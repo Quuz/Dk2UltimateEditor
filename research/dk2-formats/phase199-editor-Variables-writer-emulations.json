@@ -1,0 +1,925 @@
+{
+  "scope": "Whole Pro4937C0 Variables writer with native numeric defaults and Terrain6.\n\nMap model and its double array are explicit inputs, not a reconstructed full\neditor document. Historical Win32/IAT and CFile sink fixtures remain declared.\n",
+  "replays": [
+    {
+      "case": {
+        "name": "defaults-TPS4",
+        "TPS": 4,
+        "seed": 165,
+        "overrides": {},
+        "terrain": {},
+        "tail": null,
+        "extra": false,
+        "lists": [],
+        "error": null
+      },
+      "file": "ghidra\\phase199-editor-Variables-native-defaults-TPS4-0d8d6b929b1a.json",
+      "sha256": "c012bcdd4da52d4e40758ae67781701723f67ca688121f24d649bdd66ccd4396",
+      "outcome": {
+        "expected_failure": false,
+        "fault_PC": null,
+        "declared_records": 196,
+        "written_records": 196,
+        "written_bytes": 3192,
+        "scalar_records": 193,
+        "all_scalar_values_match": true,
+        "scalar_tail_DWORDs": [
+          5081711,
+          324
+        ],
+        "all_scalar_tails_retain_entry_scratch": true,
+        "observed_scalar_record_writes": 386,
+        "scalar_tail_writes": 0,
+        "derived74": 1,
+        "Terrain_gold_raw19A": 3000,
+        "Terrain_max_health_raw1FF": 660,
+        "Type7_model": -1.0,
+        "TPS": 4,
+        "whole_output_records_match": true,
+        "input_model_raw_and_guard_bytes_preserved": true,
+        "native_steps": 25843
+      }
+    },
+    {
+      "case": {
+        "name": "defaults-TPS20",
+        "TPS": 20,
+        "seed": 165,
+        "overrides": {},
+        "terrain": {},
+        "tail": null,
+        "extra": false,
+        "lists": [],
+        "error": null
+      },
+      "file": "ghidra\\phase199-editor-Variables-native-defaults-TPS20-c496d4cfec32.json",
+      "sha256": "c74b8a56e80f476e85d6b0f26eb35b886dea5f9868ec7a8a3520ba9b7c2db625",
+      "outcome": {
+        "expected_failure": false,
+        "fault_PC": null,
+        "declared_records": 196,
+        "written_records": 196,
+        "written_bytes": 3192,
+        "scalar_records": 193,
+        "all_scalar_values_match": true,
+        "scalar_tail_DWORDs": [
+          5081711,
+          324
+        ],
+        "all_scalar_tails_retain_entry_scratch": true,
+        "observed_scalar_record_writes": 386,
+        "scalar_tail_writes": 0,
+        "derived74": 0,
+        "Terrain_gold_raw19A": 3000,
+        "Terrain_max_health_raw1FF": 660,
+        "Type7_model": -1.0,
+        "TPS": 20,
+        "whole_output_records_match": true,
+        "input_model_raw_and_guard_bytes_preserved": true,
+        "native_steps": 25843
+      }
+    },
+    {
+      "case": {
+        "name": "tail-A",
+        "TPS": 4,
+        "seed": 165,
+        "overrides": {},
+        "terrain": {},
+        "tail": [
+          287454020,
+          1432778632
+        ],
+        "extra": false,
+        "lists": [],
+        "error": null
+      },
+      "file": "ghidra\\phase199-editor-Variables-native-tail-A-3047a240d457.json",
+      "sha256": "6b2c760d9d04d93feac6b949f790239c6f1ebce58d908cf0920a04840f694216",
+      "outcome": {
+        "expected_failure": false,
+        "fault_PC": null,
+        "declared_records": 196,
+        "written_records": 196,
+        "written_bytes": 3192,
+        "scalar_records": 193,
+        "all_scalar_values_match": true,
+        "scalar_tail_DWORDs": [
+          287454020,
+          1432778632
+        ],
+        "all_scalar_tails_retain_entry_scratch": true,
+        "observed_scalar_record_writes": 386,
+        "scalar_tail_writes": 0,
+        "derived74": 1,
+        "Terrain_gold_raw19A": 3000,
+        "Terrain_max_health_raw1FF": 660,
+        "Type7_model": -1.0,
+        "TPS": 4,
+        "whole_output_records_match": true,
+        "input_model_raw_and_guard_bytes_preserved": true,
+        "native_steps": 26874
+      }
+    },
+    {
+      "case": {
+        "name": "tail-B",
+        "TPS": 4,
+        "seed": 165,
+        "overrides": {},
+        "terrain": {},
+        "tail": [
+          3735928559,
+          2779077210
+        ],
+        "extra": false,
+        "lists": [],
+        "error": null
+      },
+      "file": "ghidra\\phase199-editor-Variables-native-tail-B-1eaa1d9abe9a.json",
+      "sha256": "8fb6c3649c6ad54675681645ec843949ffb6ab9b3ad378bf9a3aa040b6b7d56b",
+      "outcome": {
+        "expected_failure": false,
+        "fault_PC": null,
+        "declared_records": 196,
+        "written_records": 196,
+        "written_bytes": 3192,
+        "scalar_records": 193,
+        "all_scalar_values_match": true,
+        "scalar_tail_DWORDs": [
+          3735928559,
+          2779077210
+        ],
+        "all_scalar_tails_retain_entry_scratch": true,
+        "observed_scalar_record_writes": 386,
+        "scalar_tail_writes": 0,
+        "derived74": 1,
+        "Terrain_gold_raw19A": 3000,
+        "Terrain_max_health_raw1FF": 660,
+        "Type7_model": -1.0,
+        "TPS": 4,
+        "whole_output_records_match": true,
+        "input_model_raw_and_guard_bytes_preserved": true,
+        "native_steps": 26874
+      }
+    },
+    {
+      "case": {
+        "name": "fractional-positive",
+        "TPS": 4,
+        "seed": 165,
+        "overrides": {
+          "100": 3.75,
+          "67": 1.25,
+          "155": 1.25,
+          "158": 1.25,
+          "185": 1.25,
+          "220": 1.25,
+          "221": 1.25
+        },
+        "terrain": {},
+        "tail": null,
+        "extra": false,
+        "lists": [],
+        "error": null
+      },
+      "file": "ghidra\\phase199-editor-Variables-native-fractional-positive-9d6c0a2f0d94.json",
+      "sha256": "4dbbae9448b63403dce9d0f094411d9a40ff7f626ee6a2eaf15fe63156820194",
+      "outcome": {
+        "expected_failure": false,
+        "fault_PC": null,
+        "declared_records": 196,
+        "written_records": 196,
+        "written_bytes": 3192,
+        "scalar_records": 193,
+        "all_scalar_values_match": true,
+        "scalar_tail_DWORDs": [
+          2779096485,
+          2779096485
+        ],
+        "all_scalar_tails_retain_entry_scratch": true,
+        "observed_scalar_record_writes": 386,
+        "scalar_tail_writes": 0,
+        "derived74": 1,
+        "Terrain_gold_raw19A": 3000,
+        "Terrain_max_health_raw1FF": 660,
+        "Type7_model": -1.0,
+        "TPS": 4,
+        "whole_output_records_match": true,
+        "input_model_raw_and_guard_bytes_preserved": true,
+        "native_steps": 26874
+      }
+    },
+    {
+      "case": {
+        "name": "fractional-negative",
+        "TPS": 4,
+        "seed": 165,
+        "overrides": {
+          "100": -3.75,
+          "67": -1.25,
+          "155": -1.25,
+          "158": -1.25,
+          "185": -1.25,
+          "220": -1.25,
+          "221": -1.25
+        },
+        "terrain": {},
+        "tail": null,
+        "extra": false,
+        "lists": [],
+        "error": null
+      },
+      "file": "ghidra\\phase199-editor-Variables-native-fractional-negative-208a84db5cee.json",
+      "sha256": "ae92e8a857bd8e41133e02516da63e01e24235da22031d58b3efb6edeb22cab1",
+      "outcome": {
+        "expected_failure": false,
+        "fault_PC": null,
+        "declared_records": 196,
+        "written_records": 196,
+        "written_bytes": 3192,
+        "scalar_records": 193,
+        "all_scalar_values_match": true,
+        "scalar_tail_DWORDs": [
+          2779096485,
+          2779096485
+        ],
+        "all_scalar_tails_retain_entry_scratch": true,
+        "observed_scalar_record_writes": 386,
+        "scalar_tail_writes": 0,
+        "derived74": 1,
+        "Terrain_gold_raw19A": 3000,
+        "Terrain_max_health_raw1FF": 660,
+        "Type7_model": -1.0,
+        "TPS": 4,
+        "whole_output_records_match": true,
+        "input_model_raw_and_guard_bytes_preserved": true,
+        "native_steps": 26874
+      }
+    },
+    {
+      "case": {
+        "name": "signed-max",
+        "TPS": 4,
+        "seed": 165,
+        "overrides": {
+          "100": 2147483647
+        },
+        "terrain": {},
+        "tail": null,
+        "extra": false,
+        "lists": [],
+        "error": null
+      },
+      "file": "ghidra\\phase199-editor-Variables-native-signed-max-be5b6d5f9f81.json",
+      "sha256": "952741fb29cfc57d143a766ea8a300b731124ed37ad4084ec656b9fdc723c4af",
+      "outcome": {
+        "expected_failure": false,
+        "fault_PC": null,
+        "declared_records": 196,
+        "written_records": 196,
+        "written_bytes": 3192,
+        "scalar_records": 193,
+        "all_scalar_values_match": true,
+        "scalar_tail_DWORDs": [
+          2779096485,
+          2779096485
+        ],
+        "all_scalar_tails_retain_entry_scratch": true,
+        "observed_scalar_record_writes": 386,
+        "scalar_tail_writes": 0,
+        "derived74": 1,
+        "Terrain_gold_raw19A": 3000,
+        "Terrain_max_health_raw1FF": 660,
+        "Type7_model": -1.0,
+        "TPS": 4,
+        "whole_output_records_match": true,
+        "input_model_raw_and_guard_bytes_preserved": true,
+        "native_steps": 26874
+      }
+    },
+    {
+      "case": {
+        "name": "signed-min",
+        "TPS": 4,
+        "seed": 165,
+        "overrides": {
+          "100": -2147483648
+        },
+        "terrain": {},
+        "tail": null,
+        "extra": false,
+        "lists": [],
+        "error": null
+      },
+      "file": "ghidra\\phase199-editor-Variables-native-signed-min-4feb1751b58d.json",
+      "sha256": "181d5b6f70a709e6335791b83634192c51bc9fc735fbbe4c0c8cfa7c6c02bcc9",
+      "outcome": {
+        "expected_failure": false,
+        "fault_PC": null,
+        "declared_records": 196,
+        "written_records": 196,
+        "written_bytes": 3192,
+        "scalar_records": 193,
+        "all_scalar_values_match": true,
+        "scalar_tail_DWORDs": [
+          2779096485,
+          2779096485
+        ],
+        "all_scalar_tails_retain_entry_scratch": true,
+        "observed_scalar_record_writes": 386,
+        "scalar_tail_writes": 0,
+        "derived74": 1,
+        "Terrain_gold_raw19A": 3000,
+        "Terrain_max_health_raw1FF": 660,
+        "Type7_model": -1.0,
+        "TPS": 4,
+        "whole_output_records_match": true,
+        "input_model_raw_and_guard_bytes_preserved": true,
+        "native_steps": 26874
+      }
+    },
+    {
+      "case": {
+        "name": "negative-type7",
+        "TPS": 4,
+        "seed": 165,
+        "overrides": {
+          "7": -300
+        },
+        "terrain": {},
+        "tail": null,
+        "extra": false,
+        "lists": [],
+        "error": null
+      },
+      "file": "ghidra\\phase199-editor-Variables-native-negative-type7-02a27c04964c.json",
+      "sha256": "e71539237819796d95e62460c522610a7658eb3df57ae11d01708ef03516e5ce",
+      "outcome": {
+        "expected_failure": false,
+        "fault_PC": null,
+        "declared_records": 196,
+        "written_records": 196,
+        "written_bytes": 3192,
+        "scalar_records": 193,
+        "all_scalar_values_match": true,
+        "scalar_tail_DWORDs": [
+          2779096485,
+          2779096485
+        ],
+        "all_scalar_tails_retain_entry_scratch": true,
+        "observed_scalar_record_writes": 386,
+        "scalar_tail_writes": 0,
+        "derived74": 340,
+        "Terrain_gold_raw19A": 3000,
+        "Terrain_max_health_raw1FF": 660,
+        "Type7_model": -300.0,
+        "TPS": 4,
+        "whole_output_records_match": true,
+        "input_model_raw_and_guard_bytes_preserved": true,
+        "native_steps": 26874
+      }
+    },
+    {
+      "case": {
+        "name": "positive-type7",
+        "TPS": 4,
+        "seed": 165,
+        "overrides": {
+          "7": 300
+        },
+        "terrain": {},
+        "tail": null,
+        "extra": false,
+        "lists": [],
+        "error": null
+      },
+      "file": "ghidra\\phase199-editor-Variables-native-positive-type7-4aea4bf2ab7c.json",
+      "sha256": "b51e4fe6a678a298907d6e4bb49714908a1df56668377c4c2d229e95603faafa",
+      "outcome": {
+        "expected_failure": false,
+        "fault_PC": null,
+        "declared_records": 196,
+        "written_records": 196,
+        "written_bytes": 3192,
+        "scalar_records": 193,
+        "all_scalar_values_match": true,
+        "scalar_tail_DWORDs": [
+          2779096485,
+          2779096485
+        ],
+        "all_scalar_tails_retain_entry_scratch": true,
+        "observed_scalar_record_writes": 386,
+        "scalar_tail_writes": 0,
+        "derived74": 340,
+        "Terrain_gold_raw19A": 3000,
+        "Terrain_max_health_raw1FF": 660,
+        "Type7_model": 300.0,
+        "TPS": 4,
+        "whole_output_records_match": true,
+        "input_model_raw_and_guard_bytes_preserved": true,
+        "native_steps": 26874
+      }
+    },
+    {
+      "case": {
+        "name": "fractional-type7",
+        "TPS": 4,
+        "seed": 165,
+        "overrides": {
+          "7": -300.99
+        },
+        "terrain": {},
+        "tail": null,
+        "extra": false,
+        "lists": [],
+        "error": null
+      },
+      "file": "ghidra\\phase199-editor-Variables-native-fractional-type7-4de6bc5d110a.json",
+      "sha256": "6338fb4d4502645be3ee1afd9aeb4148dfd66f2b355bca4b7710f51fd05608a6",
+      "outcome": {
+        "expected_failure": false,
+        "fault_PC": null,
+        "declared_records": 196,
+        "written_records": 196,
+        "written_bytes": 3192,
+        "scalar_records": 193,
+        "all_scalar_values_match": true,
+        "scalar_tail_DWORDs": [
+          2779096485,
+          2779096485
+        ],
+        "all_scalar_tails_retain_entry_scratch": true,
+        "observed_scalar_record_writes": 386,
+        "scalar_tail_writes": 0,
+        "derived74": 340,
+        "Terrain_gold_raw19A": 3000,
+        "Terrain_max_health_raw1FF": 660,
+        "Type7_model": -300.99,
+        "TPS": 4,
+        "whole_output_records_match": true,
+        "input_model_raw_and_guard_bytes_preserved": true,
+        "native_steps": 26874
+      }
+    },
+    {
+      "case": {
+        "name": "type74-slot-ignored",
+        "TPS": 4,
+        "seed": 165,
+        "overrides": {
+          "7": -300,
+          "74": 9999
+        },
+        "terrain": {},
+        "tail": null,
+        "extra": false,
+        "lists": [],
+        "error": null
+      },
+      "file": "ghidra\\phase199-editor-Variables-native-type74-slot-ignored-884ec3b4e9f6.json",
+      "sha256": "9b4778c594125564144e5e575679f7f61af74ad26f97b6c1947acbde68c716b2",
+      "outcome": {
+        "expected_failure": false,
+        "fault_PC": null,
+        "declared_records": 196,
+        "written_records": 196,
+        "written_bytes": 3192,
+        "scalar_records": 193,
+        "all_scalar_values_match": true,
+        "scalar_tail_DWORDs": [
+          2779096485,
+          2779096485
+        ],
+        "all_scalar_tails_retain_entry_scratch": true,
+        "observed_scalar_record_writes": 386,
+        "scalar_tail_writes": 0,
+        "derived74": 340,
+        "Terrain_gold_raw19A": 3000,
+        "Terrain_max_health_raw1FF": 660,
+        "Type7_model": -300.0,
+        "TPS": 4,
+        "whole_output_records_match": true,
+        "input_model_raw_and_guard_bytes_preserved": true,
+        "native_steps": 26874
+      }
+    },
+    {
+      "case": {
+        "name": "gold-value-double",
+        "TPS": 4,
+        "seed": 165,
+        "overrides": {
+          "7": -300
+        },
+        "terrain": {
+          "410": 6000
+        },
+        "tail": null,
+        "extra": false,
+        "lists": [],
+        "error": null
+      },
+      "file": "ghidra\\phase199-editor-Variables-native-gold-value-double-9d80bc35f571.json",
+      "sha256": "85f78cee97b36758a0f3fdf14e4089fa5d1552db1a205e2c42d533ff11b2dde5",
+      "outcome": {
+        "expected_failure": false,
+        "fault_PC": null,
+        "declared_records": 196,
+        "written_records": 196,
+        "written_bytes": 3192,
+        "scalar_records": 193,
+        "all_scalar_values_match": true,
+        "scalar_tail_DWORDs": [
+          2779096485,
+          2779096485
+        ],
+        "all_scalar_tails_retain_entry_scratch": true,
+        "observed_scalar_record_writes": 386,
+        "scalar_tail_writes": 0,
+        "derived74": 681,
+        "Terrain_gold_raw19A": 6000,
+        "Terrain_max_health_raw1FF": 660,
+        "Type7_model": -300.0,
+        "TPS": 4,
+        "whole_output_records_match": true,
+        "input_model_raw_and_guard_bytes_preserved": true,
+        "native_steps": 26874
+      }
+    },
+    {
+      "case": {
+        "name": "max-health-half",
+        "TPS": 4,
+        "seed": 165,
+        "overrides": {
+          "7": -300
+        },
+        "terrain": {
+          "511": 330
+        },
+        "tail": null,
+        "extra": false,
+        "lists": [],
+        "error": null
+      },
+      "file": "ghidra\\phase199-editor-Variables-native-max-health-half-b00c24006d85.json",
+      "sha256": "17b1ea724ffe4513006e49c4631d3a285838dbc08c360c0de13538d229bc1ab9",
+      "outcome": {
+        "expected_failure": false,
+        "fault_PC": null,
+        "declared_records": 196,
+        "written_records": 196,
+        "written_bytes": 3192,
+        "scalar_records": 193,
+        "all_scalar_values_match": true,
+        "scalar_tail_DWORDs": [
+          2779096485,
+          2779096485
+        ],
+        "all_scalar_tails_retain_entry_scratch": true,
+        "observed_scalar_record_writes": 386,
+        "scalar_tail_writes": 0,
+        "derived74": 681,
+        "Terrain_gold_raw19A": 3000,
+        "Terrain_max_health_raw1FF": 330,
+        "Type7_model": -300.0,
+        "TPS": 4,
+        "whole_output_records_match": true,
+        "input_model_raw_and_guard_bytes_preserved": true,
+        "native_steps": 26874
+      }
+    },
+    {
+      "case": {
+        "name": "type74-TPS20",
+        "TPS": 20,
+        "seed": 165,
+        "overrides": {
+          "7": -300
+        },
+        "terrain": {},
+        "tail": null,
+        "extra": false,
+        "lists": [],
+        "error": null
+      },
+      "file": "ghidra\\phase199-editor-Variables-native-type74-TPS20-5fad45de7e8e.json",
+      "sha256": "35e594f69d4417fbb4d180d60380779a11f394d30e2738cc958cd21a98252251",
+      "outcome": {
+        "expected_failure": false,
+        "fault_PC": null,
+        "declared_records": 196,
+        "written_records": 196,
+        "written_bytes": 3192,
+        "scalar_records": 193,
+        "all_scalar_values_match": true,
+        "scalar_tail_DWORDs": [
+          2779096485,
+          2779096485
+        ],
+        "all_scalar_tails_retain_entry_scratch": true,
+        "observed_scalar_record_writes": 386,
+        "scalar_tail_writes": 0,
+        "derived74": 68,
+        "Terrain_gold_raw19A": 3000,
+        "Terrain_max_health_raw1FF": 660,
+        "Type7_model": -300.0,
+        "TPS": 20,
+        "whole_output_records_match": true,
+        "input_model_raw_and_guard_bytes_preserved": true,
+        "native_steps": 26874
+      }
+    },
+    {
+      "case": {
+        "name": "type74-product-wrap",
+        "TPS": 4,
+        "seed": 165,
+        "overrides": {
+          "7": 1073741824
+        },
+        "terrain": {
+          "410": 3
+        },
+        "tail": null,
+        "extra": false,
+        "lists": [],
+        "error": null
+      },
+      "file": "ghidra\\phase199-editor-Variables-native-type74-product-wrap-0c679eac684a.json",
+      "sha256": "8655e8663244ed4942bffe3fb2a83542acbce089ead0afcc1c706ffce66d4ddf",
+      "outcome": {
+        "expected_failure": false,
+        "fault_PC": null,
+        "declared_records": 196,
+        "written_records": 196,
+        "written_bytes": 3192,
+        "scalar_records": 193,
+        "all_scalar_values_match": true,
+        "scalar_tail_DWORDs": [
+          2779096485,
+          2779096485
+        ],
+        "all_scalar_tails_retain_entry_scratch": true,
+        "observed_scalar_record_writes": 386,
+        "scalar_tail_writes": 0,
+        "derived74": -406720,
+        "Terrain_gold_raw19A": 3,
+        "Terrain_max_health_raw1FF": 660,
+        "Type7_model": 1073741824.0,
+        "TPS": 4,
+        "whole_output_records_match": true,
+        "input_model_raw_and_guard_bytes_preserved": true,
+        "native_steps": 26874
+      }
+    },
+    {
+      "case": {
+        "name": "type74-signed-min",
+        "TPS": 4,
+        "seed": 165,
+        "overrides": {
+          "7": -2147483648
+        },
+        "terrain": {},
+        "tail": null,
+        "extra": false,
+        "lists": [],
+        "error": null
+      },
+      "file": "ghidra\\phase199-editor-Variables-native-type74-signed-min-322d70694ce4.json",
+      "sha256": "9c0e2f93626a62d77452b4bb89b957cc49fbc7ca9cf4f1ebe08ce6860a02bb08",
+      "outcome": {
+        "expected_failure": false,
+        "fault_PC": null,
+        "declared_records": 196,
+        "written_records": 196,
+        "written_bytes": 3192,
+        "scalar_records": 193,
+        "all_scalar_values_match": true,
+        "scalar_tail_DWORDs": [
+          2779096485,
+          2779096485
+        ],
+        "all_scalar_tails_retain_entry_scratch": true,
+        "observed_scalar_record_writes": 386,
+        "scalar_tail_writes": 0,
+        "derived74": 0,
+        "Terrain_gold_raw19A": 3000,
+        "Terrain_max_health_raw1FF": 660,
+        "Type7_model": -2147483648.0,
+        "TPS": 4,
+        "whole_output_records_match": true,
+        "input_model_raw_and_guard_bytes_preserved": true,
+        "native_steps": 26874
+      }
+    },
+    {
+      "case": {
+        "name": "unknown-array-slots",
+        "TPS": 4,
+        "seed": 165,
+        "overrides": {
+          "19": 99,
+          "29": 305419896,
+          "186": 1985229328
+        },
+        "terrain": {},
+        "tail": null,
+        "extra": false,
+        "lists": [],
+        "error": null
+      },
+      "file": "ghidra\\phase199-editor-Variables-native-unknown-array-slots-962df3bdcaf8.json",
+      "sha256": "8bd08409a13aa0d942d6ce191dbeb34d8b0d40532acc4da4219842063610c693",
+      "outcome": {
+        "expected_failure": false,
+        "fault_PC": null,
+        "declared_records": 196,
+        "written_records": 196,
+        "written_bytes": 3192,
+        "scalar_records": 193,
+        "all_scalar_values_match": true,
+        "scalar_tail_DWORDs": [
+          2779096485,
+          2779096485
+        ],
+        "all_scalar_tails_retain_entry_scratch": true,
+        "observed_scalar_record_writes": 386,
+        "scalar_tail_writes": 0,
+        "derived74": 1,
+        "Terrain_gold_raw19A": 3000,
+        "Terrain_max_health_raw1FF": 660,
+        "Type7_model": -1.0,
+        "TPS": 4,
+        "whole_output_records_match": true,
+        "input_model_raw_and_guard_bytes_preserved": true,
+        "native_steps": 26874
+      }
+    },
+    {
+      "case": {
+        "name": "manual-ID-extension",
+        "TPS": 4,
+        "seed": 165,
+        "overrides": {
+          "29": 305419896
+        },
+        "terrain": {},
+        "tail": null,
+        "extra": true,
+        "lists": [],
+        "error": null
+      },
+      "file": "ghidra\\phase199-editor-Variables-native-manual-ID-extension-51acdf99674a.json",
+      "sha256": "5079bd4e8c631339615587a2229bc3023fda1c1373f43206fb6abd4d4084bb7d",
+      "outcome": {
+        "expected_failure": false,
+        "fault_PC": null,
+        "declared_records": 197,
+        "written_records": 197,
+        "written_bytes": 3208,
+        "scalar_records": 194,
+        "all_scalar_values_match": true,
+        "scalar_tail_DWORDs": [
+          2779096485,
+          2779096485
+        ],
+        "all_scalar_tails_retain_entry_scratch": true,
+        "observed_scalar_record_writes": 388,
+        "scalar_tail_writes": 0,
+        "derived74": 1,
+        "Terrain_gold_raw19A": 3000,
+        "Terrain_max_health_raw1FF": 660,
+        "Type7_model": -1.0,
+        "TPS": 4,
+        "whole_output_records_match": true,
+        "input_model_raw_and_guard_bytes_preserved": true,
+        "native_steps": 26946
+      }
+    },
+    {
+      "case": {
+        "name": "type66-list",
+        "TPS": 4,
+        "seed": 165,
+        "overrides": {},
+        "terrain": {},
+        "tail": null,
+        "extra": false,
+        "lists": [
+          513,
+          65224
+        ],
+        "error": null
+      },
+      "file": "ghidra\\phase199-editor-Variables-native-type66-list-c8d4c9d703e7.json",
+      "sha256": "800460f99180cde5b5cad7c85d992bd93c22040b7e07f743310e2c62d19a87c0",
+      "outcome": {
+        "expected_failure": false,
+        "fault_PC": null,
+        "declared_records": 198,
+        "written_records": 198,
+        "written_bytes": 3224,
+        "scalar_records": 193,
+        "all_scalar_values_match": true,
+        "scalar_tail_DWORDs": [
+          2779096485,
+          2779096485
+        ],
+        "all_scalar_tails_retain_entry_scratch": true,
+        "observed_scalar_record_writes": 386,
+        "scalar_tail_writes": 0,
+        "derived74": 1,
+        "Terrain_gold_raw19A": 3000,
+        "Terrain_max_health_raw1FF": 660,
+        "Type7_model": -1.0,
+        "TPS": 4,
+        "whole_output_records_match": true,
+        "input_model_raw_and_guard_bytes_preserved": true,
+        "native_steps": 26982
+      }
+    },
+    {
+      "case": {
+        "name": "zero-TPS",
+        "TPS": 0,
+        "seed": 165,
+        "overrides": {},
+        "terrain": {},
+        "tail": null,
+        "extra": false,
+        "lists": [],
+        "error": 4800897
+      },
+      "file": "ghidra\\phase199-editor-Variables-native-zero-TPS-529d68987828.json",
+      "sha256": "1255ad486c37ea6a1eba64ed4d22706061471878c62a12cd36f8f66f972b73cd",
+      "outcome": {
+        "expected_failure": true,
+        "fault_PC": 4800897,
+        "declared_records": 196,
+        "written_records": 193,
+        "written_bytes": 3144,
+        "scalar_records": 193,
+        "all_scalar_values_match": true,
+        "scalar_tail_DWORDs": [
+          2779096485,
+          2779096485
+        ],
+        "all_scalar_tails_retain_entry_scratch": true,
+        "observed_scalar_record_writes": 386,
+        "scalar_tail_writes": 0,
+        "derived74": null,
+        "Terrain_gold_raw19A": 3000,
+        "Terrain_max_health_raw1FF": 660,
+        "Type7_model": -1.0,
+        "TPS": 0,
+        "whole_output_records_match": true,
+        "input_model_raw_and_guard_bytes_preserved": true,
+        "native_steps": 26711
+      }
+    },
+    {
+      "case": {
+        "name": "zero-max-health",
+        "TPS": 4,
+        "seed": 165,
+        "overrides": {},
+        "terrain": {
+          "511": 0
+        },
+        "tail": null,
+        "extra": false,
+        "lists": [],
+        "error": 4800868
+      },
+      "file": "ghidra\\phase199-editor-Variables-native-zero-max-health-74d5a418f007.json",
+      "sha256": "58ee0d5eaee35205156a5a44f652d705417c90c3824ae5905c44f5122d760695",
+      "outcome": {
+        "expected_failure": true,
+        "fault_PC": 4800868,
+        "declared_records": 196,
+        "written_records": 193,
+        "written_bytes": 3144,
+        "scalar_records": 193,
+        "all_scalar_values_match": true,
+        "scalar_tail_DWORDs": [
+          2779096485,
+          2779096485
+        ],
+        "all_scalar_tails_retain_entry_scratch": true,
+        "observed_scalar_record_writes": 386,
+        "scalar_tail_writes": 0,
+        "derived74": null,
+        "Terrain_gold_raw19A": 3000,
+        "Terrain_max_health_raw1FF": 0,
+        "Type7_model": -1.0,
+        "TPS": 4,
+        "whole_output_records_match": true,
+        "input_model_raw_and_guard_bytes_preserved": true,
+        "native_steps": 26703
+      }
+    }
+  ]
+}

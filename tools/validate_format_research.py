@@ -29,6 +29,22 @@ def main():
         for info in z.infolist():
             p=Path(info.filename)
             assert not p.is_absolute() and '..' not in p.parts and p.suffix in ['.txt','.bin']
+    if 'editor_variables_writer_semantics' in package:
+        writer=package['editor_variables_writer_semantics']
+        assert writer['counts']['native_scenes']==22 and writer['counts']['expected_division_faults']==2
+        assert writer['counts']['Ghidra_known_FISTP_DWORD_differences']==7
+        assert writer['counts']['whole_native_memory_equal_Ghidra_controls']==0
+        assert writer['numeric_model']['fixed_point_types']==[67,155,158,185,220,221]
+        assert writer['derived74']['Terrain_MaxHealth']['raw_offset']==0x1FF
+        assert writer['derived74']['direct_Map_double74_ignored'] is True
+        assert writer['physical_preservation']['opaque_record_append_remove_controls']==2
+        assert writer['physical_preservation']['exact_scalar_value_edits']==10
+        with zipfile.ZipFile(evidence) as z:
+            for row in writer['primary']['functions']+writer['primary']['blocks']:
+                for key in ['memory','assembly']:
+                    if row.get(key):assert hashlib.sha256(z.read(Path(row[key]).name)).hexdigest()==row[key+'_sha256']
+            ref=writer['Ghidra_FPU_limitation']['primary']
+            assert hashlib.sha256(z.read(Path(ref['file']).name)).hexdigest()==ref['sha256']
     for p in RESEARCH.iterdir():assert p.suffix.lower() not in ['.exe','.dll','.kwd','.kld','.xlsx','.log'],p.name
     # Check token-shaped strings, without printing any matching value.
     secret=re.compile(rb'(?:gh[pousr]_[A-Za-z0-9]{30,}|github_pat_[A-Za-z0-9_]{40,}|sk-proj-[A-Za-z0-9_-]{40,}|AKIA[A-Z0-9]{16})')

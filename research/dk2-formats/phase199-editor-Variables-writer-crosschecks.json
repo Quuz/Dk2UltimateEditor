@@ -1,0 +1,140 @@
+{
+  "replays": [
+    {
+      "case": "tail-A",
+      "file": "ghidra\\phase199-editor-Variables-writer-Ghidra-tail-A-ec9b17dcc83e.json",
+      "sha256": "d4a100dc6cda106b8e507a3c5a1c7d7370cd855b3dc08085715ec8b5598ed44b",
+      "checked_regions": 64,
+      "checked_bytes": 298321,
+      "known_FISTP_differences": [
+        {
+          "type": 155,
+          "output_offset": 1836,
+          "bytes": 4,
+          "scaled_binary64": 6553.6,
+          "native_trunc_bits": 6553,
+          "Ghidra_FISTP_bits": 6554
+        }
+      ],
+      "equal_native_bytes": 298317,
+      "whole_native_output_equal": false
+    },
+    {
+      "case": "tail-B",
+      "file": "ghidra\\phase199-editor-Variables-writer-Ghidra-tail-B-7c37cb4b3499.json",
+      "sha256": "7ff695bc2fdfd5a2ef04594303795c81c63ec481877a512e2a6fe0541ad8b8f8",
+      "checked_regions": 64,
+      "checked_bytes": 298321,
+      "known_FISTP_differences": [
+        {
+          "type": 155,
+          "output_offset": 1836,
+          "bytes": 4,
+          "scaled_binary64": 6553.6,
+          "native_trunc_bits": 6553,
+          "Ghidra_FISTP_bits": 6554
+        }
+      ],
+      "equal_native_bytes": 298317,
+      "whole_native_output_equal": false
+    },
+    {
+      "case": "fractional-negative",
+      "file": "ghidra\\phase199-editor-Variables-writer-Ghidra-fractional-negative-63360849927b.json",
+      "sha256": "96b55514de0c1e9b37d601b845a78fbdb60e968c07f7fd930112efb0226223fa",
+      "checked_regions": 64,
+      "checked_bytes": 298321,
+      "known_FISTP_differences": [
+        {
+          "type": 100,
+          "output_offset": 1180,
+          "bytes": 4,
+          "scaled_binary64": -3.75,
+          "native_trunc_bits": 4294967293,
+          "Ghidra_FISTP_bits": 4294967292
+        }
+      ],
+      "equal_native_bytes": 298317,
+      "whole_native_output_equal": false
+    },
+    {
+      "case": "negative-type7",
+      "file": "ghidra\\phase199-editor-Variables-writer-Ghidra-negative-type7-a7e1673fd6bd.json",
+      "sha256": "7895667daa9743af34f14d2bc0306ffc51b62b9b3ea7b05c48efe8ff0d50b97f",
+      "checked_regions": 64,
+      "checked_bytes": 298321,
+      "known_FISTP_differences": [
+        {
+          "type": 155,
+          "output_offset": 1836,
+          "bytes": 4,
+          "scaled_binary64": 6553.6,
+          "native_trunc_bits": 6553,
+          "Ghidra_FISTP_bits": 6554
+        }
+      ],
+      "equal_native_bytes": 298317,
+      "whole_native_output_equal": false
+    },
+    {
+      "case": "type74-product-wrap",
+      "file": "ghidra\\phase199-editor-Variables-writer-Ghidra-type74-product-wrap-4df8050d2159.json",
+      "sha256": "7e26d4fddefc245e1c68c2f4e448b40dc5f304f085bd6914a5c4600ee1481b01",
+      "checked_regions": 64,
+      "checked_bytes": 298321,
+      "known_FISTP_differences": [
+        {
+          "type": 155,
+          "output_offset": 1836,
+          "bytes": 4,
+          "scaled_binary64": 6553.6,
+          "native_trunc_bits": 6553,
+          "Ghidra_FISTP_bits": 6554
+        }
+      ],
+      "equal_native_bytes": 298317,
+      "whole_native_output_equal": false
+    },
+    {
+      "case": "manual-ID-extension",
+      "file": "ghidra\\phase199-editor-Variables-writer-Ghidra-manual-ID-extension-5cca87baa94b.json",
+      "sha256": "78f67ff595a875d1a08eab9264ddd21066dcb2821b35f30c40caefcb4e1a17c8",
+      "checked_regions": 66,
+      "checked_bytes": 299118,
+      "known_FISTP_differences": [
+        {
+          "type": 155,
+          "output_offset": 1836,
+          "bytes": 4,
+          "scaled_binary64": 6553.6,
+          "native_trunc_bits": 6553,
+          "Ghidra_FISTP_bits": 6554
+        }
+      ],
+      "equal_native_bytes": 299114,
+      "whole_native_output_equal": false
+    },
+    {
+      "case": "type66-list",
+      "file": "ghidra\\phase199-editor-Variables-writer-Ghidra-type66-list-21c1f18e21e8.json",
+      "sha256": "ca848de31b5818c02a3a2407a9b026ecfae9fbe1df96a01cf950a7bfa74e726d",
+      "checked_regions": 65,
+      "checked_bytes": 298325,
+      "known_FISTP_differences": [
+        {
+          "type": 155,
+          "output_offset": 1836,
+          "bytes": 4,
+          "scaled_binary64": 6553.6,
+          "native_trunc_bits": 6553,
+          "Ghidra_FISTP_bits": 6554
+        }
+      ],
+      "equal_native_bytes": 298321,
+      "whole_native_output_equal": false
+    }
+  ],
+  "scope": "Unmodified Ghidra comparison, with explicit FISTP semantic differences.\n\nGhidra12 x86 FISTP unconditionally uses round(ST0), ignoring FLDCW rounding\nmode; native __ftol truncates. Compare all other bytes identically and require\nthe exact independently predicted rounded DWORDs, reporting differences.\n",
+  "original_instructions_modified": 0,
+  "known_Ghidra_FISTP_limitation": true
+}
