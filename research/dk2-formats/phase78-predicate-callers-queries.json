@@ -1,0 +1,95 @@
+[
+  {
+    "id": "phase78-DX-45cb00-create",
+    "tool": "create_function",
+    "args": {
+      "program": "DKII-DX.exe",
+      "address": "0x45cb00",
+      "disassemble_first": true
+    },
+    "print_limit": 5
+  },
+  {
+    "id": "phase78-DX-45cb00-assembly",
+    "tool": "disassemble_function",
+    "args": {
+      "program": "DKII-DX.exe",
+      "address": "0x45cb00"
+    },
+    "print_limit": 5
+  },
+  {
+    "id": "phase78-DX-45cb00-decompile",
+    "tool": "force_decompile",
+    "args": {
+      "program": "DKII-DX.exe",
+      "address": "0x45cb00"
+    },
+    "print_limit": 5
+  },
+  {
+    "id": "phase78-DX-47bbe0-create",
+    "tool": "create_function",
+    "args": {
+      "program": "DKII-DX.exe",
+      "address": "0x47bbe0",
+      "disassemble_first": true
+    },
+    "print_limit": 5
+  },
+  {
+    "id": "phase78-DX-47bbe0-assembly",
+    "tool": "disassemble_function",
+    "args": {
+      "program": "DKII-DX.exe",
+      "address": "0x47bbe0"
+    },
+    "print_limit": 5
+  },
+  {
+    "id": "phase78-DX-47bbe0-decompile",
+    "tool": "force_decompile",
+    "args": {
+      "program": "DKII-DX.exe",
+      "address": "0x47bbe0"
+    },
+    "print_limit": 5
+  },
+  {
+    "id": "phase78-DX-45cb00-xrefs",
+    "tool": "get_xrefs_to",
+    "args": {
+      "program": "DKII-DX.exe",
+      "address": "0x45cb00"
+    },
+    "print_limit": 5
+  },
+  {
+    "id": "phase78-DX-6da8c7-xrefs",
+    "tool": "get_xrefs_to",
+    "args": {
+      "program": "DKII-DX.exe",
+      "address": "0x6da8c7"
+    },
+    "print_limit": 5
+  },
+  {
+    "id": "phase78-DX-6da8c0-xrefs",
+    "tool": "get_xrefs_to",
+    "args": {
+      "program": "DKII-DX.exe",
+      "address": "0x6da8c0"
+    },
+    "print_limit": 5
+  },
+  {
+    "id": "phase78-DX-6da8c0-data",
+    "tool": "read_memory",
+    "args": {
+      "program": "DKII-DX.exe",
+      "address": "0x6da8c0",
+      "length": 512
+    },
+    "print_limit": 5
+  }
+]

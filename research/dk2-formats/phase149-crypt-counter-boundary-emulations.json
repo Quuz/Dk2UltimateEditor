@@ -1,0 +1,192 @@
+{
+  "scope": "Reject a new falseCryptCounter01 lead by executing the original boundedloop.\n\n4C7360 checks exactly three owner-relative bytes E97/EB0/EC9. The pointer-only\nscan followed the taken loop edge without constraining its EAX counter and\ninvented a read at108B after20 increments. No Cryptbonus meaning is assigned.\n",
+  "replays": [
+    {
+      "case": {
+        "name": "crypt108b-0",
+        "counter": 0,
+        "slots": [
+          0,
+          0,
+          0
+        ]
+      },
+      "file": "ghidra\\phase149-crypt-counter-boundary-281cc7219018.json",
+      "sha256": "246c85f515a69504e550334627a535bb77d647a3947920d48c3486f6f1403dfe",
+      "outcome": {
+        "result": 0,
+        "read_offsets": [
+          3735,
+          3760,
+          3785
+        ],
+        "compared_regions": 1,
+        "compared_bytes": 4672,
+        "native_steps": 22
+      }
+    },
+    {
+      "case": {
+        "name": "crypt108b-1",
+        "counter": 1,
+        "slots": [
+          0,
+          0,
+          0
+        ]
+      },
+      "file": "ghidra\\phase149-crypt-counter-boundary-3c4387bc9069.json",
+      "sha256": "6d1f670c264156b449539209ca813c471cf18a3ce55bc927499a2a19d9c2047b",
+      "outcome": {
+        "result": 0,
+        "read_offsets": [
+          3735,
+          3760,
+          3785
+        ],
+        "compared_regions": 1,
+        "compared_bytes": 4672,
+        "native_steps": 22
+      }
+    },
+    {
+      "case": {
+        "name": "crypt108b-127",
+        "counter": 127,
+        "slots": [
+          0,
+          0,
+          0
+        ]
+      },
+      "file": "ghidra\\phase149-crypt-counter-boundary-aeae1aad680e.json",
+      "sha256": "b7e9ec4e373350ff7c564aafee61bf2c3b41beb1ed9ebef7657db50e7636d80d",
+      "outcome": {
+        "result": 0,
+        "read_offsets": [
+          3735,
+          3760,
+          3785
+        ],
+        "compared_regions": 1,
+        "compared_bytes": 4672,
+        "native_steps": 22
+      }
+    },
+    {
+      "case": {
+        "name": "crypt108b-255",
+        "counter": 255,
+        "slots": [
+          0,
+          0,
+          0
+        ]
+      },
+      "file": "ghidra\\phase149-crypt-counter-boundary-3409205ddce8.json",
+      "sha256": "52a6374f474cb77486850a1a584c5a08301fa6c1c186279453f6ae738e8d10d6",
+      "outcome": {
+        "result": 0,
+        "read_offsets": [
+          3735,
+          3760,
+          3785
+        ],
+        "compared_regions": 1,
+        "compared_bytes": 4672,
+        "native_steps": 22
+      }
+    },
+    {
+      "case": {
+        "name": "slot0-active",
+        "counter": 1,
+        "slots": [
+          1,
+          0,
+          0
+        ]
+      },
+      "file": "ghidra\\phase149-crypt-counter-boundary-8325f0b89f1a.json",
+      "sha256": "9a4f0fba3e4a2148ac9a63df9e0295bdf9c575bd966b2f5c7046eb2197e5f3fb",
+      "outcome": {
+        "result": 1,
+        "read_offsets": [
+          3735
+        ],
+        "compared_regions": 1,
+        "compared_bytes": 4672,
+        "native_steps": 6
+      }
+    },
+    {
+      "case": {
+        "name": "slot1-active",
+        "counter": 1,
+        "slots": [
+          0,
+          1,
+          0
+        ]
+      },
+      "file": "ghidra\\phase149-crypt-counter-boundary-9eec4b13c875.json",
+      "sha256": "67839f0ee7203d34fa19b0c04979370dc615d4ff80d8965500b74bdc236a7f6f",
+      "outcome": {
+        "result": 1,
+        "read_offsets": [
+          3735,
+          3760
+        ],
+        "compared_regions": 1,
+        "compared_bytes": 4672,
+        "native_steps": 12
+      }
+    },
+    {
+      "case": {
+        "name": "slot2-active",
+        "counter": 1,
+        "slots": [
+          0,
+          0,
+          1
+        ]
+      },
+      "file": "ghidra\\phase149-crypt-counter-boundary-ddb025765019.json",
+      "sha256": "a313c344e8364ee154bc2aab10e7c2f95d0664750cafc4eed0204eba305e50cb",
+      "outcome": {
+        "result": 1,
+        "read_offsets": [
+          3735,
+          3760,
+          3785
+        ],
+        "compared_regions": 1,
+        "compared_bytes": 4672,
+        "native_steps": 18
+      }
+    },
+    {
+      "case": {
+        "name": "slot0-highbit",
+        "counter": 255,
+        "slots": [
+          128,
+          0,
+          0
+        ]
+      },
+      "file": "ghidra\\phase149-crypt-counter-boundary-7dcc406ca7c6.json",
+      "sha256": "6603d70ee6b9b1210a995f27ee1c311a6359dca2aa313e51f0abb9167e379d51",
+      "outcome": {
+        "result": 1,
+        "read_offsets": [
+          3735
+        ],
+        "compared_regions": 1,
+        "compared_bytes": 4672,
+        "native_steps": 6
+      }
+    }
+  ]
+}

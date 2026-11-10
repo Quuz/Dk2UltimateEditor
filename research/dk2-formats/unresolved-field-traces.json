@@ -1,0 +1,434 @@
+{
+  "program": "DKII-DX.exe",
+  "fields": [
+    {
+      "family": "Terrain",
+      "raw_offset": "0x198",
+      "raw_bytes": 2,
+      "intermediate_offset": "0x250",
+      "runtime_offset": "0x183",
+      "runtime_bytes": 2,
+      "meaning": "unresolved",
+      "signedness": "Copy width is verified; no signedness inferred without a semantic consumer.",
+      "storage_evidence": {
+        "raw_offset": "0x198",
+        "raw_bytes": 2,
+        "baseline_field": "Unk198",
+        "intermediate_offset": "0x250",
+        "runtime_offset": "0x183",
+        "runtime_bytes": 2,
+        "transform": "copy",
+        "runtime_expression": "*(undefined2 *)(param_2 + 0x250)",
+        "converter_evidence": [
+          {
+            "line": 63,
+            "assignment": "uVar2 = *(undefined2 *)(param_2 + 0x198);"
+          },
+          {
+            "line": 67,
+            "assignment": "*(undefined2 *)(param_1 + 0x94) = uVar2;"
+          }
+        ],
+        "runtime_evidence": {
+          "line": 123,
+          "assignment": "*(undefined2 *)(param_1 + 0x183) = *(undefined2 *)(param_2 + 0x250);"
+        }
+      },
+      "standalone_unsigned_value_counts": {
+        "0": 20,
+        "1": 2,
+        "2": 1,
+        "4": 1,
+        "5": 3,
+        "6": 1,
+        "7": 2,
+        "19": 2,
+        "20": 1,
+        "504": 6,
+        "508": 2
+      },
+      "native_editor_trace": {
+        "family": "Terrain",
+        "raw_offset": "0x198",
+        "raw_bytes": 2,
+        "intermediate_offset": "0x250",
+        "editor_model_offset": "0x3d0",
+        "meaning": "unresolved",
+        "evidence": [
+          {
+            "file": "editor-phase8-terrain-model-load.txt",
+            "line": 122,
+            "excerpt": "*(short *)(this + 0xf4) = (short)piVar1[0x94];"
+          },
+          {
+            "file": "editor-phase8-terrain-writer-assembly.txt",
+            "line": 115,
+            "excerpt": "004a78cb: MOV AX,word ptr [EBX + 0x3d0]"
+          }
+        ]
+      }
+    },
+    {
+      "family": "Terrain",
+      "raw_offset": "0x224",
+      "raw_bytes": 4,
+      "intermediate_offset": "0x2dc",
+      "runtime_offset": "0x1b5",
+      "runtime_bytes": 4,
+      "meaning": "unresolved",
+      "signedness": "Copy width is verified; no signedness inferred without a semantic consumer.",
+      "storage_evidence": {
+        "raw_offset": "0x224",
+        "raw_bytes": 4,
+        "baseline_field": "Unk224",
+        "intermediate_offset": "0x2dc",
+        "runtime_offset": "0x1b5",
+        "runtime_bytes": 4,
+        "transform": "copy",
+        "runtime_expression": "*(undefined4 *)(param_2 + 0x2dc)",
+        "converter_evidence": [
+          {
+            "line": 241,
+            "assignment": "uVar3 = *(undefined4 *)(param_2 + 0x224);"
+          },
+          {
+            "line": 245,
+            "assignment": "param_1[0xb7] = uVar3;"
+          }
+        ],
+        "runtime_evidence": {
+          "line": 339,
+          "assignment": "*(undefined4 *)(param_1 + 0x1b5) = *(undefined4 *)(param_2 + 0x2dc);"
+        }
+      },
+      "standalone_unsigned_value_counts": {
+        "0": 19,
+        "4628": 22
+      },
+      "native_editor_trace": {
+        "family": "Terrain",
+        "raw_offset": "0x224",
+        "raw_bytes": 4,
+        "intermediate_offset": "0x2dc",
+        "editor_model_offset": "0x320",
+        "editor_scale": 0.000244140625,
+        "inverse_scale": 4096.0,
+        "meaning": "unresolved; native editor stores an unsigned raw DWORD as scaled double",
+        "ui_binding": "not established in the inspected Terrain properties panel",
+        "evidence": [
+          {
+            "file": "editor-phase8-terrain-model-load.txt",
+            "line": 201,
+            "excerpt": "*(double *)(this + 200) = (double)local_14 * _DAT_0050ac48;"
+          },
+          {
+            "file": "editor-phase8-terrain-writer-assembly.txt",
+            "line": 127,
+            "excerpt": "004a7919: FLD double ptr [EBX + 0x320]"
+          },
+          {
+            "file": "editor-phase8-terrain-writer-assembly.txt",
+            "line": 128,
+            "excerpt": "004a791f: FMUL double ptr [0x0050ac58]"
+          }
+        ]
+      }
+    },
+    {
+      "family": "Traps",
+      "raw_offset": "0x204",
+      "raw_bytes": 2,
+      "intermediate_offset": "0x2ac",
+      "runtime_offset": "0x98",
+      "runtime_bytes": 2,
+      "meaning": "unresolved",
+      "signedness": "Copy width is verified; no signedness inferred without a semantic consumer.",
+      "storage_evidence": {
+        "raw_offset": "0x204",
+        "raw_bytes": 2,
+        "baseline_field": "unknown4[0].unknown4",
+        "intermediate_offset": "0x2ac",
+        "runtime_offset": "0x98",
+        "runtime_bytes": 2,
+        "transform": "copy",
+        "runtime_expression": "*(undefined2 *)(param_2 + 0x2ac)",
+        "converter_evidence": [
+          {
+            "line": 137,
+            "assignment": "uVar2 = *(undefined2 *)(param_2 + 0x204);"
+          },
+          {
+            "line": 141,
+            "assignment": "*(undefined2 *)(param_1 + 0xab) = uVar2;"
+          }
+        ],
+        "runtime_evidence": {
+          "line": 111,
+          "assignment": "*(undefined2 *)(param_1 + 0x98) = *(undefined2 *)(param_2 + 0x2ac);"
+        }
+      },
+      "standalone_unsigned_value_counts": {
+        "0": 6,
+        "65526": 10
+      },
+      "baseline_aliases": [
+        "unknown4[0].unknown4",
+        "unknown4[1].unknown4"
+      ],
+      "native_view": "One word, not two independent native properties.",
+      "observed_bit_pattern": "0xfff6 can be displayed as unsigned 65526 / signed -10; neither display proves meaning.",
+      "hypothesis": "ManaGen is unconfirmed. The native editor contains a hidden orphan Mana Gen. static caption; no binding to raw+0x204 has been established.",
+      "native_editor_trace": {
+        "family": "Traps",
+        "raw_offset": "0x204",
+        "raw_bytes": 2,
+        "intermediate_offset": "0x2ac",
+        "editor_model_offset": "0x238",
+        "game_runtime_offset": "0x98",
+        "meaning": "unresolved",
+        "evidence": [
+          {
+            "file": "editor-phase8-traps-convert.txt",
+            "line": 69,
+            "excerpt": "uVar2 = *(undefined2 *)(param_1 + 0x204);"
+          },
+          {
+            "file": "editor-phase8-traps-model-load-assembly.txt",
+            "line": 131,
+            "excerpt": "004a192d: MOV word ptr [EBX + 0x238],AX"
+          },
+          {
+            "file": "editor-phase8-traps-writer.txt",
+            "line": 99,
+            "excerpt": "uStack_60 = (undefined2)piVar1[0x8e];"
+          }
+        ],
+        "rejected_label": "Mana Gen.",
+        "label_status": "Hidden static text; no control-to-field binding established.",
+        "different_field": {
+          "name": "ResearchTime",
+          "raw_offset": "0x1e8",
+          "intermediate_offset": "0x290",
+          "editor_model_offset": "0x158",
+          "editor_dialog_offset": "0x64",
+          "control": {
+            "dialog": 326,
+            "control_id": 12984,
+            "control_id_hex": "0x32b8",
+            "resource_path": [
+              5,
+              326,
+              2057
+            ],
+            "control": {
+              "id": 12984,
+              "title": "",
+              "window_class": {
+                "ordinal": 129
+              },
+              "style": "0x48810080",
+              "template_visible": false,
+              "template_disabled": true,
+              "x": 7,
+              "y": 7,
+              "width": 35,
+              "height": 13
+            }
+          },
+          "evidence": [
+            {
+              "file": "editor-phase8-traps-model-load-assembly.txt",
+              "line": 217,
+              "excerpt": "004a1ab4: MOV word ptr [EBX + 0x158],AX"
+            },
+            {
+              "file": "editor-phase8-traps-panel-load-assembly.txt",
+              "line": 93,
+              "excerpt": "00471ac0: MOV AX,word ptr [ECX + 0x158]"
+            },
+            {
+              "file": "editor-phase8-traps-ddx-assembly.txt",
+              "line": 115,
+              "excerpt": "00470883: PUSH 0x32b8"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "family": "Objects",
+      "raw_offset": "0x34c",
+      "raw_bytes": 2,
+      "intermediate_offset": "0x3cc",
+      "runtime_offset": "0x106",
+      "runtime_bytes": 2,
+      "meaning": "Native editor label Mana Gen established; gameplay effect remains unresolved.",
+      "signedness": "Signed16 native editor display established; runtime consumer signedness remains unresolved.",
+      "storage_evidence": {
+        "raw_offset": "0x34c",
+        "raw_bytes": 2,
+        "runtime_bytes": 2,
+        "intermediate_offset": "0x3cc",
+        "runtime_offset": "0x106",
+        "converter_evidence": [
+          {
+            "line": 191,
+            "assignment": "uVar2 = *(undefined2 *)(param_2 + 0x34c);"
+          },
+          {
+            "line": 195,
+            "assignment": "*(undefined2 *)(param_1 + 0xf3) = uVar2;"
+          }
+        ],
+        "runtime_file": "game-objects-runtime.txt",
+        "runtime_alias_evidence": {
+          "line": 115,
+          "assignment": "local_10c = param_1;"
+        },
+        "runtime_evidence": {
+          "line": 577,
+          "assignment": "*(undefined2 *)(local_10c + 0x106) = *(undefined2 *)(param_2 + 0x3cc);"
+        },
+        "note": "Manual alias trace; outside the literal-only scalar-storage-paths extractor."
+      },
+      "standalone_unsigned_value_counts": {
+        "0": 145
+      },
+      "native_editor_trace": {
+        "family": "Objects",
+        "raw_offset": "0x34c",
+        "raw_bytes": 2,
+        "intermediate_offset": "0x3cc",
+        "editor_model_offset": "0x3be",
+        "meaning": "Native editor label Mana Gen established; gameplay effect remains unresolved.",
+        "evidence": [
+          {
+            "file": "editor-phase8-candidate-1d80.txt",
+            "line": 116,
+            "excerpt": "*(short *)((int)local_1c + 0x3be) = (short)piVar1[0xf3];"
+          }
+        ]
+      },
+      "native_editor_ui_binding": {
+        "raw_offset": 844,
+        "raw_bytes": 2,
+        "intermediate_offset": 972,
+        "editor_model_offset": 958,
+        "panel_offset": 140,
+        "game_runtime_offset": 262,
+        "label": "Mana Gen:",
+        "control_id": 1318,
+        "editor_read": "signed16",
+        "gui_range": [
+          0,
+          32000
+        ],
+        "gameplay_effect": "unresolved",
+        "evidence": [
+          {
+            "file": "editor-phase10-object-convert.txt",
+            "line": 96,
+            "excerpt": "uVar2 = *(undefined2 *)(param_1 + 0x34c);"
+          },
+          {
+            "file": "editor-phase8-candidate-1d80.txt",
+            "line": 116,
+            "excerpt": "*(short *)((int)local_1c + 0x3be) = (short)piVar1[0xf3];"
+          },
+          {
+            "file": "phase16-object-panel-fill-assembly.txt",
+            "first": "0x45a531",
+            "last": "0x45a53e",
+            "instructions": [
+              "0045a531: MOV EAX,dword ptr [ESI + 0x100] ",
+              "0045a537: MOVSX ECX,word ptr [EAX + 0x3be] ",
+              "0045a53e: MOV dword ptr [ESI + 0x8c],ECX "
+            ]
+          },
+          {
+            "file": "phase16-object-ddx-assembly.txt",
+            "first": "0x4598fa",
+            "last": "0x459917",
+            "instructions": [
+              "004598fa: LEA EBX,[EDI + 0x8c] ",
+              "00459900: PUSH EBX ",
+              "00459901: PUSH 0x526 ",
+              "00459906: PUSH ESI ",
+              "00459907: CALL 0x004e485a ",
+              "0045990c: MOV EDX,dword ptr [EBX] ",
+              "0045990e: PUSH 0x7d00 ",
+              "00459913: PUSH 0x0 ",
+              "00459915: PUSH EDX ",
+              "00459916: PUSH ESI ",
+              "00459917: CALL 0x004e4b31 "
+            ]
+          },
+          {
+            "file": "phase16-object-panel-commit.txt",
+            "line": 20,
+            "excerpt": "*(undefined2 *)(*(int *)(param_1 + 0x100) + 0x3be) = *(undefined2 *)(param_1 + 0x8c);"
+          },
+          {
+            "file": "phase16-object-writer-assembly.txt",
+            "first": "0x4a955a",
+            "last": "0x4a9561",
+            "instructions": [
+              "004a955a: MOV DX,word ptr [EBX + 0x3be] ",
+              "004a9561: MOV word ptr [ESP + 0x3a0],DX "
+            ]
+          },
+          {
+            "file": "game-objects-runtime.txt",
+            "line": 577,
+            "excerpt": "*(undefined2 *)(local_10c + 0x106) = *(undefined2 *)(param_2 + 0x3cc);"
+          }
+        ]
+      }
+    }
+  ],
+  "search": {
+    "tool": "find_native_memory_candidates.py",
+    "mapped_spans_scanned": 8729,
+    "evidence_files": [
+      "phase7-terrain-trap-candidates.json",
+      "phase7-object-and-trap-candidates.json"
+    ],
+    "conclusion": "No semantic consumer established for these four fields in this pass.",
+    "limitation": "Exact memory displacements in mapped .text spans only. Pointer adjustment, aliases, bulk copies, unmapped code or other binaries can evade this search. Absence is not proof of non-use.",
+    "rejected_candidate": {
+      "function": "0x47b970",
+      "instruction": "0x47bafc",
+      "reason": "0x183 is a displacement in the creature level-stat table, not the Terrain definition."
+    },
+    "additional_rejected_candidate": {
+      "address": "0x4f8750",
+      "instruction": "0x4f8c1c",
+      "reason": "This is the MyComputerPlayer initialization routine, with config-style source offsets. Identity of source+0x98 as a Trap definition is not established; it is excluded as semantic evidence for Traps+0x204.",
+      "evidence": {
+        "file": "phase12-trap98-candidate-init.txt",
+        "line": 149,
+        "excerpt": "uVar1 = *(ushort *)(param_2 + 0x98);"
+      }
+    },
+    "additional_full_text_pass": {
+      "tool": "find_full_text_memory_candidates.py",
+      "evidence_files": [
+        {
+          "file": "phase16-full-game-unknown-candidates.json",
+          "sha256": "beb9a57247a7cd201373a31577f8b60cbe06e21f5c7994c8cca302b5a61e1d85"
+        },
+        {
+          "file": "phase16-full-editor-unknown-candidates.json",
+          "sha256": "9f69bf6dc916378e41880cdbb05102e560b695fd7c1b77275996570d1a0079ab"
+        }
+      ],
+      "conclusion": "Objects+0x34C now has a verified native Mana Gen UI binding. No new gameplay meaning is assigned to Terrain+0x198/+0x224 or Objects+0x34C.",
+      "limitation": "Full .text linear and displacement-anchored searches include false instruction starts and unrelated structures. They do not rule out computed pointers, other binaries or indirect consumption."
+    }
+  },
+  "preserve": "Keep complete original bytes; do not zero fields or rename a template hypothesis as verified semantics.",
+  "phase64_search_review": {
+    "file": "memory-read-policy.json",
+    "sha256": "63f0065f043406ed859ece4290f517d887e229537bcf863c7c87bcb7b6f90ab9"
+  }
+}

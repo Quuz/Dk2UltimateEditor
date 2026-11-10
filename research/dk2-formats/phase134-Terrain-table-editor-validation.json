@@ -1,0 +1,216 @@
+{
+  "phase": 134,
+  "scope": "Bounded primary-byte check of Pro/RC3 storage access and local writer loop.\n\nRC3 local loop alignment is proved by identical instruction bytes except CALL\ndisplacement. No RC3 function-wide CPU execution or complete UI-use claim.\n",
+  "profiles": [
+    {
+      "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\DK2 Editor pro.exe",
+      "sha256": "989c45df779bccfc9a9e509b2ad0224a9bd269629f74792adc0320fa4b99fb09"
+    },
+    {
+      "file": "D:\\Games\\DK2\\Tools\\dk2-format-research\\source-binaries\\DK2-Editor-rc3.exe",
+      "sha256": "7368d200cc5ac7e0cdb28c9852d9aa51b960fd718d9eea8dd927c4084add102c"
+    }
+  ],
+  "inherited_full_Pro_function_spans": [
+    {
+      "address": 4880016,
+      "length": 1057,
+      "assembly": "ghidra/phase128-terrain-4a7690-disassemble_function.txt",
+      "assembly_sha256": "2a611ebe8daa3fedfda5b2ec01ffc370902f48902b6cf3bcd83b19e4fa18f8a1",
+      "memory": "ghidra/phase128-primary-terrain-4a7690.txt",
+      "memory_sha256": "45fd5ad3ac6b0ba3f813b09f3783c567c9e2a280243d5306bf50913050d55824",
+      "original_bytes_sha256": "c176bd6beb7fdc18dc1329a1a7a2ba48a89d4dc0a7cc03cbce2be8753ffd66ab"
+    },
+    {
+      "address": 4847072,
+      "length": 1604,
+      "assembly": "ghidra/phase128-terrain-49f5e0-disassemble_function.txt",
+      "assembly_sha256": "d3c58260ef9573b72de8e92eb7f3a4ee164558f32ff7161e3bafd2629a88fb0b",
+      "memory": "ghidra/phase128-primary-terrain-49f5e0.txt",
+      "memory_sha256": "4b6434be4ec94dcd6c86ca63716a100085a660762209862b266c1c4dd7958423",
+      "original_bytes_sha256": "b481d33ee8e5c1f0c1c18489850e1d95949fe93af6dd7a649346c8b5b43efafb"
+    },
+    {
+      "address": 4346880,
+      "length": 26,
+      "assembly": "ghidra/phase128-terrain-425400-disassemble_function.txt",
+      "assembly_sha256": "9903eb97e363031b5f8ec167327f28f79423e4aecec0c0b9b8288fb21d7d4174",
+      "memory": "ghidra/phase128-primary-terrain-425400.txt",
+      "memory_sha256": "bdd57076ba389937a22de00b454d1e5e3b2a0c6e4a471ba8135b272eb46b4646",
+      "original_bytes_sha256": "b5b2b7914e9b56e8dc7b7ed2b21732f6712b22c7eb9d37389fce2f02283e6f9d"
+    },
+    {
+      "address": 4346912,
+      "length": 25,
+      "assembly": "ghidra/phase128-terrain-425420-disassemble_function.txt",
+      "assembly_sha256": "f37ac85953abfe575427809bf173938aff1afd735e88e1572c20c39607fafb8f",
+      "memory": "ghidra/phase128-primary-terrain-425420.txt",
+      "memory_sha256": "78bf93e637fa6f3a20b6d957559918880a044052ce34ae85f58fd6ce2b261b93",
+      "original_bytes_sha256": "75ed078b328214f7d85fbef5c8dff1eec2733b55628c041a0bd4d4d6ff7cf5b3"
+    }
+  ],
+  "Pro_getter": 4346880,
+  "Pro_setter": 4346912,
+  "RC3_getter": 4388720,
+  "getter_bytes": 26,
+  "getter_unsigned_index_limit": 16,
+  "getter_out_of_range": "AX=0, upperEAX unspecified",
+  "model_offset": 808,
+  "raw_offset": 430,
+  "words": 16,
+  "element_bytes": 2,
+  "native_direct_xrefs": [
+    {
+      "file": "ghidra/phase134-Terrain-425400-xrefs.txt",
+      "sha256": "c679c90d2f170bb792bc3b233815e66c2566beafd0c8e5f5d0f3fba23a53287a",
+      "direct_xref": 4880754
+    },
+    {
+      "file": "ghidra/phase134-Terrain-425420-xrefs.txt",
+      "sha256": "fbaf11303cec9840e90d7652b1d2ca385d4063d0212fa8e73608e34a483404e5",
+      "direct_xref": 4847747
+    }
+  ],
+  "RC3_local_writer_loops": [
+    {
+      "address": 4880742,
+      "length": 29,
+      "bytes": "33f68dbc24fa010000568bcbe889daf7ff6689074683c70283fe1072ec",
+      "normalized_call_bytes": "33f68dbc24fa010000568bcbe8000000006689074683c70283fe1072ec",
+      "instructions": [
+        {
+          "address": 4880742,
+          "bytes": "33f6",
+          "mnemonic": "xor",
+          "operands": "esi, esi"
+        },
+        {
+          "address": 4880744,
+          "bytes": "8dbc24fa010000",
+          "mnemonic": "lea",
+          "operands": "edi, [esp + 0x1fa]"
+        },
+        {
+          "address": 4880751,
+          "bytes": "56",
+          "mnemonic": "push",
+          "operands": "esi"
+        },
+        {
+          "address": 4880752,
+          "bytes": "8bcb",
+          "mnemonic": "mov",
+          "operands": "ecx, ebx"
+        },
+        {
+          "address": 4880754,
+          "bytes": "e889daf7ff",
+          "mnemonic": "call",
+          "operands": "0x425400"
+        },
+        {
+          "address": 4880759,
+          "bytes": "668907",
+          "mnemonic": "mov",
+          "operands": "word ptr [edi], ax"
+        },
+        {
+          "address": 4880762,
+          "bytes": "46",
+          "mnemonic": "inc",
+          "operands": "esi"
+        },
+        {
+          "address": 4880763,
+          "bytes": "83c702",
+          "mnemonic": "add",
+          "operands": "edi, 2"
+        },
+        {
+          "address": 4880766,
+          "bytes": "83fe10",
+          "mnemonic": "cmp",
+          "operands": "esi, 0x10"
+        },
+        {
+          "address": 4880769,
+          "bytes": "72ec",
+          "mnemonic": "jb",
+          "operands": "0x4a796f"
+        }
+      ]
+    },
+    {
+      "address": 4903302,
+      "length": 29,
+      "bytes": "33f68dbc24fa010000568bcbe8d925f8ff6689074683c70283fe1072ec",
+      "normalized_call_bytes": "33f68dbc24fa010000568bcbe8000000006689074683c70283fe1072ec",
+      "instructions": [
+        {
+          "address": 4903302,
+          "bytes": "33f6",
+          "mnemonic": "xor",
+          "operands": "esi, esi"
+        },
+        {
+          "address": 4903304,
+          "bytes": "8dbc24fa010000",
+          "mnemonic": "lea",
+          "operands": "edi, [esp + 0x1fa]"
+        },
+        {
+          "address": 4903311,
+          "bytes": "56",
+          "mnemonic": "push",
+          "operands": "esi"
+        },
+        {
+          "address": 4903312,
+          "bytes": "8bcb",
+          "mnemonic": "mov",
+          "operands": "ecx, ebx"
+        },
+        {
+          "address": 4903314,
+          "bytes": "e8d925f8ff",
+          "mnemonic": "call",
+          "operands": "0x42f770"
+        },
+        {
+          "address": 4903319,
+          "bytes": "668907",
+          "mnemonic": "mov",
+          "operands": "word ptr [edi], ax"
+        },
+        {
+          "address": 4903322,
+          "bytes": "46",
+          "mnemonic": "inc",
+          "operands": "esi"
+        },
+        {
+          "address": 4903323,
+          "bytes": "83c702",
+          "mnemonic": "add",
+          "operands": "edi, 2"
+        },
+        {
+          "address": 4903326,
+          "bytes": "83fe10",
+          "mnemonic": "cmp",
+          "operands": "esi, 0x10"
+        },
+        {
+          "address": 4903329,
+          "bytes": "72ec",
+          "mnemonic": "jb",
+          "operands": "0x4ad18f"
+        }
+      ]
+    }
+  ],
+  "RC3_local_writer_equivalent_except_call_displacement": true,
+  "RC3_CPU_executions": 0,
+  "semantic_names_found": false,
+  "complete_UI_use_search": false
+}

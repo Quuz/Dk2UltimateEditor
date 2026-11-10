@@ -1,0 +1,49 @@
+[
+  {
+    "id": "phase123-torch-571ab0-create_function",
+    "tool": "create_function",
+    "args": {
+      "address": "0x571ab0",
+      "program": "DKII-DX.exe",
+      "disassemble_first": true
+    },
+    "print_limit": 0
+  },
+  {
+    "id": "phase123-torch-571ab0-force_decompile",
+    "tool": "force_decompile",
+    "args": {
+      "address": "0x571ab0",
+      "program": "DKII-DX.exe"
+    },
+    "print_limit": 0
+  },
+  {
+    "id": "phase123-torch-571ab0-disassemble_function",
+    "tool": "disassemble_function",
+    "args": {
+      "address": "0x571ab0",
+      "program": "DKII-DX.exe"
+    },
+    "print_limit": 0
+  },
+  {
+    "id": "phase123-bridge-vtable-refs",
+    "tool": "get_xrefs_to",
+    "args": {
+      "address": "0x66cc94",
+      "program": "DKII-DX.exe"
+    },
+    "print_limit": 1000
+  },
+  {
+    "id": "phase123-light-vtable",
+    "tool": "read_memory",
+    "args": {
+      "address": "0x66cc14",
+      "length": 20,
+      "program": "DKII-DX.exe"
+    },
+    "print_limit": 0
+  }
+]

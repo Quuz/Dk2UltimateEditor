@@ -1,0 +1,31 @@
+{
+  "phase": 39,
+  "date": "2026-10-26",
+  "native_emulations": 136,
+  "native_case_kinds": {
+    "parser": 18,
+    "converter": 3,
+    "game": 67,
+    "editor": 35,
+    "heart_serializer": 3,
+    "writer": 10
+  },
+  "boundary_cases": 419,
+  "corpus_room_records": 858,
+  "exact_in_memory_container_patches": 15444,
+  "whole_thing_files_roundtrip": 110,
+  "primary_instructions": 3049,
+  "primary_ranges_matching_pe": 26,
+  "original_main_inputs_unchanged": 17,
+  "original_main_executables_unchanged": 2,
+  "format_package_components": 51,
+  "modified_gameplay_runs": 0,
+  "limitations": [
+    "136 emulations:18 parser,3 converter,67 full game callback,35 full editor callback with native lookup/add/resolve and preallocated arrays,3 heart serializer,10 full Things writer. Game validity/tile/checksum/rebuild/health helpers are explicit fixtures; actual final health, geometry, room ownership and heart object creation are not simulated.",
+    "Direction cardinal names NORTH/EAST/SOUTH/WEST remain baseline labels; native control flow establishes the four raw values and runtime orientation mapping. It does not independently calibrate world north.",
+    "Native editor terrain-match is not a game callback check. Game does not compare selector to actual existing room type, so diagnostic APIs must not turn that into an invented native guarantee.",
+    "Six corpus selector34 records have no applying branch in inspected editor/game callbacks. This does not prove complete map load/save removes them: other loading phases can populate models from map cells. Independent codec retains every record.",
+    "Raw Z/WORD0C/BYTE0F retain unknown original purpose; observed ignored/discarded paths do not justify automatic zeroing. All patch/rebuild work is in memory; original files unchanged.",
+    "Phase39 corrected phase38 external provider fixture ABI:488850 consumes4 bytes and4889D0 consumes16, previously net-balanced12/8. All29 body editor cases rerun and package component refreshed; field results unchanged. Supporting functions are included in primary manifest."
+  ]
+}

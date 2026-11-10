@@ -1,0 +1,1403 @@
+{
+  "family": "Creatures",
+  "record_variants": [
+    5449,
+    5537
+  ],
+  "raw_offset": 3812,
+  "raw_bytes": 4,
+  "baseline_name": "Unkee4",
+  "native_editor_label": "Ability Creep Percentage",
+  "label_resource": {
+    "id": 63580,
+    "id_hex": "0xf85c",
+    "text": "Ability Creep Percentage",
+    "resource_path": [
+      6,
+      3974,
+      2057
+    ],
+    "text_file_offset": 1590208,
+    "text_rva": 1688512,
+    "utf16_bytes": 48,
+    "text_sha256": "4ecc4baff1dbb09b04a9488e44793b02a7b5afd3df5dad9aba9cad89429b0b3e",
+    "block_sha256": "3c197b0572851038667d2bc5b759afbf1069cd36f05ac9d4af0f994eaf1a76f8"
+  },
+  "raw_representation": "Preserve all32 bits; this field is an integer percentage, without /4096.",
+  "executable_sha256": {
+    "Dungeon Keeper 2/DKII-DX.exe": "d7a8b854e4e4f02709eba271bead6fe2307dd6e332b5a96e70857e5b0e19fb8a",
+    "Dungeon Keeper 2/Data/editor/DK2 Editor pro.exe": "989c45df779bccfc9a9e509b2ad0224a9bd269629f74792adc0320fa4b99fb09"
+  },
+  "game_storage": {
+    "converter": 5672496,
+    "intermediate_offset": 4820,
+    "presence_offset": 520,
+    "loader": 4793120,
+    "runtime_offset": 1888,
+    "runtime_bytes": 4,
+    "evidence": [
+      {
+        "file": "phase24-creature-converter-assembly.txt",
+        "first": "0x568e42",
+        "last": "0x568e42",
+        "instructions": [
+          "00568e42: MOV ESI,0x1 "
+        ]
+      },
+      {
+        "file": "phase24-creature-converter-assembly.txt",
+        "first": "0x5694a3",
+        "last": "0x5694af",
+        "instructions": [
+          "005694a3: MOV EAX,dword ptr [EBX + 0xee4] ",
+          "005694a9: MOV dword ptr [EBP + 0x208],ESI ",
+          "005694af: MOV dword ptr [EBP + 0x12d4],EAX "
+        ]
+      },
+      {
+        "file": "game-creature-type-assembly.txt",
+        "first": "0x493bdd",
+        "last": "0x493bed",
+        "instructions": [
+          "00493bdd: MOV EAX,dword ptr [EBP + 0x208] ",
+          "00493be3: TEST EAX,EAX ",
+          "00493be5: JZ 0x00493bf3 ",
+          "00493be7: MOV ECX,dword ptr [EBP + 0x12d4] ",
+          "00493bed: MOV dword ptr [EBX + 0x760],ECX "
+        ]
+      }
+    ]
+  },
+  "stat_override": {
+    "variable_type": 77,
+    "stat_id": 26,
+    "setter": 4803184,
+    "rule": "Setter dispatch narrows stat ID to u8, then case26 copies all32 supplied value bits to runtime+760, without TPS/fixed-point/byte conversion.",
+    "evidence": {
+      "file": "phase24-stat-setter-assembly.txt",
+      "first": "0x494c18",
+      "last": "0x494c23",
+      "instructions": [
+        "00494c18: MOV EAX,dword ptr [ESP + 0xc] ",
+        "00494c1c: MOV dword ptr [ECX + 0x760],EAX ",
+        "00494c22: POP ESI ",
+        "00494c23: RET 0x8 "
+      ]
+    }
+  },
+  "creeping_state": {
+    "instance_offset": 998,
+    "mask": 4096,
+    "native_debug_label": "Creeping",
+    "level_offset": 1027,
+    "definition_pointer_offset": 880,
+    "evidence": {
+      "file": "phase24-creature-state-dump.txt",
+      "line": 111,
+      "excerpt": "FUN_005595c0(&DAT_00756ee8,s_Creeping__d_0069d4ac,*(uint *)(param_1 + 0x3e6) >> 0xc & 1);"
+    }
+  },
+  "level_multiplier": {
+    "variable_type": 65,
+    "stat_id": 26,
+    "table_pointer_address": 7225684,
+    "table_offset": 675,
+    "item_bytes": 2,
+    "index": "raw instance level byte; only level1 skips the table",
+    "read_signed": true,
+    "normal_pointer_binding": {
+      "address": 5282454,
+      "bytes": "c70554416e0050256f00",
+      "instruction": "MOV dword ptr [0x6E4154],0x6F2550"
+    },
+    "variable_rule": "Type65 handler stores low16(ValueRaw) at0x6F261D +2*(statID*9 +level)+2. For stat26 this equals0x6F2550+0x2A3+2*level.",
+    "evidence": {
+      "file": "game-variable65.txt",
+      "line": 9,
+      "excerpt": "*(short *)((int)&DAT_006f261d + (*(int *)(param_1 + 0x14) * 9 + *(int *)(param_1 + 0x1c)) * 2 + 2)"
+    }
+  },
+  "arithmetic": {
+    "gate": "Only while Creeping flag1000 is set; otherwise incoming metric bits unchanged.",
+    "metric": "XY signed32 coordinate differences wrap32. Each signed64 square is shifted right12 and narrowed32; the two terms add modulo2^32. This is squared distance in Q12.",
+    "percentage": "Level1: runtime DWORD bits. Other level bytes: trunc_to_zero(s32(low32(s16(levelMultiplier) * s32(rawPercentage)))/100).",
+    "weight": "weighted = unsigned32(low32(incomingMetric * effectivePercentage)) //100. Low32 product occurs BEFORE the unsigned division.",
+    "bounds": "No clamp to0..100 or nonnegative values in these fragments. Value0 produces metric0 when active.",
+    "sight": "A later numeric sight gate compares signed32(metric) < signed32(low32(radiusTiles*radiusTiles*4096)); equality is rejected.",
+    "scope": "Other faction, list, status, class-weight, nearest-candidate and LOS gates are outside this arithmetic projection.",
+    "distance_evidence": {
+      "file": "phase24-creep-move-a-assembly.txt",
+      "first": "0x45b232",
+      "last": "0x45b27f",
+      "instructions": [
+        "0045b232: MOV EAX,dword ptr [ESI + 0x1a] ",
+        "0045b235: MOV EDX,dword ptr [EBX + 0x1a] ",
+        "0045b238: LEA EDI,[ESI + 0x1a] ",
+        "0045b23b: LEA ECX,[EBX + 0x1a] ",
+        "0045b23e: SUB EAX,EDX ",
+        "0045b240: MOV dword ptr [EBP + -0x2c],ECX ",
+        "0045b243: CDQ ",
+        "0045b244: XOR EAX,EDX ",
+        "0045b246: SUB EAX,EDX ",
+        "0045b248: MOV EDX,dword ptr [ECX + 0x4] ",
+        "0045b24b: MOV dword ptr [EBP + -0x18],EAX ",
+        "0045b24e: MOV EAX,dword ptr [EDI + 0x4] ",
+        "0045b251: SUB EAX,EDX ",
+        "0045b253: CDQ ",
+        "0045b254: XOR EAX,EDX ",
+        "0045b256: SUB EAX,EDX ",
+        "0045b258: MOV dword ptr [EBP + -0x1c],EAX ",
+        "0045b25b: MOV EAX,dword ptr [EBP + -0x18] ",
+        "0045b25e: MOV EBX,dword ptr [EBP + -0x18] ",
+        "0045b261: IMUL EBX ",
+        "0045b263: SHRD EAX,EDX,0xc ",
+        "0045b267: MOV dword ptr [EBP + -0x20],EAX ",
+        "0045b26a: MOV EAX,dword ptr [EBP + -0x1c] ",
+        "0045b26d: MOV EBX,dword ptr [EBP + -0x1c] ",
+        "0045b270: IMUL EBX ",
+        "0045b272: SHRD EAX,EDX,0xc ",
+        "0045b276: MOV dword ptr [EBP + -0x24],EAX ",
+        "0045b279: MOV EDX,dword ptr [EBP + -0x20] ",
+        "0045b27c: MOV EAX,dword ptr [EBP + -0x24] ",
+        "0045b27f: LEA EBX,[EAX + EDX*0x1] "
+      ]
+    },
+    "sight_evidence": {
+      "file": "phase24-creep-target-assembly.txt",
+      "first": "0x48f00d",
+      "last": "0x48f026",
+      "instructions": [
+        "0048f00d: MOV ECX,dword ptr [EBP + 0xc] ",
+        "0048f010: MOV EDX,dword ptr [ECX + 0x370] ",
+        "0048f016: MOV EAX,dword ptr [EDX + 0x77b] ",
+        "0048f01c: MOV ECX,EAX ",
+        "0048f01e: IMUL ECX,EAX ",
+        "0048f021: SHL ECX,0xc ",
+        "0048f024: CMP EBX,ECX ",
+        "0048f026: JGE 0x0048f043 "
+      ]
+    }
+  },
+  "kernels": [
+    {
+      "key": "a",
+      "function": 4567360,
+      "subject": "candidate being examined",
+      "emulator_start": 4567691,
+      "end_exclusive": 4567786,
+      "distance_register": "EBX",
+      "evidence": {
+        "file": "phase24-creep-move-a-assembly.txt",
+        "first": "0x45b282",
+        "last": "0x45b2e9",
+        "instructions": [
+          "0045b282: MOV EAX,dword ptr [ESI + 0x3e6] ",
+          "0045b288: TEST AH,0x10 ",
+          "0045b28b: JZ 0x0045b2ea ",
+          "0045b28d: MOV DL,byte ptr [ESI + 0x403] ",
+          "0045b293: MOV EAX,dword ptr [ESI + 0x370] ",
+          "0045b299: CMP DL,0x1 ",
+          "0045b29c: MOV byte ptr [EBP + -0x28],DL ",
+          "0045b29f: JNZ 0x0045b2a9 ",
+          "0045b2a1: MOV EDX,dword ptr [EAX + 0x760] ",
+          "0045b2a7: JMP 0x0045b2db ",
+          "0045b2a9: MOV ECX,dword ptr [EBP + -0x28] ",
+          "0045b2ac: MOV EDX,dword ptr [0x006e4154] ",
+          "0045b2b2: AND ECX,0xff ",
+          "0045b2b8: MOVSX ECX,word ptr [EDX + ECX*0x2 + 0x2a3] ",
+          "0045b2c0: IMUL ECX,dword ptr [EAX + 0x760] ",
+          "0045b2c7: MOV EAX,0x51eb851f ",
+          "0045b2cc: IMUL ECX ",
+          "0045b2ce: MOV ECX,dword ptr [EBP + -0x2c] ",
+          "0045b2d1: SAR EDX,0x5 ",
+          "0045b2d4: MOV EAX,EDX ",
+          "0045b2d6: SHR EAX,0x1f ",
+          "0045b2d9: ADD EDX,EAX ",
+          "0045b2db: IMUL EBX,EDX ",
+          "0045b2de: MOV EAX,0x51eb851f ",
+          "0045b2e3: MUL EBX ",
+          "0045b2e5: SHR EDX,0x5 ",
+          "0045b2e8: MOV EBX,EDX "
+        ]
+      }
+    },
+    {
+      "key": "b1",
+      "function": 4570608,
+      "subject": "candidate being examined",
+      "emulator_start": 4571093,
+      "end_exclusive": 4571187,
+      "distance_register": "EBX",
+      "evidence": {
+        "file": "phase24-creep-move-b-assembly.txt",
+        "first": "0x45bfc9",
+        "last": "0x45c032",
+        "instructions": [
+          "0045bfc9: MOV EAX,dword ptr [ESI + 0x3e6] ",
+          "0045bfcf: TEST AH,0x10 ",
+          "0045bfd2: LEA EBX,[EDX + ECX*0x1] ",
+          "0045bfd5: JZ 0x0045c033 ",
+          "0045bfd7: MOV CL,byte ptr [ESI + 0x403] ",
+          "0045bfdd: MOV EAX,dword ptr [ESI + 0x370] ",
+          "0045bfe3: CMP CL,0x1 ",
+          "0045bfe6: MOV byte ptr [EBP + -0x34],CL ",
+          "0045bfe9: JNZ 0x0045bff3 ",
+          "0045bfeb: MOV EAX,dword ptr [EAX + 0x760] ",
+          "0045bff1: JMP 0x0045c024 ",
+          "0045bff3: MOV ECX,dword ptr [EBP + -0x34] ",
+          "0045bff6: MOV EDX,dword ptr [0x006e4154] ",
+          "0045bffc: AND ECX,0xff ",
+          "0045c002: MOVSX ECX,word ptr [EDX + ECX*0x2 + 0x2a3] ",
+          "0045c00a: IMUL ECX,dword ptr [EAX + 0x760] ",
+          "0045c011: MOV EAX,0x51eb851f ",
+          "0045c016: IMUL ECX ",
+          "0045c018: SAR EDX,0x5 ",
+          "0045c01b: MOV EAX,EDX ",
+          "0045c01d: SHR EAX,0x1f ",
+          "0045c020: ADD EDX,EAX ",
+          "0045c022: MOV EAX,EDX ",
+          "0045c024: IMUL EBX,EAX ",
+          "0045c027: MOV EAX,0x51eb851f ",
+          "0045c02c: MUL EBX ",
+          "0045c02e: SHR EDX,0x5 ",
+          "0045c031: MOV EBX,EDX "
+        ]
+      }
+    },
+    {
+      "key": "b2",
+      "function": 4570608,
+      "subject": "candidate being examined",
+      "emulator_start": 4571646,
+      "end_exclusive": 4571740,
+      "distance_register": "EBX",
+      "evidence": {
+        "file": "phase24-creep-move-b-assembly.txt",
+        "first": "0x45c1f5",
+        "last": "0x45c25b",
+        "instructions": [
+          "0045c1f5: MOV EAX,dword ptr [ESI + 0x3e6] ",
+          "0045c1fb: TEST AH,0x10 ",
+          "0045c1fe: JZ 0x0045c25c ",
+          "0045c200: MOV CL,byte ptr [ESI + 0x403] ",
+          "0045c206: MOV EAX,dword ptr [ESI + 0x370] ",
+          "0045c20c: CMP CL,0x1 ",
+          "0045c20f: MOV byte ptr [EBP + -0x40],CL ",
+          "0045c212: JNZ 0x0045c21c ",
+          "0045c214: MOV EAX,dword ptr [EAX + 0x760] ",
+          "0045c21a: JMP 0x0045c24d ",
+          "0045c21c: MOV ECX,dword ptr [EBP + -0x40] ",
+          "0045c21f: MOV EDX,dword ptr [0x006e4154] ",
+          "0045c225: AND ECX,0xff ",
+          "0045c22b: MOVSX ECX,word ptr [EDX + ECX*0x2 + 0x2a3] ",
+          "0045c233: IMUL ECX,dword ptr [EAX + 0x760] ",
+          "0045c23a: MOV EAX,0x51eb851f ",
+          "0045c23f: IMUL ECX ",
+          "0045c241: SAR EDX,0x5 ",
+          "0045c244: MOV EAX,EDX ",
+          "0045c246: SHR EAX,0x1f ",
+          "0045c249: ADD EDX,EAX ",
+          "0045c24b: MOV EAX,EDX ",
+          "0045c24d: IMUL EBX,EAX ",
+          "0045c250: MOV EAX,0x51eb851f ",
+          "0045c255: MUL EBX ",
+          "0045c257: SHR EDX,0x5 ",
+          "0045c25a: MOV EBX,EDX "
+        ]
+      }
+    },
+    {
+      "key": "c",
+      "function": 4568320,
+      "subject": "candidate being examined",
+      "emulator_start": 4568651,
+      "end_exclusive": 4568745,
+      "distance_register": "EBX",
+      "evidence": {
+        "file": "phase24-creep-move-c-assembly.txt",
+        "first": "0x45b63f",
+        "last": "0x45b6a8",
+        "instructions": [
+          "0045b63f: MOV EAX,dword ptr [ESI + 0x3e6] ",
+          "0045b645: TEST AH,0x10 ",
+          "0045b648: LEA EBX,[EDX + ECX*0x1] ",
+          "0045b64b: JZ 0x0045b6a9 ",
+          "0045b64d: MOV CL,byte ptr [ESI + 0x403] ",
+          "0045b653: MOV EAX,dword ptr [ESI + 0x370] ",
+          "0045b659: CMP CL,0x1 ",
+          "0045b65c: MOV byte ptr [EBP + -0x2c],CL ",
+          "0045b65f: JNZ 0x0045b669 ",
+          "0045b661: MOV EAX,dword ptr [EAX + 0x760] ",
+          "0045b667: JMP 0x0045b69a ",
+          "0045b669: MOV ECX,dword ptr [EBP + -0x2c] ",
+          "0045b66c: MOV EDX,dword ptr [0x006e4154] ",
+          "0045b672: AND ECX,0xff ",
+          "0045b678: MOVSX ECX,word ptr [EDX + ECX*0x2 + 0x2a3] ",
+          "0045b680: IMUL ECX,dword ptr [EAX + 0x760] ",
+          "0045b687: MOV EAX,0x51eb851f ",
+          "0045b68c: IMUL ECX ",
+          "0045b68e: SAR EDX,0x5 ",
+          "0045b691: MOV EAX,EDX ",
+          "0045b693: SHR EAX,0x1f ",
+          "0045b696: ADD EDX,EAX ",
+          "0045b698: MOV EAX,EDX ",
+          "0045b69a: IMUL EBX,EAX ",
+          "0045b69d: MOV EAX,0x51eb851f ",
+          "0045b6a2: MUL EBX ",
+          "0045b6a4: SHR EDX,0x5 ",
+          "0045b6a7: MOV EBX,EDX "
+        ]
+      }
+    },
+    {
+      "key": "d",
+      "function": 4569088,
+      "subject": "candidate being examined",
+      "emulator_start": 4569376,
+      "end_exclusive": 4569470,
+      "distance_register": "EBX",
+      "evidence": {
+        "file": "phase24-creep-move-d-assembly.txt",
+        "first": "0x45b914",
+        "last": "0x45b97d",
+        "instructions": [
+          "0045b914: MOV EAX,dword ptr [ESI + 0x3e6] ",
+          "0045b91a: TEST AH,0x10 ",
+          "0045b91d: LEA EBX,[EDX + ECX*0x1] ",
+          "0045b920: JZ 0x0045b97e ",
+          "0045b922: MOV CL,byte ptr [ESI + 0x403] ",
+          "0045b928: MOV EAX,dword ptr [ESI + 0x370] ",
+          "0045b92e: CMP CL,0x1 ",
+          "0045b931: MOV byte ptr [EBP + -0x2c],CL ",
+          "0045b934: JNZ 0x0045b93e ",
+          "0045b936: MOV EAX,dword ptr [EAX + 0x760] ",
+          "0045b93c: JMP 0x0045b96f ",
+          "0045b93e: MOV ECX,dword ptr [EBP + -0x2c] ",
+          "0045b941: MOV EDX,dword ptr [0x006e4154] ",
+          "0045b947: AND ECX,0xff ",
+          "0045b94d: MOVSX ECX,word ptr [EDX + ECX*0x2 + 0x2a3] ",
+          "0045b955: IMUL ECX,dword ptr [EAX + 0x760] ",
+          "0045b95c: MOV EAX,0x51eb851f ",
+          "0045b961: IMUL ECX ",
+          "0045b963: SAR EDX,0x5 ",
+          "0045b966: MOV EAX,EDX ",
+          "0045b968: SHR EAX,0x1f ",
+          "0045b96b: ADD EDX,EAX ",
+          "0045b96d: MOV EAX,EDX ",
+          "0045b96f: IMUL EBX,EAX ",
+          "0045b972: MOV EAX,0x51eb851f ",
+          "0045b977: MUL EBX ",
+          "0045b979: SHR EDX,0x5 ",
+          "0045b97c: MOV EBX,EDX "
+        ]
+      }
+    },
+    {
+      "key": "e",
+      "function": 4569808,
+      "subject": "candidate being examined",
+      "emulator_start": 4570136,
+      "end_exclusive": 4570228,
+      "distance_register": "EDI",
+      "evidence": {
+        "file": "phase24-creep-move-e-assembly.txt",
+        "first": "0x45bc0c",
+        "last": "0x45bc73",
+        "instructions": [
+          "0045bc0c: MOV EAX,dword ptr [ESI + 0x3e6] ",
+          "0045bc12: TEST AH,0x10 ",
+          "0045bc15: LEA EDI,[EDX + ECX*0x1] ",
+          "0045bc18: JZ 0x0045bc74 ",
+          "0045bc1a: MOV CL,byte ptr [ESI + 0x403] ",
+          "0045bc20: MOV EAX,dword ptr [ESI + 0x370] ",
+          "0045bc26: CMP CL,0x1 ",
+          "0045bc29: MOV byte ptr [EBP + -0x2c],CL ",
+          "0045bc2c: JNZ 0x0045bc36 ",
+          "0045bc2e: MOV EDX,dword ptr [EAX + 0x760] ",
+          "0045bc34: JMP 0x0045bc65 ",
+          "0045bc36: MOV ECX,dword ptr [EBP + -0x2c] ",
+          "0045bc39: MOV EDX,dword ptr [0x006e4154] ",
+          "0045bc3f: AND ECX,0xff ",
+          "0045bc45: MOVSX ECX,word ptr [EDX + ECX*0x2 + 0x2a3] ",
+          "0045bc4d: IMUL ECX,dword ptr [EAX + 0x760] ",
+          "0045bc54: MOV EAX,0x51eb851f ",
+          "0045bc59: IMUL ECX ",
+          "0045bc5b: SAR EDX,0x5 ",
+          "0045bc5e: MOV EAX,EDX ",
+          "0045bc60: SHR EAX,0x1f ",
+          "0045bc63: ADD EDX,EAX ",
+          "0045bc65: IMUL EDI,EDX ",
+          "0045bc68: MOV EAX,0x51eb851f ",
+          "0045bc6d: MUL EDI ",
+          "0045bc6f: SHR EDX,0x5 ",
+          "0045bc72: MOV EDI,EDX "
+        ]
+      }
+    },
+    {
+      "key": "f1",
+      "function": 4572816,
+      "subject": "candidate being examined",
+      "emulator_start": 4573044,
+      "end_exclusive": 4573139,
+      "distance_register": "EBX",
+      "evidence": {
+        "file": "phase24-creep-move-f-assembly.txt",
+        "first": "0x45c768",
+        "last": "0x45c7d2",
+        "instructions": [
+          "0045c768: MOV EAX,dword ptr [ESI + 0x3e6] ",
+          "0045c76e: TEST AH,0x10 ",
+          "0045c771: MOV dword ptr [EBP + -0x24],EBX ",
+          "0045c774: JZ 0x0045c7d3 ",
+          "0045c776: MOV DL,byte ptr [ESI + 0x403] ",
+          "0045c77c: MOV EAX,dword ptr [ESI + 0x370] ",
+          "0045c782: CMP DL,0x1 ",
+          "0045c785: MOV byte ptr [EBP + -0x30],DL ",
+          "0045c788: JNZ 0x0045c792 ",
+          "0045c78a: MOV EDX,dword ptr [EAX + 0x760] ",
+          "0045c790: JMP 0x0045c7c4 ",
+          "0045c792: MOV EDX,dword ptr [EBP + -0x30] ",
+          "0045c795: MOV EBX,dword ptr [0x006e4154] ",
+          "0045c79b: AND EDX,0xff ",
+          "0045c7a1: MOVSX EDX,word ptr [EBX + EDX*0x2 + 0x2a3] ",
+          "0045c7a9: IMUL EDX,dword ptr [EAX + 0x760] ",
+          "0045c7b0: MOV EAX,0x51eb851f ",
+          "0045c7b5: MOV EBX,dword ptr [EBP + -0x24] ",
+          "0045c7b8: IMUL EDX ",
+          "0045c7ba: SAR EDX,0x5 ",
+          "0045c7bd: MOV EAX,EDX ",
+          "0045c7bf: SHR EAX,0x1f ",
+          "0045c7c2: ADD EDX,EAX ",
+          "0045c7c4: IMUL EBX,EDX ",
+          "0045c7c7: MOV EAX,0x51eb851f ",
+          "0045c7cc: MUL EBX ",
+          "0045c7ce: SHR EDX,0x5 ",
+          "0045c7d1: MOV EBX,EDX "
+        ]
+      }
+    },
+    {
+      "key": "f2",
+      "function": 4572816,
+      "subject": "candidate being examined",
+      "emulator_start": 4573538,
+      "end_exclusive": 4573633,
+      "distance_register": "EBX",
+      "evidence": {
+        "file": "phase24-creep-move-f-assembly.txt",
+        "first": "0x45c956",
+        "last": "0x45c9c0",
+        "instructions": [
+          "0045c956: MOV EAX,dword ptr [ESI + 0x3e6] ",
+          "0045c95c: TEST AH,0x10 ",
+          "0045c95f: MOV dword ptr [EBP + -0x24],EBX ",
+          "0045c962: JZ 0x0045c9c1 ",
+          "0045c964: MOV DL,byte ptr [ESI + 0x403] ",
+          "0045c96a: MOV EAX,dword ptr [ESI + 0x370] ",
+          "0045c970: CMP DL,0x1 ",
+          "0045c973: MOV byte ptr [EBP + -0x3c],DL ",
+          "0045c976: JNZ 0x0045c980 ",
+          "0045c978: MOV EDX,dword ptr [EAX + 0x760] ",
+          "0045c97e: JMP 0x0045c9b2 ",
+          "0045c980: MOV EDX,dword ptr [EBP + -0x3c] ",
+          "0045c983: MOV EBX,dword ptr [0x006e4154] ",
+          "0045c989: AND EDX,0xff ",
+          "0045c98f: MOVSX EDX,word ptr [EBX + EDX*0x2 + 0x2a3] ",
+          "0045c997: IMUL EDX,dword ptr [EAX + 0x760] ",
+          "0045c99e: MOV EAX,0x51eb851f ",
+          "0045c9a3: MOV EBX,dword ptr [EBP + -0x24] ",
+          "0045c9a6: IMUL EDX ",
+          "0045c9a8: SAR EDX,0x5 ",
+          "0045c9ab: MOV EAX,EDX ",
+          "0045c9ad: SHR EAX,0x1f ",
+          "0045c9b0: ADD EDX,EAX ",
+          "0045c9b2: IMUL EBX,EDX ",
+          "0045c9b5: MOV EAX,0x51eb851f ",
+          "0045c9ba: MUL EBX ",
+          "0045c9bc: SHR EDX,0x5 ",
+          "0045c9bf: MOV EBX,EDX "
+        ]
+      }
+    },
+    {
+      "key": "g1",
+      "function": 4573952,
+      "subject": "candidate being examined",
+      "emulator_start": 4575736,
+      "end_exclusive": 4575828,
+      "distance_register": "EBX",
+      "evidence": {
+        "file": "phase24-creep-move-g-assembly.txt",
+        "first": "0x45d1ef",
+        "last": "0x45d253",
+        "instructions": [
+          "0045d1ef: MOV EAX,dword ptr [EDI + 0x3e6] ",
+          "0045d1f5: TEST AH,0x10 ",
+          "0045d1f8: JZ 0x0045d254 ",
+          "0045d1fa: MOV CL,byte ptr [EDI + 0x403] ",
+          "0045d200: MOV EAX,dword ptr [EDI + 0x370] ",
+          "0045d206: CMP CL,0x1 ",
+          "0045d209: MOV byte ptr [EBP + -0x34],CL ",
+          "0045d20c: JNZ 0x0045d216 ",
+          "0045d20e: MOV EDX,dword ptr [EAX + 0x760] ",
+          "0045d214: JMP 0x0045d245 ",
+          "0045d216: MOV ECX,dword ptr [EBP + -0x34] ",
+          "0045d219: MOV EDX,dword ptr [0x006e4154] ",
+          "0045d21f: AND ECX,0xff ",
+          "0045d225: MOVSX ECX,word ptr [EDX + ECX*0x2 + 0x2a3] ",
+          "0045d22d: IMUL ECX,dword ptr [EAX + 0x760] ",
+          "0045d234: MOV EAX,0x51eb851f ",
+          "0045d239: IMUL ECX ",
+          "0045d23b: SAR EDX,0x5 ",
+          "0045d23e: MOV EAX,EDX ",
+          "0045d240: SHR EAX,0x1f ",
+          "0045d243: ADD EDX,EAX ",
+          "0045d245: IMUL EBX,EDX ",
+          "0045d248: MOV EAX,0x51eb851f ",
+          "0045d24d: MUL EBX ",
+          "0045d24f: SHR EDX,0x5 ",
+          "0045d252: MOV EBX,EDX "
+        ]
+      }
+    },
+    {
+      "key": "g2",
+      "function": 4573952,
+      "subject": "candidate being examined",
+      "emulator_start": 4576262,
+      "end_exclusive": 4576354,
+      "distance_register": "EBX",
+      "evidence": {
+        "file": "phase24-creep-move-g-assembly.txt",
+        "first": "0x45d3fa",
+        "last": "0x45d461",
+        "instructions": [
+          "0045d3fa: MOV EAX,dword ptr [EDI + 0x3e6] ",
+          "0045d400: TEST AH,0x10 ",
+          "0045d403: LEA EBX,[EDX + ECX*0x1] ",
+          "0045d406: JZ 0x0045d462 ",
+          "0045d408: MOV CL,byte ptr [EDI + 0x403] ",
+          "0045d40e: MOV EAX,dword ptr [EDI + 0x370] ",
+          "0045d414: CMP CL,0x1 ",
+          "0045d417: MOV byte ptr [EBP + -0x6c],CL ",
+          "0045d41a: JNZ 0x0045d424 ",
+          "0045d41c: MOV EDX,dword ptr [EAX + 0x760] ",
+          "0045d422: JMP 0x0045d453 ",
+          "0045d424: MOV ECX,dword ptr [EBP + -0x6c] ",
+          "0045d427: MOV EDX,dword ptr [0x006e4154] ",
+          "0045d42d: AND ECX,0xff ",
+          "0045d433: MOVSX ECX,word ptr [EDX + ECX*0x2 + 0x2a3] ",
+          "0045d43b: IMUL ECX,dword ptr [EAX + 0x760] ",
+          "0045d442: MOV EAX,0x51eb851f ",
+          "0045d447: IMUL ECX ",
+          "0045d449: SAR EDX,0x5 ",
+          "0045d44c: MOV EAX,EDX ",
+          "0045d44e: SHR EAX,0x1f ",
+          "0045d451: ADD EDX,EAX ",
+          "0045d453: IMUL EBX,EDX ",
+          "0045d456: MOV EAX,0x51eb851f ",
+          "0045d45b: MUL EBX ",
+          "0045d45d: SHR EDX,0x5 ",
+          "0045d460: MOV EBX,EDX "
+        ]
+      }
+    },
+    {
+      "key": "target",
+      "function": 4779664,
+      "subject": "self in this helper",
+      "emulator_start": 4779953,
+      "end_exclusive": 4780045,
+      "distance_register": "EBX",
+      "evidence": {
+        "file": "phase24-creep-target-assembly.txt",
+        "first": "0x48efa8",
+        "last": "0x48f00c",
+        "instructions": [
+          "0048efa8: MOV ECX,dword ptr [EAX + 0x3e6] ",
+          "0048efae: TEST CH,0x10 ",
+          "0048efb1: JZ 0x0048f00d ",
+          "0048efb3: MOV CL,byte ptr [EAX + 0x403] ",
+          "0048efb9: MOV EAX,dword ptr [EAX + 0x370] ",
+          "0048efbf: CMP CL,0x1 ",
+          "0048efc2: MOV byte ptr [EBP + -0x1c],CL ",
+          "0048efc5: JNZ 0x0048efcf ",
+          "0048efc7: MOV EDX,dword ptr [EAX + 0x760] ",
+          "0048efcd: JMP 0x0048effe ",
+          "0048efcf: MOV ECX,dword ptr [EBP + -0x1c] ",
+          "0048efd2: MOV EDX,dword ptr [0x006e4154] ",
+          "0048efd8: AND ECX,0xff ",
+          "0048efde: MOVSX ECX,word ptr [EDX + ECX*0x2 + 0x2a3] ",
+          "0048efe6: IMUL ECX,dword ptr [EAX + 0x760] ",
+          "0048efed: MOV EAX,0x51eb851f ",
+          "0048eff2: IMUL ECX ",
+          "0048eff4: SAR EDX,0x5 ",
+          "0048eff7: MOV EAX,EDX ",
+          "0048eff9: SHR EAX,0x1f ",
+          "0048effc: ADD EDX,EAX ",
+          "0048effe: IMUL EBX,EDX ",
+          "0048f001: MOV EAX,0x51eb851f ",
+          "0048f006: MUL EBX ",
+          "0048f008: SHR EDX,0x5 ",
+          "0048f00b: MOV EBX,EDX "
+        ]
+      }
+    }
+  ],
+  "separate_movement_speed": {
+    "function": 4762544,
+    "mode2_runtime_offset": 1468,
+    "raw_offset": 3383,
+    "native_label": "Shuffle Speed (Tiles Per Second)",
+    "scope": "First-person input selects speed mode2 when Creeping. Inspected speed helper selects runtime5BC, not EE4/runtime760. Other health/terrain/possession modifiers still apply.",
+    "evidence": [
+      {
+        "file": "phase24-creep-speed-assembly.txt",
+        "first": "0x48abb0",
+        "last": "0x48abde",
+        "instructions": [
+          "0048abb0: MOV EAX,dword ptr [ESP + 0x4] ",
+          "0048abb4: PUSH EBX ",
+          "0048abb5: PUSH ESI ",
+          "0048abb6: PUSH EDI ",
+          "0048abb7: MOV EDI,ECX ",
+          "0048abb9: SUB EAX,0x0 ",
+          "0048abbc: MOV ECX,dword ptr [EDI + 0x370] ",
+          "0048abc2: MOV ESI,dword ptr [ECX + 0x5b4] ",
+          "0048abc8: JZ 0x0048abde ",
+          "0048abca: DEC EAX ",
+          "0048abcb: JZ 0x0048abd8 ",
+          "0048abcd: DEC EAX ",
+          "0048abce: JNZ 0x0048abde ",
+          "0048abd0: MOV ESI,dword ptr [ECX + 0x5bc] ",
+          "0048abd6: JMP 0x0048abde ",
+          "0048abd8: MOV ESI,dword ptr [ECX + 0x5b8] ",
+          "0048abde: MOV ECX,dword ptr [0x006e5050] "
+        ]
+      },
+      {
+        "file": "phase24-first-person-input.txt",
+        "line": 223,
+        "excerpt": "iVar7 = FUN_0048abb0(2);"
+      }
+    ]
+  },
+  "action": {
+    "function": 5337872,
+    "rule": "If player possessed-creature WORD+134 is nonzero: flags=(flags & FFFFEFFF) | ((actionDWORD0 &1)<<12). Otherwise flags unchanged. Other state bits preserved.",
+    "evidence": {
+      "file": "phase24-creep-action-assembly.txt",
+      "first": "0x517310",
+      "last": "0x517357",
+      "instructions": [
+        "00517310: MOV ECX,dword ptr [ESP + 0x4] ",
+        "00517314: XOR EAX,EAX ",
+        "00517316: MOV AX,word ptr [ECX + 0x10] ",
+        "0051731a: MOV EAX,dword ptr [EAX*0x4 + 0x6ee540] ",
+        "00517321: MOV AX,word ptr [EAX + 0x134] ",
+        "00517328: TEST AX,AX ",
+        "0051732b: JZ 0x00517352 ",
+        "0051732d: MOV ECX,dword ptr [ECX] ",
+        "0051732f: AND EAX,0xffff ",
+        "00517334: AND ECX,0x1 ",
+        "00517337: MOV EAX,dword ptr [EAX*0x4 + 0x6ee540] ",
+        "0051733e: SHL ECX,0xc ",
+        "00517341: MOV EDX,dword ptr [EAX + 0x3e6] ",
+        "00517347: AND DH,0xef ",
+        "0051734a: OR ECX,EDX ",
+        "0051734c: MOV dword ptr [EAX + 0x3e6],ECX ",
+        "00517352: MOV EAX,0x1 ",
+        "00517357: RET 0x4 "
+      ]
+    }
+  },
+  "native_editor": {
+    "intermediate_offset": 4836,
+    "presence_offset": 520,
+    "model_offset": 5952,
+    "model_bytes": 1,
+    "panel_offset": 6272,
+    "property_id": 63580,
+    "callback": 4850096,
+    "writer": 4882176,
+    "writer_record_bytes": 5537,
+    "load": "When presence nonzero, callback stores low8 of raw DWORD in model byte. Native converter sets presence for a complete record.",
+    "display": "Property F85C reads model/panel as unsigned byte and presents it numerically.",
+    "update": "After __ftol, update case stores low8 of its integer result. No full GUI float parser or validation range is claimed.",
+    "write": "Writer zeros ECX, loads model byte into CL, stores full ECX DWORD. Present-field callback -> save projection is raw &255, including an unchanged property.",
+    "preservation": "An independent editor should retain all32 original bits unless an explicit user edit or native-compatibility normalization is requested.",
+    "evidence": [
+      {
+        "file": "creature-record-decoder.txt",
+        "line": 591,
+        "excerpt": "uVar3 = *(undefined4 *)(param_1 + 0xee4);"
+      },
+      {
+        "file": "creature-record-decoder.txt",
+        "line": 593,
+        "excerpt": "*(undefined4 *)((int)this + 0x208) = 1;"
+      },
+      {
+        "file": "creature-record-decoder.txt",
+        "line": 595,
+        "excerpt": "*(undefined4 *)((int)this + 0x12e4) = uVar3;"
+      },
+      {
+        "file": "phase17-creature-editor-model.txt",
+        "line": 583,
+        "excerpt": "*(char *)(this + 0x5d0) = (char)piVar1[0x4b9];"
+      },
+      {
+        "file": "phase17-creature-main-panel-fill.txt",
+        "line": 110,
+        "excerpt": "*(undefined1 *)((int)this + 0x1880) = *(undefined1 *)(*(int *)((int)this + 0x134) + 0x1740);"
+      },
+      {
+        "file": "phase17-creature-f55-panel-extract.txt",
+        "line": 240,
+        "excerpt": "case 0xf85c:"
+      },
+      {
+        "file": "phase17-creature-f55-panel-extract.txt",
+        "line": 241,
+        "excerpt": "*(double *)((int)param_1 + 0x60) = (double)*(byte *)((int)param_1 + 0x1880);"
+      },
+      {
+        "file": "phase17-creature-f55-panel-update.txt",
+        "line": 223,
+        "excerpt": "*(char *)(param_1 + 0x1880) = (char)lVar2;"
+      },
+      {
+        "file": "phase17-creature-f55-panel-update.txt",
+        "line": 221,
+        "excerpt": "case 0xf85c:"
+      },
+      {
+        "file": "phase17-creature-main-panel-commit.txt",
+        "line": 113,
+        "excerpt": "*(undefined1 *)(*(int *)(param_1 + 0x134) + 0x1740) = *(undefined1 *)(param_1 + 0x1880);"
+      },
+      {
+        "file": "phase24-editor-creature-model-assembly.txt",
+        "first": "0x4a0f54",
+        "last": "0x4a0f62",
+        "instructions": [
+          "004a0f54: CMP dword ptr [EBX + 0x208],EDI ",
+          "004a0f5a: JZ 0x004a0f68 ",
+          "004a0f5c: MOV EAX,dword ptr [EBX + 0x12e4] ",
+          "004a0f62: MOV byte ptr [EBP + 0x1740],AL "
+        ]
+      },
+      {
+        "file": "phase17-creature-writer-assembly.txt",
+        "first": "0x4a84b4",
+        "last": "0x4a84c3",
+        "instructions": [
+          "004a84b4: XOR ECX,ECX ",
+          "004a84b6: MOV dword ptr [ESP + 0xf74],EAX ",
+          "004a84bd: MOV CL,byte ptr [EBX + 0x1740] ",
+          "004a84c3: MOV dword ptr [ESP + 0xf78],ECX "
+        ]
+      },
+      {
+        "file": "phase17-creature-writer-assembly.txt",
+        "first": "0x4a8b7d",
+        "last": "0x4a8b84",
+        "instructions": [
+          "004a8b7d: LEA EAX,[ESP + 0x94] ",
+          "004a8b84: PUSH 0x15a1 "
+        ]
+      }
+    ]
+  },
+  "native_emulations": [
+    {
+      "file": "phase24-emulation-creep-kernel-a-0.json",
+      "sha256": "ff7b171a24743eeeee5aa4d06f087b5f9035887a26c922fec7e04f81974389cd",
+      "case": "kernel-a-0"
+    },
+    {
+      "file": "phase24-emulation-creep-kernel-a-1.json",
+      "sha256": "bd169f374fd9d7c08921f1bcd841236ec0d1def9989b595e9a18dc7a90c61eae",
+      "case": "kernel-a-1"
+    },
+    {
+      "file": "phase24-emulation-creep-kernel-a-2.json",
+      "sha256": "7ca2c27bcf5a9fc305d26e4f2e935f895ec529ce88051746216a56e2d1cf72e7",
+      "case": "kernel-a-2"
+    },
+    {
+      "file": "phase24-emulation-creep-kernel-a-3.json",
+      "sha256": "b0c81ef08b9ea570990be84b7dbc4e9afbbf5fe79161c98856df2d1adbd634e1",
+      "case": "kernel-a-3"
+    },
+    {
+      "file": "phase24-emulation-creep-kernel-a-4.json",
+      "sha256": "77b06eb10b942a24a18400a1f0a66c503d21de3f5f8af94398f122f0a2b0a9a5",
+      "case": "kernel-a-4"
+    },
+    {
+      "file": "phase24-emulation-creep-kernel-a-5.json",
+      "sha256": "2055dc450fde82a6f94ddf5140b8df6237837e524dbbfe2d502b0efde3b5b24f",
+      "case": "kernel-a-5"
+    },
+    {
+      "file": "phase24-emulation-creep-kernel-a-6.json",
+      "sha256": "011fa809c4900223a644ce721663be9d08858d50d9927a7da967c08151b8aaad",
+      "case": "kernel-a-6"
+    },
+    {
+      "file": "phase24-emulation-creep-kernel-a-7.json",
+      "sha256": "56aaa11aef8e21607be4bb445bdd04e0126d24e22e3943ab4e07ca12ff9e692f",
+      "case": "kernel-a-7"
+    },
+    {
+      "file": "phase24-emulation-creep-kernel-b1-0.json",
+      "sha256": "dae9616c70ab56536681ba687689aa34cc3c0188650f48522ef27576180bb24f",
+      "case": "kernel-b1-0"
+    },
+    {
+      "file": "phase24-emulation-creep-kernel-b1-1.json",
+      "sha256": "d20ed80b2da52b39e27572b54a37337ae7750e8dd8c18af4bdeade3637af0dd6",
+      "case": "kernel-b1-1"
+    },
+    {
+      "file": "phase24-emulation-creep-kernel-b1-2.json",
+      "sha256": "ecb4d25bff1a96bd0969f44027c41f8bb4d8885bf28b6d18dd2819e8e58a781c",
+      "case": "kernel-b1-2"
+    },
+    {
+      "file": "phase24-emulation-creep-kernel-b1-3.json",
+      "sha256": "783044156f100bf95b43f94319663f48e8266da202755fd18ea8e2aa5fbaa42f",
+      "case": "kernel-b1-3"
+    },
+    {
+      "file": "phase24-emulation-creep-kernel-b1-4.json",
+      "sha256": "f24c5b61f7dc0e10b976fa806d17539769b66d8885c56011eae93d5fd3c35702",
+      "case": "kernel-b1-4"
+    },
+    {
+      "file": "phase24-emulation-creep-kernel-b1-5.json",
+      "sha256": "96b216e6de99c90cdcdcf4dcdda40d6f1b421288cd310afc66beae5ef9884b9a",
+      "case": "kernel-b1-5"
+    },
+    {
+      "file": "phase24-emulation-creep-kernel-b1-6.json",
+      "sha256": "a1dfc0e550d16ad18c493eb778005e06c0bda7a34cae406e93f0d8267e5df923",
+      "case": "kernel-b1-6"
+    },
+    {
+      "file": "phase24-emulation-creep-kernel-b1-7.json",
+      "sha256": "b404bf79761dc8a2fbba1d8b31f95c31ce46eb7a8426d98d7ea908650c7d7daf",
+      "case": "kernel-b1-7"
+    },
+    {
+      "file": "phase24-emulation-creep-kernel-b2-0.json",
+      "sha256": "6c0d33cdd447fe2d206a641160dcda0a06cd2fc5ec13bcf1802c9cd2da9dd44a",
+      "case": "kernel-b2-0"
+    },
+    {
+      "file": "phase24-emulation-creep-kernel-b2-1.json",
+      "sha256": "ff3890b2ad94f0468f417de94c20b7392117149945f5717e1d360a7f8ef60d88",
+      "case": "kernel-b2-1"
+    },
+    {
+      "file": "phase24-emulation-creep-kernel-b2-2.json",
+      "sha256": "49f81127405c36d8afe5ad42c23659c17a3cbdd7ffe884f547ba64e0ac17d418",
+      "case": "kernel-b2-2"
+    },
+    {
+      "file": "phase24-emulation-creep-kernel-b2-3.json",
+      "sha256": "1157bc407d8aa124ae39770717461a4ba7e6e40696dcd08fd7c14d734b13c6e3",
+      "case": "kernel-b2-3"
+    },
+    {
+      "file": "phase24-emulation-creep-kernel-b2-4.json",
+      "sha256": "ff64131da178566e4ec978418579a98d4fb74097fcb1270b23ef0fbd2d3e964b",
+      "case": "kernel-b2-4"
+    },
+    {
+      "file": "phase24-emulation-creep-kernel-b2-5.json",
+      "sha256": "bc2055f8e4ed946b1e939d2c380deec528e47781c026dc1c7aecf6a3f6109264",
+      "case": "kernel-b2-5"
+    },
+    {
+      "file": "phase24-emulation-creep-kernel-b2-6.json",
+      "sha256": "4a219295581d9be0fb9183c24058b292a9492dc46a375856b1e75dd8bfa58c00",
+      "case": "kernel-b2-6"
+    },
+    {
+      "file": "phase24-emulation-creep-kernel-b2-7.json",
+      "sha256": "c9c5b46e50e317b70d230cf1ec199b025cff486e40b6004fb880061826f4aae3",
+      "case": "kernel-b2-7"
+    },
+    {
+      "file": "phase24-emulation-creep-kernel-c-0.json",
+      "sha256": "6e3b6e47660fe536e4287190e90cdb92a8f1fe7f542fdb520f169808fe5c77f8",
+      "case": "kernel-c-0"
+    },
+    {
+      "file": "phase24-emulation-creep-kernel-c-1.json",
+      "sha256": "c879a93cba671aba8636adf53a7d081813e79747f3fab7fb0faa4b140846be58",
+      "case": "kernel-c-1"
+    },
+    {
+      "file": "phase24-emulation-creep-kernel-c-2.json",
+      "sha256": "797ac3ca906b6a621345533e106ccd4d3b43152b30234d37413ca80bccfb2a52",
+      "case": "kernel-c-2"
+    },
+    {
+      "file": "phase24-emulation-creep-kernel-c-3.json",
+      "sha256": "62bc5499195b016b858ef468dd9c653169a1112504b8962139eeec4aca4c5e79",
+      "case": "kernel-c-3"
+    },
+    {
+      "file": "phase24-emulation-creep-kernel-c-4.json",
+      "sha256": "66ca7169e6e94788efa4b4ced01c80691382174af32fb84d5a5b9bdfa1c2aef0",
+      "case": "kernel-c-4"
+    },
+    {
+      "file": "phase24-emulation-creep-kernel-c-5.json",
+      "sha256": "9ab254eeb9db436dc76da89314bf1b1b480b84106c2fafeaeecb7702b1f947d1",
+      "case": "kernel-c-5"
+    },
+    {
+      "file": "phase24-emulation-creep-kernel-c-6.json",
+      "sha256": "3e27e3ce0c3951032e09ad42d4805f1d276e3b588a2943452904dd62b36ec491",
+      "case": "kernel-c-6"
+    },
+    {
+      "file": "phase24-emulation-creep-kernel-c-7.json",
+      "sha256": "0373d54508f8392dba2bbefec1513f667937a70e7704a9c496b3a590ccffce54",
+      "case": "kernel-c-7"
+    },
+    {
+      "file": "phase24-emulation-creep-kernel-d-0.json",
+      "sha256": "779ea6fa82b6b5be8aa2a444b2ddfb680b131d03d7ab6fbfa723b2ced67334d3",
+      "case": "kernel-d-0"
+    },
+    {
+      "file": "phase24-emulation-creep-kernel-d-1.json",
+      "sha256": "b991b828f78c42fc5689eef6b327fd7d378a70e084d9e8c6e8727a72653d1085",
+      "case": "kernel-d-1"
+    },
+    {
+      "file": "phase24-emulation-creep-kernel-d-2.json",
+      "sha256": "aea2a469571ded7e333efe7702eecbfafaaf2ad10e2c0e908c1c369f625e5bf5",
+      "case": "kernel-d-2"
+    },
+    {
+      "file": "phase24-emulation-creep-kernel-d-3.json",
+      "sha256": "ac1f3f8cfd218ab19da337775d548c8059008221aec4dd8b7251c26661f59d1e",
+      "case": "kernel-d-3"
+    },
+    {
+      "file": "phase24-emulation-creep-kernel-d-4.json",
+      "sha256": "e8446e61e6411657eb8192d6bae69b82b1fad5bf88cfc7df6ce2ebbad2544bfc",
+      "case": "kernel-d-4"
+    },
+    {
+      "file": "phase24-emulation-creep-kernel-d-5.json",
+      "sha256": "dddbac4b33dac3bf7ab8111423c60bd2cb6d9152952ab97ca6207e7501ae46db",
+      "case": "kernel-d-5"
+    },
+    {
+      "file": "phase24-emulation-creep-kernel-d-6.json",
+      "sha256": "15de9e42ca0ff656dd147f343651c632beb8bd48f6d600372eb635fc5a600621",
+      "case": "kernel-d-6"
+    },
+    {
+      "file": "phase24-emulation-creep-kernel-d-7.json",
+      "sha256": "f7dc405d6a2f70bd5642a6728a812db85dc525a385b42947811c43056b237fee",
+      "case": "kernel-d-7"
+    },
+    {
+      "file": "phase24-emulation-creep-kernel-e-0.json",
+      "sha256": "0ca244789c32cb1c3ce88968782143c49d590cf6eefea8e9a0112ffd525e8dd4",
+      "case": "kernel-e-0"
+    },
+    {
+      "file": "phase24-emulation-creep-kernel-e-1.json",
+      "sha256": "baf46f7d55b81d35f87bf7a7ce87ca7d041ca1216b2fa5033c29f95880786ca2",
+      "case": "kernel-e-1"
+    },
+    {
+      "file": "phase24-emulation-creep-kernel-e-2.json",
+      "sha256": "60c1c807a3038ea24c7d45457324489ab65efa30276d46a3d431fb1372c95261",
+      "case": "kernel-e-2"
+    },
+    {
+      "file": "phase24-emulation-creep-kernel-e-3.json",
+      "sha256": "740768db1ef4bd31a42d713091c00151f83b260cc2a5a3f6e0c1a5bf0a484598",
+      "case": "kernel-e-3"
+    },
+    {
+      "file": "phase24-emulation-creep-kernel-e-4.json",
+      "sha256": "0d1223c8b24c9c09689f8ae617e681a2b878c4027fc1d93b31db69aa6fb0a7c4",
+      "case": "kernel-e-4"
+    },
+    {
+      "file": "phase24-emulation-creep-kernel-e-5.json",
+      "sha256": "3b4de4ac2d1420f893046047af11e39f0b8bfa7d310f798eda05b2c1fc58f058",
+      "case": "kernel-e-5"
+    },
+    {
+      "file": "phase24-emulation-creep-kernel-e-6.json",
+      "sha256": "9a50c0b604210f7ef7cfcfc9c006dcc8d7e7503e7a4d97b2c37063803f3c5039",
+      "case": "kernel-e-6"
+    },
+    {
+      "file": "phase24-emulation-creep-kernel-e-7.json",
+      "sha256": "64116ee1ddb756d9e468ad94fc0d8368c676912156a5b976c9f9e810294b9d33",
+      "case": "kernel-e-7"
+    },
+    {
+      "file": "phase24-emulation-creep-kernel-f1-0.json",
+      "sha256": "554e82098e85e3c520308fba6028b13c9cee31a2f042310c8d21450f0a111de2",
+      "case": "kernel-f1-0"
+    },
+    {
+      "file": "phase24-emulation-creep-kernel-f1-1.json",
+      "sha256": "a6b9d6b186234893d894307a41e4be96cdfd45c45a6ab361fba7dd3fb486cccc",
+      "case": "kernel-f1-1"
+    },
+    {
+      "file": "phase24-emulation-creep-kernel-f1-2.json",
+      "sha256": "c39c22c0d4877f420901f809dc4ae62cbc02a79797cd548b0aeb70abe6370ac0",
+      "case": "kernel-f1-2"
+    },
+    {
+      "file": "phase24-emulation-creep-kernel-f1-3.json",
+      "sha256": "f0e0b452708ddbc9941fa2707fd1599bb93999ab14bcfa9ed5588854ad68de0a",
+      "case": "kernel-f1-3"
+    },
+    {
+      "file": "phase24-emulation-creep-kernel-f1-4.json",
+      "sha256": "effb12314d4163634f847a6974ab51adbd690374722d685a3d5bd7fdccd53525",
+      "case": "kernel-f1-4"
+    },
+    {
+      "file": "phase24-emulation-creep-kernel-f1-5.json",
+      "sha256": "191ebcf7ef247b1c9cd159c8eedab35b827d2dd30ca0677b54a80d71bf81336b",
+      "case": "kernel-f1-5"
+    },
+    {
+      "file": "phase24-emulation-creep-kernel-f1-6.json",
+      "sha256": "feb7b94b94313f6e8e56c4db43058e868e2ae1ea0a6d5d31213ec4ecb8c02f36",
+      "case": "kernel-f1-6"
+    },
+    {
+      "file": "phase24-emulation-creep-kernel-f1-7.json",
+      "sha256": "43006f834ab52665a8476d4bdc5d7bff88701473998a969684c97f9b61753251",
+      "case": "kernel-f1-7"
+    },
+    {
+      "file": "phase24-emulation-creep-kernel-f2-0.json",
+      "sha256": "bc7c33d72bf6d179ae3886a47905e790294c84000fddbd13c187eee9f8a877c3",
+      "case": "kernel-f2-0"
+    },
+    {
+      "file": "phase24-emulation-creep-kernel-f2-1.json",
+      "sha256": "2a7425609e768fd1562eccfc38cadc8632132c7ceadf52c0d60d32b5650779c0",
+      "case": "kernel-f2-1"
+    },
+    {
+      "file": "phase24-emulation-creep-kernel-f2-2.json",
+      "sha256": "0e19da8324d4147f32b135515bc44ac9d73d922a0491d822eeb7f00d2536f000",
+      "case": "kernel-f2-2"
+    },
+    {
+      "file": "phase24-emulation-creep-kernel-f2-3.json",
+      "sha256": "47fbfb554f978bd580094cbedb3468d694b6de1f2832b1cc5b2d70dc2d5ba4bf",
+      "case": "kernel-f2-3"
+    },
+    {
+      "file": "phase24-emulation-creep-kernel-f2-4.json",
+      "sha256": "dbbde4fdac888dda7822dbb354e58c243a573a6d63448a86c4e369091177a560",
+      "case": "kernel-f2-4"
+    },
+    {
+      "file": "phase24-emulation-creep-kernel-f2-5.json",
+      "sha256": "e3dd0eb24a74ef85860ef4f5e8907dcc5175226b216cf6ee22ed429d54c72d51",
+      "case": "kernel-f2-5"
+    },
+    {
+      "file": "phase24-emulation-creep-kernel-f2-6.json",
+      "sha256": "c6e0cf4ffeb83f6a4e11a4237142321caaf3b95a25345e481386ad373aae6b35",
+      "case": "kernel-f2-6"
+    },
+    {
+      "file": "phase24-emulation-creep-kernel-f2-7.json",
+      "sha256": "45dc707b13957d2132737623827a2a434ed8cdadbe262fa261a2f8a13d6faa56",
+      "case": "kernel-f2-7"
+    },
+    {
+      "file": "phase24-emulation-creep-kernel-g1-0.json",
+      "sha256": "1ee24740b6f6a317af5d279a2767dc4dc97fbe17e5d9e9165eccf7fac4c98f7b",
+      "case": "kernel-g1-0"
+    },
+    {
+      "file": "phase24-emulation-creep-kernel-g1-1.json",
+      "sha256": "f0b68ceb6c7f8ca5e1483798c07ef735542e3f33c47a4b58788f2db8c7e26e5b",
+      "case": "kernel-g1-1"
+    },
+    {
+      "file": "phase24-emulation-creep-kernel-g1-2.json",
+      "sha256": "c51f14551e198c4bc61520c3888f262a4b6dde8e718a86cd9063ac55da31306b",
+      "case": "kernel-g1-2"
+    },
+    {
+      "file": "phase24-emulation-creep-kernel-g1-3.json",
+      "sha256": "405b05e79f3d6ce072a228ed796058343043d69a28bfe8ff8aad2272014df807",
+      "case": "kernel-g1-3"
+    },
+    {
+      "file": "phase24-emulation-creep-kernel-g1-4.json",
+      "sha256": "170a043c86b51bb49b248402bc0a994f412026c27ff7d6a4ede263781edce3b3",
+      "case": "kernel-g1-4"
+    },
+    {
+      "file": "phase24-emulation-creep-kernel-g1-5.json",
+      "sha256": "5040507d7759f7f5668e87f1f397aa7cd7fb9b4939b84d6549e7dd30954cfd81",
+      "case": "kernel-g1-5"
+    },
+    {
+      "file": "phase24-emulation-creep-kernel-g1-6.json",
+      "sha256": "4b0dc93dd7ff9d715c8b28a6d7b52a5b1845b68456b83e72688bc2f3f55137e6",
+      "case": "kernel-g1-6"
+    },
+    {
+      "file": "phase24-emulation-creep-kernel-g1-7.json",
+      "sha256": "18f94734ef8c739f2951f01ea77fb1c926a00654a5282c5cf14d38745fab9a06",
+      "case": "kernel-g1-7"
+    },
+    {
+      "file": "phase24-emulation-creep-kernel-g2-0.json",
+      "sha256": "97a89d4dfd6b474de4d9dfb3c7e43a309c4e03ba2269f3c6cf86bf64c8360d0f",
+      "case": "kernel-g2-0"
+    },
+    {
+      "file": "phase24-emulation-creep-kernel-g2-1.json",
+      "sha256": "e124cda8b240675cca0eb16ba7da46f7b75a1ba7663b410ef557a861e8b11d45",
+      "case": "kernel-g2-1"
+    },
+    {
+      "file": "phase24-emulation-creep-kernel-g2-2.json",
+      "sha256": "b19f4e740514a6009850f9319d8690c72e891ab1e22f13069c3cd7302dcd908d",
+      "case": "kernel-g2-2"
+    },
+    {
+      "file": "phase24-emulation-creep-kernel-g2-3.json",
+      "sha256": "8fdd07f5c5df90c427c0961c6ab4bbbdd7fc9018edc31f2ad6d39be4f7ebfca0",
+      "case": "kernel-g2-3"
+    },
+    {
+      "file": "phase24-emulation-creep-kernel-g2-4.json",
+      "sha256": "dd59561fa0f314886832365e8e2ed95b4c221e13201010290dc1248f13c901b3",
+      "case": "kernel-g2-4"
+    },
+    {
+      "file": "phase24-emulation-creep-kernel-g2-5.json",
+      "sha256": "7d42c51f22dea71e778088b4bcca7596d47ef414de6ffd4acd9947fca97e4f99",
+      "case": "kernel-g2-5"
+    },
+    {
+      "file": "phase24-emulation-creep-kernel-g2-6.json",
+      "sha256": "6255c727080c6ff5db84dded4f0d6648ecb92330dd702e29fc1d8ddbaeb64564",
+      "case": "kernel-g2-6"
+    },
+    {
+      "file": "phase24-emulation-creep-kernel-g2-7.json",
+      "sha256": "dacb7079e126c882e0098c727f65ee6f22a4c8126b1cc5cae7b94bc76af7be19",
+      "case": "kernel-g2-7"
+    },
+    {
+      "file": "phase24-emulation-creep-kernel-target-0.json",
+      "sha256": "1fec84bf62dbc115d274d22c567d0d487dff82d0916bb3fa78e9a9d4c8f57a54",
+      "case": "kernel-target-0"
+    },
+    {
+      "file": "phase24-emulation-creep-kernel-target-1.json",
+      "sha256": "47f9bb5f5e039b957c5e1a26323d144e671dbf3679d9165c01a6d9d098e2128e",
+      "case": "kernel-target-1"
+    },
+    {
+      "file": "phase24-emulation-creep-kernel-target-2.json",
+      "sha256": "81310951908a9fd79bf42da153eb2044ebf3b9573adbd27e59a8fca17b67b7ac",
+      "case": "kernel-target-2"
+    },
+    {
+      "file": "phase24-emulation-creep-kernel-target-3.json",
+      "sha256": "d0f77954d3847107c468cdc4c4caa67ff360592b2e199614a6eb20949517e9aa",
+      "case": "kernel-target-3"
+    },
+    {
+      "file": "phase24-emulation-creep-kernel-target-4.json",
+      "sha256": "2f847883fd009e61ab2f5ed52b326e178b3b9747929dacfb7a2aadf33f33cfaf",
+      "case": "kernel-target-4"
+    },
+    {
+      "file": "phase24-emulation-creep-kernel-target-5.json",
+      "sha256": "cb247d1cb0b799a1b87a553e54f8455fbf73251a7952ca9395b547c33a14fa93",
+      "case": "kernel-target-5"
+    },
+    {
+      "file": "phase24-emulation-creep-kernel-target-6.json",
+      "sha256": "ba80b2ba13b8e49b68d079d7aa56e9ac3bd8b7aebd0cc9fc7e3499f4ea85fcde",
+      "case": "kernel-target-6"
+    },
+    {
+      "file": "phase24-emulation-creep-kernel-target-7.json",
+      "sha256": "85c7994669e3bca16d67ba8fa9a91cbc1b272340c8737e08f5d49f3962c52895",
+      "case": "kernel-target-7"
+    },
+    {
+      "file": "phase24-emulation-creep-game-0.json",
+      "sha256": "79abb2d7628c64f9e2700da7aea49fd73d8b02d65c0a967db362ecbefb1091b4",
+      "case": "game-0"
+    },
+    {
+      "file": "phase24-emulation-creep-editor-0.json",
+      "sha256": "e36c2a3f38c2028b71962b381cbebfad928b4d24cbbcfc0b7af837e802855bf2",
+      "case": "editor-0"
+    },
+    {
+      "file": "phase24-emulation-creep-game-50.json",
+      "sha256": "f44821cbfb19430cebaf789fad5cca2ec3b7d50a6d42da89b1f2dd62c5f4d473",
+      "case": "game-50"
+    },
+    {
+      "file": "phase24-emulation-creep-editor-50.json",
+      "sha256": "623adca954e5d0f9364b866907d609631f42cf5a2c93d7a0c2ec0d12d67c2ee6",
+      "case": "editor-50"
+    },
+    {
+      "file": "phase24-emulation-creep-game-100.json",
+      "sha256": "291c7dd856555b49f51150fe6be340d8abae6fcf3d08f72f52aa2bc22de0182b",
+      "case": "game-100"
+    },
+    {
+      "file": "phase24-emulation-creep-editor-100.json",
+      "sha256": "24cd12e7b0b3dd254d3117368d634713e6d948afe494f9e4c66c8197c9346519",
+      "case": "editor-100"
+    },
+    {
+      "file": "phase24-emulation-creep-game-255.json",
+      "sha256": "09373555dbea5b5b9f624e2455e08d1f50a3a4a54a8c2357048135f8cc536ec5",
+      "case": "game-255"
+    },
+    {
+      "file": "phase24-emulation-creep-editor-255.json",
+      "sha256": "1ca18866ee0e0044b721bb39043a8686607abeb3ca0a91850eee0514dba31143",
+      "case": "editor-255"
+    },
+    {
+      "file": "phase24-emulation-creep-game-256.json",
+      "sha256": "94cda6a8753b0a1b7305eaf7f1b4799e7b99b34866e7121ba92c912d92f1b862",
+      "case": "game-256"
+    },
+    {
+      "file": "phase24-emulation-creep-editor-256.json",
+      "sha256": "cebe2c1dc0af55a74673a381c9bd784f2e10ae86d179d8d706fb3a1211cc1135",
+      "case": "editor-256"
+    },
+    {
+      "file": "phase24-emulation-creep-game-300.json",
+      "sha256": "8eea3f6c63cd5ed078f13055af11ea74a1d999e39058ee086bff9bc31cc5ceef",
+      "case": "game-300"
+    },
+    {
+      "file": "phase24-emulation-creep-editor-300.json",
+      "sha256": "cf1a1534cc092d94f5f1dd324a04f3e635c2932f8720c8c4fa5b472c95df59a5",
+      "case": "editor-300"
+    },
+    {
+      "file": "phase24-emulation-creep-game-32000.json",
+      "sha256": "ffe08b987285da33eddfc567c7dbaebf5883dbf2b6df666a4e3529f1354a26d4",
+      "case": "game-32000"
+    },
+    {
+      "file": "phase24-emulation-creep-editor-32000.json",
+      "sha256": "4bcc7ec7c3bbe5341f43297a35cae8c3485e593c14166a762498feb6e4bccdd3",
+      "case": "editor-32000"
+    },
+    {
+      "file": "phase24-emulation-creep-game-4294967295.json",
+      "sha256": "3ebb4bfe5de362bcb20bf2cffe3d741b9cf2b82a1a196a44686a176417f01e93",
+      "case": "game-4294967295"
+    },
+    {
+      "file": "phase24-emulation-creep-editor-4294967295.json",
+      "sha256": "812805665fee8998fcdbeffd74864bfc6a13d8613f9fb800e6b8d64f1852abcc",
+      "case": "editor-4294967295"
+    },
+    {
+      "file": "phase24-emulation-creep-action-0.json",
+      "sha256": "7006221e5fd76039637cd75d6164c20ab6cb9811cb46bc7310b76cc41c5bf6ae",
+      "case": "action-0"
+    },
+    {
+      "file": "phase24-emulation-creep-action-1.json",
+      "sha256": "bd46bdc4fdfb90ed2160721835abe02674fec5f2f6f35d3712e3f02eab84d94a",
+      "case": "action-1"
+    },
+    {
+      "file": "phase24-emulation-creep-action-2.json",
+      "sha256": "5ea15c4fe05f1cb45469974f81a45de09408a027cae8c492f454036c231269ae",
+      "case": "action-2"
+    },
+    {
+      "file": "phase24-emulation-creep-action-3.json",
+      "sha256": "fc2b99946d328dac77a55b9d781a398578dd76721e5a68b806baffb830f460c8",
+      "case": "action-3"
+    },
+    {
+      "file": "phase24-emulation-creep-squared-0.json",
+      "sha256": "fbf4687151b10ea1c5fb3826b79f5791c20c2f076b0eca2a21ac9fc6a386e4dc",
+      "case": "squared-0"
+    },
+    {
+      "file": "phase24-emulation-creep-squared-1.json",
+      "sha256": "c577ec167e6a552a51818422d79dfb5cad1f602af564c29049fb7412cd5d2b79",
+      "case": "squared-1"
+    },
+    {
+      "file": "phase24-emulation-creep-squared-2.json",
+      "sha256": "e8d00358fd9c40db66de130f2bd8534652f41fe112eca5578dd84cd38cfb3752",
+      "case": "squared-2"
+    },
+    {
+      "file": "phase24-emulation-creep-squared-3.json",
+      "sha256": "27bfc107e9aad7962e0c55000230f40110750a4abd17e5234f89d99e87926e6d",
+      "case": "squared-3"
+    },
+    {
+      "file": "phase24-emulation-creep-stat26-50.json",
+      "sha256": "9564c6a7e662cfd952774c889638fa549b6693c50cf791dcec449fdefd7c59da",
+      "case": "stat26-50"
+    },
+    {
+      "file": "phase24-emulation-creep-stat26-300.json",
+      "sha256": "7fb473b6d9e14e5b1be0e31d5333e59003fe931668f78397f2ec1ee76eb71ed8",
+      "case": "stat26-300"
+    },
+    {
+      "file": "phase24-emulation-creep-stat26-2147483648.json",
+      "sha256": "bfe58ce6775cfa147098968f65e99565d7dde3c5bdf68c008c105cb55475cc8c",
+      "case": "stat26-2147483648"
+    },
+    {
+      "file": "phase24-emulation-creep-stat26-4294967295.json",
+      "sha256": "30cb4ead7d18a3856d17b5379f8cee34652f0720a128a011ab6912de2cc8c371",
+      "case": "stat26-4294967295"
+    }
+  ],
+  "limitations": [
+    "Exact inspected EXE hashes only; no full-game behavioral or rendering validation.",
+    "Kernels receive a precomputed metric and explicit level multiplier. Entry TEST adapter supplies the skipped Creeping flags condition; f1/f2 receive the original cached metric slot.",
+    "Game pipeline chains original converter/loader fragments. Editor pipeline chains original callback/writer fragments; external construction, UI dispatch and resource loading skipped.",
+    "Other previously unknown Creatures fields and the four Terrain/Traps/Objects scalars are not assigned new semantics by this result.",
+    "Third-party template labels were leads; native debug text, PE resource, exact instructions and emulations establish the reported meaning."
+  ]
+}

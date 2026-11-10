@@ -1,0 +1,4150 @@
+{
+  "phase": 191,
+  "kind": "bounded_static_pointer_return_hints",
+  "program_sha256": "d7a8b854e4e4f02709eba271bead6fe2307dd6e332b5a96e70857e5b0e19fb8a",
+  "EDX_search_exactly_reproduced": true,
+  "return_contexts": 13,
+  "contexts": [
+    {
+      "entry": "0x4dc7e0",
+      "registers": {
+        "ecx": 0
+      },
+      "stack": {},
+      "span": [
+        5097440,
+        5097479
+      ],
+      "states": 281,
+      "limited": false,
+      "returns": [
+        {
+          "address": "0x4dc806",
+          "offset": 3745,
+          "instruction": "ret 4",
+          "trace": [
+            "4dc803: dec ecx",
+            "4dc804: jne 0x4dc7f5",
+            "4dc7f5: cmp byte ptr [eax - 0xe], dl",
+            "4dc7f8: jne 0x4dc800",
+            "4dc800: add eax, 0x12",
+            "4dc803: dec ecx",
+            "4dc804: jne 0x4dc7f5",
+            "4dc7f5: cmp byte ptr [eax - 0xe], dl",
+            "4dc7f8: jne 0x4dc800",
+            "4dc800: add eax, 0x12",
+            "4dc803: dec ecx",
+            "4dc804: jne 0x4dc7f5"
+          ]
+        }
+      ]
+    },
+    {
+      "entry": "0x4c5f50",
+      "registers": {
+        "ecx": 0
+      },
+      "stack": {},
+      "span": [
+        5005136,
+        5021520
+      ],
+      "states": 2,
+      "limited": false,
+      "returns": [
+        {
+          "address": "0x4c5f56",
+          "offset": 2883,
+          "instruction": "ret ",
+          "trace": [
+            "4c5f50: lea eax, [ecx + 0xb43]"
+          ]
+        }
+      ]
+    },
+    {
+      "entry": "0x4fac40",
+      "registers": {},
+      "stack": {
+        "4": 0
+      },
+      "span": [
+        5221440,
+        5237824
+      ],
+      "states": 124,
+      "limited": false,
+      "returns": [
+        {
+          "address": "0x4fac50",
+          "offset": 0,
+          "instruction": "ret 0x18",
+          "trace": [
+            "4fac40: push ebp",
+            "4fac41: mov ebp, esp",
+            "4fac43: sub esp, 0x14",
+            "4fac46: mov eax, dword ptr [ebp + 8]",
+            "4fac49: test eax, eax",
+            "4fac4b: jne 0x4fac53",
+            "4fac4d: mov esp, ebp",
+            "4fac4f: pop ebp"
+          ]
+        }
+      ]
+    },
+    {
+      "entry": "0x4fac40",
+      "registers": {
+        "ecx": 0
+      },
+      "stack": {
+        "4": 0
+      },
+      "span": [
+        5221440,
+        5237824
+      ],
+      "states": 124,
+      "limited": false,
+      "returns": [
+        {
+          "address": "0x4fac50",
+          "offset": 0,
+          "instruction": "ret 0x18",
+          "trace": [
+            "4fac40: push ebp",
+            "4fac41: mov ebp, esp",
+            "4fac43: sub esp, 0x14",
+            "4fac46: mov eax, dword ptr [ebp + 8]",
+            "4fac49: test eax, eax",
+            "4fac4b: jne 0x4fac53",
+            "4fac4d: mov esp, ebp",
+            "4fac4f: pop ebp"
+          ]
+        }
+      ]
+    },
+    {
+      "entry": "0x4fac40",
+      "registers": {
+        "edx": 0
+      },
+      "stack": {
+        "4": 0
+      },
+      "span": [
+        5221440,
+        5237824
+      ],
+      "states": 130,
+      "limited": false,
+      "returns": [
+        {
+          "address": "0x4fac50",
+          "offset": 0,
+          "instruction": "ret 0x18",
+          "trace": [
+            "4fac40: push ebp",
+            "4fac41: mov ebp, esp",
+            "4fac43: sub esp, 0x14",
+            "4fac46: mov eax, dword ptr [ebp + 8]",
+            "4fac49: test eax, eax",
+            "4fac4b: jne 0x4fac53",
+            "4fac4d: mov esp, ebp",
+            "4fac4f: pop ebp"
+          ]
+        }
+      ]
+    },
+    {
+      "entry": "0x5056e0",
+      "registers": {
+        "ecx": 2593
+      },
+      "stack": {},
+      "span": [
+        5265120,
+        5281504
+      ],
+      "states": 5000,
+      "limited": true,
+      "returns": [
+        {
+          "address": "0x505740",
+          "offset": 2593,
+          "instruction": "ret 4",
+          "trace": [
+            "5056ee: mov cx, word ptr [esp + 0xc]",
+            "5056f3: mov esi, eax",
+            "5056f5: xor edx, edx",
+            "5056f7: and esi, 0xff",
+            "5056fd: jle 0x50570e",
+            "5056ff: mov eax, edi",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2595,
+          "instruction": "ret 4",
+          "trace": [
+            "5056fd: jle 0x50570e",
+            "5056ff: mov eax, edi",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2597,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2599,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2601,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2603,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2605,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2607,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2609,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2611,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2613,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2615,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2617,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2619,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2621,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2623,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2625,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2627,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2629,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2631,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2633,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2635,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2637,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2639,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2641,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2643,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2645,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2647,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2649,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2651,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2653,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2655,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2657,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2659,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2661,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2663,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2665,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2667,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2669,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2671,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2673,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2675,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2677,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2679,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2681,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2683,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2685,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2687,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2689,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2691,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2693,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2695,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2697,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2699,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2701,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2703,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2705,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2707,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2709,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2711,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2713,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2715,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2717,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2719,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2721,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2723,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2725,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2727,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2729,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2731,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2733,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2735,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2737,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2739,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2741,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2743,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2745,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2747,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2749,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2751,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2753,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2755,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2757,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2759,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2761,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2763,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2765,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2767,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2769,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2771,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2773,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2775,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2777,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2779,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2781,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2783,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2785,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2787,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2789,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2791,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2793,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2795,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2797,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2799,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2801,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2803,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2805,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2807,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2809,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2811,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2813,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2815,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2817,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2819,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2821,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2823,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2825,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2827,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2829,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2831,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2833,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2835,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2837,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2839,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2841,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2843,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2845,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2847,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2849,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2851,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2853,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2855,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2857,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2859,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2861,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2863,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2865,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2867,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2869,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2871,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2873,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2875,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2877,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2879,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2881,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2883,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2885,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2887,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2889,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2891,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2893,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2895,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2897,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2899,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2901,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2903,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2905,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2907,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2909,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2911,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2913,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2915,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2917,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2919,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2921,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2923,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2925,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2927,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2929,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2931,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2933,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2935,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2937,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2939,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2941,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2943,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2945,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2947,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2949,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2951,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2953,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2955,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2957,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2959,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2961,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2963,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2965,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2967,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2969,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2971,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2973,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        },
+        {
+          "address": "0x505740",
+          "offset": 2975,
+          "instruction": "ret 4",
+          "trace": [
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "505701: cmp word ptr [eax], cx",
+            "505704: je 0x50570e",
+            "505706: inc edx",
+            "505707: add eax, 2",
+            "50570a: cmp edx, esi",
+            "50570c: jl 0x505701",
+            "50570e: cmp word ptr [edi + edx*2], cx",
+            "505712: jne 0x50573e",
+            "50573e: pop edi",
+            "50573f: pop esi"
+          ]
+        }
+      ]
+    },
+    {
+      "entry": "0x48fa99",
+      "registers": {
+        "eax": 0
+      },
+      "stack": {},
+      "span": null,
+      "states": 20,
+      "limited": false,
+      "returns": [
+        {
+          "address": "0x48fcbc",
+          "offset": 0,
+          "instruction": "ret ",
+          "trace": [
+            "48fa99: xor ecx, ecx",
+            "48fa9b: mov cx, word ptr [eax + 6]",
+            "48fa9f: mov edi, dword ptr [ecx*4 + 0x6ee540]",
+            "48faa6: test edi, edi",
+            "48faa8: je 0x48fcb7",
+            "48fcb7: pop edi",
+            "48fcb8: pop esi",
+            "48fcb9: mov esp, ebp",
+            "48fcbb: pop ebp"
+          ]
+        }
+      ],
+      "producer": {
+        "address": "0x48fa96",
+        "next": "0x48fa99",
+        "family": "Owners",
+        "register": "eax",
+        "producer": "entity-field-hint",
+        "instruction": "mov eax, dword ptr [esi + 0x2a]",
+        "function_hint": "0x48fa70",
+        "states": 20,
+        "limited": false,
+        "argument_contexts": 0,
+        "limited_argument_contexts": false
+      }
+    },
+    {
+      "entry": "0x4c5f50",
+      "registers": {
+        "ecx": 0
+      },
+      "stack": {
+        "20": 0
+      },
+      "span": [
+        5005136,
+        5021520
+      ],
+      "states": 2,
+      "limited": false,
+      "returns": [
+        {
+          "address": "0x4c5f56",
+          "offset": 2883,
+          "instruction": "ret ",
+          "trace": [
+            "4c5f50: lea eax, [ecx + 0xb43]"
+          ]
+        }
+      ]
+    },
+    {
+      "entry": "0x4b33de",
+      "registers": {
+        "eax": 0
+      },
+      "stack": {},
+      "span": null,
+      "states": 15,
+      "limited": false,
+      "returns": [
+        {
+          "address": "0x4b34e0",
+          "offset": 0,
+          "instruction": "ret 0xc",
+          "trace": [
+            "4b33de: xor edx, edx",
+            "4b33e0: mov ecx, dword ptr [eax + 0x10fd]",
+            "4b33e6: mov dx, word ptr [ecx]",
+            "4b33e9: mov esi, dword ptr [edx*4 + 0x6ee540]",
+            "4b33f0: test esi, esi",
+            "4b33f2: mov dword ptr [ebp + 0x10], esi",
+            "4b33f5: je 0x4b34da",
+            "4b34da: pop edi",
+            "4b34db: pop esi",
+            "4b34dc: pop ebx",
+            "4b34dd: mov esp, ebp",
+            "4b34df: pop ebp"
+          ]
+        }
+      ],
+      "producer": {
+        "address": "0x4b33db",
+        "next": "0x4b33de",
+        "family": "Owners",
+        "register": "eax",
+        "producer": "entity-field-hint",
+        "instruction": "mov eax, dword ptr [esi + 0x2a]",
+        "function_hint": "0x4b32a0",
+        "states": 15,
+        "limited": false,
+        "argument_contexts": 0,
+        "limited_argument_contexts": false
+      }
+    },
+    {
+      "entry": "0x4d918b",
+      "registers": {
+        "eax": 0
+      },
+      "stack": {},
+      "span": null,
+      "states": 15,
+      "limited": false,
+      "returns": [
+        {
+          "address": "0x4d926e",
+          "offset": 0,
+          "instruction": "ret 4",
+          "trace": [
+            "4d918b: mov cl, byte ptr [eax + 0x108a]",
+            "4d9191: inc cl",
+            "4d9193: mov byte ptr [eax + 0x108a], cl",
+            "4d9199: jns 0x4d9267",
+            "4d9267: mov word ptr [esi + 0x53], di",
+            "4d926b: pop edi",
+            "4d926c: pop esi",
+            "4d926d: pop ebx"
+          ]
+        },
+        {
+          "address": "0x4d91ac",
+          "offset": 0,
+          "instruction": "ret 4",
+          "trace": [
+            "4d918b: mov cl, byte ptr [eax + 0x108a]",
+            "4d9191: inc cl",
+            "4d9193: mov byte ptr [eax + 0x108a], cl",
+            "4d9199: jns 0x4d9267",
+            "4d919f: mov byte ptr [eax + 0x108a], bl",
+            "4d91a5: mov word ptr [esi + 0x53], di",
+            "4d91a9: pop edi",
+            "4d91aa: pop esi",
+            "4d91ab: pop ebx"
+          ]
+        }
+      ],
+      "producer": {
+        "address": "0x4d9186",
+        "next": "0x4d918b",
+        "family": "Owners",
+        "register": "eax",
+        "producer": "exact-lookup-return",
+        "instruction": "call 0x4e52f0",
+        "function_hint": "0x4d8e60",
+        "states": 15,
+        "limited": false,
+        "argument_contexts": 0,
+        "limited_argument_contexts": false
+      }
+    },
+    {
+      "entry": "0x4d91b6",
+      "registers": {
+        "eax": 0
+      },
+      "stack": {},
+      "span": null,
+      "states": 15,
+      "limited": false,
+      "returns": [
+        {
+          "address": "0x4d926e",
+          "offset": 0,
+          "instruction": "ret 4",
+          "trace": [
+            "4d91b6: mov cl, byte ptr [eax + 0x108e]",
+            "4d91bc: inc cl",
+            "4d91be: mov byte ptr [eax + 0x108e], cl",
+            "4d91c4: jns 0x4d9267",
+            "4d9267: mov word ptr [esi + 0x53], di",
+            "4d926b: pop edi",
+            "4d926c: pop esi",
+            "4d926d: pop ebx"
+          ]
+        },
+        {
+          "address": "0x4d91d7",
+          "offset": 0,
+          "instruction": "ret 4",
+          "trace": [
+            "4d91b6: mov cl, byte ptr [eax + 0x108e]",
+            "4d91bc: inc cl",
+            "4d91be: mov byte ptr [eax + 0x108e], cl",
+            "4d91c4: jns 0x4d9267",
+            "4d91ca: mov byte ptr [eax + 0x108e], bl",
+            "4d91d0: mov word ptr [esi + 0x53], di",
+            "4d91d4: pop edi",
+            "4d91d5: pop esi",
+            "4d91d6: pop ebx"
+          ]
+        }
+      ],
+      "producer": {
+        "address": "0x4d91b1",
+        "next": "0x4d91b6",
+        "family": "Owners",
+        "register": "eax",
+        "producer": "exact-lookup-return",
+        "instruction": "call 0x4e52f0",
+        "function_hint": "0x4d8e60",
+        "states": 15,
+        "limited": false,
+        "argument_contexts": 0,
+        "limited_argument_contexts": false
+      }
+    },
+    {
+      "entry": "0x4d91e1",
+      "registers": {
+        "eax": 0
+      },
+      "stack": {},
+      "span": null,
+      "states": 15,
+      "limited": false,
+      "returns": [
+        {
+          "address": "0x4d926e",
+          "offset": 0,
+          "instruction": "ret 4",
+          "trace": [
+            "4d91e1: mov cl, byte ptr [eax + 0x108f]",
+            "4d91e7: inc cl",
+            "4d91e9: mov byte ptr [eax + 0x108f], cl",
+            "4d91ef: jns 0x4d9267",
+            "4d9267: mov word ptr [esi + 0x53], di",
+            "4d926b: pop edi",
+            "4d926c: pop esi",
+            "4d926d: pop ebx"
+          ]
+        },
+        {
+          "address": "0x4d91fe",
+          "offset": 0,
+          "instruction": "ret 4",
+          "trace": [
+            "4d91e1: mov cl, byte ptr [eax + 0x108f]",
+            "4d91e7: inc cl",
+            "4d91e9: mov byte ptr [eax + 0x108f], cl",
+            "4d91ef: jns 0x4d9267",
+            "4d91f1: mov byte ptr [eax + 0x108f], bl",
+            "4d91f7: mov word ptr [esi + 0x53], di",
+            "4d91fb: pop edi",
+            "4d91fc: pop esi",
+            "4d91fd: pop ebx"
+          ]
+        }
+      ],
+      "producer": {
+        "address": "0x4d91dc",
+        "next": "0x4d91e1",
+        "family": "Owners",
+        "register": "eax",
+        "producer": "exact-lookup-return",
+        "instruction": "call 0x4e52f0",
+        "function_hint": "0x4d8e60",
+        "states": 15,
+        "limited": false,
+        "argument_contexts": 0,
+        "limited_argument_contexts": false
+      }
+    },
+    {
+      "entry": "0x4da741",
+      "registers": {
+        "eax": 0
+      },
+      "stack": {},
+      "span": null,
+      "states": 100,
+      "limited": false,
+      "returns": [
+        {
+          "address": "0x4daa03",
+          "offset": 0,
+          "instruction": "ret 8",
+          "trace": [
+            "4da745: mov edi, dword ptr [ebp + 0x82]",
+            "4da74b: je 0x4da8e9",
+            "4da8e9: mov ebp, dword ptr [esp + 0x10]",
+            "4da8ed: cmp dword ptr [0x75ad4b], 1",
+            "4da8f4: jne 0x4da9f1",
+            "4da9f1: mov ecx, dword ptr [esp + 0x28]",
+            "4da9f5: pop edi",
+            "4da9f6: pop esi",
+            "4da9f7: pop ebp",
+            "4da9f8: mov dword ptr fs:[0], ecx",
+            "4da9ff: pop ebx",
+            "4daa00: add esp, 0x24"
+          ]
+        }
+      ],
+      "producer": {
+        "address": "0x4da73c",
+        "next": "0x4da741",
+        "family": "Owners",
+        "register": "eax",
+        "producer": "exact-lookup-return",
+        "instruction": "call 0x4e52f0",
+        "function_hint": "0x4da560",
+        "states": 100,
+        "limited": false,
+        "argument_contexts": 2,
+        "limited_argument_contexts": false
+      }
+    }
+  ],
+  "helper": {
+    "file": "scan_crypt_pointer_returns.py",
+    "sha256": "a1de782f2b37012b9e6d9e81057ddd734e8c930818f1e4218675e5b3f0c26db9"
+  },
+  "scope": "A known pointer alias reaches EAX at a syntactic RET. Root may start midfunction; type, caller, feasibility and complete function contracts require separate primary proof."
+}

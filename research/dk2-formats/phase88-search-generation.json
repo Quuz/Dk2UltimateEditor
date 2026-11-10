@@ -1,0 +1,19 @@
+{
+  "scope": "New indexed/return-alias leads over prior Terrain roots;do not alter old passes.\n\nReturn propagation is an overapproximate candidate source,not an ABI/type proof.\nBounded callers/callees,unknown return paths and missing stack pointees remain.\n",
+  "scripts": [
+    {
+      "base": "scan_dx_terrain_arguments.py",
+      "base_sha256": "c072f73b63d98aafa91f6737adfd2d7a92ad3b317e19b79d70c7008f4a279029",
+      "derived": "scan_terrain_arguments_returns.py",
+      "derived_sha256": "a236e1ce7a3747f858fc55292a0b54420162b48771c6843a17d639ef53559889",
+      "output": "phase88-terrain-arguments-return-leads.json"
+    },
+    {
+      "base": "scan_dx_terrain_cache.py",
+      "base_sha256": "4ee428842fd6c46835715bfed3349d1ac8c4b32e3f5e4393558b8c5639a814de",
+      "derived": "scan_terrain_cache_returns.py",
+      "derived_sha256": "02e3c35f348e34a3f90c82bb967a9e0bfc44762705bd22d0e203ef6f7ede3fdb",
+      "output": "phase88-terrain-cache-return-leads.json"
+    }
+  ]
+}

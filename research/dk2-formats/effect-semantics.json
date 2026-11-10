@@ -1,0 +1,1006 @@
+{
+  "executable_sha256": "d7a8b854e4e4f02709eba271bead6fe2307dd6e332b5a96e70857e5b0e19fb8a",
+  "scope": "Version-specific native storage and branch semantics; no modified-map gameplay validation.",
+  "generation_dispatch": {
+    "address": "0x697668",
+    "entry_bytes": 5,
+    "entries": [
+      {
+        "value": 0,
+        "baseline_name": "NONE",
+        "callback": "0x0",
+        "table_entry_address": "0x697668",
+        "evidence_file": null
+      },
+      {
+        "value": 1,
+        "baseline_name": "DEFAULT",
+        "callback": "0x4375c0",
+        "table_entry_address": "0x69766d",
+        "evidence_file": "game-effect-generation-1.txt"
+      },
+      {
+        "value": 2,
+        "baseline_name": "ADJACENT_EXPLOSION",
+        "callback": "0x4376e0",
+        "table_entry_address": "0x697672",
+        "evidence_file": "game-effect-generation-2.txt"
+      },
+      {
+        "value": 3,
+        "baseline_name": "STORM",
+        "callback": "0x438020",
+        "table_entry_address": "0x697677",
+        "evidence_file": "game-effect-generation-3.txt"
+      },
+      {
+        "value": 4,
+        "baseline_name": "CUBE_GEN",
+        "callback": "0x4386f0",
+        "table_entry_address": "0x69767c",
+        "evidence_file": "game-effect-generation-4.txt"
+      },
+      {
+        "value": 5,
+        "baseline_name": "EXPLOSION_2",
+        "callback": "0x439210",
+        "table_entry_address": "0x697681",
+        "evidence_file": "game-effect-generation-5.txt"
+      },
+      {
+        "value": 6,
+        "baseline_name": "SPRAY",
+        "callback": "0x439330",
+        "table_entry_address": "0x697686",
+        "evidence_file": "game-effect-generation-6.txt"
+      },
+      {
+        "value": 7,
+        "baseline_name": "EXPLOSION",
+        "callback": "0x436c80",
+        "table_entry_address": "0x69768b",
+        "evidence_file": "game-effect-generation-7.txt"
+      },
+      {
+        "value": 8,
+        "baseline_name": "SPIRAL",
+        "callback": "0x436970",
+        "table_entry_address": "0x697690",
+        "evidence_file": "game-effect-generation-8.txt"
+      },
+      {
+        "value": 9,
+        "baseline_name": "EVERYTHING",
+        "callback": "0x436af0",
+        "table_entry_address": "0x697695",
+        "evidence_file": "game-effect-generation-9.txt"
+      },
+      {
+        "value": 10,
+        "baseline_name": "CHICKEN_SLAP",
+        "callback": "0x4372a0",
+        "table_entry_address": "0x69769a",
+        "evidence_file": "game-effect-generation-10.txt"
+      },
+      {
+        "value": 11,
+        "baseline_name": "DIG",
+        "callback": "0x436e60",
+        "table_entry_address": "0x69769f",
+        "evidence_file": "game-effect-generation-11.txt"
+      },
+      {
+        "value": 12,
+        "baseline_name": "SMOKE_PUFF",
+        "callback": "0x437480",
+        "table_entry_address": "0x6976a4",
+        "evidence_file": "game-effect-generation-12.txt"
+      },
+      {
+        "value": 13,
+        "baseline_name": "FIRE",
+        "callback": "0x4375a0",
+        "table_entry_address": "0x6976a9",
+        "evidence_file": "game-effect-generation-13.txt"
+      },
+      {
+        "value": 14,
+        "baseline_name": "GOLD_COST",
+        "callback": "0x439480",
+        "table_entry_address": "0x6976ae",
+        "evidence_file": "game-effect-generation-14.txt"
+      },
+      {
+        "value": 15,
+        "baseline_name": "TEST_0",
+        "callback": "0x4395f0",
+        "table_entry_address": "0x6976b3",
+        "evidence_file": "game-effect-generation-15.txt"
+      },
+      {
+        "value": 16,
+        "baseline_name": "TEST_1",
+        "callback": "0x5282f0",
+        "table_entry_address": "0x6976b8",
+        "evidence_file": "game-effect-generation-16.txt"
+      },
+      {
+        "value": 17,
+        "baseline_name": "TEST_2",
+        "callback": "0x4375a0",
+        "table_entry_address": "0x6976bd",
+        "evidence_file": "game-effect-generation-13.txt"
+      },
+      {
+        "value": 18,
+        "baseline_name": "TEST_3",
+        "callback": "0x439100",
+        "table_entry_address": "0x6976c2",
+        "evidence_file": "game-effect-generation-18.txt"
+      }
+    ]
+  },
+  "runtime_definition_bytes": {
+    "Effects": 148,
+    "EffectElements": 79
+  },
+  "narrowed_fields": {
+    "Effects": [
+      {
+        "field": "Mass",
+        "raw_offset": 140,
+        "raw_size": 4,
+        "runtime_offset": 103,
+        "runtime_size": 2,
+        "intermediate_offset": 320,
+        "consumer_interpretation": "signed16"
+      },
+      {
+        "field": "Radius",
+        "raw_offset": 152,
+        "raw_size": 4,
+        "runtime_offset": 109,
+        "runtime_size": 2,
+        "intermediate_offset": 332,
+        "consumer_interpretation": "low16; signedness not established here"
+      },
+      {
+        "field": "MinSpeedXy",
+        "raw_offset": 156,
+        "raw_size": 4,
+        "runtime_offset": 111,
+        "runtime_size": 2,
+        "intermediate_offset": 336,
+        "consumer_interpretation": "signed16"
+      },
+      {
+        "field": "MaxSpeedXy",
+        "raw_offset": 160,
+        "raw_size": 4,
+        "runtime_offset": 113,
+        "runtime_size": 2,
+        "intermediate_offset": 340,
+        "consumer_interpretation": "signed16"
+      },
+      {
+        "field": "MinSpeedYz",
+        "raw_offset": 164,
+        "raw_size": 4,
+        "runtime_offset": 115,
+        "runtime_size": 2,
+        "intermediate_offset": 344,
+        "consumer_interpretation": "signed16"
+      },
+      {
+        "field": "MaxSpeedYz",
+        "raw_offset": 168,
+        "raw_size": 4,
+        "runtime_offset": 117,
+        "runtime_size": 2,
+        "intermediate_offset": 348,
+        "consumer_interpretation": "signed16"
+      },
+      {
+        "field": "MinScale",
+        "raw_offset": 172,
+        "raw_size": 4,
+        "runtime_offset": 99,
+        "runtime_size": 2,
+        "intermediate_offset": 352,
+        "consumer_interpretation": "unsigned16"
+      },
+      {
+        "field": "MaxScale",
+        "raw_offset": 176,
+        "raw_size": 4,
+        "runtime_offset": 101,
+        "runtime_size": 2,
+        "intermediate_offset": 356,
+        "consumer_interpretation": "unsigned16"
+      },
+      {
+        "field": "AirFriction",
+        "raw_offset": 144,
+        "raw_size": 4,
+        "runtime_offset": 107,
+        "runtime_size": 2,
+        "intermediate_offset": 324,
+        "consumer_interpretation": "unsigned16"
+      },
+      {
+        "field": "Elasticity",
+        "raw_offset": 148,
+        "raw_size": 4,
+        "runtime_offset": 105,
+        "runtime_size": 2,
+        "intermediate_offset": 328,
+        "consumer_interpretation": "unsigned16"
+      }
+    ],
+    "EffectElements": [
+      {
+        "field": "Mass",
+        "raw_offset": 116,
+        "raw_size": 4,
+        "runtime_offset": 43,
+        "runtime_size": 2,
+        "intermediate_offset": 224,
+        "consumer_interpretation": "signed16"
+      },
+      {
+        "field": "AirFriction",
+        "raw_offset": 120,
+        "raw_size": 4,
+        "runtime_offset": 39,
+        "runtime_size": 2,
+        "intermediate_offset": 228,
+        "consumer_interpretation": "unsigned16"
+      },
+      {
+        "field": "Elasticity",
+        "raw_offset": 124,
+        "raw_size": 4,
+        "runtime_offset": 41,
+        "runtime_size": 2,
+        "intermediate_offset": 232,
+        "consumer_interpretation": "unsigned16"
+      },
+      {
+        "field": "MinScale",
+        "raw_offset": 144,
+        "raw_size": 4,
+        "runtime_offset": 45,
+        "runtime_size": 2,
+        "intermediate_offset": 252,
+        "consumer_interpretation": "unsigned16"
+      },
+      {
+        "field": "MaxScale",
+        "raw_offset": 148,
+        "raw_size": 4,
+        "runtime_offset": 47,
+        "runtime_size": 2,
+        "intermediate_offset": 256,
+        "consumer_interpretation": "unsigned16"
+      },
+      {
+        "field": "MinSpeedXy",
+        "raw_offset": 128,
+        "raw_size": 4,
+        "runtime_offset": 49,
+        "runtime_size": 2,
+        "intermediate_offset": 236,
+        "consumer_interpretation": "signed16"
+      },
+      {
+        "field": "MaxSpeedXy",
+        "raw_offset": 132,
+        "raw_size": 4,
+        "runtime_offset": 51,
+        "runtime_size": 2,
+        "intermediate_offset": 240,
+        "consumer_interpretation": "signed16"
+      },
+      {
+        "field": "MinSpeedYz",
+        "raw_offset": 136,
+        "raw_size": 4,
+        "runtime_offset": 53,
+        "runtime_size": 2,
+        "intermediate_offset": 244,
+        "consumer_interpretation": "signed16"
+      },
+      {
+        "field": "MaxSpeedYz",
+        "raw_offset": 140,
+        "raw_size": 4,
+        "runtime_offset": 55,
+        "runtime_size": 2,
+        "intermediate_offset": 248,
+        "consumer_interpretation": "signed16"
+      }
+    ]
+  },
+  "effect_tail_fields": [
+    {
+      "field": "OuterOriginRange",
+      "raw_offset": 218,
+      "size": 2,
+      "intermediate_offset": 398,
+      "runtime_offset": 55,
+      "update_condition": "runtime slot replaced only when intermediate value !=0 in0x4358C0"
+    },
+    {
+      "field": "LowerHeightLimit",
+      "raw_offset": 220,
+      "size": 2,
+      "intermediate_offset": 400,
+      "runtime_offset": 57,
+      "update_condition": "runtime slot replaced only when intermediate value !=0 in0x4358C0"
+    },
+    {
+      "field": "UpperHeightLimit",
+      "raw_offset": 222,
+      "size": 2,
+      "intermediate_offset": 402,
+      "runtime_offset": 59,
+      "update_condition": "runtime slot replaced only when intermediate value !=0 in0x4358C0"
+    },
+    {
+      "field": "OrientationRange",
+      "raw_offset": 224,
+      "size": 2,
+      "intermediate_offset": 404,
+      "runtime_offset": 61,
+      "update_condition": "runtime slot replaced only when intermediate value !=0 in0x4358C0"
+    },
+    {
+      "field": "SpriteSpinRateRange",
+      "raw_offset": 226,
+      "size": 2,
+      "intermediate_offset": 406,
+      "runtime_offset": 63,
+      "update_condition": "runtime slot replaced only when intermediate value !=0 in0x4358C0"
+    },
+    {
+      "field": "WhirlpoolRate",
+      "raw_offset": 228,
+      "size": 2,
+      "intermediate_offset": 408,
+      "runtime_offset": 65,
+      "update_condition": "runtime slot replaced only when intermediate value !=0 in0x4358C0"
+    },
+    {
+      "field": "DirectionalSpread",
+      "raw_offset": 230,
+      "size": 2,
+      "intermediate_offset": 410,
+      "runtime_offset": 67,
+      "update_condition": "runtime slot replaced only when intermediate value !=0 in0x4358C0"
+    },
+    {
+      "field": "CircularPathRate",
+      "raw_offset": 232,
+      "size": 2,
+      "intermediate_offset": 412,
+      "runtime_offset": 69,
+      "update_condition": "runtime slot replaced only when intermediate value !=0 in0x4358C0"
+    },
+    {
+      "field": "InnerOriginRange",
+      "raw_offset": 234,
+      "size": 2,
+      "intermediate_offset": 414,
+      "runtime_offset": 71,
+      "update_condition": "runtime slot replaced only when intermediate value !=0 in0x4358C0"
+    },
+    {
+      "field": "GenerateRandomness",
+      "raw_offset": 236,
+      "size": 2,
+      "intermediate_offset": 416,
+      "runtime_offset": 73,
+      "update_condition": "runtime slot replaced only when intermediate value !=0 in0x4358C0"
+    },
+    {
+      "field": "Misc2",
+      "raw_offset": 238,
+      "size": 2,
+      "intermediate_offset": 418,
+      "runtime_offset": 75,
+      "update_condition": "runtime slot replaced only when intermediate value !=0 in0x4358C0"
+    },
+    {
+      "field": "Misc3",
+      "raw_offset": 240,
+      "size": 2,
+      "intermediate_offset": 420,
+      "runtime_offset": 77,
+      "update_condition": "runtime slot replaced only when intermediate value !=0 in0x4358C0"
+    }
+  ],
+  "rules": [
+    {
+      "id": "generation_type_unchecked_index",
+      "family": "Effects",
+      "raw_offset": 242,
+      "description": "u8 indexes packed 5-byte table at0x697668 without a range check. Defined entries0..18. Entry0 has a null callback.",
+      "evidence": {
+        "file": "game-effect-tick-assembly.txt",
+        "first": "0x4350e1",
+        "last": "0x435103",
+        "instructions": [
+          "004350e1: MOV ECX,dword ptr [EDI + 0x107] ",
+          "004350e7: XOR EAX,EAX ",
+          "004350e9: MOV AL,byte ptr [ECX + 0x85] ",
+          "004350ef: LEA EAX,[EAX + EAX*0x4 + 0x697668] ",
+          "004350f6: MOV EAX,dword ptr [EAX + 0x1] ",
+          "004350f9: CMP EAX,ESI ",
+          "004350fb: JZ 0x00435111 ",
+          "004350fd: PUSH EBP ",
+          "004350fe: PUSH ECX ",
+          "004350ff: MOV ECX,EDI ",
+          "00435101: CALL EAX ",
+          "00435103: TEST EAX,EAX "
+        ]
+      }
+    },
+    {
+      "id": "cube_generation_gate",
+      "family": "Effects",
+      "raw_offset": 236,
+      "description": "CUBE_GEN reads GenerateRandomness as signed16. Calls RNG(s16(raw)+1) and emits only when result==0 and instance lifetime>0. RNG(0) logs and returns0, not a division crash.",
+      "evidence": {
+        "file": "game-effect-generation-4-assembly.txt",
+        "first": "0x438841",
+        "last": "0x43886e",
+        "instructions": [
+          "00438841: MOVSX ECX,word ptr [EBX + 0x49] ",
+          "00438845: PUSH 0x394 ",
+          "0043884a: PUSH 0x6976c8 ",
+          "0043884f: INC ECX ",
+          "00438850: PUSH 0x6d6450 ",
+          "00438855: PUSH ECX ",
+          "00438856: CALL 0x005558d0 ",
+          "0043885b: ADD ESP,0x10 ",
+          "0043885e: TEST EAX,EAX ",
+          "00438860: JNZ 0x004390ac ",
+          "00438866: MOV EAX,dword ptr [ESI + 0x10b] ",
+          "0043886c: TEST EAX,EAX ",
+          "0043886e: JLE 0x004390ac "
+        ]
+      }
+    },
+    {
+      "id": "cube_target_table",
+      "family": "Effects",
+      "raw_offset": 180,
+      "description": "CUBE_GEN uses flag0x40 to choose Effects. With the bit clear it uses EffectElements; bit0x80 is not required by this branch.",
+      "evidence": {
+        "file": "game-effect-generation-4-assembly.txt",
+        "first": "0x43895a",
+        "last": "0x43897a",
+        "instructions": [
+          "0043895a: MOV EAX,dword ptr [ECX + 0x5f] ",
+          "0043895d: TEST AL,0x40 ",
+          "0043895f: JZ 0x00438cf1 ",
+          "00438965: MOVSX EDX,word ptr [EBX + 0x43] ",
+          "00438969: MOV EAX,dword ptr [EBX + 0x5f] ",
+          "0043896c: MOV dword ptr [ESP + 0x14],EDX ",
+          "00438970: TEST AH,0x4 ",
+          "00438973: MOV EAX,dword ptr [ESP + 0x88] ",
+          "0043897a: JZ 0x00438b2d "
+        ]
+      }
+    },
+    {
+      "id": "cube_whirlpool_signed_conversion",
+      "family": "Effects",
+      "raw_offset": 228,
+      "description": "Read signed16 r; if r>=128 subtract256 once; pass r*16 to whirlpool helper. Applies only in the element branch. This is not a low-byte cast for arbitrary raw values.",
+      "evidence": {
+        "file": "game-effect-generation-4-assembly.txt",
+        "first": "0x43870f",
+        "last": "0x438738",
+        "instructions": [
+          "0043870f: MOVSX EAX,word ptr [EBX + 0x41] ",
+          "00438713: TEST EAX,EAX ",
+          "00438715: PUSH EDI ",
+          "00438716: MOV ESI,ECX ",
+          "00438718: JZ 0x0043873d ",
+          "0043871a: MOV ECX,dword ptr [ESI + 0x107] ",
+          "00438720: TEST byte ptr [ECX + 0x5f],0x40 ",
+          "00438724: JNZ 0x0043873d ",
+          "00438726: CMP EAX,0x80 ",
+          "0043872b: JL 0x00438732 ",
+          "0043872d: SUB EAX,0x100 ",
+          "00438732: SHL EAX,0x4 ",
+          "00438735: PUSH EAX ",
+          "00438736: MOV ECX,ESI ",
+          "00438738: CALL 0x00438520 "
+        ]
+      }
+    },
+    {
+      "id": "cube_circular_signed_conversion",
+      "family": "Effects",
+      "raw_offset": 232,
+      "description": "Element branch: signed16 r, subtract256 once if r>=128, then helper clamps to[-1024,1023]. Effect branch: clamp signed16 directly, without subtract256.",
+      "evidence": {
+        "file": "game-effect-generation-4-assembly.txt",
+        "first": "0x43873d",
+        "last": "0x43882d",
+        "instructions": [
+          "0043873d: MOVSX EDI,word ptr [EBX + 0x45] ",
+          "00438741: TEST EDI,EDI ",
+          "00438743: JZ 0x00438832 ",
+          "00438749: MOV EDX,dword ptr [ESI + 0x107] ",
+          "0043874f: TEST byte ptr [EDX + 0x5f],0x40 ",
+          "00438753: JZ 0x0043881c ",
+          "00438759: CMP EDI,0xfffffc00 ",
+          "0043875f: JGE 0x00438766 ",
+          "00438761: MOV EDI,0xfffffc00 ",
+          "00438766: CMP EDI,0x3ff ",
+          "0043876c: JLE 0x00438773 ",
+          "0043876e: MOV EDI,0x3ff ",
+          "00438773: LEA ECX,[ESI + 0xd6] ",
+          "00438779: MOV EAX,ECX ",
+          "0043877b: MOV EDX,dword ptr [EAX] ",
+          "0043877d: MOV dword ptr [ESP + 0x44],EDX ",
+          "00438781: MOV EDX,dword ptr [EAX + 0x4] ",
+          "00438784: MOV dword ptr [ESP + 0x48],EDX ",
+          "00438788: LEA EDX,[ESP + 0x44] ",
+          "0043878c: MOV EAX,dword ptr [EAX + 0x8] ",
+          "0043878f: PUSH EDX ",
+          "00438790: MOV dword ptr [ESP + 0x50],EAX ",
+          "00438794: LEA EAX,[ESP + 0x3c] ",
+          "00438798: PUSH EAX ",
+          "00438799: CALL 0x004390d0 ",
+          "0043879e: LEA ECX,[ESP + 0x38] ",
+          "004387a2: LEA EDX,[ESP + 0x50] ",
+          "004387a6: PUSH ECX ",
+          "004387a7: MOV ECX,dword ptr [ESP + 0x3c] ",
+          "004387ab: AND EDI,0x7ff ",
+          "004387b1: PUSH EDX ",
+          "004387b2: PUSH EDI ",
+          "004387b3: MOV EDX,dword ptr [ESP + 0x48] ",
+          "004387b7: SUB ESP,0xc ",
+          "004387ba: MOV EAX,ESP ",
+          "004387bc: MOV dword ptr [EAX],ECX ",
+          "004387be: MOV ECX,dword ptr [ESP + 0x58] ",
+          "004387c2: MOV dword ptr [EAX + 0x4],EDX ",
+          "004387c5: LEA EDX,[ESP + 0x80] ",
+          "004387cc: PUSH EDX ",
+          "004387cd: MOV dword ptr [EAX + 0x8],ECX ",
+          "004387d0: CALL 0x004384d0 ",
+          "004387d5: ADD ESP,0x14 ",
+          "004387d8: MOV ECX,EAX ",
+          "004387da: CALL 0x004390d0 ",
+          "004387df: MOV EAX,dword ptr [ESP + 0x54] ",
+          "004387e3: MOV ECX,dword ptr [ESP + 0x50] ",
+          "004387e7: SHL EAX,0x4 ",
+          "004387ea: PUSH 0x0 ",
+          "004387ec: PUSH EAX ",
+          "004387ed: SHL ECX,0x4 ",
+          "004387f0: PUSH ECX ",
+          "004387f1: LEA ECX,[ESP + 0x68] ",
+          "004387f5: CALL 0x00572cd0 ",
+          "004387fa: LEA EDX,[ESP + 0x5c] ",
+          "004387fe: LEA ECX,[ESI + 0x14] ",
+          "00438801: PUSH EDX ",
+          "00438802: MOV dword ptr [ESP + 0x80],0x0 ",
+          "0043880d: CALL 0x00434e50 ",
+          "00438812: MOV dword ptr [ESP + 0x7c],0xffffffff ",
+          "0043881a: JMP 0x00438832 ",
+          "0043881c: CMP EDI,0x80 ",
+          "00438822: JL 0x0043882a ",
+          "00438824: SUB EDI,0x100 ",
+          "0043882a: PUSH EDI ",
+          "0043882b: MOV ECX,ESI ",
+          "0043882d: CALL 0x00438620 "
+        ]
+      }
+    },
+    {
+      "id": "cube_radius_height_units",
+      "family": "Effects",
+      "raw_offset": 218,
+      "description": "CUBE_GEN sign-extends tail range words. Horizontal radius raw*23 native position units; height raw*16. Position coordinates use4096 units per tile. Keep signedness and raw u16 storage distinct.",
+      "evidence": {
+        "file": "game-effect-generation-4-assembly.txt",
+        "first": "0x438880",
+        "last": "0x438923",
+        "instructions": [
+          "00438880: MOVSX ECX,word ptr [EBX + 0x37] ",
+          "00438884: XOR EAX,EAX ",
+          "00438886: MOV dword ptr [ESP + 0x7c],0x1 ",
+          "0043888e: MOV AL,byte ptr [EBX + 0x8a] ",
+          "00438894: MOV dword ptr [ESP + 0x88],EAX ",
+          "0043889b: LEA EAX,[ECX + ECX*0x2] ",
+          "0043889e: SHL EAX,0x3 ",
+          "004388a1: SUB EAX,ECX ",
+          "004388a3: SHL EAX,0xc ",
+          "004388a6: CDQ ",
+          "004388a7: AND EDX,0xfff ",
+          "004388ad: ADD EAX,EDX ",
+          "004388af: SAR EAX,0xc ",
+          "004388b2: MOV dword ptr [ESP + 0x24],EAX ",
+          "004388b6: MOVSX EAX,word ptr [EBX + 0x39] ",
+          "004388ba: SHL EAX,0xc ",
+          "004388bd: CDQ ",
+          "004388be: AND EDX,0xff ",
+          "004388c4: ADD EAX,EDX ",
+          "004388c6: SAR EAX,0x8 ",
+          "004388c9: MOV dword ptr [ESP + 0x20],EAX ",
+          "004388cd: MOVSX EAX,word ptr [EBX + 0x3b] ",
+          "004388d1: SHL EAX,0xc ",
+          "004388d4: CDQ ",
+          "004388d5: AND EDX,0xff ",
+          "004388db: ADD EAX,EDX ",
+          "004388dd: MOVSX ECX,word ptr [EBX + 0x3d] ",
+          "004388e1: SAR EAX,0x8 ",
+          "004388e4: MOV dword ptr [ESP + 0x1c],EAX ",
+          "004388e8: MOV dword ptr [ESP + 0x14],ECX ",
+          "004388ec: MOVSX EAX,word ptr [EBX + 0x3f] ",
+          "004388f0: MOVSX ECX,word ptr [EBX + 0x47] ",
+          "004388f4: SHL EAX,0xb ",
+          "004388f7: CDQ ",
+          "004388f8: AND EDX,0xff ",
+          "004388fe: ADD EAX,EDX ",
+          "00438900: MOV EDI,EAX ",
+          "00438902: LEA EAX,[ECX + ECX*0x2] ",
+          "00438905: SHL EAX,0x3 ",
+          "00438908: SUB EAX,ECX ",
+          "0043890a: SHL EAX,0xc ",
+          "0043890d: CDQ ",
+          "0043890e: AND EDX,0xfff ",
+          "00438914: ADD EAX,EDX ",
+          "00438916: LEA EDX,[ESI + 0xd6] ",
+          "0043891c: SAR EAX,0xc ",
+          "0043891f: MOV EBP,dword ptr [EDX] ",
+          "00438921: MOV dword ptr [ESP + 0x28],EAX "
+        ]
+      }
+    },
+    {
+      "id": "element_collision_priority",
+      "family": "EffectElements",
+      "raw_offset": 170,
+      "description": "In the below-surface element branch, choose first nonzero runtime slot+46,+48,+44: raw HitLavaElementId, then HitWaterElementId, then HitSolidElementId. No terrain-kind test occurs within this branch. The separate horizontal collision path uses HitSolidElementId.",
+      "evidence": {
+        "file": "game-effect-location-apply-assembly.txt",
+        "first": "0x4471ee",
+        "last": "0x4472b3",
+        "instructions": [
+          "004471ee: CMP EAX,0x1 ",
+          "004471f1: JNZ 0x00447107 ",
+          "004471f7: MOV AX,word ptr [ESI + 0x111] ",
+          "004471fe: MOV EDX,dword ptr [ESI + 0x103] ",
+          "00447204: CMP AX,BX ",
+          "00447207: JNZ 0x0044720d ",
+          "00447209: XOR ECX,ECX ",
+          "0044720b: JMP 0x00447219 ",
+          "0044720d: AND EAX,0xffff ",
+          "00447212: MOV ECX,dword ptr [EAX*0x4 + 0x6d6458] ",
+          "00447219: MOV AX,word ptr [EDX + 0x46] ",
+          "0044721d: CMP AX,BX ",
+          "00447220: JZ 0x00447248 ",
+          "00447222: MOV EDX,dword ptr [EDI] ",
+          "00447224: MOV dword ptr [ESP + 0x18],EBP ",
+          "00447228: MOV dword ptr [ESP + 0x10],EDX ",
+          "0044722c: MOV EDX,dword ptr [ESI + 0xda] ",
+          "00447232: MOV dword ptr [ESP + 0x14],EDX ",
+          "00447236: LEA EDX,[ESP + 0x20] ",
+          "0044723a: PUSH EDX ",
+          "0044723b: LEA EDX,[ESI + 0xe2] ",
+          "00447241: PUSH EDX ",
+          "00447242: LEA EDX,[ESP + 0x18] ",
+          "00447246: JMP 0x004472a4 ",
+          "00447248: MOV AX,word ptr [EDX + 0x48] ",
+          "0044724c: CMP AX,BX ",
+          "0044724f: JZ 0x00447277 ",
+          "00447251: MOV EDX,dword ptr [EDI] ",
+          "00447253: MOV dword ptr [ESP + 0x18],EBP ",
+          "00447257: MOV dword ptr [ESP + 0x10],EDX ",
+          "0044725b: MOV EDX,dword ptr [ESI + 0xda] ",
+          "00447261: MOV dword ptr [ESP + 0x14],EDX ",
+          "00447265: LEA EDX,[ESP + 0x20] ",
+          "00447269: PUSH EDX ",
+          "0044726a: LEA EDX,[ESI + 0xe2] ",
+          "00447270: PUSH EDX ",
+          "00447271: LEA EDX,[ESP + 0x18] ",
+          "00447275: JMP 0x004472a4 ",
+          "00447277: MOV AX,word ptr [EDX + 0x44] ",
+          "0044727b: CMP AX,BX ",
+          "0044727e: JZ 0x004472ab ",
+          "00447280: MOV EDX,dword ptr [EDI] ",
+          "00447282: MOV dword ptr [ESP + 0x18],EBP ",
+          "00447286: MOV dword ptr [ESP + 0x10],EDX ",
+          "0044728a: MOV EDX,dword ptr [ESI + 0xda] ",
+          "00447290: MOV dword ptr [ESP + 0x14],EDX ",
+          "00447294: LEA EDX,[ESP + 0x20] ",
+          "00447298: PUSH EDX ",
+          "00447299: LEA EDX,[ESI + 0xe2] ",
+          "0044729f: PUSH EDX ",
+          "004472a0: LEA EDX,[ESP + 0x18] ",
+          "004472a4: PUSH EDX ",
+          "004472a5: PUSH EAX ",
+          "004472a6: CALL 0x004352e0 ",
+          "004472ab: TEST byte ptr [ESI + 0x100],0x4 ",
+          "004472b2: JZ 0x00447107 "
+        ]
+      }
+    },
+    {
+      "id": "element_next_effect_per_update",
+      "family": "EffectElements",
+      "raw_offset": 180,
+      "description": "After decreasing element lifetime, its update calls bridge+94 with runtime NextEffectId+40 whenever nonzero. Bridge+94 forwards to effect creation, not element creation. This path runs once per update call, outside the physics substep loop.",
+      "evidence": {
+        "file": "game-element-tick-assembly.txt",
+        "first": "0x436430",
+        "last": "0x4364a0",
+        "instructions": [
+          "00436430: SUB ESP,0xc ",
+          "00436433: PUSH EBX ",
+          "00436434: PUSH EBP ",
+          "00436435: PUSH ESI ",
+          "00436436: MOV ESI,ECX ",
+          "00436438: PUSH EDI ",
+          "00436439: MOV EDI,dword ptr [ESP + 0x20] ",
+          "0043643d: MOV ECX,dword ptr [ESI + 0x109] ",
+          "00436443: SUB ECX,EDI ",
+          "00436445: MOV dword ptr [ESI + 0x109],ECX ",
+          "0043644b: MOV EAX,dword ptr [ESI + 0x103] ",
+          "00436451: MOV BX,word ptr [EAX + 0x40] ",
+          "00436455: TEST BX,BX ",
+          "00436458: JZ 0x0043648a ",
+          "0043645a: MOV ECX,dword ptr [0x006da458] ",
+          "00436460: LEA EDX,[ESP + 0x14] ",
+          "00436464: LEA EAX,[ESI + 0xe2] ",
+          "0043646a: PUSH EDX ",
+          "0043646b: MOV EBP,dword ptr [ECX] ",
+          "0043646d: MOV EDX,dword ptr [ESI] ",
+          "0043646f: LEA ECX,[ESI + 0xd6] ",
+          "00436475: PUSH EAX ",
+          "00436476: PUSH ECX ",
+          "00436477: MOV ECX,ESI ",
+          "00436479: CALL dword ptr [EDX + 0xc] ",
+          "0043647c: MOV ECX,dword ptr [0x006da458] ",
+          "00436482: PUSH EAX ",
+          "00436483: PUSH EBX ",
+          "00436484: CALL dword ptr [EBP + 0x94] ",
+          "0043648a: MOV AX,word ptr [ESI + 0xec] ",
+          "00436491: XOR ECX,ECX ",
+          "00436493: ADD AX,word ptr [ESI + 0xe2] ",
+          "0043649a: XOR EDX,EDX ",
+          "0043649c: AND EAX,0x7ff "
+        ]
+      }
+    },
+    {
+      "id": "spray_overloaded_origin_field",
+      "family": "Effects",
+      "raw_offset": 218,
+      "description": "SPRAY(type6) uses runtime+37, normally OuterOriginRange, as a secondary EffectId when elapsedTicks%3==0. The normal particles are selected from the numeric first..last ElementId range.",
+      "evidence": {
+        "file": "game-effect-generation-6-assembly.txt",
+        "first": "0x439409",
+        "last": "0x439461",
+        "instructions": [
+          "00439409: MOV EAX,dword ptr [EDI + 0x10f] ",
+          "0043940f: XOR EDX,EDX ",
+          "00439411: MOV ECX,0x3 ",
+          "00439416: DIV ECX ",
+          "00439418: TEST EDX,EDX ",
+          "0043941a: JNZ 0x00439467 ",
+          "0043941c: LEA EDX,[EDI + 0xd6] ",
+          "00439422: MOV word ptr [ESP + 0x28],0x0 ",
+          "00439429: MOV EAX,dword ptr [EDX] ",
+          "0043942b: MOV dword ptr [ESP + 0x18],EAX ",
+          "0043942f: MOV ECX,dword ptr [EDX + 0x4] ",
+          "00439432: MOV dword ptr [ESP + 0x1c],ECX ",
+          "00439436: MOV ECX,dword ptr [0x006da458] ",
+          "0043943c: MOV EDX,dword ptr [EDX + 0x8] ",
+          "0043943f: MOV dword ptr [ESP + 0x20],EDX ",
+          "00439443: LEA EDX,[ESP + 0x2c] ",
+          "00439447: PUSH EDX ",
+          "00439448: LEA EDX,[ESP + 0x2c] ",
+          "0043944c: MOV EAX,dword ptr [ECX] ",
+          "0043944e: PUSH EDX ",
+          "0043944f: LEA EDX,[ESP + 0x20] ",
+          "00439453: PUSH EDX ",
+          "00439454: MOV DX,word ptr [EDI + 0x12d] ",
+          "0043945b: PUSH EDX ",
+          "0043945c: MOV DX,word ptr [ESI + 0x37] ",
+          "00439460: PUSH EDX ",
+          "00439461: CALL dword ptr [EAX + 0x94] "
+        ]
+      }
+    },
+    {
+      "id": "gold_cost_digit_series",
+      "family": "Effects",
+      "raw_offset": 202,
+      "description": "GOLD_COST(type14) uses first GenerateId as baseElementId and creates base+decimalDigit from instance+12F. Ten consecutive element definitions are implied; eight file slots are not the full digit set.",
+      "evidence": {
+        "file": "game-effect-generation-14-assembly.txt",
+        "first": "0x439539",
+        "last": "0x439581",
+        "instructions": [
+          "00439539: MOV ESI,dword ptr [ESI + 0x12f] ",
+          "0043953f: XOR EDI,EDI ",
+          "00439541: CMP EBX,EBP ",
+          "00439543: MOV byte ptr [ESP + 0x30],0x3 ",
+          "00439548: JLE 0x004395c4 ",
+          "0043954a: MOV ECX,dword ptr [ESP + 0x10] ",
+          "0043954e: ADD ECX,0xd6 ",
+          "00439554: MOV dword ptr [ESP + 0x1c],ECX ",
+          "00439558: MOV ECX,dword ptr [ESP + 0x1c] ",
+          "0043955c: LEA EDX,[ESP + 0x24] ",
+          "00439560: LEA EAX,[ESP + 0x3c] ",
+          "00439564: PUSH EDX ",
+          "00439565: PUSH EAX ",
+          "00439566: MOV EAX,ESI ",
+          "00439568: PUSH ECX ",
+          "00439569: MOV ECX,0xa ",
+          "0043956e: CDQ ",
+          "0043956f: IDIV ECX ",
+          "00439571: MOV ECX,dword ptr [ESP + 0x2c] ",
+          "00439575: MOV word ptr [ESP + 0x48],BP ",
+          "0043957a: ADD EDX,ECX ",
+          "0043957c: MOV ECX,dword ptr [ESP + 0x1c] ",
+          "00439580: PUSH EDX ",
+          "00439581: CALL 0x004352e0 "
+        ]
+      }
+    },
+    {
+      "id": "test3_four_slot_batches",
+      "family": "Effects",
+      "raw_offset": 243,
+      "description": "TEST_3(type18) loops floor(ElementsPerTurn/4) batches, each visiting physical GenerateIds3..0 and creating Effects only when flag0x40 is set. Slots4..7 are not generated by this handler.",
+      "evidence": {
+        "file": "game-effect-generation-18-assembly.txt",
+        "first": "0x439127",
+        "last": "0x439169",
+        "instructions": [
+          "00439127: XOR EAX,EAX ",
+          "00439129: MOV AL,byte ptr [EBP + 0x8a] ",
+          "0043912f: SHR EAX,0x2 ",
+          "00439132: MOV ECX,EAX ",
+          "00439134: DEC EAX ",
+          "00439135: TEST ECX,ECX ",
+          "00439137: JZ 0x004391fc ",
+          "0043913d: INC EAX ",
+          "0043913e: PUSH EDI ",
+          "0043913f: PUSH EBX ",
+          "00439140: MOV dword ptr [ESP + 0x18],EAX ",
+          "00439144: JMP 0x0043914a ",
+          "00439146: MOV EBP,dword ptr [ESP + 0x30] ",
+          "0043914a: ADD EBP,0x55 ",
+          "0043914d: MOV dword ptr [ESP + 0x14],0x4 ",
+          "00439155: XOR EDI,EDI ",
+          "00439157: MOV DI,word ptr [EBP] ",
+          "0043915b: TEST EDI,EDI ",
+          "0043915d: JZ 0x004391d7 ",
+          "0043915f: MOV EDX,dword ptr [ESI + 0x107] ",
+          "00439165: TEST byte ptr [EDX + 0x5f],0x40 ",
+          "00439169: JZ 0x004391d7 "
+        ]
+      }
+    }
+  ],
+  "generate_ids": {
+    "raw_offset": 202,
+    "count": 8,
+    "element_bytes": 2,
+    "runtime_offset": 79,
+    "last_index_offset": 147,
+    "last_index_rule": "scan7..1 for last nonzero; otherwise0",
+    "selection": "random index0..last inclusive. Holes and duplicate ids are retained; first/last accessors use the physical slots.",
+    "evidence_files": [
+      "game-effect-definition-load.txt",
+      "game-effect-pick-first.txt",
+      "game-effect-pick-last.txt",
+      "game-effect-pick-random.txt"
+    ]
+  },
+  "mode_specific_selection": {
+    "4": {
+      "kind": "physical_slots",
+      "target": "Effects if flag0x40 else EffectElements",
+      "selector": "RANDOM_DISTRIBUTION flag0x400 chooses random physical slot; otherwise visit eight slots and skip0"
+    },
+    "5": {
+      "kind": "numeric_id_range",
+      "target": "EffectElements",
+      "bounds": "first..last inclusive"
+    },
+    "6": {
+      "kind": "numeric_id_range",
+      "target": "EffectElements",
+      "bounds": "first..last inclusive",
+      "overloaded_field": {
+        "raw_offset": 218,
+        "baseline_name": "OuterOriginRange",
+        "native_role": "SecondaryEffectId",
+        "target": "Effects"
+      }
+    },
+    "7": {
+      "kind": "numeric_id_range",
+      "target": "EffectElements",
+      "bounds": "first..last inclusive"
+    },
+    "8": {
+      "kind": "numeric_id_range",
+      "target": "EffectElements",
+      "bounds": "first..last inclusive"
+    },
+    "9": {
+      "kind": "numeric_id_range",
+      "target": "EffectElements",
+      "bounds": "first inclusive, last exclusive",
+      "evidence_file": "game-effect-generation-9-assembly.txt"
+    },
+    "14": {
+      "kind": "digit_element_series",
+      "target": "EffectElements",
+      "base_slot": 0,
+      "count": 10,
+      "rule": "base+digit0..9, low16 used by element lookup; independent of ElementsPerTurn"
+    },
+    "15": {
+      "kind": "numeric_id_range",
+      "target": "EffectElements",
+      "bounds": "first..last inclusive"
+    },
+    "18": {
+      "kind": "four_physical_slots",
+      "target": "Effects",
+      "slots": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "count": "floor(ElementsPerTurn/4) batches",
+      "requires_flag": 64
+    }
+  },
+  "physics": {
+    "function": "0x4476E0",
+    "position_units_per_tile": 4096,
+    "velocity_units_per_position_unit": 16,
+    "update_order": [
+      "verticalVelocity -= signed16(MassRaw)",
+      "each velocity component = trunc32(component*(4096-unsigned16(AirFrictionRaw)))/4096, truncating toward zero",
+      "movement and collision; vertical position increment is velocityZ>>4"
+    ],
+    "friction_note": "32-bit intermediate multiplication wraps. The file baseline AirFriction/65536 differs from the per-step raw/4096 coefficient; retain both views.",
+    "evidence_files": [
+      "game-effect-physics.txt",
+      "game-effect-physics-assembly.txt"
+    ]
+  },
+  "whirlpool": {
+    "function": "0x438520",
+    "angle_units_per_turn": 2048,
+    "formula": "clamp(trunc((convertedRate*16*128)/(square(dx>>5)+square(dy>>5)+128)),-1024,1023)",
+    "effect": "add position-displacement impulse to child+14/+18, scaled by16; does not directly overwrite ordinary velocity",
+    "warning": "Integer arithmetic/overflow and trig-table quantization matter; formula is not the distance-linear approximation used in OpenKeeper.",
+    "evidence_files": [
+      "game-effect-cube-whirlpool.txt"
+    ]
+  },
+  "subsequent_findings": {
+    "Effects.NextEffectId": "See effect-chain-semantics.json: immediate chain creation in0x440350.",
+    "EffectElements.ColorAndFade": "See element-color-semantics.json: initial color priority and distinct native RGB/alpha fade, with26 isolated emulations."
+  },
+  "unresolved": [
+    "Some generation modes have hard-coded behavior; names are OpenKeeper labels, not independent confirmation of every intended use.",
+    "EffectElements RandomColorIndex/TableColorIndex: storage confirmed, full palette behavior unresolved.",
+    "Effects raw+F4 is not read by inspected converter; preserve it."
+  ]
+}

@@ -1,0 +1,1139 @@
+{
+  "phase": 190,
+  "status": "verified_original_CPlayer_writer_copies_Crypt_runtime_state",
+  "counts": {
+    "native_scenes": 6,
+    "independent_Ghidra_controls": 6,
+    "Ghidra_compared_regions": 138,
+    "Ghidra_compared_bytes": 986970,
+    "original_CPlayer_constructors": 6,
+    "original_CPlayer_writers": 6,
+    "original_MyFile_writes": 62,
+    "original_Disc_writes": 62,
+    "complete_output_scenes": 4,
+    "short_or_failed_OS_scenes": 2,
+    "additional_primary_extents": 10,
+    "inherited_primary_extents": 7,
+    "unique_executed_original_PCs": 562,
+    "excluded_exploratory_traces": 12,
+    "prior_components_preserved": 167,
+    "source_files_preserved": 420,
+    "EXE_paths_preserved": 7,
+    "new_raw_fields": 0,
+    "source_writes": 0,
+    "Crypt_passive_counter_meanings_assigned": 8,
+    "Crypt_active_groups_assigned": 10,
+    "Crypt_counter_meanings_remaining": 10
+  },
+  "profile": {
+    "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\DKII-DX.exe",
+    "sha256": "d7a8b854e4e4f02709eba271bead6fe2307dd6e332b5a96e70857e5b0e19fb8a"
+  },
+  "format_scope": "RuntimeCPlayerstreamfragmentonly;notanewKWDfieldorcompleteSAVformat. Existing18Cryptgroupsplus2unassignedtailbytesarepreserved.",
+  "owner_type": {
+    "RTTI_name": ".?AVCPlayer@@",
+    "type_descriptor": 6943536,
+    "COL": 6805760,
+    "vtable": 6740380,
+    "destructor": 4988848,
+    "writer": 4951360,
+    "stride": 4389,
+    "proof": "OriginalRTTI/vtableandfull4B8450constructor;primarytablehasdeletingdestructorandwriter,notadditionalCryptgetters."
+  },
+  "native_chain": {
+    "writer": 4951360,
+    "base_tag_writer": 5274096,
+    "write_wrapper": 5979872,
+    "MyFile_slot_C": 5992128,
+    "Disc_slot_8": 6291440,
+    "WriteFile_IAT": 6734288,
+    "external_WriteFile_target": 2674486,
+    "IO_scope": "OriginalIATandstreamvtables/methodsretained. Onlyoutside-imageWindowsWriteFileendpointcopiesintoresearchmemory."
+  },
+  "fixed_state_block": {
+    "runtime_offset": 118,
+    "bytes": 4136,
+    "end_exclusive": 4254,
+    "stream_fragment_offset": 3,
+    "runtime_counter_span": {
+      "offset": 4234,
+      "bytes": 20,
+      "mapped_species_group_bytes": 18,
+      "unassigned_tail_bytes": 2
+    },
+    "counter_stream_fragment_offset": 4119,
+    "offset_scope": "OffsetsrelativeonlytothisstandaloneCPlayerfragmentstartingatstream0;notabsoluteoffsetsinKWDorwholeSAV."
+  },
+  "outcomes": {
+    "byte_preservation": "All20bytesincludingdiagnostic80/FFpreservedwithoutnormalizationin4complete-outputscenes. Suchbitsarenotclaimednaturallyreachablecountervalues.",
+    "ordinary_output_bytes": 4184,
+    "one_array_entry_output_bytes": 4192,
+    "short_17_bytes": 65,
+    "OS_failure_bytes": 0,
+    "return_scope": "CPlayerwriterreturns1inall6scenes,includingshort/failedexternalwrites. Returnaloneisnotproofacompletestreamwaswritten;outergamesaveframeworknotexecuted."
+  },
+  "source_preservation": "Constructor/bareCPlayerconditionsandone9-bytearrayentryareexplicit. Observationcopyproveswritercannotalterthepreparedsourceobject;guard/IAT/vtablechecksandfullydisjointregionspass.",
+  "fixture": {
+    "bare_constructor": "NoWorld/playerconfigbootstrap;tag1andoriginalembedded506120subobjectconstructedbygamecode.",
+    "optional_controllers": "Absent;onlyoneexplicit9-byteowned-arrayentrycontrol. Otherarrays/optionalcontrollersnotfullyexercised.",
+    "corrected_map": "Output31400000..31420040;IOstate/logoutsideoutput. BothnativeandGhidrabuildersassertdisjointregions.",
+    "prior_failures": "Old31040000outputoverlappedstate/logandfailedfullguards;allretainedandexcluded.ExtraarrayIOsourcerangewasalsomissinginanearlierexploration."
+  },
+  "native_executions": {
+    "scope": "Strict full CPlayer writer checks with an independent expected byte stream.",
+    "replays": [
+      {
+        "case": {
+          "name": "zero",
+          "counters": "0000000000000000000000000000000000000000"
+        },
+        "file": "ghidra\\phase190-crypt-state-writer-zero-f8d850e888e5.json",
+        "sha256": "26348aca407bb0ea3266eb224dc03607b0b471f2bdbf81835b0d90b8db55b7e5",
+        "outcome": {
+          "return_EAX": 1,
+          "output_bytes": 4184,
+          "intended_bytes": 4184,
+          "output_sha256": "8ce4f5f68c207eb2c343eff5d67e2e4f08ef62c93886a6e82559aa85c7949230",
+          "writes": [
+            {
+              "position": 0,
+              "source": 822087932,
+              "request": 1,
+              "written": 1
+            },
+            {
+              "position": 1,
+              "source": 822083588,
+              "request": 2,
+              "written": 2
+            },
+            {
+              "position": 3,
+              "source": 822083702,
+              "request": 4136,
+              "written": 4136
+            },
+            {
+              "position": 4139,
+              "source": 2147418104,
+              "request": 8,
+              "written": 8
+            },
+            {
+              "position": 4147,
+              "source": 2147418104,
+              "request": 8,
+              "written": 8
+            },
+            {
+              "position": 4155,
+              "source": 2147418104,
+              "request": 8,
+              "written": 8
+            },
+            {
+              "position": 4163,
+              "source": 2147418104,
+              "request": 8,
+              "written": 8
+            },
+            {
+              "position": 4171,
+              "source": 2147418104,
+              "request": 8,
+              "written": 8
+            },
+            {
+              "position": 4179,
+              "source": 822087957,
+              "request": 4,
+              "written": 4
+            },
+            {
+              "position": 4183,
+              "source": 822087930,
+              "request": 1,
+              "written": 1
+            }
+          ],
+          "exact_counter20_preserved": true,
+          "source_object_unchanged_by_writer": true,
+          "IAT_and_vtables_unchanged": true,
+          "OS_write_fail_or_short": false,
+          "native_steps": 11543,
+          "original_Writes": 10
+        }
+      },
+      {
+        "case": {
+          "name": "marker",
+          "counters": "0102030405060708090a0b0c0d0e0f1011121314"
+        },
+        "file": "ghidra\\phase190-crypt-state-writer-marker-919e17bfc8eb.json",
+        "sha256": "df1b04132d89b293ed95e046a4cd3cf260e145f0f25ddec323bd537e3768893c",
+        "outcome": {
+          "return_EAX": 1,
+          "output_bytes": 4184,
+          "intended_bytes": 4184,
+          "output_sha256": "a69dfa55dd2d8f51c2c8073008bc08dbbe0fab033018d893bb3e83b19a8dfae9",
+          "writes": [
+            {
+              "position": 0,
+              "source": 822087932,
+              "request": 1,
+              "written": 1
+            },
+            {
+              "position": 1,
+              "source": 822083588,
+              "request": 2,
+              "written": 2
+            },
+            {
+              "position": 3,
+              "source": 822083702,
+              "request": 4136,
+              "written": 4136
+            },
+            {
+              "position": 4139,
+              "source": 2147418104,
+              "request": 8,
+              "written": 8
+            },
+            {
+              "position": 4147,
+              "source": 2147418104,
+              "request": 8,
+              "written": 8
+            },
+            {
+              "position": 4155,
+              "source": 2147418104,
+              "request": 8,
+              "written": 8
+            },
+            {
+              "position": 4163,
+              "source": 2147418104,
+              "request": 8,
+              "written": 8
+            },
+            {
+              "position": 4171,
+              "source": 2147418104,
+              "request": 8,
+              "written": 8
+            },
+            {
+              "position": 4179,
+              "source": 822087957,
+              "request": 4,
+              "written": 4
+            },
+            {
+              "position": 4183,
+              "source": 822087930,
+              "request": 1,
+              "written": 1
+            }
+          ],
+          "exact_counter20_preserved": true,
+          "source_object_unchanged_by_writer": true,
+          "IAT_and_vtables_unchanged": true,
+          "OS_write_fail_or_short": false,
+          "native_steps": 11543,
+          "original_Writes": 10
+        }
+      },
+      {
+        "case": {
+          "name": "signed-bits",
+          "counters": "00017f80ff00017f80ff00017f80ff00017f80ff"
+        },
+        "file": "ghidra\\phase190-crypt-state-writer-signed-bits-a19cef9adeae.json",
+        "sha256": "94b2cf5818b28a6718e72a02793cf7a204d054439328a35793f65b34334888ca",
+        "outcome": {
+          "return_EAX": 1,
+          "output_bytes": 4184,
+          "intended_bytes": 4184,
+          "output_sha256": "5fb2b41a67b5a619841c08f5bf26247b14ffeb47a23f4463d0af351f8d2e46d4",
+          "writes": [
+            {
+              "position": 0,
+              "source": 822087932,
+              "request": 1,
+              "written": 1
+            },
+            {
+              "position": 1,
+              "source": 822083588,
+              "request": 2,
+              "written": 2
+            },
+            {
+              "position": 3,
+              "source": 822083702,
+              "request": 4136,
+              "written": 4136
+            },
+            {
+              "position": 4139,
+              "source": 2147418104,
+              "request": 8,
+              "written": 8
+            },
+            {
+              "position": 4147,
+              "source": 2147418104,
+              "request": 8,
+              "written": 8
+            },
+            {
+              "position": 4155,
+              "source": 2147418104,
+              "request": 8,
+              "written": 8
+            },
+            {
+              "position": 4163,
+              "source": 2147418104,
+              "request": 8,
+              "written": 8
+            },
+            {
+              "position": 4171,
+              "source": 2147418104,
+              "request": 8,
+              "written": 8
+            },
+            {
+              "position": 4179,
+              "source": 822087957,
+              "request": 4,
+              "written": 4
+            },
+            {
+              "position": 4183,
+              "source": 822087930,
+              "request": 1,
+              "written": 1
+            }
+          ],
+          "exact_counter20_preserved": true,
+          "source_object_unchanged_by_writer": true,
+          "IAT_and_vtables_unchanged": true,
+          "OS_write_fail_or_short": false,
+          "native_steps": 11543,
+          "original_Writes": 10
+        }
+      },
+      {
+        "case": {
+          "name": "one-list-entry",
+          "counters": "000102030405060708090a0b0c0d0e0f10111213",
+          "one_entry": true
+        },
+        "file": "ghidra\\phase190-crypt-state-writer-one-list-entry-a311430276b1.json",
+        "sha256": "43255fed7e50a8ea4dc75bf9af673e91446bc870f9cc60cc830a5f5cbf4e9a22",
+        "outcome": {
+          "return_EAX": 1,
+          "output_bytes": 4192,
+          "intended_bytes": 4192,
+          "output_sha256": "4f75c297f08642d86a700a9d1c2955d53fe82fbd644613573d63e70d381bf7ba",
+          "writes": [
+            {
+              "position": 0,
+              "source": 822087932,
+              "request": 1,
+              "written": 1
+            },
+            {
+              "position": 1,
+              "source": 822083588,
+              "request": 2,
+              "written": 2
+            },
+            {
+              "position": 3,
+              "source": 822083702,
+              "request": 4136,
+              "written": 4136
+            },
+            {
+              "position": 4139,
+              "source": 2147418104,
+              "request": 8,
+              "written": 8
+            },
+            {
+              "position": 4147,
+              "source": 824180737,
+              "request": 4,
+              "written": 4
+            },
+            {
+              "position": 4151,
+              "source": 824180741,
+              "request": 4,
+              "written": 4
+            },
+            {
+              "position": 4155,
+              "source": 2147418104,
+              "request": 8,
+              "written": 8
+            },
+            {
+              "position": 4163,
+              "source": 2147418104,
+              "request": 8,
+              "written": 8
+            },
+            {
+              "position": 4171,
+              "source": 2147418104,
+              "request": 8,
+              "written": 8
+            },
+            {
+              "position": 4179,
+              "source": 2147418104,
+              "request": 8,
+              "written": 8
+            },
+            {
+              "position": 4187,
+              "source": 822087957,
+              "request": 4,
+              "written": 4
+            },
+            {
+              "position": 4191,
+              "source": 822087930,
+              "request": 1,
+              "written": 1
+            }
+          ],
+          "exact_counter20_preserved": true,
+          "source_object_unchanged_by_writer": true,
+          "IAT_and_vtables_unchanged": true,
+          "OS_write_fail_or_short": false,
+          "native_steps": 11860,
+          "original_Writes": 12
+        }
+      },
+      {
+        "case": {
+          "name": "short-17",
+          "counters": "0102030405060708090a0b0c0d0e0f1011121314",
+          "limit": 17
+        },
+        "file": "ghidra\\phase190-crypt-state-writer-short-17-77f1c7208ae8.json",
+        "sha256": "3e038c8c75ed9eb3ad90a49fb3a2c2d351ad45264c499ace4763cb937ecdf0c8",
+        "outcome": {
+          "return_EAX": 1,
+          "output_bytes": 65,
+          "intended_bytes": 4184,
+          "output_sha256": "b340288010d484b0b078a568f38397f86645b22ebc05b1067099deb84a8f374a",
+          "writes": [
+            {
+              "position": 0,
+              "source": 822087932,
+              "request": 1,
+              "written": 1
+            },
+            {
+              "position": 1,
+              "source": 822083588,
+              "request": 2,
+              "written": 2
+            },
+            {
+              "position": 3,
+              "source": 822083702,
+              "request": 4136,
+              "written": 17
+            },
+            {
+              "position": 20,
+              "source": 2147418104,
+              "request": 8,
+              "written": 8
+            },
+            {
+              "position": 28,
+              "source": 2147418104,
+              "request": 8,
+              "written": 8
+            },
+            {
+              "position": 36,
+              "source": 2147418104,
+              "request": 8,
+              "written": 8
+            },
+            {
+              "position": 44,
+              "source": 2147418104,
+              "request": 8,
+              "written": 8
+            },
+            {
+              "position": 52,
+              "source": 2147418104,
+              "request": 8,
+              "written": 8
+            },
+            {
+              "position": 60,
+              "source": 822087957,
+              "request": 4,
+              "written": 4
+            },
+            {
+              "position": 64,
+              "source": 822087930,
+              "request": 1,
+              "written": 1
+            }
+          ],
+          "exact_counter20_preserved": false,
+          "source_object_unchanged_by_writer": true,
+          "IAT_and_vtables_unchanged": true,
+          "OS_write_fail_or_short": true,
+          "native_steps": 7446,
+          "original_Writes": 10
+        }
+      },
+      {
+        "case": {
+          "name": "write-fails",
+          "counters": "0102030405060708090a0b0c0d0e0f1011121314",
+          "fail": true
+        },
+        "file": "ghidra\\phase190-crypt-state-writer-write-fails-d27349ab0b87.json",
+        "sha256": "b4228ce7c6693f17dc5f4ecfc1283506293140235b90495977dc47b2fc247d00",
+        "outcome": {
+          "return_EAX": 1,
+          "output_bytes": 0,
+          "intended_bytes": 4184,
+          "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "writes": [
+            {
+              "position": 0,
+              "source": 822087932,
+              "request": 1,
+              "written": 0
+            },
+            {
+              "position": 0,
+              "source": 822083588,
+              "request": 2,
+              "written": 0
+            },
+            {
+              "position": 0,
+              "source": 822083702,
+              "request": 4136,
+              "written": 0
+            },
+            {
+              "position": 0,
+              "source": 2147418104,
+              "request": 8,
+              "written": 0
+            },
+            {
+              "position": 0,
+              "source": 2147418104,
+              "request": 8,
+              "written": 0
+            },
+            {
+              "position": 0,
+              "source": 2147418104,
+              "request": 8,
+              "written": 0
+            },
+            {
+              "position": 0,
+              "source": 2147418104,
+              "request": 8,
+              "written": 0
+            },
+            {
+              "position": 0,
+              "source": 2147418104,
+              "request": 8,
+              "written": 0
+            },
+            {
+              "position": 0,
+              "source": 822087957,
+              "request": 4,
+              "written": 0
+            },
+            {
+              "position": 0,
+              "source": 822087930,
+              "request": 1,
+              "written": 0
+            }
+          ],
+          "exact_counter20_preserved": false,
+          "source_object_unchanged_by_writer": true,
+          "IAT_and_vtables_unchanged": true,
+          "OS_write_fail_or_short": true,
+          "native_steps": 7379,
+          "original_Writes": 10
+        }
+      }
+    ]
+  },
+  "independent_Ghidra_controls": [
+    {
+      "case": "zero",
+      "file": "ghidra\\phase190-crypt-state-writer-Ghidra-zero-6f2766035907.json",
+      "sha256": "b0718a8e85c1a07efb91b334b8f5eacef163a63ce5678807b4d0a9dbf28de1db",
+      "checked_regions": 23,
+      "checked_bytes": 164495
+    },
+    {
+      "case": "marker",
+      "file": "ghidra\\phase190-crypt-state-writer-Ghidra-marker-1d08b37d33cd.json",
+      "sha256": "cda0312a20ed79d6264c64c96c484237c06a5460f9bd972333e70943b7805a44",
+      "checked_regions": 23,
+      "checked_bytes": 164495
+    },
+    {
+      "case": "signed-bits",
+      "file": "ghidra\\phase190-crypt-state-writer-Ghidra-signed-bits-ae3b3dc7063c.json",
+      "sha256": "5cbe9c8bf2b36c72059d2ba774999859bc9464b3f85eb81230caf8f27088dd69",
+      "checked_regions": 23,
+      "checked_bytes": 164495
+    },
+    {
+      "case": "one-list-entry",
+      "file": "ghidra\\phase190-crypt-state-writer-Ghidra-one-list-entry-49b3b8c9f6b1.json",
+      "sha256": "af8ee3c3f4680eea796e43767c17f90fb07d6a3ca37a380caf1296403afe1039",
+      "checked_regions": 23,
+      "checked_bytes": 164495
+    },
+    {
+      "case": "short-17",
+      "file": "ghidra\\phase190-crypt-state-writer-Ghidra-short-17-9aa131435772.json",
+      "sha256": "da5581bd59e66c309076460a6c017125008fa9faca84e295e0409d9661f49fa1",
+      "checked_regions": 23,
+      "checked_bytes": 164495
+    },
+    {
+      "case": "write-fails",
+      "file": "ghidra\\phase190-crypt-state-writer-Ghidra-write-fails-c0fede35b366.json",
+      "sha256": "d6d0a46397c528d90209deaded1da8dabe36c5c6231fe0edc57a47e448a1f431",
+      "checked_regions": 23,
+      "checked_bytes": 164495
+    }
+  ],
+  "primary": {
+    "profile": {
+      "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\DKII-DX.exe",
+      "sha256": "d7a8b854e4e4f02709eba271bead6fe2307dd6e332b5a96e70857e5b0e19fb8a"
+    },
+    "functions": [
+      {
+        "address": 4949072,
+        "length": 222,
+        "memory": "ghidra/phase190-writer-4b8450-memory.txt",
+        "assembly": "ghidra/phase190-writer-4b8450-assembly.txt",
+        "memory_sha256": "50e75880986ee5c7f003708403b1b5d984dcb1e0055442596e558e42da56f99a",
+        "assembly_sha256": "5495280aaab43b9202d3e1df3adc924e85d9c67bb4bd7526ea4f8d869658984f",
+        "bytes_sha256": "c9eb52ece29c73737c2a6322759a12af248acc20b1a689af43ae130a29bad9f7",
+        "entry_evidence": "phase190-writer-entry-proofs.json",
+        "extent_kind": "original_Ghidra_function_body"
+      },
+      {
+        "address": 4951360,
+        "length": 1281,
+        "memory": "ghidra/phase190-writer-4b8d40-memory.txt",
+        "assembly": "ghidra/phase190-writer-4b8d40-assembly.txt",
+        "memory_sha256": "42e55c71e527139c5b6117bcd040708a7257ac79f4cc997928a2e94531af26ed",
+        "assembly_sha256": "e38e7113bfb68df4fce083c3dfc2a899be48db01c6aa8348d96f3bb69b58cd1a",
+        "bytes_sha256": "86bac399916e5b79870ca6f43d1fa6313e33c3d27a67208ba296a3c4c71d6c35",
+        "entry_evidence": "phase190-writer-entry-proofs.json",
+        "extent_kind": "original_Ghidra_function_body"
+      },
+      {
+        "address": 5264912,
+        "length": 17,
+        "memory": "ghidra/phase190-writer-505610-memory.txt",
+        "assembly": "ghidra/phase190-writer-505610-assembly.txt",
+        "memory_sha256": "8c624633874fad508408093c60bbba48c0fd60832a0e08f70eb79b4aaeb859f4",
+        "assembly_sha256": "fa2cc99ad96a344305755008142e844ead6305c4d05fa11ff2fc8701263545b7",
+        "bytes_sha256": "a9139d3a62e946997fc9f887fd5da7d0542decd59f82fa6b93201d0875812065",
+        "entry_evidence": "phase190-writer-entry-proofs.json",
+        "extent_kind": "original_Ghidra_function_body"
+      },
+      {
+        "address": 5267744,
+        "length": 23,
+        "memory": "ghidra/phase190-writer-506120-memory.txt",
+        "assembly": "ghidra/phase190-writer-506120-assembly.txt",
+        "memory_sha256": "f34921c235bb7d19402e35653b6a6fd9ac9927a64342d964f5f77acb94e00813",
+        "assembly_sha256": "04cf25e4dc1d115c4ec82992a6fb13e13a026299605b3b2fd5bc45f4131ed641",
+        "bytes_sha256": "b102115ad41675d2b3730c3c33006cb96307aae37feb1d80df5799b682e8bcc9",
+        "entry_evidence": "phase190-writer-entry-proofs.json",
+        "extent_kind": "original_Ghidra_function_body"
+      },
+      {
+        "address": 5268000,
+        "length": 162,
+        "memory": "ghidra/phase190-writer-506220-memory.txt",
+        "assembly": "ghidra/phase190-writer-506220-assembly.txt",
+        "memory_sha256": "853deac7d3591553e2e7b95c9f79dc7d1882b57aee90f1672dde92b77eae24d1",
+        "assembly_sha256": "3f4aca3d44622ba9447f273d12ba51b673cbb85badffafe03ddc7576533a60fa",
+        "bytes_sha256": "5da32ef202c26d520628c44bbdcdbbc612ba9e62ba7ed6136a63c772f3ceaa47",
+        "entry_evidence": "phase190-writer-entry-proofs.json",
+        "extent_kind": "original_Ghidra_function_body"
+      },
+      {
+        "address": 5269088,
+        "length": 43,
+        "memory": "ghidra/phase190-writer-506660-memory.txt",
+        "assembly": "ghidra/phase190-writer-506660-assembly.txt",
+        "memory_sha256": "34232aa5e41a5abf1676aab7acfbc3e748f5746d85fd1df5cc1bde2b61474222",
+        "assembly_sha256": "5140b3dc76ec57260c11c73734a916ea3a8da8930ea5be7b2ddb4ea2ea1b4c34",
+        "bytes_sha256": "ea5cd8c599fd224ed41ee7e1c6fdd411b2099f1b9131bc37ea2bd98570fbbb44",
+        "entry_evidence": "phase190-writer-entry-proofs.json",
+        "extent_kind": "original_Ghidra_function_body"
+      },
+      {
+        "address": 5274096,
+        "length": 55,
+        "memory": "ghidra/phase190-writer-5079f0-memory.txt",
+        "assembly": "ghidra/phase190-writer-5079f0-assembly.txt",
+        "memory_sha256": "d8e580af9f50e51630ed99a440daac070d93e297ca09ae11be2d6017521ea3cc",
+        "assembly_sha256": "6f1860c945fc3423e02f8df06ed2a926a386f3a592a2de24b5d78e4c2b39c2a7",
+        "bytes_sha256": "719cf9778cedf8b2e3460499c951f6cc1c3f1a3731c9a66bc0a5b8865d15ef93",
+        "entry_evidence": "phase190-writer-entry-proofs.json",
+        "extent_kind": "original_Ghidra_function_body"
+      },
+      {
+        "address": 5979872,
+        "length": 45,
+        "memory": "ghidra/phase190-writer-5b3ee0-memory.txt",
+        "assembly": "ghidra/phase190-writer-5b3ee0-assembly.txt",
+        "memory_sha256": "be105ba7264a9e123332b8d6fa3a9d0546f067ca8d576dcda74424aba197df37",
+        "assembly_sha256": "2b8acd48689732c256e4b340427fcc544846a41c29fb05f1c49ae2d168f8bd04",
+        "bytes_sha256": "87771ac304a0d9a6ff9e8765a6f107137f9582fa50525b24d33dc7be489cf0d0",
+        "entry_evidence": "phase190-writer-entry-proofs.json",
+        "extent_kind": "original_Ghidra_function_body"
+      },
+      {
+        "address": 5992128,
+        "length": 31,
+        "memory": "ghidra/phase190-writer-5b6ec0-memory.txt",
+        "assembly": "ghidra/phase190-writer-5b6ec0-assembly.txt",
+        "memory_sha256": "d3d14c5db8d1bf4919b510587084334f1becf914ae2acb5b5ea56aa9316480d9",
+        "assembly_sha256": "4aa1fef7cdaf080fd5b67faedcaf4fc2e94ec4da7f281a091dc23e32aa3061ec",
+        "bytes_sha256": "226d79b74b4594b293b4484e193b85bba50e2d0e80086dfebba2b3e708a36eaf",
+        "entry_evidence": "phase190-writer-entry-proofs.json",
+        "extent_kind": "original_Ghidra_function_body"
+      },
+      {
+        "address": 6291440,
+        "length": 57,
+        "memory": "ghidra/phase190-writer-5ffff0-memory.txt",
+        "assembly": "ghidra/phase190-writer-5ffff0-assembly.txt",
+        "memory_sha256": "81e7668ebf53320aff8139951ce7f52a663bc137e48335b9911e1579f1344b03",
+        "assembly_sha256": "6821a369615e971c61915b9fafb47f08a578996cc11779c8b375c66259da8bed",
+        "bytes_sha256": "a309664233879fede36db73ebfce0a6e7162e26226d2bf6480f56a3334329fc7",
+        "entry_evidence": "phase190-writer-entry-proofs.json",
+        "extent_kind": "original_Ghidra_function_body"
+      }
+    ],
+    "inherited": [
+      {
+        "exe": "D:\\Games\\DK2\\Dungeon Keeper 2\\DKII-DX.exe",
+        "address": 5273680,
+        "length": 208,
+        "assembly": "ghidra/phase80-final-DX-507850-assembly.txt",
+        "memory": "ghidra/phase93-primary-507850.txt",
+        "scope": "Complete native span; static includes unexecuted branches, not coverage claim",
+        "source_manifest": "phase94-primary-manifest.json",
+        "memory_sha256": "be6c98fafd933bb3a4e0f91cd732c5feac7e6271be03929b6eda2537081a91e7",
+        "bytes_sha256": "83fd7446d5f7ad4c000159fe7e934fd003b437db241861f583dd07a4c42f081e"
+      },
+      {
+        "address": 4249152,
+        "length": 3,
+        "assembly": "ghidra/phase131-primary-40d640-assembly.txt",
+        "assembly_sha256": "1e2b2b9f6d2ce273300371839eb5f612e385959cd0d3ca03ca3fc04d5bbb9f64",
+        "explicit_FWAIT_split_addresses": [],
+        "memory": "ghidra/phase131-primary-40d640-memory.txt",
+        "memory_sha256": "5ac37bd97ee6d2631dc8d17ff7b5b1d9177f1828564ebdda44492aefa51f0f4e",
+        "bytes_sha256": "58367ffa2a0179375018fa0f5c26da24391e42ebe0ed8fdda35a21fc7bdc396f",
+        "source_manifest": "phase131-area-primary.json"
+      },
+      {
+        "address": 6512320,
+        "length": 111,
+        "assembly": "ghidra/phase131-primary-635ec0-assembly.txt",
+        "assembly_sha256": "c98824ce1acdf8f9dcf42880080e5dc57d7cf5b45ee91f71ddacfd43c70cb560",
+        "explicit_FWAIT_split_addresses": [],
+        "memory": "ghidra/phase131-primary-635ec0-memory.txt",
+        "memory_sha256": "289a51c4ee5a1aa21e744d3d7b29d3dd097913862ca348cfc441a6020c0f34a9",
+        "bytes_sha256": "69530106f3b4252f59fbfd1b59c1abdb491ee504b2b93c344511916209db7593",
+        "source_manifest": "phase131-area-primary.json"
+      },
+      {
+        "address": 6512440,
+        "length": 20,
+        "assembly": "ghidra/phase131-primary-635f38-assembly.txt",
+        "assembly_sha256": "ea90fe6695552beeea19019074431fc150f3877527fe04f0db12eba305774aaa",
+        "explicit_FWAIT_split_addresses": [],
+        "memory": "ghidra/phase131-primary-635f38-memory.txt",
+        "memory_sha256": "ca639d65b7cc7af67cf85ace35b6e4a09e5dd8246ae242eb11f8a80d0adb60cd",
+        "bytes_sha256": "d3ecaec63122a11538fefbc03b3523b606c470eb8f44a40da3089946765c5424",
+        "source_manifest": "phase131-area-primary.json"
+      },
+      {
+        "address": 5992000,
+        "length": 16,
+        "assembly": "ghidra/phase160-primary-5b6e40-assembly.txt",
+        "assembly_sha256": "24516200cb39ef1dde2050dfe44134b196767e5418a4f838fb847470e90cd50b",
+        "explicit_FWAIT_split_addresses": [],
+        "memory": "ghidra/phase160-primary-5b6e40-memory.txt",
+        "memory_sha256": "72c842dbaa7e2e9394e17ae52f6e0acd8c03bcf6ec877c4d0ae7ab6d6a6ea485",
+        "bytes_sha256": "2a912f9306714a055aa586146bed5fe3e9a9b182a5fdf45d3e22a43e7d0efa8c",
+        "source_manifest": "phase160-native-door-reader-primary.json"
+      },
+      {
+        "address": 5992224,
+        "length": 42,
+        "assembly": "ghidra/phase160-primary-5b6f20-assembly.txt",
+        "assembly_sha256": "e08e43fdc397adc96180b665b05b06f747513952078837c7759561ff65945acb",
+        "explicit_FWAIT_split_addresses": [],
+        "memory": "ghidra/phase160-primary-5b6f20-memory.txt",
+        "memory_sha256": "1419f5acf0535bb4ace5d96d4043076c77fff8e7d1f638934fca5543c70c06a2",
+        "bytes_sha256": "87c582033880602704770d0b488be95a9d95ce460ed998c4813cad08d599eca6",
+        "source_manifest": "phase160-native-door-reader-primary.json"
+      },
+      {
+        "address": 6124080,
+        "length": 11,
+        "assembly": "ghidra/phase160-primary-5d7230-assembly.txt",
+        "assembly_sha256": "5e8d363c02d26d6f1c3de235b9911a315a78ef75c3f05cf49e43aed0d3149610",
+        "explicit_FWAIT_split_addresses": [],
+        "memory": "ghidra/phase160-primary-5d7230-memory.txt",
+        "memory_sha256": "fb8764a6004df65d9eb506c4afc5217a2cc7ffa944eb6d0c355ad13ddb6ef61f",
+        "bytes_sha256": "841d7b8e520aba01226823eca6e3b961c3b955e318380c4f1e04d4f00bc597e4",
+        "source_manifest": "phase160-native-door-reader-primary.json"
+      }
+    ],
+    "unique_executed_original_PCs": 562,
+    "all_executed_original_PCs_covered": true,
+    "entries": {
+      "file": "phase190-writer-entry-proofs.json",
+      "sha256": "27e2cfb11380387b90b4d97afa97530aa39e652cf357ad23d0fda98abbd2a946"
+    },
+    "scope": "Sixbare-CPlayerwriterexecutions;notfulllivesavegameorKWDformats."
+  },
+  "RTTI_evidence": {
+    "file": "phase190-player-rtti.json",
+    "sha256": "b86e9552e30fcac0e02fba5a55f7d1d72f3eb0a944acb4be2fff32ca1858b2d0"
+  },
+  "version_layout_comparison": {
+    "file": "phase190-player-runtime-layout.json",
+    "sha256": "0079a407a09c266faa849e521f7061477c5ca9d3052b111022ee9a8e1db03181"
+  },
+  "older_version_scope": "User-suppliedcopylabelled13;notcertifiedretail1.3.",
+  "excluded_exploratory": [
+    {
+      "file": "ghidra\\phase190-crypt-state-writer-marker-31a34c808f0b.json",
+      "sha256": "5c8f04575d0a8f6a82eef3f5f7ae291613097d6399c56c36257a80cb2727b2f2",
+      "reason": "Exploratoryoverlappingoutput/state/logregions;notaccepted.",
+      "overlaps": [
+        {
+          "first": 822345728,
+          "first_bytes": 131136,
+          "second": 822411264,
+          "second_bytes": 20
+        },
+        {
+          "first": 822345728,
+          "first_bytes": 131136,
+          "second": 822476800,
+          "second_bytes": 1280
+        }
+      ]
+    },
+    {
+      "file": "ghidra\\phase190-crypt-state-writer-marker-754719819e6f.json",
+      "sha256": "1dcd72149b51eb311175c6ee074427d6e6ea6cd0777974e2099aa49d90a0b6d9",
+      "reason": "Exploratoryoverlappingoutput/state/logregions;notaccepted.",
+      "overlaps": [
+        {
+          "first": 822345728,
+          "first_bytes": 131136,
+          "second": 822411264,
+          "second_bytes": 20
+        },
+        {
+          "first": 822345728,
+          "first_bytes": 131136,
+          "second": 822476800,
+          "second_bytes": 1280
+        }
+      ]
+    },
+    {
+      "file": "ghidra\\phase190-crypt-state-writer-one-list-entry-08319ac7fe0a.json",
+      "sha256": "e1bd78b36d14a45292f6bdbc209f6f6aaef315e7cd8ceb61b19740d780bd3e03",
+      "reason": "Exploratoryoverlappingoutput/state/logregions;notaccepted.",
+      "overlaps": [
+        {
+          "first": 822345728,
+          "first_bytes": 131136,
+          "second": 822411264,
+          "second_bytes": 20
+        },
+        {
+          "first": 822345728,
+          "first_bytes": 131136,
+          "second": 822476800,
+          "second_bytes": 1280
+        }
+      ]
+    },
+    {
+      "file": "ghidra\\phase190-crypt-state-writer-one-list-entry-57774087b482.json",
+      "sha256": "2abc78aa2dbcb62d20de3b05615dcfdcf01a1e249b34478808455823a193560b",
+      "reason": "Exploratoryoverlappingoutput/state/logregions;notaccepted.",
+      "overlaps": [
+        {
+          "first": 822345728,
+          "first_bytes": 131136,
+          "second": 822411264,
+          "second_bytes": 20
+        },
+        {
+          "first": 822345728,
+          "first_bytes": 131136,
+          "second": 822476800,
+          "second_bytes": 1280
+        }
+      ]
+    },
+    {
+      "file": "ghidra\\phase190-crypt-state-writer-short-17-4b80f2f33b21.json",
+      "sha256": "036a73a5e7b489c488a0d22483d386e23cccee520d9bd0a3564efdb8b3e9e40c",
+      "reason": "Exploratoryoverlappingoutput/state/logregions;notaccepted.",
+      "overlaps": [
+        {
+          "first": 822345728,
+          "first_bytes": 131136,
+          "second": 822411264,
+          "second_bytes": 20
+        },
+        {
+          "first": 822345728,
+          "first_bytes": 131136,
+          "second": 822476800,
+          "second_bytes": 1280
+        }
+      ]
+    },
+    {
+      "file": "ghidra\\phase190-crypt-state-writer-short-17-9d2c3ba921ce.json",
+      "sha256": "8417bdeaa05e24451cc2a94fe6c2101c542ea66d52684e073c47e715563196f3",
+      "reason": "Exploratoryoverlappingoutput/state/logregions;notaccepted.",
+      "overlaps": [
+        {
+          "first": 822345728,
+          "first_bytes": 131136,
+          "second": 822411264,
+          "second_bytes": 20
+        },
+        {
+          "first": 822345728,
+          "first_bytes": 131136,
+          "second": 822476800,
+          "second_bytes": 1280
+        }
+      ]
+    },
+    {
+      "file": "ghidra\\phase190-crypt-state-writer-signed-bits-30aa033342a9.json",
+      "sha256": "da42c46b87f9c80710fab9be500c0e33f7e3b99a5a035500c49809b86919771a",
+      "reason": "Exploratoryoverlappingoutput/state/logregions;notaccepted.",
+      "overlaps": [
+        {
+          "first": 822345728,
+          "first_bytes": 131136,
+          "second": 822411264,
+          "second_bytes": 20
+        },
+        {
+          "first": 822345728,
+          "first_bytes": 131136,
+          "second": 822476800,
+          "second_bytes": 1280
+        }
+      ]
+    },
+    {
+      "file": "ghidra\\phase190-crypt-state-writer-signed-bits-e536e5054da0.json",
+      "sha256": "4a118af0325dfe74b7abc9efed9b2cdfa0199f76bb2069efe0d97c6f590d6a60",
+      "reason": "Exploratoryoverlappingoutput/state/logregions;notaccepted.",
+      "overlaps": [
+        {
+          "first": 822345728,
+          "first_bytes": 131136,
+          "second": 822411264,
+          "second_bytes": 20
+        },
+        {
+          "first": 822345728,
+          "first_bytes": 131136,
+          "second": 822476800,
+          "second_bytes": 1280
+        }
+      ]
+    },
+    {
+      "file": "ghidra\\phase190-crypt-state-writer-write-fails-aecdfff2c0d4.json",
+      "sha256": "27e8375a56cff639e38a9a7b330dd64dbc8ae360b5a20dd6b33e936442e0b9d3",
+      "reason": "Exploratoryoverlappingoutput/state/logregions;notaccepted.",
+      "overlaps": [
+        {
+          "first": 822345728,
+          "first_bytes": 131136,
+          "second": 822411264,
+          "second_bytes": 20
+        },
+        {
+          "first": 822345728,
+          "first_bytes": 131136,
+          "second": 822476800,
+          "second_bytes": 1280
+        }
+      ]
+    },
+    {
+      "file": "ghidra\\phase190-crypt-state-writer-write-fails-e40c166e4fe9.json",
+      "sha256": "5b8aac6a8b1c8a0175a259a7edcb17fbc4aefffad8a5a7f6397a62efb073567b",
+      "reason": "Exploratoryoverlappingoutput/state/logregions;notaccepted.",
+      "overlaps": [
+        {
+          "first": 822345728,
+          "first_bytes": 131136,
+          "second": 822411264,
+          "second_bytes": 20
+        },
+        {
+          "first": 822345728,
+          "first_bytes": 131136,
+          "second": 822476800,
+          "second_bytes": 1280
+        }
+      ]
+    },
+    {
+      "file": "ghidra\\phase190-crypt-state-writer-zero-57832eca9bfa.json",
+      "sha256": "b20fc163f3b4a8c96d23a99861085306f1343ded0efdd08c8a4ec0ea5af1d13d",
+      "reason": "Exploratoryoverlappingoutput/state/logregions;notaccepted.",
+      "overlaps": [
+        {
+          "first": 822345728,
+          "first_bytes": 131136,
+          "second": 822411264,
+          "second_bytes": 20
+        },
+        {
+          "first": 822345728,
+          "first_bytes": 131136,
+          "second": 822476800,
+          "second_bytes": 1280
+        }
+      ]
+    },
+    {
+      "file": "ghidra\\phase190-crypt-state-writer-zero-acd56890e0bf.json",
+      "sha256": "37c030c3ec56aa4253bc511d635ea2f1b259f46b21dba39cf4b5240b7fdfedd1",
+      "reason": "Exploratoryoverlappingoutput/state/logregions;notaccepted.",
+      "overlaps": [
+        {
+          "first": 822345728,
+          "first_bytes": 131136,
+          "second": 822411264,
+          "second_bytes": 20
+        },
+        {
+          "first": 822345728,
+          "first_bytes": 131136,
+          "second": 822476800,
+          "second_bytes": 1280
+        }
+      ]
+    }
+  ],
+  "preservation": {
+    "file": "phase165-source-baseline.json",
+    "sha256": "e032a4b5a485cbec505b114e3a22ab4e995af3fb5d2e878d738197e74fc916f8"
+  },
+  "helpers": [
+    {
+      "file": "probe_crypt_state_writer.py",
+      "sha256": "14203fa3ce6194baab8e0acfbdbb996a549e3d7595fa010526331e6a51747667"
+    },
+    {
+      "file": "native_file_write_api_fixture.py",
+      "sha256": "49cf70bb0476e44937819659d62fb5aec6184b8b512d9d670ced860b06c10ca5"
+    },
+    {
+      "file": "emulate_crypt_state_writer.py",
+      "sha256": "e2a597c205ac701efc6a643a96a443fe62c83a58dfcfb3450bc48843ad72ed5d"
+    },
+    {
+      "file": "crosscheck_crypt_state_writer.py",
+      "sha256": "676b2e5a3cbd8251be7cbd2a8b562d588cc204a57d9031e00aefd071090791b2"
+    },
+    {
+      "file": "prepare_crypt_state_writer_primary.py",
+      "sha256": "92de80b5fa7cf2a2a97254bce497bba69f59171c6476ce0f11e34115c69fec74"
+    },
+    {
+      "file": "compare_player_runtime_layout.py",
+      "sha256": "2a4eef9da301c858a2ec10b09e2b24026f6854c5cdd6c7dc99f4ad7d3456e84f"
+    },
+    {
+      "file": "inventory_player_rtti.py",
+      "sha256": "668c04639acd3f67784c7b6f655406d5a4c04e55c5ef1ff4e247fcbd55cfe188"
+    },
+    {
+      "file": "native_unicorn_mapreader.py",
+      "sha256": "f602c16f87beec825fc2fae28900a62bd13ad909c1c9b95c9dae6481e75f8daf"
+    },
+    {
+      "file": "native_file_api_fixture.py",
+      "sha256": "7ddefd970e797eae2031cc6f1809fa1269e73cc6e81be0e66a2d4ad05a7808b9"
+    }
+  ],
+  "priority": {
+    "current": "Crypt groups",
+    "block_complete": false,
+    "next": [
+      "Actualgameplayconsumer/meaningof10unassignedCryptcounters.",
+      "Pass-pointerbulk/returncontextsnotcoveredbyearlierforwardsearch;do notinferunusedfromabsence.",
+      "OthernaturalAIinterruptionsandfullWorldlifetime;globalsremainnextuser-priorityblock."
+    ]
+  },
+  "limitations": [
+    "Noconclusionthatremaining10countersgrantnewpassivebonuses;generalstate-serializationconsumeronly.",
+    "Twoextra20-byte-tailentriesarenotnewCryptspeciesgroups;18registrationgroupsremain.",
+    "Olderusercopyhasdifferentstate-blocksize/stride;noDXoffsettransferoroldCryptmappingproved.",
+    "WholeSAVenvelope/readback/optionalcontrollers/fullsaveframeworknotexecuted;notasavegameeditor.",
+    "NoKWDcodec/APIorparalleleditorchanges;broader15familygoalstillactive."
+  ]
+}

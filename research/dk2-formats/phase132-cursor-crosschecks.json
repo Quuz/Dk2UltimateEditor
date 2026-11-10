@@ -1,0 +1,47 @@
+{
+  "scope": "Ghidra CPU controls against complete prepared outputs of original native paths.\n\nWhole opaque buffers are measured Unicorn outputs, not independently decoded\ngeometry. The second CPU backend verifies those bytes. No original code patch.\n",
+  "replays": [
+    {
+      "case": "integer-frame",
+      "file": "ghidra\\phase132-cursor-Ghidra-integer-frame-8a308a4b790c.json",
+      "sha256": "28e6ea6e6e541125a38f2dc20f21007a60de6bf7332956e2a862930f0db5a00e",
+      "checked_regions": 54,
+      "checked_bytes": 365645
+    },
+    {
+      "case": "integer-frame-allowed",
+      "file": "ghidra\\phase132-cursor-Ghidra-integer-frame-allowed-f1c11c9fe081.json",
+      "sha256": "e4f57c18880ba705eaad07cdbe5b1ad1d9c6ff37a551848140ab24bb4c9c146c",
+      "checked_regions": 54,
+      "checked_bytes": 365645
+    },
+    {
+      "case": "samples-deform-Terrain-source",
+      "file": "ghidra\\phase132-cursor-Ghidra-samples-deform-Terrain-source-e42a20bd1c8c.json",
+      "sha256": "85605ec146af46f1d7bd7436593430271017229edd7163fc660be0e0d3c7c534",
+      "checked_regions": 65,
+      "checked_bytes": 428341
+    },
+    {
+      "case": "samples-deform-Lean-high",
+      "file": "ghidra\\phase132-cursor-Ghidra-samples-deform-Lean-high-44221092c7fe.json",
+      "sha256": "3662fd33c840fca3fb92594d2a94d3c3cefa42fb56accabbfda577b00a3a1478",
+      "checked_regions": 65,
+      "checked_bytes": 428341
+    }
+  ],
+  "diagnostics": [
+    {
+      "case": "full-frame",
+      "file": "ghidra\\phase132-cursor-Ghidra-full-frame-7bd94d9b0d90.json",
+      "sha256": "5b53affca3b27ba6d67ac1f4d0aeb8115f4265f55c4484f8fccb01283279b950",
+      "reason": "Whole heap comparison differs: native floor versus Ghidra FRNDINT round on fractional coordinates. Retained mismatch; not a passing control."
+    },
+    {
+      "case": "integer-deform-source",
+      "file": "ghidra\\phase132-cursor-Ghidra-integer-deform-source-3b36a0779cf6.json",
+      "sha256": "570591c21f1a70ec6ce84cadeaee4b5cc057f5fc337b4225f6bb2fcac62338a4",
+      "reason": "Original FSIN unsupported by this Ghidra CPU. Full deformed frame not a passing control; no instruction replacement."
+    }
+  ]
+}

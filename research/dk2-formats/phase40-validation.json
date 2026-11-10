@@ -1,0 +1,36 @@
+{
+  "phase": 40,
+  "date": "2026-10-26",
+  "native_emulations": 84,
+  "native_case_kinds": {
+    "parser": 16,
+    "converter": 6,
+    "skip": 6,
+    "loader": 15,
+    "delta": 21,
+    "scalar_set": 4,
+    "position": 6,
+    "angles": 7,
+    "registration": 3
+  },
+  "boundary_cases": 1786,
+  "corpus_camera_records": 0,
+  "whole_thing_files_roundtrip": 110,
+  "synthetic_in_memory_appends": 16,
+  "synthetic_in_memory_exact_patches": 472,
+  "primary_instructions": 2857,
+  "primary_ranges_matching_pe": 21,
+  "original_main_inputs_unchanged": 17,
+  "original_main_executables_unchanged": 2,
+  "format_package_components": 51,
+  "modified_gameplay_runs": 0,
+  "limitations": [
+    "84 final native cases:16 parser,6 converter,6 skip,15 full game callback/preset store,21 delta controls,4 scalar absolute controls,6 position controls,7 relative angle controls,3 editor registration fragments. Cases compare full152-byte intermediate, entire0xC00 preset state or0xF00 active state as appropriate.",
+    "No CD records in the110 inspected Things inputs. All camera behavior/patch checks use declared synthetic fixtures; no real world camera was rendered or measured. Baseline Q12 display units and field labels are kept with scope, not extended into universal units for lens/view.",
+    "Full game preset callback uses manager provider and checksum fixtures; actual449A30 executes. Stored presets and active-camera state are separate. Complete44ACE0 transition, timeline, world/possessed modes and rendering remain unverified.",
+    "Active-control functions execute unchanged;44D6D0 matrix rebuild is a call-count fixture. Mode1 relative angle results do not establish behavior of every mode. Upper bounds are exclusive in inspected signed clamps, including unusual empty/reversed bounds arithmetic.",
+    "Editor registration verification executes actual context zero initializer plus final assignment fragment; earlier string/file setup is bypassed. Full registration assembly inspected; no actual GUI roundtrip or universal claim about other editor builds.",
+    "Original rawBYTE53 remains authoritative even though both converters ignore it. Do not merge it into a16-bit ID or zero it on independent save. Preserve full flagsDWORD and shortened raw payload lengths.",
+    "All Ghidra emulation substitutions are local EmulatorHelper memory only. No game process, executable or source data edits. Native writer omission is assembly evidence; independent raw-preserving codec keeps custom CD records."
+  ]
+}

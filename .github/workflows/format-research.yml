@@ -1,0 +1,24 @@
+name: Format research integrity
+
+on:
+  push:
+    paths: ['research/dk2-formats/**', 'docs/formats/**', 'tools/*format*.py', 'tests/FormatResearch/**', '.github/workflows/format-research.yml']
+  pull_request:
+    paths: ['research/dk2-formats/**', 'docs/formats/**', 'tools/*format*.py', 'tests/FormatResearch/**', '.github/workflows/format-research.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  integrity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check snapshot hashes and reconstruct the complete package
+        run: python tools/validate_format_research.py
+      - name: Check field edits preserve unrelated bytes
+        run: python -m unittest discover -s tests/FormatResearch -p 'test_*.py'

@@ -1,0 +1,598 @@
+{
+  "program": "..\\..\\Dungeon Keeper 2\\DKII-DX.exe",
+  "program_sha256": "d7a8b854e4e4f02709eba271bead6fe2307dd6e332b5a96e70857e5b0e19fb8a",
+  "text_origin": "0x401000",
+  "text_bytes": 2432000,
+  "offsets": [
+    "0x106",
+    "0x183",
+    "0x1b5"
+  ],
+  "warning": "Search all PE .text, including code absent from the saved function map.\n\nLinear disassembly and displacement-anchored decodes are only candidates.\nAnchored results can start inside another instruction or embedded data. Verify\neach candidate against a function body and object identity before using it.\n",
+  "candidates": [
+    {
+      "address": "0x4036b0",
+      "instruction": "sbb byte ptr [0x106], al",
+      "displacement": "0x106",
+      "memory_bytes": 1,
+      "base": null,
+      "index": null,
+      "access": 3,
+      "sources": [
+        "displacement-anchored"
+      ],
+      "mapped_span": {
+        "address": "0x4033f0",
+        "name": "fun_4033F0",
+        "size": 738
+      }
+    },
+    {
+      "address": "0x409e79",
+      "instruction": "lea eax, [edi + 0x106]",
+      "displacement": "0x106",
+      "memory_bytes": 4,
+      "base": "edi",
+      "index": null,
+      "access": 1,
+      "sources": [
+        "linear",
+        "displacement-anchored"
+      ],
+      "mapped_span": {
+        "address": "0x409e30",
+        "name": "CDefaultPlayerInterface_chatCallback",
+        "size": 144
+      }
+    },
+    {
+      "address": "0x409ed0",
+      "instruction": "lea eax, [edi + 0x106]",
+      "displacement": "0x106",
+      "memory_bytes": 4,
+      "base": "edi",
+      "index": null,
+      "access": 1,
+      "sources": [
+        "linear",
+        "displacement-anchored"
+      ],
+      "mapped_span": {
+        "address": "0x409ec0",
+        "name": "fun_409EC0",
+        "size": 101
+      }
+    },
+    {
+      "address": "0x47bafc",
+      "instruction": "movsx ecx, word ptr [edx + ecx*2 + 0x183]",
+      "displacement": "0x183",
+      "memory_bytes": 2,
+      "base": "edx",
+      "index": "ecx",
+      "access": 1,
+      "sources": [
+        "linear",
+        "displacement-anchored"
+      ],
+      "mapped_span": {
+        "address": "0x47b970",
+        "name": "sub_47B970",
+        "size": 594
+      }
+    },
+    {
+      "address": "0x49dcfd",
+      "instruction": "mov word ptr [esi + 0x106], ax",
+      "displacement": "0x106",
+      "memory_bytes": 2,
+      "base": "esi",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear",
+        "displacement-anchored"
+      ],
+      "mapped_span": {
+        "address": "0x49dc80",
+        "name": "constructor",
+        "size": 216
+      }
+    },
+    {
+      "address": "0x49dcfe",
+      "instruction": "mov dword ptr [esi + 0x106], eax",
+      "displacement": "0x106",
+      "memory_bytes": 4,
+      "base": "esi",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "displacement-anchored"
+      ],
+      "mapped_span": {
+        "address": "0x49dc80",
+        "name": "constructor",
+        "size": 216
+      }
+    },
+    {
+      "address": "0x49e50e",
+      "instruction": "mov word ptr [ebx + 0x106], cx",
+      "displacement": "0x106",
+      "memory_bytes": 2,
+      "base": "ebx",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear",
+        "displacement-anchored"
+      ],
+      "mapped_span": {
+        "address": "0x49dd60",
+        "name": "sub_49DD60",
+        "size": 2192
+      }
+    },
+    {
+      "address": "0x49e50f",
+      "instruction": "mov dword ptr [ebx + 0x106], ecx",
+      "displacement": "0x106",
+      "memory_bytes": 4,
+      "base": "ebx",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "displacement-anchored"
+      ],
+      "mapped_span": {
+        "address": "0x49dd60",
+        "name": "sub_49DD60",
+        "size": 2192
+      }
+    },
+    {
+      "address": "0x4a3fd0",
+      "instruction": "mov bl, byte ptr [edi + 0x183]",
+      "displacement": "0x183",
+      "memory_bytes": 1,
+      "base": "edi",
+      "index": null,
+      "access": 1,
+      "sources": [
+        "linear",
+        "displacement-anchored"
+      ],
+      "mapped_span": {
+        "address": "0x4a3fc0",
+        "name": "sub_4A3FC0",
+        "size": 683
+      }
+    },
+    {
+      "address": "0x4a3fe6",
+      "instruction": "mov byte ptr [edi + 0x183], bl",
+      "displacement": "0x183",
+      "memory_bytes": 1,
+      "base": "edi",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear",
+        "displacement-anchored"
+      ],
+      "mapped_span": {
+        "address": "0x4a3fc0",
+        "name": "sub_4A3FC0",
+        "size": 683
+      }
+    },
+    {
+      "address": "0x4be932",
+      "instruction": "mov dl, byte ptr [esi + 0x183]",
+      "displacement": "0x183",
+      "memory_bytes": 1,
+      "base": "esi",
+      "index": null,
+      "access": 1,
+      "sources": [
+        "linear",
+        "displacement-anchored"
+      ],
+      "mapped_span": {
+        "address": "0x4be630",
+        "name": "fun_4BE630",
+        "size": 3350
+      }
+    },
+    {
+      "address": "0x4be94c",
+      "instruction": "mov byte ptr [esi + 0x183], dl",
+      "displacement": "0x183",
+      "memory_bytes": 1,
+      "base": "esi",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear",
+        "displacement-anchored"
+      ],
+      "mapped_span": {
+        "address": "0x4be630",
+        "name": "fun_4BE630",
+        "size": 3350
+      }
+    },
+    {
+      "address": "0x4d292e",
+      "instruction": "mov dword ptr [esp + 0x106], ebx",
+      "displacement": "0x106",
+      "memory_bytes": 4,
+      "base": "esp",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear",
+        "displacement-anchored"
+      ],
+      "mapped_span": {
+        "address": "0x4d2850",
+        "name": "sub_4D2850",
+        "size": 473
+      }
+    },
+    {
+      "address": "0x4d4f1c",
+      "instruction": "mov edx, dword ptr [esi + 0x106]",
+      "displacement": "0x106",
+      "memory_bytes": 4,
+      "base": "esi",
+      "index": null,
+      "access": 1,
+      "sources": [
+        "linear",
+        "displacement-anchored"
+      ],
+      "mapped_span": {
+        "address": "0x4d4760",
+        "name": "fun_4D4760",
+        "size": 2038
+      }
+    },
+    {
+      "address": "0x4d4f3d",
+      "instruction": "mov dword ptr [esi + 0x106], ecx",
+      "displacement": "0x106",
+      "memory_bytes": 4,
+      "base": "esi",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear",
+        "displacement-anchored"
+      ],
+      "mapped_span": {
+        "address": "0x4d4760",
+        "name": "fun_4D4760",
+        "size": 2038
+      }
+    },
+    {
+      "address": "0x4d519a",
+      "instruction": "mov dword ptr [esi + 0x106], ebx",
+      "displacement": "0x106",
+      "memory_bytes": 4,
+      "base": "esi",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear",
+        "displacement-anchored"
+      ],
+      "mapped_span": {
+        "address": "0x4d5100",
+        "name": "calcPath_4D5100",
+        "size": 996
+      }
+    },
+    {
+      "address": "0x4d549b",
+      "instruction": "mov dword ptr [esi + 0x106], eax",
+      "displacement": "0x106",
+      "memory_bytes": 4,
+      "base": "esi",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear",
+        "displacement-anchored"
+      ],
+      "mapped_span": {
+        "address": "0x4d5100",
+        "name": "calcPath_4D5100",
+        "size": 996
+      }
+    },
+    {
+      "address": "0x4d5689",
+      "instruction": "mov dword ptr [esi + 0x106], ebx",
+      "displacement": "0x106",
+      "memory_bytes": 4,
+      "base": "esi",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear",
+        "displacement-anchored"
+      ],
+      "mapped_span": {
+        "address": "0x4d55b0",
+        "name": "constructor",
+        "size": 289
+      }
+    },
+    {
+      "address": "0x4d5ba3",
+      "instruction": "mov dword ptr [ecx + 0x106], edx",
+      "displacement": "0x106",
+      "memory_bytes": 4,
+      "base": "ecx",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear",
+        "displacement-anchored"
+      ],
+      "mapped_span": {
+        "address": "0x4d5b30",
+        "name": "MyPilotNavigationBase_constructor",
+        "size": 198
+      }
+    },
+    {
+      "address": "0x4d5e03",
+      "instruction": "mov eax, dword ptr [esi + 0x106]",
+      "displacement": "0x106",
+      "memory_bytes": 4,
+      "base": "esi",
+      "index": null,
+      "access": 1,
+      "sources": [
+        "linear",
+        "displacement-anchored"
+      ],
+      "mapped_span": {
+        "address": "0x4d5c00",
+        "name": "dump",
+        "size": 835
+      }
+    },
+    {
+      "address": "0x4f65e5",
+      "instruction": "mov word ptr [esi + 0x183], ax",
+      "displacement": "0x183",
+      "memory_bytes": 2,
+      "base": "esi",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear",
+        "displacement-anchored"
+      ],
+      "mapped_span": {
+        "address": "0x4f6570",
+        "name": "constructor",
+        "size": 357
+      }
+    },
+    {
+      "address": "0x4f65e6",
+      "instruction": "mov dword ptr [esi + 0x183], eax",
+      "displacement": "0x183",
+      "memory_bytes": 4,
+      "base": "esi",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "displacement-anchored"
+      ],
+      "mapped_span": {
+        "address": "0x4f6570",
+        "name": "constructor",
+        "size": 357
+      }
+    },
+    {
+      "address": "0x4f666c",
+      "instruction": "mov dword ptr [esi + 0x1b5], eax",
+      "displacement": "0x1b5",
+      "memory_bytes": 4,
+      "base": "esi",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear",
+        "displacement-anchored"
+      ],
+      "mapped_span": {
+        "address": "0x4f6570",
+        "name": "constructor",
+        "size": 357
+      }
+    },
+    {
+      "address": "0x4f679c",
+      "instruction": "mov word ptr [ebx + 0x183], cx",
+      "displacement": "0x183",
+      "memory_bytes": 2,
+      "base": "ebx",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear",
+        "displacement-anchored"
+      ],
+      "mapped_span": {
+        "address": "0x4f66e0",
+        "name": "sub_4F66E0",
+        "size": 4298
+      }
+    },
+    {
+      "address": "0x4f679d",
+      "instruction": "mov dword ptr [ebx + 0x183], ecx",
+      "displacement": "0x183",
+      "memory_bytes": 4,
+      "base": "ebx",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "displacement-anchored"
+      ],
+      "mapped_span": {
+        "address": "0x4f66e0",
+        "name": "sub_4F66E0",
+        "size": 4298
+      }
+    },
+    {
+      "address": "0x4f6a3f",
+      "instruction": "mov dword ptr [ebx + 0x1b5], edx",
+      "displacement": "0x1b5",
+      "memory_bytes": 4,
+      "base": "ebx",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear",
+        "displacement-anchored"
+      ],
+      "mapped_span": {
+        "address": "0x4f66e0",
+        "name": "sub_4F66E0",
+        "size": 4298
+      }
+    },
+    {
+      "address": "0x5b1954",
+      "instruction": "mov dl, byte ptr [edi + 0x106]",
+      "displacement": "0x106",
+      "memory_bytes": 1,
+      "base": "edi",
+      "index": null,
+      "access": 1,
+      "sources": [
+        "linear",
+        "displacement-anchored"
+      ],
+      "mapped_span": {
+        "address": "0x5b1906",
+        "name": "sub_5B1906",
+        "size": 523
+      }
+    },
+    {
+      "address": "0x605bca",
+      "instruction": "shr dword ptr [0x106], 1",
+      "displacement": "0x106",
+      "memory_bytes": 4,
+      "base": null,
+      "index": null,
+      "access": 3,
+      "sources": [
+        "displacement-anchored"
+      ],
+      "mapped_span": {
+        "address": "0x605b20",
+        "name": "zlib::deflate_stored",
+        "size": 346
+      }
+    },
+    {
+      "address": "0x605e65",
+      "instruction": "les eax, ptr [edi + 0x106]",
+      "displacement": "0x106",
+      "memory_bytes": 4,
+      "base": null,
+      "index": "edi",
+      "access": 1,
+      "sources": [
+        "displacement-anchored"
+      ],
+      "mapped_span": {
+        "address": "0x605e30",
+        "name": "zlib::deflate_fast",
+        "size": 857
+      }
+    },
+    {
+      "address": "0x606347",
+      "instruction": "les eax, ptr [edi + 0x106]",
+      "displacement": "0x106",
+      "memory_bytes": 4,
+      "base": null,
+      "index": "edi",
+      "access": 1,
+      "sources": [
+        "displacement-anchored"
+      ],
+      "mapped_span": {
+        "address": "0x606310",
+        "name": "zlib::deflate_slow",
+        "size": 1106
+      }
+    },
+    {
+      "address": "0x6063d0",
+      "instruction": "shr dword ptr [0x106], 1",
+      "displacement": "0x106",
+      "memory_bytes": 4,
+      "base": null,
+      "index": null,
+      "access": 3,
+      "sources": [
+        "displacement-anchored"
+      ],
+      "mapped_span": {
+        "address": "0x606310",
+        "name": "zlib::deflate_slow",
+        "size": 1106
+      }
+    },
+    {
+      "address": "0x624613",
+      "instruction": "mov word ptr [ebx + 0x106], ax",
+      "displacement": "0x106",
+      "memory_bytes": 2,
+      "base": "ebx",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear",
+        "displacement-anchored"
+      ],
+      "mapped_span": {
+        "address": "0x623e60",
+        "name": "sub_623E60",
+        "size": 3120
+      }
+    },
+    {
+      "address": "0x624614",
+      "instruction": "mov dword ptr [ebx + 0x106], eax",
+      "displacement": "0x106",
+      "memory_bytes": 4,
+      "base": "ebx",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "displacement-anchored"
+      ],
+      "mapped_span": {
+        "address": "0x623e60",
+        "name": "sub_623E60",
+        "size": 3120
+      }
+    }
+  ]
+}

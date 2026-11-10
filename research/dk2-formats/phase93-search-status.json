@@ -1,0 +1,39 @@
+{
+  "phase": 93,
+  "date": "2026-10-28",
+  "status": "Ordinary possession damage reduction,healing ceiling and original event path published",
+  "previous_goal_turn_classification": "progress:phase92 actualspeed published;phase93 adds raw224/65/239→full HP consumer and native event dispatch",
+  "findings": [
+    "Ordinary possessed damage scale128−64=64;−100→−50,−101→−50,−1→0;WORD443 shares OR subtraction,not extra stacking",
+    "Healing ceiling baseCreatureHP+raw65/HealthLevel;raw224/Health andscalar98/113/114 do not change tested damage/heal-cap paths",
+    "Raw23950→WORD64 throughnative51CD90 interactswithflag8000;withpossessed flag scale0 in fixture",
+    "Over-ceiling preparedHP1500/request+200→1250 possessed versus1000 normal is conditional arithmetic,not proof of normal-game/editorbug",
+    "31newnativecases15events,132whole native spans6blocks;557acceptedVariables9healthlevel36exactAPIpatches;package72/allprevious71 unchanged;4EXEs unchanged"
+  ],
+  "evidence": [
+    {
+      "file": "possession-health-semantics.json",
+      "sha256": "66bbe2589015e5568f3ae2fdebbc0911b22d4b58e69b71aca156bf31592d2a7f"
+    },
+    {
+      "file": "phase93-validation.json",
+      "sha256": "547a7f21bbd354655df627cb56b860b68351f5d9523a08a4dc680202ac7c2386"
+    },
+    {
+      "file": "phase93-primary-manifest.json",
+      "sha256": "3ba5051c47d566febbdd0e0a31e3c6c2be85c1e83a3f4edc757989aebd66d654"
+    },
+    {
+      "file": "phase93-possession-health-emulations.json",
+      "sha256": "aa5d0dfa784842b2ad8c8d3a7c94b724a9c2f365684435f9dba4bb5a2d88fcc1"
+    },
+    {
+      "file": "native_possession_health.py",
+      "sha256": "cf728a4442a5d2e452c173fe6ee77b274018dee4d59de3042eb2034ecb7a4999"
+    }
+  ],
+  "next_action": "Trace real writers/receivers of ownerBYTE1095 (used as signed positive count reducing damage by8 perunit) using phase94-owner-health-modifier-leads.json. Also trace actor3EA/8 writer and full possession/upgraded/friendly control path; seek actual scalar98/113/114 and otherstat224 consumers without declaring them unused from negative direct scans.",
+  "goal_achieved": false,
+  "significant_unknowns_remain": true,
+  "preserved_scope": "All15 requested format families. Fullpossession cycle,death/special states,Objects34C,Traps204,Doors236,Terrain198/224,Creature Priority/Jump and remaining consumers stay open."
+}

@@ -1,0 +1,1667 @@
+{
+  "phase": 192,
+  "status": "verified_existing_Variables233_conditional_creature_conversion_score_delta",
+  "counts": {
+    "native_scenes": 16,
+    "independent_Ghidra_controls": 6,
+    "Ghidra_compared_regions": 258,
+    "Ghidra_compared_bytes": 639528,
+    "source_raw_Creature_loads": 16,
+    "raw_233_callbacks": 16,
+    "complete_conversion_calls": 16,
+    "original_owner_setters": 16,
+    "original_score_updates": 11,
+    "score_gate_rejections": 5,
+    "new_complete_function_extents": 4,
+    "inherited_extents": 72,
+    "additional_executed_byte_blocks": 8,
+    "unique_executed_original_PCs": 7382,
+    "exact_in_memory_container_edits": 8,
+    "requested_family_roundtrips": 15,
+    "newly_assigned_existing_variable_types": 1,
+    "new_raw_fields": 0,
+    "source_writes": 0,
+    "prior_components_preserved": 169,
+    "source_files_preserved": 420,
+    "EXE_paths_preserved": 7
+  },
+  "profile": {
+    "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\DKII-DX.exe",
+    "sha256": "d7a8b854e4e4f02709eba271bead6fe2307dd6e332b5a96e70857e5b0e19fb8a"
+  },
+  "field": {
+    "family": "Variables",
+    "type": 233,
+    "payload_bytes": 16,
+    "type_record_offset": 0,
+    "value_record_offset": 4,
+    "value_bytes": 4,
+    "confirmed_alias": "CREATURE_CONVERSION_SCORE_DELTA_MODE4",
+    "label_ru": "Очки за конверсию существа в режиме4",
+    "source_value_i32": 40,
+    "source_record": "e9000000280000000000000000000000",
+    "source_file_offset": 3992,
+    "storage": "Preserve all32 physical Value bits and opaque Extra1/Extra2. Old UNKNOWN_233 baseline name remains historical.",
+    "runtime": {
+      "loader": 5361040,
+      "store_instruction": 5363373,
+      "address": 7285225,
+      "width": 4,
+      "transform": "exact32-bit copy"
+    }
+  },
+  "consumer": {
+    "entry": 5187584,
+    "owner_setter": 4771920,
+    "score_read": 5187769,
+    "conditions": [
+      "DWORD75AD4B equals4",
+      "Receiving Room owner lookup4E52F0 returns CPlayer whose unsignedBYTE10FC is>=3"
+    ],
+    "owner_type_scope": "CPlayer internaltype, not the player tag/number.",
+    "mode_scope": "Literal mode4 confirmed; its user-facing mode name is not established by this stage.",
+    "actual_effect": "Complete conversion changes Creature owner tag2->3 and pointer, preserves HP1000, then optionally updates World score."
+  },
+  "score": {
+    "original_World_vtable": 6743020,
+    "slot": 836,
+    "target": 5314128,
+    "field_offset": 29346,
+    "width": 4,
+    "arithmetic": "result=wrap_u32(previous_bits+Value_bits); if signed32(result)<0 then result=0",
+    "lower_clamp": true,
+    "upper_saturation": false,
+    "examples": [
+      {
+        "before": 10,
+        "delta": 40,
+        "after": 50
+      },
+      {
+        "before": 10,
+        "delta": -5,
+        "after": 5
+      },
+      {
+        "before": 10,
+        "delta": -40,
+        "after": 0
+      },
+      {
+        "before": 2147483647,
+        "delta": 1,
+        "after": 0
+      }
+    ],
+    "diagnostic_scope": "Negative initial score and type255/overflow fixtures test machine representation; not asserted legal normal game settings."
+  },
+  "caller": {
+    "function": 4699536,
+    "conversion_call": 4699935,
+    "existing_evidence": [
+      {
+        "file": "phase167-caller-queries.json",
+        "sha256": "6828bc23313f93bf0c4756589df084f07c24a790a851487f211370fe7fc3387e"
+      },
+      {
+        "file": "ghidra/phase167-DX-47b590-assembly.txt",
+        "sha256": "fc69719254f4026b78beb55183211d1906d899079e683d6f60077d2730b8e710"
+      },
+      {
+        "file": "ghidra/phase167-DX-47b590-decompile.txt",
+        "sha256": "54ff1f520bdaf44ff0cd0878184b45c549d23427371c9e4b61d4c24d3a65fcaa"
+      }
+    ],
+    "scope": "Static threshold/chance path ending in4F2800. Full naturally timed torture/job loop, RNG outcome and visuals are not executed here."
+  },
+  "fixture": {
+    "initial": "Prepared native post-factory Warlock plus full original raw Creature loader; explicit World,Room,CPlayer registry/count rows and session.",
+    "no_substitution": "Original game code, original Creature/World vtables, owner setter and score method are unchanged.",
+    "external": "Declared external sound lookup/play providers from inherited fixture; only3 external audio PCs executed. No rendered audio/graphics.",
+    "low_memory": "Only original FS:[0] exception-chain accesses are accepted; early bad CPlayer count/World probes rejected."
+  },
+  "primary": {
+    "program_sha256": "d7a8b854e4e4f02709eba271bead6fe2307dd6e332b5a96e70857e5b0e19fb8a",
+    "functions": [
+      {
+        "address": 5187584,
+        "length": 263,
+        "memory": "ghidra\\phase192-score-primary-4f2800-memory.txt",
+        "memory_sha256": "33009d42d1e5f6a3ad4002a4d58d151dac3bc46d03bd5a7bc1df73d5bc19d4d6",
+        "assembly": "ghidra\\phase192-score-primary-4f2800-assembly.txt",
+        "assembly_sha256": "ff2bcd24cb05fe0b7759b1cd500460d8d5d83fbf720217202bc2d49d80d0b225",
+        "bytes_sha256": "ae6f986fd1f7be8a4f47b275283333e340796a43ee9cb46a838a526a01d9e3e3"
+      },
+      {
+        "address": 4771920,
+        "length": 750,
+        "memory": "ghidra\\phase192-score-primary-48d050-memory.txt",
+        "memory_sha256": "35bf32b8bdf7a55cc24b2708427f173e035272349f920d36b6a83f6d9955f95d",
+        "assembly": "ghidra\\phase192-score-primary-48d050-assembly.txt",
+        "assembly_sha256": "c91916df2ead417db9f020246f80af974387f4fb3304eeaf31a43372afe60729",
+        "bytes_sha256": "a1fcd195a8083009581e9a7ade87e05f4e62b78050bf056f58906ab1784d5216"
+      },
+      {
+        "address": 5314128,
+        "length": 33,
+        "memory": "ghidra\\phase192-score-primary-511650-memory.txt",
+        "memory_sha256": "73fde8237467175bef2791b5ac23123f0b3ba652f5123a3f9464721248460c2f",
+        "assembly": "ghidra\\phase192-score-primary-511650-assembly.txt",
+        "assembly_sha256": "bf8cef692e6233cd0c0c249e104306aee85326824821e6bef2b0cffe43cfc65e",
+        "bytes_sha256": "9d231fdfdab318ed0903d4e28a6b08f1d389edb6632bfe78864557b0b3d09e2e"
+      },
+      {
+        "address": 4746784,
+        "length": 165,
+        "memory": "ghidra\\phase192-score-primary-486e20-memory.txt",
+        "memory_sha256": "8f6c70fd2b51f06563f03b15b1467187c6ba30f26cea18dd32c24dd9e5199b4d",
+        "assembly": "ghidra\\phase192-score-primary-486e20-assembly.txt",
+        "assembly_sha256": "be20a76e646ee2394de5c4b414973850a998fc5ed6cd59474107f55f7c051853",
+        "bytes_sha256": "4dcdd33a69995260237002e135fa5db220b3f48b51f9a83d5ce3794a64926743"
+      }
+    ],
+    "executed_blocks": [
+      {
+        "address": 4762928,
+        "length": 21,
+        "memory": "ghidra/phase192-executed-block-48ad30-memory.txt",
+        "memory_sha256": "d8682d65292dc1ef24fcafa6387629f698a327904c25dda38953bbbc6ba66fb3",
+        "bytes_sha256": "9579243d727ec3197f3c64ec122c9be8a33d6628be8dc4cea743be591ef9c5b4",
+        "scope": "Executed-PC byte block, not a complete function boundary",
+        "executed_PCs": [
+          4762928,
+          4762932,
+          4762934,
+          4762935,
+          4762941,
+          4762946
+        ]
+      },
+      {
+        "address": 4812160,
+        "length": 63,
+        "memory": "ghidra/phase192-executed-block-496d80-memory.txt",
+        "memory_sha256": "eb92e6bb60c786edd38105a690c29fb86fd66ec56e19878ebb6cfae86b1c558b",
+        "bytes_sha256": "cc7536cc5eee2f4d232643fe49ffb74a229a38a53868af4f056f74616ddd3986",
+        "scope": "Executed-PC byte block, not a complete function boundary",
+        "executed_PCs": [
+          4812160,
+          4812162,
+          4812168,
+          4812174,
+          4812180,
+          4812186,
+          4812192,
+          4812198,
+          4812204,
+          4812210,
+          4812216,
+          4812222
+        ]
+      },
+      {
+        "address": 4827696,
+        "length": 18,
+        "memory": "ghidra/phase192-executed-block-49aa30-memory.txt",
+        "memory_sha256": "f36ef664014a4e095bc326acd2964395f83a6193df11b6f89462a1ca0bab22fd",
+        "bytes_sha256": "2e3f1e0c917f2ca96d3d91605a3b2f8e7e4375cd9a259e1e802bfa638cea0dc3",
+        "scope": "Executed-PC byte block, not a complete function boundary",
+        "executed_PCs": [
+          4827696,
+          4827697,
+          4827698,
+          4827700,
+          4827701,
+          4827702,
+          4827709,
+          4827712
+        ]
+      },
+      {
+        "address": 4827789,
+        "length": 9,
+        "memory": "ghidra/phase192-executed-block-49aa8d-memory.txt",
+        "memory_sha256": "7823df9e33dd3fe1946456b1765f25b3d9f049f22a089d3436e61b317bad81b2",
+        "bytes_sha256": "b6b9836c758965906da27b30a7277ba4ead111305d0b8b3329fa58831a9301e6",
+        "scope": "Executed-PC byte block, not a complete function boundary",
+        "executed_PCs": [
+          4827789,
+          4827790,
+          4827791,
+          4827792,
+          4827794,
+          4827795
+        ]
+      },
+      {
+        "address": 4958832,
+        "length": 77,
+        "memory": "ghidra/phase192-executed-block-4baa70-memory.txt",
+        "memory_sha256": "ca5e8e0e59d6a21fd302092b69ee6c89d2fc1f3d0158419e3705f0285ff21400",
+        "bytes_sha256": "2ee175b62c35b98c3b38f28ab02bd50551ba6e455074921b7b3bad9f51feab4a",
+        "scope": "Executed-PC byte block, not a complete function boundary",
+        "executed_PCs": [
+          4958832,
+          4958835,
+          4958836,
+          4958840,
+          4958841,
+          4958843,
+          4958848,
+          4958849,
+          4958850,
+          4958852,
+          4958854,
+          4958856,
+          4958858,
+          4958860,
+          4958863,
+          4958866,
+          4958868,
+          4958870,
+          4958873,
+          4958875,
+          4958877,
+          4958896,
+          4958899,
+          4958901,
+          4958904,
+          4958905,
+          4958906
+        ]
+      },
+      {
+        "address": 4973360,
+        "length": 63,
+        "memory": "ghidra/phase192-executed-block-4be330-memory.txt",
+        "memory_sha256": "7466fb7a061b27e4d30e3a42fc4e5766c4438b675f02188347ec9b90f68bd277",
+        "bytes_sha256": "510377e83ce3d1965c42d10aa80ec27fb453c098800213b9acc928ea0f6a6063",
+        "scope": "Executed-PC byte block, not a complete function boundary",
+        "executed_PCs": [
+          4973360,
+          4973361,
+          4973363,
+          4973369,
+          4973374,
+          4973380,
+          4973387,
+          4973389,
+          4973395,
+          4973401,
+          4973406,
+          4973412,
+          4973415,
+          4973418,
+          4973421,
+          4973422
+        ]
+      },
+      {
+        "address": 4981888,
+        "length": 55,
+        "memory": "ghidra/phase192-executed-block-4c0480-memory.txt",
+        "memory_sha256": "1c0a41754c5783633cdf9571440cee216606c1fd4cf971e48832cfb9c224dc78",
+        "bytes_sha256": "999a55773ba4a73e4bd6a9d094ebe633bd1845d6092e268427b5d2031b5f6aed",
+        "scope": "Executed-PC byte block, not a complete function boundary",
+        "executed_PCs": [
+          4981888,
+          4981892,
+          4981894,
+          4981899,
+          4981902,
+          4981909,
+          4981911,
+          4981920,
+          4981924,
+          4981929,
+          4981932,
+          4981940
+        ]
+      },
+      {
+        "address": 4998656,
+        "length": 58,
+        "memory": "ghidra/phase192-executed-block-4c4600-memory.txt",
+        "memory_sha256": "e1d0734fdc8ca8a8491fdaa297a9b4a35f44e042fb4a00945c7742e52aec3551",
+        "bytes_sha256": "5643d0eeeeb46d8d719f6e405b4295a6e833ccfe8422c64a67f65b3eca5bca6a",
+        "scope": "Executed-PC byte block, not a complete function boundary",
+        "executed_PCs": [
+          4998656,
+          4998662,
+          4998663,
+          4998664,
+          4998671,
+          4998673,
+          4998675,
+          4998676,
+          4998681,
+          4998682,
+          4998689,
+          4998695,
+          4998697,
+          4998699,
+          4998701,
+          4998702,
+          4998703,
+          4998704,
+          4998705,
+          4998711
+        ]
+      }
+    ],
+    "inherited": [
+      {
+        "address": 4681008,
+        "length": 649,
+        "memory": "ghidra\\phase93-primary-476d30.txt",
+        "memory_sha256": "d071670caafa31a509658fc84ee68ec21b4b299625711933873ea60ea19ea9ea",
+        "assembly": "ghidra\\phase90-primary-extra-476d30-assembly.txt",
+        "assembly_sha256": "0d51b5e8f97a4bc73a336459ec5b73217ad6134174feccc4e188c7e1d6c69f6f",
+        "bytes_sha256": "45a0fbb97432db55522942ba53573c3d9afae9ca9f35253a5f0dd2a8ca59c8ff"
+      },
+      {
+        "address": 4692208,
+        "length": 3727,
+        "memory": "ghidra\\phase93-primary-4798f0.txt",
+        "memory_sha256": "788a52865f0132aee7d4e0815bb97d120c4e0487643b7effddf29b1c6329396c",
+        "assembly": "ghidra\\phase90-temple-4798f0-disassemble_function.txt",
+        "assembly_sha256": "7e9b214b2cff1463446da1e1bf075382c70ac583e8a6f102ddb0019e36f5ce9b",
+        "bytes_sha256": "058e3c71125c823234eb5d681f338ac991845b3b37d721671455f884a94869be"
+      },
+      {
+        "address": 4700448,
+        "length": 70,
+        "memory": "ghidra\\phase94-primary-47b920.txt",
+        "memory_sha256": "675285bb24b6974db41a6fe0b58a3c9f53c424a591d4754255719bfd9d408f02",
+        "assembly": "ghidra\\phase94-owner-47b920-disassemble_function.txt",
+        "assembly_sha256": "17744256b38fadbaf8017c60ba2266e21fc7d23e968b7abe0bfd7b5093615110",
+        "bytes_sha256": "c3436ab027e38f54f8d0ef943d190f976e90d1b0276717c454b7bf30761b2174"
+      },
+      {
+        "address": 4701152,
+        "length": 18957,
+        "memory": "ghidra\\phase93-primary-47bbe0.txt",
+        "memory_sha256": "5ecf599d8253778fdf478f5a5f4158bfae679132370ae0e0369941f2defc7cae",
+        "assembly": "ghidra\\phase78-DX-47bbe0-assembly.txt",
+        "assembly_sha256": "ce64d13261ac637a0046b825dd0ba33a32d1cda1c2618168cfe7ff70680bb450",
+        "bytes_sha256": "0aec0160148cb09cec86bc55ef20f9223b703dd6e680b89ea90cc3b9e4add686"
+      },
+      {
+        "address": 4934704,
+        "length": 258,
+        "memory": "ghidra\\phase93-primary-4b4c30.txt",
+        "memory_sha256": "b1df0b2279c590964f68c3d11c8716b2ffbeb43b2ebe537ddbfa3c44e46fbe0d",
+        "assembly": "ghidra\\phase80-final-DX-4b4c30-assembly.txt",
+        "assembly_sha256": "793f194ac23b010470c2e7497d2329f0be95f8f7dd7ef31c5273dcd249f5b157",
+        "bytes_sha256": "be54f5b834c8e2f7ac71fc2bd95af90413bdf7d84c0a703de5ac25dbf6cba56c"
+      },
+      {
+        "address": 4934976,
+        "length": 290,
+        "memory": "ghidra\\phase93-primary-4b4d40.txt",
+        "memory_sha256": "36183eba85c719a619a68abe5a3a8799c1ac6cea6a736c6fffed674f8b4ec0d2",
+        "assembly": "ghidra\\phase80-final-DX-4b4d40-assembly.txt",
+        "assembly_sha256": "2b9f5c7b0b4ed12f30467281f391d119aabf5c5815928286b1fca82a04037033",
+        "bytes_sha256": "1e2738279c225b3e9cdc4e96b0be757a63a3b5d7d3a0db356d8fc8899a06361f"
+      },
+      {
+        "address": 5133040,
+        "length": 14,
+        "memory": "ghidra\\phase93-primary-4e52f0.txt",
+        "memory_sha256": "05a83f8d4593fc33e228948fa85c9d0d582826015bd4730825b48a88190b5650",
+        "assembly": "ghidra\\phase88-sacrifice-context-4e52f0-assembly.txt",
+        "assembly_sha256": "d3ce52aaa7c0e1cb9afe0b656783b1388988bd04052e14aa4c93e1c6d3f901f4",
+        "bytes_sha256": "c52131d78982a209a5e16898e130384e55e74847b2aa315f002f72783e4984d5"
+      },
+      {
+        "address": 5361040,
+        "length": 2478,
+        "memory": "ghidra\\phase93-primary-51cd90.txt",
+        "memory_sha256": "9998ad7bd55ccf03133baae9eca339d3ddcc7904e0bf3993d5447d2b9a37b601",
+        "assembly": "ghidra\\phase93-health-51cd90-disassemble_function.txt",
+        "assembly_sha256": "18af1de2b32996fdb7cb0b4d3a9cadcc087921ea7997be372a34fa1543819d9b",
+        "bytes_sha256": "fc7039770083104c04e63750e00b9dbd91186be3ec389cccbc814d5cf2f4c728"
+      },
+      {
+        "address": 4791632,
+        "length": 12,
+        "memory": "ghidra\\phase131-primary-491d50-memory.txt",
+        "memory_sha256": "fdafeee392378d33f65dfcac797f7d24f68a1c51a77d276ef4200d31ab8af9d7",
+        "assembly": "ghidra\\phase131-primary-491d50-assembly.txt",
+        "assembly_sha256": "2784631f7bae062af949e7479633c657750a0baffed86c7b21f5186e8e5220a6",
+        "bytes_sha256": "254aa0b0b08b7e12486fe79e6f89212d8d35b5a15a5e830a47cdd2f98ba1cf24"
+      },
+      {
+        "address": 4791648,
+        "length": 25,
+        "memory": "ghidra\\phase131-primary-491d60-memory.txt",
+        "memory_sha256": "8e8a215b13c1b6caf2d7aba35aa7885ac9eb34d0e02e06f2237c31d6b4b374c1",
+        "assembly": "ghidra\\phase131-primary-491d60-assembly.txt",
+        "assembly_sha256": "02db2c178fefc6178fea027b7f2259e71086ebfd93e998d510cf81d6c7128a62",
+        "bytes_sha256": "4e37c8de468ed3cd1f88b1953b94bde62b84ee28d3026bf02bf9641583a663d8"
+      },
+      {
+        "address": 4791680,
+        "length": 10,
+        "memory": "ghidra\\phase131-primary-491d80-memory.txt",
+        "memory_sha256": "3a3e694198fc30912c5639ff0c5e284837ee6b823ba9fdb89954a6fc2b3c104c",
+        "assembly": "ghidra\\phase131-primary-491d80-assembly.txt",
+        "assembly_sha256": "57e6b6ebe0743208472b8c22561fcc5a63232a260de138c95ef1f00b33e0b31e",
+        "bytes_sha256": "404140e7761959e82db6cdcf77ddd6930c6ab91ba6aced866d7a66eb5e6d991a"
+      },
+      {
+        "address": 4791696,
+        "length": 18,
+        "memory": "ghidra\\phase131-primary-491d90-memory.txt",
+        "memory_sha256": "723bcd020f05dd2d7cbde51503c7d5086deef7ddfc5def5c4e9e84a6dea4cc2e",
+        "assembly": "ghidra\\phase131-primary-491d90-assembly.txt",
+        "assembly_sha256": "803d2d84930f751fad641a700b035340744dff76b52dd4a7c9a5fdb3b58716f0",
+        "bytes_sha256": "fa94d490cef860b4e8f5c9c05d1458d70d294db3f79e4f09d69cb2e81b9226df"
+      },
+      {
+        "address": 4791728,
+        "length": 15,
+        "memory": "ghidra\\phase131-primary-491db0-memory.txt",
+        "memory_sha256": "f2b6728020256c960f6aa3e3aa256852978814a222014bffed98717b5baf2b0c",
+        "assembly": "ghidra\\phase131-primary-491db0-assembly.txt",
+        "assembly_sha256": "14c1859bc2a11a52fe81528c69e771838237ef4662f7689193f12f4e4c3d7860",
+        "bytes_sha256": "6c127110d6a0e40d721ab6b3f3a089fdb058953422d172f0dbb94cff78330294"
+      },
+      {
+        "address": 4791744,
+        "length": 1135,
+        "memory": "ghidra\\phase131-primary-491dc0-memory.txt",
+        "memory_sha256": "8eeaa117ba424ced9d9f91f77ed6441360753bf0b27866b547500cffbf9dc600",
+        "assembly": "ghidra\\phase131-primary-491dc0-assembly.txt",
+        "assembly_sha256": "0d01ca89a8e0a671a2f11945d9be58fa9429b0f498f68089955949547ad1b20c",
+        "bytes_sha256": "ae4ad216755f302e1b9106e075e9851d3fd529f6c5f570fb17152019c50f1791"
+      },
+      {
+        "address": 4793120,
+        "length": 8252,
+        "memory": "ghidra\\phase131-primary-492320-memory.txt",
+        "memory_sha256": "c3f9e6bedcbbef867ff897a5b3d1ee1196ed22d6d59cdad088e08d74795b4706",
+        "assembly": "ghidra\\phase131-primary-492320-assembly.txt",
+        "assembly_sha256": "36ed1e3d206c43a605c1c9935965ad82af7fba67c1cb68389dfd5a9b227db083",
+        "bytes_sha256": "b311ac9d5f88c17ee505128e44c062cee0e2163b5417cd6ed63cba0651e97d1a"
+      },
+      {
+        "address": 5262688,
+        "length": 31,
+        "memory": "ghidra\\phase131-primary-504d60-memory.txt",
+        "memory_sha256": "32e15bf942f468df5d1261dbb63f7267c2ef615d9c129a91177294d70060a33f",
+        "assembly": "ghidra\\phase131-primary-504d60-assembly.txt",
+        "assembly_sha256": "8e2439f87dc650e5c0295ca6ebaed505f5ab49f69602f5613f0a39958141963a",
+        "bytes_sha256": "12558628e8f199e22dc7f8289bfa4fed64080f401040c04b2ca7368c5c86384d"
+      },
+      {
+        "address": 5338256,
+        "length": 7,
+        "memory": "ghidra\\phase131-primary-517490-memory.txt",
+        "memory_sha256": "f46b8b162979527e9d3fea64055ea964ea463c0991d7166587c5d794dc4ec19f",
+        "assembly": "ghidra\\phase131-primary-517490-assembly.txt",
+        "assembly_sha256": "763420093614a38f2a44a5451a20454ee03cff0eb59228df7c9422d065df45e7",
+        "bytes_sha256": "478d198204dc1201c6d9430aa257ec122efc8ed3694922175dea0e90f77f6148"
+      },
+      {
+        "address": 5670944,
+        "length": 1552,
+        "memory": "ghidra\\phase131-primary-568820-memory.txt",
+        "memory_sha256": "b9e5ebaea845adf7fd08a7e50c152a248b7e41023612349fb2998338b29b751c",
+        "assembly": "ghidra\\phase131-primary-568820-assembly.txt",
+        "assembly_sha256": "821f20219eaad78a5d0c3da2f8b0c3355d4a12fb050a3d96f03ec4f0f48046d6",
+        "bytes_sha256": "496dd328a811d181e915b61e6ccaf90525d478bcc63017c9c3e7eebf1f31bc24"
+      },
+      {
+        "address": 5672496,
+        "length": 3597,
+        "memory": "ghidra\\phase131-primary-568e30-memory.txt",
+        "memory_sha256": "0cf8edde42d73245e325f4ce69e42d0a55fd57921c2b03ce407735d4754c1add",
+        "assembly": "ghidra\\phase131-primary-568e30-assembly.txt",
+        "assembly_sha256": "97e9b7b90edc3441e1f6eaf7ef9d84ccb953c0604e8527a85ca26db865b3cde9",
+        "bytes_sha256": "e418e5207c7759bbc3de4e9d28b92604fcf4b75869b67846622df9c1cbc36c78"
+      },
+      {
+        "address": 5676096,
+        "length": 24,
+        "memory": "ghidra\\phase131-primary-569c40-memory.txt",
+        "memory_sha256": "6e0400c4135d937e36b46cc67e0d8fe55913f451b3b33d16d13e38906dc60187",
+        "assembly": "ghidra\\phase131-primary-569c40-assembly.txt",
+        "assembly_sha256": "7f78fe97d05b137389ab45436eebddc9a541488ceea0456b29fc4202d339af89",
+        "bytes_sha256": "fdfdb393f068d6cf157a87816c073903e9f8c1b195eafa3664d446a08034dbef"
+      },
+      {
+        "address": 5676128,
+        "length": 24,
+        "memory": "ghidra\\phase131-primary-569c60-memory.txt",
+        "memory_sha256": "e6a565677a869ed3bc51e3cc4bcbdb742684714dcf45f07098182b998d2f27dd",
+        "assembly": "ghidra\\phase131-primary-569c60-assembly.txt",
+        "assembly_sha256": "ae99ecb0df3c90d4c2ac3509bc0078b9d6cfc9d7e7c4f8efe0ef7a2efa183479",
+        "bytes_sha256": "4a363e1000c4d218c45c298bde1ac26549ba37e2383be7e2c0f8f6bc9f1b4759"
+      },
+      {
+        "address": 5676160,
+        "length": 24,
+        "memory": "ghidra\\phase131-primary-569c80-memory.txt",
+        "memory_sha256": "9e7c91973826ceedcdd367c4596eeca04458ae629a750db2bb00665223c0c924",
+        "assembly": "ghidra\\phase131-primary-569c80-assembly.txt",
+        "assembly_sha256": "819231de19bbad16556436396d5363255ae6cf79093cd83dd71ca0cb11019ed9",
+        "bytes_sha256": "ccbe7eb058d5707256759f5beb62bf62e89287716c2404d271e7ad4aeee11229"
+      },
+      {
+        "address": 5676192,
+        "length": 24,
+        "memory": "ghidra\\phase131-primary-569ca0-memory.txt",
+        "memory_sha256": "58de4674d678ee7f137ec5edaa5c0abfc4749152a34f755bb3b00352d7a51415",
+        "assembly": "ghidra\\phase131-primary-569ca0-assembly.txt",
+        "assembly_sha256": "3a1c9d19ed61821f9039d86f230ded1e940e05f6cff1a8818859a9e5fd3c5279",
+        "bytes_sha256": "a6e825fcb2b65b3def02191ffc8932105046460039f8efe0b164059038c6a2ef"
+      },
+      {
+        "address": 5676224,
+        "length": 27,
+        "memory": "ghidra\\phase131-primary-569cc0-memory.txt",
+        "memory_sha256": "72b39c49f0db27fc0f66e7e0ece691e0aa70bdbc44e652f3d46b4ac804898aa2",
+        "assembly": "ghidra\\phase131-primary-569cc0-assembly.txt",
+        "assembly_sha256": "24b2bcea9ff62f42c614e4e45bb3f1ffcf185e41cdde9adf684e9501deaec05b",
+        "bytes_sha256": "7569634cfc81cd11024cec9bafa9532c9c8ca1506468361de83a65bf18ed1f24"
+      },
+      {
+        "address": 5676256,
+        "length": 27,
+        "memory": "ghidra\\phase131-primary-569ce0-memory.txt",
+        "memory_sha256": "570b4dab7d6b2fc95ecbf7c09ad06facc2fbfabe20fdf6a88ba396ed02d91408",
+        "assembly": "ghidra\\phase131-primary-569ce0-assembly.txt",
+        "assembly_sha256": "11e3f8456f61cfe533a3b2ace1ca90ad0d3439ec0c68aa13043d3bdad2ee09a4",
+        "bytes_sha256": "460e57ca06d6b68e96bd5f2a0fbf346a7e201974543fce922a32502c202a48bf"
+      },
+      {
+        "address": 5676288,
+        "length": 27,
+        "memory": "ghidra\\phase131-primary-569d00-memory.txt",
+        "memory_sha256": "d807f0ff4c8c2a0c33eb25cf87326b0333b91fd8845ea3720134f408343eb416",
+        "assembly": "ghidra\\phase131-primary-569d00-assembly.txt",
+        "assembly_sha256": "8a741222090ed25fd1b1510120ec8931bb1546537c6d07c80d7b121935e80ef3",
+        "bytes_sha256": "3e1b0d5c7cc6925605ec50b0a521dbce0e6ddc3c876af370808474e1db51fa4a"
+      },
+      {
+        "address": 5676320,
+        "length": 38,
+        "memory": "ghidra\\phase131-primary-569d20-memory.txt",
+        "memory_sha256": "09f612076ce2af20bb7210b99cda67a861235072a4e230828863bd66d2072c00",
+        "assembly": "ghidra\\phase131-primary-569d20-assembly.txt",
+        "assembly_sha256": "b3090aa8e601afaf82c4d6103968e69026a24d859aaf21c4f86e2c08457dc2cf",
+        "bytes_sha256": "f65c6282ba9b74eac79c4c331b1853785bda5ac5a4b2559245743b98fa226c9a"
+      },
+      {
+        "address": 5676368,
+        "length": 27,
+        "memory": "ghidra\\phase131-primary-569d50-memory.txt",
+        "memory_sha256": "a3dc78e5945127d4100d08bf592aac5f791bcbb99cbd198f70daa9c59ea88494",
+        "assembly": "ghidra\\phase131-primary-569d50-assembly.txt",
+        "assembly_sha256": "da2189d699b514efcd1593b780002dda0c5374cd64aad74a3bd114228a77c53d",
+        "bytes_sha256": "489e5c78bc6620f031d230a3885d5004da798f7cab0df37f90ec3d8933075d8a"
+      },
+      {
+        "address": 5676400,
+        "length": 24,
+        "memory": "ghidra\\phase131-primary-569d70-memory.txt",
+        "memory_sha256": "395217b972dd039ae6259b21f1bd8c93d672b5046d42820f9976ceaa778d76e1",
+        "assembly": "ghidra\\phase131-primary-569d70-assembly.txt",
+        "assembly_sha256": "21efea584786e3d1ecd6066299194f12bc9fc0c1cd2934d9f5fb025a71dc98a3",
+        "bytes_sha256": "8d75d9f82b4e5902875fa9f1ced9cbae2b10da661fa11cc2660370ab52c25ec1"
+      },
+      {
+        "address": 5676432,
+        "length": 24,
+        "memory": "ghidra\\phase131-primary-569d90-memory.txt",
+        "memory_sha256": "f3c7602dcf684f8dab6860f2b878f74305ab6f2f4b29ce54a8674503f582777c",
+        "assembly": "ghidra\\phase131-primary-569d90-assembly.txt",
+        "assembly_sha256": "4ad23252ec33b5e8fedf8bb488b9ff409d765c28b71f203c6ad7dbbed39ca15d",
+        "bytes_sha256": "6d136458bc301eec6540f5d938bcfd9abcd7d0a6d9b69b770488e4509f890467"
+      },
+      {
+        "address": 5676464,
+        "length": 24,
+        "memory": "ghidra\\phase131-primary-569db0-memory.txt",
+        "memory_sha256": "310cdcf5d49268a086e8f17c62ec270c5dddf707fd974fd3634831a37019d583",
+        "assembly": "ghidra\\phase131-primary-569db0-assembly.txt",
+        "assembly_sha256": "5271de0d7f03a57622c217b28c288d6209dfa0ebfc9d8826775cfd3216626321",
+        "bytes_sha256": "a24f435ff116ccfb0884dcb0de0bc1cc2f816f6b013c8ebbc33fe29e81ee4f45"
+      },
+      {
+        "address": 5676496,
+        "length": 24,
+        "memory": "ghidra\\phase131-primary-569dd0-memory.txt",
+        "memory_sha256": "6b77df37ee3c6b65a3e498751a9568c73f373a47d2b5910ffbe1970d67f55dec",
+        "assembly": "ghidra\\phase131-primary-569dd0-assembly.txt",
+        "assembly_sha256": "291430cb007f1df9d486b3ec4ac6a27597f42dabd77369e04c0ad34754996c7d",
+        "bytes_sha256": "c504904f40039bd76227e295a9ac5be694a648df7ec43cb6eed0b2492858a5cc"
+      },
+      {
+        "address": 5676528,
+        "length": 27,
+        "memory": "ghidra\\phase131-primary-569df0-memory.txt",
+        "memory_sha256": "b2e7bf16a05eb6027b046a8cb148c79d410c6fe5eba84b0257472a25205bc830",
+        "assembly": "ghidra\\phase131-primary-569df0-assembly.txt",
+        "assembly_sha256": "b27e80cbffd18f5286406d62fb6e128a326bb656a6285403b1004808282189a2",
+        "bytes_sha256": "5a440b444ab77476338e942ad5e35162819c2250f7fe8886d18250d99a1d0385"
+      },
+      {
+        "address": 5676560,
+        "length": 27,
+        "memory": "ghidra\\phase131-primary-569e10-memory.txt",
+        "memory_sha256": "92436b893efa580731f58a30cd40c02bdd5d4b97bedf88db8842db0fcea63fcc",
+        "assembly": "ghidra\\phase131-primary-569e10-assembly.txt",
+        "assembly_sha256": "03c6df80453b31656da59161826eb30ce7919363b4dc221c5a35c4378a39e592",
+        "bytes_sha256": "8920ea61130ad6d313d84d278112909da25ffa04f86a9ca4300da3c56113e8da"
+      },
+      {
+        "address": 5676592,
+        "length": 29,
+        "memory": "ghidra\\phase131-primary-569e30-memory.txt",
+        "memory_sha256": "45470634d13c6eb71573d18edc0fb6c586d6fd79a69bfe9d5444265deee6c134",
+        "assembly": "ghidra\\phase131-primary-569e30-assembly.txt",
+        "assembly_sha256": "de8389dd6563f3f085259f552cfbe5925ba72b3c78e14841e4708e10b8a1d5fd",
+        "bytes_sha256": "0d337d7fd5d01920eb27dc368577de2bfdad7090674b38c96f45b0f4e20d95ea"
+      },
+      {
+        "address": 5676624,
+        "length": 29,
+        "memory": "ghidra\\phase131-primary-569e50-memory.txt",
+        "memory_sha256": "59e535267c3ca649ff6a69e4ae5fe025dcb93bf8c13970e30c433b7be639f9fa",
+        "assembly": "ghidra\\phase131-primary-569e50-assembly.txt",
+        "assembly_sha256": "66aea9f20d41ab6deb981d6c6a5172cdf43d7fd5a1a430f0df89fe341885709a",
+        "bytes_sha256": "cf7acf6d5dfc1953fcc45afa053f85cf08375d3afd3038a3f189568b59ea8c8b"
+      },
+      {
+        "address": 5676656,
+        "length": 24,
+        "memory": "ghidra\\phase131-primary-569e70-memory.txt",
+        "memory_sha256": "a9f79059508d0fc363004f14690d8f150636f760bfcb994c40bb60d07692ee73",
+        "assembly": "ghidra\\phase131-primary-569e70-assembly.txt",
+        "assembly_sha256": "15658c6ece765b5167c4900f1692fd1f6b9a7c6bda0ce1afea0ef056c5db5c4e",
+        "bytes_sha256": "c4fd399701f67562236076288649eb03ba78ae8112080deb91f1e5d583f064a2"
+      },
+      {
+        "address": 5676688,
+        "length": 27,
+        "memory": "ghidra\\phase131-primary-569e90-memory.txt",
+        "memory_sha256": "d31b88394429a0ec12a31d71c48224c9746d43ee43549a271275ca5a07a58598",
+        "assembly": "ghidra\\phase131-primary-569e90-assembly.txt",
+        "assembly_sha256": "e069788da7eb61df955967649f9f2f768337789ff6ce29c7688065c330ae3733",
+        "bytes_sha256": "1c0bf0f48c0b19f33fade56ac9b111d03214611a25b6ed26825c73c3e8f3532a"
+      },
+      {
+        "address": 5676720,
+        "length": 27,
+        "memory": "ghidra\\phase131-primary-569eb0-memory.txt",
+        "memory_sha256": "b01d84c2a8f7dfb1e837411b0af349c1bb3bf84f5db6dc6687a3f9565b75a3ea",
+        "assembly": "ghidra\\phase131-primary-569eb0-assembly.txt",
+        "assembly_sha256": "3291138e5edcb8c9386bb2a55a4aaaaee1154d096b967196519e8072b14bf3dd",
+        "bytes_sha256": "3215120be939556c76719d7ca7fcfdcf0eecdcfd11abebe13f2c5f120163fe8c"
+      },
+      {
+        "address": 5676752,
+        "length": 29,
+        "memory": "ghidra\\phase131-primary-569ed0-memory.txt",
+        "memory_sha256": "2c733684354a7b78161ffd3dd904d33e61d7a94890fbba5a3abf72d4a568b4eb",
+        "assembly": "ghidra\\phase131-primary-569ed0-assembly.txt",
+        "assembly_sha256": "a1c83e7b31d62b31838535f56d3b071bce565d7bfc145015ec477a3d2580bf2b",
+        "bytes_sha256": "070dffab6cf12cad7c100bda7dd0acb74e154e8ecd061ccf64ea4b2a3c255b62"
+      },
+      {
+        "address": 5676784,
+        "length": 29,
+        "memory": "ghidra\\phase131-primary-569ef0-memory.txt",
+        "memory_sha256": "dfe68a4ec30bf949ff5f048b03d994a652692982e6c5c201cf6097b233d4b761",
+        "assembly": "ghidra\\phase131-primary-569ef0-assembly.txt",
+        "assembly_sha256": "faeb83b2d45952b70990fc441f25b34dbbd84d52d1412d72c0a274c9ff7965b6",
+        "bytes_sha256": "3614a1db547afbebfa1b1076aa0923fe6fa552481c7f11c2af63c4bd4f42140a"
+      },
+      {
+        "address": 5676816,
+        "length": 24,
+        "memory": "ghidra\\phase131-primary-569f10-memory.txt",
+        "memory_sha256": "adafd27f4b68589cf31caf078ab805a76fd36efe816eb3f9541d1fd75b8097bf",
+        "assembly": "ghidra\\phase131-primary-569f10-assembly.txt",
+        "assembly_sha256": "c7b5d98ede5f3f0fe9d6f7c99cbd83035e704bd12615dfddc40faea196604d6c",
+        "bytes_sha256": "9e4b0d729300b12da25c38dcebcd0600f29f0ca021b31d6b8737d309064622f6"
+      },
+      {
+        "address": 5676848,
+        "length": 27,
+        "memory": "ghidra\\phase131-primary-569f30-memory.txt",
+        "memory_sha256": "f84795742cb95ca3a5b74a608aca898f5dcb818ca99e23543153de65d5aee4c6",
+        "assembly": "ghidra\\phase131-primary-569f30-assembly.txt",
+        "assembly_sha256": "51e534a4ff4c4c64e8c729fd6a61e75dae6d0cc039227dc91fb3d8479f3d9fef",
+        "bytes_sha256": "ebfecf02a5ec07b368d5217b4ec91974998a4e262d970ed463a6612a02bbb5f6"
+      },
+      {
+        "address": 5676880,
+        "length": 27,
+        "memory": "ghidra\\phase131-primary-569f50-memory.txt",
+        "memory_sha256": "b66e7c68a17de1facee1f59bfbd4f926e5a6e72e8a8e73a4718135aa72c1504e",
+        "assembly": "ghidra\\phase131-primary-569f50-assembly.txt",
+        "assembly_sha256": "f3963486966ca4404f9d4ecbca3930a3d97bf7ac439570efe24cf6c05a18cb0a",
+        "bytes_sha256": "d6d55d5e0835296486c209547253da89ef19fd2416ce9973482f4e1e1cdbcbbe"
+      },
+      {
+        "address": 5676912,
+        "length": 29,
+        "memory": "ghidra\\phase131-primary-569f70-memory.txt",
+        "memory_sha256": "a383b13c166d159d0789c84781131f6f2751e6b46adf8d951ecd40fa2ba964c0",
+        "assembly": "ghidra\\phase131-primary-569f70-assembly.txt",
+        "assembly_sha256": "fc7f6e06e675b4ef0c7bfb7d8c3373cd3bbf58f30ec014cc65102060511ecc4f",
+        "bytes_sha256": "3d49e32645c3591920c0abd32b00da6572ca937d88a734c3203579c4f1d28994"
+      },
+      {
+        "address": 5676944,
+        "length": 29,
+        "memory": "ghidra\\phase131-primary-569f90-memory.txt",
+        "memory_sha256": "e7a3be98a1361d7b1c8aaf2d1f1937cd210352f2e76138372f2995d69c683a11",
+        "assembly": "ghidra\\phase131-primary-569f90-assembly.txt",
+        "assembly_sha256": "ffe51b753892e0cf4224304985795e863d78d1a3dc860499c7ed9c2095a671fb",
+        "bytes_sha256": "c87884efc79413aa23c3b10427737040089dffff79f07cb31161d0646e0e43ae"
+      },
+      {
+        "address": 5676976,
+        "length": 24,
+        "memory": "ghidra\\phase131-primary-569fb0-memory.txt",
+        "memory_sha256": "ce113a26866521afeaccb3cf6e77869166de744b09bfa55d6abf226109267d55",
+        "assembly": "ghidra\\phase131-primary-569fb0-assembly.txt",
+        "assembly_sha256": "b320912c1df3e3309f6c395b22de515548ca64b5e2dd14261fec02684e473931",
+        "bytes_sha256": "18e2f13b720f285c543f4b5a85b6f0f06d839fbd9540a7d0e438f73c4521aeb5"
+      },
+      {
+        "address": 5677008,
+        "length": 24,
+        "memory": "ghidra\\phase131-primary-569fd0-memory.txt",
+        "memory_sha256": "c36b37560911f8937c7f185d7bc691635e73a0105535216fce8a38c277406d3d",
+        "assembly": "ghidra\\phase131-primary-569fd0-assembly.txt",
+        "assembly_sha256": "e87932cfc6636ee9dd74571ccebe948b8462958269b50965e36df261396a99e6",
+        "bytes_sha256": "860b36ce9df81873c47890b6822fd0981c040348cd3bbe9d27e73d0992e3cdb0"
+      },
+      {
+        "address": 5677040,
+        "length": 24,
+        "memory": "ghidra\\phase131-primary-569ff0-memory.txt",
+        "memory_sha256": "9bd15d15df78c0ef51a900a3c2978cdcbdb1734d05fc4129a223ae360dc8fc4e",
+        "assembly": "ghidra\\phase131-primary-569ff0-assembly.txt",
+        "assembly_sha256": "5db5d5fd0b1d4770785c3e55d847d85d0911ae177c3e124ee0a6acdbd78a6688",
+        "bytes_sha256": "200fe6651942e6d9270d558e16f4966ce35fdf176694a4d1b0d63deff02377c1"
+      },
+      {
+        "address": 5677072,
+        "length": 24,
+        "memory": "ghidra\\phase131-primary-56a010-memory.txt",
+        "memory_sha256": "395ab420163072832132fbde86963f02610d3c8e0b978485a62ceb68fcc0d4b6",
+        "assembly": "ghidra\\phase131-primary-56a010-assembly.txt",
+        "assembly_sha256": "68e367d7157acfa3a17d2a473ac8b94bdd37890118f0cd32676005c8d0eefc72",
+        "bytes_sha256": "ab6751b234526fb015712c1b3d9ac6c7e2af6a73c95669599efeef4a94bf5844"
+      },
+      {
+        "address": 5677104,
+        "length": 26,
+        "memory": "ghidra\\phase131-primary-56a030-memory.txt",
+        "memory_sha256": "bfd5155ae6ef2fb00b577a158faf43dd88e3036a6886b4507b54942e27fe00df",
+        "assembly": "ghidra\\phase131-primary-56a030-assembly.txt",
+        "assembly_sha256": "d48148cdc06e7465356a55541a7172134eb1fdd96e050f1e8540534af5025061",
+        "bytes_sha256": "b106e436f666f21f0592b78eb30c5470e923f83a75eedfcda7071f274b0ab3ca"
+      },
+      {
+        "address": 5677136,
+        "length": 26,
+        "memory": "ghidra\\phase131-primary-56a050-memory.txt",
+        "memory_sha256": "d2a092f9fb160a2407634bba1092b93f1ff6e9d3283b4224e38aef2096761300",
+        "assembly": "ghidra\\phase131-primary-56a050-assembly.txt",
+        "assembly_sha256": "354b6f6bd824241a0677d554b9dd6df266bdabffa7be6c08e81d4261db0c9538",
+        "bytes_sha256": "a167ef82fa0c5798a2450f569fa20cfd732a344ddc3fb838a8de3edd43548669"
+      },
+      {
+        "address": 5677168,
+        "length": 24,
+        "memory": "ghidra\\phase131-primary-56a070-memory.txt",
+        "memory_sha256": "1329e76ee245e35ce3acc695bd35c5dc3c5f81071ca10d1ae748d09d430c7a02",
+        "assembly": "ghidra\\phase131-primary-56a070-assembly.txt",
+        "assembly_sha256": "dd15d3b189661ad3f8b1de46f1009a65c730107e4133d3202ab67d55dcbccf40",
+        "bytes_sha256": "8d6687e906259dfd4658736e76feeeda2f39491bdec42e01adc8fa3bd91978ff"
+      },
+      {
+        "address": 5677200,
+        "length": 24,
+        "memory": "ghidra\\phase131-primary-56a090-memory.txt",
+        "memory_sha256": "102e9b13de0c5b3d001b2f94ec4c9633626978e56ad5eda33ec05bca9b2d4436",
+        "assembly": "ghidra\\phase131-primary-56a090-assembly.txt",
+        "assembly_sha256": "9d3f8e0bc61a00d44f89fe1a70840edf7004429b5071374b15910c608ed1dc88",
+        "bytes_sha256": "379126499787206b46ea70cd95a2419e5709ccc7fca768f26dd6323fa24e2218"
+      },
+      {
+        "address": 5677232,
+        "length": 24,
+        "memory": "ghidra\\phase131-primary-56a0b0-memory.txt",
+        "memory_sha256": "70ccf758e12e7e1cb71b35cb45ab79aec92d0c815f16336c53a109484bfa2b6a",
+        "assembly": "ghidra\\phase131-primary-56a0b0-assembly.txt",
+        "assembly_sha256": "65c8fb9222c31f76b3157272978860a9eeca5d762ce16b6713989f8847a14233",
+        "bytes_sha256": "928d13d933a635551a68b4b2f74e7587a3d4709a9d87fe780d286d20cf985f42"
+      },
+      {
+        "address": 5677264,
+        "length": 24,
+        "memory": "ghidra\\phase131-primary-56a0d0-memory.txt",
+        "memory_sha256": "01f2cba828b1d413c28f2134a7358a54272344260bfa43991a660b25478e63be",
+        "assembly": "ghidra\\phase131-primary-56a0d0-assembly.txt",
+        "assembly_sha256": "4a1679f6989c84cca9377797b9996ce412ddb20feb659fb4b99b7fa61cc6c808",
+        "bytes_sha256": "d3c0dde4ad34118b50a65ce7562eeed2d954d76ec2d1ab1a749706cc713c9a52"
+      },
+      {
+        "address": 5677296,
+        "length": 41,
+        "memory": "ghidra\\phase131-primary-56a0f0-memory.txt",
+        "memory_sha256": "d54f20987fd455bfe98b12beb358b0944ac04c7ffe705e4cb0a0f6690f62ddff",
+        "assembly": "ghidra\\phase131-primary-56a0f0-assembly.txt",
+        "assembly_sha256": "211c88c587dd3aa3f356f07c126f05db1c42e0c18eb45809bb8c9cea9d6e2ca8",
+        "bytes_sha256": "99430ffc554bb477992dd41bfc9c3f9572605b33ca8de26ad809a35ccc7ebdce"
+      },
+      {
+        "address": 5677344,
+        "length": 24,
+        "memory": "ghidra\\phase131-primary-56a120-memory.txt",
+        "memory_sha256": "92d04e210bf6068e8ee6db5dccd7b735d28899ad96fb345181428c2b35a6a1ad",
+        "assembly": "ghidra\\phase131-primary-56a120-assembly.txt",
+        "assembly_sha256": "7dce880d4def301de1c7eca85fb1f1b6b9e5f7e0aab0e7ea8ce8204a5e679f4d",
+        "bytes_sha256": "688ab333b3fd55e7b742cc0da35c1e3f1ad44356354c507f0dc3780ba3296aee"
+      },
+      {
+        "address": 5677376,
+        "length": 38,
+        "memory": "ghidra\\phase131-primary-56a140-memory.txt",
+        "memory_sha256": "d705971432d0680fb80f019520138fdaf37530774a181d68848b47bbc20d603b",
+        "assembly": "ghidra\\phase131-primary-56a140-assembly.txt",
+        "assembly_sha256": "6fcb4736c698137e28deb51deee75d3e03343856a81ced8a19f93d08eb191eeb",
+        "bytes_sha256": "c2037d826719c31efdddefb17d7391fe32db6b6468d84bc203797baebdb0ff25"
+      },
+      {
+        "address": 5677424,
+        "length": 24,
+        "memory": "ghidra\\phase131-primary-56a170-memory.txt",
+        "memory_sha256": "ca3ec3dc72428bcd13935b422760b2fb43610072791df6d34f670cafff7254f7",
+        "assembly": "ghidra\\phase131-primary-56a170-assembly.txt",
+        "assembly_sha256": "0a65d177235bef7ed05f401bdb9755344d4f53ec572d46552bf06a36d3162e13",
+        "bytes_sha256": "59d258dc842960cc9e15c78f1d59946d42a87f72f6d39bc6d1795515df0f5d29"
+      },
+      {
+        "address": 5677456,
+        "length": 26,
+        "memory": "ghidra\\phase131-primary-56a190-memory.txt",
+        "memory_sha256": "4b3d160eb9f85e1eeaa18a099296bee4492bf0a76cb864b84470906b13ff6e64",
+        "assembly": "ghidra\\phase131-primary-56a190-assembly.txt",
+        "assembly_sha256": "fb41075457f07a124e367b02849958b8690765891eff12caf1aad684df268f61",
+        "bytes_sha256": "e901dc0f18e16443f4091dcd81ea096959f5b9dab4c7aacce02fdc09e6558568"
+      },
+      {
+        "address": 5677488,
+        "length": 26,
+        "memory": "ghidra\\phase131-primary-56a1b0-memory.txt",
+        "memory_sha256": "e76ef42b473e85af6413ae00afe07000ad84875788b462018de902acdd2a1ea7",
+        "assembly": "ghidra\\phase131-primary-56a1b0-assembly.txt",
+        "assembly_sha256": "ea957930307f618e333397089547c2e1173315d755c47b2a5bad57e389708eeb",
+        "bytes_sha256": "d1e2656aee885c2751973bc1678de41683cf3ee777c675daabec781aa8ff5045"
+      },
+      {
+        "address": 5677520,
+        "length": 24,
+        "memory": "ghidra\\phase131-primary-56a1d0-memory.txt",
+        "memory_sha256": "67e8b2d49d2812534d12c5e721c0cc4551b1cfd6725bc2ed8f81373264c20809",
+        "assembly": "ghidra\\phase131-primary-56a1d0-assembly.txt",
+        "assembly_sha256": "4123c68ce37c3d55eb540e1696cd0eddfe820cd3b28413b099dcf7b290d6fcf5",
+        "bytes_sha256": "faf3d270396c420c873370554d5795fd2a7325c0c1eb4ccf769b17492452c672"
+      },
+      {
+        "address": 5677552,
+        "length": 24,
+        "memory": "ghidra\\phase131-primary-56a1f0-memory.txt",
+        "memory_sha256": "3f8ccbdda84562b1b36ab3b4702c486b8c63b3b14a3e300340f0908475806719",
+        "assembly": "ghidra\\phase131-primary-56a1f0-assembly.txt",
+        "assembly_sha256": "32a5ce01f870cfaf19bc268ae7b1774e558cdeae774b11f70d589c694e7d06ec",
+        "bytes_sha256": "dbf11bbe797cb2bbeaccad6d80f0850cd1e7f53a0b983b10cafb636a6f0bb751"
+      },
+      {
+        "address": 5677584,
+        "length": 24,
+        "memory": "ghidra\\phase131-primary-56a210-memory.txt",
+        "memory_sha256": "537831de66e603e5c24b11ba8b5c3153c0f718f53cd43edd56d84436f7be8917",
+        "assembly": "ghidra\\phase131-primary-56a210-assembly.txt",
+        "assembly_sha256": "ae4928f156d67e8a3dc513e9e984e24e36a60e016ff519daf2f7087d185e5b31",
+        "bytes_sha256": "9d26529fe8142cba6ab7f0d410977106c6ac4f119395086c63c16f3cd54dab41"
+      },
+      {
+        "address": 5677616,
+        "length": 24,
+        "memory": "ghidra\\phase131-primary-56a230-memory.txt",
+        "memory_sha256": "340c185f8e42d7a0890ae7d4e141bfcb6d252f4cddb4d6c1e60a058fc58c6f4f",
+        "assembly": "ghidra\\phase131-primary-56a230-assembly.txt",
+        "assembly_sha256": "3bbccc4e24da5bd38491ec1c95b8e67922d52916d53d9e6d5bc42a8810b250cc",
+        "bytes_sha256": "959dad2e68553a46a1af14a38039d2bb3c652b58d08da29f6ba4d17f1c989f28"
+      },
+      {
+        "address": 6512320,
+        "length": 111,
+        "memory": "ghidra\\phase131-primary-635ec0-memory.txt",
+        "memory_sha256": "289a51c4ee5a1aa21e744d3d7b29d3dd097913862ca348cfc441a6020c0f34a9",
+        "assembly": "ghidra\\phase131-primary-635ec0-assembly.txt",
+        "assembly_sha256": "c98824ce1acdf8f9dcf42880080e5dc57d7cf5b45ee91f71ddacfd43c70cb560",
+        "bytes_sha256": "69530106f3b4252f59fbfd1b59c1abdb491ee504b2b93c344511916209db7593"
+      },
+      {
+        "address": 6512440,
+        "length": 20,
+        "memory": "ghidra\\phase131-primary-635f38-memory.txt",
+        "memory_sha256": "ca639d65b7cc7af67cf85ace35b6e4a09e5dd8246ae242eb11f8a80d0adb60cd",
+        "assembly": "ghidra\\phase131-primary-635f38-assembly.txt",
+        "assembly_sha256": "ea90fe6695552beeea19019074431fc150f3877527fe04f0db12eba305774aaa",
+        "bytes_sha256": "d3ecaec63122a11538fefbc03b3523b606c470eb8f44a40da3089946765c5424"
+      },
+      {
+        "address": 6513056,
+        "length": 254,
+        "memory": "ghidra\\phase131-primary-6361a0-memory.txt",
+        "memory_sha256": "b4f8463f4318b565e89410b1c0dcd3f35c19c62221578d65e99e7558bc0863a6",
+        "assembly": "ghidra\\phase131-primary-6361a0-assembly.txt",
+        "assembly_sha256": "b0e0d11e7cf673bf18b7ce3a03aa84c72f430f345f8016b33784a3a22d82361a",
+        "bytes_sha256": "0318574df8288c6fc0e543c779d4c1098344731f9acf2a7c790c2176ab7bdf4c"
+      },
+      {
+        "address": 4685904,
+        "length": 43,
+        "memory": "ghidra\\phase168-primary-478050-memory.txt",
+        "memory_sha256": "354a494399d569fe7f40eb2872c0f33b100e2ed5442014817295f533cec2676b",
+        "assembly": "ghidra\\phase168-primary-478050-assembly.txt",
+        "assembly_sha256": "166e326a1af6ff539f2565c18d6037883835ba0a14c8a3c92f42b391c4647cb8",
+        "bytes_sha256": "86e7882a072f463e5aa71bffae7b07a2644c9ad9629eb27e39eeecc980c3ac0b"
+      },
+      {
+        "address": 5039760,
+        "length": 161,
+        "memory": "ghidra\\phase151-primary-4ce690-memory.txt",
+        "memory_sha256": "26ca250cca2699c217e33836cc8004c359ce37e18fcdbb05b4f77f5e28e023dc",
+        "assembly": "ghidra\\phase151-primary-4ce690-assembly.txt",
+        "assembly_sha256": "b0bfae7efa2f9e40f1c2d6945cb8146d24e8766b580f03112fe93ab77813579f",
+        "bytes_sha256": "524bc052d0fed677f82798350344d212d6f2eb7c2642f397882862c66ba8a8c0"
+      },
+      {
+        "address": 5135872,
+        "length": 484,
+        "memory": "ghidra\\phase181-primary-4e5e00-memory.txt",
+        "memory_sha256": "770f589a00384523fb0f7fc4adcbfd1106968f61e7bfaae1e9b50ef91c61c583",
+        "assembly": "ghidra\\phase181-primary-4e5e00-assembly.txt",
+        "assembly_sha256": "6301bc940ecc50d490b77696800063e6a2c5d7b7fa08ea31e883a615fe966819",
+        "bytes_sha256": "7bc3ec6d6fb702f6b66ecf6090eee1ad958f8739109315233f15dd50d389d560"
+      }
+    ],
+    "unique_executed_original_PCs": 7382,
+    "all_executed_original_PCs_covered": true,
+    "declared_external_audio_PCs": 3,
+    "original_World_vtable": {
+      "address": 6743020,
+      "length": 928,
+      "sha256": "dc1a04c3ffb287304d0aafab1eb1c76a9d1d4cf93e9a929f21594f4869206ec9",
+      "slot": 836,
+      "target": 5314128
+    },
+    "key_instructions": [
+      {
+        "address": "0x51d6ad",
+        "hex": "a3e9296f00",
+        "mnemonic": "mov",
+        "operands": "dword ptr [0x6f29e9], eax"
+      },
+      {
+        "address": "0x4f2893",
+        "hex": "833d4bad750004",
+        "mnemonic": "cmp",
+        "operands": "dword ptr [0x75ad4b], 4"
+      },
+      {
+        "address": "0x4f28a3",
+        "hex": "80b8fc10000003",
+        "mnemonic": "cmp",
+        "operands": "byte ptr [eax + 0x10fc], 3"
+      },
+      {
+        "address": "0x4f28b9",
+        "hex": "a1e9296f00",
+        "mnemonic": "mov",
+        "operands": "eax, dword ptr [0x6f29e9]"
+      },
+      {
+        "address": "0x4f28c1",
+        "hex": "ff9244030000",
+        "mnemonic": "call",
+        "operands": "dword ptr [edx + 0x344]"
+      },
+      {
+        "address": "0x51165a",
+        "hex": "03d0",
+        "mnemonic": "add",
+        "operands": "edx, eax"
+      },
+      {
+        "address": "0x511662",
+        "hex": "790a",
+        "mnemonic": "jns",
+        "operands": "0x51166e"
+      }
+    ],
+    "caller_static_only": {
+      "function": 4699536,
+      "call": 4699935,
+      "target": 5187584,
+      "assembly": "ghidra/phase167-DX-47b590-assembly.txt",
+      "scope": "Torture chance/threshold path read statically; not executed by these conversion scenes."
+    }
+  },
+  "native_executions": {
+    "phase": 192,
+    "replays": [
+      {
+        "case": {
+          "name": "source40",
+          "source_record": true
+        },
+        "file": "ghidra\\phase192-conversion-native-source40-271ff08a3e3e.json",
+        "sha256": "f952e8d57e791a5adbf07255e5c502032e9b72bc4f3205048f632d6f7ebd947f",
+        "outcome": {
+          "score_before_bits": 10,
+          "raw_value_bits": 40,
+          "score_after_bits": 50,
+          "scoring_gate": true,
+          "new_owner_tag": 3,
+          "new_owner_pointer": 402923520,
+          "HP": 1000,
+          "raw_and_guards_preserved": true,
+          "original_conversion_count": 1,
+          "native_steps": 69603
+        }
+      },
+      {
+        "case": {
+          "name": "zero",
+          "value": 0
+        },
+        "file": "ghidra\\phase192-conversion-native-zero-b923afe6b68b.json",
+        "sha256": "a20471a8f16a9dd5537bfba97a2e58bfc967bc1f0352a721ff97dc6c46b6c377",
+        "outcome": {
+          "score_before_bits": 10,
+          "raw_value_bits": 0,
+          "score_after_bits": 10,
+          "scoring_gate": true,
+          "new_owner_tag": 3,
+          "new_owner_pointer": 402923520,
+          "HP": 1000,
+          "raw_and_guards_preserved": true,
+          "original_conversion_count": 1,
+          "native_steps": 69603
+        }
+      },
+      {
+        "case": {
+          "name": "positive123",
+          "value": 123
+        },
+        "file": "ghidra\\phase192-conversion-native-positive123-cb472d14213b.json",
+        "sha256": "247775ae4691288fd46769aadf9223f5cd87a05c783f3c1507e9a5d642dde6c9",
+        "outcome": {
+          "score_before_bits": 10,
+          "raw_value_bits": 123,
+          "score_after_bits": 133,
+          "scoring_gate": true,
+          "new_owner_tag": 3,
+          "new_owner_pointer": 402923520,
+          "HP": 1000,
+          "raw_and_guards_preserved": true,
+          "original_conversion_count": 1,
+          "native_steps": 69603
+        }
+      },
+      {
+        "case": {
+          "name": "negative5",
+          "value": -5
+        },
+        "file": "ghidra\\phase192-conversion-native-negative5-61edf4b19123.json",
+        "sha256": "cc74b12a95f994d8c34c090e6cfe94dbc2ae2ed26d63bbf8a6ffb0bfe420c8ec",
+        "outcome": {
+          "score_before_bits": 10,
+          "raw_value_bits": 4294967291,
+          "score_after_bits": 5,
+          "scoring_gate": true,
+          "new_owner_tag": 3,
+          "new_owner_pointer": 402923520,
+          "HP": 1000,
+          "raw_and_guards_preserved": true,
+          "original_conversion_count": 1,
+          "native_steps": 69603
+        }
+      },
+      {
+        "case": {
+          "name": "negative-clamp",
+          "value": -40
+        },
+        "file": "ghidra\\phase192-conversion-native-negative-clamp-e8a29e297f60.json",
+        "sha256": "5ba4d708d8ebbb3acb479a52d69893b2ca3a14fe0a138db4c027e2f92bc2a5c2",
+        "outcome": {
+          "score_before_bits": 10,
+          "raw_value_bits": 4294967256,
+          "score_after_bits": 0,
+          "scoring_gate": true,
+          "new_owner_tag": 3,
+          "new_owner_pointer": 402923520,
+          "HP": 1000,
+          "raw_and_guards_preserved": true,
+          "original_conversion_count": 1,
+          "native_steps": 69604
+        }
+      },
+      {
+        "case": {
+          "name": "int-min",
+          "value": -2147483648
+        },
+        "file": "ghidra\\phase192-conversion-native-int-min-0deb0658ca58.json",
+        "sha256": "3602adb47889515b569aec7394708655c55e28a8b403d02b7d50276cb4ca21d4",
+        "outcome": {
+          "score_before_bits": 10,
+          "raw_value_bits": 2147483648,
+          "score_after_bits": 0,
+          "scoring_gate": true,
+          "new_owner_tag": 3,
+          "new_owner_pointer": 402923520,
+          "HP": 1000,
+          "raw_and_guards_preserved": true,
+          "original_conversion_count": 1,
+          "native_steps": 69604
+        }
+      },
+      {
+        "case": {
+          "name": "positive-overflow",
+          "score": 2147483647,
+          "value": 1
+        },
+        "file": "ghidra\\phase192-conversion-native-positive-overflow-ca2e57c5b977.json",
+        "sha256": "5e537dbabe054cf4086b0444107a7f1e6b44905927cb027556ebc0dffd24cda0",
+        "outcome": {
+          "score_before_bits": 2147483647,
+          "raw_value_bits": 1,
+          "score_after_bits": 0,
+          "scoring_gate": true,
+          "new_owner_tag": 3,
+          "new_owner_pointer": 402923520,
+          "HP": 1000,
+          "raw_and_guards_preserved": true,
+          "original_conversion_count": 1,
+          "native_steps": 69604
+        }
+      },
+      {
+        "case": {
+          "name": "negative-wrap",
+          "score": 2147483648,
+          "value": -1
+        },
+        "file": "ghidra\\phase192-conversion-native-negative-wrap-ad5d427d3f1c.json",
+        "sha256": "ea661c5de09a82013b4cc502d528b74260e713eccbbf938740885cab46e77631",
+        "outcome": {
+          "score_before_bits": 2147483648,
+          "raw_value_bits": 4294967295,
+          "score_after_bits": 2147483647,
+          "scoring_gate": true,
+          "new_owner_tag": 3,
+          "new_owner_pointer": 402923520,
+          "HP": 1000,
+          "raw_and_guards_preserved": true,
+          "original_conversion_count": 1,
+          "native_steps": 69603
+        }
+      },
+      {
+        "case": {
+          "name": "negative-initial-stays-negative",
+          "score": 2147483648,
+          "value": 0
+        },
+        "file": "ghidra\\phase192-conversion-native-negative-initial-stays-negative-3862b93f29c0.json",
+        "sha256": "b2cc8fe1d68383d3b26d01664d1b3500ce1938a4af54e408afc7dd3fdc09311d",
+        "outcome": {
+          "score_before_bits": 2147483648,
+          "raw_value_bits": 0,
+          "score_after_bits": 0,
+          "scoring_gate": true,
+          "new_owner_tag": 3,
+          "new_owner_pointer": 402923520,
+          "HP": 1000,
+          "raw_and_guards_preserved": true,
+          "original_conversion_count": 1,
+          "native_steps": 69604
+        }
+      },
+      {
+        "case": {
+          "name": "other-mode",
+          "mode": 3
+        },
+        "file": "ghidra\\phase192-conversion-native-other-mode-65417e22e2a3.json",
+        "sha256": "69ced0579a0f8940f07a6cccb6a037398c230790bf9f8106485ba7ecdb529565",
+        "outcome": {
+          "score_before_bits": 10,
+          "raw_value_bits": 40,
+          "score_after_bits": 10,
+          "scoring_gate": false,
+          "new_owner_tag": 3,
+          "new_owner_pointer": 402923520,
+          "HP": 1000,
+          "raw_and_guards_preserved": true,
+          "original_conversion_count": 1,
+          "native_steps": 69581
+        }
+      },
+      {
+        "case": {
+          "name": "mode-zero",
+          "mode": 0
+        },
+        "file": "ghidra\\phase192-conversion-native-mode-zero-903c3ab85cbe.json",
+        "sha256": "cf4cd9d17d959ff0dd9fc1d479857c51e4fb4ce7663d1ccd58eea5d33eb97e05",
+        "outcome": {
+          "score_before_bits": 10,
+          "raw_value_bits": 40,
+          "score_after_bits": 10,
+          "scoring_gate": false,
+          "new_owner_tag": 3,
+          "new_owner_pointer": 402923520,
+          "HP": 1000,
+          "raw_and_guards_preserved": true,
+          "original_conversion_count": 1,
+          "native_steps": 69581
+        }
+      },
+      {
+        "case": {
+          "name": "player0",
+          "player_type": 0
+        },
+        "file": "ghidra\\phase192-conversion-native-player0-a4ec5ba02535.json",
+        "sha256": "9509ca90888fe5a989ebcd03e9570bab265c96d7661e3945daaf374f2871e8d3",
+        "outcome": {
+          "score_before_bits": 10,
+          "raw_value_bits": 40,
+          "score_after_bits": 10,
+          "scoring_gate": false,
+          "new_owner_tag": 3,
+          "new_owner_pointer": 402923520,
+          "HP": 1000,
+          "raw_and_guards_preserved": true,
+          "original_conversion_count": 1,
+          "native_steps": 69592
+        }
+      },
+      {
+        "case": {
+          "name": "player1",
+          "player_type": 1
+        },
+        "file": "ghidra\\phase192-conversion-native-player1-95dac3176d0d.json",
+        "sha256": "92d034aa0f510b31fc4ae8ac2cf5c59346bbd02959ef1e0d4a063e36554c7dc7",
+        "outcome": {
+          "score_before_bits": 10,
+          "raw_value_bits": 40,
+          "score_after_bits": 10,
+          "scoring_gate": false,
+          "new_owner_tag": 3,
+          "new_owner_pointer": 402923520,
+          "HP": 1000,
+          "raw_and_guards_preserved": true,
+          "original_conversion_count": 1,
+          "native_steps": 69592
+        }
+      },
+      {
+        "case": {
+          "name": "player2",
+          "player_type": 2
+        },
+        "file": "ghidra\\phase192-conversion-native-player2-98591b5b1167.json",
+        "sha256": "1c9bf9b4d82b2aa0ded1545d4941d3c634389b690418d162324ee187fb7cf90d",
+        "outcome": {
+          "score_before_bits": 10,
+          "raw_value_bits": 40,
+          "score_after_bits": 10,
+          "scoring_gate": false,
+          "new_owner_tag": 3,
+          "new_owner_pointer": 402923520,
+          "HP": 1000,
+          "raw_and_guards_preserved": true,
+          "original_conversion_count": 1,
+          "native_steps": 69592
+        }
+      },
+      {
+        "case": {
+          "name": "player4",
+          "player_type": 4
+        },
+        "file": "ghidra\\phase192-conversion-native-player4-6cb9b998b035.json",
+        "sha256": "ad7ede17c20565cddf897e51c5e16b5ae91850d9d337ec7731806d049e86ceb3",
+        "outcome": {
+          "score_before_bits": 10,
+          "raw_value_bits": 40,
+          "score_after_bits": 50,
+          "scoring_gate": true,
+          "new_owner_tag": 3,
+          "new_owner_pointer": 402923520,
+          "HP": 1000,
+          "raw_and_guards_preserved": true,
+          "original_conversion_count": 1,
+          "native_steps": 69603
+        }
+      },
+      {
+        "case": {
+          "name": "player255",
+          "player_type": 255
+        },
+        "file": "ghidra\\phase192-conversion-native-player255-ebea5f613db9.json",
+        "sha256": "835cf3446f01af4d1c359411670f06aa013ac584faa320154a82e99d835f0a0e",
+        "outcome": {
+          "score_before_bits": 10,
+          "raw_value_bits": 40,
+          "score_after_bits": 50,
+          "scoring_gate": true,
+          "new_owner_tag": 3,
+          "new_owner_pointer": 402923520,
+          "HP": 1000,
+          "raw_and_guards_preserved": true,
+          "original_conversion_count": 1,
+          "native_steps": 69603
+        }
+      }
+    ]
+  },
+  "independent_Ghidra_controls": [
+    {
+      "case": "source40",
+      "file": "ghidra\\phase192-conversion-Ghidra-source40-9c566ec39088.json",
+      "sha256": "64d8a877f73d38545124a3e5814262a0665dbebaf088620d9230291e7190b5ca",
+      "checked_regions": 43,
+      "checked_bytes": 106588
+    },
+    {
+      "case": "negative-clamp",
+      "file": "ghidra\\phase192-conversion-Ghidra-negative-clamp-1f46ffc3027c.json",
+      "sha256": "b0479f9f13d0519cb24e75e745170f433b9899ed81bf2c8c2b8b7f5b75197277",
+      "checked_regions": 43,
+      "checked_bytes": 106588
+    },
+    {
+      "case": "positive-overflow",
+      "file": "ghidra\\phase192-conversion-Ghidra-positive-overflow-7411227c0b5b.json",
+      "sha256": "877ce5868eb683234caab0f6a2b29648537c49df49ce11fc5a9d04ab3f28b2c5",
+      "checked_regions": 43,
+      "checked_bytes": 106588
+    },
+    {
+      "case": "other-mode",
+      "file": "ghidra\\phase192-conversion-Ghidra-other-mode-5595ccede590.json",
+      "sha256": "35d6b8138715d457fa7896804deff38bf158764989ba0531c1b62797dccf1913",
+      "checked_regions": 43,
+      "checked_bytes": 106588
+    },
+    {
+      "case": "player2",
+      "file": "ghidra\\phase192-conversion-Ghidra-player2-0b802199ef1f.json",
+      "sha256": "9d78ac527db0de420ee44ca9915afd8704b70f2e8936a7e189e2a2dcfa0b046d",
+      "checked_regions": 43,
+      "checked_bytes": 106588
+    },
+    {
+      "case": "player255",
+      "file": "ghidra\\phase192-conversion-Ghidra-player255-220b41a1863b.json",
+      "sha256": "036d082dbecac5b4fb46b213c5607fbfd066bb33ccfb495e175bddd49e9a4c6f",
+      "checked_regions": 43,
+      "checked_bytes": 106588
+    }
+  ],
+  "storage": {
+    "source": {
+      "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\GlobalVariables.kwd",
+      "sha256": "d14b6a28694254dad722071267268d4f36c8535cd3a9c610f9ee0447fe9b941a"
+    },
+    "record_index": 246,
+    "record_file_offset": 3992,
+    "field_record_offset": 4,
+    "field_bytes": 4,
+    "raw_record_hex": "e9000000280000000000000000000000",
+    "edits": [
+      {
+        "value_bits": 0,
+        "only_four_value_bytes_may_change": true,
+        "unknown_payload_and_other_sections_preserved": true,
+        "inverse_restores_source": true
+      },
+      {
+        "value_bits": 1,
+        "only_four_value_bytes_may_change": true,
+        "unknown_payload_and_other_sections_preserved": true,
+        "inverse_restores_source": true
+      },
+      {
+        "value_bits": 40,
+        "only_four_value_bytes_may_change": true,
+        "unknown_payload_and_other_sections_preserved": true,
+        "inverse_restores_source": true
+      },
+      {
+        "value_bits": 123,
+        "only_four_value_bytes_may_change": true,
+        "unknown_payload_and_other_sections_preserved": true,
+        "inverse_restores_source": true
+      },
+      {
+        "value_bits": 2147483647,
+        "only_four_value_bytes_may_change": true,
+        "unknown_payload_and_other_sections_preserved": true,
+        "inverse_restores_source": true
+      },
+      {
+        "value_bits": 2147483648,
+        "only_four_value_bytes_may_change": true,
+        "unknown_payload_and_other_sections_preserved": true,
+        "inverse_restores_source": true
+      },
+      {
+        "value_bits": 4294967295,
+        "only_four_value_bytes_may_change": true,
+        "unknown_payload_and_other_sections_preserved": true,
+        "inverse_restores_source": true
+      },
+      {
+        "value_bits": 305419896,
+        "only_four_value_bytes_may_change": true,
+        "unknown_payload_and_other_sections_preserved": true,
+        "inverse_restores_source": true
+      }
+    ],
+    "source_roundtrips": [
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\Creatures.kwd",
+        "sha256": "e215c03c7722e89f7736ced7c710406dc10d6cf48e5ad37bed45faf2055c52e2",
+        "bytes": 250710,
+        "exact_physical_and_decoded_roundtrip": true
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\Objects.kwd",
+        "sha256": "36d607b408eeeb17da0fbea01e374a614a327021d2a30eea4aaa0311bf9b334c",
+        "bytes": 129686,
+        "exact_physical_and_decoded_roundtrip": true
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\EffectElements.kwd",
+        "sha256": "b8c64fdc1418f1154c3f4bd874be91b4138013d8baa1cb2397e53b1beb7d2ae6",
+        "bytes": 108528,
+        "exact_physical_and_decoded_roundtrip": true
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\Effects.kwd",
+        "sha256": "35d3816e5274d62d0ddbdb7b292f1e7550dbbe9c975fc80ec7fed75b3bf48f10",
+        "bytes": 91076,
+        "exact_physical_and_decoded_roundtrip": true
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\Rooms.kwd",
+        "sha256": "24546825ac6cf3f8455bf9b26fbffe9e2ded05ea3b176c0e00354ee1ccf0a465",
+        "bytes": 27486,
+        "exact_physical_and_decoded_roundtrip": true
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\AutoSave.kwd",
+        "sha256": "71bd5f7e7071722d1f7fbe7eadd1c4293faf1e4ecca9698cae1504f4edb3af7c",
+        "bytes": 26343,
+        "exact_physical_and_decoded_roundtrip": true
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\Terrain.kwd",
+        "sha256": "1b4296b0cf696d5428e6d3d94eb8571e2601bd78fc51caa6c3e1e13c0695e77d",
+        "bytes": 22688,
+        "exact_physical_and_decoded_roundtrip": true
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\AutoSaveMap.kld",
+        "sha256": "081491d867dde05ab7a500cd6562fffed33576d090116f06ed2a47651b9d3bc8",
+        "bytes": 3108,
+        "exact_physical_and_decoded_roundtrip": true
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\Shots.kwd",
+        "sha256": "a684a3d91b2bded6f8072bbdfefb26e72cb76343028aaf8476fa473f6a7075b6",
+        "bytes": 15591,
+        "exact_physical_and_decoded_roundtrip": true
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\GlobalVariables.kwd",
+        "sha256": "d14b6a28694254dad722071267268d4f36c8535cd3a9c610f9ee0447fe9b941a",
+        "bytes": 13636,
+        "exact_physical_and_decoded_roundtrip": true
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\CreatureSpells.kwd",
+        "sha256": "125f19e82b96cc5480ce3648342c9c1749e448b88db2133436737a22758e8d17",
+        "bytes": 10962,
+        "exact_physical_and_decoded_roundtrip": true
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\Traps.kwd",
+        "sha256": "417c5632e431963e0e734386ac5cea6750fe84d4422e7725e68228bd593aeb04",
+        "bytes": 9320,
+        "exact_physical_and_decoded_roundtrip": true
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\KeeperSpells.kwd",
+        "sha256": "1836b4dfd708f56568ac22135ac2526eeeeaa5e06b34acd6fbe5afd516cd0b16",
+        "bytes": 5334,
+        "exact_physical_and_decoded_roundtrip": true
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\AutoSaveThings.kld",
+        "sha256": "557604dc3092de7d242d641026faa7a660efbad82cdc7a07f3bf731bbf2eea68",
+        "bytes": 196,
+        "exact_physical_and_decoded_roundtrip": true
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\Doors.kwd",
+        "sha256": "0f9235b31fcf72525c6cac8eb800e866731e50e9d05bf56ed94bfa0927717504",
+        "bytes": 4984,
+        "exact_physical_and_decoded_roundtrip": true
+      }
+    ],
+    "unknown_Extra1_Extra2_preserved": true,
+    "source_writes": 0
+  },
+  "API": {
+    "file": {
+      "file": "native_conversion_score.py",
+      "sha256": "369129ad53b7cf1c0d106352d523b7305df19f52f7e61ab26177011f5aa3e964"
+    },
+    "reader": "view",
+    "physical_patch": "patch_bits",
+    "observed_arithmetic": "project",
+    "scope": "Inspected DX semantics; physical record patching preserves all unknown payload bytes."
+  },
+  "source_baseline": {
+    "file": "phase165-source-baseline.json",
+    "sha256": "e032a4b5a485cbec505b114e3a22ab4e995af3fb5d2e878d738197e74fc916f8"
+  },
+  "helpers": [
+    {
+      "file": "probe_conversion_score.py",
+      "sha256": "8461ff92751e587e03658aa9e4040bd6b58fa2ae7e60136622dbb66cf52b3778"
+    },
+    {
+      "file": "native_conversion_score.py",
+      "sha256": "369129ad53b7cf1c0d106352d523b7305df19f52f7e61ab26177011f5aa3e964"
+    },
+    {
+      "file": "emulate_conversion_score.py",
+      "sha256": "d3f4605420424813870b73c6b58d1c534ea0c590ccea387439968abe13981e1e"
+    },
+    {
+      "file": "crosscheck_conversion_score.py",
+      "sha256": "a32ae49befe58665f643836209a0a9428fc08d1ee6d63300eddf0241219291e2"
+    },
+    {
+      "file": "prepare_conversion_score_primary.py",
+      "sha256": "61b442b9a3e727dbbf737bf71f0d51dd78bc9a1b3bdbb42b96be507552c1e058"
+    },
+    {
+      "file": "validate_conversion_score_storage.py",
+      "sha256": "3f032a070f77489a0077e84b14cf6be6c88f925d72a24de72592af3c54ef96d8"
+    },
+    {
+      "file": "build_conversion_score.py",
+      "sha256": "dce978ac99c78f6935d330c27b5729904b94a6578fe94b172d0e8380f2f05023"
+    },
+    {
+      "file": "native_unicorn_mapreader.py",
+      "sha256": "f602c16f87beec825fc2fae28900a62bd13ad909c1c9b95c9dae6481e75f8daf"
+    },
+    {
+      "file": "emulate_temple_creature_entry.py",
+      "sha256": "79f203bf83a28ea1048a013cd5452b22744d8b8e672f3b8634ad131c1cf37519"
+    }
+  ],
+  "priority": {
+    "current": "Global parameters",
+    "block_complete": false,
+    "order": [
+      "ProcessType/DamageType",
+      "Global parameters",
+      "Creature resistances and flags",
+      "Other unknowns"
+    ],
+    "Process_Damage_status": "Core consolidated phase176; explicitly retained variants/version/scheduler gaps remain in the broad objective.",
+    "Crypt": "Deferred by explicit user instruction9November; phase191 unchanged,10 meanings still unassigned.",
+    "next": [
+      "Other unknown global scalar meanings and formulas.",
+      "Global/level override order and original full Variables reader/writer.",
+      "Creature resistances/flags after the globals block."
+    ]
+  },
+  "limitations": [
+    "One existing variable meaning confirmed; not completion of GlobalVariables or all15 families.",
+    "Natural upstream torture threshold/RNG/job loop and score UI consumption remain outside executed scenes.",
+    "Mode4 user-facing identity and transfer to other EXEs/RC3 are not certified.",
+    "Raw MID prefix explicitly prepared; full KWD file I/O and editor saving not executed by these scenes.",
+    "Broad goal remains active; no readiness percentage increase inferred from number of tests."
+  ]
+}

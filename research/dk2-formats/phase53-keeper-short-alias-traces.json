@@ -1,0 +1,48 @@
+{
+  "scope": "45 getter/vcall110 seeds; forward straight-line at most150instructions, stops at branches. Virtual110 is candidate only, not guaranteed Keeper type. No stack alias tracking.",
+  "seeds": 45,
+  "reads": [],
+  "ecx_forwarded_calls": [
+    {
+      "function": "0x40d310",
+      "name": "sub_40D310",
+      "seed": "0x40d3b8",
+      "target": "0x40d640",
+      "pointer_offset": 0,
+      "call": "0x40d3c0",
+      "path": [
+        "0040d3be: mov ecx, eax",
+        "0040d3c0: call 0x40d640"
+      ]
+    },
+    {
+      "function": "0x42d820",
+      "name": "sub_42D820",
+      "seed": "0x42d930",
+      "target": "0x4f8150",
+      "pointer_offset": 0,
+      "call": "0x42d93f",
+      "path": [
+        "0042d936: mov edi, eax",
+        "0042d938: push 0x740780",
+        "0042d93d: mov ecx, edi",
+        "0042d93f: call 0x4f8150"
+      ]
+    },
+    {
+      "function": "0x51fcd0",
+      "name": "CWorld_loadKeeperSpell",
+      "seed": "0x51fd0d",
+      "target": "0x4f7ce0",
+      "pointer_offset": 0,
+      "call": "0x51fd1b",
+      "path": [
+        "0051fd13: mov edx, dword ptr [esp + 0x10]",
+        "0051fd17: mov ecx, eax",
+        "0051fd19: push edx",
+        "0051fd1a: push esi",
+        "0051fd1b: call 0x4f7ce0"
+      ]
+    }
+  ]
+}

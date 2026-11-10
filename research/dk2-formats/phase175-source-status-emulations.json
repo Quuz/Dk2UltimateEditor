@@ -1,0 +1,2179 @@
+{
+  "scope": "Phase175 accepted unchanged Freeze/Poison sources and Crystal child chain.\n\nWhole original methods on prepared class contexts. Host-selected call order,\nnot complete World scheduling or real combat DPS. All source bytes preserved.\n",
+  "replays": [
+    {
+      "case": {
+        "name": "wave-first"
+      },
+      "file": "ghidra\\phase175-source-status-wave-first-b121ca6a7e34.json",
+      "sha256": "cbcabcadf1cf1a7e29fda5614c96ba6e401e59c38f4957e9a1275dfae976950b",
+      "outcome": {
+        "HP": [
+          100000,
+          99925,
+          100000
+        ],
+        "freeze": [
+          0,
+          1200,
+          0
+        ],
+        "poison": [
+          0,
+          0,
+          0
+        ],
+        "severity": [
+          0,
+          0,
+          0
+        ],
+        "shots": [
+          {
+            "tag": 202,
+            "address": 471007372,
+            "ID": 162,
+            "HP": 7,
+            "tick": 1,
+            "Data1": 60,
+            "Data2": 2,
+            "target": 2
+          },
+          {
+            "tag": 203,
+            "address": 544211084,
+            "ID": 164,
+            "HP": 3,
+            "tick": 0,
+            "Data1": 60,
+            "Data2": 2,
+            "target": 2
+          }
+        ],
+        "requests": [
+          {
+            "target": 271581184,
+            "delta": -60,
+            "before": 100000,
+            "caller": "0x4ac58e"
+          }
+        ],
+        "parameter_copy_writes": [
+          {
+            "ShotID": 164,
+            "field": "Data1",
+            "write": {
+              "pc": "0x4abf7d",
+              "address": "0x207001c9",
+              "size": 4,
+              "value": 60
+            }
+          },
+          {
+            "ShotID": 164,
+            "field": "Data2",
+            "write": {
+              "pc": "0x4abf83",
+              "address": "0x207001cd",
+              "size": 4,
+              "value": 2
+            }
+          }
+        ],
+        "events": [
+          {
+            "caller_return": 4895366,
+            "event_mask": 64,
+            "instance": 471007372,
+            "tick": 1,
+            "Data1": 60,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 471007372,
+            "tick": 1,
+            "Data1": 60,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4898758,
+            "event_mask": 4,
+            "instance": 471007372,
+            "tick": 1,
+            "Data1": 60,
+            "Data2": 2,
+            "return_EAX": 0
+          }
+        ],
+        "full_regions": 104,
+        "full_bytes": 273755,
+        "native_steps": 126198
+      }
+    },
+    {
+      "case": {
+        "name": "wave-expiry",
+        "parent_ticks": 8
+      },
+      "file": "ghidra\\phase175-source-status-wave-expiry-665aa861acf0.json",
+      "sha256": "58289861cd19f0ac7b712222c73bd22c13408c8d3162951b29612f7bd9f91a4e",
+      "outcome": {
+        "HP": [
+          100000,
+          99925,
+          100000
+        ],
+        "freeze": [
+          0,
+          1200,
+          0
+        ],
+        "poison": [
+          0,
+          0,
+          0
+        ],
+        "severity": [
+          0,
+          0,
+          0
+        ],
+        "shots": [
+          {
+            "tag": 202,
+            "address": 471007372,
+            "ID": 162,
+            "HP": 0,
+            "tick": 8,
+            "Data1": 60,
+            "Data2": 2,
+            "target": 2
+          },
+          {
+            "tag": 203,
+            "address": 544211084,
+            "ID": 164,
+            "HP": 3,
+            "tick": 0,
+            "Data1": 60,
+            "Data2": 2,
+            "target": 2
+          },
+          {
+            "tag": 204,
+            "address": 544215180,
+            "ID": 163,
+            "HP": 20,
+            "tick": 0,
+            "Data1": 60,
+            "Data2": 2,
+            "target": 2
+          }
+        ],
+        "requests": [
+          {
+            "target": 271581184,
+            "delta": -60,
+            "before": 100000,
+            "caller": "0x4ac58e"
+          }
+        ],
+        "parameter_copy_writes": [
+          {
+            "ShotID": 164,
+            "field": "Data1",
+            "write": {
+              "pc": "0x4abf7d",
+              "address": "0x207001c9",
+              "size": 4,
+              "value": 60
+            }
+          },
+          {
+            "ShotID": 164,
+            "field": "Data2",
+            "write": {
+              "pc": "0x4abf83",
+              "address": "0x207001cd",
+              "size": 4,
+              "value": 2
+            }
+          },
+          {
+            "ShotID": 163,
+            "field": "Data1",
+            "write": {
+              "pc": "0x4ab61b",
+              "address": "0x207011c9",
+              "size": 4,
+              "value": 60
+            }
+          },
+          {
+            "ShotID": 163,
+            "field": "Data2",
+            "write": {
+              "pc": "0x4ab621",
+              "address": "0x207011cd",
+              "size": 4,
+              "value": 2
+            }
+          }
+        ],
+        "events": [
+          {
+            "caller_return": 4895366,
+            "event_mask": 64,
+            "instance": 471007372,
+            "tick": 1,
+            "Data1": 60,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 471007372,
+            "tick": 1,
+            "Data1": 60,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4898758,
+            "event_mask": 4,
+            "instance": 471007372,
+            "tick": 1,
+            "Data1": 60,
+            "Data2": 2,
+            "return_EAX": 0
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 471007372,
+            "tick": 2,
+            "Data1": 60,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 471007372,
+            "tick": 3,
+            "Data1": 60,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 471007372,
+            "tick": 4,
+            "Data1": 60,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 471007372,
+            "tick": 5,
+            "Data1": 60,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 471007372,
+            "tick": 6,
+            "Data1": 60,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 471007372,
+            "tick": 7,
+            "Data1": 60,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 471007372,
+            "tick": 8,
+            "Data1": 60,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4896359,
+            "event_mask": 128,
+            "instance": 471007372,
+            "tick": 8,
+            "Data1": 60,
+            "Data2": 2,
+            "return_EAX": 1
+          }
+        ],
+        "full_regions": 104,
+        "full_bytes": 273755,
+        "native_steps": 135286
+      }
+    },
+    {
+      "case": {
+        "name": "wave-child-first",
+        "child_ticks": [
+          [
+            0,
+            1
+          ]
+        ]
+      },
+      "file": "ghidra\\phase175-source-status-wave-child-first-c8c13bb2ef78.json",
+      "sha256": "8bd218140dfb928a13b922d2515bee6cadbb44ca7fc7f5d3daf8b56885c4b7d6",
+      "outcome": {
+        "HP": [
+          100000,
+          99850,
+          99940
+        ],
+        "freeze": [
+          0,
+          1200,
+          0
+        ],
+        "poison": [
+          0,
+          0,
+          0
+        ],
+        "severity": [
+          0,
+          0,
+          0
+        ],
+        "shots": [
+          {
+            "tag": 202,
+            "address": 471007372,
+            "ID": 162,
+            "HP": 7,
+            "tick": 1,
+            "Data1": 60,
+            "Data2": 2,
+            "target": 2
+          },
+          {
+            "tag": 203,
+            "address": 544211084,
+            "ID": 164,
+            "HP": 2,
+            "tick": 1,
+            "Data1": 60,
+            "Data2": 2,
+            "target": 2
+          }
+        ],
+        "requests": [
+          {
+            "target": 271581184,
+            "delta": -60,
+            "before": 100000,
+            "caller": "0x4ac58e"
+          },
+          {
+            "target": 271581184,
+            "delta": -60,
+            "before": 99925,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 452984832,
+            "delta": -60,
+            "before": 100000,
+            "caller": "0x4ac666"
+          }
+        ],
+        "parameter_copy_writes": [
+          {
+            "ShotID": 164,
+            "field": "Data1",
+            "write": {
+              "pc": "0x4abf7d",
+              "address": "0x207001c9",
+              "size": 4,
+              "value": 60
+            }
+          },
+          {
+            "ShotID": 164,
+            "field": "Data2",
+            "write": {
+              "pc": "0x4abf83",
+              "address": "0x207001cd",
+              "size": 4,
+              "value": 2
+            }
+          }
+        ],
+        "events": [
+          {
+            "caller_return": 4895366,
+            "event_mask": 64,
+            "instance": 471007372,
+            "tick": 1,
+            "Data1": 60,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 471007372,
+            "tick": 1,
+            "Data1": 60,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4898758,
+            "event_mask": 4,
+            "instance": 471007372,
+            "tick": 1,
+            "Data1": 60,
+            "Data2": 2,
+            "return_EAX": 0
+          },
+          {
+            "caller_return": 4895366,
+            "event_mask": 64,
+            "instance": 544211084,
+            "tick": 1,
+            "Data1": 60,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 544211084,
+            "tick": 1,
+            "Data1": 60,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 544211084,
+            "tick": 1,
+            "Data1": 60,
+            "Data2": 2,
+            "return_EAX": 1
+          }
+        ],
+        "full_regions": 104,
+        "full_bytes": 273755,
+        "native_steps": 127621
+      }
+    },
+    {
+      "case": {
+        "name": "wave-child-three",
+        "child_ticks": [
+          [
+            0,
+            3
+          ]
+        ]
+      },
+      "file": "ghidra\\phase175-source-status-wave-child-three-7f3a1c19ae9b.json",
+      "sha256": "ef45ea37f81cb96c8de96f01103378b3e82b8fc41718a2fac758c75bad7566d4",
+      "outcome": {
+        "HP": [
+          100000,
+          99700,
+          99820
+        ],
+        "freeze": [
+          0,
+          1200,
+          0
+        ],
+        "poison": [
+          0,
+          0,
+          0
+        ],
+        "severity": [
+          0,
+          0,
+          0
+        ],
+        "shots": [
+          {
+            "tag": 202,
+            "address": 471007372,
+            "ID": 162,
+            "HP": 7,
+            "tick": 1,
+            "Data1": 60,
+            "Data2": 2,
+            "target": 2
+          },
+          {
+            "tag": 203,
+            "address": 544211084,
+            "ID": 164,
+            "HP": 0,
+            "tick": 3,
+            "Data1": 60,
+            "Data2": 2,
+            "target": 2
+          }
+        ],
+        "requests": [
+          {
+            "target": 271581184,
+            "delta": -60,
+            "before": 100000,
+            "caller": "0x4ac58e"
+          },
+          {
+            "target": 271581184,
+            "delta": -60,
+            "before": 99925,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 452984832,
+            "delta": -60,
+            "before": 100000,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 271581184,
+            "delta": -60,
+            "before": 99850,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 452984832,
+            "delta": -60,
+            "before": 99940,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 271581184,
+            "delta": -60,
+            "before": 99775,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 452984832,
+            "delta": -60,
+            "before": 99880,
+            "caller": "0x4ac666"
+          }
+        ],
+        "parameter_copy_writes": [
+          {
+            "ShotID": 164,
+            "field": "Data1",
+            "write": {
+              "pc": "0x4abf7d",
+              "address": "0x207001c9",
+              "size": 4,
+              "value": 60
+            }
+          },
+          {
+            "ShotID": 164,
+            "field": "Data2",
+            "write": {
+              "pc": "0x4abf83",
+              "address": "0x207001cd",
+              "size": 4,
+              "value": 2
+            }
+          }
+        ],
+        "events": [
+          {
+            "caller_return": 4895366,
+            "event_mask": 64,
+            "instance": 471007372,
+            "tick": 1,
+            "Data1": 60,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 471007372,
+            "tick": 1,
+            "Data1": 60,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4898758,
+            "event_mask": 4,
+            "instance": 471007372,
+            "tick": 1,
+            "Data1": 60,
+            "Data2": 2,
+            "return_EAX": 0
+          },
+          {
+            "caller_return": 4895366,
+            "event_mask": 64,
+            "instance": 544211084,
+            "tick": 1,
+            "Data1": 60,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 544211084,
+            "tick": 1,
+            "Data1": 60,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 544211084,
+            "tick": 1,
+            "Data1": 60,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 544211084,
+            "tick": 2,
+            "Data1": 60,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 544211084,
+            "tick": 2,
+            "Data1": 60,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 544211084,
+            "tick": 3,
+            "Data1": 60,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 544211084,
+            "tick": 3,
+            "Data1": 60,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4896359,
+            "event_mask": 128,
+            "instance": 544211084,
+            "tick": 3,
+            "Data1": 60,
+            "Data2": 2,
+            "return_EAX": 1
+          }
+        ],
+        "full_regions": 104,
+        "full_bytes": 273755,
+        "native_steps": 130461
+      }
+    },
+    {
+      "case": {
+        "name": "wall-inherited",
+        "parent_ticks": 8,
+        "child_ticks": [
+          [
+            1,
+            1
+          ]
+        ]
+      },
+      "file": "ghidra\\phase175-source-status-wall-inherited-c528e0ce9ccc.json",
+      "sha256": "c0a01a58184b2287bfddc3fa15d56163426d638f6ef0391696a418d365f3aae1",
+      "outcome": {
+        "HP": [
+          100000,
+          99925,
+          100000
+        ],
+        "freeze": [
+          0,
+          1200,
+          0
+        ],
+        "poison": [
+          0,
+          0,
+          0
+        ],
+        "severity": [
+          0,
+          0,
+          0
+        ],
+        "shots": [
+          {
+            "tag": 202,
+            "address": 471007372,
+            "ID": 162,
+            "HP": 0,
+            "tick": 8,
+            "Data1": 60,
+            "Data2": 2,
+            "target": 2
+          },
+          {
+            "tag": 203,
+            "address": 544211084,
+            "ID": 164,
+            "HP": 3,
+            "tick": 0,
+            "Data1": 60,
+            "Data2": 2,
+            "target": 2
+          },
+          {
+            "tag": 204,
+            "address": 544215180,
+            "ID": 163,
+            "HP": 19,
+            "tick": 1,
+            "Data1": 60,
+            "Data2": 2,
+            "target": 2
+          }
+        ],
+        "requests": [
+          {
+            "target": 271581184,
+            "delta": -60,
+            "before": 100000,
+            "caller": "0x4ac58e"
+          }
+        ],
+        "parameter_copy_writes": [
+          {
+            "ShotID": 164,
+            "field": "Data1",
+            "write": {
+              "pc": "0x4abf7d",
+              "address": "0x207001c9",
+              "size": 4,
+              "value": 60
+            }
+          },
+          {
+            "ShotID": 164,
+            "field": "Data2",
+            "write": {
+              "pc": "0x4abf83",
+              "address": "0x207001cd",
+              "size": 4,
+              "value": 2
+            }
+          },
+          {
+            "ShotID": 163,
+            "field": "Data1",
+            "write": {
+              "pc": "0x4ab61b",
+              "address": "0x207011c9",
+              "size": 4,
+              "value": 60
+            }
+          },
+          {
+            "ShotID": 163,
+            "field": "Data2",
+            "write": {
+              "pc": "0x4ab621",
+              "address": "0x207011cd",
+              "size": 4,
+              "value": 2
+            }
+          }
+        ],
+        "events": [
+          {
+            "caller_return": 4895366,
+            "event_mask": 64,
+            "instance": 471007372,
+            "tick": 1,
+            "Data1": 60,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 471007372,
+            "tick": 1,
+            "Data1": 60,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4898758,
+            "event_mask": 4,
+            "instance": 471007372,
+            "tick": 1,
+            "Data1": 60,
+            "Data2": 2,
+            "return_EAX": 0
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 471007372,
+            "tick": 2,
+            "Data1": 60,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 471007372,
+            "tick": 3,
+            "Data1": 60,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 471007372,
+            "tick": 4,
+            "Data1": 60,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 471007372,
+            "tick": 5,
+            "Data1": 60,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 471007372,
+            "tick": 6,
+            "Data1": 60,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 471007372,
+            "tick": 7,
+            "Data1": 60,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 471007372,
+            "tick": 8,
+            "Data1": 60,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4896359,
+            "event_mask": 128,
+            "instance": 471007372,
+            "tick": 8,
+            "Data1": 60,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895366,
+            "event_mask": 64,
+            "instance": 544215180,
+            "tick": 1,
+            "Data1": 60,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 544215180,
+            "tick": 1,
+            "Data1": 60,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 544215180,
+            "tick": 1,
+            "Data1": 60,
+            "Data2": 2,
+            "return_EAX": 1
+          }
+        ],
+        "full_regions": 104,
+        "full_bytes": 273755,
+        "native_steps": 135691
+      }
+    },
+    {
+      "case": {
+        "name": "wall-source",
+        "parent": 163
+      },
+      "file": "ghidra\\phase175-source-status-wall-source-59f49cd07984.json",
+      "sha256": "9c6046b3bac791f0f3c7ba5a1fd4d2188b0aa98125a8a2357612c28b69685162",
+      "outcome": {
+        "HP": [
+          100000,
+          100000,
+          100000
+        ],
+        "freeze": [
+          0,
+          0,
+          0
+        ],
+        "poison": [
+          0,
+          0,
+          0
+        ],
+        "severity": [
+          0,
+          0,
+          0
+        ],
+        "shots": [
+          {
+            "tag": 202,
+            "address": 471007372,
+            "ID": 163,
+            "HP": 19,
+            "tick": 1,
+            "Data1": 0,
+            "Data2": 2,
+            "target": 2
+          },
+          {
+            "tag": 203,
+            "address": 544211084,
+            "ID": 164,
+            "HP": 3,
+            "tick": 0,
+            "Data1": 0,
+            "Data2": 2,
+            "target": 2
+          }
+        ],
+        "requests": [],
+        "parameter_copy_writes": [
+          {
+            "ShotID": 164,
+            "field": "Data1",
+            "write": {
+              "pc": "0x4abf7d",
+              "address": "0x207001c9",
+              "size": 4,
+              "value": 0
+            }
+          },
+          {
+            "ShotID": 164,
+            "field": "Data2",
+            "write": {
+              "pc": "0x4abf83",
+              "address": "0x207001cd",
+              "size": 4,
+              "value": 2
+            }
+          }
+        ],
+        "events": [
+          {
+            "caller_return": 4895366,
+            "event_mask": 64,
+            "instance": 471007372,
+            "tick": 1,
+            "Data1": 0,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 471007372,
+            "tick": 1,
+            "Data1": 0,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4898758,
+            "event_mask": 4,
+            "instance": 471007372,
+            "tick": 1,
+            "Data1": 0,
+            "Data2": 2,
+            "return_EAX": 0
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 471007372,
+            "tick": 1,
+            "Data1": 0,
+            "Data2": 2,
+            "return_EAX": 1
+          }
+        ],
+        "full_regions": 104,
+        "full_bytes": 273755,
+        "native_steps": 124953
+      }
+    },
+    {
+      "case": {
+        "name": "wall-source-child",
+        "parent": 163,
+        "child_ticks": [
+          [
+            0,
+            1
+          ]
+        ]
+      },
+      "file": "ghidra\\phase175-source-status-wall-source-child-6f7451d53ff6.json",
+      "sha256": "ae63bc42c1d8d84d0080ee1f7913b7ff41b07272faae8833cca0e6a9fc80fb12",
+      "outcome": {
+        "HP": [
+          100000,
+          100000,
+          100000
+        ],
+        "freeze": [
+          0,
+          0,
+          0
+        ],
+        "poison": [
+          0,
+          0,
+          0
+        ],
+        "severity": [
+          0,
+          0,
+          0
+        ],
+        "shots": [
+          {
+            "tag": 202,
+            "address": 471007372,
+            "ID": 163,
+            "HP": 19,
+            "tick": 1,
+            "Data1": 0,
+            "Data2": 2,
+            "target": 2
+          },
+          {
+            "tag": 203,
+            "address": 544211084,
+            "ID": 164,
+            "HP": 2,
+            "tick": 1,
+            "Data1": 0,
+            "Data2": 2,
+            "target": 2
+          }
+        ],
+        "requests": [
+          {
+            "target": 271581184,
+            "delta": 0,
+            "before": 100000,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 452984832,
+            "delta": 0,
+            "before": 100000,
+            "caller": "0x4ac666"
+          }
+        ],
+        "parameter_copy_writes": [
+          {
+            "ShotID": 164,
+            "field": "Data1",
+            "write": {
+              "pc": "0x4abf7d",
+              "address": "0x207001c9",
+              "size": 4,
+              "value": 0
+            }
+          },
+          {
+            "ShotID": 164,
+            "field": "Data2",
+            "write": {
+              "pc": "0x4abf83",
+              "address": "0x207001cd",
+              "size": 4,
+              "value": 2
+            }
+          }
+        ],
+        "events": [
+          {
+            "caller_return": 4895366,
+            "event_mask": 64,
+            "instance": 471007372,
+            "tick": 1,
+            "Data1": 0,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 471007372,
+            "tick": 1,
+            "Data1": 0,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4898758,
+            "event_mask": 4,
+            "instance": 471007372,
+            "tick": 1,
+            "Data1": 0,
+            "Data2": 2,
+            "return_EAX": 0
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 471007372,
+            "tick": 1,
+            "Data1": 0,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895366,
+            "event_mask": 64,
+            "instance": 544211084,
+            "tick": 1,
+            "Data1": 0,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 544211084,
+            "tick": 1,
+            "Data1": 0,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 544211084,
+            "tick": 1,
+            "Data1": 0,
+            "Data2": 2,
+            "return_EAX": 1
+          }
+        ],
+        "full_regions": 104,
+        "full_bytes": 273755,
+        "native_steps": 126157
+      }
+    },
+    {
+      "case": {
+        "name": "wave-invulnerable",
+        "invulnerable": 1,
+        "child_ticks": [
+          [
+            0,
+            1
+          ]
+        ]
+      },
+      "file": "ghidra\\phase175-source-status-wave-invulnerable-9a0e49ab6e00.json",
+      "sha256": "df3793047773cbc71533b906faf7a106181c1db6c97ec8ef09b698735fec4a86",
+      "outcome": {
+        "HP": [
+          100000,
+          100000,
+          99940
+        ],
+        "freeze": [
+          0,
+          1200,
+          0
+        ],
+        "poison": [
+          0,
+          0,
+          0
+        ],
+        "severity": [
+          0,
+          0,
+          0
+        ],
+        "shots": [
+          {
+            "tag": 202,
+            "address": 471007372,
+            "ID": 162,
+            "HP": 7,
+            "tick": 1,
+            "Data1": 60,
+            "Data2": 2,
+            "target": 2
+          },
+          {
+            "tag": 203,
+            "address": 544211084,
+            "ID": 164,
+            "HP": 2,
+            "tick": 1,
+            "Data1": 60,
+            "Data2": 2,
+            "target": 2
+          }
+        ],
+        "requests": [
+          {
+            "target": 452984832,
+            "delta": -60,
+            "before": 100000,
+            "caller": "0x4ac666"
+          }
+        ],
+        "parameter_copy_writes": [
+          {
+            "ShotID": 164,
+            "field": "Data1",
+            "write": {
+              "pc": "0x4abf7d",
+              "address": "0x207001c9",
+              "size": 4,
+              "value": 60
+            }
+          },
+          {
+            "ShotID": 164,
+            "field": "Data2",
+            "write": {
+              "pc": "0x4abf83",
+              "address": "0x207001cd",
+              "size": 4,
+              "value": 2
+            }
+          }
+        ],
+        "events": [
+          {
+            "caller_return": 4895366,
+            "event_mask": 64,
+            "instance": 471007372,
+            "tick": 1,
+            "Data1": 60,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 471007372,
+            "tick": 1,
+            "Data1": 60,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4898758,
+            "event_mask": 4,
+            "instance": 471007372,
+            "tick": 1,
+            "Data1": 60,
+            "Data2": 2,
+            "return_EAX": 0
+          },
+          {
+            "caller_return": 4895366,
+            "event_mask": 64,
+            "instance": 544211084,
+            "tick": 1,
+            "Data1": 60,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 544211084,
+            "tick": 1,
+            "Data1": 60,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 544211084,
+            "tick": 1,
+            "Data1": 60,
+            "Data2": 2,
+            "return_EAX": 1
+          }
+        ],
+        "full_regions": 104,
+        "full_bytes": 273755,
+        "native_steps": 127341
+      }
+    },
+    {
+      "case": {
+        "name": "wave-trap80",
+        "trap_data1": 80,
+        "child_ticks": [
+          [
+            0,
+            1
+          ]
+        ]
+      },
+      "file": "ghidra\\phase175-source-status-wave-trap80-027453aeddf9.json",
+      "sha256": "32e84427fc43cb83a22ca3894938fd21fd27c0d2e0abb7ddc68409030a37a7aa",
+      "outcome": {
+        "HP": [
+          100000,
+          99800,
+          99920
+        ],
+        "freeze": [
+          0,
+          1600,
+          0
+        ],
+        "poison": [
+          0,
+          0,
+          0
+        ],
+        "severity": [
+          0,
+          0,
+          0
+        ],
+        "shots": [
+          {
+            "tag": 202,
+            "address": 471007372,
+            "ID": 162,
+            "HP": 7,
+            "tick": 1,
+            "Data1": 80,
+            "Data2": 2,
+            "target": 2
+          },
+          {
+            "tag": 203,
+            "address": 544211084,
+            "ID": 164,
+            "HP": 2,
+            "tick": 1,
+            "Data1": 80,
+            "Data2": 2,
+            "target": 2
+          }
+        ],
+        "requests": [
+          {
+            "target": 271581184,
+            "delta": -80,
+            "before": 100000,
+            "caller": "0x4ac58e"
+          },
+          {
+            "target": 271581184,
+            "delta": -80,
+            "before": 99900,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 452984832,
+            "delta": -80,
+            "before": 100000,
+            "caller": "0x4ac666"
+          }
+        ],
+        "parameter_copy_writes": [
+          {
+            "ShotID": 164,
+            "field": "Data1",
+            "write": {
+              "pc": "0x4abf7d",
+              "address": "0x207001c9",
+              "size": 4,
+              "value": 80
+            }
+          },
+          {
+            "ShotID": 164,
+            "field": "Data2",
+            "write": {
+              "pc": "0x4abf83",
+              "address": "0x207001cd",
+              "size": 4,
+              "value": 2
+            }
+          }
+        ],
+        "events": [
+          {
+            "caller_return": 4895366,
+            "event_mask": 64,
+            "instance": 471007372,
+            "tick": 1,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 471007372,
+            "tick": 1,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4898758,
+            "event_mask": 4,
+            "instance": 471007372,
+            "tick": 1,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 0
+          },
+          {
+            "caller_return": 4895366,
+            "event_mask": 64,
+            "instance": 544211084,
+            "tick": 1,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 544211084,
+            "tick": 1,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 544211084,
+            "tick": 1,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 1
+          }
+        ],
+        "full_regions": 104,
+        "full_bytes": 273755,
+        "native_steps": 127621
+      }
+    },
+    {
+      "case": {
+        "name": "wave-trap0",
+        "trap_data1": 0,
+        "child_ticks": [
+          [
+            0,
+            1
+          ]
+        ]
+      },
+      "file": "ghidra\\phase175-source-status-wave-trap0-4c6f6f094542.json",
+      "sha256": "35cab3320379c218e579152deb6da919ece3bc9babac7d5d13bc7f30dce19371",
+      "outcome": {
+        "HP": [
+          100000,
+          100000,
+          100000
+        ],
+        "freeze": [
+          0,
+          0,
+          0
+        ],
+        "poison": [
+          0,
+          0,
+          0
+        ],
+        "severity": [
+          0,
+          0,
+          0
+        ],
+        "shots": [
+          {
+            "tag": 202,
+            "address": 471007372,
+            "ID": 162,
+            "HP": 7,
+            "tick": 1,
+            "Data1": 0,
+            "Data2": 2,
+            "target": 2
+          },
+          {
+            "tag": 203,
+            "address": 544211084,
+            "ID": 164,
+            "HP": 2,
+            "tick": 1,
+            "Data1": 0,
+            "Data2": 2,
+            "target": 2
+          }
+        ],
+        "requests": [
+          {
+            "target": 271581184,
+            "delta": 0,
+            "before": 100000,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 452984832,
+            "delta": 0,
+            "before": 100000,
+            "caller": "0x4ac666"
+          }
+        ],
+        "parameter_copy_writes": [
+          {
+            "ShotID": 164,
+            "field": "Data1",
+            "write": {
+              "pc": "0x4abf7d",
+              "address": "0x207001c9",
+              "size": 4,
+              "value": 0
+            }
+          },
+          {
+            "ShotID": 164,
+            "field": "Data2",
+            "write": {
+              "pc": "0x4abf83",
+              "address": "0x207001cd",
+              "size": 4,
+              "value": 2
+            }
+          }
+        ],
+        "events": [
+          {
+            "caller_return": 4895366,
+            "event_mask": 64,
+            "instance": 471007372,
+            "tick": 1,
+            "Data1": 0,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 471007372,
+            "tick": 1,
+            "Data1": 0,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4898758,
+            "event_mask": 4,
+            "instance": 471007372,
+            "tick": 1,
+            "Data1": 0,
+            "Data2": 2,
+            "return_EAX": 0
+          },
+          {
+            "caller_return": 4895366,
+            "event_mask": 64,
+            "instance": 544211084,
+            "tick": 1,
+            "Data1": 0,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 544211084,
+            "tick": 1,
+            "Data1": 0,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 544211084,
+            "tick": 1,
+            "Data1": 0,
+            "Data2": 2,
+            "return_EAX": 1
+          }
+        ],
+        "full_regions": 104,
+        "full_bytes": 273755,
+        "native_steps": 127244
+      }
+    },
+    {
+      "case": {
+        "name": "poison85",
+        "source_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\AutoSaveGlobals.kld",
+        "IDs": [
+          85
+        ],
+        "parent": 85
+      },
+      "file": "ghidra\\phase175-source-status-poison85-46823e62a5bb.json",
+      "sha256": "2a67d4ddbd69d30856f0c3adb5d05abff3a4888b7a2c9cf3978df3268e0b4e22",
+      "outcome": {
+        "HP": [
+          100000,
+          99950,
+          100000
+        ],
+        "freeze": [
+          0,
+          0,
+          0
+        ],
+        "poison": [
+          0,
+          50,
+          0
+        ],
+        "severity": [
+          0,
+          2,
+          0
+        ],
+        "shots": [
+          {
+            "tag": 202,
+            "address": 471007372,
+            "ID": 85,
+            "HP": 0,
+            "tick": 1,
+            "Data1": 50,
+            "Data2": 2,
+            "target": 2
+          }
+        ],
+        "requests": [
+          {
+            "target": 271581184,
+            "delta": -50,
+            "before": 100000,
+            "caller": "0x4ac58e"
+          }
+        ],
+        "parameter_copy_writes": [],
+        "events": [
+          {
+            "caller_return": 4895366,
+            "event_mask": 64,
+            "instance": 471007372,
+            "tick": 1,
+            "Data1": 50,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 471007372,
+            "tick": 1,
+            "Data1": 50,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4898758,
+            "event_mask": 4,
+            "instance": 471007372,
+            "tick": 1,
+            "Data1": 50,
+            "Data2": 2,
+            "return_EAX": 0
+          },
+          {
+            "caller_return": 4896359,
+            "event_mask": 128,
+            "instance": 471007372,
+            "tick": 1,
+            "Data1": 50,
+            "Data2": 2,
+            "return_EAX": 1
+          }
+        ],
+        "full_regions": 104,
+        "full_bytes": 273041,
+        "native_steps": 117952
+      }
+    },
+    {
+      "case": {
+        "name": "poison88",
+        "source_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\AutoSaveGlobals.kld",
+        "IDs": [
+          88
+        ],
+        "parent": 88
+      },
+      "file": "ghidra\\phase175-source-status-poison88-9fd42aa8f69d.json",
+      "sha256": "3d3d37f2f1dcd2f4ca31ed164f8979ed585d56abdf182eb51f542f1ebb408a27",
+      "outcome": {
+        "HP": [
+          100000,
+          99950,
+          100000
+        ],
+        "freeze": [
+          0,
+          0,
+          0
+        ],
+        "poison": [
+          0,
+          50,
+          0
+        ],
+        "severity": [
+          0,
+          2,
+          0
+        ],
+        "shots": [
+          {
+            "tag": 202,
+            "address": 471007372,
+            "ID": 88,
+            "HP": 0,
+            "tick": 1,
+            "Data1": 50,
+            "Data2": 2,
+            "target": 2
+          }
+        ],
+        "requests": [
+          {
+            "target": 271581184,
+            "delta": -50,
+            "before": 100000,
+            "caller": "0x4ac58e"
+          }
+        ],
+        "parameter_copy_writes": [],
+        "events": [
+          {
+            "caller_return": 4895366,
+            "event_mask": 64,
+            "instance": 471007372,
+            "tick": 1,
+            "Data1": 50,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 471007372,
+            "tick": 1,
+            "Data1": 50,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4898758,
+            "event_mask": 4,
+            "instance": 471007372,
+            "tick": 1,
+            "Data1": 50,
+            "Data2": 2,
+            "return_EAX": 0
+          },
+          {
+            "caller_return": 4896359,
+            "event_mask": 128,
+            "instance": 471007372,
+            "tick": 1,
+            "Data1": 50,
+            "Data2": 2,
+            "return_EAX": 1
+          }
+        ],
+        "full_regions": 104,
+        "full_bytes": 273041,
+        "native_steps": 117935
+      }
+    },
+    {
+      "case": {
+        "name": "poison95",
+        "source_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\AutoSaveGlobals.kld",
+        "IDs": [
+          95
+        ],
+        "parent": 95
+      },
+      "file": "ghidra\\phase175-source-status-poison95-f0ed7b2c9cb6.json",
+      "sha256": "667d32f3b4755c961b88814d8fbc73073e869e39651237681b2b14f0875a41c4",
+      "outcome": {
+        "HP": [
+          100000,
+          99950,
+          100000
+        ],
+        "freeze": [
+          0,
+          0,
+          0
+        ],
+        "poison": [
+          0,
+          50,
+          0
+        ],
+        "severity": [
+          0,
+          2,
+          0
+        ],
+        "shots": [
+          {
+            "tag": 202,
+            "address": 471007372,
+            "ID": 95,
+            "HP": 4294967295,
+            "tick": 1,
+            "Data1": 50,
+            "Data2": 2,
+            "target": 2
+          }
+        ],
+        "requests": [
+          {
+            "target": 271581184,
+            "delta": -50,
+            "before": 100000,
+            "caller": "0x4ac58e"
+          }
+        ],
+        "parameter_copy_writes": [],
+        "events": [
+          {
+            "caller_return": 4895366,
+            "event_mask": 64,
+            "instance": 471007372,
+            "tick": 1,
+            "Data1": 50,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 471007372,
+            "tick": 1,
+            "Data1": 50,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4898758,
+            "event_mask": 4,
+            "instance": 471007372,
+            "tick": 1,
+            "Data1": 50,
+            "Data2": 2,
+            "return_EAX": 0
+          },
+          {
+            "caller_return": 4896359,
+            "event_mask": 128,
+            "instance": 471007372,
+            "tick": 1,
+            "Data1": 50,
+            "Data2": 2,
+            "return_EAX": 1
+          }
+        ],
+        "full_regions": 104,
+        "full_bytes": 273041,
+        "native_steps": 117599
+      }
+    },
+    {
+      "case": {
+        "name": "poison85-alternate",
+        "source_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\kop3Globals.kld",
+        "IDs": [
+          85
+        ],
+        "parent": 85
+      },
+      "file": "ghidra\\phase175-source-status-poison85-alternate-0c70552483af.json",
+      "sha256": "f298c21561db612d8e035fcf89592d802de332e13a6a76f93d8849ad055ca7ac",
+      "outcome": {
+        "HP": [
+          100000,
+          99950,
+          100000
+        ],
+        "freeze": [
+          0,
+          0,
+          0
+        ],
+        "poison": [
+          0,
+          50,
+          0
+        ],
+        "severity": [
+          0,
+          2,
+          0
+        ],
+        "shots": [
+          {
+            "tag": 202,
+            "address": 471007372,
+            "ID": 85,
+            "HP": 0,
+            "tick": 1,
+            "Data1": 50,
+            "Data2": 2,
+            "target": 2
+          }
+        ],
+        "requests": [
+          {
+            "target": 271581184,
+            "delta": -50,
+            "before": 100000,
+            "caller": "0x4ac58e"
+          }
+        ],
+        "parameter_copy_writes": [],
+        "events": [
+          {
+            "caller_return": 4895366,
+            "event_mask": 64,
+            "instance": 471007372,
+            "tick": 1,
+            "Data1": 50,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 471007372,
+            "tick": 1,
+            "Data1": 50,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4898758,
+            "event_mask": 4,
+            "instance": 471007372,
+            "tick": 1,
+            "Data1": 50,
+            "Data2": 2,
+            "return_EAX": 0
+          },
+          {
+            "caller_return": 4896359,
+            "event_mask": 128,
+            "instance": 471007372,
+            "tick": 1,
+            "Data1": 50,
+            "Data2": 2,
+            "return_EAX": 1
+          }
+        ],
+        "full_regions": 104,
+        "full_bytes": 273041,
+        "native_steps": 117938
+      }
+    },
+    {
+      "case": {
+        "name": "poison85-invulnerable",
+        "source_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\AutoSaveGlobals.kld",
+        "IDs": [
+          85
+        ],
+        "parent": 85,
+        "invulnerable": 1
+      },
+      "file": "ghidra\\phase175-source-status-poison85-invulnerable-3e90294062aa.json",
+      "sha256": "5aee97a74153d89678dc6cb416f318bea5c4af45224259b85421629b0619bc65",
+      "outcome": {
+        "HP": [
+          100000,
+          100000,
+          100000
+        ],
+        "freeze": [
+          0,
+          0,
+          0
+        ],
+        "poison": [
+          0,
+          50,
+          0
+        ],
+        "severity": [
+          0,
+          2,
+          0
+        ],
+        "shots": [
+          {
+            "tag": 202,
+            "address": 471007372,
+            "ID": 85,
+            "HP": 0,
+            "tick": 1,
+            "Data1": 50,
+            "Data2": 2,
+            "target": 2
+          }
+        ],
+        "requests": [],
+        "parameter_copy_writes": [],
+        "events": [
+          {
+            "caller_return": 4895366,
+            "event_mask": 64,
+            "instance": 471007372,
+            "tick": 1,
+            "Data1": 50,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 471007372,
+            "tick": 1,
+            "Data1": 50,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4898758,
+            "event_mask": 4,
+            "instance": 471007372,
+            "tick": 1,
+            "Data1": 50,
+            "Data2": 2,
+            "return_EAX": 0
+          },
+          {
+            "caller_return": 4896359,
+            "event_mask": 128,
+            "instance": 471007372,
+            "tick": 1,
+            "Data1": 50,
+            "Data2": 2,
+            "return_EAX": 1
+          }
+        ],
+        "full_regions": 104,
+        "full_bytes": 273041,
+        "native_steps": 117808
+      }
+    }
+  ]
+}

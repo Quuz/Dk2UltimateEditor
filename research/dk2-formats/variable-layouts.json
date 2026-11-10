@@ -1,0 +1,506 @@
+{
+  "1": {
+    "name": "CreaturePool",
+    "record_size": 16,
+    "fields": [
+      {
+        "name": "Type",
+        "offset": 0,
+        "offset_hex": "0x0",
+        "kind": "u32",
+        "size": 4
+      },
+      {
+        "name": "CreatureId",
+        "offset": 4,
+        "offset_hex": "0x4",
+        "kind": "i32",
+        "size": 4
+      },
+      {
+        "name": "Count",
+        "offset": 8,
+        "offset_hex": "0x8",
+        "kind": "i32",
+        "size": 4
+      },
+      {
+        "name": "PlayerId",
+        "offset": 12,
+        "offset_hex": "0xc",
+        "kind": "i32",
+        "size": 4
+      }
+    ],
+    "evidence": "0x51C9C0; player 0 iterates eligible players, not neutral player only"
+  },
+  "2": {
+    "name": "Availability",
+    "record_size": 16,
+    "fields": [
+      {
+        "name": "Type",
+        "offset": 0,
+        "offset_hex": "0x0",
+        "kind": "u32",
+        "size": 4
+      },
+      {
+        "name": "AvailabilityType",
+        "offset": 4,
+        "offset_hex": "0x4",
+        "kind": "u16",
+        "size": 2
+      },
+      {
+        "name": "PlayerId",
+        "offset": 6,
+        "offset_hex": "0x6",
+        "kind": "u16",
+        "size": 2
+      },
+      {
+        "name": "DefinitionId",
+        "offset": 8,
+        "offset_hex": "0x8",
+        "kind": "i32",
+        "size": 4
+      },
+      {
+        "name": "Value",
+        "offset": 12,
+        "offset_hex": "0xc",
+        "kind": "i32",
+        "size": 4
+      }
+    ],
+    "evidence": "0x51CA60 -> 0x51CAE0; player 0 iterates player list"
+  },
+  "17": {
+    "name": "ResearchOrder",
+    "record_size": 16,
+    "fields": [
+      {
+        "name": "Type",
+        "offset": 0,
+        "offset_hex": "0x0",
+        "kind": "u32",
+        "size": 4
+      },
+      {
+        "name": "ResearchCategory",
+        "offset": 4,
+        "offset_hex": "0x4",
+        "kind": "u32",
+        "size": 4
+      },
+      {
+        "name": "DefinitionId",
+        "offset": 8,
+        "offset_hex": "0x8",
+        "kind": "u32",
+        "size": 4
+      },
+      {
+        "name": "ResearchPointsRaw",
+        "offset": 12,
+        "offset_hex": "0xc",
+        "kind": "u32",
+        "size": 4
+      }
+    ],
+    "evidence": "0x51DB00 -> 0x506FF0; category names from template"
+  },
+  "43": {
+    "name": "Sacrifice",
+    "record_size": 16,
+    "fields": [
+      {
+        "name": "Type",
+        "offset": 0,
+        "offset_hex": "0x0",
+        "kind": "u32",
+        "size": 4
+      },
+      {
+        "name": "Input[0].Type",
+        "offset": 4,
+        "offset_hex": "0x4",
+        "kind": "u8",
+        "size": 1
+      },
+      {
+        "name": "Input[0].Id",
+        "offset": 5,
+        "offset_hex": "0x5",
+        "kind": "u8",
+        "size": 1
+      },
+      {
+        "name": "Input[1].Type",
+        "offset": 6,
+        "offset_hex": "0x6",
+        "kind": "u8",
+        "size": 1
+      },
+      {
+        "name": "Input[1].Id",
+        "offset": 7,
+        "offset_hex": "0x7",
+        "kind": "u8",
+        "size": 1
+      },
+      {
+        "name": "Input[2].Type",
+        "offset": 8,
+        "offset_hex": "0x8",
+        "kind": "u8",
+        "size": 1
+      },
+      {
+        "name": "Input[2].Id",
+        "offset": 9,
+        "offset_hex": "0x9",
+        "kind": "u8",
+        "size": 1
+      },
+      {
+        "name": "RewardType",
+        "offset": 10,
+        "offset_hex": "0xa",
+        "kind": "u8",
+        "size": 1
+      },
+      {
+        "name": "SpeechId",
+        "offset": 11,
+        "offset_hex": "0xb",
+        "kind": "u8",
+        "size": 1
+      },
+      {
+        "name": "RewardValue",
+        "offset": 12,
+        "offset_hex": "0xc",
+        "kind": "i32",
+        "size": 4
+      }
+    ],
+    "evidence": "0x51DB30; OpenKeeper"
+  },
+  "61": {
+    "name": "NoOpInOriginal170",
+    "record_size": 16,
+    "fields": [
+      {
+        "name": "Type",
+        "offset": 0,
+        "offset_hex": "0x0",
+        "kind": "u32",
+        "size": 4
+      },
+      {
+        "name": "Ignored1",
+        "offset": 4,
+        "offset_hex": "0x4",
+        "kind": "u32",
+        "size": 4
+      },
+      {
+        "name": "Ignored2",
+        "offset": 8,
+        "offset_hex": "0x8",
+        "kind": "u32",
+        "size": 4
+      },
+      {
+        "name": "Ignored3",
+        "offset": 12,
+        "offset_hex": "0xc",
+        "kind": "u32",
+        "size": 4
+      }
+    ],
+    "evidence": "0x51DC20 -> 0x401200 (empty function in this image)"
+  },
+  "62": {
+    "name": "NoOpInOriginal170",
+    "record_size": 16,
+    "fields": [
+      {
+        "name": "Type",
+        "offset": 0,
+        "offset_hex": "0x0",
+        "kind": "u32",
+        "size": 4
+      },
+      {
+        "name": "Ignored1",
+        "offset": 4,
+        "offset_hex": "0x4",
+        "kind": "u32",
+        "size": 4
+      },
+      {
+        "name": "Ignored2",
+        "offset": 8,
+        "offset_hex": "0x8",
+        "kind": "u32",
+        "size": 4
+      },
+      {
+        "name": "Ignored3",
+        "offset": 12,
+        "offset_hex": "0xc",
+        "kind": "u32",
+        "size": 4
+      }
+    ],
+    "evidence": "0x51DC20 -> 0x401200 (empty function in this image)"
+  },
+  "63": {
+    "name": "NoOpInOriginal170",
+    "record_size": 16,
+    "fields": [
+      {
+        "name": "Type",
+        "offset": 0,
+        "offset_hex": "0x0",
+        "kind": "u32",
+        "size": 4
+      },
+      {
+        "name": "Ignored1",
+        "offset": 4,
+        "offset_hex": "0x4",
+        "kind": "u32",
+        "size": 4
+      },
+      {
+        "name": "Ignored2",
+        "offset": 8,
+        "offset_hex": "0x8",
+        "kind": "u32",
+        "size": 4
+      },
+      {
+        "name": "Ignored3",
+        "offset": 12,
+        "offset_hex": "0xc",
+        "kind": "u32",
+        "size": 4
+      }
+    ],
+    "evidence": "0x51DC20 -> 0x401200 (empty function in this image)"
+  },
+  "64": {
+    "name": "NoOpInOriginal170",
+    "record_size": 16,
+    "fields": [
+      {
+        "name": "Type",
+        "offset": 0,
+        "offset_hex": "0x0",
+        "kind": "u32",
+        "size": 4
+      },
+      {
+        "name": "Ignored1",
+        "offset": 4,
+        "offset_hex": "0x4",
+        "kind": "u32",
+        "size": 4
+      },
+      {
+        "name": "Ignored2",
+        "offset": 8,
+        "offset_hex": "0x8",
+        "kind": "u32",
+        "size": 4
+      },
+      {
+        "name": "Ignored3",
+        "offset": 12,
+        "offset_hex": "0xc",
+        "kind": "u32",
+        "size": 4
+      }
+    ],
+    "evidence": "0x51DC20 -> 0x401200 (empty function in this image)"
+  },
+  "65": {
+    "name": "CreatureLevelStat",
+    "record_size": 16,
+    "fields": [
+      {
+        "name": "Type",
+        "offset": 0,
+        "offset_hex": "0x0",
+        "kind": "u32",
+        "size": 4
+      },
+      {
+        "name": "StatId",
+        "offset": 4,
+        "offset_hex": "0x4",
+        "kind": "u32",
+        "size": 4
+      },
+      {
+        "name": "ValueRaw",
+        "offset": 8,
+        "offset_hex": "0x8",
+        "kind": "u32",
+        "size": 4
+      },
+      {
+        "name": "CreatureLevel",
+        "offset": 12,
+        "offset_hex": "0xc",
+        "kind": "u32",
+        "size": 4
+      }
+    ],
+    "evidence": "0x51DC40; low 16 bits of ValueRaw stored; observed levels 2..10"
+  },
+  "66": {
+    "name": "Alliance",
+    "record_size": 16,
+    "fields": [
+      {
+        "name": "Type",
+        "offset": 0,
+        "offset_hex": "0x0",
+        "kind": "u32",
+        "size": 4
+      },
+      {
+        "name": "Player1",
+        "offset": 4,
+        "offset_hex": "0x4",
+        "kind": "u32",
+        "size": 4
+      },
+      {
+        "name": "Player2",
+        "offset": 8,
+        "offset_hex": "0x8",
+        "kind": "u32",
+        "size": 4
+      },
+      {
+        "name": "Unused",
+        "offset": 12,
+        "offset_hex": "0xc",
+        "kind": "u32",
+        "size": 4
+      }
+    ],
+    "evidence": "0x51DC90; player IDs truncated to u8; symmetric write"
+  },
+  "77": {
+    "name": "ModifyCreatureStat",
+    "record_size": 16,
+    "fields": [
+      {
+        "name": "Type",
+        "offset": 0,
+        "offset_hex": "0x0",
+        "kind": "u32",
+        "size": 4
+      },
+      {
+        "name": "CreatureId",
+        "offset": 4,
+        "offset_hex": "0x4",
+        "kind": "u32",
+        "size": 4
+      },
+      {
+        "name": "StatId",
+        "offset": 8,
+        "offset_hex": "0x8",
+        "kind": "u32",
+        "size": 4
+      },
+      {
+        "name": "RuntimeValueRaw",
+        "offset": 12,
+        "offset_hex": "0xc",
+        "kind": "u32",
+        "size": 4
+      }
+    ],
+    "evidence": "0x51DD10 -> 0x494A70; stat ID u8; runtime units"
+  },
+  "224": {
+    "name": "FirstPersonStat",
+    "record_size": 16,
+    "fields": [
+      {
+        "name": "Type",
+        "offset": 0,
+        "offset_hex": "0x0",
+        "kind": "u32",
+        "size": 4
+      },
+      {
+        "name": "StatId",
+        "offset": 4,
+        "offset_hex": "0x4",
+        "kind": "u32",
+        "size": 4
+      },
+      {
+        "name": "ValueRaw",
+        "offset": 8,
+        "offset_hex": "0x8",
+        "kind": "u32",
+        "size": 4
+      },
+      {
+        "name": "Unused",
+        "offset": 12,
+        "offset_hex": "0xc",
+        "kind": "u32",
+        "size": 4
+      }
+    ],
+    "evidence": "0x51DC70; third payload DWORD ignored; low 16 bits of value stored"
+  },
+  "generic": {
+    "name": "MiscOrUnknown",
+    "record_size": 16,
+    "fields": [
+      {
+        "name": "Type",
+        "offset": 0,
+        "offset_hex": "0x0",
+        "kind": "u32",
+        "size": 4
+      },
+      {
+        "name": "Value",
+        "offset": 4,
+        "offset_hex": "0x4",
+        "kind": "i32",
+        "size": 4
+      },
+      {
+        "name": "Extra1",
+        "offset": 8,
+        "offset_hex": "0x8",
+        "kind": "i32",
+        "size": 4
+      },
+      {
+        "name": "Extra2",
+        "offset": 12,
+        "offset_hex": "0xc",
+        "kind": "i32",
+        "size": 4
+      }
+    ],
+    "evidence": "Raw 4-DWORD container; signed view and names from OpenKeeper, semantics vary by Type"
+  }
+}

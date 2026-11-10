@@ -1,0 +1,912 @@
+{
+  "program": "DKII-DX.exe",
+  "program_sha256": "d7a8b854e4e4f02709eba271bead6fe2307dd6e332b5a96e70857e5b0e19fb8a",
+  "fields": [
+    {
+      "family": "Terrain",
+      "name": "ManaGain",
+      "raw_offset": 412,
+      "raw_bytes": 2,
+      "raw_storage": "Preserve the original little-endian16-bit pattern; semantic view is signed16.",
+      "intermediate_offset": 596,
+      "runtime_offset": 391,
+      "role": "Signed contribution to player mana income accumulator+0x10E2 on ownership update.",
+      "evidence": [
+        {
+          "file": "game-terrain-convert.txt",
+          "line": 151,
+          "excerpt": "uVar2 = *(undefined2 *)(param_2 + 0x19c);"
+        },
+        {
+          "file": "game-terrain-convert.txt",
+          "line": 155,
+          "excerpt": "*(undefined2 *)(param_1 + 0x95) = uVar2;"
+        },
+        {
+          "file": "game-terrain-runtime.txt",
+          "line": 201,
+          "excerpt": "*(undefined2 *)(param_1 + 0x187) = *(undefined2 *)(param_2 + 0x254);"
+        }
+      ]
+    },
+    {
+      "family": "Terrain",
+      "name": "MaxManaGain",
+      "raw_offset": 414,
+      "raw_bytes": 2,
+      "raw_storage": "Preserve the original little-endian16-bit pattern; semantic view is signed16.",
+      "intermediate_offset": 598,
+      "runtime_offset": 393,
+      "role": "Signed contribution to player maximum mana income per second+0x10DE; not stored-mana capacity.",
+      "evidence": [
+        {
+          "file": "game-terrain-convert.txt",
+          "line": 157,
+          "excerpt": "uVar2 = *(undefined2 *)(param_2 + 0x19e);"
+        },
+        {
+          "file": "game-terrain-convert.txt",
+          "line": 161,
+          "excerpt": "*(undefined2 *)((int)param_1 + 0x256) = uVar2;"
+        },
+        {
+          "file": "game-terrain-runtime.txt",
+          "line": 207,
+          "excerpt": "*(undefined2 *)(param_1 + 0x189) = *(undefined2 *)(param_2 + 0x256);"
+        }
+      ]
+    },
+    {
+      "family": "Traps",
+      "name": "ManaUsage",
+      "raw_offset": 514,
+      "raw_bytes": 2,
+      "raw_storage": "Preserve the original little-endian16-bit pattern; semantic view is signed16.",
+      "intermediate_offset": 682,
+      "runtime_offset": 150,
+      "role": "Signed upkeep contribution to player+0x10D6, subtracted from player income+0x10E2 when registered.",
+      "evidence": [
+        {
+          "file": "game-traps-convert.txt",
+          "line": 131,
+          "excerpt": "uVar2 = *(undefined2 *)(param_2 + 0x202);"
+        },
+        {
+          "file": "game-traps-convert.txt",
+          "line": 135,
+          "excerpt": "*(undefined2 *)((int)param_1 + 0x2aa) = uVar2;"
+        },
+        {
+          "file": "game-traps-runtime.txt",
+          "line": 105,
+          "excerpt": "*(undefined2 *)(param_1 + 0x96) = *(undefined2 *)(param_2 + 0x2aa);"
+        }
+      ]
+    }
+  ],
+  "player_fields": [
+    {
+      "offset": 130,
+      "bytes": 4,
+      "native_debug_label": "CurrentMana",
+      "evidence": {
+        "file": "phase23-player-mana-dump.txt",
+        "line": 113,
+        "excerpt": "FUN_005595c0(&DAT_00756ee8,s_CurrentMana__d_0069fd4c,*(undefined4 *)(param_1 + 0x82));"
+      }
+    },
+    {
+      "offset": 134,
+      "bytes": 4,
+      "native_debug_label": "ManaIncreaseRate",
+      "evidence": {
+        "file": "phase23-player-mana-dump.txt",
+        "line": 115,
+        "excerpt": "FUN_005595c0(&DAT_00756ee8,s_ManaIncreaseRate__d_0069fd30,*(undefined4 *)(param_1 + 0x86));"
+      }
+    },
+    {
+      "offset": 154,
+      "bytes": 4,
+      "native_debug_label": "ManaGainTick",
+      "evidence": {
+        "file": "phase23-player-mana-dump.txt",
+        "line": 129,
+        "excerpt": "FUN_005595c0(&DAT_00756ee8,s_ManaGainTick__d_0069fc98,*(undefined4 *)(param_1 + 0x9a));"
+      }
+    },
+    {
+      "offset": 4318,
+      "bytes": 4,
+      "native_debug_label": "MaxManaGainPerSecond",
+      "evidence": {
+        "file": "phase23-player-mana-dump.txt",
+        "line": 315,
+        "excerpt": "FUN_005595c0(&DAT_00756ee8,s_MaxManaGainPerSecond__d_0069f7a0,*(undefined4 *)(param_1 + 0x10de));"
+      }
+    },
+    {
+      "offset": 4322,
+      "bytes": 4,
+      "native_debug_label": "ManaGainPerSecond",
+      "evidence": {
+        "file": "phase23-player-mana-dump.txt",
+        "line": 317,
+        "excerpt": "FUN_005595c0(&DAT_00756ee8,s_ManaGainPerSecond__d_0069f784,*(undefined4 *)(param_1 + 0x10e2));"
+      }
+    },
+    {
+      "offset": 4326,
+      "bytes": 4,
+      "native_debug_label": "BasicManaPerSecond",
+      "evidence": {
+        "file": "phase23-player-mana-dump.txt",
+        "line": 327,
+        "excerpt": "FUN_005595c0(&DAT_00756ee8,s_BasicManaPerSecond__d_0069f720,*(undefined4 *)(param_1 + 0x10e6));"
+      }
+    },
+    {
+      "offset": 4330,
+      "bytes": 4,
+      "native_debug_label": "MaxMana",
+      "evidence": {
+        "file": "phase23-player-mana-dump.txt",
+        "line": 329,
+        "excerpt": "FUN_005595c0(&DAT_00756ee8,s_MaxMana__d_0069f710,*(undefined4 *)(param_1 + 0x10ea));"
+      }
+    },
+    {
+      "offset": 4334,
+      "bytes": 4,
+      "native_debug_label": "OneShotManaGain",
+      "evidence": {
+        "file": "phase23-player-mana-dump.txt",
+        "line": 331,
+        "excerpt": "FUN_005595c0(&DAT_00756ee8,s_OneShotManaGain__d_0069f6f8,*(undefined4 *)(param_1 + 0x10ee));"
+      }
+    },
+    {
+      "offset": 4338,
+      "bytes": 4,
+      "native_debug_label": "OneShotManaLoss",
+      "evidence": {
+        "file": "phase23-player-mana-dump.txt",
+        "line": 333,
+        "excerpt": "FUN_005595c0(&DAT_00756ee8,s_OneShotManaLoss__d_0069f6e0,*(undefined4 *)(param_1 + 0x10f2));"
+      }
+    }
+  ],
+  "ownership": {
+    "function": 4544976,
+    "node_owner_word_offset": 8,
+    "node_terrain_id_offset": 10,
+    "compare": "Compare owner_word&0xFFF with low16(requested_owner). Assignment changes low12 owner bits only and preserves upper nibble.",
+    "different_owner": "If old owner!=0, subtract signed Terrain+187/+189 from old player. Always add both signed values to the new player, including new owner0.",
+    "same_owner": "If owner!=0 and world byte+7239 bit80 is set, add both values again; otherwise these accumulators are unchanged.",
+    "side_effect_scope": "Also calls0x4BE070 and has game-mode4 side effects. Projection only returns mana field deltas; mode4 was disabled and0x4BE070 stubbed in isolated emulation.",
+    "evidence": {
+      "file": "phase23-terrain-mana-node-update-assembly.txt",
+      "first": "0x4559d0",
+      "last": "0x455b7f",
+      "instructions": [
+        "004559d0: PUSH EBP ",
+        "004559d1: PUSH ESI ",
+        "004559d2: MOV EBP,dword ptr [ESP + 0xc] ",
+        "004559d6: MOV ESI,ECX ",
+        "004559d8: PUSH EDI ",
+        "004559d9: MOV AX,word ptr [ESI + 0x8] ",
+        "004559dd: MOV ECX,EAX ",
+        "004559df: AND ECX,0xfff ",
+        "004559e5: CMP CX,BP ",
+        "004559e8: JZ 0x00455b22 ",
+        "004559ee: TEST CX,CX ",
+        "004559f1: JZ 0x00455a81 ",
+        "004559f7: AND EAX,0xfff ",
+        "004559fc: PUSH -0x1 ",
+        "004559fe: MOV EDI,dword ptr [EAX*0x4 + 0x6ee540] ",
+        "00455a05: MOV ECX,EDI ",
+        "00455a07: CALL 0x004be070 ",
+        "00455a0c: XOR EAX,EAX ",
+        "00455a0e: MOV AL,byte ptr [ESI + 0xa] ",
+        "00455a11: MOV ECX,dword ptr [EAX*0x4 + 0x6da4a8] ",
+        "00455a18: MOV EAX,dword ptr [EDI + 0x10e2] ",
+        "00455a1e: MOVSX EDX,word ptr [ECX + 0x187] ",
+        "00455a25: SUB EAX,EDX ",
+        "00455a27: MOV dword ptr [EDI + 0x10e2],EAX ",
+        "00455a2d: XOR EAX,EAX ",
+        "00455a2f: MOV AL,byte ptr [ESI + 0xa] ",
+        "00455a32: MOV ECX,dword ptr [EAX*0x4 + 0x6da4a8] ",
+        "00455a39: MOVSX EDX,word ptr [ECX + 0x189] ",
+        "00455a40: MOV ECX,dword ptr [EDI + 0x10de] ",
+        "00455a46: SUB ECX,EDX ",
+        "00455a48: MOV dword ptr [EDI + 0x10de],ECX ",
+        "00455a4e: MOV EAX,[0x0075ad4b] ",
+        "00455a53: CMP EAX,0x4 ",
+        "00455a56: JNZ 0x00455a81 ",
+        "00455a58: MOV ECX,dword ptr [0x006da4a4] ",
+        "00455a5e: TEST byte ptr [ECX + 0x7239],0x80 ",
+        "00455a65: JNZ 0x00455a81 ",
+        "00455a67: CMP byte ptr [EDI + 0x10fc],0x3 ",
+        "00455a6e: JNZ 0x00455a81 ",
+        "00455a70: MOV EDX,dword ptr [0x006f29d9] ",
+        "00455a76: MOV EAX,dword ptr [ECX] ",
+        "00455a78: NEG EDX ",
+        "00455a7a: PUSH EDX ",
+        "00455a7b: CALL dword ptr [EAX + 0x344] ",
+        "00455a81: MOV CX,word ptr [ESI + 0x8] ",
+        "00455a85: PUSH 0x1 ",
+        "00455a87: XOR EBP,ECX ",
+        "00455a89: AND EBP,0xfff ",
+        "00455a8f: MOV EAX,EBP ",
+        "00455a91: XOR EAX,ECX ",
+        "00455a93: MOV word ptr [ESI + 0x8],AX ",
+        "00455a97: AND EAX,0xfff ",
+        "00455a9c: MOV EDI,dword ptr [EAX*0x4 + 0x6ee540] ",
+        "00455aa3: MOV ECX,EDI ",
+        "00455aa5: CALL 0x004be070 ",
+        "00455aaa: CMP dword ptr [0x0075ad4b],0x4 ",
+        "00455ab1: JNZ 0x00455ada ",
+        "00455ab3: MOV ECX,dword ptr [0x006da4a4] ",
+        "00455ab9: TEST byte ptr [ECX + 0x7239],0x80 ",
+        "00455ac0: JNZ 0x00455ada ",
+        "00455ac2: CMP byte ptr [EDI + 0x10fc],0x3 ",
+        "00455ac9: JNZ 0x00455ada ",
+        "00455acb: MOV EDX,dword ptr [0x006f29d9] ",
+        "00455ad1: MOV EAX,dword ptr [ECX] ",
+        "00455ad3: PUSH EDX ",
+        "00455ad4: CALL dword ptr [EAX + 0x344] ",
+        "00455ada: XOR EAX,EAX ",
+        "00455adc: MOV AL,byte ptr [ESI + 0xa] ",
+        "00455adf: MOV ECX,dword ptr [EAX*0x4 + 0x6da4a8] ",
+        "00455ae6: XOR EAX,EAX ",
+        "00455ae8: MOVSX EDX,word ptr [ECX + 0x187] ",
+        "00455aef: MOV ECX,dword ptr [EDI + 0x10e2] ",
+        "00455af5: ADD ECX,EDX ",
+        "00455af7: MOV dword ptr [EDI + 0x10e2],ECX ",
+        "00455afd: MOV AL,byte ptr [ESI + 0xa] ",
+        "00455b00: MOV ECX,dword ptr [EAX*0x4 + 0x6da4a8] ",
+        "00455b07: MOV EAX,dword ptr [EDI + 0x10de] ",
+        "00455b0d: MOVSX EDX,word ptr [ECX + 0x189] ",
+        "00455b14: ADD EAX,EDX ",
+        "00455b16: MOV dword ptr [EDI + 0x10de],EAX ",
+        "00455b1c: POP EDI ",
+        "00455b1d: POP ESI ",
+        "00455b1e: POP EBP ",
+        "00455b1f: RET 0x4 ",
+        "00455b22: TEST CX,CX ",
+        "00455b25: JZ 0x00455b7c ",
+        "00455b27: MOV ECX,dword ptr [0x006da4a4] ",
+        "00455b2d: TEST byte ptr [ECX + 0x7239],0x80 ",
+        "00455b34: JZ 0x00455b7c ",
+        "00455b36: XOR EDX,EDX ",
+        "00455b38: AND EAX,0xfff ",
+        "00455b3d: MOV DL,byte ptr [ESI + 0xa] ",
+        "00455b40: MOV EAX,dword ptr [EAX*0x4 + 0x6ee540] ",
+        "00455b47: MOV ECX,dword ptr [EDX*0x4 + 0x6da4a8] ",
+        "00455b4e: MOV EDI,dword ptr [EAX + 0x10e2] ",
+        "00455b54: MOVSX EDX,word ptr [ECX + 0x187] ",
+        "00455b5b: ADD EDI,EDX ",
+        "00455b5d: XOR ECX,ECX ",
+        "00455b5f: MOV dword ptr [EAX + 0x10e2],EDI ",
+        "00455b65: MOV CL,byte ptr [ESI + 0xa] ",
+        "00455b68: MOV EDX,dword ptr [ECX*0x4 + 0x6da4a8] ",
+        "00455b6f: MOVSX ECX,word ptr [EDX + 0x189] ",
+        "00455b76: ADD dword ptr [EAX + 0x10de],ECX ",
+        "00455b7c: POP EDI ",
+        "00455b7d: POP ESI ",
+        "00455b7e: POP EBP ",
+        "00455b7f: RET 0x4 "
+      ]
+    }
+  },
+  "terrain_transition": {
+    "function": 4545424,
+    "room_flag": 16,
+    "world_skip_flag": 64,
+    "ordinary": "If neither definition has ROOM and owner!=0 and world+7239 bit40 clear: subtract old signed gain unless old terrain ID0; add new signed gain.",
+    "room_branch": "If either definition has ROOM: new ID17/26 adds1; otherwise old ID17/26 subtracts1. These branches do not test owner!=0 or world bit40.",
+    "precedence": "New special ID branch wins, including17->26. Same old/new ID skips all changes.",
+    "ceiling": "No writes to player+10DE in this helper. Do not infer that other callers or later rebuilds cannot update it.",
+    "id_update": "Changed IDs are written to node+0xA even when mana adjustment is skipped.",
+    "evidence": {
+      "file": "phase23-terrain-mana-node-helper-assembly.txt",
+      "first": "0x455b90",
+      "last": "0x455c93",
+      "instructions": [
+        "00455b90: MOV AL,byte ptr [ECX + 0xa] ",
+        "00455b93: PUSH EBX ",
+        "00455b94: PUSH EDI ",
+        "00455b95: MOV EDI,dword ptr [ESP + 0xc] ",
+        "00455b99: MOV BL,byte ptr [EDI + 0x1c4] ",
+        "00455b9f: CMP AL,BL ",
+        "00455ba1: JZ 0x00455c91 ",
+        "00455ba7: MOV DL,0x10 ",
+        "00455ba9: PUSH ESI ",
+        "00455baa: TEST byte ptr [EDI + 0x17b],DL ",
+        "00455bb0: PUSH EBP ",
+        "00455bb1: JNZ 0x00455c2a ",
+        "00455bb3: MOV ESI,EAX ",
+        "00455bb5: AND ESI,0xff ",
+        "00455bbb: MOV ESI,dword ptr [ESI*0x4 + 0x6da4a8] ",
+        "00455bc2: TEST byte ptr [ESI + 0x17b],DL ",
+        "00455bc8: JNZ 0x00455c2a ",
+        "00455bca: MOV DX,word ptr [ECX + 0x8] ",
+        "00455bce: TEST EDX,0xfff ",
+        "00455bd4: JZ 0x00455c8c ",
+        "00455bda: MOV EBP,dword ptr [0x006da4a4] ",
+        "00455be0: TEST byte ptr [EBP + 0x7239],0x40 ",
+        "00455be7: JNZ 0x00455c8c ",
+        "00455bed: AND EDX,0xfff ",
+        "00455bf3: TEST AL,AL ",
+        "00455bf5: MOV EDX,dword ptr [EDX*0x4 + 0x6ee540] ",
+        "00455bfc: JZ 0x00455c0b ",
+        "00455bfe: MOVSX EAX,word ptr [ESI + 0x187] ",
+        "00455c05: SUB dword ptr [EDX + 0x10e2],EAX ",
+        "00455c0b: MOVSX EAX,word ptr [EDI + 0x187] ",
+        "00455c12: MOV ESI,dword ptr [EDX + 0x10e2] ",
+        "00455c18: POP EBP ",
+        "00455c19: ADD ESI,EAX ",
+        "00455c1b: MOV dword ptr [EDX + 0x10e2],ESI ",
+        "00455c21: MOV byte ptr [ECX + 0xa],BL ",
+        "00455c24: POP ESI ",
+        "00455c25: POP EDI ",
+        "00455c26: POP EBX ",
+        "00455c27: RET 0x4 ",
+        "00455c2a: CMP BL,0x11 ",
+        "00455c2d: JZ 0x00455c75 ",
+        "00455c2f: CMP BL,0x1a ",
+        "00455c32: JZ 0x00455c75 ",
+        "00455c34: AND EAX,0xff ",
+        "00455c39: MOV EDX,dword ptr [EAX*0x4 + 0x6da4a8] ",
+        "00455c40: MOV AL,byte ptr [EDX + 0x1c4] ",
+        "00455c46: CMP AL,0x11 ",
+        "00455c48: JZ 0x00455c4e ",
+        "00455c4a: CMP AL,0x1a ",
+        "00455c4c: JNZ 0x00455c8c ",
+        "00455c4e: MOV AX,word ptr [ECX + 0x8] ",
+        "00455c52: POP EBP ",
+        "00455c53: AND EAX,0xfff ",
+        "00455c58: POP ESI ",
+        "00455c59: MOV EAX,dword ptr [EAX*0x4 + 0x6ee540] ",
+        "00455c60: MOV EDX,dword ptr [EAX + 0x10e2] ",
+        "00455c66: DEC EDX ",
+        "00455c67: MOV dword ptr [EAX + 0x10e2],EDX ",
+        "00455c6d: MOV byte ptr [ECX + 0xa],BL ",
+        "00455c70: POP EDI ",
+        "00455c71: POP EBX ",
+        "00455c72: RET 0x4 ",
+        "00455c75: MOV DX,word ptr [ECX + 0x8] ",
+        "00455c79: AND EDX,0xfff ",
+        "00455c7f: MOV EAX,dword ptr [EDX*0x4 + 0x6ee540] ",
+        "00455c86: INC dword ptr [EAX + 0x10e2] ",
+        "00455c8c: POP EBP ",
+        "00455c8d: MOV byte ptr [ECX + 0xa],BL ",
+        "00455c90: POP ESI ",
+        "00455c91: POP EDI ",
+        "00455c92: POP EBX ",
+        "00455c93: RET 0x4 "
+      ]
+    }
+  },
+  "income": {
+    "preview_function": 4986736,
+    "tick_function": 4985056,
+    "cost_helper": 4986784,
+    "gross": "min_signed32(s32(extra + basic + helper_cost + one_shot_gain), income_ceiling)",
+    "net_tick": "Clear both one-shot DWORDs; compute gross with first cost-helper result; subtract second cost-helper result; multiply only positive net by player+86.",
+    "helper": "0x4C17A0 includes imp/trap upkeep and conditional ability/possession costs; it is not a constant. Projection takes its two return values separately.",
+    "mode_branch": "If global DWORD75AD4B==3: setting WORD75AEA7==2 doubles low32(delta); setting0 computes signed low32(delta*2), then adds sign-bias3 and SAR2. Numeric conditions only; mode labels not inferred.",
+    "stored_mana": "Add final signed delta modulo2^32. Negative delta clamps only a negative result to0; nonnegative delta clamps only above player+10EA. Extreme overflow is preserved in the projection.",
+    "deadline": "Unsigned now >= low32(last_tick+ticks_per_second); normal end of function writes now to player+9A. Early-return side paths are outside projection.",
+    "evidence": [
+      {
+        "file": "phase23-player-mana-tick-assembly.txt",
+        "first": "0x4c1770",
+        "last": "0x4c179f",
+        "instructions": [
+          "004c1770: PUSH ESI ",
+          "004c1771: MOV ESI,ECX ",
+          "004c1773: PUSH EDI ",
+          "004c1774: MOV EDI,dword ptr [ESI + 0x10e2] ",
+          "004c177a: CALL 0x004c17a0 ",
+          "004c177f: MOV EDX,dword ptr [ESI + 0x10e6] ",
+          "004c1785: ADD EAX,EDX ",
+          "004c1787: MOV EDX,dword ptr [ESI + 0x10ee] ",
+          "004c178d: MOV ESI,dword ptr [ESI + 0x10de] ",
+          "004c1793: ADD EAX,EDI ",
+          "004c1795: ADD EAX,EDX ",
+          "004c1797: CMP EAX,ESI ",
+          "004c1799: JL 0x004c179d ",
+          "004c179b: MOV EAX,ESI ",
+          "004c179d: POP EDI ",
+          "004c179e: POP ESI ",
+          "004c179f: RET "
+        ]
+      },
+      {
+        "file": "phase23-player-mana-income-assembly.txt",
+        "first": "0x4c1109",
+        "last": "0x4c1121",
+        "instructions": [
+          "004c1109: MOV ECX,dword ptr [0x006f2590] ",
+          "004c110f: MOV EDI,dword ptr [ESI + 0x9a] ",
+          "004c1115: MOV dword ptr [ESP + 0x14],ECX ",
+          "004c1119: ADD ECX,EDI ",
+          "004c111b: CMP EAX,ECX ",
+          "004c111d: MOV dword ptr [ESP + 0x10],EAX ",
+          "004c1121: JC 0x004c16b7 "
+        ]
+      },
+      {
+        "file": "phase23-player-mana-income-assembly.txt",
+        "first": "0x4c1127",
+        "last": "0x4c11e7",
+        "instructions": [
+          "004c1127: MOV EBP,dword ptr [ESI + 0x10e2] ",
+          "004c112d: XOR EAX,EAX ",
+          "004c112f: MOV ECX,ESI ",
+          "004c1131: MOV dword ptr [ESI + 0x10ee],EAX ",
+          "004c1137: MOV dword ptr [ESI + 0x10f2],EAX ",
+          "004c113d: CALL 0x004c17a0 ",
+          "004c1142: MOV EDX,dword ptr [ESI + 0x10ee] ",
+          "004c1148: MOV EDI,EAX ",
+          "004c114a: MOV EAX,dword ptr [ESI + 0x10e6] ",
+          "004c1150: ADD EDI,EAX ",
+          "004c1152: MOV EAX,dword ptr [ESI + 0x10de] ",
+          "004c1158: ADD EDI,EBP ",
+          "004c115a: ADD EDI,EDX ",
+          "004c115c: CMP EDI,EAX ",
+          "004c115e: JL 0x004c1162 ",
+          "004c1160: MOV EDI,EAX ",
+          "004c1162: MOV ECX,ESI ",
+          "004c1164: CALL 0x004c17a0 ",
+          "004c1169: SUB EDI,EAX ",
+          "004c116b: MOV EBX,EDI ",
+          "004c116d: TEST EBX,EBX ",
+          "004c116f: JLE 0x004c117a ",
+          "004c1171: MOV EAX,dword ptr [ESI + 0x86] ",
+          "004c1177: IMUL EBX,EAX ",
+          "004c117a: MOV EAX,[0x0075ad4b] ",
+          "004c117f: CMP EAX,0x3 ",
+          "004c1182: JNZ 0x004c11b9 ",
+          "004c1184: MOV CX,word ptr [0x0075aea7] ",
+          "004c118b: MOV EAX,EBX ",
+          "004c118d: MOV word ptr [ESP + 0x18],CX ",
+          "004c1192: MOV ECX,dword ptr [ESP + 0x18] ",
+          "004c1196: AND ECX,0xffff ",
+          "004c119c: SUB ECX,0x0 ",
+          "004c119f: JZ 0x004c11ab ",
+          "004c11a1: SUB ECX,0x2 ",
+          "004c11a4: JNZ 0x004c11b7 ",
+          "004c11a6: LEA EAX,[EBX + EBX*0x1] ",
+          "004c11a9: JMP 0x004c11b7 ",
+          "004c11ab: LEA EAX,[EBX + EBX*0x1] ",
+          "004c11ae: CDQ ",
+          "004c11af: AND EDX,0x3 ",
+          "004c11b2: ADD EAX,EDX ",
+          "004c11b4: SAR EAX,0x2 ",
+          "004c11b7: MOV EBX,EAX ",
+          "004c11b9: MOV EDX,dword ptr [ESI + 0x82] ",
+          "004c11bf: ADD EDX,EBX ",
+          "004c11c1: TEST EBX,EBX ",
+          "004c11c3: MOV dword ptr [ESI + 0x82],EDX ",
+          "004c11c9: MOV EAX,EDX ",
+          "004c11cb: JGE 0x004c11dd ",
+          "004c11cd: TEST EAX,EAX ",
+          "004c11cf: JGE 0x004c11ed ",
+          "004c11d1: MOV dword ptr [ESI + 0x82],0x0 ",
+          "004c11db: JMP 0x004c11ed ",
+          "004c11dd: MOV ECX,dword ptr [ESI + 0x10ea] ",
+          "004c11e3: CMP EAX,ECX ",
+          "004c11e5: JLE 0x004c11ed ",
+          "004c11e7: MOV dword ptr [ESI + 0x82],ECX "
+        ]
+      },
+      {
+        "file": "phase23-player-mana-income-assembly.txt",
+        "first": "0x4c16b1",
+        "last": "0x4c16b1",
+        "instructions": [
+          "004c16b1: MOV dword ptr [ESI + 0x9a],EDI "
+        ]
+      }
+    ]
+  },
+  "trap_upkeep": {
+    "add_function": 4987744,
+    "remove_function": 4987792,
+    "rule": "Signed16 usage from definition+96; add: maintain+=usage, extra-=usage. Remove reverses these operations. All DWORD arithmetic wraps32.",
+    "unknown_neighbor": "raw+204/runtime+98 remains unresolved and is not consumed by these handlers.",
+    "caller_scope": "4A7CE0 adds after a successful preceding helper only if instance+10C bit20 is clear.4A7B20 removes under its external zero-result gate and the same bit-clear condition.4A96D0 clears bit20 and adds in either TriggerType branch.4A96A0 calls remove then add around other binding helpers; those helpers are not fully analyzed here.",
+    "caller_evidence": [
+      {
+        "file": "phase23-trap-upkeep-add-path.txt",
+        "line": 23,
+        "excerpt": "if ((*(byte *)(param_1 + 0x10c) & 0x20) == 0) {"
+      },
+      {
+        "file": "phase23-trap-upkeep-remove-path.txt",
+        "line": 45,
+        "excerpt": "FUN_004c1b90(param_1);"
+      },
+      {
+        "file": "phase23-trap-owner-upkeep.txt",
+        "line": 11,
+        "excerpt": "FUN_004c1b90(param_1);"
+      },
+      {
+        "file": "phase23-trap-owner-upkeep.txt",
+        "line": 17,
+        "excerpt": "FUN_004c1b60(param_1);"
+      },
+      {
+        "file": "phase23-trap-upkeep-refresh.txt",
+        "line": 11,
+        "excerpt": "*(byte *)(param_1 + 0x10c) = *(byte *)(param_1 + 0x10c) & 0xdf;"
+      }
+    ],
+    "evidence": [
+      {
+        "file": "phase23-upkeep-add-assembly.txt",
+        "first": "0x4c1b60",
+        "last": "0x4c1b8d",
+        "instructions": [
+          "004c1b60: MOV EAX,dword ptr [ESP + 0x4] ",
+          "004c1b64: MOV EDX,dword ptr [EAX + 0xf7] ",
+          "004c1b6a: MOVSX EAX,word ptr [EDX + 0x96] ",
+          "004c1b71: MOV EDX,dword ptr [ECX + 0x10d6] ",
+          "004c1b77: ADD EDX,EAX ",
+          "004c1b79: MOV dword ptr [ECX + 0x10d6],EDX ",
+          "004c1b7f: MOV EDX,dword ptr [ECX + 0x10e2] ",
+          "004c1b85: SUB EDX,EAX ",
+          "004c1b87: MOV dword ptr [ECX + 0x10e2],EDX ",
+          "004c1b8d: RET 0x4 "
+        ]
+      },
+      {
+        "file": "phase23-upkeep-remove-assembly.txt",
+        "first": "0x4c1b90",
+        "last": "0x4c1bbd",
+        "instructions": [
+          "004c1b90: MOV EAX,dword ptr [ESP + 0x4] ",
+          "004c1b94: MOV EDX,dword ptr [EAX + 0xf7] ",
+          "004c1b9a: MOVSX EAX,word ptr [EDX + 0x96] ",
+          "004c1ba1: MOV EDX,dword ptr [ECX + 0x10d6] ",
+          "004c1ba7: SUB EDX,EAX ",
+          "004c1ba9: MOV dword ptr [ECX + 0x10d6],EDX ",
+          "004c1baf: MOV EDX,dword ptr [ECX + 0x10e2] ",
+          "004c1bb5: ADD EDX,EAX ",
+          "004c1bb7: MOV dword ptr [ECX + 0x10e2],EDX ",
+          "004c1bbd: RET 0x4 "
+        ]
+      }
+    ]
+  },
+  "adjusted_pointer_search": {
+    "tool": "scan_adjusted_pointers.py",
+    "file": "phase23-adjusted-pointer-candidates.json",
+    "result": "38 candidate overlaps in8729 mapped spans; no new semantic consumer established for the four unknown fields.",
+    "limitation": "Short fall-through alias traces only; no whole-program pointer analysis, object identity inference or proof of global non-use."
+  },
+  "native_emulations": [
+    {
+      "file": "phase23-emulation-mana-ownership-0.json",
+      "sha256": "f1066d2fecd9aa3b9c5b44338badd15e83d97e25d94252acdf06491d4488ccd1",
+      "case": "ownership-0"
+    },
+    {
+      "file": "phase23-emulation-mana-ownership-1.json",
+      "sha256": "94e464108c4062c937756a01a177ec93f373ba2af5c1db1a56fb9fcf5a856533",
+      "case": "ownership-1"
+    },
+    {
+      "file": "phase23-emulation-mana-ownership-2.json",
+      "sha256": "e69f7e72539243affc06dce72ce8b682b4c92683edf08709a67c6dab3b4baf5b",
+      "case": "ownership-2"
+    },
+    {
+      "file": "phase23-emulation-mana-ownership-3.json",
+      "sha256": "e5e4cc3dcc959b5aca90d2e2a7f6e99071082a47e28cf783c58c0a6bf05140e7",
+      "case": "ownership-3"
+    },
+    {
+      "file": "phase23-emulation-mana-ownership-4.json",
+      "sha256": "d87ac0a8294ab90d172443bc1cc3168e458268b6ab0c88ee70e54b2cfce4de03",
+      "case": "ownership-4"
+    },
+    {
+      "file": "phase23-emulation-mana-ownership-5.json",
+      "sha256": "4f3335fcbc7aef11dcf2ca411eea1bf9f46d3c5370f2acbffcbd9542a8dfef7e",
+      "case": "ownership-5"
+    },
+    {
+      "file": "phase23-emulation-mana-ownership-6.json",
+      "sha256": "83504219827abe287789b0e328cc3a41208511243a3c561ff79c402a9f0f078e",
+      "case": "ownership-6"
+    },
+    {
+      "file": "phase23-emulation-mana-ownership-7.json",
+      "sha256": "0ce2ad1f8209276d91465521536c65f45fa71f9faefb6552ee1ccea56286a7a3",
+      "case": "ownership-7"
+    },
+    {
+      "file": "phase23-emulation-mana-ownership-8.json",
+      "sha256": "dc850a46f0e4260016907143758fa21c1ebb5ca3c1d6eab9f03374558b951609",
+      "case": "ownership-8"
+    },
+    {
+      "file": "phase23-emulation-mana-ownership-9.json",
+      "sha256": "b7df7c4700ebae26b6e18e908d422109b4195b00061abf0bd14a13cf9e8087d5",
+      "case": "ownership-9"
+    },
+    {
+      "file": "phase23-emulation-mana-ownership-10.json",
+      "sha256": "8293900b8184305371356dcb1ecb8a8473ca6dc0c16ad3700d199250009c9753",
+      "case": "ownership-10"
+    },
+    {
+      "file": "phase23-emulation-mana-ownership-11.json",
+      "sha256": "fc7cc3024fd7572c5590c6dcb217b08852cab0cc3b1bd2999d995aa7f4aadb6f",
+      "case": "ownership-11"
+    },
+    {
+      "file": "phase23-emulation-mana-terrain-change-0.json",
+      "sha256": "ed2996f17b4c791d38520c51faf419689f3270fa543a9cd2fef96dd0b1bafeec",
+      "case": "terrain-change-0"
+    },
+    {
+      "file": "phase23-emulation-mana-terrain-change-1.json",
+      "sha256": "4e557385637e992f076d2bd98c667b59b7c63e03ddf99eb60ebe4ef0bfe338cc",
+      "case": "terrain-change-1"
+    },
+    {
+      "file": "phase23-emulation-mana-terrain-change-2.json",
+      "sha256": "835fc3b082e0ffb94944120a06f688351ce0838cd6a397ae19b6d86be08569ae",
+      "case": "terrain-change-2"
+    },
+    {
+      "file": "phase23-emulation-mana-terrain-change-3.json",
+      "sha256": "9a7b5779509664248fb7ec25d5e1fdac2689687a44b2f14e76f5bde648b0a67b",
+      "case": "terrain-change-3"
+    },
+    {
+      "file": "phase23-emulation-mana-terrain-change-4.json",
+      "sha256": "d4c512d825d27da7bac65c9ebc299e4b722329197ccee246e839820ae99df0bc",
+      "case": "terrain-change-4"
+    },
+    {
+      "file": "phase23-emulation-mana-terrain-change-5.json",
+      "sha256": "4a0f3e07b338537fc74bbf260c3364b6b6dc1124d8c4d5dda44716f3131b91d8",
+      "case": "terrain-change-5"
+    },
+    {
+      "file": "phase23-emulation-mana-terrain-change-6.json",
+      "sha256": "5edabf57c0622899c5c113eba524d096b809f79151096fe10f658b94b5802a27",
+      "case": "terrain-change-6"
+    },
+    {
+      "file": "phase23-emulation-mana-terrain-change-7.json",
+      "sha256": "24ee963f1909faf141fa029973801a96b22f42041737bf211d35f8fb3db77a6e",
+      "case": "terrain-change-7"
+    },
+    {
+      "file": "phase23-emulation-mana-terrain-change-8.json",
+      "sha256": "05c40c432d60c037234517d8a110d25c18005840815b749f1e915e82fc2e13f1",
+      "case": "terrain-change-8"
+    },
+    {
+      "file": "phase23-emulation-mana-terrain-change-9.json",
+      "sha256": "9ca48973c78197a0b5cc40ce6c1bf670c556f56238730047aa0f336143c9ea77",
+      "case": "terrain-change-9"
+    },
+    {
+      "file": "phase23-emulation-mana-terrain-change-10.json",
+      "sha256": "187947eeb129621bcef579e03ec9d54807fc45ecc287a986f87e6044ce2c0890",
+      "case": "terrain-change-10"
+    },
+    {
+      "file": "phase23-emulation-mana-terrain-change-11.json",
+      "sha256": "665cc414ad2ff9a86c583895179fc5b7fe7b7c11374407f5ea345f6f3864a611",
+      "case": "terrain-change-11"
+    },
+    {
+      "file": "phase23-emulation-mana-gross-0.json",
+      "sha256": "05a472c782bac6b000656a0abf00b9da904622aaee59fcd822c579d435a8132b",
+      "case": "gross-0"
+    },
+    {
+      "file": "phase23-emulation-mana-gross-1.json",
+      "sha256": "73258cf93f4eb0a65fed4efb79fd232db4359814857dd6d73e3782259adfd7af",
+      "case": "gross-1"
+    },
+    {
+      "file": "phase23-emulation-mana-gross-2.json",
+      "sha256": "bb0a1f5a34c7b2714158c235e3d6792a59fea47b2a1d9b3a5920a4ac1c560e1e",
+      "case": "gross-2"
+    },
+    {
+      "file": "phase23-emulation-mana-gross-3.json",
+      "sha256": "2873009893595c99c5d599f777c186d679890299e6276a7b61f29bd93c1656be",
+      "case": "gross-3"
+    },
+    {
+      "file": "phase23-emulation-mana-gross-4.json",
+      "sha256": "39f4b95326ae5fdd0f40825903c9ca9544203d731f5e2c0a4e03972e565eb0d5",
+      "case": "gross-4"
+    },
+    {
+      "file": "phase23-emulation-mana-gross-5.json",
+      "sha256": "98d69d37d2988fb69d17420b2fad287fd279a2b7661c1dd7656ec9e52cfc9871",
+      "case": "gross-5"
+    },
+    {
+      "file": "phase23-emulation-mana-gross-6.json",
+      "sha256": "33d7b13afc7cd8297220e01e53ac3511b3b99b768d5bfadb2eaaab93167aa772",
+      "case": "gross-6"
+    },
+    {
+      "file": "phase23-emulation-mana-gross-7.json",
+      "sha256": "8031006432242bc66d765cdac3582421320f05f3872a34c693441caed22a5186",
+      "case": "gross-7"
+    },
+    {
+      "file": "phase23-emulation-mana-gross-8.json",
+      "sha256": "969719c15034af5dcae6020cb716b984ac3467a9beafa93166ad69a8d457fad4",
+      "case": "gross-8"
+    },
+    {
+      "file": "phase23-emulation-mana-tick-0.json",
+      "sha256": "a432d11a00c3783f198eece9db4dbce77cc96377942f768800f80c51daca1c4c",
+      "case": "tick-0"
+    },
+    {
+      "file": "phase23-emulation-mana-tick-1.json",
+      "sha256": "2dad154223759a8fde4d34992633c6e51c204b1d170774916e00445161b1abc2",
+      "case": "tick-1"
+    },
+    {
+      "file": "phase23-emulation-mana-tick-2.json",
+      "sha256": "ce5663ca260a5d516cf2485ef0537886ac03bde88b5b72d667ba76435de4d063",
+      "case": "tick-2"
+    },
+    {
+      "file": "phase23-emulation-mana-tick-3.json",
+      "sha256": "d86634312313c11f02d5c9545cf24ae3c9ad11a363c80c6e90d7b7fedd378c3d",
+      "case": "tick-3"
+    },
+    {
+      "file": "phase23-emulation-mana-tick-4.json",
+      "sha256": "99cb4ab9ab9021cc6f4b6bf5e825045e70313aa49fbd53c36d38dbfff06a423f",
+      "case": "tick-4"
+    },
+    {
+      "file": "phase23-emulation-mana-tick-5.json",
+      "sha256": "2aaf84f9ccfbf3f42d43372dc80983e9549fbc857b7db1e64306ece254fd0e1d",
+      "case": "tick-5"
+    },
+    {
+      "file": "phase23-emulation-mana-tick-6.json",
+      "sha256": "a4aef54e06850a3f39500e0fe95f6350e28c96b60ffa8d4a305a4a1315cb4b0a",
+      "case": "tick-6"
+    },
+    {
+      "file": "phase23-emulation-mana-tick-7.json",
+      "sha256": "4d70cd660e9ce0ebb60c458deb412c3830022f4f8373bb344cdc1ec022cd946f",
+      "case": "tick-7"
+    },
+    {
+      "file": "phase23-emulation-mana-tick-8.json",
+      "sha256": "165c17340939c3a5ccb73f3abf8757425f7accff626c45de73c6174c396bad9a",
+      "case": "tick-8"
+    },
+    {
+      "file": "phase23-emulation-mana-tick-9.json",
+      "sha256": "af0679f1dbafc501b12edc6d2c83d303860fe1cb2aa2c0637a49345748d7d8d0",
+      "case": "tick-9"
+    },
+    {
+      "file": "phase23-emulation-mana-tick-10.json",
+      "sha256": "812c4b02db0c0c339dd4e6cede36e74fed7af1ebaf4ede99641311d519ed0a3f",
+      "case": "tick-10"
+    },
+    {
+      "file": "phase23-emulation-mana-tick-11.json",
+      "sha256": "b485ba9bd31d39d3b0c3cb1da4de31521c5f7ff9dcaaf4695714bc2571357d48",
+      "case": "tick-11"
+    },
+    {
+      "file": "phase23-emulation-mana-tick-12.json",
+      "sha256": "24b4cdfb5dd0f34f054ac61eef39bbdc3de75cfe286f6090bc8b8f2d30f3cca1",
+      "case": "tick-12"
+    },
+    {
+      "file": "phase23-emulation-mana-upkeep-1-0.json",
+      "sha256": "9b780f831f8096714c8b768c2b49b71d81fc6185892b096cc88b2777e2053ac0",
+      "case": "upkeep-1-0"
+    },
+    {
+      "file": "phase23-emulation-mana-upkeep-1-1.json",
+      "sha256": "363d74b8c7220beea61e264032f9e322be688f8f1e38bb6f4f31a3d27a452378",
+      "case": "upkeep-1-1"
+    },
+    {
+      "file": "phase23-emulation-mana-upkeep-1-32767.json",
+      "sha256": "88e98fabf3b68749ad230ddd0a18426f63a573f810d06094213c96985c2f97f5",
+      "case": "upkeep-1-32767"
+    },
+    {
+      "file": "phase23-emulation-mana-upkeep-1-32768.json",
+      "sha256": "55c0a9105536eea8c8e967f94c47d639733fb8b947c01657354bbe087f6f7a4d",
+      "case": "upkeep-1-32768"
+    },
+    {
+      "file": "phase23-emulation-mana-upkeep-1-65535.json",
+      "sha256": "524b4eaae31705153d363f5ad97ee15394f1325404e3c9b847ece43e4790243b",
+      "case": "upkeep-1-65535"
+    },
+    {
+      "file": "phase23-emulation-mana-upkeep-0-0.json",
+      "sha256": "cdce51d6f64f0704cc52a929b0cb4a157c6909415ec8c37eaa6d58bbcf8793b4",
+      "case": "upkeep-0-0"
+    },
+    {
+      "file": "phase23-emulation-mana-upkeep-0-1.json",
+      "sha256": "47ffc03155efe850466dcb7532cf4f5bc1ab39e850d483c6815b96999f8a9f99",
+      "case": "upkeep-0-1"
+    },
+    {
+      "file": "phase23-emulation-mana-upkeep-0-32767.json",
+      "sha256": "19e94cbbfd19b409c793a71f289711bf4861cd7cd3a3972ad93898a28c10c3e3",
+      "case": "upkeep-0-32767"
+    },
+    {
+      "file": "phase23-emulation-mana-upkeep-0-32768.json",
+      "sha256": "edd1f4c281f3897ae91c2e27e1d76b7fc34b60057baa27389cce433a7907a1d5",
+      "case": "upkeep-0-32768"
+    },
+    {
+      "file": "phase23-emulation-mana-upkeep-0-65535.json",
+      "sha256": "11a0ed0f3a4758e6f1d3d5fc6222eaf4ad0d5e7369f97e04eb614c342f38622a",
+      "case": "upkeep-0-65535"
+    },
+    {
+      "file": "phase23-emulation-mana-due-0.json",
+      "sha256": "cf0cfd4b943cc6677ee71e25ac81e809822b2ff837c0fa729eea259ba6663bad",
+      "case": "due-0"
+    },
+    {
+      "file": "phase23-emulation-mana-due-1.json",
+      "sha256": "1d6cefe10399269eaf2889a59a22338470e61dcd4dbb9650935990ee8249bf72",
+      "case": "due-1"
+    },
+    {
+      "file": "phase23-emulation-mana-due-2.json",
+      "sha256": "ff05e79e3b4a7b94665b6e0318b447d7c04f549c9cef6cca701221cdb04da7ba",
+      "case": "due-2"
+    },
+    {
+      "file": "phase23-emulation-mana-due-3.json",
+      "sha256": "f76bf5f57187cd73ad6527d723a0840a6f5b18d26f0281b4bc01e3b25d024ffc",
+      "case": "due-3"
+    },
+    {
+      "file": "phase23-emulation-mana-due-4.json",
+      "sha256": "edb4f899505a7c2ad9d928de24477935bd30e36ad81a125039f6c26f09dad3c6",
+      "case": "due-4"
+    },
+    {
+      "file": "phase23-emulation-mana-due-5.json",
+      "sha256": "92ce2f7d1875124f818e30540ac4a0289c2481d0c656189043b017d3fe4a250e",
+      "case": "due-5"
+    }
+  ],
+  "limitations": [
+    "No modified gameplay or live renderer run.",
+    "All native signedness/rules are for the exact inspected executable hash.",
+    "Whole ownership handler external count callback is stubbed; game-mode4 side effects disabled.",
+    "Income emulates arithmetic and deadline fragments, not the entire0x4C10E0 function or full cost helper.",
+    "Do not derive a complete player/world income solely from terrain records; rooms, variables, creatures, spells and other state also contribute.",
+    "Baseline raw schema names/types retained for audit; semantic signed views do not change field width.",
+    "Terrain+198/+224, Traps+204 and gameplay effect of Objects+34C remain unresolved."
+  ]
+}

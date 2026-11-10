@@ -1,0 +1,479 @@
+{
+  "program": "DK2 Editor pro.exe",
+  "sha256": "989c45df779bccfc9a9e509b2ad0224a9bd269629f74792adc0320fa4b99fb09",
+  "terrain_lean": {
+    "dialog_resource": 230,
+    "dialog_title": "Modify Terrain Lean Values",
+    "bindings": [
+      {
+        "family": "Terrain",
+        "axis": "horizontal",
+        "position": "top",
+        "index": 0,
+        "raw_offset": 463,
+        "raw_bytes": 1,
+        "intermediate_offset": "0x287",
+        "editor_model_offset": "0x362",
+        "dialog_member_offset": "0x5c",
+        "control_id": 1762,
+        "editor_range": [
+          0,
+          255
+        ],
+        "editor_storage": "u8, no fixed-point scaling",
+        "getter": "0x425480",
+        "setter": "0x4254a0"
+      },
+      {
+        "family": "Terrain",
+        "axis": "horizontal",
+        "position": "middle",
+        "index": 1,
+        "raw_offset": 464,
+        "raw_bytes": 1,
+        "intermediate_offset": "0x288",
+        "editor_model_offset": "0x363",
+        "dialog_member_offset": "0x60",
+        "control_id": 1763,
+        "editor_range": [
+          0,
+          255
+        ],
+        "editor_storage": "u8, no fixed-point scaling",
+        "getter": "0x425480",
+        "setter": "0x4254a0"
+      },
+      {
+        "family": "Terrain",
+        "axis": "horizontal",
+        "position": "bottom",
+        "index": 2,
+        "raw_offset": 465,
+        "raw_bytes": 1,
+        "intermediate_offset": "0x289",
+        "editor_model_offset": "0x364",
+        "dialog_member_offset": "0x64",
+        "control_id": 1764,
+        "editor_range": [
+          0,
+          255
+        ],
+        "editor_storage": "u8, no fixed-point scaling",
+        "getter": "0x425480",
+        "setter": "0x4254a0"
+      },
+      {
+        "family": "Terrain",
+        "axis": "vertical",
+        "position": "top",
+        "index": 0,
+        "raw_offset": 467,
+        "raw_bytes": 1,
+        "intermediate_offset": "0x28b",
+        "editor_model_offset": "0x365",
+        "dialog_member_offset": "0x68",
+        "control_id": 1765,
+        "editor_range": [
+          0,
+          255
+        ],
+        "editor_storage": "u8, no fixed-point scaling",
+        "getter": "0x425440",
+        "setter": "0x425460"
+      },
+      {
+        "family": "Terrain",
+        "axis": "vertical",
+        "position": "middle",
+        "index": 1,
+        "raw_offset": 468,
+        "raw_bytes": 1,
+        "intermediate_offset": "0x28c",
+        "editor_model_offset": "0x366",
+        "dialog_member_offset": "0x6c",
+        "control_id": 1766,
+        "editor_range": [
+          0,
+          255
+        ],
+        "editor_storage": "u8, no fixed-point scaling",
+        "getter": "0x425440",
+        "setter": "0x425460"
+      },
+      {
+        "family": "Terrain",
+        "axis": "vertical",
+        "position": "bottom",
+        "index": 2,
+        "raw_offset": 469,
+        "raw_bytes": 1,
+        "intermediate_offset": "0x28d",
+        "editor_model_offset": "0x367",
+        "dialog_member_offset": "0x70",
+        "control_id": 1767,
+        "editor_range": [
+          0,
+          255
+        ],
+        "editor_storage": "u8, no fixed-point scaling",
+        "getter": "0x425440",
+        "setter": "0x425460"
+      }
+    ],
+    "constructor": "0x450060",
+    "init": "0x4500a0",
+    "ddx": "0x450130",
+    "commit": "0x450200",
+    "getter_bounds": "index >= 3 returns zero",
+    "setter_bounds": "index >= 3 performs no write",
+    "evidence": [
+      {
+        "file": "editor-phase9-lean-dialog-ctor.txt",
+        "line": 5,
+        "excerpt": "FUN_004d9a8b(this,0xe6,param_2);"
+      },
+      {
+        "file": "editor-phase9-lean-ddx.txt",
+        "line": 8,
+        "excerpt": "bVar1 = FUN_00425480(*(void **)((int)param_1 + 0x74),0);"
+      },
+      {
+        "file": "editor-phase9-lean-ddx-actual.txt",
+        "line": 5,
+        "excerpt": "DDX_Text(param_2,0x6e2);"
+      },
+      {
+        "file": "editor-phase9-lean-ddx-actual.txt",
+        "line": 15,
+        "excerpt": "DDX_Text(param_2,0x6e7);"
+      },
+      {
+        "file": "editor-phase9-lean-get-h.txt",
+        "line": 8,
+        "excerpt": "return *(undefined1 *)(param_1 + 0x362 + (int)this);"
+      },
+      {
+        "file": "editor-phase9-lean-get-v.txt",
+        "line": 8,
+        "excerpt": "return *(undefined1 *)(param_1 + 0x365 + (int)this);"
+      },
+      {
+        "file": "editor-phase9-lean-set-h.txt",
+        "line": 5,
+        "excerpt": "if (param_1 < 3) {"
+      },
+      {
+        "file": "editor-phase9-lean-set-v.txt",
+        "line": 5,
+        "excerpt": "if (param_1 < 3) {"
+      },
+      {
+        "file": "editor-phase9-lean-commit-assembly.txt",
+        "line": 9,
+        "excerpt": "00450213: CALL 0x004254a0"
+      },
+      {
+        "file": "editor-phase9-lean-commit-assembly.txt",
+        "line": 34,
+        "excerpt": "00450259: CALL 0x00425460"
+      },
+      {
+        "file": "editor-phase8-terrain-convert.txt",
+        "line": 164,
+        "excerpt": "cVar1 = param_1[uVar5 + 0x1cf];"
+      },
+      {
+        "file": "editor-phase8-terrain-convert.txt",
+        "line": 173,
+        "excerpt": "cVar1 = param_1[uVar5 + 0x1d3];"
+      }
+    ]
+  },
+  "room_terrain_panel": {
+    "room_id_raw_offset": 914,
+    "terrain_id_raw_offset": 916,
+    "foreign_key": "Rooms.TerrainId -> Terrain.TerrainId (raw+0x1D6)",
+    "room_converter": "0x42df90",
+    "room_callback": "0x49fc30",
+    "room_terrain_id_model_offset": "0x4e0",
+    "panel_load": "0x4675f0",
+    "panel_commit": "0x467bb0",
+    "terrain_pointer_member": "0x13c",
+    "room_pointer_member": "0x144",
+    "selection": "Panel selects Terrain, then scans Rooms for matching TerrainId. Last matching Room wins in that scan.",
+    "room_lean_button": {
+      "control_id": 1875,
+      "handler": "0x468900",
+      "argument": "panel+0x13c (Terrain pointer)",
+      "target_file": "Terrain catalogue in the same actual definition scope",
+      "warning": "No independent Rooms Lean storage is established; do not copy six bytes into the Rooms record."
+    },
+    "shared_properties": [
+      {
+        "name": "MaxHealth",
+        "owner_family": "Terrain",
+        "raw_offset": 511,
+        "editor_model_offset": "0x34a",
+        "panel_member_offset": "0x7c"
+      },
+      {
+        "name": "StartingHealth",
+        "owner_family": "Terrain",
+        "raw_offset": 471,
+        "editor_model_offset": "0x348",
+        "panel_member_offset": "0x80"
+      },
+      {
+        "name": "Depth",
+        "owner_family": "Terrain",
+        "raw_offset": 392,
+        "editor_model_offset": "0x358",
+        "panel_member_offset": "0x60"
+      },
+      {
+        "name": "Damage",
+        "owner_family": "Terrain",
+        "raw_offset": 404,
+        "editor_model_offset": "0x368",
+        "panel_member_offset": "0x68"
+      },
+      {
+        "name": "WibbleH",
+        "owner_family": "Terrain",
+        "raw_offset": 462,
+        "editor_model_offset": "0x360",
+        "panel_member_offset": "0x90"
+      },
+      {
+        "name": "WibbleV",
+        "owner_family": "Terrain",
+        "raw_offset": 466,
+        "editor_model_offset": "0x361",
+        "panel_member_offset": "0x94"
+      },
+      {
+        "name": "LightHeight",
+        "owner_family": "Terrain",
+        "raw_offset": 396,
+        "editor_model_offset": "0x318",
+        "panel_member_offset": "0xe8"
+      }
+    ],
+    "evidence": [
+      {
+        "file": "editor-phase9-room-convert.txt",
+        "line": 20,
+        "excerpt": "cVar1 = param_1[0x394];"
+      },
+      {
+        "file": "editor-phase9-room-model-candidate.txt",
+        "line": 122,
+        "excerpt": "*(char *)(this + 0x138) = (char)piVar7[0x11a];"
+      },
+      {
+        "file": "editor-phase9-room-panel-load.txt",
+        "line": 37,
+        "excerpt": "*(int *)((int)this + 0x13c) = iVar3;"
+      },
+      {
+        "file": "editor-phase9-room-panel-load.txt",
+        "line": 45,
+        "excerpt": "(*(char *)(iVar3 + 0x4e0) == *(char *)(*(int *)((int)this + 0x13c) + 0x168))) {"
+      },
+      {
+        "file": "editor-phase8-room-lean-handler.txt",
+        "line": 14,
+        "excerpt": "FUN_00450060(local_84,*(undefined4 *)(param_1 + 0x13c),param_1);"
+      },
+      {
+        "file": "editor-phase9-room-panel-commit.txt",
+        "line": 8,
+        "excerpt": "*(undefined2 *)(*(int *)(param_1 + 0x13c) + 0x348) = *(undefined2 *)(param_1 + 0x80);"
+      }
+    ]
+  },
+  "room_commit_side_effects": {
+    "scalar_resets": [
+      {
+        "field": "GoldValue",
+        "owner_family": "Terrain",
+        "raw_offset": 410,
+        "raw_bytes": 2,
+        "editor_model_offset": "0x36a",
+        "assigned_value": 0
+      },
+      {
+        "field": "ManaGain",
+        "owner_family": "Terrain",
+        "raw_offset": 412,
+        "raw_bytes": 2,
+        "editor_model_offset": "0x36c",
+        "assigned_value": 0
+      },
+      {
+        "field": "MaxManaGain",
+        "owner_family": "Terrain",
+        "raw_offset": 414,
+        "raw_bytes": 2,
+        "editor_model_offset": "0x36e",
+        "assigned_value": 0
+      }
+    ],
+    "forced_terrain_flags": {
+      "raw_offset": 400,
+      "raw_bytes": 4,
+      "affected_mask": 32735,
+      "forced_value": 20,
+      "assignments": [
+        {
+          "model_offset": "0x374",
+          "mask": "0x1",
+          "value": 0
+        },
+        {
+          "model_offset": "0x378",
+          "mask": "0x2",
+          "value": 0
+        },
+        {
+          "model_offset": "0x37c",
+          "mask": "0x4",
+          "value": 1
+        },
+        {
+          "model_offset": "0x380",
+          "mask": "0x8",
+          "value": 0
+        },
+        {
+          "model_offset": "0x384",
+          "mask": "0x10",
+          "value": 1
+        },
+        {
+          "model_offset": "0x38c",
+          "mask": "0x40",
+          "value": 0
+        },
+        {
+          "model_offset": "0x390",
+          "mask": "0x80",
+          "value": 0
+        },
+        {
+          "model_offset": "0x394",
+          "mask": "0x100",
+          "value": 0
+        },
+        {
+          "model_offset": "0x398",
+          "mask": "0x200",
+          "value": 0
+        },
+        {
+          "model_offset": "0x39c",
+          "mask": "0x400",
+          "value": 0
+        },
+        {
+          "model_offset": "0x3a0",
+          "mask": "0x800",
+          "value": 0
+        },
+        {
+          "model_offset": "0x3a4",
+          "mask": "0x1000",
+          "value": 0
+        },
+        {
+          "model_offset": "0x3a8",
+          "mask": "0x2000",
+          "value": 0
+        },
+        {
+          "model_offset": "0x3ac",
+          "mask": "0x4000",
+          "value": 0
+        }
+      ],
+      "preserved_from_panel": "Attackable bit0x20 is assigned separately from dialog+0x128.",
+      "scope": "Known unconditional assignments only; not a full reconstruction of the editor flag serializer."
+    },
+    "evidence": [
+      {
+        "file": "editor-phase9-room-panel-commit-assembly.txt",
+        "line": 19,
+        "excerpt": "00467bfe: MOV word ptr [EAX + 0x36c],DI"
+      },
+      {
+        "file": "editor-phase9-room-panel-commit-assembly.txt",
+        "line": 21,
+        "excerpt": "00467c0b: MOV word ptr [ECX + 0x36e],DI"
+      },
+      {
+        "file": "editor-phase9-room-panel-commit-assembly.txt",
+        "line": 23,
+        "excerpt": "00467c18: MOV word ptr [EDX + 0x36a],DI"
+      },
+      {
+        "file": "editor-phase9-room-panel-commit.txt",
+        "line": 29,
+        "excerpt": "*(undefined4 *)(*(int *)(param_1 + 0x13c) + 0x37c) = 1;"
+      },
+      {
+        "file": "editor-phase9-room-panel-commit.txt",
+        "line": 31,
+        "excerpt": "*(undefined4 *)(*(int *)(param_1 + 0x13c) + 900) = 1;"
+      },
+      {
+        "file": "editor-phase9-terrain-flags-writer.txt",
+        "line": 21,
+        "excerpt": "bVar4 = bVar4 | 0x10;"
+      }
+    ],
+    "warning": "These are native GUI side effects on linked Terrain. A lossless editor must not silently apply them on ordinary serialization."
+  },
+  "resource_constraints": [
+    {
+      "family": "Objects",
+      "raw_offset": 368,
+      "raw_bytes": 84,
+      "intermediate_offset": "0x1f0",
+      "editor_model_offset": "0x16c",
+      "meaning": "Native Editor In Hand Icon UI alias; see object-resource-bindings.json for the complete proof and baseline naming conflict.",
+      "known_different_field": {
+        "name": "InHandMeshResource",
+        "raw_offset": 284,
+        "intermediate_offset": "0x19c",
+        "editor_model_offset": "0x1c8",
+        "button_id": 1595,
+        "handler": "0x45b4d0",
+        "getter": "0x472d10"
+      },
+      "conclusion": "In Hand Mesh button targets a different resource. Unknown slot must retain its own full84 bytes.",
+      "evidence": [
+        {
+          "file": "editor-phase8-candidate-1d80.txt",
+          "line": 60,
+          "excerpt": "FUN_0041bb90(local_1c + 0x5b,piVar1 + 0x7c);"
+        },
+        {
+          "file": "editor-phase9-object-inhand-getter-assembly.txt",
+          "line": 1,
+          "excerpt": "00472d10: LEA EAX,[ECX + 0x1c8]"
+        },
+        {
+          "file": "editor-phase9-object-resource-writer.txt",
+          "line": 129,
+          "excerpt": "puVar1 = (undefined4 *)FUN_0041ce60((int)this_00 + 0x16c);"
+        },
+        {
+          "file": "editor-phase9-object-resource-writer.txt",
+          "line": 136,
+          "excerpt": "puVar2 = (undefined4 *)FUN_0041ce60((int)this_00 + 0x1c8);"
+        }
+      ]
+    }
+  ],
+  "limitation": "Static editor ownership/serialization evidence. Byte meanings are not a complete simulation of geometry or gameplay."
+}

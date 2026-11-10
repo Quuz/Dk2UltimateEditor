@@ -1,0 +1,242 @@
+[
+  {
+    "function": "0x41cc50",
+    "name": "sub_41CC50",
+    "candidate_address": "0x41cfba",
+    "instructions": [
+      "0x41cfae: jne 0x41d19f",
+      "0x41cfb4: mov edx, dword ptr [ecx + 0xf7]",
+      "0x41cfba: mov eax, dword ptr [edx + 0x88]",
+      "0x41cfc0: test ah, 8",
+      "0x41cfc3: je 0x41d19f",
+      "0x41cfc9: lea eax, [ecx + 0x1a]",
+      "0x41cfcc: mov byte ptr [esp + 0x12], 0xff",
+      "0x41cfd1: mov edx, eax",
+      "0x41cfd3: mov byte ptr [esp + 0x11], 0xff"
+    ]
+  },
+  {
+    "function": "0x41cc50",
+    "name": "sub_41CC50",
+    "candidate_address": "0x41dd18",
+    "instructions": [
+      "0x41dd0f: idiv dword ptr [esp + 0x40]",
+      "0x41dd13: jmp 0x41de46",
+      "0x41dd18: mov eax, dword ptr [esi + 0x88]",
+      "0x41dd1e: test ah, 8",
+      "0x41dd21: je 0x41de53",
+      "0x41dd27: mov edx, dword ptr [esp + 0x2c]",
+      "0x41dd2b: test byte ptr [edx + 0x10c], 0x20",
+      "0x41dd32: jne 0x41de53",
+      "0x41dd38: push 0xff"
+    ]
+  },
+  {
+    "function": "0x4529a0",
+    "name": "fun_4529A0",
+    "candidate_address": "0x452a18",
+    "instructions": [
+      "0x452a0c: jne 0x452aa0",
+      "0x452a12: mov edx, dword ptr [eax + 0xf7]",
+      "0x452a18: test byte ptr [edx + 0x8b], 0x40",
+      "0x452a1f: je 0x452a33",
+      "0x452a21: mov ecx, dword ptr [esi + 8]",
+      "0x452a24: xor eax, eax",
+      "0x452a26: cmp ecx, 0x1800",
+      "0x452a2c: setle al",
+      "0x452a2f: pop esi"
+    ]
+  },
+  {
+    "function": "0x463190",
+    "name": "GuardState_cpp_463190",
+    "candidate_address": "0x463236",
+    "instructions": [
+      "0x46322e: jne 0x46326f",
+      "0x463230: mov eax, dword ptr [esi + 0xf7]",
+      "0x463236: mov ecx, dword ptr [eax + 0x88]",
+      "0x46323c: test ch, 8",
+      "0x46323f: je 0x46326f",
+      "0x463241: mov ecx, dword ptr [edi + 8]",
+      "0x463244: mov dx, word ptr [esi + 0x113]",
+      "0x46324b: cmp dx, word ptr [ecx + 0x3b9]",
+      "0x463252: jne 0x46326f"
+    ]
+  },
+  {
+    "function": "0x4a5070",
+    "name": "init",
+    "candidate_address": "0x4a5162",
+    "instructions": [
+      "0x4a5157: call 0x4b49d0",
+      "0x4a515c: mov eax, dword ptr [esi + 0xf7]",
+      "0x4a5162: test byte ptr [eax + 0x8b], 0x40",
+      "0x4a5169: mov ecx, 0x1000",
+      "0x4a516e: je 0x4a5182",
+      "0x4a5170: mov dword ptr [esp + 0x2c], ecx",
+      "0x4a5174: push 1",
+      "0x4a5176: push 1",
+      "0x4a5178: mov dword ptr [esp + 0x2c], ebp"
+    ]
+  },
+  {
+    "function": "0x4a55f0",
+    "name": "tick",
+    "candidate_address": "0x4a597a",
+    "instructions": [
+      "0x4a596e: jne 0x4a5880",
+      "0x4a5974: mov eax, dword ptr [esi + 0xf7]",
+      "0x4a597a: test byte ptr [eax + 0x8b], 0x40",
+      "0x4a5981: je 0x4a5a24",
+      "0x4a5987: mov ecx, dword ptr [esi + 0x40]",
+      "0x4a598a: test ecx, ecx",
+      "0x4a598c: jg 0x4a59d9",
+      "0x4a598e: cmp word ptr [eax + 0xae], 0",
+      "0x4a5996: je 0x4a6661"
+    ]
+  },
+  {
+    "function": "0x4a66f0",
+    "name": "sub_4A66F0",
+    "candidate_address": "0x4a6736",
+    "instructions": [
+      "0x4a672a: mov edx, dword ptr [esi + 0xf7]",
+      "0x4a6730: mov bl, byte ptr [ecx + 0x10fc]",
+      "0x4a6736: mov cl, byte ptr [edx + 0x8b]",
+      "0x4a673c: shl bl, 4",
+      "0x4a673f: test cl, 0x40",
+      "0x4a6742: mov byte ptr [esp + 0x14], bl",
+      "0x4a6746: jne 0x4a6752",
+      "0x4a6748: mov ecx, dword ptr [esi + 0x111]",
+      "0x4a674e: test ecx, ecx"
+    ]
+  },
+  {
+    "function": "0x4a68c0",
+    "name": "fun_4A68C0",
+    "candidate_address": "0x4a6a39",
+    "instructions": [
+      "0x4a6a2d: jne 0x4a6b34",
+      "0x4a6a33: mov eax, dword ptr [esi + 0xf7]",
+      "0x4a6a39: test byte ptr [eax + 0x8b], 0x40",
+      "0x4a6a40: je 0x4a6a8c",
+      "0x4a6a42: lea edx, [esp + 0x10]",
+      "0x4a6a46: lea ecx, [esp + 0x4c]",
+      "0x4a6a4a: push edx",
+      "0x4a6a4b: mov dword ptr [esp + 0x18], 0x5641524d",
+      "0x4a6a53: mov dword ptr [esp + 0x1c], 0x24"
+    ]
+  },
+  {
+    "function": "0x4a7940",
+    "name": "init",
+    "candidate_address": "0x4a7a91",
+    "instructions": [
+      "0x4a7a85: mov ecx, dword ptr [esi + 0xf7]",
+      "0x4a7a8b: mov dword ptr [esi + 0xfb], ebx",
+      "0x4a7a91: mov eax, dword ptr [ecx + 0x88]",
+      "0x4a7a97: test ah, 8",
+      "0x4a7a9a: je 0x4a7acc",
+      "0x4a7a9c: mov ecx, dword ptr [esi + 0x2a]",
+      "0x4a7a9f: lea edx, [esp + 0x20]",
+      "0x4a7aa3: push ebx",
+      "0x4a7aa4: lea eax, [esi + 0x1a]"
+    ]
+  },
+  {
+    "function": "0x4a84e0",
+    "name": "tick",
+    "candidate_address": "0x4a85c1",
+    "instructions": [
+      "0x4a85b5: jne 0x4a8c6b",
+      "0x4a85bb: mov eax, dword ptr [edi + 0xf7]",
+      "0x4a85c1: mov ecx, dword ptr [eax + 0x88]",
+      "0x4a85c7: test ch, 8",
+      "0x4a85ca: je 0x4a8aa1",
+      "0x4a85d0: mov ecx, dword ptr [0x6e5050]",
+      "0x4a85d6: mov si, word ptr [edi + 4]",
+      "0x4a85da: call 0x517490",
+      "0x4a85df: add eax, esi"
+    ]
+  },
+  {
+    "function": "0x4a9b70",
+    "name": "fun_4A9B70",
+    "candidate_address": "0x4a9d3b",
+    "instructions": [
+      "0x4a9d2f: jne 0x4a9e5e",
+      "0x4a9d35: mov ecx, dword ptr [esi + 0xf7]",
+      "0x4a9d3b: mov eax, dword ptr [ecx + 0x88]",
+      "0x4a9d41: test ah, 8",
+      "0x4a9d44: je 0x4a9d6b",
+      "0x4a9d46: mov esi, dword ptr [esp + 0x478]",
+      "0x4a9d4d: push 0x9ea",
+      "0x4a9d52: push 0x200",
+      "0x4a9d57: push esi"
+    ]
+  },
+  {
+    "function": "0x4b2030",
+    "name": "fun_4B2030",
+    "candidate_address": "0x4b2340",
+    "instructions": [
+      "0x4b2336: mov eax, dword ptr [esp + 0x2c]",
+      "0x4b233a: mov ecx, dword ptr [eax + 0xf7]",
+      "0x4b2340: test byte ptr [ecx + 0x8b], 0x40",
+      "0x4b2347: je 0x4b235b",
+      "0x4b2349: mov dword ptr [esp + 0x14], 0",
+      "0x4b2351: jmp 0x4b235b",
+      "0x4b2353: mov dword ptr [esp + 0x24], 0",
+      "0x4b235b: mov eax, dword ptr [esp + 0x14]",
+      "0x4b235f: test eax, eax"
+    ]
+  },
+  {
+    "function": "0x4b5800",
+    "name": "sub_4B5800",
+    "candidate_address": "0x4b5862",
+    "instructions": [
+      "0x4b585a: jne 0x4b5889",
+      "0x4b585c: mov ecx, dword ptr [esi + 0xf7]",
+      "0x4b5862: test byte ptr [ecx + 0x8b], 0x40",
+      "0x4b5869: jne 0x4b5889",
+      "0x4b586b: mov ecx, dword ptr [esi + 0x109]",
+      "0x4b5871: test ecx, ecx",
+      "0x4b5873: jne 0x4b5889",
+      "0x4b5875: mov ecx, dword ptr [esi + 0x10d]",
+      "0x4b587b: test ecx, ecx"
+    ]
+  },
+  {
+    "function": "0x4b58e0",
+    "name": "fun_4B58E0",
+    "candidate_address": "0x4b5920",
+    "instructions": [
+      "0x4b5918: jne 0x4b5946",
+      "0x4b591a: mov esi, dword ptr [eax + 0xf7]",
+      "0x4b5920: test byte ptr [esi + 0x8b], 0x40",
+      "0x4b5927: jne 0x4b5946",
+      "0x4b5929: mov esi, dword ptr [eax + 0x109]",
+      "0x4b592f: test esi, esi",
+      "0x4b5931: jne 0x4b5946",
+      "0x4b5933: mov esi, dword ptr [eax + 0x10d]",
+      "0x4b5939: test esi, esi"
+    ]
+  },
+  {
+    "function": "0x4c33b0",
+    "name": "sub_4C33B0",
+    "candidate_address": "0x4c33d4",
+    "instructions": [
+      "0x4c33cc: test eax, eax",
+      "0x4c33ce: je 0x4c3664",
+      "0x4c33d4: mov cl, byte ptr [eax + 0x8b]",
+      "0x4c33da: xor edi, edi",
+      "0x4c33dc: test cl, 0x40",
+      "0x4c33df: je 0x4c33e6",
+      "0x4c33e1: mov edi, 1",
+      "0x4c33e6: mov ecx, dword ptr [0x6e5054]",
+      "0x4c33ec: mov dx, word ptr [esi + 4]"
+    ]
+  }
+]

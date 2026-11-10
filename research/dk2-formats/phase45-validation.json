@@ -1,0 +1,27 @@
+{
+  "phase": 45,
+  "native_emulations": 36,
+  "native_reveal_fragments": 30,
+  "native_toolbox_functions": 6,
+  "api_boundary_cases": 625,
+  "exact_in_memory_container_patches": 60,
+  "corpus_files": 106,
+  "corpus_records": 3429,
+  "whole_file_roundtrips": 106,
+  "reveal_records": 227,
+  "toolbox_records": 10,
+  "primary_ranges_matching_pe": 4,
+  "evidence_instructions": 173,
+  "original_main_inputs_unchanged": 17,
+  "original_main_executables_unchanged": 2,
+  "format_package_components": 56,
+  "modified_gameplay_runs": 0,
+  "limitations": [
+    "36 native cases:30 original reveal-loop fragments with complete per-tile454B80/helper517480 plus6 full toolbox selections. Combined16384-byte result buffer compares all tile bytes and event/update captures; counters checked separately.",
+    "World initialisation before50C05D and later code after50C170 excluded. Entry/exit memory-only jumps bypass them; no complete50B5B0 execution claimed.",
+    "Event session527150, renderer update451C60 and delegated room reveal4E8B80 are fixtures. Real event forwarding517480 runs. Room fixture records calls and does not simulate how a real room changes visibility.",
+    "No renderer, visible fog result, GUI or modified-gameplay run. No list cycles/out-of-map accesses executed; safe projection rejects ordinary ordered out-of-map rectangles.",
+    "Unknown AP04/08, C8 gameplay purpose and other remaining catalogue semantics remain unresolved. Candidate getter/overlap scans are leads only and are not decoded fields.",
+    "First event capture fixture copied4 instead of16 bytes; its failed snapshot retained as superseded and excluded. Corrected36 cases passed. Original game bytes unaffected."
+  ]
+}

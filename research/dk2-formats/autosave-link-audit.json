@@ -1,0 +1,68 @@
+{
+  "bundle_source": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\kop4Globals.kld",
+  "bundle_sha256": "186e81c3c9d036e995a9d78bfa5b2a41a09db77cd04e7c2b21dec15473b3b6dd",
+  "descriptor_references": [
+    {
+      "type": "0x0",
+      "unknown": 0,
+      "path": "Data\\Editor\\Maps\\kop4Globals.kld",
+      "resolved": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\kop4Globals.kld",
+      "exists": true
+    },
+    {
+      "type": "0xB4",
+      "unknown": 0,
+      "path": "Data\\Editor\\Maps\\AutoSavePlayers.kld",
+      "resolved": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\AutoSavePlayers.kld",
+      "exists": false
+    },
+    {
+      "type": "0x64",
+      "unknown": 0,
+      "path": "Data\\Editor\\Maps\\AutoSaveMap.kld",
+      "resolved": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\AutoSaveMap.kld",
+      "exists": false
+    },
+    {
+      "type": "0xD2",
+      "unknown": 0,
+      "path": "Data\\Editor\\Maps\\AutoSaveTriggers.kld",
+      "resolved": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\AutoSaveTriggers.kld",
+      "exists": false
+    },
+    {
+      "type": "0xE6",
+      "unknown": 0,
+      "path": "Data\\Editor\\GlobalVariables.kwd",
+      "resolved": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\GlobalVariables.kwd",
+      "exists": true
+    },
+    {
+      "type": "0xE6",
+      "unknown": 0,
+      "path": "Data\\Editor\\Maps\\AutoSaveVariables.kld",
+      "resolved": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\AutoSaveVariables.kld",
+      "exists": false
+    },
+    {
+      "type": "0xBE",
+      "unknown": 0,
+      "path": "Data\\Editor\\Maps\\AutoSaveThings.kld",
+      "resolved": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\AutoSaveThings.kld",
+      "exists": false
+    }
+  ],
+  "checked_nonzero_by_source": {
+    "descriptor_creature_list": 23,
+    "adjacent_AutoSaveThings": 109,
+    "adjacent_AutoSaveMap_distinct_terrain": 19,
+    "GlobalVariables": 61,
+    "kop4Globals_process_Data1": 2
+  },
+  "skipped_zero_by_source": {
+    "adjacent_AutoSaveThings": 30,
+    "kop4Globals_process_Data1": 3
+  },
+  "diagnostics": [],
+  "note": "Adjacent AutoSaveThings/Map are explicitly named comparison inputs: their descriptor paths under Maps do not exist. This does not silently resolve or repair those paths, nor claim the complete map loads. Player/AP/trigger/resource references are separate namespaces."
+}

@@ -1,0 +1,114 @@
+{
+  "status": "Excluded failed synthetic-driver experiment",
+  "native_game_code_changed": false,
+  "driver_sha256": "40229901925c8e1ce0202097347d83df3529c44a5d387fcb3797d680dfac5c5d",
+  "script_sha256": "3eb0958cb32894ca6c5201c5890a12dc4584ff6dfb3d1a185b24197a665f0535",
+  "old_script": "phase85-raw-creature-driver-v1.py.txt",
+  "log": "phase85-raw-imp-run.log",
+  "instructions": [
+    {
+      "address": "0x10060000",
+      "mnemonic": "mov",
+      "operands": "ecx, 0x10010000",
+      "bytes": "b900000110"
+    },
+    {
+      "address": "0x10060005",
+      "mnemonic": "call",
+      "operands": "0x568820",
+      "bytes": "e8168850f0"
+    },
+    {
+      "address": "0x1006000a",
+      "mnemonic": "push",
+      "operands": "0x10018000",
+      "bytes": "6800800110"
+    },
+    {
+      "address": "0x1006000f",
+      "mnemonic": "mov",
+      "operands": "ecx, 0x10010000",
+      "bytes": "b900000110"
+    },
+    {
+      "address": "0x10060014",
+      "mnemonic": "call",
+      "operands": "0x568e30",
+      "bytes": "e8178e50f0"
+    },
+    {
+      "address": "0x10060019",
+      "mnemonic": "mov",
+      "operands": "esi, 0x10010000",
+      "bytes": "be00000110"
+    },
+    {
+      "address": "0x1006001e",
+      "mnemonic": "mov",
+      "operands": "edi, 0x10014000",
+      "bytes": "bf00400110"
+    },
+    {
+      "address": "0x10060023",
+      "mnemonic": "mov",
+      "operands": "ecx, 0x1939",
+      "bytes": "b939190000"
+    },
+    {
+      "address": "0x10060028",
+      "mnemonic": "rep movsb",
+      "operands": "byte ptr es:[edi], byte ptr [esi]",
+      "bytes": "f3a4"
+    },
+    {
+      "address": "0x1006002a",
+      "mnemonic": "xor",
+      "operands": "eax, eax",
+      "bytes": "31c0"
+    },
+    {
+      "address": "0x1006002c",
+      "mnemonic": "xor",
+      "operands": "ecx, ecx",
+      "bytes": "31c9"
+    },
+    {
+      "address": "0x1006002e",
+      "mnemonic": "movzx",
+      "operands": "edx, byte ptr [ecx + 0x10014000]",
+      "bytes": "0fb69100400110"
+    },
+    {
+      "address": "0x10060035",
+      "mnemonic": "add",
+      "operands": "eax, edx",
+      "bytes": "01d0"
+    },
+    {
+      "address": "0x10060037",
+      "mnemonic": "inc",
+      "operands": "ecx",
+      "bytes": "41"
+    },
+    {
+      "address": "0x10060038",
+      "mnemonic": "cmp",
+      "operands": "ecx, 0x1939",
+      "bytes": "81f939190000"
+    },
+    {
+      "address": "0x1006003e",
+      "mnemonic": "jb",
+      "operands": "0x1006003e",
+      "bytes": "0f82faffffff"
+    },
+    {
+      "address": "0x10060044",
+      "mnemonic": "mov",
+      "operands": "dword ptr [0x10050110], eax",
+      "bytes": "a310010510"
+    }
+  ],
+  "cause": "Synthetic byte-sum loop JB encoded a branch to itself. No result from this run is used as native Creature-loader evidence.",
+  "recovery": "2026-10-28: save_all_programs confirmed saving DKII-DX.exe, then exit_ghidra. Original project opened in GUI CodeBrowser;TCP MCP reconnected. No source binary/data edits."
+}

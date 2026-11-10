@@ -1,0 +1,376 @@
+{
+  "phase": 193,
+  "replays": [
+    {
+      "case": {
+        "name": "source-below",
+        "source": true,
+        "carried": 5659
+      },
+      "file": "ghidra\\phase193-gold-native-source-below-0852b0cf9d9a.json",
+      "sha256": "e8201eac961eaec4f59e2c217e5be4f8c584a0c2d649288335e46b8df1e68e05",
+      "outcome": {
+        "accepted": false,
+        "capacity_bits": 6000,
+        "threshold_bits": 5660,
+        "margin_read": true,
+        "margin_bits": 340,
+        "base_gold": 6000,
+        "level": 1,
+        "coefficient": 100,
+        "carried": 5659,
+        "exact_actor_and_world_unchanged": true,
+        "actual_registered_callback": true,
+        "native_steps": 70086
+      }
+    },
+    {
+      "case": {
+        "name": "source-boundary",
+        "source": true,
+        "carried": 5660
+      },
+      "file": "ghidra\\phase193-gold-native-source-boundary-7aa121803c15.json",
+      "sha256": "849d9564fb675b436e1b246da175d8ab0ac2b84043d6066be900bb2dc660cd91",
+      "outcome": {
+        "accepted": true,
+        "capacity_bits": 6000,
+        "threshold_bits": 5660,
+        "margin_read": true,
+        "margin_bits": 340,
+        "base_gold": 6000,
+        "level": 1,
+        "coefficient": 100,
+        "carried": 5660,
+        "exact_actor_and_world_unchanged": true,
+        "actual_registered_callback": true,
+        "native_steps": 70086
+      }
+    },
+    {
+      "case": {
+        "name": "source-above",
+        "source": true,
+        "carried": 5661
+      },
+      "file": "ghidra\\phase193-gold-native-source-above-387181fb975f.json",
+      "sha256": "0705dd4ecddd3d2efe2a4e917693da0607b6f4bdca2ff674f86d1b0548429543",
+      "outcome": {
+        "accepted": true,
+        "capacity_bits": 6000,
+        "threshold_bits": 5660,
+        "margin_read": true,
+        "margin_bits": 340,
+        "base_gold": 6000,
+        "level": 1,
+        "coefficient": 100,
+        "carried": 5661,
+        "exact_actor_and_world_unchanged": true,
+        "actual_registered_callback": true,
+        "native_steps": 70086
+      }
+    },
+    {
+      "case": {
+        "name": "zero-margin-below",
+        "margin": 0,
+        "carried": 5999
+      },
+      "file": "ghidra\\phase193-gold-native-zero-margin-below-c0122990857d.json",
+      "sha256": "2d44f6364768c37d121849d3b099d563e130da189044599ca49fefc1da971449",
+      "outcome": {
+        "accepted": false,
+        "capacity_bits": 6000,
+        "threshold_bits": 6000,
+        "margin_read": true,
+        "margin_bits": 0,
+        "base_gold": 6000,
+        "level": 1,
+        "coefficient": 100,
+        "carried": 5999,
+        "exact_actor_and_world_unchanged": true,
+        "actual_registered_callback": true,
+        "native_steps": 70086
+      }
+    },
+    {
+      "case": {
+        "name": "zero-margin-full",
+        "margin": 0,
+        "carried": 6000
+      },
+      "file": "ghidra\\phase193-gold-native-zero-margin-full-f9eff3d0f6ac.json",
+      "sha256": "748ed5abf9d2fe4a45fca53ab4facc8a9eddd45eb4d03b7c8bd6e7bc4fe2c73b",
+      "outcome": {
+        "accepted": true,
+        "capacity_bits": 6000,
+        "threshold_bits": 6000,
+        "margin_read": true,
+        "margin_bits": 0,
+        "base_gold": 6000,
+        "level": 1,
+        "coefficient": 100,
+        "carried": 6000,
+        "exact_actor_and_world_unchanged": true,
+        "actual_registered_callback": true,
+        "native_steps": 70086
+      }
+    },
+    {
+      "case": {
+        "name": "margin-equals-cap",
+        "margin": 6000,
+        "carried": 0
+      },
+      "file": "ghidra\\phase193-gold-native-margin-equals-cap-421ddbd121d5.json",
+      "sha256": "fdf6e1e7769ec84cc5f80c7b2cf118a0f203297cd3a6ee8b144fff5cf4f39fca",
+      "outcome": {
+        "accepted": true,
+        "capacity_bits": 6000,
+        "threshold_bits": 0,
+        "margin_read": true,
+        "margin_bits": 6000,
+        "base_gold": 6000,
+        "level": 1,
+        "coefficient": 100,
+        "carried": 0,
+        "exact_actor_and_world_unchanged": true,
+        "actual_registered_callback": true,
+        "native_steps": 70086
+      }
+    },
+    {
+      "case": {
+        "name": "margin-over-cap",
+        "margin": 6001,
+        "carried": 6000
+      },
+      "file": "ghidra\\phase193-gold-native-margin-over-cap-db373fabf6d2.json",
+      "sha256": "e5600de88282c6dcf9c66b769e5fa691c3ff1b190c6a4e0c1fc316556ece3192",
+      "outcome": {
+        "accepted": false,
+        "capacity_bits": 6000,
+        "threshold_bits": 4294967295,
+        "margin_read": true,
+        "margin_bits": 6001,
+        "base_gold": 6000,
+        "level": 1,
+        "coefficient": 100,
+        "carried": 6000,
+        "exact_actor_and_world_unchanged": true,
+        "actual_registered_callback": true,
+        "native_steps": 70086
+      }
+    },
+    {
+      "case": {
+        "name": "negative1-bits",
+        "margin": 4294967295,
+        "carried": 6000
+      },
+      "file": "ghidra\\phase193-gold-native-negative1-bits-bbc4684e3d03.json",
+      "sha256": "fb0e800b92ba52aab797d0f849eab4eb6c391664701abdd12650060e4b8fab58",
+      "outcome": {
+        "accepted": false,
+        "capacity_bits": 6000,
+        "threshold_bits": 6001,
+        "margin_read": true,
+        "margin_bits": 4294967295,
+        "base_gold": 6000,
+        "level": 1,
+        "coefficient": 100,
+        "carried": 6000,
+        "exact_actor_and_world_unchanged": true,
+        "actual_registered_callback": true,
+        "native_steps": 70086
+      }
+    },
+    {
+      "case": {
+        "name": "level2-below",
+        "level": 2,
+        "coefficient": 150,
+        "carried": 8659
+      },
+      "file": "ghidra\\phase193-gold-native-level2-below-b92734afc973.json",
+      "sha256": "71b7715b66e3a9968006ea39e58fbb6ced8799d6284e63a0f8c2be4fec426c9d",
+      "outcome": {
+        "accepted": false,
+        "capacity_bits": 9000,
+        "threshold_bits": 8660,
+        "margin_read": true,
+        "margin_bits": 340,
+        "base_gold": 6000,
+        "level": 2,
+        "coefficient": 150,
+        "carried": 8659,
+        "exact_actor_and_world_unchanged": true,
+        "actual_registered_callback": true,
+        "native_steps": 70096
+      }
+    },
+    {
+      "case": {
+        "name": "level2-boundary",
+        "level": 2,
+        "coefficient": 150,
+        "carried": 8660
+      },
+      "file": "ghidra\\phase193-gold-native-level2-boundary-43594bb4f6c2.json",
+      "sha256": "2f4143df97059b0f00b98d8798bc9fb7066bc9d1d23772e40326f8c8b5a0ad45",
+      "outcome": {
+        "accepted": true,
+        "capacity_bits": 9000,
+        "threshold_bits": 8660,
+        "margin_read": true,
+        "margin_bits": 340,
+        "base_gold": 6000,
+        "level": 2,
+        "coefficient": 150,
+        "carried": 8660,
+        "exact_actor_and_world_unchanged": true,
+        "actual_registered_callback": true,
+        "native_steps": 70096
+      }
+    },
+    {
+      "case": {
+        "name": "level2-negative-growth",
+        "level": 2,
+        "coefficient": -1,
+        "carried": 0
+      },
+      "file": "ghidra\\phase193-gold-native-level2-negative-growth-f36077b411cf.json",
+      "sha256": "6afa228efe8ab63e285e0b73abd55dbf2872bb4f8626dff3c724d1c721939873",
+      "outcome": {
+        "accepted": false,
+        "capacity_bits": 4294967236,
+        "threshold_bits": 4294966896,
+        "margin_read": true,
+        "margin_bits": 340,
+        "base_gold": 6000,
+        "level": 2,
+        "coefficient": -1,
+        "carried": 0,
+        "exact_actor_and_world_unchanged": true,
+        "actual_registered_callback": true,
+        "native_steps": 70096
+      }
+    },
+    {
+      "case": {
+        "name": "mode0-empty",
+        "argument": 0,
+        "carried": 0
+      },
+      "file": "ghidra\\phase193-gold-native-mode0-empty-002a6d36939c.json",
+      "sha256": "8c4cafd1a0af3ba3aa4d4d3fac9cc82aa136f287770b7fff79f673fe3000a7ad",
+      "outcome": {
+        "accepted": false,
+        "capacity_bits": null,
+        "threshold_bits": null,
+        "margin_read": false,
+        "margin_bits": 340,
+        "base_gold": 6000,
+        "level": 1,
+        "coefficient": 100,
+        "carried": 0,
+        "exact_actor_and_world_unchanged": true,
+        "actual_registered_callback": true,
+        "native_steps": 70077
+      }
+    },
+    {
+      "case": {
+        "name": "mode0-one",
+        "argument": 0,
+        "carried": 1
+      },
+      "file": "ghidra\\phase193-gold-native-mode0-one-2e237ce892c0.json",
+      "sha256": "e99861af45111c7630536584bd95ff811d2553a0c51dbbc789682f2cfbd72ca1",
+      "outcome": {
+        "accepted": true,
+        "capacity_bits": null,
+        "threshold_bits": null,
+        "margin_read": false,
+        "margin_bits": 340,
+        "base_gold": 6000,
+        "level": 1,
+        "coefficient": 100,
+        "carried": 1,
+        "exact_actor_and_world_unchanged": true,
+        "actual_registered_callback": true,
+        "native_steps": 70077
+      }
+    },
+    {
+      "case": {
+        "name": "small-cap-underflow",
+        "base_gold": 100,
+        "carried": 100
+      },
+      "file": "ghidra\\phase193-gold-native-small-cap-underflow-0ffb7150fc71.json",
+      "sha256": "a98ace40ea0863b6d51ed14fd495d3b0675f66d3c02e9d6dbdac2c6d38ee8a1a",
+      "outcome": {
+        "accepted": false,
+        "capacity_bits": 100,
+        "threshold_bits": 4294967056,
+        "margin_read": true,
+        "margin_bits": 340,
+        "base_gold": 100,
+        "level": 1,
+        "coefficient": 100,
+        "carried": 100,
+        "exact_actor_and_world_unchanged": true,
+        "actual_registered_callback": true,
+        "native_steps": 70086
+      }
+    },
+    {
+      "case": {
+        "name": "unsigned-high-carry",
+        "margin": 4294967295,
+        "carried": 4294967295
+      },
+      "file": "ghidra\\phase193-gold-native-unsigned-high-carry-58728e1f6737.json",
+      "sha256": "67238dd53e9fd4c2a7511a141aeb1a3b29b9fefc045061557a806b88ed6b6aac",
+      "outcome": {
+        "accepted": true,
+        "capacity_bits": 6000,
+        "threshold_bits": 6001,
+        "margin_read": true,
+        "margin_bits": 4294967295,
+        "base_gold": 6000,
+        "level": 1,
+        "coefficient": 100,
+        "carried": 4294967295,
+        "exact_actor_and_world_unchanged": true,
+        "actual_registered_callback": true,
+        "native_steps": 70086
+      }
+    },
+    {
+      "case": {
+        "name": "nonzero-argument2",
+        "argument": 2,
+        "carried": 5660
+      },
+      "file": "ghidra\\phase193-gold-native-nonzero-argument2-9bc334387e6d.json",
+      "sha256": "d69114dd59f46177c2bea3d080293f1b0af218d484cb1e10b8fce99326767dff",
+      "outcome": {
+        "accepted": true,
+        "capacity_bits": 6000,
+        "threshold_bits": 5660,
+        "margin_read": true,
+        "margin_bits": 340,
+        "base_gold": 6000,
+        "level": 1,
+        "coefficient": 100,
+        "carried": 5660,
+        "exact_actor_and_world_unchanged": true,
+        "actual_registered_callback": true,
+        "native_steps": 70086
+      }
+    }
+  ]
+}

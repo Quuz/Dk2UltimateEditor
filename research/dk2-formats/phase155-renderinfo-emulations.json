@@ -1,0 +1,661 @@
+{
+  "scope": "Complete original two-primitive creation after realrawdefinitionloaders.\n\nPrepared RenderInfo inputs/nativeallocator/cache/geometry. Fullcaller59CCF0,\nnative57CEB0/57CD30 and580480 execute, including realFCOS/FSIN. Picking is not\nattempted until actual renderer staging is provided; field70 remainsopaqueA5.\n",
+  "replays": [
+    {
+      "case": {
+        "name": "base",
+        "stage": "creation"
+      },
+      "file": "ghidra\\phase155-renderinfo-discovery-4e875ad51efb.json",
+      "sha256": "d4623a4fa437e10f4cf032901660223c4f81ab8ec5446988f7624f68c31b176a",
+      "outcome": {
+        "primitives": [
+          {
+            "pointer": 275775508,
+            "world_xyz": [
+              0.0,
+              0.0,
+              2.0
+            ],
+            "matrix": [
+              -1.0,
+              -8.742277657347586e-08,
+              0.0,
+              8.742277657347586e-08,
+              -1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "mesh_selection_index_unassigned_hex": "a5a5a5a5",
+            "output_token": 269090816,
+            "forwarded_AC_byte": 0
+          },
+          {
+            "pointer": 275775700,
+            "world_xyz": [
+              0.0,
+              0.0,
+              1.0
+            ],
+            "matrix": [
+              -1.0,
+              -8.742277657347586e-08,
+              0.0,
+              8.742277657347586e-08,
+              -1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "mesh_selection_index_unassigned_hex": "a5a5a5a5",
+            "output_token": 269094912,
+            "forwarded_AC_byte": 0
+          }
+        ],
+        "allocator_calls": 2,
+        "native_complete_creators": 2,
+        "raw_priority_Jump_reads": 0,
+        "compared_regions": 64,
+        "compared_bytes": 89069,
+        "native_steps": 141414,
+        "low_reads_only_FS_SEH": true,
+        "FS_reads": 20
+      }
+    },
+    {
+      "case": {
+        "name": "priority-reversed",
+        "stage": "creation",
+        "priorities": [
+          255,
+          0
+        ]
+      },
+      "file": "ghidra\\phase155-renderinfo-discovery-c8b0731c6d64.json",
+      "sha256": "647394600de9f518d86894dee2902c079a13e67f704d0ef92fe7f6c79f9b3d81",
+      "outcome": {
+        "primitives": [
+          {
+            "pointer": 275775508,
+            "world_xyz": [
+              0.0,
+              0.0,
+              2.0
+            ],
+            "matrix": [
+              -1.0,
+              -8.742277657347586e-08,
+              0.0,
+              8.742277657347586e-08,
+              -1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "mesh_selection_index_unassigned_hex": "a5a5a5a5",
+            "output_token": 269090816,
+            "forwarded_AC_byte": 0
+          },
+          {
+            "pointer": 275775700,
+            "world_xyz": [
+              0.0,
+              0.0,
+              1.0
+            ],
+            "matrix": [
+              -1.0,
+              -8.742277657347586e-08,
+              0.0,
+              8.742277657347586e-08,
+              -1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "mesh_selection_index_unassigned_hex": "a5a5a5a5",
+            "output_token": 269094912,
+            "forwarded_AC_byte": 0
+          }
+        ],
+        "allocator_calls": 2,
+        "native_complete_creators": 2,
+        "raw_priority_Jump_reads": 0,
+        "compared_regions": 64,
+        "compared_bytes": 89069,
+        "native_steps": 141414,
+        "low_reads_only_FS_SEH": true,
+        "FS_reads": 20
+      }
+    },
+    {
+      "case": {
+        "name": "jump-highbit",
+        "stage": "creation",
+        "jump": 2147483648
+      },
+      "file": "ghidra\\phase155-renderinfo-discovery-1de2e3466a32.json",
+      "sha256": "92f6830c85f3b9952dc2798c81ebe44fa6f4fb885797bca77cd77bc8f84703d4",
+      "outcome": {
+        "primitives": [
+          {
+            "pointer": 275775508,
+            "world_xyz": [
+              0.0,
+              0.0,
+              2.0
+            ],
+            "matrix": [
+              -1.0,
+              -8.742277657347586e-08,
+              0.0,
+              8.742277657347586e-08,
+              -1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "mesh_selection_index_unassigned_hex": "a5a5a5a5",
+            "output_token": 269090816,
+            "forwarded_AC_byte": 0
+          },
+          {
+            "pointer": 275775700,
+            "world_xyz": [
+              0.0,
+              0.0,
+              1.0
+            ],
+            "matrix": [
+              -1.0,
+              -8.742277657347586e-08,
+              0.0,
+              8.742277657347586e-08,
+              -1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "mesh_selection_index_unassigned_hex": "a5a5a5a5",
+            "output_token": 269094912,
+            "forwarded_AC_byte": 0
+          }
+        ],
+        "allocator_calls": 2,
+        "native_complete_creators": 2,
+        "raw_priority_Jump_reads": 0,
+        "compared_regions": 64,
+        "compared_bytes": 89069,
+        "native_steps": 141414,
+        "low_reads_only_FS_SEH": true,
+        "FS_reads": 20
+      }
+    },
+    {
+      "case": {
+        "name": "bank1",
+        "stage": "creation",
+        "bank": 1
+      },
+      "file": "ghidra\\phase155-renderinfo-discovery-31b717f473ef.json",
+      "sha256": "6b3a407a2dcb7af7959e0cac968729a3beb8aa8c49a25a3880c9064391f7c1d9",
+      "outcome": {
+        "primitives": [
+          {
+            "pointer": 275775508,
+            "world_xyz": [
+              0.0,
+              0.0,
+              2.0
+            ],
+            "matrix": [
+              -1.0,
+              -8.742277657347586e-08,
+              0.0,
+              8.742277657347586e-08,
+              -1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "mesh_selection_index_unassigned_hex": "a5a5a5a5",
+            "output_token": 269090816,
+            "forwarded_AC_byte": 1
+          },
+          {
+            "pointer": 275775700,
+            "world_xyz": [
+              0.0,
+              0.0,
+              1.0
+            ],
+            "matrix": [
+              -1.0,
+              -8.742277657347586e-08,
+              0.0,
+              8.742277657347586e-08,
+              -1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "mesh_selection_index_unassigned_hex": "a5a5a5a5",
+            "output_token": 269094912,
+            "forwarded_AC_byte": 1
+          }
+        ],
+        "allocator_calls": 2,
+        "native_complete_creators": 2,
+        "raw_priority_Jump_reads": 0,
+        "compared_regions": 64,
+        "compared_bytes": 89069,
+        "native_steps": 141414,
+        "low_reads_only_FS_SEH": true,
+        "FS_reads": 20
+      }
+    },
+    {
+      "case": {
+        "name": "bank255",
+        "stage": "creation",
+        "bank": 255
+      },
+      "file": "ghidra\\phase155-renderinfo-discovery-3884eddb9ee8.json",
+      "sha256": "c13c2d60f4d6a50c22f27b335b9e3e9bd5e4de0b2e615e286b01c9f1ec8b9c0a",
+      "outcome": {
+        "primitives": [
+          {
+            "pointer": 275775508,
+            "world_xyz": [
+              0.0,
+              0.0,
+              2.0
+            ],
+            "matrix": [
+              -1.0,
+              -8.742277657347586e-08,
+              0.0,
+              8.742277657347586e-08,
+              -1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "mesh_selection_index_unassigned_hex": "a5a5a5a5",
+            "output_token": 269090816,
+            "forwarded_AC_byte": 255
+          },
+          {
+            "pointer": 275775700,
+            "world_xyz": [
+              0.0,
+              0.0,
+              1.0
+            ],
+            "matrix": [
+              -1.0,
+              -8.742277657347586e-08,
+              0.0,
+              8.742277657347586e-08,
+              -1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "mesh_selection_index_unassigned_hex": "a5a5a5a5",
+            "output_token": 269094912,
+            "forwarded_AC_byte": 255
+          }
+        ],
+        "allocator_calls": 2,
+        "native_complete_creators": 2,
+        "raw_priority_Jump_reads": 0,
+        "compared_regions": 64,
+        "compared_bytes": 89069,
+        "native_steps": 141414,
+        "low_reads_only_FS_SEH": true,
+        "FS_reads": 20
+      }
+    },
+    {
+      "case": {
+        "name": "alpha-zero",
+        "stage": "creation",
+        "alpha": 0
+      },
+      "file": "ghidra\\phase155-renderinfo-discovery-ce3e4e5eb82c.json",
+      "sha256": "cdbbf8c8535b3975ec459ff3b63f1349c47fd333c52b4f610c3b89bfdb9ebe89",
+      "outcome": {
+        "primitives": [
+          {
+            "pointer": 275775508,
+            "world_xyz": [
+              0.0,
+              0.0,
+              2.0
+            ],
+            "matrix": [
+              -1.0,
+              -8.742277657347586e-08,
+              0.0,
+              8.742277657347586e-08,
+              -1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "mesh_selection_index_unassigned_hex": "a5a5a5a5",
+            "output_token": 269090816,
+            "forwarded_AC_byte": 0
+          },
+          {
+            "pointer": 275775700,
+            "world_xyz": [
+              0.0,
+              0.0,
+              1.0
+            ],
+            "matrix": [
+              -1.0,
+              -8.742277657347586e-08,
+              0.0,
+              8.742277657347586e-08,
+              -1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "mesh_selection_index_unassigned_hex": "a5a5a5a5",
+            "output_token": 269094912,
+            "forwarded_AC_byte": 0
+          }
+        ],
+        "allocator_calls": 2,
+        "native_complete_creators": 2,
+        "raw_priority_Jump_reads": 0,
+        "compared_regions": 64,
+        "compared_bytes": 89069,
+        "native_steps": 141414,
+        "low_reads_only_FS_SEH": true,
+        "FS_reads": 20
+      }
+    },
+    {
+      "case": {
+        "name": "half-width",
+        "stage": "creation",
+        "width": 2048
+      },
+      "file": "ghidra\\phase155-renderinfo-discovery-b8f443f065a0.json",
+      "sha256": "a8b6e8d473f793ccccb6f08784c5ac2642f3236d6fbe70273af298fd7e1d35c9",
+      "outcome": {
+        "primitives": [
+          {
+            "pointer": 275775508,
+            "world_xyz": [
+              0.0,
+              0.0,
+              2.0
+            ],
+            "matrix": [
+              -0.5,
+              -4.371138828673793e-08,
+              0.0,
+              8.742277657347586e-08,
+              -1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.5
+            ],
+            "mesh_selection_index_unassigned_hex": "a5a5a5a5",
+            "output_token": 269090816,
+            "forwarded_AC_byte": 0
+          },
+          {
+            "pointer": 275775700,
+            "world_xyz": [
+              0.0,
+              0.0,
+              1.0
+            ],
+            "matrix": [
+              -0.5,
+              -4.371138828673793e-08,
+              0.0,
+              8.742277657347586e-08,
+              -1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.5
+            ],
+            "mesh_selection_index_unassigned_hex": "a5a5a5a5",
+            "output_token": 269094912,
+            "forwarded_AC_byte": 0
+          }
+        ],
+        "allocator_calls": 2,
+        "native_complete_creators": 2,
+        "raw_priority_Jump_reads": 0,
+        "compared_regions": 64,
+        "compared_bytes": 89069,
+        "native_steps": 141418,
+        "low_reads_only_FS_SEH": true,
+        "FS_reads": 20
+      }
+    },
+    {
+      "case": {
+        "name": "double-height",
+        "stage": "creation",
+        "height": 8192
+      },
+      "file": "ghidra\\phase155-renderinfo-discovery-1a1d722c8374.json",
+      "sha256": "3485f4f475135cb56690a4d13f8fa7319263bb66806eb8406056384af355bc5d",
+      "outcome": {
+        "primitives": [
+          {
+            "pointer": 275775508,
+            "world_xyz": [
+              0.0,
+              0.0,
+              2.0
+            ],
+            "matrix": [
+              -1.0,
+              -8.742277657347586e-08,
+              0.0,
+              1.7484555314695172e-07,
+              -2.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "mesh_selection_index_unassigned_hex": "a5a5a5a5",
+            "output_token": 269090816,
+            "forwarded_AC_byte": 0
+          },
+          {
+            "pointer": 275775700,
+            "world_xyz": [
+              0.0,
+              0.0,
+              1.0
+            ],
+            "matrix": [
+              -1.0,
+              -8.742277657347586e-08,
+              0.0,
+              1.7484555314695172e-07,
+              -2.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "mesh_selection_index_unassigned_hex": "a5a5a5a5",
+            "output_token": 269094912,
+            "forwarded_AC_byte": 0
+          }
+        ],
+        "allocator_calls": 2,
+        "native_complete_creators": 2,
+        "raw_priority_Jump_reads": 0,
+        "compared_regions": 64,
+        "compared_bytes": 89069,
+        "native_steps": 141418,
+        "low_reads_only_FS_SEH": true,
+        "FS_reads": 20
+      }
+    },
+    {
+      "case": {
+        "name": "signed-position-offset",
+        "stage": "creation",
+        "offset": [
+          1,
+          -2,
+          3
+        ]
+      },
+      "file": "ghidra\\phase155-renderinfo-discovery-7f5ba0e17199.json",
+      "sha256": "a5decbca3c23ba72253c72833f8f781e85163488b1cf82f70d5deb1d33289154",
+      "outcome": {
+        "primitives": [
+          {
+            "pointer": 275775508,
+            "world_xyz": [
+              0.000244140625,
+              -0.00048828125,
+              1.999267578125
+            ],
+            "matrix": [
+              -1.0,
+              -8.742277657347586e-08,
+              0.0,
+              8.742277657347586e-08,
+              -1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "mesh_selection_index_unassigned_hex": "a5a5a5a5",
+            "output_token": 269090816,
+            "forwarded_AC_byte": 0
+          },
+          {
+            "pointer": 275775700,
+            "world_xyz": [
+              0.000244140625,
+              -0.00048828125,
+              0.999267578125
+            ],
+            "matrix": [
+              -1.0,
+              -8.742277657347586e-08,
+              0.0,
+              8.742277657347586e-08,
+              -1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "mesh_selection_index_unassigned_hex": "a5a5a5a5",
+            "output_token": 269094912,
+            "forwarded_AC_byte": 0
+          }
+        ],
+        "allocator_calls": 2,
+        "native_complete_creators": 2,
+        "raw_priority_Jump_reads": 0,
+        "compared_regions": 64,
+        "compared_bytes": 89069,
+        "native_steps": 141414,
+        "low_reads_only_FS_SEH": true,
+        "FS_reads": 20
+      }
+    },
+    {
+      "case": {
+        "name": "flags4000",
+        "stage": "creation",
+        "flags": 16384
+      },
+      "file": "ghidra\\phase155-renderinfo-discovery-27b722048bdc.json",
+      "sha256": "f229e0ec7b44e5899bcb6d2e39bd3ee38247c1f199d33afb0b276a80d954aad9",
+      "outcome": {
+        "primitives": [
+          {
+            "pointer": 275775508,
+            "world_xyz": [
+              0.0,
+              0.0,
+              2.0
+            ],
+            "matrix": [
+              -1.0,
+              -8.742277657347586e-08,
+              0.0,
+              8.742277657347586e-08,
+              -1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "mesh_selection_index_unassigned_hex": "a5a5a5a5",
+            "output_token": 269090816,
+            "forwarded_AC_byte": 0
+          },
+          {
+            "pointer": 275775700,
+            "world_xyz": [
+              0.0,
+              0.0,
+              1.0
+            ],
+            "matrix": [
+              -1.0,
+              -8.742277657347586e-08,
+              0.0,
+              8.742277657347586e-08,
+              -1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "mesh_selection_index_unassigned_hex": "a5a5a5a5",
+            "output_token": 269094912,
+            "forwarded_AC_byte": 0
+          }
+        ],
+        "allocator_calls": 2,
+        "native_complete_creators": 2,
+        "raw_priority_Jump_reads": 0,
+        "compared_regions": 64,
+        "compared_bytes": 89069,
+        "native_steps": 141414,
+        "low_reads_only_FS_SEH": true,
+        "FS_reads": 20
+      }
+    }
+  ]
+}

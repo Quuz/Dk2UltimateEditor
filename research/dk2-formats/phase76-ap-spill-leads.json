@@ -1,0 +1,1051 @@
+{
+  "scope": "New AP lookup-rooted pass retaining local aliases across known ABI calls.\n\nOnly real DX PRNG5558D0,APgetter50FAE0,mapgetter508FE0 and tentative matching\nCWorld virtual slots have contracts. Passed argument cells and dead lower\nstack are invalidated. Other calls still erase stack/frame knowledge.\nVirtual receiver identity and arbitrary pointee escapes are not proved by\nthis candidate engine. Positive control is APFlag40 read47205E after spills.\n",
+  "program_sha256": "d7a8b854e4e4f02709eba271bead6fe2307dd6e332b5a96e70857e5b0e19fb8a",
+  "decoded_instructions": 799810,
+  "producer_roots": [
+    {
+      "address": "0x426c44",
+      "next": "0x426c4a",
+      "family": "ActionPoint",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x2c8]",
+      "function_hint": "0x426960",
+      "states": 8,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x471ed0",
+      "next": "0x471ed6",
+      "family": "ActionPoint",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x2c8]",
+      "function_hint": "0x471e80",
+      "states": 142,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x472167",
+      "next": "0x47216d",
+      "family": "ActionPoint",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x2c8]",
+      "function_hint": "0x471e80",
+      "states": 7,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x4c86f5",
+      "next": "0x4c86fb",
+      "family": "ActionPoint",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [eax + 0x2c8]",
+      "function_hint": "0x4c8620",
+      "states": 44,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x4c87af",
+      "next": "0x4c87b5",
+      "family": "ActionPoint",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x2c8]",
+      "function_hint": "0x4c8620",
+      "states": 56,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x4c88ac",
+      "next": "0x4c88b2",
+      "family": "ActionPoint",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x2c8]",
+      "function_hint": "0x4c8620",
+      "states": 34,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x5100fc",
+      "next": "0x510102",
+      "family": "ActionPoint",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x2c8]",
+      "function_hint": "0x5100b0",
+      "states": 24,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x519263",
+      "next": "0x519269",
+      "family": "ActionPoint",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x2c8]",
+      "function_hint": "0x518ad0",
+      "states": 36,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    }
+  ],
+  "root_states": 351,
+  "limited_roots": 0,
+  "callee_summaries": 0,
+  "limited_callees": 0,
+  "candidates": [
+    {
+      "root": {
+        "address": "0x426c44",
+        "next": "0x426c4a",
+        "family": "ActionPoint",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [edx + 0x2c8]",
+        "function_hint": "0x426960",
+        "states": 8,
+        "limited": false,
+        "argument_contexts": 0,
+        "limited_argument_contexts": false
+      },
+      "field": "controlBounds",
+      "read": {
+        "address": "0x426c4e",
+        "offset": 58,
+        "bytes": 2,
+        "instruction": "mov cx, word ptr [eax + 0x3a]",
+        "trace": [
+          "426c4a: xor ecx, ecx",
+          "426c4c: xor edx, edx"
+        ],
+        "callee": null,
+        "call": null
+      }
+    },
+    {
+      "root": {
+        "address": "0x426c44",
+        "next": "0x426c4a",
+        "family": "ActionPoint",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [edx + 0x2c8]",
+        "function_hint": "0x426960",
+        "states": 8,
+        "limited": false,
+        "argument_contexts": 0,
+        "limited_argument_contexts": false
+      },
+      "field": "controlBounds",
+      "read": {
+        "address": "0x426c52",
+        "offset": 56,
+        "bytes": 2,
+        "instruction": "mov dx, word ptr [eax + 0x38]",
+        "trace": [
+          "426c4a: xor ecx, ecx",
+          "426c4c: xor edx, edx",
+          "426c4e: mov cx, word ptr [eax + 0x3a]"
+        ],
+        "callee": null,
+        "call": null
+      }
+    },
+    {
+      "root": {
+        "address": "0x471ed0",
+        "next": "0x471ed6",
+        "family": "ActionPoint",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [edx + 0x2c8]",
+        "function_hint": "0x471e80",
+        "states": 142,
+        "limited": false,
+        "argument_contexts": 0,
+        "limited_argument_contexts": false
+      },
+      "field": "controlBounds",
+      "read": {
+        "address": "0x471ee6",
+        "offset": 56,
+        "bytes": 2,
+        "instruction": "mov bp, word ptr [eax + 0x38]",
+        "trace": [
+          "471ed6: xor esi, esi",
+          "471ed8: xor ebp, ebp",
+          "471eda: mov dword ptr [esp + 0x28], esi",
+          "471ede: mov dword ptr [esp + 0x2c], esi",
+          "471ee2: mov dword ptr [esp + 0x30], esi"
+        ],
+        "callee": null,
+        "call": null
+      }
+    },
+    {
+      "root": {
+        "address": "0x471ed0",
+        "next": "0x471ed6",
+        "family": "ActionPoint",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [edx + 0x2c8]",
+        "function_hint": "0x471e80",
+        "states": 142,
+        "limited": false,
+        "argument_contexts": 0,
+        "limited_argument_contexts": false
+      },
+      "field": "controlBounds",
+      "read": {
+        "address": "0x471eee",
+        "offset": 58,
+        "bytes": 2,
+        "instruction": "mov bx, word ptr [eax + 0x3a]",
+        "trace": [
+          "471ed6: xor esi, esi",
+          "471ed8: xor ebp, ebp",
+          "471eda: mov dword ptr [esp + 0x28], esi",
+          "471ede: mov dword ptr [esp + 0x2c], esi",
+          "471ee2: mov dword ptr [esp + 0x30], esi",
+          "471ee6: mov bp, word ptr [eax + 0x38]",
+          "471eea: xor ebx, ebx",
+          "471eec: xor edx, edx"
+        ],
+        "callee": null,
+        "call": null
+      }
+    },
+    {
+      "root": {
+        "address": "0x471ed0",
+        "next": "0x471ed6",
+        "family": "ActionPoint",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [edx + 0x2c8]",
+        "function_hint": "0x471e80",
+        "states": 142,
+        "limited": false,
+        "argument_contexts": 0,
+        "limited_argument_contexts": false
+      },
+      "field": "controlBounds",
+      "read": {
+        "address": "0x471ef2",
+        "offset": 60,
+        "bytes": 2,
+        "instruction": "mov dx, word ptr [eax + 0x3c]",
+        "trace": [
+          "471ed6: xor esi, esi",
+          "471ed8: xor ebp, ebp",
+          "471eda: mov dword ptr [esp + 0x28], esi",
+          "471ede: mov dword ptr [esp + 0x2c], esi",
+          "471ee2: mov dword ptr [esp + 0x30], esi",
+          "471ee6: mov bp, word ptr [eax + 0x38]",
+          "471eea: xor ebx, ebx",
+          "471eec: xor edx, edx",
+          "471eee: mov bx, word ptr [eax + 0x3a]"
+        ],
+        "callee": null,
+        "call": null
+      }
+    },
+    {
+      "root": {
+        "address": "0x471ed0",
+        "next": "0x471ed6",
+        "family": "ActionPoint",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [edx + 0x2c8]",
+        "function_hint": "0x471e80",
+        "states": 142,
+        "limited": false,
+        "argument_contexts": 0,
+        "limited_argument_contexts": false
+      },
+      "field": "controlBounds",
+      "read": {
+        "address": "0x471efc",
+        "offset": 62,
+        "bytes": 2,
+        "instruction": "mov cx, word ptr [eax + 0x3e]",
+        "trace": [
+          "471ed6: xor esi, esi",
+          "471ed8: xor ebp, ebp",
+          "471eda: mov dword ptr [esp + 0x28], esi",
+          "471ede: mov dword ptr [esp + 0x2c], esi",
+          "471ee2: mov dword ptr [esp + 0x30], esi",
+          "471ee6: mov bp, word ptr [eax + 0x38]",
+          "471eea: xor ebx, ebx",
+          "471eec: xor edx, edx",
+          "471eee: mov bx, word ptr [eax + 0x3a]",
+          "471ef2: mov dx, word ptr [eax + 0x3c]",
+          "471ef6: xor ecx, ecx",
+          "471ef8: mov dword ptr [esp + 0x20], eax"
+        ],
+        "callee": null,
+        "call": null
+      }
+    },
+    {
+      "root": {
+        "address": "0x471ed0",
+        "next": "0x471ed6",
+        "family": "ActionPoint",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [edx + 0x2c8]",
+        "function_hint": "0x471e80",
+        "states": 142,
+        "limited": false,
+        "argument_contexts": 0,
+        "limited_argument_contexts": false
+      },
+      "field": "possibleAPFlags",
+      "read": {
+        "address": "0x47205e",
+        "offset": 50,
+        "bytes": 1,
+        "instruction": "mov dl, byte ptr [ecx + 0x32]",
+        "trace": [
+          "471fd5: add edx, 0x800",
+          "471fdb: mov dword ptr [esp + 0x2c], edx",
+          "471fdf: jmp 0x472043",
+          "472043: mov ecx, dword ptr [edi + 0xc]",
+          "472046: lea edx, [esp + 0x28]",
+          "47204a: push edx",
+          "47204b: mov eax, dword ptr [ecx]",
+          "47204d: call dword ptr [eax + 0x1d4]",
+          "472053: mov ecx, dword ptr [esp + 0x20]",
+          "472057: mov esi, eax",
+          "472059: xor eax, eax",
+          "47205b: mov al, byte ptr [esi + 0xa]"
+        ],
+        "callee": null,
+        "call": null
+      }
+    },
+    {
+      "root": {
+        "address": "0x472167",
+        "next": "0x47216d",
+        "family": "ActionPoint",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [edx + 0x2c8]",
+        "function_hint": "0x471e80",
+        "states": 7,
+        "limited": false,
+        "argument_contexts": 0,
+        "limited_argument_contexts": false
+      },
+      "field": "controlNext",
+      "read": {
+        "address": "0x472172",
+        "offset": 51,
+        "bytes": 1,
+        "instruction": "mov cl, byte ptr [eax + 0x33]",
+        "trace": [
+          "47216d: mov edx, dword ptr [esi + 8]",
+          "472170: xor ecx, ecx"
+        ],
+        "callee": null,
+        "call": null
+      }
+    },
+    {
+      "root": {
+        "address": "0x4c86f5",
+        "next": "0x4c86fb",
+        "family": "ActionPoint",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [eax + 0x2c8]",
+        "function_hint": "0x4c8620",
+        "states": 44,
+        "limited": false,
+        "argument_contexts": 0,
+        "limited_argument_contexts": false
+      },
+      "field": "controlBounds",
+      "read": {
+        "address": "0x4c870b",
+        "offset": 60,
+        "bytes": 2,
+        "instruction": "mov ax, word ptr [esi + 0x3c]",
+        "trace": [
+          "4c86fb: mov esi, eax",
+          "4c86fd: xor edi, edi",
+          "4c86ff: cmp esi, edi",
+          "4c8701: je 0x4c8a37",
+          "4c8707: xor eax, eax",
+          "4c8709: xor ecx, ecx"
+        ],
+        "callee": null,
+        "call": null
+      }
+    },
+    {
+      "root": {
+        "address": "0x4c86f5",
+        "next": "0x4c86fb",
+        "family": "ActionPoint",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [eax + 0x2c8]",
+        "function_hint": "0x4c8620",
+        "states": 44,
+        "limited": false,
+        "argument_contexts": 0,
+        "limited_argument_contexts": false
+      },
+      "field": "controlBounds",
+      "read": {
+        "address": "0x4c870f",
+        "offset": 56,
+        "bytes": 2,
+        "instruction": "mov cx, word ptr [esi + 0x38]",
+        "trace": [
+          "4c86fb: mov esi, eax",
+          "4c86fd: xor edi, edi",
+          "4c86ff: cmp esi, edi",
+          "4c8701: je 0x4c8a37",
+          "4c8707: xor eax, eax",
+          "4c8709: xor ecx, ecx",
+          "4c870b: mov ax, word ptr [esi + 0x3c]"
+        ],
+        "callee": null,
+        "call": null
+      }
+    },
+    {
+      "root": {
+        "address": "0x4c86f5",
+        "next": "0x4c86fb",
+        "family": "ActionPoint",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [eax + 0x2c8]",
+        "function_hint": "0x4c8620",
+        "states": 44,
+        "limited": false,
+        "argument_contexts": 0,
+        "limited_argument_contexts": false
+      },
+      "field": "controlBounds",
+      "read": {
+        "address": "0x4c871a",
+        "offset": 58,
+        "bytes": 2,
+        "instruction": "mov dx, word ptr [esi + 0x3a]",
+        "trace": [
+          "4c86fb: mov esi, eax",
+          "4c86fd: xor edi, edi",
+          "4c86ff: cmp esi, edi",
+          "4c8701: je 0x4c8a37",
+          "4c8707: xor eax, eax",
+          "4c8709: xor ecx, ecx",
+          "4c870b: mov ax, word ptr [esi + 0x3c]",
+          "4c870f: mov cx, word ptr [esi + 0x38]",
+          "4c8713: add eax, ecx",
+          "4c8715: cdq ",
+          "4c8716: sub eax, edx",
+          "4c8718: xor edx, edx"
+        ],
+        "callee": null,
+        "call": null
+      }
+    },
+    {
+      "root": {
+        "address": "0x4c86f5",
+        "next": "0x4c86fb",
+        "family": "ActionPoint",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [eax + 0x2c8]",
+        "function_hint": "0x4c8620",
+        "states": 44,
+        "limited": false,
+        "argument_contexts": 0,
+        "limited_argument_contexts": false
+      },
+      "field": "controlBounds",
+      "read": {
+        "address": "0x4c8722",
+        "offset": 62,
+        "bytes": 2,
+        "instruction": "mov ax, word ptr [esi + 0x3e]",
+        "trace": [
+          "4c8701: je 0x4c8a37",
+          "4c8707: xor eax, eax",
+          "4c8709: xor ecx, ecx",
+          "4c870b: mov ax, word ptr [esi + 0x3c]",
+          "4c870f: mov cx, word ptr [esi + 0x38]",
+          "4c8713: add eax, ecx",
+          "4c8715: cdq ",
+          "4c8716: sub eax, edx",
+          "4c8718: xor edx, edx",
+          "4c871a: mov dx, word ptr [esi + 0x3a]",
+          "4c871e: mov ecx, eax",
+          "4c8720: xor eax, eax"
+        ],
+        "callee": null,
+        "call": null
+      }
+    },
+    {
+      "root": {
+        "address": "0x4c87af",
+        "next": "0x4c87b5",
+        "family": "ActionPoint",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [edx + 0x2c8]",
+        "function_hint": "0x4c8620",
+        "states": 56,
+        "limited": false,
+        "argument_contexts": 0,
+        "limited_argument_contexts": false
+      },
+      "field": "controlBounds",
+      "read": {
+        "address": "0x4c87c3",
+        "offset": 60,
+        "bytes": 2,
+        "instruction": "mov ax, word ptr [esi + 0x3c]",
+        "trace": [
+          "4c87b5: mov esi, eax",
+          "4c87b7: test esi, esi",
+          "4c87b9: je 0x4c8a37",
+          "4c87bf: xor eax, eax",
+          "4c87c1: xor ecx, ecx"
+        ],
+        "callee": null,
+        "call": null
+      }
+    },
+    {
+      "root": {
+        "address": "0x4c87af",
+        "next": "0x4c87b5",
+        "family": "ActionPoint",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [edx + 0x2c8]",
+        "function_hint": "0x4c8620",
+        "states": 56,
+        "limited": false,
+        "argument_contexts": 0,
+        "limited_argument_contexts": false
+      },
+      "field": "controlBounds",
+      "read": {
+        "address": "0x4c87c7",
+        "offset": 56,
+        "bytes": 2,
+        "instruction": "mov cx, word ptr [esi + 0x38]",
+        "trace": [
+          "4c87b5: mov esi, eax",
+          "4c87b7: test esi, esi",
+          "4c87b9: je 0x4c8a37",
+          "4c87bf: xor eax, eax",
+          "4c87c1: xor ecx, ecx",
+          "4c87c3: mov ax, word ptr [esi + 0x3c]"
+        ],
+        "callee": null,
+        "call": null
+      }
+    },
+    {
+      "root": {
+        "address": "0x4c87af",
+        "next": "0x4c87b5",
+        "family": "ActionPoint",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [edx + 0x2c8]",
+        "function_hint": "0x4c8620",
+        "states": 56,
+        "limited": false,
+        "argument_contexts": 0,
+        "limited_argument_contexts": false
+      },
+      "field": "controlBounds",
+      "read": {
+        "address": "0x4c87d2",
+        "offset": 58,
+        "bytes": 2,
+        "instruction": "mov dx, word ptr [esi + 0x3a]",
+        "trace": [
+          "4c87b5: mov esi, eax",
+          "4c87b7: test esi, esi",
+          "4c87b9: je 0x4c8a37",
+          "4c87bf: xor eax, eax",
+          "4c87c1: xor ecx, ecx",
+          "4c87c3: mov ax, word ptr [esi + 0x3c]",
+          "4c87c7: mov cx, word ptr [esi + 0x38]",
+          "4c87cb: add eax, ecx",
+          "4c87cd: cdq ",
+          "4c87ce: sub eax, edx",
+          "4c87d0: xor edx, edx"
+        ],
+        "callee": null,
+        "call": null
+      }
+    },
+    {
+      "root": {
+        "address": "0x4c87af",
+        "next": "0x4c87b5",
+        "family": "ActionPoint",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [edx + 0x2c8]",
+        "function_hint": "0x4c8620",
+        "states": 56,
+        "limited": false,
+        "argument_contexts": 0,
+        "limited_argument_contexts": false
+      },
+      "field": "controlBounds",
+      "read": {
+        "address": "0x4c87da",
+        "offset": 62,
+        "bytes": 2,
+        "instruction": "mov ax, word ptr [esi + 0x3e]",
+        "trace": [
+          "4c87b9: je 0x4c8a37",
+          "4c87bf: xor eax, eax",
+          "4c87c1: xor ecx, ecx",
+          "4c87c3: mov ax, word ptr [esi + 0x3c]",
+          "4c87c7: mov cx, word ptr [esi + 0x38]",
+          "4c87cb: add eax, ecx",
+          "4c87cd: cdq ",
+          "4c87ce: sub eax, edx",
+          "4c87d0: xor edx, edx",
+          "4c87d2: mov dx, word ptr [esi + 0x3a]",
+          "4c87d6: mov ecx, eax",
+          "4c87d8: xor eax, eax"
+        ],
+        "callee": null,
+        "call": null
+      }
+    },
+    {
+      "root": {
+        "address": "0x4c88ac",
+        "next": "0x4c88b2",
+        "family": "ActionPoint",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [edx + 0x2c8]",
+        "function_hint": "0x4c8620",
+        "states": 34,
+        "limited": false,
+        "argument_contexts": 0,
+        "limited_argument_contexts": false
+      },
+      "field": "controlBounds",
+      "read": {
+        "address": "0x4c88c0",
+        "offset": 60,
+        "bytes": 2,
+        "instruction": "mov ax, word ptr [ecx + 0x3c]",
+        "trace": [
+          "4c88b2: mov ecx, eax",
+          "4c88b4: test ecx, ecx",
+          "4c88b6: je 0x4c8a37",
+          "4c88bc: xor eax, eax",
+          "4c88be: xor edx, edx"
+        ],
+        "callee": null,
+        "call": null
+      }
+    },
+    {
+      "root": {
+        "address": "0x4c88ac",
+        "next": "0x4c88b2",
+        "family": "ActionPoint",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [edx + 0x2c8]",
+        "function_hint": "0x4c8620",
+        "states": 34,
+        "limited": false,
+        "argument_contexts": 0,
+        "limited_argument_contexts": false
+      },
+      "field": "controlBounds",
+      "read": {
+        "address": "0x4c88c4",
+        "offset": 56,
+        "bytes": 2,
+        "instruction": "mov dx, word ptr [ecx + 0x38]",
+        "trace": [
+          "4c88b2: mov ecx, eax",
+          "4c88b4: test ecx, ecx",
+          "4c88b6: je 0x4c8a37",
+          "4c88bc: xor eax, eax",
+          "4c88be: xor edx, edx",
+          "4c88c0: mov ax, word ptr [ecx + 0x3c]"
+        ],
+        "callee": null,
+        "call": null
+      }
+    },
+    {
+      "root": {
+        "address": "0x4c88ac",
+        "next": "0x4c88b2",
+        "family": "ActionPoint",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [edx + 0x2c8]",
+        "function_hint": "0x4c8620",
+        "states": 34,
+        "limited": false,
+        "argument_contexts": 0,
+        "limited_argument_contexts": false
+      },
+      "field": "controlBounds",
+      "read": {
+        "address": "0x4c88cf",
+        "offset": 58,
+        "bytes": 2,
+        "instruction": "mov dx, word ptr [ecx + 0x3a]",
+        "trace": [
+          "4c88b2: mov ecx, eax",
+          "4c88b4: test ecx, ecx",
+          "4c88b6: je 0x4c8a37",
+          "4c88bc: xor eax, eax",
+          "4c88be: xor edx, edx",
+          "4c88c0: mov ax, word ptr [ecx + 0x3c]",
+          "4c88c4: mov dx, word ptr [ecx + 0x38]",
+          "4c88c8: add eax, edx",
+          "4c88ca: cdq ",
+          "4c88cb: sub eax, edx",
+          "4c88cd: xor edx, edx"
+        ],
+        "callee": null,
+        "call": null
+      }
+    },
+    {
+      "root": {
+        "address": "0x4c88ac",
+        "next": "0x4c88b2",
+        "family": "ActionPoint",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [edx + 0x2c8]",
+        "function_hint": "0x4c8620",
+        "states": 34,
+        "limited": false,
+        "argument_contexts": 0,
+        "limited_argument_contexts": false
+      },
+      "field": "controlBounds",
+      "read": {
+        "address": "0x4c88d7",
+        "offset": 62,
+        "bytes": 2,
+        "instruction": "mov ax, word ptr [ecx + 0x3e]",
+        "trace": [
+          "4c88b6: je 0x4c8a37",
+          "4c88bc: xor eax, eax",
+          "4c88be: xor edx, edx",
+          "4c88c0: mov ax, word ptr [ecx + 0x3c]",
+          "4c88c4: mov dx, word ptr [ecx + 0x38]",
+          "4c88c8: add eax, edx",
+          "4c88ca: cdq ",
+          "4c88cb: sub eax, edx",
+          "4c88cd: xor edx, edx",
+          "4c88cf: mov dx, word ptr [ecx + 0x3a]",
+          "4c88d3: mov esi, eax",
+          "4c88d5: xor eax, eax"
+        ],
+        "callee": null,
+        "call": null
+      }
+    },
+    {
+      "root": {
+        "address": "0x5100fc",
+        "next": "0x510102",
+        "family": "ActionPoint",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [edx + 0x2c8]",
+        "function_hint": "0x5100b0",
+        "states": 24,
+        "limited": false,
+        "argument_contexts": 0,
+        "limited_argument_contexts": false
+      },
+      "field": "controlBounds",
+      "read": {
+        "address": "0x51010a",
+        "offset": 60,
+        "bytes": 2,
+        "instruction": "mov bx, word ptr [eax + 0x3c]",
+        "trace": [
+          "510102: cmp eax, ebx",
+          "510104: je 0x5101a9"
+        ],
+        "callee": null,
+        "call": null
+      }
+    },
+    {
+      "root": {
+        "address": "0x5100fc",
+        "next": "0x510102",
+        "family": "ActionPoint",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [edx + 0x2c8]",
+        "function_hint": "0x5100b0",
+        "states": 24,
+        "limited": false,
+        "argument_contexts": 0,
+        "limited_argument_contexts": false
+      },
+      "field": "controlBounds",
+      "read": {
+        "address": "0x510110",
+        "offset": 62,
+        "bytes": 2,
+        "instruction": "mov dx, word ptr [eax + 0x3e]",
+        "trace": [
+          "510102: cmp eax, ebx",
+          "510104: je 0x5101a9",
+          "51010a: mov bx, word ptr [eax + 0x3c]",
+          "51010e: xor edx, edx"
+        ],
+        "callee": null,
+        "call": null
+      }
+    },
+    {
+      "root": {
+        "address": "0x5100fc",
+        "next": "0x510102",
+        "family": "ActionPoint",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [edx + 0x2c8]",
+        "function_hint": "0x5100b0",
+        "states": 24,
+        "limited": false,
+        "argument_contexts": 0,
+        "limited_argument_contexts": false
+      },
+      "field": "controlBounds",
+      "read": {
+        "address": "0x510116",
+        "offset": 58,
+        "bytes": 2,
+        "instruction": "mov bp, word ptr [eax + 0x3a]",
+        "trace": [
+          "510102: cmp eax, ebx",
+          "510104: je 0x5101a9",
+          "51010a: mov bx, word ptr [eax + 0x3c]",
+          "51010e: xor edx, edx",
+          "510110: mov dx, word ptr [eax + 0x3e]",
+          "510114: xor ebp, ebp"
+        ],
+        "callee": null,
+        "call": null
+      }
+    },
+    {
+      "root": {
+        "address": "0x5100fc",
+        "next": "0x510102",
+        "family": "ActionPoint",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [edx + 0x2c8]",
+        "function_hint": "0x5100b0",
+        "states": 24,
+        "limited": false,
+        "argument_contexts": 0,
+        "limited_argument_contexts": false
+      },
+      "field": "controlBounds",
+      "read": {
+        "address": "0x510126",
+        "offset": 56,
+        "bytes": 2,
+        "instruction": "mov si, word ptr [eax + 0x38]",
+        "trace": [
+          "510102: cmp eax, ebx",
+          "510104: je 0x5101a9",
+          "51010a: mov bx, word ptr [eax + 0x3c]",
+          "51010e: xor edx, edx",
+          "510110: mov dx, word ptr [eax + 0x3e]",
+          "510114: xor ebp, ebp",
+          "510116: mov bp, word ptr [eax + 0x3a]",
+          "51011a: shl esi, 4",
+          "51011d: lea ecx, [esi + edi + 0x7245]",
+          "510124: xor esi, esi"
+        ],
+        "callee": null,
+        "call": null
+      }
+    },
+    {
+      "root": {
+        "address": "0x519263",
+        "next": "0x519269",
+        "family": "ActionPoint",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [edx + 0x2c8]",
+        "function_hint": "0x518ad0",
+        "states": 36,
+        "limited": false,
+        "argument_contexts": 0,
+        "limited_argument_contexts": false
+      },
+      "field": "controlBounds",
+      "read": {
+        "address": "0x519275",
+        "offset": 56,
+        "bytes": 2,
+        "instruction": "mov bp, word ptr [eax + 0x38]",
+        "trace": [
+          "519269: test eax, eax",
+          "51926b: je 0x51988c",
+          "519271: xor ebp, ebp",
+          "519273: xor ecx, ecx"
+        ],
+        "callee": null,
+        "call": null
+      }
+    },
+    {
+      "root": {
+        "address": "0x519263",
+        "next": "0x519269",
+        "family": "ActionPoint",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [edx + 0x2c8]",
+        "function_hint": "0x518ad0",
+        "states": 36,
+        "limited": false,
+        "argument_contexts": 0,
+        "limited_argument_contexts": false
+      },
+      "field": "controlBounds",
+      "read": {
+        "address": "0x519279",
+        "offset": 58,
+        "bytes": 2,
+        "instruction": "mov cx, word ptr [eax + 0x3a]",
+        "trace": [
+          "519269: test eax, eax",
+          "51926b: je 0x51988c",
+          "519271: xor ebp, ebp",
+          "519273: xor ecx, ecx",
+          "519275: mov bp, word ptr [eax + 0x38]"
+        ],
+        "callee": null,
+        "call": null
+      }
+    },
+    {
+      "root": {
+        "address": "0x519263",
+        "next": "0x519269",
+        "family": "ActionPoint",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [edx + 0x2c8]",
+        "function_hint": "0x518ad0",
+        "states": 36,
+        "limited": false,
+        "argument_contexts": 0,
+        "limited_argument_contexts": false
+      },
+      "field": "controlBounds",
+      "read": {
+        "address": "0x519281",
+        "offset": 62,
+        "bytes": 2,
+        "instruction": "mov dx, word ptr [eax + 0x3e]",
+        "trace": [
+          "519269: test eax, eax",
+          "51926b: je 0x51988c",
+          "519271: xor ebp, ebp",
+          "519273: xor ecx, ecx",
+          "519275: mov bp, word ptr [eax + 0x38]",
+          "519279: mov cx, word ptr [eax + 0x3a]",
+          "51927d: xor edx, edx",
+          "51927f: xor edi, edi"
+        ],
+        "callee": null,
+        "call": null
+      }
+    },
+    {
+      "root": {
+        "address": "0x519263",
+        "next": "0x519269",
+        "family": "ActionPoint",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [edx + 0x2c8]",
+        "function_hint": "0x518ad0",
+        "states": 36,
+        "limited": false,
+        "argument_contexts": 0,
+        "limited_argument_contexts": false
+      },
+      "field": "controlBounds",
+      "read": {
+        "address": "0x519285",
+        "offset": 60,
+        "bytes": 2,
+        "instruction": "mov di, word ptr [eax + 0x3c]",
+        "trace": [
+          "519269: test eax, eax",
+          "51926b: je 0x51988c",
+          "519271: xor ebp, ebp",
+          "519273: xor ecx, ecx",
+          "519275: mov bp, word ptr [eax + 0x38]",
+          "519279: mov cx, word ptr [eax + 0x3a]",
+          "51927d: xor edx, edx",
+          "51927f: xor edi, edi",
+          "519281: mov dx, word ptr [eax + 0x3e]"
+        ],
+        "callee": null,
+        "call": null
+      }
+    }
+  ]
+}

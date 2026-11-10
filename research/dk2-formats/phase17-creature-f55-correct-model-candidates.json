@@ -1,0 +1,77 @@
+{
+  "program": "..\\..\\Dungeon Keeper 2\\Data\\editor\\DK2 Editor pro.exe",
+  "program_sha256": "989c45df779bccfc9a9e509b2ad0224a9bd269629f74792adc0320fa4b99fb09",
+  "text_origin": "0x401000",
+  "text_bytes": 1060864,
+  "offsets": [
+    "0x16ae"
+  ],
+  "warning": "Search all PE .text, including code absent from the saved function map.\n\nLinear disassembly and displacement-anchored decodes are only candidates.\nAnchored results can start inside another instruction or embedded data. Verify\neach candidate against a function body and object identity before using it.\n",
+  "candidates": [
+    {
+      "address": "0x41db87",
+      "instruction": "mov byte ptr [esi + 0x16ae], 1",
+      "displacement": "0x16ae",
+      "memory_bytes": 1,
+      "base": "esi",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear",
+        "displacement-anchored"
+      ]
+    },
+    {
+      "address": "0x43f781",
+      "instruction": "mov al, byte ptr [eax + 0x16ae]",
+      "displacement": "0x16ae",
+      "memory_bytes": 1,
+      "base": "eax",
+      "index": null,
+      "access": 1,
+      "sources": [
+        "linear",
+        "displacement-anchored"
+      ]
+    },
+    {
+      "address": "0x4415d2",
+      "instruction": "mov byte ptr [edx + 0x16ae], al",
+      "displacement": "0x16ae",
+      "memory_bytes": 1,
+      "base": "edx",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear",
+        "displacement-anchored"
+      ]
+    },
+    {
+      "address": "0x4a0e6a",
+      "instruction": "mov byte ptr [ebp + 0x16ae], dl",
+      "displacement": "0x16ae",
+      "memory_bytes": 1,
+      "base": "ebp",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear",
+        "displacement-anchored"
+      ]
+    },
+    {
+      "address": "0x4a841e",
+      "instruction": "mov al, byte ptr [ebx + 0x16ae]",
+      "displacement": "0x16ae",
+      "memory_bytes": 1,
+      "base": "ebx",
+      "index": null,
+      "access": 1,
+      "sources": [
+        "linear",
+        "displacement-anchored"
+      ]
+    }
+  ]
+}

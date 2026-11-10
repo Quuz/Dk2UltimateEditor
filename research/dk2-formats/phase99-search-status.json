@@ -1,0 +1,78 @@
+{
+  "phase": 99,
+  "date": "2026-10-28",
+  "status": "Published and validated: Terrain flags→original cache/CMap NAV producer→whole native movement",
+  "published_phase": 99,
+  "previous_goal_turn_classification": "progress",
+  "native_cases": 20,
+  "raw_terrain_loader_compositions": 8,
+  "package_components": 78,
+  "evidence": [
+    {
+      "file": "navigation-map-semantics.json",
+      "sha256": "fead98a204c1407096375084204ae9c9b3caaedb04f3841d5d0e9c2aa72a578f"
+    },
+    {
+      "file": "NAVIGATION_MAP_RU.md",
+      "sha256": "dc5ca5d6e90dd32e363e7720f2123c8dd1f184aa80032a466fb6c6293b9f60a7"
+    },
+    {
+      "file": "phase99-validation.json",
+      "sha256": "3001ba6d8d50dcdf99ad1e990ad2da3264a4551972dc11bfb88dccb29f100463"
+    },
+    {
+      "file": "phase99-navigation-map-emulations.json",
+      "sha256": "d41d5f0029145f7e42cc28d71caea6e05148564916caf453121464a34c24dc07"
+    },
+    {
+      "file": "phase99-primary-manifest.json",
+      "sha256": "aae9001bc42c19adce028980c8c4656ce2e36fcc483a2556e1c174eeebe589f8"
+    },
+    {
+      "file": "phase99-terrain-flags-api-validation.json",
+      "sha256": "b2c5495b08316e50ae565c51e3b517e507f1c59aba471e2bf7f643974dae933f"
+    },
+    {
+      "file": "READINESS_RU.md",
+      "sha256": "cc3350035a48dac3f1831a5e0289a75455a53a7dae439a6242551446cc072d60"
+    },
+    {
+      "file": "INTEGRATION_RU.md",
+      "sha256": "aaa4daffd31333eece7710d27fa0b43666b9cffda95c281a4c62472002ac29f9"
+    },
+    {
+      "file": "editor-format-package.json",
+      "sha256": "35d0ce24c3be5ad138c442b2f989a0267ae1430f94a4f8d760ca5d9df07db550"
+    }
+  ],
+  "findings": [
+    "Fulloriginal44FC40 loading-mode placement writes NAV through4D1970 and native movement reads it throughoriginalcallback.",
+    "Terrain rawDWORD190→mid248→runtime17B; priority SOLID1→8,WATER80h→1,LAVA100h→3,default0; wholebyteassignment.",
+    "Water/lava permission Creature686/10/20 changes the observed controller step after realTerrain placement.",
+    "Original455D40 rebuilds1024-byte cache using realWorld enumeration/count/getter;no vtable or code patch.",
+    "19836 exactcontainer API checks on3306 records/82Terrain sources preserve all otherbits/bytes.",
+    "Two measuring-fixture diagnostics excluded: clobberedcallbackEAX and missing expectedWorld9F6 Sessiontick assignment."
+  ],
+  "next_action": "Return to remaining unknown KWD consumers instead of extending known movement fixture permutations. Inspect original pickup/ability getter virtual interfaces and older-profile dataflow for CreaturePriority6EB/rawF55 andJump75C/rawEE0; review unclosed summarylimits fromphase73/85. If no typed evidence,retainunknown and pursue Traps98/raw204,Doors99/raw236,Objects106/raw34C,Terrain183/1B5 and scalar113/114 via actual structures/callers. Normal4D1930/4CE770graph rebuild remains a documented separate navigation gap,not a prerequisite to editing the proven flags.",
+  "readiness": {
+    "overall_estimate_percent": 75,
+    "range": [
+      70,
+      80
+    ],
+    "meaning": "Expert estimate,not field count or correctnessprobability"
+  },
+  "pending_native_jobs": [],
+  "goal_achieved": false,
+  "significant_unknowns_remain": true,
+  "limitations": [
+    "Exact supplied DX only;not other-version or live-session proof.",
+    "Loading-mode CMap path,unowned/no rooms,no matching localowner or terrainlight;normal4D1930 graph rebuild remains static.",
+    "RawTerrain initializer/converter/loader composed in8 cases;no sourcefile parser or complete maploading replay.",
+    "Creature permissions use prepared runtime definitions asphase98;new fullrawCreatureloader→terrain→movement not composed.",
+    "Bridge placement,Door overlays,water/lava damage,fullA*,forces,physics andrenderer not executed.",
+    "ControllerXY checked;new actualActorXY application not claimed.",
+    "No Priority/Jump gameplay link established by this navigation work;their known storage and unresolved semantics remain.",
+    "Objects34C,Traps204,Doors236,Terrain198/224,scalar98/113/114 andremaining15-family unknowns keepgoalopen."
+  ]
+}

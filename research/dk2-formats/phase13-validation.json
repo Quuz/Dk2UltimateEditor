@@ -1,0 +1,46 @@
+{
+  "synthetic_cases_passed": 31,
+  "actual_shotdata1_patch_roundtrips": 48,
+  "evidence_excerpts_verified": 5,
+  "evidence_instructions_verified": 138,
+  "source_evidence_sha256": {
+    "phase13-trap-shot-create-assembly.txt": "6022d2975f84fac168305f83d9cb038268dfd341096b77d51084455dc36dc0eb",
+    "phase13-trap-fire-assembly.txt": "004eb101c007f7375ea6f50b6ce7fc22eb63ba34a93b7072d10ce6e618734bb3",
+    "phase13-shot-target-vector.txt": "50516ae18afb32376c9a91fb105889d7c41c8fb07c7c674617fae17d6e12411e",
+    "phase12-trap-loader-assembly.txt": "35d8013343f0282797ac2d0e6bb881952123ae7a6dcb22c4f5f14be24493848f",
+    "phase12-trap-tick-assembly.txt": "122770013942644560a07bfea31a0a45e71b61d06ae4c0ec643c5174d095fa14",
+    "phase13-trap-flags-dump.txt": "d8860b3aead16b4724abc3da22ad66dca2c6f0e3ba437905b3e02bf0b4380a22",
+    "game-traps-runtime.txt": "eefa6340029485b9545ef9875a62959542aeb7ebec3ca31348edcf8cfcd93521"
+  },
+  "main_input_files_hashes_unchanged": 17,
+  "executable_hashes_unchanged": {
+    "Dungeon Keeper 2/DKII-DX.exe": "d7a8b854e4e4f02709eba271bead6fe2307dd6e332b5a96e70857e5b0e19fb8a",
+    "Dungeon Keeper 2/Data/editor/DK2 Editor pro.exe": "989c45df779bccfc9a9e509b2ad0224a9bd269629f74792adc0320fa4b99fb09"
+  },
+  "scenario": {
+    "ticks_per_second": 20,
+    "current_tick": 1000,
+    "target_tag": 1,
+    "instance_flags": 16,
+    "note": "Explicit audit scenario, not values inferred from game runtime or maps; all post-creation assignments are conditional."
+  },
+  "package_components": 23,
+  "package_component_hashes_match": true,
+  "trap_fire_schema_sha256": "778740fb162ba0cd1b2a619cc7c18f42bed26b5ef3599e0979aec0f109c2c223",
+  "script_sha256": {
+    "build_trap_fire_semantics.py": "150339a9f1105f04f193865a19d7f5a074fc6091777e0fb323c7923705bf2d78",
+    "native_trap_fire.py": "5eb9af9e3b7fe40fe60312310592408f1466a2738febad13cf283c18b6ff980b",
+    "audit_trap_fire.py": "733efd6d98d54011275dbd8fd906887c29cd3e6f430101612e6e0e4c361b2195",
+    "build_format_package.py": "c282eccda19aa71f40ad291cc26de2ea3cf9e46bc291d0f1c085aee93f281bcf"
+  },
+  "trig_view_sha256": {
+    "sine": "84dfe6902e4c8947b75f4ff0a54d82fced478dd9682255eaa973a88cbf76cf3c",
+    "cosine": "688e629369dc1c5379bae04b5e11100a4fd0aabd89745f2c0b5b6309ce0261c9"
+  },
+  "targeted_corpus_files": 80,
+  "targeted_corpus_records": 1261,
+  "duration_narrowing_at_scenario_tps": 804,
+  "all_heading_origin_projections": 18432,
+  "original_offsets_with_multiply_wraps": 0,
+  "limitation": "Static arithmetic and selected assignments. Threat countdown independence is a local tick observation, not a global perpetual-threat claim. No modified file executed."
+}

@@ -1,0 +1,2522 @@
+{
+  "scope": "New Terrain getter-rooted all-PE search, including forwarded arguments.\n\nDerived from the bounded phase72 engine. Tracks constant aliases and ESP/EBP\nspills through up to three direct call levels. Virtual slot70 is a lead only;\nevery resulting unknown-field match needs independent Terrain identity proof.\nDoes not repeat the earlier displacement-only and adjusted-pointer inventories.\n",
+  "program_sha256": "d7a8b854e4e4f02709eba271bead6fe2307dd6e332b5a96e70857e5b0e19fb8a",
+  "decoded_instructions": 799810,
+  "producer_roots": [
+    {
+      "address": "0x40e33c",
+      "next": "0x40e33f",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x40e0d0",
+      "states": 2,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x42a11c",
+      "next": "0x42a11f",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x428a30",
+      "states": 2,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x42d45d",
+      "next": "0x42d460",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x42d1f0",
+      "states": 4,
+      "limited": false,
+      "argument_contexts": 2,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x43c8ca",
+      "next": "0x43c8cd",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [eax + 0x70]",
+      "function_hint": "0x43c260",
+      "states": 2,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x43ce68",
+      "next": "0x43ce6b",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [eax + 0x70]",
+      "function_hint": "0x43c260",
+      "states": 2,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x43d213",
+      "next": "0x43d216",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [esi + 0x70]",
+      "function_hint": "0x43c260",
+      "states": 96,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x43d810",
+      "next": "0x43d813",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x43d770",
+      "states": 12,
+      "limited": false,
+      "argument_contexts": 1,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x43e417",
+      "next": "0x43e41a",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x43e320",
+      "states": 38,
+      "limited": false,
+      "argument_contexts": 2,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x43e427",
+      "next": "0x43e42a",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [eax + 0x70]",
+      "function_hint": "0x43e320",
+      "states": 38,
+      "limited": false,
+      "argument_contexts": 2,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x43e9f6",
+      "next": "0x43e9f9",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [eax + 0x70]",
+      "function_hint": "0x43e860",
+      "states": 24,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x43ed19",
+      "next": "0x43ed1c",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x43e860",
+      "states": 30,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x43edb7",
+      "next": "0x43edba",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [eax + 0x70]",
+      "function_hint": "0x43e860",
+      "states": 30,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x43ee69",
+      "next": "0x43ee6c",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [eax + 0x70]",
+      "function_hint": "0x43e860",
+      "states": 63,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x43ef77",
+      "next": "0x43ef7a",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [eax + 0x70]",
+      "function_hint": "0x43e860",
+      "states": 63,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x43f077",
+      "next": "0x43f07a",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [eax + 0x70]",
+      "function_hint": "0x43e860",
+      "states": 63,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x43f561",
+      "next": "0x43f564",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x43e860",
+      "states": 55,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x43f61d",
+      "next": "0x43f620",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [eax + 0x70]",
+      "function_hint": "0x43e860",
+      "states": 55,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x43f6e1",
+      "next": "0x43f6e4",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [eax + 0x70]",
+      "function_hint": "0x43e860",
+      "states": 111,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x43f85f",
+      "next": "0x43f862",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [eax + 0x70]",
+      "function_hint": "0x43e860",
+      "states": 111,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x43f9cf",
+      "next": "0x43f9d2",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [eax + 0x70]",
+      "function_hint": "0x43e860",
+      "states": 111,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x4402ae",
+      "next": "0x4402b1",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [eax + 0x70]",
+      "function_hint": "0x43e860",
+      "states": 3,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x4413bd",
+      "next": "0x4413c0",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [eax + 0x70]",
+      "function_hint": "0x441250",
+      "states": 1,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x442d35",
+      "next": "0x442d38",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x441cd0",
+      "states": 1,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x443eec",
+      "next": "0x443eef",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x443910",
+      "states": 7,
+      "limited": false,
+      "argument_contexts": 1,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x4458ea",
+      "next": "0x4458ed",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [eax + 0x70]",
+      "function_hint": "0x444f10",
+      "states": 7,
+      "limited": false,
+      "argument_contexts": 1,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x44fdac",
+      "next": "0x44fdaf",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [eax + 0x70]",
+      "function_hint": "0x44fc40",
+      "states": 4,
+      "limited": false,
+      "argument_contexts": 1,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x452ca0",
+      "next": "0x452ca3",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x452bd0",
+      "states": 20,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x452e4e",
+      "next": "0x452e51",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x452dc0",
+      "states": 3,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x455d7b",
+      "next": "0x455d7e",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [eax + 0x70]",
+      "function_hint": "0x455d40",
+      "states": 6,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x48820a",
+      "next": "0x48820d",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x487c70",
+      "states": 17,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x4897ba",
+      "next": "0x4897bd",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [ebx + 0x70]",
+      "function_hint": "0x4888c0",
+      "states": 15,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x48b57e",
+      "next": "0x48b581",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [eax + 0x70]",
+      "function_hint": "0x48b500",
+      "states": 2,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x48b59b",
+      "next": "0x48b59e",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x48b500",
+      "states": 2,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x49b39d",
+      "next": "0x49b3a0",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x49b1c0",
+      "states": 1,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x4a32dd",
+      "next": "0x4a32e0",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [eax + 0x70]",
+      "function_hint": "0x4a10e0",
+      "states": 1,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x4b0fda",
+      "next": "0x4b0fdd",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x4b0f20",
+      "states": 1,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x4c5d43",
+      "next": "0x4c5d46",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x4c5c30",
+      "states": 1,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x4c5e7c",
+      "next": "0x4c5e7f",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x4c5db0",
+      "states": 37,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x4d9de3",
+      "next": "0x4d9de6",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x4d9690",
+      "states": 2,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x4d9fef",
+      "next": "0x4d9ff2",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x4d9690",
+      "states": 1,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x4da0bf",
+      "next": "0x4da0c2",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [eax + 0x70]",
+      "function_hint": "0x4d9690",
+      "states": 16,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x4e2da0",
+      "next": "0x4e2da3",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x4e2d40",
+      "states": 1,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x4e360e",
+      "next": "0x4e3611",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x4e35c0",
+      "states": 32,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x4e4bc4",
+      "next": "0x4e4bc7",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [eax + 0x70]",
+      "function_hint": "0x4e4b00",
+      "states": 13,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x4e5343",
+      "next": "0x4e5346",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x4e5300",
+      "states": 7,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x4e5371",
+      "next": "0x4e5374",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x4e5300",
+      "states": 5,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x4e6285",
+      "next": "0x4e6288",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x4e6220",
+      "states": 6,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x4e6c2d",
+      "next": "0x4e6c30",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x4e6c00",
+      "states": 8,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x4e6c74",
+      "next": "0x4e6c77",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x4e6c60",
+      "states": 3,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x4e928c",
+      "next": "0x4e928f",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [eax + 0x70]",
+      "function_hint": "0x4e9130",
+      "states": 6,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x4e92b6",
+      "next": "0x4e92b9",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [eax + 0x70]",
+      "function_hint": "0x4e9130",
+      "states": 11,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x4ebda5",
+      "next": "0x4ebda8",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [eax + 0x70]",
+      "function_hint": "0x4eacc0",
+      "states": 3,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x4ec627",
+      "next": "0x4ec62a",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x4ec5a0",
+      "states": 5,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x4ec7bf",
+      "next": "0x4ec7c2",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x4ec650",
+      "states": 4,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x50946f",
+      "next": "0x509472",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x508a10",
+      "states": 2,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x50949a",
+      "next": "0x50949d",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x508a10",
+      "states": 2,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x50be14",
+      "next": "0x50be17",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x50b5b0",
+      "states": 1,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x50be28",
+      "next": "0x50be2b",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x50b5b0",
+      "states": 1,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x50c931",
+      "next": "0x50c934",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x50c800",
+      "states": 58,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x51949b",
+      "next": "0x51949e",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x518ad0",
+      "states": 14,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x51eb83",
+      "next": "0x51eb86",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [eax + 0x70]",
+      "function_hint": "0x51e2c0",
+      "states": 4,
+      "limited": false,
+      "argument_contexts": 2,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x51ebf7",
+      "next": "0x51ebfa",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x51e2c0",
+      "states": 13,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x51ecb5",
+      "next": "0x51ecb8",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x51e2c0",
+      "states": 11,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x562fb8",
+      "next": "0x562fbb",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [eax + 0x70]",
+      "function_hint": "0x562c30",
+      "states": 2,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x563a4a",
+      "next": "0x563a4d",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [eax + 0x70]",
+      "function_hint": "0x563a20",
+      "states": 2,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x59863c",
+      "next": "0x59863f",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x598370",
+      "states": 6,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x5b49f8",
+      "next": "0x5b49fb",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [ecx + 0x70]",
+      "function_hint": "0x5b4390",
+      "states": 12,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x61769a",
+      "next": "0x61769d",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [eax + 0x70]",
+      "function_hint": "0x617510",
+      "states": 2,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x61a68e",
+      "next": "0x61a691",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edi + 0x70]",
+      "function_hint": "0x61a500",
+      "states": 1,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x61b8b3",
+      "next": "0x61b8b6",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [ecx + 0x70]",
+      "function_hint": "0x61b5e0",
+      "states": 1,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x61b8c3",
+      "next": "0x61b8c6",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x61b5e0",
+      "states": 2,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x61b8d7",
+      "next": "0x61b8da",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [ecx + 0x70]",
+      "function_hint": "0x61b5e0",
+      "states": 1,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x61b8e4",
+      "next": "0x61b8e7",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x61b5e0",
+      "states": 1,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x61b8ff",
+      "next": "0x61b902",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x61b5e0",
+      "states": 1,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x61b90f",
+      "next": "0x61b912",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [ecx + 0x70]",
+      "function_hint": "0x61b5e0",
+      "states": 1,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x61b923",
+      "next": "0x61b926",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x61b5e0",
+      "states": 1,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x61b934",
+      "next": "0x61b937",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x61b5e0",
+      "states": 1,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x61b953",
+      "next": "0x61b956",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [ecx + 0x70]",
+      "function_hint": "0x61b5e0",
+      "states": 1,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x61b967",
+      "next": "0x61b96a",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [ecx + 0x70]",
+      "function_hint": "0x61b5e0",
+      "states": 1,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x61b97b",
+      "next": "0x61b97e",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [ecx + 0x70]",
+      "function_hint": "0x61b5e0",
+      "states": 1,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x61b98c",
+      "next": "0x61b98f",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [ecx + 0x70]",
+      "function_hint": "0x61b5e0",
+      "states": 1,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x61b9a7",
+      "next": "0x61b9aa",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x61b5e0",
+      "states": 1,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x61b9b7",
+      "next": "0x61b9ba",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [ecx + 0x70]",
+      "function_hint": "0x61b5e0",
+      "states": 1,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x61b9cb",
+      "next": "0x61b9ce",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x61b5e0",
+      "states": 1,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x61b9dc",
+      "next": "0x61b9df",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x61b5e0",
+      "states": 1,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x61b9fa",
+      "next": "0x61b9fd",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [ecx + 0x70]",
+      "function_hint": "0x61b5e0",
+      "states": 1,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x61ba0e",
+      "next": "0x61ba11",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x61b5e0",
+      "states": 1,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x61ba22",
+      "next": "0x61ba25",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x61b5e0",
+      "states": 1,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x61ba32",
+      "next": "0x61ba35",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x61b5e0",
+      "states": 1,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x61ba50",
+      "next": "0x61ba53",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x61b5e0",
+      "states": 1,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x61ba64",
+      "next": "0x61ba67",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [ecx + 0x70]",
+      "function_hint": "0x61b5e0",
+      "states": 1,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x61ba74",
+      "next": "0x61ba77",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x61b5e0",
+      "states": 1,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x61ba84",
+      "next": "0x61ba87",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [ecx + 0x70]",
+      "function_hint": "0x61b5e0",
+      "states": 1,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    }
+  ],
+  "root_states": 1320,
+  "limited_roots": 0,
+  "callee_summaries": 10,
+  "limited_callees": 1,
+  "candidates": [
+    {
+      "root": {
+        "address": "0x43d213",
+        "next": "0x43d216",
+        "family": "Terrain",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [esi + 0x70]",
+        "function_hint": "0x43c260",
+        "states": 96,
+        "limited": false,
+        "argument_contexts": 0,
+        "limited_argument_contexts": false
+      },
+      "field": "controlFlags",
+      "read": {
+        "address": "0x43d218",
+        "offset": 379,
+        "bytes": 4,
+        "instruction": "mov eax, dword ptr [esi + 0x17b]",
+        "trace": [
+          "43d216: mov esi, eax"
+        ],
+        "callee": null,
+        "call": null
+      }
+    },
+    {
+      "root": {
+        "address": "0x43d213",
+        "next": "0x43d216",
+        "family": "Terrain",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [esi + 0x70]",
+        "function_hint": "0x43c260",
+        "states": 96,
+        "limited": false,
+        "argument_contexts": 0,
+        "limited_argument_contexts": false
+      },
+      "field": "controlFlags",
+      "read": {
+        "address": "0x43d2f7",
+        "offset": 379,
+        "bytes": 1,
+        "instruction": "test byte ptr [esi + 0x17b], 1",
+        "trace": [
+          "43d216: mov esi, eax",
+          "43d218: mov eax, dword ptr [esi + 0x17b]",
+          "43d21e: test al, 1",
+          "43d220: jne 0x43d2f1",
+          "43d2f1: mov ecx, dword ptr [0x759ad8]"
+        ],
+        "callee": null,
+        "call": null
+      }
+    },
+    {
+      "root": {
+        "address": "0x43e417",
+        "next": "0x43e41a",
+        "family": "Terrain",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [edx + 0x70]",
+        "function_hint": "0x43e320",
+        "states": 38,
+        "limited": false,
+        "argument_contexts": 2,
+        "limited_argument_contexts": false
+      },
+      "field": "controlFlags",
+      "read": {
+        "address": "0x43e3ae",
+        "offset": 379,
+        "bytes": 1,
+        "instruction": "test byte ptr [eax + 0x17b], 0x10",
+        "trace": [
+          "43e41a: mov ebx, 1",
+          "43e41f: jmp 0x43e3ae"
+        ],
+        "callee": null,
+        "call": null
+      }
+    },
+    {
+      "root": {
+        "address": "0x43e427",
+        "next": "0x43e42a",
+        "family": "Terrain",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [eax + 0x70]",
+        "function_hint": "0x43e320",
+        "states": 38,
+        "limited": false,
+        "argument_contexts": 2,
+        "limited_argument_contexts": false
+      },
+      "field": "controlFlags",
+      "read": {
+        "address": "0x43e3ae",
+        "offset": 379,
+        "bytes": 1,
+        "instruction": "test byte ptr [eax + 0x17b], 0x10",
+        "trace": [
+          "43e42a: mov ebx, 1",
+          "43e42f: jmp 0x43e3ae"
+        ],
+        "callee": null,
+        "call": null
+      }
+    },
+    {
+      "root": {
+        "address": "0x43f561",
+        "next": "0x43f564",
+        "family": "Terrain",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [edx + 0x70]",
+        "function_hint": "0x43e860",
+        "states": 55,
+        "limited": false,
+        "argument_contexts": 0,
+        "limited_argument_contexts": false
+      },
+      "field": "controlFlags",
+      "read": {
+        "address": "0x43f5ce",
+        "offset": 379,
+        "bytes": 4,
+        "instruction": "mov eax, dword ptr [ebp + 0x17b]",
+        "trace": [
+          "43f5a4: mov dword ptr [ecx + 0x11], ebx",
+          "43f5a7: mov byte ptr [ecx + 0x15], bl",
+          "43f5aa: mov eax, dword ptr [edi]",
+          "43f5ac: lea ecx, [esp + 0x50]",
+          "43f5b0: push ecx",
+          "43f5b1: mov ecx, edi",
+          "43f5b3: call dword ptr [eax + 0x2a8]",
+          "43f5b9: mov ecx, dword ptr [esi + 0x2e8]",
+          "43f5bf: lea edx, [ecx + ecx*4]",
+          "43f5c2: lea ecx, [ecx + edx*2]",
+          "43f5c5: mov edx, dword ptr [eax]",
+          "43f5c7: mov dword ptr [esi + ecx*2 + 0x1c5], edx"
+        ],
+        "callee": null,
+        "call": null
+      }
+    },
+    {
+      "root": {
+        "address": "0x43f61d",
+        "next": "0x43f620",
+        "family": "Terrain",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [eax + 0x70]",
+        "function_hint": "0x43e860",
+        "states": 55,
+        "limited": false,
+        "argument_contexts": 0,
+        "limited_argument_contexts": false
+      },
+      "field": "controlFlags",
+      "read": {
+        "address": "0x43f68a",
+        "offset": 379,
+        "bytes": 4,
+        "instruction": "mov eax, dword ptr [ebp + 0x17b]",
+        "trace": [
+          "43f660: mov dword ptr [ecx + 0x11], ebx",
+          "43f663: mov byte ptr [ecx + 0x15], bl",
+          "43f666: mov eax, dword ptr [edi]",
+          "43f668: lea ecx, [esp + 0x54]",
+          "43f66c: push ecx",
+          "43f66d: mov ecx, edi",
+          "43f66f: call dword ptr [eax + 0x2a8]",
+          "43f675: mov ecx, dword ptr [esi + 0x2e8]",
+          "43f67b: lea edx, [ecx + ecx*4]",
+          "43f67e: lea ecx, [ecx + edx*2]",
+          "43f681: mov edx, dword ptr [eax]",
+          "43f683: mov dword ptr [esi + ecx*2 + 0x1c5], edx"
+        ],
+        "callee": null,
+        "call": null
+      }
+    },
+    {
+      "root": {
+        "address": "0x43f6e1",
+        "next": "0x43f6e4",
+        "family": "Terrain",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [eax + 0x70]",
+        "function_hint": "0x43e860",
+        "states": 111,
+        "limited": false,
+        "argument_contexts": 0,
+        "limited_argument_contexts": false
+      },
+      "field": "controlFlags",
+      "read": {
+        "address": "0x43f750",
+        "offset": 379,
+        "bytes": 4,
+        "instruction": "mov eax, dword ptr [ebp + 0x17b]",
+        "trace": [
+          "43f728: mov byte ptr [ecx + 0x1a], bl",
+          "43f72b: lea ecx, [esp + 0x58]",
+          "43f72f: mov dword ptr [esp + 0x20], eax",
+          "43f733: mov eax, dword ptr [edi]",
+          "43f735: push ecx",
+          "43f736: mov ecx, edi",
+          "43f738: call dword ptr [eax + 0x2a8]",
+          "43f73e: mov ecx, dword ptr [esi + 0x1b0]",
+          "43f744: mov eax, dword ptr [eax]",
+          "43f746: lea ecx, [ecx + ecx*2]",
+          "43f749: lea edx, [esi + ecx*8]",
+          "43f74c: mov dword ptr [ecx + edx + 0x11], eax"
+        ],
+        "callee": null,
+        "call": null
+      }
+    },
+    {
+      "root": {
+        "address": "0x43f6e1",
+        "next": "0x43f6e4",
+        "family": "Terrain",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [eax + 0x70]",
+        "function_hint": "0x43e860",
+        "states": 111,
+        "limited": false,
+        "argument_contexts": 0,
+        "limited_argument_contexts": false
+      },
+      "field": "controlFlags",
+      "read": {
+        "address": "0x43f80b",
+        "offset": 379,
+        "bytes": 4,
+        "instruction": "mov eax, dword ptr [ebp + 0x17b]",
+        "trace": [
+          "43f7e4: mov dword ptr [ecx + 0x16], edx",
+          "43f7e7: mov byte ptr [ecx + 0x1a], bl",
+          "43f7ea: mov eax, dword ptr [edi]",
+          "43f7ec: lea ecx, [esp + 0x5c]",
+          "43f7f0: push ecx",
+          "43f7f1: mov ecx, edi",
+          "43f7f3: call dword ptr [eax + 0x2a8]",
+          "43f7f9: mov ecx, dword ptr [esi + 0x1b0]",
+          "43f7ff: mov eax, dword ptr [eax]",
+          "43f801: lea ecx, [ecx + ecx*2]",
+          "43f804: lea edx, [esi + ecx*8]",
+          "43f807: mov dword ptr [ecx + edx + 0x11], eax"
+        ],
+        "callee": null,
+        "call": null
+      }
+    },
+    {
+      "root": {
+        "address": "0x43f85f",
+        "next": "0x43f862",
+        "family": "Terrain",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [eax + 0x70]",
+        "function_hint": "0x43e860",
+        "states": 111,
+        "limited": false,
+        "argument_contexts": 0,
+        "limited_argument_contexts": false
+      },
+      "field": "controlFlags",
+      "read": {
+        "address": "0x43f8ce",
+        "offset": 379,
+        "bytes": 4,
+        "instruction": "mov eax, dword ptr [ebp + 0x17b]",
+        "trace": [
+          "43f8a6: mov byte ptr [ecx + 0x1a], bl",
+          "43f8a9: lea ecx, [esp + 0x60]",
+          "43f8ad: mov dword ptr [esp + 0x20], eax",
+          "43f8b1: mov eax, dword ptr [edi]",
+          "43f8b3: push ecx",
+          "43f8b4: mov ecx, edi",
+          "43f8b6: call dword ptr [eax + 0x2a8]",
+          "43f8bc: mov ecx, dword ptr [esi + 0x1b0]",
+          "43f8c2: mov eax, dword ptr [eax]",
+          "43f8c4: lea ecx, [ecx + ecx*2]",
+          "43f8c7: lea edx, [esi + ecx*8]",
+          "43f8ca: mov dword ptr [ecx + edx + 0x11], eax"
+        ],
+        "callee": null,
+        "call": null
+      }
+    },
+    {
+      "root": {
+        "address": "0x43f85f",
+        "next": "0x43f862",
+        "family": "Terrain",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [eax + 0x70]",
+        "function_hint": "0x43e860",
+        "states": 111,
+        "limited": false,
+        "argument_contexts": 0,
+        "limited_argument_contexts": false
+      },
+      "field": "controlFlags",
+      "read": {
+        "address": "0x43f989",
+        "offset": 379,
+        "bytes": 4,
+        "instruction": "mov eax, dword ptr [ebp + 0x17b]",
+        "trace": [
+          "43f962: mov dword ptr [ecx + 0x16], edx",
+          "43f965: mov byte ptr [ecx + 0x1a], bl",
+          "43f968: mov eax, dword ptr [edi]",
+          "43f96a: lea ecx, [esp + 0x64]",
+          "43f96e: push ecx",
+          "43f96f: mov ecx, edi",
+          "43f971: call dword ptr [eax + 0x2a8]",
+          "43f977: mov ecx, dword ptr [esi + 0x1b0]",
+          "43f97d: mov eax, dword ptr [eax]",
+          "43f97f: lea ecx, [ecx + ecx*2]",
+          "43f982: lea edx, [esi + ecx*8]",
+          "43f985: mov dword ptr [ecx + edx + 0x11], eax"
+        ],
+        "callee": null,
+        "call": null
+      }
+    },
+    {
+      "root": {
+        "address": "0x43f9cf",
+        "next": "0x43f9d2",
+        "family": "Terrain",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [eax + 0x70]",
+        "function_hint": "0x43e860",
+        "states": 111,
+        "limited": false,
+        "argument_contexts": 0,
+        "limited_argument_contexts": false
+      },
+      "field": "controlFlags",
+      "read": {
+        "address": "0x43fa3e",
+        "offset": 379,
+        "bytes": 4,
+        "instruction": "mov eax, dword ptr [ebp + 0x17b]",
+        "trace": [
+          "43fa16: mov byte ptr [ecx + 0x1a], bl",
+          "43fa19: lea ecx, [esp + 0x68]",
+          "43fa1d: mov dword ptr [esp + 0x20], eax",
+          "43fa21: mov eax, dword ptr [edi]",
+          "43fa23: push ecx",
+          "43fa24: mov ecx, edi",
+          "43fa26: call dword ptr [eax + 0x2a8]",
+          "43fa2c: mov ecx, dword ptr [esi + 0x1b0]",
+          "43fa32: mov eax, dword ptr [eax]",
+          "43fa34: lea ecx, [ecx + ecx*2]",
+          "43fa37: lea edx, [esi + ecx*8]",
+          "43fa3a: mov dword ptr [ecx + edx + 0x11], eax"
+        ],
+        "callee": null,
+        "call": null
+      }
+    },
+    {
+      "root": {
+        "address": "0x43f9cf",
+        "next": "0x43f9d2",
+        "family": "Terrain",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [eax + 0x70]",
+        "function_hint": "0x43e860",
+        "states": 111,
+        "limited": false,
+        "argument_contexts": 0,
+        "limited_argument_contexts": false
+      },
+      "field": "controlFlags",
+      "read": {
+        "address": "0x43faf9",
+        "offset": 379,
+        "bytes": 4,
+        "instruction": "mov eax, dword ptr [ebp + 0x17b]",
+        "trace": [
+          "43fad2: mov dword ptr [ecx + 0x16], edx",
+          "43fad5: mov byte ptr [ecx + 0x1a], bl",
+          "43fad8: mov eax, dword ptr [edi]",
+          "43fada: lea ecx, [esp + 0x6c]",
+          "43fade: push ecx",
+          "43fadf: mov ecx, edi",
+          "43fae1: call dword ptr [eax + 0x2a8]",
+          "43fae7: mov ecx, dword ptr [esi + 0x1b0]",
+          "43faed: mov eax, dword ptr [eax]",
+          "43faef: lea ecx, [ecx + ecx*2]",
+          "43faf2: lea edx, [esi + ecx*8]",
+          "43faf5: mov dword ptr [ecx + edx + 0x11], eax"
+        ],
+        "callee": null,
+        "call": null
+      }
+    },
+    {
+      "root": {
+        "address": "0x443eec",
+        "next": "0x443eef",
+        "family": "Terrain",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [edx + 0x70]",
+        "function_hint": "0x443910",
+        "states": 7,
+        "limited": false,
+        "argument_contexts": 1,
+        "limited_argument_contexts": false
+      },
+      "field": "controlFlags",
+      "read": {
+        "address": "0x43e453",
+        "offset": 379,
+        "bytes": 4,
+        "instruction": "mov ecx, dword ptr [edi + 0x17b]",
+        "trace": [
+          "43e440: push ebx",
+          "43e441: push ebp",
+          "43e442: push esi",
+          "43e443: mov eax, dword ptr [0x759ad8]",
+          "43e448: mov ebp, dword ptr [esp + 0x20]",
+          "43e44c: push edi",
+          "43e44d: mov edi, dword ptr [esp + 0x1c]",
+          "43e451: xor ebx, ebx"
+        ],
+        "callee": "0x43e440",
+        "call": "0x443efe",
+        "caller_trace": [
+          "443eef: mov ecx, dword ptr [esp + 0x44]",
+          "443ef3: push eax",
+          "443ef4: mov eax, dword ptr [esp + 0x4c]",
+          "443ef8: push eax",
+          "443ef9: push ecx",
+          "443efa: mov ecx, dword ptr [esp + 0x3c]"
+        ],
+        "argument_chain": [
+          {
+            "address": "0x443efe",
+            "target": "0x43e440",
+            "registers": {},
+            "arguments": {
+              "12": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "root": {
+        "address": "0x443eec",
+        "next": "0x443eef",
+        "family": "Terrain",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [edx + 0x70]",
+        "function_hint": "0x443910",
+        "states": 7,
+        "limited": false,
+        "argument_contexts": 1,
+        "limited_argument_contexts": false
+      },
+      "field": "controlFlags",
+      "read": {
+        "address": "0x43e7cf",
+        "offset": 379,
+        "bytes": 4,
+        "instruction": "mov eax, dword ptr [edi + 0x17b]",
+        "trace": [
+          "43e7a3: lea ebp, [edi + edx*8]",
+          "43e7a6: lea eax, [ecx + eax*2 + 0x1b4]",
+          "43e7ad: mov edx, dword ptr [edx + ebp + 0x97]",
+          "43e7b4: mov dword ptr [eax], edx",
+          "43e7b6: mov dword ptr [eax + 4], esi",
+          "43e7b9: mov byte ptr [eax + 8], bl",
+          "43e7bc: mov byte ptr [eax + 9], bl",
+          "43e7bf: mov byte ptr [eax + 0xa], bl",
+          "43e7c2: mov dword ptr [eax + 0xc], ebx",
+          "43e7c5: mov byte ptr [eax + 0x10], 0xff",
+          "43e7c9: mov dword ptr [eax + 0x11], ebx",
+          "43e7cc: mov byte ptr [eax + 0x15], bl"
+        ],
+        "callee": "0x43e440",
+        "call": "0x443efe",
+        "caller_trace": [
+          "443eef: mov ecx, dword ptr [esp + 0x44]",
+          "443ef3: push eax",
+          "443ef4: mov eax, dword ptr [esp + 0x4c]",
+          "443ef8: push eax",
+          "443ef9: push ecx",
+          "443efa: mov ecx, dword ptr [esp + 0x3c]"
+        ],
+        "argument_chain": [
+          {
+            "address": "0x443efe",
+            "target": "0x43e440",
+            "registers": {},
+            "arguments": {
+              "12": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "root": {
+        "address": "0x443eec",
+        "next": "0x443eef",
+        "family": "Terrain",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [edx + 0x70]",
+        "function_hint": "0x443910",
+        "states": 7,
+        "limited": false,
+        "argument_contexts": 1,
+        "limited_argument_contexts": false
+      },
+      "field": "controlFlags",
+      "read": {
+        "address": "0x43e4f5",
+        "offset": 379,
+        "bytes": 4,
+        "instruction": "test dword ptr [edi + 0x17b], 0x20000000",
+        "trace": [
+          "43e4c6: mov edx, dword ptr [eax + 0x66dea1]",
+          "43e4cc: mov dword ptr [esp + 0x24], ecx",
+          "43e4d0: movsx eax, byte ptr [eax + 0x66dea0]",
+          "43e4d7: push edx",
+          "43e4d8: lea eax, [eax + eax*2]",
+          "43e4db: lea edx, [edi + eax*8]",
+          "43e4de: mov eax, dword ptr [eax + edx + 0x97]",
+          "43e4e5: push eax",
+          "43e4e6: call 0x43e830",
+          "43e4eb: mov eax, dword ptr [esp + 0x20]",
+          "43e4ef: mov dword ptr [eax + 0x16], ebx",
+          "43e4f2: mov byte ptr [eax + 0x1a], bl"
+        ],
+        "callee": "0x43e440",
+        "call": "0x443efe",
+        "caller_trace": [
+          "443eef: mov ecx, dword ptr [esp + 0x44]",
+          "443ef3: push eax",
+          "443ef4: mov eax, dword ptr [esp + 0x4c]",
+          "443ef8: push eax",
+          "443ef9: push ecx",
+          "443efa: mov ecx, dword ptr [esp + 0x3c]"
+        ],
+        "argument_chain": [
+          {
+            "address": "0x443efe",
+            "target": "0x43e440",
+            "registers": {},
+            "arguments": {
+              "12": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "root": {
+        "address": "0x443eec",
+        "next": "0x443eef",
+        "family": "Terrain",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [edx + 0x70]",
+        "function_hint": "0x443910",
+        "states": 7,
+        "limited": false,
+        "argument_contexts": 1,
+        "limited_argument_contexts": false
+      },
+      "field": "controlFlags",
+      "read": {
+        "address": "0x43e5ad",
+        "offset": 379,
+        "bytes": 4,
+        "instruction": "test dword ptr [edi + 0x17b], 0x20000000",
+        "trace": [
+          "43e57e: sub eax, edx",
+          "43e580: push eax",
+          "43e581: movsx eax, byte ptr [ecx + 0x66dea0]",
+          "43e588: lea eax, [eax + eax*2]",
+          "43e58b: lea ecx, [edi + eax*8]",
+          "43e58e: mov edx, dword ptr [eax + ecx + 0x97]",
+          "43e595: mov ecx, dword ptr [esp + 0x28]",
+          "43e599: push edx",
+          "43e59a: call 0x43e830",
+          "43e59f: mov eax, dword ptr [esp + 0x20]",
+          "43e5a3: mov dword ptr [eax + 0x16], 1",
+          "43e5aa: mov byte ptr [eax + 0x1a], bl"
+        ],
+        "callee": "0x43e440",
+        "call": "0x443efe",
+        "caller_trace": [
+          "443eef: mov ecx, dword ptr [esp + 0x44]",
+          "443ef3: push eax",
+          "443ef4: mov eax, dword ptr [esp + 0x4c]",
+          "443ef8: push eax",
+          "443ef9: push ecx",
+          "443efa: mov ecx, dword ptr [esp + 0x3c]"
+        ],
+        "argument_chain": [
+          {
+            "address": "0x443efe",
+            "target": "0x43e440",
+            "registers": {},
+            "arguments": {
+              "12": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "root": {
+        "address": "0x443eec",
+        "next": "0x443eef",
+        "family": "Terrain",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [edx + 0x70]",
+        "function_hint": "0x443910",
+        "states": 7,
+        "limited": false,
+        "argument_contexts": 1,
+        "limited_argument_contexts": false
+      },
+      "field": "controlFlags",
+      "read": {
+        "address": "0x43e677",
+        "offset": 379,
+        "bytes": 4,
+        "instruction": "test dword ptr [edi + 0x17b], 0x20000000",
+        "trace": [
+          "43e650: xor eax, edx",
+          "43e652: sub eax, edx",
+          "43e654: mov dword ptr [ecx + 4], eax",
+          "43e657: mov byte ptr [ecx + 8], bl",
+          "43e65a: mov byte ptr [ecx + 9], bl",
+          "43e65d: mov byte ptr [ecx + 0xa], bl",
+          "43e660: mov dword ptr [ecx + 0xc], ebx",
+          "43e663: mov byte ptr [ecx + 0x10], 0xff",
+          "43e667: mov dword ptr [ecx + 0x11], ebx",
+          "43e66a: mov byte ptr [ecx + 0x15], bl",
+          "43e66d: mov dword ptr [ecx + 0x16], 2",
+          "43e674: mov byte ptr [ecx + 0x1a], bl"
+        ],
+        "callee": "0x43e440",
+        "call": "0x443efe",
+        "caller_trace": [
+          "443eef: mov ecx, dword ptr [esp + 0x44]",
+          "443ef3: push eax",
+          "443ef4: mov eax, dword ptr [esp + 0x4c]",
+          "443ef8: push eax",
+          "443ef9: push ecx",
+          "443efa: mov ecx, dword ptr [esp + 0x3c]"
+        ],
+        "argument_chain": [
+          {
+            "address": "0x443efe",
+            "target": "0x43e440",
+            "registers": {},
+            "arguments": {
+              "12": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "root": {
+        "address": "0x443eec",
+        "next": "0x443eef",
+        "family": "Terrain",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [edx + 0x70]",
+        "function_hint": "0x443910",
+        "states": 7,
+        "limited": false,
+        "argument_contexts": 1,
+        "limited_argument_contexts": false
+      },
+      "field": "controlFlags",
+      "read": {
+        "address": "0x43e73a",
+        "offset": 379,
+        "bytes": 4,
+        "instruction": "test dword ptr [edi + 0x17b], 0x20000000",
+        "trace": [
+          "43e713: xor eax, edx",
+          "43e715: sub eax, edx",
+          "43e717: mov dword ptr [ecx + 4], eax",
+          "43e71a: mov byte ptr [ecx + 8], bl",
+          "43e71d: mov byte ptr [ecx + 9], bl",
+          "43e720: mov byte ptr [ecx + 0xa], bl",
+          "43e723: mov dword ptr [ecx + 0xc], ebx",
+          "43e726: mov byte ptr [ecx + 0x10], 0xff",
+          "43e72a: mov dword ptr [ecx + 0x11], ebx",
+          "43e72d: mov byte ptr [ecx + 0x15], bl",
+          "43e730: mov dword ptr [ecx + 0x16], 3",
+          "43e737: mov byte ptr [ecx + 0x1a], bl"
+        ],
+        "callee": "0x43e440",
+        "call": "0x443efe",
+        "caller_trace": [
+          "443eef: mov ecx, dword ptr [esp + 0x44]",
+          "443ef3: push eax",
+          "443ef4: mov eax, dword ptr [esp + 0x4c]",
+          "443ef8: push eax",
+          "443ef9: push ecx",
+          "443efa: mov ecx, dword ptr [esp + 0x3c]"
+        ],
+        "argument_chain": [
+          {
+            "address": "0x443efe",
+            "target": "0x43e440",
+            "registers": {},
+            "arguments": {
+              "12": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "root": {
+        "address": "0x4458ea",
+        "next": "0x4458ed",
+        "family": "Terrain",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [eax + 0x70]",
+        "function_hint": "0x444f10",
+        "states": 7,
+        "limited": false,
+        "argument_contexts": 1,
+        "limited_argument_contexts": false
+      },
+      "field": "controlFlags",
+      "read": {
+        "address": "0x4419f3",
+        "offset": 379,
+        "bytes": 4,
+        "instruction": "test dword ptr [ecx + 0x17b], 0x20000",
+        "trace": [
+          "4419d0: push -1",
+          "4419d2: push 0x64a9e0",
+          "4419d7: mov eax, dword ptr fs:[0]",
+          "4419dd: push eax",
+          "4419de: mov dword ptr fs:[0], esp",
+          "4419e5: push ecx",
+          "4419e6: mov ecx, dword ptr [esp + 0x1c]",
+          "4419ea: push esi",
+          "4419eb: mov dword ptr [esp + 4], 0"
+        ],
+        "callee": "0x4419d0",
+        "call": "0x4458fc",
+        "caller_trace": [
+          "4458ed: push eax",
+          "4458ee: lea ecx, [esp + 0x20]",
+          "4458f2: push ebx",
+          "4458f3: push ecx",
+          "4458f4: mov ecx, dword ptr [esp + 0x1c]",
+          "4458f8: mov dword ptr [esp + 0x24], eax"
+        ],
+        "argument_chain": [
+          {
+            "address": "0x4458fc",
+            "target": "0x4419d0",
+            "registers": {},
+            "arguments": {
+              "12": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "root": {
+        "address": "0x44fdac",
+        "next": "0x44fdaf",
+        "family": "Terrain",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [eax + 0x70]",
+        "function_hint": "0x44fc40",
+        "states": 4,
+        "limited": false,
+        "argument_contexts": 1,
+        "limited_argument_contexts": false
+      },
+      "field": "controlFlags",
+      "read": {
+        "address": "0x455baa",
+        "offset": 379,
+        "bytes": 1,
+        "instruction": "test byte ptr [edi + 0x17b], dl",
+        "trace": [
+          "455b90: mov al, byte ptr [ecx + 0xa]",
+          "455b93: push ebx",
+          "455b94: push edi",
+          "455b95: mov edi, dword ptr [esp + 0xc]",
+          "455b99: mov bl, byte ptr [edi + 0x1c4]",
+          "455b9f: cmp al, bl",
+          "455ba1: je 0x455c91",
+          "455ba7: mov dl, 0x10",
+          "455ba9: push esi"
+        ],
+        "callee": "0x455b90",
+        "call": "0x44fdb6",
+        "caller_trace": [
+          "44fdaf: push eax",
+          "44fdb0: mov ecx, ebp",
+          "44fdb2: mov dword ptr [esp + 0x18], eax"
+        ],
+        "argument_chain": [
+          {
+            "address": "0x44fdb6",
+            "target": "0x455b90",
+            "registers": {},
+            "arguments": {
+              "4": 0,
+              "28": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "root": {
+        "address": "0x452ca0",
+        "next": "0x452ca3",
+        "family": "Terrain",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [edx + 0x70]",
+        "function_hint": "0x452bd0",
+        "states": 20,
+        "limited": false,
+        "argument_contexts": 0,
+        "limited_argument_contexts": false
+      },
+      "field": "controlFlags",
+      "read": {
+        "address": "0x452ca3",
+        "offset": 379,
+        "bytes": 1,
+        "instruction": "test byte ptr [eax + 0x17b], 0x10",
+        "trace": [],
+        "callee": null,
+        "call": null
+      }
+    },
+    {
+      "root": {
+        "address": "0x452e4e",
+        "next": "0x452e51",
+        "family": "Terrain",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [edx + 0x70]",
+        "function_hint": "0x452dc0",
+        "states": 3,
+        "limited": false,
+        "argument_contexts": 0,
+        "limited_argument_contexts": false
+      },
+      "field": "controlFlags",
+      "read": {
+        "address": "0x452e57",
+        "offset": 379,
+        "bytes": 4,
+        "instruction": "mov eax, dword ptr [eax + 0x17b]",
+        "trace": [
+          "452e51: mov ecx, dword ptr [esp + 0x10]",
+          "452e55: mov dword ptr [ecx], eax"
+        ],
+        "callee": null,
+        "call": null
+      }
+    },
+    {
+      "root": {
+        "address": "0x4e6285",
+        "next": "0x4e6288",
+        "family": "Terrain",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [edx + 0x70]",
+        "function_hint": "0x4e6220",
+        "states": 6,
+        "limited": false,
+        "argument_contexts": 0,
+        "limited_argument_contexts": false
+      },
+      "field": "controlFlags",
+      "read": {
+        "address": "0x4e6288",
+        "offset": 379,
+        "bytes": 4,
+        "instruction": "test dword ptr [eax + 0x17b], 0x20000000",
+        "trace": [],
+        "callee": null,
+        "call": null
+      }
+    },
+    {
+      "root": {
+        "address": "0x51949b",
+        "next": "0x51949e",
+        "family": "Terrain",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [edx + 0x70]",
+        "function_hint": "0x518ad0",
+        "states": 14,
+        "limited": false,
+        "argument_contexts": 0,
+        "limited_argument_contexts": false
+      },
+      "field": "controlFlags",
+      "read": {
+        "address": "0x51949e",
+        "offset": 379,
+        "bytes": 1,
+        "instruction": "test byte ptr [eax + 0x17b], 0x10",
+        "trace": [],
+        "callee": null,
+        "call": null
+      }
+    },
+    {
+      "root": {
+        "address": "0x51eb83",
+        "next": "0x51eb86",
+        "family": "Terrain",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [eax + 0x70]",
+        "function_hint": "0x51e2c0",
+        "states": 4,
+        "limited": false,
+        "argument_contexts": 2,
+        "limited_argument_contexts": false
+      },
+      "field": "controlFlags",
+      "read": {
+        "address": "0x4f69cb",
+        "offset": 379,
+        "bytes": 4,
+        "instruction": "mov ecx, dword ptr [ebx + 0x17b]",
+        "trace": [
+          "4f68b5: cmp dword ptr [ebp + 0x48], edi",
+          "4f68b8: je 0x4f68c8",
+          "4f68c8: cmp dword ptr [ebp + 0x4c], edi",
+          "4f68cb: je 0x4f68db",
+          "4f68db: cmp dword ptr [ebp + 0x50], edi",
+          "4f68de: je 0x4f68ee",
+          "4f68ee: cmp dword ptr [0x6fcdcf], edi",
+          "4f68f4: jne 0x4f69a0",
+          "4f69a0: cmp dword ptr [ebp + 0xb0], edi",
+          "4f69a6: je 0x4f69b4",
+          "4f69b4: cmp dword ptr [ebp + 0x8c], edi",
+          "4f69ba: je 0x4f69cb"
+        ],
+        "callee": "0x4f66e0",
+        "call": "0x51eb8a",
+        "caller_trace": [
+          "51eb86: push ebp",
+          "51eb87: push edi",
+          "51eb88: mov ecx, eax"
+        ],
+        "argument_chain": [
+          {
+            "address": "0x51eb8a",
+            "target": "0x4f66e0",
+            "registers": {
+              "ecx": 0
+            },
+            "arguments": {}
+          }
+        ]
+      }
+    },
+    {
+      "root": {
+        "address": "0x51eb83",
+        "next": "0x51eb86",
+        "family": "Terrain",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [eax + 0x70]",
+        "function_hint": "0x51e2c0",
+        "states": 4,
+        "limited": false,
+        "argument_contexts": 2,
+        "limited_argument_contexts": false
+      },
+      "field": "controlFlags",
+      "read": {
+        "address": "0x4f6b39",
+        "offset": 379,
+        "bytes": 4,
+        "instruction": "mov eax, dword ptr [ebx + 0x17b]",
+        "trace": [
+          "4f6aa8: test ecx, 0x8000000",
+          "4f6aae: je 0x4f6ab7",
+          "4f6ab7: cmp dword ptr [ebp + 0xa8], edi",
+          "4f6abd: je 0x4f6acb",
+          "4f6acb: cmp dword ptr [ebp + 0xac], edi",
+          "4f6ad1: je 0x4f6adf",
+          "4f6adf: cmp dword ptr [ebp + 0x20], edi",
+          "4f6ae2: je 0x4f6b25",
+          "4f6b25: mov eax, dword ptr [0x6fcdcf]",
+          "4f6b2a: mov esi, dword ptr [esp + 0x178]",
+          "4f6b31: test eax, eax",
+          "4f6b33: jne 0x4f73c2"
+        ],
+        "callee": "0x4f66e0",
+        "call": "0x51eb8a",
+        "caller_trace": [
+          "51eb86: push ebp",
+          "51eb87: push edi",
+          "51eb88: mov ecx, eax"
+        ],
+        "argument_chain": [
+          {
+            "address": "0x51eb8a",
+            "target": "0x4f66e0",
+            "registers": {
+              "ecx": 0
+            },
+            "arguments": {}
+          }
+        ]
+      }
+    },
+    {
+      "root": {
+        "address": "0x51eb83",
+        "next": "0x51eb86",
+        "family": "Terrain",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [eax + 0x70]",
+        "function_hint": "0x51e2c0",
+        "states": 4,
+        "limited": false,
+        "argument_contexts": 2,
+        "limited_argument_contexts": false
+      },
+      "field": "controlFlags",
+      "read": {
+        "address": "0x4f7719",
+        "offset": 379,
+        "bytes": 1,
+        "instruction": "test byte ptr [ebx + 0x17b], 4",
+        "trace": [
+          "4f6abd: je 0x4f6acb",
+          "4f6acb: cmp dword ptr [ebp + 0xac], edi",
+          "4f6ad1: je 0x4f6adf",
+          "4f6adf: cmp dword ptr [ebp + 0x20], edi",
+          "4f6ae2: je 0x4f6b25",
+          "4f6b25: mov eax, dword ptr [0x6fcdcf]",
+          "4f6b2a: mov esi, dword ptr [esp + 0x178]",
+          "4f6b31: test eax, eax",
+          "4f6b33: jne 0x4f73c2",
+          "4f73c2: mov eax, dword ptr [0x6fcdcf]",
+          "4f73c7: test eax, eax",
+          "4f73c9: jne 0x4f7719"
+        ],
+        "callee": "0x4f66e0",
+        "call": "0x51eb8a",
+        "caller_trace": [
+          "51eb86: push ebp",
+          "51eb87: push edi",
+          "51eb88: mov ecx, eax"
+        ],
+        "argument_chain": [
+          {
+            "address": "0x51eb8a",
+            "target": "0x4f66e0",
+            "registers": {
+              "ecx": 0
+            },
+            "arguments": {}
+          }
+        ]
+      }
+    },
+    {
+      "root": {
+        "address": "0x51eb83",
+        "next": "0x51eb86",
+        "family": "Terrain",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [eax + 0x70]",
+        "function_hint": "0x51e2c0",
+        "states": 4,
+        "limited": false,
+        "argument_contexts": 2,
+        "limited_argument_contexts": false
+      },
+      "field": "controlFlags",
+      "read": {
+        "address": "0x4f73cf",
+        "offset": 379,
+        "bytes": 1,
+        "instruction": "test byte ptr [ebx + 0x17b], 0x80",
+        "trace": [
+          "4f6abd: je 0x4f6acb",
+          "4f6acb: cmp dword ptr [ebp + 0xac], edi",
+          "4f6ad1: je 0x4f6adf",
+          "4f6adf: cmp dword ptr [ebp + 0x20], edi",
+          "4f6ae2: je 0x4f6b25",
+          "4f6b25: mov eax, dword ptr [0x6fcdcf]",
+          "4f6b2a: mov esi, dword ptr [esp + 0x178]",
+          "4f6b31: test eax, eax",
+          "4f6b33: jne 0x4f73c2",
+          "4f73c2: mov eax, dword ptr [0x6fcdcf]",
+          "4f73c7: test eax, eax",
+          "4f73c9: jne 0x4f7719"
+        ],
+        "callee": "0x4f66e0",
+        "call": "0x51eb8a",
+        "caller_trace": [
+          "51eb86: push ebp",
+          "51eb87: push edi",
+          "51eb88: mov ecx, eax"
+        ],
+        "argument_chain": [
+          {
+            "address": "0x51eb8a",
+            "target": "0x4f66e0",
+            "registers": {
+              "ecx": 0
+            },
+            "arguments": {}
+          }
+        ]
+      }
+    },
+    {
+      "root": {
+        "address": "0x51eb83",
+        "next": "0x51eb86",
+        "family": "Terrain",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [eax + 0x70]",
+        "function_hint": "0x51e2c0",
+        "states": 4,
+        "limited": false,
+        "argument_contexts": 2,
+        "limited_argument_contexts": false
+      },
+      "field": "controlFlags",
+      "read": {
+        "address": "0x4f7573",
+        "offset": 379,
+        "bytes": 4,
+        "instruction": "mov eax, dword ptr [ebx + 0x17b]",
+        "trace": [
+          "4f6ad1: je 0x4f6adf",
+          "4f6adf: cmp dword ptr [ebp + 0x20], edi",
+          "4f6ae2: je 0x4f6b25",
+          "4f6b25: mov eax, dword ptr [0x6fcdcf]",
+          "4f6b2a: mov esi, dword ptr [esp + 0x178]",
+          "4f6b31: test eax, eax",
+          "4f6b33: jne 0x4f73c2",
+          "4f73c2: mov eax, dword ptr [0x6fcdcf]",
+          "4f73c7: test eax, eax",
+          "4f73c9: jne 0x4f7719",
+          "4f73cf: test byte ptr [ebx + 0x17b], 0x80",
+          "4f73d6: je 0x4f7573"
+        ],
+        "callee": "0x4f66e0",
+        "call": "0x51eb8a",
+        "caller_trace": [
+          "51eb86: push ebp",
+          "51eb87: push edi",
+          "51eb88: mov ecx, eax"
+        ],
+        "argument_chain": [
+          {
+            "address": "0x51eb8a",
+            "target": "0x4f66e0",
+            "registers": {
+              "ecx": 0
+            },
+            "arguments": {}
+          }
+        ]
+      }
+    },
+    {
+      "root": {
+        "address": "0x51ebf7",
+        "next": "0x51ebfa",
+        "family": "Terrain",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [edx + 0x70]",
+        "function_hint": "0x51e2c0",
+        "states": 13,
+        "limited": false,
+        "argument_contexts": 0,
+        "limited_argument_contexts": false
+      },
+      "field": "controlFlags",
+      "read": {
+        "address": "0x51ebfa",
+        "offset": 379,
+        "bytes": 1,
+        "instruction": "test byte ptr [eax + 0x17b], 0x80",
+        "trace": [],
+        "callee": null,
+        "call": null
+      }
+    },
+    {
+      "root": {
+        "address": "0x51ebf7",
+        "next": "0x51ebfa",
+        "family": "Terrain",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [edx + 0x70]",
+        "function_hint": "0x51e2c0",
+        "states": 13,
+        "limited": false,
+        "argument_contexts": 0,
+        "limited_argument_contexts": false
+      },
+      "field": "controlFlags",
+      "read": {
+        "address": "0x51ec0f",
+        "offset": 379,
+        "bytes": 4,
+        "instruction": "mov ecx, dword ptr [eax + 0x17b]",
+        "trace": [
+          "51ebfa: test byte ptr [eax + 0x17b], 0x80",
+          "51ec01: je 0x51ec0f"
+        ],
+        "callee": null,
+        "call": null
+      }
+    },
+    {
+      "root": {
+        "address": "0x51ecb5",
+        "next": "0x51ecb8",
+        "family": "Terrain",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [edx + 0x70]",
+        "function_hint": "0x51e2c0",
+        "states": 11,
+        "limited": false,
+        "argument_contexts": 0,
+        "limited_argument_contexts": false
+      },
+      "field": "controlFlags",
+      "read": {
+        "address": "0x51ecb8",
+        "offset": 379,
+        "bytes": 1,
+        "instruction": "test byte ptr [eax + 0x17b], 0x10",
+        "trace": [],
+        "callee": null,
+        "call": null
+      }
+    }
+  ]
+}

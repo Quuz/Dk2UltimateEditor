@@ -1,0 +1,1754 @@
+{
+  "scope": "Original Keeper raw loaders, rule initializers and complete pre-cast validators.\n\nPrepared World/Player/Actor/NAV, original vtables and helpers. Only external\nsound-handle lookup is an explicit adapter. No code/vtable substitution.\n",
+  "replays": [
+    {
+      "case": {
+        "name": "sight-point",
+        "spell": 1
+      },
+      "file": "ghidra\\phase152-keeper-validation-native-a30a2dee4878.json",
+      "sha256": "c1d8c3c2ffbfb81f0eccf0dcebb9134bbf8c1a5c62c767731cda159bc4e301b6",
+      "outcome": {
+        "return_value": 1,
+        "raw_spell_id": 1,
+        "CastRule": 5,
+        "TargetRule": 4,
+        "C8": 4262199296,
+        "C8_definition_reads": 0,
+        "compared_regions": 25,
+        "compared_bytes": 59941,
+        "original_instructions": 5887
+      }
+    },
+    {
+      "case": {
+        "name": "possession-creature",
+        "spell": 2,
+        "kind": "creature"
+      },
+      "file": "ghidra\\phase152-keeper-validation-native-c92197db779b.json",
+      "sha256": "1846448415d2e42b74395f5eb9b31ba6516bc33b45b3dfff8ae49a0e957da038",
+      "outcome": {
+        "return_value": 1,
+        "raw_spell_id": 2,
+        "CastRule": 5,
+        "TargetRule": 6,
+        "C8": 0,
+        "C8_definition_reads": 0,
+        "compared_regions": 25,
+        "compared_bytes": 59941,
+        "original_instructions": 5885
+      }
+    },
+    {
+      "case": {
+        "name": "call-to-arms-point",
+        "spell": 3
+      },
+      "file": "ghidra\\phase152-keeper-validation-native-311e2c6fca53.json",
+      "sha256": "ef8fc1fc92edacc9e121ec9c5d07830e30f065bfbaa1a28c1775bd2068f8c09c",
+      "outcome": {
+        "return_value": 1,
+        "raw_spell_id": 3,
+        "CastRule": 4,
+        "TargetRule": 4,
+        "C8": 0,
+        "C8_definition_reads": 0,
+        "compared_regions": 25,
+        "compared_bytes": 59941,
+        "original_instructions": 5927
+      }
+    },
+    {
+      "case": {
+        "name": "secret1-Heal-own-creature",
+        "spell": 10,
+        "kind": "creature",
+        "source_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Secret1Globals.kld"
+      },
+      "file": "ghidra\\phase152-keeper-validation-native-4e70d2fe7945.json",
+      "sha256": "46742ac1c8a488e58bb680950d23fff6d7786b871e5456404c80f7ea11d764f2",
+      "outcome": {
+        "return_value": 1,
+        "raw_spell_id": 10,
+        "CastRule": 2,
+        "TargetRule": 1,
+        "C8": 0,
+        "C8_definition_reads": 0,
+        "compared_regions": 25,
+        "compared_bytes": 59941,
+        "original_instructions": 5882
+      }
+    },
+    {
+      "case": {
+        "name": "sight-c8-00000000",
+        "spell": 1,
+        "c8": 0
+      },
+      "file": "ghidra\\phase152-keeper-validation-native-7a9976b7b951.json",
+      "sha256": "fc7a48a1de49944c6a89ea9e863102b585f8c0e923ae8372c442798c603c9d78",
+      "outcome": {
+        "return_value": 1,
+        "raw_spell_id": 1,
+        "CastRule": 5,
+        "TargetRule": 4,
+        "C8": 0,
+        "C8_definition_reads": 0,
+        "compared_regions": 25,
+        "compared_bytes": 59941,
+        "original_instructions": 5887
+      }
+    },
+    {
+      "case": {
+        "name": "sight-c8-00000001",
+        "spell": 1,
+        "c8": 1
+      },
+      "file": "ghidra\\phase152-keeper-validation-native-23c90bbb82a6.json",
+      "sha256": "d55c4937a8c4b45e5db9248e3a7aff6003899b216f631aa524569e542737f246",
+      "outcome": {
+        "return_value": 1,
+        "raw_spell_id": 1,
+        "CastRule": 5,
+        "TargetRule": 4,
+        "C8": 1,
+        "C8_definition_reads": 0,
+        "compared_regions": 25,
+        "compared_bytes": 59941,
+        "original_instructions": 5887
+      }
+    },
+    {
+      "case": {
+        "name": "sight-c8-7fffffff",
+        "spell": 1,
+        "c8": 2147483647
+      },
+      "file": "ghidra\\phase152-keeper-validation-native-4fec8459d014.json",
+      "sha256": "3f302b5227b2291a242d7307091760ca4771e535a051a619694e5eabcdb45bb7",
+      "outcome": {
+        "return_value": 1,
+        "raw_spell_id": 1,
+        "CastRule": 5,
+        "TargetRule": 4,
+        "C8": 2147483647,
+        "C8_definition_reads": 0,
+        "compared_regions": 25,
+        "compared_bytes": 59941,
+        "original_instructions": 5887
+      }
+    },
+    {
+      "case": {
+        "name": "sight-c8-80000000",
+        "spell": 1,
+        "c8": 2147483648
+      },
+      "file": "ghidra\\phase152-keeper-validation-native-9036b582d415.json",
+      "sha256": "eb839aec674ee80acfe727f32ffffa9692b06586b0e2932eed1f7283e035cef8",
+      "outcome": {
+        "return_value": 1,
+        "raw_spell_id": 1,
+        "CastRule": 5,
+        "TargetRule": 4,
+        "C8": 2147483648,
+        "C8_definition_reads": 0,
+        "compared_regions": 25,
+        "compared_bytes": 59941,
+        "original_instructions": 5887
+      }
+    },
+    {
+      "case": {
+        "name": "sight-c8-fe0c0000",
+        "spell": 1,
+        "c8": 4262199296
+      },
+      "file": "ghidra\\phase152-keeper-validation-native-a30a2dee4878.json",
+      "sha256": "c1d8c3c2ffbfb81f0eccf0dcebb9134bbf8c1a5c62c767731cda159bc4e301b6",
+      "outcome": {
+        "return_value": 1,
+        "raw_spell_id": 1,
+        "CastRule": 5,
+        "TargetRule": 4,
+        "C8": 4262199296,
+        "C8_definition_reads": 0,
+        "compared_regions": 25,
+        "compared_bytes": 59941,
+        "original_instructions": 5887
+      }
+    },
+    {
+      "case": {
+        "name": "sight-c8-ffffffff",
+        "spell": 1,
+        "c8": 4294967295
+      },
+      "file": "ghidra\\phase152-keeper-validation-native-8e91af6c73a9.json",
+      "sha256": "d36c33cbb4aa5aa6b6a746539ca27f3908a3441508ae73d32f33a2141e710178",
+      "outcome": {
+        "return_value": 1,
+        "raw_spell_id": 1,
+        "CastRule": 5,
+        "TargetRule": 4,
+        "C8": 4294967295,
+        "C8_definition_reads": 0,
+        "compared_regions": 25,
+        "compared_bytes": 59941,
+        "original_instructions": 5887
+      }
+    },
+    {
+      "case": {
+        "name": "mana-below",
+        "spell": 1,
+        "mana": 4999
+      },
+      "file": "ghidra\\phase152-keeper-validation-native-375df288d5c1.json",
+      "sha256": "b5504aec09a8bc8a5ae85ace107a8204b4f6a6476857a819be6c7bffd0a31463",
+      "outcome": {
+        "return_value": 0,
+        "raw_spell_id": 1,
+        "CastRule": 5,
+        "TargetRule": 4,
+        "C8": 4262199296,
+        "C8_definition_reads": 0,
+        "compared_regions": 25,
+        "compared_bytes": 59941,
+        "original_instructions": 5656
+      }
+    },
+    {
+      "case": {
+        "name": "mana-equal",
+        "spell": 1,
+        "mana": 5000
+      },
+      "file": "ghidra\\phase152-keeper-validation-native-daec071acfd0.json",
+      "sha256": "b95616421d409d15e37c9f5e3be7c94e0348c11351ac52461cb25d578f9bb6cc",
+      "outcome": {
+        "return_value": 1,
+        "raw_spell_id": 1,
+        "CastRule": 5,
+        "TargetRule": 4,
+        "C8": 4262199296,
+        "C8_definition_reads": 0,
+        "compared_regions": 25,
+        "compared_bytes": 59941,
+        "original_instructions": 5887
+      }
+    },
+    {
+      "case": {
+        "name": "cooldown-before",
+        "spell": 1,
+        "last": 90,
+        "recharge": 4096
+      },
+      "file": "ghidra\\phase152-keeper-validation-native-11c7e059d00c.json",
+      "sha256": "e9d410e106c66fab8b1d67fa19a25a97c82719db0793664a8deab8190c2d9ef7",
+      "outcome": {
+        "return_value": 0,
+        "raw_spell_id": 1,
+        "CastRule": 5,
+        "TargetRule": 4,
+        "C8": 4262199296,
+        "C8_definition_reads": 0,
+        "compared_regions": 25,
+        "compared_bytes": 59941,
+        "original_instructions": 5741
+      }
+    },
+    {
+      "case": {
+        "name": "cooldown-boundary",
+        "spell": 1,
+        "last": 80,
+        "recharge": 4096
+      },
+      "file": "ghidra\\phase152-keeper-validation-native-331a97c96dd5.json",
+      "sha256": "7f677060f8daf056262b7392a32f88022df51ae4bb9b7892bdbdb1dee1b492c6",
+      "outcome": {
+        "return_value": 1,
+        "raw_spell_id": 1,
+        "CastRule": 5,
+        "TargetRule": 4,
+        "C8": 4262199296,
+        "C8_definition_reads": 0,
+        "compared_regions": 25,
+        "compared_bytes": 59941,
+        "original_instructions": 5929
+      }
+    },
+    {
+      "case": {
+        "name": "timestamp-zero",
+        "spell": 1,
+        "last": 0,
+        "recharge": 4294967295
+      },
+      "file": "ghidra\\phase152-keeper-validation-native-fe6757256b2a.json",
+      "sha256": "07d4fd14e671b2d41c1577f73acf67736ec69f72e0ea47556215db4d14738a77",
+      "outcome": {
+        "return_value": 1,
+        "raw_spell_id": 1,
+        "CastRule": 5,
+        "TargetRule": 4,
+        "C8": 4262199296,
+        "C8_definition_reads": 0,
+        "compared_regions": 25,
+        "compared_bytes": 59941,
+        "original_instructions": 5887
+      }
+    },
+    {
+      "case": {
+        "name": "cast-none",
+        "spell": 1,
+        "cast": 0
+      },
+      "file": "ghidra\\phase152-keeper-validation-native-6e734129ce79.json",
+      "sha256": "60866f1bbe6b64edebb71c720cdd8cb02dac0f0c52a990613a336f238ce78eb8",
+      "outcome": {
+        "return_value": 0,
+        "raw_spell_id": 1,
+        "CastRule": 0,
+        "TargetRule": 4,
+        "C8": 4262199296,
+        "C8_definition_reads": 0,
+        "compared_regions": 25,
+        "compared_bytes": 59941,
+        "original_instructions": 5776
+      }
+    },
+    {
+      "case": {
+        "name": "cast-out-of-range",
+        "spell": 1,
+        "cast": 6
+      },
+      "file": "ghidra\\phase152-keeper-validation-native-591099ce6452.json",
+      "sha256": "8ac6a07f4925f955e76dacbaa70bcce9ec725ecf6e29e79d396163bac4085dc5",
+      "outcome": {
+        "return_value": 0,
+        "raw_spell_id": 1,
+        "CastRule": 6,
+        "TargetRule": 4,
+        "C8": 4262199296,
+        "C8_definition_reads": 0,
+        "compared_regions": 25,
+        "compared_bytes": 59941,
+        "original_instructions": 5763
+      }
+    },
+    {
+      "case": {
+        "name": "cast255",
+        "spell": 1,
+        "cast": 255
+      },
+      "file": "ghidra\\phase152-keeper-validation-native-4f809d950c09.json",
+      "sha256": "2000a38a466f280a8bcb6211c9d18afc6f723a4290cc656cfe81a261f3b0b543",
+      "outcome": {
+        "return_value": 0,
+        "raw_spell_id": 1,
+        "CastRule": 255,
+        "TargetRule": 4,
+        "C8": 4262199296,
+        "C8_definition_reads": 0,
+        "compared_regions": 25,
+        "compared_bytes": 59941,
+        "original_instructions": 5763
+      }
+    },
+    {
+      "case": {
+        "name": "cast-any-land",
+        "spell": 1,
+        "cast": 4
+      },
+      "file": "ghidra\\phase152-keeper-validation-native-d1c37b046158.json",
+      "sha256": "9ab7790778cf57e4bf7c71907edbc75949b7a810ddc7a3b3707ebd5cffd02984",
+      "outcome": {
+        "return_value": 1,
+        "raw_spell_id": 1,
+        "CastRule": 4,
+        "TargetRule": 4,
+        "C8": 4262199296,
+        "C8_definition_reads": 0,
+        "compared_regions": 25,
+        "compared_bytes": 59941,
+        "original_instructions": 5938
+      }
+    },
+    {
+      "case": {
+        "name": "cast-any-land-solid",
+        "spell": 1,
+        "cast": 4,
+        "solid": true
+      },
+      "file": "ghidra\\phase152-keeper-validation-native-2f57bd8af950.json",
+      "sha256": "1200ed4027efe291672aebc699627b5bc496ea50b8a708c4c88607f86e3ba330",
+      "outcome": {
+        "return_value": 0,
+        "raw_spell_id": 1,
+        "CastRule": 4,
+        "TargetRule": 4,
+        "C8": 4262199296,
+        "C8_definition_reads": 0,
+        "compared_regions": 25,
+        "compared_bytes": 59941,
+        "original_instructions": 5834
+      }
+    },
+    {
+      "case": {
+        "name": "target-none",
+        "spell": 1,
+        "target": 0
+      },
+      "file": "ghidra\\phase152-keeper-validation-native-e8eb5d948a42.json",
+      "sha256": "af9362c6c3c8453bf916defdb991e8e015e1e9a64a297045b48a893db13b3b34",
+      "outcome": {
+        "return_value": 0,
+        "raw_spell_id": 1,
+        "CastRule": 5,
+        "TargetRule": 0,
+        "C8": 4262199296,
+        "C8_definition_reads": 0,
+        "compared_regions": 25,
+        "compared_bytes": 59941,
+        "original_instructions": 5851
+      }
+    },
+    {
+      "case": {
+        "name": "target-all",
+        "spell": 1,
+        "target": 5
+      },
+      "file": "ghidra\\phase152-keeper-validation-native-f8277e336df7.json",
+      "sha256": "6e3bf239830be4d197ddf587a4d9a461ce0418acf859efc5c72d16709a916548",
+      "outcome": {
+        "return_value": 1,
+        "raw_spell_id": 1,
+        "CastRule": 5,
+        "TargetRule": 5,
+        "C8": 4262199296,
+        "C8_definition_reads": 0,
+        "compared_regions": 25,
+        "compared_bytes": 59941,
+        "original_instructions": 5860
+      }
+    },
+    {
+      "case": {
+        "name": "target-out-of-range",
+        "spell": 1,
+        "target": 7
+      },
+      "file": "ghidra\\phase152-keeper-validation-native-b50a168ea7a1.json",
+      "sha256": "7cff3eb306bef7f30622757f73995ae5621183ec02e950c84126acbe59dcb7b9",
+      "outcome": {
+        "return_value": 0,
+        "raw_spell_id": 1,
+        "CastRule": 5,
+        "TargetRule": 7,
+        "C8": 4262199296,
+        "C8_definition_reads": 0,
+        "compared_regions": 25,
+        "compared_bytes": 59941,
+        "original_instructions": 5839
+      }
+    },
+    {
+      "case": {
+        "name": "target255",
+        "spell": 1,
+        "target": 255
+      },
+      "file": "ghidra\\phase152-keeper-validation-native-bb78a17851fb.json",
+      "sha256": "e746fa7d69e77af5043510f14b2bc3ccc37c9e2c73a7e05542e4c5f111e33b25",
+      "outcome": {
+        "return_value": 0,
+        "raw_spell_id": 1,
+        "CastRule": 5,
+        "TargetRule": 255,
+        "C8": 4262199296,
+        "C8_definition_reads": 0,
+        "compared_regions": 25,
+        "compared_bytes": 59941,
+        "original_instructions": 5839
+      }
+    },
+    {
+      "case": {
+        "name": "possession-enemy-owner",
+        "spell": 2,
+        "kind": "creature",
+        "owner": 8
+      },
+      "file": "ghidra\\phase152-keeper-validation-native-15d8a43fdd47.json",
+      "sha256": "9ce36357876f9ec435059936c43d07e30dbc74ab7182582f6425d8c8f4f39c7f",
+      "outcome": {
+        "return_value": 0,
+        "raw_spell_id": 2,
+        "CastRule": 5,
+        "TargetRule": 6,
+        "C8": 0,
+        "C8_definition_reads": 0,
+        "compared_regions": 25,
+        "compared_bytes": 59941,
+        "original_instructions": 5885
+      }
+    },
+    {
+      "case": {
+        "name": "possession-neutral-owner",
+        "spell": 2,
+        "kind": "creature",
+        "owner": 0
+      },
+      "file": "ghidra\\phase152-keeper-validation-native-c11b90d4156a.json",
+      "sha256": "fb8febb653fcae52dbf31fb2ed64caf95fef0c76f99dc74a313a3dd53d7a47ce",
+      "outcome": {
+        "return_value": 0,
+        "raw_spell_id": 2,
+        "CastRule": 5,
+        "TargetRule": 6,
+        "C8": 0,
+        "C8_definition_reads": 0,
+        "compared_regions": 25,
+        "compared_bytes": 59941,
+        "original_instructions": 5885
+      }
+    },
+    {
+      "case": {
+        "name": "possession-Horny",
+        "spell": 2,
+        "kind": "creature",
+        "def_flags": 16384
+      },
+      "file": "ghidra\\phase152-keeper-validation-native-094994475b6e.json",
+      "sha256": "3d7257e68d73871abc61b09002f7ab2664ae4d98ebdd66f12cfbe16956512f40",
+      "outcome": {
+        "return_value": 0,
+        "raw_spell_id": 2,
+        "CastRule": 5,
+        "TargetRule": 6,
+        "C8": 0,
+        "C8_definition_reads": 0,
+        "compared_regions": 25,
+        "compared_bytes": 59941,
+        "original_instructions": 5880
+      }
+    },
+    {
+      "case": {
+        "name": "possession-actor-flag8",
+        "spell": 2,
+        "kind": "creature",
+        "actor_flags": 8
+      },
+      "file": "ghidra\\phase152-keeper-validation-native-3f85a82f99e2.json",
+      "sha256": "8d2e71b088667c29727c3138cc26275b6871b6009e6c3b08a00756c42401839a",
+      "outcome": {
+        "return_value": 0,
+        "raw_spell_id": 2,
+        "CastRule": 5,
+        "TargetRule": 6,
+        "C8": 0,
+        "C8_definition_reads": 0,
+        "compared_regions": 25,
+        "compared_bytes": 59941,
+        "original_instructions": 5882
+      }
+    },
+    {
+      "case": {
+        "name": "possession-actor-flag8000",
+        "spell": 2,
+        "kind": "creature",
+        "actor_flags": 32768
+      },
+      "file": "ghidra\\phase152-keeper-validation-native-ec34bcc8bdb2.json",
+      "sha256": "b74acc94516a6fc68353f6558fd51c452071d14ab98a8ae2c75bddd6f4f49e06",
+      "outcome": {
+        "return_value": 0,
+        "raw_spell_id": 2,
+        "CastRule": 5,
+        "TargetRule": 6,
+        "C8": 0,
+        "C8_definition_reads": 0,
+        "compared_regions": 25,
+        "compared_bytes": 59941,
+        "original_instructions": 5874
+      }
+    },
+    {
+      "case": {
+        "name": "possession-word3cb",
+        "spell": 2,
+        "kind": "creature",
+        "word3cb": 1
+      },
+      "file": "ghidra\\phase152-keeper-validation-native-dc1b0382993e.json",
+      "sha256": "afb5850048923c2b26f0626238b4dd473309e725ffe3d4e4f5184e68cd9ab945",
+      "outcome": {
+        "return_value": 0,
+        "raw_spell_id": 2,
+        "CastRule": 5,
+        "TargetRule": 6,
+        "C8": 0,
+        "C8_definition_reads": 0,
+        "compared_regions": 25,
+        "compared_bytes": 59941,
+        "original_instructions": 5862
+      }
+    },
+    {
+      "case": {
+        "name": "possession-word44b",
+        "spell": 2,
+        "kind": "creature",
+        "word44b": 1
+      },
+      "file": "ghidra\\phase152-keeper-validation-native-6ffba904db24.json",
+      "sha256": "dc6b8965eb4e73e8b0ca4fdd8b9bad95fc5695f3d5d21154494140a73d6f7bf6",
+      "outcome": {
+        "return_value": 0,
+        "raw_spell_id": 2,
+        "CastRule": 5,
+        "TargetRule": 6,
+        "C8": 0,
+        "C8_definition_reads": 0,
+        "compared_regions": 25,
+        "compared_bytes": 59941,
+        "original_instructions": 5876
+      }
+    },
+    {
+      "case": {
+        "name": "possession-state-d1",
+        "spell": 2,
+        "kind": "creature",
+        "state": 209
+      },
+      "file": "ghidra\\phase152-keeper-validation-native-6be369e87b90.json",
+      "sha256": "bdb056d81b16e3ba07f379f7088d51e69a6213008d3e78e79d1a1a01a51187a9",
+      "outcome": {
+        "return_value": 0,
+        "raw_spell_id": 2,
+        "CastRule": 5,
+        "TargetRule": 6,
+        "C8": 0,
+        "C8_definition_reads": 0,
+        "compared_regions": 25,
+        "compared_bytes": 59941,
+        "original_instructions": 5854
+      }
+    },
+    {
+      "case": {
+        "name": "possession-state-ff",
+        "spell": 2,
+        "kind": "creature",
+        "state": 255
+      },
+      "file": "ghidra\\phase152-keeper-validation-native-fb06dd699ddf.json",
+      "sha256": "ece981723f825795081a3d8658208d20da102e5da34774866b85db4c02252ed8",
+      "outcome": {
+        "return_value": 0,
+        "raw_spell_id": 2,
+        "CastRule": 5,
+        "TargetRule": 6,
+        "C8": 0,
+        "C8_definition_reads": 0,
+        "compared_regions": 25,
+        "compared_bytes": 59941,
+        "original_instructions": 5856
+      }
+    },
+    {
+      "case": {
+        "name": "possession-state-100",
+        "spell": 2,
+        "kind": "creature",
+        "state": 256
+      },
+      "file": "ghidra\\phase152-keeper-validation-native-3d243749f254.json",
+      "sha256": "03f024c4ac2df4fc61223ed22cef4a8281b961166dc2a5e4a70524c66ff069a3",
+      "outcome": {
+        "return_value": 0,
+        "raw_spell_id": 2,
+        "CastRule": 5,
+        "TargetRule": 6,
+        "C8": 0,
+        "C8_definition_reads": 0,
+        "compared_regions": 25,
+        "compared_bytes": 59941,
+        "original_instructions": 5858
+      }
+    },
+    {
+      "case": {
+        "name": "possession-state-101",
+        "spell": 2,
+        "kind": "creature",
+        "state": 257
+      },
+      "file": "ghidra\\phase152-keeper-validation-native-e464ea765f07.json",
+      "sha256": "54d01571855f07547271621df67cbc626defc119972a76958e33a9bc4a8aee2f",
+      "outcome": {
+        "return_value": 0,
+        "raw_spell_id": 2,
+        "CastRule": 5,
+        "TargetRule": 6,
+        "C8": 0,
+        "C8_definition_reads": 0,
+        "compared_regions": 25,
+        "compared_bytes": 59941,
+        "original_instructions": 5860
+      }
+    },
+    {
+      "case": {
+        "name": "possession-state-c1",
+        "spell": 2,
+        "kind": "creature",
+        "state": 193
+      },
+      "file": "ghidra\\phase152-keeper-validation-native-2d0bcf6b3cda.json",
+      "sha256": "a3f3648e5aded6665cabb3fad53044faeb933246a84507e0c2dbef9078263e64",
+      "outcome": {
+        "return_value": 0,
+        "raw_spell_id": 2,
+        "CastRule": 5,
+        "TargetRule": 6,
+        "C8": 0,
+        "C8_definition_reads": 0,
+        "compared_regions": 25,
+        "compared_bytes": 59941,
+        "original_instructions": 5865
+      }
+    },
+    {
+      "case": {
+        "name": "possession-state-116",
+        "spell": 2,
+        "kind": "creature",
+        "state": 278
+      },
+      "file": "ghidra\\phase152-keeper-validation-native-34a07c4290a6.json",
+      "sha256": "e171e1ccfc65a88993403e30989a4a0990b1a87f9e9fb3b4f0cccadbb9357743",
+      "outcome": {
+        "return_value": 0,
+        "raw_spell_id": 2,
+        "CastRule": 5,
+        "TargetRule": 6,
+        "C8": 0,
+        "C8_definition_reads": 0,
+        "compared_regions": 25,
+        "compared_bytes": 59941,
+        "original_instructions": 5867
+      }
+    },
+    {
+      "case": {
+        "name": "possession-state-117",
+        "spell": 2,
+        "kind": "creature",
+        "state": 279
+      },
+      "file": "ghidra\\phase152-keeper-validation-native-ec806ecf9454.json",
+      "sha256": "15d14edf2146a10e0397e15e09153713351cc9d1d9ccdbdd3785cf29b6b87b09",
+      "outcome": {
+        "return_value": 0,
+        "raw_spell_id": 2,
+        "CastRule": 5,
+        "TargetRule": 6,
+        "C8": 0,
+        "C8_definition_reads": 0,
+        "compared_regions": 25,
+        "compared_bytes": 59941,
+        "original_instructions": 5869
+      }
+    },
+    {
+      "case": {
+        "name": "possession-state-118",
+        "spell": 2,
+        "kind": "creature",
+        "state": 280
+      },
+      "file": "ghidra\\phase152-keeper-validation-native-6925da9f8189.json",
+      "sha256": "6818f611fd6107cc75ea1872f8beb8a55138e0a65dcb8f150d5477e47a56e2ef",
+      "outcome": {
+        "return_value": 0,
+        "raw_spell_id": 2,
+        "CastRule": 5,
+        "TargetRule": 6,
+        "C8": 0,
+        "C8_definition_reads": 0,
+        "compared_regions": 25,
+        "compared_bytes": 59941,
+        "original_instructions": 5871
+      }
+    },
+    {
+      "case": {
+        "name": "possession-ordinary-state",
+        "spell": 2,
+        "kind": "creature",
+        "state": 17
+      },
+      "file": "ghidra\\phase152-keeper-validation-native-2b965fe0c6f1.json",
+      "sha256": "8aa29c11d20499e495487e8ec36b7e5bbccec1ad618417d0f219e384abc6526b",
+      "outcome": {
+        "return_value": 1,
+        "raw_spell_id": 2,
+        "CastRule": 5,
+        "TargetRule": 6,
+        "C8": 0,
+        "C8_definition_reads": 0,
+        "compared_regions": 25,
+        "compared_bytes": 59941,
+        "original_instructions": 5885
+      }
+    },
+    {
+      "case": {
+        "name": "possession-missing-tag",
+        "spell": 2,
+        "kind": "creature",
+        "exists": false
+      },
+      "file": "ghidra\\phase152-keeper-validation-native-fd2963c5c4f2.json",
+      "sha256": "684251a1272fb7e02357365abe39e7f5cbaec55e77e427c03a96fa15c326df7a",
+      "outcome": {
+        "return_value": 0,
+        "raw_spell_id": 2,
+        "CastRule": 5,
+        "TargetRule": 6,
+        "C8": 0,
+        "C8_definition_reads": 0,
+        "compared_regions": 25,
+        "compared_bytes": 59941,
+        "original_instructions": 5674
+      }
+    },
+    {
+      "case": {
+        "name": "possession-wrong-type",
+        "spell": 2,
+        "kind": "creature",
+        "actor_type": 2
+      },
+      "file": "ghidra\\phase152-keeper-validation-native-c828bf67eccb.json",
+      "sha256": "b207a9695a0c6f48f31ff5531dcbb049bb7d621ad0a80aab1bcb911844df1272",
+      "outcome": {
+        "return_value": 0,
+        "raw_spell_id": 2,
+        "CastRule": 5,
+        "TargetRule": 6,
+        "C8": 0,
+        "C8_definition_reads": 0,
+        "compared_regions": 25,
+        "compared_bytes": 59941,
+        "original_instructions": 5678
+      }
+    },
+    {
+      "case": {
+        "name": "target1-owner0",
+        "spell": 2,
+        "kind": "creature",
+        "target": 1,
+        "owner": 0
+      },
+      "file": "ghidra\\phase152-keeper-validation-native-232d49ea02d9.json",
+      "sha256": "38c7a07985425f18f065042269bf705244173b086f74b248bfa2ebe8a1af6722",
+      "outcome": {
+        "return_value": 0,
+        "raw_spell_id": 2,
+        "CastRule": 5,
+        "TargetRule": 1,
+        "C8": 0,
+        "C8_definition_reads": 0,
+        "compared_regions": 25,
+        "compared_bytes": 59941,
+        "original_instructions": 5863
+      }
+    },
+    {
+      "case": {
+        "name": "target1-owner7",
+        "spell": 2,
+        "kind": "creature",
+        "target": 1,
+        "owner": 7
+      },
+      "file": "ghidra\\phase152-keeper-validation-native-264b53d700ef.json",
+      "sha256": "9171e0b384dcca62c91f885837906bcc2ae4d12b804557aa86b17d6f33b50e2a",
+      "outcome": {
+        "return_value": 1,
+        "raw_spell_id": 2,
+        "CastRule": 5,
+        "TargetRule": 1,
+        "C8": 0,
+        "C8_definition_reads": 0,
+        "compared_regions": 25,
+        "compared_bytes": 59941,
+        "original_instructions": 5863
+      }
+    },
+    {
+      "case": {
+        "name": "target1-owner8",
+        "spell": 2,
+        "kind": "creature",
+        "target": 1,
+        "owner": 8
+      },
+      "file": "ghidra\\phase152-keeper-validation-native-ae23346ac013.json",
+      "sha256": "d8e2092a0a60b0271739a560a62ba6819a55d323bcd74063b6e72429b89e3a88",
+      "outcome": {
+        "return_value": 0,
+        "raw_spell_id": 2,
+        "CastRule": 5,
+        "TargetRule": 1,
+        "C8": 0,
+        "C8_definition_reads": 0,
+        "compared_regions": 25,
+        "compared_bytes": 59941,
+        "original_instructions": 5863
+      }
+    },
+    {
+      "case": {
+        "name": "target2-owner0",
+        "spell": 2,
+        "kind": "creature",
+        "target": 2,
+        "owner": 0
+      },
+      "file": "ghidra\\phase152-keeper-validation-native-728782a7efb2.json",
+      "sha256": "a76edac4e9422791ec100eedd69c648988831d19093c6d49f466b7608a5fa384",
+      "outcome": {
+        "return_value": 0,
+        "raw_spell_id": 2,
+        "CastRule": 5,
+        "TargetRule": 2,
+        "C8": 0,
+        "C8_definition_reads": 0,
+        "compared_regions": 25,
+        "compared_bytes": 59941,
+        "original_instructions": 5851
+      }
+    },
+    {
+      "case": {
+        "name": "target2-owner7",
+        "spell": 2,
+        "kind": "creature",
+        "target": 2,
+        "owner": 7
+      },
+      "file": "ghidra\\phase152-keeper-validation-native-fccc3aecf94e.json",
+      "sha256": "c09835380e295e656ea5dbb8b470cab73355088f056e65fd92626f639b74c3f4",
+      "outcome": {
+        "return_value": 0,
+        "raw_spell_id": 2,
+        "CastRule": 5,
+        "TargetRule": 2,
+        "C8": 0,
+        "C8_definition_reads": 0,
+        "compared_regions": 25,
+        "compared_bytes": 59941,
+        "original_instructions": 5849
+      }
+    },
+    {
+      "case": {
+        "name": "target2-owner8",
+        "spell": 2,
+        "kind": "creature",
+        "target": 2,
+        "owner": 8
+      },
+      "file": "ghidra\\phase152-keeper-validation-native-40dbd8c5b6fc.json",
+      "sha256": "f54dff2913e21f3840af0ce0a4fad4ec5b752d23050f89fe3ac501898ea980eb",
+      "outcome": {
+        "return_value": 1,
+        "raw_spell_id": 2,
+        "CastRule": 5,
+        "TargetRule": 2,
+        "C8": 0,
+        "C8_definition_reads": 0,
+        "compared_regions": 25,
+        "compared_bytes": 59941,
+        "original_instructions": 5851
+      }
+    },
+    {
+      "case": {
+        "name": "target3-owner0",
+        "spell": 2,
+        "kind": "creature",
+        "target": 3,
+        "owner": 0
+      },
+      "file": "ghidra\\phase152-keeper-validation-native-8169cf027752.json",
+      "sha256": "bde29de3a6d9948664a26b7e12749bcdd2b8d45102a996b53402669955d320ff",
+      "outcome": {
+        "return_value": 0,
+        "raw_spell_id": 2,
+        "CastRule": 5,
+        "TargetRule": 3,
+        "C8": 0,
+        "C8_definition_reads": 0,
+        "compared_regions": 25,
+        "compared_bytes": 59941,
+        "original_instructions": 5847
+      }
+    },
+    {
+      "case": {
+        "name": "target3-owner7",
+        "spell": 2,
+        "kind": "creature",
+        "target": 3,
+        "owner": 7
+      },
+      "file": "ghidra\\phase152-keeper-validation-native-739328f1cafc.json",
+      "sha256": "3f2161ebd12d0bc23129bbdf5fa4818307ea1e0f92caacd85945d22d7c655a55",
+      "outcome": {
+        "return_value": 1,
+        "raw_spell_id": 2,
+        "CastRule": 5,
+        "TargetRule": 3,
+        "C8": 0,
+        "C8_definition_reads": 0,
+        "compared_regions": 25,
+        "compared_bytes": 59941,
+        "original_instructions": 5847
+      }
+    },
+    {
+      "case": {
+        "name": "target3-owner8",
+        "spell": 2,
+        "kind": "creature",
+        "target": 3,
+        "owner": 8
+      },
+      "file": "ghidra\\phase152-keeper-validation-native-040ccee6b3e8.json",
+      "sha256": "48c3f56de2ce1d5e958bb0a9b7f23b42aeb127681d95d75b25aeee35c6bc89c7",
+      "outcome": {
+        "return_value": 1,
+        "raw_spell_id": 2,
+        "CastRule": 5,
+        "TargetRule": 3,
+        "C8": 0,
+        "C8_definition_reads": 0,
+        "compared_regions": 25,
+        "compared_bytes": 59941,
+        "original_instructions": 5847
+      }
+    },
+    {
+      "case": {
+        "name": "target5-owner0",
+        "spell": 2,
+        "kind": "creature",
+        "target": 5,
+        "owner": 0
+      },
+      "file": "ghidra\\phase152-keeper-validation-native-85861e1409d2.json",
+      "sha256": "9494d861cd78ae011ab7881257a066b691e89773ce552503a5ee6252d1c88213",
+      "outcome": {
+        "return_value": 1,
+        "raw_spell_id": 2,
+        "CastRule": 5,
+        "TargetRule": 5,
+        "C8": 0,
+        "C8_definition_reads": 0,
+        "compared_regions": 25,
+        "compared_bytes": 59941,
+        "original_instructions": 5834
+      }
+    },
+    {
+      "case": {
+        "name": "target5-owner7",
+        "spell": 2,
+        "kind": "creature",
+        "target": 5,
+        "owner": 7
+      },
+      "file": "ghidra\\phase152-keeper-validation-native-443f77d7a980.json",
+      "sha256": "e85c9876469a5a67e902e6c5851f6736366e1756421b767ce68a89d687cd62f3",
+      "outcome": {
+        "return_value": 1,
+        "raw_spell_id": 2,
+        "CastRule": 5,
+        "TargetRule": 5,
+        "C8": 0,
+        "C8_definition_reads": 0,
+        "compared_regions": 25,
+        "compared_bytes": 59941,
+        "original_instructions": 5834
+      }
+    },
+    {
+      "case": {
+        "name": "target5-owner8",
+        "spell": 2,
+        "kind": "creature",
+        "target": 5,
+        "owner": 8
+      },
+      "file": "ghidra\\phase152-keeper-validation-native-ceb97d05043e.json",
+      "sha256": "85ec6e583a014d0809c1f070cfd416d217345a3c90381c5eedc56de78ba6958a",
+      "outcome": {
+        "return_value": 1,
+        "raw_spell_id": 2,
+        "CastRule": 5,
+        "TargetRule": 5,
+        "C8": 0,
+        "C8_definition_reads": 0,
+        "compared_regions": 25,
+        "compared_bytes": 59941,
+        "original_instructions": 5834
+      }
+    },
+    {
+      "case": {
+        "name": "target1-inverted-owner7",
+        "spell": 2,
+        "kind": "creature",
+        "target": 1,
+        "owner": 7,
+        "flags": 4
+      },
+      "file": "ghidra\\phase152-keeper-validation-native-737f8cda7a95.json",
+      "sha256": "bd6a0ca99a7624c343dad34a7180b9d61e5c9a109094ef9a6166c219c9f82fd7",
+      "outcome": {
+        "return_value": 0,
+        "raw_spell_id": 2,
+        "CastRule": 5,
+        "TargetRule": 1,
+        "C8": 0,
+        "C8_definition_reads": 0,
+        "compared_regions": 25,
+        "compared_bytes": 59941,
+        "original_instructions": 5856
+      }
+    },
+    {
+      "case": {
+        "name": "target1-inverted-owner8",
+        "spell": 2,
+        "kind": "creature",
+        "target": 1,
+        "owner": 8,
+        "flags": 4
+      },
+      "file": "ghidra\\phase152-keeper-validation-native-6820d496a283.json",
+      "sha256": "73383a6c49c88d408d9e573c685357c8ce6526e56e93277b46d1ec75249f32aa",
+      "outcome": {
+        "return_value": 1,
+        "raw_spell_id": 2,
+        "CastRule": 5,
+        "TargetRule": 1,
+        "C8": 0,
+        "C8_definition_reads": 0,
+        "compared_regions": 25,
+        "compared_bytes": 59941,
+        "original_instructions": 5858
+      }
+    },
+    {
+      "case": {
+        "name": "target2-inverted-owner7",
+        "spell": 2,
+        "kind": "creature",
+        "target": 2,
+        "owner": 7,
+        "flags": 4
+      },
+      "file": "ghidra\\phase152-keeper-validation-native-585833fb3932.json",
+      "sha256": "c7d953b712b4dc466df2b8311303df496ee4040e84d83378b5ed6887e72b1bea",
+      "outcome": {
+        "return_value": 1,
+        "raw_spell_id": 2,
+        "CastRule": 5,
+        "TargetRule": 2,
+        "C8": 0,
+        "C8_definition_reads": 0,
+        "compared_regions": 25,
+        "compared_bytes": 59941,
+        "original_instructions": 5874
+      }
+    },
+    {
+      "case": {
+        "name": "target2-inverted-owner8",
+        "spell": 2,
+        "kind": "creature",
+        "target": 2,
+        "owner": 8,
+        "flags": 4
+      },
+      "file": "ghidra\\phase152-keeper-validation-native-8331bdf1fec9.json",
+      "sha256": "ca27e13010fe4c2a910c28b21827f51d01f250d86cd0907e69560b86b04d994c",
+      "outcome": {
+        "return_value": 0,
+        "raw_spell_id": 2,
+        "CastRule": 5,
+        "TargetRule": 2,
+        "C8": 0,
+        "C8_definition_reads": 0,
+        "compared_regions": 25,
+        "compared_bytes": 59941,
+        "original_instructions": 5874
+      }
+    },
+    {
+      "case": {
+        "name": "possession-c8-00000000",
+        "spell": 2,
+        "kind": "creature",
+        "c8": 0
+      },
+      "file": "ghidra\\phase152-keeper-validation-native-c92197db779b.json",
+      "sha256": "1846448415d2e42b74395f5eb9b31ba6516bc33b45b3dfff8ae49a0e957da038",
+      "outcome": {
+        "return_value": 1,
+        "raw_spell_id": 2,
+        "CastRule": 5,
+        "TargetRule": 6,
+        "C8": 0,
+        "C8_definition_reads": 0,
+        "compared_regions": 25,
+        "compared_bytes": 59941,
+        "original_instructions": 5885
+      }
+    },
+    {
+      "case": {
+        "name": "possession-c8-00000001",
+        "spell": 2,
+        "kind": "creature",
+        "c8": 1
+      },
+      "file": "ghidra\\phase152-keeper-validation-native-b0436987227b.json",
+      "sha256": "cd7132ecce27b4c815d4abbe0ae4c04b98705bdbd1c4c553d931d534c67203ab",
+      "outcome": {
+        "return_value": 1,
+        "raw_spell_id": 2,
+        "CastRule": 5,
+        "TargetRule": 6,
+        "C8": 1,
+        "C8_definition_reads": 0,
+        "compared_regions": 25,
+        "compared_bytes": 59941,
+        "original_instructions": 5885
+      }
+    },
+    {
+      "case": {
+        "name": "possession-c8-fe0c0000",
+        "spell": 2,
+        "kind": "creature",
+        "c8": 4262199296
+      },
+      "file": "ghidra\\phase152-keeper-validation-native-a0b6ba690b21.json",
+      "sha256": "022598a6b670aa027c8918ce72fb2674101b905c12f4ddf9ef2549ddd7035bed",
+      "outcome": {
+        "return_value": 1,
+        "raw_spell_id": 2,
+        "CastRule": 5,
+        "TargetRule": 6,
+        "C8": 4262199296,
+        "C8_definition_reads": 0,
+        "compared_regions": 25,
+        "compared_bytes": 59941,
+        "original_instructions": 5885
+      }
+    },
+    {
+      "case": {
+        "name": "possession-c8-ffffffff",
+        "spell": 2,
+        "kind": "creature",
+        "c8": 4294967295
+      },
+      "file": "ghidra\\phase152-keeper-validation-native-ff723b0482d1.json",
+      "sha256": "7e89ed8dbc544e00ca7c5ffa877f3ec289ce1878bc9c33abb49f3d1d0f0cd974",
+      "outcome": {
+        "return_value": 1,
+        "raw_spell_id": 2,
+        "CastRule": 5,
+        "TargetRule": 6,
+        "C8": 4294967295,
+        "C8_definition_reads": 0,
+        "compared_regions": 25,
+        "compared_bytes": 59941,
+        "original_instructions": 5885
+      }
+    },
+    {
+      "case": {
+        "name": "cast1-land7-allied0",
+        "spell": 1,
+        "cast": 1,
+        "cell_owner": 7,
+        "allied": false
+      },
+      "file": "ghidra\\phase152-keeper-validation-native-99b155981fb1.json",
+      "sha256": "c9987f5caa9e55e14b5198d7790f6b15750e961e7fb7e0e2e574f76104551af8",
+      "outcome": {
+        "return_value": 1,
+        "raw_spell_id": 1,
+        "CastRule": 1,
+        "TargetRule": 4,
+        "C8": 4262199296,
+        "C8_definition_reads": 0,
+        "compared_regions": 25,
+        "compared_bytes": 59941,
+        "original_instructions": 5978
+      }
+    },
+    {
+      "case": {
+        "name": "cast1-land8-allied0",
+        "spell": 1,
+        "cast": 1,
+        "cell_owner": 8,
+        "allied": false
+      },
+      "file": "ghidra\\phase152-keeper-validation-native-edc958a176c7.json",
+      "sha256": "dc0e82d9107ada2304c80f81ae3cf43ee5029da0cf91783d2db43410ae819acc",
+      "outcome": {
+        "return_value": 0,
+        "raw_spell_id": 1,
+        "CastRule": 1,
+        "TargetRule": 4,
+        "C8": 4262199296,
+        "C8_definition_reads": 0,
+        "compared_regions": 25,
+        "compared_bytes": 59941,
+        "original_instructions": 5833
+      }
+    },
+    {
+      "case": {
+        "name": "cast1-land8-allied1",
+        "spell": 1,
+        "cast": 1,
+        "cell_owner": 8,
+        "allied": true
+      },
+      "file": "ghidra\\phase152-keeper-validation-native-25862b63c57a.json",
+      "sha256": "a2fa1a12f38b26a6a5743d89a918f9ce29543e1b79c1ed029ba09a6ff9f7b8aa",
+      "outcome": {
+        "return_value": 1,
+        "raw_spell_id": 1,
+        "CastRule": 1,
+        "TargetRule": 4,
+        "C8": 4262199296,
+        "C8_definition_reads": 0,
+        "compared_regions": 25,
+        "compared_bytes": 59941,
+        "original_instructions": 5983
+      }
+    },
+    {
+      "case": {
+        "name": "cast2-land7-allied0",
+        "spell": 1,
+        "cast": 2,
+        "cell_owner": 7,
+        "allied": false
+      },
+      "file": "ghidra\\phase152-keeper-validation-native-84292cf04e8c.json",
+      "sha256": "18af8bcc497f2798b19fe3835ed58a7af3b0a72ef3e3619641cdb57627361a18",
+      "outcome": {
+        "return_value": 1,
+        "raw_spell_id": 1,
+        "CastRule": 2,
+        "TargetRule": 4,
+        "C8": 4262199296,
+        "C8_definition_reads": 0,
+        "compared_regions": 25,
+        "compared_bytes": 59941,
+        "original_instructions": 5976
+      }
+    },
+    {
+      "case": {
+        "name": "cast2-land8-allied0",
+        "spell": 1,
+        "cast": 2,
+        "cell_owner": 8,
+        "allied": false
+      },
+      "file": "ghidra\\phase152-keeper-validation-native-3ddc678240a9.json",
+      "sha256": "c41c72b5daf61df7721ff996a5a3ad8b97d24b4ddbccedd7d42c8a9ee0094e2e",
+      "outcome": {
+        "return_value": 0,
+        "raw_spell_id": 1,
+        "CastRule": 2,
+        "TargetRule": 4,
+        "C8": 4262199296,
+        "C8_definition_reads": 0,
+        "compared_regions": 25,
+        "compared_bytes": 59941,
+        "original_instructions": 5833
+      }
+    },
+    {
+      "case": {
+        "name": "cast2-land8-allied1",
+        "spell": 1,
+        "cast": 2,
+        "cell_owner": 8,
+        "allied": true
+      },
+      "file": "ghidra\\phase152-keeper-validation-native-09b6055f14ed.json",
+      "sha256": "37eb324b9cf3f9c197623a1ac6e8049d33a3c2181c0c0aed6ab411fb80b32b7d",
+      "outcome": {
+        "return_value": 1,
+        "raw_spell_id": 1,
+        "CastRule": 2,
+        "TargetRule": 4,
+        "C8": 4262199296,
+        "C8_definition_reads": 0,
+        "compared_regions": 25,
+        "compared_bytes": 59941,
+        "original_instructions": 5981
+      }
+    },
+    {
+      "case": {
+        "name": "cast3-land7-allied0",
+        "spell": 1,
+        "cast": 3,
+        "cell_owner": 7,
+        "allied": false
+      },
+      "file": "ghidra\\phase152-keeper-validation-native-b32aa2a9cdd1.json",
+      "sha256": "5027916102da2b34577bbce1da6eec87b5c178622ca3eb76c3acb81384da0763",
+      "outcome": {
+        "return_value": 0,
+        "raw_spell_id": 1,
+        "CastRule": 3,
+        "TargetRule": 4,
+        "C8": 4262199296,
+        "C8_definition_reads": 0,
+        "compared_regions": 25,
+        "compared_bytes": 59941,
+        "original_instructions": 5828
+      }
+    },
+    {
+      "case": {
+        "name": "cast3-land8-allied0",
+        "spell": 1,
+        "cast": 3,
+        "cell_owner": 8,
+        "allied": false
+      },
+      "file": "ghidra\\phase152-keeper-validation-native-51e262924bde.json",
+      "sha256": "5f0891e974ef57106ec44d43686d4ff6186ea803fc87bc520454e0074378c574",
+      "outcome": {
+        "return_value": 1,
+        "raw_spell_id": 1,
+        "CastRule": 3,
+        "TargetRule": 4,
+        "C8": 4262199296,
+        "C8_definition_reads": 0,
+        "compared_regions": 25,
+        "compared_bytes": 59941,
+        "original_instructions": 5985
+      }
+    },
+    {
+      "case": {
+        "name": "cast3-land8-allied1",
+        "spell": 1,
+        "cast": 3,
+        "cell_owner": 8,
+        "allied": true
+      },
+      "file": "ghidra\\phase152-keeper-validation-native-1f8923d2d222.json",
+      "sha256": "dbb59444bf35f6f7b3ad086b11f1d1a0c131e18596552c938760cea6d179be0a",
+      "outcome": {
+        "return_value": 0,
+        "raw_spell_id": 1,
+        "CastRule": 3,
+        "TargetRule": 4,
+        "C8": 4262199296,
+        "C8_definition_reads": 0,
+        "compared_regions": 25,
+        "compared_bytes": 59941,
+        "original_instructions": 5837
+      }
+    },
+    {
+      "case": {
+        "name": "cast4-land7-allied0",
+        "spell": 1,
+        "cast": 4,
+        "cell_owner": 7,
+        "allied": false
+      },
+      "file": "ghidra\\phase152-keeper-validation-native-d1c37b046158.json",
+      "sha256": "9ab7790778cf57e4bf7c71907edbc75949b7a810ddc7a3b3707ebd5cffd02984",
+      "outcome": {
+        "return_value": 1,
+        "raw_spell_id": 1,
+        "CastRule": 4,
+        "TargetRule": 4,
+        "C8": 4262199296,
+        "C8_definition_reads": 0,
+        "compared_regions": 25,
+        "compared_bytes": 59941,
+        "original_instructions": 5938
+      }
+    },
+    {
+      "case": {
+        "name": "cast4-land8-allied0",
+        "spell": 1,
+        "cast": 4,
+        "cell_owner": 8,
+        "allied": false
+      },
+      "file": "ghidra\\phase152-keeper-validation-native-30b587c62a5e.json",
+      "sha256": "4a76a6c805924f164cbb1a200da30b33db9d8f8c963309899638f3c6bdc7fbd6",
+      "outcome": {
+        "return_value": 1,
+        "raw_spell_id": 1,
+        "CastRule": 4,
+        "TargetRule": 4,
+        "C8": 4262199296,
+        "C8_definition_reads": 0,
+        "compared_regions": 25,
+        "compared_bytes": 59941,
+        "original_instructions": 5938
+      }
+    },
+    {
+      "case": {
+        "name": "cast4-land8-allied1",
+        "spell": 1,
+        "cast": 4,
+        "cell_owner": 8,
+        "allied": true
+      },
+      "file": "ghidra\\phase152-keeper-validation-native-a5bf1fab1283.json",
+      "sha256": "4d2cc76f71b5f0ae4c0ba073e39bdf1fae7a98c70879a977d0ac458103ff1155",
+      "outcome": {
+        "return_value": 1,
+        "raw_spell_id": 1,
+        "CastRule": 4,
+        "TargetRule": 4,
+        "C8": 4262199296,
+        "C8_definition_reads": 0,
+        "compared_regions": 25,
+        "compared_bytes": 59941,
+        "original_instructions": 5938
+      }
+    },
+    {
+      "case": {
+        "name": "cast1-flag2-marked0",
+        "spell": 1,
+        "cast": 1,
+        "cell_owner": 7,
+        "flags": 2,
+        "marked": false
+      },
+      "file": "ghidra\\phase152-keeper-validation-native-ab442e80d523.json",
+      "sha256": "2efd7c10d93a7d0ba6928fbb383dd47d3c8df0f083a3557ff0c0bdbddf6926e1",
+      "outcome": {
+        "return_value": 1,
+        "raw_spell_id": 1,
+        "CastRule": 1,
+        "TargetRule": 4,
+        "C8": 4262199296,
+        "C8_definition_reads": 0,
+        "compared_regions": 25,
+        "compared_bytes": 59941,
+        "original_instructions": 5978
+      }
+    },
+    {
+      "case": {
+        "name": "cast1-flag2-marked1",
+        "spell": 1,
+        "cast": 1,
+        "cell_owner": 7,
+        "flags": 2,
+        "marked": true
+      },
+      "file": "ghidra\\phase152-keeper-validation-native-ca4711153466.json",
+      "sha256": "7eb9f4887e62098ae65bbe0dbf4972837a910ceb07a6af9e2434b666d06ad1bc",
+      "outcome": {
+        "return_value": 1,
+        "raw_spell_id": 1,
+        "CastRule": 1,
+        "TargetRule": 4,
+        "C8": 4262199296,
+        "C8_definition_reads": 0,
+        "compared_regions": 25,
+        "compared_bytes": 59941,
+        "original_instructions": 5978
+      }
+    },
+    {
+      "case": {
+        "name": "cast2-flag2-marked0",
+        "spell": 1,
+        "cast": 2,
+        "cell_owner": 7,
+        "flags": 2,
+        "marked": false
+      },
+      "file": "ghidra\\phase152-keeper-validation-native-fcab8bcf9bb5.json",
+      "sha256": "37fdaccad4dda956d4b6773338890b8bf00231e2590f39d1de0ed315c1b9491d",
+      "outcome": {
+        "return_value": 0,
+        "raw_spell_id": 1,
+        "CastRule": 2,
+        "TargetRule": 4,
+        "C8": 4262199296,
+        "C8_definition_reads": 0,
+        "compared_regions": 25,
+        "compared_bytes": 59941,
+        "original_instructions": 5855
+      }
+    },
+    {
+      "case": {
+        "name": "cast2-flag2-marked1",
+        "spell": 1,
+        "cast": 2,
+        "cell_owner": 7,
+        "flags": 2,
+        "marked": true
+      },
+      "file": "ghidra\\phase152-keeper-validation-native-8ea743faf7e2.json",
+      "sha256": "2f04233e3e92661553cd24a8888d5e27497bd4939af557836aab98de72e5200f",
+      "outcome": {
+        "return_value": 1,
+        "raw_spell_id": 1,
+        "CastRule": 2,
+        "TargetRule": 4,
+        "C8": 4262199296,
+        "C8_definition_reads": 0,
+        "compared_regions": 25,
+        "compared_bytes": 59941,
+        "original_instructions": 5978
+      }
+    },
+    {
+      "case": {
+        "name": "cast3-flag2-marked0",
+        "spell": 1,
+        "cast": 3,
+        "cell_owner": 8,
+        "flags": 2,
+        "marked": false
+      },
+      "file": "ghidra\\phase152-keeper-validation-native-0b391f2ffb8f.json",
+      "sha256": "1bd1b66849b70734c94ffb9cab724657d46ac6cd0cc9e71edad355244cb71ce4",
+      "outcome": {
+        "return_value": 0,
+        "raw_spell_id": 1,
+        "CastRule": 3,
+        "TargetRule": 4,
+        "C8": 4262199296,
+        "C8_definition_reads": 0,
+        "compared_regions": 25,
+        "compared_bytes": 59941,
+        "original_instructions": 5864
+      }
+    },
+    {
+      "case": {
+        "name": "cast3-flag2-marked1",
+        "spell": 1,
+        "cast": 3,
+        "cell_owner": 8,
+        "flags": 2,
+        "marked": true
+      },
+      "file": "ghidra\\phase152-keeper-validation-native-8c5e511f0032.json",
+      "sha256": "d64040d2652531dc69245f02e9f2982be57be0473934f89a5cf46a19d1121cf1",
+      "outcome": {
+        "return_value": 1,
+        "raw_spell_id": 1,
+        "CastRule": 3,
+        "TargetRule": 4,
+        "C8": 4262199296,
+        "C8_definition_reads": 0,
+        "compared_regions": 25,
+        "compared_bytes": 59941,
+        "original_instructions": 5987
+      }
+    },
+    {
+      "case": {
+        "name": "cast4-flag2-marked0",
+        "spell": 1,
+        "cast": 4,
+        "cell_owner": 7,
+        "flags": 2,
+        "marked": false
+      },
+      "file": "ghidra\\phase152-keeper-validation-native-c3cfe3387079.json",
+      "sha256": "0a61ccb323bde184b3d35970264a80e1c60191aeb59113ce410a284d3ed3333f",
+      "outcome": {
+        "return_value": 0,
+        "raw_spell_id": 1,
+        "CastRule": 4,
+        "TargetRule": 4,
+        "C8": 4262199296,
+        "C8_definition_reads": 0,
+        "compared_regions": 25,
+        "compared_bytes": 59941,
+        "original_instructions": 5838
+      }
+    },
+    {
+      "case": {
+        "name": "cast4-flag2-marked1",
+        "spell": 1,
+        "cast": 4,
+        "cell_owner": 7,
+        "flags": 2,
+        "marked": true
+      },
+      "file": "ghidra\\phase152-keeper-validation-native-adda362f4aa9.json",
+      "sha256": "adc4e86dac898d642ae95ceaa403b727f2c660e7982b8b2c87d97a9b0894a20f",
+      "outcome": {
+        "return_value": 1,
+        "raw_spell_id": 1,
+        "CastRule": 4,
+        "TargetRule": 4,
+        "C8": 4262199296,
+        "C8_definition_reads": 0,
+        "compared_regions": 25,
+        "compared_bytes": 59941,
+        "original_instructions": 5940
+      }
+    }
+  ]
+}

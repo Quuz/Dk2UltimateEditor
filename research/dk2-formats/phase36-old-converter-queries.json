@@ -1,0 +1,30 @@
+[
+  {
+    "id": "phase36-old-converter-create",
+    "tool": "create_function",
+    "args": {
+      "program": "DKII-local13.exe",
+      "address": "0x55f170",
+      "disassemble_first": true
+    },
+    "print_limit": 50
+  },
+  {
+    "id": "phase36-old-converter",
+    "tool": "force_decompile",
+    "args": {
+      "program": "DKII-local13.exe",
+      "address": "0x55f170"
+    },
+    "print_limit": 50
+  },
+  {
+    "id": "phase36-old-converter-assembly",
+    "tool": "disassemble_function",
+    "args": {
+      "program": "DKII-local13.exe",
+      "address": "0x55f170"
+    },
+    "print_limit": 50
+  }
+]

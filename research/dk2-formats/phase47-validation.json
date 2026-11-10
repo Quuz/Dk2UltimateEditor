@@ -1,0 +1,51 @@
+{
+  "phase": 47,
+  "date": "2026-10-26",
+  "native_emulations": 48,
+  "full_converter_cases": 36,
+  "diagnostic_fragment_cases": 12,
+  "identical_converter_bodies": 3,
+  "runtime_fields_with_verified_offset_difference": 3,
+  "api_boundary_cases": 2057,
+  "exact_in_memory_container_patches": 64,
+  "patches_by_tag": {
+    "198": 16,
+    "199": 36,
+    "200": 12
+  },
+  "whole_file_roundtrips": 110,
+  "primary_function_ranges_matching_pe": 8,
+  "primary_native_label_ranges_matching_pe": 6,
+  "evidence_instructions": 310,
+  "main_inputs_matching_historical_baseline": 14,
+  "main_input_baseline_drift": [
+    {
+      "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\AutoSave.kwd",
+      "historical_sha256": "2121d9b84566c4d69440825fe8af6f6b14dbbd22fa01dfaab36e9a4cc8523081",
+      "captured_sha256": "1ab10355a574e325525ba4d70adc7eeddddfe65ff4d4e8057d2b16982975a7fc"
+    },
+    {
+      "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\AutoSaveMap.kld",
+      "historical_sha256": "33ca15973cd57488d8663181a8a63f6cab5360451c032ec5cf1629c0657a30c2",
+      "captured_sha256": "7ea1c15447680af8a9988c5a9896bfa88df7631338c0611b150d8084c72a0b22"
+    },
+    {
+      "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\AutoSaveThings.kld",
+      "historical_sha256": "497baba367fc50e18d2ad535ee6969d506ce4934b8ac2524cd728a0ba050cd67",
+      "captured_sha256": "6be45fb802ecf66551805d0426de7f69eb3a3f014b7631e5572ad28e57ee8bda"
+    }
+  ],
+  "input_capture_manifest_sha256": "7479793c4ed8ccbbe4ee85408ee4e2e948b80e0843846768614031b978742bc1",
+  "original_executables_unchanged": 3,
+  "old_research_copy_unchanged": true,
+  "format_package_components": 58,
+  "research_writes_to_original_game_data": 0,
+  "modified_gameplay_runs": 0,
+  "limitations": [
+    "48 native cases:36 complete converters (18 per EXE),12 diagnostic fragments (6 per EXE). All56/84/64 intermediate bytes and3 captured (native format-string pointer, value) records compared.",
+    "Diagnostic fragment enters after prior unrelated print cleanup and exits before next print. Logger fixture captures arguments, not real textual rendering. Entire dump functions/constructors/gameplay not executed.",
+    "Equal converter bodies do not prove every parser, loader, game behavior or editor-save path is compatible across the two executables. Do not infer full version compatibility or original1.3 certification.",
+    "Definition25/6EB and WanderRadius gameplay meaning remain unresolved. Bounded candidate scans are evidence of searched paths, not global non-use. No new gameplay field name/unit assigned.",
+    "No research writes to original game data/EXEs. Three AutoSave inputs changed relative to baseline while both editors were observed running; exact writer not identified. They were snapshotted under research directory and not restored or repaired.14 other main inputs and3 EXEs match historical hashes."
+  ]
+}

@@ -1,0 +1,3046 @@
+{
+  "family": "Doors",
+  "record_bytes": 616,
+  "executables": {
+    "Dungeon Keeper 2/DKII-DX.exe": "d7a8b854e4e4f02709eba271bead6fe2307dd6e332b5a96e70857e5b0e19fb8a",
+    "Dungeon Keeper 2/Data/editor/DK2 Editor pro.exe": "989c45df779bccfc9a9e509b2ad0224a9bd269629f74792adc0320fa4b99fb09"
+  },
+  "functions": {
+    "game_converter": "0x56aa40",
+    "game_loader": "0x4a7100",
+    "runtime_constructor": "0x4a7040",
+    "editor_converter": "0x42a5d0",
+    "editor_model_load": "0x4a1320",
+    "editor_writer": "0x4a8bf0",
+    "editor_fill": "0x447590",
+    "editor_commit": "0x447880",
+    "editor_ddx": "0x4466f0",
+    "game_tick": "0x4a55f0"
+  },
+  "native_scalar_bindings": [
+    {
+      "storage_path": {
+        "raw_offset": "0x22e",
+        "raw_bytes": 2,
+        "baseline_field": "GoldCost",
+        "intermediate_offset": "0x2a2",
+        "runtime_offset": "0x8f",
+        "runtime_bytes": 2,
+        "transform": "copy",
+        "runtime_expression": "*(undefined2 *)(param_2 + 0x2a2)",
+        "converter_evidence": [
+          {
+            "line": 139,
+            "assignment": "uVar2 = *(undefined2 *)(param_2 + 0x22e);"
+          },
+          {
+            "line": 143,
+            "assignment": "*(undefined2 *)((int)param_1 + 0x2a2) = uVar2;"
+          }
+        ],
+        "runtime_evidence": {
+          "line": 61,
+          "assignment": "*(undefined2 *)(param_1 + 0x8f) = *(undefined2 *)(param_2 + 0x2a2);"
+        }
+      },
+      "editor_model_offset": 648,
+      "panel_offset": 92,
+      "native_edit_control": 1269,
+      "label": "Gold &Cost:",
+      "edit_range": [
+        0,
+        32767
+      ],
+      "template_visible": true
+    },
+    {
+      "storage_path": {
+        "raw_offset": "0x22c",
+        "raw_bytes": 2,
+        "baseline_field": "Health",
+        "intermediate_offset": "0x2a0",
+        "runtime_offset": "0x91",
+        "runtime_bytes": 2,
+        "transform": "copy",
+        "runtime_expression": "*(undefined2 *)(param_2 + 0x2a0)",
+        "converter_evidence": [
+          {
+            "line": 163,
+            "assignment": "uVar2 = *(undefined2 *)(param_2 + 0x22c);"
+          },
+          {
+            "line": 167,
+            "assignment": "*(undefined2 *)(param_1 + 0xa8) = uVar2;"
+          }
+        ],
+        "runtime_evidence": {
+          "line": 91,
+          "assignment": "*(undefined2 *)(param_1 + 0x91) = *(undefined2 *)(param_2 + 0x2a0);"
+        }
+      },
+      "editor_model_offset": 654,
+      "panel_offset": 96,
+      "native_edit_control": 1264,
+      "label": "&Health:",
+      "edit_range": [
+        0,
+        32767
+      ],
+      "template_visible": true
+    },
+    {
+      "storage_path": {
+        "raw_offset": "0x21c",
+        "raw_bytes": 2,
+        "baseline_field": "HealthGain",
+        "intermediate_offset": "0x290",
+        "runtime_offset": "0x93",
+        "runtime_bytes": 2,
+        "transform": "copy",
+        "runtime_expression": "*(undefined2 *)(param_2 + 0x290)",
+        "converter_evidence": [
+          {
+            "line": 169,
+            "assignment": "uVar2 = *(undefined2 *)(param_2 + 0x21c);"
+          },
+          {
+            "line": 173,
+            "assignment": "*(undefined2 *)(param_1 + 0xa4) = uVar2;"
+          }
+        ],
+        "runtime_evidence": {
+          "line": 97,
+          "assignment": "*(undefined2 *)(param_1 + 0x93) = *(undefined2 *)(param_2 + 0x290);"
+        }
+      },
+      "editor_model_offset": 656,
+      "panel_offset": 100,
+      "native_edit_control": 1265,
+      "label": "Health Gain:",
+      "edit_range": [
+        0,
+        32767
+      ],
+      "template_visible": true
+    },
+    {
+      "storage_path": {
+        "raw_offset": "0x238",
+        "raw_bytes": 2,
+        "baseline_field": "ManaCost",
+        "intermediate_offset": "0x2ac",
+        "runtime_offset": "0x9b",
+        "runtime_bytes": 2,
+        "transform": "copy",
+        "runtime_expression": "*(undefined2 *)(param_2 + 0x2ac)",
+        "converter_evidence": [
+          {
+            "line": 181,
+            "assignment": "uVar2 = *(undefined2 *)(param_2 + 0x238);"
+          },
+          {
+            "line": 185,
+            "assignment": "*(undefined2 *)(param_1 + 0xab) = uVar2;"
+          }
+        ],
+        "runtime_evidence": {
+          "line": 109,
+          "assignment": "*(undefined2 *)(param_1 + 0x9b) = *(undefined2 *)(param_2 + 0x2ac);"
+        }
+      },
+      "editor_model_offset": 652,
+      "panel_offset": 104,
+      "native_edit_control": 1263,
+      "label": "&Mana Cost:",
+      "edit_range": [
+        -32767,
+        32767
+      ],
+      "template_visible": true
+    },
+    {
+      "storage_path": {
+        "raw_offset": "0x234",
+        "raw_bytes": 2,
+        "baseline_field": "ManufToBuild",
+        "intermediate_offset": "0x2a8",
+        "runtime_offset": "0x95",
+        "runtime_bytes": 2,
+        "transform": "copy",
+        "runtime_expression": "*(undefined2 *)(param_2 + 0x2a8)",
+        "converter_evidence": [
+          {
+            "line": 145,
+            "assignment": "uVar2 = *(undefined2 *)(param_2 + 0x234);"
+          },
+          {
+            "line": 149,
+            "assignment": "*(undefined2 *)(param_1 + 0xaa) = uVar2;"
+          }
+        ],
+        "runtime_evidence": {
+          "line": 67,
+          "assignment": "*(undefined2 *)(param_1 + 0x95) = *(undefined2 *)(param_2 + 0x2a8);"
+        }
+      },
+      "editor_model_offset": 658,
+      "panel_offset": 112,
+      "native_edit_control": 12691,
+      "label": "Manf. To &Build:",
+      "edit_range": [
+        0,
+        32767
+      ],
+      "template_visible": true
+    }
+  ],
+  "manufacture_split": {
+    "baseline_name": "ManufToBuild",
+    "baseline_raw_offset": 564,
+    "baseline_raw_bytes": 4,
+    "native_low_word": {
+      "raw_offset": 564,
+      "bytes": 2,
+      "intermediate_offset": 680,
+      "runtime_offset": 149,
+      "editor_model_offset": 658,
+      "label": "Manf. To &Build:",
+      "meaning_status": "native editor label; game loader copy"
+    },
+    "native_high_word": {
+      "raw_offset": 566,
+      "bytes": 2,
+      "intermediate_offset": 682,
+      "runtime_offset": 153,
+      "editor_model_offset": 650,
+      "meaning_status": "unresolved; copied and written separately, no binding in inspected door properties panel"
+    },
+    "rule": "Expose two physical u16 spans in the supplemental schema. Preserve the upper word when editing manufacture requirement.",
+    "evidence": [
+      {
+        "file": "game-doors-convert.txt",
+        "line": 145,
+        "excerpt": "uVar2 = *(undefined2 *)(param_2 + 0x234);"
+      },
+      {
+        "file": "game-doors-convert.txt",
+        "line": 175,
+        "excerpt": "uVar2 = *(undefined2 *)(param_2 + 0x236);"
+      },
+      {
+        "file": "game-doors-runtime.txt",
+        "line": 67,
+        "excerpt": "*(undefined2 *)(param_1 + 0x95) = *(undefined2 *)(param_2 + 0x2a8);"
+      },
+      {
+        "file": "game-doors-runtime.txt",
+        "line": 103,
+        "excerpt": "*(undefined2 *)(param_1 + 0x99) = *(undefined2 *)(param_2 + 0x2aa);"
+      },
+      {
+        "file": "phase14-editor-door-model-load.txt",
+        "line": 107,
+        "excerpt": "*(undefined2 *)((int)this + 0x28a) = *(undefined2 *)((int)piVar1 + 0x2aa);"
+      },
+      {
+        "file": "phase14-editor-door-model-load.txt",
+        "line": 124,
+        "excerpt": "*(short *)((int)this + 0x292) = (short)piVar1[0xaa];"
+      },
+      {
+        "file": "doors-catalogue-writer.txt",
+        "line": 165,
+        "excerpt": "uStack_4a = *(undefined2 *)(iVar1 + 0x28a);"
+      },
+      {
+        "file": "doors-catalogue-writer.txt",
+        "line": 177,
+        "excerpt": "uStack_4c = *(undefined2 *)(iVar1 + 0x292);"
+      },
+      {
+        "file": "phase14-editor-door-fill.txt",
+        "line": 45,
+        "excerpt": "*(uint *)((int)this + 0x70) = (uint)*(ushort *)(iVar4 + 0x292);"
+      },
+      {
+        "file": "phase14-editor-door-ddx-verified.txt",
+        "line": 15,
+        "excerpt": "DDX_Text(param_2,0x3193);"
+      }
+    ]
+  },
+  "health_gain": {
+    "raw_offset": 540,
+    "bytes": 2,
+    "runtime_offset": 147,
+    "game_read": "signed16",
+    "gui_range": [
+      0,
+      32767
+    ],
+    "health_max": {
+      "raw_offset": 556,
+      "runtime_offset": 145,
+      "read": "unsigned16"
+    },
+    "next_tick_instance_offset": 282,
+    "gate": "not dead and unsigned current_tick > next_health_tick and signed16 HealthGain !=0",
+    "delta_rule": "s16(low16(min_signed32(s32(u16(max_health)-current_health),s16(HealthGain))))",
+    "next_tick_rule": "old next_health_tick + ticks_per_second modulo2**32, including a zero resulting delta",
+    "caveat": "One update per tick invocation; does not catch up with a loop. Full lifecycle and other tick behavior are outside this projection.",
+    "evidence": [
+      {
+        "file": "phase14-door-tick-assembly.txt",
+        "first": "0x4a5617",
+        "last": "0x4a5680",
+        "instructions": [
+          "004a5617: MOV EAX,dword ptr [ESI] ",
+          "004a5619: CALL dword ptr [EAX + 0x28] ",
+          "004a561c: TEST EAX,EAX ",
+          "004a561e: JNZ 0x004a5686 ",
+          "004a5620: MOV ECX,dword ptr [0x006e5050] ",
+          "004a5626: CALL 0x00517490 ",
+          "004a562b: CMP EAX,dword ptr [ESI + 0x11a] ",
+          "004a5631: JBE 0x004a5686 ",
+          "004a5633: MOV ECX,dword ptr [ESI + 0xf7] ",
+          "004a5639: MOV DX,word ptr [ECX + 0x93] ",
+          "004a5640: TEST DX,DX ",
+          "004a5643: JZ 0x004a5686 ",
+          "004a5645: MOV EDI,dword ptr [ESI + 0x40] ",
+          "004a5648: XOR EAX,EAX ",
+          "004a564a: MOV AX,word ptr [ECX + 0x91] ",
+          "004a5651: MOVSX ECX,DX ",
+          "004a5654: SUB EAX,EDI ",
+          "004a5656: CMP EAX,ECX ",
+          "004a5658: JL 0x004a565c ",
+          "004a565a: MOV EAX,ECX ",
+          "004a565c: TEST AX,AX ",
+          "004a565f: JZ 0x004a5673 ",
+          "004a5661: MOV CX,word ptr [ESI + 0x36] ",
+          "004a5665: PUSH 0x0 ",
+          "004a5667: MOVSX EDX,AX ",
+          "004a566a: PUSH ECX ",
+          "004a566b: PUSH EDX ",
+          "004a566c: MOV ECX,ESI ",
+          "004a566e: CALL 0x004b2ce0 ",
+          "004a5673: MOV EAX,[0x006f2590] ",
+          "004a5678: MOV ECX,dword ptr [ESI + 0x11a] ",
+          "004a567e: ADD ECX,EAX ",
+          "004a5680: MOV dword ptr [ESI + 0x11a],ECX "
+        ]
+      },
+      {
+        "file": "phase14-door-health-apply.txt",
+        "line": 35,
+        "excerpt": "param_4 = param_1[0x10] + param_2;"
+      },
+      {
+        "file": "phase14-editor-door-fill.txt",
+        "line": 42,
+        "excerpt": "*(int *)((int)this + 100) = (int)*(short *)(iVar4 + 0x290);"
+      },
+      {
+        "file": "phase14-editor-door-ddx-verified.txt",
+        "line": 10,
+        "excerpt": "FUN_004e4b31(param_2,*(int *)(param_1 + 100),0,0x7fff);"
+      }
+    ]
+  },
+  "editor_flags": {
+    "raw_offset": 552,
+    "bytes": 4,
+    "intermediate_offset": 668,
+    "runtime_offset": 139,
+    "supported_mask": 224,
+    "dropped_mask": 4294967071,
+    "decode": "0x41f510",
+    "encode": "0x41f4e0",
+    "bits": [
+      {
+        "mask": 32,
+        "model_offset": 668,
+        "checkbox": 1784,
+        "label": "&Secret"
+      },
+      {
+        "mask": 64,
+        "model_offset": 672,
+        "checkbox": 1786,
+        "label": "Barricade"
+      },
+      {
+        "mask": 128,
+        "model_offset": 676,
+        "checkbox": 1787,
+        "label": "Good"
+      }
+    ],
+    "rule": "Native full decode/encode reconstructs only bits5,6,7; lossless serialization must retain all other raw bits.",
+    "evidence": [
+      {
+        "file": "phase14-editor-door-flags-decode.txt",
+        "line": 5,
+        "excerpt": "*(uint *)((int)this + 0x29c) = param_1 >> 5 & 1;"
+      },
+      {
+        "file": "phase14-editor-door-flags-encode.txt",
+        "line": 15,
+        "excerpt": "uVar1 = uVar1 | 0x80;"
+      },
+      {
+        "file": "doors-catalogue-writer.txt",
+        "line": 193,
+        "excerpt": "uStack_58 = FUN_0041f4e0(iVar1);"
+      },
+      {
+        "file": "phase14-editor-door-ddx-verified.txt",
+        "line": 30,
+        "excerpt": "FUN_004e490a(param_2,0x6fb,(int *)(param_1 + 0xa4));"
+      }
+    ]
+  },
+  "untransferred_spans": [
+    {
+      "raw_offset": 542,
+      "bytes": 2,
+      "meaning_status": "unresolved",
+      "observation": "No field transfer in the inspected game/editor raw converters. Preserve bytes; do not claim global non-use."
+    },
+    {
+      "raw_offset": 544,
+      "bytes": 4,
+      "meaning_status": "unresolved",
+      "observation": "No field transfer in the inspected game/editor raw converters. Preserve bytes; do not claim global non-use."
+    },
+    {
+      "raw_offset": 560,
+      "bytes": 2,
+      "meaning_status": "unresolved",
+      "observation": "No field transfer in the inspected game/editor raw converters. Preserve bytes; do not claim global non-use."
+    }
+  ],
+  "door_shot": {
+    "trap_type_path": {
+      "raw_offset": "0x227",
+      "raw_bytes": 1,
+      "baseline_field": "TrapTypeId",
+      "intermediate_offset": "0x29b",
+      "runtime_offset": "0xb0",
+      "runtime_bytes": 1,
+      "transform": "copy",
+      "runtime_expression": "*(undefined1 *)(param_2 + 0x29b)",
+      "converter_evidence": [
+        {
+          "line": 37,
+          "assignment": "cVar1 = param_2[0x227];"
+        },
+        {
+          "line": 41,
+          "assignment": "*(char *)((int)param_1 + 0x29b) = cVar1;"
+        }
+      ],
+      "runtime_evidence": {
+        "line": 493,
+        "assignment": "*(undefined1 *)(param_1 + 0xb0) = *(undefined1 *)(param_2 + 0x29b);"
+      }
+    },
+    "trap_getter_vtable_offset": 352,
+    "prerequisites": "Nonzero TrapTypeId, due unsigned shot timer, selected eligible target and closed door; full target selection is not modeled.",
+    "mana_gate": "Trap.ManaCostToFire read as signed32; helper returns cost==0 or cost<=player_mana (signed comparison).",
+    "initial_origin": "door XYZ, with z+=0x800 modulo2**32",
+    "uses_trap_shot_offsets": false,
+    "shot_type": {
+      "trap_raw_offset": 525,
+      "trap_runtime_offset": 187
+    },
+    "payload": [
+      {
+        "trap_raw_offset": 480,
+        "trap_runtime_offset": 124,
+        "shot_offset": 317
+      },
+      {
+        "trap_raw_offset": 484,
+        "trap_runtime_offset": 128,
+        "shot_offset": 321
+      }
+    ],
+    "source_tag_shot_offset": 325,
+    "target_tag_shot_offset": 327,
+    "target_helper": "0x4ab830",
+    "trap16_override": false,
+    "uses_trap_charge_gate": false,
+    "uses_trap_threat_reset": false,
+    "failed_factory": "On the mana-allowed attempt path, factory failure jumps to mana accounting and recharge deadline update. Payload/tag assignments are success-only.",
+    "deadline": "current_tick + Trap.RechargeTime runtime ticks modulo2**32",
+    "unavailable_mana": "Optional ManaCostToFireEffectId at door XYZ, then exits without deadline update in this branch.",
+    "scope": "Selected assignments in this separate native door shot path; other projectile motion and full door tick are not modeled.",
+    "evidence": [
+      {
+        "file": "phase14-door-tick-assembly.txt",
+        "first": "0x4a6186",
+        "last": "0x4a61ab",
+        "instructions": [
+          "004a6186: MOV EAX,dword ptr [ESI + 0xf7] ",
+          "004a618c: MOV CL,byte ptr [EAX + 0xb0] ",
+          "004a6192: TEST CL,CL ",
+          "004a6194: JZ 0x004a646f ",
+          "004a619a: MOV ECX,dword ptr [0x006e5050] ",
+          "004a61a0: CALL 0x00517490 ",
+          "004a61a5: CMP EAX,dword ptr [ESI + 0x105] ",
+          "004a61ab: JC 0x004a646f "
+        ]
+      },
+      {
+        "file": "phase14-door-tick-assembly.txt",
+        "first": "0x4a629d",
+        "last": "0x4a62e5",
+        "instructions": [
+          "004a629d: MOV EAX,dword ptr [ESI + 0x10d] ",
+          "004a62a3: TEST EAX,EAX ",
+          "004a62a5: JNZ 0x004a646f ",
+          "004a62ab: MOV EAX,dword ptr [ESI + 0xf7] ",
+          "004a62b1: MOV ECX,dword ptr [0x006e5050] ",
+          "004a62b7: MOV AL,byte ptr [EAX + 0xb0] ",
+          "004a62bd: MOV EDX,dword ptr [ECX] ",
+          "004a62bf: PUSH EAX ",
+          "004a62c0: CALL dword ptr [EDX + 0x160] ",
+          "004a62c6: MOV EDI,EAX ",
+          "004a62c8: MOV ECX,dword ptr [EDI + 0x9a] ",
+          "004a62ce: PUSH ECX ",
+          "004a62cf: MOV ECX,dword ptr [ESI + 0x2a] ",
+          "004a62d2: CALL 0x004c1740 ",
+          "004a62d7: TEST EAX,EAX ",
+          "004a62d9: JNZ 0x004a6328 ",
+          "004a62db: MOV DI,word ptr [EDI + 0xb7] ",
+          "004a62e2: TEST DI,DI ",
+          "004a62e5: JZ 0x004a646f "
+        ]
+      },
+      {
+        "file": "phase14-door-tick-assembly.txt",
+        "first": "0x4a6328",
+        "last": "0x4a6378",
+        "instructions": [
+          "004a6328: LEA EBX,[ESI + 0x1a] ",
+          "004a632b: PUSH 0x1 ",
+          "004a632d: MOV EAX,EBX ",
+          "004a632f: MOV word ptr [EBP + -0xe],0x0 ",
+          "004a6335: MOV ECX,dword ptr [EAX] ",
+          "004a6337: MOV dword ptr [EBP + -0x50],ECX ",
+          "004a633a: LEA ECX,[EBP + -0x14] ",
+          "004a633d: MOV EDX,dword ptr [EAX + 0x4] ",
+          "004a6340: PUSH ECX ",
+          "004a6341: MOV CX,word ptr [ESI + 0x28] ",
+          "004a6345: MOV dword ptr [EBP + -0x4c],EDX ",
+          "004a6348: MOV EAX,dword ptr [EAX + 0x8] ",
+          "004a634b: LEA EDX,[EBP + -0xe] ",
+          "004a634e: ADD EAX,0x800 ",
+          "004a6353: PUSH EDX ",
+          "004a6354: MOV dword ptr [EBP + -0x48],EAX ",
+          "004a6357: MOV AL,byte ptr [EDI + 0xbb] ",
+          "004a635d: MOV byte ptr [EBP + -0x2c],AL ",
+          "004a6360: MOV EDX,dword ptr [EBP + -0x2c] ",
+          "004a6363: LEA EAX,[EBP + -0x50] ",
+          "004a6366: PUSH EAX ",
+          "004a6367: MOV EAX,[0x006e5050] ",
+          "004a636c: PUSH ECX ",
+          "004a636d: PUSH EDX ",
+          "004a636e: LEA ECX,[EAX + 0x8] ",
+          "004a6371: CALL 0x004b7cd0 ",
+          "004a6376: TEST EAX,EAX ",
+          "004a6378: JZ 0x004a6431 "
+        ]
+      },
+      {
+        "file": "phase14-door-tick-assembly.txt",
+        "first": "0x4a63c9",
+        "last": "0x4a640c",
+        "instructions": [
+          "004a63c9: MOV EAX,dword ptr [EBP + -0x14] ",
+          "004a63cc: MOV DX,word ptr [ESI + 0x4] ",
+          "004a63d0: MOV word ptr [EAX + 0x145],DX ",
+          "004a63d7: MOV ECX,dword ptr [EBP + -0x18] ",
+          "004a63da: MOV EAX,dword ptr [EBP + -0x14] ",
+          "004a63dd: MOV DX,word ptr [ECX + 0x4] ",
+          "004a63e1: MOV word ptr [EAX + 0x147],DX ",
+          "004a63e8: MOV ECX,dword ptr [EBP + -0x18] ",
+          "004a63eb: ADD ECX,0x1a ",
+          "004a63ee: PUSH ECX ",
+          "004a63ef: MOV ECX,dword ptr [EBP + -0x14] ",
+          "004a63f2: CALL 0x004ab830 ",
+          "004a63f7: MOV ECX,dword ptr [EBP + -0x14] ",
+          "004a63fa: MOV EAX,dword ptr [EDI + 0x80] ",
+          "004a6400: MOV EDX,dword ptr [EDI + 0x7c] ",
+          "004a6403: MOV dword ptr [EBP + -0x38],ECX ",
+          "004a6406: MOV dword ptr [ECX + 0x13d],EDX ",
+          "004a640c: MOV dword ptr [ECX + 0x141],EAX "
+        ]
+      },
+      {
+        "file": "phase14-door-tick-assembly.txt",
+        "first": "0x4a6431",
+        "last": "0x4a6469",
+        "instructions": [
+          "004a6431: MOV ECX,dword ptr [EDI + 0x9a] ",
+          "004a6437: NEG ECX ",
+          "004a6439: PUSH ECX ",
+          "004a643a: MOV ECX,dword ptr [ESI + 0x2a] ",
+          "004a643d: CALL 0x004c19c0 ",
+          "004a6442: MOV EAX,dword ptr [ESI + 0x2a] ",
+          "004a6445: MOV EDX,dword ptr [EDI + 0x9a] ",
+          "004a644b: MOV EBX,dword ptr [EAX + 0x10f2] ",
+          "004a6451: ADD EBX,EDX ",
+          "004a6453: MOV dword ptr [EAX + 0x10f2],EBX ",
+          "004a6459: MOV ECX,dword ptr [0x006e5050] ",
+          "004a645f: MOV EDI,dword ptr [EDI + 0x74] ",
+          "004a6462: CALL 0x00517490 ",
+          "004a6467: ADD EAX,EDI ",
+          "004a6469: MOV dword ptr [ESI + 0x105],EAX "
+        ]
+      },
+      {
+        "file": "phase14-door-mana-gate.txt",
+        "line": 8,
+        "excerpt": "return param_2 <= *(int *)(param_1 + 0x82);"
+      },
+      {
+        "file": "phase14-door-mana-adjust.txt",
+        "line": 7,
+        "excerpt": "iVar1 = *(int *)(param_1 + 0x82) + param_2;"
+      }
+    ]
+  },
+  "exploratory_query_notes": "Some phase14 filenames reflect search guesses: flags-decode query0x41f520 returned entry0x41f510; commit query0x447980 returned0x447880. door-convert0x42b050 was only a header-copy helper. Only verified function entries above are used.",
+  "limitation": "Static Ghidra evidence and read-only projections; no modified game data executed. Upper manufacture word and remaining unknown spans retain unresolved status.",
+  "phase59_height_consumer": {
+    "file": "structure-overlay-semantics.json",
+    "sha256": "3fe624e6071e4fcc1c6d93c69f7d13abaa7940e328700d45c4f67f980c79c980",
+    "field": {
+      "raw_bytes": 616,
+      "raw_height": 536,
+      "mid_bytes": 732,
+      "mid_height": 652,
+      "presence": 36,
+      "definition_bytes": 181,
+      "definition_height": 151,
+      "kind": 4,
+      "converter": 5679680,
+      "loader": 4878592,
+      "start": 4878758,
+      "stop": 4878778
+    },
+    "scope": "Full5955C0:kind3 readsunsigneddefinitionWORDA0 and adds200hex. Kind4readsunsignedWORD97 and adds800hex,plus898hexifinstanceDWORD10D!=0. WritesoffsetDWORD14 and addsitmodulo32toZDWORD2D/39 in300-byteoverlaycontext. No inferenceofallphysicalheight/collision/renderingrules."
+  },
+  "phase62_old_entity_definitions": {
+    "file": "entity-definition-semantics.json",
+    "sha256": "4022cf9afba928f57a15e4f613ec8ad53c81eb2a097c1e968f3e04d0c5b5baf7",
+    "family": "Doors",
+    "profile": {
+      "kind": 4,
+      "lookup_old": 5251232,
+      "world_array": 5588,
+      "world_count": 5596,
+      "definition_bytes": 181,
+      "definition_id": 173,
+      "old_pointer": 246,
+      "dx_pointer": 247,
+      "old_id": 245,
+      "dx_id": 246,
+      "raw_bytes": 616,
+      "patch_offset": 536,
+      "patch_bytes": 4
+    },
+    "scope": "Exactoldentityoffsets and lookup/overlay consumers;nativeclass/initializationbinding static;unknown gameplay purposes remain open."
+  },
+  "phase66_writer": {
+    "phase": 66,
+    "family": "Doors original Pro/RC3 serialization",
+    "record_bytes": 616,
+    "profiles": {
+      "Pro": {
+        "program": "DK2 Editor pro.exe",
+        "writer": 4885488,
+        "array": 1208,
+        "count": 1212,
+        "date_global": 5572938,
+        "date_helper": 4895520
+      },
+      "RC3": {
+        "program": "DK2-Editor-rc3.exe",
+        "writer": 4908032,
+        "array": 1204,
+        "count": 1208,
+        "date_global": 5669042,
+        "date_helper": 4918064
+      }
+    },
+    "primary_program_bytes": [
+      {
+        "profile": "Pro",
+        "program": "DK2 Editor pro.exe",
+        "exe": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\DK2 Editor pro.exe",
+        "address": 4885488,
+        "length": 834,
+        "before": "phase66-Pro-4a8bf0-disassemble_function.txt",
+        "after": "phase66-final-Pro-4a8bf0-assembly.txt",
+        "memory": "phase66-final-Pro-4a8bf0-memory.txt",
+        "scope": "Full executed nativefunction;date/filefunctions areproviders instead.",
+        "before_sha256": "900ce0f7d4bc37c7893667f87ce06887fac4122302089e0f44cb89e7a61d41fb",
+        "memory_sha256": "e4c078dd08135df2dee6ae91c631ab23adfdf7576fe494cb4c2c0a292b671323",
+        "program_bytes_sha256": "2689fe728123bbd74fc35e157801aab5e5e5abf4ea1b48783ff404603cfe573d"
+      },
+      {
+        "profile": "Pro",
+        "program": "DK2 Editor pro.exe",
+        "exe": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\DK2 Editor pro.exe",
+        "address": 4902312,
+        "length": 39,
+        "before": "phase66-Pro-4acda8-disassemble_function.txt",
+        "after": "phase66-final-Pro-4acda8-assembly.txt",
+        "memory": "phase66-final-Pro-4acda8-memory.txt",
+        "scope": "Full executed nativefunction;date/filefunctions areproviders instead.",
+        "before_sha256": "fd8ecc41a6cbe4f7bae48f65f96be1e80f68097545b47265d30844161c5b5151",
+        "memory_sha256": "a7680f8c3eb9745605f467e8e1909f52c40de01517c8a65e3ad9ddbc278cf1f7",
+        "program_bytes_sha256": "d0a2aca68648a0ae9d5cbfae1b276d4a64d4f797fc0c60f28b64096cdfa3148c"
+      },
+      {
+        "profile": "Pro",
+        "program": "DK2 Editor pro.exe",
+        "exe": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\DK2 Editor pro.exe",
+        "address": 4322528,
+        "length": 42,
+        "before": "phase66-Pro-41f4e0-disassemble_function.txt",
+        "after": "phase66-final-Pro-41f4e0-assembly.txt",
+        "memory": "phase66-final-Pro-41f4e0-memory.txt",
+        "scope": "Full executed nativefunction;date/filefunctions areproviders instead.",
+        "before_sha256": "732e8f6e9c274946f4f16cc9d662f27477982e8bfdeb790d830456ab04f58fde",
+        "memory_sha256": "d203c3ea6b4457042e8f806c3d4aab26195ea9809dfaa7f285785edb4fe84550",
+        "program_bytes_sha256": "57d3cce2bcef112886136f9fc9ca6ee55808c05e01bf4962662e2506362ebcb4"
+      },
+      {
+        "profile": "Pro",
+        "program": "DK2 Editor pro.exe",
+        "exe": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\DK2 Editor pro.exe",
+        "address": 4312672,
+        "length": 4,
+        "before": "phase66-Pro-41ce60-disassemble_function.txt",
+        "after": "phase66-final-Pro-41ce60-assembly.txt",
+        "memory": "phase66-final-Pro-41ce60-memory.txt",
+        "scope": "Full executed nativefunction;date/filefunctions areproviders instead.",
+        "before_sha256": "24db10ab781c10921afaf8a1c9d6df5e7fc1c2a12517f8e14b46c1964e32ad35",
+        "memory_sha256": "c7929ff5d9bd9223fa3664c069007b34ea43915a9c656436beedff2e61b2f233",
+        "program_bytes_sha256": "4181cb1fec090d6487f323c8ce84a17ff37429613d7843b4f5f40f5eae266b77"
+      },
+      {
+        "profile": "Pro",
+        "program": "DK2 Editor pro.exe",
+        "exe": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\DK2 Editor pro.exe",
+        "address": 4895664,
+        "length": 74,
+        "before": "phase66-Pro-4ab3b0-disassemble_function.txt",
+        "after": "phase66-final-Pro-4ab3b0-assembly.txt",
+        "memory": "phase66-final-Pro-4ab3b0-memory.txt",
+        "scope": "Full executed nativefunction;date/filefunctions areproviders instead.",
+        "before_sha256": "21c261b949dd848b7288b197f761274c69d261e4488b92d01d6ea54cb35c7426",
+        "memory_sha256": "1e61d4a9abde9a24b96929bed44058a22355273a23ffa19e804a4e5e1b6f53c9",
+        "program_bytes_sha256": "df9397344238ab0c72051bb3fad9574701e5a4e3b53ba52c323ca56754493138"
+      },
+      {
+        "profile": "RC3",
+        "program": "DK2-Editor-rc3.exe",
+        "exe": "D:\\Games\\DK2\\Tools\\dk2-format-research\\source-binaries\\DK2-Editor-rc3.exe",
+        "address": 4908032,
+        "length": 834,
+        "before": "phase66-RC3-4ae400-disassemble_function.txt",
+        "after": "phase66-final-RC3-4ae400-assembly.txt",
+        "memory": "phase66-final-RC3-4ae400-memory.txt",
+        "scope": "Full executed nativefunction;date/filefunctions areproviders instead.",
+        "before_sha256": "c93bd6869d7587c81c4cf28821cd232eee2198da3db28ef9511885ac80559584",
+        "memory_sha256": "263e05ca1d898c10617cf0696eb93cd209dae555e6b31c6d3359b435d616eb2a",
+        "program_bytes_sha256": "efe9dba97506c75901b79b0bb196df7836fc4e8d5d9720c1d52d2774c38da490"
+      },
+      {
+        "profile": "RC3",
+        "program": "DK2-Editor-rc3.exe",
+        "exe": "D:\\Games\\DK2\\Tools\\dk2-format-research\\source-binaries\\DK2-Editor-rc3.exe",
+        "address": 4954192,
+        "length": 39,
+        "before": "phase66-RC3-4b9850-disassemble_function.txt",
+        "after": "phase66-final-RC3-4b9850-assembly.txt",
+        "memory": "phase66-final-RC3-4b9850-memory.txt",
+        "scope": "Full executed nativefunction;date/filefunctions areproviders instead.",
+        "before_sha256": "dd4b6a058e3fa80663c0b89c8da733182a9c528ae67cd7ef3710200bf6e9786d",
+        "memory_sha256": "80b26467e17e213fe803b7dba0db815e00998a2cb55e2c11d69078bfadc887d2",
+        "program_bytes_sha256": "d0a2aca68648a0ae9d5cbfae1b276d4a64d4f797fc0c60f28b64096cdfa3148c"
+      },
+      {
+        "profile": "RC3",
+        "program": "DK2-Editor-rc3.exe",
+        "exe": "D:\\Games\\DK2\\Tools\\dk2-format-research\\source-binaries\\DK2-Editor-rc3.exe",
+        "address": 4364784,
+        "length": 42,
+        "before": "phase66-RC3-4299f0-disassemble_function.txt",
+        "after": "phase66-final-RC3-4299f0-assembly.txt",
+        "memory": "phase66-final-RC3-4299f0-memory.txt",
+        "scope": "Full executed nativefunction;date/filefunctions areproviders instead.",
+        "before_sha256": "19afcfda848d44264ed6f34c61794fc46048fe10dddb9bbe490108549ad7fdfe",
+        "memory_sha256": "21161181e5bd394d8d23d5d8f824d406a14149260982e0bd80b0ee3ef834a846",
+        "program_bytes_sha256": "57d3cce2bcef112886136f9fc9ca6ee55808c05e01bf4962662e2506362ebcb4"
+      },
+      {
+        "profile": "RC3",
+        "program": "DK2-Editor-rc3.exe",
+        "exe": "D:\\Games\\DK2\\Tools\\dk2-format-research\\source-binaries\\DK2-Editor-rc3.exe",
+        "address": 4350480,
+        "length": 4,
+        "before": "phase66-RC3-426210-disassemble_function.txt",
+        "after": "phase66-final-RC3-426210-assembly.txt",
+        "memory": "phase66-final-RC3-426210-memory.txt",
+        "scope": "Full executed nativefunction;date/filefunctions areproviders instead.",
+        "before_sha256": "d33846392eb36662a6e36bbc1787e10d6f4d27673a9ba684bba4f1d7b7e7cfbf",
+        "memory_sha256": "24925374a97a35dd4d4bd1ce5265bf3b345eeb3a1727bc44aba392fce6287dad",
+        "program_bytes_sha256": "4181cb1fec090d6487f323c8ce84a17ff37429613d7843b4f5f40f5eae266b77"
+      },
+      {
+        "profile": "RC3",
+        "program": "DK2-Editor-rc3.exe",
+        "exe": "D:\\Games\\DK2\\Tools\\dk2-format-research\\source-binaries\\DK2-Editor-rc3.exe",
+        "address": 4918208,
+        "length": 74,
+        "before": "phase66-RC3-4b0bc0-disassemble_function.txt",
+        "after": "phase66-final-RC3-4b0bc0-assembly.txt",
+        "memory": "phase66-final-RC3-4b0bc0-memory.txt",
+        "scope": "Full executed nativefunction;date/filefunctions areproviders instead.",
+        "before_sha256": "0a1f8d18addedffd99c07effeeac7061567d7e4ca1abc3638c5ae35381f57724",
+        "memory_sha256": "1c720cc237a5325f3ce2e1c843c66a00b7583f10baf50c6d2f2824c334efff9f",
+        "program_bytes_sha256": "df9397344238ab0c72051bb3fad9574701e5a4e3b53ba52c323ca56754493138"
+      }
+    ],
+    "primary_data_and_static_ranges": [
+      {
+        "program": "DK2 Editor pro.exe",
+        "exe": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\DK2 Editor pro.exe",
+        "address": 5287000,
+        "length": 8,
+        "memory": "phase66-final-data-Pro-scale-memory.txt",
+        "scope": "Nativebinary64scale4096 usedbywriter.",
+        "memory_sha256": "f9956ee7138a0310cb08d9e0b6afcbbd641f808a7a955d9e219586d89bd0c230",
+        "program_bytes_sha256": "46d7322f14ccdacd8b08d3f772527f9cbeba5bca01ff775b05fe562c237e0d72",
+        "hex": "000000000000b040"
+      },
+      {
+        "program": "DK2-Editor-rc3.exe",
+        "exe": "D:\\Games\\DK2\\Tools\\dk2-format-research\\source-binaries\\DK2-Editor-rc3.exe",
+        "address": 5356736,
+        "length": 8,
+        "memory": "phase66-final-data-RC3-scale-memory.txt",
+        "scope": "Nativebinary64scale4096 usedbywriter.",
+        "memory_sha256": "2d9f57ff6243cf3933363526a1de9ee57e8f423cb93b1d0f599bdb4838fc0372",
+        "program_bytes_sha256": "46d7322f14ccdacd8b08d3f772527f9cbeba5bca01ff775b05fe562c237e0d72",
+        "hex": "000000000000b040"
+      },
+      {
+        "program": "DKII-local13.exe",
+        "exe": "D:\\Games\\DK2\\Tools\\dk2-format-research\\source-binaries\\DKII-local13.exe",
+        "address": 5259584,
+        "length": 46,
+        "memory": "phase66-final-data-old-APgetter-memory.txt",
+        "scope": "Completegetterbytesforstaticidentity;notexecuted inphase66.",
+        "memory_sha256": "a283652b6f446d98f8ad695694731a5eb4d2eb2de06887cb6d3fc62098ea5185",
+        "program_bytes_sha256": "97cf6f764efc22b51acadc1c52f4515dfc9950d321e46617057f4c13d53f862a",
+        "hex": "33c0668b41128b0485c8956d0085c0741a8a4c2404384837741133d2668b50088b0495c8956d0085c075eac20400"
+      },
+      {
+        "program": "DKII-local13.exe",
+        "exe": "D:\\Games\\DK2\\Tools\\dk2-format-research\\source-binaries\\DKII-local13.exe",
+        "address": 6682084,
+        "length": 4,
+        "memory": "phase66-final-data-old-APvslot-memory.txt",
+        "scope": "CWorldvslot2C8pointertoold504140.",
+        "memory_sha256": "5b12ccdae3a338e7b6b949970d4b71bd135fbf624e36e3d056177b65663f36ce",
+        "program_bytes_sha256": "b29ea92dd2e75f7ee109fdc1ada5da76062574d34e2c758a63c4074d3323dad9",
+        "hex": "40415000"
+      }
+    ],
+    "native_emulations": [
+      {
+        "file": "phase66-emulation-door-writer-Pro-word236-0.json",
+        "sha256": "a0f4f5364dedd8c46313298f7ef189fd0a995ca2e062e4a1c07efaf45c3404b0",
+        "case": "Pro-word236-0"
+      },
+      {
+        "file": "phase66-emulation-door-writer-Pro-word236-1.json",
+        "sha256": "6e9c1c7428504292ae53ec2ce6ca6ba2c973c5931176b919adc3ec26ad36887c",
+        "case": "Pro-word236-1"
+      },
+      {
+        "file": "phase66-emulation-door-writer-Pro-word236-32767.json",
+        "sha256": "791298abc33309de925cf134e216aee07f4809f8d158f6761041d0faa16fa823",
+        "case": "Pro-word236-32767"
+      },
+      {
+        "file": "phase66-emulation-door-writer-Pro-word236-32768.json",
+        "sha256": "961b2606550d4fffab6715334028439a1cae2cb3551d3576c1f654dce5101f1a",
+        "case": "Pro-word236-32768"
+      },
+      {
+        "file": "phase66-emulation-door-writer-Pro-word236-65535.json",
+        "sha256": "cf6485328ce878aa2240d230e4fc8f834c03fafeea51643d585fa9a63159668b",
+        "case": "Pro-word236-65535"
+      },
+      {
+        "file": "phase66-emulation-door-writer-Pro-scratch-0.json",
+        "sha256": "92c0004634d5cbb21f18454baadf0b259eff18236cf700fd282987ebc7da4675",
+        "case": "Pro-scratch-0"
+      },
+      {
+        "file": "phase66-emulation-door-writer-Pro-scratch-255.json",
+        "sha256": "df8bdfffd385828fb849993c4742d34674e8c4bb2fc25e0603427cec751539c3",
+        "case": "Pro-scratch-255"
+      },
+      {
+        "file": "phase66-emulation-door-writer-Pro-scratch-pattern.json",
+        "sha256": "1bd689e011d069aa676e02b3bce96df4be74270898d4b6fe994264a00231850f",
+        "case": "Pro-scratch-pattern"
+      },
+      {
+        "file": "phase66-emulation-door-writer-Pro-slots-.json",
+        "sha256": "b81b7646162dd5b277d318ea2235b6321bc354523f0f708c008ef05bc8c0adef",
+        "case": "Pro-slots-"
+      },
+      {
+        "file": "phase66-emulation-door-writer-Pro-slots-0.json",
+        "sha256": "2068b2ce978fd06d09a8e2c0873c284a35f8c3df5a1a8dd45ae5e9ac161f0072",
+        "case": "Pro-slots-0"
+      },
+      {
+        "file": "phase66-emulation-door-writer-Pro-slots-102.json",
+        "sha256": "b034a65ac215fe7d10e384aebaeef8b8c0c3a1b8f62d3d6b3690c35a6d9f6d11",
+        "case": "Pro-slots-102"
+      },
+      {
+        "file": "phase66-emulation-door-writer-Pro-slots-21.json",
+        "sha256": "309c15b54dc47d1de4afc21878bc525542c5f8c298f08a88a94eb1e415298c2d",
+        "case": "Pro-slots-21"
+      },
+      {
+        "file": "phase66-emulation-door-writer-Pro-flags-0.json",
+        "sha256": "e0e0577980c13e182cba7b7f39251cdba7a23ce6a1f6e88a6b0c8c8396c5b359",
+        "case": "Pro-flags-0"
+      },
+      {
+        "file": "phase66-emulation-door-writer-Pro-flags-32.json",
+        "sha256": "4b7ac6e504ce56fd10dbebb7e271675ecf6898679c9623dfd206f2ad111d2f50",
+        "case": "Pro-flags-32"
+      },
+      {
+        "file": "phase66-emulation-door-writer-Pro-flags-64.json",
+        "sha256": "e19bfc1b4b98866d9e45ae17405691647c6726f783297bb1ea1af70809c43ac4",
+        "case": "Pro-flags-64"
+      },
+      {
+        "file": "phase66-emulation-door-writer-Pro-flags-128.json",
+        "sha256": "60f671c663f3bf0ae4d0247fdfc1835c7c5f86f3b5bbb283c4a8f5d85e6b1d49",
+        "case": "Pro-flags-128"
+      },
+      {
+        "file": "phase66-emulation-door-writer-Pro-name-543.json",
+        "sha256": "73de648c9aa3f009fa8c1e25eeb5ba25be9205d510ce85898346049eb641ae3b",
+        "case": "Pro-name-543"
+      },
+      {
+        "file": "phase66-emulation-door-writer-Pro-name-544.json",
+        "sha256": "c53857be3c2cd62146f0d03bcee3db9939660db742eeec21742f41c632a53171",
+        "case": "Pro-name-544"
+      },
+      {
+        "file": "phase66-emulation-door-writer-Pro-name-548.json",
+        "sha256": "a391549dbcde64935fe84c0f7034df9995093264181eaf13205f536c8ff16c67",
+        "case": "Pro-name-548"
+      },
+      {
+        "file": "phase66-emulation-door-writer-Pro-name-562.json",
+        "sha256": "959e3820d7db246a3b23cd2cc0c27978d34da04376c226fd4b8c2022af392195",
+        "case": "Pro-name-562"
+      },
+      {
+        "file": "phase66-emulation-door-writer-Pro-name-carry-to-next-record.json",
+        "sha256": "bfbc56934a5635f56ad07f9dba4441278b032aa4e0ced3f3aa2bbf53a480038d",
+        "case": "Pro-name-carry-to-next-record"
+      },
+      {
+        "file": "phase66-emulation-door-writer-RC3-word236-0.json",
+        "sha256": "944479888ccfbca34e1d59cab52b7a806e80ae9ae6421f63140cab411b37b05a",
+        "case": "RC3-word236-0"
+      },
+      {
+        "file": "phase66-emulation-door-writer-RC3-word236-1.json",
+        "sha256": "45b378326a5298e3700faf98af8b53cdefbfd340106a98606bae9e764db28476",
+        "case": "RC3-word236-1"
+      },
+      {
+        "file": "phase66-emulation-door-writer-RC3-word236-32767.json",
+        "sha256": "1b4b4f898d8f99ac1471553a3c3845253c6839bcd085b91061c4796fa3d8c351",
+        "case": "RC3-word236-32767"
+      },
+      {
+        "file": "phase66-emulation-door-writer-RC3-word236-32768.json",
+        "sha256": "9ee7061e12c09245febf02912974b28dad78bd57180c561176ea659de595a4e1",
+        "case": "RC3-word236-32768"
+      },
+      {
+        "file": "phase66-emulation-door-writer-RC3-word236-65535.json",
+        "sha256": "465c677c68bb01bc8e0d4e2d810706ba272735f4f9e60753e2897f81245e1aa3",
+        "case": "RC3-word236-65535"
+      },
+      {
+        "file": "phase66-emulation-door-writer-RC3-scratch-0.json",
+        "sha256": "029a232a988e9634469f0c96f59c8f860aa44442640310225bbde2766d4dfacf",
+        "case": "RC3-scratch-0"
+      },
+      {
+        "file": "phase66-emulation-door-writer-RC3-scratch-255.json",
+        "sha256": "23d6fe7c45118d1f211e51f5e81cefb3230259d633afc5474b5194bb1a1251cf",
+        "case": "RC3-scratch-255"
+      },
+      {
+        "file": "phase66-emulation-door-writer-RC3-scratch-pattern.json",
+        "sha256": "d2b08793428c13bda5486a559b604ec7d31a23ff2b8c4c8fddf6d00959221701",
+        "case": "RC3-scratch-pattern"
+      },
+      {
+        "file": "phase66-emulation-door-writer-RC3-slots-.json",
+        "sha256": "df62aa03c1bb8ab9c04a9ca77744e2a9cfd32e1d9c4678377b1ccb53cb3bfcb4",
+        "case": "RC3-slots-"
+      },
+      {
+        "file": "phase66-emulation-door-writer-RC3-slots-0.json",
+        "sha256": "4ddfabf8ab7b00811c98ecd30003b68283b7de2dfd9915fdbee27ea433b8b2c0",
+        "case": "RC3-slots-0"
+      },
+      {
+        "file": "phase66-emulation-door-writer-RC3-slots-102.json",
+        "sha256": "c517999e3df19b877b21139f102ca0003c1b19826917c800b487c31f7c138c96",
+        "case": "RC3-slots-102"
+      },
+      {
+        "file": "phase66-emulation-door-writer-RC3-slots-21.json",
+        "sha256": "272f9e81e7069f8133d15e8ae98ca1af823a4880fe7340462f4f1f87babaa6b3",
+        "case": "RC3-slots-21"
+      },
+      {
+        "file": "phase66-emulation-door-writer-RC3-flags-0.json",
+        "sha256": "46fc296261e718c37ffab844bb3ee8687b32bcc0581a356a43364e60bba6d15f",
+        "case": "RC3-flags-0"
+      },
+      {
+        "file": "phase66-emulation-door-writer-RC3-flags-32.json",
+        "sha256": "82a7cb6f0ae2858a1849ee56e528b59e33f57ecbd60b1db955eaf9846bdead37",
+        "case": "RC3-flags-32"
+      },
+      {
+        "file": "phase66-emulation-door-writer-RC3-flags-64.json",
+        "sha256": "580fd0481301b2a2d5c5400dd41a40deab9b49679efe5ed746dc596e2fb3a05a",
+        "case": "RC3-flags-64"
+      },
+      {
+        "file": "phase66-emulation-door-writer-RC3-flags-128.json",
+        "sha256": "c2bb0451aebbb535dd5542f4c4a14015f11f0c9bff91847140d972c8da897f8d",
+        "case": "RC3-flags-128"
+      },
+      {
+        "file": "phase66-emulation-door-writer-RC3-name-543.json",
+        "sha256": "416f7465a8b83f89d07a6dd1e69dea1dc9b60ed5eca7b10c05d5d7b40959b517",
+        "case": "RC3-name-543"
+      },
+      {
+        "file": "phase66-emulation-door-writer-RC3-name-544.json",
+        "sha256": "0cde07fc07725cac499a40582b79e5ddae623988a1db2cd25d5879b654b2480b",
+        "case": "RC3-name-544"
+      },
+      {
+        "file": "phase66-emulation-door-writer-RC3-name-548.json",
+        "sha256": "8857f556f1336a4cd33ee456fe92181071c9a88c6aba348a9f7e92684b863880",
+        "case": "RC3-name-548"
+      },
+      {
+        "file": "phase66-emulation-door-writer-RC3-name-562.json",
+        "sha256": "de51c687bfc6e50a43874ecdcd8209c7bdad3b89f5ab9c49d33223d3c0fa8840",
+        "case": "RC3-name-562"
+      },
+      {
+        "file": "phase66-emulation-door-writer-RC3-name-carry-to-next-record.json",
+        "sha256": "fd85525210f3c1dfcb150c5d3a758965395925cb8b44dd9b8f3b340e081a1f32",
+        "case": "RC3-name-carry-to-next-record"
+      }
+    ],
+    "corpus": {
+      "files": [
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\AutoSaveGlobals.kld",
+          "sha256": "7c67217033699a2a7e36eed002b54134ebcb79ad817a910b1103b25a43eebe0c",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\Doors.kwd",
+          "sha256": "0f9235b31fcf72525c6cac8eb800e866731e50e9d05bf56ed94bfa0927717504",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\3DLevelGlobals.kld",
+          "sha256": "120d8c91e38ad5d939a42c34aea7c0c963dc547a53350ca7ed3755654231c951",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\ANL - 3 FunGlobals.kld",
+          "sha256": "874bcadc18d8a77c5de499da90289bc5565785cacdc0e87d4a1461d9778777fc",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Battle for the Sun Qz2Globals.kld",
+          "sha256": "514322930de7f8d2d20cada6be2619a982ec42024a166e0274c782ffa018a791",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Battle for the Sun QzGlobals.kld",
+          "sha256": "aeab60f5ebebd74da0af4d24c96f1942d143816f4e80fce2aa29466af00f9001",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\DK2 tutorial map2Globals.kld",
+          "sha256": "e0db2f285ada981166c56b3ce0cbaf51e88f0d723827991dd29ff1a44aefc45f",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\DK2 tutorial mapGlobals.kld",
+          "sha256": "fcd646f297aec1d29a7bfa54030f19715bfdfa7ba9e993f265463788376bea7c",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\DK2Preview_6a88240eaf814f78Globals.kld",
+          "sha256": "c65efb3538303f7bd6ea7748d6afb26766895b4db4a64a709f4039b6f13a88bf",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\FrontEnd3DLevelGlobals.kld",
+          "sha256": "84762d33e56fcc1d115cac14b1e7cc8f228b236c0710a734c73eb6139608f550",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 1- Kharak SystemGlobals.kld",
+          "sha256": "7398b0eab6168c3d6d0f79c83fec985c8bcb13dab300dd2796f0d68406f75357",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 10- Super Nova StationGlobals.kld",
+          "sha256": "089f47860bb46c2c5ade2372111606e0444ddd5f3252abb0e547ac0221363ce7",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 11- Tenhauser GateGlobals.kld",
+          "sha256": "03c605b09fa4df14bdabaeea448aef2c2757ae10d48a2c0b66f2353543a8a73f",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 12- Galactic CoreGlobals.kld",
+          "sha256": "39d1c977feab14bc990aca28db0ce60e7e618e8a9e968edd79f4b21d1c0d5763",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 13- Karos GraveyardGlobals.kld",
+          "sha256": "d31ed0f5bf1fb9cea0bbb4415d8c706b2dd80cea8df9c5457c11320be66e5b00",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 14- Bridge of SighsGlobals.kld",
+          "sha256": "0486863a90a31f19404c8fc8057c9d3a26ea4830bdaed0facaeeff5c3f0a73ac",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 15- Chapel PerilousGlobals.kld",
+          "sha256": "43cd67545e3e77fd8cb22d56490d09c5ec9f1fd70dce566ec92761df58a78921",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 16- HiigaraGlobals.kld",
+          "sha256": "1399f369dc487244db7fee178b46aa290cbe4793669598672e42b5a5514a2a33",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 2- Outer Kharak SystemGlobals.kld",
+          "sha256": "0592cbad205a9212b03a04a8f0a34b0d5a14235d16f8b4bdf1f6f8f7c6ad9fbc",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 3- Return to KharakGlobals.kld",
+          "sha256": "4408e05c2487d8e73991f8f40b351150962efcdccd8f2e914be04daae6063a1d",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 4- The Great WastelandGlobals.kld",
+          "sha256": "f4c9b22915ae24c4512f3adc3556d6d1fea701a58b0d9b401020c2d440b3b01d",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 5- The Great WastelandGlobals.kld",
+          "sha256": "fd6ac330133a37e93901d3907ff617f2e6410569fb7fce20fcbd8df86c7f27f0",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 6- Diamond ShoalsGlobals.kld",
+          "sha256": "c2ac3161528c2fd5051205b92db7c2e0f1ac00ecb688852b632db4ef5f5899ab",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 7- The Gardens of KadeshGlobals.kld",
+          "sha256": "9501ec7aa6c7d40f690efc5faadb91c75ca317269b999432a0568c71b5c24de8",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 8- The Cathedral of KadeshGlobals.kld",
+          "sha256": "d80c59e1228130e99e4eb1afcaed36e4d207cef82bbdf2808d3964bc0290c2f6",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 9-The Sea of Lost SoulsGlobals.kld",
+          "sha256": "c585968a135c04fb671ee53049f11b962245734061b88d4f0b177ef5ba0f3896",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level10Globals.kld",
+          "sha256": "9edbdaebd9d575001f6a45704789be183c55e5b2127c2169af5bcb4811e1a93b",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level11BGlobals.kld",
+          "sha256": "9ef9a7d52d8b03661876e667e433c40c126a708f7c4cf16ad5b0b0480f63abb9",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level13Globals.kld",
+          "sha256": "5dde8da4df42f42ebd0f36c8094b890737225d10995b184d4302416f3a382fb2",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level14Globals.kld",
+          "sha256": "d14b1f3f17fe3a3cb0fba0c795e9ee123e1716ca561ef12c77dafea06dd99973",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level15aGlobals.kld",
+          "sha256": "61c33d99115af4ee53e0dbb00a58c641ce89ec91843f346f81400401ecb3dd9f",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level16Globals.kld",
+          "sha256": "16ce8ac0f75b8272c14c1f9e97562ebd021d1972669027c97fc0e0f121a6879e",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level17Globals.kld",
+          "sha256": "6440f662e8e7058f4ce387df15a7e9862c0f9c8a39fd36920f5b2aa4d1c23646",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level19Globals.kld",
+          "sha256": "9f5f0add9416cd4e1c20539c4ec84fba9225fa09ce8c0ade3049188594ba6aee",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level20Globals.kld",
+          "sha256": "2fb9f0831d478150a83f3b0dc7ecacd39376c37201255b0ef9d0681c5609a965",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level4Globals.kld",
+          "sha256": "35a3fca33e47fb5acfbdb08d6c9604d73c54521abd1bab7cb9270340bfa3c8fd",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level6aGlobals.kld",
+          "sha256": "11f94af0cf11365b9daaf629f75009fb9754aec154da0e3ee21f663d69f9a04e",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level6bGlobals.kld",
+          "sha256": "5e15604c18cb96349df3e765ffa321fe12b6e3c24a4ba3573535173009dfe027",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level6bkanGlobals.kld",
+          "sha256": "4676bf880c7960dd211363814bdeb29a8a0b8775ba08af76c9f912dd82fba184",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level9Globals.kld",
+          "sha256": "2ce3b5488119cd62d0f43fced5a6021d0ce464b17b49fa776815d58cd76acf66",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\NeedsTest2Globals.kld",
+          "sha256": "303d3667f27a570784c6c0e577d26ffcd2932ad26dd83b78f9becccca9df5915",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\NeedsTestGlobals.kld",
+          "sha256": "9dc47825c3d39b91c7126e539ef30bcc4cdb489aadb468a2290a5ba3f5746ead",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Secret1Globals.kld",
+          "sha256": "aef868525fb6ae09ef64eb853dbc7cfbf50dae713e2126ad68243f05c9a2eb55",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Secret2Globals.kld",
+          "sha256": "d5b75287746a15ce99850e3999da03107840d44bbc7828630af6dd69cb4cfa98",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Secret3Globals.kld",
+          "sha256": "b439128c47f5fadc3acb45465ed9bf294367bd7b6759a4a0ee946ead02f852f6",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Secret4Globals.kld",
+          "sha256": "f1008aa04a084eee2ec68f42dda75aa89a020f33a224a048313f383696148c79",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\TFO1-1Globals.kld",
+          "sha256": "b39947c0f82a054268a63b4df29523ef7908d7ba80a1a29cdff7dcfcb5a0aea7",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\TFO1Globals.kld",
+          "sha256": "8312784af6b7dd4df3ea4901d40235a03627757d2940b60a73e13998ba3f0074",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\TFO2Globals.kld",
+          "sha256": "4f2474b49b8ff4cd41917a2edf55b4e1bd2cfd6989b665c51d9869e0aaa3c467",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\TFO3-2Globals.kld",
+          "sha256": "d9bf121f460bda7411cd84fe4d0fa0259419f463a72a98e30f2af6035a403590",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\TFO3Globals.kld",
+          "sha256": "4a547d2644d1db662cc1d3345e318368cee0f0bfddbdae77654ebdd6d19c2f96",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\TFO4-2Globals.kld",
+          "sha256": "c1821f266fb4226f82017e082330e22f887ecc4b90c4d565f726a29cf6fbeee1",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\TFO4Globals.kld",
+          "sha256": "abc2357ea366136258a26934c7ce247f5145f1cd31d99402b9f4f93cce735e88",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXLevel13Globals.kld",
+          "sha256": "cedd60b7d59d86fad84a6408421ff2047dc26c2d8ebccc2d822a8ae25c9c54bb",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXLevel19Globals.kld",
+          "sha256": "47f9c21d94548dac142e7ef00d057b6d17ccb9d89c79337e9f648b3c0eac71a4",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXLevel20Globals.kld",
+          "sha256": "ad47d6ba4099f49146ac182cde9dc46b806f1092c6fc7dc6df1da5be713eef0e",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXlevel1-2Globals.kld",
+          "sha256": "42e9753de5f7c16b3c1540c67c25c630e474d52e4ef82cadca6e64414787ec3d",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXlevel1-3Globals.kld",
+          "sha256": "75c49e43ab0f245a900092d45eddfc9c33f4b9247dde7dfc8978d422ce279781",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXlevel1-4Globals.kld",
+          "sha256": "af64931d6c156176e15e1374b27cde4905edbd9dbe4d9e2ee85f0a3f7bc645d7",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXlevel1Globals.kld",
+          "sha256": "96770b0f15f04084dee8d82d220e8284574b35e75af76fa0984d11959011d181",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXlevel2Globals.kld",
+          "sha256": "404321b6bdb1ade74263bd0690b7b329ab6bfb24bcd2c65899301fec3679ab77",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXlevel3Globals.kld",
+          "sha256": "e596b72c3276c3df569f44b375d4e60cd6161df1981496fd15afe6b8a7fad774",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXlevel5Globals.kld",
+          "sha256": "3f3085e08805280bb106787d28526db04a6c17d91c06aea4273ae924e7819d5e",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\kop2Globals.kld",
+          "sha256": "e2e9d3c644683e51bcc8c6f59c37b493e3d6e55eca3bdc67626c1018a0688e08",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\kop3Globals.kld",
+          "sha256": "a9ec89e6a64dd598f4133dc9a9a812b964a1da69cd1615a6a09be7370b8a5164",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\kop4Globals.kld",
+          "sha256": "186e81c3c9d036e995a9d78bfa5b2a41a09db77cd04e7c2b21dec15473b3b6dd",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\level11AGlobals.kld",
+          "sha256": "c8ae5cdc3f76f19df04f204b58ad40a9a48b19da76b4409018f2dd639197fac0",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\level11CGlobals.kld",
+          "sha256": "03f455a8e99269803523161a23caf646b41f05f8d99976d1c67b772e6ddbfdd3",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\level12Globals.kld",
+          "sha256": "3090630f89b838b8ae7320f42d1dce7ef82d2cecac7b9f8ddff8b252614abb26",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\level15bGlobals.kld",
+          "sha256": "8c1d0722c4c764b19035ef11c3d4f52f5fef6ef39e738012a0a8cc84e70e91e7",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\level18Globals.kld",
+          "sha256": "bfa1f62509083b3cfe62eff461d2c711149e78a50e16854b090f43bf59979cee",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\level1Globals.kld",
+          "sha256": "c65efb3538303f7bd6ea7748d6afb26766895b4db4a64a709f4039b6f13a88bf",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\level2Globals.kld",
+          "sha256": "858d53d1e9b726a26f50cee2206c615f45e904b597c4ae67dc6b6b4b21a00d97",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\level3Globals.kld",
+          "sha256": "1be40393b04a5c604bf4cab605848fc66cd9088a161f42f3392caf1accfa7569",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\level5Globals.kld",
+          "sha256": "068c99350ca07015fe5aae6be743eaed66a5db89f012b1371f1bb0a1d94b2539",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\level7Globals.kld",
+          "sha256": "5ea59d2ad2b212c376d05d90d059b71149d0cc17bf70a2eabf3687c0c821288d",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\level8Globals.kld",
+          "sha256": "9bd4c87e117795eee204347cba492e8c8ddb29007f25e671d40353bb9447b6cc",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\mpd8Globals.kld",
+          "sha256": "5d7c0136a14ff42c962b30b07b22a5c0426f08fad731cca88f4346ea35569da1",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\testAI2Globals.kld",
+          "sha256": "3915c9faced729584219068888e37ed8f82cb0d64f6cf4629d92d6d0972f45d0",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\testAI3Globals.kld",
+          "sha256": "25256daeda9ebb4ee3a8b14e9518a74a2573362065197991e46560d27f04eb2b",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\testAI4Globals.kld",
+          "sha256": "336f1a0195e3d2709513a1bc753273b8174389f9c230040d504e7399b50c6dbc",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\testAIGlobals.kld",
+          "sha256": "ad3ea90f2840cdde11189f10052f78731f22eff64cbb3117f4f9f7dd5d8f8892",
+          "records": 8
+        }
+      ],
+      "file_count": 82,
+      "records": 656,
+      "scope": "Door-containing subsetof84sourceentitycorpus;repeatedcataloguescountphysically."
+    },
+    "direct_model_fields": [
+      [
+        580,
+        360,
+        1
+      ],
+      [
+        570,
+        292,
+        2
+      ],
+      [
+        572,
+        294,
+        2
+      ],
+      [
+        574,
+        296,
+        2
+      ],
+      [
+        576,
+        298,
+        2
+      ],
+      [
+        578,
+        300,
+        2
+      ],
+      [
+        558,
+        648,
+        2
+      ],
+      [
+        566,
+        650,
+        2
+      ],
+      [
+        568,
+        652,
+        2
+      ],
+      [
+        556,
+        654,
+        2
+      ],
+      [
+        540,
+        656,
+        2
+      ],
+      [
+        564,
+        658,
+        2
+      ],
+      [
+        550,
+        664,
+        1
+      ],
+      [
+        582,
+        660,
+        1
+      ],
+      [
+        583,
+        661,
+        1
+      ],
+      [
+        562,
+        662,
+        2
+      ],
+      [
+        551,
+        665,
+        1
+      ],
+      [
+        548,
+        344,
+        2
+      ],
+      [
+        581,
+        346,
+        1
+      ]
+    ],
+    "resource_copies": [
+      [
+        32,
+        204
+      ],
+      [
+        116,
+        20
+      ],
+      [
+        200,
+        112
+      ],
+      [
+        284,
+        368
+      ],
+      [
+        368,
+        460
+      ],
+      [
+        452,
+        552
+      ]
+    ],
+    "output": {
+      "header": "56bytes:N=contextcount;S=56+616*N;D=616*N. Enumeratearrayphysicalorder;nullslots skippedwithoutcorrectingN/S/D. Fourmalformednull-slotcasesareexplicitfixtures,not proof GUI normallycreatesnullarrays.",
+      "resources": "Sixreal41CE60/426210LEA gettersreturnembedded84-bytedata;all504resourcebytescompared. Originalflagsencoder,CStringhelperandftolrununchanged.",
+      "strings": "RealCStringhelpercopiesentirelength;count32onlypads shortstrings. Labels<=32andsounds<=32producefixedrecords;syntheticlabels543/544/548/562overwritealreadyassignedfieldswithin616-byteoutputbuffer. GUIacceptanceoftheselengthsisnotproved.",
+      "flag_rule": "NativeencoderbuildsonlymaskE0frommodelBOOL29C/2A0/2A4,noncanonicalnonzeroBOOLaccepted. Combinedwithpreviousdecoderbehavior,nativeroundtripcanloseunsupportedrawbits. Independentserializerpreservesunselectedbits.",
+      "height": "Modeldouble280*binary644096→actualftol→rawDWORD218. Syntheticexactbinaryinputs1.25/2.25avoidunsupportedgeneralx87roundingclaim."
+    },
+    "unassigned_record_spans": [
+      {
+        "raw_offset": 542,
+        "bytes": 2,
+        "origin": "Retainedpriorstackbufferbyteswhenbothstringsbounded32. No scalarassignmentinitializesthese8bytes inthiswriterpath.",
+        "initial_stack_offset_from_entry": -74
+      },
+      {
+        "raw_offset": 544,
+        "bytes": 4,
+        "origin": "Retainedpriorstackbufferbyteswhenbothstringsbounded32. No scalarassignmentinitializesthese8bytes inthiswriterpath.",
+        "initial_stack_offset_from_entry": -72
+      },
+      {
+        "raw_offset": 560,
+        "bytes": 2,
+        "origin": "Retainedpriorstackbufferbyteswhenbothstringsbounded32. No scalarassignmentinitializesthese8bytes inthiswriterpath.",
+        "initial_stack_offset_from_entry": -56
+      }
+    ],
+    "scratch": {
+      "record_start": "EntryESP-268hex;insidewrite-looprecordstartsESP+4Cafterlocals+fourcallee-savedpushes.",
+      "source_spans": "raw21E/220/230 correspondEntryESP-4A/-48/-38. Uniform00/A5/FFandpatternseedsverified inbothEXEs.",
+      "reuse": "Scratchreusedbetweenrecords. Firstsynthetic562-charlabeloverwritesall8unassignedbyteswith51hex;nextboundedlabelleavesthose51bytesinthefollowingrecord. Thisisverifiednativewriterstate,notlosslessrawpreservation.",
+      "historical_limits": "StandaloneDoorshasdifferentnonzerountransferredbytes;corpuspatterniscompatiblewithgarbagebutdoesnotproveuniquehistoricalproducerorvalues. Donotgeneratearbitrarystackbytesinneweditor.",
+      "header_padding": "Header46/47unassignedunderdateprovider;EntryESP-26A/-269. Full56bytescomparedwithseed. ActualWindowsdatehelpernotexecuted."
+    },
+    "word236": {
+      "raw_offset": 566,
+      "bytes": 2,
+      "model": 650,
+      "native_store": "Pro4A8D56/4A8D5D;RC3homologouslocations",
+      "values": [
+        0,
+        1,
+        32767,
+        32768,
+        65535
+      ],
+      "scope": "Fullwriterspreserveall16bitsindependentlyofraw234ManufToBuild. No gameplaynameorpanelbindingnewlyassigned."
+    },
+    "comparison": {
+      "cases": 42,
+      "writers_per_profile": 21,
+      "emitted_records": 50,
+      "full_header": true,
+      "full_record": true,
+      "full_models_and_context": true,
+      "source_CStrings_unchanged": true,
+      "providers": "OnlymemoryfileWrite anddate helperarefixtures;noGUI/Windowsclock/filewrites. Actualresource/flags/CString/ftolhelpersandwritersrun."
+    },
+    "api": {
+      "file": "native_door_writer.py",
+      "operations": [
+        "record",
+        "patch_word236",
+        "patch_untransferred"
+      ],
+      "policy": "record projectsoriginalwriterwithexplicitpriorrawscratch;notpreferredserializer. Patcheschangeonlyselectedrawspanandpreserveallothers. Do notsilentlynormalizeholes/flags/nullcounts."
+    },
+    "limitations": [
+      "ExactPro/RC3SHAprofiles;sharedwritercodecanhavecommondefects. No universalall-editorbehaviorclaim.",
+      "42fullwritersuseexplicitprebuiltmodels,stackseed,date/fileproviders. GUIload/edit/saveandgameplaynotexecuted.",
+      "Longnamesaresynthetic,notproofGUIacceptsthem. Onlylabelcopieswithin616bytesaretested;unboundedsound/stackoverflownotexecuted.",
+      "The8rawbytesareunassignedwithboundedstringsinthispath;historicalmeaningorotherreadersnotgloballyexcluded. Existingconverteromissionandruntimeunknown236remainseparatefacts.",
+      "Nativecountsincludeempty/nullslotswhileoutputskipsnulls;suchslotstatesnotattributedtoGUIcreation.",
+      "Heightftolonlyexactbinaryvalues;nogeneralx87fractionalroundingcertification.",
+      "Thisdoesnotshowacrash,visualartifactorwronggameplayfromDoorsholes. Safeeditorpreservesoriginalrawbytes."
+    ]
+  },
+  "phase67_loading": {
+    "phase": 67,
+    "family": "Doors full raw conversion and null-resource definition loading",
+    "profiles": {
+      "d7a8b854e4e4f02709eba271bead6fe2307dd6e332b5a96e70857e5b0e19fb8a": {
+        "program": "DKII-DX.exe",
+        "init": 5679392,
+        "converter": 5679680,
+        "loader": 4878592,
+        "gate": 7327183,
+        "sound_buffer": 7605280,
+        "sound_global": 7713896,
+        "sound_prefix": 6876468,
+        "string": 6513056
+      },
+      "93e826a142f677ef5120699feddb0572799d93399167ef1d05ec4b48a8b2a342": {
+        "program": "DKII-local13.exe",
+        "init": 5639264,
+        "converter": 5639552,
+        "loader": 4841328,
+        "gate": null,
+        "sound_buffer": 7539328,
+        "sound_global": 7647488,
+        "sound_prefix": 6814924,
+        "string": 6454480
+      }
+    },
+    "sizes": {
+      "raw": 616,
+      "intermediate": 732,
+      "definition": 181
+    },
+    "primary_program_bytes": [
+      {
+        "program": "DKII-DX.exe",
+        "exe": "D:\\Games\\DK2\\Dungeon Keeper 2\\DKII-DX.exe",
+        "address": 5679392,
+        "length": 277,
+        "before": "phase67-DX-56a920-disassemble_function.txt",
+        "after": "phase67-final-DKII-DX.exe-56a920-assembly.txt",
+        "memory": "phase67-final-DKII-DX.exe-56a920-memory.txt",
+        "before_sha256": "b80a62de7435ba1612668fca4a6b32fbea2aead692e0037adc4074c90b3ceb1e",
+        "memory_sha256": "c716f884a37de5b4d95036f7c5e31d9c46f5bc47027eab9316e123c2c3c13d37",
+        "program_bytes_sha256": "af2f3fcf5e481c2ad26459686304796988d6e694edd016b01ca9c3957ae18f8b"
+      },
+      {
+        "program": "DKII-DX.exe",
+        "exe": "D:\\Games\\DK2\\Dungeon Keeper 2\\DKII-DX.exe",
+        "address": 5679680,
+        "length": 566,
+        "before": "phase67-DX-56aa40-disassemble_function.txt",
+        "after": "phase67-final-DKII-DX.exe-56aa40-assembly.txt",
+        "memory": "phase67-final-DKII-DX.exe-56aa40-memory.txt",
+        "before_sha256": "eec836c3f5beb11bcc8d05946feff8e7373a5e3384cfae40c4cef474fa439cdc",
+        "memory_sha256": "39b03747e569f716513e94126f0a342263263e9f81fe2e3334163500a0902d3c",
+        "program_bytes_sha256": "3497283f59c6b9cc9523347292b771dc1d6a578d46a118781e3f33ff18f6d555"
+      },
+      {
+        "program": "DKII-DX.exe",
+        "exe": "D:\\Games\\DK2\\Dungeon Keeper 2\\DKII-DX.exe",
+        "address": 4878592,
+        "length": 1757,
+        "before": "phase67-DX-4a7100-disassemble_function.txt",
+        "after": "phase67-final-DKII-DX.exe-4a7100-assembly.txt",
+        "memory": "phase67-final-DKII-DX.exe-4a7100-memory.txt",
+        "before_sha256": "64b45b913f73de8b6889fa6824e462e2294e0c33b682de4bb2983b81c14a8ddf",
+        "memory_sha256": "2deae09ecd3a7d942b606c76eed7a28e4e650550fb675d13c42a8c3cf6a7ceee",
+        "program_bytes_sha256": "ec34a47a0917bff25e3f167f0ff4c757f05bb8f6712aa2492b3b2936a0859b01"
+      },
+      {
+        "program": "DKII-DX.exe",
+        "exe": "D:\\Games\\DK2\\Dungeon Keeper 2\\DKII-DX.exe",
+        "address": 6513056,
+        "length": 254,
+        "before": "phase52-DKII-DX.exe-6361a0-disassemble_function.txt",
+        "after": "phase67-final-DKII-DX.exe-6361a0-assembly.txt",
+        "memory": "phase67-final-DKII-DX.exe-6361a0-memory.txt",
+        "before_sha256": "b0e0d11e7cf673bf18b7ce3a03aa84c72f430f345f8016b33784a3a22d82361a",
+        "memory_sha256": "b4f8463f4318b565e89410b1c0dcd3f35c19c62221578d65e99e7558bc0863a6",
+        "program_bytes_sha256": "0318574df8288c6fc0e543c779d4c1098344731f9acf2a7c790c2176ab7bdf4c"
+      },
+      {
+        "program": "DKII-local13.exe",
+        "exe": "D:\\Games\\DK2\\Tools\\dk2-format-research\\source-binaries\\DKII-local13.exe",
+        "address": 5639264,
+        "length": 277,
+        "before": "phase67-old-560c60-disassemble_function.txt",
+        "after": "phase67-final-DKII-local13.exe-560c60-assembly.txt",
+        "memory": "phase67-final-DKII-local13.exe-560c60-memory.txt",
+        "before_sha256": "8ad197e6d2ec99f1ea6c5f4ae789f8bed6c369137d37e70ee85f33f73b63264f",
+        "memory_sha256": "1d67e14a9134d2ef9744d52399e94a8a684638723d2aa2683c85a9a29d1c67ee",
+        "program_bytes_sha256": "af2f3fcf5e481c2ad26459686304796988d6e694edd016b01ca9c3957ae18f8b"
+      },
+      {
+        "program": "DKII-local13.exe",
+        "exe": "D:\\Games\\DK2\\Tools\\dk2-format-research\\source-binaries\\DKII-local13.exe",
+        "address": 5639552,
+        "length": 566,
+        "before": "phase67-old-560d80-disassemble_function.txt",
+        "after": "phase67-final-DKII-local13.exe-560d80-assembly.txt",
+        "memory": "phase67-final-DKII-local13.exe-560d80-memory.txt",
+        "before_sha256": "5875c21bc1041c7f9eab331abf8e1af4fe04dd03884713dd69891c170b7e5853",
+        "memory_sha256": "2714747384529fa6f447a61185924fb44b34a05ee4391ac695aab1ea5ed087f8",
+        "program_bytes_sha256": "91826bc5418fbb3a5dad6ff0e50da609f74e147d0e63eba3db9db79f34e69d82"
+      },
+      {
+        "program": "DKII-local13.exe",
+        "exe": "D:\\Games\\DK2\\Tools\\dk2-format-research\\source-binaries\\DKII-local13.exe",
+        "address": 4841328,
+        "length": 1692,
+        "before": "phase67-old-49df70-disassemble_function.txt",
+        "after": "phase67-final-DKII-local13.exe-49df70-assembly.txt",
+        "memory": "phase67-final-DKII-local13.exe-49df70-memory.txt",
+        "before_sha256": "1fbf3b68ffe361d7b4455ae38b9f9f8b0330a5740c1b54dd37c8d002068fce56",
+        "memory_sha256": "ec7f42d19a396f0f61e98ed07084ac5bed080120cc6fd00bc4436eb16a356ca3",
+        "program_bytes_sha256": "8fbe352c94d71902fa82819135ad88cacd4559b71059b228043e2bd5d66abeb7"
+      },
+      {
+        "program": "DKII-local13.exe",
+        "exe": "D:\\Games\\DK2\\Tools\\dk2-format-research\\source-binaries\\DKII-local13.exe",
+        "address": 6454480,
+        "length": 254,
+        "before": "phase52-DKII-local13.exe-627cd0-disassemble_function.txt",
+        "after": "phase67-final-DKII-local13.exe-627cd0-assembly.txt",
+        "memory": "phase67-final-DKII-local13.exe-627cd0-memory.txt",
+        "before_sha256": "31417b917b3fe99b542ab23374654951817d7832fe2d99025dd0cd4bfb7d39c6",
+        "memory_sha256": "a6177d1f39ed84bbe3d35aa357d67450c2d35153cf454b30699017d703573ece",
+        "program_bytes_sha256": "0318574df8288c6fc0e543c779d4c1098344731f9acf2a7c790c2176ab7bdf4c"
+      }
+    ],
+    "primary_data_ranges": [
+      {
+        "program": "DKII-DX.exe",
+        "exe": "D:\\Games\\DK2\\Dungeon Keeper 2\\DKII-DX.exe",
+        "address": 6876468,
+        "length": 8,
+        "memory": "phase67-final-DKII-DX.exe-sound-prefix-memory.txt",
+        "label": "sound-prefix",
+        "memory_sha256": "0f9aa0e00c32f3a3c53a519eb6fbc35981410d1a7ffc6a4b7483cb37e1196c59",
+        "program_bytes_sha256": "1ef4f2b37d512a63a6d74ffa1f8d56d9ec52ebe90c126ca40f6604359a4f6386",
+        "hex": "474c4f42414c5c00"
+      },
+      {
+        "program": "DKII-local13.exe",
+        "exe": "D:\\Games\\DK2\\Tools\\dk2-format-research\\source-binaries\\DKII-local13.exe",
+        "address": 6814924,
+        "length": 8,
+        "memory": "phase67-final-DKII-local13.exe-sound-prefix-memory.txt",
+        "label": "sound-prefix",
+        "memory_sha256": "ecbd6ba3adc09708f81fb94991bd7c8eee2343a0e3a991d5830aec3742d3c6a4",
+        "program_bytes_sha256": "1ef4f2b37d512a63a6d74ffa1f8d56d9ec52ebe90c126ca40f6604359a4f6386",
+        "hex": "474c4f42414c5c00"
+      }
+    ],
+    "native_emulations": [
+      {
+        "file": "phase67-emulation-door-loading-init-d7a-0.json",
+        "sha256": "5e42616f5a3c1013b3195505c5467161c0bde212f69d3ae5e5202c358f89f0c8",
+        "case": "init-d7a-0"
+      },
+      {
+        "file": "phase67-emulation-door-loading-init-d7a-165.json",
+        "sha256": "3f6df6040db66222287eebc1c9cea2e07169ffd869e13d55aec4e444884868a1",
+        "case": "init-d7a-165"
+      },
+      {
+        "file": "phase67-emulation-door-loading-init-d7a-255.json",
+        "sha256": "fafe16c6a5e175952a228ecc18fc8b94ae6835858d15860778fa9e492c535fe2",
+        "case": "init-d7a-255"
+      },
+      {
+        "file": "phase67-emulation-door-loading-convert-d7a-0-0.json",
+        "sha256": "dd3ecc396cef2941e689e8ede09a3f4469c30680fc895e428cb66daeee9fa689",
+        "case": "convert-d7a-0-0"
+      },
+      {
+        "file": "phase67-emulation-door-loading-convert-d7a-0-1.json",
+        "sha256": "0bcbf15850203b5e3c9d85c85060fc380ea1d0629386eb900c5dc42757ce8580",
+        "case": "convert-d7a-0-1"
+      },
+      {
+        "file": "phase67-emulation-door-loading-convert-d7a-165-0.json",
+        "sha256": "705e7058dc290f4c38cc75c6c032b50d9cd0677f8c8f4141f92a44c705042b75",
+        "case": "convert-d7a-165-0"
+      },
+      {
+        "file": "phase67-emulation-door-loading-convert-d7a-165-1.json",
+        "sha256": "29c2391453e44fc5d28d9e73eb8c4c48cf8bd35d7d23eaa6d09293157fc85728",
+        "case": "convert-d7a-165-1"
+      },
+      {
+        "file": "phase67-emulation-door-loading-convert-d7a-255-0.json",
+        "sha256": "47cfe6d803c94fc9ca8a33e53fcff5311dcd275e77795bf410250ccda66304d0",
+        "case": "convert-d7a-255-0"
+      },
+      {
+        "file": "phase67-emulation-door-loading-convert-d7a-255-1.json",
+        "sha256": "f1769e9a6bf73f9f922a5b29078a6d37188197b1bd1666b4cdd0c05203787209",
+        "case": "convert-d7a-255-1"
+      },
+      {
+        "file": "phase67-emulation-door-loading-load-d7a-word-0.json",
+        "sha256": "83e4f30ed3d0354ccc5f8956fcb5ddefbc389ea087609c5890218012c617eb66",
+        "case": "load-d7a-word-0"
+      },
+      {
+        "file": "phase67-emulation-door-loading-load-d7a-word-1.json",
+        "sha256": "f934e9b5f2fdb4be136ae186b2638a17fb2d1c087e746abb905dfb7bcbcda291",
+        "case": "load-d7a-word-1"
+      },
+      {
+        "file": "phase67-emulation-door-loading-load-d7a-word-32768.json",
+        "sha256": "302a64eab89272a7b11f7d2c8ddcdd493fd3c5af7eebf9b864c9427d6c199d67",
+        "case": "load-d7a-word-32768"
+      },
+      {
+        "file": "phase67-emulation-door-loading-load-d7a-word-65535.json",
+        "sha256": "67782c49e9d546c003c65b79f61bfaf87bf02f788c81c4c47b2c0b5b5396138d",
+        "case": "load-d7a-word-65535"
+      },
+      {
+        "file": "phase67-emulation-door-loading-load-d7a-presence-0.json",
+        "sha256": "221d74dc2e2a0fd00d16be55956623a7a42133d14ddd90058b27397e1d1afe3c",
+        "case": "load-d7a-presence-0"
+      },
+      {
+        "file": "phase67-emulation-door-loading-load-d7a-presence-2.json",
+        "sha256": "a9245c2ecedd236a9ea9ba32221b2ff950aa0fc81288efb669675636178f7c62",
+        "case": "load-d7a-presence-2"
+      },
+      {
+        "file": "phase67-emulation-door-loading-load-d7a-presence-4294967295.json",
+        "sha256": "c3a180f1af330b7d3f23747fac4daa5ee2594628ae43550e8eb7a7fcc7c88fb3",
+        "case": "load-d7a-presence-4294967295"
+      },
+      {
+        "file": "phase67-emulation-door-loading-load-d7a-allmissing.json",
+        "sha256": "c68041774392f178767be257702d049a8370366c27d7818da20e12a4d4f56999",
+        "case": "load-d7a-allmissing"
+      },
+      {
+        "file": "phase67-emulation-door-loading-chain-d7a-gap-0-gate-0.json",
+        "sha256": "1d57cc0cbff2859d7510f39b29573068709fa8194e6d08e09947701f2f08a795",
+        "case": "chain-d7a-gap-0-gate-0"
+      },
+      {
+        "file": "phase67-emulation-door-loading-chain-d7a-gap-0-gate-1.json",
+        "sha256": "7c92648e7a8be2493673986e80b16bbf8c3b378a44959110c04be14fd1b44afe",
+        "case": "chain-d7a-gap-0-gate-1"
+      },
+      {
+        "file": "phase67-emulation-door-loading-chain-d7a-gap-255-gate-0.json",
+        "sha256": "59c3569357b98c17c4434e47d8afe06985fefb1f785031c21ece6ad83e1405b4",
+        "case": "chain-d7a-gap-255-gate-0"
+      },
+      {
+        "file": "phase67-emulation-door-loading-chain-d7a-gap-255-gate-1.json",
+        "sha256": "9659ace53e93ce8ca7e0e7ba660bb4cfba2c05a5df242dc7ad69e9ea690482c8",
+        "case": "chain-d7a-gap-255-gate-1"
+      },
+      {
+        "file": "phase67-emulation-door-loading-chain-d7a-gap-pattern-gate-0.json",
+        "sha256": "ea4b9b896074dd1942baacfb5b77d1c898c5b1a1ece5bba3b0df7acb0b5ccde1",
+        "case": "chain-d7a-gap-pattern-gate-0"
+      },
+      {
+        "file": "phase67-emulation-door-loading-chain-d7a-gap-pattern-gate-1.json",
+        "sha256": "5597653ce84413ec5808dac6fbb6e0b78840b6c3cb14bd7201406478f34b2c53",
+        "case": "chain-d7a-gap-pattern-gate-1"
+      },
+      {
+        "file": "phase67-emulation-door-loading-chain-d7a-sum-collision-255.json",
+        "sha256": "deab4a30b037b467bffb27a0fc73cae8006ed7741298ff4ecbed753804988a06",
+        "case": "chain-d7a-sum-collision-255"
+      },
+      {
+        "file": "phase67-emulation-door-loading-chain-d7a-sum-collision-65280.json",
+        "sha256": "84e446c17949643a0c90528cf6895cdd5a1380a56bf9644bc2c693b3682243e2",
+        "case": "chain-d7a-sum-collision-65280"
+      },
+      {
+        "file": "phase67-emulation-door-loading-chain-d7a-research-0-gate-0.json",
+        "sha256": "80d9c50365dc75821d7c0911de123fdc584fffb6ff2f94a57a3d78f48e01bf63",
+        "case": "chain-d7a-research-0-gate-0"
+      },
+      {
+        "file": "phase67-emulation-door-loading-chain-d7a-research-0-gate-1.json",
+        "sha256": "7769684213a40c89fb963b8c6b5416dd252e7f8c6b6e201fadde6b878f21c87f",
+        "case": "chain-d7a-research-0-gate-1"
+      },
+      {
+        "file": "phase67-emulation-door-loading-chain-d7a-research-65535-gate-0.json",
+        "sha256": "7abdd011501c82539f36135eae863db3a19d287a1cb3387f25ed0e7ee6b6e2a7",
+        "case": "chain-d7a-research-65535-gate-0"
+      },
+      {
+        "file": "phase67-emulation-door-loading-chain-d7a-research-65535-gate-1.json",
+        "sha256": "b0faa772ad3ca06f525fad0e34254666e3957c803f85a94b91efcb9f2429f345",
+        "case": "chain-d7a-research-65535-gate-1"
+      },
+      {
+        "file": "phase67-emulation-door-loading-init-93e-0.json",
+        "sha256": "77f3d475782fa2c0aaf8e99a366e8823b39884ba1dbc09638958cdc03b461318",
+        "case": "init-93e-0"
+      },
+      {
+        "file": "phase67-emulation-door-loading-init-93e-165.json",
+        "sha256": "6804307661d0388151dc5ff73f15ba5126480ede678d215cb5f735042ec1b883",
+        "case": "init-93e-165"
+      },
+      {
+        "file": "phase67-emulation-door-loading-init-93e-255.json",
+        "sha256": "adf744397f74b0ccb8a0207030808db0a16cc198fbbe613aa9e5e81246f2f225",
+        "case": "init-93e-255"
+      },
+      {
+        "file": "phase67-emulation-door-loading-convert-93e-0-0.json",
+        "sha256": "4cd357171c184cef37ccaca6147b3730942485035b5d225e271f38d4e2c8dace",
+        "case": "convert-93e-0-0"
+      },
+      {
+        "file": "phase67-emulation-door-loading-convert-93e-0-1.json",
+        "sha256": "665f2baeb6269148c296a7288cb90957933720c635d2443ef6f3d4a67a93de24",
+        "case": "convert-93e-0-1"
+      },
+      {
+        "file": "phase67-emulation-door-loading-convert-93e-165-0.json",
+        "sha256": "d32d0d2fde59188eb9300e2ddc030281107b864b903c2b53a70e4be55556e304",
+        "case": "convert-93e-165-0"
+      },
+      {
+        "file": "phase67-emulation-door-loading-convert-93e-165-1.json",
+        "sha256": "d97e77d778c271e3d472c4a016ddf196d809bc07a4d6706e8fbc9afc68d54e12",
+        "case": "convert-93e-165-1"
+      },
+      {
+        "file": "phase67-emulation-door-loading-convert-93e-255-0.json",
+        "sha256": "1e0f5c9fe7beb270386c6b185a736121ba92850c88403f84ca35c1de6b4523eb",
+        "case": "convert-93e-255-0"
+      },
+      {
+        "file": "phase67-emulation-door-loading-convert-93e-255-1.json",
+        "sha256": "d801ebec41348d126755ae825ce9b0ded5384e60f0d05a353d3d3e311419e1b6",
+        "case": "convert-93e-255-1"
+      },
+      {
+        "file": "phase67-emulation-door-loading-load-93e-word-0.json",
+        "sha256": "e175891e82369c91b8ba0b6723aa2baa60238ba5a66061c0c5076b9c71a3f0c3",
+        "case": "load-93e-word-0"
+      },
+      {
+        "file": "phase67-emulation-door-loading-load-93e-word-1.json",
+        "sha256": "477db462ffc83d5155e22ed092e381396222d5f72986e294471b2c379d928c21",
+        "case": "load-93e-word-1"
+      },
+      {
+        "file": "phase67-emulation-door-loading-load-93e-word-32768.json",
+        "sha256": "c4aa4a68f41fa8c0e13cd45f79bd34f315fc3e56bd2830e188b15d2e1573181c",
+        "case": "load-93e-word-32768"
+      },
+      {
+        "file": "phase67-emulation-door-loading-load-93e-word-65535.json",
+        "sha256": "7ac7801fe96301d2a64f52613b15d85f29623c94372e65ab28678b9ab586c198",
+        "case": "load-93e-word-65535"
+      },
+      {
+        "file": "phase67-emulation-door-loading-load-93e-presence-0.json",
+        "sha256": "2345b05387c1d87477078cfd55692fdb45487f2993a677a657926b06b966a1f4",
+        "case": "load-93e-presence-0"
+      },
+      {
+        "file": "phase67-emulation-door-loading-load-93e-presence-2.json",
+        "sha256": "84d5f9b128fa484d79a20220b810ad39e63f11f0bbfd0c4e9ff41b846ddf86de",
+        "case": "load-93e-presence-2"
+      },
+      {
+        "file": "phase67-emulation-door-loading-load-93e-presence-4294967295.json",
+        "sha256": "aaba20e26ba002f09673e2eb8fd763044933a969cfceb5d53412f554d802fab9",
+        "case": "load-93e-presence-4294967295"
+      },
+      {
+        "file": "phase67-emulation-door-loading-load-93e-allmissing.json",
+        "sha256": "d098028733e3bc0bfab08b97da70f261abda3ed66ae6f6142d401f016f4a1c45",
+        "case": "load-93e-allmissing"
+      },
+      {
+        "file": "phase67-emulation-door-loading-chain-93e-gap-0-gate-0.json",
+        "sha256": "4e1320a0bdf59a3c18d25bd0bed86e8a7dbd4fcaf3201bd28b02ae313f50162a",
+        "case": "chain-93e-gap-0-gate-0"
+      },
+      {
+        "file": "phase67-emulation-door-loading-chain-93e-gap-0-gate-1.json",
+        "sha256": "40582480e089b75c99049d2115f6dcea024dcd0976464078a063529e8a3144e6",
+        "case": "chain-93e-gap-0-gate-1"
+      },
+      {
+        "file": "phase67-emulation-door-loading-chain-93e-gap-255-gate-0.json",
+        "sha256": "48ff3cd4ca27bee2030f4abc415b4c96d76a13563eb389771802618c39a50b3b",
+        "case": "chain-93e-gap-255-gate-0"
+      },
+      {
+        "file": "phase67-emulation-door-loading-chain-93e-gap-255-gate-1.json",
+        "sha256": "0d112584cdb8931381b85e2d2d5461e87b662bba7a0a385270ece43b25a47820",
+        "case": "chain-93e-gap-255-gate-1"
+      },
+      {
+        "file": "phase67-emulation-door-loading-chain-93e-gap-pattern-gate-0.json",
+        "sha256": "ac70f7abf91b830ce4b28434e067e2f68b0b337835b1ba96f5c5ae17e40eabe8",
+        "case": "chain-93e-gap-pattern-gate-0"
+      },
+      {
+        "file": "phase67-emulation-door-loading-chain-93e-gap-pattern-gate-1.json",
+        "sha256": "caf7cf0d75b5a7c2bd16e15277bed929c7e30e12cdf91352993d0aad81c3e03f",
+        "case": "chain-93e-gap-pattern-gate-1"
+      },
+      {
+        "file": "phase67-emulation-door-loading-chain-93e-sum-collision-255.json",
+        "sha256": "00a31fa9618a2827b19698020c35815e07b747b9d38fec9e81dfdc1e72cf7acf",
+        "case": "chain-93e-sum-collision-255"
+      },
+      {
+        "file": "phase67-emulation-door-loading-chain-93e-sum-collision-65280.json",
+        "sha256": "aeb861674bc4a9ec7be6626629d224d0845f39c8f8a839a2eabc49ef21c48c86",
+        "case": "chain-93e-sum-collision-65280"
+      },
+      {
+        "file": "phase67-emulation-door-loading-chain-93e-research-0-gate-0.json",
+        "sha256": "33f282bca418856e4d100e1c96d17b07697dd1bd0098d57ae9c9b2722e96ccbf",
+        "case": "chain-93e-research-0-gate-0"
+      },
+      {
+        "file": "phase67-emulation-door-loading-chain-93e-research-0-gate-1.json",
+        "sha256": "75674cdadce827d9f1457ff19e61b9b410c31cd7da49adcc9dc4f5e657ed7873",
+        "case": "chain-93e-research-0-gate-1"
+      },
+      {
+        "file": "phase67-emulation-door-loading-chain-93e-research-65535-gate-0.json",
+        "sha256": "11665c8e48241c68fa1dd0cccd0aa094e89597c3a6461c5561691baf6cb91395",
+        "case": "chain-93e-research-65535-gate-0"
+      },
+      {
+        "file": "phase67-emulation-door-loading-chain-93e-research-65535-gate-1.json",
+        "sha256": "22f9b9134d1106b36cf72d0177552552f6e445d047e0edc7899e021451ac7623",
+        "case": "chain-93e-research-65535-gate-1"
+      }
+    ],
+    "native_execution_scope": "Full old/DX Door initializer/converter/loader withnullvisualprovider.\n\nNativeboundedstrncpy executes;audio lookup is an explicitcapture/tokenprovider.\nAll616raw/732intermediate/181definitionbytescompared. No modifiedgameprocess.\n",
+    "version_scope": "OLD means exact SHA of supplied executable from DKII13 directory, not independently certified retail1.3.",
+    "initializer": "Both complete initializers clear all732 bytes, including eight intermediate padding bytes. Full chain initializes before conversion; this stage does not execute the filesystem parser.",
+    "converter": {
+      "scalars": [
+        {
+          "presence": 4,
+          "source": 580,
+          "destination": 696,
+          "bytes": 1
+        },
+        {
+          "presence": 88,
+          "source": 551,
+          "destination": 667,
+          "bytes": 1
+        },
+        {
+          "presence": 40,
+          "source": 558,
+          "destination": 674,
+          "bytes": 2
+        },
+        {
+          "presence": 44,
+          "source": 564,
+          "destination": 680,
+          "bytes": 2
+        },
+        {
+          "presence": 64,
+          "source": 548,
+          "destination": 664,
+          "bytes": 2
+        },
+        {
+          "presence": 36,
+          "source": 536,
+          "destination": 652,
+          "bytes": 4
+        },
+        {
+          "presence": 48,
+          "source": 556,
+          "destination": 672,
+          "bytes": 2
+        },
+        {
+          "presence": 52,
+          "source": 540,
+          "destination": 656,
+          "bytes": 2
+        },
+        {
+          "presence": 56,
+          "source": 566,
+          "destination": 682,
+          "bytes": 2
+        },
+        {
+          "presence": 60,
+          "source": 568,
+          "destination": 684,
+          "bytes": 2
+        },
+        {
+          "presence": 104,
+          "source": 550,
+          "destination": 666,
+          "bytes": 1
+        },
+        {
+          "presence": 108,
+          "source": 581,
+          "destination": 697,
+          "bytes": 1
+        },
+        {
+          "presence": 92,
+          "source": 582,
+          "destination": 698,
+          "bytes": 1
+        },
+        {
+          "presence": 96,
+          "source": 583,
+          "destination": 699,
+          "bytes": 1
+        },
+        {
+          "presence": 100,
+          "source": 562,
+          "destination": 678,
+          "bytes": 2
+        },
+        {
+          "presence": 72,
+          "source": 572,
+          "destination": 688,
+          "bytes": 2
+        },
+        {
+          "presence": 68,
+          "source": 570,
+          "destination": 686,
+          "bytes": 2
+        },
+        {
+          "presence": 76,
+          "source": 574,
+          "destination": 690,
+          "bytes": 2
+        },
+        {
+          "presence": 80,
+          "source": 576,
+          "destination": 692,
+          "bytes": 2
+        },
+        {
+          "presence": 84,
+          "source": 578,
+          "destination": 694,
+          "bytes": 2
+        }
+      ],
+      "resources": [
+        {
+          "presence": 12,
+          "source": 32,
+          "destination": 148,
+          "bytes": 84
+        },
+        {
+          "presence": 16,
+          "source": 116,
+          "destination": 232,
+          "bytes": 84
+        },
+        {
+          "presence": 20,
+          "source": 200,
+          "destination": 316,
+          "bytes": 84
+        },
+        {
+          "presence": 24,
+          "source": 284,
+          "destination": 400,
+          "bytes": 84
+        },
+        {
+          "presence": 28,
+          "source": 368,
+          "destination": 484,
+          "bytes": 84
+        },
+        {
+          "presence": 32,
+          "source": 452,
+          "destination": 568,
+          "bytes": 84
+        }
+      ],
+      "strings": [
+        {
+          "presence": 0,
+          "raw": 0,
+          "intermediate": 116,
+          "bytes": 32
+        },
+        {
+          "presence": 8,
+          "raw": 584,
+          "intermediate": 700,
+          "bytes": 32
+        }
+      ],
+      "strings_rule": "Native bounded strncpy32, followed by forced final NUL; earlyNUL and unterminated32-byte input both tested.",
+      "flags": "midDWORD29C |= rawDWORD228; presence70=1. Isolated dirty buffers preserve prior flags. This is not a claim of accumulation in the normal initialized parser.",
+      "presence": "All29 DWORD presence slots0..70 set to1.",
+      "raw_untransferred": [
+        {
+          "raw": 542,
+          "bytes": 2
+        },
+        {
+          "raw": 544,
+          "bytes": 4
+        },
+        {
+          "raw": 560,
+          "bytes": 2
+        }
+      ],
+      "intermediate_unwritten": [
+        {
+          "offset": 658,
+          "bytes": 6
+        },
+        {
+          "offset": 676,
+          "bytes": 2
+        }
+      ],
+      "padding_rule": "Converter retains eight intermediate bytes from its previous buffer. They are different physical spans from the eight raw holes. Full initializer clears them."
+    },
+    "loader": {
+      "scalars": [
+        {
+          "presence": 4,
+          "source": 696,
+          "destination": 173,
+          "bytes": 1
+        },
+        {
+          "presence": 40,
+          "source": 674,
+          "destination": 143,
+          "bytes": 2
+        },
+        {
+          "presence": 44,
+          "source": 680,
+          "destination": 149,
+          "bytes": 2
+        },
+        {
+          "presence": 92,
+          "source": 698,
+          "destination": 177,
+          "bytes": 1
+        },
+        {
+          "presence": 96,
+          "source": 699,
+          "destination": 178,
+          "bytes": 1
+        },
+        {
+          "presence": 36,
+          "source": 652,
+          "destination": 151,
+          "bytes": 2
+        },
+        {
+          "presence": 48,
+          "source": 672,
+          "destination": 145,
+          "bytes": 2
+        },
+        {
+          "presence": 52,
+          "source": 656,
+          "destination": 147,
+          "bytes": 2
+        },
+        {
+          "presence": 56,
+          "source": 682,
+          "destination": 153,
+          "bytes": 2
+        },
+        {
+          "presence": 60,
+          "source": 684,
+          "destination": 155,
+          "bytes": 2
+        },
+        {
+          "presence": 100,
+          "source": 678,
+          "destination": 174,
+          "bytes": 2
+        },
+        {
+          "presence": 68,
+          "source": 686,
+          "destination": 159,
+          "bytes": 2
+        },
+        {
+          "presence": 72,
+          "source": 688,
+          "destination": 161,
+          "bytes": 2
+        },
+        {
+          "presence": 76,
+          "source": 690,
+          "destination": 163,
+          "bytes": 2
+        },
+        {
+          "presence": 80,
+          "source": 692,
+          "destination": 165,
+          "bytes": 2
+        },
+        {
+          "presence": 84,
+          "source": 694,
+          "destination": 167,
+          "bytes": 2
+        },
+        {
+          "presence": 88,
+          "source": 667,
+          "destination": 176,
+          "bytes": 1
+        },
+        {
+          "presence": 104,
+          "source": 666,
+          "destination": 179,
+          "bytes": 1
+        },
+        {
+          "presence": 108,
+          "source": 697,
+          "destination": 180,
+          "bytes": 1
+        },
+        {
+          "presence": 112,
+          "source": 668,
+          "destination": 139,
+          "bytes": 4
+        }
+      ],
+      "presence": "Zero retains previous scalar field, any nonzero applies it; values0/2/FFFFFFFF tested for WORD236 presence38.",
+      "word236": "rawWORD236 -> midWORD2AA, presenceDWORD38 -> definitionWORD99. All16 bits preserved. Gameplay purpose remains open.",
+      "height": "rawDWORD218 -> midDWORD28C -> low16 at definitionWORD97.",
+      "research_time": {
+        "raw": 548,
+        "intermediate": 664,
+        "presence": 64,
+        "baseline_label": "ResearchTime",
+        "finding": "Full observed loaders do not transfer this scalar to definition. In the null-resource contract, changing only this WORD changes only checksum when checksum is calculated; DXgate1 gives identical complete definitions. No claim of global non-use or correctness of baseline gameplay name."
+      }
+    },
+    "checksum": {
+      "definition": 135,
+      "bytes": 4,
+      "rule": "sum of all732 unsigned intermediate bytes",
+      "old": "Always replaces previous DWORD87.",
+      "dx": "GlobalDWORD6FCDCF==0 replaces; nonzero retains.",
+      "collision": "Native chains for WORD236=00FF/FF00 have different definitionWORD99 but equal checksumDWORD87; sum is not a uniqueness guarantee."
+    },
+    "sound": {
+      "presence": 8,
+      "intermediate": 700,
+      "definition": 169,
+      "rule": "If present, OLD always and DX only at gate0: native strncpy32 into global buffer, force lastNUL; virtual audio slot1C(prefixGLOBAL\\,name); store returnedDWORD.",
+      "provider": "Capture exact prefix pointer,32 name bytes,call count; returnA1B2C3D4. No asset lookup/playback or audio failure tests."
+    },
+    "raw_holes_result": "Twelve full native chains, varying all8 raw bytes0/FF/pattern in both profiles and both gate values, produce identical complete intermediate/definition buffers per profile/gate. No other consumer or historical purpose is ruled out.",
+    "search": [
+      {
+        "file": "phase67-old-door-word236-leads.json",
+        "sha256": "ef8b27bb316635ad283cd396546959bedf848600977acddb4f1e074173cb6538",
+        "scope": "Bounded displacement/argument search. Entity definition pointer hints are untyped; seven overlapping DWORD9A reads per EXE do not establish a DoorWORD99 consumer. No new gameplay meaning or global absence claim."
+      },
+      {
+        "file": "phase67-DX-door-word236-leads.json",
+        "sha256": "d2c95be6647fdb09ef11c9aa70b911de56d37ab36916e68b64ca627791446d28",
+        "scope": "Bounded displacement/argument search. Entity definition pointer hints are untyped; seven overlapping DWORD9A reads per EXE do not establish a DoorWORD99 consumer. No new gameplay meaning or global absence claim."
+      }
+    ],
+    "corpus": {
+      "files": [
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\AutoSaveGlobals.kld",
+          "sha256": "7c67217033699a2a7e36eed002b54134ebcb79ad817a910b1103b25a43eebe0c",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\Doors.kwd",
+          "sha256": "0f9235b31fcf72525c6cac8eb800e866731e50e9d05bf56ed94bfa0927717504",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\3DLevelGlobals.kld",
+          "sha256": "120d8c91e38ad5d939a42c34aea7c0c963dc547a53350ca7ed3755654231c951",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\ANL - 3 FunGlobals.kld",
+          "sha256": "874bcadc18d8a77c5de499da90289bc5565785cacdc0e87d4a1461d9778777fc",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Battle for the Sun Qz2Globals.kld",
+          "sha256": "514322930de7f8d2d20cada6be2619a982ec42024a166e0274c782ffa018a791",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Battle for the Sun QzGlobals.kld",
+          "sha256": "aeab60f5ebebd74da0af4d24c96f1942d143816f4e80fce2aa29466af00f9001",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\DK2 tutorial map2Globals.kld",
+          "sha256": "e0db2f285ada981166c56b3ce0cbaf51e88f0d723827991dd29ff1a44aefc45f",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\DK2 tutorial mapGlobals.kld",
+          "sha256": "fcd646f297aec1d29a7bfa54030f19715bfdfa7ba9e993f265463788376bea7c",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\DK2Preview_6a88240eaf814f78Globals.kld",
+          "sha256": "c65efb3538303f7bd6ea7748d6afb26766895b4db4a64a709f4039b6f13a88bf",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\FrontEnd3DLevelGlobals.kld",
+          "sha256": "84762d33e56fcc1d115cac14b1e7cc8f228b236c0710a734c73eb6139608f550",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 1- Kharak SystemGlobals.kld",
+          "sha256": "7398b0eab6168c3d6d0f79c83fec985c8bcb13dab300dd2796f0d68406f75357",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 10- Super Nova StationGlobals.kld",
+          "sha256": "089f47860bb46c2c5ade2372111606e0444ddd5f3252abb0e547ac0221363ce7",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 11- Tenhauser GateGlobals.kld",
+          "sha256": "03c605b09fa4df14bdabaeea448aef2c2757ae10d48a2c0b66f2353543a8a73f",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 12- Galactic CoreGlobals.kld",
+          "sha256": "39d1c977feab14bc990aca28db0ce60e7e618e8a9e968edd79f4b21d1c0d5763",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 13- Karos GraveyardGlobals.kld",
+          "sha256": "d31ed0f5bf1fb9cea0bbb4415d8c706b2dd80cea8df9c5457c11320be66e5b00",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 14- Bridge of SighsGlobals.kld",
+          "sha256": "0486863a90a31f19404c8fc8057c9d3a26ea4830bdaed0facaeeff5c3f0a73ac",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 15- Chapel PerilousGlobals.kld",
+          "sha256": "43cd67545e3e77fd8cb22d56490d09c5ec9f1fd70dce566ec92761df58a78921",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 16- HiigaraGlobals.kld",
+          "sha256": "1399f369dc487244db7fee178b46aa290cbe4793669598672e42b5a5514a2a33",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 2- Outer Kharak SystemGlobals.kld",
+          "sha256": "0592cbad205a9212b03a04a8f0a34b0d5a14235d16f8b4bdf1f6f8f7c6ad9fbc",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 3- Return to KharakGlobals.kld",
+          "sha256": "4408e05c2487d8e73991f8f40b351150962efcdccd8f2e914be04daae6063a1d",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 4- The Great WastelandGlobals.kld",
+          "sha256": "f4c9b22915ae24c4512f3adc3556d6d1fea701a58b0d9b401020c2d440b3b01d",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 5- The Great WastelandGlobals.kld",
+          "sha256": "fd6ac330133a37e93901d3907ff617f2e6410569fb7fce20fcbd8df86c7f27f0",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 6- Diamond ShoalsGlobals.kld",
+          "sha256": "c2ac3161528c2fd5051205b92db7c2e0f1ac00ecb688852b632db4ef5f5899ab",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 7- The Gardens of KadeshGlobals.kld",
+          "sha256": "9501ec7aa6c7d40f690efc5faadb91c75ca317269b999432a0568c71b5c24de8",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 8- The Cathedral of KadeshGlobals.kld",
+          "sha256": "d80c59e1228130e99e4eb1afcaed36e4d207cef82bbdf2808d3964bc0290c2f6",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 9-The Sea of Lost SoulsGlobals.kld",
+          "sha256": "c585968a135c04fb671ee53049f11b962245734061b88d4f0b177ef5ba0f3896",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level10Globals.kld",
+          "sha256": "9edbdaebd9d575001f6a45704789be183c55e5b2127c2169af5bcb4811e1a93b",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level11BGlobals.kld",
+          "sha256": "9ef9a7d52d8b03661876e667e433c40c126a708f7c4cf16ad5b0b0480f63abb9",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level13Globals.kld",
+          "sha256": "5dde8da4df42f42ebd0f36c8094b890737225d10995b184d4302416f3a382fb2",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level14Globals.kld",
+          "sha256": "d14b1f3f17fe3a3cb0fba0c795e9ee123e1716ca561ef12c77dafea06dd99973",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level15aGlobals.kld",
+          "sha256": "61c33d99115af4ee53e0dbb00a58c641ce89ec91843f346f81400401ecb3dd9f",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level16Globals.kld",
+          "sha256": "16ce8ac0f75b8272c14c1f9e97562ebd021d1972669027c97fc0e0f121a6879e",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level17Globals.kld",
+          "sha256": "6440f662e8e7058f4ce387df15a7e9862c0f9c8a39fd36920f5b2aa4d1c23646",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level19Globals.kld",
+          "sha256": "9f5f0add9416cd4e1c20539c4ec84fba9225fa09ce8c0ade3049188594ba6aee",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level20Globals.kld",
+          "sha256": "2fb9f0831d478150a83f3b0dc7ecacd39376c37201255b0ef9d0681c5609a965",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level4Globals.kld",
+          "sha256": "35a3fca33e47fb5acfbdb08d6c9604d73c54521abd1bab7cb9270340bfa3c8fd",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level6aGlobals.kld",
+          "sha256": "11f94af0cf11365b9daaf629f75009fb9754aec154da0e3ee21f663d69f9a04e",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level6bGlobals.kld",
+          "sha256": "5e15604c18cb96349df3e765ffa321fe12b6e3c24a4ba3573535173009dfe027",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level6bkanGlobals.kld",
+          "sha256": "4676bf880c7960dd211363814bdeb29a8a0b8775ba08af76c9f912dd82fba184",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level9Globals.kld",
+          "sha256": "2ce3b5488119cd62d0f43fced5a6021d0ce464b17b49fa776815d58cd76acf66",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\NeedsTest2Globals.kld",
+          "sha256": "303d3667f27a570784c6c0e577d26ffcd2932ad26dd83b78f9becccca9df5915",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\NeedsTestGlobals.kld",
+          "sha256": "9dc47825c3d39b91c7126e539ef30bcc4cdb489aadb468a2290a5ba3f5746ead",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Secret1Globals.kld",
+          "sha256": "aef868525fb6ae09ef64eb853dbc7cfbf50dae713e2126ad68243f05c9a2eb55",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Secret2Globals.kld",
+          "sha256": "d5b75287746a15ce99850e3999da03107840d44bbc7828630af6dd69cb4cfa98",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Secret3Globals.kld",
+          "sha256": "b439128c47f5fadc3acb45465ed9bf294367bd7b6759a4a0ee946ead02f852f6",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Secret4Globals.kld",
+          "sha256": "f1008aa04a084eee2ec68f42dda75aa89a020f33a224a048313f383696148c79",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\TFO1-1Globals.kld",
+          "sha256": "b39947c0f82a054268a63b4df29523ef7908d7ba80a1a29cdff7dcfcb5a0aea7",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\TFO1Globals.kld",
+          "sha256": "8312784af6b7dd4df3ea4901d40235a03627757d2940b60a73e13998ba3f0074",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\TFO2Globals.kld",
+          "sha256": "4f2474b49b8ff4cd41917a2edf55b4e1bd2cfd6989b665c51d9869e0aaa3c467",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\TFO3-2Globals.kld",
+          "sha256": "d9bf121f460bda7411cd84fe4d0fa0259419f463a72a98e30f2af6035a403590",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\TFO3Globals.kld",
+          "sha256": "4a547d2644d1db662cc1d3345e318368cee0f0bfddbdae77654ebdd6d19c2f96",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\TFO4-2Globals.kld",
+          "sha256": "c1821f266fb4226f82017e082330e22f887ecc4b90c4d565f726a29cf6fbeee1",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\TFO4Globals.kld",
+          "sha256": "abc2357ea366136258a26934c7ce247f5145f1cd31d99402b9f4f93cce735e88",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXLevel13Globals.kld",
+          "sha256": "cedd60b7d59d86fad84a6408421ff2047dc26c2d8ebccc2d822a8ae25c9c54bb",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXLevel19Globals.kld",
+          "sha256": "47f9c21d94548dac142e7ef00d057b6d17ccb9d89c79337e9f648b3c0eac71a4",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXLevel20Globals.kld",
+          "sha256": "ad47d6ba4099f49146ac182cde9dc46b806f1092c6fc7dc6df1da5be713eef0e",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXlevel1-2Globals.kld",
+          "sha256": "42e9753de5f7c16b3c1540c67c25c630e474d52e4ef82cadca6e64414787ec3d",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXlevel1-3Globals.kld",
+          "sha256": "75c49e43ab0f245a900092d45eddfc9c33f4b9247dde7dfc8978d422ce279781",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXlevel1-4Globals.kld",
+          "sha256": "af64931d6c156176e15e1374b27cde4905edbd9dbe4d9e2ee85f0a3f7bc645d7",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXlevel1Globals.kld",
+          "sha256": "96770b0f15f04084dee8d82d220e8284574b35e75af76fa0984d11959011d181",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXlevel2Globals.kld",
+          "sha256": "404321b6bdb1ade74263bd0690b7b329ab6bfb24bcd2c65899301fec3679ab77",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXlevel3Globals.kld",
+          "sha256": "e596b72c3276c3df569f44b375d4e60cd6161df1981496fd15afe6b8a7fad774",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXlevel5Globals.kld",
+          "sha256": "3f3085e08805280bb106787d28526db04a6c17d91c06aea4273ae924e7819d5e",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\kop2Globals.kld",
+          "sha256": "e2e9d3c644683e51bcc8c6f59c37b493e3d6e55eca3bdc67626c1018a0688e08",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\kop3Globals.kld",
+          "sha256": "a9ec89e6a64dd598f4133dc9a9a812b964a1da69cd1615a6a09be7370b8a5164",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\kop4Globals.kld",
+          "sha256": "186e81c3c9d036e995a9d78bfa5b2a41a09db77cd04e7c2b21dec15473b3b6dd",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\level11AGlobals.kld",
+          "sha256": "c8ae5cdc3f76f19df04f204b58ad40a9a48b19da76b4409018f2dd639197fac0",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\level11CGlobals.kld",
+          "sha256": "03f455a8e99269803523161a23caf646b41f05f8d99976d1c67b772e6ddbfdd3",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\level12Globals.kld",
+          "sha256": "3090630f89b838b8ae7320f42d1dce7ef82d2cecac7b9f8ddff8b252614abb26",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\level15bGlobals.kld",
+          "sha256": "8c1d0722c4c764b19035ef11c3d4f52f5fef6ef39e738012a0a8cc84e70e91e7",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\level18Globals.kld",
+          "sha256": "bfa1f62509083b3cfe62eff461d2c711149e78a50e16854b090f43bf59979cee",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\level1Globals.kld",
+          "sha256": "c65efb3538303f7bd6ea7748d6afb26766895b4db4a64a709f4039b6f13a88bf",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\level2Globals.kld",
+          "sha256": "858d53d1e9b726a26f50cee2206c615f45e904b597c4ae67dc6b6b4b21a00d97",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\level3Globals.kld",
+          "sha256": "1be40393b04a5c604bf4cab605848fc66cd9088a161f42f3392caf1accfa7569",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\level5Globals.kld",
+          "sha256": "068c99350ca07015fe5aae6be743eaed66a5db89f012b1371f1bb0a1d94b2539",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\level7Globals.kld",
+          "sha256": "5ea59d2ad2b212c376d05d90d059b71149d0cc17bf70a2eabf3687c0c821288d",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\level8Globals.kld",
+          "sha256": "9bd4c87e117795eee204347cba492e8c8ddb29007f25e671d40353bb9447b6cc",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\mpd8Globals.kld",
+          "sha256": "5d7c0136a14ff42c962b30b07b22a5c0426f08fad731cca88f4346ea35569da1",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\testAI2Globals.kld",
+          "sha256": "3915c9faced729584219068888e37ed8f82cb0d64f6cf4629d92d6d0972f45d0",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\testAI3Globals.kld",
+          "sha256": "25256daeda9ebb4ee3a8b14e9518a74a2573362065197991e46560d27f04eb2b",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\testAI4Globals.kld",
+          "sha256": "336f1a0195e3d2709513a1bc753273b8174389f9c230040d504e7399b50c6dbc",
+          "records": 8
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\testAIGlobals.kld",
+          "sha256": "ad3ea90f2840cdde11189f10052f78731f22eff64cbb3117f4f9f7dd5d8f8892",
+          "records": 8
+        }
+      ],
+      "file_count": 82,
+      "records": 656,
+      "scope": "Door-containing subsetof84sourceentitycorpus;repeatedcataloguescountphysically."
+    },
+    "api": {
+      "file": "native_door_loading.py",
+      "operations": [
+        "intermediate",
+        "definition",
+        "sound_requested",
+        "patch_research_time"
+      ],
+      "policy": "Keep original raw record for saving. Runtime definition is a projection, never a replacement source for serialization. ResearchTime patch preserves every other byte."
+    },
+    "limitations": [
+      "Eight complete original functions execute: two initializers, converters, loaders and bounded-string helpers. Complete bodies are re-read after emulation and matched to source PE.",
+      "Visual resource provider is NULL. Full functions execute, but visual success/failure branches, renderer and resource allocation are outside the tested contract.",
+      "No full filesystem parser, world insertion or interactive GUI/gameplay session in this stage.",
+      "Traps204 and Door236 gameplay meanings remain open. Similar offsets in other native types do not prove bad editor serialization.",
+      "Existing2624 phase66 Door patches are not rerun as new work; phase67 adds only ResearchTime224 WORD container patches."
+    ]
+  },
+  "phase68_readiness_review": {
+    "file": "trap-readiness-semantics.json",
+    "sha256": "a516ec51750596e939af065d089141d3031ce1a3b635f323c08c1f7ba687a8c7",
+    "scope": {
+      "native_class": "CTrap",
+      "vtable": 6739796,
+      "locator": 6805344,
+      "type_descriptor": 6943024,
+      "readiness_caller": {
+        "slot": 20,
+        "function": 4883680,
+        "this_to_edi": 4883710,
+        "call_this_from_edi": 4885563,
+        "call": 4885565,
+        "target": 4881680,
+        "read": 4881752
+      },
+      "diagnostic_consumer": {
+        "slot": 76,
+        "function": 4889456,
+        "this_to_esi": 4889484,
+        "definition_load": 4889740,
+        "read": 4889753
+      },
+      "conclusion": "These two DX reads are in native CTrap member paths,not proven DoorWORD99 consumers. They read full DWORD9A,not WORD99.",
+      "remaining": "Other5 DX DWORD9A candidate reads and7 old counterparts retain separate type-review requirements. A CTrap method can query another entity;its local pointer is not automatically this."
+    },
+    "warning": "This review does not assign a gameplay meaning to DoorWORD236."
+  },
+  "phase69_consumer_review": {
+    "file": "entity-kind-filter-semantics.json",
+    "sha256": "efcd53b937ed95e0828955305e4e275399ed10f78f9eae0ca80d295b218faa1e",
+    "scope": {
+      "previously_type_rooted_DX_reads": [
+        4881752,
+        4889753
+      ],
+      "newly_type_rooted_DX_reads": [
+        4881881,
+        4886883,
+        4883329,
+        4883355
+      ],
+      "direct_kind_guard": {
+        "function": 4558688,
+        "kind_compare": 4558745,
+        "kind": 3,
+        "call_this": 4559033,
+        "call": 4559035,
+        "target": 4881808,
+        "read": 4881881
+      },
+      "switch_guard": {
+        "function": 4852016,
+        "kind_read": 4852114,
+        "table": 4853268,
+        "case": 3,
+        "target": 4852430,
+        "call": 4852568,
+        "target_function": 4881808
+      },
+      "iterator": {
+        "function": 4886128,
+        "kind_push": 4886380,
+        "kind": 3,
+        "filter_call": 4886384,
+        "output_to_ESI": 4886397,
+        "definition_read": 4886853,
+        "cost_read": 4886883,
+        "creator_this": 4887054,
+        "creator_call": 4887056,
+        "creator": 4882656,
+        "creator_reads": [
+          4883329,
+          4883355
+        ]
+      },
+      "meaning": "These six instruction addresses have verified routes from runtime kind3/Trap pointers. DWORD9A is the separately confirmed Trap mana-cost field. This does not prove those machine instructions can never receive another kind through malformed/untyped calls.",
+      "class_roots": [
+        {
+          "file": "entity-definition-semantics.json",
+          "sha256": "4022cf9afba928f57a15e4f613ec8ad53c81eb2a097c1e968f3e04d0c5b5baf7"
+        },
+        {
+          "file": "trap-readiness-semantics.json",
+          "sha256": "a516ec51750596e939af065d089141d3031ce1a3b635f323c08c1f7ba687a8c7"
+        }
+      ]
+    },
+    "untyped_route": {
+      "handler": 5322544,
+      "bytes": 33,
+      "tag": "low16 messageDWORD0",
+      "argument": "messageDWORD4 passed to4A7E70",
+      "pointer": "global table[tag] passed as ECX without a local validity-array,kind or NULL check",
+      "call": 5322564,
+      "target": 4882032,
+      "read": 4882111,
+      "warning": "Caller is an untyped command route;upstream producer/dispatch contracts not proved. A deliberate wrong-kind input does not establish a legitimate DoorWORD236 consumer or editor file corruption. Same creator function is reachable from this route,so six typed routes are not global exclusivity proofs."
+    }
+  }
+}

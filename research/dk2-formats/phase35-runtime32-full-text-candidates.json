@@ -1,0 +1,2270 @@
+{
+  "program": "..\\..\\Dungeon Keeper 2\\DKII-DX.exe",
+  "program_sha256": "d7a8b854e4e4f02709eba271bead6fe2307dd6e332b5a96e70857e5b0e19fb8a",
+  "text_origin": "0x401000",
+  "text_bytes": 2432000,
+  "offsets": [
+    "0x32"
+  ],
+  "warning": "Search all PE .text, including code absent from the saved function map.\n\nLinear disassembly and displacement-anchored decodes are only candidates.\nAnchored results can start inside another instruction or embedded data. Verify\neach candidate against a function body and object identity before using it.\n",
+  "candidates": [
+    {
+      "address": "0x423d04",
+      "instruction": "mov al, byte ptr [ecx + edx + 0x32]",
+      "displacement": "0x32",
+      "memory_bytes": 1,
+      "base": "ecx",
+      "index": "edx",
+      "access": 1,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x423bd0",
+        "name": "sub_423BD0",
+        "size": 826
+      }
+    },
+    {
+      "address": "0x423d38",
+      "instruction": "mov byte ptr [eax + edx + 0x32], 1",
+      "displacement": "0x32",
+      "memory_bytes": 1,
+      "base": "eax",
+      "index": "edx",
+      "access": 2,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x423bd0",
+        "name": "sub_423BD0",
+        "size": 826
+      }
+    },
+    {
+      "address": "0x423d64",
+      "instruction": "mov byte ptr [edx + eax + 0x32], 2",
+      "displacement": "0x32",
+      "memory_bytes": 1,
+      "base": "edx",
+      "index": "eax",
+      "access": 2,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x423bd0",
+        "name": "sub_423BD0",
+        "size": 826
+      }
+    },
+    {
+      "address": "0x423d8d",
+      "instruction": "cmp byte ptr [edx + eax + 0x32], 0",
+      "displacement": "0x32",
+      "memory_bytes": 1,
+      "base": "edx",
+      "index": "eax",
+      "access": 1,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x423bd0",
+        "name": "sub_423BD0",
+        "size": 826
+      }
+    },
+    {
+      "address": "0x423dbb",
+      "instruction": "mov byte ptr [ecx + edx + 0x32], 0",
+      "displacement": "0x32",
+      "memory_bytes": 1,
+      "base": "ecx",
+      "index": "edx",
+      "access": 2,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x423bd0",
+        "name": "sub_423BD0",
+        "size": 826
+      }
+    },
+    {
+      "address": "0x435d47",
+      "instruction": "mov cl, byte ptr [esp + 0x32]",
+      "displacement": "0x32",
+      "memory_bytes": 1,
+      "base": "esp",
+      "index": null,
+      "access": 1,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x4358c0",
+        "name": "sub_4358C0",
+        "size": 1359
+      }
+    },
+    {
+      "address": "0x43b2aa",
+      "instruction": "lea eax, [edx + eax + 0x32]",
+      "displacement": "0x32",
+      "memory_bytes": 4,
+      "base": "edx",
+      "index": "eax",
+      "access": 1,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x43b220",
+        "name": "fun_43B220",
+        "size": 4122
+      }
+    },
+    {
+      "address": "0x43bf4e",
+      "instruction": "lea eax, [edi + 0x32]",
+      "displacement": "0x32",
+      "memory_bytes": 4,
+      "base": "edi",
+      "index": null,
+      "access": 1,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x43b220",
+        "name": "fun_43B220",
+        "size": 4122
+      }
+    },
+    {
+      "address": "0x455f83",
+      "instruction": "mov esi, dword ptr [esp + 0x32]",
+      "displacement": "0x32",
+      "memory_bytes": 4,
+      "base": "esp",
+      "index": null,
+      "access": 1,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x455f30",
+        "name": "heedingCallToArms_192_CallToArmsState_455F30",
+        "size": 433
+      }
+    },
+    {
+      "address": "0x458f3b",
+      "instruction": "lea ecx, [ebx + eax + 0x32]",
+      "displacement": "0x32",
+      "memory_bytes": 4,
+      "base": "ebx",
+      "index": "eax",
+      "access": 1,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x458eb0",
+        "name": "DisArmTrapState_cpp_458EB0",
+        "size": 174
+      }
+    },
+    {
+      "address": "0x46122c",
+      "instruction": "test byte ptr [edi + 0x32], 1",
+      "displacement": "0x32",
+      "memory_bytes": 1,
+      "base": "edi",
+      "index": null,
+      "access": 1,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x4611d0",
+        "name": "FightWithDrawState_cpp_4611D0",
+        "size": 1654
+      }
+    },
+    {
+      "address": "0x4632ee",
+      "instruction": "lea ecx, [ebx + eax + 0x32]",
+      "displacement": "0x32",
+      "memory_bytes": 4,
+      "base": "ebx",
+      "index": "eax",
+      "access": 1,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x4632a0",
+        "name": "GuardState_cpp_4632A0",
+        "size": 127
+      }
+    },
+    {
+      "address": "0x466607",
+      "instruction": "mov edx, dword ptr [esp + 0x32]",
+      "displacement": "0x32",
+      "memory_bytes": 4,
+      "base": "esp",
+      "index": null,
+      "access": 1,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x466390",
+        "name": "reinforcingWalls_22_466390",
+        "size": 712
+      }
+    },
+    {
+      "address": "0x46a9c2",
+      "instruction": "lea ecx, [eax + edx + 0x32]",
+      "displacement": "0x32",
+      "memory_bytes": 4,
+      "base": "eax",
+      "index": "edx",
+      "access": 1,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x46a550",
+        "name": "fun_46A550",
+        "size": 1518
+      }
+    },
+    {
+      "address": "0x46ce4f",
+      "instruction": "lea edx, [ecx + eax + 0x32]",
+      "displacement": "0x32",
+      "memory_bytes": 4,
+      "base": "ecx",
+      "index": "eax",
+      "access": 1,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x46cb80",
+        "name": "fun_46CB80",
+        "size": 952
+      }
+    },
+    {
+      "address": "0x47205e",
+      "instruction": "mov dl, byte ptr [ecx + 0x32]",
+      "displacement": "0x32",
+      "memory_bytes": 1,
+      "base": "ecx",
+      "index": null,
+      "access": 1,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x471eb0",
+        "name": "PatrolState_cpp_471EB0",
+        "size": 668
+      }
+    },
+    {
+      "address": "0x486da2",
+      "instruction": "lea edx, [edi + eax + 0x32]",
+      "displacement": "0x32",
+      "memory_bytes": 4,
+      "base": "edi",
+      "index": "eax",
+      "access": 1,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x486cf0",
+        "name": "WaitState_cpp_486CF0",
+        "size": 248
+      }
+    },
+    {
+      "address": "0x49b4e9",
+      "instruction": "mov eax, dword ptr [esi + 0x32]",
+      "displacement": "0x32",
+      "memory_bytes": 4,
+      "base": "esi",
+      "index": null,
+      "access": 1,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x49b1c0",
+        "name": "init",
+        "size": 931
+      }
+    },
+    {
+      "address": "0x49b4f0",
+      "instruction": "mov dword ptr [esi + 0x32], eax",
+      "displacement": "0x32",
+      "memory_bytes": 4,
+      "base": "esi",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x49b1c0",
+        "name": "init",
+        "size": 931
+      }
+    },
+    {
+      "address": "0x49b694",
+      "instruction": "mov ecx, dword ptr [esi + 0x32]",
+      "displacement": "0x32",
+      "memory_bytes": 4,
+      "base": "esi",
+      "index": null,
+      "access": 1,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x49b5e0",
+        "name": "_reset",
+        "size": 1008
+      }
+    },
+    {
+      "address": "0x49be8d",
+      "instruction": "mov eax, dword ptr [esi + 0x32]",
+      "displacement": "0x32",
+      "memory_bytes": 4,
+      "base": "esi",
+      "index": null,
+      "access": 1,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x49bd20",
+        "name": "tick",
+        "size": 403
+      }
+    },
+    {
+      "address": "0x49bea4",
+      "instruction": "mov dword ptr [esi + 0x32], eax",
+      "displacement": "0x32",
+      "memory_bytes": 4,
+      "base": "esi",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x49bd20",
+        "name": "tick",
+        "size": 403
+      }
+    },
+    {
+      "address": "0x49e031",
+      "instruction": "mov dword ptr [ebx + 0x32], edx",
+      "displacement": "0x32",
+      "memory_bytes": 4,
+      "base": "ebx",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x49dd60",
+        "name": "sub_49DD60",
+        "size": 2192
+      }
+    },
+    {
+      "address": "0x4a5271",
+      "instruction": "mov edx, dword ptr [esi + 0x32]",
+      "displacement": "0x32",
+      "memory_bytes": 4,
+      "base": "esi",
+      "index": null,
+      "access": 1,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x4a5070",
+        "name": "init",
+        "size": 543
+      }
+    },
+    {
+      "address": "0x4a527c",
+      "instruction": "mov dword ptr [esi + 0x32], eax",
+      "displacement": "0x32",
+      "memory_bytes": 4,
+      "base": "esi",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x4a5070",
+        "name": "init",
+        "size": 543
+      }
+    },
+    {
+      "address": "0x4a52d6",
+      "instruction": "mov eax, dword ptr [esi + 0x32]",
+      "displacement": "0x32",
+      "memory_bytes": 4,
+      "base": "esi",
+      "index": null,
+      "access": 1,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x4a5290",
+        "name": "sub_4A5290",
+        "size": 568
+      }
+    },
+    {
+      "address": "0x4a5a01",
+      "instruction": "mov eax, dword ptr [esi + 0x32]",
+      "displacement": "0x32",
+      "memory_bytes": 4,
+      "base": "esi",
+      "index": null,
+      "access": 1,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x4a55f0",
+        "name": "tick",
+        "size": 4231
+      }
+    },
+    {
+      "address": "0x4a5a1c",
+      "instruction": "mov dword ptr [esi + 0x32], eax",
+      "displacement": "0x32",
+      "memory_bytes": 4,
+      "base": "esi",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x4a55f0",
+        "name": "tick",
+        "size": 4231
+      }
+    },
+    {
+      "address": "0x4a6489",
+      "instruction": "mov eax, dword ptr [esi + 0x32]",
+      "displacement": "0x32",
+      "memory_bytes": 4,
+      "base": "esi",
+      "index": null,
+      "access": 1,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x4a55f0",
+        "name": "tick",
+        "size": 4231
+      }
+    },
+    {
+      "address": "0x4a64a0",
+      "instruction": "mov dword ptr [esi + 0x32], eax",
+      "displacement": "0x32",
+      "memory_bytes": 4,
+      "base": "esi",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x4a55f0",
+        "name": "tick",
+        "size": 4231
+      }
+    },
+    {
+      "address": "0x4a7463",
+      "instruction": "mov dword ptr [ebp + 0x32], edx",
+      "displacement": "0x32",
+      "memory_bytes": 4,
+      "base": "ebp",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x4a7100",
+        "name": "sub_4A7100",
+        "size": 1757
+      }
+    },
+    {
+      "address": "0x4a7aed",
+      "instruction": "mov edx, dword ptr [esi + 0x32]",
+      "displacement": "0x32",
+      "memory_bytes": 4,
+      "base": "esi",
+      "index": null,
+      "access": 1,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x4a7940",
+        "name": "init",
+        "size": 459
+      }
+    },
+    {
+      "address": "0x4a7af8",
+      "instruction": "mov dword ptr [esi + 0x32], eax",
+      "displacement": "0x32",
+      "memory_bytes": 4,
+      "base": "esi",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x4a7940",
+        "name": "init",
+        "size": 459
+      }
+    },
+    {
+      "address": "0x4a7b4e",
+      "instruction": "mov eax, dword ptr [esi + 0x32]",
+      "displacement": "0x32",
+      "memory_bytes": 4,
+      "base": "esi",
+      "index": null,
+      "access": 1,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x4a7b20",
+        "name": "sub_4A7B20",
+        "size": 173
+      }
+    },
+    {
+      "address": "0x4a8dc3",
+      "instruction": "mov eax, dword ptr [edi + 0x32]",
+      "displacement": "0x32",
+      "memory_bytes": 4,
+      "base": "edi",
+      "index": null,
+      "access": 1,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x4a84e0",
+        "name": "tick",
+        "size": 2436
+      }
+    },
+    {
+      "address": "0x4a8dda",
+      "instruction": "mov dword ptr [edi + 0x32], eax",
+      "displacement": "0x32",
+      "memory_bytes": 4,
+      "base": "edi",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x4a84e0",
+        "name": "tick",
+        "size": 2436
+      }
+    },
+    {
+      "address": "0x4aa745",
+      "instruction": "mov dword ptr [ebp + 0x32], edx",
+      "displacement": "0x32",
+      "memory_bytes": 4,
+      "base": "ebp",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x4aa440",
+        "name": "sub_4AA440",
+        "size": 1898
+      }
+    },
+    {
+      "address": "0x4aaf3c",
+      "instruction": "mov eax, dword ptr [esi + 0x32]",
+      "displacement": "0x32",
+      "memory_bytes": 4,
+      "base": "esi",
+      "index": null,
+      "access": 1,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x4aac90",
+        "name": "fun_4AAC90",
+        "size": 715
+      }
+    },
+    {
+      "address": "0x4aaf47",
+      "instruction": "mov dword ptr [esi + 0x32], eax",
+      "displacement": "0x32",
+      "memory_bytes": 4,
+      "base": "esi",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x4aac90",
+        "name": "fun_4AAC90",
+        "size": 715
+      }
+    },
+    {
+      "address": "0x4aaf9b",
+      "instruction": "mov edx, dword ptr [esi + 0x32]",
+      "displacement": "0x32",
+      "memory_bytes": 4,
+      "base": "esi",
+      "index": null,
+      "access": 1,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x4aaf70",
+        "name": "sub_4AAF70",
+        "size": 278
+      }
+    },
+    {
+      "address": "0x4aafa2",
+      "instruction": "mov dword ptr [esi + 0x32], eax",
+      "displacement": "0x32",
+      "memory_bytes": 4,
+      "base": "esi",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x4aaf70",
+        "name": "sub_4AAF70",
+        "size": 278
+      }
+    },
+    {
+      "address": "0x4ab7c9",
+      "instruction": "mov eax, dword ptr [esi + 0x32]",
+      "displacement": "0x32",
+      "memory_bytes": 4,
+      "base": "esi",
+      "index": null,
+      "access": 1,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x4ab180",
+        "name": "tick",
+        "size": 1648
+      }
+    },
+    {
+      "address": "0x4ab7e0",
+      "instruction": "mov dword ptr [esi + 0x32], eax",
+      "displacement": "0x32",
+      "memory_bytes": 4,
+      "base": "esi",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x4ab180",
+        "name": "tick",
+        "size": 1648
+      }
+    },
+    {
+      "address": "0x4b0438",
+      "instruction": "mov byte ptr [esi + 0x32], al",
+      "displacement": "0x32",
+      "memory_bytes": 1,
+      "base": "esi",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x4b0420",
+        "name": "init",
+        "size": 55
+      }
+    },
+    {
+      "address": "0x4b0af6",
+      "instruction": "mov al, byte ptr [ecx + 0x32]",
+      "displacement": "0x32",
+      "memory_bytes": 1,
+      "base": "ecx",
+      "index": null,
+      "access": 1,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x4b0af0",
+        "name": "setUnk1",
+        "size": 27
+      }
+    },
+    {
+      "address": "0x4b0afd",
+      "instruction": "mov byte ptr [ecx + 0x32], al",
+      "displacement": "0x32",
+      "memory_bytes": 1,
+      "base": "ecx",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x4b0af0",
+        "name": "setUnk1",
+        "size": 27
+      }
+    },
+    {
+      "address": "0x4b0b05",
+      "instruction": "mov byte ptr [ecx + 0x32], al",
+      "displacement": "0x32",
+      "memory_bytes": 1,
+      "base": "ecx",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x4b0af0",
+        "name": "setUnk1",
+        "size": 27
+      }
+    },
+    {
+      "address": "0x4b0b16",
+      "instruction": "mov al, byte ptr [ecx + 0x32]",
+      "displacement": "0x32",
+      "memory_bytes": 1,
+      "base": "ecx",
+      "index": null,
+      "access": 1,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x4b0b10",
+        "name": "setUnk2",
+        "size": 27
+      }
+    },
+    {
+      "address": "0x4b0b1d",
+      "instruction": "mov byte ptr [ecx + 0x32], al",
+      "displacement": "0x32",
+      "memory_bytes": 1,
+      "base": "ecx",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x4b0b10",
+        "name": "setUnk2",
+        "size": 27
+      }
+    },
+    {
+      "address": "0x4b0b25",
+      "instruction": "mov byte ptr [ecx + 0x32], al",
+      "displacement": "0x32",
+      "memory_bytes": 1,
+      "base": "ecx",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x4b0b10",
+        "name": "setUnk2",
+        "size": 27
+      }
+    },
+    {
+      "address": "0x4b0b36",
+      "instruction": "mov al, byte ptr [ecx + 0x32]",
+      "displacement": "0x32",
+      "memory_bytes": 1,
+      "base": "ecx",
+      "index": null,
+      "access": 1,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x4b0b30",
+        "name": "setHeroLair",
+        "size": 27
+      }
+    },
+    {
+      "address": "0x4b0b3d",
+      "instruction": "mov byte ptr [ecx + 0x32], al",
+      "displacement": "0x32",
+      "memory_bytes": 1,
+      "base": "ecx",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x4b0b30",
+        "name": "setHeroLair",
+        "size": 27
+      }
+    },
+    {
+      "address": "0x4b0b45",
+      "instruction": "mov byte ptr [ecx + 0x32], al",
+      "displacement": "0x32",
+      "memory_bytes": 1,
+      "base": "ecx",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x4b0b30",
+        "name": "setHeroLair",
+        "size": 27
+      }
+    },
+    {
+      "address": "0x4b0b56",
+      "instruction": "mov al, byte ptr [ecx + 0x32]",
+      "displacement": "0x32",
+      "memory_bytes": 1,
+      "base": "ecx",
+      "index": null,
+      "access": 1,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x4b0b50",
+        "name": "setToolBox",
+        "size": 27
+      }
+    },
+    {
+      "address": "0x4b0b5d",
+      "instruction": "mov byte ptr [ecx + 0x32], al",
+      "displacement": "0x32",
+      "memory_bytes": 1,
+      "base": "ecx",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x4b0b50",
+        "name": "setToolBox",
+        "size": 27
+      }
+    },
+    {
+      "address": "0x4b0b65",
+      "instruction": "mov byte ptr [ecx + 0x32], al",
+      "displacement": "0x32",
+      "memory_bytes": 1,
+      "base": "ecx",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x4b0b50",
+        "name": "setToolBox",
+        "size": 27
+      }
+    },
+    {
+      "address": "0x4b0b76",
+      "instruction": "mov al, byte ptr [ecx + 0x32]",
+      "displacement": "0x32",
+      "memory_bytes": 1,
+      "base": "ecx",
+      "index": null,
+      "access": 1,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x4b0b70",
+        "name": "setRevealThroughFogOfWar",
+        "size": 27
+      }
+    },
+    {
+      "address": "0x4b0b7d",
+      "instruction": "mov byte ptr [ecx + 0x32], al",
+      "displacement": "0x32",
+      "memory_bytes": 1,
+      "base": "ecx",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x4b0b70",
+        "name": "setRevealThroughFogOfWar",
+        "size": 27
+      }
+    },
+    {
+      "address": "0x4b0b85",
+      "instruction": "mov byte ptr [ecx + 0x32], al",
+      "displacement": "0x32",
+      "memory_bytes": 1,
+      "base": "ecx",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x4b0b70",
+        "name": "setRevealThroughFogOfWar",
+        "size": 27
+      }
+    },
+    {
+      "address": "0x4b0bcc",
+      "instruction": "mov dl, byte ptr [esi + 0x32]",
+      "displacement": "0x32",
+      "memory_bytes": 1,
+      "base": "esi",
+      "index": null,
+      "access": 1,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x4b0b90",
+        "name": "fun_4B0B90",
+        "size": 243
+      }
+    },
+    {
+      "address": "0x4b19d9",
+      "instruction": "mov dword ptr [esi + 0x32], ecx",
+      "displacement": "0x32",
+      "memory_bytes": 4,
+      "base": "esi",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x4b19a0",
+        "name": "CEffectGenerator_init",
+        "size": 70
+      }
+    },
+    {
+      "address": "0x4b1bae",
+      "instruction": "cmp word ptr [esi + ebx*2 + 0x32], 0",
+      "displacement": "0x32",
+      "memory_bytes": 2,
+      "base": "esi",
+      "index": "ebx",
+      "access": 1,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x4b1b60",
+        "name": "CEffectGenerator::fun_4B1B60",
+        "size": 368
+      }
+    },
+    {
+      "address": "0x4b1c9c",
+      "instruction": "mov ax, word ptr [esi + ebx*2 + 0x32]",
+      "displacement": "0x32",
+      "memory_bytes": 2,
+      "base": "esi",
+      "index": "ebx",
+      "access": 1,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x4b1b60",
+        "name": "CEffectGenerator::fun_4B1B60",
+        "size": 368
+      }
+    },
+    {
+      "address": "0x4b28ff",
+      "instruction": "mov dword ptr [esi + 0x32], edi",
+      "displacement": "0x32",
+      "memory_bytes": 4,
+      "base": "esi",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x4b28d0",
+        "name": "initWithType",
+        "size": 55
+      }
+    },
+    {
+      "address": "0x4b5b43",
+      "instruction": "mov dword ptr [esi + 0x32], ebp",
+      "displacement": "0x32",
+      "memory_bytes": 4,
+      "base": "esi",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x4b5a10",
+        "name": "createCreatures",
+        "size": 354
+      }
+    },
+    {
+      "address": "0x4b6fa4",
+      "instruction": "mov eax, dword ptr [ebp + 0x32]",
+      "displacement": "0x32",
+      "memory_bytes": 4,
+      "base": "ebp",
+      "index": null,
+      "access": 1,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x4b65e0",
+        "name": "deserializeTag",
+        "size": 2984
+      }
+    },
+    {
+      "address": "0x4b6fab",
+      "instruction": "mov dword ptr [ebp + 0x32], eax",
+      "displacement": "0x32",
+      "memory_bytes": 4,
+      "base": "ebp",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x4b65e0",
+        "name": "deserializeTag",
+        "size": 2984
+      }
+    },
+    {
+      "address": "0x4b7f60",
+      "instruction": "mov eax, dword ptr [edi + 0x32]",
+      "displacement": "0x32",
+      "memory_bytes": 4,
+      "base": "edi",
+      "index": null,
+      "access": 1,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x4b7f20",
+        "name": "createActionPoint",
+        "size": 94
+      }
+    },
+    {
+      "address": "0x4b7f64",
+      "instruction": "mov dword ptr [edi + 0x32], eax",
+      "displacement": "0x32",
+      "memory_bytes": 4,
+      "base": "edi",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x4b7f20",
+        "name": "createActionPoint",
+        "size": 94
+      }
+    },
+    {
+      "address": "0x4b7faf",
+      "instruction": "mov eax, dword ptr [edi + 0x32]",
+      "displacement": "0x32",
+      "memory_bytes": 4,
+      "base": "edi",
+      "index": null,
+      "access": 1,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x4b7f80",
+        "name": "sub_4B7F80",
+        "size": 63
+      }
+    },
+    {
+      "address": "0x4b7fb3",
+      "instruction": "mov dword ptr [edi + 0x32], eax",
+      "displacement": "0x32",
+      "memory_bytes": 4,
+      "base": "edi",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x4b7f80",
+        "name": "sub_4B7F80",
+        "size": 63
+      }
+    },
+    {
+      "address": "0x4b82b0",
+      "instruction": "mov esi, dword ptr [ecx + 0x32]",
+      "displacement": "0x32",
+      "memory_bytes": 4,
+      "base": "ecx",
+      "index": null,
+      "access": 1,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x4b8290",
+        "name": "calcChecksum",
+        "size": 119
+      }
+    },
+    {
+      "address": "0x4b83c5",
+      "instruction": "mov edx, dword ptr [esi + 0x32]",
+      "displacement": "0x32",
+      "memory_bytes": 4,
+      "base": "esi",
+      "index": null,
+      "access": 1,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x4b8310",
+        "name": "dump",
+        "size": 307
+      }
+    },
+    {
+      "address": "0x4c293d",
+      "instruction": "mov byte ptr [esp + 0x32], al",
+      "displacement": "0x32",
+      "memory_bytes": 1,
+      "base": "esp",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x4c2880",
+        "name": "hero_outpost_floor_4C2880",
+        "size": 241
+      }
+    },
+    {
+      "address": "0x4df7ec",
+      "instruction": "mov eax, dword ptr [esi + 0x32]",
+      "displacement": "0x32",
+      "memory_bytes": 4,
+      "base": "esi",
+      "index": null,
+      "access": 1,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x4df6e0",
+        "name": "HeroGateFrontEnd_cpp_tick",
+        "size": 907
+      }
+    },
+    {
+      "address": "0x4df7f3",
+      "instruction": "mov dword ptr [esi + 0x32], eax",
+      "displacement": "0x32",
+      "memory_bytes": 4,
+      "base": "esi",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x4df6e0",
+        "name": "HeroGateFrontEnd_cpp_tick",
+        "size": 907
+      }
+    },
+    {
+      "address": "0x4eaf5d",
+      "instruction": "mov dword ptr [edi + 0x32], edx",
+      "displacement": "0x32",
+      "memory_bytes": 4,
+      "base": "edi",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x4eacc0",
+        "name": "load_sub_4EACC0",
+        "size": 4657
+      }
+    },
+    {
+      "address": "0x4eb1ee",
+      "instruction": "mov dl, byte ptr [esp + 0x32]",
+      "displacement": "0x32",
+      "memory_bytes": 1,
+      "base": "esp",
+      "index": null,
+      "access": 1,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x4eacc0",
+        "name": "load_sub_4EACC0",
+        "size": 4657
+      }
+    },
+    {
+      "address": "0x4ebecb",
+      "instruction": "mov cl, byte ptr [esp + 0x32]",
+      "displacement": "0x32",
+      "memory_bytes": 1,
+      "base": "esp",
+      "index": null,
+      "access": 1,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x4eacc0",
+        "name": "load_sub_4EACC0",
+        "size": 4657
+      }
+    },
+    {
+      "address": "0x4f6cd8",
+      "instruction": "mov dword ptr [ebx + 0x32], edx",
+      "displacement": "0x32",
+      "memory_bytes": 4,
+      "base": "ebx",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x4f66e0",
+        "name": "sub_4F66E0",
+        "size": 4298
+      }
+    },
+    {
+      "address": "0x4f71ed",
+      "instruction": "mov dword ptr [ebx + 0x32], edx",
+      "displacement": "0x32",
+      "memory_bytes": 4,
+      "base": "ebx",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x4f66e0",
+        "name": "sub_4F66E0",
+        "size": 4298
+      }
+    },
+    {
+      "address": "0x4f813f",
+      "instruction": "mov dword ptr [edi + 0x32], edx",
+      "displacement": "0x32",
+      "memory_bytes": 4,
+      "base": "edi",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x4f7ce0",
+        "name": "sub_4F7CE0",
+        "size": 1135
+      }
+    },
+    {
+      "address": "0x4f88ab",
+      "instruction": "mov eax, dword ptr [edi + 0x32]",
+      "displacement": "0x32",
+      "memory_bytes": 4,
+      "base": "edi",
+      "index": null,
+      "access": 1,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x4f8750",
+        "name": "init_4F8750",
+        "size": 1287
+      }
+    },
+    {
+      "address": "0x4fd5a2",
+      "instruction": "cmp dword ptr [esi + eax*8 + 0x32], ebx",
+      "displacement": "0x32",
+      "memory_bytes": 4,
+      "base": "esi",
+      "index": "eax",
+      "access": 1,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x4fd590",
+        "name": "fun_4FD590",
+        "size": 202
+      }
+    },
+    {
+      "address": "0x5021d0",
+      "instruction": "mov dword ptr [ebp + ecx*8 + 0x32], eax",
+      "displacement": "0x32",
+      "memory_bytes": 4,
+      "base": "ebp",
+      "index": "ecx",
+      "access": 2,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x501c10",
+        "name": "fun_501C10",
+        "size": 1562
+      }
+    },
+    {
+      "address": "0x509e19",
+      "instruction": "mov dl, byte ptr [esp + 0x32]",
+      "displacement": "0x32",
+      "memory_bytes": 1,
+      "base": "esp",
+      "index": null,
+      "access": 1,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x5099a0",
+        "name": "create_objects",
+        "size": 2379
+      }
+    },
+    {
+      "address": "0x50c083",
+      "instruction": "test byte ptr [eax + 0x32], 0x10",
+      "displacement": "0x32",
+      "memory_bytes": 1,
+      "base": "eax",
+      "index": null,
+      "access": 1,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x50b5b0",
+        "name": "fun_50B5B0",
+        "size": 4675
+      }
+    },
+    {
+      "address": "0x50c27a",
+      "instruction": "mov word ptr [edx + 0x32], 0x5a",
+      "displacement": "0x32",
+      "memory_bytes": 2,
+      "base": "edx",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x50b5b0",
+        "name": "fun_50B5B0",
+        "size": 4675
+      }
+    },
+    {
+      "address": "0x510e36",
+      "instruction": "test byte ptr [ecx + 0x32], dl",
+      "displacement": "0x32",
+      "memory_bytes": 1,
+      "base": "ecx",
+      "index": null,
+      "access": 0,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x510e20",
+        "name": "fun_510E20",
+        "size": 49
+      }
+    },
+    {
+      "address": "0x512cd6",
+      "instruction": "mov word ptr [esp + 0x32], di",
+      "displacement": "0x32",
+      "memory_bytes": 2,
+      "base": "esp",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x512a20",
+        "name": "sub_512A20",
+        "size": 766
+      }
+    },
+    {
+      "address": "0x51dbfb",
+      "instruction": "mov dword ptr [esp + 0x32], eax",
+      "displacement": "0x32",
+      "memory_bytes": 4,
+      "base": "esp",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x51db30",
+        "name": "sub_51DB30",
+        "size": 240
+      }
+    },
+    {
+      "address": "0x52095f",
+      "instruction": "mov al, byte ptr [esi + 0x32]",
+      "displacement": "0x32",
+      "memory_bytes": 1,
+      "base": "esi",
+      "index": null,
+      "access": 1,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x5208b0",
+        "name": "CWorld_loadThing_Creature",
+        "size": 765
+      }
+    },
+    {
+      "address": "0x520977",
+      "instruction": "mov cl, byte ptr [esi + 0x32]",
+      "displacement": "0x32",
+      "memory_bytes": 1,
+      "base": "esi",
+      "index": null,
+      "access": 1,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x5208b0",
+        "name": "CWorld_loadThing_Creature",
+        "size": 765
+      }
+    },
+    {
+      "address": "0x520998",
+      "instruction": "mov al, byte ptr [esi + 0x32]",
+      "displacement": "0x32",
+      "memory_bytes": 1,
+      "base": "esi",
+      "index": null,
+      "access": 1,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x5208b0",
+        "name": "CWorld_loadThing_Creature",
+        "size": 765
+      }
+    },
+    {
+      "address": "0x520a32",
+      "instruction": "mov al, byte ptr [esi + 0x32]",
+      "displacement": "0x32",
+      "memory_bytes": 1,
+      "base": "esi",
+      "index": null,
+      "access": 1,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x5208b0",
+        "name": "CWorld_loadThing_Creature",
+        "size": 765
+      }
+    },
+    {
+      "address": "0x52b413",
+      "instruction": "mov dword ptr [esp + 0x32], 1",
+      "displacement": "0x32",
+      "memory_bytes": 4,
+      "base": "esp",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x52b390",
+        "name": "CListBox::add_CVerticalSlider",
+        "size": 318
+      }
+    },
+    {
+      "address": "0x52cf66",
+      "instruction": "mov edx, dword ptr [eax + 0x32]",
+      "displacement": "0x32",
+      "memory_bytes": 4,
+      "base": "eax",
+      "index": null,
+      "access": 1,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x52ced0",
+        "name": "configure",
+        "size": 182
+      }
+    },
+    {
+      "address": "0x52e3b1",
+      "instruction": "mov dl, byte ptr [esp + 0x32]",
+      "displacement": "0x32",
+      "memory_bytes": 1,
+      "base": "esp",
+      "index": null,
+      "access": 1,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x52e0a0",
+        "name": "probably_copySurface_8bpp",
+        "size": 1003
+      }
+    },
+    {
+      "address": "0x53bb85",
+      "instruction": "lea ecx, [esi + 0x32]",
+      "displacement": "0x32",
+      "memory_bytes": 4,
+      "base": "esi",
+      "index": null,
+      "access": 1,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x53b980",
+        "name": "do_smth_and_showOutro",
+        "size": 837
+      }
+    },
+    {
+      "address": "0x53ce5c",
+      "instruction": "mov byte ptr [esp + 0x32], 0xff",
+      "displacement": "0x32",
+      "memory_bytes": 1,
+      "base": "esp",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x53caf0",
+        "name": "CButton_render_53CAF0",
+        "size": 1917
+      }
+    },
+    {
+      "address": "0x5510fc",
+      "instruction": "add byte ptr [ebp + 0x32], bh",
+      "displacement": "0x32",
+      "memory_bytes": 1,
+      "base": "ebp",
+      "index": null,
+      "access": 3,
+      "sources": [
+        "displacement-anchored"
+      ],
+      "mapped_span": {
+        "address": "0x550d90",
+        "name": "CButton_render_550D90",
+        "size": 1718
+      }
+    },
+    {
+      "address": "0x5583c2",
+      "instruction": "lea edx, [edi + 0x32]",
+      "displacement": "0x32",
+      "memory_bytes": 4,
+      "base": "edi",
+      "index": null,
+      "access": 1,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x5581b0",
+        "name": "prepareScreenEx",
+        "size": 1026
+      }
+    },
+    {
+      "address": "0x562966",
+      "instruction": "add byte ptr [ecx + 0x32], bh",
+      "displacement": "0x32",
+      "memory_bytes": 1,
+      "base": "ecx",
+      "index": null,
+      "access": 3,
+      "sources": [
+        "displacement-anchored"
+      ],
+      "mapped_span": {
+        "address": "0x562960",
+        "name": "constructor",
+        "size": 72
+      }
+    },
+    {
+      "address": "0x56f582",
+      "instruction": "mov byte ptr [ecx + 0x32], dl",
+      "displacement": "0x32",
+      "memory_bytes": 1,
+      "base": "ecx",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x56f540",
+        "name": "sub_56F540",
+        "size": 118
+      }
+    },
+    {
+      "address": "0x56faa4",
+      "instruction": "mov dword ptr [esp + 0x32], eax",
+      "displacement": "0x32",
+      "memory_bytes": 4,
+      "base": "esp",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x56fa00",
+        "name": "FileSystem_TbDiscFile_parseThings",
+        "size": 1637
+      }
+    },
+    {
+      "address": "0x5b1a90",
+      "instruction": "mov al, byte ptr [esi + 0x32]",
+      "displacement": "0x32",
+      "memory_bytes": 1,
+      "base": "esi",
+      "index": null,
+      "access": 1,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x5b1906",
+        "name": "sub_5B1906",
+        "size": 523
+      }
+    },
+    {
+      "address": "0x5b5529",
+      "instruction": "mov cl, byte ptr [esp + 0x32]",
+      "displacement": "0x32",
+      "memory_bytes": 1,
+      "base": "esp",
+      "index": null,
+      "access": 1,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x5b5490",
+        "name": "MyDdSurfaceEx_fillWithColor",
+        "size": 575
+      }
+    },
+    {
+      "address": "0x5c2ff4",
+      "instruction": "mov byte ptr [esp + 0x32], dl",
+      "displacement": "0x32",
+      "memory_bytes": 1,
+      "base": "esp",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x5c2fa0",
+        "name": "f18_5C2FA0",
+        "size": 1580
+      }
+    },
+    {
+      "address": "0x5c30b4",
+      "instruction": "mov byte ptr [esp + 0x32], dl",
+      "displacement": "0x32",
+      "memory_bytes": 1,
+      "base": "esp",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x5c2fa0",
+        "name": "f18_5C2FA0",
+        "size": 1580
+      }
+    },
+    {
+      "address": "0x5c36d8",
+      "instruction": "mov bl, byte ptr [esp + 0x32]",
+      "displacement": "0x32",
+      "memory_bytes": 1,
+      "base": "esp",
+      "index": null,
+      "access": 1,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x5c3650",
+        "name": "fun_5C3650",
+        "size": 428
+      }
+    },
+    {
+      "address": "0x5c3739",
+      "instruction": "mov bl, byte ptr [esp + 0x32]",
+      "displacement": "0x32",
+      "memory_bytes": 1,
+      "base": "esp",
+      "index": null,
+      "access": 1,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x5c3650",
+        "name": "fun_5C3650",
+        "size": 428
+      }
+    },
+    {
+      "address": "0x5c37d9",
+      "instruction": "mov bl, byte ptr [esp + 0x32]",
+      "displacement": "0x32",
+      "memory_bytes": 1,
+      "base": "esp",
+      "index": null,
+      "access": 1,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x5c3650",
+        "name": "fun_5C3650",
+        "size": 428
+      }
+    },
+    {
+      "address": "0x5c7b9a",
+      "instruction": "mov byte ptr [esp + 0x32], dl",
+      "displacement": "0x32",
+      "memory_bytes": 1,
+      "base": "esp",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x5c7ab0",
+        "name": "f18_5C7AB0",
+        "size": 2362
+      }
+    },
+    {
+      "address": "0x5c7eec",
+      "instruction": "mov byte ptr [esp + 0x32], cl",
+      "displacement": "0x32",
+      "memory_bytes": 1,
+      "base": "esp",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x5c7ab0",
+        "name": "f18_5C7AB0",
+        "size": 2362
+      }
+    },
+    {
+      "address": "0x5c8888",
+      "instruction": "mov edx, dword ptr [esp + 0x32]",
+      "displacement": "0x32",
+      "memory_bytes": 4,
+      "base": "esp",
+      "index": null,
+      "access": 1,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x5c8810",
+        "name": "fun_5C8810",
+        "size": 560
+      }
+    },
+    {
+      "address": "0x5c891b",
+      "instruction": "mov edx, dword ptr [esp + 0x32]",
+      "displacement": "0x32",
+      "memory_bytes": 4,
+      "base": "esp",
+      "index": null,
+      "access": 1,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x5c8810",
+        "name": "fun_5C8810",
+        "size": 560
+      }
+    },
+    {
+      "address": "0x5c89ef",
+      "instruction": "mov ecx, dword ptr [esp + 0x32]",
+      "displacement": "0x32",
+      "memory_bytes": 4,
+      "base": "esp",
+      "index": null,
+      "access": 1,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x5c8810",
+        "name": "fun_5C8810",
+        "size": 560
+      }
+    },
+    {
+      "address": "0x5c8aa0",
+      "instruction": "mov ecx, dword ptr [esp + 0x32]",
+      "displacement": "0x32",
+      "memory_bytes": 4,
+      "base": "esp",
+      "index": null,
+      "access": 1,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x5c8a40",
+        "name": "f30_5C8A40",
+        "size": 711
+      }
+    },
+    {
+      "address": "0x5c8d6e",
+      "instruction": "mov edx, dword ptr [esp + 0x32]",
+      "displacement": "0x32",
+      "memory_bytes": 4,
+      "base": "esp",
+      "index": null,
+      "access": 1,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x5c8d10",
+        "name": "My32BitTexture_5C8D10",
+        "size": 681
+      }
+    },
+    {
+      "address": "0x5efe33",
+      "instruction": "mov al, byte ptr [esp + 0x32]",
+      "displacement": "0x32",
+      "memory_bytes": 1,
+      "base": "esp",
+      "index": null,
+      "access": 1,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x5efca0",
+        "name": "sub_5EFCA0",
+        "size": 434
+      }
+    },
+    {
+      "address": "0x619dda",
+      "instruction": "mov byte ptr [esp + 0x32], al",
+      "displacement": "0x32",
+      "memory_bytes": 1,
+      "base": "esp",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x619d10",
+        "name": "sub_619D10",
+        "size": 504
+      }
+    },
+    {
+      "address": "0x619df1",
+      "instruction": "mov byte ptr [esp + 0x32], cl",
+      "displacement": "0x32",
+      "memory_bytes": 1,
+      "base": "esp",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x619d10",
+        "name": "sub_619D10",
+        "size": 504
+      }
+    },
+    {
+      "address": "0x619e7e",
+      "instruction": "mov byte ptr [esp + 0x32], cl",
+      "displacement": "0x32",
+      "memory_bytes": 1,
+      "base": "esp",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x619d10",
+        "name": "sub_619D10",
+        "size": 504
+      }
+    },
+    {
+      "address": "0x622664",
+      "instruction": "mov word ptr [edx + 0x32], ax",
+      "displacement": "0x32",
+      "memory_bytes": 2,
+      "base": "edx",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x6211c0",
+        "name": "sub_6211C0",
+        "size": 8629
+      }
+    },
+    {
+      "address": "0x6247ad",
+      "instruction": "mov word ptr [ebx + 0x32], ax",
+      "displacement": "0x32",
+      "memory_bytes": 2,
+      "base": "ebx",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x623e60",
+        "name": "sub_623E60",
+        "size": 3120
+      }
+    },
+    {
+      "address": "0x626e49",
+      "instruction": "mov word ptr [edi + 0x32], ax",
+      "displacement": "0x32",
+      "memory_bytes": 2,
+      "base": "edi",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x6251e0",
+        "name": "sub_6251E0",
+        "size": 12804
+      }
+    },
+    {
+      "address": "0x6281d2",
+      "instruction": "mov word ptr [ebx + 0x32], ax",
+      "displacement": "0x32",
+      "memory_bytes": 2,
+      "base": "ebx",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x6251e0",
+        "name": "sub_6251E0",
+        "size": 12804
+      }
+    },
+    {
+      "address": "0x631254",
+      "instruction": "mov ecx, dword ptr [esp + 0x32]",
+      "displacement": "0x32",
+      "memory_bytes": 4,
+      "base": "esp",
+      "index": null,
+      "access": 1,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x6311e0",
+        "name": "render_r8g8b8a8",
+        "size": 587
+      }
+    },
+    {
+      "address": "0x63b7cd",
+      "instruction": "mov byte ptr [esp + 0x32], al",
+      "displacement": "0x32",
+      "memory_bytes": 1,
+      "base": "esp",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x63b510",
+        "name": "__woutput",
+        "size": 2188
+      }
+    },
+    {
+      "address": "0x63b7d1",
+      "instruction": "lea edx, [esp + 0x32]",
+      "displacement": "0x32",
+      "memory_bytes": 4,
+      "base": "esp",
+      "index": null,
+      "access": 1,
+      "sources": [
+        "linear"
+      ],
+      "mapped_span": {
+        "address": "0x63b510",
+        "name": "__woutput",
+        "size": 2188
+      }
+    },
+    {
+      "address": "0x6420a4",
+      "instruction": "movsx eax, byte ptr [esp + 0x32]",
+      "displacement": "0x32",
+      "memory_bytes": 1,
+      "base": "esp",
+      "index": null,
+      "access": 1,
+      "sources": [
+        "linear"
+      ]
+    },
+    {
+      "address": "0x646c09",
+      "instruction": "cmp word ptr [esp + 0x32], 0xffff",
+      "displacement": "0x32",
+      "memory_bytes": 2,
+      "base": "esp",
+      "index": null,
+      "access": 1,
+      "sources": [
+        "linear"
+      ]
+    },
+    {
+      "address": "0x646c16",
+      "instruction": "mov word ptr [esp + 0x32], di",
+      "displacement": "0x32",
+      "memory_bytes": 2,
+      "base": "esp",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear"
+      ]
+    },
+    {
+      "address": "0x646c1e",
+      "instruction": "inc word ptr [esp + 0x32]",
+      "displacement": "0x32",
+      "memory_bytes": 2,
+      "base": "esp",
+      "index": null,
+      "access": 3,
+      "sources": [
+        "linear"
+      ]
+    }
+  ]
+}

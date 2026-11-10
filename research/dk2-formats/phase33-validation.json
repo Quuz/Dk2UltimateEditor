@@ -1,0 +1,843 @@
+{
+  "phase": 33,
+  "date": "2026-10-26",
+  "boundary_cases": 65626,
+  "native_emulations": 70,
+  "native_case_kinds": {
+    "parser": 14,
+    "loader": 17,
+    "writer": 8,
+    "next": 5,
+    "area": 4,
+    "patrol": 11,
+    "wait": 5,
+    "codec": 6
+  },
+  "exact_in_memory_container_patches": 252,
+  "corpus": {
+    "thing_files": 109,
+    "action_points": 3422,
+    "payload_sizes": {
+      "56": 3422
+    },
+    "raw_flags": {
+      "0": 171,
+      "4": 2864,
+      "5": 43,
+      "12": 65,
+      "16": 48,
+      "20": 170,
+      "21": 1,
+      "32": 2,
+      "48": 7,
+      "49": 1,
+      "68": 50
+    },
+    "raw_waits": {
+      "0": 2926,
+      "1": 57,
+      "2": 131,
+      "3": 78,
+      "4": 25,
+      "5": 95,
+      "7": 14,
+      "8": 6,
+      "9": 1,
+      "10": 42,
+      "12": 4,
+      "13": 1,
+      "14": 1,
+      "15": 12,
+      "20": 14,
+      "30": 2,
+      "33": 1,
+      "35": 3,
+      "60": 1,
+      "250": 2,
+      "500": 4,
+      "32767": 2
+    },
+    "coordinate_modes": {
+      "corners": 3422
+    },
+    "raw_ids": {
+      "1": 103,
+      "2": 100,
+      "3": 97,
+      "4": 91,
+      "5": 89,
+      "6": 88,
+      "7": 89,
+      "8": 84,
+      "9": 80,
+      "10": 79,
+      "11": 78,
+      "12": 77,
+      "13": 76,
+      "14": 71,
+      "15": 72,
+      "16": 69,
+      "17": 70,
+      "18": 65,
+      "19": 64,
+      "20": 62,
+      "21": 63,
+      "22": 58,
+      "23": 53,
+      "24": 54,
+      "25": 53,
+      "26": 53,
+      "27": 50,
+      "28": 49,
+      "29": 48,
+      "30": 47,
+      "31": 47,
+      "32": 46,
+      "33": 42,
+      "34": 42,
+      "35": 42,
+      "36": 41,
+      "37": 40,
+      "38": 39,
+      "39": 39,
+      "40": 37,
+      "41": 38,
+      "42": 36,
+      "43": 35,
+      "44": 35,
+      "45": 33,
+      "46": 34,
+      "47": 33,
+      "48": 34,
+      "49": 34,
+      "50": 31,
+      "51": 29,
+      "52": 26,
+      "53": 26,
+      "54": 26,
+      "55": 25,
+      "56": 25,
+      "57": 23,
+      "58": 23,
+      "59": 22,
+      "60": 22,
+      "61": 20,
+      "62": 18,
+      "63": 18,
+      "64": 18,
+      "65": 17,
+      "66": 17,
+      "67": 16,
+      "68": 16,
+      "69": 15,
+      "70": 15,
+      "71": 14,
+      "72": 14,
+      "73": 13,
+      "74": 13,
+      "75": 12,
+      "76": 12,
+      "77": 11,
+      "78": 10,
+      "79": 10,
+      "80": 6
+    },
+    "next_ids": {
+      "0": 1862,
+      "1": 31,
+      "2": 47,
+      "3": 44,
+      "4": 34,
+      "5": 27,
+      "6": 31,
+      "7": 30,
+      "8": 29,
+      "9": 28,
+      "10": 34,
+      "11": 36,
+      "12": 36,
+      "13": 35,
+      "14": 36,
+      "15": 31,
+      "16": 35,
+      "17": 24,
+      "18": 28,
+      "19": 34,
+      "20": 31,
+      "21": 37,
+      "22": 24,
+      "23": 25,
+      "24": 32,
+      "25": 36,
+      "26": 22,
+      "27": 22,
+      "28": 25,
+      "29": 18,
+      "30": 29,
+      "31": 24,
+      "32": 24,
+      "33": 29,
+      "34": 28,
+      "35": 24,
+      "36": 21,
+      "37": 13,
+      "38": 14,
+      "39": 25,
+      "40": 11,
+      "41": 12,
+      "42": 11,
+      "43": 18,
+      "44": 15,
+      "45": 16,
+      "46": 19,
+      "47": 19,
+      "48": 20,
+      "49": 18,
+      "50": 13,
+      "51": 9,
+      "52": 11,
+      "53": 13,
+      "54": 13,
+      "55": 14,
+      "56": 7,
+      "57": 10,
+      "58": 9,
+      "59": 11,
+      "60": 11,
+      "61": 9,
+      "62": 11,
+      "63": 13,
+      "64": 9,
+      "65": 14,
+      "66": 11,
+      "67": 11,
+      "68": 12,
+      "69": 7,
+      "70": 5,
+      "71": 7,
+      "72": 7,
+      "73": 2,
+      "74": 5,
+      "75": 4,
+      "76": 4,
+      "77": 3,
+      "78": 8,
+      "79": 4,
+      "80": 1
+    },
+    "distinct_raw_names": 71,
+    "raw_mask40_records": 50,
+    "missing_nonzero_next_links": [],
+    "editor_flag_projection_changes": [],
+    "file_details": [
+      {
+        "file": "3DLevelThings.kld",
+        "sha256": "7dee113ec14ae0f009c579b0c4a46309b9a48cdb42000be69db75eccaa7085ac",
+        "action_points": 1
+      },
+      {
+        "file": "ANL - 3 FunThings.kld",
+        "sha256": "1e1635f903228dec2dedb96e5661c1679999e3b8b01c156215a45f61931792ca",
+        "action_points": 58
+      },
+      {
+        "file": "Battle for the Sun Qz2Things.kld",
+        "sha256": "d0d483ad852300e42ebdd325611124c0c1669dd26e9dc29c0b74f2c02f95a2d8",
+        "action_points": 80
+      },
+      {
+        "file": "Battle for the Sun QzThings.kld",
+        "sha256": "7dccc6e33044eaa5c14dfe586aa9f8dd1ac407792c52e86ecb6899a5a2b794f7",
+        "action_points": 80
+      },
+      {
+        "file": "BattlesThings.kld",
+        "sha256": "2a1330aa4c61b3255ea2b784c334f473dfc7966334492bc830acc2ecf19132b5",
+        "action_points": 0
+      },
+      {
+        "file": "DK2 tutorial map2Things.kld",
+        "sha256": "6f30c37c02ecfc981243ea590a5d5841d3c34ece390f82f6c0f7d0b16c26611b",
+        "action_points": 22
+      },
+      {
+        "file": "DK2 tutorial mapThings.kld",
+        "sha256": "8b8f104d5a7a6f7445432af6e3450b9d2b4fa1cabe830370e2d18328b06640df",
+        "action_points": 22
+      },
+      {
+        "file": "DK2Preview_6a88240eaf814f78Things.kld",
+        "sha256": "bcdeb56f15748f68ed525ce8dcc2ffe31921c09ccb2f30e9657aa2bfdcf17d81",
+        "action_points": 79
+      },
+      {
+        "file": "FrontEnd3DLevelThings.kld",
+        "sha256": "3bee4c9026d746fed2e036dc098404444436720fbe7b4784d28883b0cc2f4a6a",
+        "action_points": 1
+      },
+      {
+        "file": "kop2Things.kld",
+        "sha256": "90ad33bfbac82b9558418e1f75b2caf810e0a9a3a91640c07d4e7de3b58ce4d6",
+        "action_points": 2
+      },
+      {
+        "file": "kop3Things.kld",
+        "sha256": "686df8b82b923dfe1d180b25efc48cb90e3a6ba071a425b43f8002aadc22e9eb",
+        "action_points": 3
+      },
+      {
+        "file": "kop4Things.kld",
+        "sha256": "d15ef0868d9ca6265f8bc7b4edd8a3beac4fccf3d96caaef524a2dc563d31863",
+        "action_points": 7
+      },
+      {
+        "file": "Level 1- Kharak SystemThings.kld",
+        "sha256": "1bff86a2b221bbad6f0a3049d7f6bf38350cd24394de82fcd91abe462fe0736f",
+        "action_points": 7
+      },
+      {
+        "file": "Level 10- Super Nova StationThings.kld",
+        "sha256": "e3b0adf03cac1e1020136f85923261db08953f0a7564d08317b867ef15a719b0",
+        "action_points": 13
+      },
+      {
+        "file": "Level 11- Tenhauser GateThings.kld",
+        "sha256": "14b107ee0a26584949821ed2f0a4f28457ee8cabe686b1984313fead05f034c9",
+        "action_points": 19
+      },
+      {
+        "file": "Level 12- Galactic CoreThings.kld",
+        "sha256": "f9a8b0b27187a74f0e175587d02941986fca207f2f0202202c0083095627621e",
+        "action_points": 27
+      },
+      {
+        "file": "Level 13- Karos GraveyardThings.kld",
+        "sha256": "e774d2f1ede6cd44f6d95194badf9046858a93a13c8787da3d38319a80dc8e89",
+        "action_points": 7
+      },
+      {
+        "file": "Level 14- Bridge of SighsThings.kld",
+        "sha256": "f1b8f559d279e62c0e8d2871fc90b2cf7afda9011b35a2fabfa6e8e0bbe49d58",
+        "action_points": 24
+      },
+      {
+        "file": "Level 15- Chapel PerilousThings.kld",
+        "sha256": "bf72702db0bf013c9e12e14ae526b51a067c52d98d2a7a4d1f579dfddc295abe",
+        "action_points": 7
+      },
+      {
+        "file": "Level 16- HiigaraThings.kld",
+        "sha256": "bdf1a4a43e49f38fde3d8a32e392ec2a9e74fe1feeb86c9aff81ca54c31446e6",
+        "action_points": 44
+      },
+      {
+        "file": "Level 2- Outer Kharak SystemThings.kld",
+        "sha256": "30e2d4f0613f639c54b5d12a692e9d20224c1f6a27665d7f64bec897547e8786",
+        "action_points": 9
+      },
+      {
+        "file": "Level 3- Return to KharakThings.kld",
+        "sha256": "0a54d36e8482776d4d6b6244b9af0703fc441e30e78bf8350534f77f5670e77b",
+        "action_points": 18
+      },
+      {
+        "file": "Level 4- The Great WastelandThings.kld",
+        "sha256": "cb1eeae0a8fed01030b2078b5929bf2971ff8be729e9c449f0ee87fc810cba9b",
+        "action_points": 17
+      },
+      {
+        "file": "Level 5- The Great WastelandThings.kld",
+        "sha256": "f18f1c646daf7f5dc9b9fc6c937ba8aa78b549426c652256a8956a995a41f457",
+        "action_points": 11
+      },
+      {
+        "file": "Level 6- Diamond ShoalsThings.kld",
+        "sha256": "4f820dce387b87693bfa770a19b8d61678d1c1153114995ea9a57e33c6dbb060",
+        "action_points": 6
+      },
+      {
+        "file": "Level 7- The Gardens of KadeshThings.kld",
+        "sha256": "99f84e32e80f9f04c5f5cefb602722d95df0e68d8a24f569446840a72b7da829",
+        "action_points": 12
+      },
+      {
+        "file": "Level 8- The Cathedral of KadeshThings.kld",
+        "sha256": "f13829df88bfa85cb465dde86c5302d831d2fb86ad7b10c279f2a5ccc31421ab",
+        "action_points": 35
+      },
+      {
+        "file": "Level 9-The Sea of Lost SoulsThings.kld",
+        "sha256": "d195842428945ccb38e9bd4cfb1d3bab071d8fad2bd0042f57909de4bd4f8b48",
+        "action_points": 21
+      },
+      {
+        "file": "Level10Things.kld",
+        "sha256": "75e4f4e90eea11d1564d728ad1a1189be54e0df65b346bb9f5680b9eacf0e849",
+        "action_points": 56
+      },
+      {
+        "file": "level11AThings.kld",
+        "sha256": "821805404632e2a7f4ab3d403e4e41851ffe167e6caffb80affd44a8c1906e83",
+        "action_points": 43
+      },
+      {
+        "file": "level11BThings.kld",
+        "sha256": "af44bcc2f9c4a3ab5bf6f3224741a4d473a24a39da805fde979d67c43fde4972",
+        "action_points": 15
+      },
+      {
+        "file": "level11CThings.kld",
+        "sha256": "b5f10b7fd4559e7b97f34c8bc304b487a16a1f6bbda332d47da787c8341dd449",
+        "action_points": 15
+      },
+      {
+        "file": "level12Things.kld",
+        "sha256": "f2dca1d46a5e31b0ba18d9791d09188d7740523a2a5b9554dd76befb0cbec321",
+        "action_points": 17
+      },
+      {
+        "file": "Level13Things.kld",
+        "sha256": "333c535f08d175a6895c303dbf57c5d36881d0fc2e2e91d517a3546deec2d775",
+        "action_points": 30
+      },
+      {
+        "file": "Level14Things.kld",
+        "sha256": "0151b7def44868094faf5ba0cf774135ca9e886713b6036d22b64edae6b5a598",
+        "action_points": 19
+      },
+      {
+        "file": "Level15aThings.kld",
+        "sha256": "8a6fc06af8581aa143732f3f99125a76d753df136335eea77c4525c9ae42d8f9",
+        "action_points": 20
+      },
+      {
+        "file": "level15bThings.kld",
+        "sha256": "1e6139d606982a361393634b515ada90191850c3a11936975d443cb2f266f65f",
+        "action_points": 26
+      },
+      {
+        "file": "Level16Things.kld",
+        "sha256": "731142f12f92bc9551bd6cfa2ad87b429091baa0376cc5fe9f930d249e47aeda",
+        "action_points": 50
+      },
+      {
+        "file": "Level17Things.kld",
+        "sha256": "f23ab72fcd4469ebb78d51c850e881cfa7cc46b87fe6f28667c03b0b35128983",
+        "action_points": 22
+      },
+      {
+        "file": "level18Things.kld",
+        "sha256": "1a4b40ad83d895ee86874b2e60644a672afc4a7461ec277103f245adc6a72f36",
+        "action_points": 10
+      },
+      {
+        "file": "Level19Things.kld",
+        "sha256": "1b89944d5bbf7ea17e04317d26674fd172a5fd98c49607d48165c339024d22f1",
+        "action_points": 26
+      },
+      {
+        "file": "level1Things.kld",
+        "sha256": "0a0a83397167dbe184eaf7a15949652675a267b0ed45e670399ecf2555f3cc8f",
+        "action_points": 79
+      },
+      {
+        "file": "Level20Things.kld",
+        "sha256": "ff8637fe16bee981b7221bad12cff92db5879782bce6f86fd52eb9ec60a7ab5f",
+        "action_points": 22
+      },
+      {
+        "file": "level2Things.kld",
+        "sha256": "db6d0d53610c8f528e7426c654dd19dbf10420a0a40530dc67eb582258537056",
+        "action_points": 68
+      },
+      {
+        "file": "level3Things.kld",
+        "sha256": "7add6face0e0c3caa088d05bf9af0a9d520f9ac22c5e209667e7ed5a2ebff9c0",
+        "action_points": 79
+      },
+      {
+        "file": "level4Things.kld",
+        "sha256": "09db058c23264931d330ecd23ac47306ae63b226bd5b368d164e41ca67feaeb4",
+        "action_points": 79
+      },
+      {
+        "file": "level5Things.kld",
+        "sha256": "4ce3854896e298fb763ed81c54308fe1364a050ddaa24f46b6dc8dff6adc895d",
+        "action_points": 76
+      },
+      {
+        "file": "Level6aThings.kld",
+        "sha256": "f0f6947186c58e272f290b48f315c96213b7951a31b7052d06c85c2d4c274f5c",
+        "action_points": 79
+      },
+      {
+        "file": "Level6bkanThings.kld",
+        "sha256": "b6b228332963089de7ce95a4b27a4e490f4de63971bf733305fa3aac985ae1b6",
+        "action_points": 41
+      },
+      {
+        "file": "Level6bThings.kld",
+        "sha256": "410bd03cd5a20008a5c12e9feb3dc6a0ae5cedb944fa7df39729b672355cfa74",
+        "action_points": 76
+      },
+      {
+        "file": "level7Things.kld",
+        "sha256": "6b029022ec6cc0048093737a0447ca80108e733df479c9213e432d07a967d805",
+        "action_points": 54
+      },
+      {
+        "file": "level8Things.kld",
+        "sha256": "04d6307817cd82eb3b19c742386a519e4f21b66bc81444af6b593164ebd0549e",
+        "action_points": 70
+      },
+      {
+        "file": "Level9Things.kld",
+        "sha256": "511e7575050de0ec3235a1748c2b8169b3b5886746e0ddcb2a074b0876805558",
+        "action_points": 78
+      },
+      {
+        "file": "LinchpinThings.kld",
+        "sha256": "521d810e9aee0fbe2237e3d4ae9353c1b53a8987c2b7ff5f2d6912b76185dbbe",
+        "action_points": 0
+      },
+      {
+        "file": "mpd1Things.kld",
+        "sha256": "2c7c9d54ca0c75796e815fc802caf87c91d82861524b6f483311e8099a411e8c",
+        "action_points": 4
+      },
+      {
+        "file": "mpd2Things.kld",
+        "sha256": "20559ff75ee0e21e77dbc34ef6d504032ebc190a990c703c02c0f60a6d5d7767",
+        "action_points": 3
+      },
+      {
+        "file": "mpd3Things.kld",
+        "sha256": "14e7b804238c0d9e7e4bc683943e846436bec58d1726f134c57e6ad54538105b",
+        "action_points": 3
+      },
+      {
+        "file": "mpd4Things.kld",
+        "sha256": "c6613114115da6254632defa017ef9ca1bf8c9d37aa8c37f7cdde586862b350e",
+        "action_points": 3
+      },
+      {
+        "file": "mpd5Things.kld",
+        "sha256": "7f803aa0ced28d00098779916c4157598ebfb98c5a481014a12cd79c4feb4ec8",
+        "action_points": 3
+      },
+      {
+        "file": "MPD6Things.kld",
+        "sha256": "442ceba3c79f19b2df3d1a72b6f78213d06f0a9dcb61e41e8880e57f7dc0ce4d",
+        "action_points": 3
+      },
+      {
+        "file": "mpd7Things.kld",
+        "sha256": "39a0f2ff080a519aa02916891504d858e96ba6bc710d25ed810dc61e57718c89",
+        "action_points": 2
+      },
+      {
+        "file": "mpd8Things.kld",
+        "sha256": "2465a7acd7696a584d3d91ae86d5d9d064f098f963a22f010d1e2b81c4250882",
+        "action_points": 13
+      },
+      {
+        "file": "NeedsTest2Things.kld",
+        "sha256": "e375cb34c56c2a3a71355fa1878dec35017ed046844fef704eb2104b0529aa44",
+        "action_points": 0
+      },
+      {
+        "file": "NeedsTestThings.kld",
+        "sha256": "dd724b65bb372fac7abf7d4eaf494572d52bceec9e3db3180910ac4a8a3d80a4",
+        "action_points": 1
+      },
+      {
+        "file": "SampleHeroPMapThings.kld",
+        "sha256": "30d38b96ab13a55f56a0a852cc2f5220e88f7c614c97480ab787c5d367fffb53",
+        "action_points": 80
+      },
+      {
+        "file": "SampleThings.kld",
+        "sha256": "3251bc73d6ff837cbb826884aee443260b2145ada4ce84b6b94030cd9d562ad9",
+        "action_points": 0
+      },
+      {
+        "file": "Secret1Things.kld",
+        "sha256": "0265cb001f972e98a852009333ba3844b45c07c5a57bac3264f994f9be35a4a2",
+        "action_points": 49
+      },
+      {
+        "file": "Secret2Things.kld",
+        "sha256": "aaf56acad643f85ee00d2280f90075b6918044282338aed991c8a1dc78669da0",
+        "action_points": 3
+      },
+      {
+        "file": "Secret3Things.kld",
+        "sha256": "c5b3915ae7d7dcd4e6e04042029aac0d93c0b9e9c2e445b82c64d8e8e96fc22f",
+        "action_points": 6
+      },
+      {
+        "file": "Secret4Things.kld",
+        "sha256": "96ccc3197c293648bbcccdb8a6504645fffc74c66f4471bb61c24f8beebfbbf9",
+        "action_points": 9
+      },
+      {
+        "file": "Secret5Things.kld",
+        "sha256": "fcef84a0165a3c6ae8a256920e2843d0b53ecd9803804100b93238dccb66d7cc",
+        "action_points": 4
+      },
+      {
+        "file": "testAI2Things.kld",
+        "sha256": "3cd601e31943ace8f832ffb75d607dfcf74a58a99248ddf37342bedee60e16fe",
+        "action_points": 8
+      },
+      {
+        "file": "testAI3Things.kld",
+        "sha256": "741a7b95e2b312a92ff01f8ecf48c5716511b475dbee7616a8a969fd7c5cbf16",
+        "action_points": 8
+      },
+      {
+        "file": "testAI4Things.kld",
+        "sha256": "4be93283e49f9556c60393d973d75b69b7dd02dcce697f45d346e7f3023d62cf",
+        "action_points": 8
+      },
+      {
+        "file": "testAIThings.kld",
+        "sha256": "e139bdb565ffbff708f30e12de06e3389a84e17960fdcf5e5b472520f2396064",
+        "action_points": 5
+      },
+      {
+        "file": "TFO1-1Things.kld",
+        "sha256": "f3997cea4a3bbf3e5b51b1655893a90bbb305d03362cb39a4cf2058896b11ee5",
+        "action_points": 66
+      },
+      {
+        "file": "TFO1Things.kld",
+        "sha256": "a1c135cefa891a3269ef313484e02eeebef137603574af43eb5b5be51748ea4f",
+        "action_points": 74
+      },
+      {
+        "file": "TFO2Things.kld",
+        "sha256": "32e89064667e4bd70d9c84ddc7672b61436e2c0af6d131c51aaff5535abb37d8",
+        "action_points": 80
+      },
+      {
+        "file": "TFO3-2Things.kld",
+        "sha256": "1c3f0f7738f99603760bef4e546acef09631cbfcce09bf442d3584c821a78c4c",
+        "action_points": 72
+      },
+      {
+        "file": "TFO3Things.kld",
+        "sha256": "b1b55badd9461722e4cff738ec7e280ae170596949075387f923bb1d1b98b52b",
+        "action_points": 64
+      },
+      {
+        "file": "TFO4-2Things.kld",
+        "sha256": "92988cbfdf5c5aa91ca6ad309a265f40cbefe652f0e40b9122de8c4b3df21fb5",
+        "action_points": 61
+      },
+      {
+        "file": "TFO4Things.kld",
+        "sha256": "d0e014d4a3fd557741de6c1bb7095fb357801ccdfd97d569e196bf576c7f0766",
+        "action_points": 61
+      },
+      {
+        "file": "XXlevel1-2Things.kld",
+        "sha256": "d38617cc0bad5675a33fa11a5db894f3dc5fec668686ebcbb6b294ce04d8bd91",
+        "action_points": 51
+      },
+      {
+        "file": "XXlevel1-3Things.kld",
+        "sha256": "f79c4e785f03787d8b8711f6e9233618dd2ac147e69144ab0cd35f75436838b9",
+        "action_points": 51
+      },
+      {
+        "file": "XXlevel1-4Things.kld",
+        "sha256": "837043686ff0044fc0960c1d219c0e55becc13b2ef9fff0127028b9efe9045ed",
+        "action_points": 55
+      },
+      {
+        "file": "XXLevel10Things.kld",
+        "sha256": "9a01c25428e0a17c660c6b45574de415f93a1bd913b5d6ac8c20402147b1f147",
+        "action_points": 50
+      },
+      {
+        "file": "XXlevel11AThings.kld",
+        "sha256": "611688b6e57420e49c210973252f94f3b991318137660c0bea0f80f1f6d6213b",
+        "action_points": 11
+      },
+      {
+        "file": "XXlevel11BThings.kld",
+        "sha256": "245f1395aeeab11c4df536cc36dc9d4eb4c9e04badccde09c5630fca89aeb38a",
+        "action_points": 11
+      },
+      {
+        "file": "XXlevel11CThings.kld",
+        "sha256": "264484aee0ad8d01da3f7e9fcc3f271bfa95dc8ef43e5f9c51ef45d514b84e4c",
+        "action_points": 10
+      },
+      {
+        "file": "XXlevel12Things.kld",
+        "sha256": "85faa69659c195bb3bae18362d2b88fafca8b472df4dd4ddc14bdfec5d1ae294",
+        "action_points": 22
+      },
+      {
+        "file": "XXLevel13Things.kld",
+        "sha256": "9eb686adce2bb3c09448d50ad7cb9fa1470d4b5f574daa3bdc65a00e4bcb61b1",
+        "action_points": 32
+      },
+      {
+        "file": "XXLevel14Things.kld",
+        "sha256": "b361c0668887e45d97c4600e2f1968086ac97e0fe11ef346445a7a2fb45375a0",
+        "action_points": 21
+      },
+      {
+        "file": "XXLevel15aThings.kld",
+        "sha256": "abbdd687d8b8a9a51b92dfd2019bfae78592b3689af10764603756cc1f3f3f65",
+        "action_points": 51
+      },
+      {
+        "file": "XXlevel15bThings.kld",
+        "sha256": "4347662b35472091061a4d08650cdc68efbc7c1318c9e7d8e17ebb98a81bbbea",
+        "action_points": 50
+      },
+      {
+        "file": "XXLevel16Things.kld",
+        "sha256": "d80585d64f0211c1a494000d083861645b995542c8cc8d8bbcd388483158ce5a",
+        "action_points": 56
+      },
+      {
+        "file": "XXLevel17Things.kld",
+        "sha256": "a262d4a3e1fcda213efe225f23600ebf8a4b439e5361d3606c1c38d3ff075406",
+        "action_points": 17
+      },
+      {
+        "file": "XXlevel18Things.kld",
+        "sha256": "0b9c657667dffaaa98e1bed0477871bf9d52c9587967f3c08c587206e0ebbb3b",
+        "action_points": 17
+      },
+      {
+        "file": "XXLevel19Things.kld",
+        "sha256": "5e2e14b909d8b5fdd36aa944f59342d8c0e6d5d7be530fd2ded5bf29b9880f6a",
+        "action_points": 38
+      },
+      {
+        "file": "XXlevel1Things.kld",
+        "sha256": "8bd4c39cf8022bba66cec3aa9ec1d16bfb9ab5f3dc2f72067aa3f6a7bafec12e",
+        "action_points": 33
+      },
+      {
+        "file": "XXLevel20Things.kld",
+        "sha256": "f3a145aad7b76113f25aa14d1f9c5dfc64265a23040fecb41043f1311b36bac9",
+        "action_points": 32
+      },
+      {
+        "file": "XXlevel2Things.kld",
+        "sha256": "d0dcbab3fb4d9aa028921b1a452c0a3c96e2121ef32844404b19c9e8e3a99526",
+        "action_points": 26
+      },
+      {
+        "file": "XXlevel3Things.kld",
+        "sha256": "797079ef5eee5e3ba55172606e53b348991e0eb5672257a0c93561fc4508b842",
+        "action_points": 32
+      },
+      {
+        "file": "XXlevel4Things.kld",
+        "sha256": "7cf63a56e58c170586d54394fe36d363cb3e81dd3099efe178bf7153631741fb",
+        "action_points": 39
+      },
+      {
+        "file": "XXlevel5Things.kld",
+        "sha256": "00eee5062c721e168bbc31dc11c665697c497b4a55960cf926aca614195efb16",
+        "action_points": 31
+      },
+      {
+        "file": "XXLevel6aThings.kld",
+        "sha256": "16e635026209d78cb65b752552edc8d88c496e6e2b5b5fe68d6eab4eeb4cb81c",
+        "action_points": 27
+      },
+      {
+        "file": "XXLevel6bThings.kld",
+        "sha256": "9fdb703766cbe345b65c4898a00fcd373bb1233fb144b8d05be463084fb6ce9e",
+        "action_points": 41
+      },
+      {
+        "file": "XXlevel7Things.kld",
+        "sha256": "a55716d2e21c64d6c4e58205bca9759858e40d74d4ba19145edd6f8d2cbb1e99",
+        "action_points": 49
+      },
+      {
+        "file": "XXlevel8Things.kld",
+        "sha256": "ddd133e9e59be9e1b35ad49896bcab592158958922578a2b554526fbd85d3a99",
+        "action_points": 55
+      },
+      {
+        "file": "XXLevel9Things.kld",
+        "sha256": "1062c18a0a6d38fc768794d14b2ed3c3ff63aa717084fec7b29143678f5f9b7d",
+        "action_points": 39
+      }
+    ]
+  },
+  "primary_evidence": {
+    "instructions": 1082,
+    "sha256": {
+      "phase33-AP-parser-assembly.txt": "c50630c5883fe53b6e57364b1386dc0fdfe884e80bf83dfbdd7c38044abb77ee",
+      "phase33-AP-converter-assembly.txt": "a0716b215caccdd2b3245582e2e0bea26cf19eb3b75e965264cbb4f366e96b7a",
+      "phase33-AP-editor-reader-assembly.txt": "a570117b11e4e5c11dcd5d50219dac96be1c1e8ec3496653a14c2f2550dad38b",
+      "phase33-AP-editor-converter-assembly.txt": "caae670f7636e1371b9374c245646ba4f39fe333e7b2260fa8820ad864885254",
+      "phase33-AP-loader-assembly.txt": "d09e27c6b852f6272a44fbb5c717463deb657f1553cd5234fa6d4def4dc2c420",
+      "phase33-AP-create-assembly.txt": "2f4dddd33f0574218bf289f901aa74f12c95605a321c7c7545c1236df4be4ee6",
+      "phase33-AP-init-assembly.txt": "ddbc23c83b2de05b3a6280f095da6c9c839ac49fee2fb9dd6db0848f2a1bad33",
+      "phase33-AP-trigger-setter-assembly.txt": "56c566a22e895b8f5c38020f7626a01c420958535122ae0a502bbe79421814b8",
+      "phase33-AP-patrol-assembly.txt": "19aed9f03bac62542f56441a4d8f54a94995fb78ad52f5ffab136122072b9517",
+      "phase33-AP-patrol-next-assembly.txt": "d90cdbe9cad5babf6409412547d38176fbbe9c64aface6911c525fd1a0946387",
+      "phase33-AP-patrol-wait-assembly.txt": "a697cb10fc9cf6de2cede267aebbe1cd20be6261848233fc65bb3c13b0819434",
+      "phase33-AP-editor-flags-setter-assembly.txt": "21d122d6756fd738e69c578cfc16104214a9e7b8defebdf9bf88b3722960b251",
+      "phase33-AP-editor-legacy-clear-assembly.txt": "a0c3af70a3a80237211ce9d242e687a5ef250ae897f35e242fc4e9adb0aca055",
+      "phase33-AP-flag-search-assembly.txt": "822d4761c40faac0d784a9e681de5bf0590a0b5c83d8fc1139f1965597f149db",
+      "phase33-setter-4b0af0-assembly.txt": "871a1f87c51e2b3d2a4f5737fb573fefac5273d9e91ef89a0cecb237a8930142",
+      "phase33-setter-4b0b10-assembly.txt": "d959b12c2160ea7e15a3e82ed51965767dd92d49c82c2f3ae5257078fd794af5",
+      "phase33-setter-4b0b30-assembly.txt": "5f5fed773830d905d4f9b8e2112b758ef7919e5d6d31936ee3b72215eefac954",
+      "phase33-setter-4b0b50-assembly.txt": "f4773fd10badaf4db4d9894ae765e45356b15ecc53cf6797722bf48a7f7e3d08",
+      "phase33-setter-4b0b70-assembly.txt": "e71990e3130b130af87e29967a8810600ace6c893c39eafefff917e38b1bcbea",
+      "phase32-prefix-callee-41b9b0.txt": "55fca9169933e57da37e564462c3ebf8547180886e2b97abc65eda08d3a3b524",
+      "phase33-AP-editor-load-assembly.txt": "0aaac600fdd3c01ef22cdf227f09b7f0e33c3571e2bb533d2c1aa801eebbb206",
+      "phase33-AP-random-room-assembly.txt": "e01551665e14c2f9aeaafeaa2f970aa73abc22e996ccf7b068e7c115bfc83c8b",
+      "phase30-things-writer-before.txt": "44fe8f6c732011d81b11295444397457b4f165b92877e045ddc09cffe5f068c7"
+    },
+    "live_program_ranges_matching_pe": 26,
+    "unchanged_disassemblies": 26
+  },
+  "unchanged_inputs": [
+    "Creatures.kwd",
+    "Objects.kwd",
+    "EffectElements.kwd",
+    "Effects.kwd",
+    "Rooms.kwd",
+    "AutoSave.kwd",
+    "Terrain.kwd",
+    "AutoSaveMap.kld",
+    "Shots.kwd",
+    "GlobalVariables.kwd",
+    "CreatureSpells.kwd",
+    "Traps.kwd",
+    "KeeperSpells.kwd",
+    "AutoSaveThings.kld",
+    "Doors.kwd",
+    "AutoSaveGlobals.kld",
+    "kop4Globals.kld"
+  ],
+  "unchanged_executables": {
+    "Dungeon Keeper 2/DKII-DX.exe": "d7a8b854e4e4f02709eba271bead6fe2307dd6e332b5a96e70857e5b0e19fb8a",
+    "Dungeon Keeper 2/Data/editor/DK2 Editor pro.exe": "989c45df779bccfc9a9e509b2ad0224a9bd269629f74792adc0320fa4b99fb09"
+  },
+  "format_package_components": 45,
+  "modified_gameplay_runs": 0,
+  "limitations": [
+    "Exact inspected EXEs only; no modified gameplay or real GUI save.",
+    "14 full parsers use explicit read/callback fixtures and compare all92 intermediate bytes viaCMPSB. Short lengths0/16/24 and full56 tested. No oversized native stack read reproduced.",
+    "17 full game loaders execute actual creator/init/flag setters with allocation, constructor, base-init, checksum and trigger provider fixtures. All64 entity bytes compared. No allocator/linked-list/world registration guarantee.",
+    "Eight full Things writers use two AP models and zero counts for other families, actual AP array getter/packed-field getter, deterministic virtual trigger/file/date/count fixtures. All112 payload bytes and both mutated model flag bytes checked.",
+    "11 full patrol functions use controlled PRNG outputs, AP/terrain/ownership virtual providers and movement fixture;5 full next-state functions use AP/clock/state providers;5 wait functions block neighbor movement. No actual nav/AI simulation.",
+    "Four inclusive area fast paths and6 original editor packed-field codecs verified. Unknown04/08 gameplay effect, full editor property panel commit, UI legacy-major handling and exact field ranges remain separate unresolved work."
+  ]
+}

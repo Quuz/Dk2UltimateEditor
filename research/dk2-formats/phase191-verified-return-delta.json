@@ -1,0 +1,45 @@
+{
+  "phase": 191,
+  "status": "bounded_static_search_with_verified_arithmetic_returns",
+  "contracts": [
+    {
+      "entry": "0x4c5f50",
+      "receiver": "ECX",
+      "returned_offset": 2883,
+      "original_hex": "8d81430b0000c3"
+    },
+    {
+      "entry": "0x4dc7e0",
+      "receiver": "ECX",
+      "returned_offset": 3745,
+      "original_hex": "8a5424048d81650b00008891470b0000b92e0000003850f27506c70000a0000083c0124975efc20400"
+    }
+  ],
+  "current": {
+    "file": "phase191-verified-return-owner-leads.json",
+    "sha256": "13fecec33695baa087117baeb3cea7aa46689e7c3dd37b4cf247f3448daa0730"
+  },
+  "prior": {
+    "file": "phase191-edx-owner-crypt-leads.json",
+    "sha256": "5c6dc3d5486d5e8df56f6355aff949c9f6426d32f390ad1c30c99f087b9a88aa"
+  },
+  "prior_candidates": 33,
+  "current_candidates": 33,
+  "retained_candidates": 33,
+  "lost_candidates": [],
+  "new_candidates": [],
+  "new_indexed_events": [],
+  "lost_indexed_events": [],
+  "counts": {
+    "root_states": 10057,
+    "limited_roots": 1,
+    "callee_summaries": 199,
+    "limited_callees": 12
+  },
+  "limitations": [
+    "Only two exact arithmetic contracts; no general return-value analysis.",
+    "A return pointer into a receiver does not establish its runtime type.",
+    "Conditional/void-return EAX survivors are not accepted contracts.",
+    "Original static search limits and indirect/pointee gaps remain."
+  ]
+}

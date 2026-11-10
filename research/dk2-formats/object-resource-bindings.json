@@ -1,0 +1,473 @@
+{
+  "family": "Objects",
+  "record_bytes": 894,
+  "resource_bytes": 84,
+  "editor_program": "DK2 Editor pro.exe",
+  "editor_sha256": "989c45df779bccfc9a9e509b2ad0224a9bd269629f74792adc0320fa4b99fb09",
+  "game_program": "DKII-DX.exe",
+  "game_sha256": "d7a8b854e4e4f02709eba271bead6fe2307dd6e332b5a96e70857e5b0e19fb8a",
+  "editor_converter": "0x42d570",
+  "editor_model_callback": "0x4a1d80",
+  "editor_writer": "0x4a9390",
+  "game_converter": "0x56d620",
+  "game_loader": "0x49dd60",
+  "world_entry_helper": "0x504d80",
+  "slots": [
+    {
+      "raw_offset": 32,
+      "raw_offset_hex": "0x20",
+      "raw_bytes": 84,
+      "baseline_field": "MeshResource",
+      "intermediate_offset": 160,
+      "editor_model_offset": 200,
+      "native_editor": {
+        "dialog_resource": 327,
+        "control_id": 1590,
+        "label": "Mesh...",
+        "template_visible": false,
+        "template_disabled": true,
+        "message_map_entry_address": "0x511788",
+        "message_map_words": [
+          273,
+          0,
+          1590,
+          1590,
+          12,
+          4567888
+        ],
+        "handler": "0x45b350",
+        "getter": "0x4484b0",
+        "additional_index": null,
+        "evidence": [
+          {
+            "file": "editor-phase10-object-mesh-button.txt",
+            "line": 21,
+            "excerpt": "iVar1 = FUN_004484b0(*(int *)(param_1 + 0x100));"
+          },
+          {
+            "file": "editor-phase10-object-mesh-getter.txt",
+            "line": 5,
+            "excerpt": "return param_1 + 200;"
+          }
+        ]
+      },
+      "runtime_entry_offset": 81,
+      "runtime_observation": "Loaded conditionally via resource service vtable+0x54 and CWorldEntry helper0x504D80.",
+      "meaning_status": "native editor label and game resource loading established"
+    },
+    {
+      "raw_offset": 116,
+      "raw_offset_hex": "0x74",
+      "raw_bytes": 84,
+      "baseline_field": "GuiIconResource",
+      "intermediate_offset": 244,
+      "editor_model_offset": 16,
+      "native_editor": {
+        "dialog_resource": 327,
+        "control_id": 1589,
+        "label": "GUI Icon...",
+        "template_visible": false,
+        "template_disabled": true,
+        "message_map_entry_address": "0x511770",
+        "message_map_words": [
+          273,
+          0,
+          1589,
+          1589,
+          12,
+          4567696
+        ],
+        "handler": "0x45b290",
+        "getter": "0x442be0",
+        "additional_index": null,
+        "evidence": [
+          {
+            "file": "editor-phase10-object-gui-button.txt",
+            "line": 21,
+            "excerpt": "iVar1 = FUN_00442be0(*(int *)(param_1 + 0x100));"
+          },
+          {
+            "file": "editor-phase10-object-gui-getter.txt",
+            "line": 5,
+            "excerpt": "return param_1 + 0x10;"
+          }
+        ]
+      },
+      "runtime_entry_offset": 0,
+      "runtime_observation": "Loaded conditionally via resource service vtable+0x54 and CWorldEntry helper0x504D80.",
+      "meaning_status": "native editor label and game resource loading established"
+    },
+    {
+      "raw_offset": 200,
+      "raw_offset_hex": "0xc8",
+      "raw_bytes": 84,
+      "baseline_field": "InHandIconResource",
+      "intermediate_offset": 328,
+      "editor_model_offset": 108,
+      "native_editor": null,
+      "runtime_entry_offset": null,
+      "runtime_observation": "No resource load from intermediate+0x148 in the inspected 0x49DD60 body.",
+      "meaning_status": "unresolved"
+    },
+    {
+      "raw_offset": 284,
+      "raw_offset_hex": "0x11c",
+      "raw_bytes": 84,
+      "baseline_field": "InHandMeshResource",
+      "intermediate_offset": 412,
+      "editor_model_offset": 456,
+      "native_editor": {
+        "dialog_resource": 327,
+        "control_id": 1595,
+        "label": "In Hand Mesh...",
+        "template_visible": false,
+        "template_disabled": true,
+        "message_map_entry_address": "0x5117b8",
+        "message_map_words": [
+          273,
+          0,
+          1595,
+          1595,
+          12,
+          4568272
+        ],
+        "handler": "0x45b4d0",
+        "getter": "0x472d10",
+        "additional_index": null,
+        "evidence": [
+          {
+            "file": "editor-phase8-object-inhand-handler.txt",
+            "line": 21,
+            "excerpt": "iVar1 = FUN_00472d10(*(int *)(param_1 + 0x100));"
+          },
+          {
+            "file": "editor-phase9-object-inhand-getter-assembly.txt",
+            "line": 1,
+            "excerpt": "00472d10: LEA EAX,[ECX + 0x1c8]"
+          }
+        ]
+      },
+      "runtime_entry_offset": 54,
+      "runtime_observation": "Loaded conditionally via resource service vtable+0x54 and CWorldEntry helper0x504D80.",
+      "meaning_status": "native editor label and game resource loading established"
+    },
+    {
+      "raw_offset": 368,
+      "raw_offset_hex": "0x170",
+      "raw_bytes": 84,
+      "baseline_field": "kUnknownResource",
+      "intermediate_offset": 496,
+      "editor_model_offset": 364,
+      "native_editor": {
+        "dialog_resource": 327,
+        "control_id": 1587,
+        "label": "In Hand Icon...",
+        "template_visible": false,
+        "template_disabled": true,
+        "message_map_entry_address": "0x5117a0",
+        "message_map_words": [
+          273,
+          0,
+          1587,
+          1587,
+          12,
+          4568080
+        ],
+        "handler": "0x45b410",
+        "getter": "0x45ba00",
+        "additional_index": null,
+        "evidence": [
+          {
+            "file": "editor-phase10-object-unknown-button.txt",
+            "line": 21,
+            "excerpt": "iVar1 = FUN_0045ba00(*(int *)(param_1 + 0x100));"
+          },
+          {
+            "file": "editor-phase10-object-unknown-getter.txt",
+            "line": 5,
+            "excerpt": "return param_1 + 0x16c;"
+          }
+        ]
+      },
+      "runtime_entry_offset": 27,
+      "runtime_observation": "Loaded conditionally via resource service vtable+0x54 and CWorldEntry helper0x504D80.",
+      "meaning_status": "native editor label and game resource loading established"
+    },
+    {
+      "raw_offset": 452,
+      "raw_offset_hex": "0x1c4",
+      "raw_bytes": 84,
+      "baseline_field": "AdditionalResources[0].resource",
+      "intermediate_offset": 580,
+      "editor_model_offset": 548,
+      "native_editor": {
+        "dialog_resource": 327,
+        "control_id": 1591,
+        "label": "Additional 1...",
+        "template_visible": false,
+        "template_disabled": true,
+        "message_map_entry_address": "0x5117d0",
+        "message_map_words": [
+          273,
+          0,
+          1591,
+          1591,
+          12,
+          4568464
+        ],
+        "handler": "0x45b590",
+        "getter": "0x420d00",
+        "additional_index": 0,
+        "evidence": [
+          {
+            "file": "editor-phase10-object-additional1-button.txt",
+            "line": 21,
+            "excerpt": "iVar1 = FUN_00420d00(*(void **)(param_1 + 0x100),0);"
+          },
+          {
+            "file": "editor-phase10-object-additional-getter.txt",
+            "line": 5,
+            "excerpt": "return (int)this + param_1 * 0x5c + 0x224;"
+          }
+        ]
+      },
+      "runtime_entry_offset": 108,
+      "runtime_observation": "Loaded conditionally via resource service vtable+0x54 and CWorldEntry helper0x504D80.",
+      "meaning_status": "native editor label and game resource loading established"
+    },
+    {
+      "raw_offset": 536,
+      "raw_offset_hex": "0x218",
+      "raw_bytes": 84,
+      "baseline_field": "AdditionalResources[1].resource",
+      "intermediate_offset": 664,
+      "editor_model_offset": 640,
+      "native_editor": {
+        "dialog_resource": 327,
+        "control_id": 1592,
+        "label": "Additional 2...",
+        "template_visible": false,
+        "template_disabled": true,
+        "message_map_entry_address": "0x5117e8",
+        "message_map_words": [
+          273,
+          0,
+          1592,
+          1592,
+          12,
+          4568656
+        ],
+        "handler": "0x45b650",
+        "getter": "0x420d00",
+        "additional_index": 1,
+        "evidence": [
+          {
+            "file": "editor-phase10-object-additional2-button.txt",
+            "line": 21,
+            "excerpt": "iVar1 = FUN_00420d00(*(void **)(param_1 + 0x100),1);"
+          },
+          {
+            "file": "editor-phase10-object-additional-getter.txt",
+            "line": 5,
+            "excerpt": "return (int)this + param_1 * 0x5c + 0x224;"
+          }
+        ]
+      },
+      "runtime_entry_offset": 135,
+      "runtime_observation": "Loaded conditionally via resource service vtable+0x54 and CWorldEntry helper0x504D80.",
+      "meaning_status": "native editor label and game resource loading established"
+    },
+    {
+      "raw_offset": 620,
+      "raw_offset_hex": "0x26c",
+      "raw_bytes": 84,
+      "baseline_field": "AdditionalResources[2].resource",
+      "intermediate_offset": 748,
+      "editor_model_offset": 732,
+      "native_editor": {
+        "dialog_resource": 327,
+        "control_id": 1593,
+        "label": "Additional 3...",
+        "template_visible": false,
+        "template_disabled": true,
+        "message_map_entry_address": "0x511800",
+        "message_map_words": [
+          273,
+          0,
+          1593,
+          1593,
+          12,
+          4568848
+        ],
+        "handler": "0x45b710",
+        "getter": "0x420d00",
+        "additional_index": 2,
+        "evidence": [
+          {
+            "file": "editor-phase10-object-additional3-button.txt",
+            "line": 21,
+            "excerpt": "iVar1 = FUN_00420d00(*(void **)(param_1 + 0x100),2);"
+          },
+          {
+            "file": "editor-phase10-object-additional-getter.txt",
+            "line": 5,
+            "excerpt": "return (int)this + param_1 * 0x5c + 0x224;"
+          }
+        ]
+      },
+      "runtime_entry_offset": 162,
+      "runtime_observation": "Loaded conditionally via resource service vtable+0x54 and CWorldEntry helper0x504D80.",
+      "meaning_status": "native editor label and game resource loading established"
+    },
+    {
+      "raw_offset": 704,
+      "raw_offset_hex": "0x2c0",
+      "raw_bytes": 84,
+      "baseline_field": "AdditionalResources[3].resource",
+      "intermediate_offset": 832,
+      "editor_model_offset": 824,
+      "native_editor": {
+        "dialog_resource": 327,
+        "control_id": 1594,
+        "label": "Additional 4...",
+        "template_visible": false,
+        "template_disabled": true,
+        "message_map_entry_address": "0x511818",
+        "message_map_words": [
+          273,
+          0,
+          1594,
+          1594,
+          12,
+          4569040
+        ],
+        "handler": "0x45b7d0",
+        "getter": "0x420d00",
+        "additional_index": 3,
+        "evidence": [
+          {
+            "file": "editor-phase10-object-additional4-button.txt",
+            "line": 21,
+            "excerpt": "iVar1 = FUN_00420d00(*(void **)(param_1 + 0x100),3);"
+          },
+          {
+            "file": "editor-phase10-object-additional-getter.txt",
+            "line": 5,
+            "excerpt": "return (int)this + param_1 * 0x5c + 0x224;"
+          }
+        ]
+      },
+      "runtime_entry_offset": 189,
+      "runtime_observation": "Loaded conditionally via resource service vtable+0x54 and CWorldEntry helper0x504D80.",
+      "meaning_status": "native editor label and game resource loading established"
+    }
+  ],
+  "evidence": [
+    {
+      "file": "editor-phase10-object-convert.txt",
+      "line": 78,
+      "excerpt": "pcVar8 = param_1 + 0x170;"
+    },
+    {
+      "file": "editor-phase10-object-convert.txt",
+      "line": 79,
+      "excerpt": "puVar5 = (undefined4 *)((int)this + 0x1f0);"
+    },
+    {
+      "file": "editor-phase8-candidate-1d80.txt",
+      "line": 60,
+      "excerpt": "FUN_0041bb90(local_1c + 0x5b,piVar1 + 0x7c);"
+    },
+    {
+      "file": "editor-phase9-object-resource-writer.txt",
+      "line": 129,
+      "excerpt": "puVar1 = (undefined4 *)FUN_0041ce60((int)this_00 + 0x16c);"
+    },
+    {
+      "file": "editor-phase9-object-resource-writer.txt",
+      "line": 130,
+      "excerpt": "puVar2 = auStack_228;"
+    },
+    {
+      "file": "editor-phase9-object-resource-writer.txt",
+      "line": 161,
+      "excerpt": "(**(code **)(*piStack_14 + 0x38))(&uStack_398,0x37e);"
+    },
+    {
+      "file": "game-objects-convert.txt",
+      "line": 155,
+      "excerpt": "pcVar8 = param_2 + 0x170;"
+    },
+    {
+      "file": "game-objects-convert.txt",
+      "line": 157,
+      "excerpt": "puVar5 = param_1 + 0x7c;"
+    },
+    {
+      "file": "game-phase10-object-runtime-assembly.txt",
+      "line": 167,
+      "excerpt": "0049df84: LEA EAX,[EBP + 0x1f0]"
+    },
+    {
+      "file": "game-phase10-object-runtime-assembly.txt",
+      "line": 170,
+      "excerpt": "0049df8d: CALL dword ptr [EDX + 0x54]"
+    },
+    {
+      "file": "game-phase10-object-runtime-assembly.txt",
+      "line": 176,
+      "excerpt": "0049df9a: LEA ECX,[EBX + 0x1b]"
+    },
+    {
+      "file": "game-phase10-object-runtime-assembly.txt",
+      "line": 177,
+      "excerpt": "0049df9d: CALL 0x00504d80"
+    },
+    {
+      "file": "game-phase10-object-runtime-assembly.txt",
+      "line": 96,
+      "excerpt": "0049deb5: MOV ECX,EBX"
+    },
+    {
+      "file": "game-phase10-object-runtime-assembly.txt",
+      "line": 256,
+      "excerpt": "0049e080: LEA ECX,[EBX + 0x36]"
+    },
+    {
+      "file": "game-phase10-object-runtime-assembly.txt",
+      "line": 428,
+      "excerpt": "0049e28b: LEA ECX,[EBX + 0x51]"
+    },
+    {
+      "file": "game-phase10-object-runtime-assembly.txt",
+      "line": 482,
+      "excerpt": "0049e325: ADD EBX,0x77"
+    },
+    {
+      "file": "game-phase10-object-runtime-assembly.txt",
+      "line": 514,
+      "excerpt": "0049e387: LEA ECX,[EAX + -0xb]"
+    },
+    {
+      "file": "game-phase10-worldentry-load.txt",
+      "line": 15,
+      "excerpt": "*(undefined4 *)((int)param_1 + 0xf) = param_2;"
+    }
+  ],
+  "naming_conflict": {
+    "raw_offset": 368,
+    "baseline_field": "kUnknownResource",
+    "native_editor_label": "In Hand Icon...",
+    "other_raw_offset": 200,
+    "other_baseline_field": "InHandIconResource",
+    "rule": "Keep both physical slots. UI alias for0x170 must not redirect accesses to baseline0xC8 or copy either resource automatically."
+  },
+  "load_conditions": [
+    "The ordinary resource-loading path is skipped when DAT_006fcdcf is nonzero.",
+    "Each ordinary slot checks its intermediate presence flag, resource-service pointer and nonzero resource type.",
+    "Main mesh has an additional alternate-name path for certain object IDs; this schema does not model resource-name substitution.",
+    "Successful main-resource load writes a 27-byte CWorldEntry; Start/End handles are populated by separate flag-dependent loads."
+  ],
+  "preservation": "Each resource is84 physical bytes:64-byte name, flags DWORD,12-byte union, type byte,2 type-specific bytes, final byte. Preserve uninterpreted data.",
+  "limitation": "Native GUI binding and definition loading are established. These8 buttons are hidden in the dialog template; dynamic visibility is not established. Full rendering/pickup behavior and the purpose of raw0xC8 remain unresolved; no modified files were run in game."
+}

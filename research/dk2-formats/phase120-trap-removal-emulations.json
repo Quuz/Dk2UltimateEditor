@@ -1,0 +1,288 @@
+{
+  "scope": "Complete original Trap removal after actual raw load and native pool init.\n\nNo World scheduler claim. The manager is invoked explicitly after creation and\noptional activation/tick. Real cleanup/destructor/tag/owner/pool code runs;\nunknown204 remains unresolved. All low-page accesses must be FS:[0] only.\n",
+  "replays": [
+    {
+      "case": "trap1-inactive-0",
+      "file": "phase120-trap-removal-a16f9a107668.json",
+      "sha256": "73158dfe1854182583ec31055610e11e5bc85e26adb39d1719f3f70628d033e3",
+      "outcome": {
+        "registered": false,
+        "pool_free_bytes": 512,
+        "pool_used_bytes": 0,
+        "owner_expense": 0,
+        "owner_income": 0,
+        "unknown204": 0,
+        "unknown_reads": 0,
+        "sound_releases": 1,
+        "refund_calls": 0
+      }
+    },
+    {
+      "case": "trap1-inactive-65526",
+      "file": "phase120-trap-removal-32fb13e5198d.json",
+      "sha256": "6e3d6afedd0ae1d36602d7a44d6e2ee291dae9badfa9e0c7213c44b61b808ca1",
+      "outcome": {
+        "registered": false,
+        "pool_free_bytes": 512,
+        "pool_used_bytes": 0,
+        "owner_expense": 0,
+        "owner_income": 0,
+        "unknown204": 65526,
+        "unknown_reads": 0,
+        "sound_releases": 1,
+        "refund_calls": 0
+      }
+    },
+    {
+      "case": "trap1-inactive-65535",
+      "file": "phase120-trap-removal-17127c538b09.json",
+      "sha256": "8173802f977b50e571cb25ecc67daae89ced00cb0bfdb0345e01ccb1069ed26c",
+      "outcome": {
+        "registered": false,
+        "pool_free_bytes": 512,
+        "pool_used_bytes": 0,
+        "owner_expense": 0,
+        "owner_income": 0,
+        "unknown204": 65535,
+        "unknown_reads": 0,
+        "sound_releases": 1,
+        "refund_calls": 0
+      }
+    },
+    {
+      "case": "trap1-active-0",
+      "file": "phase120-trap-removal-5e1d08d1a14d.json",
+      "sha256": "c48f337798918edd9deac67fcdff0c195bd5d4ab47f86d8981abbb5dc42783ad",
+      "outcome": {
+        "registered": false,
+        "pool_free_bytes": 512,
+        "pool_used_bytes": 0,
+        "owner_expense": 0,
+        "owner_income": 0,
+        "unknown204": 0,
+        "unknown_reads": 0,
+        "sound_releases": 1,
+        "refund_calls": 1
+      }
+    },
+    {
+      "case": "trap1-active-65526",
+      "file": "phase120-trap-removal-5115e7904bde.json",
+      "sha256": "dc5c69931138e1459a7210b5b0ebeb18d04e6ac6e530516e665552fe5e995ee1",
+      "outcome": {
+        "registered": false,
+        "pool_free_bytes": 512,
+        "pool_used_bytes": 0,
+        "owner_expense": 0,
+        "owner_income": 0,
+        "unknown204": 65526,
+        "unknown_reads": 0,
+        "sound_releases": 1,
+        "refund_calls": 1
+      }
+    },
+    {
+      "case": "trap1-active-65535",
+      "file": "phase120-trap-removal-0a10132bd620.json",
+      "sha256": "323b80cdc6adaaa314271996a48f58eacf464110bce878124a5994511fddf482",
+      "outcome": {
+        "registered": false,
+        "pool_free_bytes": 512,
+        "pool_used_bytes": 0,
+        "owner_expense": 0,
+        "owner_income": 0,
+        "unknown204": 65535,
+        "unknown_reads": 0,
+        "sound_releases": 1,
+        "refund_calls": 1
+      }
+    },
+    {
+      "case": "trap9-inactive-0",
+      "file": "phase120-trap-removal-30c07e9fb221.json",
+      "sha256": "cf71f84b49ddfb6af0001d6bc605690889f5c7204fe253c4feeab8144fb9ce71",
+      "outcome": {
+        "registered": false,
+        "pool_free_bytes": 512,
+        "pool_used_bytes": 0,
+        "owner_expense": 0,
+        "owner_income": 0,
+        "unknown204": 0,
+        "unknown_reads": 0,
+        "sound_releases": 1,
+        "refund_calls": 0
+      }
+    },
+    {
+      "case": "trap9-inactive-65526",
+      "file": "phase120-trap-removal-6be971d9802a.json",
+      "sha256": "6b5b25e50dfb00b2655416845015e6c518abbce1098d619759ea55424ac960a2",
+      "outcome": {
+        "registered": false,
+        "pool_free_bytes": 512,
+        "pool_used_bytes": 0,
+        "owner_expense": 0,
+        "owner_income": 0,
+        "unknown204": 65526,
+        "unknown_reads": 0,
+        "sound_releases": 1,
+        "refund_calls": 0
+      }
+    },
+    {
+      "case": "trap9-inactive-65535",
+      "file": "phase120-trap-removal-4f74275569ce.json",
+      "sha256": "750794a1952f4219d1506e800b223c143e7c62103f4753019227dc88e22fbb9a",
+      "outcome": {
+        "registered": false,
+        "pool_free_bytes": 512,
+        "pool_used_bytes": 0,
+        "owner_expense": 0,
+        "owner_income": 0,
+        "unknown204": 65535,
+        "unknown_reads": 0,
+        "sound_releases": 1,
+        "refund_calls": 0
+      }
+    },
+    {
+      "case": "trap9-active-0",
+      "file": "phase120-trap-removal-1a9c8ef2803c.json",
+      "sha256": "047a0c8953efcd8a828bcf15d94695ea050a4ca35374e448755c49293f9a4032",
+      "outcome": {
+        "registered": false,
+        "pool_free_bytes": 512,
+        "pool_used_bytes": 0,
+        "owner_expense": 0,
+        "owner_income": 0,
+        "unknown204": 0,
+        "unknown_reads": 0,
+        "sound_releases": 1,
+        "refund_calls": 1
+      }
+    },
+    {
+      "case": "trap9-active-65526",
+      "file": "phase120-trap-removal-e5ffa0abf38d.json",
+      "sha256": "9df3074e574d4b3559226104144d54f1f65d3741631529ea7e17e3262354d24c",
+      "outcome": {
+        "registered": false,
+        "pool_free_bytes": 512,
+        "pool_used_bytes": 0,
+        "owner_expense": 0,
+        "owner_income": 0,
+        "unknown204": 65526,
+        "unknown_reads": 0,
+        "sound_releases": 1,
+        "refund_calls": 1
+      }
+    },
+    {
+      "case": "trap9-active-65535",
+      "file": "phase120-trap-removal-53aa279bc6d0.json",
+      "sha256": "dfb85d42a4544cc8c6c2361d07d214c4951e493bd3d27bd2393f4c969a1d00dc",
+      "outcome": {
+        "registered": false,
+        "pool_free_bytes": 512,
+        "pool_used_bytes": 0,
+        "owner_expense": 0,
+        "owner_income": 0,
+        "unknown204": 65535,
+        "unknown_reads": 0,
+        "sound_releases": 1,
+        "refund_calls": 1
+      }
+    },
+    {
+      "case": "upkeep-positive",
+      "file": "phase120-trap-removal-f0a49cc2a351.json",
+      "sha256": "28ca10e6e49ba62f4ffe708ca485188e19bad32fb3f7611350add4c2e42d803d",
+      "outcome": {
+        "registered": false,
+        "pool_free_bytes": 512,
+        "pool_used_bytes": 0,
+        "owner_expense": 0,
+        "owner_income": 0,
+        "unknown204": 0,
+        "unknown_reads": 0,
+        "sound_releases": 1,
+        "refund_calls": 1
+      }
+    },
+    {
+      "case": "upkeep-negative",
+      "file": "phase120-trap-removal-92d8103cd7c2.json",
+      "sha256": "a0739bf51b8d268f045a51d8f27233ef043394378a56ed2f988951da66818d0f",
+      "outcome": {
+        "registered": false,
+        "pool_free_bytes": 512,
+        "pool_used_bytes": 0,
+        "owner_expense": 0,
+        "owner_income": 0,
+        "unknown204": 0,
+        "unknown_reads": 0,
+        "sound_releases": 1,
+        "refund_calls": 1
+      }
+    },
+    {
+      "case": "owner-mismatch-death",
+      "file": "phase120-trap-removal-705972444553.json",
+      "sha256": "5033b53ac0cefc238ca1d84198266cca89347535b168a3268ded1e6e0fc22dc0",
+      "outcome": {
+        "registered": false,
+        "pool_free_bytes": 512,
+        "pool_used_bytes": 0,
+        "owner_expense": 0,
+        "owner_income": 0,
+        "unknown204": 0,
+        "unknown_reads": 0,
+        "sound_releases": 1,
+        "refund_calls": 1
+      }
+    },
+    {
+      "case": "definition-gate",
+      "file": "phase120-trap-removal-54cf2df77586.json",
+      "sha256": "b9bfcd201421d3648f5a8af009313ac361a8d99bee55153cb966d883c7d16417",
+      "outcome": {
+        "registered": false,
+        "pool_free_bytes": 512,
+        "pool_used_bytes": 0,
+        "owner_expense": 0,
+        "owner_income": 0,
+        "unknown204": 65526,
+        "unknown_reads": 0,
+        "sound_releases": 1,
+        "refund_calls": 1
+      }
+    },
+    {
+      "case": "world-gate",
+      "file": "phase120-trap-removal-c3bb20ce03c9.json",
+      "sha256": "c86481c0648444e313d4384f9612ecbec93326ff1531ebbac6541f83606a63b8",
+      "outcome": {
+        "registered": false,
+        "pool_free_bytes": 512,
+        "pool_used_bytes": 0,
+        "owner_expense": 5,
+        "owner_income": -5,
+        "unknown204": 65526,
+        "unknown_reads": 0,
+        "sound_releases": 1,
+        "refund_calls": 0
+      }
+    }
+  ],
+  "paired_full_context_cases": [
+    "trap1-inactive-65526",
+    "trap1-inactive-65535",
+    "trap1-active-65526",
+    "trap1-active-65535",
+    "trap9-inactive-65526",
+    "trap9-inactive-65535",
+    "trap9-active-65526",
+    "trap9-active-65535"
+  ],
+  "measured_opaque_baselines": 4
+}

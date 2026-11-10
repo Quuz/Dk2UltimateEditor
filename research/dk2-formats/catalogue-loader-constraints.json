@@ -1,0 +1,289 @@
+{
+  "0x6e": {
+    "family": "Terrain",
+    "parser": "0x56f090",
+    "native_record_bytes": 552,
+    "observed_record_bytes": [
+      552
+    ],
+    "zero_count_division": "0x56f1b8",
+    "subsequent_zero_test": "0x56f1ba",
+    "condition": "Record callback registered; the skip-data branch has no such division",
+    "stride_expression": "unsigned D/N before count guard",
+    "assembly_evidence": "game-catalogue-terrain-parser-assembly.txt",
+    "decompiler_evidence": "game-catalogue-terrain-parser.txt",
+    "assembly_context": [
+      "0056f1a0: JZ 0x0056f28d ",
+      "0056f1a6: MOV EAX,dword ptr [ESP + 0x20] ",
+      "0056f1aa: MOV ECX,dword ptr [ESP + 0x48] ",
+      "0056f1ae: XOR EDX,EDX ",
+      "0056f1b0: MOV dword ptr [ESP + 0x10],0x0 ",
+      "0056f1b8: DIV ECX ",
+      "0056f1ba: TEST ECX,ECX ",
+      "0056f1bc: MOV EBP,EAX ",
+      "0056f1be: JBE 0x0056f2bc ",
+      "0056f1c4: MOV EDX,0x7470e8 "
+    ]
+  },
+  "0x78": {
+    "family": "Rooms",
+    "parser": "0x56e300",
+    "native_record_bytes": 1055,
+    "observed_record_bytes": [
+      1055
+    ],
+    "zero_count_division": "0x56e428",
+    "subsequent_zero_test": "0x56e42a",
+    "condition": "Record callback registered; the skip-data branch has no such division",
+    "stride_expression": "unsigned D/N before count guard",
+    "assembly_evidence": "game-catalogue-rooms-parser-assembly.txt",
+    "decompiler_evidence": "game-catalogue-rooms-parser.txt",
+    "assembly_context": [
+      "0056e410: JZ 0x0056e500 ",
+      "0056e416: MOV EAX,dword ptr [ESP + 0x20] ",
+      "0056e41a: MOV ECX,dword ptr [ESP + 0x48] ",
+      "0056e41e: XOR EDX,EDX ",
+      "0056e420: MOV dword ptr [ESP + 0x10],0x0 ",
+      "0056e428: DIV ECX ",
+      "0056e42a: TEST ECX,ECX ",
+      "0056e42c: MOV EBP,EAX ",
+      "0056e42e: JBE 0x0056e52f ",
+      "0056e434: MOV EDX,0x7472df "
+    ]
+  },
+  "0x82": {
+    "family": "Traps",
+    "parser": "0x571040",
+    "native_record_bytes": 579,
+    "observed_record_bytes": [
+      579
+    ],
+    "zero_count_division": "0x57116e",
+    "subsequent_zero_test": "0x571170",
+    "condition": "Record callback registered; the skip-data branch has no such division",
+    "stride_expression": "unsigned D/N before count guard",
+    "assembly_evidence": "game-catalogue-traps-parser-assembly.txt",
+    "decompiler_evidence": "game-catalogue-traps-parser.txt",
+    "assembly_context": [
+      "00571156: JZ 0x00571246 ",
+      "0057115c: MOV EAX,dword ptr [ESP + 0x20] ",
+      "00571160: MOV ECX,dword ptr [ESP + 0x48] ",
+      "00571164: XOR EDX,EDX ",
+      "00571166: MOV dword ptr [ESP + 0x10],0x0 ",
+      "0057116e: DIV ECX ",
+      "00571170: TEST ECX,ECX ",
+      "00571172: MOV EBP,EAX ",
+      "00571174: JBE 0x00571275 ",
+      "0057117a: MOV EDX,0x747103 "
+    ]
+  },
+  "0x8c": {
+    "family": "Doors",
+    "parser": "0x56ac80",
+    "native_record_bytes": 616,
+    "observed_record_bytes": [
+      616
+    ],
+    "zero_count_division": "0x56adae",
+    "subsequent_zero_test": "0x56adb0",
+    "condition": "Record callback registered; the skip-data branch has no such division",
+    "stride_expression": "unsigned D/N before count guard",
+    "assembly_evidence": "game-catalogue-doors-parser-assembly.txt",
+    "decompiler_evidence": "game-catalogue-doors-parser.txt",
+    "assembly_context": [
+      "0056ad96: JZ 0x0056ae83 ",
+      "0056ad9c: MOV EAX,dword ptr [ESP + 0x20] ",
+      "0056ada0: MOV ECX,dword ptr [ESP + 0x48] ",
+      "0056ada4: XOR EDX,EDX ",
+      "0056ada6: MOV dword ptr [ESP + 0x10],0x0 ",
+      "0056adae: DIV ECX ",
+      "0056adb0: TEST ECX,ECX ",
+      "0056adb2: MOV EBP,EAX ",
+      "0056adb4: JBE 0x0056aeb2 ",
+      "0056adba: MOV EDX,0x747128 "
+    ]
+  },
+  "0x96": {
+    "family": "KeeperSpells",
+    "parser": "0x56bcf0",
+    "native_record_bytes": 406,
+    "observed_record_bytes": [
+      406
+    ],
+    "zero_count_division": "0x56be1e",
+    "subsequent_zero_test": "0x56be20",
+    "condition": "Record callback registered; the skip-data branch has no such division",
+    "stride_expression": "unsigned D/N before count guard",
+    "assembly_evidence": "game-catalogue-keeperspells-parser-assembly.txt",
+    "decompiler_evidence": "game-catalogue-keeperspells-parser.txt",
+    "assembly_context": [
+      "0056be06: JZ 0x0056bef5 ",
+      "0056be0c: MOV EAX,dword ptr [ESP + 0x20] ",
+      "0056be10: MOV ECX,dword ptr [ESP + 0x48] ",
+      "0056be14: XOR EDX,EDX ",
+      "0056be16: MOV dword ptr [ESP + 0x10],0x0 ",
+      "0056be1e: DIV ECX ",
+      "0056be20: TEST ECX,ECX ",
+      "0056be22: MOV EBP,EAX ",
+      "0056be24: JBE 0x0056bf24 ",
+      "0056be2a: MOV EDX,0x747056 "
+    ]
+  },
+  "0xa0": {
+    "family": "CreatureSpells",
+    "parser": "0x56a6d0",
+    "native_record_bytes": 266,
+    "observed_record_bytes": [
+      266
+    ],
+    "zero_count_division": "0x56a7fe",
+    "subsequent_zero_test": "0x56a800",
+    "condition": "Record callback registered; the skip-data branch has no such division",
+    "stride_expression": "unsigned D/N before count guard",
+    "assembly_evidence": "game-catalogue-creaturespells-parser-assembly.txt",
+    "decompiler_evidence": "game-catalogue-creaturespells-parser.txt",
+    "assembly_context": [
+      "0056a7e6: JZ 0x0056a8d5 ",
+      "0056a7ec: MOV EAX,dword ptr [ESP + 0x20] ",
+      "0056a7f0: MOV ECX,dword ptr [ESP + 0x48] ",
+      "0056a7f4: XOR EDX,EDX ",
+      "0056a7f6: MOV dword ptr [ESP + 0x10],0x0 ",
+      "0056a7fe: DIV ECX ",
+      "0056a800: TEST ECX,ECX ",
+      "0056a802: MOV EBP,EAX ",
+      "0056a804: JBE 0x0056a904 ",
+      "0056a80a: MOV EDX,0x746fca "
+    ]
+  },
+  "0xaa": {
+    "family": "Creatures",
+    "parser": "0x56a250",
+    "native_record_bytes": 5449,
+    "observed_record_bytes": [
+      5449,
+      5537
+    ],
+    "zero_count_division": "0x56a37e",
+    "subsequent_zero_test": "0x56a380",
+    "condition": "Record callback registered; the skip-data branch has no such division",
+    "stride_expression": "unsigned D/N before count guard",
+    "assembly_evidence": "game-creature-parser-assembly.txt",
+    "decompiler_evidence": "game-creature-parser.txt",
+    "assembly_context": [
+      "0056a366: JZ 0x0056a454 ",
+      "0056a36c: MOV EAX,dword ptr [ESP + 0x20] ",
+      "0056a370: MOV ECX,dword ptr [ESP + 0x48] ",
+      "0056a374: XOR EDX,EDX ",
+      "0056a376: MOV dword ptr [ESP + 0x10],0x0 ",
+      "0056a37e: DIV ECX ",
+      "0056a380: TEST ECX,ECX ",
+      "0056a382: MOV EBP,EAX ",
+      "0056a384: JBE 0x0056a483 ",
+      "0056a38a: MOV EDX,0x748409 "
+    ]
+  },
+  "0xf0": {
+    "family": "Objects",
+    "parser": "0x56d880",
+    "native_record_bytes": 894,
+    "observed_record_bytes": [
+      894
+    ],
+    "zero_count_division": "0x56d9b7",
+    "subsequent_zero_test": "0x56d9b9",
+    "condition": "Record callback registered; the skip-data branch has no such division",
+    "stride_expression": "unsigned D/N before count guard",
+    "assembly_evidence": "game-catalogue-objects-parser-assembly.txt",
+    "decompiler_evidence": "game-catalogue-objects-parser.txt",
+    "assembly_context": [
+      "0056d99f: JZ 0x0056da94 ",
+      "0056d9a5: MOV EAX,dword ptr [ESP + 0x20] ",
+      "0056d9a9: MOV ECX,dword ptr [ESP + 0x48] ",
+      "0056d9ad: XOR EDX,EDX ",
+      "0056d9af: MOV dword ptr [ESP + 0x10],0x0 ",
+      "0056d9b7: DIV ECX ",
+      "0056d9b9: TEST ECX,ECX ",
+      "0056d9bb: MOV EBP,EAX ",
+      "0056d9bd: JBE 0x0056dac3 ",
+      "0056d9c3: MOV EDX,0x74723e "
+    ]
+  },
+  "0xfa": {
+    "family": "EffectElements",
+    "parser": "0x56b740",
+    "native_record_bytes": 182,
+    "observed_record_bytes": [
+      182
+    ],
+    "zero_count_division": "0x56b877",
+    "subsequent_zero_test": "0x56b879",
+    "condition": "Record callback registered; the skip-data branch has no such division",
+    "stride_expression": "unsigned D/N before count guard",
+    "assembly_evidence": "game-catalogue-effectelements-parser-assembly.txt",
+    "decompiler_evidence": "game-catalogue-effectelements-parser.txt",
+    "assembly_context": [
+      "0056b85f: JZ 0x0056b954 ",
+      "0056b865: MOV EAX,dword ptr [ESP + 0x20] ",
+      "0056b869: MOV ECX,dword ptr [ESP + 0x48] ",
+      "0056b86d: XOR EDX,EDX ",
+      "0056b86f: MOV dword ptr [ESP + 0x10],0x0 ",
+      "0056b877: DIV ECX ",
+      "0056b879: TEST ECX,ECX ",
+      "0056b87b: MOV EBP,EAX ",
+      "0056b87d: JBE 0x0056b983 ",
+      "0056b883: MOV EDX,0x746f76 "
+    ]
+  },
+  "0x104": {
+    "family": "Shots",
+    "parser": "0x56e900",
+    "native_record_bytes": 239,
+    "observed_record_bytes": [
+      239
+    ],
+    "zero_count_division": "0x56ea37",
+    "subsequent_zero_test": "0x56ea39",
+    "condition": "Record callback registered; the skip-data branch has no such division",
+    "stride_expression": "unsigned D/N before count guard",
+    "assembly_evidence": "game-catalogue-shots-parser-assembly.txt",
+    "decompiler_evidence": "game-shots-parser.txt",
+    "assembly_context": [
+      "0056ea1f: JZ 0x0056eb15 ",
+      "0056ea25: MOV EAX,dword ptr [ESP + 0x20] ",
+      "0056ea29: MOV ECX,dword ptr [ESP + 0x48] ",
+      "0056ea2d: XOR EDX,EDX ",
+      "0056ea2f: MOV dword ptr [ESP + 0x10],0x0 ",
+      "0056ea37: DIV ECX ",
+      "0056ea39: TEST ECX,ECX ",
+      "0056ea3b: MOV EBP,EAX ",
+      "0056ea3d: JBE 0x0056eb44 ",
+      "0056ea43: MOV EDX,0x746faf "
+    ]
+  },
+  "0x10e": {
+    "family": "Effects",
+    "parser": "0x56b210",
+    "native_record_bytes": 246,
+    "observed_record_bytes": [
+      246
+    ],
+    "zero_count_division": "0x56b347",
+    "subsequent_zero_test": "0x56b349",
+    "condition": "Record callback registered; the skip-data branch has no such division",
+    "stride_expression": "unsigned D/N before count guard",
+    "assembly_evidence": "game-catalogue-effects-parser-assembly.txt",
+    "decompiler_evidence": "game-catalogue-effects-parser.txt",
+    "assembly_context": [
+      "0056b32f: JZ 0x0056b424 ",
+      "0056b335: MOV EAX,dword ptr [ESP + 0x20] ",
+      "0056b339: MOV ECX,dword ptr [ESP + 0x48] ",
+      "0056b33d: XOR EDX,EDX ",
+      "0056b33f: MOV dword ptr [ESP + 0x10],0x0 ",
+      "0056b347: DIV ECX ",
+      "0056b349: TEST ECX,ECX ",
+      "0056b34b: MOV EBP,EAX ",
+      "0056b34d: JBE 0x0056b453 ",
+      "0056b353: MOV EDX,0x746fb6 "
+    ]
+  }
+}

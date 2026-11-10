@@ -1,0 +1,668 @@
+{
+  "phase": 115,
+  "date": "2026-10-29",
+  "families": [
+    "Shots",
+    "CreatureSpells",
+    "Creatures"
+  ],
+  "executable": "D:\\Games\\DK2\\Dungeon Keeper 2\\DKII-DX.exe",
+  "executable_sha256": "d7a8b854e4e4f02709eba271bead6fe2307dd6e332b5a96e70857e5b0e19fb8a",
+  "correction": {
+    "component": "shot_parameters",
+    "json_pointer": "/processes/38",
+    "before": {
+      "data1": "severity",
+      "data2": "timer"
+    },
+    "after": {
+      "data1": "duration updates low16",
+      "data2": "damage/update low16"
+    },
+    "cause": "Earlier report assigned names to call arguments without checking their stack order and callee stores.",
+    "confirmed": true,
+    "original_editor_bug_established": false
+  },
+  "corrected_process38": {
+    "process_type": 38,
+    "name": "POISON_SPIT",
+    "table_address": "0x69ead5",
+    "handler": "0x004b0270",
+    "data1": "Poison duration: low u16 update count; stored directly in Creature45D without multiplication by TPS.",
+    "data2": "Poison damage magnitude per eligible Creature update: low u16; stored in Creature45F.",
+    "note": "Corrected phase115:4B0270 pushes Data1 first and Data2 second;48CC50 reads ESP+8 into timer45D,ESP+4 into severity45F. Whole native cast/collision/tick confirms50/5 -> timer50,damage5.",
+    "evidence": "phase115-primary-manifest.json;phase115-poison-emulations.json",
+    "direct_instance_reads": {
+      "data1": true,
+      "data2": true
+    },
+    "supersedes_phase": "Initial process38 parameter meanings in shot-semantics.json were reversed; retain that source solely as an auditable historical component."
+  },
+  "package_contract": "Use top-level effective_shot_parameters for Shot process UI. It derives from historical shot_parameters and applies this exact replacement to process38; all other process rows remain byte-equivalent JSON values.",
+  "primary_evidence": {
+    "file": "phase115-primary-manifest.json",
+    "sha256": "a0c0da1f38dbf43fc3a0ffc2f2429c908faaa4c546fd8127b63da09f58e01130"
+  },
+  "native_replays": [
+    {
+      "case": "apply-only",
+      "file": "phase115-poison-c91bc17d16ae.json",
+      "sha256": "11004a7809b19bb617f5bd57a68db38c2ed7a7f01c66a4c4d7db69b199b2326f",
+      "outcome": {
+        "HP": 1000,
+        "timer": 50,
+        "severity": 5,
+        "owner": 7,
+        "freeze": 0,
+        "armour": 0,
+        "invulnerable": 0,
+        "ticks": 0,
+        "HP_calls": 0,
+        "timer_writes": [
+          50
+        ],
+        "HP_writes": [],
+        "applications": 1
+      },
+      "captured_contexts": 63,
+      "captured_bytes": 128200
+    },
+    {
+      "case": "tick1",
+      "file": "phase115-poison-624fa583951e.json",
+      "sha256": "ad0b8dbd93dc079e26a7ceec0b0c5e26392650545920f62bc4daef7c03099902",
+      "outcome": {
+        "HP": 995,
+        "timer": 49,
+        "severity": 5,
+        "owner": 7,
+        "freeze": 0,
+        "armour": 0,
+        "invulnerable": 0,
+        "ticks": 1,
+        "HP_calls": 1,
+        "timer_writes": [
+          50,
+          49
+        ],
+        "HP_writes": [
+          995
+        ],
+        "applications": 1
+      },
+      "captured_contexts": 68,
+      "captured_bytes": 139650
+    },
+    {
+      "case": "res100",
+      "file": "phase115-poison-a166394e00b4.json",
+      "sha256": "8e4767b9d520a526d5b8f764a17662f3adcc87440695c9fc6ed551d50d3eadfd",
+      "outcome": {
+        "HP": 995,
+        "timer": 49,
+        "severity": 5,
+        "owner": 7,
+        "freeze": 0,
+        "armour": 0,
+        "invulnerable": 0,
+        "ticks": 1,
+        "HP_calls": 1,
+        "timer_writes": [
+          50,
+          49
+        ],
+        "HP_writes": [
+          995
+        ],
+        "applications": 1
+      },
+      "captured_contexts": 68,
+      "captured_bytes": 139650
+    },
+    {
+      "case": "res255",
+      "file": "phase115-poison-a50dad09d238.json",
+      "sha256": "d947b01181a2a365fd07b338b936f8361dbeb2b60ab5f4ff8b0fc9e0fe4bbf32",
+      "outcome": {
+        "HP": 995,
+        "timer": 49,
+        "severity": 5,
+        "owner": 7,
+        "freeze": 0,
+        "armour": 0,
+        "invulnerable": 0,
+        "ticks": 1,
+        "HP_calls": 1,
+        "timer_writes": [
+          50,
+          49
+        ],
+        "HP_writes": [
+          995
+        ],
+        "applications": 1
+      },
+      "captured_contexts": 68,
+      "captured_bytes": 139650
+    },
+    {
+      "case": "ends-on-one",
+      "file": "phase115-poison-244b8263f46b.json",
+      "sha256": "2d0607105762467f8e051b9da573cad64b5108037521d990be954ee781135ea1",
+      "outcome": {
+        "HP": 995,
+        "timer": 0,
+        "severity": 5,
+        "owner": 7,
+        "freeze": 0,
+        "armour": 0,
+        "invulnerable": 0,
+        "ticks": 1,
+        "HP_calls": 1,
+        "timer_writes": [
+          1,
+          0
+        ],
+        "HP_writes": [
+          995
+        ],
+        "applications": 1
+      },
+      "captured_contexts": 68,
+      "captured_bytes": 139650
+    },
+    {
+      "case": "ends-before-third",
+      "file": "phase115-poison-7351ebf17d48.json",
+      "sha256": "b79bda24e57ded58f5f1431e4706363f4da124823df1692e96d16db1d687ebb6",
+      "outcome": {
+        "HP": 990,
+        "timer": 0,
+        "severity": 5,
+        "owner": 7,
+        "freeze": 0,
+        "armour": 0,
+        "invulnerable": 0,
+        "ticks": 3,
+        "HP_calls": 2,
+        "timer_writes": [
+          2,
+          1,
+          0
+        ],
+        "HP_writes": [
+          995,
+          990
+        ],
+        "applications": 1
+      },
+      "captured_contexts": 68,
+      "captured_bytes": 139650
+    },
+    {
+      "case": "widebits",
+      "file": "phase115-poison-e79ad14dc0c6.json",
+      "sha256": "7e004507c8791bab75153be34884a95e54f3d0dc877a19f087f6ab0fffb55563",
+      "outcome": {
+        "HP": 995,
+        "timer": 1,
+        "severity": 5,
+        "owner": 7,
+        "freeze": 0,
+        "armour": 0,
+        "invulnerable": 0,
+        "ticks": 1,
+        "HP_calls": 1,
+        "timer_writes": [
+          2,
+          1
+        ],
+        "HP_writes": [
+          995
+        ],
+        "applications": 1
+      },
+      "captured_contexts": 68,
+      "captured_bytes": 139650
+    },
+    {
+      "case": "zero-duration",
+      "file": "phase115-poison-8ad4a459c25d.json",
+      "sha256": "5c5952e3b8e591a87503178a599fb07a08495df48150ffb8ec325f4340c2231d",
+      "outcome": {
+        "HP": 1000,
+        "timer": 0,
+        "severity": 5,
+        "owner": 7,
+        "freeze": 0,
+        "armour": 0,
+        "invulnerable": 0,
+        "ticks": 1,
+        "HP_calls": 0,
+        "timer_writes": [
+          0
+        ],
+        "HP_writes": [],
+        "applications": 1
+      },
+      "captured_contexts": 68,
+      "captured_bytes": 139650
+    },
+    {
+      "case": "zero-severity",
+      "file": "phase115-poison-d43b9643e480.json",
+      "sha256": "2f370355a36cfda67ded6a946bc2a7db7a002164db589b10eaeb03622bb9277d",
+      "outcome": {
+        "HP": 1000,
+        "timer": 49,
+        "severity": 0,
+        "owner": 7,
+        "freeze": 0,
+        "armour": 0,
+        "invulnerable": 0,
+        "ticks": 1,
+        "HP_calls": 1,
+        "timer_writes": [
+          50,
+          49
+        ],
+        "HP_writes": [],
+        "applications": 1
+      },
+      "captured_contexts": 68,
+      "captured_bytes": 139650
+    },
+    {
+      "case": "frozen",
+      "file": "phase115-poison-3bfd924cbf26.json",
+      "sha256": "5694359cf9a029ed5726c7637ffe7dc82b2b2b72f78ce451c03258dd52ded191",
+      "outcome": {
+        "HP": 1000,
+        "timer": 50,
+        "severity": 5,
+        "owner": 7,
+        "freeze": 0,
+        "armour": 0,
+        "invulnerable": 0,
+        "ticks": 1,
+        "HP_calls": 0,
+        "timer_writes": [
+          50
+        ],
+        "HP_writes": [],
+        "applications": 1
+      },
+      "captured_contexts": 68,
+      "captured_bytes": 139650
+    },
+    {
+      "case": "thawed",
+      "file": "phase115-poison-44e5675d52b9.json",
+      "sha256": "dd89492fd06e0984506cedbe24b1aa958653691eabb4cfb38a9b5b8439796500",
+      "outcome": {
+        "HP": 995,
+        "timer": 49,
+        "severity": 5,
+        "owner": 7,
+        "freeze": 0,
+        "armour": 0,
+        "invulnerable": 0,
+        "ticks": 2,
+        "HP_calls": 1,
+        "timer_writes": [
+          50,
+          49
+        ],
+        "HP_writes": [
+          995
+        ],
+        "applications": 1
+      },
+      "captured_contexts": 68,
+      "captured_bytes": 139650
+    },
+    {
+      "case": "invulnerable",
+      "file": "phase115-poison-af055b3aff9e.json",
+      "sha256": "e6d970ebff9b5b291f522a684adae525343a0d9d1db8f98cfd6c54b7b3f0d5a0",
+      "outcome": {
+        "HP": 995,
+        "timer": 49,
+        "severity": 5,
+        "owner": 7,
+        "freeze": 0,
+        "armour": 0,
+        "invulnerable": 1,
+        "ticks": 1,
+        "HP_calls": 1,
+        "timer_writes": [
+          50,
+          49
+        ],
+        "HP_writes": [
+          995
+        ],
+        "applications": 1
+      },
+      "captured_contexts": 68,
+      "captured_bytes": 139650
+    },
+    {
+      "case": "armoured",
+      "file": "phase115-poison-f4624e336621.json",
+      "sha256": "682d0558b53576a4328c64b549a7d6aa4b177309cb0a2cd96ec7f9400f41fabb",
+      "outcome": {
+        "HP": 998,
+        "timer": 49,
+        "severity": 5,
+        "owner": 7,
+        "freeze": 0,
+        "armour": 1,
+        "invulnerable": 0,
+        "ticks": 1,
+        "HP_calls": 1,
+        "timer_writes": [
+          50,
+          49
+        ],
+        "HP_writes": [
+          998
+        ],
+        "applications": 1
+      },
+      "captured_contexts": 68,
+      "captured_bytes": 139650
+    },
+    {
+      "case": "reapply-callback",
+      "file": "phase115-poison-0840a51487dc.json",
+      "sha256": "0eb103c27ab672ae60c84f2b61eb9831301760e7fb4963d395e3a12986805b52",
+      "outcome": {
+        "HP": 990,
+        "timer": 49,
+        "severity": 5,
+        "owner": 7,
+        "freeze": 0,
+        "armour": 0,
+        "invulnerable": 0,
+        "ticks": 2,
+        "HP_calls": 2,
+        "timer_writes": [
+          50,
+          49,
+          50,
+          49
+        ],
+        "HP_writes": [
+          995,
+          990
+        ],
+        "applications": 2
+      },
+      "captured_contexts": 68,
+      "captured_bytes": 139650
+    },
+    {
+      "case": "defaults-overridden",
+      "file": "phase115-poison-4ad6b62d1118.json",
+      "sha256": "230c62917a48d039326881d5378f57ca1c411c1b43facd31616312b00e341c63",
+      "outcome": {
+        "HP": 995,
+        "timer": 49,
+        "severity": 5,
+        "owner": 7,
+        "freeze": 0,
+        "armour": 0,
+        "invulnerable": 0,
+        "ticks": 1,
+        "HP_calls": 1,
+        "timer_writes": [
+          50,
+          49
+        ],
+        "HP_writes": [
+          995
+        ],
+        "applications": 1
+      },
+      "captured_contexts": 68,
+      "captured_bytes": 139650
+    },
+    {
+      "case": "tick2",
+      "file": "phase115-poison-66947769493b.json",
+      "sha256": "2b46447b49716b54aa412deb6946409f2a02da070d7caa900aade7363b4cd9f5",
+      "outcome": {
+        "HP": 990,
+        "timer": 48,
+        "severity": 5,
+        "owner": 7,
+        "freeze": 0,
+        "armour": 0,
+        "invulnerable": 0,
+        "ticks": 2,
+        "HP_calls": 2,
+        "timer_writes": [
+          50,
+          49,
+          48
+        ],
+        "HP_writes": [
+          995,
+          990
+        ],
+        "applications": 1
+      },
+      "captured_contexts": 68,
+      "captured_bytes": 139650
+    }
+  ],
+  "load_cast_collision": {
+    "raw_creature_source": "Vampire8 target with explicit resistance type41/value0,100,255.",
+    "raw_shot_source": "Maiden Poison Spit62,239bytes,DamageType0,ProcessType38,category8.",
+    "raw_creature_spell_source": "Maiden Poison Spit41,266bytes,ShotID62; complete346byte intermediate and70byte definition verified.",
+    "loaders": [
+      4791744,
+      5670944,
+      5672496,
+      4793120,
+      4902240,
+      5694784,
+      5695120,
+      4902384,
+      5678224,
+      5678432,
+      5208160
+    ],
+    "cast": 4818128,
+    "factory": [
+      4947152,
+      4893840
+    ],
+    "collision": 4898144,
+    "dispatch": 4904752,
+    "poison_callback": 4915824,
+    "setter": 4770896,
+    "collision_tables_initializer": 4897952,
+    "process_tables_initializer": 4903344,
+    "identity": "Native Creature cast sets Shot145=caster100; actual cell/bounds/enemy collision selects target101 and setsShot147. No synthetic hit-tag setter.",
+    "snapshot": "Prepared caster/target overlap in one valid cell; actual original Creature/Object/World/Shot vtables,normal factory pool/tag/map registration.",
+    "allocation_scope": "On hit ShotHP becomes0 but tag remains alive; scheduler deletion and physical flight are not executed."
+  },
+  "parameters": {
+    "duration": {
+      "Shot_raw": 152,
+      "CreatureSpell_raw": 200,
+      "CreatureSpell_definition": 31,
+      "Shot_instance": 317,
+      "Creature_state": 1117,
+      "runtime_width": 2,
+      "unit": "eligible update calls remaining",
+      "TPS_multiplication": false
+    },
+    "damage": {
+      "Shot_raw": 156,
+      "CreatureSpell_raw": 204,
+      "CreatureSpell_definition": 35,
+      "Shot_instance": 321,
+      "Creature_state": 1119,
+      "runtime_width": 2,
+      "unit": "requested HP damage per eligible update"
+    },
+    "override": "Creature wrapper copies loaded CreatureSpellData1/2 over Shotdefaults. SourceShotdefaults123/9 stillproduce poison50/5 whenCreatureSpell50/5.",
+    "full_raw_width": 4,
+    "serialization": "Preserve all32rawbits; low16 runtime narrowing does not authorize deleting upper16 file bits."
+  },
+  "delayed_state": {
+    "timer_offset": 1117,
+    "damage_offset": 1119,
+    "player_offset": 1121,
+    "source": "Only player owner7 explicitly stored by4B02CD; this six-byte state has no ShotID,SpellID orAttackCategory.",
+    "update": 4776288,
+    "enclosing_tick": 4753712,
+    "HP_handler": 4926688,
+    "behavior": "When timer nonzero and freezeTimer447 zero: decrement timer once,request -unsigned16severity with savedplayer andcontrol0. A timer1 stilldealsdamage and becomes0.",
+    "no_global_claim": "No proof against source recovery through all possible external/global bookkeeping; the six bytes themselves do not distinguish attacks."
+  },
+  "tested": {
+    "base": "Data1=50,Data2=5 -> no immediate HP loss; after one full updateHP995/timer49; aftertwoHP990/timer48.",
+    "narrowing": "Data1=10002h,Data2=10005h -> timer2,severity5; afteroneHP995/timer1.",
+    "zero_duration": "Timer0 disables poison request; severity remains5.",
+    "zero_severity": "Timer still decrements; commonHP handler called withdelta0,HP unchanged.",
+    "freeze": "FreezeTimer1 pauses both poison timer and damage for firstupdate; secondupdate resumesdamage5.",
+    "invulnerability": "Prepared InvulnerableTimer445=2 does not prevent selected poison:HP995,timer445=1 afteroneupdate.",
+    "armour": "ArmourTimer443=2 decrements to1 before HP calculation; incoming5 becomes2 with integer truncation.",
+    "reapplication": "Additional direct original process-dispatch callback afterfirstupdate overwrites49->50; nextupdate49,HP990. This is not a second physical collision/new projectile.",
+    "resistance": "Type41 fourpairs with values0/100/255 allgiveHP995. Count78A reads onlywithinrawloader; no pairs/count reads incast/collision/status/HP selected paths."
+  },
+  "verification": {
+    "native_scenarios": 16,
+    "full_Creature_updates": 20,
+    "HP_handler_calls": 16,
+    "poison_applications": 17,
+    "HP_stores": 15,
+    "complete_context_pairs": [
+      "res100",
+      "res255",
+      "widebits",
+      "defaults-overridden"
+    ],
+    "independently_checked": "Entire346byte CreatureSpell intermediate and70byte definition,loaded parameters,cast/collision identity,state,timer/HP stores,original entry counts,FS-only zero-page accesses andShotvtable.",
+    "new_original_PE_ranges": 11,
+    "inherited_Ghidra_byte_ranges": 12,
+    "independent_Ghidra_CPU_controls": 0,
+    "pending_review": "Prior automatic approval review failed because usage limit; no Ghidra request dispatched this phase,no bypass.",
+    "clock": "Prepared World tick counter fixed; consecutive explicit Creature update calls,not advancing realWorld scheduler or measured wall time."
+  },
+  "corpus": {
+    "evidence": {
+      "file": "phase115-poison-api-validation.json",
+      "sha256": "fa8e279225fc0c84203c2091ba56a25c694da0c64bb604cae2b70c64f46db4aa"
+    },
+    "unique_sources": 83,
+    "family_source_checks": 164,
+    "exact_rebuilds": 820,
+    "changed": 656,
+    "identity": 164,
+    "identity_records": 9086,
+    "high_bits_preserved": true,
+    "source_writes": 0
+  },
+  "pending_independent_controls": {
+    "file": "phase115-pending-crosschecks.json",
+    "sha256": "4e7435e9da319d2c70b6f6ea9def526974c3b6a55078876aca7ce1e98e830cce"
+  },
+  "helpers": [
+    {
+      "file": "probe_poison.py",
+      "sha256": "923bf9c2032ba561db8e3caf2c1377ece90d9388acefe763ca1ec21c5433d3a3"
+    },
+    {
+      "file": "emulate_poison.py",
+      "sha256": "37ac619f2af0b4375dcde16f4036244c0fd3b9a3c0b1b5695fab5dcc7f84ee6b"
+    },
+    {
+      "file": "validate_poison_parameters.py",
+      "sha256": "b8476f226c622e2dd9c63f11f03d098a6d3d79499f0f8ea91b68a6cd08fb8d65"
+    },
+    {
+      "file": "prepare_poison_primary.py",
+      "sha256": "0053877207a2ab86254e457facf02270584f555bbe05addf855e262856a980f6"
+    },
+    {
+      "file": "crosscheck_poison.py",
+      "sha256": "e5269652ef6cd18429c7b09b8d91b79d6aadfd15a447effc21afa213c716231e"
+    }
+  ],
+  "dependencies": [
+    {
+      "file": "probe_shot_hit.py",
+      "sha256": "e69d2d9bd85ba526aaed97743fdfe0ff7c10cae177e2b982a444c3bc7f04c15f"
+    },
+    {
+      "file": "probe_creature_resistance.py",
+      "sha256": "212c0879b5ef5c55bdc824175856c00c5c25975b541d674f198139666e10dbdf"
+    },
+    {
+      "file": "probe_creature_tick.py",
+      "sha256": "b1e57d40fa472ee0d4290717195e78b302ad7b0d52d85157e2243e2da4b916aa"
+    },
+    {
+      "file": "native_unicorn_factorytrace.py",
+      "sha256": "b51cdd7e08799ff1dca2b3633d90bb924dfc8f427dceb573f5336d3a12babc2d"
+    },
+    {
+      "file": "native_spell_alternatives.py",
+      "sha256": "82aa05afdb0ee7532df3bd4d0084ad37be045d33adf63feb6506a593baeafd56"
+    },
+    {
+      "file": "native_spell_writer.py",
+      "sha256": "8ec58d9056e6522589412b6f9b32ab449878eb6f37ab83335b413fc554176f7e"
+    },
+    {
+      "file": "native_shot_damage.py",
+      "sha256": "8c37832431dbac15cb25201e12b493cbb4c973a199cda8bd59b880db9234d285"
+    },
+    {
+      "file": "shot-semantics.json",
+      "sha256": "d469e2caf0d0f19cd2c5311bd857d0578d02301ab8c29831c0fbd361c361e1c3"
+    },
+    {
+      "file": "shot-damage-semantics.json",
+      "sha256": "4e1f5aed0b804cf6b3cef0738289fd176ec05077be36b08bc9edc4d8cf76886c"
+    },
+    {
+      "file": "crypt-tick-semantics.json",
+      "sha256": "2fbee5c433f28d48ca00285db08fe6615fa181b349d94ac54f87f9ee817eb7a2"
+    }
+  ],
+  "unchanged_source_executables": [
+    {
+      "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\DKII-DX.exe",
+      "sha256": "d7a8b854e4e4f02709eba271bead6fe2307dd6e332b5a96e70857e5b0e19fb8a"
+    },
+    {
+      "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\DK2 Editor pro.exe",
+      "sha256": "989c45df779bccfc9a9e509b2ad0224a9bd269629f74792adc0320fa4b99fb09"
+    },
+    {
+      "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\DK2 Editor rc3.exe",
+      "sha256": "7368d200cc5ac7e0cdb28c9852d9aa51b960fd718d9eea8dd927c4084add102c"
+    },
+    {
+      "file": "D:/Games/DK2/DKII 13/Dungeon Keeper 2/DKII.exe",
+      "sha256": "93e826a142f677ef5120699feddb0572799d93399167ef1d05ec4b48a8b2a342"
+    }
+  ],
+  "limitations": [
+    "Exact supplied DX; no livegame,renderer,audio or original editor GUI commit/save executed.",
+    "Actual native cast and overlap collision in prepared scene; no flight or World scheduling/deletion,AI recipient alert list intentionally empty.",
+    "Genuine game code/vtables retained; external absent-resource/audio providers explicit; sound provider returns0 to avoid a synthetic livehandle.",
+    "RawCreature/rawShot/rawCreatureSpell load in one CPU; CreatureSpell70byte definition starts with resource pointers0 and nullGFX loader.",
+    "Prepared cardinal trig/nav/state tables reused from verified initializers; no real trigtable/renderer initialization.",
+    "Four whole-context pairs from measured baseline; remaining scenarios use independent semantic/state/store checks and full captures,not a full independent opaque-byte model.",
+    "Delayed source cannot be identified from timer/severity/player triple alone; no exhaustive global source-tracking absence proof.",
+    "No general resistance formula or mod implemented; otherDamageTypes/specialProcesses and major remaining15family unknowns stayopen.",
+    "Independent Ghidra CPU controls0; previousphase114 five controls also remain pending."
+  ]
+}

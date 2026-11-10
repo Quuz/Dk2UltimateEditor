@@ -1,0 +1,36 @@
+{
+  "phase": 43,
+  "date": "2026-10-26",
+  "native_emulations": 38,
+  "native_case_kinds": {
+    "writer": 18,
+    "converter": 12,
+    "parser": 8
+  },
+  "boundary_cases": 475,
+  "corpus_files": 82,
+  "corpus_records": 3734,
+  "long_records": 3504,
+  "opaque80_variants": 4,
+  "last4_variants": [
+    {
+      "hex": "f5540010",
+      "records": 3504
+    }
+  ],
+  "whole_file_roundtrips": 82,
+  "exact_in_memory_container_patches": 2484,
+  "primary_instructions": 4279,
+  "primary_ranges_matching_pe": 53,
+  "original_main_inputs_unchanged": 17,
+  "original_main_executables_unchanged": 2,
+  "format_package_components": 54,
+  "modified_gameplay_runs": 0,
+  "limitations": [
+    "38 native cases:18 full writers,12 paired full converter chains and8 full parsers. Writer assertions cover final92 payload bytes, not every field of all5537 output bytes.",
+    "Models are prebuilt synthetic buffers with zero numeric data except declared flags/IDs/strings; all original getter bodies execute. Exact-zero x87 inputs avoid the known fractional rounding limitation. Normal GUI construction, gameplay and graphics are not run.",
+    "Parser I/O and callback are explicit fixtures. Full intermediate compared to native isolated reference, which tests buffer adjacency/reading/conversion consistency; this is not an independent semantic oracle for every field.",
+    "Initial writer experiment incorrectly expected last4 bytes to retain stack seed; saved as superseded after recognizing real stack probe writes. Initial parser callbacks missed callee-saved ESI/EDI preservation; all8 cases rerun with corrected ABI, old snapshots retained and excluded.",
+    "Observed tailF5540010 matches native global context54F550/probe return4A7F10. This supports the byte-origin explanation without identifying every historical producer. Other builds/Flame runtime patches not covered."
+  ]
+}

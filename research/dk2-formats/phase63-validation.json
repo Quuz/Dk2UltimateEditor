@@ -1,0 +1,51 @@
+{
+  "phase": 63,
+  "date": "2026-10-27",
+  "native_scenarios": 68,
+  "full_native_activation_calls": 69,
+  "raw_to_activation_chains": 19,
+  "complete_executed_native_functions": 7,
+  "primary_full_pe_functions": 7,
+  "primary_dispatch_table_ranges": 1,
+  "whole_manager_bytes_compared": 3840,
+  "source_files_roundtripped": 3,
+  "camera_records_counting_copies": 117,
+  "distinct_source_records": 39,
+  "exact_in_memory_field_patches": 2808,
+  "semantic_boundary_checks": 11,
+  "negative_old_creature_search": [
+    {
+      "file": "phase63-old-creature-thiscall-leads.json",
+      "sha256": "981de1acf76e19025b662a37f03168450b55abcc8f75b07cb13ed893cf5af712",
+      "roots": 822,
+      "root_states": 14495,
+      "control_reads": 333,
+      "callee_contexts": 46,
+      "limited_roots": 0,
+      "limited_callees": 0
+    },
+    {
+      "file": "phase63-old-creature-argument-leads.json",
+      "sha256": "086dfed014e9e2087cfd3e2460290038897d254b4e74d5cf4446df0873205019",
+      "roots": 822,
+      "root_states": 14506,
+      "control_reads": 335,
+      "callee_contexts": 77,
+      "limited_roots": 0,
+      "limited_callees": 0
+    }
+  ],
+  "source_executables_unchanged": 4,
+  "package_components": 67,
+  "research_writes_to_game_data": 0,
+  "modified_gameplay_runs": 0,
+  "limitations": [
+    "Exact supplied DX SHA only;no proof of same activation inoldEXE,Pro orRC3.",
+    "All18 requested modeIDs tested,but mode11 kind6 random/entity branch is not executed;allinputstates are not exhausted.",
+    "Matrices,terrain/worldimplementation,clock/global-modehook/timerreset/eventqueue andorientationtable population areexternalfixtures. Whole managercomparison is conditional on those providers.",
+    "No per-frame transition/interpolation,projectionmatrix/rasterizer/gameplayrun/visualartifact conclusion. Lenslimit quirk is a measured state result,not a demonstratedvisibledefect.",
+    "Bank lookup precedes range rejection;0/19 fixtures have readable memory,not a guarantee of safe arbitrarymodeIDs.",
+    "Negative oldCreature searches remain separate boundedstaticleads;AbilityJump/PickUpPriority gameplaypurposes are unresolved.",
+    "First mode11 projection incorrectly used lensvalue;native mismatch atDD0 exposed actualmid84 lenslower. Diagnosticv1 retained;only68 finalsuccessfulcases listed."
+  ]
+}

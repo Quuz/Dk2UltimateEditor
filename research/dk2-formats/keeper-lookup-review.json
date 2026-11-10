@@ -1,0 +1,907 @@
+{
+  "phase": 72,
+  "family": "KeeperSpells old/DX lookup contracts and argument-forward search",
+  "profiles": {
+    "d7a8b854e4e4f02709eba271bead6fe2307dd6e332b5a96e70857e5b0e19fb8a": {
+      "program": "DKII-DX.exe",
+      "getter": 5299552
+    },
+    "93e826a142f677ef5120699feddb0572799d93399167ef1d05ec4b48a8b2a342": {
+      "program": "DKII-local13.exe",
+      "getter": 5253024
+    }
+  },
+  "primary_program_bytes": [
+    {
+      "program": "DKII-DX.exe",
+      "exe": "D:\\Games\\DK2\\Dungeon Keeper 2\\DKII-DX.exe",
+      "address": 5299552,
+      "length": 98,
+      "before": "phase72-DX-50dd60-assembly.txt",
+      "after": "phase72-final-DKII-DX.exe-50dd60-assembly.txt",
+      "memory": "phase72-final-DKII-DX.exe-50dd60-memory.txt",
+      "executed": true,
+      "before_sha256": "1a32e440c481f751d0c9336df7624b7e0be24b6bf15ea876e8a417f72d932c73",
+      "memory_sha256": "6aaff279f3fa0fa5fe7d70adbd8c41cab20cb6c54bdf90ee0341663dc3ee6bd5",
+      "program_bytes_sha256": "a01bc325574446af45bd38909cefbb1bacfae0800a4b2917d2a49dbb1a5d4d38"
+    },
+    {
+      "program": "DKII-local13.exe",
+      "exe": "D:\\Games\\DK2\\Tools\\dk2-format-research\\source-binaries\\DKII-local13.exe",
+      "address": 5253024,
+      "length": 97,
+      "before": "phase72-old-5027a0-assembly.txt",
+      "after": "phase72-final-DKII-local13.exe-5027a0-assembly.txt",
+      "memory": "phase72-final-DKII-local13.exe-5027a0-memory.txt",
+      "executed": true,
+      "before_sha256": "1d73a449ab4598f4bb40f78694b6f6471746d7f39849d3a54245fb6916880294",
+      "memory_sha256": "4038881ad617603e53cbc371c4d34902f0f1a376ff035ff8648f8a0129cf2f25",
+      "program_bytes_sha256": "e9ba5aed825c2612d33f73e23232713516abaf3027ea280917387d1c403eb6b9"
+    }
+  ],
+  "primary_data_and_code_fragments": [
+    {
+      "program": "DKII-local13.exe",
+      "exe": "D:\\Games\\DK2\\Tools\\dk2-format-research\\source-binaries\\DKII-local13.exe",
+      "address": 6681644,
+      "length": 8,
+      "memory": "phase72-final-old-world-slot-memory.txt",
+      "scope": "Native world vslot110 and114;table type was attested inphase62.",
+      "memory_sha256": "efa56d7073a43b9ee2dd6476ac4086d268f77927b514c409b8c70881d570aa2e",
+      "program_bytes_sha256": "51ebdf60aee93091990813b5384acb6625fe060ec526e12f2ae1f83180d6cdf2",
+      "hex": "a027500030d94f00"
+    },
+    {
+      "program": "DKII-local13.exe",
+      "exe": "D:\\Games\\DK2\\Tools\\dk2-format-research\\source-binaries\\DKII-local13.exe",
+      "address": 5163289,
+      "length": 16,
+      "memory": "phase72-final-old-loader-C8-fragment-memory.txt",
+      "scope": "Scalar-loader fragment only:presence18/mid140→definition3A. Not a full loader execution or new raw→mid proof.",
+      "memory_sha256": "df628d1b3588f8b899f46d712dce2e06c7d47d01c09768d59f4d9e51fcdaf09a",
+      "program_bytes_sha256": "4459f9d0bd74f5fb32fb86ae69b663acdbc0d7d18fe0bd0d28405abbb8451ad9",
+      "hex": "8b461885c074098b964001000089553a"
+    }
+  ],
+  "native_emulations": [
+    {
+      "file": "phase72-emulation-keeper-lookup-d7a-empty.json",
+      "sha256": "7c20489b62686228cba8f551de02677a3c43b78a3f840cef4a657a65c36d8b01",
+      "case": "d7a-empty"
+    },
+    {
+      "file": "phase72-emulation-keeper-lookup-d7a-zero-existing.json",
+      "sha256": "f441ded0c1f40699886376e954d3eee54ee36cadad7c2bb155592fb651d6aa93",
+      "case": "d7a-zero-existing"
+    },
+    {
+      "file": "phase72-emulation-keeper-lookup-d7a-first.json",
+      "sha256": "abeec50cb491a54e6b33eb04f38e3b7985dadde702928b2f4b9fd3fe3484155d",
+      "case": "d7a-first"
+    },
+    {
+      "file": "phase72-emulation-keeper-lookup-d7a-middle.json",
+      "sha256": "07fc0dd2fcff84e98f486af307942cf2f16d27ee2d1593634f3217a9428652c7",
+      "case": "d7a-middle"
+    },
+    {
+      "file": "phase72-emulation-keeper-lookup-d7a-last-high-id.json",
+      "sha256": "ab89abd7ee6c5667ca6524b726c38cf900d77da1ee570f910c375a525a4c04c5",
+      "case": "d7a-last-high-id"
+    },
+    {
+      "file": "phase72-emulation-keeper-lookup-d7a-missing-between.json",
+      "sha256": "46f034f28a9b1940f9e250faa9ebe7ed0e6ccca4f6003bf3a2ac1c3e5f9b34b0",
+      "case": "d7a-missing-between"
+    },
+    {
+      "file": "phase72-emulation-keeper-lookup-d7a-missing-above.json",
+      "sha256": "cb01dc42c259c5ad4aed57464e712b4bcde7c98d0dce7016579edc99170b28e8",
+      "case": "d7a-missing-above"
+    },
+    {
+      "file": "phase72-emulation-keeper-lookup-d7a-high-argument.json",
+      "sha256": "b9e202b510fa21ba30aac91ca473b2a7906360275d51bf46a5b33ee310b6df87",
+      "case": "d7a-high-argument"
+    },
+    {
+      "file": "phase72-emulation-keeper-lookup-d7a-high-argument-zero.json",
+      "sha256": "5f34c276cf01b0036bedc719dde8a0550c4cbffa6bccd8340d09f05a28d8967f",
+      "case": "d7a-high-argument-zero"
+    },
+    {
+      "file": "phase72-emulation-keeper-lookup-d7a-unsorted-hidden.json",
+      "sha256": "17f1f03be384063fe9ca9f4bb65fcd2f1f63b4d14ae76cea7fa0bcd123b80ddf",
+      "case": "d7a-unsorted-hidden"
+    },
+    {
+      "file": "phase72-emulation-keeper-lookup-d7a-duplicate-index-limit.json",
+      "sha256": "fb9a838f6d99cdcb1881f6ec34a0aae334bbd71b3cf6fbf19758602aa6ddc8cc",
+      "case": "d7a-duplicate-index-limit"
+    },
+    {
+      "file": "phase72-emulation-keeper-lookup-d7a-single-id255.json",
+      "sha256": "74568922ee5699381398c95bef13423a50c0ab7cb95a1fc99ef1f19efcc4d5b4",
+      "case": "d7a-single-id255"
+    },
+    {
+      "file": "phase72-emulation-keeper-lookup-d7a-id0-first-hides-1.json",
+      "sha256": "1baa917e2963fdb534456bc5784d8ab07cdf92d674629adc216017473f906bcd",
+      "case": "d7a-id0-first-hides-1"
+    },
+    {
+      "file": "phase72-emulation-keeper-lookup-93e-empty.json",
+      "sha256": "63d2114ffb36a7eba173a717fed3a9f80377a19196b956cc9c27821ec98b5e62",
+      "case": "93e-empty"
+    },
+    {
+      "file": "phase72-emulation-keeper-lookup-93e-zero-existing.json",
+      "sha256": "946bbd4902420a53849ef613354bddbe0c041e0d26a1a49f8be6e1df20432bdc",
+      "case": "93e-zero-existing"
+    },
+    {
+      "file": "phase72-emulation-keeper-lookup-93e-first.json",
+      "sha256": "43aedc6bbcec522515302d20ba1a6b091ff6f40b5728289e0678827fe07ead7e",
+      "case": "93e-first"
+    },
+    {
+      "file": "phase72-emulation-keeper-lookup-93e-middle.json",
+      "sha256": "bac595a75f280618210c809d78b4ecc2667208ad1a83884efec74fc9142e7462",
+      "case": "93e-middle"
+    },
+    {
+      "file": "phase72-emulation-keeper-lookup-93e-last-high-id.json",
+      "sha256": "a7015643fdaed03372f13259c522058a9851869180ce23282234550db2d9fc5f",
+      "case": "93e-last-high-id"
+    },
+    {
+      "file": "phase72-emulation-keeper-lookup-93e-missing-between.json",
+      "sha256": "8cfbd5061444e290ca5b3a47a84bfb2965d07617b90d8ffea06a96efe57dd8fb",
+      "case": "93e-missing-between"
+    },
+    {
+      "file": "phase72-emulation-keeper-lookup-93e-missing-above.json",
+      "sha256": "b8b038440b71b884a7f2dcd304d4d1e2002cb97d3f16ab9c6042bfbc9f23936d",
+      "case": "93e-missing-above"
+    },
+    {
+      "file": "phase72-emulation-keeper-lookup-93e-high-argument.json",
+      "sha256": "5e887d8ce96d29bba5a53521e15ee9ae6e79346bed4f48d9816b337c42c8e94e",
+      "case": "93e-high-argument"
+    },
+    {
+      "file": "phase72-emulation-keeper-lookup-93e-high-argument-zero.json",
+      "sha256": "33b8295dcc78dd8b33c4933f81fc4100f73349c54faa784978ebb488267e90be",
+      "case": "93e-high-argument-zero"
+    },
+    {
+      "file": "phase72-emulation-keeper-lookup-93e-unsorted-hidden.json",
+      "sha256": "93f3a70b00cb79f915276d25eae73dc9a3876181ad0376c56a6552b24291235b",
+      "case": "93e-unsorted-hidden"
+    },
+    {
+      "file": "phase72-emulation-keeper-lookup-93e-duplicate-index-limit.json",
+      "sha256": "40fded4c3ff8f00a7b03538e5a982d237f7bbae42c9c07e6c4c11b51514c8c54",
+      "case": "93e-duplicate-index-limit"
+    },
+    {
+      "file": "phase72-emulation-keeper-lookup-93e-single-id255.json",
+      "sha256": "e3bbbd46a205fbe8b7a8e6e5a46e5e8613bdb1b73d4f20bd7049eb7d6e2b9a6d",
+      "case": "93e-single-id255"
+    },
+    {
+      "file": "phase72-emulation-keeper-lookup-93e-id0-first-hides-1.json",
+      "sha256": "944918aa169e6d259e0a45878243c641bac1ae7ee7fb220ce7c6a9948c3eab0f",
+      "case": "93e-id0-first-hides-1"
+    }
+  ],
+  "native_execution_scope": "Complete old/DX Keeper definition lookups;whole world/table compared unchanged.",
+  "runtime_layout": {
+    "record_bytes": 122,
+    "array_pointer_in_world": 5636,
+    "count_in_world": 5644,
+    "ID_in_definition": 117,
+    "old_world_vtable": 6681372,
+    "old_slot": 272,
+    "old_slot_target": 5253024,
+    "old_scalar_fragment": {
+      "address": 5163289,
+      "bytes": 16,
+      "presence": 24,
+      "intermediate": 320,
+      "definition": 58,
+      "scope": "Static fragment verifies intermediate→definition copy only;oldrawconverter/full old loader not newly executed."
+    }
+  },
+  "lookup": {
+    "expression": "key=argument&255;index=min(key-1,count-1);whileindex>=0:ifID[index]==key returnrow;ifID[index]<key returnNULL;--index;returnNULL.",
+    "behavior": [
+      "ID0 lookup returnsNULL evenwhenphysicalrow0exists.",
+      "[0,1,2] lookup1startsindex0andstopsatID0,so existingID1isnotfound.",
+      "Unsorted[1,7,3] lookup7stopsatlastID3anddoesnotfind7.",
+      "Sparse[1,3,7] lookup7findsrow2;do not require IDs to be contiguous merely fromcount.",
+      "Duplicate[1,1,3] lookup1findsrow0becauseinitialindex=key-1=0;notalwayslastduplicate.",
+      "Onlylow8argumentused;12340003matches3,100maps0andreturnsNULL."
+    ],
+    "preservation": "Runtime lookup contract is diagnostic. Do not delete,sort,renumber or change physical file records automatically. Normal loader insertion/sorting is a separate operation;syntheticunsortedtablesarenotproofthenativeloaderleavesnormalarraysunsorted."
+  },
+  "consumer_search": [
+    {
+      "file": "phase72-DX-keeper-pointer-argument-leads.json",
+      "sha256": "997370e276d5d753497a46bc60687ab7915660e2ac5aaee6a71dc60cf5616a1d",
+      "program_sha256": "d7a8b854e4e4f02709eba271bead6fe2307dd6e332b5a96e70857e5b0e19fb8a",
+      "producer_roots": 45,
+      "root_states": 835,
+      "callee_summaries": 9,
+      "candidates": 27,
+      "unknown_C8_candidates": 0,
+      "control_candidates": 27,
+      "limited_roots": 0,
+      "limited_callees": 0,
+      "limited_argument_context_roots": 0
+    },
+    {
+      "file": "phase72-old-keeper-pointer-argument-leads.json",
+      "sha256": "89b6099079895fc0fd42f2a3cfda029ad39b127418b05f8f894c74ffc9c935b2",
+      "program_sha256": "93e826a142f677ef5120699feddb0572799d93399167ef1d05ec4b48a8b2a342",
+      "producer_roots": 48,
+      "root_states": 711,
+      "callee_summaries": 5,
+      "candidates": 27,
+      "unknown_C8_candidates": 0,
+      "control_candidates": 27,
+      "limited_roots": 0,
+      "limited_callees": 0,
+      "limited_argument_context_roots": 0
+    }
+  ],
+  "new_search_scope": "All linear PE.text seeds plus direct-callee forwarding up to3levels;ECX andfirst8potentialstackslots,ESP/EBP aliases,correct TEST/CMPmemoryreadrule. Olderphase64passwasmapped-span/intraprocedural. Nativegetterrootverified;untypedvirtual110matchescanreferotherclasses.",
+  "search_result": "No read overlapping candidateDWORD3A established. BothEXEsfind27controlleads each. Absence ofboundedcandidateisnotnewpurposeorproofglobalnon-use.",
+  "search_limitations": [
+    "Dynamicindices,indirectcallee/return identities,computedjumpdestinations,arbitraryheapspillsandunknownABIarenotfullyresolved.",
+    "Walkermaystopwhenaliasesdieorindirectjumpsappear. Zero state/argument budget limits means no budget saturation,not whole-program coverage.",
+    "Potentialstackslotsareforwardsleads,notprovenformalarguments. Onlyactualcallee loadsseedaliases;3-leveldepthnotexhaustive.",
+    "Functionhintsfromnearestdirectcallarelabelsforselection,notproofactualfunctionownership. Instructionlinearpasscanmisscodeorinterpretdata."
+  ],
+  "source_tools": [
+    {
+      "file": "prepare_keeper_pointer_search.py",
+      "sha256": "068b62ea5868b9e955a7aea9bc34cf82ea597bd2e96cfe40cc5104dff653db62"
+    },
+    {
+      "file": "scan_keeper_pointer_arguments.py",
+      "sha256": "88dbf6ea4fb21a15455917b17c60b9841a0adc67e55b77cf6dd3a99969f83397"
+    },
+    {
+      "file": "scan_old_keeper_pointer_arguments.py",
+      "sha256": "49c80700ce758c82aaa9e89dafd6a6a82f0d1d2fa758f2b0b3554072c581d5c0"
+    },
+    {
+      "file": "scan_current_door_word236_arguments.py",
+      "sha256": "9f61d0a3029dae530bd1c3ba2b153113179ae5c4a9a5ba184680bc67fd011cd5"
+    },
+    {
+      "file": "native_memory_access.py",
+      "sha256": "be38c08f91955d4fd1ca0e03ce9c954238926498889325adf6ba63e61edbd7f4"
+    }
+  ],
+  "corpus": {
+    "files": [
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\KeeperSpells.kwd",
+        "sha256": "1836b4dfd708f56568ac22135ac2526eeeeaa5e06b34acd6fbe5afd516cd0b16",
+        "records": 13,
+        "nonzero_c8_records": 1,
+        "nonzero_gap_records": 13
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\AutoSaveGlobals.kld",
+        "sha256": "7c67217033699a2a7e36eed002b54134ebcb79ad817a910b1103b25a43eebe0c",
+        "records": 13,
+        "nonzero_c8_records": 1,
+        "nonzero_gap_records": 0
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\3DLevelGlobals.kld",
+        "sha256": "120d8c91e38ad5d939a42c34aea7c0c963dc547a53350ca7ed3755654231c951",
+        "records": 13,
+        "nonzero_c8_records": 1,
+        "nonzero_gap_records": 0
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\ANL - 3 FunGlobals.kld",
+        "sha256": "874bcadc18d8a77c5de499da90289bc5565785cacdc0e87d4a1461d9778777fc",
+        "records": 13,
+        "nonzero_c8_records": 1,
+        "nonzero_gap_records": 0
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Battle for the Sun Qz2Globals.kld",
+        "sha256": "514322930de7f8d2d20cada6be2619a982ec42024a166e0274c782ffa018a791",
+        "records": 13,
+        "nonzero_c8_records": 1,
+        "nonzero_gap_records": 0
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Battle for the Sun QzGlobals.kld",
+        "sha256": "aeab60f5ebebd74da0af4d24c96f1942d143816f4e80fce2aa29466af00f9001",
+        "records": 13,
+        "nonzero_c8_records": 1,
+        "nonzero_gap_records": 0
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\DK2 tutorial map2Globals.kld",
+        "sha256": "e0db2f285ada981166c56b3ce0cbaf51e88f0d723827991dd29ff1a44aefc45f",
+        "records": 13,
+        "nonzero_c8_records": 1,
+        "nonzero_gap_records": 0
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\DK2 tutorial mapGlobals.kld",
+        "sha256": "fcd646f297aec1d29a7bfa54030f19715bfdfa7ba9e993f265463788376bea7c",
+        "records": 13,
+        "nonzero_c8_records": 1,
+        "nonzero_gap_records": 0
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\DK2Preview_6a88240eaf814f78Globals.kld",
+        "sha256": "c65efb3538303f7bd6ea7748d6afb26766895b4db4a64a709f4039b6f13a88bf",
+        "records": 13,
+        "nonzero_c8_records": 1,
+        "nonzero_gap_records": 0
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\FrontEnd3DLevelGlobals.kld",
+        "sha256": "84762d33e56fcc1d115cac14b1e7cc8f228b236c0710a734c73eb6139608f550",
+        "records": 13,
+        "nonzero_c8_records": 1,
+        "nonzero_gap_records": 0
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\kop2Globals.kld",
+        "sha256": "e2e9d3c644683e51bcc8c6f59c37b493e3d6e55eca3bdc67626c1018a0688e08",
+        "records": 13,
+        "nonzero_c8_records": 1,
+        "nonzero_gap_records": 0
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\kop3Globals.kld",
+        "sha256": "a9ec89e6a64dd598f4133dc9a9a812b964a1da69cd1615a6a09be7370b8a5164",
+        "records": 13,
+        "nonzero_c8_records": 1,
+        "nonzero_gap_records": 0
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\kop4Globals.kld",
+        "sha256": "186e81c3c9d036e995a9d78bfa5b2a41a09db77cd04e7c2b21dec15473b3b6dd",
+        "records": 13,
+        "nonzero_c8_records": 1,
+        "nonzero_gap_records": 0
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 1- Kharak SystemGlobals.kld",
+        "sha256": "7398b0eab6168c3d6d0f79c83fec985c8bcb13dab300dd2796f0d68406f75357",
+        "records": 13,
+        "nonzero_c8_records": 1,
+        "nonzero_gap_records": 0
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 10- Super Nova StationGlobals.kld",
+        "sha256": "089f47860bb46c2c5ade2372111606e0444ddd5f3252abb0e547ac0221363ce7",
+        "records": 13,
+        "nonzero_c8_records": 1,
+        "nonzero_gap_records": 0
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 11- Tenhauser GateGlobals.kld",
+        "sha256": "03c605b09fa4df14bdabaeea448aef2c2757ae10d48a2c0b66f2353543a8a73f",
+        "records": 13,
+        "nonzero_c8_records": 1,
+        "nonzero_gap_records": 0
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 12- Galactic CoreGlobals.kld",
+        "sha256": "39d1c977feab14bc990aca28db0ce60e7e618e8a9e968edd79f4b21d1c0d5763",
+        "records": 13,
+        "nonzero_c8_records": 1,
+        "nonzero_gap_records": 0
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 13- Karos GraveyardGlobals.kld",
+        "sha256": "d31ed0f5bf1fb9cea0bbb4415d8c706b2dd80cea8df9c5457c11320be66e5b00",
+        "records": 13,
+        "nonzero_c8_records": 1,
+        "nonzero_gap_records": 0
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 14- Bridge of SighsGlobals.kld",
+        "sha256": "0486863a90a31f19404c8fc8057c9d3a26ea4830bdaed0facaeeff5c3f0a73ac",
+        "records": 13,
+        "nonzero_c8_records": 1,
+        "nonzero_gap_records": 0
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 15- Chapel PerilousGlobals.kld",
+        "sha256": "43cd67545e3e77fd8cb22d56490d09c5ec9f1fd70dce566ec92761df58a78921",
+        "records": 13,
+        "nonzero_c8_records": 1,
+        "nonzero_gap_records": 0
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 16- HiigaraGlobals.kld",
+        "sha256": "1399f369dc487244db7fee178b46aa290cbe4793669598672e42b5a5514a2a33",
+        "records": 13,
+        "nonzero_c8_records": 1,
+        "nonzero_gap_records": 0
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 2- Outer Kharak SystemGlobals.kld",
+        "sha256": "0592cbad205a9212b03a04a8f0a34b0d5a14235d16f8b4bdf1f6f8f7c6ad9fbc",
+        "records": 13,
+        "nonzero_c8_records": 1,
+        "nonzero_gap_records": 0
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 3- Return to KharakGlobals.kld",
+        "sha256": "4408e05c2487d8e73991f8f40b351150962efcdccd8f2e914be04daae6063a1d",
+        "records": 13,
+        "nonzero_c8_records": 1,
+        "nonzero_gap_records": 0
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 4- The Great WastelandGlobals.kld",
+        "sha256": "f4c9b22915ae24c4512f3adc3556d6d1fea701a58b0d9b401020c2d440b3b01d",
+        "records": 13,
+        "nonzero_c8_records": 1,
+        "nonzero_gap_records": 0
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 5- The Great WastelandGlobals.kld",
+        "sha256": "fd6ac330133a37e93901d3907ff617f2e6410569fb7fce20fcbd8df86c7f27f0",
+        "records": 13,
+        "nonzero_c8_records": 1,
+        "nonzero_gap_records": 0
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 6- Diamond ShoalsGlobals.kld",
+        "sha256": "c2ac3161528c2fd5051205b92db7c2e0f1ac00ecb688852b632db4ef5f5899ab",
+        "records": 13,
+        "nonzero_c8_records": 1,
+        "nonzero_gap_records": 0
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 7- The Gardens of KadeshGlobals.kld",
+        "sha256": "9501ec7aa6c7d40f690efc5faadb91c75ca317269b999432a0568c71b5c24de8",
+        "records": 13,
+        "nonzero_c8_records": 1,
+        "nonzero_gap_records": 0
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 8- The Cathedral of KadeshGlobals.kld",
+        "sha256": "d80c59e1228130e99e4eb1afcaed36e4d207cef82bbdf2808d3964bc0290c2f6",
+        "records": 13,
+        "nonzero_c8_records": 1,
+        "nonzero_gap_records": 0
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 9-The Sea of Lost SoulsGlobals.kld",
+        "sha256": "c585968a135c04fb671ee53049f11b962245734061b88d4f0b177ef5ba0f3896",
+        "records": 13,
+        "nonzero_c8_records": 1,
+        "nonzero_gap_records": 0
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level10Globals.kld",
+        "sha256": "9edbdaebd9d575001f6a45704789be183c55e5b2127c2169af5bcb4811e1a93b",
+        "records": 13,
+        "nonzero_c8_records": 1,
+        "nonzero_gap_records": 0
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\level11AGlobals.kld",
+        "sha256": "c8ae5cdc3f76f19df04f204b58ad40a9a48b19da76b4409018f2dd639197fac0",
+        "records": 13,
+        "nonzero_c8_records": 1,
+        "nonzero_gap_records": 0
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level11BGlobals.kld",
+        "sha256": "9ef9a7d52d8b03661876e667e433c40c126a708f7c4cf16ad5b0b0480f63abb9",
+        "records": 13,
+        "nonzero_c8_records": 1,
+        "nonzero_gap_records": 0
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\level11CGlobals.kld",
+        "sha256": "03f455a8e99269803523161a23caf646b41f05f8d99976d1c67b772e6ddbfdd3",
+        "records": 13,
+        "nonzero_c8_records": 1,
+        "nonzero_gap_records": 0
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\level12Globals.kld",
+        "sha256": "3090630f89b838b8ae7320f42d1dce7ef82d2cecac7b9f8ddff8b252614abb26",
+        "records": 13,
+        "nonzero_c8_records": 1,
+        "nonzero_gap_records": 0
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level13Globals.kld",
+        "sha256": "5dde8da4df42f42ebd0f36c8094b890737225d10995b184d4302416f3a382fb2",
+        "records": 13,
+        "nonzero_c8_records": 1,
+        "nonzero_gap_records": 0
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level14Globals.kld",
+        "sha256": "d14b1f3f17fe3a3cb0fba0c795e9ee123e1716ca561ef12c77dafea06dd99973",
+        "records": 13,
+        "nonzero_c8_records": 1,
+        "nonzero_gap_records": 0
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level15aGlobals.kld",
+        "sha256": "61c33d99115af4ee53e0dbb00a58c641ce89ec91843f346f81400401ecb3dd9f",
+        "records": 13,
+        "nonzero_c8_records": 1,
+        "nonzero_gap_records": 0
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\level15bGlobals.kld",
+        "sha256": "8c1d0722c4c764b19035ef11c3d4f52f5fef6ef39e738012a0a8cc84e70e91e7",
+        "records": 13,
+        "nonzero_c8_records": 1,
+        "nonzero_gap_records": 0
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level16Globals.kld",
+        "sha256": "16ce8ac0f75b8272c14c1f9e97562ebd021d1972669027c97fc0e0f121a6879e",
+        "records": 13,
+        "nonzero_c8_records": 1,
+        "nonzero_gap_records": 0
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level17Globals.kld",
+        "sha256": "6440f662e8e7058f4ce387df15a7e9862c0f9c8a39fd36920f5b2aa4d1c23646",
+        "records": 13,
+        "nonzero_c8_records": 1,
+        "nonzero_gap_records": 0
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\level18Globals.kld",
+        "sha256": "bfa1f62509083b3cfe62eff461d2c711149e78a50e16854b090f43bf59979cee",
+        "records": 13,
+        "nonzero_c8_records": 1,
+        "nonzero_gap_records": 0
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level19Globals.kld",
+        "sha256": "9f5f0add9416cd4e1c20539c4ec84fba9225fa09ce8c0ade3049188594ba6aee",
+        "records": 13,
+        "nonzero_c8_records": 1,
+        "nonzero_gap_records": 0
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\level1Globals.kld",
+        "sha256": "c65efb3538303f7bd6ea7748d6afb26766895b4db4a64a709f4039b6f13a88bf",
+        "records": 13,
+        "nonzero_c8_records": 1,
+        "nonzero_gap_records": 0
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level20Globals.kld",
+        "sha256": "2fb9f0831d478150a83f3b0dc7ecacd39376c37201255b0ef9d0681c5609a965",
+        "records": 13,
+        "nonzero_c8_records": 1,
+        "nonzero_gap_records": 0
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\level2Globals.kld",
+        "sha256": "858d53d1e9b726a26f50cee2206c615f45e904b597c4ae67dc6b6b4b21a00d97",
+        "records": 13,
+        "nonzero_c8_records": 1,
+        "nonzero_gap_records": 0
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\level3Globals.kld",
+        "sha256": "1be40393b04a5c604bf4cab605848fc66cd9088a161f42f3392caf1accfa7569",
+        "records": 13,
+        "nonzero_c8_records": 1,
+        "nonzero_gap_records": 0
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level4Globals.kld",
+        "sha256": "35a3fca33e47fb5acfbdb08d6c9604d73c54521abd1bab7cb9270340bfa3c8fd",
+        "records": 13,
+        "nonzero_c8_records": 1,
+        "nonzero_gap_records": 0
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\level5Globals.kld",
+        "sha256": "068c99350ca07015fe5aae6be743eaed66a5db89f012b1371f1bb0a1d94b2539",
+        "records": 13,
+        "nonzero_c8_records": 1,
+        "nonzero_gap_records": 0
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level6aGlobals.kld",
+        "sha256": "11f94af0cf11365b9daaf629f75009fb9754aec154da0e3ee21f663d69f9a04e",
+        "records": 13,
+        "nonzero_c8_records": 1,
+        "nonzero_gap_records": 0
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level6bGlobals.kld",
+        "sha256": "5e15604c18cb96349df3e765ffa321fe12b6e3c24a4ba3573535173009dfe027",
+        "records": 13,
+        "nonzero_c8_records": 1,
+        "nonzero_gap_records": 0
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level6bkanGlobals.kld",
+        "sha256": "4676bf880c7960dd211363814bdeb29a8a0b8775ba08af76c9f912dd82fba184",
+        "records": 13,
+        "nonzero_c8_records": 1,
+        "nonzero_gap_records": 0
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\level7Globals.kld",
+        "sha256": "5ea59d2ad2b212c376d05d90d059b71149d0cc17bf70a2eabf3687c0c821288d",
+        "records": 13,
+        "nonzero_c8_records": 1,
+        "nonzero_gap_records": 0
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\level8Globals.kld",
+        "sha256": "9bd4c87e117795eee204347cba492e8c8ddb29007f25e671d40353bb9447b6cc",
+        "records": 13,
+        "nonzero_c8_records": 1,
+        "nonzero_gap_records": 0
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level9Globals.kld",
+        "sha256": "2ce3b5488119cd62d0f43fced5a6021d0ce464b17b49fa776815d58cd76acf66",
+        "records": 13,
+        "nonzero_c8_records": 1,
+        "nonzero_gap_records": 0
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\mpd8Globals.kld",
+        "sha256": "5d7c0136a14ff42c962b30b07b22a5c0426f08fad731cca88f4346ea35569da1",
+        "records": 13,
+        "nonzero_c8_records": 1,
+        "nonzero_gap_records": 0
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\NeedsTest2Globals.kld",
+        "sha256": "303d3667f27a570784c6c0e577d26ffcd2932ad26dd83b78f9becccca9df5915",
+        "records": 13,
+        "nonzero_c8_records": 1,
+        "nonzero_gap_records": 0
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\NeedsTestGlobals.kld",
+        "sha256": "9dc47825c3d39b91c7126e539ef30bcc4cdb489aadb468a2290a5ba3f5746ead",
+        "records": 13,
+        "nonzero_c8_records": 1,
+        "nonzero_gap_records": 0
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Secret1Globals.kld",
+        "sha256": "aef868525fb6ae09ef64eb853dbc7cfbf50dae713e2126ad68243f05c9a2eb55",
+        "records": 13,
+        "nonzero_c8_records": 1,
+        "nonzero_gap_records": 0
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Secret2Globals.kld",
+        "sha256": "d5b75287746a15ce99850e3999da03107840d44bbc7828630af6dd69cb4cfa98",
+        "records": 13,
+        "nonzero_c8_records": 1,
+        "nonzero_gap_records": 0
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Secret3Globals.kld",
+        "sha256": "b439128c47f5fadc3acb45465ed9bf294367bd7b6759a4a0ee946ead02f852f6",
+        "records": 13,
+        "nonzero_c8_records": 1,
+        "nonzero_gap_records": 0
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Secret4Globals.kld",
+        "sha256": "f1008aa04a084eee2ec68f42dda75aa89a020f33a224a048313f383696148c79",
+        "records": 13,
+        "nonzero_c8_records": 1,
+        "nonzero_gap_records": 0
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\testAI2Globals.kld",
+        "sha256": "3915c9faced729584219068888e37ed8f82cb0d64f6cf4629d92d6d0972f45d0",
+        "records": 13,
+        "nonzero_c8_records": 1,
+        "nonzero_gap_records": 0
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\testAI3Globals.kld",
+        "sha256": "25256daeda9ebb4ee3a8b14e9518a74a2573362065197991e46560d27f04eb2b",
+        "records": 13,
+        "nonzero_c8_records": 1,
+        "nonzero_gap_records": 0
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\testAI4Globals.kld",
+        "sha256": "336f1a0195e3d2709513a1bc753273b8174389f9c230040d504e7399b50c6dbc",
+        "records": 13,
+        "nonzero_c8_records": 1,
+        "nonzero_gap_records": 0
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\testAIGlobals.kld",
+        "sha256": "ad3ea90f2840cdde11189f10052f78731f22eff64cbb3117f4f9f7dd5d8f8892",
+        "records": 13,
+        "nonzero_c8_records": 1,
+        "nonzero_gap_records": 0
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\TFO1-1Globals.kld",
+        "sha256": "b39947c0f82a054268a63b4df29523ef7908d7ba80a1a29cdff7dcfcb5a0aea7",
+        "records": 13,
+        "nonzero_c8_records": 1,
+        "nonzero_gap_records": 0
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\TFO1Globals.kld",
+        "sha256": "8312784af6b7dd4df3ea4901d40235a03627757d2940b60a73e13998ba3f0074",
+        "records": 13,
+        "nonzero_c8_records": 1,
+        "nonzero_gap_records": 0
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\TFO2Globals.kld",
+        "sha256": "4f2474b49b8ff4cd41917a2edf55b4e1bd2cfd6989b665c51d9869e0aaa3c467",
+        "records": 13,
+        "nonzero_c8_records": 1,
+        "nonzero_gap_records": 0
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\TFO3-2Globals.kld",
+        "sha256": "d9bf121f460bda7411cd84fe4d0fa0259419f463a72a98e30f2af6035a403590",
+        "records": 13,
+        "nonzero_c8_records": 1,
+        "nonzero_gap_records": 0
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\TFO3Globals.kld",
+        "sha256": "4a547d2644d1db662cc1d3345e318368cee0f0bfddbdae77654ebdd6d19c2f96",
+        "records": 13,
+        "nonzero_c8_records": 1,
+        "nonzero_gap_records": 0
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\TFO4-2Globals.kld",
+        "sha256": "c1821f266fb4226f82017e082330e22f887ecc4b90c4d565f726a29cf6fbeee1",
+        "records": 13,
+        "nonzero_c8_records": 1,
+        "nonzero_gap_records": 0
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\TFO4Globals.kld",
+        "sha256": "abc2357ea366136258a26934c7ce247f5145f1cd31d99402b9f4f93cce735e88",
+        "records": 13,
+        "nonzero_c8_records": 1,
+        "nonzero_gap_records": 0
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXlevel1-2Globals.kld",
+        "sha256": "42e9753de5f7c16b3c1540c67c25c630e474d52e4ef82cadca6e64414787ec3d",
+        "records": 13,
+        "nonzero_c8_records": 1,
+        "nonzero_gap_records": 0
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXlevel1-3Globals.kld",
+        "sha256": "75c49e43ab0f245a900092d45eddfc9c33f4b9247dde7dfc8978d422ce279781",
+        "records": 13,
+        "nonzero_c8_records": 1,
+        "nonzero_gap_records": 0
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXlevel1-4Globals.kld",
+        "sha256": "af64931d6c156176e15e1374b27cde4905edbd9dbe4d9e2ee85f0a3f7bc645d7",
+        "records": 13,
+        "nonzero_c8_records": 1,
+        "nonzero_gap_records": 0
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXLevel13Globals.kld",
+        "sha256": "cedd60b7d59d86fad84a6408421ff2047dc26c2d8ebccc2d822a8ae25c9c54bb",
+        "records": 13,
+        "nonzero_c8_records": 1,
+        "nonzero_gap_records": 0
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXLevel19Globals.kld",
+        "sha256": "47f9c21d94548dac142e7ef00d057b6d17ccb9d89c79337e9f648b3c0eac71a4",
+        "records": 13,
+        "nonzero_c8_records": 1,
+        "nonzero_gap_records": 0
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXlevel1Globals.kld",
+        "sha256": "96770b0f15f04084dee8d82d220e8284574b35e75af76fa0984d11959011d181",
+        "records": 13,
+        "nonzero_c8_records": 1,
+        "nonzero_gap_records": 0
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXLevel20Globals.kld",
+        "sha256": "ad47d6ba4099f49146ac182cde9dc46b806f1092c6fc7dc6df1da5be713eef0e",
+        "records": 13,
+        "nonzero_c8_records": 1,
+        "nonzero_gap_records": 0
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXlevel2Globals.kld",
+        "sha256": "404321b6bdb1ade74263bd0690b7b329ab6bfb24bcd2c65899301fec3679ab77",
+        "records": 13,
+        "nonzero_c8_records": 1,
+        "nonzero_gap_records": 0
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXlevel3Globals.kld",
+        "sha256": "e596b72c3276c3df569f44b375d4e60cd6161df1981496fd15afe6b8a7fad774",
+        "records": 13,
+        "nonzero_c8_records": 1,
+        "nonzero_gap_records": 0
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXlevel5Globals.kld",
+        "sha256": "3f3085e08805280bb106787d28526db04a6c17d91c06aea4273ae924e7819d5e",
+        "records": 13,
+        "nonzero_c8_records": 1,
+        "nonzero_gap_records": 0
+      }
+    ],
+    "file_count": 82,
+    "records": 1066,
+    "c8_bits_counts": {
+      "0x0": 984,
+      "0xfe0c0000": 82
+    },
+    "nonzero_c8_name_counts": {
+      "Sight Of Evil": 81,
+      "Sight-of-Evil": 1
+    },
+    "gap_buffers": [
+      {
+        "hex": "0000",
+        "records": 1053
+      },
+      {
+        "hex": "6b77",
+        "records": 13
+      }
+    ],
+    "flags_counts": {
+      "0x0": 73,
+      "0x4": 251,
+      "0x8": 86,
+      "0x10": 493,
+      "0x12": 85,
+      "0x14": 78
+    },
+    "scope": "Standalone, AutoSaveGlobals and every parseable map KLD with150; duplicated catalogue contents count in each source. Corpus pattern alone does not establish the historical producer."
+  },
+  "api": {
+    "file": "native_keeper_lookup.py",
+    "operation": "lookup_index",
+    "policy": "Pure lookup overexplicitruntimeBYTEIDsequence. Does not emulate world sorting/file parsingorreturn nativepointer. Originalrawrecordsretained."
+  },
+  "limitations": [
+    "26 full lookup executions;two complete nativefunctions;2 separately labelleddata/codefragmentranges. No providers or originalcodepatches.",
+    "EachobservercapturesexactnativeEAXbeforecomparisonandcomparesentire5888-byteworldand122-byte-rowsarrayunchanged. FinalEAX/EBPbelongtoobserver.",
+    "Fulloldrawconverter/loader,worldinsertion,GUIandspecialSightOfEvilShotpathnotexecutedinthisstage.",
+    "C8purpose,AP0408,Terrain198224,CreatureJump/PickUpPriority,Objects34C/Traps204/Doors236andotherfullgoalunknownsremainopen.",
+    "No new raw patchcases;previous Keeper exactpatches fromphases44/53retainedseparately,not countedagain."
+  ]
+}

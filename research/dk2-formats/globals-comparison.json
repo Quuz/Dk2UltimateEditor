@@ -1,0 +1,81 @@
+{
+  "adjacent_source": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\AutoSaveGlobals.kld",
+  "referenced_source": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\kop4Globals.kld",
+  "hashes": [
+    "7c67217033699a2a7e36eed002b54134ebcb79ad817a910b1103b25a43eebe0c",
+    "186e81c3c9d036e995a9d78bfa5b2a41a09db77cd04e7c2b21dec15473b3b6dd"
+  ],
+  "changed_records_by_family": {
+    "Shots": 3
+  },
+  "changes": [
+    {
+      "family": "Shots",
+      "id": 97,
+      "name": "Regeneration Effect",
+      "changed_byte_offsets": [
+        "0x98"
+      ],
+      "fields": [
+        {
+          "field": "Data1",
+          "offset": "0x98",
+          "size": 4,
+          "adjacent": 0,
+          "referenced": 30
+        }
+      ]
+    },
+    {
+      "family": "Shots",
+      "id": 102,
+      "name": "Regeneration Wait",
+      "changed_byte_offsets": [
+        "0x98",
+        "0xbc"
+      ],
+      "fields": [
+        {
+          "field": "Data1",
+          "offset": "0x98",
+          "size": 4,
+          "adjacent": 0,
+          "referenced": 30
+        },
+        {
+          "field": "Health",
+          "offset": "0xbc",
+          "size": 2,
+          "adjacent": 20,
+          "referenced": 10
+        }
+      ]
+    },
+    {
+      "family": "Shots",
+      "id": 103,
+      "name": "Regeneration Effect 2",
+      "changed_byte_offsets": [
+        "0x98",
+        "0xba"
+      ],
+      "fields": [
+        {
+          "field": "Data1",
+          "offset": "0x98",
+          "size": 4,
+          "adjacent": 0,
+          "referenced": 30
+        },
+        {
+          "field": "HitThingEffectId",
+          "offset": "0xba",
+          "size": 2,
+          "adjacent": 0,
+          "referenced": 150
+        }
+      ]
+    }
+  ],
+  "note": "Direction: adjacent AutoSaveGlobals -> bundle named in AutoSave.kwd. Baseline field names are source interpretations; raw bytes remain authoritative."
+}

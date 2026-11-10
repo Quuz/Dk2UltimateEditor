@@ -1,0 +1,63 @@
+{
+  "scope": "One-call adjusted-this-pointer leads; no object identity or global absence proof.\n\nCompute bounded intraprocedural ECX-relative read/forward summaries over direct\nCFG edges, then compose direct thiscall forwards with callee reads once. Does\nnot resolve stack argument pointers, dynamic indices, indirect calls or returns.\n",
+  "mapped_functions": 8605,
+  "states": 647664,
+  "composed_forwards": 6608,
+  "limited_functions": 115,
+  "candidates": [
+    {
+      "function": "0x4bcb60",
+      "name": "calcChecksum",
+      "call": "0x4bccf6",
+      "target": "0x506bf0",
+      "target_name": "calcChecksum",
+      "adjustment": 537,
+      "read": {
+        "address": "0x506c42",
+        "offset": 1234,
+        "bytes": 1,
+        "instruction": "mov bl, byte ptr [ecx - 0x10]"
+      },
+      "effective_offset": 1771,
+      "matches": [
+        "CreaturePickUpPriority"
+      ]
+    },
+    {
+      "function": "0x4bcb60",
+      "name": "calcChecksum",
+      "call": "0x4bccf6",
+      "target": "0x506bf0",
+      "target_name": "calcChecksum",
+      "adjustment": 537,
+      "read": {
+        "address": "0x506c26",
+        "offset": 1347,
+        "bytes": 1,
+        "instruction": "mov dl, byte ptr [ecx + 1]"
+      },
+      "effective_offset": 1884,
+      "matches": [
+        "CreatureAbilityJump"
+      ]
+    },
+    {
+      "function": "0x4bcb60",
+      "name": "calcChecksum",
+      "call": "0x4bccf6",
+      "target": "0x506bf0",
+      "target_name": "calcChecksum",
+      "adjustment": 537,
+      "read": {
+        "address": "0x506c39",
+        "offset": 1348,
+        "bytes": 4,
+        "instruction": "mov ebx, dword ptr [ecx - 0xe]"
+      },
+      "effective_offset": 1885,
+      "matches": [
+        "CreatureAbilityJump"
+      ]
+    }
+  ]
+}

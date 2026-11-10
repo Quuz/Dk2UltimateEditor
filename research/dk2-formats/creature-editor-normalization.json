@@ -1,0 +1,767 @@
+{
+  "family": "Creatures",
+  "record_variants": [
+    5449,
+    5537
+  ],
+  "executable_sha256": {
+    "Dungeon Keeper 2/DKII-DX.exe": "d7a8b854e4e4f02709eba271bead6fe2307dd6e332b5a96e70857e5b0e19fb8a",
+    "Dungeon Keeper 2/Data/editor/DK2 Editor pro.exe": "989c45df779bccfc9a9e509b2ad0224a9bd269629f74792adc0320fa4b99fb09"
+  },
+  "scope": "Four native callback normalizations and three first-person dialog bindings.",
+  "fields": [
+    {
+      "raw_offset": 3516,
+      "raw_bytes": 4,
+      "baseline_name": "FirstPersonWaddleScale",
+      "raw_type": "u32",
+      "editor_intermediate_offset": 4540,
+      "editor_model_offset": 6024,
+      "raw_divisor": 4096,
+      "normalization": {
+        "condition": "unsigned raw > maximum_preserved_raw",
+        "maximum_preserved_raw": 4096,
+        "replacement_raw": 0,
+        "scope": "Native editor model callback0x4A01B0 after the presence-controlled assignment; not a game data constraint."
+      },
+      "native_dialog": {
+        "dialog_resource": 310,
+        "dialog_panel_offset": 136,
+        "model_pointer_panel_offset": 160,
+        "control_id": 2081,
+        "caption": "Waddle Scale:",
+        "control": {
+          "id": 2081,
+          "title": "",
+          "window_class": {
+            "ordinal": 129
+          },
+          "style": "0x50810080",
+          "template_visible": true,
+          "template_disabled": false,
+          "x": 62,
+          "y": 130,
+          "width": 36,
+          "height": 13
+        },
+        "caption_control": {
+          "id": 4294967295,
+          "title": "Waddle Scale:",
+          "window_class": {
+            "ordinal": 130
+          },
+          "style": "0x50020000",
+          "template_visible": true,
+          "template_disabled": false,
+          "x": 9,
+          "y": 132,
+          "width": 50,
+          "height": 9
+        },
+        "validation_range": [
+          0,
+          1
+        ],
+        "validation_is_integer": false
+      },
+      "game_storage_paths": [
+        {
+          "raw_offset": "0xdbc",
+          "raw_bytes": 4,
+          "baseline_field": "FirstPersonWaddleScale",
+          "intermediate_offset": "0x11ac",
+          "runtime_offset": "0x863",
+          "runtime_bytes": 4,
+          "transform": "copy",
+          "runtime_expression": "*(undefined4 *)(param_2 + 0x11ac)",
+          "converter_evidence": [
+            {
+              "line": 673,
+              "assignment": "uVar6 = *(undefined4 *)(param_2 + 0xdbc);"
+            },
+            {
+              "line": 677,
+              "assignment": "param_1[0x46b] = uVar6;"
+            }
+          ],
+          "runtime_evidence": {
+            "line": 1777,
+            "assignment": "*(undefined4 *)(param_1 + 0x863) = *(undefined4 *)(param_2 + 0x11ac);"
+          }
+        }
+      ],
+      "writer_stack": {
+        "buffer_offset_before_pushes": 148,
+        "extra_pushed_bytes": 0,
+        "destination_offset": 3664
+      },
+      "evidence": [
+        {
+          "file": "creature-record-decoder.txt",
+          "line": 663,
+          "excerpt": "uVar3 = *(undefined4 *)(param_1 + 0xdbc);"
+        },
+        {
+          "file": "creature-record-decoder.txt",
+          "line": 667,
+          "excerpt": "*(undefined4 *)((int)this + 0x11bc) = uVar3;"
+        },
+        {
+          "file": "phase17-creature-editor-model.txt",
+          "line": 275,
+          "excerpt": "local_14 = (int *)piVar1[0x46f];"
+        },
+        {
+          "file": "phase17-creature-editor-model.txt",
+          "line": 276,
+          "excerpt": "uStack_10 = 0;"
+        },
+        {
+          "file": "phase17-creature-editor-model.txt",
+          "line": 277,
+          "excerpt": "*(double *)(this + 0x5e2) = (double)local_14 * _DAT_0050ac48;"
+        },
+        {
+          "file": "phase17-creature-editor-model.txt",
+          "line": 279,
+          "excerpt": "if (_DAT_00515820 < *(double *)(this + 0x5e2)) {"
+        },
+        {
+          "file": "phase17-creature-editor-model.txt",
+          "line": 280,
+          "excerpt": "this[0x5e2] = 0;"
+        },
+        {
+          "file": "phase17-creature-editor-model.txt",
+          "line": 281,
+          "excerpt": "this[0x5e3] = 0;"
+        },
+        {
+          "file": "phase17-creature-editor-model.txt",
+          "line": 282,
+          "excerpt": "}"
+        },
+        {
+          "file": "phase17-creature-writer-assembly.txt",
+          "first": "0x4a8543",
+          "last": "0x4a8554",
+          "instructions": [
+            "004a8543: FLD double ptr [EBX + 0x1788] ",
+            "004a8549: FMUL double ptr [0x0050ac58] ",
+            "004a854f: CALL 0x004acda8 ",
+            "004a8554: MOV dword ptr [ESP + 0xe50],EAX "
+          ]
+        },
+        {
+          "file": "phase17-creature-first-person-init-assembly.txt",
+          "first": "0x4396d4",
+          "last": "0x4396da",
+          "instructions": [
+            "004396d4: FLD double ptr [EAX + 0x1788] ",
+            "004396da: FSTP double ptr [ESI + 0x88] "
+          ]
+        },
+        {
+          "file": "phase17-creature-first-person-commit-assembly.txt",
+          "first": "0x43a15b",
+          "last": "0x43a167",
+          "instructions": [
+            "0043a15b: MOV ECX,dword ptr [ESI + 0xa0] ",
+            "0043a161: FLD double ptr [ESI + 0x88] ",
+            "0043a167: FSTP double ptr [ECX + 0x1788] "
+          ]
+        },
+        {
+          "file": "phase17-creature-first-person-ddx-assembly.txt",
+          "first": "0x439832",
+          "last": "0x439851",
+          "instructions": [
+            "00439832: LEA EBX,[EDI + 0x88] ",
+            "00439838: PUSH EBX ",
+            "00439839: PUSH 0x821 ",
+            "0043983e: PUSH ESI ",
+            "0043983f: CALL 0x004e4f78 ",
+            "00439844: PUSH 0x3ff00000 ",
+            "00439849: PUSH 0x0 ",
+            "0043984b: PUSH 0x0 ",
+            "0043984d: PUSH 0x0 ",
+            "0043984f: PUSH EBX ",
+            "00439850: PUSH ESI ",
+            "00439851: CALL 0x004e5038 "
+          ]
+        },
+        {
+          "file": "game-creature-type-assembly.txt",
+          "first": "0x493c51",
+          "last": "0x493c61",
+          "instructions": [
+            "00493c51: MOV EAX,dword ptr [EBP + 0x240] ",
+            "00493c57: TEST EAX,EAX ",
+            "00493c59: JZ 0x00493c67 ",
+            "00493c5b: MOV EAX,dword ptr [EBP + 0x11ac] ",
+            "00493c61: MOV dword ptr [EBX + 0x863],EAX "
+          ]
+        }
+      ]
+    },
+    {
+      "raw_offset": 3520,
+      "raw_bytes": 4,
+      "baseline_name": "FirstPersonOscillateScale",
+      "raw_type": "u32",
+      "editor_intermediate_offset": 4544,
+      "editor_model_offset": 6032,
+      "raw_divisor": 4096,
+      "normalization": {
+        "condition": "unsigned raw > maximum_preserved_raw",
+        "maximum_preserved_raw": 4096,
+        "replacement_raw": 0,
+        "scope": "Native editor model callback0x4A01B0 after the presence-controlled assignment; not a game data constraint."
+      },
+      "native_dialog": {
+        "dialog_resource": 310,
+        "dialog_panel_offset": 144,
+        "model_pointer_panel_offset": 160,
+        "control_id": 1857,
+        "caption": "Oscillate Scale:",
+        "control": {
+          "id": 1857,
+          "title": "",
+          "window_class": {
+            "ordinal": 129
+          },
+          "style": "0x50810080",
+          "template_visible": true,
+          "template_disabled": false,
+          "x": 166,
+          "y": 130,
+          "width": 36,
+          "height": 13
+        },
+        "caption_control": {
+          "id": 4294967295,
+          "title": "Oscillate Scale:",
+          "window_class": {
+            "ordinal": 130
+          },
+          "style": "0x50020000",
+          "template_visible": true,
+          "template_disabled": false,
+          "x": 111,
+          "y": 132,
+          "width": 52,
+          "height": 9
+        },
+        "validation_range": [
+          0,
+          1
+        ],
+        "validation_is_integer": false
+      },
+      "game_storage_paths": [
+        {
+          "raw_offset": "0xdc0",
+          "raw_bytes": 4,
+          "baseline_field": "FirstPersonOscillateScale",
+          "intermediate_offset": "0x11b0",
+          "runtime_offset": "0x867",
+          "runtime_bytes": 4,
+          "transform": "copy",
+          "runtime_expression": "*(undefined4 *)(param_2 + 0x11b0)",
+          "converter_evidence": [
+            {
+              "line": 679,
+              "assignment": "uVar6 = *(undefined4 *)(param_2 + 0xdc0);"
+            },
+            {
+              "line": 683,
+              "assignment": "param_1[0x46c] = uVar6;"
+            }
+          ],
+          "runtime_evidence": {
+            "line": 1783,
+            "assignment": "*(undefined4 *)(param_1 + 0x867) = *(undefined4 *)(param_2 + 0x11b0);"
+          }
+        }
+      ],
+      "writer_stack": {
+        "buffer_offset_before_pushes": 148,
+        "extra_pushed_bytes": 0,
+        "destination_offset": 3668
+      },
+      "evidence": [
+        {
+          "file": "creature-record-decoder.txt",
+          "line": 669,
+          "excerpt": "uVar3 = *(undefined4 *)(param_1 + 0xdc0);"
+        },
+        {
+          "file": "creature-record-decoder.txt",
+          "line": 673,
+          "excerpt": "*(undefined4 *)((int)this + 0x11c0) = uVar3;"
+        },
+        {
+          "file": "phase17-creature-editor-model.txt",
+          "line": 284,
+          "excerpt": "local_14 = (int *)piVar1[0x470];"
+        },
+        {
+          "file": "phase17-creature-editor-model.txt",
+          "line": 285,
+          "excerpt": "uStack_10 = 0;"
+        },
+        {
+          "file": "phase17-creature-editor-model.txt",
+          "line": 286,
+          "excerpt": "*(double *)(this + 0x5e4) = (double)local_14 * _DAT_0050ac48;"
+        },
+        {
+          "file": "phase17-creature-editor-model.txt",
+          "line": 288,
+          "excerpt": "if (_DAT_00515820 < *(double *)(this + 0x5e4)) {"
+        },
+        {
+          "file": "phase17-creature-editor-model.txt",
+          "line": 289,
+          "excerpt": "this[0x5e4] = 0;"
+        },
+        {
+          "file": "phase17-creature-editor-model.txt",
+          "line": 290,
+          "excerpt": "this[0x5e5] = 0;"
+        },
+        {
+          "file": "phase17-creature-editor-model.txt",
+          "line": 291,
+          "excerpt": "}"
+        },
+        {
+          "file": "phase17-creature-writer-assembly.txt",
+          "first": "0x4a855b",
+          "last": "0x4a8570",
+          "instructions": [
+            "004a855b: FLD double ptr [EBX + 0x1790] ",
+            "004a8561: FMUL double ptr [0x0050ac58] ",
+            "004a8567: CALL 0x004acda8 ",
+            "004a856c: LEA ECX,[ESP + 0x7c] ",
+            "004a8570: MOV dword ptr [ESP + 0xe54],EAX "
+          ]
+        },
+        {
+          "file": "phase17-creature-first-person-init-assembly.txt",
+          "first": "0x4396e0",
+          "last": "0x4396e6",
+          "instructions": [
+            "004396e0: FLD double ptr [EAX + 0x1790] ",
+            "004396e6: FSTP double ptr [ESI + 0x90] "
+          ]
+        },
+        {
+          "file": "phase17-creature-first-person-commit-assembly.txt",
+          "first": "0x43a16d",
+          "last": "0x43a179",
+          "instructions": [
+            "0043a16d: FLD double ptr [ESI + 0x90] ",
+            "0043a173: MOV EDX,dword ptr [ESI + 0xa0] ",
+            "0043a179: FSTP double ptr [EDX + 0x1790] "
+          ]
+        },
+        {
+          "file": "phase17-creature-first-person-ddx-assembly.txt",
+          "first": "0x439856",
+          "last": "0x439875",
+          "instructions": [
+            "00439856: LEA EBX,[EDI + 0x90] ",
+            "0043985c: PUSH EBX ",
+            "0043985d: PUSH 0x741 ",
+            "00439862: PUSH ESI ",
+            "00439863: CALL 0x004e4f78 ",
+            "00439868: PUSH 0x3ff00000 ",
+            "0043986d: PUSH 0x0 ",
+            "0043986f: PUSH 0x0 ",
+            "00439871: PUSH 0x0 ",
+            "00439873: PUSH EBX ",
+            "00439874: PUSH ESI ",
+            "00439875: CALL 0x004e5038 "
+          ]
+        },
+        {
+          "file": "game-creature-type-assembly.txt",
+          "first": "0x493c67",
+          "last": "0x493c77",
+          "instructions": [
+            "00493c67: MOV EAX,dword ptr [EBP + 0x244] ",
+            "00493c6d: TEST EAX,EAX ",
+            "00493c6f: JZ 0x00493c7d ",
+            "00493c71: MOV ECX,dword ptr [EBP + 0x11b0] ",
+            "00493c77: MOV dword ptr [EBX + 0x867],ECX "
+          ]
+        }
+      ]
+    },
+    {
+      "raw_offset": 3389,
+      "raw_bytes": 1,
+      "baseline_name": "FirstPersonWalkCycleScale",
+      "raw_type": "u8",
+      "editor_intermediate_offset": 4413,
+      "editor_model_offset": 6040,
+      "raw_divisor": 1,
+      "normalization": {
+        "condition": "unsigned raw > maximum_preserved_raw",
+        "maximum_preserved_raw": 12,
+        "replacement_raw": 4,
+        "scope": "Native editor model callback0x4A01B0 after the presence-controlled assignment; not a game data constraint."
+      },
+      "native_dialog": {
+        "dialog_resource": 310,
+        "dialog_panel_offset": 152,
+        "model_pointer_panel_offset": 160,
+        "control_id": 1859,
+        "caption": "Walk Cycle Scale:",
+        "control": {
+          "id": 1859,
+          "title": "",
+          "window_class": {
+            "ordinal": 129
+          },
+          "style": "0x50810080",
+          "template_visible": true,
+          "template_disabled": false,
+          "x": 273,
+          "y": 130,
+          "width": 36,
+          "height": 13
+        },
+        "caption_control": {
+          "id": 4294967295,
+          "title": "Walk Cycle Scale:",
+          "window_class": {
+            "ordinal": 130
+          },
+          "style": "0x50020000",
+          "template_visible": true,
+          "template_disabled": false,
+          "x": 211,
+          "y": 132,
+          "width": 60,
+          "height": 9
+        },
+        "validation_range": [
+          1,
+          12
+        ],
+        "validation_is_integer": true
+      },
+      "game_storage_paths": [
+        {
+          "raw_offset": "0xd3d",
+          "raw_bytes": 1,
+          "baseline_field": "FirstPersonWalkCycleScale",
+          "intermediate_offset": "0x112d",
+          "runtime_offset": "0x86b",
+          "runtime_bytes": 4,
+          "transform": "expression",
+          "runtime_expression": "(uint)*(byte *)(param_2 + 0x112d)",
+          "converter_evidence": [
+            {
+              "line": 685,
+              "assignment": "cVar1 = param_2[0xd3d];"
+            },
+            {
+              "line": 689,
+              "assignment": "*(char *)((int)param_1 + 0x112d) = cVar1;"
+            }
+          ],
+          "runtime_evidence": {
+            "line": 1789,
+            "assignment": "*(uint *)(param_1 + 0x86b) = (uint)*(byte *)(param_2 + 0x112d);"
+          }
+        }
+      ],
+      "writer_stack": {
+        "buffer_offset_before_pushes": 148,
+        "extra_pushed_bytes": 8,
+        "destination_offset": 3545
+      },
+      "evidence": [
+        {
+          "file": "creature-record-decoder.txt",
+          "line": 675,
+          "excerpt": "cVar1 = param_1[0xd3d];"
+        },
+        {
+          "file": "creature-record-decoder.txt",
+          "line": 679,
+          "excerpt": "*(char *)((int)this + 0x113d) = cVar1;"
+        },
+        {
+          "file": "phase17-creature-editor-model.txt",
+          "line": 293,
+          "excerpt": "*(undefined1 *)(this + 0x5e6) = *(undefined1 *)((int)piVar1 + 0x113d);"
+        },
+        {
+          "file": "phase17-creature-editor-model.txt",
+          "line": 295,
+          "excerpt": "if (0xc < *(byte *)(this + 0x5e6)) {"
+        },
+        {
+          "file": "phase17-creature-editor-model.txt",
+          "line": 296,
+          "excerpt": "*(undefined1 *)(this + 0x5e6) = 4;"
+        },
+        {
+          "file": "phase17-creature-editor-model.txt",
+          "line": 297,
+          "excerpt": "}"
+        },
+        {
+          "file": "phase17-creature-writer-assembly.txt",
+          "first": "0x4a8577",
+          "last": "0x4a8582",
+          "instructions": [
+            "004a8577: MOV AL,byte ptr [EBX + 0x1798] ",
+            "004a857d: PUSH 0x0 ",
+            "004a857f: PUSH ECX ",
+            "004a8580: MOV ECX,EBX ",
+            "004a8582: MOV byte ptr [ESP + 0xdd9],AL "
+          ]
+        },
+        {
+          "file": "phase17-creature-first-person-init-assembly.txt",
+          "first": "0x4396ec",
+          "last": "0x439704",
+          "instructions": [
+            "004396ec: MOV CL,byte ptr [EAX + 0x1798] ",
+            "004396f2: PUSH 0x0 ",
+            "004396f4: MOV byte ptr [ESP + 0x14],CL ",
+            "004396f8: MOV ECX,ESI ",
+            "004396fa: MOV EDX,dword ptr [ESP + 0x14] ",
+            "004396fe: AND EDX,0xff ",
+            "00439704: MOV dword ptr [ESI + 0x98],EDX "
+          ]
+        },
+        {
+          "file": "phase17-creature-first-person-commit-assembly.txt",
+          "first": "0x43a17f",
+          "last": "0x43a18b",
+          "instructions": [
+            "0043a17f: MOV EAX,dword ptr [ESI + 0xa0] ",
+            "0043a185: MOV CL,byte ptr [ESI + 0x98] ",
+            "0043a18b: MOV byte ptr [EAX + 0x1798],CL "
+          ]
+        },
+        {
+          "file": "phase17-creature-first-person-ddx-assembly.txt",
+          "first": "0x43987a",
+          "last": "0x439894",
+          "instructions": [
+            "0043987a: LEA EBX,[EDI + 0x98] ",
+            "00439880: PUSH EBX ",
+            "00439881: PUSH 0x743 ",
+            "00439886: PUSH ESI ",
+            "00439887: CALL 0x004e4889 ",
+            "0043988c: MOV ECX,dword ptr [EBX] ",
+            "0043988e: PUSH 0xc ",
+            "00439890: PUSH 0x1 ",
+            "00439892: PUSH ECX ",
+            "00439893: PUSH ESI ",
+            "00439894: CALL 0x004e4b5d "
+          ]
+        },
+        {
+          "file": "game-creature-type-assembly.txt",
+          "first": "0x493c7d",
+          "last": "0x493c8f",
+          "instructions": [
+            "00493c7d: MOV EAX,dword ptr [EBP + 0x248] ",
+            "00493c83: TEST EAX,EAX ",
+            "00493c85: JZ 0x00493c95 ",
+            "00493c87: XOR EDX,EDX ",
+            "00493c89: MOV DL,byte ptr [EBP + 0x112d] ",
+            "00493c8f: MOV dword ptr [EBX + 0x86b],EDX "
+          ]
+        }
+      ]
+    },
+    {
+      "raw_offset": 3321,
+      "raw_bytes": 4,
+      "baseline_name": "ShotDelay",
+      "raw_type": "u32",
+      "editor_intermediate_offset": 4345,
+      "editor_model_offset": 5648,
+      "raw_divisor": 4096,
+      "normalization": {
+        "condition": "unsigned raw > maximum_preserved_raw",
+        "maximum_preserved_raw": 40960000,
+        "replacement_raw": 0,
+        "scope": "Native editor model callback0x4A01B0 after the presence-controlled assignment; not a game data constraint."
+      },
+      "native_dialog": null,
+      "game_storage_paths": [
+        {
+          "raw_offset": "0xcf9",
+          "raw_bytes": 4,
+          "baseline_field": "ShotDelay",
+          "intermediate_offset": "0x10e9",
+          "runtime_offset": "0x5ca",
+          "runtime_bytes": 4,
+          "transform": "expression",
+          "runtime_expression": "*(int *)(param_2 + 0x10e9) * uVar19 >> 0xc",
+          "converter_evidence": [
+            {
+              "line": 423,
+              "assignment": "uVar6 = *(undefined4 *)(param_2 + 0xcf9);"
+            },
+            {
+              "line": 427,
+              "assignment": "*(undefined4 *)((int)param_1 + 0x10e9) = uVar6;"
+            }
+          ],
+          "runtime_evidence": {
+            "line": 1479,
+            "assignment": "*(uint *)(param_1 + 0x5ca) = *(int *)(param_2 + 0x10e9) * uVar19 >> 0xc;"
+          }
+        }
+      ],
+      "writer_stack": {
+        "buffer_offset_before_pushes": 148,
+        "extra_pushed_bytes": 0,
+        "destination_offset": 3469
+      },
+      "evidence": [
+        {
+          "file": "creature-record-decoder.txt",
+          "line": 413,
+          "excerpt": "uVar3 = *(undefined4 *)(param_1 + 0xcf9);"
+        },
+        {
+          "file": "creature-record-decoder.txt",
+          "line": 417,
+          "excerpt": "*(undefined4 *)((int)this + 0x10f9) = uVar3;"
+        },
+        {
+          "file": "phase17-creature-editor-model.txt",
+          "line": 315,
+          "excerpt": "local_14 = *(int **)((int)piVar1 + 0x10f9);"
+        },
+        {
+          "file": "phase17-creature-editor-model.txt",
+          "line": 316,
+          "excerpt": "uStack_10 = 0;"
+        },
+        {
+          "file": "phase17-creature-editor-model.txt",
+          "line": 317,
+          "excerpt": "*(double *)(this + 0x584) = (double)local_14 * _DAT_0050ac48;"
+        },
+        {
+          "file": "phase17-creature-editor-model.txt",
+          "line": 319,
+          "excerpt": "if (_DAT_005163a0 < *(double *)(this + 0x584)) {"
+        },
+        {
+          "file": "phase17-creature-editor-model.txt",
+          "line": 320,
+          "excerpt": "this[0x584] = 0;"
+        },
+        {
+          "file": "phase17-creature-editor-model.txt",
+          "line": 321,
+          "excerpt": "this[0x585] = 0;"
+        },
+        {
+          "file": "phase17-creature-editor-model.txt",
+          "line": 322,
+          "excerpt": "}"
+        },
+        {
+          "file": "phase17-creature-writer-assembly.txt",
+          "first": "0x4a8406",
+          "last": "0x4a8417",
+          "instructions": [
+            "004a8406: FLD double ptr [EBX + 0x1610] ",
+            "004a840c: FMUL double ptr [0x0050ac58] ",
+            "004a8412: CALL 0x004acda8 ",
+            "004a8417: MOV dword ptr [ESP + 0xd8d],EAX "
+          ]
+        }
+      ]
+    }
+  ],
+  "editor_constants": [
+    {
+      "address": 5286984,
+      "value": 0.000244140625,
+      "bytes_hex": "000000000000303f",
+      "sha256": "5d39fb0c9ed2b5c26abe8098a3612a5f93d412f4cdedb1b5cdc207df28c8c999"
+    },
+    {
+      "address": 5287000,
+      "value": 4096.0,
+      "bytes_hex": "000000000000b040",
+      "sha256": "46d7322f14ccdacd8b08d3f772527f9cbeba5bca01ff775b05fe562c237e0d72"
+    },
+    {
+      "address": 5330976,
+      "value": 1.0,
+      "bytes_hex": "000000000000f03f",
+      "sha256": "6c3c396ed6b5c36dcae172271f462051b1266b851e92df3deea8ac65478fd712"
+    },
+    {
+      "address": 5333920,
+      "value": 10000.0,
+      "bytes_hex": "000000000088c340",
+      "sha256": "2d6351abbe718b4f19aa015c71600a1bb880f4633b6b00461fdf85004d3e5eff"
+    }
+  ],
+  "dialog": {
+    "resource": [
+      5,
+      310,
+      2057
+    ],
+    "title": "Modify 1st Person Properties For \"%s\"",
+    "resource_sha256": "b5f11d0617e90d090a925928d499ab3b7203e789190ff93fa68003bb6705ca3e",
+    "constructor": 4428448,
+    "init": 4428912,
+    "ddx": 4429680,
+    "commit": 4431968,
+    "constructor_evidence": {
+      "file": "phase17-creature-f55-ui-constructor.txt",
+      "line": 5,
+      "excerpt": "FUN_004d9a8b(this,0x136,param_2);"
+    },
+    "commit_update_call": {
+      "file": "phase17-creature-first-person-commit-assembly.txt",
+      "first": "0x43a060",
+      "last": "0x43a06a",
+      "instructions": [
+        "0043a060: PUSH ESI ",
+        "0043a061: MOV ESI,ECX ",
+        "0043a063: PUSH 0x1 ",
+        "0043a065: CALL 0x004dc7f3 ",
+        "0043a06a: MOV EAX,dword ptr [ESI + 0x5c] "
+      ]
+    }
+  },
+  "writer_buffer_evidence": {
+    "file": "phase17-creature-writer-assembly.txt",
+    "first": "0x4a8b7d",
+    "last": "0x4a8b84",
+    "instructions": [
+      "004a8b7d: LEA EAX,[ESP + 0x94] ",
+      "004a8b84: PUSH 0x15a1 "
+    ]
+  },
+  "limitations": [
+    "Static native model/DDX/writer evidence; no modified-data gameplay or native emulation.",
+    "The byte value0 is preserved by the callback but falls outside the declared first-person DDX range1..12.",
+    "The commit caller does not test the UpdateData return before subsequent writes; full dialog failure behavior is not established.",
+    "A larger-than-maximum value is reset, not saturated to the upper bound.",
+    "Native editor callback normalization must not be applied implicitly by the independent lossless codec.",
+    "Shot Delay GUI control/range and gameplay consequences are not established in this pass.",
+    "File-model offsets, first-person dialog offsets and main creature panel offsets identify distinct structures."
+  ]
+}

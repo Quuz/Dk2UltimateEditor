@@ -1,0 +1,30 @@
+{
+  "phase": 54,
+  "date": "2026-10-27",
+  "native_emulations": 32,
+  "composed_full_keeper_factory_constructor_initializer": 16,
+  "primary_complete_pe_ranges": 11,
+  "entire_shot_instance_bytes_compared": 371,
+  "api_boundary_checks": 13,
+  "whole_file_roundtrips": 82,
+  "shot_records": 5551,
+  "exact_in_memory_container_patches": 16653,
+  "original_executables_unchanged": 4,
+  "format_package_components": 65,
+  "research_writes_to_game_data": 0,
+  "modified_gameplay_runs": 0,
+  "logging": {
+    "max_bytes": 16777216,
+    "backups": 2,
+    "recovery": "phase54-log-recovery.json"
+  },
+  "limitations": [
+    "Exact DX binary only;no old/RC3 runtime equivalence asserted.",
+    "Full native factory/ctor/init execute, but entity base,ownership,movement,render,range,sound and providers are explicit fixtures. This is not a live-game casting test.",
+    "Graphics success branch and extra initializer branch for definitionWORD6D!=0 are not exercised. All fixture definitions use6D=0.",
+    "Synthetic KeeperID5 avoids CreateImp cost and healing branches. ProcessType9 versus0 distinguishes definitions;no Shot ProcessType callback or tick executes.",
+    "C8 purpose,CreatureSpells alternative replacement and other existing unresolved fields remain open.",
+    "Debug v1/v2 failures exposed fixture address relocation and upper16 owner-slot capture issues;only corrected v3 results are included. Native owner argument is a WORD;upper slot bits are not an owner value.",
+    "Research log recovery and rotation are maintenance only,not format-decoding progress. Original game data and all four EXEs are unchanged."
+  ]
+}

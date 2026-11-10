@@ -1,0 +1,41 @@
+{
+  "scope": "Replay named historical DX searches without overwriting their snapshots.\n\nOnly the data-memory-read classifier and output/input snapshot names change.\nUnderlying alias/CFG bounds and source maps remain historical and incomplete.\n",
+  "replays": [
+    {
+      "script": "scan_interprocedural_creature_fields.py",
+      "source_sha256": "91997e0f7988d5cb6b81383c86014e3a042b89916bc9486779490d77f65c011d",
+      "classifier": "native_memory_access.reads_memory",
+      "classifier_substitutions": 1,
+      "snapshot_replacements": {
+        "phase57-this-read-summaries.json": "phase65-this-read-summaries-v2.json",
+        "phase57-interprocedural-creature-leads.json": "phase65-interprocedural-creature-leads-v2.json"
+      },
+      "transformed_source_sha256": "57194d472c45f2a01280da128f7f216086d3bf4f26a3f7fc6b3845641d0522ae"
+    },
+    {
+      "script": "scan_typed_definition_consumers.py",
+      "source_sha256": "d42788ca943e0e31dd2a0d9d7eff448d04a85af8577303ea2eb955491c3b694b",
+      "classifier": "native_memory_access.reads_memory",
+      "classifier_substitutions": 1,
+      "snapshot_replacements": {
+        "phase57-this-read-summaries.json": "phase65-this-read-summaries-v2.json",
+        "phase59-typed-definition-leads.json": "phase65-typed-definition-leads-v2.json"
+      },
+      "transformed_source_sha256": "969daf0bc617f6384e91191d3a772d2c6d9fe0606885094e15f383dd2b6c541d"
+    }
+  ],
+  "outputs": [
+    {
+      "file": "phase65-this-read-summaries-v2.json",
+      "sha256": "418739de7c4bce343cbc2c5a3c6c544ab59853a16ed7557d99e97e7cb00b6894"
+    },
+    {
+      "file": "phase65-interprocedural-creature-leads-v2.json",
+      "sha256": "4a2887fd1b98e1d0324595d05b08858a5650774f6b4962714cea3715ca0701c5"
+    },
+    {
+      "file": "phase65-typed-definition-leads-v2.json",
+      "sha256": "3ac74096f3c4c4a014d5309aff417c72be54baf16f49bd6da0891583f8f55b0e"
+    }
+  ]
+}

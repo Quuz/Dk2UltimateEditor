@@ -1,0 +1,328 @@
+{
+  "phase": 192,
+  "replays": [
+    {
+      "case": {
+        "name": "source40",
+        "source_record": true
+      },
+      "file": "ghidra\\phase192-conversion-native-source40-271ff08a3e3e.json",
+      "sha256": "f952e8d57e791a5adbf07255e5c502032e9b72bc4f3205048f632d6f7ebd947f",
+      "outcome": {
+        "score_before_bits": 10,
+        "raw_value_bits": 40,
+        "score_after_bits": 50,
+        "scoring_gate": true,
+        "new_owner_tag": 3,
+        "new_owner_pointer": 402923520,
+        "HP": 1000,
+        "raw_and_guards_preserved": true,
+        "original_conversion_count": 1,
+        "native_steps": 69603
+      }
+    },
+    {
+      "case": {
+        "name": "zero",
+        "value": 0
+      },
+      "file": "ghidra\\phase192-conversion-native-zero-b923afe6b68b.json",
+      "sha256": "a20471a8f16a9dd5537bfba97a2e58bfc967bc1f0352a721ff97dc6c46b6c377",
+      "outcome": {
+        "score_before_bits": 10,
+        "raw_value_bits": 0,
+        "score_after_bits": 10,
+        "scoring_gate": true,
+        "new_owner_tag": 3,
+        "new_owner_pointer": 402923520,
+        "HP": 1000,
+        "raw_and_guards_preserved": true,
+        "original_conversion_count": 1,
+        "native_steps": 69603
+      }
+    },
+    {
+      "case": {
+        "name": "positive123",
+        "value": 123
+      },
+      "file": "ghidra\\phase192-conversion-native-positive123-cb472d14213b.json",
+      "sha256": "247775ae4691288fd46769aadf9223f5cd87a05c783f3c1507e9a5d642dde6c9",
+      "outcome": {
+        "score_before_bits": 10,
+        "raw_value_bits": 123,
+        "score_after_bits": 133,
+        "scoring_gate": true,
+        "new_owner_tag": 3,
+        "new_owner_pointer": 402923520,
+        "HP": 1000,
+        "raw_and_guards_preserved": true,
+        "original_conversion_count": 1,
+        "native_steps": 69603
+      }
+    },
+    {
+      "case": {
+        "name": "negative5",
+        "value": -5
+      },
+      "file": "ghidra\\phase192-conversion-native-negative5-61edf4b19123.json",
+      "sha256": "cc74b12a95f994d8c34c090e6cfe94dbc2ae2ed26d63bbf8a6ffb0bfe420c8ec",
+      "outcome": {
+        "score_before_bits": 10,
+        "raw_value_bits": 4294967291,
+        "score_after_bits": 5,
+        "scoring_gate": true,
+        "new_owner_tag": 3,
+        "new_owner_pointer": 402923520,
+        "HP": 1000,
+        "raw_and_guards_preserved": true,
+        "original_conversion_count": 1,
+        "native_steps": 69603
+      }
+    },
+    {
+      "case": {
+        "name": "negative-clamp",
+        "value": -40
+      },
+      "file": "ghidra\\phase192-conversion-native-negative-clamp-e8a29e297f60.json",
+      "sha256": "5ba4d708d8ebbb3acb479a52d69893b2ca3a14fe0a138db4c027e2f92bc2a5c2",
+      "outcome": {
+        "score_before_bits": 10,
+        "raw_value_bits": 4294967256,
+        "score_after_bits": 0,
+        "scoring_gate": true,
+        "new_owner_tag": 3,
+        "new_owner_pointer": 402923520,
+        "HP": 1000,
+        "raw_and_guards_preserved": true,
+        "original_conversion_count": 1,
+        "native_steps": 69604
+      }
+    },
+    {
+      "case": {
+        "name": "int-min",
+        "value": -2147483648
+      },
+      "file": "ghidra\\phase192-conversion-native-int-min-0deb0658ca58.json",
+      "sha256": "3602adb47889515b569aec7394708655c55e28a8b403d02b7d50276cb4ca21d4",
+      "outcome": {
+        "score_before_bits": 10,
+        "raw_value_bits": 2147483648,
+        "score_after_bits": 0,
+        "scoring_gate": true,
+        "new_owner_tag": 3,
+        "new_owner_pointer": 402923520,
+        "HP": 1000,
+        "raw_and_guards_preserved": true,
+        "original_conversion_count": 1,
+        "native_steps": 69604
+      }
+    },
+    {
+      "case": {
+        "name": "positive-overflow",
+        "score": 2147483647,
+        "value": 1
+      },
+      "file": "ghidra\\phase192-conversion-native-positive-overflow-ca2e57c5b977.json",
+      "sha256": "5e537dbabe054cf4086b0444107a7f1e6b44905927cb027556ebc0dffd24cda0",
+      "outcome": {
+        "score_before_bits": 2147483647,
+        "raw_value_bits": 1,
+        "score_after_bits": 0,
+        "scoring_gate": true,
+        "new_owner_tag": 3,
+        "new_owner_pointer": 402923520,
+        "HP": 1000,
+        "raw_and_guards_preserved": true,
+        "original_conversion_count": 1,
+        "native_steps": 69604
+      }
+    },
+    {
+      "case": {
+        "name": "negative-wrap",
+        "score": 2147483648,
+        "value": -1
+      },
+      "file": "ghidra\\phase192-conversion-native-negative-wrap-ad5d427d3f1c.json",
+      "sha256": "ea661c5de09a82013b4cc502d528b74260e713eccbbf938740885cab46e77631",
+      "outcome": {
+        "score_before_bits": 2147483648,
+        "raw_value_bits": 4294967295,
+        "score_after_bits": 2147483647,
+        "scoring_gate": true,
+        "new_owner_tag": 3,
+        "new_owner_pointer": 402923520,
+        "HP": 1000,
+        "raw_and_guards_preserved": true,
+        "original_conversion_count": 1,
+        "native_steps": 69603
+      }
+    },
+    {
+      "case": {
+        "name": "negative-initial-stays-negative",
+        "score": 2147483648,
+        "value": 0
+      },
+      "file": "ghidra\\phase192-conversion-native-negative-initial-stays-negative-3862b93f29c0.json",
+      "sha256": "b2cc8fe1d68383d3b26d01664d1b3500ce1938a4af54e408afc7dd3fdc09311d",
+      "outcome": {
+        "score_before_bits": 2147483648,
+        "raw_value_bits": 0,
+        "score_after_bits": 0,
+        "scoring_gate": true,
+        "new_owner_tag": 3,
+        "new_owner_pointer": 402923520,
+        "HP": 1000,
+        "raw_and_guards_preserved": true,
+        "original_conversion_count": 1,
+        "native_steps": 69604
+      }
+    },
+    {
+      "case": {
+        "name": "other-mode",
+        "mode": 3
+      },
+      "file": "ghidra\\phase192-conversion-native-other-mode-65417e22e2a3.json",
+      "sha256": "69ced0579a0f8940f07a6cccb6a037398c230790bf9f8106485ba7ecdb529565",
+      "outcome": {
+        "score_before_bits": 10,
+        "raw_value_bits": 40,
+        "score_after_bits": 10,
+        "scoring_gate": false,
+        "new_owner_tag": 3,
+        "new_owner_pointer": 402923520,
+        "HP": 1000,
+        "raw_and_guards_preserved": true,
+        "original_conversion_count": 1,
+        "native_steps": 69581
+      }
+    },
+    {
+      "case": {
+        "name": "mode-zero",
+        "mode": 0
+      },
+      "file": "ghidra\\phase192-conversion-native-mode-zero-903c3ab85cbe.json",
+      "sha256": "cf4cd9d17d959ff0dd9fc1d479857c51e4fb4ce7663d1ccd58eea5d33eb97e05",
+      "outcome": {
+        "score_before_bits": 10,
+        "raw_value_bits": 40,
+        "score_after_bits": 10,
+        "scoring_gate": false,
+        "new_owner_tag": 3,
+        "new_owner_pointer": 402923520,
+        "HP": 1000,
+        "raw_and_guards_preserved": true,
+        "original_conversion_count": 1,
+        "native_steps": 69581
+      }
+    },
+    {
+      "case": {
+        "name": "player0",
+        "player_type": 0
+      },
+      "file": "ghidra\\phase192-conversion-native-player0-a4ec5ba02535.json",
+      "sha256": "9509ca90888fe5a989ebcd03e9570bab265c96d7661e3945daaf374f2871e8d3",
+      "outcome": {
+        "score_before_bits": 10,
+        "raw_value_bits": 40,
+        "score_after_bits": 10,
+        "scoring_gate": false,
+        "new_owner_tag": 3,
+        "new_owner_pointer": 402923520,
+        "HP": 1000,
+        "raw_and_guards_preserved": true,
+        "original_conversion_count": 1,
+        "native_steps": 69592
+      }
+    },
+    {
+      "case": {
+        "name": "player1",
+        "player_type": 1
+      },
+      "file": "ghidra\\phase192-conversion-native-player1-95dac3176d0d.json",
+      "sha256": "92d034aa0f510b31fc4ae8ac2cf5c59346bbd02959ef1e0d4a063e36554c7dc7",
+      "outcome": {
+        "score_before_bits": 10,
+        "raw_value_bits": 40,
+        "score_after_bits": 10,
+        "scoring_gate": false,
+        "new_owner_tag": 3,
+        "new_owner_pointer": 402923520,
+        "HP": 1000,
+        "raw_and_guards_preserved": true,
+        "original_conversion_count": 1,
+        "native_steps": 69592
+      }
+    },
+    {
+      "case": {
+        "name": "player2",
+        "player_type": 2
+      },
+      "file": "ghidra\\phase192-conversion-native-player2-98591b5b1167.json",
+      "sha256": "1c9bf9b4d82b2aa0ded1545d4941d3c634389b690418d162324ee187fb7cf90d",
+      "outcome": {
+        "score_before_bits": 10,
+        "raw_value_bits": 40,
+        "score_after_bits": 10,
+        "scoring_gate": false,
+        "new_owner_tag": 3,
+        "new_owner_pointer": 402923520,
+        "HP": 1000,
+        "raw_and_guards_preserved": true,
+        "original_conversion_count": 1,
+        "native_steps": 69592
+      }
+    },
+    {
+      "case": {
+        "name": "player4",
+        "player_type": 4
+      },
+      "file": "ghidra\\phase192-conversion-native-player4-6cb9b998b035.json",
+      "sha256": "ad7ede17c20565cddf897e51c5e16b5ae91850d9d337ec7731806d049e86ceb3",
+      "outcome": {
+        "score_before_bits": 10,
+        "raw_value_bits": 40,
+        "score_after_bits": 50,
+        "scoring_gate": true,
+        "new_owner_tag": 3,
+        "new_owner_pointer": 402923520,
+        "HP": 1000,
+        "raw_and_guards_preserved": true,
+        "original_conversion_count": 1,
+        "native_steps": 69603
+      }
+    },
+    {
+      "case": {
+        "name": "player255",
+        "player_type": 255
+      },
+      "file": "ghidra\\phase192-conversion-native-player255-ebea5f613db9.json",
+      "sha256": "835cf3446f01af4d1c359411670f06aa013ac584faa320154a82e99d835f0a0e",
+      "outcome": {
+        "score_before_bits": 10,
+        "raw_value_bits": 40,
+        "score_after_bits": 50,
+        "scoring_gate": true,
+        "new_owner_tag": 3,
+        "new_owner_pointer": 402923520,
+        "HP": 1000,
+        "raw_and_guards_preserved": true,
+        "original_conversion_count": 1,
+        "native_steps": 69603
+      }
+    }
+  ]
+}

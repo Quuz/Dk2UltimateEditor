@@ -1,0 +1,3497 @@
+{
+  "scope": "Producer-anchored Object/Trap definition leads, not automatic type proofs.\n\nRoots: loads of entity+12D/F7, exact world lookup calls, or matching world vslot.\nRoot structure identity must still be checked in primary code. Bounded CFG,\nconstant aliases and stack spills, plus one cached direct-thiscall composition.\nNo numeric loop bounds, dynamic indices, arbitrary stack-pointee calls or full\ninterprocedural return analysis. Search absence cannot establish global non-use.\n",
+  "program_sha256": "d7a8b854e4e4f02709eba271bead6fe2307dd6e332b5a96e70857e5b0e19fb8a",
+  "mapped_spans": 8605,
+  "world_vslots": {
+    "0x188": "Objects",
+    "0x160": "Traps"
+  },
+  "producer_roots": [
+    {
+      "function": "0x4075e0",
+      "name": "handleLeftClick",
+      "seed": "0x407aeb",
+      "instruction": "mov ebp, dword ptr [ebx + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x408ee0",
+      "name": "handleRightClick",
+      "seed": "0x4093a3",
+      "instruction": "mov edx, dword ptr [ecx + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x408ee0",
+      "name": "handleRightClick",
+      "seed": "0x40941a",
+      "instruction": "mov ecx, dword ptr [eax + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4098d0",
+      "name": "fun_4098D0",
+      "seed": "0x409938",
+      "instruction": "mov edx, dword ptr [eax + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x40b4f0",
+      "name": "sub_40B4F0",
+      "seed": "0x40b56a",
+      "instruction": "call dword ptr [eax + 0x160]",
+      "family": "Traps",
+      "producer": "vslot-return-hint"
+    },
+    {
+      "function": "0x40b600",
+      "name": "sub_40B600",
+      "seed": "0x40b746",
+      "instruction": "mov ecx, dword ptr [eax + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x40b600",
+      "name": "sub_40B600",
+      "seed": "0x40b770",
+      "instruction": "mov ecx, dword ptr [eax + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x40c290",
+      "name": "sub_40C290",
+      "seed": "0x40c4c0",
+      "instruction": "mov ecx, dword ptr [edi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x40c290",
+      "name": "sub_40C290",
+      "seed": "0x40c4f7",
+      "instruction": "mov edx, dword ptr [edi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x40d660",
+      "name": "sub_40D660",
+      "seed": "0x40d660",
+      "instruction": "mov eax, dword ptr [ecx + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x40d670",
+      "name": "sub_40D670",
+      "seed": "0x40d820",
+      "instruction": "mov eax, dword ptr [eax + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x40e3f0",
+      "name": "cursor2_40E3F0",
+      "seed": "0x40e4d7",
+      "instruction": "mov edx, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x410de0",
+      "name": "fun_f34_410DE0",
+      "seed": "0x410f83",
+      "instruction": "call dword ptr [edx + 0x160]",
+      "family": "Traps",
+      "producer": "vslot-return-hint"
+    },
+    {
+      "function": "0x411080",
+      "name": "sub_411080",
+      "seed": "0x4110d9",
+      "instruction": "call dword ptr [eax + 0x160]",
+      "family": "Traps",
+      "producer": "vslot-return-hint"
+    },
+    {
+      "function": "0x411140",
+      "name": "CButton_handleLeftClick_411140",
+      "seed": "0x411215",
+      "instruction": "mov ebp, dword ptr [eax + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x411690",
+      "name": "sub_411690",
+      "seed": "0x411742",
+      "instruction": "mov edi, dword ptr [eax + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x411790",
+      "name": "sub_411790",
+      "seed": "0x41184e",
+      "instruction": "mov ebp, dword ptr [eax + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x412fc0",
+      "name": "CButton_render_412FC0",
+      "seed": "0x4132ef",
+      "instruction": "mov ecx, dword ptr [eax + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x412fc0",
+      "name": "CButton_render_412FC0",
+      "seed": "0x413673",
+      "instruction": "call dword ptr [edx + 0x160]",
+      "family": "Traps",
+      "producer": "vslot-return-hint"
+    },
+    {
+      "function": "0x416bb0",
+      "name": "CPlayer_sub_416BB0",
+      "seed": "0x416be4",
+      "instruction": "mov edi, dword ptr [ecx + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x416e20",
+      "name": "fun_f34_416E20",
+      "seed": "0x416ee7",
+      "instruction": "call dword ptr [edx + 0x160]",
+      "family": "Traps",
+      "producer": "vslot-return-hint"
+    },
+    {
+      "function": "0x41cc50",
+      "name": "sub_41CC50",
+      "seed": "0x41cfb4",
+      "instruction": "mov edx, dword ptr [ecx + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x41cc50",
+      "name": "sub_41CC50",
+      "seed": "0x41da1a",
+      "instruction": "mov esi, dword ptr [eax + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x426a00",
+      "name": "CButton_handleRightClick_426A00",
+      "seed": "0x426a3c",
+      "instruction": "mov edx, dword ptr [eax + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x426b90",
+      "name": "fun_f34_426B90",
+      "seed": "0x426bbc",
+      "instruction": "mov edx, dword ptr [esi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x42d1f0",
+      "name": "sub_42D1F0",
+      "seed": "0x42d308",
+      "instruction": "mov edx, dword ptr [eax + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x42d4a0",
+      "name": "sub_42D4A0",
+      "seed": "0x42d62c",
+      "instruction": "mov edx, dword ptr [eax + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x42d4a0",
+      "name": "sub_42D4A0",
+      "seed": "0x42d6a0",
+      "instruction": "mov ecx, dword ptr [eax + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x42d4a0",
+      "name": "sub_42D4A0",
+      "seed": "0x42d6f8",
+      "instruction": "mov ecx, dword ptr [eax + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x42d820",
+      "name": "sub_42D820",
+      "seed": "0x42d8e1",
+      "instruction": "mov ecx, dword ptr [edi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x42d820",
+      "name": "sub_42D820",
+      "seed": "0x42d9d4",
+      "instruction": "call dword ptr [eax + 0x160]",
+      "family": "Traps",
+      "producer": "vslot-return-hint"
+    },
+    {
+      "function": "0x42ea70",
+      "name": "sub_42EA70",
+      "seed": "0x42eb97",
+      "instruction": "call dword ptr [eax + 0x160]",
+      "family": "Traps",
+      "producer": "vslot-return-hint"
+    },
+    {
+      "function": "0x42ea70",
+      "name": "sub_42EA70",
+      "seed": "0x42ebe1",
+      "instruction": "mov ecx, dword ptr [eax + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4488a0",
+      "name": "idx_handler_11",
+      "seed": "0x44892c",
+      "instruction": "mov edx, dword ptr [eax + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x44ace0",
+      "name": "sub_44ACE0",
+      "seed": "0x44b574",
+      "instruction": "mov edx, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x44bed0",
+      "name": "sub_44BED0",
+      "seed": "0x44c516",
+      "instruction": "mov ecx, dword ptr [edi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x44dec0",
+      "name": "sub_44DEC0",
+      "seed": "0x44e000",
+      "instruction": "mov edx, dword ptr [ecx + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x44dec0",
+      "name": "sub_44DEC0",
+      "seed": "0x44e08a",
+      "instruction": "mov edx, dword ptr [ecx + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x44fc40",
+      "name": "tickSlab",
+      "seed": "0x450049",
+      "instruction": "mov ecx, dword ptr [ebx + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x450470",
+      "name": "CMap_450470",
+      "seed": "0x450538",
+      "instruction": "mov edx, dword ptr [eax + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x450470",
+      "name": "CMap_450470",
+      "seed": "0x450690",
+      "instruction": "mov edx, dword ptr [eax + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x450be0",
+      "name": "checkAllowObjectToDrop_450BE0",
+      "seed": "0x450c3f",
+      "instruction": "call dword ptr [edx + 0x188]",
+      "family": "Objects",
+      "producer": "vslot-return-hint"
+    },
+    {
+      "function": "0x4511a0",
+      "name": "fun_4511A0",
+      "seed": "0x451237",
+      "instruction": "mov ecx, dword ptr [ecx + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4511a0",
+      "name": "fun_4511A0",
+      "seed": "0x4512aa",
+      "instruction": "mov esi, dword ptr [esi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4529a0",
+      "name": "fun_4529A0",
+      "seed": "0x452a12",
+      "instruction": "mov edx, dword ptr [eax + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x453600",
+      "name": "sub_453600",
+      "seed": "0x453624",
+      "instruction": "mov ebx, dword ptr [eax + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x453760",
+      "name": "sub_453760",
+      "seed": "0x4537a6",
+      "instruction": "mov ebx, dword ptr [eax + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x453c10",
+      "name": "sub_453C10",
+      "seed": "0x453c88",
+      "instruction": "mov ecx, dword ptr [eax + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x456500",
+      "name": "CasinoState_cpp_456500",
+      "seed": "0x4565a0",
+      "instruction": "mov eax, dword ptr [ebp + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x456690",
+      "name": "CasinoState_cpp_456690",
+      "seed": "0x4566f4",
+      "instruction": "mov edx, dword ptr [eax + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x45cb00",
+      "name": "fun_45CB00",
+      "seed": "0x45dfef",
+      "instruction": "mov edx, dword ptr [ecx + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x463190",
+      "name": "GuardState_cpp_463190",
+      "seed": "0x4631b8",
+      "instruction": "mov ebx, dword ptr [eax + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x463190",
+      "name": "GuardState_cpp_463190",
+      "seed": "0x463230",
+      "instruction": "mov eax, dword ptr [esi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x463760",
+      "name": "sub_463760",
+      "seed": "0x463841",
+      "instruction": "mov eax, dword ptr [edi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x464a80",
+      "name": "fun_464A80",
+      "seed": "0x464b48",
+      "instruction": "mov eax, dword ptr [edi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x464a80",
+      "name": "fun_464A80",
+      "seed": "0x464c14",
+      "instruction": "mov ecx, dword ptr [edi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x464a80",
+      "name": "fun_464A80",
+      "seed": "0x464db8",
+      "instruction": "mov eax, dword ptr [edx + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x464a80",
+      "name": "fun_464A80",
+      "seed": "0x464f1c",
+      "instruction": "mov ecx, dword ptr [edi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x464a80",
+      "name": "fun_464A80",
+      "seed": "0x465007",
+      "instruction": "mov eax, dword ptr [edx + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x464a80",
+      "name": "fun_464A80",
+      "seed": "0x465082",
+      "instruction": "mov eax, dword ptr [edx + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x464a80",
+      "name": "fun_464A80",
+      "seed": "0x465107",
+      "instruction": "mov ecx, dword ptr [edi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x464a80",
+      "name": "fun_464A80",
+      "seed": "0x465167",
+      "instruction": "mov eax, dword ptr [edi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x466ac0",
+      "name": "takingGoldToTheTreasury_29_466AC0",
+      "seed": "0x466b72",
+      "instruction": "call dword ptr [eax + 0x188]",
+      "family": "Objects",
+      "producer": "vslot-return-hint"
+    },
+    {
+      "function": "0x466bc0",
+      "name": "sub_466BC0",
+      "seed": "0x466c69",
+      "instruction": "mov eax, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x466cb0",
+      "name": "sub_466CB0",
+      "seed": "0x466d08",
+      "instruction": "mov ecx, dword ptr [ebx + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x466df0",
+      "name": "sub_466DF0",
+      "seed": "0x466e46",
+      "instruction": "mov ecx, dword ptr [edi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x466df0",
+      "name": "sub_466DF0",
+      "seed": "0x466e9d",
+      "instruction": "mov ecx, dword ptr [edi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x466f30",
+      "name": "sub_466F30",
+      "seed": "0x466f88",
+      "instruction": "mov ecx, dword ptr [ebx + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x467040",
+      "name": "sub_467040",
+      "seed": "0x467094",
+      "instruction": "mov eax, dword ptr [edi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4671b0",
+      "name": "sub_4671B0",
+      "seed": "0x46722d",
+      "instruction": "mov edx, dword ptr [ebx + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4671b0",
+      "name": "sub_4671B0",
+      "seed": "0x467245",
+      "instruction": "mov ecx, dword ptr [esi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4672f0",
+      "name": "sub_4672F0",
+      "seed": "0x467344",
+      "instruction": "mov eax, dword ptr [edi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x467460",
+      "name": "sub_467460",
+      "seed": "0x467506",
+      "instruction": "mov edx, dword ptr [ebx + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x467460",
+      "name": "sub_467460",
+      "seed": "0x46751f",
+      "instruction": "mov ecx, dword ptr [esi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x467460",
+      "name": "sub_467460",
+      "seed": "0x46759d",
+      "instruction": "mov ecx, dword ptr [esi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x468910",
+      "name": "sub_468910",
+      "seed": "0x46898e",
+      "instruction": "mov eax, dword ptr [ebx + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x468910",
+      "name": "sub_468910",
+      "seed": "0x468b3c",
+      "instruction": "mov edx, dword ptr [edi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x46b6d0",
+      "name": "fun_46B6D0",
+      "seed": "0x46b776",
+      "instruction": "mov edx, dword ptr [edi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x46b9c0",
+      "name": "fun_46B9C0",
+      "seed": "0x46ba71",
+      "instruction": "mov ecx, dword ptr [edi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x46b9c0",
+      "name": "fun_46B9C0",
+      "seed": "0x46bb0e",
+      "instruction": "mov ecx, dword ptr [edi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x46bd70",
+      "name": "sub_46BD70",
+      "seed": "0x46be78",
+      "instruction": "mov ecx, dword ptr [ebx + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x46bd70",
+      "name": "sub_46BD70",
+      "seed": "0x46bfc5",
+      "instruction": "mov eax, dword ptr [ebx + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x46bd70",
+      "name": "sub_46BD70",
+      "seed": "0x46c0c1",
+      "instruction": "mov ecx, dword ptr [ebx + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x46bd70",
+      "name": "sub_46BD70",
+      "seed": "0x46c13b",
+      "instruction": "mov eax, dword ptr [ebx + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x46c1a0",
+      "name": "fun_46C1A0",
+      "seed": "0x46c2e2",
+      "instruction": "mov edx, dword ptr [edi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x46c1a0",
+      "name": "fun_46C1A0",
+      "seed": "0x46c505",
+      "instruction": "mov ecx, dword ptr [edi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x46c1a0",
+      "name": "fun_46C1A0",
+      "seed": "0x46c64b",
+      "instruction": "mov eax, dword ptr [edi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x46c1a0",
+      "name": "fun_46C1A0",
+      "seed": "0x46c6be",
+      "instruction": "mov edx, dword ptr [edi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x46e480",
+      "name": "sub_46E480",
+      "seed": "0x46e4c2",
+      "instruction": "mov eax, dword ptr [ebx + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x46f390",
+      "name": "gotoMakeAHome",
+      "seed": "0x46f3ec",
+      "instruction": "call dword ptr [edx + 0x188]",
+      "family": "Objects",
+      "producer": "vslot-return-hint"
+    },
+    {
+      "function": "0x46fa60",
+      "name": "sleeping_83_46FA60",
+      "seed": "0x46fb6b",
+      "instruction": "mov ebp, dword ptr [edi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x46fe90",
+      "name": "sleeping_84_46FE90",
+      "seed": "0x46fef3",
+      "instruction": "mov ebp, dword ptr [edi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x46fe90",
+      "name": "sleeping_84_46FE90",
+      "seed": "0x46ff74",
+      "instruction": "mov ebp, dword ptr [edi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x470110",
+      "name": "ManufactureState_cpp_470110",
+      "seed": "0x470205",
+      "instruction": "mov eax, dword ptr [edi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x470110",
+      "name": "ManufactureState_cpp_470110",
+      "seed": "0x4702ee",
+      "instruction": "mov eax, dword ptr [ebp + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x470560",
+      "name": "sub_470560",
+      "seed": "0x470661",
+      "instruction": "mov eax, dword ptr [ecx + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x470560",
+      "name": "sub_470560",
+      "seed": "0x4706f6",
+      "instruction": "mov eax, dword ptr [eax + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x470560",
+      "name": "sub_470560",
+      "seed": "0x470748",
+      "instruction": "mov edx, dword ptr [eax + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x470860",
+      "name": "sub_470860",
+      "seed": "0x470969",
+      "instruction": "mov eax, dword ptr [ecx + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x470860",
+      "name": "sub_470860",
+      "seed": "0x4709fe",
+      "instruction": "mov eax, dword ptr [eax + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x470860",
+      "name": "sub_470860",
+      "seed": "0x470a55",
+      "instruction": "mov edx, dword ptr [eax + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x472740",
+      "name": "sub_472740",
+      "seed": "0x4727de",
+      "instruction": "call dword ptr [eax + 0x188]",
+      "family": "Objects",
+      "producer": "vslot-return-hint"
+    },
+    {
+      "function": "0x473550",
+      "name": "sub_473550",
+      "seed": "0x473603",
+      "instruction": "mov edx, dword ptr [ecx + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x473750",
+      "name": "sub_473750",
+      "seed": "0x473796",
+      "instruction": "mov edi, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x474af0",
+      "name": "ReaperState_cpp_474AF0",
+      "seed": "0x474b8d",
+      "instruction": "mov esi, dword ptr [eax + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x474af0",
+      "name": "ReaperState_cpp_474AF0",
+      "seed": "0x474be2",
+      "instruction": "mov ecx, dword ptr [eax + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x474af0",
+      "name": "ReaperState_cpp_474AF0",
+      "seed": "0x474c0b",
+      "instruction": "mov eax, dword ptr [eax + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x475a20",
+      "name": "ResearchState_cpp_475A20",
+      "seed": "0x475b0c",
+      "instruction": "mov eax, dword ptr [ebx + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x482760",
+      "name": "sub_482760",
+      "seed": "0x4827ad",
+      "instruction": "mov edx, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x482880",
+      "name": "sub_482880",
+      "seed": "0x4828e5",
+      "instruction": "mov edx, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x482880",
+      "name": "sub_482880",
+      "seed": "0x482968",
+      "instruction": "mov ecx, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x482b30",
+      "name": "sub_482B30",
+      "seed": "0x482b7d",
+      "instruction": "mov edx, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x482c50",
+      "name": "sub_482C50",
+      "seed": "0x482cb5",
+      "instruction": "mov edx, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x488930",
+      "name": "tick",
+      "seed": "0x489ef1",
+      "instruction": "mov edx, dword ptr [eax + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x48ad50",
+      "name": "setLair",
+      "seed": "0x48ae11",
+      "instruction": "mov edi, dword ptr [eax + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x48be50",
+      "name": "sub_48BE50",
+      "seed": "0x48c094",
+      "instruction": "call dword ptr [eax + 0x188]",
+      "family": "Objects",
+      "producer": "vslot-return-hint"
+    },
+    {
+      "function": "0x48be50",
+      "name": "sub_48BE50",
+      "seed": "0x48c0c4",
+      "instruction": "call dword ptr [edx + 0x188]",
+      "family": "Objects",
+      "producer": "vslot-return-hint"
+    },
+    {
+      "function": "0x498d20",
+      "name": "sub_498D20",
+      "seed": "0x498df0",
+      "instruction": "mov edx, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x498e30",
+      "name": "processDealDamage",
+      "seed": "0x499147",
+      "instruction": "mov eax, dword ptr [esi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x498e30",
+      "name": "processDealDamage",
+      "seed": "0x499173",
+      "instruction": "mov edx, dword ptr [esi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x498e30",
+      "name": "processDealDamage",
+      "seed": "0x49919f",
+      "instruction": "mov ecx, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x499300",
+      "name": "CreatureInstance_cpp_499300",
+      "seed": "0x4993ee",
+      "instruction": "mov ebp, dword ptr [eax + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x499300",
+      "name": "CreatureInstance_cpp_499300",
+      "seed": "0x4994c1",
+      "instruction": "mov ebp, dword ptr [eax + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x499300",
+      "name": "CreatureInstance_cpp_499300",
+      "seed": "0x49957d",
+      "instruction": "mov edi, dword ptr [eax + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x499300",
+      "name": "CreatureInstance_cpp_499300",
+      "seed": "0x49961e",
+      "instruction": "mov edi, dword ptr [eax + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x49b1c0",
+      "name": "init",
+      "seed": "0x49b1f2",
+      "instruction": "call dword ptr [eax + 0x188]",
+      "family": "Objects",
+      "producer": "vslot-return-hint"
+    },
+    {
+      "function": "0x49b1c0",
+      "name": "init",
+      "seed": "0x49b259",
+      "instruction": "mov ecx, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x49b1c0",
+      "name": "init",
+      "seed": "0x49b277",
+      "instruction": "mov edx, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x49b1c0",
+      "name": "init",
+      "seed": "0x49b2fc",
+      "instruction": "mov eax, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x49b1c0",
+      "name": "init",
+      "seed": "0x49b34f",
+      "instruction": "mov edx, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x49b1c0",
+      "name": "init",
+      "seed": "0x49b3d3",
+      "instruction": "mov eax, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x49b1c0",
+      "name": "init",
+      "seed": "0x49b408",
+      "instruction": "mov ecx, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x49b1c0",
+      "name": "init",
+      "seed": "0x49b43e",
+      "instruction": "mov eax, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x49b1c0",
+      "name": "init",
+      "seed": "0x49b46a",
+      "instruction": "mov edx, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x49b1c0",
+      "name": "init",
+      "seed": "0x49b486",
+      "instruction": "mov eax, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x49b1c0",
+      "name": "init",
+      "seed": "0x49b4a9",
+      "instruction": "mov eax, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x49b1c0",
+      "name": "init",
+      "seed": "0x49b4ce",
+      "instruction": "mov eax, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x49b5e0",
+      "name": "_reset",
+      "seed": "0x49b66f",
+      "instruction": "mov eax, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x49b5e0",
+      "name": "_reset",
+      "seed": "0x49b70f",
+      "instruction": "mov eax, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x49bd20",
+      "name": "tick",
+      "seed": "0x49bd75",
+      "instruction": "mov eax, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x49bd20",
+      "name": "tick",
+      "seed": "0x49bdb6",
+      "instruction": "mov eax, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x49bd20",
+      "name": "tick",
+      "seed": "0x49be26",
+      "instruction": "mov eax, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x49bee0",
+      "name": "sub_49BEE0",
+      "seed": "0x49bee8",
+      "instruction": "mov eax, dword ptr [ebx + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x49c160",
+      "name": "sub_49C160",
+      "seed": "0x49c164",
+      "instruction": "mov eax, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x49c2a0",
+      "name": "sub_49C2A0",
+      "seed": "0x49c2c6",
+      "instruction": "mov edx, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x49c2a0",
+      "name": "sub_49C2A0",
+      "seed": "0x49c39d",
+      "instruction": "mov eax, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x49c2a0",
+      "name": "sub_49C2A0",
+      "seed": "0x49c3e8",
+      "instruction": "mov ecx, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x49c8c0",
+      "name": "fun_49C8C0",
+      "seed": "0x49cac4",
+      "instruction": "mov edx, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x49cbb0",
+      "name": "sub_49CBB0",
+      "seed": "0x49cbb3",
+      "instruction": "mov ecx, dword ptr [eax + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x49cec0",
+      "name": "sub_49CEC0",
+      "seed": "0x49d047",
+      "instruction": "mov eax, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x49d130",
+      "name": "fun_49D130",
+      "seed": "0x49d130",
+      "instruction": "mov eax, dword ptr [ecx + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x49d310",
+      "name": "dump",
+      "seed": "0x49d562",
+      "instruction": "mov ecx, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x49d310",
+      "name": "dump",
+      "seed": "0x49d7f1",
+      "instruction": "mov ecx, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x49eed0",
+      "name": "handleTickState",
+      "seed": "0x49eee1",
+      "instruction": "mov eax, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x49ef90",
+      "name": "state1_49EF90",
+      "seed": "0x49f02d",
+      "instruction": "mov eax, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x49ef90",
+      "name": "state1_49EF90",
+      "seed": "0x49f079",
+      "instruction": "mov ecx, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x49ef90",
+      "name": "state1_49EF90",
+      "seed": "0x49f390",
+      "instruction": "mov ecx, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x49ef90",
+      "name": "state1_49EF90",
+      "seed": "0x49f47f",
+      "instruction": "mov edi, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x49ef90",
+      "name": "state1_49EF90",
+      "seed": "0x49f4c8",
+      "instruction": "mov eax, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x49f550",
+      "name": "state3_49F550",
+      "seed": "0x49f578",
+      "instruction": "mov eax, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x49f600",
+      "name": "state4_49F600",
+      "seed": "0x49f643",
+      "instruction": "mov ecx, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x49f730",
+      "name": "state5_49F730",
+      "seed": "0x49f753",
+      "instruction": "mov ecx, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x49f810",
+      "name": "state27_49F810",
+      "seed": "0x49f845",
+      "instruction": "mov eax, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x49f880",
+      "name": "sub_49F880",
+      "seed": "0x49f8e5",
+      "instruction": "mov edx, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x49fa50",
+      "name": "state9_49FA50",
+      "seed": "0x49fa57",
+      "instruction": "mov eax, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a0930",
+      "name": "sub_4A0930",
+      "seed": "0x4a0942",
+      "instruction": "mov eax, dword ptr [edi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a0930",
+      "name": "sub_4A0930",
+      "seed": "0x4a0a0d",
+      "instruction": "mov eax, dword ptr [esi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a0930",
+      "name": "sub_4A0930",
+      "seed": "0x4a0a60",
+      "instruction": "mov edx, dword ptr [esi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a0930",
+      "name": "sub_4A0930",
+      "seed": "0x4a0a7e",
+      "instruction": "mov eax, dword ptr [edi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a0930",
+      "name": "sub_4A0930",
+      "seed": "0x4a0aab",
+      "instruction": "mov eax, dword ptr [edi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a0930",
+      "name": "sub_4A0930",
+      "seed": "0x4a0adb",
+      "instruction": "mov ecx, dword ptr [esi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a0930",
+      "name": "sub_4A0930",
+      "seed": "0x4a0b5d",
+      "instruction": "mov ecx, dword ptr [esi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a0930",
+      "name": "sub_4A0930",
+      "seed": "0x4a0b7c",
+      "instruction": "mov edx, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a0930",
+      "name": "sub_4A0930",
+      "seed": "0x4a0be8",
+      "instruction": "mov eax, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a0930",
+      "name": "sub_4A0930",
+      "seed": "0x4a0dc4",
+      "instruction": "mov eax, dword ptr [edi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a0e30",
+      "name": "sub_4A0E30",
+      "seed": "0x4a0e76",
+      "instruction": "mov eax, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a0e30",
+      "name": "sub_4A0E30",
+      "seed": "0x4a1007",
+      "instruction": "mov eax, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a0e30",
+      "name": "sub_4A0E30",
+      "seed": "0x4a102c",
+      "instruction": "mov ecx, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a10e0",
+      "name": "sub_4A10E0",
+      "seed": "0x4a1202",
+      "instruction": "mov eax, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a10e0",
+      "name": "sub_4A10E0",
+      "seed": "0x4a12da",
+      "instruction": "mov eax, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a1390",
+      "name": "state17_4A1390",
+      "seed": "0x4a13c4",
+      "instruction": "mov edx, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a13f0",
+      "name": "ObjectState_cpp_state18_4A13F0",
+      "seed": "0x4a144d",
+      "instruction": "mov eax, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a13f0",
+      "name": "ObjectState_cpp_state18_4A13F0",
+      "seed": "0x4a148d",
+      "instruction": "mov ebp, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a13f0",
+      "name": "ObjectState_cpp_state18_4A13F0",
+      "seed": "0x4a14da",
+      "instruction": "mov eax, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a13f0",
+      "name": "ObjectState_cpp_state18_4A13F0",
+      "seed": "0x4a1505",
+      "instruction": "mov edi, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a15b0",
+      "name": "ObjectState_cpp_state21_4A15B0",
+      "seed": "0x4a15b7",
+      "instruction": "mov eax, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a15b0",
+      "name": "ObjectState_cpp_state21_4A15B0",
+      "seed": "0x4a163b",
+      "instruction": "mov eax, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a17e0",
+      "name": "state25_4A17E0",
+      "seed": "0x4a18ec",
+      "instruction": "mov edi, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a17e0",
+      "name": "state25_4A17E0",
+      "seed": "0x4a19b2",
+      "instruction": "mov edi, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a1bd0",
+      "name": "state29_4A1BD0",
+      "seed": "0x4a1be7",
+      "instruction": "mov edi, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a1bd0",
+      "name": "state29_4A1BD0",
+      "seed": "0x4a1c27",
+      "instruction": "mov esi, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a1cf0",
+      "name": "ObjectState_cpp_state32_4A1CF0",
+      "seed": "0x4a1d0f",
+      "instruction": "mov eax, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a21c0",
+      "name": "ObjectState_cpp_state24_4A21C0",
+      "seed": "0x4a23df",
+      "instruction": "mov ebx, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a24a0",
+      "name": "ObjectState_cpp_state8_4A24A0",
+      "seed": "0x4a250e",
+      "instruction": "mov edi, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a24a0",
+      "name": "ObjectState_cpp_state8_4A24A0",
+      "seed": "0x4a25c2",
+      "instruction": "mov edi, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a24a0",
+      "name": "ObjectState_cpp_state8_4A24A0",
+      "seed": "0x4a25f6",
+      "instruction": "mov eax, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a24a0",
+      "name": "ObjectState_cpp_state8_4A24A0",
+      "seed": "0x4a265c",
+      "instruction": "mov ecx, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a29e0",
+      "name": "state33_4A29E0",
+      "seed": "0x4a2a3a",
+      "instruction": "mov edx, dword ptr [eax + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a2b90",
+      "name": "state37_4A2B90",
+      "seed": "0x4a2bc6",
+      "instruction": "mov edx, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a3450",
+      "name": "state40_4A3450",
+      "seed": "0x4a346a",
+      "instruction": "mov eax, dword ptr [ecx + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a3530",
+      "name": "state42_4A3530",
+      "seed": "0x4a354d",
+      "instruction": "mov eax, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a3530",
+      "name": "state42_4A3530",
+      "seed": "0x4a35bd",
+      "instruction": "mov edx, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a3640",
+      "name": "state44_4A3640",
+      "seed": "0x4a365a",
+      "instruction": "mov eax, dword ptr [edi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a36d0",
+      "name": "state45_4A36D0",
+      "seed": "0x4a36ea",
+      "instruction": "mov eax, dword ptr [edi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a3760",
+      "name": "state46_4A3760",
+      "seed": "0x4a3797",
+      "instruction": "mov eax, dword ptr [edi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a3840",
+      "name": "state47_4A3840",
+      "seed": "0x4a3875",
+      "instruction": "mov eax, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a3910",
+      "name": "state54_4A3910",
+      "seed": "0x4a3941",
+      "instruction": "mov eax, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a3a00",
+      "name": "state55_4A3A00",
+      "seed": "0x4a3a31",
+      "instruction": "mov eax, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a3af0",
+      "name": "state48_4A3AF0",
+      "seed": "0x4a3b21",
+      "instruction": "mov eax, dword ptr [edi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a3b90",
+      "name": "state49_4A3B90",
+      "seed": "0x4a3bc1",
+      "instruction": "mov eax, dword ptr [edi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a3c30",
+      "name": "state50_4A3C30",
+      "seed": "0x4a3d09",
+      "instruction": "mov edx, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a3d90",
+      "name": "ObjectState_cpp_state53_4A3D90",
+      "seed": "0x4a3d97",
+      "instruction": "mov eax, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a3d90",
+      "name": "ObjectState_cpp_state53_4A3D90",
+      "seed": "0x4a3e26",
+      "instruction": "mov eax, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a3fc0",
+      "name": "sub_4A3FC0",
+      "seed": "0x4a4088",
+      "instruction": "mov eax, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a3fc0",
+      "name": "sub_4A3FC0",
+      "seed": "0x4a4151",
+      "instruction": "mov eax, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a42c0",
+      "name": "sub_4A42C0",
+      "seed": "0x4a43ab",
+      "instruction": "mov eax, dword ptr [ebp + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a43e0",
+      "name": "sub_4A43E0",
+      "seed": "0x4a45b4",
+      "instruction": "mov edx, dword ptr [ebp + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a45f0",
+      "name": "sub_4A45F0",
+      "seed": "0x4a46da",
+      "instruction": "mov eax, dword ptr [ebp + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a4710",
+      "name": "sub_4A4710",
+      "seed": "0x4a482f",
+      "instruction": "mov edx, dword ptr [edi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a4870",
+      "name": "sub_4A4870",
+      "seed": "0x4a4947",
+      "instruction": "mov eax, dword ptr [ebp + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a4980",
+      "name": "Specials_cpp_4A4980",
+      "seed": "0x4a4b94",
+      "instruction": "mov edx, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a4bd0",
+      "name": "sub_4A4BD0",
+      "seed": "0x4a4c51",
+      "instruction": "mov eax, dword ptr [edi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a4c90",
+      "name": "sub_4A4C90",
+      "seed": "0x4a4d48",
+      "instruction": "mov eax, dword ptr [ebx + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a4d80",
+      "name": "sub_4A4D80",
+      "seed": "0x4a4e03",
+      "instruction": "mov eax, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a4e50",
+      "name": "sub_4A4E50",
+      "seed": "0x4a4f39",
+      "instruction": "mov eax, dword ptr [ebp + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a4f70",
+      "name": "sub_4A4F70",
+      "seed": "0x4a501b",
+      "instruction": "mov edx, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a5070",
+      "name": "init",
+      "seed": "0x4a50d1",
+      "instruction": "mov edx, dword ptr [esi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a5070",
+      "name": "init",
+      "seed": "0x4a515c",
+      "instruction": "mov eax, dword ptr [esi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a5070",
+      "name": "init",
+      "seed": "0x4a5253",
+      "instruction": "mov edx, dword ptr [esi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a5290",
+      "name": "sub_4A5290",
+      "seed": "0x4a52b4",
+      "instruction": "mov edx, dword ptr [esi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a5290",
+      "name": "sub_4A5290",
+      "seed": "0x4a53db",
+      "instruction": "mov eax, dword ptr [esi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a55f0",
+      "name": "tick",
+      "seed": "0x4a5633",
+      "instruction": "mov ecx, dword ptr [esi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a55f0",
+      "name": "tick",
+      "seed": "0x4a5974",
+      "instruction": "mov eax, dword ptr [esi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a55f0",
+      "name": "tick",
+      "seed": "0x4a5b5a",
+      "instruction": "mov eax, dword ptr [esi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a55f0",
+      "name": "tick",
+      "seed": "0x4a5c0c",
+      "instruction": "mov eax, dword ptr [esi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a55f0",
+      "name": "tick",
+      "seed": "0x4a5c31",
+      "instruction": "mov ecx, dword ptr [esi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a55f0",
+      "name": "tick",
+      "seed": "0x4a5cc1",
+      "instruction": "mov ecx, dword ptr [esi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a55f0",
+      "name": "tick",
+      "seed": "0x4a5cea",
+      "instruction": "mov ecx, dword ptr [esi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a55f0",
+      "name": "tick",
+      "seed": "0x4a60a8",
+      "instruction": "mov eax, dword ptr [esi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a55f0",
+      "name": "tick",
+      "seed": "0x4a60dd",
+      "instruction": "mov eax, dword ptr [esi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a55f0",
+      "name": "tick",
+      "seed": "0x4a6186",
+      "instruction": "mov eax, dword ptr [esi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a55f0",
+      "name": "tick",
+      "seed": "0x4a62ab",
+      "instruction": "mov eax, dword ptr [esi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a55f0",
+      "name": "tick",
+      "seed": "0x4a62c0",
+      "instruction": "call dword ptr [edx + 0x160]",
+      "family": "Traps",
+      "producer": "vslot-return-hint"
+    },
+    {
+      "function": "0x4a55f0",
+      "name": "tick",
+      "seed": "0x4a64bf",
+      "instruction": "mov eax, dword ptr [esi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a66f0",
+      "name": "sub_4A66F0",
+      "seed": "0x4a672a",
+      "instruction": "mov edx, dword ptr [esi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a6800",
+      "name": "sub_4A6800",
+      "seed": "0x4a6833",
+      "instruction": "mov edx, dword ptr [esi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a68c0",
+      "name": "fun_4A68C0",
+      "seed": "0x4a68e9",
+      "instruction": "mov ecx, dword ptr [esi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a68c0",
+      "name": "fun_4A68C0",
+      "seed": "0x4a690e",
+      "instruction": "mov eax, dword ptr [esi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a68c0",
+      "name": "fun_4A68C0",
+      "seed": "0x4a69d4",
+      "instruction": "mov ecx, dword ptr [esi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a68c0",
+      "name": "fun_4A68C0",
+      "seed": "0x4a6a33",
+      "instruction": "mov eax, dword ptr [esi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a68c0",
+      "name": "fun_4A68C0",
+      "seed": "0x4a6a99",
+      "instruction": "mov ecx, dword ptr [esi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a6e10",
+      "name": "fun_4A6E10",
+      "seed": "0x4a6e95",
+      "instruction": "mov edx, dword ptr [esi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a7810",
+      "name": "sub_4A7810",
+      "seed": "0x4a783f",
+      "instruction": "call dword ptr [edx + 0x160]",
+      "family": "Traps",
+      "producer": "vslot-return-hint"
+    },
+    {
+      "function": "0x4a7940",
+      "name": "init",
+      "seed": "0x4a7970",
+      "instruction": "call dword ptr [eax + 0x160]",
+      "family": "Traps",
+      "producer": "vslot-return-hint"
+    },
+    {
+      "function": "0x4a7940",
+      "name": "init",
+      "seed": "0x4a799e",
+      "instruction": "mov edx, dword ptr [esi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a7940",
+      "name": "init",
+      "seed": "0x4a79c7",
+      "instruction": "mov edx, dword ptr [esi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a7940",
+      "name": "init",
+      "seed": "0x4a7a85",
+      "instruction": "mov ecx, dword ptr [esi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a7940",
+      "name": "init",
+      "seed": "0x4a7ad9",
+      "instruction": "mov edx, dword ptr [esi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a7b10",
+      "name": "sub_4A7B10",
+      "seed": "0x4a7b10",
+      "instruction": "mov eax, dword ptr [ecx + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a7b20",
+      "name": "sub_4A7B20",
+      "seed": "0x4a7b32",
+      "instruction": "mov edx, dword ptr [esi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a7b20",
+      "name": "sub_4A7B20",
+      "seed": "0x4a7b9d",
+      "instruction": "mov eax, dword ptr [esi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a7d10",
+      "name": "sub_4A7D10",
+      "seed": "0x4a7d3a",
+      "instruction": "mov eax, dword ptr [esi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a7d90",
+      "name": "sub_4A7D90",
+      "seed": "0x4a7dbb",
+      "instruction": "mov eax, dword ptr [esi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a7d90",
+      "name": "sub_4A7D90",
+      "seed": "0x4a7e22",
+      "instruction": "mov eax, dword ptr [esi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a7e70",
+      "name": "sub_4A7E70",
+      "seed": "0x4a7ea1",
+      "instruction": "mov eax, dword ptr [esi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a7e70",
+      "name": "sub_4A7E70",
+      "seed": "0x4a7f72",
+      "instruction": "mov eax, dword ptr [esi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a80e0",
+      "name": "sub_4A80E0",
+      "seed": "0x4a80fe",
+      "instruction": "mov edi, dword ptr [esi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a80e0",
+      "name": "sub_4A80E0",
+      "seed": "0x4a81a9",
+      "instruction": "mov eax, dword ptr [esi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a80e0",
+      "name": "sub_4A80E0",
+      "seed": "0x4a8222",
+      "instruction": "mov eax, dword ptr [esi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a80e0",
+      "name": "sub_4A80E0",
+      "seed": "0x4a8241",
+      "instruction": "mov ecx, dword ptr [esi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a80e0",
+      "name": "sub_4A80E0",
+      "seed": "0x4a8268",
+      "instruction": "mov eax, dword ptr [esi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a80e0",
+      "name": "sub_4A80E0",
+      "seed": "0x4a82a3",
+      "instruction": "mov edx, dword ptr [esi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a80e0",
+      "name": "sub_4A80E0",
+      "seed": "0x4a82e5",
+      "instruction": "mov eax, dword ptr [esi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a80e0",
+      "name": "sub_4A80E0",
+      "seed": "0x4a8314",
+      "instruction": "mov eax, dword ptr [esi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a80e0",
+      "name": "sub_4A80E0",
+      "seed": "0x4a8363",
+      "instruction": "mov eax, dword ptr [esi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a80e0",
+      "name": "sub_4A80E0",
+      "seed": "0x4a8392",
+      "instruction": "mov ecx, dword ptr [esi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a80e0",
+      "name": "sub_4A80E0",
+      "seed": "0x4a83af",
+      "instruction": "mov eax, dword ptr [esi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a80e0",
+      "name": "sub_4A80E0",
+      "seed": "0x4a83d3",
+      "instruction": "mov eax, dword ptr [esi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a80e0",
+      "name": "sub_4A80E0",
+      "seed": "0x4a8415",
+      "instruction": "mov edx, dword ptr [esi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a8490",
+      "name": "sub_4A8490",
+      "seed": "0x4a8494",
+      "instruction": "mov eax, dword ptr [esi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a84e0",
+      "name": "tick",
+      "seed": "0x4a85bb",
+      "instruction": "mov eax, dword ptr [edi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a84e0",
+      "name": "tick",
+      "seed": "0x4a8aac",
+      "instruction": "mov edx, dword ptr [edi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a84e0",
+      "name": "tick",
+      "seed": "0x4a8b10",
+      "instruction": "mov eax, dword ptr [edi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a84e0",
+      "name": "tick",
+      "seed": "0x4a8b85",
+      "instruction": "mov eax, dword ptr [edi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a84e0",
+      "name": "tick",
+      "seed": "0x4a8bc1",
+      "instruction": "mov ecx, dword ptr [edi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a84e0",
+      "name": "tick",
+      "seed": "0x4a8bf9",
+      "instruction": "mov eax, dword ptr [edi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a84e0",
+      "name": "tick",
+      "seed": "0x4a8c22",
+      "instruction": "mov ecx, dword ptr [edi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a84e0",
+      "name": "tick",
+      "seed": "0x4a8c6b",
+      "instruction": "mov eax, dword ptr [edi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a84e0",
+      "name": "tick",
+      "seed": "0x4a8c84",
+      "instruction": "mov ecx, dword ptr [edi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a84e0",
+      "name": "tick",
+      "seed": "0x4a8cdd",
+      "instruction": "mov ecx, dword ptr [edi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a84e0",
+      "name": "tick",
+      "seed": "0x4a8d0e",
+      "instruction": "mov edx, dword ptr [edi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a84e0",
+      "name": "tick",
+      "seed": "0x4a8d66",
+      "instruction": "mov eax, dword ptr [edi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a84e0",
+      "name": "tick",
+      "seed": "0x4a8dfb",
+      "instruction": "mov ecx, dword ptr [edi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a8e70",
+      "name": "sub_4A8E70",
+      "seed": "0x4a904d",
+      "instruction": "mov edx, dword ptr [esi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a8e70",
+      "name": "sub_4A8E70",
+      "seed": "0x4a90a9",
+      "instruction": "mov eax, dword ptr [esi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a8e70",
+      "name": "sub_4A8E70",
+      "seed": "0x4a9145",
+      "instruction": "mov eax, dword ptr [esi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a8e70",
+      "name": "sub_4A8E70",
+      "seed": "0x4a9217",
+      "instruction": "mov eax, dword ptr [esi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a9400",
+      "name": "sub_4A9400",
+      "seed": "0x4a9434",
+      "instruction": "mov eax, dword ptr [esi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a96d0",
+      "name": "sub_4A96D0",
+      "seed": "0x4a96df",
+      "instruction": "mov eax, dword ptr [esi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a9720",
+      "name": "sub_4A9720",
+      "seed": "0x4a97ea",
+      "instruction": "mov eax, dword ptr [ecx + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a9890",
+      "name": "sub_4A9890",
+      "seed": "0x4a995a",
+      "instruction": "mov eax, dword ptr [ecx + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a9a00",
+      "name": "sub_4A9A00",
+      "seed": "0x4a9ad8",
+      "instruction": "mov eax, dword ptr [ecx + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a9b70",
+      "name": "fun_4A9B70",
+      "seed": "0x4a9b91",
+      "instruction": "mov eax, dword ptr [esi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a9b70",
+      "name": "fun_4A9B70",
+      "seed": "0x4a9bbd",
+      "instruction": "mov eax, dword ptr [esi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a9b70",
+      "name": "fun_4A9B70",
+      "seed": "0x4a9c61",
+      "instruction": "mov eax, dword ptr [esi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a9b70",
+      "name": "fun_4A9B70",
+      "seed": "0x4a9c8c",
+      "instruction": "mov eax, dword ptr [esi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a9b70",
+      "name": "fun_4A9B70",
+      "seed": "0x4a9cb8",
+      "instruction": "mov eax, dword ptr [esi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a9b70",
+      "name": "fun_4A9B70",
+      "seed": "0x4a9d35",
+      "instruction": "mov ecx, dword ptr [esi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a9b70",
+      "name": "fun_4A9B70",
+      "seed": "0x4a9da0",
+      "instruction": "mov eax, dword ptr [esi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4a9ea0",
+      "name": "sub_4A9EA0",
+      "seed": "0x4a9ed7",
+      "instruction": "mov eax, dword ptr [esi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4ab180",
+      "name": "tick",
+      "seed": "0x4ab189",
+      "instruction": "mov ecx, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4ab180",
+      "name": "tick",
+      "seed": "0x4ab706",
+      "instruction": "mov eax, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4abaf0",
+      "name": "dump",
+      "seed": "0x4abb10",
+      "instruction": "mov ecx, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4af3a0",
+      "name": "sub_4AF3A0",
+      "seed": "0x4af547",
+      "instruction": "mov ecx, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4b2030",
+      "name": "fun_4B2030",
+      "seed": "0x4b233a",
+      "instruction": "mov ecx, dword ptr [eax + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4b2ce0",
+      "name": "processTakeDamage",
+      "seed": "0x4b2d20",
+      "instruction": "mov ecx, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4b5590",
+      "name": "fun_4B5590",
+      "seed": "0x4b561f",
+      "instruction": "mov ecx, dword ptr [eax + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4b5800",
+      "name": "sub_4B5800",
+      "seed": "0x4b585c",
+      "instruction": "mov ecx, dword ptr [esi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4b58e0",
+      "name": "fun_4B58E0",
+      "seed": "0x4b591a",
+      "instruction": "mov esi, dword ptr [eax + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4b7230",
+      "name": "fun_4B7230",
+      "seed": "0x4b7230",
+      "instruction": "mov eax, dword ptr [ecx + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4bc500",
+      "name": "takeThingInHand",
+      "seed": "0x4bc575",
+      "instruction": "mov edx, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4bc710",
+      "name": "dropThingFromHand",
+      "seed": "0x4bc9ea",
+      "instruction": "mov eax, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4c0cb0",
+      "name": "sub_4C0CB0",
+      "seed": "0x4c0da4",
+      "instruction": "mov edx, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4c0cb0",
+      "name": "sub_4C0CB0",
+      "seed": "0x4c0de9",
+      "instruction": "mov eax, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4c1b60",
+      "name": "sub_4C1B60",
+      "seed": "0x4c1b64",
+      "instruction": "mov edx, dword ptr [eax + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4c1b90",
+      "name": "sub_4C1B90",
+      "seed": "0x4c1b94",
+      "instruction": "mov edx, dword ptr [eax + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4c2dc0",
+      "name": "sub_4C2DC0",
+      "seed": "0x4c2f98",
+      "instruction": "call dword ptr [eax + 0x188]",
+      "family": "Objects",
+      "producer": "vslot-return-hint"
+    },
+    {
+      "function": "0x4c3200",
+      "name": "creatureDidWorkshopWork",
+      "seed": "0x4c32e0",
+      "instruction": "call dword ptr [eax + 0x188]",
+      "family": "Objects",
+      "producer": "vslot-return-hint"
+    },
+    {
+      "function": "0x4c33b0",
+      "name": "sub_4C33B0",
+      "seed": "0x4c35b7",
+      "instruction": "call dword ptr [eax + 0x160]",
+      "family": "Traps",
+      "producer": "vslot-return-hint"
+    },
+    {
+      "function": "0x4c33b0",
+      "name": "sub_4C33B0",
+      "seed": "0x4c35f7",
+      "instruction": "mov edi, dword ptr [eax + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4c3670",
+      "name": "sub_4C3670",
+      "seed": "0x4c36c9",
+      "instruction": "mov ebx, dword ptr [esi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4c3860",
+      "name": "sub_4C3860",
+      "seed": "0x4c38a9",
+      "instruction": "call dword ptr [eax + 0x160]",
+      "family": "Traps",
+      "producer": "vslot-return-hint"
+    },
+    {
+      "function": "0x4c3860",
+      "name": "sub_4C3860",
+      "seed": "0x4c39b8",
+      "instruction": "mov edi, dword ptr [eax + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4c3a20",
+      "name": "sub_4C3A20",
+      "seed": "0x4c3a5d",
+      "instruction": "mov ecx, dword ptr [esi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4c6dd0",
+      "name": "sub_4C6DD0",
+      "seed": "0x4c6e44",
+      "instruction": "call dword ptr [edx + 0x188]",
+      "family": "Objects",
+      "producer": "vslot-return-hint"
+    },
+    {
+      "function": "0x4c7b20",
+      "name": "fun_4C7B20",
+      "seed": "0x4c8372",
+      "instruction": "call dword ptr [eax + 0x160]",
+      "family": "Traps",
+      "producer": "vslot-return-hint"
+    },
+    {
+      "function": "0x4d12b0",
+      "name": "sub_4D12B0",
+      "seed": "0x4d13c0",
+      "instruction": "mov ecx, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4d12b0",
+      "name": "sub_4D12B0",
+      "seed": "0x4d1423",
+      "instruction": "mov edx, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4d12b0",
+      "name": "sub_4D12B0",
+      "seed": "0x4d144b",
+      "instruction": "mov edx, dword ptr [esi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4d12b0",
+      "name": "sub_4D12B0",
+      "seed": "0x4d148d",
+      "instruction": "mov edx, dword ptr [esi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4d12b0",
+      "name": "sub_4D12B0",
+      "seed": "0x4d155e",
+      "instruction": "mov eax, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4d6890",
+      "name": "sub_4D6890",
+      "seed": "0x4d690d",
+      "instruction": "mov eax, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4d6890",
+      "name": "sub_4D6890",
+      "seed": "0x4d6942",
+      "instruction": "mov ecx, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4d7180",
+      "name": "sub_4D7180",
+      "seed": "0x4d71cf",
+      "instruction": "mov ebp, dword ptr [eax + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4de620",
+      "name": "Hatchery_cpp_4DE620",
+      "seed": "0x4de658",
+      "instruction": "call dword ptr [eax + 0x188]",
+      "family": "Objects",
+      "producer": "vslot-return-hint"
+    },
+    {
+      "function": "0x4de620",
+      "name": "Hatchery_cpp_4DE620",
+      "seed": "0x4de846",
+      "instruction": "mov esi, dword ptr [eax + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4de620",
+      "name": "Hatchery_cpp_4DE620",
+      "seed": "0x4de9de",
+      "instruction": "mov eax, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4df6e0",
+      "name": "HeroGateFrontEnd_cpp_tick",
+      "seed": "0x4df7d8",
+      "instruction": "mov eax, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4e0000",
+      "name": "sub_4E0000",
+      "seed": "0x4e0076",
+      "instruction": "mov ecx, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4e0370",
+      "name": "MyMapElement_sub_4E0370",
+      "seed": "0x4e03b4",
+      "instruction": "mov esi, dword ptr [eax + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4e0470",
+      "name": "fun_4E0470",
+      "seed": "0x4e0556",
+      "instruction": "mov edx, dword ptr [edi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4e0a50",
+      "name": "sub_4E0A50",
+      "seed": "0x4e0b20",
+      "instruction": "mov ebx, dword ptr [eax + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4e0be0",
+      "name": "sub_4E0BE0",
+      "seed": "0x4e0cb0",
+      "instruction": "mov ebx, dword ptr [eax + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4e0d70",
+      "name": "sub_4E0D70",
+      "seed": "0x4e0e40",
+      "instruction": "mov ebx, dword ptr [eax + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4e0f00",
+      "name": "sub_4E0F00",
+      "seed": "0x4e0ff2",
+      "instruction": "mov ebx, dword ptr [eax + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4e11a0",
+      "name": "sub_4E11A0",
+      "seed": "0x4e11c4",
+      "instruction": "mov edi, dword ptr [eax + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4e12a0",
+      "name": "sub_4E12A0",
+      "seed": "0x4e1354",
+      "instruction": "mov ecx, dword ptr [edi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4e12a0",
+      "name": "sub_4E12A0",
+      "seed": "0x4e140b",
+      "instruction": "mov edx, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4e12a0",
+      "name": "sub_4E12A0",
+      "seed": "0x4e1487",
+      "instruction": "mov edx, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4e12a0",
+      "name": "sub_4E12A0",
+      "seed": "0x4e1553",
+      "instruction": "mov eax, dword ptr [edi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4e1590",
+      "name": "sub_4E1590",
+      "seed": "0x4e15dd",
+      "instruction": "mov edx, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4e1590",
+      "name": "sub_4E1590",
+      "seed": "0x4e15fd",
+      "instruction": "mov eax, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4e1890",
+      "name": "sub_4E1890",
+      "seed": "0x4e190c",
+      "instruction": "mov ecx, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4e1890",
+      "name": "sub_4E1890",
+      "seed": "0x4e196a",
+      "instruction": "mov edx, dword ptr [eax + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4e1a10",
+      "name": "sub_4E1A10",
+      "seed": "0x4e1a65",
+      "instruction": "mov ecx, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4e1ac0",
+      "name": "fun_4E1AC0",
+      "seed": "0x4e1bc0",
+      "instruction": "mov edx, dword ptr [eax + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4e1ac0",
+      "name": "fun_4E1AC0",
+      "seed": "0x4e1ca2",
+      "instruction": "mov ecx, dword ptr [eax + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4e1ed0",
+      "name": "Library_cpp_4E1ED0",
+      "seed": "0x4e209a",
+      "instruction": "mov edx, dword ptr [edi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4e5ff0",
+      "name": "fun_4E5FF0",
+      "seed": "0x4e5ff9",
+      "instruction": "mov eax, dword ptr [edi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4e60a0",
+      "name": "sub_4E60A0",
+      "seed": "0x4e60f4",
+      "instruction": "mov edx, dword ptr [eax + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4e6130",
+      "name": "fun_4E6130",
+      "seed": "0x4e61c9",
+      "instruction": "mov eax, dword ptr [edx + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4e9250",
+      "name": "fun_4E9250",
+      "seed": "0x4e993a",
+      "instruction": "mov edx, dword ptr [eax + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4e9250",
+      "name": "fun_4E9250",
+      "seed": "0x4e9d24",
+      "instruction": "mov ebx, dword ptr [eax + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4e9250",
+      "name": "fun_4E9250",
+      "seed": "0x4e9edd",
+      "instruction": "mov edx, dword ptr [eax + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4f1940",
+      "name": "sub_4F1940",
+      "seed": "0x4f19ed",
+      "instruction": "mov eax, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4f3a00",
+      "name": "Treasure_cpp_4F3A00",
+      "seed": "0x4f3a9d",
+      "instruction": "mov edx, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4f3a00",
+      "name": "Treasure_cpp_4F3A00",
+      "seed": "0x4f3af0",
+      "instruction": "mov eax, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4f4440",
+      "name": "fun_4F4440",
+      "seed": "0x4f4479",
+      "instruction": "mov esi, dword ptr [ebp + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4f47e0",
+      "name": "sub_4F47E0",
+      "seed": "0x4f4879",
+      "instruction": "mov eax, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4f48e0",
+      "name": "Treasure_cpp_4F48E0",
+      "seed": "0x4f4978",
+      "instruction": "mov edi, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4f4b20",
+      "name": "Workshop_cpp_tick",
+      "seed": "0x4f4cfb",
+      "instruction": "mov ebp, dword ptr [edi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4f5240",
+      "name": "spawnBuiltManufactureItem",
+      "seed": "0x4f52fa",
+      "instruction": "call dword ptr [edx + 0x160]",
+      "family": "Traps",
+      "producer": "vslot-return-hint"
+    },
+    {
+      "function": "0x4f5240",
+      "name": "spawnBuiltManufactureItem",
+      "seed": "0x4f5365",
+      "instruction": "mov ecx, dword ptr [ebx + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4f57f0",
+      "name": "sub_4F57F0",
+      "seed": "0x4f57f7",
+      "instruction": "mov eax, dword ptr [ebx + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4f59e0",
+      "name": "sub_4F59E0",
+      "seed": "0x4f5a5c",
+      "instruction": "mov eax, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4f5b00",
+      "name": "sub_4F5B00",
+      "seed": "0x4f5b1e",
+      "instruction": "mov esi, dword ptr [eax + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4f5b70",
+      "name": "sub_4F5B70",
+      "seed": "0x4f5b88",
+      "instruction": "mov esi, dword ptr [eax + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4f5be0",
+      "name": "sub_4F5BE0",
+      "seed": "0x4f5f46",
+      "instruction": "mov ecx, dword ptr [edi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4f5be0",
+      "name": "sub_4F5BE0",
+      "seed": "0x4f6050",
+      "instruction": "mov edx, dword ptr [edi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4fac40",
+      "name": "CPlayer_4FAC40",
+      "seed": "0x4fadaf",
+      "instruction": "mov eax, dword ptr [esi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x4ffd80",
+      "name": "ComputerPlayer_cpp_4FFD80",
+      "seed": "0x4ffee1",
+      "instruction": "call dword ptr [eax + 0x160]",
+      "family": "Traps",
+      "producer": "vslot-return-hint"
+    },
+    {
+      "function": "0x500520",
+      "name": "fun_500520",
+      "seed": "0x500556",
+      "instruction": "mov edx, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x505b30",
+      "name": "GameActionHandler_N46",
+      "seed": "0x505b6f",
+      "instruction": "call dword ptr [edx + 0x160]",
+      "family": "Traps",
+      "producer": "vslot-return-hint"
+    },
+    {
+      "function": "0x5066e0",
+      "name": "addManumactureBuildTask",
+      "seed": "0x506717",
+      "instruction": "call dword ptr [eax + 0x160]",
+      "family": "Traps",
+      "producer": "vslot-return-hint"
+    },
+    {
+      "function": "0x5066e0",
+      "name": "addManumactureBuildTask",
+      "seed": "0x506797",
+      "instruction": "mov ebx, dword ptr [eax + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x5066e0",
+      "name": "addManumactureBuildTask",
+      "seed": "0x506860",
+      "instruction": "mov ebx, dword ptr [eax + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x506ba0",
+      "name": "sub_506BA0",
+      "seed": "0x506bc2",
+      "instruction": "call dword ptr [edx + 0x160]",
+      "family": "Traps",
+      "producer": "vslot-return-hint"
+    },
+    {
+      "function": "0x50b5b0",
+      "name": "fun_50B5B0",
+      "seed": "0x50b9a1",
+      "instruction": "mov eax, dword ptr [edi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x50b5b0",
+      "name": "fun_50B5B0",
+      "seed": "0x50c403",
+      "instruction": "mov edx, dword ptr [edi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x513760",
+      "name": "GameActionHandler_N58",
+      "seed": "0x513797",
+      "instruction": "mov eax, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x514830",
+      "name": "GameActionHandler_N1A",
+      "seed": "0x514bd4",
+      "instruction": "mov eax, dword ptr [edi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x514830",
+      "name": "GameActionHandler_N1A",
+      "seed": "0x514c6b",
+      "instruction": "mov edx, dword ptr [edi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x516050",
+      "name": "sub_516050",
+      "seed": "0x516074",
+      "instruction": "mov edx, dword ptr [edi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x520060",
+      "name": "CWorld_loadTrap",
+      "seed": "0x52009d",
+      "instruction": "call dword ptr [eax + 0x160]",
+      "family": "Traps",
+      "producer": "vslot-return-hint"
+    },
+    {
+      "function": "0x520bb0",
+      "name": "CWorld_loadThing_Object",
+      "seed": "0x520cba",
+      "instruction": "mov eax, dword ptr [ecx + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x521650",
+      "name": "CWorld_loadObject",
+      "seed": "0x52168d",
+      "instruction": "call dword ptr [eax + 0x188]",
+      "family": "Objects",
+      "producer": "vslot-return-hint"
+    },
+    {
+      "function": "0x5953d0",
+      "name": "createMesh_p",
+      "seed": "0x5954e3",
+      "instruction": "mov esi, dword ptr [ebp + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x5953d0",
+      "name": "createMesh_p",
+      "seed": "0x59553c",
+      "instruction": "mov esi, dword ptr [ebp + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x5955c0",
+      "name": "sub_5955C0",
+      "seed": "0x5955dd",
+      "instruction": "mov ecx, dword ptr [edi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x5955c0",
+      "name": "sub_5955C0",
+      "seed": "0x59560c",
+      "instruction": "mov edx, dword ptr [edi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x596eb0",
+      "name": "sub_596EB0",
+      "seed": "0x596ed4",
+      "instruction": "mov edx, dword ptr [ecx + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x596eb0",
+      "name": "sub_596EB0",
+      "seed": "0x596ee8",
+      "instruction": "mov edx, dword ptr [ecx + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load"
+    },
+    {
+      "function": "0x59b880",
+      "name": "createMesh",
+      "seed": "0x59b8c2",
+      "instruction": "mov ecx, dword ptr [ebp + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load"
+    }
+  ],
+  "states": 6126,
+  "limited_roots": 0,
+  "candidates": [
+    {
+      "function": "0x42d820",
+      "name": "sub_42D820",
+      "seed": "0x42d9d4",
+      "instruction": "call dword ptr [eax + 0x160]",
+      "family": "Traps",
+      "producer": "vslot-return-hint",
+      "address": "0x4aabe0",
+      "offset": 150,
+      "bytes": 2,
+      "field": "controlManaUsage",
+      "text": "movsx edx, word ptr [ecx + 0x96]",
+      "trace": [
+        "42d9da: mov edi, eax",
+        "42d9dc: push 0x740780",
+        "42d9e1: mov ecx, edi"
+      ],
+      "callee": "0x4aabe0",
+      "call": "0x42d9e3"
+    },
+    {
+      "function": "0x49b1c0",
+      "name": "init",
+      "seed": "0x49b277",
+      "instruction": "mov edx, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load",
+      "address": "0x49b27f",
+      "offset": 260,
+      "bytes": 2,
+      "field": "controlHealth",
+      "text": "mov ax, word ptr [edx + 0x104]",
+      "trace": [
+        "49b27d: xor eax, eax"
+      ],
+      "callee": null,
+      "call": null
+    },
+    {
+      "function": "0x4a0930",
+      "name": "sub_4A0930",
+      "seed": "0x4a0be8",
+      "instruction": "mov eax, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load",
+      "address": "0x4a0c00",
+      "offset": 260,
+      "bytes": 2,
+      "field": "controlHealth",
+      "text": "mov bx, word ptr [eax + 0x104]",
+      "trace": [
+        "4a0bee: test dword ptr [eax + 0xf4], 0x20000",
+        "4a0bf8: je 0x4a0de1",
+        "4a0bfe: xor ebx, ebx"
+      ],
+      "callee": null,
+      "call": null
+    },
+    {
+      "function": "0x4a0e30",
+      "name": "sub_4A0E30",
+      "seed": "0x4a102c",
+      "instruction": "mov ecx, dword ptr [esi + 0x12d]",
+      "family": "Objects",
+      "producer": "entity-field-load",
+      "address": "0x4a1032",
+      "offset": 260,
+      "bytes": 2,
+      "field": "controlHealth",
+      "text": "mov cx, word ptr [ecx + 0x104]",
+      "trace": [],
+      "callee": null,
+      "call": null
+    },
+    {
+      "function": "0x4a7810",
+      "name": "sub_4A7810",
+      "seed": "0x4a783f",
+      "instruction": "call dword ptr [edx + 0x160]",
+      "family": "Traps",
+      "producer": "vslot-return-hint",
+      "address": "0x4a7845",
+      "offset": 150,
+      "bytes": 2,
+      "field": "controlManaUsage",
+      "text": "movsx ecx, word ptr [eax + 0x96]",
+      "trace": [],
+      "callee": null,
+      "call": null
+    },
+    {
+      "function": "0x4a9b70",
+      "name": "fun_4A9B70",
+      "seed": "0x4a9c61",
+      "instruction": "mov eax, dword ptr [esi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load",
+      "address": "0x4a9c79",
+      "offset": 150,
+      "bytes": 2,
+      "field": "controlManaUsage",
+      "text": "movsx ecx, word ptr [eax + 0x96]",
+      "trace": [
+        "4a9c67: add esp, 0xc",
+        "4a9c6a: lea edx, [esp + 0x268]",
+        "4a9c71: mov byte ptr [esp + 0x470], 0"
+      ],
+      "callee": null,
+      "call": null
+    },
+    {
+      "function": "0x4c1b60",
+      "name": "sub_4C1B60",
+      "seed": "0x4c1b64",
+      "instruction": "mov edx, dword ptr [eax + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load",
+      "address": "0x4c1b6a",
+      "offset": 150,
+      "bytes": 2,
+      "field": "controlManaUsage",
+      "text": "movsx eax, word ptr [edx + 0x96]",
+      "trace": [],
+      "callee": null,
+      "call": null
+    },
+    {
+      "function": "0x4c1b90",
+      "name": "sub_4C1B90",
+      "seed": "0x4c1b94",
+      "instruction": "mov edx, dword ptr [eax + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load",
+      "address": "0x4c1b9a",
+      "offset": 150,
+      "bytes": 2,
+      "field": "controlManaUsage",
+      "text": "movsx eax, word ptr [edx + 0x96]",
+      "trace": [],
+      "callee": null,
+      "call": null
+    },
+    {
+      "function": "0x5955c0",
+      "name": "sub_5955C0",
+      "seed": "0x5955dd",
+      "instruction": "mov ecx, dword ptr [edi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load",
+      "address": "0x5955e5",
+      "offset": 151,
+      "bytes": 2,
+      "field": "unknown204",
+      "text": "mov ax, word ptr [ecx + 0x97]",
+      "trace": [
+        "5955e3: xor eax, eax"
+      ],
+      "callee": null,
+      "call": null
+    },
+    {
+      "function": "0x5955c0",
+      "name": "sub_5955C0",
+      "seed": "0x5955dd",
+      "instruction": "mov ecx, dword ptr [edi + 0xf7]",
+      "family": "Traps",
+      "producer": "entity-field-load",
+      "address": "0x5955e5",
+      "offset": 151,
+      "bytes": 2,
+      "field": "controlManaUsage",
+      "text": "mov ax, word ptr [ecx + 0x97]",
+      "trace": [
+        "5955e3: xor eax, eax"
+      ],
+      "callee": null,
+      "call": null
+    }
+  ]
+}

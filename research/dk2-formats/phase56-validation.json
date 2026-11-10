@@ -1,0 +1,28 @@
+{
+  "phase": 56,
+  "date": "2026-10-27",
+  "native_condition_dispatches": 61,
+  "native_condition_types": 7,
+  "complete_primary_pe_functions": 12,
+  "primary_data_ranges": 4,
+  "ap04_08_bounded_equal_result_groups": 7,
+  "api_boundary_checks": 20,
+  "whole_file_roundtrips": 110,
+  "total_trigger_nodes": 26299,
+  "ap_condition_nodes": 1412,
+  "exact_in_memory_parameter_patches": 4236,
+  "corrected_baseline_condition_layouts": 2,
+  "original_executables_unchanged": 4,
+  "format_package_components": 66,
+  "research_writes_to_game_data": 0,
+  "modified_gameplay_runs": 0,
+  "limitations": [
+    "ExactDX only,not old/RC3 runtime equivalence.",
+    "No fullAP tick/walker/actions chain;static receiver path links examinedpredicate toAP object. Native output result saved separately before observer comparisons.",
+    "PlayerIDs must identify allocated native player slots;unknown/out-of-range references not emulated. Orderedsmallareas only except one fast65536areacase. Reversed bound loops can be unsafe and are not run.",
+    "Originalcreation ofmarklists,ownership changes,entity-list registration and possessionflag producers not executed. No higher-level names for all marker categories assigned.",
+    "AP04/08 gameplay remains open;this confirms specifictrigger consumers and newparameterbytes,not allAPbehavior.",
+    "Terrain08/04 consumer bitsverified;baseline flag names are retained with attribution,not automatically promoted nativeGUI labels.",
+    "All original game files and4EXEsunchanged;onlyresearch artifactswritten."
+  ]
+}

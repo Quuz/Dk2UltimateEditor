@@ -1,0 +1,39 @@
+[
+  {
+    "id": "phase134-oldTerrain-interior-delete",
+    "tool": "delete_function",
+    "args": {
+      "program": "DKII-local13.exe",
+      "address": "0x512830"
+    },
+    "print_limit": 0
+  },
+  {
+    "id": "phase134-oldTerrain-canonical-create",
+    "tool": "create_function",
+    "args": {
+      "program": "DKII-local13.exe",
+      "address": "0x512820",
+      "disassemble_first": true
+    },
+    "print_limit": 0
+  },
+  {
+    "id": "phase134-oldTerrain-canonical-assembly",
+    "tool": "disassemble_function",
+    "args": {
+      "program": "DKII-local13.exe",
+      "address": "0x512820"
+    },
+    "print_limit": 0
+  },
+  {
+    "id": "phase134-oldTerrain-canonical-decompile",
+    "tool": "force_decompile",
+    "args": {
+      "program": "DKII-local13.exe",
+      "address": "0x512820"
+    },
+    "print_limit": 0
+  }
+]

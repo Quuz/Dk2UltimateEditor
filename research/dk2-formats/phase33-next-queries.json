@@ -1,0 +1,40 @@
+[
+  {
+    "id": "phase33-AP-patrol-next-create",
+    "tool": "create_function",
+    "args": {
+      "program": "DKII-DX.exe",
+      "address": "0x472150",
+      "disassemble_first": true
+    },
+    "print_limit": 0
+  },
+  {
+    "id": "phase33-AP-patrol-next",
+    "tool": "force_decompile",
+    "args": {
+      "program": "DKII-DX.exe",
+      "address": "0x472150"
+    },
+    "print_limit": 3000
+  },
+  {
+    "id": "phase33-AP-patrol-next-assembly",
+    "tool": "disassemble_function",
+    "args": {
+      "program": "DKII-DX.exe",
+      "address": "0x472150"
+    },
+    "print_limit": 0
+  },
+  {
+    "id": "phase33-AP-editor-flags-set-xrefs",
+    "tool": "get_xrefs_to",
+    "args": {
+      "program": "DK2 Editor pro.exe",
+      "address": "0x41b9d0",
+      "limit": 40
+    },
+    "print_limit": 1500
+  }
+]

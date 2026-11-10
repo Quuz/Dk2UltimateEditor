@@ -1,0 +1,595 @@
+{
+  "phase": 117,
+  "date": "2026-10-29",
+  "family": "Original editor 2.0 and fan Pro profile boundary",
+  "profiles": [
+    {
+      "key": "stock",
+      "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\DK2 Editor 2000.exe",
+      "sha256": "f5cbbb05b3f78a1d13d0ff0c9600e6e4b231f7a81c3817cafd22368dcb175125",
+      "bytes": 1593344
+    },
+    {
+      "key": "stock_alias",
+      "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\DK2 Editor.exe",
+      "sha256": "f5cbbb05b3f78a1d13d0ff0c9600e6e4b231f7a81c3817cafd22368dcb175125",
+      "bytes": 1593344
+    },
+    {
+      "key": "pro",
+      "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\DK2 Editor pro.exe",
+      "sha256": "989c45df779bccfc9a9e509b2ad0224a9bd269629f74792adc0320fa4b99fb09",
+      "bytes": 1593344
+    }
+  ],
+  "evidence": {
+    "file": "phase117-editor-variant-evidence.json",
+    "sha256": "23637a62e62aadbd2698c522c68dae372dd335aba1cfb61b9fd1afc33e63bec2"
+  },
+  "primary": {
+    "file": "phase117-primary-manifest.json",
+    "sha256": "42bbddc8357f3225f63cbc5a4ee6c93e6981ce2a8c7600a7e5f0bb5cf99de2ef"
+  },
+  "equivalence": {
+    "stock_alias": "DK2 Editor.exe and DK2 Editor 2000.exe are byte-identical supplied files.",
+    "code_changes": 14,
+    "changed_code_bytes": 28,
+    "dialog_resource_switches": 13,
+    "other_code_change": "9-byte stock block at492603 replaced by a jump andfourNOPs.",
+    "all_other_text_bytes_equal": true,
+    "resource_leaf_pairs": 281,
+    "identical_resource_leaf_pairs": 280,
+    "only_changed_resource_path": [
+      5,
+      100,
+      2057
+    ],
+    "dialog_pairs": 115,
+    "identical_dialog_pairs": 114,
+    "about": "Stock About says Version2.0; Pro says Version2.02pro and Modified byfans,2007–2008.",
+    "inherited_Ghidra_range_pairs": 232,
+    "identical_inherited_ranges": 231,
+    "one_range_difference": "Constructor442C40 changes only dialog-ID immediate byte442C49."
+  },
+  "dialog_selection": [
+    {
+      "family": "Creature attacks",
+      "instruction": 4411032,
+      "stock_resource_id": 323,
+      "pro_resource_id": 231,
+      "stock_template": {
+        "title": "Modify Available Attacks For \"%s\"",
+        "controls": 63,
+        "template_visible": 58,
+        "template_disabled": 5
+      },
+      "pro_template": {
+        "title": "Modify Available Attacks For \"%s\"",
+        "controls": 64,
+        "template_visible": 64,
+        "template_disabled": 0
+      },
+      "stock_instruction": [
+        {
+          "address": 4411032,
+          "hex": "6843010000",
+          "text": "push 0x143"
+        }
+      ],
+      "pro_instruction": [
+        {
+          "address": 4411032,
+          "hex": "68e7000000",
+          "text": "push 0xe7"
+        }
+      ],
+      "selected_templates_already_in_stock": true
+    },
+    {
+      "family": "Creature first person",
+      "instruction": 4428456,
+      "stock_resource_id": 324,
+      "pro_resource_id": 310,
+      "stock_template": {
+        "title": "Modify 1st Person Properties For \"%s\"",
+        "controls": 37,
+        "template_visible": 35,
+        "template_disabled": 2
+      },
+      "pro_template": {
+        "title": "Modify 1st Person Properties For \"%s\"",
+        "controls": 37,
+        "template_visible": 37,
+        "template_disabled": 0
+      },
+      "stock_instruction": [
+        {
+          "address": 4428456,
+          "hex": "6844010000",
+          "text": "push 0x144"
+        }
+      ],
+      "pro_instruction": [
+        {
+          "address": 4428456,
+          "hex": "6836010000",
+          "text": "push 0x136"
+        }
+      ],
+      "selected_templates_already_in_stock": true
+    },
+    {
+      "family": "Creatures",
+      "instruction": 4443457,
+      "stock_resource_id": 322,
+      "pro_resource_id": 246,
+      "stock_template": {
+        "title": "Modify Creature Properties",
+        "controls": 100,
+        "template_visible": 58,
+        "template_disabled": 41
+      },
+      "pro_template": {
+        "title": "Modify Creature Properties",
+        "controls": 102,
+        "template_visible": 100,
+        "template_disabled": 1
+      },
+      "stock_instruction": [
+        {
+          "address": 4443457,
+          "hex": "6842010000",
+          "text": "push 0x142"
+        }
+      ],
+      "pro_instruction": [
+        {
+          "address": 4443457,
+          "hex": "68f6000000",
+          "text": "push 0xf6"
+        }
+      ],
+      "selected_templates_already_in_stock": true
+    },
+    {
+      "family": "CreatureSpells",
+      "instruction": 4467784,
+      "stock_resource_id": 328,
+      "pro_resource_id": 257,
+      "stock_template": {
+        "title": "Modify Creature Spell Properties",
+        "controls": 47,
+        "template_visible": 28,
+        "template_disabled": 19
+      },
+      "pro_template": {
+        "title": "Modify Creature Spell Properties",
+        "controls": 47,
+        "template_visible": 44,
+        "template_disabled": 3
+      },
+      "stock_instruction": [
+        {
+          "address": 4467784,
+          "hex": "6848010000",
+          "text": "push 0x148"
+        }
+      ],
+      "pro_instruction": [
+        {
+          "address": 4467784,
+          "hex": "6801010000",
+          "text": "push 0x101"
+        }
+      ],
+      "selected_templates_already_in_stock": true
+    },
+    {
+      "family": "Doors",
+      "instruction": 4481567,
+      "stock_resource_id": 325,
+      "pro_resource_id": 254,
+      "stock_template": {
+        "title": "Modify Door Properties",
+        "controls": 55,
+        "template_visible": 33,
+        "template_disabled": 22
+      },
+      "pro_template": {
+        "title": "Modify Door Properties",
+        "controls": 55,
+        "template_visible": 52,
+        "template_disabled": 3
+      },
+      "stock_instruction": [
+        {
+          "address": 4481567,
+          "hex": "6845010000",
+          "text": "push 0x145"
+        }
+      ],
+      "pro_instruction": [
+        {
+          "address": 4481567,
+          "hex": "68fe000000",
+          "text": "push 0xfe"
+        }
+      ],
+      "selected_templates_already_in_stock": true
+    },
+    {
+      "family": "EffectElements",
+      "instruction": 4503352,
+      "stock_resource_id": 332,
+      "pro_resource_id": 260,
+      "stock_template": {
+        "title": "Modify Effect Element Properties",
+        "controls": 81,
+        "template_visible": 76,
+        "template_disabled": 5
+      },
+      "pro_template": {
+        "title": "Modify Effect Element Properties",
+        "controls": 81,
+        "template_visible": 81,
+        "template_disabled": 0
+      },
+      "stock_instruction": [
+        {
+          "address": 4503352,
+          "hex": "684c010000",
+          "text": "push 0x14c"
+        }
+      ],
+      "pro_instruction": [
+        {
+          "address": 4503352,
+          "hex": "6804010000",
+          "text": "push 0x104"
+        }
+      ],
+      "selected_templates_already_in_stock": true
+    },
+    {
+      "family": "Effects",
+      "instruction": 4513416,
+      "stock_resource_id": 331,
+      "pro_resource_id": 261,
+      "stock_template": {
+        "title": "Modify Effect Properties",
+        "controls": 105,
+        "template_visible": 99,
+        "template_disabled": 6
+      },
+      "pro_template": {
+        "title": "Modify Effect Properties",
+        "controls": 105,
+        "template_visible": 105,
+        "template_disabled": 0
+      },
+      "stock_instruction": [
+        {
+          "address": 4513416,
+          "hex": "684b010000",
+          "text": "push 0x14b"
+        }
+      ],
+      "pro_instruction": [
+        {
+          "address": 4513416,
+          "hex": "6805010000",
+          "text": "push 0x105"
+        }
+      ],
+      "selected_templates_already_in_stock": true
+    },
+    {
+      "family": "KeeperSpells",
+      "instruction": 4524592,
+      "stock_resource_id": 329,
+      "pro_resource_id": 258,
+      "stock_template": {
+        "title": "Modify Keeper Spell Properties",
+        "controls": 64,
+        "template_visible": 46,
+        "template_disabled": 18
+      },
+      "pro_template": {
+        "title": "Modify Keeper Spell Properties",
+        "controls": 64,
+        "template_visible": 64,
+        "template_disabled": 0
+      },
+      "stock_instruction": [
+        {
+          "address": 4524592,
+          "hex": "6849010000",
+          "text": "push 0x149"
+        }
+      ],
+      "pro_instruction": [
+        {
+          "address": 4524592,
+          "hex": "6802010000",
+          "text": "push 0x102"
+        }
+      ],
+      "selected_templates_already_in_stock": true
+    },
+    {
+      "family": "Objects",
+      "instruction": 4559510,
+      "stock_resource_id": 327,
+      "pro_resource_id": 256,
+      "stock_template": {
+        "title": "Configure Object Types",
+        "controls": 92,
+        "template_visible": 40,
+        "template_disabled": 50
+      },
+      "pro_template": {
+        "title": "Configure Object Types",
+        "controls": 93,
+        "template_visible": 87,
+        "template_disabled": 0
+      },
+      "stock_instruction": [
+        {
+          "address": 4559510,
+          "hex": "6847010000",
+          "text": "push 0x147"
+        }
+      ],
+      "pro_instruction": [
+        {
+          "address": 4559510,
+          "hex": "6800010000",
+          "text": "push 0x100"
+        }
+      ],
+      "selected_templates_already_in_stock": true
+    },
+    {
+      "family": "Rooms",
+      "instruction": 4612037,
+      "stock_resource_id": 321,
+      "pro_resource_id": 251,
+      "stock_template": {
+        "title": "Modify Room Properties",
+        "controls": 131,
+        "template_visible": 78,
+        "template_disabled": 53
+      },
+      "pro_template": {
+        "title": "Modify Room Properties",
+        "controls": 131,
+        "template_visible": 125,
+        "template_disabled": 6
+      },
+      "stock_instruction": [
+        {
+          "address": 4612037,
+          "hex": "6841010000",
+          "text": "push 0x141"
+        }
+      ],
+      "pro_instruction": [
+        {
+          "address": 4612037,
+          "hex": "68fb000000",
+          "text": "push 0xfb"
+        }
+      ],
+      "selected_templates_already_in_stock": true
+    },
+    {
+      "family": "Shots",
+      "instruction": 4625894,
+      "stock_resource_id": 330,
+      "pro_resource_id": 259,
+      "stock_template": {
+        "title": "Modify Shot Properties",
+        "controls": 64,
+        "template_visible": 55,
+        "template_disabled": 9
+      },
+      "pro_template": {
+        "title": "Modify Shot Properties",
+        "controls": 64,
+        "template_visible": 64,
+        "template_disabled": 0
+      },
+      "stock_instruction": [
+        {
+          "address": 4625894,
+          "hex": "684a010000",
+          "text": "push 0x14a"
+        }
+      ],
+      "pro_instruction": [
+        {
+          "address": 4625894,
+          "hex": "6803010000",
+          "text": "push 0x103"
+        }
+      ],
+      "selected_templates_already_in_stock": true
+    },
+    {
+      "family": "Terrain",
+      "instruction": 4640272,
+      "stock_resource_id": 320,
+      "pro_resource_id": 143,
+      "stock_template": {
+        "title": "Modify Terrain Properties",
+        "controls": 108,
+        "template_visible": 69,
+        "template_disabled": 39
+      },
+      "pro_template": {
+        "title": "Modify Terrain Properties",
+        "controls": 108,
+        "template_visible": 108,
+        "template_disabled": 2
+      },
+      "stock_instruction": [
+        {
+          "address": 4640272,
+          "hex": "6840010000",
+          "text": "push 0x140"
+        }
+      ],
+      "pro_instruction": [
+        {
+          "address": 4640272,
+          "hex": "688f000000",
+          "text": "push 0x8f"
+        }
+      ],
+      "selected_templates_already_in_stock": true
+    },
+    {
+      "family": "Traps",
+      "instruction": 4653126,
+      "stock_resource_id": 326,
+      "pro_resource_id": 255,
+      "stock_template": {
+        "title": "Modify Trap Properties",
+        "controls": 111,
+        "template_visible": 75,
+        "template_disabled": 36
+      },
+      "pro_template": {
+        "title": "Modify Trap Properties",
+        "controls": 111,
+        "template_visible": 102,
+        "template_disabled": 8
+      },
+      "stock_instruction": [
+        {
+          "address": 4653126,
+          "hex": "6846010000",
+          "text": "push 0x146"
+        }
+      ],
+      "pro_instruction": [
+        {
+          "address": 4653126,
+          "hex": "68ff000000",
+          "text": "push 0xff"
+        }
+      ],
+      "selected_templates_already_in_stock": true
+    }
+  ],
+  "visibility": "Counts describe WS_VISIBLE/WS_DISABLED in selected templates only; not a live proof of final control visibility or permission to edit.",
+  "serialization_consequence": "Outside the enumerated dialog-ID immediates and save branch, .text is byte-identical. Previously attested Pro reader/writer/helper instructions in the231identical ranges also exist byte-identically in suppliedstock2.0. This is shared code,not an independent implementation validating it.",
+  "save_branch": {
+    "address": 4793859,
+    "stock": [
+      {
+        "address": 4793859,
+        "hex": "6a00",
+        "text": "push 0"
+      },
+      {
+        "address": 4793861,
+        "hex": "8bcd",
+        "text": "mov ecx, ebp"
+      },
+      {
+        "address": 4793863,
+        "hex": "e80443ffff",
+        "text": "call 0x486910"
+      }
+    ],
+    "pro": [
+      {
+        "address": 4793859,
+        "hex": "e991000000",
+        "text": "jmp 0x492699"
+      },
+      {
+        "address": 4793864,
+        "hex": "90",
+        "text": "nop "
+      },
+      {
+        "address": 4793865,
+        "hex": "90",
+        "text": "nop "
+      },
+      {
+        "address": 4793866,
+        "hex": "90",
+        "text": "nop "
+      },
+      {
+        "address": 4793867,
+        "hex": "90",
+        "text": "nop "
+      }
+    ],
+    "predicate": 4781776,
+    "warning_call": 4793854,
+    "shared_continuation": 4794009,
+    "stock_message": "This filename is reserved for an Official DK2 Level.\n\nPlease select a different filename.",
+    "pro_message": "This filename is reserved for an Official DK2 Level.\n\nOriginal level will be overwritten.",
+    "scope": "Static original instructions. On the warning arm Pro jumps to shared continuation instead of the stock return/cleanup arm. Warning still occurs. Later checks and actual saving not executed."
+  },
+  "implementation_policy": [
+    "Retain complete raw records/headers/unknown bits; changing selected dialogs does not establish new storage layouts.",
+    "Do not interpret Pro as fixes to resistance mechanics, unknown fields or native writer holes: no such additional code edits exist in these exactfiles.",
+    "Do not automatically reproduce native writer omissions, truncations or destructive overwrite behaviour.",
+    "Pro still displays the official-name warning on this path; the jump bypasses the following stock abort arm,not all subsequent checks.",
+    "Template labels and sharedcallbacks do not identify the gameplay meaning of Terrain198/224,Traps204,Doors236,Objects34C,CreatureJump/Priority,AP04/08 orElementB1/B2."
+  ],
+  "source_executables_unchanged": [
+    {
+      "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\DKII-DX.exe",
+      "sha256": "d7a8b854e4e4f02709eba271bead6fe2307dd6e332b5a96e70857e5b0e19fb8a"
+    },
+    {
+      "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\DK2 Editor pro.exe",
+      "sha256": "989c45df779bccfc9a9e509b2ad0224a9bd269629f74792adc0320fa4b99fb09"
+    },
+    {
+      "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\DK2 Editor rc3.exe",
+      "sha256": "7368d200cc5ac7e0cdb28c9852d9aa51b960fd718d9eea8dd927c4084add102c"
+    },
+    {
+      "file": "D:/Games/DK2/DKII 13/Dungeon Keeper 2/DKII.exe",
+      "sha256": "93e826a142f677ef5120699feddb0572799d93399167ef1d05ec4b48a8b2a342"
+    }
+  ],
+  "helpers": [
+    {
+      "file": "scan_editor_variants.py",
+      "sha256": "8fbe5ad4ab2a38ba63cccaf3671b69ee11750ed3afbc5a3933258a1e95aa63e1"
+    },
+    {
+      "file": "prepare_editor_variant_primary.py",
+      "sha256": "0a4ede9fbe79605b1fc7d7246c32fcd0d0b6087d313527ee77f9358648150ca1"
+    },
+    {
+      "file": "extract_editor_dialogs.py",
+      "sha256": "6f30182d7bded0a1676c116ad72eb3bf8ae29f57de27a09feefb0012dad68034"
+    }
+  ],
+  "verification": {
+    "complete_binary_comparisons": 2,
+    "resource_leaf_pairs": 281,
+    "parsed_dialog_pairs": 115,
+    "new_Ghidra_CPU_controls": 0,
+    "new_native_GUI_saves": 0,
+    "new_container_rebuilds": 0,
+    "explanation": "No raw codec orfieldpatch changed. Earlier container checks are historical and are not recounted as new verification."
+  },
+  "limitations": [
+    "Exact supplied stock/Pro hashes only; RC3 is a different build and is not equated with them.",
+    "Static whole-PE/resource comparison and cached Ghidra byte attestation; no new original GUI interaction or save execution.",
+    "Shared code may contain shared bugs. Identical writers are not independent corroboration of intended file semantics.",
+    "New branches do not establish that overwriting an official level fully succeeds or that all save checks are bypassed.",
+    "No new unknown raw-field gameplay meaning assigned; substantial15-family questions remain open."
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "cases": [
+    {
+      "file": "phase88-sacrifice-dispatch-first-shorter.json",
+      "sha256": "563f229629ecac778262a7694e56e82df03d82141d82d2f6434b869a615e8035",
+      "case": "first-shorter"
+    },
+    {
+      "file": "phase88-sacrifice-dispatch-first-longer.json",
+      "sha256": "650519260e4a2926838022a769cf36b0024c8a5db57d9d292bf1ce831064ba81",
+      "case": "first-longer"
+    },
+    {
+      "file": "phase88-sacrifice-dispatch-ordered-mixed.json",
+      "sha256": "19de1aa51ec77b55fb27bd69b671ca00ae33322d7b2ae29bad646bfa27dd138e",
+      "case": "ordered-mixed"
+    },
+    {
+      "file": "phase88-sacrifice-dispatch-reversed-mixed.json",
+      "sha256": "f99e81c41e224c02c25eb147a7fc89d9980274dce8a6f550f82a18a97463d53c",
+      "case": "reversed-mixed"
+    },
+    {
+      "file": "phase88-sacrifice-dispatch-no-room.json",
+      "sha256": "9f6d5efa8848aa974a14c77cd629cd5b5e8e04990e2c3c47343b31199b9a6159",
+      "case": "no-room"
+    },
+    {
+      "file": "phase88-sacrifice-dispatch-empty-first.json",
+      "sha256": "914d28880365911ae7d37348532356b8bf66f03cba378c5428b78357be86e6cf",
+      "case": "empty-first"
+    },
+    {
+      "file": "phase88-sacrifice-dispatch-zero-gap-compacted.json",
+      "sha256": "ccac257889f6ec4dd441b3ea4da41b60491b40d4311f372da24aaae39fdf167f",
+      "case": "zero-gap-compacted"
+    },
+    {
+      "file": "phase88-sacrifice-dispatch-unsupported-reward-0.json",
+      "sha256": "5f100b7041f7a4ebe90f8242152c8adcd1e92b622db139d49e3d56f0df485eb6",
+      "case": "unsupported-reward-0"
+    },
+    {
+      "file": "phase88-sacrifice-dispatch-unsupported-reward-5.json",
+      "sha256": "432be57b8658296b8ad3db9a5855d11c9cfabca1899a085df01bff2eb105da03",
+      "case": "unsupported-reward-5"
+    },
+    {
+      "file": "phase88-sacrifice-dispatch-unsupported-reward-6.json",
+      "sha256": "dd4759ed9494ef053df7e9b0cfb172e95555c64461bf3be27b18726967058360",
+      "case": "unsupported-reward-6"
+    },
+    {
+      "file": "phase88-sacrifice-dispatch-unsupported-reward-7.json",
+      "sha256": "3ab6a31cd719d9c7a76ab333e15d4686def341216aeafbdbf057bb325b0c2eec",
+      "case": "unsupported-reward-7"
+    },
+    {
+      "file": "phase88-sacrifice-dispatch-unsupported-reward-8.json",
+      "sha256": "c32500b980440ad134212b3f103459ff4f0520ed8fc87ce7b5ab618633a3c87a",
+      "case": "unsupported-reward-8"
+    },
+    {
+      "file": "phase88-sacrifice-dispatch-unsupported-reward-9.json",
+      "sha256": "15e6c1c1d52b90a30181bca212a7fe7cde0f009c524c6dc5bceb8c198811671c",
+      "case": "unsupported-reward-9"
+    },
+    {
+      "file": "phase88-sacrifice-dispatch-unsupported-reward-255.json",
+      "sha256": "7a4a6d3bbe686a6c95549d609a1ae1444c9101bb5cff5c35ba83113bfd799adf",
+      "case": "unsupported-reward-255"
+    },
+    {
+      "file": "phase88-sacrifice-dispatch-mana-zero.json",
+      "sha256": "b75f291de3c2d11fa28b7bae9dc9c0a4fd1dceca5930cc7d7286187d2bf647ca",
+      "case": "mana-zero"
+    },
+    {
+      "file": "phase88-sacrifice-dispatch-mana-capped.json",
+      "sha256": "ef1e8ee1943f2ad83a670db9e4cae38bc0f62b264c8c89962872a883ac7e76e2",
+      "case": "mana-capped"
+    },
+    {
+      "file": "phase88-sacrifice-dispatch-mana-negative.json",
+      "sha256": "2f280bb1b441d822a68fe88b7ec738d9fd6e9b6707cef2d0705610cb236c2772",
+      "case": "mana-negative"
+    },
+    {
+      "file": "phase88-sacrifice-dispatch-mana-negative-clamp.json",
+      "sha256": "638dfed27fbd45b8954356b974318a41fb7b9cf4fb81179ae71cfa18ed75175e",
+      "case": "mana-negative-clamp"
+    },
+    {
+      "file": "phase88-sacrifice-dispatch-mana-overflow.json",
+      "sha256": "975cba87e43fc420886b91449005bed0cd445dc819ad7dc600fd48dd9eff0391",
+      "case": "mana-overflow"
+    },
+    {
+      "file": "phase88-sacrifice-dispatch-mana-cap-high.json",
+      "sha256": "6b68a3a232b45b76eef8be54a446d7ae9280297d5195e97e540fb50371ba0349",
+      "case": "mana-cap-high"
+    },
+    {
+      "file": "phase88-sacrifice-dispatch-older-history-cleared.json",
+      "sha256": "15daf6c1e28382719c9c63bfcdbf2262c1ef4c76e8cc95d87d2b57092d31dff2",
+      "case": "older-history-cleared"
+    },
+    {
+      "file": "phase88-sacrifice-dispatch-speech-suppressed.json",
+      "sha256": "2212513606a2dccd424893396d374284c6c01b367e65602d01a83e3ad9bab9d9",
+      "case": "speech-suppressed"
+    }
+  ],
+  "scope": "Full native raw loaders\u2192spell sacrifice handler\u2192matcher\u2192reward dispatcher.\n\nOriginal World vtable, map/room/PRNG/mana/notification helpers remain intact.\nTwo tiles form a finite room list; notifications disabled via owner+19A.\nCreature/object factories and renderer effects are not exercised successfully.\n"
+}

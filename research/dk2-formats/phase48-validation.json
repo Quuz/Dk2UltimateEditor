@@ -1,0 +1,46 @@
+{
+  "phase": 48,
+  "date": "2026-10-26",
+  "native_emulations": 99,
+  "native_case_kinds": {
+    "channel": 21,
+    "flags": 38,
+    "game": 40
+  },
+  "api_boundary_cases": 9361,
+  "additional_partial_presence_checks": 24,
+  "exact_in_memory_container_patches": 216,
+  "whole_file_roundtrips": 82,
+  "corpus_records": 3306,
+  "primary_function_ranges_matching_pe": 17,
+  "evidence_instructions": 375,
+  "main_inputs_matching_historical_baseline": 14,
+  "main_input_phase47_snapshot_drift": [
+    {
+      "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\AutoSave.kwd",
+      "historical_sha256": "2121d9b84566c4d69440825fe8af6f6b14dbbd22fa01dfaab36e9a4cc8523081",
+      "phase47_snapshot_sha256": "1ab10355a574e325525ba4d70adc7eeddddfe65ff4d4e8057d2b16982975a7fc"
+    },
+    {
+      "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\AutoSaveMap.kld",
+      "historical_sha256": "33ca15973cd57488d8663181a8a63f6cab5360451c032ec5cf1629c0657a30c2",
+      "phase47_snapshot_sha256": "7ea1c15447680af8a9988c5a9896bfa88df7631338c0611b150d8084c72a0b22"
+    },
+    {
+      "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\AutoSaveThings.kld",
+      "historical_sha256": "497baba367fc50e18d2ad535ee6969d506ce4934b8ac2524cd728a0ba050cd67",
+      "phase47_snapshot_sha256": "6be45fb802ecf66551805d0426de7f69eb3a3f014b7631e5572ad28e57ee8bda"
+    }
+  ],
+  "original_executables_unchanged": 3,
+  "format_package_components": 59,
+  "research_writes_to_game_data": 0,
+  "modified_gameplay_runs": 0,
+  "limitations": [
+    "99 native cases:21 complete setter+getter,38 complete decoder+encoder,40 game-loader fragment cases. Complete28-byte color and3D4-byte model compared, captured getter/encoder output checked; all460 game-definition bytes compared.",
+    "Memory adapters bypass GUI, model construction, file I/O and resource callbacks. Native full Terrain writer, complete intermediate-to-model callback, full game loader and renderer not executed.",
+    "Flag projection is scoped to decode+encode only; full GUI commit has additional mutations including clearing model384/rawflag10.",
+    "Terrain raw198/runtime183 and raw224/runtime1B5 purpose remain unknown. Nearby class-offset coincidences cannot supply names.",
+    "No game data or EXE writes. Corpus uses unchanged Terrain sources; historical17-input audit uses phase47 snapshots for3 AutoSave drifts rather than claiming all historical inputs unchanged."
+  ]
+}

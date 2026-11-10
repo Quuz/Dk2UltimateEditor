@@ -1,0 +1,611 @@
+{
+  "family": "Things",
+  "executable_sha256": {
+    "Dungeon Keeper 2/DKII-DX.exe": "d7a8b854e4e4f02709eba271bead6fe2307dd6e332b5a96e70857e5b0e19fb8a",
+    "Dungeon Keeper 2/Data/editor/DK2 Editor pro.exe": "989c45df779bccfc9a9e509b2ad0224a9bd269629f74792adc0320fa4b99fb09"
+  },
+  "envelope": "u32 tag,u32 payloadBytes,payload. All offsets below are relative to payload, not envelope.",
+  "trap": {
+    "tag": 195,
+    "payload_bytes": 16,
+    "converter": 5699216,
+    "callback": 5377616,
+    "physical_fields": {
+      "x": {
+        "offset": 0,
+        "bytes": 4
+      },
+      "y": {
+        "offset": 4,
+        "bytes": 4
+      },
+      "opaque_position_word": {
+        "offset": 8,
+        "bytes": 4
+      },
+      "activation_selector": {
+        "offset": 12,
+        "bytes": 1,
+        "baseline_name": "NumberOfShots"
+      },
+      "trap_id": {
+        "offset": 13,
+        "bytes": 1
+      },
+      "player_id": {
+        "offset": 14,
+        "bytes": 1
+      },
+      "opaque_flags": {
+        "offset": 15,
+        "bytes": 1
+      }
+    },
+    "storage": "Converter copies position XYZ DWORDs into intermediate14/18/1C; activation byteC ->20, trap IDD ->21, playerE ->22; opaque flagsF ORed into23.",
+    "position": "Callback uses only X/Y for placement: low32(rawTileBits<<12)+800 modulo2^32. Z passed to creator is0, independent of raw+8. Raw+8 is still copied and contributes to preceding intermediate checksum path; do not call globally unused.",
+    "selector_rule": "If raw byteC!=0, calls4A96D0 with created instance asECX and no numeric quantity argument. All1..255 choose this same branch. Raw0 requests manufacture task insertion5066E0(type1) and adds entity to companion list505680.",
+    "activation": "Original4A96D0 clears instance10C bit20; calls4A9F10 refresh; selects4A9720 if definition+BD==3, otherwise4A9A00; then4C1B60 upkeep. This does not initialize remaining shot count from placement byte.",
+    "task_scope": "Manufacture request can be satisfied/rejected by actual task helper (limits/existing crates etc.). API models branch/request, not guaranteed task insertion.",
+    "opaque_flags": "RawF reaches intermediate23 but no semantic read of that byte occurs in inspected placement callback. Preserve all8 bits; checksum path is separate.",
+    "evidence": [
+      {
+        "file": "phase29-thing-trap-converter-assembly.txt",
+        "first": "0x56f690",
+        "last": "0x56f6de",
+        "instructions": [
+          "0056f690: MOV EAX,dword ptr [ESP + 0x4] ",
+          "0056f694: PUSH EBX ",
+          "0056f695: MOV EBX,0x1 ",
+          "0056f69a: PUSH ESI ",
+          "0056f69b: MOV DL,byte ptr [EAX + 0xd] ",
+          "0056f69e: PUSH EDI ",
+          "0056f69f: MOV dword ptr [ECX],EBX ",
+          "0056f6a1: MOV byte ptr [ECX + 0x21],DL ",
+          "0056f6a4: MOV EDX,dword ptr [EAX + 0x8] ",
+          "0056f6a7: MOV ESI,dword ptr [EAX + 0x4] ",
+          "0056f6aa: MOV EDI,dword ptr [EAX] ",
+          "0056f6ac: MOV dword ptr [ECX + 0x4],EBX ",
+          "0056f6af: MOV dword ptr [ECX + 0x14],EDI ",
+          "0056f6b2: MOV dword ptr [ECX + 0x18],ESI ",
+          "0056f6b5: MOV dword ptr [ECX + 0x1c],EDX ",
+          "0056f6b8: MOV DL,byte ptr [EAX + 0xe] ",
+          "0056f6bb: MOV dword ptr [ECX + 0x8],EBX ",
+          "0056f6be: MOV byte ptr [ECX + 0x22],DL ",
+          "0056f6c1: MOV DL,byte ptr [EAX + 0xc] ",
+          "0056f6c4: MOV dword ptr [ECX + 0xc],EBX ",
+          "0056f6c7: MOV byte ptr [ECX + 0x20],DL ",
+          "0056f6ca: MOV AL,byte ptr [EAX + 0xf] ",
+          "0056f6cd: MOV DL,byte ptr [ECX + 0x23] ",
+          "0056f6d0: POP EDI ",
+          "0056f6d1: OR DL,AL ",
+          "0056f6d3: MOV dword ptr [ECX + 0x10],EBX ",
+          "0056f6d6: POP ESI ",
+          "0056f6d7: MOV byte ptr [ECX + 0x23],DL ",
+          "0056f6da: POP EBX ",
+          "0056f6db: RET 0x4 "
+        ]
+      },
+      {
+        "file": "phase29-thing-trap-assembly.txt",
+        "first": "0x520e50",
+        "last": "0x520f3e",
+        "instructions": [
+          "00520e50: SUB ESP,0xc ",
+          "00520e53: PUSH EBX ",
+          "00520e54: MOV EBX,dword ptr [ESP + 0x18] ",
+          "00520e58: PUSH ESI ",
+          "00520e59: MOV ESI,dword ptr [ESP + 0x18] ",
+          "00520e5d: PUSH EDI ",
+          "00520e5e: PUSH 0x24 ",
+          "00520e60: PUSH ESI ",
+          "00520e61: MOV ECX,EBX ",
+          "00520e63: CALL 0x005108c0 ",
+          "00520e68: XOR EAX,EAX ",
+          "00520e6a: MOV dword ptr [ESP + 0x14],0x0 ",
+          "00520e72: MOV AL,byte ptr [ESI + 0x22] ",
+          "00520e75: MOV ECX,EAX ",
+          "00520e77: SHL ECX,0x4 ",
+          "00520e7a: ADD ECX,EAX ",
+          "00520e7c: LEA EDX,[EAX + ECX*0x8] ",
+          "00520e7f: LEA ECX,[EAX + EDX*0x8] ",
+          "00520e82: LEA EDX,[EAX + ECX*0x4] ",
+          "00520e85: MOV EAX,dword ptr [EBX + 0x84] ",
+          "00520e8b: MOV ECX,dword ptr [ESI + 0x14] ",
+          "00520e8e: LEA EDI,[EAX + EDX*0x1 + 0xffffeedb] ",
+          "00520e95: MOV EDX,dword ptr [ESI + 0x18] ",
+          "00520e98: SHL ECX,0xc ",
+          "00520e9b: SHL EDX,0xc ",
+          "00520e9e: ADD ECX,0x800 ",
+          "00520ea4: ADD EDX,0x800 ",
+          "00520eaa: MOV dword ptr [ESP + 0xc],ECX ",
+          "00520eae: LEA EAX,[ESP + 0x1c] ",
+          "00520eb2: MOV dword ptr [ESP + 0x10],EDX ",
+          "00520eb6: MOV DX,word ptr [EDI + 0x4] ",
+          "00520eba: LEA ECX,[ESP + 0xc] ",
+          "00520ebe: PUSH EAX ",
+          "00520ebf: MOV AL,byte ptr [ESI + 0x21] ",
+          "00520ec2: PUSH ECX ",
+          "00520ec3: PUSH EDX ",
+          "00520ec4: PUSH EAX ",
+          "00520ec5: LEA ECX,[EBX + 0x8] ",
+          "00520ec8: CALL 0x004b7c10 ",
+          "00520ecd: TEST EAX,EAX ",
+          "00520ecf: JNZ 0x00520ed8 ",
+          "00520ed1: POP EDI ",
+          "00520ed2: POP ESI ",
+          "00520ed3: POP EBX ",
+          "00520ed4: ADD ESP,0xc ",
+          "00520ed7: RET ",
+          "00520ed8: MOV AL,byte ptr [ESI + 0x20] ",
+          "00520edb: TEST AL,AL ",
+          "00520edd: JBE 0x00520ef4 ",
+          "00520edf: MOV ECX,dword ptr [ESP + 0x1c] ",
+          "00520ee3: CALL 0x004a96d0 ",
+          "00520ee8: MOV EAX,0x1 ",
+          "00520eed: POP EDI ",
+          "00520eee: POP ESI ",
+          "00520eef: POP EBX ",
+          "00520ef0: ADD ESP,0xc ",
+          "00520ef3: RET ",
+          "00520ef4: MOV EDX,dword ptr [ESP + 0xc] ",
+          "00520ef8: PUSH EDI ",
+          "00520ef9: MOV EAX,dword ptr [ESP + 0x14] ",
+          "00520efd: SUB ESP,0xc ",
+          "00520f00: MOV ECX,ESP ",
+          "00520f02: MOV dword ptr [ECX],EDX ",
+          "00520f04: MOV EDX,dword ptr [ESP + 0x24] ",
+          "00520f08: MOV dword ptr [ECX + 0x4],EAX ",
+          "00520f0b: MOV AL,byte ptr [ESI + 0x21] ",
+          "00520f0e: PUSH EAX ",
+          "00520f0f: PUSH 0x1 ",
+          "00520f11: MOV dword ptr [ECX + 0x8],EDX ",
+          "00520f14: LEA ECX,[EDI + 0x219] ",
+          "00520f1a: CALL 0x005066e0 ",
+          "00520f1f: MOV ECX,dword ptr [ESP + 0x1c] ",
+          "00520f23: MOV DX,word ptr [ECX + 0x4] ",
+          "00520f27: LEA ECX,[EDI + 0xa21] ",
+          "00520f2d: PUSH EDX ",
+          "00520f2e: CALL 0x00505680 ",
+          "00520f33: POP EDI ",
+          "00520f34: POP ESI ",
+          "00520f35: MOV EAX,0x1 ",
+          "00520f3a: POP EBX ",
+          "00520f3b: ADD ESP,0xc ",
+          "00520f3e: RET "
+        ]
+      },
+      {
+        "file": "phase29-thing-trap-activate-assembly.txt",
+        "first": "0x4a96d0",
+        "last": "0x4a9711",
+        "instructions": [
+          "004a96d0: PUSH ESI ",
+          "004a96d1: MOV ESI,ECX ",
+          "004a96d3: AND byte ptr [ESI + 0x10c],0xdf ",
+          "004a96da: CALL 0x004a9f10 ",
+          "004a96df: MOV EAX,dword ptr [ESI + 0xf7] ",
+          "004a96e5: MOV CL,byte ptr [EAX + 0xbd] ",
+          "004a96eb: CMP CL,0x3 ",
+          "004a96ee: MOV ECX,ESI ",
+          "004a96f0: JNZ 0x004a9702 ",
+          "004a96f2: CALL 0x004a9720 ",
+          "004a96f7: MOV ECX,dword ptr [ESI + 0x2a] ",
+          "004a96fa: PUSH ESI ",
+          "004a96fb: CALL 0x004c1b60 ",
+          "004a9700: POP ESI ",
+          "004a9701: RET ",
+          "004a9702: CALL 0x004a9a00 ",
+          "004a9707: MOV ECX,dword ptr [ESI + 0x2a] ",
+          "004a970a: PUSH ESI ",
+          "004a970b: CALL 0x004c1b60 ",
+          "004a9710: POP ESI ",
+          "004a9711: RET "
+        ]
+      }
+    ]
+  },
+  "door": {
+    "tag": 196,
+    "payload_bytes": 20,
+    "converter": 5699072,
+    "callback": 5377856,
+    "raw_flag_offset": 16,
+    "raw_flag_bytes": 1,
+    "raw_flag_kind": "flags8",
+    "baseline_kind": "enum8",
+    "masks": [
+      {
+        "mask": 1,
+        "name": "Locked request",
+        "native_effect": "calls4A6800(3) after blueprint setter"
+      },
+      {
+        "mask": 2,
+        "name": "Blueprint",
+        "native_effect": "sets instance DWORD109 to1; manufacture branch follows if nonzero"
+      }
+    ],
+    "storage": "RawXYZ0/4/8 ->intermediate14/18/1C; raw triggerC WORD->20, door IDE->22, ownerF->23, raw flag10 ORed into24. Raw tail11..13 not read by converter.",
+    "position": "Callback centers X/Y in Q12 and passesZ0; no use of intermediate1C for placement. Orientation is derived from door definition/map neighbors, not this raw+8 word.",
+    "rule": "First blueprint=(flags>>1)&1 is passed to4A66C0, storing instance109. Then if flags&1, calls4A6800(3). State helper immediately skips when instance109!=0. Thus combined flags3 are representable; blueprint blocks this lock-state write.",
+    "lock_state": "With blueprint0 and bit1 request, setter writes instance111=3 and updates resource/navigation state. Absence of bit1 does not itself call an unlock setter here.",
+    "game_unknown_bits": "Inspected callback flags branch reads only low2 bits. Higher raw bits stay preserved in file and intermediate, without an assigned gameplay meaning here.",
+    "native_editor": {
+      "decoder": 4320560,
+      "encoder": 4320528,
+      "locked_model_offset": 28,
+      "blueprint_model_offset": 32,
+      "projection": "After conversion to two modelBOOLs, re-encoding returns low8(raw)&3. Encoder only definesAL; upper EAX not a semantic result.",
+      "evidence": [
+        {
+          "file": "phase29-door-flags-decoder-assembly.txt",
+          "first": "0x41ed30",
+          "last": "0x41ed49",
+          "instructions": [
+            "0041ed30: MOV EAX,dword ptr [ESP + 0x4] ",
+            "0041ed34: AND EAX,0xff ",
+            "0041ed39: MOV EDX,EAX ",
+            "0041ed3b: SHR EAX,0x1 ",
+            "0041ed3d: AND EDX,0x1 ",
+            "0041ed40: AND EAX,0x1 ",
+            "0041ed43: MOV dword ptr [ECX + 0x1c],EDX ",
+            "0041ed46: MOV dword ptr [ECX + 0x20],EAX ",
+            "0041ed49: RET 0x4 "
+          ]
+        },
+        {
+          "file": "phase29-door-flags-encoder-assembly.txt",
+          "first": "0x41ed10",
+          "last": "0x41ed24",
+          "instructions": [
+            "0041ed10: MOV EDX,dword ptr [ECX + 0x1c] ",
+            "0041ed13: XOR AL,AL ",
+            "0041ed15: TEST EDX,EDX ",
+            "0041ed17: JZ 0x0041ed1b ",
+            "0041ed19: MOV AL,0x1 ",
+            "0041ed1b: MOV EDX,dword ptr [ECX + 0x20] ",
+            "0041ed1e: TEST EDX,EDX ",
+            "0041ed20: JZ 0x0041ed24 ",
+            "0041ed22: OR AL,0x2 ",
+            "0041ed24: RET "
+          ]
+        },
+        {
+          "file": "phase29-things-writer.txt",
+          "first": "0x494cce",
+          "last": "0x494ce8",
+          "instructions": [
+            "00494cce: CALL 0x0041ed10 ",
+            "00494cd3: LEA ECX,[ESP + 0x88] ",
+            "00494cda: MOV byte ptr [ESP + 0x98],AL ",
+            "00494ce1: MOV EAX,dword ptr [EDI] ",
+            "00494ce3: PUSH 0x14 ",
+            "00494ce5: PUSH ECX ",
+            "00494ce6: MOV ECX,EDI ",
+            "00494ce8: CALL dword ptr [EAX + 0x38] "
+          ]
+        }
+      ]
+    },
+    "evidence": [
+      {
+        "file": "phase29-thing-door-converter-assembly.txt",
+        "first": "0x56f600",
+        "last": "0x56f64a",
+        "instructions": [
+          "0056f600: MOV EAX,dword ptr [ESP + 0x4] ",
+          "0056f604: PUSH EBX ",
+          "0056f605: MOV EBX,0x1 ",
+          "0056f60a: PUSH ESI ",
+          "0056f60b: MOV DL,byte ptr [EAX + 0xe] ",
+          "0056f60e: PUSH EDI ",
+          "0056f60f: MOV dword ptr [ECX],EBX ",
+          "0056f611: MOV byte ptr [ECX + 0x22],DL ",
+          "0056f614: MOV EDX,dword ptr [EAX + 0x8] ",
+          "0056f617: MOV ESI,dword ptr [EAX + 0x4] ",
+          "0056f61a: MOV EDI,dword ptr [EAX] ",
+          "0056f61c: MOV dword ptr [ECX + 0x4],EBX ",
+          "0056f61f: MOV dword ptr [ECX + 0x14],EDI ",
+          "0056f622: MOV dword ptr [ECX + 0x18],ESI ",
+          "0056f625: MOV dword ptr [ECX + 0x1c],EDX ",
+          "0056f628: MOV DL,byte ptr [EAX + 0xf] ",
+          "0056f62b: MOV dword ptr [ECX + 0x8],EBX ",
+          "0056f62e: MOV byte ptr [ECX + 0x23],DL ",
+          "0056f631: MOV DX,word ptr [EAX + 0xc] ",
+          "0056f635: MOV dword ptr [ECX + 0xc],EBX ",
+          "0056f638: MOV word ptr [ECX + 0x20],DX ",
+          "0056f63c: MOV AL,byte ptr [EAX + 0x10] ",
+          "0056f63f: MOV DL,byte ptr [ECX + 0x24] ",
+          "0056f642: POP EDI ",
+          "0056f643: OR DL,AL ",
+          "0056f645: MOV dword ptr [ECX + 0x10],EBX ",
+          "0056f648: POP ESI ",
+          "0056f649: MOV byte ptr [ECX + 0x24],DL "
+        ]
+      },
+      {
+        "file": "phase29-thing-door-assembly.txt",
+        "first": "0x521116",
+        "last": "0x521141",
+        "instructions": [
+          "00521116: MOV DL,byte ptr [EDI + 0x24] ",
+          "00521119: SHR EDX,0x1 ",
+          "0052111b: AND EDX,0x1 ",
+          "0052111e: PUSH EDX ",
+          "0052111f: CALL 0x004a66c0 ",
+          "00521124: TEST byte ptr [EDI + 0x24],0x1 ",
+          "00521128: JZ 0x00521135 ",
+          "0052112a: MOV ECX,dword ptr [ESP + 0x44] ",
+          "0052112e: PUSH 0x3 ",
+          "00521130: CALL 0x004a6800 ",
+          "00521135: MOV EAX,dword ptr [ESP + 0x44] ",
+          "00521139: MOV ECX,dword ptr [EAX + 0x109] ",
+          "0052113f: TEST ECX,ECX ",
+          "00521141: JZ 0x00521186 "
+        ]
+      },
+      {
+        "file": "phase29-thing-door-blueprint-assembly.txt",
+        "first": "0x4a66c0",
+        "last": "0x4a66e4",
+        "instructions": [
+          "004a66c0: MOV EAX,dword ptr [ESP + 0x4] ",
+          "004a66c4: PUSH ESI ",
+          "004a66c5: MOV ESI,ECX ",
+          "004a66c7: XOR ECX,ECX ",
+          "004a66c9: TEST EAX,EAX ",
+          "004a66cb: SETZ CL ",
+          "004a66ce: PUSH ECX ",
+          "004a66cf: MOV ECX,ESI ",
+          "004a66d1: MOV dword ptr [ESI + 0x109],EAX ",
+          "004a66d7: CALL 0x004a66f0 ",
+          "004a66dc: MOV ECX,ESI ",
+          "004a66de: CALL 0x004a6b70 ",
+          "004a66e3: POP ESI ",
+          "004a66e4: RET 0x4 "
+        ]
+      },
+      {
+        "file": "phase29-thing-door-state-assembly.txt",
+        "first": "0x4a6800",
+        "last": "0x4a689a",
+        "instructions": [
+          "004a6800: PUSH EBX ",
+          "004a6801: PUSH ESI ",
+          "004a6802: MOV ESI,ECX ",
+          "004a6804: PUSH EDI ",
+          "004a6805: MOV EAX,dword ptr [ESI + 0x109] ",
+          "004a680b: TEST EAX,EAX ",
+          "004a680d: JNZ 0x004a6897 ",
+          "004a6813: MOV EBX,dword ptr [ESP + 0x10] ",
+          "004a6817: MOV ECX,dword ptr [0x0075b468] ",
+          "004a681d: LEA EDI,[ESI + 0x1a] ",
+          "004a6820: MOV EAX,dword ptr [ECX] ",
+          "004a6822: PUSH EDI ",
+          "004a6823: TEST EBX,EBX ",
+          "004a6825: JZ 0x004a682e ",
+          "004a6827: PUSH 0xe9 ",
+          "004a682c: JMP 0x004a6833 ",
+          "004a682e: PUSH 0xea ",
+          "004a6833: MOV EDX,dword ptr [ESI + 0xf7] ",
+          "004a6839: MOV EDX,dword ptr [EDX + 0xa9] ",
+          "004a683f: PUSH EDX ",
+          "004a6840: MOV EDX,dword ptr [ESI + 0x2e] ",
+          "004a6843: PUSH EDX ",
+          "004a6844: CALL dword ptr [EAX + 0x20] ",
+          "004a6847: MOV dword ptr [ESI + 0x2e],EAX ",
+          "004a684a: MOV dword ptr [ESI + 0x111],EBX ",
+          "004a6850: MOV EAX,[0x006e5050] ",
+          "004a6855: MOV ESI,dword ptr [ESI + 0x1e] ",
+          "004a6858: SAR ESI,0xc ",
+          "004a685b: MOV EAX,dword ptr [EAX + 0x9f2] ",
+          "004a6861: MOV EDI,dword ptr [EDI] ",
+          "004a6863: SAR EDI,0xc ",
+          "004a6866: MOV EDX,dword ptr [EAX + 0x8] ",
+          "004a6869: LEA ECX,[EAX + 0x4] ",
+          "004a686c: IMUL EDX,ESI ",
+          "004a686f: ADD EDX,dword ptr [ECX + 0xc] ",
+          "004a6872: TEST EBX,EBX ",
+          "004a6874: MOV AL,byte ptr [EDX + EDI*0x1] ",
+          "004a6877: MOV DL,AL ",
+          "004a6879: JZ 0x004a6880 ",
+          "004a687b: OR DL,0x4 ",
+          "004a687e: JMP 0x004a6883 ",
+          "004a6880: AND DL,0xfb ",
+          "004a6883: CMP DL,AL ",
+          "004a6885: MOV byte ptr [ESP + 0x10],DL ",
+          "004a6889: JZ 0x004a6897 ",
+          "004a688b: MOV EAX,dword ptr [ESP + 0x10] ",
+          "004a688f: PUSH EAX ",
+          "004a6890: PUSH ESI ",
+          "004a6891: PUSH EDI ",
+          "004a6892: CALL 0x004d1930 ",
+          "004a6897: POP EDI ",
+          "004a6898: POP ESI ",
+          "004a6899: POP EBX ",
+          "004a689a: RET 0x4 "
+        ]
+      }
+    ]
+  },
+  "editor_zeroed_position": {
+    "writer": 4802496,
+    "rule": "Editor writer explicitly writes raw+8 DWORD0 for both Door andTrap payloads. This is serialization behavior, not evidence all source raw words should be normalized.",
+    "evidence": [
+      {
+        "file": "phase29-things-writer.txt",
+        "first": "0x494caa",
+        "last": "0x494cb1",
+        "instructions": [
+          "00494caa: MOV dword ptr [ESP + 0x8c],EAX ",
+          "00494cb1: MOV dword ptr [ESP + 0x90],0x0 "
+        ]
+      },
+      {
+        "file": "phase29-things-writer.txt",
+        "first": "0x494d74",
+        "last": "0x494d90",
+        "instructions": [
+          "00494d74: MOV dword ptr [ESP + 0x6c],EAX ",
+          "00494d78: MOV dword ptr [ESP + 0x70],0x0 ",
+          "00494d80: MOV CL,byte ptr [EBP + 0x19] ",
+          "00494d83: LEA EAX,[ESP + 0x68] ",
+          "00494d87: MOV byte ptr [ESP + 0x74],CL ",
+          "00494d8b: PUSH 0x10 ",
+          "00494d8d: PUSH EAX ",
+          "00494d8e: MOV ECX,EDI ",
+          "00494d90: CALL dword ptr [EDX + 0x38] "
+        ]
+      }
+    ]
+  },
+  "subsequent_work": "Placed Objects callback520BB0 and converter56F730 were collected as next evidence, but this component establishes only Trap/Door rules.",
+  "native_emulations": [
+    {
+      "file": "phase29-emulation-placed-trap-0-1.json",
+      "sha256": "e54b1daf9d5a5d793f184d12dfbcce116e3ef3a1d06242a964efdcd9d84da0e7",
+      "case": "trap-0-1"
+    },
+    {
+      "file": "phase29-emulation-placed-trap-0-3.json",
+      "sha256": "af777dc48f7475ace7ec1559e8602e7c443dc1aa45293b56485c36781cc6ac95",
+      "case": "trap-0-3"
+    },
+    {
+      "file": "phase29-emulation-placed-trap-1-1.json",
+      "sha256": "dec21d755f31d37505f0b042aa1a77e3622968880884603c04f7a717a48a4b74",
+      "case": "trap-1-1"
+    },
+    {
+      "file": "phase29-emulation-placed-trap-1-3.json",
+      "sha256": "4ab3e38b51f812cc60151df966ae1706ef032197d7bf4d335f5366ad3bc44152",
+      "case": "trap-1-3"
+    },
+    {
+      "file": "phase29-emulation-placed-trap-2-1.json",
+      "sha256": "b58f4d4a73a49bf8d6b9ca12f6a6b81df831c53289db5fadf592f9eee7049081",
+      "case": "trap-2-1"
+    },
+    {
+      "file": "phase29-emulation-placed-trap-2-3.json",
+      "sha256": "ec14cc4b93034382b129aead2914edbc7bf91b5526816094395fc88333b55a41",
+      "case": "trap-2-3"
+    },
+    {
+      "file": "phase29-emulation-placed-trap-255-1.json",
+      "sha256": "fdc36d3dc6d126a3d95d6c75b4b5b7d20ea9e08db63add1504da496442cce749",
+      "case": "trap-255-1"
+    },
+    {
+      "file": "phase29-emulation-placed-trap-255-3.json",
+      "sha256": "156c6b9b3e700a570ae18e9a8abb2a146a9bcc00d83cc14f02a5a8f4899157d8",
+      "case": "trap-255-3"
+    },
+    {
+      "file": "phase29-emulation-placed-door-0.json",
+      "sha256": "fc67a4828f5d1df6aa76bf1482b922df0acfa4365333162408bfd9af2dee9b6d",
+      "case": "door-0"
+    },
+    {
+      "file": "phase29-emulation-placed-editor-0.json",
+      "sha256": "4f2de8cc1866cbb7a9de2af63029d4bbd0cdbcb0fd678a68d67affcbc1ca7e1c",
+      "case": "editor-0"
+    },
+    {
+      "file": "phase29-emulation-placed-door-1.json",
+      "sha256": "5de65d71e270339e538626950915e73ab30bbaa190a062152fc13e227eafe3a3",
+      "case": "door-1"
+    },
+    {
+      "file": "phase29-emulation-placed-editor-1.json",
+      "sha256": "bd11bc4f484ee5e3bc8c34d7be0e0fb1e7fcf13f9c384141ec5b713080f0ac8d",
+      "case": "editor-1"
+    },
+    {
+      "file": "phase29-emulation-placed-door-2.json",
+      "sha256": "a56292b8ea51bccfa7bfefdf8bd1648038d58c2d94d09957e000778162d2f0bc",
+      "case": "door-2"
+    },
+    {
+      "file": "phase29-emulation-placed-editor-2.json",
+      "sha256": "22e46ad9de8a3f72cfaac3bd647e617b06d5d2bf6d8b6105b3c76dae33a9d29d",
+      "case": "editor-2"
+    },
+    {
+      "file": "phase29-emulation-placed-door-3.json",
+      "sha256": "f818e41af6be09affc83054e9eabed4aa36d72f0f6ede0e23c3ad0c96edf4152",
+      "case": "door-3"
+    },
+    {
+      "file": "phase29-emulation-placed-editor-3.json",
+      "sha256": "7a3b3b36945da4e138b81a0ff01ae65baf58d1688618e220b732a4b4a9c69294",
+      "case": "editor-3"
+    },
+    {
+      "file": "phase29-emulation-placed-door-4.json",
+      "sha256": "111168272a96c208cbd18950f09c382b6fd89b3992a94120ef38ff6d65356703",
+      "case": "door-4"
+    },
+    {
+      "file": "phase29-emulation-placed-editor-4.json",
+      "sha256": "967afb53142c0dfc3b58f7e8f949c8a7f034b1c5acedd3445ac8945c225cc733",
+      "case": "editor-4"
+    },
+    {
+      "file": "phase29-emulation-placed-door-128.json",
+      "sha256": "2b6bb04df01f7a9fc6e393bfadc92d53ed43746ad7dd6131aec5fb4a552bf9a8",
+      "case": "door-128"
+    },
+    {
+      "file": "phase29-emulation-placed-editor-128.json",
+      "sha256": "3eb990e83d7d71809d6d84639a2578243202d9a12a0d05d353b672597e820ee4",
+      "case": "editor-128"
+    },
+    {
+      "file": "phase29-emulation-placed-door-255.json",
+      "sha256": "c8d8112a65f28755ffd8b6f6a24ce41bc36d62f85d1d0102f8292229418c401d",
+      "case": "door-255"
+    },
+    {
+      "file": "phase29-emulation-placed-editor-255.json",
+      "sha256": "0fa126e6ec1fb4c9576ee0a908f5d77f4cd77381493039f6b984b76109f0121b",
+      "case": "editor-255"
+    },
+    {
+      "file": "phase29-emulation-placed-convert-195-0.json",
+      "sha256": "811180fbc7c1d1492b5876e9519edb9cc50a79b26b2af558eac5d343c822192b",
+      "case": "convert-195-0"
+    },
+    {
+      "file": "phase29-emulation-placed-convert-195-4294967295.json",
+      "sha256": "a0d48e79da5709610d535ed44cf653f21f38fd5cb4f24f3f9cf3161d69142619",
+      "case": "convert-195-4294967295"
+    },
+    {
+      "file": "phase29-emulation-placed-convert-195-305419896.json",
+      "sha256": "3b16eaad3b18225db838a984a3766f06240ae6a0b9361288ced87925a5075a29",
+      "case": "convert-195-305419896"
+    },
+    {
+      "file": "phase29-emulation-placed-convert-196-0.json",
+      "sha256": "e3c90ee32ce49aa2ba2cef9b70e9c50867061e8ad35084e9a7f2bf3c9c2ac7d7",
+      "case": "convert-196-0"
+    },
+    {
+      "file": "phase29-emulation-placed-convert-196-4294967295.json",
+      "sha256": "694f61b9f2b03ceff9f916054b3ebcaae191b8a89ae8407e57aa789a024bd90e",
+      "case": "convert-196-4294967295"
+    },
+    {
+      "file": "phase29-emulation-placed-convert-196-305419896.json",
+      "sha256": "a8ef1f02eec337dd311520e98177bc4b4ae3b558f785d592ab0a2d4fefeb0e5d",
+      "case": "convert-196-305419896"
+    }
+  ],
+  "limitations": [
+    "Exact inspected EXEs only. No complete level load, real GUI, navigation simulation, audio, renderer or modified gameplay run.",
+    "Eight original full Trap callbacks use explicit creation/checksum/manufacture/neighbor/upkeep fixtures. Actual4A96D0 activation body executes; downstream refresh/neighbor scanning and mana contribution are stubbed. Asserted outcome is branch choice and selected state/position fields, not a full entity.",
+    "Seven Door runs start after creation at flag assignment, execute original4A66C0 and4A6800, and use explicit resource/nav providers with skipped navigation/visual refresh helpers. Candidate orientation and creation/task branches are not emulated.",
+    "Seven original editor decoder/encoder runs and six converter runs verify physical fields. Unknown flags/padding and raw+8 remain losslessly preserved by independent codec."
+  ]
+}

@@ -1,0 +1,994 @@
+{
+  "program_sha256": "d7a8b854e4e4f02709eba271bead6fe2307dd6e332b5a96e70857e5b0e19fb8a",
+  "scope": "Short, straight-line adjusted-pointer candidates; no structure identity proof.\n\nSeeds LEA/ADD/SUB constant pointer adjustments in mapped native function spans.\nTracks register aliases for up to40 instructions on the fall-through path. Calls\nkill EAX/ECX/EDX; indirect accesses, merges and stack reloads are not resolved.\nEvery candidate still needs primary disassembly and object identity verification.\n",
+  "mapped_spans_scanned": 8729,
+  "seeds": 22572,
+  "candidates": [
+    {
+      "function": "0x409e30",
+      "name": "CDefaultPlayerInterface_chatCallback",
+      "seed": "0x409e79",
+      "instruction": "0x409e87",
+      "text": "rep movsd dword ptr es:[edi], dword ptr [esi]",
+      "effective_offset": "0x106",
+      "adjusted_register": "esi",
+      "adjustment": 262,
+      "memory_bytes": 4,
+      "targets": [
+        "Objects34c"
+      ],
+      "trace": [
+        "00409e79: lea eax, [edi + 0x106]",
+        "00409e7f: mov ecx, 0x40",
+        "00409e84: mov esi, eax",
+        "00409e86: dec edx",
+        "00409e87: rep movsd dword ptr es:[edi], dword ptr [esi]"
+      ]
+    },
+    {
+      "function": "0x409ec0",
+      "name": "fun_409EC0",
+      "seed": "0x409ed0",
+      "instruction": "0x409ede",
+      "text": "rep movsd dword ptr es:[edi], dword ptr [esi]",
+      "effective_offset": "0x106",
+      "adjusted_register": "esi",
+      "adjustment": 262,
+      "memory_bytes": 4,
+      "targets": [
+        "Objects34c"
+      ],
+      "trace": [
+        "00409ed0: lea eax, [edi + 0x106]",
+        "00409ed6: mov ecx, 0x40",
+        "00409edb: mov esi, eax",
+        "00409edd: dec edx",
+        "00409ede: rep movsd dword ptr es:[edi], dword ptr [esi]"
+      ]
+    },
+    {
+      "function": "0x46eab0",
+      "name": "idle_76_KeeperState_46EAB0",
+      "seed": "0x46ec97",
+      "instruction": "0x46ec9e",
+      "text": "mov ecx, dword ptr [edx]",
+      "effective_offset": "0x104",
+      "adjusted_register": "edx",
+      "adjustment": 260,
+      "memory_bytes": 4,
+      "targets": [
+        "Objects34c"
+      ],
+      "trace": [
+        "0046ec97: add eax, 0x104",
+        "0046ec9c: mov edx, eax",
+        "0046ec9e: mov ecx, dword ptr [edx]"
+      ]
+    },
+    {
+      "function": "0x483760",
+      "name": "sub_483760",
+      "seed": "0x483766",
+      "instruction": "0x48376d",
+      "text": "mov eax, dword ptr [edx]",
+      "effective_offset": "0x104",
+      "adjusted_register": "edx",
+      "adjustment": 260,
+      "memory_bytes": 4,
+      "targets": [
+        "Objects34c"
+      ],
+      "trace": [
+        "00483766: add eax, 0x104",
+        "0048376b: mov edx, eax",
+        "0048376d: mov eax, dword ptr [edx]"
+      ]
+    },
+    {
+      "function": "0x4abd60",
+      "name": "fun_4ABD60",
+      "seed": "0x4ac129",
+      "instruction": "0x4ac138",
+      "text": "mov eax, dword ptr [edx]",
+      "effective_offset": "0x104",
+      "adjusted_register": "edx",
+      "adjustment": 260,
+      "memory_bytes": 4,
+      "targets": [
+        "Objects34c"
+      ],
+      "trace": [
+        "004ac129: lea eax, [esi + 0x104]",
+        "004ac12f: mov ecx, dword ptr [ecx + 8]",
+        "004ac132: mov edx, eax",
+        "004ac134: mov dword ptr [esp + 0x3c], ecx",
+        "004ac138: mov eax, dword ptr [edx]"
+      ]
+    },
+    {
+      "function": "0x4b5020",
+      "name": "fun_4B5020",
+      "seed": "0x4b5289",
+      "instruction": "0x4b5291",
+      "text": "mov ebx, dword ptr [eax]",
+      "effective_offset": "0x104",
+      "adjusted_register": "eax",
+      "adjustment": 260,
+      "memory_bytes": 4,
+      "targets": [
+        "Objects34c"
+      ],
+      "trace": [
+        "004b5289: lea esi, [ecx + 0x104]",
+        "004b528f: mov eax, esi",
+        "004b5291: mov ebx, dword ptr [eax]"
+      ]
+    },
+    {
+      "function": "0x528800",
+      "name": "fun_528800",
+      "seed": "0x528936",
+      "instruction": "0x52894c",
+      "text": "mov ecx, dword ptr [eax + 8]",
+      "effective_offset": "0x98",
+      "adjusted_register": "eax",
+      "adjustment": 144,
+      "memory_bytes": 4,
+      "targets": [
+        "Traps204"
+      ],
+      "trace": [
+        "00528936: lea eax, [esi + 0x90]",
+        "0052893c: add esp, 0x14",
+        "0052893f: mov ecx, dword ptr [eax]",
+        "00528941: mov dword ptr [esp + 0x18], ecx",
+        "00528945: mov edx, dword ptr [eax + 4]",
+        "00528948: mov dword ptr [esp + 0x1c], edx",
+        "0052894c: mov ecx, dword ptr [eax + 8]"
+      ]
+    },
+    {
+      "function": "0x528800",
+      "name": "fun_528800",
+      "seed": "0x528a9c",
+      "instruction": "0x528ab2",
+      "text": "mov ecx, dword ptr [eax + 8]",
+      "effective_offset": "0x98",
+      "adjusted_register": "eax",
+      "adjustment": 144,
+      "memory_bytes": 4,
+      "targets": [
+        "Traps204"
+      ],
+      "trace": [
+        "00528a9c: lea eax, [esi + 0x90]",
+        "00528aa2: add esp, 0x14",
+        "00528aa5: mov ecx, dword ptr [eax]",
+        "00528aa7: mov dword ptr [esp + 0x18], ecx",
+        "00528aab: mov edx, dword ptr [eax + 4]",
+        "00528aae: mov dword ptr [esp + 0x1c], edx",
+        "00528ab2: mov ecx, dword ptr [eax + 8]"
+      ]
+    },
+    {
+      "function": "0x5291f0",
+      "name": "fun_5291F0",
+      "seed": "0x529326",
+      "instruction": "0x52933c",
+      "text": "mov ecx, dword ptr [eax + 8]",
+      "effective_offset": "0x98",
+      "adjusted_register": "eax",
+      "adjustment": 144,
+      "memory_bytes": 4,
+      "targets": [
+        "Traps204"
+      ],
+      "trace": [
+        "00529326: lea eax, [esi + 0x90]",
+        "0052932c: add esp, 0x14",
+        "0052932f: mov ecx, dword ptr [eax]",
+        "00529331: mov dword ptr [esp + 0x18], ecx",
+        "00529335: mov edx, dword ptr [eax + 4]",
+        "00529338: mov dword ptr [esp + 0x1c], edx",
+        "0052933c: mov ecx, dword ptr [eax + 8]"
+      ]
+    },
+    {
+      "function": "0x5291f0",
+      "name": "fun_5291F0",
+      "seed": "0x52948c",
+      "instruction": "0x5294a2",
+      "text": "mov ecx, dword ptr [eax + 8]",
+      "effective_offset": "0x98",
+      "adjusted_register": "eax",
+      "adjustment": 144,
+      "memory_bytes": 4,
+      "targets": [
+        "Traps204"
+      ],
+      "trace": [
+        "0052948c: lea eax, [esi + 0x90]",
+        "00529492: add esp, 0x14",
+        "00529495: mov ecx, dword ptr [eax]",
+        "00529497: mov dword ptr [esp + 0x18], ecx",
+        "0052949b: mov edx, dword ptr [eax + 4]",
+        "0052949e: mov dword ptr [esp + 0x1c], edx",
+        "005294a2: mov ecx, dword ptr [eax + 8]"
+      ]
+    },
+    {
+      "function": "0x52a240",
+      "name": "CSlider::fun_52A240",
+      "seed": "0x52a244",
+      "instruction": "0x52a257",
+      "text": "mov esi, dword ptr [ecx + 8]",
+      "effective_offset": "0x98",
+      "adjusted_register": "ecx",
+      "adjustment": 144,
+      "memory_bytes": 4,
+      "targets": [
+        "Traps204"
+      ],
+      "trace": [
+        "0052a244: add ecx, 0x90",
+        "0052a24a: push esi",
+        "0052a24b: mov edx, eax",
+        "0052a24d: mov esi, dword ptr [ecx]",
+        "0052a24f: mov dword ptr [edx], esi",
+        "0052a251: mov esi, dword ptr [ecx + 4]",
+        "0052a254: mov dword ptr [edx + 4], esi",
+        "0052a257: mov esi, dword ptr [ecx + 8]"
+      ]
+    },
+    {
+      "function": "0x5a01a0",
+      "name": "createCEngineUnlitProceduralMesh",
+      "seed": "0x5a0b8b",
+      "instruction": "0x5a0b9e",
+      "text": "fld dword ptr [eax - 4]",
+      "effective_offset": "0x1b4",
+      "adjusted_register": "eax",
+      "adjustment": 440,
+      "memory_bytes": 4,
+      "targets": [
+        "Terrain224"
+      ],
+      "trace": [
+        "005a0b8b: lea eax, [esp + 0x1b8]",
+        "005a0b92: mov ecx, 0x10",
+        "005a0b97: xor esi, esi",
+        "005a0b99: fld dword ptr [edx]",
+        "005a0b9b: fadd dword ptr [eax - 8]",
+        "005a0b9e: fld dword ptr [eax - 4]"
+      ]
+    },
+    {
+      "function": "0x5a01a0",
+      "name": "createCEngineUnlitProceduralMesh",
+      "seed": "0x5a0b8b",
+      "instruction": "0x5a0ba1",
+      "text": "fld dword ptr [eax]",
+      "effective_offset": "0x1b8",
+      "adjusted_register": "eax",
+      "adjustment": 440,
+      "memory_bytes": 4,
+      "targets": [
+        "Terrain224"
+      ],
+      "trace": [
+        "005a0b8b: lea eax, [esp + 0x1b8]",
+        "005a0b92: mov ecx, 0x10",
+        "005a0b97: xor esi, esi",
+        "005a0b99: fld dword ptr [edx]",
+        "005a0b9b: fadd dword ptr [eax - 8]",
+        "005a0b9e: fld dword ptr [eax - 4]",
+        "005a0ba1: fld dword ptr [eax]"
+      ]
+    },
+    {
+      "function": "0x5a01a0",
+      "name": "createCEngineUnlitProceduralMesh",
+      "seed": "0x5a0b8b",
+      "instruction": "0x5a0bb1",
+      "text": "fstp dword ptr [eax + 8]",
+      "effective_offset": "0x1b4",
+      "adjusted_register": "eax",
+      "adjustment": 428,
+      "memory_bytes": 4,
+      "targets": [
+        "Terrain224"
+      ],
+      "trace": [
+        "005a0b8b: lea eax, [esp + 0x1b8]",
+        "005a0b92: mov ecx, 0x10",
+        "005a0b97: xor esi, esi",
+        "005a0b99: fld dword ptr [edx]",
+        "005a0b9b: fadd dword ptr [eax - 8]",
+        "005a0b9e: fld dword ptr [eax - 4]",
+        "005a0ba1: fld dword ptr [eax]",
+        "005a0ba3: fxch st(2)",
+        "005a0ba5: fstp dword ptr [eax - 8]",
+        "005a0ba8: dec ecx",
+        "005a0ba9: sub eax, 0xc",
+        "005a0bac: fadd dword ptr [edx + 4]",
+        "005a0baf: cmp ecx, esi",
+        "005a0bb1: fstp dword ptr [eax + 8]"
+      ]
+    },
+    {
+      "function": "0x5a01a0",
+      "name": "createCEngineUnlitProceduralMesh",
+      "seed": "0x5a0b8b",
+      "instruction": "0x5a0bb7",
+      "text": "fstp dword ptr [eax + 0xc]",
+      "effective_offset": "0x1b8",
+      "adjusted_register": "eax",
+      "adjustment": 428,
+      "memory_bytes": 4,
+      "targets": [
+        "Terrain224"
+      ],
+      "trace": [
+        "005a0b8b: lea eax, [esp + 0x1b8]",
+        "005a0b92: mov ecx, 0x10",
+        "005a0b97: xor esi, esi",
+        "005a0b99: fld dword ptr [edx]",
+        "005a0b9b: fadd dword ptr [eax - 8]",
+        "005a0b9e: fld dword ptr [eax - 4]",
+        "005a0ba1: fld dword ptr [eax]",
+        "005a0ba3: fxch st(2)",
+        "005a0ba5: fstp dword ptr [eax - 8]",
+        "005a0ba8: dec ecx",
+        "005a0ba9: sub eax, 0xc",
+        "005a0bac: fadd dword ptr [edx + 4]",
+        "005a0baf: cmp ecx, esi",
+        "005a0bb1: fstp dword ptr [eax + 8]",
+        "005a0bb4: fadd dword ptr [edx + 8]",
+        "005a0bb7: fstp dword ptr [eax + 0xc]"
+      ]
+    },
+    {
+      "function": "0x5a01a0",
+      "name": "createCEngineUnlitProceduralMesh",
+      "seed": "0x5a0e84",
+      "instruction": "0x5a0e97",
+      "text": "fld dword ptr [eax - 4]",
+      "effective_offset": "0x1b4",
+      "adjusted_register": "eax",
+      "adjustment": 440,
+      "memory_bytes": 4,
+      "targets": [
+        "Terrain224"
+      ],
+      "trace": [
+        "005a0e84: lea eax, [esp + 0x1b8]",
+        "005a0e8b: mov ecx, 0x10",
+        "005a0e90: xor ebp, ebp",
+        "005a0e92: fld dword ptr [edx]",
+        "005a0e94: fadd dword ptr [eax - 8]",
+        "005a0e97: fld dword ptr [eax - 4]"
+      ]
+    },
+    {
+      "function": "0x5a01a0",
+      "name": "createCEngineUnlitProceduralMesh",
+      "seed": "0x5a0e84",
+      "instruction": "0x5a0e9a",
+      "text": "fld dword ptr [eax]",
+      "effective_offset": "0x1b8",
+      "adjusted_register": "eax",
+      "adjustment": 440,
+      "memory_bytes": 4,
+      "targets": [
+        "Terrain224"
+      ],
+      "trace": [
+        "005a0e84: lea eax, [esp + 0x1b8]",
+        "005a0e8b: mov ecx, 0x10",
+        "005a0e90: xor ebp, ebp",
+        "005a0e92: fld dword ptr [edx]",
+        "005a0e94: fadd dword ptr [eax - 8]",
+        "005a0e97: fld dword ptr [eax - 4]",
+        "005a0e9a: fld dword ptr [eax]"
+      ]
+    },
+    {
+      "function": "0x5a01a0",
+      "name": "createCEngineUnlitProceduralMesh",
+      "seed": "0x5a0e84",
+      "instruction": "0x5a0eaa",
+      "text": "fstp dword ptr [eax + 8]",
+      "effective_offset": "0x1b4",
+      "adjusted_register": "eax",
+      "adjustment": 428,
+      "memory_bytes": 4,
+      "targets": [
+        "Terrain224"
+      ],
+      "trace": [
+        "005a0e84: lea eax, [esp + 0x1b8]",
+        "005a0e8b: mov ecx, 0x10",
+        "005a0e90: xor ebp, ebp",
+        "005a0e92: fld dword ptr [edx]",
+        "005a0e94: fadd dword ptr [eax - 8]",
+        "005a0e97: fld dword ptr [eax - 4]",
+        "005a0e9a: fld dword ptr [eax]",
+        "005a0e9c: fxch st(2)",
+        "005a0e9e: fstp dword ptr [eax - 8]",
+        "005a0ea1: dec ecx",
+        "005a0ea2: sub eax, 0xc",
+        "005a0ea5: fadd dword ptr [edx + 4]",
+        "005a0ea8: cmp ecx, ebp",
+        "005a0eaa: fstp dword ptr [eax + 8]"
+      ]
+    },
+    {
+      "function": "0x5a01a0",
+      "name": "createCEngineUnlitProceduralMesh",
+      "seed": "0x5a0e84",
+      "instruction": "0x5a0eb0",
+      "text": "fstp dword ptr [eax + 0xc]",
+      "effective_offset": "0x1b8",
+      "adjusted_register": "eax",
+      "adjustment": 428,
+      "memory_bytes": 4,
+      "targets": [
+        "Terrain224"
+      ],
+      "trace": [
+        "005a0e84: lea eax, [esp + 0x1b8]",
+        "005a0e8b: mov ecx, 0x10",
+        "005a0e90: xor ebp, ebp",
+        "005a0e92: fld dword ptr [edx]",
+        "005a0e94: fadd dword ptr [eax - 8]",
+        "005a0e97: fld dword ptr [eax - 4]",
+        "005a0e9a: fld dword ptr [eax]",
+        "005a0e9c: fxch st(2)",
+        "005a0e9e: fstp dword ptr [eax - 8]",
+        "005a0ea1: dec ecx",
+        "005a0ea2: sub eax, 0xc",
+        "005a0ea5: fadd dword ptr [edx + 4]",
+        "005a0ea8: cmp ecx, ebp",
+        "005a0eaa: fstp dword ptr [eax + 8]",
+        "005a0ead: fadd dword ptr [edx + 8]",
+        "005a0eb0: fstp dword ptr [eax + 0xc]"
+      ]
+    },
+    {
+      "function": "0x5a1ca0",
+      "name": "createStaticHeightField",
+      "seed": "0x5a2413",
+      "instruction": "0x5a2424",
+      "text": "fld dword ptr [eax - 8]",
+      "effective_offset": "0x104",
+      "adjusted_register": "eax",
+      "adjustment": 268,
+      "memory_bytes": 4,
+      "targets": [
+        "Objects34c"
+      ],
+      "trace": [
+        "005a2413: lea eax, [esp + 0x10c]",
+        "005a241a: mov esi, 9",
+        "005a241f: mov ecx, dword ptr [eax]",
+        "005a2421: mov edi, dword ptr [eax - 4]",
+        "005a2424: fld dword ptr [eax - 8]"
+      ]
+    },
+    {
+      "function": "0x5a1ca0",
+      "name": "createStaticHeightField",
+      "seed": "0x5a2413",
+      "instruction": "0x5a2466",
+      "text": "fmul dword ptr [edx]",
+      "effective_offset": "0x104",
+      "adjusted_register": "edx",
+      "adjustment": 260,
+      "memory_bytes": 4,
+      "targets": [
+        "Objects34c"
+      ],
+      "trace": [
+        "005a2413: lea eax, [esp + 0x10c]",
+        "005a241a: mov esi, 9",
+        "005a241f: mov ecx, dword ptr [eax]",
+        "005a2421: mov edi, dword ptr [eax - 4]",
+        "005a2424: fld dword ptr [eax - 8]",
+        "005a2427: mov dword ptr [esp + 0x34], ecx",
+        "005a242b: lea ecx, [eax - 4]",
+        "005a242e: fld dword ptr [esp + 0x34]",
+        "005a2432: lea edx, [eax - 8]",
+        "005a2435: mov dword ptr [esp + 0x24], edi",
+        "005a2439: fld dword ptr [esp + 0x24]",
+        "005a243d: fmul dword ptr [esp + 0x24]",
+        "005a2441: fxch st(1)",
+        "005a2443: fmul dword ptr [esp + 0x34]",
+        "005a2447: fld st(2)",
+        "005a2449: fmul st(3)",
+        "005a244b: fxch st(1)",
+        "005a244d: faddp st(2)",
+        "005a244f: add eax, 0xc",
+        "005a2452: dec esi",
+        "005a2453: faddp st(1)",
+        "005a2455: fsqrt ",
+        "005a2457: fstp st(1)",
+        "005a2459: fdivr dword ptr [0x6706c8]",
+        "005a245f: fld st(0)",
+        "005a2461: fmul dword ptr [eax - 0xc]",
+        "005a2464: fld st(1)",
+        "005a2466: fmul dword ptr [edx]"
+      ]
+    },
+    {
+      "function": "0x5a1ca0",
+      "name": "createStaticHeightField",
+      "seed": "0x5a2413",
+      "instruction": "0x5a247f",
+      "text": "fstp dword ptr [edx]",
+      "effective_offset": "0x104",
+      "adjusted_register": "edx",
+      "adjustment": 260,
+      "memory_bytes": 4,
+      "targets": [
+        "Objects34c"
+      ],
+      "trace": [
+        "005a2413: lea eax, [esp + 0x10c]",
+        "005a241a: mov esi, 9",
+        "005a241f: mov ecx, dword ptr [eax]",
+        "005a2421: mov edi, dword ptr [eax - 4]",
+        "005a2424: fld dword ptr [eax - 8]",
+        "005a2427: mov dword ptr [esp + 0x34], ecx",
+        "005a242b: lea ecx, [eax - 4]",
+        "005a242e: fld dword ptr [esp + 0x34]",
+        "005a2432: lea edx, [eax - 8]",
+        "005a2435: mov dword ptr [esp + 0x24], edi",
+        "005a2439: fld dword ptr [esp + 0x24]",
+        "005a243d: fmul dword ptr [esp + 0x24]",
+        "005a2441: fxch st(1)",
+        "005a2443: fmul dword ptr [esp + 0x34]",
+        "005a2447: fld st(2)",
+        "005a2449: fmul st(3)",
+        "005a244b: fxch st(1)",
+        "005a244d: faddp st(2)",
+        "005a244f: add eax, 0xc",
+        "005a2452: dec esi",
+        "005a2453: faddp st(1)",
+        "005a2455: fsqrt ",
+        "005a2457: fstp st(1)",
+        "005a2459: fdivr dword ptr [0x6706c8]",
+        "005a245f: fld st(0)",
+        "005a2461: fmul dword ptr [eax - 0xc]",
+        "005a2464: fld st(1)",
+        "005a2466: fmul dword ptr [edx]",
+        "005a2468: fxch st(2)",
+        "005a246a: fmul dword ptr [ecx]",
+        "005a246c: fxch st(1)",
+        "005a246e: fxch st(2)",
+        "005a2470: fst dword ptr [esp + 0x28]",
+        "005a2474: fxch st(1)",
+        "005a2476: fst dword ptr [esp + 0x2c]",
+        "005a247a: fxch st(2)",
+        "005a247c: fstp dword ptr [eax - 0xc]",
+        "005a247f: fstp dword ptr [edx]"
+      ]
+    },
+    {
+      "function": "0x60f4e0",
+      "name": "destructor",
+      "seed": "0x60f650",
+      "instruction": "0x60f683",
+      "text": "cmp ecx, dword ptr [esi + 8]",
+      "effective_offset": "0x98",
+      "adjusted_register": "esi",
+      "adjustment": 144,
+      "memory_bytes": 4,
+      "targets": [
+        "Traps204"
+      ],
+      "trace": [
+        "0060f650: lea esi, [ebp + 0x90]",
+        "0060f656: mov byte ptr [esp + 0x40], bl",
+        "0060f65a: xor ebx, ebx",
+        "0060f65c: xor edx, edx",
+        "0060f65e: cmp eax, ebx",
+        "0060f660: sete dl",
+        "0060f663: test dl, dl",
+        "0060f665: mov edi, 0xb",
+        "0060f66a: jne 0x60f69d",
+        "0060f66c: mov ecx, dword ptr [esi + 0xc]",
+        "0060f66f: xor edx, edx",
+        "0060f671: add ecx, edi",
+        "0060f673: dec eax",
+        "0060f674: cmp eax, ebx",
+        "0060f676: mov dword ptr [esi + 0xc], ecx",
+        "0060f679: sete dl",
+        "0060f67c: test dl, dl",
+        "0060f67e: mov dword ptr [esi + 0x2c], eax",
+        "0060f681: jne 0x60f688",
+        "0060f683: cmp ecx, dword ptr [esi + 8]"
+      ]
+    },
+    {
+      "function": "0x60fbc0",
+      "name": "fun_60FBC0",
+      "seed": "0x60fbd0",
+      "instruction": "0x60fc02",
+      "text": "mov eax, dword ptr [ecx + 4]",
+      "effective_offset": "0x98",
+      "adjusted_register": "ecx",
+      "adjustment": 148,
+      "memory_bytes": 4,
+      "targets": [
+        "Traps204"
+      ],
+      "trace": [
+        "0060fbd0: lea edi, [ebp + 0x90]",
+        "0060fbd6: sub esp, 0x10",
+        "0060fbd9: mov ecx, esp",
+        "0060fbdb: sub esp, 0x10",
+        "0060fbde: lea eax, [edi + 0x14]",
+        "0060fbe1: mov edx, dword ptr [edi + 0x14]",
+        "0060fbe4: mov dword ptr [ecx], edx",
+        "0060fbe6: mov edx, dword ptr [eax + 4]",
+        "0060fbe9: mov dword ptr [ecx + 4], edx",
+        "0060fbec: mov edx, dword ptr [eax + 8]",
+        "0060fbef: mov dword ptr [ecx + 8], edx",
+        "0060fbf2: mov edx, esp",
+        "0060fbf4: mov eax, dword ptr [eax + 0xc]",
+        "0060fbf7: mov dword ptr [ecx + 0xc], eax",
+        "0060fbfa: lea ecx, [edi + 4]",
+        "0060fbfd: mov eax, dword ptr [edi + 4]",
+        "0060fc00: mov dword ptr [edx], eax",
+        "0060fc02: mov eax, dword ptr [ecx + 4]"
+      ]
+    },
+    {
+      "function": "0x60fbc0",
+      "name": "fun_60FBC0",
+      "seed": "0x60fd1d",
+      "instruction": "0x60fd3a",
+      "text": "mov eax, dword ptr [ecx + 4]",
+      "effective_offset": "0x98",
+      "adjusted_register": "ecx",
+      "adjustment": 148,
+      "memory_bytes": 4,
+      "targets": [
+        "Traps204"
+      ],
+      "trace": [
+        "0060fd1d: lea ebx, [ebp + 0x94]",
+        "0060fd23: mov edx, dword ptr [esi]",
+        "0060fd25: lea eax, [esp + 0x18]",
+        "0060fd29: push 4",
+        "0060fd2b: push eax",
+        "0060fd2c: mov ecx, esi",
+        "0060fd2e: call dword ptr [edx + 8]",
+        "0060fd31: mov ecx, ebx",
+        "0060fd33: push edi",
+        "0060fd34: mov edx, dword ptr [ecx]",
+        "0060fd36: mov dword ptr [esp + 0x30], edx",
+        "0060fd3a: mov eax, dword ptr [ecx + 4]"
+      ]
+    },
+    {
+      "function": "0x60fbc0",
+      "name": "fun_60FBC0",
+      "seed": "0x60fd1d",
+      "instruction": "0x60fd75",
+      "text": "mov ecx, dword ptr [edx + 4]",
+      "effective_offset": "0x98",
+      "adjusted_register": "edx",
+      "adjustment": 148,
+      "memory_bytes": 4,
+      "targets": [
+        "Traps204"
+      ],
+      "trace": [
+        "0060fd1d: lea ebx, [ebp + 0x94]",
+        "0060fd23: mov edx, dword ptr [esi]",
+        "0060fd25: lea eax, [esp + 0x18]",
+        "0060fd29: push 4",
+        "0060fd2b: push eax",
+        "0060fd2c: mov ecx, esi",
+        "0060fd2e: call dword ptr [edx + 8]",
+        "0060fd31: mov ecx, ebx",
+        "0060fd33: push edi",
+        "0060fd34: mov edx, dword ptr [ecx]",
+        "0060fd36: mov dword ptr [esp + 0x30], edx",
+        "0060fd3a: mov eax, dword ptr [ecx + 4]",
+        "0060fd3d: mov dword ptr [esp + 0x34], eax",
+        "0060fd41: mov edx, dword ptr [ecx + 8]",
+        "0060fd44: mov dword ptr [esp + 0x38], edx",
+        "0060fd48: mov eax, dword ptr [ecx + 0xc]",
+        "0060fd4b: lea ecx, [esp + 0x30]",
+        "0060fd4f: mov dword ptr [esp + 0x3c], eax",
+        "0060fd53: call 0x60f110",
+        "0060fd58: mov ecx, dword ptr [esp + 0x18]",
+        "0060fd5c: mov ebp, dword ptr [esp + 0x34]",
+        "0060fd60: push ecx",
+        "0060fd61: call 0x634e80",
+        "0060fd66: mov edx, ebx",
+        "0060fd68: mov dword ptr [ebp + 5], eax",
+        "0060fd6b: add esp, 4",
+        "0060fd6e: mov eax, dword ptr [edx]",
+        "0060fd70: mov dword ptr [esp + 0x1c], eax",
+        "0060fd74: push edi",
+        "0060fd75: mov ecx, dword ptr [edx + 4]"
+      ]
+    },
+    {
+      "function": "0x60fbc0",
+      "name": "fun_60FBC0",
+      "seed": "0x60fdfe",
+      "instruction": "0x60fe0f",
+      "text": "mov edx, dword ptr [eax + 4]",
+      "effective_offset": "0x98",
+      "adjusted_register": "eax",
+      "adjustment": 148,
+      "memory_bytes": 4,
+      "targets": [
+        "Traps204"
+      ],
+      "trace": [
+        "0060fdfe: lea eax, [ebp + 0x94]",
+        "0060fe04: mov esi, dword ptr [esp + 0x24]",
+        "0060fe08: push ebx",
+        "0060fe09: mov ecx, dword ptr [eax]",
+        "0060fe0b: mov dword ptr [esp + 0x30], ecx",
+        "0060fe0f: mov edx, dword ptr [eax + 4]"
+      ]
+    },
+    {
+      "function": "0x60fbc0",
+      "name": "fun_60FBC0",
+      "seed": "0x60fe8d",
+      "instruction": "0x60fe9a",
+      "text": "mov edx, dword ptr [eax + 4]",
+      "effective_offset": "0x98",
+      "adjusted_register": "eax",
+      "adjustment": 148,
+      "memory_bytes": 4,
+      "targets": [
+        "Traps204"
+      ],
+      "trace": [
+        "0060fe8d: lea eax, [ebp + 0x94]",
+        "0060fe93: push ebx",
+        "0060fe94: mov ecx, dword ptr [eax]",
+        "0060fe96: mov dword ptr [esp + 0x54], ecx",
+        "0060fe9a: mov edx, dword ptr [eax + 4]"
+      ]
+    },
+    {
+      "function": "0x60fbc0",
+      "name": "fun_60FBC0",
+      "seed": "0x60ff5c",
+      "instruction": "0x60ff6b",
+      "text": "mov ecx, dword ptr [edx + 4]",
+      "effective_offset": "0x98",
+      "adjusted_register": "edx",
+      "adjustment": 148,
+      "memory_bytes": 4,
+      "targets": [
+        "Traps204"
+      ],
+      "trace": [
+        "0060ff5c: lea esi, [ebp + 0x94]",
+        "0060ff62: push ebx",
+        "0060ff63: mov edx, esi",
+        "0060ff65: mov eax, dword ptr [edx]",
+        "0060ff67: mov dword ptr [esp + 0x74], eax",
+        "0060ff6b: mov ecx, dword ptr [edx + 4]"
+      ]
+    },
+    {
+      "function": "0x60fbc0",
+      "name": "fun_60FBC0",
+      "seed": "0x60ff5c",
+      "instruction": "0x60ff9c",
+      "text": "mov ecx, dword ptr [esi + 4]",
+      "effective_offset": "0x98",
+      "adjusted_register": "esi",
+      "adjustment": 148,
+      "memory_bytes": 4,
+      "targets": [
+        "Traps204"
+      ],
+      "trace": [
+        "0060ff5c: lea esi, [ebp + 0x94]",
+        "0060ff62: push ebx",
+        "0060ff63: mov edx, esi",
+        "0060ff65: mov eax, dword ptr [edx]",
+        "0060ff67: mov dword ptr [esp + 0x74], eax",
+        "0060ff6b: mov ecx, dword ptr [edx + 4]",
+        "0060ff6e: mov dword ptr [esp + 0x78], ecx",
+        "0060ff72: mov eax, dword ptr [edx + 8]",
+        "0060ff75: mov dword ptr [esp + 0x7c], eax",
+        "0060ff79: mov ecx, dword ptr [edx + 0xc]",
+        "0060ff7c: lea edx, [esp + 0xc8]",
+        "0060ff83: mov dword ptr [esp + 0x80], ecx",
+        "0060ff8a: push edx",
+        "0060ff8b: lea ecx, [esp + 0x78]",
+        "0060ff8f: call 0x611940",
+        "0060ff94: mov eax, dword ptr [eax + 8]",
+        "0060ff97: push ebx",
+        "0060ff98: mov byte ptr [eax + 4], 1",
+        "0060ff9c: mov ecx, dword ptr [esi + 4]"
+      ]
+    },
+    {
+      "function": "0x62a8f0",
+      "name": "sub_62A8F0",
+      "seed": "0x62abb9",
+      "instruction": "0x62abc4",
+      "text": "fld dword ptr [eax]",
+      "effective_offset": "0x104",
+      "adjusted_register": "eax",
+      "adjustment": 260,
+      "memory_bytes": 4,
+      "targets": [
+        "Objects34c"
+      ],
+      "trace": [
+        "0062abb9: lea eax, [ebx + 0x104]",
+        "0062abbf: mov edx, 0xc",
+        "0062abc4: fld dword ptr [eax]"
+      ]
+    },
+    {
+      "function": "0x62a8f0",
+      "name": "sub_62A8F0",
+      "seed": "0x62abb9",
+      "instruction": "0x62abcf",
+      "text": "fstp dword ptr [eax - 4]",
+      "effective_offset": "0x104",
+      "adjusted_register": "eax",
+      "adjustment": 264,
+      "memory_bytes": 4,
+      "targets": [
+        "Objects34c"
+      ],
+      "trace": [
+        "0062abb9: lea eax, [ebx + 0x104]",
+        "0062abbf: mov edx, 0xc",
+        "0062abc4: fld dword ptr [eax]",
+        "0062abc6: fadd dword ptr [ecx]",
+        "0062abc8: add ecx, 4",
+        "0062abcb: add eax, 4",
+        "0062abce: dec edx",
+        "0062abcf: fstp dword ptr [eax - 4]"
+      ]
+    },
+    {
+      "function": "0x62a8f0",
+      "name": "sub_62A8F0",
+      "seed": "0x62abe5",
+      "instruction": "0x62abf2",
+      "text": "fadd dword ptr [eax]",
+      "effective_offset": "0x104",
+      "adjusted_register": "eax",
+      "adjustment": 260,
+      "memory_bytes": 4,
+      "targets": [
+        "Objects34c"
+      ],
+      "trace": [
+        "0062abe5: lea eax, [ebx + 0x104]",
+        "0062abeb: mov edx, 0xc",
+        "0062abf0: fld dword ptr [ecx]",
+        "0062abf2: fadd dword ptr [eax]"
+      ]
+    },
+    {
+      "function": "0x62a8f0",
+      "name": "sub_62A8F0",
+      "seed": "0x62abe5",
+      "instruction": "0x62abfb",
+      "text": "fstp dword ptr [eax - 4]",
+      "effective_offset": "0x104",
+      "adjusted_register": "eax",
+      "adjustment": 264,
+      "memory_bytes": 4,
+      "targets": [
+        "Objects34c"
+      ],
+      "trace": [
+        "0062abe5: lea eax, [ebx + 0x104]",
+        "0062abeb: mov edx, 0xc",
+        "0062abf0: fld dword ptr [ecx]",
+        "0062abf2: fadd dword ptr [eax]",
+        "0062abf4: add ecx, 4",
+        "0062abf7: add eax, 4",
+        "0062abfa: dec edx",
+        "0062abfb: fstp dword ptr [eax - 4]"
+      ]
+    },
+    {
+      "function": "0x62a8f0",
+      "name": "sub_62A8F0",
+      "seed": "0x62ac11",
+      "instruction": "0x62ac1c",
+      "text": "fld dword ptr [eax]",
+      "effective_offset": "0x104",
+      "adjusted_register": "eax",
+      "adjustment": 260,
+      "memory_bytes": 4,
+      "targets": [
+        "Objects34c"
+      ],
+      "trace": [
+        "0062ac11: lea eax, [ebx + 0x104]",
+        "0062ac17: mov edx, 0xc",
+        "0062ac1c: fld dword ptr [eax]"
+      ]
+    },
+    {
+      "function": "0x62a8f0",
+      "name": "sub_62A8F0",
+      "seed": "0x62ac11",
+      "instruction": "0x62ac27",
+      "text": "fstp dword ptr [eax - 4]",
+      "effective_offset": "0x104",
+      "adjusted_register": "eax",
+      "adjustment": 264,
+      "memory_bytes": 4,
+      "targets": [
+        "Objects34c"
+      ],
+      "trace": [
+        "0062ac11: lea eax, [ebx + 0x104]",
+        "0062ac17: mov edx, 0xc",
+        "0062ac1c: fld dword ptr [eax]",
+        "0062ac1e: fadd dword ptr [ecx]",
+        "0062ac20: add ecx, 4",
+        "0062ac23: add eax, 4",
+        "0062ac26: dec edx",
+        "0062ac27: fstp dword ptr [eax - 4]"
+      ]
+    },
+    {
+      "function": "0x62a8f0",
+      "name": "sub_62A8F0",
+      "seed": "0x62ac3d",
+      "instruction": "0x62ac48",
+      "text": "fld dword ptr [eax]",
+      "effective_offset": "0x104",
+      "adjusted_register": "eax",
+      "adjustment": 260,
+      "memory_bytes": 4,
+      "targets": [
+        "Objects34c"
+      ],
+      "trace": [
+        "0062ac3d: lea eax, [ebx + 0x104]",
+        "0062ac43: mov edx, 0xc",
+        "0062ac48: fld dword ptr [eax]"
+      ]
+    },
+    {
+      "function": "0x62a8f0",
+      "name": "sub_62A8F0",
+      "seed": "0x62ac3d",
+      "instruction": "0x62ac53",
+      "text": "fstp dword ptr [eax - 4]",
+      "effective_offset": "0x104",
+      "adjusted_register": "eax",
+      "adjustment": 264,
+      "memory_bytes": 4,
+      "targets": [
+        "Objects34c"
+      ],
+      "trace": [
+        "0062ac3d: lea eax, [ebx + 0x104]",
+        "0062ac43: mov edx, 0xc",
+        "0062ac48: fld dword ptr [eax]",
+        "0062ac4a: fadd dword ptr [ecx]",
+        "0062ac4c: add ecx, 4",
+        "0062ac4f: add eax, 4",
+        "0062ac52: dec edx",
+        "0062ac53: fstp dword ptr [eax - 4]"
+      ]
+    }
+  ]
+}

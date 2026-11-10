@@ -1,0 +1,4505 @@
+{
+  "scope": "Find initialized non-executable offset-table candidates, not field semantics.\n\nSearch DWORD/WORD values matching unresolved definition offsets in two exact\ngame EXEs. Adjacent numeric constants are not proof of a descriptor table.\nCode references to candidate data addresses must be type-traced separately.\n",
+  "programs": [
+    {
+      "exe": "D:\\Games\\DK2\\Dungeon Keeper 2\\DKII-DX.exe",
+      "sha256": "d7a8b854e4e4f02709eba271bead6fe2307dd6e332b5a96e70857e5b0e19fb8a",
+      "sections": [
+        {
+          "name": ".rdata",
+          "address": 6733824,
+          "virtual_bytes": 136507,
+          "raw_bytes": 136704,
+          "raw_offset": 2535424,
+          "flags": 1073741888
+        },
+        {
+          "name": ".data",
+          "address": 6873088,
+          "virtual_bytes": 1150416,
+          "raw_bytes": 257024,
+          "raw_offset": 2672128,
+          "flags": 3221225536
+        },
+        {
+          "name": "grpoly_d",
+          "address": 8024064,
+          "virtual_bytes": 1840,
+          "raw_bytes": 2048,
+          "raw_offset": 2929152,
+          "flags": 3221225536
+        },
+        {
+          "name": "uva_data",
+          "address": 8028160,
+          "virtual_bytes": 19148,
+          "raw_bytes": 19456,
+          "raw_offset": 2931200,
+          "flags": 3221225536
+        },
+        {
+          "name": "idct_dat",
+          "address": 8048640,
+          "virtual_bytes": 5720,
+          "raw_bytes": 6144,
+          "raw_offset": 2950656,
+          "flags": 3221225536
+        },
+        {
+          "name": "tqia_dat",
+          "address": 8056832,
+          "virtual_bytes": 2560,
+          "raw_bytes": 2560,
+          "raw_offset": 2956800,
+          "flags": 3221225536
+        },
+        {
+          "name": "dseg",
+          "address": 8060928,
+          "virtual_bytes": 4100,
+          "raw_bytes": 4608,
+          "raw_offset": 2959360,
+          "flags": 3221225536
+        },
+        {
+          "name": "lbmpeg_d",
+          "address": 8069120,
+          "virtual_bytes": 1024,
+          "raw_bytes": 1024,
+          "raw_offset": 2963968,
+          "flags": 3221225536
+        }
+      ],
+      "candidates": [
+        {
+          "address": 6748735,
+          "section": ".rdata",
+          "value": 58,
+          "width": 4,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6748711,
+          "context_hex": "410000a0c100000042db0f4940cdcccc3d000000400000803a000000000000803f000080bf00007f43b0feff3e000040cb000080"
+        },
+        {
+          "address": 6751923,
+          "section": ".rdata",
+          "value": 58,
+          "width": 4,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6751899,
+          "context_hex": "380000000000000040000040c08fc2753d0000003f0000803a000000009a9999999999b93fb81e85eb51b89e3f0000803f000000"
+        },
+        {
+          "address": 6752035,
+          "section": ".rdata",
+          "value": 58,
+          "width": 4,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6752011,
+          "context_hex": "000000e03e00000037000080409a9999999999a93f0000003a000000009a9999999999c93f00008043cdcccc3d6f1283b9000000"
+        },
+        {
+          "address": 6752796,
+          "section": ".rdata",
+          "value": 58,
+          "width": 4,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6752772,
+          "context_hex": "1b0000001d000000200000002300000028000000300000003a0000001a0000001b0000001d00000022000000260000002e000000"
+        },
+        {
+          "address": 6757452,
+          "section": ".rdata",
+          "value": 58,
+          "width": 4,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6757428,
+          "context_hex": "1b0000001d000000200000002300000028000000300000003a0000001a0000001b0000001d00000022000000260000002e000000"
+        },
+        {
+          "address": 6768563,
+          "section": ".rdata",
+          "value": 58,
+          "width": 4,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6768539,
+          "context_hex": "0080c4610090c46100c0c46100d0c46100107256006f12833a0000004020d7610030886200508862006088620090d46100408962"
+        },
+        {
+          "address": 6785696,
+          "section": ".rdata",
+          "value": 58,
+          "width": 4,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6785672,
+          "context_hex": "e8000000b800000092000000740000005c000000490000003a0000002e000000240000001d000000170000000000000012111101"
+        },
+        {
+          "address": 6796584,
+          "section": ".rdata",
+          "value": 58,
+          "width": 4,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6796560,
+          "context_hex": "400000003f0000003e0000003d0000003c0000003b0000003a000000390000003800000037000000360000003500000034000000"
+        },
+        {
+          "address": 6735607,
+          "section": ".rdata",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6735583,
+          "context_hex": "3c9a99993e0000000034b68c3f0000003f000080390000803a0000c03f00000000000000000000e03f0000343f0000803e000000"
+        },
+        {
+          "address": 6748735,
+          "section": ".rdata",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6748711,
+          "context_hex": "410000a0c100000042db0f4940cdcccc3d000000400000803a000000000000803f000080bf00007f43b0feff3e000040cb000080"
+        },
+        {
+          "address": 6750341,
+          "section": ".rdata",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6750317,
+          "context_hex": "3d000001ff0000c03f0000803e000041fe000001fa0000c03a0000803b000041fb000000390000c1f9000081f800004038000000"
+        },
+        {
+          "address": 6751923,
+          "section": ".rdata",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6751899,
+          "context_hex": "380000000000000040000040c08fc2753d0000003f0000803a000000009a9999999999b93fb81e85eb51b89e3f0000803f000000"
+        },
+        {
+          "address": 6752035,
+          "section": ".rdata",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6752011,
+          "context_hex": "000000e03e00000037000080409a9999999999a93f0000003a000000009a9999999999c93f00008043cdcccc3d6f1283b9000000"
+        },
+        {
+          "address": 6752796,
+          "section": ".rdata",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6752772,
+          "context_hex": "1b0000001d000000200000002300000028000000300000003a0000001a0000001b0000001d00000022000000260000002e000000"
+        },
+        {
+          "address": 6756605,
+          "section": ".rdata",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6756581,
+          "context_hex": "07000000000000003d0000080000000a04000000000000003a000008000000f607000000000000003b0000080000000b04000000"
+        },
+        {
+          "address": 6757452,
+          "section": ".rdata",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6757428,
+          "context_hex": "1b0000001d000000200000002300000028000000300000003a0000001a0000001b0000001d00000022000000260000002e000000"
+        },
+        {
+          "address": 6761172,
+          "section": ".rdata",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6761148,
+          "context_hex": "40f9bcace36cd832755cdf45cf0dd6dc593dd1abac30d9263a00de518051d7c81661d0bfb5f4b42123c4b3569995bacf0fa5bdb8"
+        },
+        {
+          "address": 6764040,
+          "section": ".rdata",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6764016,
+          "context_hex": "6a000800ea0008001a0008009a0008005a000800da0008003a000800ba0008007a000800fa000800060008008600080046000800"
+        },
+        {
+          "address": 6768563,
+          "section": ".rdata",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6768539,
+          "context_hex": "0080c4610090c46100c0c46100d0c46100107256006f12833a0000004020d7610030886200508862006088620090d46100408962"
+        },
+        {
+          "address": 6785506,
+          "section": ".rdata",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6785482,
+          "context_hex": "e800f74eb80025499200671b74007b275c0092244900b30d3a00bd132e0049922400d9061d00de091700244912006c830e00ef84"
+        },
+        {
+          "address": 6785601,
+          "section": ".rdata",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6785577,
+          "context_hex": "e800004eb80000499200001b740000275c0000244900000d3a0000132e000092240000061d00000917000049120000830e000084"
+        },
+        {
+          "address": 6785696,
+          "section": ".rdata",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6785672,
+          "context_hex": "e8000000b800000092000000740000005c000000490000003a0000002e000000240000001d000000170000000000000012111101"
+        },
+        {
+          "address": 6796584,
+          "section": ".rdata",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6796560,
+          "context_hex": "400000003f0000003e0000003d0000003c0000003b0000003a000000390000003800000037000000360000003500000034000000"
+        },
+        {
+          "address": 6750877,
+          "section": ".rdata",
+          "value": 152,
+          "width": 2,
+          "field_hints": [
+            "Traps.204"
+          ],
+          "context_address": 6750853,
+          "context_hex": "9a0000819b0000405b000001990000c0590000805800004198000001880000c04800008049000041890000004b0000c18b000081"
+        },
+        {
+          "address": 6755453,
+          "section": ".rdata",
+          "value": 152,
+          "width": 2,
+          "field_hints": [
+            "Traps.204"
+          ],
+          "context_address": 6755429,
+          "context_hex": "0b00000000000000a4000006000000040c0000000000000098000006000000fc0f000000000000009c0000060000000314000000"
+        },
+        {
+          "address": 6758554,
+          "section": ".rdata",
+          "value": 262,
+          "width": 2,
+          "field_hints": [
+            "Objects.34C"
+          ],
+          "context_address": 6758530,
+          "context_hex": "02050402000200060505010602050705050003050305030006010101060003050505030007010301070007010301010006010105"
+        },
+        {
+          "address": 6758578,
+          "section": ".rdata",
+          "value": 262,
+          "width": 2,
+          "field_hints": [
+            "Objects.34C"
+          ],
+          "context_address": 6758554,
+          "context_hex": "06010101060003050505030007010301070007010301010006010105060005050705050007020202070004040404030005050305"
+        },
+        {
+          "address": 6758650,
+          "section": ".rdata",
+          "value": 262,
+          "width": 2,
+          "field_hints": [
+            "Objects.34C"
+          ],
+          "context_address": 6758626,
+          "context_hex": "02050505020003050301010002050507060003050305050006010204030007020202020005050505070005050505020005050707"
+        },
+        {
+          "address": 6758747,
+          "section": ".rdata",
+          "value": 262,
+          "width": 2,
+          "field_hints": [
+            "Objects.34C"
+          ],
+          "context_address": 6758723,
+          "context_hex": "00000007000000010204000304060506000103050503000006010106000406050506000006070106000002010301010002050604"
+        },
+        {
+          "address": 6753320,
+          "section": ".rdata",
+          "value": 387,
+          "width": 2,
+          "field_hints": [
+            "Terrain.198"
+          ],
+          "context_address": 6753296,
+          "context_hex": "7c017688280d6c007e017688100d6c0080017688ec0c6c0083017688d80c6c0090017688c00c6c009a017688a00c6c00a4017688"
+        },
+        {
+          "address": 7009856,
+          "section": ".data",
+          "value": 1884,
+          "width": 2,
+          "field_hints": [
+            "Creature.AbilityJump"
+          ],
+          "context_address": 7009832,
+          "context_hex": "8c076b008f01000074076b00c10a00000c0d6b00000000005c076b00c20a000044076b00c30a00000c0d6b000000000024076b00"
+        },
+        {
+          "address": 6875587,
+          "section": ".data",
+          "value": 58,
+          "width": 4,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6875563,
+          "context_hex": "32643a2025732c20257300000044334420446576696365733a00000000496e76616c696420443344204465766963652053656c65"
+        },
+        {
+          "address": 6889864,
+          "section": ".data",
+          "value": 58,
+          "width": 4,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6889840,
+          "context_hex": "00000000280028000000000000000000f0504200010000003a000000000000000000000000000000000200000000000000000000"
+        },
+        {
+          "address": 6944147,
+          "section": ".data",
+          "value": 58,
+          "width": 4,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6944123,
+          "context_hex": "204372797074506f7765727350656f706c654163746976653a0000000020202020446973636f496e6665726e6f436f756e742025"
+        },
+        {
+          "address": 6945480,
+          "section": ".data",
+          "value": 58,
+          "width": 4,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6945456,
+          "context_hex": "76756c6e657261626c652025640a000020202020416c6c793a000000202020204372656174757265734b696c6c65643a00000000"
+        },
+        {
+          "address": 6945503,
+          "section": ".data",
+          "value": 58,
+          "width": 4,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6945479,
+          "context_hex": "793a000000202020204372656174757265734b696c6c65643a00000000202020204f626a6563746976655465787449642025640a"
+        },
+        {
+          "address": 6945775,
+          "section": ".data",
+          "value": 58,
+          "width": 4,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6945751,
+          "context_hex": "642025640a00000000202020205468696e67496e48616e643a00000000202020204c6173744e6f4d616e615761726e696e675469"
+        },
+        {
+          "address": 6946308,
+          "section": ".data",
+          "value": 58,
+          "width": 4,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6946284,
+          "context_hex": "546f74616c4e756d6265724f664f776e65645468696e67733a000000202020204372656174757265456e7472616e6365496e666f"
+        },
+        {
+          "address": 6946336,
+          "section": ".data",
+          "value": 58,
+          "width": 4,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6946312,
+          "context_hex": "202020204372656174757265456e7472616e6365496e666f3a00000020256400202020205468696e67734f776e65644c6973743a"
+        },
+        {
+          "address": 6946363,
+          "section": ".data",
+          "value": 58,
+          "width": 4,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6946339,
+          "context_hex": "0020256400202020205468696e67734f776e65644c6973743a000000002020506c617965723a205461674964202564205b4e756d"
+        },
+        {
+          "address": 6976520,
+          "section": ".data",
+          "value": 58,
+          "width": 4,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6976496,
+          "context_hex": "20002500730000004e6574776f726b2053657276696365733a000000536574757020536572766963652053756363657373000000"
+        },
+        {
+          "address": 6976628,
+          "section": ".data",
+          "value": 58,
+          "width": 4,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6976604,
+          "context_hex": "204661696c6564004e6574776f726b2053657373696f6e733a0000004c6f63616c204d616368696e65204e616d653a2025730000"
+        },
+        {
+          "address": 6976687,
+          "section": ".data",
+          "value": 58,
+          "width": 4,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6976663,
+          "context_hex": "6573733a20257300004d79204d616368696e6520496e666f3a0000000053657373696f6e204372656174656400556e61626c6520"
+        },
+        {
+          "address": 6978428,
+          "section": ".data",
+          "value": 58,
+          "width": 4,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6978404,
+          "context_hex": "53004b002100000042007500740074006f006e00200039003a00000042007500740074006f006e00200038003a00000042007500"
+        },
+        {
+          "address": 6978448,
+          "section": ".data",
+          "value": 58,
+          "width": 4,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6978424,
+          "context_hex": "200039003a00000042007500740074006f006e00200038003a00000042007500740074006f006e00200037003a00000042007500"
+        },
+        {
+          "address": 6978468,
+          "section": ".data",
+          "value": 58,
+          "width": 4,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6978444,
+          "context_hex": "200038003a00000042007500740074006f006e00200037003a00000042007500740074006f006e00200036003a00000042007500"
+        },
+        {
+          "address": 6978488,
+          "section": ".data",
+          "value": 58,
+          "width": 4,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6978464,
+          "context_hex": "200037003a00000042007500740074006f006e00200036003a00000042007500740074006f006e00200035003a00000054007200"
+        },
+        {
+          "address": 6978508,
+          "section": ".data",
+          "value": 58,
+          "width": 4,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6978484,
+          "context_hex": "200036003a00000042007500740074006f006e00200035003a00000054007200650061007300750072006500200052006f006f00"
+        },
+        {
+          "address": 6983058,
+          "section": ".data",
+          "value": 58,
+          "width": 4,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6983034,
+          "context_hex": "0000000000000000000000000000000000000000000000023a0000006775695c4a6f62735c4578706572745c4d616e7566616374"
+        },
+        {
+          "address": 7036084,
+          "section": ".data",
+          "value": 58,
+          "width": 4,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 7036060,
+          "context_hex": "0000e09453000000000000000000000000000400110002003a000000600208031805ac00000000001805ac000000000000000000"
+        },
+        {
+          "address": 7046780,
+          "section": ".data",
+          "value": 58,
+          "width": 4,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 7046756,
+          "context_hex": "960000005b000000d8ac6b0034010000710000005c0000003a000000ccac6b00670100006d000000730000004c000000c0ac6b00"
+        },
+        {
+          "address": 7047380,
+          "section": ".data",
+          "value": 58,
+          "width": 4,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 7047356,
+          "context_hex": "960000005b00000068ab6b0034010000710000005c0000003a0000005cab6b00670100006d000000730000004c00000050ab6b00"
+        },
+        {
+          "address": 7047980,
+          "section": ".data",
+          "value": 58,
+          "width": 4,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 7047956,
+          "context_hex": "960000005b000000f8a96b0034010000710000005c0000003a000000eca96b00670100006d000000730000004c000000e0a96b00"
+        },
+        {
+          "address": 7048580,
+          "section": ".data",
+          "value": 58,
+          "width": 4,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 7048556,
+          "context_hex": "960000005b00000088a86b0034010000710000005c0000003a0000007ca86b00670100006d000000730000004c00000070a86b00"
+        },
+        {
+          "address": 7065384,
+          "section": ".data",
+          "value": 58,
+          "width": 4,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 7065360,
+          "context_hex": "19000000c00600001a000000d00600001b0000000f0b00003a0000000e0b00003b000000100b00003c000000110b00003d000000"
+        },
+        {
+          "address": 7066080,
+          "section": ".data",
+          "value": 58,
+          "width": 4,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 7066056,
+          "context_hex": "34000000bd06000033000000be0600000f000000b00400003a000000b10400002a000000a804000036000000a80400001d000000"
+        },
+        {
+          "address": 7072240,
+          "section": ".data",
+          "value": 58,
+          "width": 4,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 7072216,
+          "context_hex": "0f000000170000001e000000250000002c000000330000003a0000003b000000340000002d000000260000001f00000027000000"
+        },
+        {
+          "address": 7076420,
+          "section": ".data",
+          "value": 58,
+          "width": 4,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 7076396,
+          "context_hex": "85ffffff60ffffff3dffffff19fffffff6feffff130000003a0000006100000088000000b0000000d7000000fe00000025010000"
+        },
+        {
+          "address": 7102356,
+          "section": ".data",
+          "value": 58,
+          "width": 4,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 7102332,
+          "context_hex": "940000005407000043000000000800007a000000000800003a00000000090000d40000005207000013000000000800006a000000"
+        },
+        {
+          "address": 7104404,
+          "section": ".data",
+          "value": 58,
+          "width": 4,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 7104380,
+          "context_hex": "950000005407000043000000000800007a000000000800003a00000000090000d50000005207000013000000000800006a000000"
+        },
+        {
+          "address": 7117440,
+          "section": ".data",
+          "value": 58,
+          "width": 4,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 7117416,
+          "context_hex": "300100004e0100006d01000000000000ffffffff1e0000003a000000590000007700000096000000b4000000d3000000f2000000"
+        },
+        {
+          "address": 6874702,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6874678,
+          "context_hex": "5c2a2e736176000000005061636b6574205265636f7264733a002020256331322e2e313032342a3736382031366262702057696e"
+        },
+        {
+          "address": 6875053,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6875029,
+          "context_hex": "000000417661696c61626c6520566964656f204d6f6465733a00004368616e67652053637265656e204d6f6465204661696c6564"
+        },
+        {
+          "address": 6875587,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6875563,
+          "context_hex": "32643a2025732c20257300000044334420446576696365733a00000000496e76616c696420443344204465766963652053656c65"
+        },
+        {
+          "address": 6875769,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6875745,
+          "context_hex": "72652032440000417661696c61626c6520456e67696e65733a0000496e76616c696420456e67696e65204964000000456e67696e"
+        },
+        {
+          "address": 6878516,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6878492,
+          "context_hex": "000000002e3f4156435468696e67404000000000250073003a0020002500730000000000250064003a0020002500730000000000"
+        },
+        {
+          "address": 6878532,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6878508,
+          "context_hex": "00000000250073003a0020002500730000000000250064003a002000250073000000000008f66800f0f56800e0f56800ccf56800"
+        },
+        {
+          "address": 6889864,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6889840,
+          "context_hex": "00000000280028000000000000000000f0504200010000003a000000000000000000000000000000000200000000000000000000"
+        },
+        {
+          "address": 6944109,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6944085,
+          "context_hex": "666f3a0a000000202020204f666665726564416c6c79546f3a00002025642000000000202020204372797074506f776572735065"
+        },
+        {
+          "address": 6944147,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6944123,
+          "context_hex": "204372797074506f7765727350656f706c654163746976653a0000000020202020446973636f496e6665726e6f436f756e742025"
+        },
+        {
+          "address": 6945480,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6945456,
+          "context_hex": "76756c6e657261626c652025640a000020202020416c6c793a000000202020204372656174757265734b696c6c65643a00000000"
+        },
+        {
+          "address": 6945503,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6945479,
+          "context_hex": "793a000000202020204372656174757265734b696c6c65643a00000000202020204f626a6563746976655465787449642025640a"
+        },
+        {
+          "address": 6945775,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6945751,
+          "context_hex": "642025640a00000000202020205468696e67496e48616e643a00000000202020204c6173744e6f4d616e615761726e696e675469"
+        },
+        {
+          "address": 6946308,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6946284,
+          "context_hex": "546f74616c4e756d6265724f664f776e65645468696e67733a000000202020204372656174757265456e7472616e6365496e666f"
+        },
+        {
+          "address": 6946336,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6946312,
+          "context_hex": "202020204372656174757265456e7472616e6365496e666f3a00000020256400202020205468696e67734f776e65644c6973743a"
+        },
+        {
+          "address": 6946363,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6946339,
+          "context_hex": "0020256400202020205468696e67734f776e65644c6973743a000000002020506c617965723a205461674964202564205b4e756d"
+        },
+        {
+          "address": 6965306,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6965282,
+          "context_hex": "00002020202020204e756d626572496e5461736b4c6973743a002020202020205461736b4c697374486561643a00202020202020"
+        },
+        {
+          "address": 6965326,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6965302,
+          "context_hex": "4c6973743a002020202020205461736b4c697374486561643a00202020202020467265654c697374486561642025640a00002020"
+        },
+        {
+          "address": 6965482,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6965458,
+          "context_hex": "74612025640a000000002020202020202020576f726b65723a002020202020202020506f736974696f6e202825642c202564290a"
+        },
+        {
+          "address": 6976494,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6976470,
+          "context_hex": "656e204e6574776f726b2053797374656d002500320064003a0020002500730000004e6574776f726b2053657276696365733a00"
+        },
+        {
+          "address": 6976520,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6976496,
+          "context_hex": "20002500730000004e6574776f726b2053657276696365733a000000536574757020536572766963652053756363657373000000"
+        },
+        {
+          "address": 6976628,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6976604,
+          "context_hex": "204661696c6564004e6574776f726b2053657373696f6e733a0000004c6f63616c204d616368696e65204e616d653a2025730000"
+        },
+        {
+          "address": 6976687,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6976663,
+          "context_hex": "6573733a20257300004d79204d616368696e6520496e666f3a0000000053657373696f6e204372656174656400556e61626c6520"
+        },
+        {
+          "address": 6977338,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6977314,
+          "context_hex": "202020204964202564004661696c656420506c61796572733a0020204661696c65640000000047756172616e7465656420446174"
+        },
+        {
+          "address": 6978236,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6978212,
+          "context_hex": "7400200061006e00640020007300650065002000200020003a0029002000200059006f00750020007200650061006c006c007900"
+        },
+        {
+          "address": 6978428,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6978404,
+          "context_hex": "53004b002100000042007500740074006f006e00200039003a00000042007500740074006f006e00200038003a00000042007500"
+        },
+        {
+          "address": 6978448,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6978424,
+          "context_hex": "200039003a00000042007500740074006f006e00200038003a00000042007500740074006f006e00200037003a00000042007500"
+        },
+        {
+          "address": 6978468,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6978444,
+          "context_hex": "200038003a00000042007500740074006f006e00200037003a00000042007500740074006f006e00200036003a00000042007500"
+        },
+        {
+          "address": 6978488,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6978464,
+          "context_hex": "200037003a00000042007500740074006f006e00200036003a00000042007500740074006f006e00200035003a00000054007200"
+        },
+        {
+          "address": 6978508,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6978484,
+          "context_hex": "200036003a00000042007500740074006f006e00200035003a00000054007200650061007300750072006500200052006f006f00"
+        },
+        {
+          "address": 6978538,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6978514,
+          "context_hex": "7200650061007300750072006500200052006f006f006d003a00200041006c006c006f0077007300200079006f00750020007400"
+        },
+        {
+          "address": 6978642,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6978618,
+          "context_hex": "75006e00670065006f006e002000480065006100720074003a00200041006c006c006f0077007300200079006f00750020007400"
+        },
+        {
+          "address": 6978736,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6978712,
+          "context_hex": "7200740000000000480061007400630068006500720079003a00200041006c006c006f0077007300200079006f00750020007400"
+        },
+        {
+          "address": 6978820,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6978796,
+          "context_hex": "720079000000000045006e007400720061006e00630065003a00200041006c006c006f0077007300200079006f00750020007400"
+        },
+        {
+          "address": 6983058,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6983034,
+          "context_hex": "0000000000000000000000000000000000000000000000023a0000006775695c4a6f62735c4578706572745c4d616e7566616374"
+        },
+        {
+          "address": 7000509,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 7000485,
+          "context_hex": "46726f6e74456e64436f6d706f6e656e74404000000000453a00006364617564696f0025735c25732e736176000000446174615c"
+        },
+        {
+          "address": 7020484,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 7020460,
+          "context_hex": "6400000025006c00750000002500300032006c00750020003a0020002500300032006c00750000002500640020002f0020002500"
+        },
+        {
+          "address": 7025510,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 7025486,
+          "context_hex": "6c00750020007800200025006c00750000002500730020003a0020002500730000002600000000000000000000000000000a8007"
+        },
+        {
+          "address": 7029720,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 7029696,
+          "context_hex": "0000000000000000000000000000000000000000000000003a0020000000000025007300010025006c007500010025006c007500"
+        },
+        {
+          "address": 7029786,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 7029762,
+          "context_hex": "7500010025006c00750001002500730001000000000020003a00200025006400000023000000ffffffffffffffffffffffff0000"
+        },
+        {
+          "address": 7036084,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 7036060,
+          "context_hex": "0000e09453000000000000000000000000000400110002003a000000600208031805ac00000000001805ac000000000000000000"
+        },
+        {
+          "address": 7046780,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 7046756,
+          "context_hex": "960000005b000000d8ac6b0034010000710000005c0000003a000000ccac6b00670100006d000000730000004c000000c0ac6b00"
+        },
+        {
+          "address": 7047380,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 7047356,
+          "context_hex": "960000005b00000068ab6b0034010000710000005c0000003a0000005cab6b00670100006d000000730000004c00000050ab6b00"
+        },
+        {
+          "address": 7047980,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 7047956,
+          "context_hex": "960000005b000000f8a96b0034010000710000005c0000003a000000eca96b00670100006d000000730000004c000000e0a96b00"
+        },
+        {
+          "address": 7048580,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 7048556,
+          "context_hex": "960000005b00000088a86b0034010000710000005c0000003a0000007ca86b00670100006d000000730000004c00000070a86b00"
+        },
+        {
+          "address": 7065384,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 7065360,
+          "context_hex": "19000000c00600001a000000d00600001b0000000f0b00003a0000000e0b00003b000000100b00003c000000110b00003d000000"
+        },
+        {
+          "address": 7066080,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 7066056,
+          "context_hex": "34000000bd06000033000000be0600000f000000b00400003a000000b10400002a000000a804000036000000a80400001d000000"
+        },
+        {
+          "address": 7072240,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 7072216,
+          "context_hex": "0f000000170000001e000000250000002c000000330000003a0000003b000000340000002d000000260000001f00000027000000"
+        },
+        {
+          "address": 7076420,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 7076396,
+          "context_hex": "85ffffff60ffffff3dffffff19fffffff6feffff130000003a0000006100000088000000b0000000d7000000fe00000025010000"
+        },
+        {
+          "address": 7083445,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 7083421,
+          "context_hex": "3500008e3600005237000017380000db3800009f390000623a0000263b0000ea3b0000ad3c0000703d0000333e0000f63e0000b9"
+        },
+        {
+          "address": 7086941,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 7086917,
+          "context_hex": "3e0000333e0000703d0000ad3c0000ea3b0000263b0000623a00009f390000db38000017380000523700008e360000c935000005"
+        },
+        {
+          "address": 7091637,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 7091613,
+          "context_hex": "3500008e3600005237000017380000db3800009f390000623a0000263b0000ea3b0000ad3c0000703d0000333e0000f63e0000b9"
+        },
+        {
+          "address": 7100933,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 7100909,
+          "context_hex": "3d000001ff0000c03f0000803e000041fe000001fa0000c03a0000803b000041fb000000390000c1f9000081f800004038000000"
+        },
+        {
+          "address": 7102356,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 7102332,
+          "context_hex": "940000005407000043000000000800007a000000000800003a00000000090000d40000005207000013000000000800006a000000"
+        },
+        {
+          "address": 7104404,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 7104380,
+          "context_hex": "950000005407000043000000000800007a000000000800003a00000000090000d50000005207000013000000000800006a000000"
+        },
+        {
+          "address": 7117440,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 7117416,
+          "context_hex": "300100004e0100006d01000000000000ffffffff1e0000003a000000590000007700000096000000b4000000d3000000f2000000"
+        },
+        {
+          "address": 6989544,
+          "section": ".data",
+          "value": 152,
+          "width": 4,
+          "field_hints": [
+            "Traps.204"
+          ],
+          "context_address": 6989520,
+          "context_hex": "000000000000000000000000000000000000000000000002980000006775695c4f7074696f6e735c416c6c795f722d3031000000"
+        },
+        {
+          "address": 7005206,
+          "section": ".data",
+          "value": 152,
+          "width": 4,
+          "field_hints": [
+            "Traps.204"
+          ],
+          "context_address": 7005182,
+          "context_hex": "00000000000000000000000000000000000000007802000a98000000000000000000000000000000000070235300000000000000"
+        },
+        {
+          "address": 7007694,
+          "section": ".data",
+          "value": 152,
+          "width": 4,
+          "field_hints": [
+            "Traps.204"
+          ],
+          "context_address": 7007670,
+          "context_hex": "000000000000000000000000000000000000b80120011c0298000000000000000000000000000000000050235300000000005300"
+        },
+        {
+          "address": 7007774,
+          "section": ".data",
+          "value": 152,
+          "width": 4,
+          "field_hints": [
+            "Traps.204"
+          ],
+          "context_address": 7007750,
+          "context_hex": "000000000000000000000000000000000000c8032001440298000000000000000000000000000000000050235300000000001706"
+        },
+        {
+          "address": 7007854,
+          "section": ".data",
+          "value": 152,
+          "width": 4,
+          "field_hints": [
+            "Traps.204"
+          ],
+          "context_address": 7007830,
+          "context_hex": "000000000000000000000000000000000000080620011c029800000000000000000000000000000000005023530000000000ec00"
+        },
+        {
+          "address": 7040777,
+          "section": ".data",
+          "value": 152,
+          "width": 4,
+          "field_hints": [
+            "Traps.204"
+          ],
+          "context_address": 7040753,
+          "context_hex": "23530000000000180b00000000000000000300000000000698000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "address": 7046708,
+          "section": ".data",
+          "value": 152,
+          "width": 4,
+          "field_hints": [
+            "Traps.204"
+          ],
+          "context_address": 7046684,
+          "context_hex": "0cad6b006b000000630000006200000033000000fcac6b00980000007e0000004500000030000000f0ac6b00bc00000063000000"
+        },
+        {
+          "address": 7047308,
+          "section": ".data",
+          "value": 152,
+          "width": 4,
+          "field_hints": [
+            "Traps.204"
+          ],
+          "context_address": 7047284,
+          "context_hex": "9cab6b006b0000006300000062000000330000008cab6b00980000007e000000450000003000000080ab6b00bc00000063000000"
+        },
+        {
+          "address": 7047908,
+          "section": ".data",
+          "value": 152,
+          "width": 4,
+          "field_hints": [
+            "Traps.204"
+          ],
+          "context_address": 7047884,
+          "context_hex": "2caa6b006b0000006300000062000000330000001caa6b00980000007e000000450000003000000010aa6b00bc00000063000000"
+        },
+        {
+          "address": 7048508,
+          "section": ".data",
+          "value": 152,
+          "width": 4,
+          "field_hints": [
+            "Traps.204"
+          ],
+          "context_address": 7048484,
+          "context_hex": "bca86b006b000000630000006200000033000000aca86b00980000007e0000004500000030000000a0a86b00bc00000063000000"
+        },
+        {
+          "address": 7058054,
+          "section": ".data",
+          "value": 152,
+          "width": 4,
+          "field_hints": [
+            "Traps.204"
+          ],
+          "context_address": 7058030,
+          "context_hex": "00000000000000000000000000000000000084012001f40398000000000000000000000000000000000050235300000000005300"
+        },
+        {
+          "address": 7058134,
+          "section": ".data",
+          "value": 152,
+          "width": 4,
+          "field_hints": [
+            "Traps.204"
+          ],
+          "context_address": 7058110,
+          "context_hex": "00000000000000000000000000000000000078052001cc019800000000000000000000000000000000005023530000000000aa0a"
+        },
+        {
+          "address": 7058214,
+          "section": ".data",
+          "value": 152,
+          "width": 4,
+          "field_hints": [
+            "Traps.204"
+          ],
+          "context_address": 7058190,
+          "context_hex": "00000000000000000000000000000000000044072001e00198000000000000000000000000000000000050235300000000001e00"
+        },
+        {
+          "address": 7102076,
+          "section": ".data",
+          "value": 152,
+          "width": 4,
+          "field_hints": [
+            "Traps.204"
+          ],
+          "context_address": 7102052,
+          "context_hex": "08000000000800005c000000000800001c00000000090000980000005407000053000000000800007c000000000800003c000000"
+        },
+        {
+          "address": 6989544,
+          "section": ".data",
+          "value": 152,
+          "width": 2,
+          "field_hints": [
+            "Traps.204"
+          ],
+          "context_address": 6989520,
+          "context_hex": "000000000000000000000000000000000000000000000002980000006775695c4f7074696f6e735c416c6c795f722d3031000000"
+        },
+        {
+          "address": 7005206,
+          "section": ".data",
+          "value": 152,
+          "width": 2,
+          "field_hints": [
+            "Traps.204"
+          ],
+          "context_address": 7005182,
+          "context_hex": "00000000000000000000000000000000000000007802000a98000000000000000000000000000000000070235300000000000000"
+        },
+        {
+          "address": 7007694,
+          "section": ".data",
+          "value": 152,
+          "width": 2,
+          "field_hints": [
+            "Traps.204"
+          ],
+          "context_address": 7007670,
+          "context_hex": "000000000000000000000000000000000000b80120011c0298000000000000000000000000000000000050235300000000005300"
+        },
+        {
+          "address": 7007774,
+          "section": ".data",
+          "value": 152,
+          "width": 2,
+          "field_hints": [
+            "Traps.204"
+          ],
+          "context_address": 7007750,
+          "context_hex": "000000000000000000000000000000000000c8032001440298000000000000000000000000000000000050235300000000001706"
+        },
+        {
+          "address": 7007854,
+          "section": ".data",
+          "value": 152,
+          "width": 2,
+          "field_hints": [
+            "Traps.204"
+          ],
+          "context_address": 7007830,
+          "context_hex": "000000000000000000000000000000000000080620011c029800000000000000000000000000000000005023530000000000ec00"
+        },
+        {
+          "address": 7040777,
+          "section": ".data",
+          "value": 152,
+          "width": 2,
+          "field_hints": [
+            "Traps.204"
+          ],
+          "context_address": 7040753,
+          "context_hex": "23530000000000180b00000000000000000300000000000698000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "address": 7046708,
+          "section": ".data",
+          "value": 152,
+          "width": 2,
+          "field_hints": [
+            "Traps.204"
+          ],
+          "context_address": 7046684,
+          "context_hex": "0cad6b006b000000630000006200000033000000fcac6b00980000007e0000004500000030000000f0ac6b00bc00000063000000"
+        },
+        {
+          "address": 7047308,
+          "section": ".data",
+          "value": 152,
+          "width": 2,
+          "field_hints": [
+            "Traps.204"
+          ],
+          "context_address": 7047284,
+          "context_hex": "9cab6b006b0000006300000062000000330000008cab6b00980000007e000000450000003000000080ab6b00bc00000063000000"
+        },
+        {
+          "address": 7047908,
+          "section": ".data",
+          "value": 152,
+          "width": 2,
+          "field_hints": [
+            "Traps.204"
+          ],
+          "context_address": 7047884,
+          "context_hex": "2caa6b006b0000006300000062000000330000001caa6b00980000007e000000450000003000000010aa6b00bc00000063000000"
+        },
+        {
+          "address": 7048508,
+          "section": ".data",
+          "value": 152,
+          "width": 2,
+          "field_hints": [
+            "Traps.204"
+          ],
+          "context_address": 7048484,
+          "context_hex": "bca86b006b000000630000006200000033000000aca86b00980000007e0000004500000030000000a0a86b00bc00000063000000"
+        },
+        {
+          "address": 7058054,
+          "section": ".data",
+          "value": 152,
+          "width": 2,
+          "field_hints": [
+            "Traps.204"
+          ],
+          "context_address": 7058030,
+          "context_hex": "00000000000000000000000000000000000084012001f40398000000000000000000000000000000000050235300000000005300"
+        },
+        {
+          "address": 7058134,
+          "section": ".data",
+          "value": 152,
+          "width": 2,
+          "field_hints": [
+            "Traps.204"
+          ],
+          "context_address": 7058110,
+          "context_hex": "00000000000000000000000000000000000078052001cc019800000000000000000000000000000000005023530000000000aa0a"
+        },
+        {
+          "address": 7058214,
+          "section": ".data",
+          "value": 152,
+          "width": 2,
+          "field_hints": [
+            "Traps.204"
+          ],
+          "context_address": 7058190,
+          "context_hex": "00000000000000000000000000000000000044072001e00198000000000000000000000000000000000050235300000000001e00"
+        },
+        {
+          "address": 7083977,
+          "section": ".data",
+          "value": 152,
+          "width": 2,
+          "field_hints": [
+            "Traps.204"
+          ],
+          "context_address": 7083953,
+          "context_hex": "94000053950000f6950000999600003c970000de9700007f98000021990000c2990000629a0000029b0000a29b0000429c0000e1"
+        },
+        {
+          "address": 7086409,
+          "section": ".data",
+          "value": 152,
+          "width": 2,
+          "field_hints": [
+            "Traps.204"
+          ],
+          "context_address": 7086385,
+          "context_hex": "9c0000a29b0000029b0000629a0000c2990000219900007f980000de9700003c97000099960000f695000053950000b09400000c"
+        },
+        {
+          "address": 7092169,
+          "section": ".data",
+          "value": 152,
+          "width": 2,
+          "field_hints": [
+            "Traps.204"
+          ],
+          "context_address": 7092145,
+          "context_hex": "94000053950000f6950000999600003c970000de9700007f98000021990000c2990000629a0000029b0000a29b0000429c0000e1"
+        },
+        {
+          "address": 7101469,
+          "section": ".data",
+          "value": 152,
+          "width": 2,
+          "field_hints": [
+            "Traps.204"
+          ],
+          "context_address": 7101445,
+          "context_hex": "9a0000819b0000405b000001990000c0590000805800004198000001880000c04800008049000041890000004b0000c18b000081"
+        },
+        {
+          "address": 7102076,
+          "section": ".data",
+          "value": 152,
+          "width": 2,
+          "field_hints": [
+            "Traps.204"
+          ],
+          "context_address": 7102052,
+          "context_hex": "08000000000800005c000000000800001c00000000090000980000005407000053000000000800007c000000000800003c000000"
+        },
+        {
+          "address": 7114505,
+          "section": ".data",
+          "value": 152,
+          "width": 2,
+          "field_hints": [
+            "Traps.204"
+          ],
+          "context_address": 7114481,
+          "context_hex": "696e666f404000200593190000000000000000000000007598000073980000204e6300001240000012400000000000dcbb670000"
+        },
+        {
+          "address": 7114509,
+          "section": ".data",
+          "value": 152,
+          "width": 2,
+          "field_hints": [
+            "Traps.204"
+          ],
+          "context_address": 7114485,
+          "context_hex": "404000200593190000000000000000000000007598000073980000204e6300001240000012400000000000dcbb6700000000002e"
+        },
+        {
+          "address": 6887768,
+          "section": ".data",
+          "value": 262,
+          "width": 4,
+          "field_hints": [
+            "Objects.34C"
+          ],
+          "context_address": 6887744,
+          "context_hex": "0000000000000000580000005800800000000000580080000601000010484200e029410099000000010000000000000000000000"
+        },
+        {
+          "address": 6889944,
+          "section": ".data",
+          "value": 262,
+          "width": 4,
+          "field_hints": [
+            "Objects.34C"
+          ],
+          "context_address": 6889920,
+          "context_hex": "00000000280028000000000000000000f05042000000000006010000000000000000000000000000000300000000000000000000"
+        },
+        {
+          "address": 6891704,
+          "section": ".data",
+          "value": 262,
+          "width": 4,
+          "field_hints": [
+            "Objects.34C"
+          ],
+          "context_address": 6891680,
+          "context_hex": "00000000280028000000000000000000f0504200000000000601000000000000010000000e000000030300000000000000000000"
+        },
+        {
+          "address": 6891944,
+          "section": ".data",
+          "value": 262,
+          "width": 4,
+          "field_hints": [
+            "Objects.34C"
+          ],
+          "context_address": 6891920,
+          "context_hex": "00000000280028000000000000000000f0504200000000000601000000000000020000000e000000030300000000000000000000"
+        },
+        {
+          "address": 6997134,
+          "section": ".data",
+          "value": 262,
+          "width": 4,
+          "field_hints": [
+            "Objects.34C"
+          ],
+          "context_address": 6997110,
+          "context_hex": "000000000000000000000000000000000000000000000002060100006775695c69636f6e735c68696c696768742d320000000000"
+        },
+        {
+          "address": 6887768,
+          "section": ".data",
+          "value": 262,
+          "width": 2,
+          "field_hints": [
+            "Objects.34C"
+          ],
+          "context_address": 6887744,
+          "context_hex": "0000000000000000580000005800800000000000580080000601000010484200e029410099000000010000000000000000000000"
+        },
+        {
+          "address": 6889944,
+          "section": ".data",
+          "value": 262,
+          "width": 2,
+          "field_hints": [
+            "Objects.34C"
+          ],
+          "context_address": 6889920,
+          "context_hex": "00000000280028000000000000000000f05042000000000006010000000000000000000000000000000300000000000000000000"
+        },
+        {
+          "address": 6891704,
+          "section": ".data",
+          "value": 262,
+          "width": 2,
+          "field_hints": [
+            "Objects.34C"
+          ],
+          "context_address": 6891680,
+          "context_hex": "00000000280028000000000000000000f0504200000000000601000000000000010000000e000000030300000000000000000000"
+        },
+        {
+          "address": 6891944,
+          "section": ".data",
+          "value": 262,
+          "width": 2,
+          "field_hints": [
+            "Objects.34C"
+          ],
+          "context_address": 6891920,
+          "context_hex": "00000000280028000000000000000000f0504200000000000601000000000000020000000e000000030300000000000000000000"
+        },
+        {
+          "address": 6997134,
+          "section": ".data",
+          "value": 262,
+          "width": 2,
+          "field_hints": [
+            "Objects.34C"
+          ],
+          "context_address": 6997110,
+          "context_hex": "000000000000000000000000000000000000000000000002060100006775695c69636f6e735c68696c696768742d320000000000"
+        },
+        {
+          "address": 7046588,
+          "section": ".data",
+          "value": 387,
+          "width": 4,
+          "field_hints": [
+            "Terrain.198"
+          ],
+          "context_address": 7046564,
+          "context_hex": "60ad6b005b010000b60000003e0000002d00000050ad6b0083010000a7000000510000003400000040ad6b009b0100008c000000"
+        },
+        {
+          "address": 7047188,
+          "section": ".data",
+          "value": 387,
+          "width": 4,
+          "field_hints": [
+            "Terrain.198"
+          ],
+          "context_address": 7047164,
+          "context_hex": "f0ab6b005b010000b60000003e0000002d000000e0ab6b0083010000a70000005100000034000000d0ab6b009b0100008c000000"
+        },
+        {
+          "address": 7047788,
+          "section": ".data",
+          "value": 387,
+          "width": 4,
+          "field_hints": [
+            "Terrain.198"
+          ],
+          "context_address": 7047764,
+          "context_hex": "80aa6b005b010000b60000003e0000002d00000070aa6b0083010000a7000000510000003400000060aa6b009b0100008c000000"
+        },
+        {
+          "address": 7048388,
+          "section": ".data",
+          "value": 387,
+          "width": 4,
+          "field_hints": [
+            "Terrain.198"
+          ],
+          "context_address": 7048364,
+          "context_hex": "10a96b005b010000b60000003e0000002d00000000a96b0083010000a70000005100000034000000f0a86b009b0100008c000000"
+        },
+        {
+          "address": 7046588,
+          "section": ".data",
+          "value": 387,
+          "width": 2,
+          "field_hints": [
+            "Terrain.198"
+          ],
+          "context_address": 7046564,
+          "context_hex": "60ad6b005b010000b60000003e0000002d00000050ad6b0083010000a7000000510000003400000040ad6b009b0100008c000000"
+        },
+        {
+          "address": 7047188,
+          "section": ".data",
+          "value": 387,
+          "width": 2,
+          "field_hints": [
+            "Terrain.198"
+          ],
+          "context_address": 7047164,
+          "context_hex": "f0ab6b005b010000b60000003e0000002d000000e0ab6b0083010000a70000005100000034000000d0ab6b009b0100008c000000"
+        },
+        {
+          "address": 7047788,
+          "section": ".data",
+          "value": 387,
+          "width": 2,
+          "field_hints": [
+            "Terrain.198"
+          ],
+          "context_address": 7047764,
+          "context_hex": "80aa6b005b010000b60000003e0000002d00000070aa6b0083010000a7000000510000003400000060aa6b009b0100008c000000"
+        },
+        {
+          "address": 7048388,
+          "section": ".data",
+          "value": 387,
+          "width": 2,
+          "field_hints": [
+            "Terrain.198"
+          ],
+          "context_address": 7048364,
+          "context_hex": "10a96b005b010000b60000003e0000002d00000000a96b0083010000a70000005100000034000000f0a86b009b0100008c000000"
+        },
+        {
+          "address": 8046080,
+          "section": "uva_data",
+          "value": 58,
+          "width": 4,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 8046056,
+          "context_hex": "1f000000170000001e000000250000002c000000330000003a00000039000000320000002b000000240000001d00000016000000"
+        },
+        {
+          "address": 8046080,
+          "section": "uva_data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 8046056,
+          "context_hex": "1f000000170000001e000000250000002c000000330000003a00000039000000320000002b000000240000001d00000016000000"
+        },
+        {
+          "address": 8046416,
+          "section": "uva_data",
+          "value": 262,
+          "width": 2,
+          "field_hints": [
+            "Objects.34C"
+          ],
+          "context_address": 8046392,
+          "context_hex": "0202060001060600010606000106060001060600010e080006010800010d0800010c0800020408000302080005010800010b0800"
+        },
+        {
+          "address": 8049684,
+          "section": "idct_dat",
+          "value": 152,
+          "width": 4,
+          "field_hints": [
+            "Traps.204"
+          ],
+          "context_address": 8049660,
+          "context_hex": "cc000000b000000094000000780000005c0000007c00000098000000b4000000d0000000ec000000f0000000d4000000b8000000"
+        },
+        {
+          "address": 8049684,
+          "section": "idct_dat",
+          "value": 152,
+          "width": 2,
+          "field_hints": [
+            "Traps.204"
+          ],
+          "context_address": 8049660,
+          "context_hex": "cc000000b000000094000000780000005c0000007c00000098000000b4000000d0000000ec000000f0000000d4000000b8000000"
+        },
+        {
+          "address": 8057140,
+          "section": "tqia_dat",
+          "value": 58,
+          "width": 4,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 8057116,
+          "context_hex": "1f000000170000001e000000250000002c000000330000003a00000039000000320000002b000000240000001d00000016000000"
+        },
+        {
+          "address": 8058580,
+          "section": "tqia_dat",
+          "value": 58,
+          "width": 4,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 8058556,
+          "context_hex": "1f000000170000001e000000250000002c000000330000003a00000039000000320000002b000000240000001d00000016000000"
+        },
+        {
+          "address": 8057140,
+          "section": "tqia_dat",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 8057116,
+          "context_hex": "1f000000170000001e000000250000002c000000330000003a00000039000000320000002b000000240000001d00000016000000"
+        },
+        {
+          "address": 8058580,
+          "section": "tqia_dat",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 8058556,
+          "context_hex": "1f000000170000001e000000250000002c000000330000003a00000039000000320000002b000000240000001d00000016000000"
+        },
+        {
+          "address": 8057476,
+          "section": "tqia_dat",
+          "value": 262,
+          "width": 2,
+          "field_hints": [
+            "Objects.34C"
+          ],
+          "context_address": 8057452,
+          "context_hex": "0202060001060600010606000106060001060600010e080006010800010d0800010c0800020408000302080005010800010b0800"
+        },
+        {
+          "address": 8058916,
+          "section": "tqia_dat",
+          "value": 262,
+          "width": 2,
+          "field_hints": [
+            "Objects.34C"
+          ],
+          "context_address": 8058892,
+          "context_hex": "0202060001060600010606000106060001060600010e080006010800010d0800010c0800020408000302080005010800010b0800"
+        }
+      ]
+    },
+    {
+      "exe": "D:\\Games\\DK2\\Tools\\dk2-format-research\\source-binaries\\DKII-local13.exe",
+      "sha256": "93e826a142f677ef5120699feddb0572799d93399167ef1d05ec4b48a8b2a342",
+      "sections": [
+        {
+          "name": ".rdata",
+          "address": 6672384,
+          "virtual_bytes": 138479,
+          "raw_bytes": 138752,
+          "raw_offset": 2468864,
+          "flags": 1073741888
+        },
+        {
+          "name": ".data",
+          "address": 6811648,
+          "virtual_bytes": 1145302,
+          "raw_bytes": 266752,
+          "raw_offset": 2607616,
+          "flags": 3221225536
+        },
+        {
+          "name": "GRPOLY_D",
+          "address": 7958528,
+          "virtual_bytes": 1808,
+          "raw_bytes": 2048,
+          "raw_offset": 2874368,
+          "flags": 3221225536
+        },
+        {
+          "name": "UVA_DATA",
+          "address": 7962624,
+          "virtual_bytes": 19148,
+          "raw_bytes": 19456,
+          "raw_offset": 2876416,
+          "flags": 3221225536
+        },
+        {
+          "name": "IDCT_DAT",
+          "address": 7983104,
+          "virtual_bytes": 5720,
+          "raw_bytes": 6144,
+          "raw_offset": 2895872,
+          "flags": 3221225536
+        },
+        {
+          "name": "TQIA_DAT",
+          "address": 7991296,
+          "virtual_bytes": 2560,
+          "raw_bytes": 2560,
+          "raw_offset": 2902016,
+          "flags": 3221225536
+        },
+        {
+          "name": "DSEG",
+          "address": 7995392,
+          "virtual_bytes": 4100,
+          "raw_bytes": 4608,
+          "raw_offset": 2904576,
+          "flags": 3221225536
+        },
+        {
+          "name": "LBMPEG_D",
+          "address": 8003584,
+          "virtual_bytes": 1024,
+          "raw_bytes": 1024,
+          "raw_offset": 2909184,
+          "flags": 3221225536
+        }
+      ],
+      "candidates": [
+        {
+          "address": 6687247,
+          "section": ".rdata",
+          "value": 58,
+          "width": 4,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6687223,
+          "context_hex": "410000a0c100000042db0f4940cdcccc3d000000400000803a000000000000803f000080bf00007f43b0feff3e000040cb000080"
+        },
+        {
+          "address": 6690395,
+          "section": ".rdata",
+          "value": 58,
+          "width": 4,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6690371,
+          "context_hex": "380000000000000040000040c08fc2753d0000003f0000803a000000009a9999999999b93fb81e85eb51b89e3f0000803f000000"
+        },
+        {
+          "address": 6690507,
+          "section": ".rdata",
+          "value": 58,
+          "width": 4,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6690483,
+          "context_hex": "000000e03e00000037000080409a9999999999a93f0000003a000000009a9999999999c93f00008043cdcccc3d6f1283b9000000"
+        },
+        {
+          "address": 6691260,
+          "section": ".rdata",
+          "value": 58,
+          "width": 4,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6691236,
+          "context_hex": "1b0000001d000000200000002300000028000000300000003a0000001a0000001b0000001d00000022000000260000002e000000"
+        },
+        {
+          "address": 6695916,
+          "section": ".rdata",
+          "value": 58,
+          "width": 4,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6695892,
+          "context_hex": "1b0000001d000000200000002300000028000000300000003a0000001a0000001b0000001d00000022000000260000002e000000"
+        },
+        {
+          "address": 6712535,
+          "section": ".rdata",
+          "value": 58,
+          "width": 4,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6712511,
+          "context_hex": "00a0d06000b0d06000e0d06000f0d0600000dd60006f12833a000000400000000060116100d0c26100f0c2610000c36100d00e61"
+        },
+        {
+          "address": 6729712,
+          "section": ".rdata",
+          "value": 58,
+          "width": 4,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6729688,
+          "context_hex": "e8000000b800000092000000740000005c000000490000003a0000002e000000240000001d000000170000000000000012111101"
+        },
+        {
+          "address": 6740600,
+          "section": ".rdata",
+          "value": 58,
+          "width": 4,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6740576,
+          "context_hex": "400000003f0000003e0000003d0000003c0000003b0000003a000000390000003800000037000000360000003500000034000000"
+        },
+        {
+          "address": 6674087,
+          "section": ".rdata",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6674063,
+          "context_hex": "3c9a99993e0000000034b68c3f0000003f000080390000803a0000c03f00000000000000000000e03f0000343f0000803e000000"
+        },
+        {
+          "address": 6687247,
+          "section": ".rdata",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6687223,
+          "context_hex": "410000a0c100000042db0f4940cdcccc3d000000400000803a000000000000803f000080bf00007f43b0feff3e000040cb000080"
+        },
+        {
+          "address": 6688829,
+          "section": ".rdata",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6688805,
+          "context_hex": "3d000001ff0000c03f0000803e000041fe000001fa0000c03a0000803b000041fb000000390000c1f9000081f800004038000000"
+        },
+        {
+          "address": 6690395,
+          "section": ".rdata",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6690371,
+          "context_hex": "380000000000000040000040c08fc2753d0000003f0000803a000000009a9999999999b93fb81e85eb51b89e3f0000803f000000"
+        },
+        {
+          "address": 6690507,
+          "section": ".rdata",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6690483,
+          "context_hex": "000000e03e00000037000080409a9999999999a93f0000003a000000009a9999999999c93f00008043cdcccc3d6f1283b9000000"
+        },
+        {
+          "address": 6691260,
+          "section": ".rdata",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6691236,
+          "context_hex": "1b0000001d000000200000002300000028000000300000003a0000001a0000001b0000001d00000022000000260000002e000000"
+        },
+        {
+          "address": 6695069,
+          "section": ".rdata",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6695045,
+          "context_hex": "07000000000000003d0000080000000a04000000000000003a000008000000f607000000000000003b0000080000000b04000000"
+        },
+        {
+          "address": 6695916,
+          "section": ".rdata",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6695892,
+          "context_hex": "1b0000001d000000200000002300000028000000300000003a0000001a0000001b0000001d00000022000000260000002e000000"
+        },
+        {
+          "address": 6700713,
+          "section": ".rdata",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6700689,
+          "context_hex": "acef315c51d011a9aa00aa0061be939768a856d40ace11b03a0020af0ba770109f6b637d0cd11195b20020afdc7421b0f40f48b2"
+        },
+        {
+          "address": 6705452,
+          "section": ".rdata",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6705428,
+          "context_hex": "40f9bcace36cd832755cdf45cf0dd6dc593dd1abac30d9263a00de518051d7c81661d0bfb5f4b42123c4b3569995bacf0fa5bdb8"
+        },
+        {
+          "address": 6708152,
+          "section": ".rdata",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6708128,
+          "context_hex": "6a000800ea0008001a0008009a0008005a000800da0008003a000800ba0008007a000800fa000800060008008600080046000800"
+        },
+        {
+          "address": 6712535,
+          "section": ".rdata",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6712511,
+          "context_hex": "00a0d06000b0d06000e0d06000f0d0600000dd60006f12833a000000400000000060116100d0c26100f0c2610000c36100d00e61"
+        },
+        {
+          "address": 6729522,
+          "section": ".rdata",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6729498,
+          "context_hex": "e800f74eb80025499200671b74007b275c0092244900b30d3a00bd132e0049922400d9061d00de091700244912006c830e00ef84"
+        },
+        {
+          "address": 6729617,
+          "section": ".rdata",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6729593,
+          "context_hex": "e800004eb80000499200001b740000275c0000244900000d3a0000132e000092240000061d00000917000049120000830e000084"
+        },
+        {
+          "address": 6729712,
+          "section": ".rdata",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6729688,
+          "context_hex": "e8000000b800000092000000740000005c000000490000003a0000002e000000240000001d000000170000000000000012111101"
+        },
+        {
+          "address": 6740600,
+          "section": ".rdata",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6740576,
+          "context_hex": "400000003f0000003e0000003d0000003c0000003b0000003a000000390000003800000037000000360000003500000034000000"
+        },
+        {
+          "address": 6689365,
+          "section": ".rdata",
+          "value": 152,
+          "width": 2,
+          "field_hints": [
+            "Traps.204"
+          ],
+          "context_address": 6689341,
+          "context_hex": "9a0000819b0000405b000001990000c0590000805800004198000001880000c04800008049000041890000004b0000c18b000081"
+        },
+        {
+          "address": 6693917,
+          "section": ".rdata",
+          "value": 152,
+          "width": 2,
+          "field_hints": [
+            "Traps.204"
+          ],
+          "context_address": 6693893,
+          "context_hex": "0b00000000000000a4000006000000040c0000000000000098000006000000fc0f000000000000009c0000060000000314000000"
+        },
+        {
+          "address": 6809110,
+          "section": ".rdata",
+          "value": 152,
+          "width": 2,
+          "field_hints": [
+            "Traps.204"
+          ],
+          "context_address": 6809086,
+          "context_hex": "4765744c6f676963616c4472697665537472696e677341009800467265654c69627261727900160147657450726f634164647265"
+        },
+        {
+          "address": 6677415,
+          "section": ".rdata",
+          "value": 262,
+          "width": 4,
+          "field_hints": [
+            "Objects.34C"
+          ],
+          "context_address": 6677391,
+          "context_hex": "00e0f96600806c6200000000000000e0bf000000020004000601000000b0024a0002000000e0024a000300000050034a00000000"
+        },
+        {
+          "address": 6677415,
+          "section": ".rdata",
+          "value": 262,
+          "width": 2,
+          "field_hints": [
+            "Objects.34C"
+          ],
+          "context_address": 6677391,
+          "context_hex": "00e0f96600806c6200000000000000e0bf000000020004000601000000b0024a0002000000e0024a000300000050034a00000000"
+        },
+        {
+          "address": 6702842,
+          "section": ".rdata",
+          "value": 262,
+          "width": 2,
+          "field_hints": [
+            "Objects.34C"
+          ],
+          "context_address": 6702818,
+          "context_hex": "02050402000200060505010602050705050003050305030006010101060003050505030007010301070007010301010006010105"
+        },
+        {
+          "address": 6702866,
+          "section": ".rdata",
+          "value": 262,
+          "width": 2,
+          "field_hints": [
+            "Objects.34C"
+          ],
+          "context_address": 6702842,
+          "context_hex": "06010101060003050505030007010301070007010301010006010105060005050705050007020202070004040404030005050305"
+        },
+        {
+          "address": 6702938,
+          "section": ".rdata",
+          "value": 262,
+          "width": 2,
+          "field_hints": [
+            "Objects.34C"
+          ],
+          "context_address": 6702914,
+          "context_hex": "02050505020003050301010002050507060003050305050006010204030007020202020005050505070005050505020005050707"
+        },
+        {
+          "address": 6703035,
+          "section": ".rdata",
+          "value": 262,
+          "width": 2,
+          "field_hints": [
+            "Objects.34C"
+          ],
+          "context_address": 6703011,
+          "context_hex": "00000007000000010204000304060506000103050503000006010106000406050506000006070106000002010301010002050604"
+        },
+        {
+          "address": 6691784,
+          "section": ".rdata",
+          "value": 387,
+          "width": 2,
+          "field_hints": [
+            "Terrain.198"
+          ],
+          "context_address": 6691760,
+          "context_hex": "7c01768888526b007e01768870526b00800176884c526b008301768838526b009001768820526b009a01768800526b00a4017688"
+        },
+        {
+          "address": 6809384,
+          "section": ".rdata",
+          "value": 387,
+          "width": 2,
+          "field_hints": [
+            "Terrain.198"
+          ],
+          "context_address": 6809360,
+          "context_hex": "696c65427566666572730000e50152746c556e77696e640083014973426164526561645074720000430043726561746554687265"
+        },
+        {
+          "address": 6814039,
+          "section": ".data",
+          "value": 58,
+          "width": 4,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6814015,
+          "context_hex": "32643a2025732c20257300000044334420446576696365733a00000000496e76616c696420443344204465766963652053656c65"
+        },
+        {
+          "address": 6828112,
+          "section": ".data",
+          "value": 58,
+          "width": 4,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6828088,
+          "context_hex": "0000000028002800000000000000000040384200010000003a000000000000000000000000000000000200000000000000000000"
+        },
+        {
+          "address": 6888127,
+          "section": ".data",
+          "value": 58,
+          "width": 4,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6888103,
+          "context_hex": "5d3a0a000020202020526f6f6d52656d6f76616c496e666f3a00000000202020204f666665726564416c6c79546f3a0000202020"
+        },
+        {
+          "address": 6889448,
+          "section": ".data",
+          "value": 58,
+          "width": 4,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6889424,
+          "context_hex": "76756c6e657261626c652025640a000020202020416c6c793a000000202020204372656174757265734b696c6c65643a00000000"
+        },
+        {
+          "address": 6889471,
+          "section": ".data",
+          "value": 58,
+          "width": 4,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6889447,
+          "context_hex": "793a000000202020204372656174757265734b696c6c65643a00000000202020204f626a6563746976655465787449642025640a"
+        },
+        {
+          "address": 6889743,
+          "section": ".data",
+          "value": 58,
+          "width": 4,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6889719,
+          "context_hex": "642025640a00000000202020205468696e67496e48616e643a00000000202020204c6173744e6f4d616e615761726e696e675469"
+        },
+        {
+          "address": 6890276,
+          "section": ".data",
+          "value": 58,
+          "width": 4,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6890252,
+          "context_hex": "546f74616c4e756d6265724f664f776e65645468696e67733a000000202020204372656174757265456e7472616e6365496e666f"
+        },
+        {
+          "address": 6890304,
+          "section": ".data",
+          "value": 58,
+          "width": 4,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6890280,
+          "context_hex": "202020204372656174757265456e7472616e6365496e666f3a00000020256400202020205468696e67734f776e65644c6973743a"
+        },
+        {
+          "address": 6890331,
+          "section": ".data",
+          "value": 58,
+          "width": 4,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6890307,
+          "context_hex": "0020256400202020205468696e67734f776e65644c6973743a000000002020506c617965723a205461674964202564205b4e756d"
+        },
+        {
+          "address": 6919136,
+          "section": ".data",
+          "value": 58,
+          "width": 4,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6919112,
+          "context_hex": "20002500730000004e6574776f726b2053657276696365733a000000536574757020536572766963652053756363657373000000"
+        },
+        {
+          "address": 6919244,
+          "section": ".data",
+          "value": 58,
+          "width": 4,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6919220,
+          "context_hex": "204661696c6564004e6574776f726b2053657373696f6e733a0000004c6f63616c204d616368696e65204e616d653a2025730000"
+        },
+        {
+          "address": 6919303,
+          "section": ".data",
+          "value": 58,
+          "width": 4,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6919279,
+          "context_hex": "6573733a20257300004d79204d616368696e6520496e666f3a0000000053657373696f6e204372656174656400556e61626c6520"
+        },
+        {
+          "address": 6921044,
+          "section": ".data",
+          "value": 58,
+          "width": 4,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6921020,
+          "context_hex": "53004b002100000042007500740074006f006e00200039003a00000042007500740074006f006e00200038003a00000042007500"
+        },
+        {
+          "address": 6921064,
+          "section": ".data",
+          "value": 58,
+          "width": 4,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6921040,
+          "context_hex": "200039003a00000042007500740074006f006e00200038003a00000042007500740074006f006e00200037003a00000042007500"
+        },
+        {
+          "address": 6921084,
+          "section": ".data",
+          "value": 58,
+          "width": 4,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6921060,
+          "context_hex": "200038003a00000042007500740074006f006e00200037003a00000042007500740074006f006e00200036003a00000042007500"
+        },
+        {
+          "address": 6921104,
+          "section": ".data",
+          "value": 58,
+          "width": 4,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6921080,
+          "context_hex": "200037003a00000042007500740074006f006e00200036003a00000042007500740074006f006e00200035003a00000054007200"
+        },
+        {
+          "address": 6921124,
+          "section": ".data",
+          "value": 58,
+          "width": 4,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6921100,
+          "context_hex": "200036003a00000042007500740074006f006e00200035003a00000054007200650061007300750072006500200052006f006f00"
+        },
+        {
+          "address": 6925706,
+          "section": ".data",
+          "value": 58,
+          "width": 4,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6925682,
+          "context_hex": "0000000000000000000000000000000000000000000000023a0000006775695c4a6f62735c4578706572745c4d616e7566616374"
+        },
+        {
+          "address": 6946764,
+          "section": ".data",
+          "value": 58,
+          "width": 4,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6946740,
+          "context_hex": "960000005b000000483c6a0034010000710000005c0000003a0000003c3c6a00670100006d000000730000004c000000303c6a00"
+        },
+        {
+          "address": 6947364,
+          "section": ".data",
+          "value": 58,
+          "width": 4,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6947340,
+          "context_hex": "960000005b000000d83a6a0034010000710000005c0000003a000000cc3a6a00670100006d000000730000004c000000c03a6a00"
+        },
+        {
+          "address": 6947964,
+          "section": ".data",
+          "value": 58,
+          "width": 4,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6947940,
+          "context_hex": "960000005b00000068396a0034010000710000005c0000003a0000005c396a00670100006d000000730000004c00000050396a00"
+        },
+        {
+          "address": 6948564,
+          "section": ".data",
+          "value": 58,
+          "width": 4,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6948540,
+          "context_hex": "960000005b000000f8376a0034010000710000005c0000003a000000ec376a00670100006d000000730000004c000000e0376a00"
+        },
+        {
+          "address": 6991512,
+          "section": ".data",
+          "value": 58,
+          "width": 4,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6991488,
+          "context_hex": "0000000000000000000000000000000000000000000000003a000000444b320025007300010025006c007500010025006c007500"
+        },
+        {
+          "address": 7003282,
+          "section": ".data",
+          "value": 58,
+          "width": 4,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 7003258,
+          "context_hex": "00000000705e5200000000000400000001000000000000003a000000000048089806c000c00001000000c000c000000000000000"
+        },
+        {
+          "address": 7018512,
+          "section": ".data",
+          "value": 58,
+          "width": 4,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 7018488,
+          "context_hex": "19000000c00600001a000000d00600001b0000000f0b00003a0000000e0b00003b000000100b00003c000000110b00003d000000"
+        },
+        {
+          "address": 7019200,
+          "section": ".data",
+          "value": 58,
+          "width": 4,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 7019176,
+          "context_hex": "34000000bd06000033000000be0600000f000000b00400003a000000b10400002a000000a804000036000000a80400001d000000"
+        },
+        {
+          "address": 7024552,
+          "section": ".data",
+          "value": 58,
+          "width": 4,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 7024528,
+          "context_hex": "0f000000170000001e000000250000002c000000330000003a0000003b000000340000002d000000260000001f00000027000000"
+        },
+        {
+          "address": 7028644,
+          "section": ".data",
+          "value": 58,
+          "width": 4,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 7028620,
+          "context_hex": "85ffffff60ffffff3dffffff19fffffff6feffff130000003a0000006100000088000000b0000000d7000000fe00000025010000"
+        },
+        {
+          "address": 7053844,
+          "section": ".data",
+          "value": 58,
+          "width": 4,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 7053820,
+          "context_hex": "940000005407000043000000000800007a000000000800003a00000000090000d40000005207000013000000000800006a000000"
+        },
+        {
+          "address": 7055892,
+          "section": ".data",
+          "value": 58,
+          "width": 4,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 7055868,
+          "context_hex": "950000005407000043000000000800007a000000000800003a00000000090000d50000005207000013000000000800006a000000"
+        },
+        {
+          "address": 7065808,
+          "section": ".data",
+          "value": 58,
+          "width": 4,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 7065784,
+          "context_hex": "300100004e0100006d01000000000000ffffffff1e0000003a000000590000007700000096000000b4000000d3000000f2000000"
+        },
+        {
+          "address": 6813282,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6813258,
+          "context_hex": "5c2a2e736176000000005061636b6574205265636f7264733a002020256331302e2e3830302a3630302031366262702057696e64"
+        },
+        {
+          "address": 6813577,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6813553,
+          "context_hex": "000000417661696c61626c6520566964656f204d6f6465733a00004368616e67652053637265656e204d6f6465204661696c6564"
+        },
+        {
+          "address": 6814039,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6814015,
+          "context_hex": "32643a2025732c20257300000044334420446576696365733a00000000496e76616c696420443344204465766963652053656c65"
+        },
+        {
+          "address": 6814221,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6814197,
+          "context_hex": "72652032440000417661696c61626c6520456e67696e65733a0000496e76616c696420456e67696e65204964000000456e67696e"
+        },
+        {
+          "address": 6828112,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6828088,
+          "context_hex": "0000000028002800000000000000000040384200010000003a000000000000000000000000000000000200000000000000000000"
+        },
+        {
+          "address": 6888127,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6888103,
+          "context_hex": "5d3a0a000020202020526f6f6d52656d6f76616c496e666f3a00000000202020204f666665726564416c6c79546f3a0000202020"
+        },
+        {
+          "address": 6888149,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6888125,
+          "context_hex": "666f3a00000000202020204f666665726564416c6c79546f3a000020202020446973636f496e6665726e6f436f756e740925640a"
+        },
+        {
+          "address": 6889448,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6889424,
+          "context_hex": "76756c6e657261626c652025640a000020202020416c6c793a000000202020204372656174757265734b696c6c65643a00000000"
+        },
+        {
+          "address": 6889471,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6889447,
+          "context_hex": "793a000000202020204372656174757265734b696c6c65643a00000000202020204f626a6563746976655465787449642025640a"
+        },
+        {
+          "address": 6889743,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6889719,
+          "context_hex": "642025640a00000000202020205468696e67496e48616e643a00000000202020204c6173744e6f4d616e615761726e696e675469"
+        },
+        {
+          "address": 6890276,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6890252,
+          "context_hex": "546f74616c4e756d6265724f664f776e65645468696e67733a000000202020204372656174757265456e7472616e6365496e666f"
+        },
+        {
+          "address": 6890304,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6890280,
+          "context_hex": "202020204372656174757265456e7472616e6365496e666f3a00000020256400202020205468696e67734f776e65644c6973743a"
+        },
+        {
+          "address": 6890331,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6890307,
+          "context_hex": "0020256400202020205468696e67734f776e65644c6973743a000000002020506c617965723a205461674964202564205b4e756d"
+        },
+        {
+          "address": 6906234,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6906210,
+          "context_hex": "00002020202020204e756d626572496e5461736b4c6973743a002020202020205461736b4c697374486561643a00202020202020"
+        },
+        {
+          "address": 6906254,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6906230,
+          "context_hex": "4c6973743a002020202020205461736b4c697374486561643a00202020202020467265654c697374486561642025640a00002020"
+        },
+        {
+          "address": 6906410,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6906386,
+          "context_hex": "74612025640a000000002020202020202020576f726b65723a002020202020202020506f736974696f6e202825642c202564290a"
+        },
+        {
+          "address": 6917896,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6917872,
+          "context_hex": "69746542616e6b40400000002573256c73000000250064003a0020002500730000000000388f6900308f6900208f690052657374"
+        },
+        {
+          "address": 6919110,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6919086,
+          "context_hex": "656e204e6574776f726b2053797374656d002500320064003a0020002500730000004e6574776f726b2053657276696365733a00"
+        },
+        {
+          "address": 6919136,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6919112,
+          "context_hex": "20002500730000004e6574776f726b2053657276696365733a000000536574757020536572766963652053756363657373000000"
+        },
+        {
+          "address": 6919244,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6919220,
+          "context_hex": "204661696c6564004e6574776f726b2053657373696f6e733a0000004c6f63616c204d616368696e65204e616d653a2025730000"
+        },
+        {
+          "address": 6919303,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6919279,
+          "context_hex": "6573733a20257300004d79204d616368696e6520496e666f3a0000000053657373696f6e204372656174656400556e61626c6520"
+        },
+        {
+          "address": 6919954,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6919930,
+          "context_hex": "202020204964202564004661696c656420506c61796572733a0020204661696c65640000000047756172616e7465656420446174"
+        },
+        {
+          "address": 6920852,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6920828,
+          "context_hex": "7400200061006e00640020007300650065002000200020003a0029002000200059006f00750020007200650061006c006c007900"
+        },
+        {
+          "address": 6921044,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6921020,
+          "context_hex": "53004b002100000042007500740074006f006e00200039003a00000042007500740074006f006e00200038003a00000042007500"
+        },
+        {
+          "address": 6921064,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6921040,
+          "context_hex": "200039003a00000042007500740074006f006e00200038003a00000042007500740074006f006e00200037003a00000042007500"
+        },
+        {
+          "address": 6921084,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6921060,
+          "context_hex": "200038003a00000042007500740074006f006e00200037003a00000042007500740074006f006e00200036003a00000042007500"
+        },
+        {
+          "address": 6921104,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6921080,
+          "context_hex": "200037003a00000042007500740074006f006e00200036003a00000042007500740074006f006e00200035003a00000054007200"
+        },
+        {
+          "address": 6921124,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6921100,
+          "context_hex": "200036003a00000042007500740074006f006e00200035003a00000054007200650061007300750072006500200052006f006f00"
+        },
+        {
+          "address": 6921154,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6921130,
+          "context_hex": "7200650061007300750072006500200052006f006f006d003a00200041006c006c006f0077007300200079006f00750020007400"
+        },
+        {
+          "address": 6921258,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6921234,
+          "context_hex": "75006e00670065006f006e002000480065006100720074003a00200041006c006c006f0077007300200079006f00750020007400"
+        },
+        {
+          "address": 6921352,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6921328,
+          "context_hex": "7200740000000000480061007400630068006500720079003a00200041006c006c006f0077007300200079006f00750020007400"
+        },
+        {
+          "address": 6921436,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6921412,
+          "context_hex": "720079000000000045006e007400720061006e00630065003a00200041006c006c006f0077007300200079006f00750020007400"
+        },
+        {
+          "address": 6925706,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6925682,
+          "context_hex": "0000000000000000000000000000000000000000000000023a0000006775695c4a6f62735c4578706572745c4d616e7566616374"
+        },
+        {
+          "address": 6946764,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6946740,
+          "context_hex": "960000005b000000483c6a0034010000710000005c0000003a0000003c3c6a00670100006d000000730000004c000000303c6a00"
+        },
+        {
+          "address": 6947364,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6947340,
+          "context_hex": "960000005b000000d83a6a0034010000710000005c0000003a000000cc3a6a00670100006d000000730000004c000000c03a6a00"
+        },
+        {
+          "address": 6947964,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6947940,
+          "context_hex": "960000005b00000068396a0034010000710000005c0000003a0000005c396a00670100006d000000730000004c00000050396a00"
+        },
+        {
+          "address": 6948564,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6948540,
+          "context_hex": "960000005b000000f8376a0034010000710000005c0000003a000000ec376a00670100006d000000730000004c000000e0376a00"
+        },
+        {
+          "address": 6985130,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6985106,
+          "context_hex": "0000000000000000000000000000250032006c00750020003a0020002500300032006c0075000000000025006c0075002e002500"
+        },
+        {
+          "address": 6989990,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6989966,
+          "context_hex": "6c00750020007800200025006c00750000002500730020003a0020002500730000002000000000000000000000000000000a8007"
+        },
+        {
+          "address": 6991512,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6991488,
+          "context_hex": "0000000000000000000000000000000000000000000000003a000000444b320025007300010025006c007500010025006c007500"
+        },
+        {
+          "address": 6991546,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6991522,
+          "context_hex": "7300010025006c007500010025006c0075000100000020003a002000250064000000230000003a00200000000000ffffffffffff"
+        },
+        {
+          "address": 6991560,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 6991536,
+          "context_hex": "6c0075000100000020003a002000250064000000230000003a00200000000000ffffffffffffffff230000000000000000000000"
+        },
+        {
+          "address": 7003282,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 7003258,
+          "context_hex": "00000000705e5200000000000400000001000000000000003a000000000048089806c000c00001000000c000c000000000000000"
+        },
+        {
+          "address": 7018512,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 7018488,
+          "context_hex": "19000000c00600001a000000d00600001b0000000f0b00003a0000000e0b00003b000000100b00003c000000110b00003d000000"
+        },
+        {
+          "address": 7019200,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 7019176,
+          "context_hex": "34000000bd06000033000000be0600000f000000b00400003a000000b10400002a000000a804000036000000a80400001d000000"
+        },
+        {
+          "address": 7024552,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 7024528,
+          "context_hex": "0f000000170000001e000000250000002c000000330000003a0000003b000000340000002d000000260000001f00000027000000"
+        },
+        {
+          "address": 7028644,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 7028620,
+          "context_hex": "85ffffff60ffffff3dffffff19fffffff6feffff130000003a0000006100000088000000b0000000d7000000fe00000025010000"
+        },
+        {
+          "address": 7035669,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 7035645,
+          "context_hex": "3500008e3600005237000017380000db3800009f390000623a0000263b0000ea3b0000ad3c0000703d0000333e0000f63e0000b9"
+        },
+        {
+          "address": 7039165,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 7039141,
+          "context_hex": "3e0000333e0000703d0000ad3c0000ea3b0000263b0000623a00009f390000db38000017380000523700008e360000c935000005"
+        },
+        {
+          "address": 7043861,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 7043837,
+          "context_hex": "3500008e3600005237000017380000db3800009f390000623a0000263b0000ea3b0000ad3c0000703d0000333e0000f63e0000b9"
+        },
+        {
+          "address": 7053844,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 7053820,
+          "context_hex": "940000005407000043000000000800007a000000000800003a00000000090000d40000005207000013000000000800006a000000"
+        },
+        {
+          "address": 7055892,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 7055868,
+          "context_hex": "950000005407000043000000000800007a000000000800003a00000000090000d50000005207000013000000000800006a000000"
+        },
+        {
+          "address": 7065808,
+          "section": ".data",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 7065784,
+          "context_hex": "300100004e0100006d01000000000000ffffffff1e0000003a000000590000007700000096000000b4000000d3000000f2000000"
+        },
+        {
+          "address": 6932192,
+          "section": ".data",
+          "value": 152,
+          "width": 4,
+          "field_hints": [
+            "Traps.204"
+          ],
+          "context_address": 6932168,
+          "context_hex": "000000000000000000000000000000000000000000000002980000006775695c4f7074696f6e735c416c6c795f722d3031000000"
+        },
+        {
+          "address": 6946692,
+          "section": ".data",
+          "value": 152,
+          "width": 4,
+          "field_hints": [
+            "Traps.204"
+          ],
+          "context_address": 6946668,
+          "context_hex": "7c3c6a006b0000006300000062000000330000006c3c6a00980000007e0000004500000030000000603c6a00bc00000063000000"
+        },
+        {
+          "address": 6947292,
+          "section": ".data",
+          "value": 152,
+          "width": 4,
+          "field_hints": [
+            "Traps.204"
+          ],
+          "context_address": 6947268,
+          "context_hex": "0c3b6a006b000000630000006200000033000000fc3a6a00980000007e0000004500000030000000f03a6a00bc00000063000000"
+        },
+        {
+          "address": 6947892,
+          "section": ".data",
+          "value": 152,
+          "width": 4,
+          "field_hints": [
+            "Traps.204"
+          ],
+          "context_address": 6947868,
+          "context_hex": "9c396a006b0000006300000062000000330000008c396a00980000007e000000450000003000000080396a00bc00000063000000"
+        },
+        {
+          "address": 6948492,
+          "section": ".data",
+          "value": 152,
+          "width": 4,
+          "field_hints": [
+            "Traps.204"
+          ],
+          "context_address": 6948468,
+          "context_hex": "2c386a006b0000006300000062000000330000001c386a00980000007e000000450000003000000010386a00bc00000063000000"
+        },
+        {
+          "address": 6972406,
+          "section": ".data",
+          "value": 152,
+          "width": 4,
+          "field_hints": [
+            "Traps.204"
+          ],
+          "context_address": 6972382,
+          "context_hex": "000000000000000000000000000000000000b80120011c0298000000000000000000000000000000000070885200000000005300"
+        },
+        {
+          "address": 6972486,
+          "section": ".data",
+          "value": 152,
+          "width": 4,
+          "field_hints": [
+            "Traps.204"
+          ],
+          "context_address": 6972462,
+          "context_hex": "000000000000000000000000000000000000c8032001440298000000000000000000000000000000000070885200000000001706"
+        },
+        {
+          "address": 6972566,
+          "section": ".data",
+          "value": 152,
+          "width": 4,
+          "field_hints": [
+            "Traps.204"
+          ],
+          "context_address": 6972542,
+          "context_hex": "000000000000000000000000000000000000080620011c029800000000000000000000000000000000007088520000000000ec00"
+        },
+        {
+          "address": 7003177,
+          "section": ".data",
+          "value": 152,
+          "width": 4,
+          "field_hints": [
+            "Traps.204"
+          ],
+          "context_address": 7003153,
+          "context_hex": "88520000000000180b00000000000000000000000000000698000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "address": 7009270,
+          "section": ".data",
+          "value": 152,
+          "width": 4,
+          "field_hints": [
+            "Traps.204"
+          ],
+          "context_address": 7009246,
+          "context_hex": "0000000000000000eb000000000000000000d40318041802980000000000180298000000000000000000e09f5200000000000000"
+        },
+        {
+          "address": 7009278,
+          "section": ".data",
+          "value": 152,
+          "width": 4,
+          "field_hints": [
+            "Traps.204"
+          ],
+          "context_address": 7009254,
+          "context_hex": "eb000000000000000000d40318041802980000000000180298000000000000000000e09f52000000000000000000080000000000"
+        },
+        {
+          "address": 7011598,
+          "section": ".data",
+          "value": 152,
+          "width": 4,
+          "field_hints": [
+            "Traps.204"
+          ],
+          "context_address": 7011574,
+          "context_hex": "000000000000000000000000000000000000a0002001700298000000000000000000000000000000000070885200000000005300"
+        },
+        {
+          "address": 7011678,
+          "section": ".data",
+          "value": 152,
+          "width": 4,
+          "field_hints": [
+            "Traps.204"
+          ],
+          "context_address": 7011654,
+          "context_hex": "0000000000000000000000000000000000005005200190019800000000000000000000000000000000007088520000000000aa0a"
+        },
+        {
+          "address": 7011758,
+          "section": ".data",
+          "value": 152,
+          "width": 4,
+          "field_hints": [
+            "Traps.204"
+          ],
+          "context_address": 7011734,
+          "context_hex": "00000000000000000000000000000000000008072001b80198000000000000000000000000000000000070885200000000001e00"
+        },
+        {
+          "address": 7053564,
+          "section": ".data",
+          "value": 152,
+          "width": 4,
+          "field_hints": [
+            "Traps.204"
+          ],
+          "context_address": 7053540,
+          "context_hex": "08000000000800005c000000000800001c00000000090000980000005407000053000000000800007c000000000800003c000000"
+        },
+        {
+          "address": 6932192,
+          "section": ".data",
+          "value": 152,
+          "width": 2,
+          "field_hints": [
+            "Traps.204"
+          ],
+          "context_address": 6932168,
+          "context_hex": "000000000000000000000000000000000000000000000002980000006775695c4f7074696f6e735c416c6c795f722d3031000000"
+        },
+        {
+          "address": 6946692,
+          "section": ".data",
+          "value": 152,
+          "width": 2,
+          "field_hints": [
+            "Traps.204"
+          ],
+          "context_address": 6946668,
+          "context_hex": "7c3c6a006b0000006300000062000000330000006c3c6a00980000007e0000004500000030000000603c6a00bc00000063000000"
+        },
+        {
+          "address": 6947292,
+          "section": ".data",
+          "value": 152,
+          "width": 2,
+          "field_hints": [
+            "Traps.204"
+          ],
+          "context_address": 6947268,
+          "context_hex": "0c3b6a006b000000630000006200000033000000fc3a6a00980000007e0000004500000030000000f03a6a00bc00000063000000"
+        },
+        {
+          "address": 6947892,
+          "section": ".data",
+          "value": 152,
+          "width": 2,
+          "field_hints": [
+            "Traps.204"
+          ],
+          "context_address": 6947868,
+          "context_hex": "9c396a006b0000006300000062000000330000008c396a00980000007e000000450000003000000080396a00bc00000063000000"
+        },
+        {
+          "address": 6948492,
+          "section": ".data",
+          "value": 152,
+          "width": 2,
+          "field_hints": [
+            "Traps.204"
+          ],
+          "context_address": 6948468,
+          "context_hex": "2c386a006b0000006300000062000000330000001c386a00980000007e000000450000003000000010386a00bc00000063000000"
+        },
+        {
+          "address": 6972406,
+          "section": ".data",
+          "value": 152,
+          "width": 2,
+          "field_hints": [
+            "Traps.204"
+          ],
+          "context_address": 6972382,
+          "context_hex": "000000000000000000000000000000000000b80120011c0298000000000000000000000000000000000070885200000000005300"
+        },
+        {
+          "address": 6972486,
+          "section": ".data",
+          "value": 152,
+          "width": 2,
+          "field_hints": [
+            "Traps.204"
+          ],
+          "context_address": 6972462,
+          "context_hex": "000000000000000000000000000000000000c8032001440298000000000000000000000000000000000070885200000000001706"
+        },
+        {
+          "address": 6972566,
+          "section": ".data",
+          "value": 152,
+          "width": 2,
+          "field_hints": [
+            "Traps.204"
+          ],
+          "context_address": 6972542,
+          "context_hex": "000000000000000000000000000000000000080620011c029800000000000000000000000000000000007088520000000000ec00"
+        },
+        {
+          "address": 7003177,
+          "section": ".data",
+          "value": 152,
+          "width": 2,
+          "field_hints": [
+            "Traps.204"
+          ],
+          "context_address": 7003153,
+          "context_hex": "88520000000000180b00000000000000000000000000000698000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "address": 7009270,
+          "section": ".data",
+          "value": 152,
+          "width": 2,
+          "field_hints": [
+            "Traps.204"
+          ],
+          "context_address": 7009246,
+          "context_hex": "0000000000000000eb000000000000000000d40318041802980000000000180298000000000000000000e09f5200000000000000"
+        },
+        {
+          "address": 7009278,
+          "section": ".data",
+          "value": 152,
+          "width": 2,
+          "field_hints": [
+            "Traps.204"
+          ],
+          "context_address": 7009254,
+          "context_hex": "eb000000000000000000d40318041802980000000000180298000000000000000000e09f52000000000000000000080000000000"
+        },
+        {
+          "address": 7011598,
+          "section": ".data",
+          "value": 152,
+          "width": 2,
+          "field_hints": [
+            "Traps.204"
+          ],
+          "context_address": 7011574,
+          "context_hex": "000000000000000000000000000000000000a0002001700298000000000000000000000000000000000070885200000000005300"
+        },
+        {
+          "address": 7011678,
+          "section": ".data",
+          "value": 152,
+          "width": 2,
+          "field_hints": [
+            "Traps.204"
+          ],
+          "context_address": 7011654,
+          "context_hex": "0000000000000000000000000000000000005005200190019800000000000000000000000000000000007088520000000000aa0a"
+        },
+        {
+          "address": 7011758,
+          "section": ".data",
+          "value": 152,
+          "width": 2,
+          "field_hints": [
+            "Traps.204"
+          ],
+          "context_address": 7011734,
+          "context_hex": "00000000000000000000000000000000000008072001b80198000000000000000000000000000000000070885200000000001e00"
+        },
+        {
+          "address": 7036201,
+          "section": ".data",
+          "value": 152,
+          "width": 2,
+          "field_hints": [
+            "Traps.204"
+          ],
+          "context_address": 7036177,
+          "context_hex": "94000053950000f6950000999600003c970000de9700007f98000021990000c2990000629a0000029b0000a29b0000429c0000e1"
+        },
+        {
+          "address": 7038633,
+          "section": ".data",
+          "value": 152,
+          "width": 2,
+          "field_hints": [
+            "Traps.204"
+          ],
+          "context_address": 7038609,
+          "context_hex": "9c0000a29b0000029b0000629a0000c2990000219900007f980000de9700003c97000099960000f695000053950000b09400000c"
+        },
+        {
+          "address": 7044393,
+          "section": ".data",
+          "value": 152,
+          "width": 2,
+          "field_hints": [
+            "Traps.204"
+          ],
+          "context_address": 7044369,
+          "context_hex": "94000053950000f6950000999600003c970000de9700007f98000021990000c2990000629a0000029b0000a29b0000429c0000e1"
+        },
+        {
+          "address": 7053564,
+          "section": ".data",
+          "value": 152,
+          "width": 2,
+          "field_hints": [
+            "Traps.204"
+          ],
+          "context_address": 7053540,
+          "context_hex": "08000000000800005c000000000800001c00000000090000980000005407000053000000000800007c000000000800003c000000"
+        },
+        {
+          "address": 7062873,
+          "section": ".data",
+          "value": 152,
+          "width": 2,
+          "field_hints": [
+            "Traps.204"
+          ],
+          "context_address": 7062849,
+          "context_hex": "696e666f404000200593190000000000000000000000007598000073980000506d620020b34e0020b34e0000000000f4e0660000"
+        },
+        {
+          "address": 7062877,
+          "section": ".data",
+          "value": 152,
+          "width": 2,
+          "field_hints": [
+            "Traps.204"
+          ],
+          "context_address": 7062853,
+          "context_hex": "404000200593190000000000000000000000007598000073980000506d620020b34e0020b34e0000000000f4e06600000000002e"
+        },
+        {
+          "address": 6826016,
+          "section": ".data",
+          "value": 262,
+          "width": 4,
+          "field_hints": [
+            "Objects.34C"
+          ],
+          "context_address": 6825992,
+          "context_hex": "00000000000000005800000058008000000000005800800006010000f0304200c014410099000000010000000000000000000000"
+        },
+        {
+          "address": 6828192,
+          "section": ".data",
+          "value": 262,
+          "width": 4,
+          "field_hints": [
+            "Objects.34C"
+          ],
+          "context_address": 6828168,
+          "context_hex": "00000000280028000000000000000000403842000000000006010000000000000000000000000000000300000000000000000000"
+        },
+        {
+          "address": 6829232,
+          "section": ".data",
+          "value": 262,
+          "width": 4,
+          "field_hints": [
+            "Objects.34C"
+          ],
+          "context_address": 6829208,
+          "context_hex": "0000000028002800000000000000000040384200000000000601000000000000010000000e000000030300000000000000000000"
+        },
+        {
+          "address": 6829472,
+          "section": ".data",
+          "value": 262,
+          "width": 4,
+          "field_hints": [
+            "Objects.34C"
+          ],
+          "context_address": 6829448,
+          "context_hex": "0000000028002800000000000000000040384200000000000601000000000000020000000e000000030300000000000000000000"
+        },
+        {
+          "address": 6939782,
+          "section": ".data",
+          "value": 262,
+          "width": 4,
+          "field_hints": [
+            "Objects.34C"
+          ],
+          "context_address": 6939758,
+          "context_hex": "000000000000000000000000000000000000000000000002060100006775695c69636f6e735c68696c696768742d320000000000"
+        },
+        {
+          "address": 6945334,
+          "section": ".data",
+          "value": 262,
+          "width": 4,
+          "field_hints": [
+            "Objects.34C"
+          ],
+          "context_address": 6945310,
+          "context_hex": "0000000000000000000000000601000796000000c600000006010000000000000000000000000000000006010007c8000000a400"
+        },
+        {
+          "address": 6945952,
+          "section": ".data",
+          "value": 262,
+          "width": 4,
+          "field_hints": [
+            "Objects.34C"
+          ],
+          "context_address": 6945928,
+          "context_hex": "00001e0100000101000000000000000000000000000000000601000000000000001400000000ed01000045000000000000000000"
+        },
+        {
+          "address": 6946224,
+          "section": ".data",
+          "value": 262,
+          "width": 4,
+          "field_hints": [
+            "Objects.34C"
+          ],
+          "context_address": 6946200,
+          "context_hex": "000000002400000000250000000026000000000000000000060100000000000047000000c40500007b050000f30a000060000000"
+        },
+        {
+          "address": 7011153,
+          "section": ".data",
+          "value": 262,
+          "width": 4,
+          "field_hints": [
+            "Objects.34C"
+          ],
+          "context_address": 7011129,
+          "context_hex": "5652000000000003000000020000000100000000000000000601000000705e520000000000030000000100000003000000080000"
+        },
+        {
+          "address": 6826016,
+          "section": ".data",
+          "value": 262,
+          "width": 2,
+          "field_hints": [
+            "Objects.34C"
+          ],
+          "context_address": 6825992,
+          "context_hex": "00000000000000005800000058008000000000005800800006010000f0304200c014410099000000010000000000000000000000"
+        },
+        {
+          "address": 6828192,
+          "section": ".data",
+          "value": 262,
+          "width": 2,
+          "field_hints": [
+            "Objects.34C"
+          ],
+          "context_address": 6828168,
+          "context_hex": "00000000280028000000000000000000403842000000000006010000000000000000000000000000000300000000000000000000"
+        },
+        {
+          "address": 6829232,
+          "section": ".data",
+          "value": 262,
+          "width": 2,
+          "field_hints": [
+            "Objects.34C"
+          ],
+          "context_address": 6829208,
+          "context_hex": "0000000028002800000000000000000040384200000000000601000000000000010000000e000000030300000000000000000000"
+        },
+        {
+          "address": 6829472,
+          "section": ".data",
+          "value": 262,
+          "width": 2,
+          "field_hints": [
+            "Objects.34C"
+          ],
+          "context_address": 6829448,
+          "context_hex": "0000000028002800000000000000000040384200000000000601000000000000020000000e000000030300000000000000000000"
+        },
+        {
+          "address": 6939782,
+          "section": ".data",
+          "value": 262,
+          "width": 2,
+          "field_hints": [
+            "Objects.34C"
+          ],
+          "context_address": 6939758,
+          "context_hex": "000000000000000000000000000000000000000000000002060100006775695c69636f6e735c68696c696768742d320000000000"
+        },
+        {
+          "address": 6945172,
+          "section": ".data",
+          "value": 262,
+          "width": 2,
+          "field_hints": [
+            "Objects.34C"
+          ],
+          "context_address": 6945148,
+          "context_hex": "0000b60000005201000000000000000000000000000000000601000796000000dc0000004a010000000000000000000000000000"
+        },
+        {
+          "address": 6945202,
+          "section": ".data",
+          "value": 262,
+          "width": 2,
+          "field_hints": [
+            "Objects.34C"
+          ],
+          "context_address": 6945178,
+          "context_hex": "0000dc0000004a010000000000000000000000000000000006010007c8000000c800000035010000000000000000000000000000"
+        },
+        {
+          "address": 6945232,
+          "section": ".data",
+          "value": 262,
+          "width": 2,
+          "field_hints": [
+            "Objects.34C"
+          ],
+          "context_address": 6945208,
+          "context_hex": "0000c800000035010000000000000000000000000000000006010007fa000000da00000029010000000000000000000000000000"
+        },
+        {
+          "address": 6945262,
+          "section": ".data",
+          "value": 262,
+          "width": 2,
+          "field_hints": [
+            "Objects.34C"
+          ],
+          "context_address": 6945238,
+          "context_hex": "0000da000000290100000000000000000000000000000000060100072c010000d80000001d010000000000000000000000000000"
+        },
+        {
+          "address": 6945292,
+          "section": ".data",
+          "value": 262,
+          "width": 2,
+          "field_hints": [
+            "Objects.34C"
+          ],
+          "context_address": 6945268,
+          "context_hex": "0000d80000001d01000000000000000000000000000000000601000764000000e9000000fe000000000000000000000000000000"
+        },
+        {
+          "address": 6945322,
+          "section": ".data",
+          "value": 262,
+          "width": 2,
+          "field_hints": [
+            "Objects.34C"
+          ],
+          "context_address": 6945298,
+          "context_hex": "0000e9000000fe00000000000000000000000000000000000601000796000000c600000006010000000000000000000000000000"
+        },
+        {
+          "address": 6945334,
+          "section": ".data",
+          "value": 262,
+          "width": 2,
+          "field_hints": [
+            "Objects.34C"
+          ],
+          "context_address": 6945310,
+          "context_hex": "0000000000000000000000000601000796000000c600000006010000000000000000000000000000000006010007c8000000a400"
+        },
+        {
+          "address": 6945352,
+          "section": ".data",
+          "value": 262,
+          "width": 2,
+          "field_hints": [
+            "Objects.34C"
+          ],
+          "context_address": 6945328,
+          "context_hex": "0000c600000006010000000000000000000000000000000006010007c8000000a4000000ee000000000000000000000000000000"
+        },
+        {
+          "address": 6945382,
+          "section": ".data",
+          "value": 262,
+          "width": 2,
+          "field_hints": [
+            "Objects.34C"
+          ],
+          "context_address": 6945358,
+          "context_hex": "0000a4000000ee000000000000000000000000000000000006010007fa000000d7000000e7000000000000000000000000000000"
+        },
+        {
+          "address": 6945412,
+          "section": ".data",
+          "value": 262,
+          "width": 2,
+          "field_hints": [
+            "Objects.34C"
+          ],
+          "context_address": 6945388,
+          "context_hex": "0000d7000000e70000000000000000000000000000000000060100072c010000fc000000e7000000000000000000000000000000"
+        },
+        {
+          "address": 6945442,
+          "section": ".data",
+          "value": 262,
+          "width": 2,
+          "field_hints": [
+            "Objects.34C"
+          ],
+          "context_address": 6945418,
+          "context_hex": "0000fc000000e700000000000000000000000000000000000601000764000000ed000000d5000000000000000000000000000000"
+        },
+        {
+          "address": 6945472,
+          "section": ".data",
+          "value": 262,
+          "width": 2,
+          "field_hints": [
+            "Objects.34C"
+          ],
+          "context_address": 6945448,
+          "context_hex": "0000ed000000d5000000000000000000000000000000000006010007c80000008e000000d5000000000000000000000000000000"
+        },
+        {
+          "address": 6945502,
+          "section": ".data",
+          "value": 262,
+          "width": 2,
+          "field_hints": [
+            "Objects.34C"
+          ],
+          "context_address": 6945478,
+          "context_hex": "00008e000000d5000000000000000000000000000000000006010007fa00000082000000a4000000000000000000000000000000"
+        },
+        {
+          "address": 6945532,
+          "section": ".data",
+          "value": 262,
+          "width": 2,
+          "field_hints": [
+            "Objects.34C"
+          ],
+          "context_address": 6945508,
+          "context_hex": "000082000000a40000000000000000000000000000000000060100072c010000ee000000c0000000000000000000000000000000"
+        },
+        {
+          "address": 6945562,
+          "section": ".data",
+          "value": 262,
+          "width": 2,
+          "field_hints": [
+            "Objects.34C"
+          ],
+          "context_address": 6945538,
+          "context_hex": "0000ee000000c000000000000000000000000000000000000601000764000000a30000008e000000000000000000000000000000"
+        },
+        {
+          "address": 6945592,
+          "section": ".data",
+          "value": 262,
+          "width": 2,
+          "field_hints": [
+            "Objects.34C"
+          ],
+          "context_address": 6945568,
+          "context_hex": "0000a30000008e000000000000000000000000000000000006010007c8000000db000000a6000000000000000000000000000000"
+        },
+        {
+          "address": 6945622,
+          "section": ".data",
+          "value": 262,
+          "width": 2,
+          "field_hints": [
+            "Objects.34C"
+          ],
+          "context_address": 6945598,
+          "context_hex": "0000db000000a6000000000000000000000000000000000006010007fa000000fa000000a6000000000000000000000000000000"
+        },
+        {
+          "address": 6945652,
+          "section": ".data",
+          "value": 262,
+          "width": 2,
+          "field_hints": [
+            "Objects.34C"
+          ],
+          "context_address": 6945628,
+          "context_hex": "0000fa000000a60000000000000000000000000000000000060100072c010000f00000008b000000000000000000000000000000"
+        },
+        {
+          "address": 6945682,
+          "section": ".data",
+          "value": 262,
+          "width": 2,
+          "field_hints": [
+            "Objects.34C"
+          ],
+          "context_address": 6945658,
+          "context_hex": "0000f00000008b00000000000000000000000000000000000601000764000000d100000088000000000000000000000000000000"
+        },
+        {
+          "address": 6945712,
+          "section": ".data",
+          "value": 262,
+          "width": 2,
+          "field_hints": [
+            "Objects.34C"
+          ],
+          "context_address": 6945688,
+          "context_hex": "0000d10000008800000000000000000000000000000000000601000796000000dc0000007a000000000000000000000000000000"
+        },
+        {
+          "address": 6945742,
+          "section": ".data",
+          "value": 262,
+          "width": 2,
+          "field_hints": [
+            "Objects.34C"
+          ],
+          "context_address": 6945718,
+          "context_hex": "0000dc0000007a000000000000000000000000000000000006010007c8000000d80000005f000000000000000000000000000000"
+        },
+        {
+          "address": 6945772,
+          "section": ".data",
+          "value": 262,
+          "width": 2,
+          "field_hints": [
+            "Objects.34C"
+          ],
+          "context_address": 6945748,
+          "context_hex": "0000d80000005f000000000000000000000000000000000006010007fa000000be00000047000000000000000000000000000000"
+        },
+        {
+          "address": 6945802,
+          "section": ".data",
+          "value": 262,
+          "width": 2,
+          "field_hints": [
+            "Objects.34C"
+          ],
+          "context_address": 6945778,
+          "context_hex": "0000be000000470000000000000000000000000000000000060100072c010000920000003d010000000000000000000000000000"
+        },
+        {
+          "address": 6945832,
+          "section": ".data",
+          "value": 262,
+          "width": 2,
+          "field_hints": [
+            "Objects.34C"
+          ],
+          "context_address": 6945808,
+          "context_hex": "0000920000003d0100000000000000000000000000000000060100076400000051000000ca000000000000000000000000000000"
+        },
+        {
+          "address": 6945862,
+          "section": ".data",
+          "value": 262,
+          "width": 2,
+          "field_hints": [
+            "Objects.34C"
+          ],
+          "context_address": 6945838,
+          "context_hex": "000051000000ca000000000000000000000000000000000006010007960000006f0000007c000000000000000000000000000000"
+        },
+        {
+          "address": 6945892,
+          "section": ".data",
+          "value": 262,
+          "width": 2,
+          "field_hints": [
+            "Objects.34C"
+          ],
+          "context_address": 6945868,
+          "context_hex": "00006f0000007c000000000000000000000000000000000006010007c8000000290100008f000000000000000000000000000000"
+        },
+        {
+          "address": 6945922,
+          "section": ".data",
+          "value": 262,
+          "width": 2,
+          "field_hints": [
+            "Objects.34C"
+          ],
+          "context_address": 6945898,
+          "context_hex": "0000290100008f000000000000000000000000000000000006010007fa0000001e01000001010000000000000000000000000000"
+        },
+        {
+          "address": 6945952,
+          "section": ".data",
+          "value": 262,
+          "width": 2,
+          "field_hints": [
+            "Objects.34C"
+          ],
+          "context_address": 6945928,
+          "context_hex": "00001e0100000101000000000000000000000000000000000601000000000000001400000000ed01000045000000000000000000"
+        },
+        {
+          "address": 6946224,
+          "section": ".data",
+          "value": 262,
+          "width": 2,
+          "field_hints": [
+            "Objects.34C"
+          ],
+          "context_address": 6946200,
+          "context_hex": "000000002400000000250000000026000000000000000000060100000000000047000000c40500007b050000f30a000060000000"
+        },
+        {
+          "address": 7011153,
+          "section": ".data",
+          "value": 262,
+          "width": 2,
+          "field_hints": [
+            "Objects.34C"
+          ],
+          "context_address": 7011129,
+          "context_hex": "5652000000000003000000020000000100000000000000000601000000705e520000000000030000000100000003000000080000"
+        },
+        {
+          "address": 6946572,
+          "section": ".data",
+          "value": 387,
+          "width": 4,
+          "field_hints": [
+            "Terrain.198"
+          ],
+          "context_address": 6946548,
+          "context_hex": "d03c6a005b010000b60000003e0000002d000000c03c6a0083010000a70000005100000034000000b03c6a009b0100008c000000"
+        },
+        {
+          "address": 6947172,
+          "section": ".data",
+          "value": 387,
+          "width": 4,
+          "field_hints": [
+            "Terrain.198"
+          ],
+          "context_address": 6947148,
+          "context_hex": "603b6a005b010000b60000003e0000002d000000503b6a0083010000a70000005100000034000000403b6a009b0100008c000000"
+        },
+        {
+          "address": 6947772,
+          "section": ".data",
+          "value": 387,
+          "width": 4,
+          "field_hints": [
+            "Terrain.198"
+          ],
+          "context_address": 6947748,
+          "context_hex": "f0396a005b010000b60000003e0000002d000000e0396a0083010000a70000005100000034000000d0396a009b0100008c000000"
+        },
+        {
+          "address": 6948372,
+          "section": ".data",
+          "value": 387,
+          "width": 4,
+          "field_hints": [
+            "Terrain.198"
+          ],
+          "context_address": 6948348,
+          "context_hex": "80386a005b010000b60000003e0000002d00000070386a0083010000a7000000510000003400000060386a009b0100008c000000"
+        },
+        {
+          "address": 6946572,
+          "section": ".data",
+          "value": 387,
+          "width": 2,
+          "field_hints": [
+            "Terrain.198"
+          ],
+          "context_address": 6946548,
+          "context_hex": "d03c6a005b010000b60000003e0000002d000000c03c6a0083010000a70000005100000034000000b03c6a009b0100008c000000"
+        },
+        {
+          "address": 6947172,
+          "section": ".data",
+          "value": 387,
+          "width": 2,
+          "field_hints": [
+            "Terrain.198"
+          ],
+          "context_address": 6947148,
+          "context_hex": "603b6a005b010000b60000003e0000002d000000503b6a0083010000a70000005100000034000000403b6a009b0100008c000000"
+        },
+        {
+          "address": 6947772,
+          "section": ".data",
+          "value": 387,
+          "width": 2,
+          "field_hints": [
+            "Terrain.198"
+          ],
+          "context_address": 6947748,
+          "context_hex": "f0396a005b010000b60000003e0000002d000000e0396a0083010000a70000005100000034000000d0396a009b0100008c000000"
+        },
+        {
+          "address": 6948372,
+          "section": ".data",
+          "value": 387,
+          "width": 2,
+          "field_hints": [
+            "Terrain.198"
+          ],
+          "context_address": 6948348,
+          "context_hex": "80386a005b010000b60000003e0000002d00000070386a0083010000a7000000510000003400000060386a009b0100008c000000"
+        },
+        {
+          "address": 7980544,
+          "section": "UVA_DATA",
+          "value": 58,
+          "width": 4,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 7980520,
+          "context_hex": "1f000000170000001e000000250000002c000000330000003a00000039000000320000002b000000240000001d00000016000000"
+        },
+        {
+          "address": 7980544,
+          "section": "UVA_DATA",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 7980520,
+          "context_hex": "1f000000170000001e000000250000002c000000330000003a00000039000000320000002b000000240000001d00000016000000"
+        },
+        {
+          "address": 7980880,
+          "section": "UVA_DATA",
+          "value": 262,
+          "width": 2,
+          "field_hints": [
+            "Objects.34C"
+          ],
+          "context_address": 7980856,
+          "context_hex": "0202060001060600010606000106060001060600010e080006010800010d0800010c0800020408000302080005010800010b0800"
+        },
+        {
+          "address": 7984148,
+          "section": "IDCT_DAT",
+          "value": 152,
+          "width": 4,
+          "field_hints": [
+            "Traps.204"
+          ],
+          "context_address": 7984124,
+          "context_hex": "cc000000b000000094000000780000005c0000007c00000098000000b4000000d0000000ec000000f0000000d4000000b8000000"
+        },
+        {
+          "address": 7984148,
+          "section": "IDCT_DAT",
+          "value": 152,
+          "width": 2,
+          "field_hints": [
+            "Traps.204"
+          ],
+          "context_address": 7984124,
+          "context_hex": "cc000000b000000094000000780000005c0000007c00000098000000b4000000d0000000ec000000f0000000d4000000b8000000"
+        },
+        {
+          "address": 7991604,
+          "section": "TQIA_DAT",
+          "value": 58,
+          "width": 4,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 7991580,
+          "context_hex": "1f000000170000001e000000250000002c000000330000003a00000039000000320000002b000000240000001d00000016000000"
+        },
+        {
+          "address": 7993044,
+          "section": "TQIA_DAT",
+          "value": 58,
+          "width": 4,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 7993020,
+          "context_hex": "1f000000170000001e000000250000002c000000330000003a00000039000000320000002b000000240000001d00000016000000"
+        },
+        {
+          "address": 7991604,
+          "section": "TQIA_DAT",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 7991580,
+          "context_hex": "1f000000170000001e000000250000002c000000330000003a00000039000000320000002b000000240000001d00000016000000"
+        },
+        {
+          "address": 7993044,
+          "section": "TQIA_DAT",
+          "value": 58,
+          "width": 2,
+          "field_hints": [
+            "KeeperSpells.C8"
+          ],
+          "context_address": 7993020,
+          "context_hex": "1f000000170000001e000000250000002c000000330000003a00000039000000320000002b000000240000001d00000016000000"
+        },
+        {
+          "address": 7991940,
+          "section": "TQIA_DAT",
+          "value": 262,
+          "width": 2,
+          "field_hints": [
+            "Objects.34C"
+          ],
+          "context_address": 7991916,
+          "context_hex": "0202060001060600010606000106060001060600010e080006010800010d0800010c0800020408000302080005010800010b0800"
+        },
+        {
+          "address": 7993380,
+          "section": "TQIA_DAT",
+          "value": 262,
+          "width": 2,
+          "field_hints": [
+            "Objects.34C"
+          ],
+          "context_address": 7993356,
+          "context_hex": "0202060001060600010606000106060001060600010e080006010800010d0800010c0800020408000302080005010800010b0800"
+        }
+      ]
+    }
+  ]
+}

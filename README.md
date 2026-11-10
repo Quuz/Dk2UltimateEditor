@@ -1,6 +1,6 @@
 # Dungeon Keeper 2 Ultimate Editor
 
-[Русский](docs/README_RU.md) · [Contributing](CONTRIBUTING.md) · [Documentation](docs/INDEX.md)
+[Русский](docs/README_RU.md) · [Contributing](CONTRIBUTING.md) · [Documentation](docs/INDEX.md) · [DK2 format specifications](docs/formats/README.md)
 
 **UltimateEditor** is a Windows map and scenario editor for Dungeon Keeper 2. It rebuilds [NovFR’s map editor](https://github.com/NovFR/DK2-Map-Editor) in C# and WPF, with English and Russian interfaces, Unicode text support, undo/redo and an optional local MCP bridge for automation.
 

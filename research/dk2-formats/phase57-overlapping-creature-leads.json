@@ -1,0 +1,698 @@
+{
+  "program": "D:\\Games\\DK2\\Dungeon Keeper 2\\DKII-DX.exe",
+  "program_sha256": "d7a8b854e4e4f02709eba271bead6fe2307dd6e332b5a96e70857e5b0e19fb8a",
+  "text_origin": "0x401000",
+  "text_bytes": 2432000,
+  "offsets": [
+    "0x6e4",
+    "0x6e5",
+    "0x6e6",
+    "0x6e7",
+    "0x6e8",
+    "0x6e9",
+    "0x6ea",
+    "0x6eb",
+    "0x755",
+    "0x756",
+    "0x757",
+    "0x758",
+    "0x759",
+    "0x75a",
+    "0x75b",
+    "0x75c",
+    "0x75d",
+    "0x75e",
+    "0x75f"
+  ],
+  "warning": "Search all PE .text, including code absent from the saved function map.\n\nLinear disassembly and displacement-anchored decodes are only candidates.\nAnchored results can start inside another instruction or embedded data. Verify\neach candidate against a function body and object identity before using it.\n",
+  "candidates": [
+    {
+      "address": "0x4920eb",
+      "instruction": "mov dword ptr [esi + 0x6e7], ebx",
+      "displacement": "0x6e7",
+      "memory_bytes": 4,
+      "base": "esi",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear",
+        "displacement-anchored"
+      ],
+      "mapped_span": {
+        "address": "0x491dc0",
+        "name": "constructor",
+        "size": 1135
+      },
+      "overlaps": [],
+      "read_candidate": false
+    },
+    {
+      "address": "0x4920f1",
+      "instruction": "mov byte ptr [esi + 0x6eb], bl",
+      "displacement": "0x6eb",
+      "memory_bytes": 1,
+      "base": "esi",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear",
+        "displacement-anchored"
+      ],
+      "mapped_span": {
+        "address": "0x491dc0",
+        "name": "constructor",
+        "size": 1135
+      },
+      "overlaps": [
+        "CreaturePickUpPriority"
+      ],
+      "read_candidate": false
+    },
+    {
+      "address": "0x492122",
+      "instruction": "mov dword ptr [esi + 0x758], ebx",
+      "displacement": "0x758",
+      "memory_bytes": 4,
+      "base": "esi",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear",
+        "displacement-anchored"
+      ],
+      "mapped_span": {
+        "address": "0x491dc0",
+        "name": "constructor",
+        "size": 1135
+      },
+      "overlaps": [],
+      "read_candidate": false
+    },
+    {
+      "address": "0x492128",
+      "instruction": "mov dword ptr [esi + 0x75c], ebx",
+      "displacement": "0x75c",
+      "memory_bytes": 4,
+      "base": "esi",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear",
+        "displacement-anchored"
+      ],
+      "mapped_span": {
+        "address": "0x491dc0",
+        "name": "constructor",
+        "size": 1135
+      },
+      "overlaps": [
+        "CreatureAbilityJump"
+      ],
+      "read_candidate": false
+    },
+    {
+      "address": "0x49262a",
+      "instruction": "mov byte ptr [ebx + 0x6eb], dl",
+      "displacement": "0x6eb",
+      "memory_bytes": 1,
+      "base": "ebx",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear",
+        "displacement-anchored"
+      ],
+      "mapped_span": {
+        "address": "0x492320",
+        "name": "loadCreatureType",
+        "size": 8252
+      },
+      "overlaps": [
+        "CreaturePickUpPriority"
+      ],
+      "read_candidate": false
+    },
+    {
+      "address": "0x493bc1",
+      "instruction": "mov dword ptr [ebx + 0x758], edx",
+      "displacement": "0x758",
+      "memory_bytes": 4,
+      "base": "ebx",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear",
+        "displacement-anchored"
+      ],
+      "mapped_span": {
+        "address": "0x492320",
+        "name": "loadCreatureType",
+        "size": 8252
+      },
+      "overlaps": [],
+      "read_candidate": false
+    },
+    {
+      "address": "0x493bd7",
+      "instruction": "mov dword ptr [ebx + 0x75c], eax",
+      "displacement": "0x75c",
+      "memory_bytes": 4,
+      "base": "ebx",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear",
+        "displacement-anchored"
+      ],
+      "mapped_span": {
+        "address": "0x492320",
+        "name": "loadCreatureType",
+        "size": 8252
+      },
+      "overlaps": [
+        "CreatureAbilityJump"
+      ],
+      "read_candidate": false
+    },
+    {
+      "address": "0x493ded",
+      "instruction": "mov dword ptr [ebx + 0x6e7], eax",
+      "displacement": "0x6e7",
+      "memory_bytes": 4,
+      "base": "ebx",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear",
+        "displacement-anchored"
+      ],
+      "mapped_span": {
+        "address": "0x492320",
+        "name": "loadCreatureType",
+        "size": 8252
+      },
+      "overlaps": [],
+      "read_candidate": false
+    },
+    {
+      "address": "0x494c0e",
+      "instruction": "mov dword ptr [ecx + 0x75c], edx",
+      "displacement": "0x75c",
+      "memory_bytes": 4,
+      "base": "ecx",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear",
+        "displacement-anchored"
+      ],
+      "mapped_span": {
+        "address": "0x494a70",
+        "name": "sub_494A70",
+        "size": 514
+      },
+      "overlaps": [
+        "CreatureAbilityJump"
+      ],
+      "read_candidate": false
+    },
+    {
+      "address": "0x4e955b",
+      "instruction": "lea edx, [esp + 0x6e4]",
+      "displacement": "0x6e4",
+      "memory_bytes": 4,
+      "base": "esp",
+      "index": null,
+      "access": 1,
+      "sources": [
+        "linear",
+        "displacement-anchored"
+      ],
+      "mapped_span": {
+        "address": "0x4e9250",
+        "name": "fun_4E9250",
+        "size": 6340
+      },
+      "overlaps": [],
+      "read_candidate": false
+    },
+    {
+      "address": "0x4e9698",
+      "instruction": "lea eax, [esp + 0x6e4]",
+      "displacement": "0x6e4",
+      "memory_bytes": 4,
+      "base": "esp",
+      "index": null,
+      "access": 1,
+      "sources": [
+        "linear",
+        "displacement-anchored"
+      ],
+      "mapped_span": {
+        "address": "0x4e9250",
+        "name": "fun_4E9250",
+        "size": 6340
+      },
+      "overlaps": [],
+      "read_candidate": false
+    },
+    {
+      "address": "0x4e9a30",
+      "instruction": "lea edx, [esp + 0x6e4]",
+      "displacement": "0x6e4",
+      "memory_bytes": 4,
+      "base": "esp",
+      "index": null,
+      "access": 1,
+      "sources": [
+        "linear",
+        "displacement-anchored"
+      ],
+      "mapped_span": {
+        "address": "0x4e9250",
+        "name": "fun_4E9250",
+        "size": 6340
+      },
+      "overlaps": [],
+      "read_candidate": false
+    },
+    {
+      "address": "0x4e9fbc",
+      "instruction": "lea ecx, [esp + 0x6e4]",
+      "displacement": "0x6e4",
+      "memory_bytes": 4,
+      "base": "esp",
+      "index": null,
+      "access": 1,
+      "sources": [
+        "linear",
+        "displacement-anchored"
+      ],
+      "mapped_span": {
+        "address": "0x4e9250",
+        "name": "fun_4E9250",
+        "size": 6340
+      },
+      "overlaps": [],
+      "read_candidate": false
+    },
+    {
+      "address": "0x4eaaf2",
+      "instruction": "mov ecx, dword ptr [esp + 0x758]",
+      "displacement": "0x758",
+      "memory_bytes": 4,
+      "base": "esp",
+      "index": null,
+      "access": 1,
+      "sources": [
+        "linear",
+        "displacement-anchored"
+      ],
+      "mapped_span": {
+        "address": "0x4e9250",
+        "name": "fun_4E9250",
+        "size": 6340
+      },
+      "overlaps": [],
+      "read_candidate": false
+    },
+    {
+      "address": "0x51fa08",
+      "instruction": "mov ecx, dword ptr [edx + 0x6e7]",
+      "displacement": "0x6e7",
+      "memory_bytes": 4,
+      "base": "edx",
+      "index": null,
+      "access": 1,
+      "sources": [
+        "linear",
+        "displacement-anchored"
+      ],
+      "mapped_span": {
+        "address": "0x51f3b0",
+        "name": "copy",
+        "size": 2292
+      },
+      "overlaps": [],
+      "read_candidate": false
+    },
+    {
+      "address": "0x51fa0e",
+      "instruction": "mov dword ptr [eax + 0x6e7], ecx",
+      "displacement": "0x6e7",
+      "memory_bytes": 4,
+      "base": "eax",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear",
+        "displacement-anchored"
+      ],
+      "mapped_span": {
+        "address": "0x51f3b0",
+        "name": "copy",
+        "size": 2292
+      },
+      "overlaps": [],
+      "read_candidate": false
+    },
+    {
+      "address": "0x51fa14",
+      "instruction": "mov cl, byte ptr [edx + 0x6eb]",
+      "displacement": "0x6eb",
+      "memory_bytes": 1,
+      "base": "edx",
+      "index": null,
+      "access": 1,
+      "sources": [
+        "linear",
+        "displacement-anchored"
+      ],
+      "mapped_span": {
+        "address": "0x51f3b0",
+        "name": "copy",
+        "size": 2292
+      },
+      "overlaps": [
+        "CreaturePickUpPriority"
+      ],
+      "read_candidate": true
+    },
+    {
+      "address": "0x51fa1a",
+      "instruction": "mov byte ptr [eax + 0x6eb], cl",
+      "displacement": "0x6eb",
+      "memory_bytes": 1,
+      "base": "eax",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear",
+        "displacement-anchored"
+      ],
+      "mapped_span": {
+        "address": "0x51f3b0",
+        "name": "copy",
+        "size": 2292
+      },
+      "overlaps": [
+        "CreaturePickUpPriority"
+      ],
+      "read_candidate": false
+    },
+    {
+      "address": "0x51fa72",
+      "instruction": "mov ecx, dword ptr [edx + 0x758]",
+      "displacement": "0x758",
+      "memory_bytes": 4,
+      "base": "edx",
+      "index": null,
+      "access": 1,
+      "sources": [
+        "linear",
+        "displacement-anchored"
+      ],
+      "mapped_span": {
+        "address": "0x51f3b0",
+        "name": "copy",
+        "size": 2292
+      },
+      "overlaps": [],
+      "read_candidate": false
+    },
+    {
+      "address": "0x51fa78",
+      "instruction": "mov dword ptr [eax + 0x758], ecx",
+      "displacement": "0x758",
+      "memory_bytes": 4,
+      "base": "eax",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear",
+        "displacement-anchored"
+      ],
+      "mapped_span": {
+        "address": "0x51f3b0",
+        "name": "copy",
+        "size": 2292
+      },
+      "overlaps": [],
+      "read_candidate": false
+    },
+    {
+      "address": "0x51fa7e",
+      "instruction": "mov ecx, dword ptr [edx + 0x75c]",
+      "displacement": "0x75c",
+      "memory_bytes": 4,
+      "base": "edx",
+      "index": null,
+      "access": 1,
+      "sources": [
+        "linear",
+        "displacement-anchored"
+      ],
+      "mapped_span": {
+        "address": "0x51f3b0",
+        "name": "copy",
+        "size": 2292
+      },
+      "overlaps": [
+        "CreatureAbilityJump"
+      ],
+      "read_candidate": true
+    },
+    {
+      "address": "0x51fa84",
+      "instruction": "mov dword ptr [eax + 0x75c], ecx",
+      "displacement": "0x75c",
+      "memory_bytes": 4,
+      "base": "eax",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear",
+        "displacement-anchored"
+      ],
+      "mapped_span": {
+        "address": "0x51f3b0",
+        "name": "copy",
+        "size": 2292
+      },
+      "overlaps": [
+        "CreatureAbilityJump"
+      ],
+      "read_candidate": false
+    },
+    {
+      "address": "0x5a03e3",
+      "instruction": "mov dword ptr [esp + 0x6e4], edi",
+      "displacement": "0x6e4",
+      "memory_bytes": 4,
+      "base": "esp",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear",
+        "displacement-anchored"
+      ],
+      "mapped_span": {
+        "address": "0x5a01a0",
+        "name": "createCEngineUnlitProceduralMesh",
+        "size": 3785
+      },
+      "overlaps": [],
+      "read_candidate": false
+    },
+    {
+      "address": "0x5a0414",
+      "instruction": "mov dword ptr [esp + 0x6e8], 0xffffffff",
+      "displacement": "0x6e8",
+      "memory_bytes": 4,
+      "base": "esp",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear",
+        "displacement-anchored"
+      ],
+      "mapped_span": {
+        "address": "0x5a01a0",
+        "name": "createCEngineUnlitProceduralMesh",
+        "size": 3785
+      },
+      "overlaps": [
+        "CreaturePickUpPriority"
+      ],
+      "read_candidate": false
+    },
+    {
+      "address": "0x5a0c63",
+      "instruction": "mov dword ptr [esp + 0x6e4], 1",
+      "displacement": "0x6e4",
+      "memory_bytes": 4,
+      "base": "esp",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear",
+        "displacement-anchored"
+      ],
+      "mapped_span": {
+        "address": "0x5a01a0",
+        "name": "createCEngineUnlitProceduralMesh",
+        "size": 3785
+      },
+      "overlaps": [],
+      "read_candidate": false
+    },
+    {
+      "address": "0x5a0ca1",
+      "instruction": "mov dword ptr [esp + 0x6e8], edi",
+      "displacement": "0x6e8",
+      "memory_bytes": 4,
+      "base": "esp",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear",
+        "displacement-anchored"
+      ],
+      "mapped_span": {
+        "address": "0x5a01a0",
+        "name": "createCEngineUnlitProceduralMesh",
+        "size": 3785
+      },
+      "overlaps": [
+        "CreaturePickUpPriority"
+      ],
+      "read_candidate": false
+    },
+    {
+      "address": "0x5a0cfa",
+      "instruction": "mov dword ptr [esp + 0x6e4], 2",
+      "displacement": "0x6e4",
+      "memory_bytes": 4,
+      "base": "esp",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear",
+        "displacement-anchored"
+      ],
+      "mapped_span": {
+        "address": "0x5a01a0",
+        "name": "createCEngineUnlitProceduralMesh",
+        "size": 3785
+      },
+      "overlaps": [],
+      "read_candidate": false
+    },
+    {
+      "address": "0x5a0d35",
+      "instruction": "mov dword ptr [esp + 0x6e8], edi",
+      "displacement": "0x6e8",
+      "memory_bytes": 4,
+      "base": "esp",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear",
+        "displacement-anchored"
+      ],
+      "mapped_span": {
+        "address": "0x5a01a0",
+        "name": "createCEngineUnlitProceduralMesh",
+        "size": 3785
+      },
+      "overlaps": [
+        "CreaturePickUpPriority"
+      ],
+      "read_candidate": false
+    },
+    {
+      "address": "0x5a0f5c",
+      "instruction": "mov dword ptr [esp + 0x6e4], 3",
+      "displacement": "0x6e4",
+      "memory_bytes": 4,
+      "base": "esp",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear",
+        "displacement-anchored"
+      ],
+      "mapped_span": {
+        "address": "0x5a01a0",
+        "name": "createCEngineUnlitProceduralMesh",
+        "size": 3785
+      },
+      "overlaps": [],
+      "read_candidate": false
+    },
+    {
+      "address": "0x5a0f98",
+      "instruction": "mov dword ptr [esp + 0x6e8], edi",
+      "displacement": "0x6e8",
+      "memory_bytes": 4,
+      "base": "esp",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear",
+        "displacement-anchored"
+      ],
+      "mapped_span": {
+        "address": "0x5a01a0",
+        "name": "createCEngineUnlitProceduralMesh",
+        "size": 3785
+      },
+      "overlaps": [
+        "CreaturePickUpPriority"
+      ],
+      "read_candidate": false
+    },
+    {
+      "address": "0x5a0ff1",
+      "instruction": "mov dword ptr [esp + 0x6e4], 4",
+      "displacement": "0x6e4",
+      "memory_bytes": 4,
+      "base": "esp",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear",
+        "displacement-anchored"
+      ],
+      "mapped_span": {
+        "address": "0x5a01a0",
+        "name": "createCEngineUnlitProceduralMesh",
+        "size": 3785
+      },
+      "overlaps": [],
+      "read_candidate": false
+    },
+    {
+      "address": "0x5a102a",
+      "instruction": "mov dword ptr [esp + 0x6e8], edi",
+      "displacement": "0x6e8",
+      "memory_bytes": 4,
+      "base": "esp",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear",
+        "displacement-anchored"
+      ],
+      "mapped_span": {
+        "address": "0x5a01a0",
+        "name": "createCEngineUnlitProceduralMesh",
+        "size": 3785
+      },
+      "overlaps": [
+        "CreaturePickUpPriority"
+      ],
+      "read_candidate": false
+    }
+  ]
+}

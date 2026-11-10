@@ -1,0 +1,1288 @@
+{
+  "executable_sha256": "d7a8b854e4e4f02709eba271bead6fe2307dd6e332b5a96e70857e5b0e19fb8a",
+  "scope": "Native storage/selector evidence; original game was not run with modified files.",
+  "runtime_definition_bytes": {
+    "CreatureSpells": 70,
+    "KeeperSpells": 122
+  },
+  "dispatch_tables": {
+    "creature_alternative": {
+      "runtime_address": "0x6e4ac8",
+      "entry_bytes": 17,
+      "entry_count": 6,
+      "enum": "CreatureSpell.AlternativeShot",
+      "initializer_evidence": "game-creaturespell-alternative-init.txt",
+      "consumer": "0x49A7B0",
+      "out_of_range_behavior": "With a valid readable definition, selector6..255 returns0 before indexing. Missing definition is not checked before reading selector+45.",
+      "entries": [
+        {
+          "value": 0,
+          "baseline_name": "NONE",
+          "callback": "0x0",
+          "runtime_entry_address": "0x6e4ac8",
+          "role": "no callback; returns0"
+        },
+        {
+          "value": 1,
+          "baseline_name": "HASTE",
+          "callback": "0x49a830",
+          "runtime_entry_address": "0x6e4ad9",
+          "role": "eligibility predicate",
+          "predicate": "creature.timer+459 ==0",
+          "evidence": "game-alternative-haste.txt"
+        },
+        {
+          "value": 2,
+          "baseline_name": "HEAL",
+          "callback": "0x49a840",
+          "runtime_entry_address": "0x6e4aea",
+          "role": "eligibility predicate",
+          "predicate": "s32(currentHP)<threshold; level1:baseU16HP>>1; otherwise:(truncTowardZero(s16Coefficient*baseU16HP/100)&FFFFFFFF)>>1",
+          "evidence": "game-alternative-heal.txt",
+          "assembly_evidence": "game-alternative-heal-assembly.txt"
+        },
+        {
+          "value": 3,
+          "baseline_name": "ARMOUR",
+          "callback": "0x49a8c0",
+          "runtime_entry_address": "0x6e4afb",
+          "role": "eligibility predicate",
+          "predicate": "effective AI-state category from0x478050 ==0x16 and WORDtimer+443 ==0",
+          "evidence": "game-alternative-armour.txt"
+        },
+        {
+          "value": 4,
+          "baseline_name": "INVULNERABLE",
+          "callback": "0x49a8f0",
+          "runtime_entry_address": "0x6e4b0c",
+          "role": "eligibility predicate",
+          "predicate": "effective AI-state category from0x478050 ==0x16 and WORDtimer+445 ==0",
+          "evidence": "game-alternative-invulnerable.txt"
+        },
+        {
+          "value": 5,
+          "baseline_name": "INVISIBLE",
+          "callback": "0x49a920",
+          "runtime_entry_address": "0x6e4b1d",
+          "role": "eligibility predicate",
+          "predicate": "effective AI-state category from0x478050 ==0x16 and WORDtimer+44F ==0",
+          "evidence": "game-alternative-invisible.txt"
+        }
+      ],
+      "native_runtime_review": {
+        "file": "spell-predicate-semantics.json",
+        "sha256": "f37a8f11333dc9d7aa188baabdc8b84f437b1859a72e8f75ec47865a4777a259"
+      }
+    },
+    "keeper_cast": {
+      "runtime_address": "0x6fcdd8",
+      "entry_bytes": 17,
+      "entry_count": 6,
+      "enum": "KeeperSpell.CastRule",
+      "initializer_evidence": "game-keeperspell-cast-init.txt",
+      "consumer": "0x5176B0",
+      "out_of_range_behavior": "return0; bounds checked before indexing",
+      "entries": [
+        {
+          "value": 0,
+          "baseline_name": "NONE",
+          "callback": "0x0",
+          "runtime_entry_address": "0x6fcdd8",
+          "evidence_file": null
+        },
+        {
+          "value": 1,
+          "baseline_name": "OWN_LAND",
+          "callback": "0x517b80",
+          "runtime_entry_address": "0x6fcde9",
+          "evidence_file": "game-cast-own-land.txt"
+        },
+        {
+          "value": 2,
+          "baseline_name": "OWN_AND_NEUTRAL_LAND",
+          "callback": "0x517cb0",
+          "runtime_entry_address": "0x6fcdfa",
+          "evidence_file": "game-cast-own-neutral-land.txt"
+        },
+        {
+          "value": 3,
+          "baseline_name": "ENEMY_LAND",
+          "callback": "0x517de0",
+          "runtime_entry_address": "0x6fce0b",
+          "evidence_file": "game-cast-enemy-land.txt"
+        },
+        {
+          "value": 4,
+          "baseline_name": "ANY_LAND",
+          "callback": "0x517f10",
+          "runtime_entry_address": "0x6fce1c",
+          "evidence_file": "game-cast-any-land.txt"
+        },
+        {
+          "value": 5,
+          "baseline_name": "ANYWHERE",
+          "callback": "0x517f60",
+          "runtime_entry_address": "0x6fce2d",
+          "evidence_file": "game-cast-anywhere.txt"
+        }
+      ]
+    },
+    "keeper_target": {
+      "runtime_address": "0x6fce40",
+      "entry_bytes": 18,
+      "entry_count": 7,
+      "enum": "KeeperSpell.TargetRule",
+      "initializer_evidence": "game-keeperspell-target-init.txt",
+      "consumer": "0x517730",
+      "out_of_range_behavior": "return0; bounds checked before indexing",
+      "entries": [
+        {
+          "value": 0,
+          "baseline_name": "NONE",
+          "callback": "0x0",
+          "runtime_entry_address": "0x6fce40",
+          "expects_entity_target": false,
+          "evidence_file": null
+        },
+        {
+          "value": 1,
+          "baseline_name": "OWN_CREATURES",
+          "callback": "0x517800",
+          "runtime_entry_address": "0x6fce52",
+          "expects_entity_target": true,
+          "evidence_file": "game-target-own-creatures.txt"
+        },
+        {
+          "value": 2,
+          "baseline_name": "ENEMY_CREATURES",
+          "callback": "0x517930",
+          "runtime_entry_address": "0x6fce64",
+          "expects_entity_target": true,
+          "evidence_file": "game-target-enemy-creatures.txt"
+        },
+        {
+          "value": 3,
+          "baseline_name": "ALL_CREATURES",
+          "callback": "0x517990",
+          "runtime_entry_address": "0x6fce76",
+          "expects_entity_target": true,
+          "evidence_file": "game-target-all-creatures.txt"
+        },
+        {
+          "value": 4,
+          "baseline_name": "LAND",
+          "callback": "0x5179d0",
+          "runtime_entry_address": "0x6fce88",
+          "expects_entity_target": false,
+          "evidence_file": "game-target-land.txt"
+        },
+        {
+          "value": 5,
+          "baseline_name": "ALL",
+          "callback": "0x517f60",
+          "runtime_entry_address": "0x6fce9a",
+          "expects_entity_target": false,
+          "evidence_file": "game-cast-anywhere.txt"
+        },
+        {
+          "value": 6,
+          "baseline_name": "POSESSION",
+          "callback": "0x517ab0",
+          "runtime_entry_address": "0x6fceac",
+          "expects_entity_target": true,
+          "evidence_file": "game-target-possession.txt"
+        }
+      ]
+    }
+  },
+  "storage_paths": {
+    "CreatureSpells": {
+      "converter_file": "game-creaturespells-convert.txt",
+      "runtime_file": "game-creaturespells-runtime.txt",
+      "literal_scalar_copies": 16,
+      "literal_runtime_assignments": 15,
+      "joined_paths": [
+        {
+          "raw_offset": "0xe6",
+          "raw_bytes": 1,
+          "baseline_field": "CreatureSpellId",
+          "intermediate_offset": "0x136",
+          "runtime_offset": "0x43",
+          "runtime_bytes": 1,
+          "transform": "copy",
+          "runtime_expression": "*(undefined1 *)(param_2 + 0x136)",
+          "converter_evidence": [
+            {
+              "line": 25,
+              "assignment": "cVar1 = param_2[0xe6];"
+            },
+            {
+              "line": 29,
+              "assignment": "*(char *)((int)param_1 + 0x136) = cVar1;"
+            }
+          ],
+          "runtime_evidence": {
+            "line": 51,
+            "assignment": "*(undefined1 *)(param_1 + 0x43) = *(undefined1 *)(param_2 + 0x136);"
+          }
+        },
+        {
+          "raw_offset": "0xd8",
+          "raw_bytes": 2,
+          "baseline_field": "CombatPoints",
+          "intermediate_offset": "0x128",
+          "runtime_offset": "0x2b",
+          "runtime_bytes": 2,
+          "transform": "copy",
+          "runtime_expression": "*(undefined2 *)(param_2 + 0x128)",
+          "converter_evidence": [
+            {
+              "line": 69,
+              "assignment": "uVar2 = *(undefined2 *)(param_2 + 0xd8);"
+            },
+            {
+              "line": 73,
+              "assignment": "*(undefined2 *)(param_1 + 0x4a) = uVar2;"
+            }
+          ],
+          "runtime_evidence": {
+            "line": 57,
+            "assignment": "*(undefined2 *)(param_1 + 0x2b) = *(undefined2 *)(param_2 + 0x128);"
+          }
+        },
+        {
+          "raw_offset": "0xea",
+          "raw_bytes": 4,
+          "baseline_field": "RechargeTime",
+          "intermediate_offset": "0x13a",
+          "runtime_offset": "0x2d",
+          "runtime_bytes": 4,
+          "transform": "expression",
+          "runtime_expression": "(uint)(*(int *)(param_2 + 0x13a) * iVar4) >> 0xc",
+          "converter_evidence": [
+            {
+              "line": 75,
+              "assignment": "uVar3 = *(undefined4 *)(param_2 + 0xea);"
+            },
+            {
+              "line": 79,
+              "assignment": "*(undefined4 *)((int)param_1 + 0x13a) = uVar3;"
+            }
+          ],
+          "runtime_evidence": {
+            "line": 63,
+            "assignment": "*(uint *)(param_1 + 0x2d) = (uint)(*(int *)(param_2 + 0x13a) * iVar4) >> 0xc;"
+          }
+        },
+        {
+          "raw_offset": "0xd0",
+          "raw_bytes": 4,
+          "baseline_field": "Range",
+          "intermediate_offset": "0x120",
+          "runtime_offset": "0x31",
+          "runtime_bytes": 4,
+          "transform": "copy",
+          "runtime_expression": "*(undefined4 *)(param_2 + 0x120)",
+          "converter_evidence": [
+            {
+              "line": 81,
+              "assignment": "uVar3 = *(undefined4 *)(param_2 + 0xd0);"
+            },
+            {
+              "line": 85,
+              "assignment": "param_1[0x48] = uVar3;"
+            }
+          ],
+          "runtime_evidence": {
+            "line": 69,
+            "assignment": "*(undefined4 *)(param_1 + 0x31) = *(undefined4 *)(param_2 + 0x120);"
+          }
+        },
+        {
+          "raw_offset": "0xde",
+          "raw_bytes": 2,
+          "baseline_field": "TooltipStringId",
+          "intermediate_offset": "0x12e",
+          "runtime_offset": "0x35",
+          "runtime_bytes": 2,
+          "transform": "copy",
+          "runtime_expression": "*(undefined2 *)(param_2 + 0x12e)",
+          "converter_evidence": [
+            {
+              "line": 87,
+              "assignment": "uVar2 = *(undefined2 *)(param_2 + 0xde);"
+            },
+            {
+              "line": 91,
+              "assignment": "*(undefined2 *)((int)param_1 + 0x12e) = uVar2;"
+            }
+          ],
+          "runtime_evidence": {
+            "line": 75,
+            "assignment": "*(undefined2 *)(param_1 + 0x35) = *(undefined2 *)(param_2 + 0x12e);"
+          }
+        },
+        {
+          "raw_offset": "0xdc",
+          "raw_bytes": 2,
+          "baseline_field": "NameStringId",
+          "intermediate_offset": "0x12c",
+          "runtime_offset": "0x37",
+          "runtime_bytes": 2,
+          "transform": "copy",
+          "runtime_expression": "*(undefined2 *)(param_2 + 300)",
+          "converter_evidence": [
+            {
+              "line": 93,
+              "assignment": "uVar2 = *(undefined2 *)(param_2 + 0xdc);"
+            },
+            {
+              "line": 97,
+              "assignment": "*(undefined2 *)(param_1 + 0x4b) = uVar2;"
+            }
+          ],
+          "runtime_evidence": {
+            "line": 81,
+            "assignment": "*(undefined2 *)(param_1 + 0x37) = *(undefined2 *)(param_2 + 300);"
+          }
+        },
+        {
+          "raw_offset": "0xe0",
+          "raw_bytes": 2,
+          "baseline_field": "GeneralDescriptionStringId",
+          "intermediate_offset": "0x130",
+          "runtime_offset": "0x39",
+          "runtime_bytes": 2,
+          "transform": "copy",
+          "runtime_expression": "*(undefined2 *)(param_2 + 0x130)",
+          "converter_evidence": [
+            {
+              "line": 99,
+              "assignment": "uVar2 = *(undefined2 *)(param_2 + 0xe0);"
+            },
+            {
+              "line": 103,
+              "assignment": "*(undefined2 *)(param_1 + 0x4c) = uVar2;"
+            }
+          ],
+          "runtime_evidence": {
+            "line": 87,
+            "assignment": "*(undefined2 *)(param_1 + 0x39) = *(undefined2 *)(param_2 + 0x130);"
+          }
+        },
+        {
+          "raw_offset": "0xe2",
+          "raw_bytes": 2,
+          "baseline_field": "StrengthStringId",
+          "intermediate_offset": "0x132",
+          "runtime_offset": "0x3b",
+          "runtime_bytes": 2,
+          "transform": "copy",
+          "runtime_expression": "*(undefined2 *)(param_2 + 0x132)",
+          "converter_evidence": [
+            {
+              "line": 105,
+              "assignment": "uVar2 = *(undefined2 *)(param_2 + 0xe2);"
+            },
+            {
+              "line": 109,
+              "assignment": "*(undefined2 *)((int)param_1 + 0x132) = uVar2;"
+            }
+          ],
+          "runtime_evidence": {
+            "line": 93,
+            "assignment": "*(undefined2 *)(param_1 + 0x3b) = *(undefined2 *)(param_2 + 0x132);"
+          }
+        },
+        {
+          "raw_offset": "0xe4",
+          "raw_bytes": 2,
+          "baseline_field": "WeaknessStringId",
+          "intermediate_offset": "0x134",
+          "runtime_offset": "0x3d",
+          "runtime_bytes": 2,
+          "transform": "copy",
+          "runtime_expression": "*(undefined2 *)(param_2 + 0x134)",
+          "converter_evidence": [
+            {
+              "line": 111,
+              "assignment": "uVar2 = *(undefined2 *)(param_2 + 0xe4);"
+            },
+            {
+              "line": 115,
+              "assignment": "*(undefined2 *)(param_1 + 0x4d) = uVar2;"
+            }
+          ],
+          "runtime_evidence": {
+            "line": 99,
+            "assignment": "*(undefined2 *)(param_1 + 0x3d) = *(undefined2 *)(param_2 + 0x134);"
+          }
+        },
+        {
+          "raw_offset": "0xe7",
+          "raw_bytes": 1,
+          "baseline_field": "ShotTypeId",
+          "intermediate_offset": "0x137",
+          "runtime_offset": "0x44",
+          "runtime_bytes": 1,
+          "transform": "copy",
+          "runtime_expression": "*(undefined1 *)(param_2 + 0x137)",
+          "converter_evidence": [
+            {
+              "line": 129,
+              "assignment": "cVar1 = param_2[0xe7];"
+            },
+            {
+              "line": 133,
+              "assignment": "*(char *)((int)param_1 + 0x137) = cVar1;"
+            }
+          ],
+          "runtime_evidence": {
+            "line": 179,
+            "assignment": "*(undefined1 *)(param_1 + 0x44) = *(undefined1 *)(param_2 + 0x137);"
+          }
+        },
+        {
+          "raw_offset": "0xc8",
+          "raw_bytes": 4,
+          "baseline_field": "ShotData1",
+          "intermediate_offset": "0x118",
+          "runtime_offset": "0x1f",
+          "runtime_bytes": 4,
+          "transform": "copy",
+          "runtime_expression": "*(undefined4 *)(param_2 + 0x118)",
+          "converter_evidence": [
+            {
+              "line": 135,
+              "assignment": "uVar3 = *(undefined4 *)(param_2 + 200);"
+            },
+            {
+              "line": 139,
+              "assignment": "param_1[0x46] = uVar3;"
+            }
+          ],
+          "runtime_evidence": {
+            "line": 185,
+            "assignment": "*(undefined4 *)(param_1 + 0x1f) = *(undefined4 *)(param_2 + 0x118);"
+          }
+        },
+        {
+          "raw_offset": "0xcc",
+          "raw_bytes": 4,
+          "baseline_field": "ShotData2",
+          "intermediate_offset": "0x11c",
+          "runtime_offset": "0x23",
+          "runtime_bytes": 4,
+          "transform": "copy",
+          "runtime_expression": "*(undefined4 *)(param_2 + 0x11c)",
+          "converter_evidence": [
+            {
+              "line": 141,
+              "assignment": "uVar3 = *(undefined4 *)(param_2 + 0xcc);"
+            },
+            {
+              "line": 145,
+              "assignment": "param_1[0x47] = uVar3;"
+            }
+          ],
+          "runtime_evidence": {
+            "line": 191,
+            "assignment": "*(undefined4 *)(param_1 + 0x23) = *(undefined4 *)(param_2 + 0x11c);"
+          }
+        },
+        {
+          "raw_offset": "0xda",
+          "raw_bytes": 2,
+          "baseline_field": "SoundEvent",
+          "intermediate_offset": "0x12a",
+          "runtime_offset": "0x3f",
+          "runtime_bytes": 4,
+          "transform": "expression",
+          "runtime_expression": "(uint)*(ushort *)(param_2 + 0x12a)",
+          "converter_evidence": [
+            {
+              "line": 147,
+              "assignment": "uVar2 = *(undefined2 *)(param_2 + 0xda);"
+            },
+            {
+              "line": 151,
+              "assignment": "*(undefined2 *)((int)param_1 + 0x12a) = uVar2;"
+            }
+          ],
+          "runtime_evidence": {
+            "line": 197,
+            "assignment": "*(uint *)(param_1 + 0x3f) = (uint)*(ushort *)(param_2 + 0x12a);"
+          }
+        },
+        {
+          "raw_offset": "0xee",
+          "raw_bytes": 1,
+          "baseline_field": "AlternativeShot",
+          "intermediate_offset": "0x13e",
+          "runtime_offset": "0x45",
+          "runtime_bytes": 1,
+          "transform": "copy",
+          "runtime_expression": "*(undefined1 *)(param_2 + 0x13e)",
+          "converter_evidence": [
+            {
+              "line": 153,
+              "assignment": "cVar1 = param_2[0xee];"
+            },
+            {
+              "line": 157,
+              "assignment": "*(char *)((int)param_1 + 0x13e) = cVar1;"
+            }
+          ],
+          "runtime_evidence": {
+            "line": 105,
+            "assignment": "*(undefined1 *)(param_1 + 0x45) = *(undefined1 *)(param_2 + 0x13e);"
+          }
+        }
+      ]
+    },
+    "KeeperSpells": {
+      "converter_file": "game-keeperspells-convert.txt",
+      "runtime_file": "game-keeperspells-runtime.txt",
+      "literal_scalar_copies": 23,
+      "literal_runtime_assignments": 24,
+      "joined_paths": [
+        {
+          "raw_offset": "0xee",
+          "raw_bytes": 1,
+          "baseline_field": "KeeperSpellId",
+          "intermediate_offset": "0x166",
+          "runtime_offset": "0x75",
+          "runtime_bytes": 1,
+          "transform": "copy",
+          "runtime_expression": "*(undefined1 *)(param_2 + 0x166)",
+          "converter_evidence": [
+            {
+              "line": 31,
+              "assignment": "cVar1 = param_2[0xee];"
+            },
+            {
+              "line": 35,
+              "assignment": "*(char *)((int)param_1 + 0x166) = cVar1;"
+            }
+          ],
+          "runtime_evidence": {
+            "line": 59,
+            "assignment": "*(undefined1 *)(param_1 + 0x75) = *(undefined1 *)(param_2 + 0x166);"
+          }
+        },
+        {
+          "raw_offset": "0x11c",
+          "raw_bytes": 4,
+          "baseline_field": "ManaCost",
+          "intermediate_offset": "0x194",
+          "runtime_offset": "0x58",
+          "runtime_bytes": 4,
+          "transform": "copy",
+          "runtime_expression": "*(undefined4 *)(param_2 + 0x194)",
+          "converter_evidence": [
+            {
+              "line": 69,
+              "assignment": "uVar3 = *(undefined4 *)(param_2 + 0x11c);"
+            },
+            {
+              "line": 73,
+              "assignment": "param_1[0x65] = uVar3;"
+            }
+          ],
+          "runtime_evidence": {
+            "line": 65,
+            "assignment": "*(undefined4 *)(param_1 + 0x58) = *(undefined4 *)(param_2 + 0x194);"
+          }
+        },
+        {
+          "raw_offset": "0xe2",
+          "raw_bytes": 2,
+          "baseline_field": "ManaDrain",
+          "intermediate_offset": "0x15a",
+          "runtime_offset": "0x5c",
+          "runtime_bytes": 2,
+          "transform": "copy",
+          "runtime_expression": "*(undefined2 *)(param_2 + 0x15a)",
+          "converter_evidence": [
+            {
+              "line": 75,
+              "assignment": "uVar2 = *(undefined2 *)(param_2 + 0xe2);"
+            },
+            {
+              "line": 79,
+              "assignment": "*(undefined2 *)((int)param_1 + 0x15a) = uVar2;"
+            }
+          ],
+          "runtime_evidence": {
+            "line": 71,
+            "assignment": "*(undefined2 *)(param_1 + 0x5c) = *(undefined2 *)(param_2 + 0x15a);"
+          }
+        },
+        {
+          "raw_offset": "0xc8",
+          "raw_bytes": 4,
+          "baseline_field": "Xc8",
+          "intermediate_offset": "0x140",
+          "runtime_offset": "0x3a",
+          "runtime_bytes": 4,
+          "transform": "copy",
+          "runtime_expression": "*(undefined4 *)(param_2 + 0x140)",
+          "converter_evidence": [
+            {
+              "line": 81,
+              "assignment": "uVar3 = *(undefined4 *)(param_2 + 200);"
+            },
+            {
+              "line": 85,
+              "assignment": "param_1[0x50] = uVar3;"
+            }
+          ],
+          "runtime_evidence": {
+            "line": 77,
+            "assignment": "*(undefined4 *)(param_1 + 0x3a) = *(undefined4 *)(param_2 + 0x140);"
+          }
+        },
+        {
+          "raw_offset": "0xcc",
+          "raw_bytes": 4,
+          "baseline_field": "RechargeTime",
+          "intermediate_offset": "0x144",
+          "runtime_offset": "0x3e",
+          "runtime_bytes": 4,
+          "transform": "expression",
+          "runtime_expression": "(uint)(*(int *)(param_2 + 0x144) * iVar6) >> 0xc",
+          "converter_evidence": [
+            {
+              "line": 87,
+              "assignment": "uVar3 = *(undefined4 *)(param_2 + 0xcc);"
+            },
+            {
+              "line": 91,
+              "assignment": "param_1[0x51] = uVar3;"
+            }
+          ],
+          "runtime_evidence": {
+            "line": 83,
+            "assignment": "*(uint *)(param_1 + 0x3e) = (uint)(*(int *)(param_2 + 0x144) * iVar6) >> 0xc;"
+          }
+        },
+        {
+          "raw_offset": "0xe4",
+          "raw_bytes": 2,
+          "baseline_field": "TooltipStringId",
+          "intermediate_offset": "0x15c",
+          "runtime_offset": "0x62",
+          "runtime_bytes": 2,
+          "transform": "copy",
+          "runtime_expression": "*(undefined2 *)(param_2 + 0x15c)",
+          "converter_evidence": [
+            {
+              "line": 93,
+              "assignment": "uVar2 = *(undefined2 *)(param_2 + 0xe4);"
+            },
+            {
+              "line": 97,
+              "assignment": "*(undefined2 *)(param_1 + 0x57) = uVar2;"
+            }
+          ],
+          "runtime_evidence": {
+            "line": 103,
+            "assignment": "*(undefined2 *)(param_1 + 0x62) = *(undefined2 *)(param_2 + 0x15c);"
+          }
+        },
+        {
+          "raw_offset": "0xe6",
+          "raw_bytes": 2,
+          "baseline_field": "NameStringId",
+          "intermediate_offset": "0x15e",
+          "runtime_offset": "0x64",
+          "runtime_bytes": 2,
+          "transform": "copy",
+          "runtime_expression": "*(undefined2 *)(param_2 + 0x15e)",
+          "converter_evidence": [
+            {
+              "line": 99,
+              "assignment": "uVar2 = *(undefined2 *)(param_2 + 0xe6);"
+            },
+            {
+              "line": 103,
+              "assignment": "*(undefined2 *)((int)param_1 + 0x15e) = uVar2;"
+            }
+          ],
+          "runtime_evidence": {
+            "line": 109,
+            "assignment": "*(undefined2 *)(param_1 + 100) = *(undefined2 *)(param_2 + 0x15e);"
+          }
+        },
+        {
+          "raw_offset": "0xe8",
+          "raw_bytes": 2,
+          "baseline_field": "GeneralDescriptionStringId",
+          "intermediate_offset": "0x160",
+          "runtime_offset": "0x66",
+          "runtime_bytes": 2,
+          "transform": "copy",
+          "runtime_expression": "*(undefined2 *)(param_2 + 0x160)",
+          "converter_evidence": [
+            {
+              "line": 105,
+              "assignment": "uVar2 = *(undefined2 *)(param_2 + 0xe8);"
+            },
+            {
+              "line": 109,
+              "assignment": "*(undefined2 *)(param_1 + 0x58) = uVar2;"
+            }
+          ],
+          "runtime_evidence": {
+            "line": 115,
+            "assignment": "*(undefined2 *)(param_1 + 0x66) = *(undefined2 *)(param_2 + 0x160);"
+          }
+        },
+        {
+          "raw_offset": "0xea",
+          "raw_bytes": 2,
+          "baseline_field": "StrengthStringId",
+          "intermediate_offset": "0x162",
+          "runtime_offset": "0x68",
+          "runtime_bytes": 2,
+          "transform": "copy",
+          "runtime_expression": "*(undefined2 *)(param_2 + 0x162)",
+          "converter_evidence": [
+            {
+              "line": 111,
+              "assignment": "uVar2 = *(undefined2 *)(param_2 + 0xea);"
+            },
+            {
+              "line": 115,
+              "assignment": "*(undefined2 *)((int)param_1 + 0x162) = uVar2;"
+            }
+          ],
+          "runtime_evidence": {
+            "line": 121,
+            "assignment": "*(undefined2 *)(param_1 + 0x68) = *(undefined2 *)(param_2 + 0x162);"
+          }
+        },
+        {
+          "raw_offset": "0xec",
+          "raw_bytes": 2,
+          "baseline_field": "WeaknessStringId",
+          "intermediate_offset": "0x164",
+          "runtime_offset": "0x6a",
+          "runtime_bytes": 2,
+          "transform": "copy",
+          "runtime_expression": "*(undefined2 *)(param_2 + 0x164)",
+          "converter_evidence": [
+            {
+              "line": 117,
+              "assignment": "uVar2 = *(undefined2 *)(param_2 + 0xec);"
+            },
+            {
+              "line": 121,
+              "assignment": "*(undefined2 *)(param_1 + 0x59) = uVar2;"
+            }
+          ],
+          "runtime_evidence": {
+            "line": 127,
+            "assignment": "*(undefined2 *)(param_1 + 0x6a) = *(undefined2 *)(param_2 + 0x164);"
+          }
+        },
+        {
+          "raw_offset": "0xef",
+          "raw_bytes": 1,
+          "baseline_field": "CastRule",
+          "intermediate_offset": "0x167",
+          "runtime_offset": "0x76",
+          "runtime_bytes": 1,
+          "transform": "copy",
+          "runtime_expression": "*(undefined1 *)(param_2 + 0x167)",
+          "converter_evidence": [
+            {
+              "line": 123,
+              "assignment": "cVar1 = param_2[0xef];"
+            },
+            {
+              "line": 127,
+              "assignment": "*(char *)((int)param_1 + 0x167) = cVar1;"
+            }
+          ],
+          "runtime_evidence": {
+            "line": 133,
+            "assignment": "*(undefined1 *)(param_1 + 0x76) = *(undefined1 *)(param_2 + 0x167);"
+          }
+        },
+        {
+          "raw_offset": "0xda",
+          "raw_bytes": 1,
+          "baseline_field": "TargetRule",
+          "intermediate_offset": "0x152",
+          "runtime_offset": "0x77",
+          "runtime_bytes": 1,
+          "transform": "copy",
+          "runtime_expression": "*(undefined1 *)(param_2 + 0x152)",
+          "converter_evidence": [
+            {
+              "line": 129,
+              "assignment": "cVar1 = param_2[0xda];"
+            },
+            {
+              "line": 133,
+              "assignment": "*(char *)((int)param_1 + 0x152) = cVar1;"
+            }
+          ],
+          "runtime_evidence": {
+            "line": 139,
+            "assignment": "*(undefined1 *)(param_1 + 0x77) = *(undefined1 *)(param_2 + 0x152);"
+          }
+        },
+        {
+          "raw_offset": "0xf0",
+          "raw_bytes": 1,
+          "baseline_field": "ShotTypeId",
+          "intermediate_offset": "0x168",
+          "runtime_offset": "0x42",
+          "runtime_bytes": 1,
+          "transform": "copy",
+          "runtime_expression": "*(undefined1 *)(param_2 + 0x168)",
+          "converter_evidence": [
+            {
+              "line": 135,
+              "assignment": "cVar1 = param_2[0xf0];"
+            },
+            {
+              "line": 139,
+              "assignment": "*(char *)(param_1 + 0x5a) = cVar1;"
+            }
+          ],
+          "runtime_evidence": {
+            "line": 145,
+            "assignment": "*(undefined1 *)(param_1 + 0x42) = *(undefined1 *)(param_2 + 0x168);"
+          }
+        },
+        {
+          "raw_offset": "0xd0",
+          "raw_bytes": 4,
+          "baseline_field": "ShotData1",
+          "intermediate_offset": "0x148",
+          "runtime_offset": "0x43",
+          "runtime_bytes": 4,
+          "transform": "copy",
+          "runtime_expression": "*(undefined4 *)(param_2 + 0x148)",
+          "converter_evidence": [
+            {
+              "line": 141,
+              "assignment": "uVar3 = *(undefined4 *)(param_2 + 0xd0);"
+            },
+            {
+              "line": 145,
+              "assignment": "param_1[0x52] = uVar3;"
+            }
+          ],
+          "runtime_evidence": {
+            "line": 151,
+            "assignment": "*(undefined4 *)(param_1 + 0x43) = *(undefined4 *)(param_2 + 0x148);"
+          }
+        },
+        {
+          "raw_offset": "0xd4",
+          "raw_bytes": 4,
+          "baseline_field": "ShotData2",
+          "intermediate_offset": "0x14c",
+          "runtime_offset": "0x47",
+          "runtime_bytes": 4,
+          "transform": "copy",
+          "runtime_expression": "*(undefined4 *)(param_2 + 0x14c)",
+          "converter_evidence": [
+            {
+              "line": 147,
+              "assignment": "param_1[0x53] = *(undefined4 *)(param_2 + 0xd4);"
+            },
+            {
+              "line": 147,
+              "assignment": "param_1[0x53] = *(undefined4 *)(param_2 + 0xd4);"
+            }
+          ],
+          "runtime_evidence": {
+            "line": 157,
+            "assignment": "*(undefined4 *)(param_1 + 0x47) = *(undefined4 *)(param_2 + 0x14c);"
+          }
+        },
+        {
+          "raw_offset": "0x111",
+          "raw_bytes": 2,
+          "baseline_field": "BonusRTime",
+          "intermediate_offset": "0x189",
+          "runtime_offset": "0x60",
+          "runtime_bytes": 2,
+          "transform": "expression",
+          "runtime_expression": "(ushort)(*(short *)(param_2 + 0x189) * sVar8) >> 0xc",
+          "converter_evidence": [
+            {
+              "line": 167,
+              "assignment": "uVar2 = *(undefined2 *)(param_2 + 0x111);"
+            },
+            {
+              "line": 171,
+              "assignment": "*(undefined2 *)((int)param_1 + 0x189) = uVar2;"
+            }
+          ],
+          "runtime_evidence": {
+            "line": 97,
+            "assignment": "*(ushort *)(param_1 + 0x60) = (ushort)(*(short *)(param_2 + 0x189) * sVar8) >> 0xc;"
+          }
+        },
+        {
+          "raw_offset": "0x113",
+          "raw_bytes": 1,
+          "baseline_field": "BonusShotTypeId",
+          "intermediate_offset": "0x18b",
+          "runtime_offset": "0x4b",
+          "runtime_bytes": 1,
+          "transform": "copy",
+          "runtime_expression": "*(undefined1 *)(param_2 + 0x18b)",
+          "converter_evidence": [
+            {
+              "line": 173,
+              "assignment": "cVar1 = param_2[0x113];"
+            },
+            {
+              "line": 177,
+              "assignment": "*(char *)((int)param_1 + 0x18b) = cVar1;"
+            }
+          ],
+          "runtime_evidence": {
+            "line": 163,
+            "assignment": "*(undefined1 *)(param_1 + 0x4b) = *(undefined1 *)(param_2 + 0x18b);"
+          }
+        },
+        {
+          "raw_offset": "0x114",
+          "raw_bytes": 4,
+          "baseline_field": "BonusShotData1",
+          "intermediate_offset": "0x18c",
+          "runtime_offset": "0x4c",
+          "runtime_bytes": 4,
+          "transform": "copy",
+          "runtime_expression": "*(undefined4 *)(param_2 + 0x18c)",
+          "converter_evidence": [
+            {
+              "line": 179,
+              "assignment": "uVar3 = *(undefined4 *)(param_2 + 0x114);"
+            },
+            {
+              "line": 183,
+              "assignment": "param_1[99] = uVar3;"
+            }
+          ],
+          "runtime_evidence": {
+            "line": 169,
+            "assignment": "*(undefined4 *)(param_1 + 0x4c) = *(undefined4 *)(param_2 + 0x18c);"
+          }
+        },
+        {
+          "raw_offset": "0x118",
+          "raw_bytes": 4,
+          "baseline_field": "BonusShotData2",
+          "intermediate_offset": "0x190",
+          "runtime_offset": "0x50",
+          "runtime_bytes": 4,
+          "transform": "copy",
+          "runtime_expression": "*(undefined4 *)(param_2 + 400)",
+          "converter_evidence": [
+            {
+              "line": 185,
+              "assignment": "uVar3 = *(undefined4 *)(param_2 + 0x118);"
+            },
+            {
+              "line": 189,
+              "assignment": "param_1[100] = uVar3;"
+            }
+          ],
+          "runtime_evidence": {
+            "line": 175,
+            "assignment": "*(undefined4 *)(param_1 + 0x50) = *(undefined4 *)(param_2 + 400);"
+          }
+        },
+        {
+          "raw_offset": "0xd8",
+          "raw_bytes": 2,
+          "baseline_field": "ResearchTime",
+          "intermediate_offset": "0x150",
+          "runtime_offset": "0x5e",
+          "runtime_bytes": 2,
+          "transform": "expression",
+          "runtime_expression": "(ushort)(*(short *)(param_2 + 0x150) * sVar8) >> 0xc",
+          "converter_evidence": [
+            {
+              "line": 191,
+              "assignment": "*(undefined2 *)(param_1 + 0x54) = *(undefined2 *)(param_2 + 0xd8);"
+            },
+            {
+              "line": 191,
+              "assignment": "*(undefined2 *)(param_1 + 0x54) = *(undefined2 *)(param_2 + 0xd8);"
+            }
+          ],
+          "runtime_evidence": {
+            "line": 91,
+            "assignment": "*(ushort *)(param_1 + 0x5e) = (ushort)(*(short *)(param_2 + 0x150) * sVar8) >> 0xc;"
+          }
+        },
+        {
+          "raw_offset": "0xdb",
+          "raw_bytes": 1,
+          "baseline_field": "OrderInEditor",
+          "intermediate_offset": "0x153",
+          "runtime_offset": "0x6c",
+          "runtime_bytes": 1,
+          "transform": "copy",
+          "runtime_expression": "*(undefined1 *)(param_2 + 0x153)",
+          "converter_evidence": [
+            {
+              "line": 207,
+              "assignment": "cVar1 = param_2[0xdb];"
+            },
+            {
+              "line": 211,
+              "assignment": "*(char *)((int)param_1 + 0x153) = cVar1;"
+            }
+          ],
+          "runtime_evidence": {
+            "line": 181,
+            "assignment": "*(undefined1 *)(param_1 + 0x6c) = *(undefined1 *)(param_2 + 0x153);"
+          }
+        },
+        {
+          "raw_offset": "0x194",
+          "raw_bytes": 1,
+          "baseline_field": "HandAnimId",
+          "intermediate_offset": "0x20c",
+          "runtime_offset": "0x78",
+          "runtime_bytes": 1,
+          "transform": "copy",
+          "runtime_expression": "*(undefined1 *)(param_2 + 0x20c)",
+          "converter_evidence": [
+            {
+              "line": 213,
+              "assignment": "cVar1 = param_2[0x194];"
+            },
+            {
+              "line": 217,
+              "assignment": "*(char *)(param_1 + 0x83) = cVar1;"
+            }
+          ],
+          "runtime_evidence": {
+            "line": 187,
+            "assignment": "*(undefined1 *)(param_1 + 0x78) = *(undefined1 *)(param_2 + 0x20c);"
+          }
+        },
+        {
+          "raw_offset": "0x195",
+          "raw_bytes": 1,
+          "baseline_field": "NoGoHandAnimId",
+          "intermediate_offset": "0x20d",
+          "runtime_offset": "0x79",
+          "runtime_bytes": 1,
+          "transform": "copy",
+          "runtime_expression": "*(undefined1 *)(param_2 + 0x20d)",
+          "converter_evidence": [
+            {
+              "line": 219,
+              "assignment": "cVar1 = param_2[0x195];"
+            },
+            {
+              "line": 223,
+              "assignment": "*(char *)((int)param_1 + 0x20d) = cVar1;"
+            }
+          ],
+          "runtime_evidence": {
+            "line": 193,
+            "assignment": "*(undefined1 *)(param_1 + 0x79) = *(undefined1 *)(param_2 + 0x20d);"
+          }
+        }
+      ]
+    }
+  },
+  "rules": [
+    {
+      "id": "keeper_research_time_truncation",
+      "family": "KeeperSpells",
+      "fields": [
+        "ResearchTime",
+        "BonusRTime"
+      ],
+      "description": "Native loader uses 16-bit IMUL then logical SHR12. Result=(rawU16*low16(TPS) mod65536)>>12 and lies in0..15. It is not a direct research-point cost.",
+      "evidence": {
+        "file": "game-keeperspell-load-assembly.txt",
+        "first": "0x4f7d78",
+        "last": "0x4f7da8",
+        "instructions": [
+          "004f7d78: MOV EAX,dword ptr [ESI + 0x5c] ",
+          "004f7d7b: TEST EAX,EAX ",
+          "004f7d7d: JZ 0x004f7d92 ",
+          "004f7d7f: MOV DX,word ptr [ESI + 0x150] ",
+          "004f7d86: IMUL DX,CX ",
+          "004f7d8a: SHR DX,0xc ",
+          "004f7d8e: MOV word ptr [EDI + 0x5e],DX ",
+          "004f7d92: MOV EAX,dword ptr [ESI + 0x30] ",
+          "004f7d95: TEST EAX,EAX ",
+          "004f7d97: JZ 0x004f7dac ",
+          "004f7d99: MOV AX,word ptr [ESI + 0x189] ",
+          "004f7da0: IMUL AX,CX ",
+          "004f7da4: SHR AX,0xc ",
+          "004f7da8: MOV word ptr [EDI + 0x60],AX "
+        ]
+      }
+    },
+    {
+      "id": "keeper_recharge_time_32bit",
+      "family": "KeeperSpells",
+      "fields": [
+        "RechargeTime"
+      ],
+      "description": "Result=(rawU32*TPS mod2^32)>>12; multiplication precedes logical shift.",
+      "evidence": {
+        "file": "game-keeperspell-load-assembly.txt",
+        "first": "0x4f7d62",
+        "last": "0x4f7d75",
+        "instructions": [
+          "004f7d62: MOV EAX,dword ptr [ESI + 0x1c] ",
+          "004f7d65: TEST EAX,EAX ",
+          "004f7d67: JZ 0x004f7d78 ",
+          "004f7d69: MOV EAX,dword ptr [ESI + 0x144] ",
+          "004f7d6f: IMUL EAX,ECX ",
+          "004f7d72: SHR EAX,0xc ",
+          "004f7d75: MOV dword ptr [EDI + 0x3e],EAX "
+        ]
+      }
+    },
+    {
+      "id": "research_order_threshold",
+      "family": "Variables",
+      "fields": [
+        "ResearchPointsRaw"
+      ],
+      "description": "Type17 stores category/id/points in12-byte entries.0x507040 compares accumulated points with entry+8;0x507060 uses the same threshold for percentage. Player0x4C2DC0 calls the comparator; not KeeperSpells.ResearchTime.",
+      "evidence_files": [
+        "game-research-variable.txt",
+        "game-research-add.txt",
+        "game-research-current-entry.txt",
+        "game-research-advance-entry.txt",
+        "game-player-research-completion.txt",
+        "game-player-research-percentage.txt"
+      ]
+    },
+    {
+      "id": "alternative_is_predicate",
+      "family": "CreatureSpells",
+      "fields": [
+        "AlternativeShot"
+      ],
+      "description": "RawEE chooses a suitability predicate on creature this/ECX, not a replacement ShotId or buff application. With a readable definition, selector6..255 returns0; the getter result is not checked for null before selector access. RawE8/E9 gameplay remains unresolved.",
+      "evidence_files": [
+        "game-spell-consumer-49a7b0.txt",
+        "game-alternative-dispatch-assembly.txt"
+      ]
+    },
+    {
+      "id": "keeper_dispatch_bounds",
+      "family": "KeeperSpells",
+      "fields": [
+        "CastRule",
+        "TargetRule"
+      ],
+      "description": "CastRule>=6 and TargetRule>=7 are rejected with return0, unlike the unchecked Effects generation table.",
+      "evidence_files": [
+        "game-spell-consumer-5176b0.txt",
+        "game-spell-consumer-517730.txt",
+        "game-cast-dispatch-assembly.txt",
+        "game-target-dispatch-assembly.txt"
+      ]
+    },
+    {
+      "id": "target_rule_entity_kind",
+      "family": "KeeperSpells",
+      "fields": [
+        "TargetRule"
+      ],
+      "description": "Target-table byte+17 is returned by0x5177B0; true for1,2,3,6, false for0,4,5. These are entity-target modes.",
+      "evidence_files": [
+        "game-keeperspell-target-init.txt",
+        "game-spell-consumer-5177b0.txt"
+      ]
+    },
+    {
+      "id": "own_land_includes_alliance",
+      "family": "KeeperSpells",
+      "fields": [
+        "CastRule"
+      ],
+      "description": "Rule1 calls player relation helper0x4BF3D0: self is allowed, other owners use the alliance byte. It separately excludes the neutral/special player and applies terrain/room restrictions.",
+      "evidence_files": [
+        "game-cast-own-land.txt",
+        "game-player-relation-allow.txt"
+      ]
+    },
+    {
+      "id": "upgraded_shot_tuple",
+      "family": "KeeperSpells",
+      "fields": [
+        "ShotTypeId",
+        "ShotData1",
+        "ShotData2",
+        "BonusShotTypeId",
+        "BonusShotData1",
+        "BonusShotData2"
+      ],
+      "description": "Phase53 correction: player spell-state DWORD0D selects normal/bonus ShotId for nonzero check/definition lookup and selects Data1/Data2. Full DX4BBF90/4BC290 then reload primary ShotId(runtime42/rawF0) for actual factory4B7CD0, even when bonus is selected. See keeper-cast-semantics.json and120 full-wrapper checks. Native spell IDs4,5,14 also have explicit special cases in validation/cost; this does not establish CreatureSpells AlternativeShot behavior.",
+      "evidence_files": [
+        "game-spell-consumer-4bb8a0.txt",
+        "game-spell-consumer-4bbf90.txt",
+        "game-spell-consumer-4bc290.txt",
+        "game-keeperspell-creature-cast-assembly.txt",
+        "game-keeperspell-object-cast-assembly.txt"
+      ]
+    }
+  ],
+  "not_transferred_to_runtime": [
+    {
+      "family": "CreatureSpells",
+      "raw_offset": 232,
+      "size": 1,
+      "baseline_name": "AlternativeShotId",
+      "intermediate_offset": 312,
+      "note": "Copied by converter, absent from inspected70-byte runtime loader."
+    },
+    {
+      "family": "CreatureSpells",
+      "raw_offset": 233,
+      "size": 1,
+      "baseline_name": "AlternativeRoomId",
+      "intermediate_offset": 313,
+      "note": "Copied by converter, absent from inspected70-byte runtime loader."
+    }
+  ],
+  "not_read_by_converter": [
+    {
+      "family": "CreatureSpells",
+      "raw_offset": 239,
+      "size": 27,
+      "note": "Preserve all27 bytes; not a command to zero them."
+    },
+    {
+      "family": "KeeperSpells",
+      "raw_offset": 224,
+      "size": 2,
+      "note": "Previously named Xe0Unreferenced; preserve bytes."
+    }
+  ],
+  "unresolved": [
+    {
+      "family": "KeeperSpells",
+      "field": "Xc8",
+      "raw_offset": 200,
+      "runtime_offset": 58,
+      "note": "Storage confirmed; gameplay consumer and meaning unresolved. Do not label it research cost or mana cost."
+    },
+    "Room-specific exceptions and call flag bits in target rules are not fully named.",
+    "ResearchTime/BonusRTime native storage transform is proven; all other consumers of those runtime slots have not been exhaustively ruled out."
+  ]
+}

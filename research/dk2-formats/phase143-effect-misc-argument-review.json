@@ -1,0 +1,167 @@
+{
+  "phase": 143,
+  "scope": "Reject six apparent Misc reads that require exceeding native slot-loop bounds.",
+  "search": {
+    "producer_roots": 54,
+    "root_states": 3688,
+    "limited_roots": 2,
+    "callee_summaries": 8,
+    "limited_callees": 1,
+    "all_field_leads": 26,
+    "misc_leads": 6
+  },
+  "classifications": [
+    {
+      "root": "0x4386f0",
+      "read": "0x438f14",
+      "claimed_field": "Misc3",
+      "claimed_offset": 77,
+      "real_slot_offsets": [
+        93,
+        91,
+        89,
+        87,
+        85,
+        83,
+        81,
+        79
+      ],
+      "classification": "Infeasible extra iteration: native counter reaches0 before4D/4B.",
+      "assumption": "Valid native stack/ordinarycallee ABI; no external mutation of loop counter. Genericwalker deliberately lacks numericloop bounds."
+    },
+    {
+      "root": "0x4386f0",
+      "read": "0x438b5b",
+      "claimed_field": "Misc3",
+      "claimed_offset": 77,
+      "real_slot_offsets": [
+        93,
+        91,
+        89,
+        87,
+        85,
+        83,
+        81,
+        79
+      ],
+      "classification": "Infeasible extra iteration: native counter reaches0 before4D/4B.",
+      "assumption": "Valid native stack/ordinarycallee ABI; no external mutation of loop counter. Genericwalker deliberately lacks numericloop bounds."
+    },
+    {
+      "root": "0x4386f0",
+      "read": "0x438f14",
+      "claimed_field": "Misc2",
+      "claimed_offset": 75,
+      "real_slot_offsets": [
+        93,
+        91,
+        89,
+        87,
+        85,
+        83,
+        81,
+        79
+      ],
+      "classification": "Infeasible extra iteration: native counter reaches0 before4D/4B.",
+      "assumption": "Valid native stack/ordinarycallee ABI; no external mutation of loop counter. Genericwalker deliberately lacks numericloop bounds."
+    },
+    {
+      "root": "0x4386f0",
+      "read": "0x438b5b",
+      "claimed_field": "Misc2",
+      "claimed_offset": 75,
+      "real_slot_offsets": [
+        93,
+        91,
+        89,
+        87,
+        85,
+        83,
+        81,
+        79
+      ],
+      "classification": "Infeasible extra iteration: native counter reaches0 before4D/4B.",
+      "assumption": "Valid native stack/ordinarycallee ABI; no external mutation of loop counter. Genericwalker deliberately lacks numericloop bounds."
+    },
+    {
+      "root": "0x439100",
+      "read": "0x439157",
+      "claimed_field": "Misc3",
+      "claimed_offset": 77,
+      "real_slot_offsets": [
+        85,
+        83,
+        81,
+        79
+      ],
+      "classification": "Infeasible extra iteration: native counter reaches0 before4D/4B.",
+      "assumption": "Valid native stack/ordinarycallee ABI; no external mutation of loop counter. Genericwalker deliberately lacks numericloop bounds."
+    },
+    {
+      "root": "0x439100",
+      "read": "0x439157",
+      "claimed_field": "Misc2",
+      "claimed_offset": 75,
+      "real_slot_offsets": [
+        85,
+        83,
+        81,
+        79
+      ],
+      "classification": "Infeasible extra iteration: native counter reaches0 before4D/4B.",
+      "assumption": "Valid native stack/ordinarycallee ABI; no external mutation of loop counter. Genericwalker deliberately lacks numericloop bounds."
+    }
+  ],
+  "canonical_instruction_evidence": [
+    "00438b46: ADD EBX,0x5d",
+    "00438b49: MOV dword ptr [ESP + 0x2c],0x8",
+    "00438b5b: MOV BX,word ptr [EAX]",
+    "00438cca: SUB EDX,0x2",
+    "00438ccd: TEST EAX,EAX",
+    "00438cd7: JA 0x00438b55",
+    "00438eff: ADD EBX,0x5d",
+    "00438f02: MOV dword ptr [ESP + 0x30],0x8",
+    "00438f14: MOV BX,word ptr [EAX]",
+    "0043908a: SUB EDX,0x2",
+    "0043908d: TEST EAX,EAX",
+    "00439097: JA 0x00438f0e",
+    "0043914a: ADD EBP,0x55",
+    "0043914d: MOV dword ptr [ESP + 0x14],0x4",
+    "00439157: MOV DI,word ptr [EBP]",
+    "004391db: SUB EBP,0x2",
+    "004391de: DEC EAX",
+    "004391df: TEST EAX,EAX",
+    "004391e5: JA 0x00439155"
+  ],
+  "reused_whole_Cube_attestation": {
+    "address": 4425456,
+    "length": 2518,
+    "assembly": "ghidra/phase141-primary-4386f0-assembly.txt",
+    "assembly_sha256": "562a36f4a6a18b4a0610bcbb2a4b80f693a03ce5d9f1354807ee62f0f57c7ecb",
+    "explicit_FWAIT_split_addresses": [],
+    "memory": "ghidra/phase141-primary-4386f0-memory.txt",
+    "memory_sha256": "5ed5d56c256f3c09fca23a2d9f7fd27d497a6b8ef7f2a99629ae38b529c04034",
+    "bytes_sha256": "c2f59185d0b0c5fbb4f13e16f467b8da4095824c65be626e91e71b919bc1551c"
+  },
+  "excluded_initial_probe": {
+    "file": "ghidra/phase143-mode18-native-a3cd9af77bde.json",
+    "sha256": "912a527d0ff50af19186eb6282e559ae6fc18a3b899a05c6e269a4d1b65d074b",
+    "reason": "Only4definitions loaded; nativeNext references143/221 missing. CPUreturned but readNULLdefinition fields from mapped lowpage. Semanticinvalid, excluded from accepted12cases/controls.",
+    "repair": "Load complete originalclosure[1,2,3,4,143,221]; acceptedverifier rejects all lowpage accesses except originalFS:[0]."
+  },
+  "references": [
+    {
+      "file": "phase143-effect-misc-argument-leads.json",
+      "sha256": "84947d60466ce6ff10a1659a2ec5ae91e70e95d5e63e0641aa3e7334fdbf98ed"
+    },
+    {
+      "file": "ghidra/phase143-cube-bounds-assembly.txt",
+      "sha256": "562a36f4a6a18b4a0610bcbb2a4b80f693a03ce5d9f1354807ee62f0f57c7ecb"
+    },
+    {
+      "file": "ghidra/phase143-mode18-assembly.txt",
+      "sha256": "762bb0351d6715b5090b046541707da57ba0697935023098031342868ff6d000"
+    }
+  ],
+  "conclusion": "No new genuine Misc2/Misc3 consumer established. Onlysix specific staticleads rejected; other roots/limits/aliases/indirect/indexed paths remainopen. No globalunusedclaim."
+}

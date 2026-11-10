@@ -1,0 +1,39 @@
+{
+  "phase": 35,
+  "status": "level_descriptor_pass_complete; catalogue_and_AP_meanings_still_open",
+  "completed_phase34": "phase34-validation.json",
+  "searches": [
+    {
+      "file": "phase35-runtime32-candidates.json",
+      "sha256": "84ac6aebc7fdaf2e96cd7d65951da954a3cda1b83a0fce522dd9c3d9343cea8b"
+    },
+    {
+      "file": "phase35-runtime32-full-text-candidates.json",
+      "sha256": "daaa55e04662d2604fd3c674d38303cfe0af6ad209242425675316143c5006b7"
+    },
+    {
+      "file": "ghidra/phase35-AP-methods-candidate.txt",
+      "sha256": "3ba7fab45214e7bb70a5283641f9a77155522abf4d149fed8d25dfd695650cd0"
+    }
+  ],
+  "finding": "Mapped and full-text displacement32 candidate scans yielded no new confirmed semantic reader of AP masks04/08. This is a bounded negative search, not proof that bits are unused: aliases, wider reads, packed/serialized state and code absent or misdecoded by linear scan remain possible.",
+  "known_candidate_consumers": [
+    {
+      "address": "0x4611d0",
+      "mask": "0x01",
+      "scope": "AP identity and effect require original full-function verification; sgmap name FightWithDrawState only a lead"
+    },
+    {
+      "address": "0x50b5b0",
+      "instruction": "0x50c083 tests [eax+32],10",
+      "scope": "Possible reveal consumer; full-function identity and providers need verification"
+    }
+  ],
+  "unresolved": [
+    "ActionPoint04/08 gameplay meaning",
+    "WanderRadius418:phase31 mapped candidates only established initialization/load/dump, not effect",
+    "Other remaining catalogue fields retain unresolved semantics"
+  ],
+  "next_action": "Continue unresolved Things CB EffectGenerator payload08/C/10/12, then remaining CA/CC/CD properties, using native converter/loader/editor writer. Do not repeat phase35 bounded catalogue searches without new alias evidence.",
+  "completed_level_work": "phase35-validation.json"
+}

@@ -1,0 +1,36 @@
+{
+  "phase": 58,
+  "date": "2026-10-27",
+  "native_emulations": 32,
+  "native_case_kinds": {
+    "pipeline": 24,
+    "partial": 8
+  },
+  "native_getter_calls": 288,
+  "complete_primary_pe_functions": 11,
+  "whole_file_roundtrips": 82,
+  "terrain_records": 3306,
+  "exact_in_memory_patches": 6612,
+  "api_boundary_checks": 39,
+  "checksum_collision_pair_verified": true,
+  "source_executables_unchanged": 4,
+  "research_writes_to_game_data": 0,
+  "modified_gameplay_runs": 0,
+  "package_components": 67,
+  "unknown_gameplay_purposes": [
+    "Terrain198",
+    "Terrain224",
+    "Traps204",
+    "Objects34C"
+  ],
+  "limitations": [
+    "ExactDX only;not proofRC3 or local13 gameplay equality.",
+    "24complete parser→callback→loader cases plus8complete direct partial loader cases. All32alsoexecute native constructor and9getter calls.",
+    "Native graphics provider null,resource descriptors absent,special flags1000/2000 excluded. Real renderer/model loading not executed.",
+    "Only5B3EB0 reads and virtual sound handle provider are fixtures. Sound provider returnsA100+callindex;actual audio engine not executed. ID22 extra provider path exercised.",
+    "Compare entire256×460 definition array,A3CC world,736intermediate,16control,460constructor buffer,input stream and288lookup addresses. FinalEAX/EBP are observer equality results,not loader returns.",
+    "Original first diagnostic failed because an inherited read fixture used an old cursor address. Onlyexplicit finalv2 files listed in manifest count as validation;diagnostic/failing artifacts excluded.",
+    "Terrain198/224,Traps204,Objects34C gameplay purposes remain unresolved. Negative lead searches do not prove unused fields.",
+    "No game/EXE/parallel-editor writes or changed-data game runs."
+  ]
+}

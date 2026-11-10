@@ -1,0 +1,32 @@
+{
+  "scope": "Two same-input cross-engine checks against retained phase102 Ghidra results.",
+  "replays": [
+    {
+      "case": "sprite-base",
+      "same_input": true,
+      "complete128bytes_equal": true,
+      "Ghidra": {
+        "file": "ghidra\\phase102-gfx-sprite-base-0ff1359845.json",
+        "sha256": "f838cc6e569c85cc1f64a21e3d9b35af0386e85c2e05f1fbef1425488e0ed33e"
+      },
+      "Unicorn": {
+        "file": "ghidra\\phase103-cross-engine-sprite-base.json",
+        "sha256": "8947ff5a8a39a16f8ce598ccaa90ad008177dcaed39a343e5556b008cf16af39"
+      }
+    },
+    {
+      "case": "quad-palette-0-0",
+      "same_input": true,
+      "complete128bytes_equal": true,
+      "Ghidra": {
+        "file": "ghidra\\phase102-gfx-quad-palette-0-0-ffbd041121.json",
+        "sha256": "538048287db18ad6394789e73a620d7a1093de90dd2a2be9ab8c487c39555e30"
+      },
+      "Unicorn": {
+        "file": "ghidra\\phase103-cross-engine-quad-palette-0-0.json",
+        "sha256": "52b7d5e6738fdc5f0b9fbd4b818ce21b1f7bf4b46dba159ff539f3caf4cfcaf3"
+      }
+    }
+  ],
+  "limitations": "Two heap outcomes only; not global emulator equivalence or model cross-engine execution."
+}

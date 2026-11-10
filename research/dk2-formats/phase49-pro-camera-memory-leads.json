@@ -1,0 +1,4752 @@
+{
+  "program_sha256": "989c45df779bccfc9a9e509b2ad0224a9bd269629f74792adc0320fa4b99fb09",
+  "warning": "Find exact memory displacement candidates in Ghidra-mapped editor functions.\n\nCandidates are not object identities. Embedded data and pointer aliases require\nmanual verification; scanning between entry points can include alignment data.\n",
+  "functions": [
+    {
+      "function": "0x402930",
+      "end_bound": "0x402a40",
+      "candidates": [
+        {
+          "address": "0x4029f7",
+          "instruction": "mov dword ptr [esi + 0xa8], edi",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x402ca0",
+      "end_bound": "0x402ef0",
+      "candidates": [
+        {
+          "address": "0x402ced",
+          "instruction": "mov dword ptr [esi + 0xa8], ebx",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x402dd7",
+          "instruction": "mov dword ptr [esi + 0xa8], edx",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x403440",
+      "end_bound": "0x403460",
+      "candidates": [
+        {
+          "address": "0x40344f",
+          "instruction": "mov eax, dword ptr [ecx + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x403d40",
+      "end_bound": "0x403e30",
+      "candidates": [
+        {
+          "address": "0x403e15",
+          "instruction": "mov dword ptr [esi + 0xa8], eax",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x404ad0",
+      "end_bound": "0x404c30",
+      "candidates": [
+        {
+          "address": "0x404bd8",
+          "instruction": "mov dword ptr [esi + 0xa8], edi",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x404d60",
+      "end_bound": "0x404ee0",
+      "candidates": [
+        {
+          "address": "0x404ea4",
+          "instruction": "lea ecx, [edi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x404ee0",
+      "end_bound": "0x405150",
+      "candidates": [
+        {
+          "address": "0x404f35",
+          "instruction": "mov dword ptr [esi + 0xa8], edi",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x4050b5",
+          "instruction": "mov dword ptr [esi + 0xa8], eax",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x406020",
+      "end_bound": "0x406140",
+      "candidates": [
+        {
+          "address": "0x4060e5",
+          "instruction": "mov cl, byte ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 1
+        }
+      ]
+    },
+    {
+      "function": "0x406330",
+      "end_bound": "0x406450",
+      "candidates": [
+        {
+          "address": "0x4063fb",
+          "instruction": "mov dword ptr [esi + 0xa8], edi",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x406530",
+      "end_bound": "0x4066a0",
+      "candidates": [
+        {
+          "address": "0x406669",
+          "instruction": "lea edx, [edi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x4066a0",
+      "end_bound": "0x4068d0",
+      "candidates": [
+        {
+          "address": "0x4066eb",
+          "instruction": "mov dword ptr [esi + 0xa8], ebx",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x40683a",
+          "instruction": "mov dword ptr [esi + 0xa8], ebx",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x406869",
+          "instruction": "mov dword ptr [esi + 0xa8], eax",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x4072a0",
+      "end_bound": "0x407400",
+      "candidates": [
+        {
+          "address": "0x40739b",
+          "instruction": "mov ecx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x407480",
+      "end_bound": "0x407580",
+      "candidates": [
+        {
+          "address": "0x40753b",
+          "instruction": "mov dword ptr [esi + 0xa8], ecx",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x407546",
+          "instruction": "mov ecx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x407760",
+      "end_bound": "0x407830",
+      "candidates": [
+        {
+          "address": "0x407766",
+          "instruction": "mov eax, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x40777b",
+          "instruction": "mov edx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x407794",
+          "instruction": "mov ecx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x4077ad",
+          "instruction": "mov ecx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x4077d4",
+          "instruction": "mov edx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x4077fe",
+          "instruction": "mov ecx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x407f60",
+      "end_bound": "0x407fe0",
+      "candidates": [
+        {
+          "address": "0x407f6a",
+          "instruction": "mov ecx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x407f75",
+          "instruction": "mov eax, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x407f8e",
+          "instruction": "mov ecx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x407fa1",
+          "instruction": "mov ecx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x407fb4",
+          "instruction": "mov ecx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x407fc7",
+          "instruction": "mov ecx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x407fe0",
+      "end_bound": "0x408010",
+      "candidates": [
+        {
+          "address": "0x407fe5",
+          "instruction": "mov eax, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x408090",
+      "end_bound": "0x4081b0",
+      "candidates": [
+        {
+          "address": "0x40815b",
+          "instruction": "mov dword ptr [esi + 0xa8], edi",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x408300",
+      "end_bound": "0x4083c0",
+      "candidates": [
+        {
+          "address": "0x408386",
+          "instruction": "lea ecx, [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x4083c0",
+      "end_bound": "0x408610",
+      "candidates": [
+        {
+          "address": "0x40840d",
+          "instruction": "mov dword ptr [esi + 0xa8], ebx",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x408563",
+          "instruction": "mov dword ptr [esi + 0xa8], ebx",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x40857f",
+          "instruction": "mov dword ptr [esi + 0xa8], 1",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x408cb0",
+      "end_bound": "0x408cd0",
+      "candidates": [
+        {
+          "address": "0x408cb0",
+          "instruction": "mov eax, dword ptr [ecx + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x4092f0",
+      "end_bound": "0x409420",
+      "candidates": [
+        {
+          "address": "0x4093d5",
+          "instruction": "mov dword ptr [esi + 0xa8], edi",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x409660",
+      "end_bound": "0x4097f0",
+      "candidates": [
+        {
+          "address": "0x4096a1",
+          "instruction": "mov dword ptr [esi + 0xa8], ebx",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x40970f",
+          "instruction": "mov dword ptr [esi + 0xa8], eax",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x40a710",
+      "end_bound": "0x40a7d0",
+      "candidates": [
+        {
+          "address": "0x40a777",
+          "instruction": "mov cl, byte ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 1
+        }
+      ]
+    },
+    {
+      "function": "0x40a850",
+      "end_bound": "0x40a9a0",
+      "candidates": [
+        {
+          "address": "0x40a952",
+          "instruction": "mov dword ptr [esi + 0xa8], edi",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x40ac00",
+      "end_bound": "0x40ad60",
+      "candidates": [
+        {
+          "address": "0x40ac4d",
+          "instruction": "mov dword ptr [esi + 0xa8], ebp",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x40acc3",
+          "instruction": "mov dword ptr [esi + 0xa8], eax",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x40b950",
+      "end_bound": "0x40bb90",
+      "candidates": [
+        {
+          "address": "0x40bb48",
+          "instruction": "mov edx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x40bc30",
+      "end_bound": "0x40bd30",
+      "candidates": [
+        {
+          "address": "0x40bceb",
+          "instruction": "mov dword ptr [esi + 0xa8], ecx",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x40bcf6",
+          "instruction": "mov ecx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x40bec0",
+      "end_bound": "0x40c010",
+      "candidates": [
+        {
+          "address": "0x40bec5",
+          "instruction": "mov eax, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x40bf50",
+          "instruction": "mov edx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x40bf69",
+          "instruction": "mov ecx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x40bfd2",
+          "instruction": "mov eax, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x40c6d0",
+      "end_bound": "0x40c7a0",
+      "candidates": [
+        {
+          "address": "0x40c6da",
+          "instruction": "mov ecx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x40c6f1",
+          "instruction": "mov edx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x40c6fd",
+          "instruction": "mov ecx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x40c715",
+          "instruction": "mov ecx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x40c71e",
+          "instruction": "mov ecx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x40c727",
+          "instruction": "mov edx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x40c74b",
+          "instruction": "mov ecx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x40c760",
+          "instruction": "mov ecx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x40c773",
+          "instruction": "mov ecx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x40c78b",
+          "instruction": "mov edx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x40c820",
+      "end_bound": "0x40c8d0",
+      "candidates": [
+        {
+          "address": "0x40c859",
+          "instruction": "mov dword ptr [esi + 0xa8], edi",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x40ca90",
+      "end_bound": "0x40cc70",
+      "candidates": [
+        {
+          "address": "0x40cc07",
+          "instruction": "mov edx, dword ptr [ebp + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x40cc3c",
+          "instruction": "mov eax, dword ptr [ebp + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x40cc70",
+      "end_bound": "0x40cc90",
+      "candidates": [
+        {
+          "address": "0x40cc70",
+          "instruction": "mov eax, dword ptr [ecx + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x40cc90",
+      "end_bound": "0x40ccc0",
+      "candidates": [
+        {
+          "address": "0x40cc9d",
+          "instruction": "mov esi, dword ptr [ecx + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x40ccc0",
+      "end_bound": "0x40cd80",
+      "candidates": [
+        {
+          "address": "0x40ccca",
+          "instruction": "mov eax, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x40cd80",
+      "end_bound": "0x40ce10",
+      "candidates": [
+        {
+          "address": "0x40cda5",
+          "instruction": "mov edx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x40cdc0",
+          "instruction": "mov edx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x40d2d0",
+      "end_bound": "0x40d410",
+      "candidates": [
+        {
+          "address": "0x40d3e6",
+          "instruction": "mov dword ptr [esi + 0xa8], eax",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x40d770",
+      "end_bound": "0x40d860",
+      "candidates": [
+        {
+          "address": "0x40d799",
+          "instruction": "mov eax, dword ptr [ebx + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x40e370",
+      "end_bound": "0x40e540",
+      "candidates": [
+        {
+          "address": "0x40e37d",
+          "instruction": "mov eax, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x40e4fa",
+          "instruction": "mov ecx, dword ptr [ebx + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x40eb10",
+      "end_bound": "0x40ec10",
+      "candidates": [
+        {
+          "address": "0x40ebc5",
+          "instruction": "mov dword ptr [esi + 0xa8], ecx",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x40ebd0",
+          "instruction": "mov ecx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x40ec30",
+      "end_bound": "0x40ed80",
+      "candidates": [
+        {
+          "address": "0x40ed05",
+          "instruction": "mov eax, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x40ede0",
+      "end_bound": "0x40ee80",
+      "candidates": [
+        {
+          "address": "0x40ede4",
+          "instruction": "mov eax, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x40ee1f",
+          "instruction": "mov ecx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x40ee38",
+          "instruction": "mov ecx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x40ee5c",
+          "instruction": "mov ecx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x40efe0",
+      "end_bound": "0x40f190",
+      "candidates": [
+        {
+          "address": "0x40efeb",
+          "instruction": "mov eax, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x40f5c0",
+      "end_bound": "0x40f640",
+      "candidates": [
+        {
+          "address": "0x40f607",
+          "instruction": "mov eax, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x40f670",
+      "end_bound": "0x40f6d0",
+      "candidates": [
+        {
+          "address": "0x40f67a",
+          "instruction": "mov ecx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x40f691",
+          "instruction": "mov edx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x40f6a9",
+          "instruction": "mov eax, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x40f6b5",
+          "instruction": "mov edx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x40f750",
+      "end_bound": "0x40f840",
+      "candidates": [
+        {
+          "address": "0x40f825",
+          "instruction": "mov byte ptr [esi + 0xa8], bl",
+          "displacement": "0xa8",
+          "memory_bytes": 1
+        }
+      ]
+    },
+    {
+      "function": "0x40fcb0",
+      "end_bound": "0x40fec0",
+      "candidates": [
+        {
+          "address": "0x40fccd",
+          "instruction": "mov byte ptr [esi + 0xa8], cl",
+          "displacement": "0xa8",
+          "memory_bytes": 1
+        },
+        {
+          "address": "0x40fd28",
+          "instruction": "mov al, byte ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 1
+        },
+        {
+          "address": "0x40fd51",
+          "instruction": "mov al, byte ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 1
+        }
+      ]
+    },
+    {
+      "function": "0x4103f0",
+      "end_bound": "0x4104d0",
+      "candidates": [
+        {
+          "address": "0x4104b1",
+          "instruction": "mov dword ptr [esi + 0xa8], eax",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x410dd0",
+      "end_bound": "0x410ec0",
+      "candidates": [
+        {
+          "address": "0x410e04",
+          "instruction": "mov dword ptr [esi + 0xa8], eax",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x410ee0",
+      "end_bound": "0x410fa0",
+      "candidates": [
+        {
+          "address": "0x410f57",
+          "instruction": "lea eax, [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x411110",
+      "end_bound": "0x4111d0",
+      "candidates": [
+        {
+          "address": "0x411118",
+          "instruction": "lea esi, [edi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x411cf0",
+      "end_bound": "0x411dc0",
+      "candidates": [
+        {
+          "address": "0x411d24",
+          "instruction": "mov dword ptr [esi + 0xa8], eax",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x411de0",
+      "end_bound": "0x411e80",
+      "candidates": [
+        {
+          "address": "0x411e32",
+          "instruction": "lea eax, [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x411f90",
+      "end_bound": "0x412050",
+      "candidates": [
+        {
+          "address": "0x411f99",
+          "instruction": "lea esi, [ebp + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x4124f0",
+      "end_bound": "0x412630",
+      "candidates": [
+        {
+          "address": "0x4125de",
+          "instruction": "mov dword ptr [esi + 0xa8], eax",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x4127c0",
+      "end_bound": "0x412890",
+      "candidates": [
+        {
+          "address": "0x412846",
+          "instruction": "lea ecx, [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x412890",
+      "end_bound": "0x412a00",
+      "candidates": [
+        {
+          "address": "0x4129a3",
+          "instruction": "mov dword ptr [esi + 0xa8], ecx",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x4129c6",
+          "instruction": "mov dword ptr [esi + 0xa8], 0",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x413da0",
+      "end_bound": "0x413dd0",
+      "candidates": [
+        {
+          "address": "0x413daa",
+          "instruction": "mov eax, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x413dd0",
+      "end_bound": "0x413e00",
+      "candidates": [
+        {
+          "address": "0x413de4",
+          "instruction": "mov dword ptr [esi + 0xa8], 1",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x413ea0",
+      "end_bound": "0x414050",
+      "candidates": [
+        {
+          "address": "0x413f92",
+          "instruction": "mov eax, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x4140d0",
+      "end_bound": "0x414190",
+      "candidates": [
+        {
+          "address": "0x41411c",
+          "instruction": "mov dword ptr [esi + 0xa8], ebx",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x4144a0",
+      "end_bound": "0x414580",
+      "candidates": [
+        {
+          "address": "0x414561",
+          "instruction": "mov dword ptr [esi + 0xa8], eax",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x416790",
+      "end_bound": "0x416800",
+      "candidates": [
+        {
+          "address": "0x4167da",
+          "instruction": "mov dword ptr [esi + 0xa8], edi",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x416830",
+      "end_bound": "0x416ae0",
+      "candidates": [
+        {
+          "address": "0x416a71",
+          "instruction": "lea ebx, [edi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x416ae0",
+      "end_bound": "0x416bc0",
+      "candidates": [
+        {
+          "address": "0x416b6a",
+          "instruction": "mov dword ptr [esi + 0xa8], ecx",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x416bc0",
+      "end_bound": "0x416ca0",
+      "candidates": [
+        {
+          "address": "0x416c64",
+          "instruction": "mov al, byte ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 1
+        }
+      ]
+    },
+    {
+      "function": "0x416ed0",
+      "end_bound": "0x416f60",
+      "candidates": [
+        {
+          "address": "0x416f30",
+          "instruction": "mov eax, dword ptr [ecx + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x417450",
+      "end_bound": "0x4174c0",
+      "candidates": [
+        {
+          "address": "0x417480",
+          "instruction": "mov dword ptr [esi + 0xa8], edi",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x417c70",
+      "end_bound": "0x417d00",
+      "candidates": [
+        {
+          "address": "0x417cc3",
+          "instruction": "mov dword ptr [esi + 0xa8], edi",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x417d30",
+      "end_bound": "0x418000",
+      "candidates": [
+        {
+          "address": "0x417f54",
+          "instruction": "lea ecx, [edi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x418000",
+      "end_bound": "0x4180c0",
+      "candidates": [
+        {
+          "address": "0x418046",
+          "instruction": "mov dword ptr [ecx + 0xa8], edx",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x4180c0",
+      "end_bound": "0x4181a0",
+      "candidates": [
+        {
+          "address": "0x418129",
+          "instruction": "mov ecx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x418220",
+      "end_bound": "0x4182b0",
+      "candidates": [
+        {
+          "address": "0x41826d",
+          "instruction": "mov dword ptr [esi + 0xa8], edi",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x4182e0",
+      "end_bound": "0x418510",
+      "candidates": [
+        {
+          "address": "0x418461",
+          "instruction": "lea ebx, [edi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x418510",
+      "end_bound": "0x4185e0",
+      "candidates": [
+        {
+          "address": "0x418568",
+          "instruction": "mov dword ptr [ecx + 0xa8], edx",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x4185e0",
+      "end_bound": "0x4186b0",
+      "candidates": [
+        {
+          "address": "0x41865a",
+          "instruction": "mov eax, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x418730",
+      "end_bound": "0x4187c0",
+      "candidates": [
+        {
+          "address": "0x418750",
+          "instruction": "mov dword ptr [esi + 0xa8], eax",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x4187f0",
+      "end_bound": "0x418a50",
+      "candidates": [
+        {
+          "address": "0x418987",
+          "instruction": "lea ecx, [edi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x418a50",
+      "end_bound": "0x418b20",
+      "candidates": [
+        {
+          "address": "0x418a98",
+          "instruction": "mov dword ptr [ecx + 0xa8], edx",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x418b20",
+      "end_bound": "0x418bf0",
+      "candidates": [
+        {
+          "address": "0x418b89",
+          "instruction": "mov cl, byte ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 1
+        }
+      ]
+    },
+    {
+      "function": "0x421420",
+      "end_bound": "0x4215b0",
+      "candidates": [
+        {
+          "address": "0x4214d1",
+          "instruction": "mov dword ptr [esi + 0xa8], ebx",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x4220a0",
+      "end_bound": "0x422260",
+      "candidates": [
+        {
+          "address": "0x4220ce",
+          "instruction": "mov dword ptr [ebx + 0xa8], esi",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x422115",
+          "instruction": "mov dword ptr [ebx + 0xa8], ebp",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x422126",
+          "instruction": "mov ecx, dword ptr [ebx + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x422210",
+          "instruction": "mov dword ptr [ebx + 0xa8], eax",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x426440",
+      "end_bound": "0x427bd0",
+      "candidates": [
+        {
+          "address": "0x42647d",
+          "instruction": "mov dword ptr [esp + 0xa8], 0",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x42650d",
+          "instruction": "mov byte ptr [esp + 0xa8], 2",
+          "displacement": "0xa8",
+          "memory_bytes": 1
+        },
+        {
+          "address": "0x4265ea",
+          "instruction": "mov byte ptr [esp + 0xa8], 1",
+          "displacement": "0xa8",
+          "memory_bytes": 1
+        },
+        {
+          "address": "0x4265f7",
+          "instruction": "mov byte ptr [esp + 0xa8], 0",
+          "displacement": "0xa8",
+          "memory_bytes": 1
+        },
+        {
+          "address": "0x42662d",
+          "instruction": "mov byte ptr [esp + 0xa8], 0",
+          "displacement": "0xa8",
+          "memory_bytes": 1
+        },
+        {
+          "address": "0x42666f",
+          "instruction": "mov byte ptr [esp + 0xa8], 0",
+          "displacement": "0xa8",
+          "memory_bytes": 1
+        },
+        {
+          "address": "0x42668a",
+          "instruction": "mov byte ptr [esp + 0xa8], 5",
+          "displacement": "0xa8",
+          "memory_bytes": 1
+        },
+        {
+          "address": "0x4266e9",
+          "instruction": "mov byte ptr [esp + 0xa8], 0",
+          "displacement": "0xa8",
+          "memory_bytes": 1
+        },
+        {
+          "address": "0x426729",
+          "instruction": "mov byte ptr [esp + 0xa8], 0",
+          "displacement": "0xa8",
+          "memory_bytes": 1
+        },
+        {
+          "address": "0x426744",
+          "instruction": "mov byte ptr [esp + 0xa8], 7",
+          "displacement": "0xa8",
+          "memory_bytes": 1
+        },
+        {
+          "address": "0x42687b",
+          "instruction": "mov byte ptr [esp + 0xa8], 0",
+          "displacement": "0xa8",
+          "memory_bytes": 1
+        },
+        {
+          "address": "0x4268bd",
+          "instruction": "mov byte ptr [esp + 0xa8], 0",
+          "displacement": "0xa8",
+          "memory_bytes": 1
+        },
+        {
+          "address": "0x42690b",
+          "instruction": "mov byte ptr [esp + 0xa8], 0",
+          "displacement": "0xa8",
+          "memory_bytes": 1
+        },
+        {
+          "address": "0x426987",
+          "instruction": "mov byte ptr [esp + 0xa8], 0xc",
+          "displacement": "0xa8",
+          "memory_bytes": 1
+        },
+        {
+          "address": "0x426a16",
+          "instruction": "mov byte ptr [esp + 0xa8], 0xc",
+          "displacement": "0xa8",
+          "memory_bytes": 1
+        },
+        {
+          "address": "0x426b67",
+          "instruction": "mov byte ptr [esp + 0xa8], 0xb",
+          "displacement": "0xa8",
+          "memory_bytes": 1
+        },
+        {
+          "address": "0x426b78",
+          "instruction": "mov byte ptr [esp + 0xa8], 0xa",
+          "displacement": "0xa8",
+          "memory_bytes": 1
+        },
+        {
+          "address": "0x426b85",
+          "instruction": "mov byte ptr [esp + 0xa8], 0",
+          "displacement": "0xa8",
+          "memory_bytes": 1
+        },
+        {
+          "address": "0x426bc7",
+          "instruction": "mov byte ptr [esp + 0xa8], 0x10",
+          "displacement": "0xa8",
+          "memory_bytes": 1
+        },
+        {
+          "address": "0x426c9a",
+          "instruction": "mov byte ptr [esp + 0xa8], 0x10",
+          "displacement": "0xa8",
+          "memory_bytes": 1
+        },
+        {
+          "address": "0x426e6a",
+          "instruction": "mov byte ptr [esp + 0xa8], 0x12",
+          "displacement": "0xa8",
+          "memory_bytes": 1
+        },
+        {
+          "address": "0x426e9b",
+          "instruction": "mov byte ptr [esp + 0xa8], 0x10",
+          "displacement": "0xa8",
+          "memory_bytes": 1
+        },
+        {
+          "address": "0x427028",
+          "instruction": "mov byte ptr [esp + 0xa8], 0xf",
+          "displacement": "0xa8",
+          "memory_bytes": 1
+        },
+        {
+          "address": "0x427035",
+          "instruction": "mov byte ptr [esp + 0xa8], 0",
+          "displacement": "0xa8",
+          "memory_bytes": 1
+        },
+        {
+          "address": "0x4270a5",
+          "instruction": "mov byte ptr [esp + 0xa8], 0x14",
+          "displacement": "0xa8",
+          "memory_bytes": 1
+        },
+        {
+          "address": "0x4270b6",
+          "instruction": "mov byte ptr [esp + 0xa8], 0x13",
+          "displacement": "0xa8",
+          "memory_bytes": 1
+        },
+        {
+          "address": "0x427130",
+          "instruction": "mov byte ptr [esp + 0xa8], 0x13",
+          "displacement": "0xa8",
+          "memory_bytes": 1
+        },
+        {
+          "address": "0x42715f",
+          "instruction": "mov byte ptr [esp + 0xa8], 0",
+          "displacement": "0xa8",
+          "memory_bytes": 1
+        },
+        {
+          "address": "0x4271d2",
+          "instruction": "mov byte ptr [esp + 0xa8], 0x18",
+          "displacement": "0xa8",
+          "memory_bytes": 1
+        },
+        {
+          "address": "0x4271e6",
+          "instruction": "mov byte ptr [esp + 0xa8], 0x17",
+          "displacement": "0xa8",
+          "memory_bytes": 1
+        },
+        {
+          "address": "0x427260",
+          "instruction": "mov byte ptr [esp + 0xa8], 0x17",
+          "displacement": "0xa8",
+          "memory_bytes": 1
+        },
+        {
+          "address": "0x42728f",
+          "instruction": "mov byte ptr [esp + 0xa8], 0",
+          "displacement": "0xa8",
+          "memory_bytes": 1
+        },
+        {
+          "address": "0x4272aa",
+          "instruction": "mov byte ptr [esp + 0xa8], 0x1b",
+          "displacement": "0xa8",
+          "memory_bytes": 1
+        },
+        {
+          "address": "0x4272f6",
+          "instruction": "mov byte ptr [esp + 0xa8], bl",
+          "displacement": "0xa8",
+          "memory_bytes": 1
+        },
+        {
+          "address": "0x427306",
+          "instruction": "mov byte ptr [esp + 0xa8], 0x1b",
+          "displacement": "0xa8",
+          "memory_bytes": 1
+        },
+        {
+          "address": "0x42736b",
+          "instruction": "mov byte ptr [esp + 0xa8], 0x1b",
+          "displacement": "0xa8",
+          "memory_bytes": 1
+        },
+        {
+          "address": "0x42740a",
+          "instruction": "mov byte ptr [esp + 0xa8], 0x1b",
+          "displacement": "0xa8",
+          "memory_bytes": 1
+        },
+        {
+          "address": "0x4274ce",
+          "instruction": "mov byte ptr [esp + 0xa8], 0x1b",
+          "displacement": "0xa8",
+          "memory_bytes": 1
+        },
+        {
+          "address": "0x427535",
+          "instruction": "mov byte ptr [esp + 0xa8], 0x1b",
+          "displacement": "0xa8",
+          "memory_bytes": 1
+        },
+        {
+          "address": "0x42759c",
+          "instruction": "mov byte ptr [esp + 0xa8], 0x1b",
+          "displacement": "0xa8",
+          "memory_bytes": 1
+        },
+        {
+          "address": "0x42765d",
+          "instruction": "mov byte ptr [esp + 0xa8], bl",
+          "displacement": "0xa8",
+          "memory_bytes": 1
+        },
+        {
+          "address": "0x427669",
+          "instruction": "mov byte ptr [esp + 0xa8], 0x1b",
+          "displacement": "0xa8",
+          "memory_bytes": 1
+        },
+        {
+          "address": "0x4276d4",
+          "instruction": "mov byte ptr [esp + 0xa8], bl",
+          "displacement": "0xa8",
+          "memory_bytes": 1
+        },
+        {
+          "address": "0x4276e0",
+          "instruction": "mov byte ptr [esp + 0xa8], 0x1b",
+          "displacement": "0xa8",
+          "memory_bytes": 1
+        },
+        {
+          "address": "0x4276f4",
+          "instruction": "mov byte ptr [esp + 0xa8], 0",
+          "displacement": "0xa8",
+          "memory_bytes": 1
+        },
+        {
+          "address": "0x42770c",
+          "instruction": "mov byte ptr [esp + 0xa8], 0x27",
+          "displacement": "0xa8",
+          "memory_bytes": 1
+        },
+        {
+          "address": "0x4277c2",
+          "instruction": "mov byte ptr [esp + 0xa8], 0x28",
+          "displacement": "0xa8",
+          "memory_bytes": 1
+        },
+        {
+          "address": "0x427825",
+          "instruction": "mov byte ptr [esp + 0xa8], 0x27",
+          "displacement": "0xa8",
+          "memory_bytes": 1
+        },
+        {
+          "address": "0x427832",
+          "instruction": "mov byte ptr [esp + 0xa8], 0",
+          "displacement": "0xa8",
+          "memory_bytes": 1
+        },
+        {
+          "address": "0x427887",
+          "instruction": "mov byte ptr [esp + 0xa8], 0x29",
+          "displacement": "0xa8",
+          "memory_bytes": 1
+        },
+        {
+          "address": "0x427925",
+          "instruction": "mov byte ptr [esp + 0xa8], 0x29",
+          "displacement": "0xa8",
+          "memory_bytes": 1
+        },
+        {
+          "address": "0x427932",
+          "instruction": "mov byte ptr [esp + 0xa8], 0",
+          "displacement": "0xa8",
+          "memory_bytes": 1
+        },
+        {
+          "address": "0x427965",
+          "instruction": "mov byte ptr [esp + 0xa8], 0x2c",
+          "displacement": "0xa8",
+          "memory_bytes": 1
+        },
+        {
+          "address": "0x427a40",
+          "instruction": "mov byte ptr [esp + 0xa8], 0x2b",
+          "displacement": "0xa8",
+          "memory_bytes": 1
+        },
+        {
+          "address": "0x427a4d",
+          "instruction": "mov byte ptr [esp + 0xa8], 0",
+          "displacement": "0xa8",
+          "memory_bytes": 1
+        },
+        {
+          "address": "0x427a82",
+          "instruction": "mov byte ptr [esp + 0xa8], 0",
+          "displacement": "0xa8",
+          "memory_bytes": 1
+        },
+        {
+          "address": "0x427a9a",
+          "instruction": "mov dword ptr [esp + 0xa8], 0xffffffff",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x4281b0",
+      "end_bound": "0x4287c0",
+      "candidates": [
+        {
+          "address": "0x4282eb",
+          "instruction": "lea ecx, [edx + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x4287c0",
+      "end_bound": "0x429350",
+      "candidates": [
+        {
+          "address": "0x42902b",
+          "instruction": "mov dword ptr [ebp + 0xa8], eax",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x42aba0",
+      "end_bound": "0x42add0",
+      "candidates": [
+        {
+          "address": "0x42ac82",
+          "instruction": "mov ecx, dword ptr [ebp + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x42b1b0",
+      "end_bound": "0x42b380",
+      "candidates": [
+        {
+          "address": "0x42b2ce",
+          "instruction": "mov cx, word ptr [ebp + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 2
+        }
+      ]
+    },
+    {
+      "function": "0x42bc20",
+      "end_bound": "0x42bde0",
+      "candidates": [
+        {
+          "address": "0x42bcd3",
+          "instruction": "lea eax, [edx + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x42bde0",
+      "end_bound": "0x42c1c0",
+      "candidates": [
+        {
+          "address": "0x42bfd7",
+          "instruction": "mov dword ptr [esi + 0xa8], ebp",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x42dad0",
+      "end_bound": "0x42db90",
+      "candidates": [
+        {
+          "address": "0x42db06",
+          "instruction": "mov al, byte ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 1
+        }
+      ]
+    },
+    {
+      "function": "0x42e680",
+      "end_bound": "0x42e8f0",
+      "candidates": [
+        {
+          "address": "0x42e6bd",
+          "instruction": "lea edi, [ebp + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x42e8ca",
+          "instruction": "mov ebx, dword ptr [ebx + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x42ebd0",
+      "end_bound": "0x42ed90",
+      "candidates": [
+        {
+          "address": "0x42ed2d",
+          "instruction": "lea eax, [edx + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x42ed90",
+      "end_bound": "0x42f0f0",
+      "candidates": [
+        {
+          "address": "0x42eff5",
+          "instruction": "mov dword ptr [ebp + 0xa8], eax",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x430910",
+      "end_bound": "0x430a70",
+      "candidates": [
+        {
+          "address": "0x43092d",
+          "instruction": "mov eax, dword ptr [esp + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x430a15",
+          "instruction": "mov edx, dword ptr [esp + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x431220",
+      "end_bound": "0x431380",
+      "candidates": [
+        {
+          "address": "0x43122f",
+          "instruction": "mov eax, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x43130f",
+          "instruction": "call dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x431380",
+      "end_bound": "0x431530",
+      "candidates": [
+        {
+          "address": "0x43150c",
+          "instruction": "lea edi, [edx + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x431530",
+      "end_bound": "0x431860",
+      "candidates": [
+        {
+          "address": "0x43153c",
+          "instruction": "lea eax, [ebp + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x433320",
+      "end_bound": "0x4333d0",
+      "candidates": [
+        {
+          "address": "0x433383",
+          "instruction": "mov dword ptr [esi + 0xa8], eax",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x4333d0",
+      "end_bound": "0x433b80",
+      "candidates": [
+        {
+          "address": "0x433638",
+          "instruction": "mov dword ptr [esi + 0xa8], edx",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x433aa7",
+          "instruction": "lea edx, [edi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x433cf0",
+      "end_bound": "0x434650",
+      "candidates": [
+        {
+          "address": "0x433fd9",
+          "instruction": "mov dword ptr [esi + 0xa8], edi",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x434192",
+          "instruction": "mov dword ptr [esi + 0xa8], edi",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x4344dc",
+          "instruction": "mov dword ptr [esi + 0xa8], edi",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x43455d",
+          "instruction": "mov dword ptr [esi + 0xa8], edi",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x4345db",
+          "instruction": "mov dword ptr [esi + 0xa8], edi",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x4347d0",
+      "end_bound": "0x434810",
+      "candidates": [
+        {
+          "address": "0x4347da",
+          "instruction": "mov eax, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x4347f4",
+          "instruction": "mov ecx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x4349f0",
+      "end_bound": "0x434e90",
+      "candidates": [
+        {
+          "address": "0x434a2a",
+          "instruction": "mov eax, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x434d5f",
+          "instruction": "mov ecx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x434e90",
+      "end_bound": "0x434ff0",
+      "candidates": [
+        {
+          "address": "0x434f30",
+          "instruction": "mov dword ptr [esi + 0xa8], eax",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x4350a0",
+      "end_bound": "0x4354d0",
+      "candidates": [
+        {
+          "address": "0x4352f2",
+          "instruction": "lea ebx, [edi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x435950",
+      "end_bound": "0x435bd0",
+      "candidates": [
+        {
+          "address": "0x435b59",
+          "instruction": "fstp qword ptr [ebx + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 8
+        }
+      ]
+    },
+    {
+      "function": "0x435db0",
+      "end_bound": "0x4360b0",
+      "candidates": [
+        {
+          "address": "0x43602f",
+          "instruction": "fld qword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 8
+        }
+      ]
+    },
+    {
+      "function": "0x436d10",
+      "end_bound": "0x436f40",
+      "candidates": [
+        {
+          "address": "0x436e11",
+          "instruction": "mov dword ptr [esi + 0xa8], ecx",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x436f40",
+      "end_bound": "0x4371e0",
+      "candidates": [
+        {
+          "address": "0x43703d",
+          "instruction": "mov cx, word ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 2
+        }
+      ]
+    },
+    {
+      "function": "0x437460",
+      "end_bound": "0x4375d0",
+      "candidates": [
+        {
+          "address": "0x437578",
+          "instruction": "mov dword ptr [esi + 0xa8], edi",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x4376d0",
+      "end_bound": "0x437a60",
+      "candidates": [
+        {
+          "address": "0x437a21",
+          "instruction": "lea ecx, [edi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x437a60",
+      "end_bound": "0x437f30",
+      "candidates": [
+        {
+          "address": "0x437be6",
+          "instruction": "mov dword ptr [esi + 0xa8], edx",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x438f10",
+      "end_bound": "0x439260",
+      "candidates": [
+        {
+          "address": "0x439145",
+          "instruction": "mov eax, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x4392a0",
+      "end_bound": "0x439390",
+      "candidates": [
+        {
+          "address": "0x4392b9",
+          "instruction": "mov dword ptr [esi + 0xa8], ecx",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x4393b0",
+      "end_bound": "0x4398c0",
+      "candidates": [
+        {
+          "address": "0x439421",
+          "instruction": "lea eax, [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x4398c0",
+      "end_bound": "0x439a20",
+      "candidates": [
+        {
+          "address": "0x4398cb",
+          "instruction": "lea ebx, [ebp + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x43a1f0",
+      "end_bound": "0x43a4e0",
+      "candidates": [
+        {
+          "address": "0x43a240",
+          "instruction": "mov dword ptr [esi + 0xa8], edi",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x43cd20",
+      "end_bound": "0x43d070",
+      "candidates": [
+        {
+          "address": "0x43cf2a",
+          "instruction": "mov dword ptr [esi + 0xa8], ebx",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x43d280",
+      "end_bound": "0x43d820",
+      "candidates": [
+        {
+          "address": "0x43d5e6",
+          "instruction": "lea edx, [edi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x43d820",
+      "end_bound": "0x43dba0",
+      "candidates": [
+        {
+          "address": "0x43db91",
+          "instruction": "mov dword ptr [edx + 0xa8], 0xf86a",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x43f2a0",
+      "end_bound": "0x43fce0",
+      "candidates": [
+        {
+          "address": "0x43fac6",
+          "instruction": "mov dword ptr [esi + 0xa8], edx",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x441160",
+      "end_bound": "0x441a60",
+      "candidates": [
+        {
+          "address": "0x441886",
+          "instruction": "mov eax, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x4428d0",
+      "end_bound": "0x442940",
+      "candidates": [
+        {
+          "address": "0x442905",
+          "instruction": "mov dword ptr [esp + 0xa8], 0",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x442919",
+          "instruction": "mov dword ptr [esp + 0xa8], 0xffffffff",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x442c40",
+      "end_bound": "0x442d80",
+      "candidates": [
+        {
+          "address": "0x442d2e",
+          "instruction": "mov dword ptr [esi + 0xa8], eax",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x4439a0",
+      "end_bound": "0x443bf0",
+      "candidates": [
+        {
+          "address": "0x443af9",
+          "instruction": "mov dword ptr [esi + 0xa8], eax",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x443cf0",
+      "end_bound": "0x443ea0",
+      "candidates": [
+        {
+          "address": "0x443e8a",
+          "instruction": "mov ecx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x444820",
+      "end_bound": "0x444bc0",
+      "candidates": [
+        {
+          "address": "0x4448ed",
+          "instruction": "mov ebp, dword ptr [edi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x4448f3",
+          "instruction": "lea esi, [edi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x445220",
+      "end_bound": "0x4452e0",
+      "candidates": [
+        {
+          "address": "0x445262",
+          "instruction": "lea edi, [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x4452e0",
+      "end_bound": "0x445440",
+      "candidates": [
+        {
+          "address": "0x4452e7",
+          "instruction": "lea ebx, [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x446200",
+      "end_bound": "0x4463c0",
+      "candidates": [
+        {
+          "address": "0x44636d",
+          "instruction": "mov dword ptr [esi + 0xa8], ebx",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x4474e0",
+      "end_bound": "0x447590",
+      "candidates": [
+        {
+          "address": "0x44754f",
+          "instruction": "mov eax, dword ptr [edi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x447590",
+      "end_bound": "0x447810",
+      "candidates": [
+        {
+          "address": "0x447603",
+          "instruction": "mov dword ptr [esi + 0xa8], eax",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x44767b",
+          "instruction": "mov eax, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x447690",
+          "instruction": "mov ecx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x4476b2",
+          "instruction": "mov ecx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x4476d4",
+          "instruction": "mov ecx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x4476f6",
+          "instruction": "mov ecx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x447718",
+          "instruction": "mov ecx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x447791",
+          "instruction": "mov ecx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x447880",
+      "end_bound": "0x447a10",
+      "candidates": [
+        {
+          "address": "0x44788a",
+          "instruction": "mov eax, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x44789e",
+          "instruction": "mov ecx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x4478a9",
+          "instruction": "mov eax, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x4478ba",
+          "instruction": "mov edx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x4478c9",
+          "instruction": "mov eax, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x4478da",
+          "instruction": "mov edx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x4478eb",
+          "instruction": "mov ecx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x4478fc",
+          "instruction": "mov eax, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x44790d",
+          "instruction": "mov edx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x447925",
+          "instruction": "mov ecx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x447942",
+          "instruction": "mov ecx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x44795d",
+          "instruction": "mov edx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x447978",
+          "instruction": "mov eax, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x447993",
+          "instruction": "mov ecx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x4479b0",
+          "instruction": "mov edx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x4479bf",
+          "instruction": "mov ecx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x4479d1",
+          "instruction": "mov eax, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x4479e3",
+          "instruction": "mov edx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x4479f5",
+          "instruction": "mov ecx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x447a10",
+      "end_bound": "0x447a80",
+      "candidates": [
+        {
+          "address": "0x447a13",
+          "instruction": "mov ecx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x447a4a",
+          "instruction": "mov ecx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x447a80",
+      "end_bound": "0x447ae0",
+      "candidates": [
+        {
+          "address": "0x447aab",
+          "instruction": "mov ecx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x447ae0",
+      "end_bound": "0x447e70",
+      "candidates": [
+        {
+          "address": "0x447b06",
+          "instruction": "mov edi, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x447b4d",
+          "instruction": "mov dword ptr [esi + 0xa8], eax",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x447b71",
+          "instruction": "mov ecx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x447b81",
+          "instruction": "mov dword ptr [esi + 0xa8], edi",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x447bbb",
+          "instruction": "mov ebp, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x447c06",
+          "instruction": "mov dword ptr [esi + 0xa8], ecx",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x447c66",
+          "instruction": "mov eax, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x447c77",
+          "instruction": "mov dword ptr [esi + 0xa8], ebp",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x447c88",
+          "instruction": "mov ebx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x447cab",
+          "instruction": "mov ecx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x447db1",
+          "instruction": "mov ebx, dword ptr [edi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x447e70",
+      "end_bound": "0x447ff0",
+      "candidates": [
+        {
+          "address": "0x447e91",
+          "instruction": "mov eax, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x447ff0",
+      "end_bound": "0x448060",
+      "candidates": [
+        {
+          "address": "0x448008",
+          "instruction": "mov eax, dword ptr [ecx + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x448060",
+      "end_bound": "0x448120",
+      "candidates": [
+        {
+          "address": "0x44808f",
+          "instruction": "mov ecx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x448120",
+      "end_bound": "0x4481e0",
+      "candidates": [
+        {
+          "address": "0x44814f",
+          "instruction": "mov ecx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x4481e0",
+      "end_bound": "0x4482a0",
+      "candidates": [
+        {
+          "address": "0x44820f",
+          "instruction": "mov ecx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x4482a0",
+      "end_bound": "0x448360",
+      "candidates": [
+        {
+          "address": "0x4482cf",
+          "instruction": "mov ecx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x448360",
+      "end_bound": "0x448420",
+      "candidates": [
+        {
+          "address": "0x44838f",
+          "instruction": "mov ecx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x448470",
+      "end_bound": "0x4484b0",
+      "candidates": [
+        {
+          "address": "0x448473",
+          "instruction": "mov ecx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x448c40",
+      "end_bound": "0x448d70",
+      "candidates": [
+        {
+          "address": "0x448c89",
+          "instruction": "mov dword ptr [esi + 0xa8], eax",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x44a9a0",
+      "end_bound": "0x44aa40",
+      "candidates": [
+        {
+          "address": "0x44a9e7",
+          "instruction": "mov dword ptr [esi + 0xa8], eax",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x44b510",
+      "end_bound": "0x44b8d0",
+      "candidates": [
+        {
+          "address": "0x44b7e2",
+          "instruction": "mov dword ptr [esi + 0xa8], eax",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x44b9b0",
+      "end_bound": "0x44bff0",
+      "candidates": [
+        {
+          "address": "0x44bdda",
+          "instruction": "lea ebx, [edi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x44c610",
+      "end_bound": "0x44c8f0",
+      "candidates": [
+        {
+          "address": "0x44c721",
+          "instruction": "fstp qword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 8
+        }
+      ]
+    },
+    {
+      "function": "0x44c940",
+      "end_bound": "0x44cbe0",
+      "candidates": [
+        {
+          "address": "0x44ca14",
+          "instruction": "fld qword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 8
+        }
+      ]
+    },
+    {
+      "function": "0x44d310",
+      "end_bound": "0x44d3a0",
+      "candidates": [
+        {
+          "address": "0x44d393",
+          "instruction": "mov dword ptr [esi + 0xa8], ecx",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x44d450",
+      "end_bound": "0x44d680",
+      "candidates": [
+        {
+          "address": "0x44d48d",
+          "instruction": "mov ecx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x44d537",
+          "instruction": "mov eax, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x44d5a3",
+          "instruction": "mov ecx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x44d5ec",
+          "instruction": "mov ecx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x44d604",
+          "instruction": "mov ecx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x44d61c",
+          "instruction": "mov ecx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x44d8c0",
+      "end_bound": "0x44da70",
+      "candidates": [
+        {
+          "address": "0x44d8cd",
+          "instruction": "mov ecx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x44da1d",
+          "instruction": "mov ecx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x44da30",
+          "instruction": "mov ecx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x44db30",
+      "end_bound": "0x44dc30",
+      "candidates": [
+        {
+          "address": "0x44db7c",
+          "instruction": "mov ecx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x44dbcd",
+          "instruction": "mov ecx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x44dd40",
+      "end_bound": "0x44ddd0",
+      "candidates": [
+        {
+          "address": "0x44dd57",
+          "instruction": "mov ecx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x44ddd0",
+      "end_bound": "0x44e000",
+      "candidates": [
+        {
+          "address": "0x44ddda",
+          "instruction": "mov eax, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x44ddf4",
+          "instruction": "mov ecx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x44de0f",
+          "instruction": "mov ecx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x44de2a",
+          "instruction": "mov ecx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x44de45",
+          "instruction": "mov ecx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x44df01",
+          "instruction": "mov dword ptr [esi + 0xa8], eax",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x44e090",
+      "end_bound": "0x44e780",
+      "candidates": [
+        {
+          "address": "0x44e577",
+          "instruction": "lea ebx, [edi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x44eb00",
+      "end_bound": "0x44ee50",
+      "candidates": [
+        {
+          "address": "0x44ec21",
+          "instruction": "fstp qword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 8
+        }
+      ]
+    },
+    {
+      "function": "0x44eea0",
+      "end_bound": "0x44f1f0",
+      "candidates": [
+        {
+          "address": "0x44ef74",
+          "instruction": "fld qword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 8
+        }
+      ]
+    },
+    {
+      "function": "0x44f1f0",
+      "end_bound": "0x44f5d0",
+      "candidates": [
+        {
+          "address": "0x44f252",
+          "instruction": "mov dword ptr [esp + 0xa8], edi",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x44f960",
+      "end_bound": "0x44f9d0",
+      "candidates": [
+        {
+          "address": "0x44f995",
+          "instruction": "mov dword ptr [esp + 0xa8], 0",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x44f9a9",
+          "instruction": "mov dword ptr [esp + 0xa8], 0xffffffff",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x450a10",
+      "end_bound": "0x450bf0",
+      "candidates": [
+        {
+          "address": "0x450b61",
+          "instruction": "mov dword ptr [esi + 0xa8], ebx",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x450f80",
+      "end_bound": "0x451200",
+      "candidates": [
+        {
+          "address": "0x451165",
+          "instruction": "lea ebx, [edi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x451fd0",
+      "end_bound": "0x452210",
+      "candidates": [
+        {
+          "address": "0x452166",
+          "instruction": "mov ecx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x4528e0",
+      "end_bound": "0x452980",
+      "candidates": [
+        {
+          "address": "0x45294d",
+          "instruction": "mov dword ptr [esi + 0xa8], eax",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x452d30",
+      "end_bound": "0x453450",
+      "candidates": [
+        {
+          "address": "0x452e25",
+          "instruction": "mov dx, word ptr [eax + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 2
+        },
+        {
+          "address": "0x453014",
+          "instruction": "mov dword ptr [esi + 0xa8], eax",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x453334",
+          "instruction": "lea ecx, [edi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x453940",
+      "end_bound": "0x4539b0",
+      "candidates": [
+        {
+          "address": "0x453950",
+          "instruction": "mov ecx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x453a20",
+      "end_bound": "0x453cb0",
+      "candidates": [
+        {
+          "address": "0x453a45",
+          "instruction": "mov word ptr [edx + 0xa8], ax",
+          "displacement": "0xa8",
+          "memory_bytes": 2
+        },
+        {
+          "address": "0x453bc7",
+          "instruction": "mov edx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x453cb0",
+      "end_bound": "0x453ea0",
+      "candidates": [
+        {
+          "address": "0x453e22",
+          "instruction": "mov dword ptr [esi + 0xa8], ebx",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x453ec0",
+      "end_bound": "0x454710",
+      "candidates": [
+        {
+          "address": "0x4541f9",
+          "instruction": "fstp qword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 8
+        },
+        {
+          "address": "0x4545f3",
+          "instruction": "lea ebx, [edi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x454fd0",
+      "end_bound": "0x455190",
+      "candidates": [
+        {
+          "address": "0x455112",
+          "instruction": "mov eax, dword ptr [esp + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x455310",
+      "end_bound": "0x455660",
+      "candidates": [
+        {
+          "address": "0x4554da",
+          "instruction": "fld qword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 8
+        }
+      ]
+    },
+    {
+      "function": "0x4584b0",
+      "end_bound": "0x458590",
+      "candidates": [
+        {
+          "address": "0x458524",
+          "instruction": "mov dword ptr [esi + 0xa8], eax",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x4585b0",
+      "end_bound": "0x458670",
+      "candidates": [
+        {
+          "address": "0x4585d7",
+          "instruction": "lea eax, [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x458c00",
+      "end_bound": "0x458f90",
+      "candidates": [
+        {
+          "address": "0x458c20",
+          "instruction": "lea edi, [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x459270",
+      "end_bound": "0x459480",
+      "candidates": [
+        {
+          "address": "0x4593a3",
+          "instruction": "mov dword ptr [esi + 0xa8], ebx",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x4597b0",
+      "end_bound": "0x459b30",
+      "candidates": [
+        {
+          "address": "0x45998d",
+          "instruction": "lea eax, [edi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x45a400",
+      "end_bound": "0x45a800",
+      "candidates": [
+        {
+          "address": "0x45a5ad",
+          "instruction": "mov dword ptr [esi + 0xa8], eax",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x45a870",
+      "end_bound": "0x45acb0",
+      "candidates": [
+        {
+          "address": "0x45a9a4",
+          "instruction": "mov edx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x45b890",
+      "end_bound": "0x45b900",
+      "candidates": [
+        {
+          "address": "0x45b8c5",
+          "instruction": "mov dword ptr [esp + 0xa8], 0",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x45b8d9",
+          "instruction": "mov dword ptr [esp + 0xa8], 0xffffffff",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x45be60",
+      "end_bound": "0x45bf50",
+      "candidates": [
+        {
+          "address": "0x45be72",
+          "instruction": "mov eax, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x45be8a",
+          "instruction": "mov ecx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x45c9c0",
+      "end_bound": "0x45cab0",
+      "candidates": [
+        {
+          "address": "0x45c9d2",
+          "instruction": "mov eax, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x45c9ea",
+          "instruction": "mov ecx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x45d820",
+      "end_bound": "0x45d910",
+      "candidates": [
+        {
+          "address": "0x45d832",
+          "instruction": "mov eax, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x45d84a",
+          "instruction": "mov ecx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x45e230",
+      "end_bound": "0x45e310",
+      "candidates": [
+        {
+          "address": "0x45e242",
+          "instruction": "mov eax, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x45e25a",
+          "instruction": "mov ecx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x45eb00",
+      "end_bound": "0x45ebe0",
+      "candidates": [
+        {
+          "address": "0x45eb12",
+          "instruction": "mov eax, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x45eb2a",
+          "instruction": "mov ecx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x45f0c0",
+      "end_bound": "0x45f110",
+      "candidates": [
+        {
+          "address": "0x45f0d9",
+          "instruction": "mov eax, dword ptr [edi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x45f380",
+      "end_bound": "0x45f470",
+      "candidates": [
+        {
+          "address": "0x45f392",
+          "instruction": "mov eax, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x45f3aa",
+          "instruction": "mov ecx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x460310",
+      "end_bound": "0x4603f0",
+      "candidates": [
+        {
+          "address": "0x460339",
+          "instruction": "mov dword ptr [esi + 0xa8], eax",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x4655b0",
+      "end_bound": "0x465650",
+      "candidates": [
+        {
+          "address": "0x4655f4",
+          "instruction": "mov dword ptr [esi + 0xa8], eax",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x465c20",
+      "end_bound": "0x465e00",
+      "candidates": [
+        {
+          "address": "0x465d58",
+          "instruction": "mov ecx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x465ddc",
+          "instruction": "mov eax, dword ptr [edx + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x465e00",
+      "end_bound": "0x465e30",
+      "candidates": [
+        {
+          "address": "0x465e0d",
+          "instruction": "mov ecx, dword ptr [ecx + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x465e30",
+      "end_bound": "0x465fa0",
+      "candidates": [
+        {
+          "address": "0x465ecd",
+          "instruction": "mov ecx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x465ee7",
+          "instruction": "mov edx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x465f01",
+          "instruction": "mov eax, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x465f1e",
+          "instruction": "mov ecx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x465f3b",
+          "instruction": "mov edx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x465f58",
+          "instruction": "mov eax, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x465fa0",
+      "end_bound": "0x466220",
+      "candidates": [
+        {
+          "address": "0x4660d3",
+          "instruction": "mov dword ptr [esi + 0xa8], ebx",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x466700",
+      "end_bound": "0x466c60",
+      "candidates": [
+        {
+          "address": "0x466b6c",
+          "instruction": "lea edx, [edi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x4675f0",
+      "end_bound": "0x467b40",
+      "candidates": [
+        {
+          "address": "0x4679a2",
+          "instruction": "mov dword ptr [esi + 0xa8], eax",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x467bb0",
+      "end_bound": "0x468080",
+      "candidates": [
+        {
+          "address": "0x46805e",
+          "instruction": "mov eax, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x468970",
+      "end_bound": "0x468a50",
+      "candidates": [
+        {
+          "address": "0x4689bb",
+          "instruction": "lea ecx, [esp + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x4689c2",
+          "instruction": "mov dword ptr [esp + 0xa8], 0x50dccc",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x4695c0",
+      "end_bound": "0x469760",
+      "candidates": [
+        {
+          "address": "0x4696b4",
+          "instruction": "mov dword ptr [esi + 0xa8], ebx",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x4699d0",
+      "end_bound": "0x469cc0",
+      "candidates": [
+        {
+          "address": "0x469ae9",
+          "instruction": "lea ebx, [edi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x46a2d0",
+      "end_bound": "0x46a590",
+      "candidates": [
+        {
+          "address": "0x46a4f9",
+          "instruction": "mov dword ptr [esi + 0xa8], eax",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x46a5e0",
+      "end_bound": "0x46a870",
+      "candidates": [
+        {
+          "address": "0x46a82f",
+          "instruction": "mov ecx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x46afb0",
+      "end_bound": "0x46b020",
+      "candidates": [
+        {
+          "address": "0x46afe5",
+          "instruction": "mov dword ptr [esp + 0xa8], 0",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x46aff9",
+          "instruction": "mov dword ptr [esp + 0xa8], 0xffffffff",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x46b080",
+      "end_bound": "0x46b130",
+      "candidates": [
+        {
+          "address": "0x46b0ae",
+          "instruction": "mov dword ptr [esi + 0xa8], eax",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x46bc50",
+      "end_bound": "0x46bd00",
+      "candidates": [
+        {
+          "address": "0x46bc7b",
+          "instruction": "mov dword ptr [esi + 0xa8], eax",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x46cdf0",
+      "end_bound": "0x46d000",
+      "candidates": [
+        {
+          "address": "0x46cee1",
+          "instruction": "mov dword ptr [esi + 0xa8], ebx",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x46d0d0",
+      "end_bound": "0x46d810",
+      "candidates": [
+        {
+          "address": "0x46d5f5",
+          "instruction": "lea ebx, [edi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x46deb0",
+      "end_bound": "0x46e350",
+      "candidates": [
+        {
+          "address": "0x46e087",
+          "instruction": "mov dword ptr [esi + 0xa8], eax",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x46e410",
+      "end_bound": "0x46e7c0",
+      "candidates": [
+        {
+          "address": "0x46e566",
+          "instruction": "mov dx, word ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 2
+        }
+      ]
+    },
+    {
+      "function": "0x470020",
+      "end_bound": "0x4702d0",
+      "candidates": [
+        {
+          "address": "0x470152",
+          "instruction": "mov dword ptr [esi + 0xa8], ebx",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x470740",
+      "end_bound": "0x470bf0",
+      "candidates": [
+        {
+          "address": "0x47085b",
+          "instruction": "lea ebx, [edi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x471930",
+      "end_bound": "0x471d90",
+      "candidates": [
+        {
+          "address": "0x471a8a",
+          "instruction": "fstp qword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 8
+        }
+      ]
+    },
+    {
+      "function": "0x471e00",
+      "end_bound": "0x472210",
+      "candidates": [
+        {
+          "address": "0x471efe",
+          "instruction": "fld qword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 8
+        }
+      ]
+    },
+    {
+      "function": "0x472d90",
+      "end_bound": "0x472e80",
+      "candidates": [
+        {
+          "address": "0x472e5c",
+          "instruction": "mov dword ptr [esi + 0xa8], ebx",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x479d00",
+      "end_bound": "0x47a110",
+      "candidates": [
+        {
+          "address": "0x479f62",
+          "instruction": "mov eax, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x479f69",
+          "instruction": "mov dword ptr [esi + 0xa8], eax",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x479ff2",
+          "instruction": "mov eax, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x47a076",
+          "instruction": "mov eax, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x47bf70",
+      "end_bound": "0x47c4a0",
+      "candidates": [
+        {
+          "address": "0x47c23a",
+          "instruction": "mov dword ptr [esi + 0x60c], edi",
+          "displacement": "0x60c",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x47c24c",
+          "instruction": "mov dword ptr [esi + 0x610], edi",
+          "displacement": "0x610",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x47e520",
+      "end_bound": "0x47e990",
+      "candidates": [
+        {
+          "address": "0x47e624",
+          "instruction": "mov dword ptr [esp + 0xa8], edx",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x47ffb0",
+      "end_bound": "0x481cd0",
+      "candidates": [
+        {
+          "address": "0x48032c",
+          "instruction": "mov dword ptr [ecx + 0xa8], 0x32",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x480ed5",
+          "instruction": "mov dword ptr [edi + 0xa8], ebp",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x481911",
+          "instruction": "mov dword ptr [edi + 0x60c], 0x408f4000",
+          "displacement": "0x60c",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x481921",
+          "instruction": "mov dword ptr [edi + 0x610], ebp",
+          "displacement": "0x610",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x4826f0",
+      "end_bound": "0x482710",
+      "candidates": [
+        {
+          "address": "0x4826f4",
+          "instruction": "mov edx, dword ptr [ecx + 0x610]",
+          "displacement": "0x610",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x482703",
+          "instruction": "mov ecx, dword ptr [ecx + 0x60c]",
+          "displacement": "0x60c",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x482710",
+      "end_bound": "0x482750",
+      "candidates": [
+        {
+          "address": "0x482717",
+          "instruction": "mov eax, dword ptr [edi + 0x610]",
+          "displacement": "0x610",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x482736",
+          "instruction": "mov eax, dword ptr [edi + 0x610]",
+          "displacement": "0x610",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x482750",
+      "end_bound": "0x4828d0",
+      "candidates": [
+        {
+          "address": "0x482758",
+          "instruction": "mov esi, dword ptr [ebx + 0x610]",
+          "displacement": "0x610",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x48276d",
+          "instruction": "mov eax, dword ptr [ebx + 0x60c]",
+          "displacement": "0x60c",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x482789",
+          "instruction": "mov dword ptr [ebx + 0x60c], edi",
+          "displacement": "0x60c",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x482795",
+          "instruction": "mov dword ptr [ebx + 0x610], edi",
+          "displacement": "0x610",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x4827b5",
+          "instruction": "mov dword ptr [ebx + 0x60c], edx",
+          "displacement": "0x60c",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x4827d6",
+          "instruction": "mov dword ptr [ebx + 0x610], ebp",
+          "displacement": "0x610",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x4827fa",
+          "instruction": "mov dword ptr [ebx + 0x610], ebp",
+          "displacement": "0x610",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x482851",
+          "instruction": "mov ecx, dword ptr [ebx + 0x610]",
+          "displacement": "0x610",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x482857",
+          "instruction": "mov esi, dword ptr [ebx + 0x60c]",
+          "displacement": "0x60c",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x482874",
+          "instruction": "mov edx, dword ptr [ebx + 0x610]",
+          "displacement": "0x610",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x482885",
+          "instruction": "mov eax, dword ptr [ebx + 0x60c]",
+          "displacement": "0x60c",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x4828a0",
+          "instruction": "mov dword ptr [ebx + 0x60c], ecx",
+          "displacement": "0x60c",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x4828a6",
+          "instruction": "mov dword ptr [ebx + 0x610], ebp",
+          "displacement": "0x610",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x4828b2",
+          "instruction": "mov eax, dword ptr [ebx + 0x60c]",
+          "displacement": "0x60c",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x4828d0",
+      "end_bound": "0x482940",
+      "candidates": [
+        {
+          "address": "0x4828d8",
+          "instruction": "cmp edi, dword ptr [esi + 0x610]",
+          "displacement": "0x610",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x4828fb",
+          "instruction": "mov eax, dword ptr [esi + 0x610]",
+          "displacement": "0x610",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x482901",
+          "instruction": "mov ecx, dword ptr [esi + 0x60c]",
+          "displacement": "0x60c",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x482921",
+          "instruction": "mov eax, dword ptr [esi + 0x610]",
+          "displacement": "0x610",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x482929",
+          "instruction": "mov dword ptr [esi + 0x610], eax",
+          "displacement": "0x610",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x482940",
+      "end_bound": "0x482970",
+      "candidates": [
+        {
+          "address": "0x482944",
+          "instruction": "mov esi, dword ptr [edi + 0x610]",
+          "displacement": "0x610",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x482970",
+      "end_bound": "0x4829f0",
+      "candidates": [
+        {
+          "address": "0x482989",
+          "instruction": "mov eax, dword ptr [esi + 0x610]",
+          "displacement": "0x610",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x485ee0",
+      "end_bound": "0x486410",
+      "candidates": [
+        {
+          "address": "0x48618f",
+          "instruction": "mov word ptr [esi + 0xa8], bx",
+          "displacement": "0xa8",
+          "memory_bytes": 2
+        }
+      ]
+    },
+    {
+      "function": "0x4892b0",
+      "end_bound": "0x489490",
+      "candidates": [
+        {
+          "address": "0x489387",
+          "instruction": "mov eax, dword ptr [esp + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x48940e",
+          "instruction": "mov eax, dword ptr [esp + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x4896a0",
+      "end_bound": "0x489880",
+      "candidates": [
+        {
+          "address": "0x489777",
+          "instruction": "mov eax, dword ptr [esp + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x4897fe",
+          "instruction": "mov eax, dword ptr [esp + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x489a90",
+      "end_bound": "0x489cd0",
+      "candidates": [
+        {
+          "address": "0x489b83",
+          "instruction": "lea ecx, [esp + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x489b8a",
+          "instruction": "mov dword ptr [esp + 0xa8], esi",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x489c38",
+          "instruction": "lea ecx, [esp + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x489c3f",
+          "instruction": "mov dword ptr [esp + 0xa8], esi",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x48aba0",
+      "end_bound": "0x48acb0",
+      "candidates": [
+        {
+          "address": "0x48abc1",
+          "instruction": "mov esi, dword ptr [esp + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x48b5f0",
+      "end_bound": "0x48bac0",
+      "candidates": [
+        {
+          "address": "0x48b738",
+          "instruction": "mov dword ptr [esp + 0xa8], 0x491340",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x4905b0",
+      "end_bound": "0x490c90",
+      "candidates": [
+        {
+          "address": "0x490b0d",
+          "instruction": "mov word ptr [esi + 0xa8], cx",
+          "displacement": "0xa8",
+          "memory_bytes": 2
+        }
+      ]
+    },
+    {
+      "function": "0x493200",
+      "end_bound": "0x4937c0",
+      "candidates": [
+        {
+          "address": "0x493315",
+          "instruction": "mov dword ptr [esp + 0xa8], 0xdf",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x4935ce",
+          "instruction": "mov ax, word ptr [ebp + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 2
+        },
+        {
+          "address": "0x4936ee",
+          "instruction": "lea eax, [esp + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x4947c0",
+      "end_bound": "0x4952f0",
+      "candidates": [
+        {
+          "address": "0x494e27",
+          "instruction": "mov dword ptr [esp + 0xa8], eax",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x495930",
+      "end_bound": "0x495ab0",
+      "candidates": [
+        {
+          "address": "0x495969",
+          "instruction": "mov dword ptr [esi + 0xa8], 0x517864",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x495b30",
+      "end_bound": "0x495d60",
+      "candidates": [
+        {
+          "address": "0x495b82",
+          "instruction": "lea ecx, [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x496a60",
+      "end_bound": "0x496c00",
+      "candidates": [
+        {
+          "address": "0x496b38",
+          "instruction": "lea ebx, [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x496c00",
+      "end_bound": "0x496e90",
+      "candidates": [
+        {
+          "address": "0x496cb0",
+          "instruction": "lea ecx, [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x496cbb",
+          "instruction": "lea eax, [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x496d45",
+          "instruction": "lea ecx, [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x496dd2",
+          "instruction": "lea ebx, [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x496e5b",
+          "instruction": "lea ecx, [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x496e90",
+      "end_bound": "0x497030",
+      "candidates": [
+        {
+          "address": "0x496f5c",
+          "instruction": "lea ecx, [edi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x496f67",
+          "instruction": "lea eax, [edi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x496ff3",
+          "instruction": "lea ecx, [edi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x497030",
+      "end_bound": "0x497190",
+      "candidates": [
+        {
+          "address": "0x49706e",
+          "instruction": "lea ebp, [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x497390",
+      "end_bound": "0x4976a0",
+      "candidates": [
+        {
+          "address": "0x4973b3",
+          "instruction": "lea ebx, [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x49d050",
+      "end_bound": "0x49d2b0",
+      "candidates": [
+        {
+          "address": "0x49d133",
+          "instruction": "mov dword ptr [esp + 0xa8], ecx",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x49f5e0",
+      "end_bound": "0x49fc30",
+      "candidates": [
+        {
+          "address": "0x49f9f8",
+          "instruction": "mov ecx, dword ptr [ebx + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x4a01b0",
+      "end_bound": "0x4a1320",
+      "candidates": [
+        {
+          "address": "0x4a0a50",
+          "instruction": "mov eax, dword ptr [ebx + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x4a1770",
+      "end_bound": "0x4a1d80",
+      "candidates": [
+        {
+          "address": "0x4a17c5",
+          "instruction": "lea eax, [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x4a2a70",
+      "end_bound": "0x4a2f50",
+      "candidates": [
+        {
+          "address": "0x4a2b0d",
+          "instruction": "lea ecx, [ebx + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x4a6870",
+      "end_bound": "0x4a7690",
+      "candidates": [
+        {
+          "address": "0x4a70e1",
+          "instruction": "fstp qword ptr [ecx + 0x610]",
+          "displacement": "0x610",
+          "memory_bytes": 8
+        }
+      ]
+    },
+    {
+      "function": "0x4ab210",
+      "end_bound": "0x4ab320",
+      "candidates": [
+        {
+          "address": "0x4ab21e",
+          "instruction": "mov eax, dword ptr [edi + 0x610]",
+          "displacement": "0x610",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x4ab252",
+          "instruction": "mov ecx, dword ptr [edi + 0x610]",
+          "displacement": "0x610",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x4ab2b4",
+          "instruction": "mov eax, dword ptr [edi + 0x610]",
+          "displacement": "0x610",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x4ab2f6",
+          "instruction": "mov eax, dword ptr [edi + 0x610]",
+          "displacement": "0x610",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x4b8600",
+      "end_bound": "0x4b8750",
+      "candidates": [
+        {
+          "address": "0x4b8697",
+          "instruction": "mov dword ptr [esi + 0xa8], 0x2000",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x4b8712",
+          "instruction": "mov eax, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x4b8b00",
+      "end_bound": "0x4b8f60",
+      "candidates": [
+        {
+          "address": "0x4b8d19",
+          "instruction": "mov eax, dword ptr [ebp + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x4bea10",
+      "end_bound": "0x4beac0",
+      "candidates": [
+        {
+          "address": "0x4bea1b",
+          "instruction": "mov ebx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x4bea25",
+          "instruction": "mov eax, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x4c0700",
+      "end_bound": "0x4c0a80",
+      "candidates": [
+        {
+          "address": "0x4c07b4",
+          "instruction": "mov eax, dword ptr [ebp + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x4c081e",
+          "instruction": "mov eax, dword ptr [ebp + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x4c0833",
+          "instruction": "mov ecx, dword ptr [ebp + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x4c0876",
+          "instruction": "mov ecx, dword ptr [ebp + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x4c088e",
+          "instruction": "mov ecx, dword ptr [ebp + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x4c08c3",
+          "instruction": "mov ecx, dword ptr [ebp + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x4c08ec",
+          "instruction": "mov ecx, dword ptr [ebp + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x4c0914",
+          "instruction": "mov eax, dword ptr [ebp + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x4c1470",
+      "end_bound": "0x4c1730",
+      "candidates": [
+        {
+          "address": "0x4c161e",
+          "instruction": "mov eax, dword ptr [ebp + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x4c6370",
+      "end_bound": "0x4c64c0",
+      "candidates": [
+        {
+          "address": "0x4c63ee",
+          "instruction": "mov dword ptr [ebp + 0xa8], edx",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x4c8220",
+      "end_bound": "0x4c84f0",
+      "candidates": [
+        {
+          "address": "0x4c827a",
+          "instruction": "mov byte ptr [esp + 0xa8], 1",
+          "displacement": "0xa8",
+          "memory_bytes": 1
+        },
+        {
+          "address": "0x4c82ea",
+          "instruction": "mov byte ptr [esp + 0xa8], 2",
+          "displacement": "0xa8",
+          "memory_bytes": 1
+        },
+        {
+          "address": "0x4c834e",
+          "instruction": "mov byte ptr [esp + 0xa8], 3",
+          "displacement": "0xa8",
+          "memory_bytes": 1
+        },
+        {
+          "address": "0x4c83d4",
+          "instruction": "mov byte ptr [esp + 0xa8], 4",
+          "displacement": "0xa8",
+          "memory_bytes": 1
+        },
+        {
+          "address": "0x4c8445",
+          "instruction": "mov byte ptr [esp + 0xa8], 5",
+          "displacement": "0xa8",
+          "memory_bytes": 1
+        },
+        {
+          "address": "0x4c84b3",
+          "instruction": "mov byte ptr [esp + 0xa8], bl",
+          "displacement": "0xa8",
+          "memory_bytes": 1
+        },
+        {
+          "address": "0x4c84c3",
+          "instruction": "mov dword ptr [esp + 0xa8], 0xffffffff",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x4ca1a0",
+      "end_bound": "0x4ca4b0",
+      "candidates": [
+        {
+          "address": "0x4ca290",
+          "instruction": "mov al, byte ptr [esp + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 1
+        },
+        {
+          "address": "0x4ca332",
+          "instruction": "mov al, byte ptr [esp + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 1
+        },
+        {
+          "address": "0x4ca3d4",
+          "instruction": "mov eax, dword ptr [esp + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x4ca3ff",
+          "instruction": "mov edx, dword ptr [esp + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x4d00c0",
+      "end_bound": "0x4d0130",
+      "candidates": [
+        {
+          "address": "0x4d00e3",
+          "instruction": "lea eax, [edi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x4d671f",
+      "end_bound": "0x4d6865",
+      "candidates": [
+        {
+          "address": "0x4d6767",
+          "instruction": "mov dword ptr [esi + 0xa8], eax",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x4d6881",
+      "end_bound": "0x4d695c",
+      "candidates": [
+        {
+          "address": "0x4d68ff",
+          "instruction": "cmp dword ptr [esi + 0xa8], 0",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x4dc22c",
+      "end_bound": "0x4dc259",
+      "candidates": [
+        {
+          "address": "0x4dc24f",
+          "instruction": "call dword ptr [edx + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x4dd504",
+      "end_bound": "0x4dd52b",
+      "candidates": [
+        {
+          "address": "0x4dd522",
+          "instruction": "call dword ptr [edx + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x4e86f3",
+      "end_bound": "0x4e87e6",
+      "candidates": [
+        {
+          "address": "0x4e8756",
+          "instruction": "mov eax, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x4eb26f",
+      "end_bound": "0x4eb309",
+      "candidates": [
+        {
+          "address": "0x4eb2e1",
+          "instruction": "mov ecx, dword ptr [ecx + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x4eb309",
+      "end_bound": "0x4eb38e",
+      "candidates": [
+        {
+          "address": "0x4eb31f",
+          "instruction": "mov ecx, dword ptr [ecx + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x4eb360",
+          "instruction": "lea esi, [ecx + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x4eb5f6",
+      "end_bound": "0x4eb65b",
+      "candidates": [
+        {
+          "address": "0x4eb648",
+          "instruction": "mov dword ptr [eax + 0xa8], 0x80000000",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x4eba79",
+      "end_bound": "0x4ebb84",
+      "candidates": [
+        {
+          "address": "0x4ebb31",
+          "instruction": "mov dword ptr [ebx + 0xa8], ecx",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x4ebb59",
+          "instruction": "mov dword ptr [ebx + 0xa8], ecx",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x4ebe7c",
+      "end_bound": "0x4ebf55",
+      "candidates": [
+        {
+          "address": "0x4ebef0",
+          "instruction": "mov eax, dword ptr [ebx + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x4ed419",
+      "end_bound": "0x4ed493",
+      "candidates": [
+        {
+          "address": "0x4ed45e",
+          "instruction": "mov eax, dword ptr [eax + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x4ef8e4",
+      "end_bound": "0x4ef9a6",
+      "candidates": [
+        {
+          "address": "0x4ef961",
+          "instruction": "mov dword ptr [esi + 0xa8], edi",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x4efa71",
+      "end_bound": "0x4efabb",
+      "candidates": [
+        {
+          "address": "0x4efaab",
+          "instruction": "call dword ptr [edx + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x4f1526",
+      "end_bound": "0x4f1755",
+      "candidates": [
+        {
+          "address": "0x4f174c",
+          "instruction": "mov dword ptr [ecx + 0xa8], eax",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x4f1755",
+      "end_bound": "0x4f17c7",
+      "candidates": [
+        {
+          "address": "0x4f1763",
+          "instruction": "push dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x4f4b18",
+      "end_bound": "0x4f4c02",
+      "candidates": [
+        {
+          "address": "0x4f4b9b",
+          "instruction": "mov dword ptr [esi + 0xa8], edi",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x4f4c62",
+      "end_bound": "0x4f4cde",
+      "candidates": [
+        {
+          "address": "0x4f4ca9",
+          "instruction": "mov dword ptr [esi + 0xa8], eax",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x4f4f49",
+      "end_bound": "0x4f507f",
+      "candidates": [
+        {
+          "address": "0x4f4f77",
+          "instruction": "mov ecx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x4f507f",
+      "end_bound": "0x4f50af",
+      "candidates": [
+        {
+          "address": "0x4f5082",
+          "instruction": "mov ecx, dword ptr [esi + 0xa8]",
+          "displacement": "0xa8",
+          "memory_bytes": 4
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "source": "native_unicorn_wandertrace.py",
+  "source_sha256": "f9c5a81f0a78af1a91b8fae644f5140623cf691db858c3dd1ce9d2d61a3da598",
+  "output": "native_unicorn_roomwandertrace.py",
+  "output_sha256": "c1e773d1f7dad7d667da67ab83c3ea2a16926e8e1d7193282fe216fbfbd7391f",
+  "changes": [
+    [
+      "    wander_rng_calls = []",
+      "    wander_rng_calls = []\n    room_target_calls = []"
+    ],
+    [
+      "        if address == 0x480A00:",
+      "        if address == 0x4E8430:\n            room_target_calls.append(hex(uc.reg_read(xc.UC_X86_REG_ECX)))\n        if address == 0x480A00:"
+    ],
+    [
+      "if address in [0x480E92,0x480E9E]:",
+      "if address in [0x480B6E,0x480E92,0x480E9E]:"
+    ],
+    [
+      "wander_rng_calls=wander_rng_calls,",
+      "wander_rng_calls=wander_rng_calls, room_target_calls=room_target_calls,"
+    ]
+  ]
+}

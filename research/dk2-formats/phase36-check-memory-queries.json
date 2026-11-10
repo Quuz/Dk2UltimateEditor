@@ -1,0 +1,28 @@
+[
+  {
+    "id": "phase36-open-after-load",
+    "tool": "list_open_programs",
+    "args": {},
+    "print_limit": 1800
+  },
+  {
+    "id": "phase36-old-immunity-bytes",
+    "tool": "read_memory",
+    "args": {
+      "program": "DKII-local13.exe",
+      "address": "0x4a60e0",
+      "length": 329
+    },
+    "print_limit": 100
+  },
+  {
+    "id": "phase36-current-immunity-bytes",
+    "tool": "read_memory",
+    "args": {
+      "program": "DKII-DX.exe",
+      "address": "0x4af1e0",
+      "length": 329
+    },
+    "print_limit": 100
+  }
+]

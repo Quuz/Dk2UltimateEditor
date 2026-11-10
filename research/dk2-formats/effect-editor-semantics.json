@@ -1,0 +1,1204 @@
+{
+  "family": "Effects",
+  "record_variants": [
+    246
+  ],
+  "executable_sha256": {
+    "Dungeon Keeper 2/DKII-DX.exe": "d7a8b854e4e4f02709eba271bead6fe2307dd6e332b5a96e70857e5b0e19fb8a",
+    "Dungeon Keeper 2/Data/editor/DK2 Editor pro.exe": "989c45df779bccfc9a9e509b2ad0224a9bd269629f74792adc0320fa4b99fb09"
+  },
+  "flags": {
+    "raw_offset": 180,
+    "raw_bytes": 4,
+    "game_intermediate_offset": 360,
+    "game_runtime_offset": 95,
+    "game_rule": "Converter ORs raw flags with intermediate DWORD; loader copies full DWORD when presence4C is set. No editor maskFFF7 in these game fragments.",
+    "editor_decoder": 4325264,
+    "editor_encoder": 4325056,
+    "editor_callback": 4861776,
+    "model_fields": [
+      {
+        "mask": 1,
+        "model_offset": 496
+      },
+      {
+        "mask": 2,
+        "model_offset": 500
+      },
+      {
+        "mask": 4,
+        "model_offset": 504
+      },
+      {
+        "mask": 16,
+        "model_offset": 508
+      },
+      {
+        "mask": 32,
+        "model_offset": 512
+      },
+      {
+        "mask": 64,
+        "model_offset": 516
+      },
+      {
+        "mask": 128,
+        "model_offset": 520
+      },
+      {
+        "mask": 256,
+        "model_offset": 524
+      },
+      {
+        "mask": 512,
+        "model_offset": 528
+      },
+      {
+        "mask": 1024,
+        "model_offset": 532
+      },
+      {
+        "mask": 2048,
+        "model_offset": 536
+      },
+      {
+        "mask": 4096,
+        "model_offset": 540
+      },
+      {
+        "mask": 8192,
+        "model_offset": 544
+      },
+      {
+        "mask": 16384,
+        "model_offset": 548
+      },
+      {
+        "mask": 32768,
+        "model_offset": 552
+      }
+    ],
+    "pure_decode_encode_mask": 65527,
+    "callback_default": "After decoding flags, if both model204(mask40) and model208(mask80) are0, callback calls41FDA0(1), setting model208=1 and model204=0. If either is nonzero it leaves the pair unchanged, including both nonzero.",
+    "loaded_save_projection": "v=rawFlags & FFF7; if !(v &C0): v |=80. Thus raw0 ->80, raw8 ->80, raw40 ->40, rawC0 ->C0, FFFFFFFF ->FFF7.",
+    "evidence": [
+      {
+        "file": "phase27-effects-flags-decode-assembly.txt",
+        "first": "0x41ff90",
+        "last": "0x420060",
+        "instructions": [
+          "0041ff90: MOV EAX,dword ptr [ESP + 0x4] ",
+          "0041ff94: MOV EDX,EAX ",
+          "0041ff96: AND EDX,0x1 ",
+          "0041ff99: MOV dword ptr [ECX + 0x1f0],EDX ",
+          "0041ff9f: MOV EDX,EAX ",
+          "0041ffa1: SHR EDX,0x1 ",
+          "0041ffa3: AND EDX,0x1 ",
+          "0041ffa6: MOV dword ptr [ECX + 0x1f4],EDX ",
+          "0041ffac: MOV EDX,EAX ",
+          "0041ffae: SHR EDX,0x2 ",
+          "0041ffb1: AND EDX,0x1 ",
+          "0041ffb4: MOV dword ptr [ECX + 0x1f8],EDX ",
+          "0041ffba: MOV EDX,EAX ",
+          "0041ffbc: SHR EDX,0x4 ",
+          "0041ffbf: AND EDX,0x1 ",
+          "0041ffc2: MOV dword ptr [ECX + 0x1fc],EDX ",
+          "0041ffc8: MOV EDX,EAX ",
+          "0041ffca: SHR EDX,0x5 ",
+          "0041ffcd: AND EDX,0x1 ",
+          "0041ffd0: MOV dword ptr [ECX + 0x200],EDX ",
+          "0041ffd6: MOV EDX,EAX ",
+          "0041ffd8: SHR EDX,0x6 ",
+          "0041ffdb: AND EDX,0x1 ",
+          "0041ffde: MOV dword ptr [ECX + 0x204],EDX ",
+          "0041ffe4: MOV EDX,EAX ",
+          "0041ffe6: SHR EDX,0x7 ",
+          "0041ffe9: AND EDX,0x1 ",
+          "0041ffec: MOV dword ptr [ECX + 0x208],EDX ",
+          "0041fff2: MOV EDX,EAX ",
+          "0041fff4: SHR EDX,0x8 ",
+          "0041fff7: AND EDX,0x1 ",
+          "0041fffa: MOV dword ptr [ECX + 0x20c],EDX ",
+          "00420000: MOV EDX,EAX ",
+          "00420002: SHR EDX,0x9 ",
+          "00420005: AND EDX,0x1 ",
+          "00420008: MOV dword ptr [ECX + 0x210],EDX ",
+          "0042000e: MOV EDX,EAX ",
+          "00420010: SHR EDX,0xa ",
+          "00420013: AND EDX,0x1 ",
+          "00420016: MOV dword ptr [ECX + 0x214],EDX ",
+          "0042001c: MOV EDX,EAX ",
+          "0042001e: SHR EDX,0xb ",
+          "00420021: AND EDX,0x1 ",
+          "00420024: MOV dword ptr [ECX + 0x218],EDX ",
+          "0042002a: MOV EDX,EAX ",
+          "0042002c: SHR EDX,0xc ",
+          "0042002f: AND EDX,0x1 ",
+          "00420032: MOV dword ptr [ECX + 0x21c],EDX ",
+          "00420038: MOV EDX,EAX ",
+          "0042003a: SHR EDX,0xd ",
+          "0042003d: AND EDX,0x1 ",
+          "00420040: MOV dword ptr [ECX + 0x220],EDX ",
+          "00420046: MOV EDX,EAX ",
+          "00420048: SHR EDX,0xe ",
+          "0042004b: SHR EAX,0xf ",
+          "0042004e: AND EDX,0x1 ",
+          "00420051: AND EAX,0x1 ",
+          "00420054: MOV dword ptr [ECX + 0x224],EDX ",
+          "0042005a: MOV dword ptr [ECX + 0x228],EAX ",
+          "00420060: RET 0x4 "
+        ]
+      },
+      {
+        "file": "phase27-effects-flags-assembly.txt",
+        "first": "0x41fec0",
+        "last": "0x41ff81",
+        "instructions": [
+          "0041fec0: MOV EDX,dword ptr [ECX + 0x1f0] ",
+          "0041fec6: XOR EAX,EAX ",
+          "0041fec8: TEST EDX,EDX ",
+          "0041feca: JZ 0x0041fed1 ",
+          "0041fecc: MOV EAX,0x1 ",
+          "0041fed1: MOV EDX,dword ptr [ECX + 0x1f4] ",
+          "0041fed7: TEST EDX,EDX ",
+          "0041fed9: JZ 0x0041fedd ",
+          "0041fedb: OR AL,0x2 ",
+          "0041fedd: MOV EDX,dword ptr [ECX + 0x1f8] ",
+          "0041fee3: TEST EDX,EDX ",
+          "0041fee5: JZ 0x0041fee9 ",
+          "0041fee7: OR AL,0x4 ",
+          "0041fee9: MOV EDX,dword ptr [ECX + 0x1fc] ",
+          "0041feef: TEST EDX,EDX ",
+          "0041fef1: JZ 0x0041fef5 ",
+          "0041fef3: OR AL,0x10 ",
+          "0041fef5: MOV EDX,dword ptr [ECX + 0x200] ",
+          "0041fefb: TEST EDX,EDX ",
+          "0041fefd: JZ 0x0041ff01 ",
+          "0041feff: OR AL,0x20 ",
+          "0041ff01: MOV EDX,dword ptr [ECX + 0x204] ",
+          "0041ff07: TEST EDX,EDX ",
+          "0041ff09: JZ 0x0041ff0d ",
+          "0041ff0b: OR AL,0x40 ",
+          "0041ff0d: MOV EDX,dword ptr [ECX + 0x208] ",
+          "0041ff13: TEST EDX,EDX ",
+          "0041ff15: JZ 0x0041ff19 ",
+          "0041ff17: OR AL,0x80 ",
+          "0041ff19: MOV EDX,dword ptr [ECX + 0x20c] ",
+          "0041ff1f: TEST EDX,EDX ",
+          "0041ff21: JZ 0x0041ff26 ",
+          "0041ff23: OR AH,0x1 ",
+          "0041ff26: MOV EDX,dword ptr [ECX + 0x210] ",
+          "0041ff2c: TEST EDX,EDX ",
+          "0041ff2e: JZ 0x0041ff33 ",
+          "0041ff30: OR AH,0x2 ",
+          "0041ff33: MOV EDX,dword ptr [ECX + 0x214] ",
+          "0041ff39: TEST EDX,EDX ",
+          "0041ff3b: JZ 0x0041ff40 ",
+          "0041ff3d: OR AH,0x4 ",
+          "0041ff40: MOV EDX,dword ptr [ECX + 0x218] ",
+          "0041ff46: TEST EDX,EDX ",
+          "0041ff48: JZ 0x0041ff4d ",
+          "0041ff4a: OR AH,0x8 ",
+          "0041ff4d: MOV EDX,dword ptr [ECX + 0x21c] ",
+          "0041ff53: TEST EDX,EDX ",
+          "0041ff55: JZ 0x0041ff5a ",
+          "0041ff57: OR AH,0x10 ",
+          "0041ff5a: MOV EDX,dword ptr [ECX + 0x220] ",
+          "0041ff60: TEST EDX,EDX ",
+          "0041ff62: JZ 0x0041ff67 ",
+          "0041ff64: OR AH,0x20 ",
+          "0041ff67: MOV EDX,dword ptr [ECX + 0x224] ",
+          "0041ff6d: TEST EDX,EDX ",
+          "0041ff6f: JZ 0x0041ff74 ",
+          "0041ff71: OR AH,0x40 ",
+          "0041ff74: MOV EDX,dword ptr [ECX + 0x228] ",
+          "0041ff7a: TEST EDX,EDX ",
+          "0041ff7c: JZ 0x0041ff81 ",
+          "0041ff7e: OR AH,0x80 ",
+          "0041ff81: RET "
+        ]
+      },
+      {
+        "file": "phase27-effects-model-assembly.txt",
+        "first": "0x4a3267",
+        "last": "0x4a328e",
+        "instructions": [
+          "004a3267: CMP dword ptr [EBX + 0x4c],EDI ",
+          "004a326a: JZ 0x004a327a ",
+          "004a326c: MOV EAX,dword ptr [EBX + 0x168] ",
+          "004a3272: MOV ECX,EBP ",
+          "004a3274: PUSH EAX ",
+          "004a3275: CALL 0x0041ff90 ",
+          "004a327a: CMP dword ptr [EBP + 0x204],EDI ",
+          "004a3280: JNZ 0x004a3293 ",
+          "004a3282: CMP dword ptr [EBP + 0x208],EDI ",
+          "004a3288: JNZ 0x004a3293 ",
+          "004a328a: PUSH 0x1 ",
+          "004a328c: MOV ECX,EBP ",
+          "004a328e: CALL 0x0041fda0 "
+        ]
+      },
+      {
+        "file": "phase27-effect-generation-default-assembly.txt",
+        "first": "0x41fda0",
+        "last": "0x41fdb8",
+        "instructions": [
+          "0041fda0: MOV EAX,dword ptr [ESP + 0x4] ",
+          "0041fda4: TEST EAX,EAX ",
+          "0041fda6: MOV dword ptr [ECX + 0x208],EAX ",
+          "0041fdac: JZ 0x0041fdb8 ",
+          "0041fdae: MOV dword ptr [ECX + 0x204],0x0 ",
+          "0041fdb8: RET 0x4 "
+        ]
+      },
+      {
+        "file": "phase27-effect-writer-assembly.txt",
+        "first": "0x4aa322",
+        "last": "0x4aa32f",
+        "instructions": [
+          "004aa322: MOV ECX,EBX ",
+          "004aa324: CALL 0x0041fec0 ",
+          "004aa329: LEA ECX,[EBX + 0xc8] ",
+          "004aa32f: MOV dword ptr [ESP + 0x100],EAX "
+        ]
+      },
+      {
+        "file": "phase27-effect-converter-assembly.txt",
+        "first": "0x56b18b",
+        "last": "0x56b196",
+        "instructions": [
+          "0056b18b: MOV ECX,dword ptr [EBP + 0xb4] ",
+          "0056b191: OR EDX,ECX ",
+          "0056b193: MOV dword ptr [EBX + 0x4c],EAX ",
+          "0056b196: MOV dword ptr [EBX + 0x168],EDX "
+        ]
+      },
+      {
+        "file": "phase27-effect-loader-assembly.txt",
+        "first": "0x435b14",
+        "last": "0x435b21",
+        "instructions": [
+          "00435b14: MOV EAX,dword ptr [EBX + 0x4c] ",
+          "00435b17: TEST EAX,EAX ",
+          "00435b19: JZ 0x00435b24 ",
+          "00435b1b: MOV EAX,dword ptr [EBX + 0x168] ",
+          "00435b21: MOV dword ptr [EBP + 0x5f],EAX "
+        ]
+      }
+    ]
+  },
+  "opaque_f4": {
+    "raw_offset": 244,
+    "raw_bytes": 2,
+    "baseline_name": "Unknown3",
+    "game": "Full inspected converter56AFE0 handles12 WORDs DA..F0 plus generation/type bytesF2/F3. It does not transfer F4 into intermediate. Four whole-body converter fixtures differing only in F4 have identical complete-intermediate FNV readout and selected field readouts.",
+    "writer": "Writer4AA040 passes246 bytes at frameESP+4C to file vcall38. Assigned fields end at rawF3; no ordinary field store initializes rawF4/F5. The remaining WORD carries preexisting frameESP+140 bytes (entryESP-4).",
+    "stack_audit": {
+      "function": 4890688,
+      "visited_instruction_states": 190,
+      "record_start_entry_sp": -248,
+      "record_bytes": 246,
+      "unassigned_tail_entry_sp": [
+        -4,
+        -2
+      ],
+      "direct_esp_write_or_push_hits": [],
+      "writes": [
+        {
+          "address": 4890694,
+          "entry_relative_start": -312,
+          "bytes": 4,
+          "instruction": "push ebp"
+        },
+        {
+          "address": 4890697,
+          "entry_relative_start": -316,
+          "bytes": 4,
+          "instruction": "push esi"
+        },
+        {
+          "address": 4890711,
+          "entry_relative_start": -320,
+          "bytes": 4,
+          "instruction": "push 0xc"
+        },
+        {
+          "address": 4890713,
+          "entry_relative_start": -296,
+          "bytes": 4,
+          "instruction": "mov dword ptr [esp + 0x18], 0x10e"
+        },
+        {
+          "address": 4890721,
+          "entry_relative_start": -292,
+          "bytes": 4,
+          "instruction": "mov dword ptr [esp + 0x1c], 4"
+        },
+        {
+          "address": 4890746,
+          "entry_relative_start": -288,
+          "bytes": 4,
+          "instruction": "mov dword ptr [esp + 0x20], eax"
+        },
+        {
+          "address": 4890754,
+          "entry_relative_start": -324,
+          "bytes": 4,
+          "instruction": "push eax"
+        },
+        {
+          "address": 4890775,
+          "entry_relative_start": -276,
+          "bytes": 4,
+          "instruction": "mov dword ptr [esp + 0x28], ecx"
+        },
+        {
+          "address": 4890786,
+          "entry_relative_start": -268,
+          "bytes": 4,
+          "instruction": "mov dword ptr [esp + 0x30], edx"
+        },
+        {
+          "address": 4890794,
+          "entry_relative_start": -260,
+          "bytes": 2,
+          "instruction": "mov word ptr [esp + 0x38], cx"
+        },
+        {
+          "address": 4890799,
+          "entry_relative_start": -320,
+          "bytes": 4,
+          "instruction": "push edx"
+        },
+        {
+          "address": 4890802,
+          "entry_relative_start": -284,
+          "bytes": 4,
+          "instruction": "mov dword ptr [esp + 0x24], 0x10f"
+        },
+        {
+          "address": 4890810,
+          "entry_relative_start": -272,
+          "bytes": 4,
+          "instruction": "mov dword ptr [esp + 0x30], 1"
+        },
+        {
+          "address": 4890818,
+          "entry_relative_start": -264,
+          "bytes": 4,
+          "instruction": "mov dword ptr [esp + 0x38], eax"
+        },
+        {
+          "address": 4890833,
+          "entry_relative_start": -320,
+          "bytes": 4,
+          "instruction": "push 0x24"
+        },
+        {
+          "address": 4890835,
+          "entry_relative_start": -324,
+          "bytes": 4,
+          "instruction": "push ecx"
+        },
+        {
+          "address": 4890838,
+          "entry_relative_start": -280,
+          "bytes": 4,
+          "instruction": "mov dword ptr [esp + 0x2c], 0x1c"
+        },
+        {
+          "address": 4890855,
+          "entry_relative_start": -320,
+          "bytes": 4,
+          "instruction": "push 8"
+        },
+        {
+          "address": 4890859,
+          "entry_relative_start": -304,
+          "bytes": 4,
+          "instruction": "mov dword ptr [esp + 0x10], 0x110"
+        },
+        {
+          "address": 4890880,
+          "entry_relative_start": -300,
+          "bytes": 4,
+          "instruction": "mov dword ptr [esp + 0x14], eax"
+        },
+        {
+          "address": 4890888,
+          "entry_relative_start": -324,
+          "bytes": 4,
+          "instruction": "push eax"
+        },
+        {
+          "address": 4890902,
+          "entry_relative_start": -308,
+          "bytes": 4,
+          "instruction": "mov dword ptr [esp + 8], ecx"
+        },
+        {
+          "address": 4890912,
+          "entry_relative_start": -320,
+          "bytes": 4,
+          "instruction": "push ebx"
+        },
+        {
+          "address": 4890915,
+          "entry_relative_start": -324,
+          "bytes": 4,
+          "instruction": "push edi"
+        },
+        {
+          "address": 4890946,
+          "entry_relative_start": -64,
+          "bytes": 2,
+          "instruction": "mov word ptr [esp + 0x104], ax"
+        },
+        {
+          "address": 4890971,
+          "entry_relative_start": -108,
+          "bytes": 4,
+          "instruction": "mov dword ptr [esp + 0xd8], eax"
+        },
+        {
+          "address": 4890995,
+          "entry_relative_start": -104,
+          "bytes": 4,
+          "instruction": "mov dword ptr [esp + 0xdc], eax"
+        },
+        {
+          "address": 4891019,
+          "entry_relative_start": -100,
+          "bytes": 4,
+          "instruction": "mov dword ptr [esp + 0xe0], eax"
+        },
+        {
+          "address": 4891043,
+          "entry_relative_start": -96,
+          "bytes": 4,
+          "instruction": "mov dword ptr [esp + 0xe4], eax"
+        },
+        {
+          "address": 4891057,
+          "entry_relative_start": -62,
+          "bytes": 2,
+          "instruction": "mov word ptr [esp + 0x106], cx"
+        },
+        {
+          "address": 4891072,
+          "entry_relative_start": -60,
+          "bytes": 2,
+          "instruction": "mov word ptr [esp + 0x108], dx"
+        },
+        {
+          "address": 4891097,
+          "entry_relative_start": -76,
+          "bytes": 4,
+          "instruction": "mov dword ptr [esp + 0xf8], eax"
+        },
+        {
+          "address": 4891121,
+          "entry_relative_start": -72,
+          "bytes": 4,
+          "instruction": "mov dword ptr [esp + 0xfc], eax"
+        },
+        {
+          "address": 4891145,
+          "entry_relative_start": -92,
+          "bytes": 4,
+          "instruction": "mov dword ptr [esp + 0xe8], eax"
+        },
+        {
+          "address": 4891169,
+          "entry_relative_start": -88,
+          "bytes": 4,
+          "instruction": "mov dword ptr [esp + 0xec], eax"
+        },
+        {
+          "address": 4891193,
+          "entry_relative_start": -84,
+          "bytes": 4,
+          "instruction": "mov dword ptr [esp + 0xf0], eax"
+        },
+        {
+          "address": 4891217,
+          "entry_relative_start": -80,
+          "bytes": 4,
+          "instruction": "mov dword ptr [esp + 0xf4], eax"
+        },
+        {
+          "address": 4891230,
+          "entry_relative_start": -5,
+          "bytes": 1,
+          "instruction": "mov byte ptr [esp + 0x13f], al"
+        },
+        {
+          "address": 4891244,
+          "entry_relative_start": -56,
+          "bytes": 2,
+          "instruction": "mov word ptr [esp + 0x10c], cx"
+        },
+        {
+          "address": 4891259,
+          "entry_relative_start": -54,
+          "bytes": 2,
+          "instruction": "mov word ptr [esp + 0x10e], dx"
+        },
+        {
+          "address": 4891274,
+          "entry_relative_start": -52,
+          "bytes": 2,
+          "instruction": "mov word ptr [esp + 0x110], ax"
+        },
+        {
+          "address": 4891289,
+          "entry_relative_start": -48,
+          "bytes": 2,
+          "instruction": "mov word ptr [esp + 0x114], cx"
+        },
+        {
+          "address": 4891304,
+          "entry_relative_start": -50,
+          "bytes": 2,
+          "instruction": "mov word ptr [esp + 0x112], dx"
+        },
+        {
+          "address": 4891319,
+          "entry_relative_start": -58,
+          "bytes": 2,
+          "instruction": "mov word ptr [esp + 0x10a], ax"
+        },
+        {
+          "address": 4891405,
+          "entry_relative_start": -6,
+          "bytes": 1,
+          "instruction": "mov byte ptr [esp + 0x13e], cl"
+        },
+        {
+          "address": 4891439,
+          "entry_relative_start": -68,
+          "bytes": 4,
+          "instruction": "mov dword ptr [esp + 0x100], eax"
+        },
+        {
+          "address": 4891467,
+          "entry_relative_start": -328,
+          "bytes": 4,
+          "instruction": "push 0x20"
+        },
+        {
+          "address": 4891473,
+          "entry_relative_start": -332,
+          "bytes": 4,
+          "instruction": "push ebx"
+        },
+        {
+          "address": 4891474,
+          "entry_relative_start": -336,
+          "bytes": 4,
+          "instruction": "push edx"
+        },
+        {
+          "address": 4891493,
+          "entry_relative_start": -328,
+          "bytes": 4,
+          "instruction": "push 0xf6"
+        },
+        {
+          "address": 4891498,
+          "entry_relative_start": -332,
+          "bytes": 4,
+          "instruction": "push edx"
+        },
+        {
+          "address": 4891517,
+          "entry_relative_start": -308,
+          "bytes": 4,
+          "instruction": "mov dword ptr [esp + 0x10], ecx"
+        }
+      ],
+      "calls": [
+        {
+          "address": 4890755,
+          "stack_before": -324,
+          "cleanup": 8,
+          "target": "file write"
+        },
+        {
+          "address": 4890822,
+          "stack_before": -320,
+          "cleanup": 4,
+          "target": "0x4ab320"
+        },
+        {
+          "address": 4890846,
+          "stack_before": -324,
+          "cleanup": 8,
+          "target": "file write"
+        },
+        {
+          "address": 4890889,
+          "stack_before": -324,
+          "cleanup": 8,
+          "target": "file write"
+        },
+        {
+          "address": 4890966,
+          "stack_before": -324,
+          "cleanup": 0,
+          "target": "0x4acda8"
+        },
+        {
+          "address": 4890990,
+          "stack_before": -324,
+          "cleanup": 0,
+          "target": "0x4acda8"
+        },
+        {
+          "address": 4891014,
+          "stack_before": -324,
+          "cleanup": 0,
+          "target": "0x4acda8"
+        },
+        {
+          "address": 4891038,
+          "stack_before": -324,
+          "cleanup": 0,
+          "target": "0x4acda8"
+        },
+        {
+          "address": 4891092,
+          "stack_before": -324,
+          "cleanup": 0,
+          "target": "0x4acda8"
+        },
+        {
+          "address": 4891116,
+          "stack_before": -324,
+          "cleanup": 0,
+          "target": "0x4acda8"
+        },
+        {
+          "address": 4891140,
+          "stack_before": -324,
+          "cleanup": 0,
+          "target": "0x4acda8"
+        },
+        {
+          "address": 4891164,
+          "stack_before": -324,
+          "cleanup": 0,
+          "target": "0x4acda8"
+        },
+        {
+          "address": 4891188,
+          "stack_before": -324,
+          "cleanup": 0,
+          "target": "0x4acda8"
+        },
+        {
+          "address": 4891212,
+          "stack_before": -324,
+          "cleanup": 0,
+          "target": "0x4acda8"
+        },
+        {
+          "address": 4891428,
+          "stack_before": -324,
+          "cleanup": 0,
+          "target": "0x41fec0"
+        },
+        {
+          "address": 4891446,
+          "stack_before": -324,
+          "cleanup": 0,
+          "target": "0x41ce60"
+        },
+        {
+          "address": 4891477,
+          "stack_before": -336,
+          "cleanup": 12,
+          "target": "0x4ab3b0"
+        },
+        {
+          "address": 4891501,
+          "stack_before": -332,
+          "cleanup": 8,
+          "target": "file write"
+        }
+      ],
+      "returns": [
+        {
+          "address": 4891539,
+          "entry_relative_sp": 0
+        },
+        {
+          "address": 4891552,
+          "entry_relative_sp": 0
+        }
+      ],
+      "scope": "Direct ESP writes/PUSHes in full writer CFG. Record-array copies, resource/light/name helpers require separate instruction evidence and ordinary CString length<=32 precondition. File callback is assumed read-only on supplied buffer, as captured in native fixtures."
+    },
+    "indirect_write_ranges": [
+      {
+        "name": "GenerateIds",
+        "raw_start": 202,
+        "bytes": 16,
+        "model_offset": 452
+      },
+      {
+        "name": "12 tail WORDs",
+        "raw_start": 218,
+        "bytes": 24,
+        "model_offset": 468
+      },
+      {
+        "name": "Light",
+        "raw_start": 116,
+        "bytes": 24,
+        "model_offset": 316
+      },
+      {
+        "name": "ArtResource",
+        "raw_start": 32,
+        "bytes": 84,
+        "model_offset": 204
+      },
+      {
+        "name": "Name",
+        "raw_start": 0,
+        "bytes": 32,
+        "precondition": "CString length<=32"
+      }
+    ],
+    "name_helper": "4AB3B0 copies CString length without bounding copy to supplied32; then zero-pads only if length<32. Tail claim assumes ordinary name length<=32. Oversized internal CString memory behavior is outside codec projection.",
+    "header_helper": "Earlier4AB320 writes date components only within supplied buffer+0..8, passed at writer frame-header area, separately from rawF4. It does not initialize the record tail.",
+    "preservation": "Keep original opaque WORD in an independent editor. Do not recompute it as a checksum, force it to zero, or intentionally reproduce uninitialized stack content. Current evidence establishes this native writer path, not global absence of every possible consumer.",
+    "evidence": [
+      {
+        "file": "phase27-effect-writer-assembly.txt",
+        "first": "0x4aa2bf",
+        "last": "0x4aa36d",
+        "instructions": [
+          "004aa2bf: LEA ECX,[ESP + 0x116] ",
+          "004aa2c6: LEA EAX,[EBX + 0x1c4] ",
+          "004aa2cc: MOV EDX,0x8 ",
+          "004aa2d1: MOV SI,word ptr [EAX] ",
+          "004aa2d4: ADD EAX,0x2 ",
+          "004aa2d7: MOV word ptr [ECX],SI ",
+          "004aa2da: ADD ECX,0x2 ",
+          "004aa2dd: DEC EDX ",
+          "004aa2de: JNZ 0x004aa2d1 ",
+          "004aa2e0: LEA ECX,[ESP + 0x126] ",
+          "004aa2e7: LEA EAX,[EBX + 0x1d4] ",
+          "004aa2ed: MOV EDX,0xc ",
+          "004aa2f2: MOV SI,word ptr [EAX] ",
+          "004aa2f5: ADD EAX,0x2 ",
+          "004aa2f8: MOV word ptr [ECX],SI ",
+          "004aa2fb: ADD ECX,0x2 ",
+          "004aa2fe: DEC EDX ",
+          "004aa2ff: JNZ 0x004aa2f2 ",
+          "004aa301: MOV CL,byte ptr [EBX + 0x1ee] ",
+          "004aa307: LEA ESI,[EBX + 0x13c] ",
+          "004aa30d: MOV byte ptr [ESP + 0x13e],CL ",
+          "004aa314: MOV ECX,0x6 ",
+          "004aa319: LEA EDI,[ESP + 0xc0] ",
+          "004aa320: MOVSD.REP ES:EDI,ESI ",
+          "004aa322: MOV ECX,EBX ",
+          "004aa324: CALL 0x0041fec0 ",
+          "004aa329: LEA ECX,[EBX + 0xc8] ",
+          "004aa32f: MOV dword ptr [ESP + 0x100],EAX ",
+          "004aa336: CALL 0x0041ce60 ",
+          "004aa33b: MOV ECX,0x15 ",
+          "004aa340: MOV ESI,EAX ",
+          "004aa342: LEA EDI,[ESP + 0x6c] ",
+          "004aa346: ADD EBX,0x8 ",
+          "004aa349: MOVSD.REP ES:EDI,ESI ",
+          "004aa34b: PUSH 0x20 ",
+          "004aa34d: LEA EDX,[ESP + 0x50] ",
+          "004aa351: PUSH EBX ",
+          "004aa352: PUSH EDX ",
+          "004aa353: MOV ECX,EBP ",
+          "004aa355: CALL 0x004ab3b0 ",
+          "004aa35a: MOV ECX,dword ptr [ESP + 0x148] ",
+          "004aa361: LEA EDX,[ESP + 0x4c] ",
+          "004aa365: PUSH 0xf6 ",
+          "004aa36a: PUSH EDX ",
+          "004aa36b: MOV EAX,dword ptr [ECX] ",
+          "004aa36d: CALL dword ptr [EAX + 0x38] "
+        ]
+      },
+      {
+        "file": "phase27-effect-converter-assembly.txt",
+        "first": "0x56b1cf",
+        "last": "0x56b1ff",
+        "instructions": [
+          "0056b1cf: LEA ECX,[EBX + 0x18e] ",
+          "0056b1d5: ADD EBX,0x80 ",
+          "0056b1db: ADD EBP,0xda ",
+          "0056b1e1: MOV ESI,0xc ",
+          "0056b1e6: MOV DX,word ptr [EBP] ",
+          "0056b1ea: MOV dword ptr [EBX],EAX ",
+          "0056b1ec: MOV word ptr [ECX],DX ",
+          "0056b1ef: ADD EBX,0x4 ",
+          "0056b1f2: ADD EBP,0x2 ",
+          "0056b1f5: ADD ECX,0x2 ",
+          "0056b1f8: DEC ESI ",
+          "0056b1f9: JNZ 0x0056b1e6 ",
+          "0056b1fb: POP EDI ",
+          "0056b1fc: POP ESI ",
+          "0056b1fd: POP EBP ",
+          "0056b1fe: POP EBX ",
+          "0056b1ff: RET 0x4 "
+        ]
+      },
+      {
+        "file": "phase27-effect-converter-assembly.txt",
+        "first": "0x56b086",
+        "last": "0x56b08f",
+        "instructions": [
+          "0056b086: MOV CL,byte ptr [EBP + 0xf2] ",
+          "0056b08c: MOV dword ptr [EBX + 0x44],EAX ",
+          "0056b08f: MOV byte ptr [EBX + 0x1a6],CL "
+        ]
+      },
+      {
+        "file": "phase27-effect-converter-assembly.txt",
+        "first": "0x56b10d",
+        "last": "0x56b116",
+        "instructions": [
+          "0056b10d: MOV CL,byte ptr [EBP + 0xf3] ",
+          "0056b113: MOV dword ptr [EBX + 0x48],EAX ",
+          "0056b116: MOV byte ptr [EBX + 0x1a7],CL "
+        ]
+      },
+      {
+        "file": "phase27-effect-string-writer-assembly.txt",
+        "first": "0x4ab3b0",
+        "last": "0x4ab3f7",
+        "instructions": [
+          "004ab3b0: MOV EDX,dword ptr [ESP + 0x8] ",
+          "004ab3b4: PUSH ESI ",
+          "004ab3b5: XOR EAX,EAX ",
+          "004ab3b7: PUSH EDI ",
+          "004ab3b8: MOV ECX,dword ptr [EDX] ",
+          "004ab3ba: MOV ESI,dword ptr [ECX + -0x8] ",
+          "004ab3bd: TEST ESI,ESI ",
+          "004ab3bf: MOV ESI,dword ptr [ESP + 0xc] ",
+          "004ab3c3: JBE 0x004ab3d3 ",
+          "004ab3c5: MOV CL,byte ptr [ECX + EAX*0x1] ",
+          "004ab3c8: MOV byte ptr [EAX + ESI*0x1],CL ",
+          "004ab3cb: MOV ECX,dword ptr [EDX] ",
+          "004ab3cd: INC EAX ",
+          "004ab3ce: CMP EAX,dword ptr [ECX + -0x8] ",
+          "004ab3d1: JC 0x004ab3c5 ",
+          "004ab3d3: MOV EDX,dword ptr [EDX] ",
+          "004ab3d5: MOV ECX,dword ptr [ESP + 0x14] ",
+          "004ab3d9: MOV EAX,dword ptr [EDX + -0x8] ",
+          "004ab3dc: CMP EAX,ECX ",
+          "004ab3de: JNC 0x004ab3f5 ",
+          "004ab3e0: SUB ECX,EAX ",
+          "004ab3e2: LEA EDI,[EAX + ESI*0x1] ",
+          "004ab3e5: MOV EDX,ECX ",
+          "004ab3e7: XOR EAX,EAX ",
+          "004ab3e9: SHR ECX,0x2 ",
+          "004ab3ec: STOSD.REP ES:EDI ",
+          "004ab3ee: MOV ECX,EDX ",
+          "004ab3f0: AND ECX,0x3 ",
+          "004ab3f3: STOSB.REP ES:EDI ",
+          "004ab3f5: POP EDI ",
+          "004ab3f6: POP ESI ",
+          "004ab3f7: RET 0xc "
+        ]
+      },
+      {
+        "file": "phase27-effect-resource-getter-assembly.txt",
+        "first": "0x41ce60",
+        "last": "0x41ce63",
+        "instructions": [
+          "0041ce60: LEA EAX,[ECX + 0x4] ",
+          "0041ce63: RET "
+        ]
+      },
+      {
+        "file": "phase27-header-time-writer-assembly.txt",
+        "first": "0x4ab320",
+        "last": "0x4ab3a9",
+        "instructions": [
+          "004ab320: SUB ESP,0x8 ",
+          "004ab323: LEA EAX,[ESP + 0x4] ",
+          "004ab327: PUSH ESI ",
+          "004ab328: PUSH EAX ",
+          "004ab329: CALL 0x004d6c53 ",
+          "004ab32e: MOV ECX,dword ptr [EAX] ",
+          "004ab330: PUSH 0x0 ",
+          "004ab332: MOV dword ptr [ESP + 0x8],ECX ",
+          "004ab336: LEA ECX,[ESP + 0x8] ",
+          "004ab33a: CALL 0x004d6c66 ",
+          "004ab33f: MOV EDX,dword ptr [EAX + 0x14] ",
+          "004ab342: MOV ESI,dword ptr [ESP + 0x10] ",
+          "004ab346: ADD EDX,0x76c ",
+          "004ab34c: PUSH 0x0 ",
+          "004ab34e: LEA ECX,[ESP + 0x8] ",
+          "004ab352: MOV word ptr [ESI],DX ",
+          "004ab355: CALL 0x004d6c66 ",
+          "004ab35a: MOV EAX,dword ptr [EAX + 0x10] ",
+          "004ab35d: PUSH 0x0 ",
+          "004ab35f: INC AL ",
+          "004ab361: LEA ECX,[ESP + 0x8] ",
+          "004ab365: MOV byte ptr [ESI + 0x3],AL ",
+          "004ab368: CALL 0x004d6c66 ",
+          "004ab36d: MOV ECX,dword ptr [EAX + 0xc] ",
+          "004ab370: PUSH 0x0 ",
+          "004ab372: MOV byte ptr [ESI + 0x2],CL ",
+          "004ab375: LEA ECX,[ESP + 0x8] ",
+          "004ab379: CALL 0x004d6c66 ",
+          "004ab37e: MOV EDX,dword ptr [EAX + 0x8] ",
+          "004ab381: PUSH 0x0 ",
+          "004ab383: LEA ECX,[ESP + 0x8] ",
+          "004ab387: MOV byte ptr [ESI + 0x6],DL ",
+          "004ab38a: CALL 0x004d6c66 ",
+          "004ab38f: MOV EAX,dword ptr [EAX + 0x4] ",
+          "004ab392: PUSH 0x0 ",
+          "004ab394: LEA ECX,[ESP + 0x8] ",
+          "004ab398: MOV byte ptr [ESI + 0x7],AL ",
+          "004ab39b: CALL 0x004d6c66 ",
+          "004ab3a0: MOV ECX,dword ptr [EAX] ",
+          "004ab3a2: MOV byte ptr [ESI + 0x8],CL ",
+          "004ab3a5: POP ESI ",
+          "004ab3a6: ADD ESP,0x8 ",
+          "004ab3a9: RET 0x4 "
+        ]
+      }
+    ]
+  },
+  "tail_overlay": {
+    "raw_offset": 218,
+    "count": 12,
+    "item_bytes": 2,
+    "intermediate_offset": 398,
+    "runtime_offset": 55,
+    "rule": "For each slot: replace old runtime WORD only when incoming WORD is nonzero. Incoming0 keeps old value. Presence flags are not tested in this loop; this differs from GenerateIds presence-driven copy.",
+    "native_editor_model_offset": 468,
+    "writer_rule": "Copies all12 WORDs, including zeros. Game overlay behavior must not be used to skip zero bytes during file serialization.",
+    "evidence": [
+      {
+        "file": "phase27-effect-loader-assembly.txt",
+        "first": "0x435bba",
+        "last": "0x435bda",
+        "instructions": [
+          "00435bba: LEA EDX,[EBX + 0x18e] ",
+          "00435bc0: LEA ECX,[EBP + 0x37] ",
+          "00435bc3: MOV ESI,0xc ",
+          "00435bc8: MOV AX,word ptr [EDX] ",
+          "00435bcb: TEST AX,AX ",
+          "00435bce: JZ 0x00435bd3 ",
+          "00435bd0: MOV word ptr [ECX],AX ",
+          "00435bd3: ADD ECX,0x2 ",
+          "00435bd6: ADD EDX,0x2 ",
+          "00435bd9: DEC ESI ",
+          "00435bda: JNZ 0x00435bc8 "
+        ]
+      },
+      {
+        "file": "phase27-effects-model-assembly.txt",
+        "first": "0x4a3214",
+        "last": "0x4a323e",
+        "instructions": [
+          "004a3214: LEA EDX,[EBP + 0x1d4] ",
+          "004a321a: LEA ECX,[EBX + 0x18e] ",
+          "004a3220: LEA EAX,[EBX + 0x80] ",
+          "004a3226: MOV ESI,0xc ",
+          "004a322b: CMP dword ptr [EAX],EDI ",
+          "004a322d: JZ 0x004a3237 ",
+          "004a322f: MOV DI,word ptr [ECX] ",
+          "004a3232: MOV word ptr [EDX],DI ",
+          "004a3235: XOR EDI,EDI ",
+          "004a3237: ADD EAX,0x4 ",
+          "004a323a: ADD ECX,0x2 ",
+          "004a323d: ADD EDX,0x2 "
+        ]
+      },
+      {
+        "file": "phase27-effect-writer-assembly.txt",
+        "first": "0x4aa2e0",
+        "last": "0x4aa2ff",
+        "instructions": [
+          "004aa2e0: LEA ECX,[ESP + 0x126] ",
+          "004aa2e7: LEA EAX,[EBX + 0x1d4] ",
+          "004aa2ed: MOV EDX,0xc ",
+          "004aa2f2: MOV SI,word ptr [EAX] ",
+          "004aa2f5: ADD EAX,0x2 ",
+          "004aa2f8: MOV word ptr [ECX],SI ",
+          "004aa2fb: ADD ECX,0x2 ",
+          "004aa2fe: DEC EDX ",
+          "004aa2ff: JNZ 0x004aa2f2 "
+        ]
+      }
+    ]
+  },
+  "native_emulations": [
+    {
+      "file": "phase27-emulation-effect-editor-flags-0.json",
+      "sha256": "8a05b05caf353f8b8727bcf9fec6a59a88fb0e9fc9386082ba5db5b545146040",
+      "case": "flags-0"
+    },
+    {
+      "file": "phase27-emulation-effect-editor-model-0.json",
+      "sha256": "b76f2c4cfae84d71a64fa4a499130de78347cb4a6112754cad2d2c051d33115e",
+      "case": "model-0"
+    },
+    {
+      "file": "phase27-emulation-effect-editor-flags-1.json",
+      "sha256": "9a01b6ce63b7c5baec4fca5a95213cb4aadf7509689f9d7fe912f46c39a8fcf5",
+      "case": "flags-1"
+    },
+    {
+      "file": "phase27-emulation-effect-editor-model-1.json",
+      "sha256": "d5acfa3ed943f2e9e2211b6cd25fc7b4e1aa7c9cb2b2d626a78f89739f40d202",
+      "case": "model-1"
+    },
+    {
+      "file": "phase27-emulation-effect-editor-flags-8.json",
+      "sha256": "a2d6c76c39b17069f9335569b421fe8284cb51f678c4bc94689ef699c69b9881",
+      "case": "flags-8"
+    },
+    {
+      "file": "phase27-emulation-effect-editor-model-8.json",
+      "sha256": "1013a43acec39fbca9e06e4773606af11450cca128dc9b76f16ae108d92adfc3",
+      "case": "model-8"
+    },
+    {
+      "file": "phase27-emulation-effect-editor-flags-64.json",
+      "sha256": "f085bf4d780ce9848c7aee8bbbc203551cdb6a3a5e39e0895c4871eb744209bd",
+      "case": "flags-64"
+    },
+    {
+      "file": "phase27-emulation-effect-editor-model-64.json",
+      "sha256": "624e0b28fb96701eace1de924fa64ac35a344e2a9ff3bf25bcffcc630d0712db",
+      "case": "model-64"
+    },
+    {
+      "file": "phase27-emulation-effect-editor-flags-128.json",
+      "sha256": "04149cc58e7190afd588928fff14875f097d4e25427ee4ebb81faa6e07f16fbd",
+      "case": "flags-128"
+    },
+    {
+      "file": "phase27-emulation-effect-editor-model-128.json",
+      "sha256": "67d92f51633e200f932485b2f63920ed8ad89ad8804d4409adfda861e80a5389",
+      "case": "model-128"
+    },
+    {
+      "file": "phase27-emulation-effect-editor-flags-192.json",
+      "sha256": "f3d1c936e4c862fb0c8f8c88f030a70a0f472bb2493ce2233d204b427e92f073",
+      "case": "flags-192"
+    },
+    {
+      "file": "phase27-emulation-effect-editor-model-192.json",
+      "sha256": "512d5ad5a3eff9c390111ac8d20587fec189e8ae68ad306667a2d18c48b73898",
+      "case": "model-192"
+    },
+    {
+      "file": "phase27-emulation-effect-editor-flags-65535.json",
+      "sha256": "89fd4f2482e124291ecbd9c87cbf98c048f82bb8f837a4dc0f9089b2f945201d",
+      "case": "flags-65535"
+    },
+    {
+      "file": "phase27-emulation-effect-editor-model-65535.json",
+      "sha256": "ef4a05219472cc48f296551b61a491a3e44dade3d07006b4395c10596fd13059",
+      "case": "model-65535"
+    },
+    {
+      "file": "phase27-emulation-effect-editor-flags-4294967295.json",
+      "sha256": "80cfc821e84ed4b045eee83582e99ef2a4e6f257d5fa11f08f7212b84fc1148b",
+      "case": "flags-4294967295"
+    },
+    {
+      "file": "phase27-emulation-effect-editor-model-4294967295.json",
+      "sha256": "3afc11a4f791567c8e95d8151a195c79132afa12dabb420fcd97da4d45a171e2",
+      "case": "model-4294967295"
+    },
+    {
+      "file": "phase27-emulation-effect-editor-flags-65536.json",
+      "sha256": "a92d3fd3da9e71f72e81710919dce3f3451ae2b1edd5d49423a56b35f445e7c6",
+      "case": "flags-65536"
+    },
+    {
+      "file": "phase27-emulation-effect-editor-model-65536.json",
+      "sha256": "fe2db7cca4e7a47ffa0dc462e8ff520cf826dfce76cefb9f6c8adbc54a1a371c",
+      "case": "model-65536"
+    },
+    {
+      "file": "phase27-emulation-effect-editor-flags-16384.json",
+      "sha256": "3d38338755515e7c4e78ab2693b6af95783a8d2dd7f5bfbea4ba3ad71ce2b8b2",
+      "case": "flags-16384"
+    },
+    {
+      "file": "phase27-emulation-effect-editor-model-16384.json",
+      "sha256": "7dd6cccfa27d21d787ae732d5ce1dc23d01b3a02d82c1958e6e03224f19217d9",
+      "case": "model-16384"
+    },
+    {
+      "file": "phase27-emulation-effect-editor-tail-0.json",
+      "sha256": "c317e38104029b6fa2c753d8c1a5dbb212b36e8d1ad2108dacfcbef8cbc4294b",
+      "case": "tail-0"
+    },
+    {
+      "file": "phase27-emulation-effect-editor-tail-1.json",
+      "sha256": "d1897bb73865e1fdace6cf00fce71bbbeaa4854a15a8d26cfd2f49a11602091e",
+      "case": "tail-1"
+    },
+    {
+      "file": "phase27-emulation-effect-editor-tail-2.json",
+      "sha256": "ae7d725b726a88a5a279581fab7399bf7b51c41aeefdf7bb5bed0af07c1c2e4d",
+      "case": "tail-2"
+    },
+    {
+      "file": "phase27-emulation-effect-editor-converter-0.json",
+      "sha256": "9f3142b36c452a6682ca08c7c6255d101cd1d8a5a98be550f852c85e7a1f48b5",
+      "case": "converter-0"
+    },
+    {
+      "file": "phase27-emulation-effect-editor-converter-3880.json",
+      "sha256": "cdcf9af90fdd2968e98975bafed0fe01128f695bdba72c004ddf191e3f8321cd",
+      "case": "converter-3880"
+    },
+    {
+      "file": "phase27-emulation-effect-editor-converter-42330.json",
+      "sha256": "1d9fa3065e88f6127d79de3be7dbbabca700765e08aad40f2f0129ea4963b140",
+      "case": "converter-42330"
+    },
+    {
+      "file": "phase27-emulation-effect-editor-converter-65535.json",
+      "sha256": "a03dc18853de519d1a6fe9ad71e16763df5d78215fe083c1260b540258576bf2",
+      "case": "converter-65535"
+    },
+    {
+      "file": "phase27-emulation-effect-editor-writer-0.json",
+      "sha256": "17a3015c25b84711c184183fc46de4c7ac84c270df42238930c25c4a231a94ce",
+      "case": "writer-0"
+    },
+    {
+      "file": "phase27-emulation-effect-editor-writer-1.json",
+      "sha256": "31dbc7578e9580100531f343474ebf9d402c60d8b845671a6095093dc2b75a44",
+      "case": "writer-1"
+    },
+    {
+      "file": "phase27-emulation-effect-editor-writer-2.json",
+      "sha256": "addeaea3e31afb144a6133c1107eb7245569c33c9b7a8af7dcbab51ef5b91bdb",
+      "case": "writer-2"
+    },
+    {
+      "file": "phase27-emulation-effect-editor-writer-3.json",
+      "sha256": "cfd2703ce13e7ac6ddc868c290de2a30cb0b87cc3cd7e09cd6bd06a72e615b0f",
+      "case": "writer-3"
+    }
+  ],
+  "limitations": [
+    "Exact supplied EXEs. No real GUI save, live-game rendering or modification of files.",
+    "Writer suffix fixtures enter4AA2BF after unrelated scalar/x87 assignments and use an emulator file-capture callback. Original array/light/resource/name code and flags encoder execute. Full record FNV, byte length, tail WORD, flags and last assigned DWORD are checked; skipped fields retain explicit fixture bytes.",
+    "Whole converter uses no-op strncpy because raw name and zeroed destination are both32 zero bytes. Other original converter instructions execute; FNV is a fixture checksum, not a game-file checksum or a general collision-free equivalence proof.",
+    "Stack CFG audit covers direct ESP stores/PUSHes with known callee cleanup; indirect buffers are separately bounded by copy evidence. Name precondition<=32 and ordinary read-only file write callback are explicit.",
+    "The first decompile of41FEC0 declared void and hid returned register computation; discarded as semantic evidence. Full assembly and original PE bytes establish encoder behavior."
+  ]
+}

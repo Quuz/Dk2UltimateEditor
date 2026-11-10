@@ -1,0 +1,520 @@
+{
+  "phase": 124,
+  "date": "2026-10-29",
+  "family": "Exact provided normal/DX game static format-code compatibility",
+  "profiles": [
+    {
+      "key": "normal",
+      "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\DKII.EXE",
+      "sha256": "e99818fbe9ad337ab4a24fa76901d5fe5a8c0a0dd306172d24b9547762c534cc",
+      "bytes": 2977280,
+      "image_base": 4194304,
+      "entrypoint_RVA": 2327616,
+      "memory_image_bytes": 3891200
+    },
+    {
+      "key": "DX",
+      "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\DKII-DX.exe",
+      "sha256": "d7a8b854e4e4f02709eba271bead6fe2307dd6e332b5a96e70857e5b0e19fb8a",
+      "bytes": 2977280,
+      "image_base": 4194304,
+      "entrypoint_RVA": 2327616,
+      "memory_image_bytes": 3891200
+    }
+  ],
+  "exhaustive_byte_comparison": {
+    "phase": 124,
+    "profiles": [
+      {
+        "key": "normal",
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\DKII.EXE",
+        "sha256": "e99818fbe9ad337ab4a24fa76901d5fe5a8c0a0dd306172d24b9547762c534cc",
+        "bytes": 2977280,
+        "image_base": 4194304,
+        "entrypoint_RVA": 2327616,
+        "memory_image_bytes": 3891200
+      },
+      {
+        "key": "DX",
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\DKII-DX.exe",
+        "sha256": "d7a8b854e4e4f02709eba271bead6fe2307dd6e332b5a96e70857e5b0e19fb8a",
+        "bytes": 2977280,
+        "image_base": 4194304,
+        "entrypoint_RVA": 2327616,
+        "memory_image_bytes": 3891200
+      }
+    ],
+    "exact_file_differences": {
+      "count": 5,
+      "file_offset": 2668760,
+      "RVA": 2672856,
+      "VA": 6867160,
+      "normal_bytes": "44445241572e646c6c00",
+      "DX_bytes": "50415443482e646c6c00",
+      "role": "Name string ofonePEimportdescriptor"
+    },
+    "all_other_file_bytes_identical": true,
+    "sections": [
+      {
+        "name": ".text",
+        "RVA": 4096,
+        "file_offset": 1024,
+        "raw_bytes": 2432000,
+        "virtual_bytes": 2431650,
+        "executable": true,
+        "identical": true,
+        "normal_sha256": "575af252831bcb9fddb4858cda990a02c34f4d2a77031db20d3d4fec2b7388e1",
+        "DX_sha256": "575af252831bcb9fddb4858cda990a02c34f4d2a77031db20d3d4fec2b7388e1",
+        "different_bytes": 0
+      },
+      {
+        "name": "cseg",
+        "RVA": 2437120,
+        "file_offset": 2433024,
+        "raw_bytes": 102400,
+        "virtual_bytes": 101914,
+        "executable": true,
+        "identical": true,
+        "normal_sha256": "95f9ebc5c8695d7d08818832c215a41600029dc33f17526861e746d2fa4f51c5",
+        "DX_sha256": "95f9ebc5c8695d7d08818832c215a41600029dc33f17526861e746d2fa4f51c5",
+        "different_bytes": 0
+      },
+      {
+        "name": ".rdata",
+        "RVA": 2539520,
+        "file_offset": 2535424,
+        "raw_bytes": 136704,
+        "virtual_bytes": 136507,
+        "executable": false,
+        "identical": false,
+        "normal_sha256": "2347e8eeed46c0a671111533b8781d47e2f500e0d0163d2ebba0e7968dd099e0",
+        "DX_sha256": "415ba4708911e582750411e51c75f1fab5ee09661e01735628980e02096d5c66",
+        "different_bytes": 5
+      },
+      {
+        "name": ".data",
+        "RVA": 2678784,
+        "file_offset": 2672128,
+        "raw_bytes": 257024,
+        "virtual_bytes": 1150416,
+        "executable": false,
+        "identical": true,
+        "normal_sha256": "9439658b6f36f1eafcab29b7bbceb0f509ce742b1aa1a23dd0a3d5370b5ac105",
+        "DX_sha256": "9439658b6f36f1eafcab29b7bbceb0f509ce742b1aa1a23dd0a3d5370b5ac105",
+        "different_bytes": 0
+      },
+      {
+        "name": "grpoly_d",
+        "RVA": 3829760,
+        "file_offset": 2929152,
+        "raw_bytes": 2048,
+        "virtual_bytes": 1840,
+        "executable": false,
+        "identical": true,
+        "normal_sha256": "e5f68a407c717d7d4c2bcca8f0502b53d1061084872d69bb426b6ad23f4655f5",
+        "DX_sha256": "e5f68a407c717d7d4c2bcca8f0502b53d1061084872d69bb426b6ad23f4655f5",
+        "different_bytes": 0
+      },
+      {
+        "name": "uva_data",
+        "RVA": 3833856,
+        "file_offset": 2931200,
+        "raw_bytes": 19456,
+        "virtual_bytes": 19148,
+        "executable": false,
+        "identical": true,
+        "normal_sha256": "5b1f517e195357f149829627d852203c3cfa06207a0ab5d0f761a76b1c449ccd",
+        "DX_sha256": "5b1f517e195357f149829627d852203c3cfa06207a0ab5d0f761a76b1c449ccd",
+        "different_bytes": 0
+      },
+      {
+        "name": "idct_dat",
+        "RVA": 3854336,
+        "file_offset": 2950656,
+        "raw_bytes": 6144,
+        "virtual_bytes": 5720,
+        "executable": false,
+        "identical": true,
+        "normal_sha256": "7d62b0ba3f40f856755a2b79167367b805d44a396d53ca91be47d789bc23b04c",
+        "DX_sha256": "7d62b0ba3f40f856755a2b79167367b805d44a396d53ca91be47d789bc23b04c",
+        "different_bytes": 0
+      },
+      {
+        "name": "tqia_dat",
+        "RVA": 3862528,
+        "file_offset": 2956800,
+        "raw_bytes": 2560,
+        "virtual_bytes": 2560,
+        "executable": false,
+        "identical": true,
+        "normal_sha256": "890cdf9ea5aa6afad781eed48549ce3f801ae3792d3d45301b663d2e31a96f46",
+        "DX_sha256": "890cdf9ea5aa6afad781eed48549ce3f801ae3792d3d45301b663d2e31a96f46",
+        "different_bytes": 0
+      },
+      {
+        "name": "dseg",
+        "RVA": 3866624,
+        "file_offset": 2959360,
+        "raw_bytes": 4608,
+        "virtual_bytes": 4100,
+        "executable": false,
+        "identical": true,
+        "normal_sha256": "4b36eb07aa81aa676f80b56fb8cd5a140e1abc263b1cb8dd56d18ea761c5930b",
+        "DX_sha256": "4b36eb07aa81aa676f80b56fb8cd5a140e1abc263b1cb8dd56d18ea761c5930b",
+        "different_bytes": 0
+      },
+      {
+        "name": "lbmpeg_d",
+        "RVA": 3874816,
+        "file_offset": 2963968,
+        "raw_bytes": 1024,
+        "virtual_bytes": 1024,
+        "executable": false,
+        "identical": true,
+        "normal_sha256": "6286a4df30f52d4afa94cf951c9ed10356854565b7c1422bd61fe32dbd5fee6c",
+        "DX_sha256": "6286a4df30f52d4afa94cf951c9ed10356854565b7c1422bd61fe32dbd5fee6c",
+        "different_bytes": 0
+      },
+      {
+        "name": ".rsrc",
+        "RVA": 3878912,
+        "file_offset": 2964992,
+        "raw_bytes": 12288,
+        "virtual_bytes": 12078,
+        "executable": false,
+        "identical": true,
+        "normal_sha256": "6df44c24512d6aa3820550ff7ab679fc87cc79e43d3df27eb1f18ca5b856c55c",
+        "DX_sha256": "6df44c24512d6aa3820550ff7ab679fc87cc79e43d3df27eb1f18ca5b856c55c",
+        "different_bytes": 0
+      }
+    ],
+    "changed_import_descriptors": [
+      {
+        "normal_library": "DDRAW.dll",
+        "DX_library": "PATCH.dll",
+        "name_VA": 6867160,
+        "symbols": [
+          {
+            "name": "DirectDrawCreate",
+            "IAT_VA": 6733856
+          },
+          {
+            "name": "DirectDrawEnumerateA",
+            "IAT_VA": 6733860
+          }
+        ]
+      }
+    ],
+    "patch_DLL": {
+      "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\patch.dll",
+      "sha256": "cb74d7f78f831b6aff0aa37271c9525ac9e97c4e1522a71cc79a3654a9cc26be",
+      "bytes": 1255936,
+      "exports": [
+        {
+          "name": "DirectDrawCreate",
+          "ordinal": 1,
+          "RVA": 30208
+        },
+        {
+          "name": "DirectDrawEnumerateA",
+          "ordinal": 2,
+          "RVA": 30224
+        }
+      ],
+      "scope": "Presence and export table read only. No DLL execution orallinternalhook audit."
+    },
+    "rule": "Normal SHA may reuse suppliedDX static definition-layout/code projections atidenticalVA. Keepactualsourcehash. WholeWindowsbehaviornot declared equivalent:imports targetdifferentDLLs.",
+    "limitations": [
+      "SourcePEbyteidentity isnot independent code implementation orallbranch execution.",
+      "WindowsPEloader,IATbinding,patch.dll/Flame/dynamicpatching/graphics/OScompatibility not covered by isolatedcodeprojection.",
+      "No claim thatsoftwarelauncherDKII_SOFT.EXE hasthislayout;not amongthematchedpair.",
+      "KeeperC8 andremainingunknownfields stayunresolved;no consumer inferredfrombinaryequality."
+    ]
+  },
+  "primary": {
+    "editor_ranges": [
+      {
+        "address": 4471200,
+        "length": 584,
+        "assembly": "ghidra\\phase124-keeper-004439a0-disassemble_function.txt",
+        "memory": {
+          "file": "ghidra/phase124-editor-primary-4439a0.txt",
+          "sha256": "77cc4238da391c40a4ecb50719d93833efa71694d3e9627d77cceabb31041952"
+        },
+        "assembly_sha256": "8038b0fd97b470862052a3e0b1d694f6901921331ff2850c226b8cc2bc00e973",
+        "original_bytes_sha256": "b76bf9147c745f3bcac0b0718c92f9d03797d3769eaa84cb2ab5bb36331a046a"
+      },
+      {
+        "address": 4472048,
+        "length": 424,
+        "assembly": "ghidra\\phase124-keeper-00443cf0-disassemble_function.txt",
+        "memory": {
+          "file": "ghidra/phase124-editor-primary-443cf0.txt",
+          "sha256": "cb458d927d437088f9e23a019261e1a3ac871a0a3c29621f351c8b23f4248e17"
+        },
+        "assembly_sha256": "9cba6170ad04f4b50a767aae4cb1be9434a4bd1659fb53eea34be569605961e3",
+        "original_bytes_sha256": "eb54028afd5a6b45def5a8883ec4f1a49f82f84b92b9e6edd601e5525330eecf"
+      },
+      {
+        "address": 4507152,
+        "length": 733,
+        "assembly": "ghidra\\phase124-keeper-0044c610-disassemble_function.txt",
+        "memory": {
+          "file": "ghidra/phase124-editor-primary-44c610.txt",
+          "sha256": "39fde1f77496a1926651552e6e183244bc67e46e938515226db37865862c2ec0"
+        },
+        "assembly_sha256": "b9a2344ee5e180b1ba7a52a25be7a1d60cc2f0b328872009a21f2c1391778b76",
+        "original_bytes_sha256": "2dcc5e75af0534809bdccac14c5a6c7da6addab9bf6015d37c33cea58f2df3ae"
+      },
+      {
+        "address": 4507968,
+        "length": 660,
+        "assembly": "ghidra\\phase124-keeper-0044c940-disassemble_function.txt",
+        "memory": {
+          "file": "ghidra/phase124-editor-primary-44c940.txt",
+          "sha256": "867db59086624afc8a031b5cfd415869e7e274e08aebe73a513bd4c243ca574d"
+        },
+        "assembly_sha256": "c4d2f55efec2ab2e32bb45ca937d8f70c6e9a351123f5546ee8707c1d5222426",
+        "original_bytes_sha256": "fca8e898ed67abed395fffc9d9b4fb6623c5f4b4d858271c00786b640f29a1c2"
+      },
+      {
+        "address": 4516608,
+        "length": 833,
+        "assembly": "ghidra\\phase124-keeper-0044eb00-disassemble_function.txt",
+        "memory": {
+          "file": "ghidra/phase124-editor-primary-44eb00.txt",
+          "sha256": "4e72cf64bd9f6f5437485f59a747fa7bd920f77395f17ea15786be0591919e06"
+        },
+        "assembly_sha256": "b48e2adb3793260cac4eb89058a6cd09878d6f61b95b3bacb2a2ab597b069787",
+        "original_bytes_sha256": "bed36a4e07ee0818051ffd65c25396c2a30646317668ebd48560df2dcf1e1d46"
+      },
+      {
+        "address": 4517536,
+        "length": 835,
+        "assembly": "ghidra\\phase124-keeper-0044eea0-disassemble_function.txt",
+        "memory": {
+          "file": "ghidra/phase124-editor-primary-44eea0.txt",
+          "sha256": "f2ff55b2038251b301b27135939c4aa68de0ebfc6c9be951a79c60f7f015e147"
+        },
+        "assembly_sha256": "f99274ea3a80dab4761f008a3411a0463137360392a4ea1d4fdda14ab55ee56f",
+        "original_bytes_sha256": "c5e0d0e2607901e95e4072f5118fdeca209ce83e7eb6371dce5c783bce400768"
+      },
+      {
+        "address": 4858464,
+        "length": 893,
+        "assembly": "ghidra\\phase124-keeper-004a2260-disassemble_function.txt",
+        "memory": {
+          "file": "ghidra/phase124-editor-primary-4a2260.txt",
+          "sha256": "f95f54b8e0e20db215b2b3dd55de74708f3a16d08a3864fa73d8cbc391f6cb3b"
+        },
+        "assembly_sha256": "66778c15dcd448ecd0005fbef41c4071b9fb68c8a673cbc5308a39645a3b0ca0",
+        "original_bytes_sha256": "4a9dc41867a8d2118eca64fee329459c34387206a65acdcf55dc1c8ecc7f7cd2"
+      },
+      {
+        "address": 4860528,
+        "length": 1244,
+        "assembly": "ghidra\\phase124-keeper-004a2a70-disassemble_function.txt",
+        "memory": {
+          "file": "ghidra/phase124-editor-primary-4a2a70.txt",
+          "sha256": "e292beaaa0db0dbb5d7eb00c68e9219bec147a639b3de9095243f93b11e54b2b"
+        },
+        "assembly_sha256": "a9075d983ce0dc349a21947307f8e7694cbe4850e4f13589048441708bff6165",
+        "original_bytes_sha256": "a368c217bef35b90c39d5a6807ad8fa5ce9b78781ec9751a925b72611d154c48"
+      }
+    ],
+    "DX_import_blocks": [
+      {
+        "address": 6867160,
+        "length": 10,
+        "memory": {
+          "file": "ghidra/phase124-DX-import-library-name.txt",
+          "sha256": "169e5a76bd528c17de075d5bc9b8e5a1f7ee3333dc249086f1ffffc2f024883b"
+        }
+      },
+      {
+        "address": 6733856,
+        "length": 8,
+        "memory": {
+          "file": "ghidra/phase124-DX-ddraw-IAT.txt",
+          "sha256": "b12fc34969d5a05f06dee0947ee9eb3ab74166298c7ab65c8c05cd7463946bc3"
+        }
+      }
+    ],
+    "normal_import_not_in_Ghidra": "NormalPEcompared directly;DXGhidra memoryprimaryisexplicit. No normalGhidra import ornewnormalGhidraCPUcontrol."
+  },
+  "native_normal_EXE_controls": [
+    {
+      "case": "rawTrap204-FFFF",
+      "file": "ghidra\\phase124-normal-rawTrap204-FFFF-3ba20aac9a8b.json",
+      "sha256": "67031b774cf50d45d0b7c231cc254919b9d0fed912e5a0a2973a2fd30498cb44",
+      "source_executable": "D:\\Games\\DK2\\Dungeon Keeper 2\\DKII.EXE",
+      "source_executable_sha256": "e99818fbe9ad337ab4a24fa76901d5fe5a8c0a0dd306172d24b9547762c534cc",
+      "inherited_DX_result": {
+        "file": "ghidra\\phase120-trap-removal-0a10132bd620.json",
+        "sha256": "323b80cdc6adaaa314271996a48f58eacf464110bce878124a5994511fddf482"
+      },
+      "instruction_count": 8884,
+      "tracked_memory_and_instruction_trace_equal": true,
+      "outcome": {
+        "registered": false,
+        "pool_free_bytes": 512,
+        "pool_used_bytes": 0,
+        "owner_expense": 0,
+        "owner_income": 0,
+        "unknown204": 65535,
+        "unknown_reads": 0,
+        "sound_releases": 1,
+        "refund_calls": 1
+      }
+    },
+    {
+      "case": "point-128",
+      "file": "ghidra\\phase124-normal-point-128-cec6261bf2ea.json",
+      "sha256": "3b4a76883bf6d8aba334261491d2bab7c3757e11a8fc5b09acc711d587269551",
+      "source_executable": "D:\\Games\\DK2\\Dungeon Keeper 2\\DKII.EXE",
+      "source_executable_sha256": "e99818fbe9ad337ab4a24fa76901d5fe5a8c0a0dd306172d24b9547762c534cc",
+      "inherited_DX_result": {
+        "file": "ghidra\\phase123-light-render-d8d97cf14fa5.json",
+        "sha256": "95878b1b9d94da91580e847128fbfec112c2a4fbb92d35fe1167b1388a23381f"
+      },
+      "instruction_count": 268,
+      "tracked_memory_and_instruction_trace_equal": true,
+      "outcome": {
+        "created_render_record": true,
+        "normalized_intensity": 1.0,
+        "record_bytes": 56,
+        "queue_offset": 52
+      }
+    },
+    {
+      "case": "other-255",
+      "file": "ghidra\\phase124-normal-other-255-086e25afc9cc.json",
+      "sha256": "59057eb9d56dde5a73744dd73ab375d79637b9858b1dd9f3878d10b2ea2324c6",
+      "source_executable": "D:\\Games\\DK2\\Dungeon Keeper 2\\DKII.EXE",
+      "source_executable_sha256": "e99818fbe9ad337ab4a24fa76901d5fe5a8c0a0dd306172d24b9547762c534cc",
+      "inherited_DX_result": {
+        "file": "ghidra\\phase123-light-render-744925c84bbb.json",
+        "sha256": "a8cd847d37841c19e18255383365cb54c4c7fb39517ef64a92ea2f06029d6ccb"
+      },
+      "instruction_count": 274,
+      "tracked_memory_and_instruction_trace_equal": true,
+      "outcome": {
+        "created_render_record": true,
+        "normalized_intensity": 1.9921875,
+        "record_bytes": 56,
+        "queue_offset": 56
+      }
+    }
+  ],
+  "new_Ghidra_CPU_controls": 0,
+  "static_profile_resolution": [
+    {
+      "source_sha256": "e99818fbe9ad337ab4a24fa76901d5fe5a8c0a0dd306172d24b9547762c534cc",
+      "projection_profile_sha256": "d7a8b854e4e4f02709eba271bead6fe2307dd6e332b5a96e70857e5b0e19fb8a",
+      "import_library": "DDRAW.dll",
+      "scope": "Static identical native definition/format code;notwholeWindowsruntime behavior"
+    },
+    {
+      "source_sha256": "d7a8b854e4e4f02709eba271bead6fe2307dd6e332b5a96e70857e5b0e19fb8a",
+      "projection_profile_sha256": "d7a8b854e4e4f02709eba271bead6fe2307dd6e332b5a96e70857e5b0e19fb8a",
+      "import_library": "PATCH.dll",
+      "scope": "Static identical native definition/format code;notwholeWindowsruntime behavior"
+    }
+  ],
+  "original_executable_paths_preserved": [
+    {
+      "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\DKII-DX.exe",
+      "sha256": "d7a8b854e4e4f02709eba271bead6fe2307dd6e332b5a96e70857e5b0e19fb8a"
+    },
+    {
+      "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\DK2 Editor pro.exe",
+      "sha256": "989c45df779bccfc9a9e509b2ad0224a9bd269629f74792adc0320fa4b99fb09"
+    },
+    {
+      "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\DK2 Editor rc3.exe",
+      "sha256": "7368d200cc5ac7e0cdb28c9852d9aa51b960fd718d9eea8dd927c4084add102c"
+    },
+    {
+      "file": "D:/Games/DK2/DKII 13/Dungeon Keeper 2/DKII.exe",
+      "sha256": "93e826a142f677ef5120699feddb0572799d93399167ef1d05ec4b48a8b2a342"
+    },
+    {
+      "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\DK2 Editor 2000.exe",
+      "sha256": "f5cbbb05b3f78a1d13d0ff0c9600e6e4b231f7a81c3817cafd22368dcb175125"
+    },
+    {
+      "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\DK2 Editor.exe",
+      "sha256": "f5cbbb05b3f78a1d13d0ff0c9600e6e4b231f7a81c3817cafd22368dcb175125"
+    },
+    {
+      "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\DKII.EXE",
+      "sha256": "e99818fbe9ad337ab4a24fa76901d5fe5a8c0a0dd306172d24b9547762c534cc"
+    }
+  ],
+  "Keeper_C8_review": {
+    "raw": 200,
+    "intermediate": 320,
+    "runtime": 58,
+    "editor_model": 376,
+    "meaning": "unresolved",
+    "lead_inventory": {
+      "file": "phase124-keeper-model178-leads.json",
+      "sha256": "ceb43fd3ba4058a2bac1a603d433997563bae5fe6361912f125cfd4e5494d297"
+    },
+    "literal_leads": 43,
+    "owner_queries": "All43literaloperandleads have saved get_function_by_address outputs;that doesnot establish receiveridentity.",
+    "selected_panel_functions": [
+      4471200,
+      4472048,
+      4507152,
+      4507968,
+      4516608,
+      4517536
+    ],
+    "selected_panel_arrays": [
+      5569260,
+      5569356,
+      5569336
+    ],
+    "actual_Keeper_array_count": 5569204,
+    "observed": "Selectedreaders/commit paths operateothercatalogue selections andcannotnameKeeperC8. Twofresh callbacks4A2260/4A2A70 appendtootherarrays. Remainingliteralhits notdeclared globallyclosed.",
+    "boundary": "Model178 iscommon numeric offsetacrossclasses;no newKeeper semanticconsumer ornewunits established.",
+    "inherited_storage": {
+      "file": "keeper-pipeline-semantics.json",
+      "sha256": "aa88c80fee70985b92ee8234513ae74e162994960260da4618e69d9c1d19fbc4"
+    },
+    "inherited_actual_Keeper_callback_evidence": {
+      "file": "ghidra/phase26-keeper-editor-model.txt",
+      "sha256": "722347a7bb18c0e5470800509cc482573d4d5c4394ac7398bedd14a74aa17b4d"
+    }
+  },
+  "helpers": [
+    {
+      "file": "scan_game_executable_variants.py",
+      "sha256": "a406863c6b208c8ab693daf37ee2357342fed8b01feec2c78ce8e3222ceb6ec7"
+    },
+    {
+      "file": "emulate_normal_executable_controls.py",
+      "sha256": "bb00d32a9b807e5dfa9561bc006ceba174e89608f6ca4574597f21620e9eb3d2"
+    },
+    {
+      "file": "native_game_executable_profiles.py",
+      "sha256": "3c1cee88b5a0bc1e251898aeb6a6e83615089966858490df3a1b5769b43baa9d"
+    }
+  ],
+  "preservation": {
+    "new_container_rebuilds": 0,
+    "reason": "No binaryformat rule changed;newexactEXEprofile and3isolatednormalPEcontrols. OldDX tests notcounted as new.",
+    "source_writes": 0
+  },
+  "limitations": [
+    "SourcePEbyteidentity isnot independent code implementation orallbranch execution.",
+    "WindowsPEloader,IATbinding,patch.dll/Flame/dynamicpatching/graphics/OScompatibility not covered by isolatedcodeprojection.",
+    "No claim thatsoftwarelauncherDKII_SOFT.EXE hasthislayout;not amongthematchedpair.",
+    "KeeperC8 andremainingunknownfields stayunresolved;no consumer inferredfrombinaryequality.",
+    "Three newnormalPE CPUcontrols coverselectedrawTrapcycle andtwoCLight paths,notall15families/allWindows runtime.",
+    "No independentnormalGhidraCPUreplay;priorDXGhidrachecks remainhistorical.",
+    "FiniteKeepereditorlead reviewdoesnotprove globalnonuse;alias/indexed accesses andotherbinaries remainpossible.",
+    "Substantial unknownfields across15families stillopen;goalnotachieved."
+  ]
+}

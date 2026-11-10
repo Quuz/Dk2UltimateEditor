@@ -1,0 +1,84 @@
+{
+  "phase": 98,
+  "date": "2026-10-28",
+  "status": "Published and validated: whole navigation step with original callbacks, four actor/map application cases, two native permission preflights",
+  "published_phase": 98,
+  "previous_goal_turn_classification": "progress",
+  "native_cases": 32,
+  "package_components": 77,
+  "evidence": [
+    {
+      "file": "navigation-step-semantics.json",
+      "sha256": "70a09f37c0fd7c95292784702ad56cf06bb535febf389bb8ab4e8eeca6c05a0d"
+    },
+    {
+      "file": "NAVIGATION_STEP_RU.md",
+      "sha256": "4ba1f04e53079b6ccf04eea81ff97e714ab6c96dd38ddd61a2a099ec5940bb3f"
+    },
+    {
+      "file": "phase98-validation.json",
+      "sha256": "14133f44e49f1a1153e87896a788766fb523872ef26985af95d04f16acaff93a"
+    },
+    {
+      "file": "phase98-navigation-step-emulations.json",
+      "sha256": "4ea28787a1262530f12d03abf065c88a5449db3033164aaa52d105fb379e289e"
+    },
+    {
+      "file": "phase98-primary-manifest.json",
+      "sha256": "40bb541d390fedfe811169575c464c35cadd7f336c591f5f8512cb5e43935672"
+    },
+    {
+      "file": "phase98-traversal-api-validation.json",
+      "sha256": "fceeb52ce13bd48aebe02a4f2eb50a112ecb67eff3ae3db28896b042768714b4"
+    },
+    {
+      "file": "READINESS_RU.md",
+      "sha256": "5505f08e08da8b48ab9486b8669869623d8eaf53202d82c30810cd3508447db6"
+    },
+    {
+      "file": "INTEGRATION_RU.md",
+      "sha256": "fd84148a3399c9075550ed7fceb5a2ff2188d4cf84929b19b3f7e1fa47a5fa8f"
+    },
+    {
+      "file": "editor-format-package.json",
+      "sha256": "d533856f828c61bada3c41a3a5f9dc2c45f5b048029ee223fd2e1ac049f56f5d"
+    }
+  ],
+  "findings": [
+    "Whole4D5A40→4D4760 executed under explicit empty force array; original callback initializer and PE collision pointer retained.",
+    "Original4B35C0/4B5560/4B5020 applied successful XY and moved actor tag between map lists.",
+    "Native48EBF0 exposes definition686/10 permission for navigation category1; rawEFC→mid12EC→runtime686 statically bound.",
+    "14936 exact container API checks on3734 Creature records/82 files preserve all other flag bits and bytes.",
+    "User readiness examples: temple type43 recipes editable; portal post-animation XY rawE94/E98 verified separately from initial room+1.5 point; possession speed/recharge/damage partly established,remainingstats unresolved."
+  ],
+  "readiness": {
+    "overall_estimate_percent": 75,
+    "overall_range": [
+      70,
+      80
+    ],
+    "container_and_lossless_edit_range": [
+      90,
+      95
+    ],
+    "gameplay_semantics_range": [
+      60,
+      70
+    ],
+    "meaning": "Expert estimate,not measured field coverage or correctness probability; unchanged by narrow new movement checks."
+  },
+  "next_action": "Trace original force registration/navigation-map construction and concrete remaining unknown consumers. Prioritize scalar98/113/114 and unassigned possession stats,Objects34C,Traps204,Doors236,Terrain198/224,CreaturePriority/Jump. Reuse accepted native caches;do not count new span/hash checks as new gameplay coverage. Keep initial portal creation versus post-animationoffset and hardcoded damage reduction versus editable HP bonus distinct.",
+  "pending_native_jobs": [],
+  "goal_achieved": false,
+  "significant_unknowns_remain": true,
+  "limitations": [
+    "Exact supplied DX profile only;no new other-version execution or live game run.",
+    "Native composition with explicit neutral forces,not complete488930tick,fullforce/path registration,A*,renderer or physics.",
+    "RawEFC→mid12EC→definition686 binding statically verified here;not a new fullrawCreatureloader→movement execution.",
+    "Navigation buffer construction from raw KLD/Terrain is not established by manually prepared navigation categories.",
+    "48EBF0 contributes globalE4 in two explicit compositions;4D5A40 alone does not refresh it.",
+    "Axis slide priority confirmed in documented fixture;rotated alternatives and all coordinate/overflow possibilities not covered.",
+    "No raw max_speed field introduced and no rawCreature speed clamp4095 prescribed.",
+    "Scalar98/113/114,otherpossession stats,Objects34C,Traps204,Doors236,Terrain198/224,CreaturePriority/Jump and remaining15-format questions keepgoalopen."
+  ]
+}

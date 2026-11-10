@@ -1,0 +1,73 @@
+{
+  "program_sha256": "d7a8b854e4e4f02709eba271bead6fe2307dd6e332b5a96e70857e5b0e19fb8a",
+  "scope": "Short, straight-line adjusted-pointer candidates; no structure identity proof.\n\nSeeds LEA/ADD/SUB constant pointer adjustments in mapped native function spans.\nTracks register aliases for up to40 instructions on the fall-through path. Calls\nkill EAX/ECX/EDX; indirect accesses, merges and stack reloads are not resolved.\nEvery candidate still needs primary disassembly and object identity verification.\n",
+  "mapped_spans_scanned": 8729,
+  "seeds": 24722,
+  "candidates": [
+    {
+      "function": "0x4acdf0",
+      "name": "sub_4ACDF0",
+      "seed": "0x4ad14e",
+      "instruction": "0x4ad170",
+      "text": "mov cl, byte ptr [eax + 0x16]",
+      "effective_offset": "0x112",
+      "adjusted_register": "eax",
+      "adjustment": 252,
+      "memory_bytes": 1,
+      "targets": [
+        "ObjectPickUpPriority"
+      ],
+      "trace": [
+        "004ad14e: lea eax, [esi + 0xfc]",
+        "004ad154: lea edx, [edi + 0x1b]",
+        "004ad157: mov ecx, 6",
+        "004ad15c: mov esi, eax",
+        "004ad15e: mov edi, edx",
+        "004ad160: rep movsd dword ptr es:[edi], dword ptr [esi]",
+        "004ad162: mov cl, byte ptr [eax + 0x14]",
+        "004ad165: test cl, cl",
+        "004ad167: jne 0x4ad17b",
+        "004ad169: mov cl, byte ptr [eax + 0x15]",
+        "004ad16c: test cl, cl",
+        "004ad16e: jne 0x4ad17b",
+        "004ad170: mov cl, byte ptr [eax + 0x16]"
+      ]
+    },
+    {
+      "function": "0x598880",
+      "name": "maybe_cameraFun",
+      "seed": "0x598fd7",
+      "instruction": "0x599030",
+      "text": "rep movsd dword ptr es:[edi], dword ptr [esi]",
+      "effective_offset": "0x110",
+      "adjusted_register": "esi",
+      "adjustment": 272,
+      "memory_bytes": 4,
+      "targets": [
+        "ObjectPickUpPriority"
+      ],
+      "trace": [
+        "00598fd7: lea esi, [esp + 0x110]",
+        "00598fde: lea edi, [esp + 0x9c]",
+        "00598fe5: add esp, 0x50",
+        "00598fe8: fadd dword ptr [esp + 0x1c]",
+        "00598fec: fld dword ptr [esp + 0x28]",
+        "00598ff0: fsub dword ptr [esp + 0x24]",
+        "00598ff4: fmul dword ptr [ebx + 0xeca]",
+        "00598ffa: mov dword ptr [esp + 0x44], eax",
+        "00598ffe: mov eax, dword ptr [0x756eec]",
+        "00599003: mov dword ptr [esp + 0x28], eax",
+        "00599007: mov dword ptr [esp + 0x40], edx",
+        "0059900b: fadd dword ptr [esp + 0x24]",
+        "0059900f: fstp dword ptr [esp + 0x10]",
+        "00599013: fld dword ptr [esp + 0xa0]",
+        "0059901a: fsub dword ptr [0x6704bc]",
+        "00599020: fstp dword ptr [esp + 0x48]",
+        "00599024: fild qword ptr [esp + 0x28]",
+        "00599028: fxch st(1)",
+        "0059902a: fmul dword ptr [0x67050c]",
+        "00599030: rep movsd dword ptr es:[edi], dword ptr [esi]"
+      ]
+    }
+  ]
+}
