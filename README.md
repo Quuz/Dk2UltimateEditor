@@ -82,6 +82,7 @@ Read [CONTRIBUTING.md](CONTRIBUTING.md) before changing map serialization. Curre
 
 - **NovFR** — original French Dungeon Keeper 2 map editor and preserved C source/resources.
 - **Quuz** — UltimateEditor maintainer: enhancements, ongoing development and new features, with contributions from the community.
+- **DiaLight** — author of [Flame](https://github.com/DiaLight/Flame), joining the ongoing development of UltimateEditor.
 - [Flame](https://github.com/DiaLight/Flame) — related Dungeon Keeper 2 community project. UltimateEditor is a separate project.
 
 Dungeon Keeper 2 and third-party materials belong to their respective rights holders. This repository preserves upstream attribution; it does not grant a new blanket license over the original source, game assets or contributed material. See [NOTICE.md](NOTICE.md).

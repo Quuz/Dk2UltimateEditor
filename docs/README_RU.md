@@ -39,4 +39,4 @@ cd UltimateEditor
 
 Единое решение — `DK2MapEditor.slnx`, текущий C#-код — в `src`, проверки — в `tests`. `Source` и `Binaries` сохраняют оригинальные материалы и используемые ресурсы. Внутренние имена сборок `DK2MapEditor.*` оставлены для совместимости. Подробная структура — в [английском README](../README.md).
 
-Исходный французский редактор — [NovFR](https://github.com/NovFR/DK2-Map-Editor). **Доработка, развитие и новые функции UltimateEditor — Quuz**, при участии сообщества. [Flame](https://github.com/DiaLight/Flame) — отдельный связанный проект сообщества. Авторство и происхождение материалов: [NOTICE.md](../NOTICE.md). История прежних отчётов: [PROJECT_HISTORY_RU.md](PROJECT_HISTORY_RU.md).
+Исходный французский редактор — [NovFR](https://github.com/NovFR/DK2-Map-Editor). **Доработка, развитие и новые функции UltimateEditor — Quuz**, при участии сообщества. **DiaLight — автор [Flame](https://github.com/DiaLight/Flame), присоединяется к дальнейшему развитию UltimateEditor.** Flame остаётся отдельным проектом. Авторство и происхождение материалов: [NOTICE.md](../NOTICE.md). История прежних отчётов: [PROJECT_HISTORY_RU.md](PROJECT_HISTORY_RU.md).
