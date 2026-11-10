@@ -1,0 +1,92 @@
+{
+  "phase": 123,
+  "status": "WIP:static typed chain attested;newCPU renderer projection not yet executed",
+  "functions": [
+    {
+      "address": 4430736,
+      "length": 1321,
+      "assembly": "ghidra\\phase123-torch-439b90-disassemble_function.txt",
+      "memory": "ghidra\\phase123-torch-439b90-read_memory.txt",
+      "sha256": "2e99b37f3ba63b2db3842c53017d8eb1fc0adb403d738f828102c9caede94730",
+      "PE_bytes_sha256": "c02f064a10a1f0682a5c55cde85f2a0774c2c71e8ff7bb8e3aa1388a6ca1916a"
+    },
+    {
+      "address": 4429792,
+      "length": 159,
+      "assembly": "ghidra\\phase123-torch-4397e0-disassemble_function.txt",
+      "memory": "ghidra\\phase123-torch-4397e0-read_memory.txt",
+      "sha256": "071dffd99d241a1943a713528c8893b66f21c5573a3aef4f7b2ddf711665734a",
+      "PE_bytes_sha256": "01188d974c91aae6c3aeb6c499bc0e35065d4e44b8b4e43b8bf593073c3d9231"
+    },
+    {
+      "address": 4432080,
+      "length": 161,
+      "assembly": "ghidra\\phase123-torch-43a0d0-disassemble_function.txt",
+      "memory": "ghidra\\phase123-torch-43a0d0-read_memory.txt",
+      "sha256": "51f0e9a75dad5ab3efc9447efcb358be6f7483b2cf05ce3c482241d38adc018e",
+      "PE_bytes_sha256": "9d4f9629d7f33c1c9b0227496a658c37cce04ef31a08db24560de3ec2d166228"
+    },
+    {
+      "address": 4432352,
+      "length": 247,
+      "assembly": "ghidra\\phase123-torch-43a1e0-disassemble_function.txt",
+      "memory": "ghidra\\phase123-torch-43a1e0-read_memory.txt",
+      "sha256": "fed0592d7da4923d44a027e217eb13d406b88efe5d948ad981465c06c9ebebc8",
+      "PE_bytes_sha256": "15586edd1665ee0ec4dcaf1b6ba01889ffde593650ac95db3261858534890ae6"
+    },
+    {
+      "address": 4544944,
+      "length": 17,
+      "assembly": "ghidra\\phase123-torch-4559b0-disassemble_function.txt",
+      "memory": "ghidra\\phase123-torch-4559b0-read_memory.txt",
+      "sha256": "55d5b38c346ca67a6cab214a11886b0023930296b3d6f40820e12b1e90948ff6",
+      "PE_bytes_sha256": "15c2057a0f7cd039312da9fe39451fc73e3c03214b241e130ff3628b5cd3da5c"
+    },
+    {
+      "address": 5871968,
+      "length": 619,
+      "assembly": "ghidra\\phase123-torch-599960-disassemble_function.txt",
+      "memory": "ghidra\\phase123-torch-599960-read_memory.txt",
+      "sha256": "7a9d214402740aa4c87dc29abb6c6a3451939fcacd626d8d20c6cc7517e986bc",
+      "PE_bytes_sha256": "d9faaf9cfb9507fa19e065201c3d30d251547b719a86c7a18180c890f30e0b83"
+    },
+    {
+      "address": 5872736,
+      "length": 1002,
+      "assembly": "ghidra\\phase123-torch-599c60-disassemble_function.txt",
+      "memory": "ghidra\\phase123-torch-599c60-read_memory.txt",
+      "sha256": "66d762ec564f2fd93a15c4e7eb9a86731b3770e7d3d510865668804608ef821b",
+      "PE_bytes_sha256": "094a811f1f731fa6c44af002c490e1d7d2eff3b51f989b2b3f65455517b72a20"
+    },
+    {
+      "address": 5872592,
+      "length": 33,
+      "assembly": "ghidra\\phase123-torch-599bd0-disassemble_function.txt",
+      "memory": "ghidra\\phase123-torch-599bd0-read_memory.txt",
+      "sha256": "a67a1066269212d432c49cce0d0ef7841e98a894c076d371ffb2303f1dd6b2a1",
+      "PE_bytes_sha256": "aff4707a68b1738d29e712cee817db3eec55731710a29100aa15adb092715d38"
+    },
+    {
+      "address": 5708432,
+      "length": 24,
+      "assembly": "ghidra\\phase123-torch-571a90-disassemble_function.txt",
+      "memory": "ghidra\\phase123-torch-571a90-read_memory.txt",
+      "sha256": "6d6f19aaf9c85d23b6484e11afc75f3fd03c9d72175eb6aa86fc4d84884782e8",
+      "PE_bytes_sha256": "ef17ef573a2e3aa60247dc3ed7e2d9421573f04a3ee9b8a271498ded0bfdf547"
+    }
+  ],
+  "confirmed_static_chain": [
+    "Roomdefinition45E BYTE read in439B90",
+    "Roomentity via4559B0 anddefinition pointer+19",
+    "CBridge realvtable66CC94 slotA4=4397E0",
+    "4397E0 calls43A1E0;intensity fifthargument→CLight145",
+    "599960and599C60 readunsignedCLight145 and multiplyfloat670524=1/128;write renderer recordfloat30/34"
+  ],
+  "rejected_hypotheses": [
+    "66CCA0 is inside vtable,not start;subtracting assumed slotAC fromxref waswrong. Realbase66CC94 verified againstbytes/maphint;wrong43A910target is getter,excluded.",
+    "4EAB30 guessedconstructor entry defineddata;createfunctionfailed,notused."
+  ],
+  "native_CPU_runs": 0,
+  "limitation": "No newlyexecuted wholeRoomload/placement/CLight allocation/render orGPU;no claim of finalpixel brightness units.",
+  "source_EXE_sha256": "d7a8b854e4e4f02709eba271bead6fe2307dd6e332b5a96e70857e5b0e19fb8a"
+}

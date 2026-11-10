@@ -1,0 +1,1836 @@
+{
+  "scope": "New native room-list branch cases; no old empty-list cases counted again.",
+  "replays": [
+    {
+      "case": {
+        "name": "two-eligible-last",
+        "seed": 23,
+        "radius": 1,
+        "rooms": [
+          {
+            "type": 1,
+            "cells": [
+              [
+                3,
+                3
+              ]
+            ]
+          },
+          {
+            "type": 2,
+            "cells": [
+              [
+                20,
+                20
+              ]
+            ]
+          }
+        ]
+      },
+      "outcome": {
+        "seed": 1566604385,
+        "room_gate": 0,
+        "room_trials": [
+          1
+        ],
+        "selected_room": 1,
+        "target": [
+          83968,
+          83968,
+          0
+        ],
+        "queried_cells": [],
+        "rng_bounds": [
+          8,
+          1
+        ],
+        "start_index": null,
+        "compared_regions": 57,
+        "compared_bytes": 91371,
+        "native_steps": 838
+      },
+      "file": "ghidra\\phase145-room-wander-native-a8225a9f7d22.json",
+      "sha256": "35d746b4499b6c32135732ce08d9429d0c51250a33e4bfc76f60e9ae48c32fd6"
+    },
+    {
+      "case": {
+        "name": "two-eligible-reversed",
+        "seed": 23,
+        "radius": 1,
+        "rooms": [
+          {
+            "type": 2,
+            "cells": [
+              [
+                20,
+                20
+              ]
+            ]
+          },
+          {
+            "type": 1,
+            "cells": [
+              [
+                3,
+                3
+              ]
+            ]
+          }
+        ]
+      },
+      "outcome": {
+        "seed": 1566604385,
+        "room_gate": 0,
+        "room_trials": [
+          1
+        ],
+        "selected_room": 1,
+        "target": [
+          14336,
+          14336,
+          0
+        ],
+        "queried_cells": [],
+        "rng_bounds": [
+          8,
+          1
+        ],
+        "start_index": null,
+        "compared_regions": 57,
+        "compared_bytes": 91371,
+        "native_steps": 838
+      },
+      "file": "ghidra\\phase145-room-wander-native-2ef08f09bd4d.json",
+      "sha256": "0d673d8369985b7d53e947acdd2afa72fd0d5ed11c91c38d691ed9ca277a25fd"
+    },
+    {
+      "case": {
+        "name": "last-empty-skips-earlier",
+        "seed": 23,
+        "radius": 1,
+        "rooms": [
+          {
+            "type": 1,
+            "cells": [
+              [
+                3,
+                3
+              ]
+            ]
+          },
+          {
+            "type": 2,
+            "cells": []
+          }
+        ]
+      },
+      "outcome": {
+        "seed": 1566604385,
+        "room_gate": 0,
+        "room_trials": [
+          1
+        ],
+        "selected_room": null,
+        "target": [
+          47104,
+          43008,
+          0
+        ],
+        "queried_cells": [
+          [
+            11,
+            10
+          ]
+        ],
+        "rng_bounds": [
+          8,
+          8
+        ],
+        "start_index": 3,
+        "compared_regions": 57,
+        "compared_bytes": 91371,
+        "native_steps": 377
+      },
+      "file": "ghidra\\phase145-room-wander-native-d24ad2aa602c.json",
+      "sha256": "a87c19867e039d5d40db71093ae8078812dd06a3ca7fa3fa30987e7f459a30a3"
+    },
+    {
+      "case": {
+        "name": "trailing-excluded-selected",
+        "seed": 23,
+        "radius": 1,
+        "rooms": [
+          {
+            "type": 1,
+            "cells": [
+              [
+                3,
+                3
+              ]
+            ]
+          },
+          {
+            "type": 2,
+            "cells": []
+          },
+          {
+            "type": 3,
+            "cells": [
+              [
+                24,
+                24
+              ]
+            ]
+          }
+        ]
+      },
+      "outcome": {
+        "seed": 1566604385,
+        "room_gate": 0,
+        "room_trials": [
+          1,
+          2
+        ],
+        "selected_room": 2,
+        "target": [
+          100352,
+          100352,
+          0
+        ],
+        "queried_cells": [],
+        "rng_bounds": [
+          8,
+          1
+        ],
+        "start_index": null,
+        "compared_regions": 58,
+        "compared_bytes": 91604,
+        "native_steps": 909
+      },
+      "file": "ghidra\\phase145-room-wander-native-bf0006c29810.json",
+      "sha256": "382d8f093ea5cb1529f7a0fe738e43a443d42b5c3cf6a73cdfc0c8077c00f1b7"
+    },
+    {
+      "case": {
+        "name": "trailing-empty-then-excluded",
+        "seed": 23,
+        "radius": 1,
+        "rooms": [
+          {
+            "type": 1,
+            "cells": [
+              [
+                3,
+                3
+              ]
+            ]
+          },
+          {
+            "type": 2,
+            "cells": []
+          },
+          {
+            "type": 5,
+            "cells": []
+          },
+          {
+            "type": 8,
+            "cells": [
+              [
+                24,
+                24
+              ]
+            ]
+          }
+        ]
+      },
+      "outcome": {
+        "seed": 1566604385,
+        "room_gate": 0,
+        "room_trials": [
+          1,
+          2,
+          3
+        ],
+        "selected_room": 3,
+        "target": [
+          100352,
+          100352,
+          0
+        ],
+        "queried_cells": [],
+        "rng_bounds": [
+          8,
+          1
+        ],
+        "start_index": null,
+        "compared_regions": 59,
+        "compared_bytes": 91837,
+        "native_steps": 980
+      },
+      "file": "ghidra\\phase145-room-wander-native-408381fb0923.json",
+      "sha256": "a9cfe3562c27748dfd65746f21b698dab023314af6e435bf31e18308a2032ff9"
+    },
+    {
+      "case": {
+        "name": "gate-bypasses-nonempty",
+        "seed": 1,
+        "radius": 1,
+        "rooms": [
+          {
+            "type": 1,
+            "cells": [
+              [
+                3,
+                3
+              ]
+            ]
+          },
+          {
+            "type": 2,
+            "cells": [
+              [
+                20,
+                20
+              ]
+            ]
+          }
+        ]
+      },
+      "outcome": {
+        "seed": 1586005467,
+        "room_gate": 2,
+        "room_trials": [],
+        "selected_room": null,
+        "target": [
+          38912,
+          47104,
+          0
+        ],
+        "queried_cells": [
+          [
+            9,
+            11
+          ]
+        ],
+        "rng_bounds": [
+          8,
+          8
+        ],
+        "start_index": 4,
+        "compared_regions": 57,
+        "compared_bytes": 91371,
+        "native_steps": 252
+      },
+      "file": "ghidra\\phase145-room-wander-native-5e520a2a7310.json",
+      "sha256": "b1e91cdff655ffa3b3d05819903b33a19707207c23be1049e760575cf923bbc7"
+    },
+    {
+      "case": {
+        "name": "room-type-1",
+        "seed": 23,
+        "radius": 1,
+        "rooms": [
+          {
+            "type": 1,
+            "cells": [
+              [
+                20,
+                20
+              ]
+            ]
+          }
+        ]
+      },
+      "outcome": {
+        "seed": 1566604385,
+        "room_gate": 0,
+        "room_trials": [
+          0
+        ],
+        "selected_room": 0,
+        "target": [
+          83968,
+          83968,
+          0
+        ],
+        "queried_cells": [],
+        "rng_bounds": [
+          8,
+          1
+        ],
+        "start_index": null,
+        "compared_regions": 56,
+        "compared_bytes": 91138,
+        "native_steps": 802
+      },
+      "file": "ghidra\\phase145-room-wander-native-50bb22284a3e.json",
+      "sha256": "77df7676013a310536849ad551aaf12e5c6fea661ebf68454face6204b2ee3c3"
+    },
+    {
+      "case": {
+        "name": "room-type-2",
+        "seed": 23,
+        "radius": 1,
+        "rooms": [
+          {
+            "type": 2,
+            "cells": [
+              [
+                20,
+                20
+              ]
+            ]
+          }
+        ]
+      },
+      "outcome": {
+        "seed": 1566604385,
+        "room_gate": 0,
+        "room_trials": [
+          0
+        ],
+        "selected_room": 0,
+        "target": [
+          83968,
+          83968,
+          0
+        ],
+        "queried_cells": [],
+        "rng_bounds": [
+          8,
+          1
+        ],
+        "start_index": null,
+        "compared_regions": 56,
+        "compared_bytes": 91138,
+        "native_steps": 802
+      },
+      "file": "ghidra\\phase145-room-wander-native-90d0ae4a3213.json",
+      "sha256": "56531e2d274d4386ff2b8f77d8043ba1865a48d2b0db9ec9592f0ced6ee7ba17"
+    },
+    {
+      "case": {
+        "name": "room-type-3",
+        "seed": 23,
+        "radius": 1,
+        "rooms": [
+          {
+            "type": 3,
+            "cells": [
+              [
+                20,
+                20
+              ]
+            ]
+          }
+        ]
+      },
+      "outcome": {
+        "seed": 1566604385,
+        "room_gate": 0,
+        "room_trials": [],
+        "selected_room": null,
+        "target": [
+          47104,
+          43008,
+          0
+        ],
+        "queried_cells": [
+          [
+            11,
+            10
+          ]
+        ],
+        "rng_bounds": [
+          8,
+          8
+        ],
+        "start_index": 3,
+        "compared_regions": 56,
+        "compared_bytes": 91138,
+        "native_steps": 275
+      },
+      "file": "ghidra\\phase145-room-wander-native-0d342d649d92.json",
+      "sha256": "79e26e68e307e69f5ec3ae06df9b32323e5c9495854cb2ca7056724af0aaf3ae"
+    },
+    {
+      "case": {
+        "name": "room-type-4",
+        "seed": 23,
+        "radius": 1,
+        "rooms": [
+          {
+            "type": 4,
+            "cells": [
+              [
+                20,
+                20
+              ]
+            ]
+          }
+        ]
+      },
+      "outcome": {
+        "seed": 1566604385,
+        "room_gate": 0,
+        "room_trials": [
+          0
+        ],
+        "selected_room": 0,
+        "target": [
+          83968,
+          83968,
+          0
+        ],
+        "queried_cells": [],
+        "rng_bounds": [
+          8,
+          1
+        ],
+        "start_index": null,
+        "compared_regions": 56,
+        "compared_bytes": 91138,
+        "native_steps": 802
+      },
+      "file": "ghidra\\phase145-room-wander-native-ad25137548b9.json",
+      "sha256": "c3c42d81a6b40acc7e7fa9df4862e3a9fd39d4c6332aace1745bafaa9590ffe3"
+    },
+    {
+      "case": {
+        "name": "room-type-5",
+        "seed": 23,
+        "radius": 1,
+        "rooms": [
+          {
+            "type": 5,
+            "cells": [
+              [
+                20,
+                20
+              ]
+            ]
+          }
+        ]
+      },
+      "outcome": {
+        "seed": 1566604385,
+        "room_gate": 0,
+        "room_trials": [],
+        "selected_room": null,
+        "target": [
+          47104,
+          43008,
+          0
+        ],
+        "queried_cells": [
+          [
+            11,
+            10
+          ]
+        ],
+        "rng_bounds": [
+          8,
+          8
+        ],
+        "start_index": 3,
+        "compared_regions": 56,
+        "compared_bytes": 91138,
+        "native_steps": 275
+      },
+      "file": "ghidra\\phase145-room-wander-native-74f157d26d8d.json",
+      "sha256": "86d8e9b760113778971f14012f5a8b376e4691eccc42b08c275f7e8fdb1debd2"
+    },
+    {
+      "case": {
+        "name": "room-type-6",
+        "seed": 23,
+        "radius": 1,
+        "rooms": [
+          {
+            "type": 6,
+            "cells": [
+              [
+                20,
+                20
+              ]
+            ]
+          }
+        ]
+      },
+      "outcome": {
+        "seed": 1566604385,
+        "room_gate": 0,
+        "room_trials": [
+          0
+        ],
+        "selected_room": 0,
+        "target": [
+          83968,
+          83968,
+          0
+        ],
+        "queried_cells": [],
+        "rng_bounds": [
+          8,
+          1
+        ],
+        "start_index": null,
+        "compared_regions": 56,
+        "compared_bytes": 91138,
+        "native_steps": 802
+      },
+      "file": "ghidra\\phase145-room-wander-native-2797992f6184.json",
+      "sha256": "f938e067170456a5ecfe4b3e640edeba4108a4b96d57ebcab56dbf7e0fb7be5f"
+    },
+    {
+      "case": {
+        "name": "room-type-7",
+        "seed": 23,
+        "radius": 1,
+        "rooms": [
+          {
+            "type": 7,
+            "cells": [
+              [
+                20,
+                20
+              ]
+            ]
+          }
+        ]
+      },
+      "outcome": {
+        "seed": 1566604385,
+        "room_gate": 0,
+        "room_trials": [
+          0
+        ],
+        "selected_room": 0,
+        "target": [
+          83968,
+          83968,
+          0
+        ],
+        "queried_cells": [],
+        "rng_bounds": [
+          8,
+          1
+        ],
+        "start_index": null,
+        "compared_regions": 56,
+        "compared_bytes": 91138,
+        "native_steps": 802
+      },
+      "file": "ghidra\\phase145-room-wander-native-4849819f5305.json",
+      "sha256": "3ff39e822562985e07a2b93d7dc37c2993b9ae96f82360abf1f74b9fb7ecc9ad"
+    },
+    {
+      "case": {
+        "name": "room-type-8",
+        "seed": 23,
+        "radius": 1,
+        "rooms": [
+          {
+            "type": 8,
+            "cells": [
+              [
+                20,
+                20
+              ]
+            ]
+          }
+        ]
+      },
+      "outcome": {
+        "seed": 1566604385,
+        "room_gate": 0,
+        "room_trials": [],
+        "selected_room": null,
+        "target": [
+          47104,
+          43008,
+          0
+        ],
+        "queried_cells": [
+          [
+            11,
+            10
+          ]
+        ],
+        "rng_bounds": [
+          8,
+          8
+        ],
+        "start_index": 3,
+        "compared_regions": 56,
+        "compared_bytes": 91138,
+        "native_steps": 275
+      },
+      "file": "ghidra\\phase145-room-wander-native-b0f6e32ae72b.json",
+      "sha256": "45cd33bfd1916192a2e35b89d078ffd993c0f33ca9d60e54facfea2885de99cc"
+    },
+    {
+      "case": {
+        "name": "room-type-9",
+        "seed": 23,
+        "radius": 1,
+        "rooms": [
+          {
+            "type": 9,
+            "cells": [
+              [
+                20,
+                20
+              ]
+            ]
+          }
+        ]
+      },
+      "outcome": {
+        "seed": 1566604385,
+        "room_gate": 0,
+        "room_trials": [
+          0
+        ],
+        "selected_room": 0,
+        "target": [
+          83968,
+          83968,
+          0
+        ],
+        "queried_cells": [],
+        "rng_bounds": [
+          8,
+          1
+        ],
+        "start_index": null,
+        "compared_regions": 56,
+        "compared_bytes": 91138,
+        "native_steps": 802
+      },
+      "file": "ghidra\\phase145-room-wander-native-7c02ba90db98.json",
+      "sha256": "2e9b24b58167378b3afed68dd77894a42daabb427a877a33a217e5d7d28e4181"
+    },
+    {
+      "case": {
+        "name": "room-type-10",
+        "seed": 23,
+        "radius": 1,
+        "rooms": [
+          {
+            "type": 10,
+            "cells": [
+              [
+                20,
+                20
+              ]
+            ]
+          }
+        ]
+      },
+      "outcome": {
+        "seed": 1566604385,
+        "room_gate": 0,
+        "room_trials": [
+          0
+        ],
+        "selected_room": 0,
+        "target": [
+          83968,
+          83968,
+          0
+        ],
+        "queried_cells": [],
+        "rng_bounds": [
+          8,
+          1
+        ],
+        "start_index": null,
+        "compared_regions": 56,
+        "compared_bytes": 91138,
+        "native_steps": 802
+      },
+      "file": "ghidra\\phase145-room-wander-native-a8151057bcb7.json",
+      "sha256": "88e2833963f2183d4e1cf15cf6f643933bc8c4feaad7307dcb446f246f84d57f"
+    },
+    {
+      "case": {
+        "name": "room-type-11",
+        "seed": 23,
+        "radius": 1,
+        "rooms": [
+          {
+            "type": 11,
+            "cells": [
+              [
+                20,
+                20
+              ]
+            ]
+          }
+        ]
+      },
+      "outcome": {
+        "seed": 1566604385,
+        "room_gate": 0,
+        "room_trials": [
+          0
+        ],
+        "selected_room": 0,
+        "target": [
+          83968,
+          83968,
+          0
+        ],
+        "queried_cells": [],
+        "rng_bounds": [
+          8,
+          1
+        ],
+        "start_index": null,
+        "compared_regions": 56,
+        "compared_bytes": 91138,
+        "native_steps": 802
+      },
+      "file": "ghidra\\phase145-room-wander-native-dc5064e94505.json",
+      "sha256": "2970f776cb0edf8ffc04cf1155bfaec119f78526baae02f760da52edb5a060f5"
+    },
+    {
+      "case": {
+        "name": "room-type-12",
+        "seed": 23,
+        "radius": 1,
+        "rooms": [
+          {
+            "type": 12,
+            "cells": [
+              [
+                20,
+                20
+              ]
+            ]
+          }
+        ]
+      },
+      "outcome": {
+        "seed": 1566604385,
+        "room_gate": 0,
+        "room_trials": [
+          0
+        ],
+        "selected_room": 0,
+        "target": [
+          83968,
+          83968,
+          0
+        ],
+        "queried_cells": [],
+        "rng_bounds": [
+          8,
+          1
+        ],
+        "start_index": null,
+        "compared_regions": 56,
+        "compared_bytes": 91138,
+        "native_steps": 802
+      },
+      "file": "ghidra\\phase145-room-wander-native-ee4f483d2d16.json",
+      "sha256": "5731963984873b68d865ad8f45ce0464e7c17e0aa260a2ba217d40e2623eb18b"
+    },
+    {
+      "case": {
+        "name": "room-type-13",
+        "seed": 23,
+        "radius": 1,
+        "rooms": [
+          {
+            "type": 13,
+            "cells": [
+              [
+                20,
+                20
+              ]
+            ]
+          }
+        ]
+      },
+      "outcome": {
+        "seed": 1566604385,
+        "room_gate": 0,
+        "room_trials": [
+          0
+        ],
+        "selected_room": 0,
+        "target": [
+          83968,
+          83968,
+          0
+        ],
+        "queried_cells": [],
+        "rng_bounds": [
+          8,
+          1
+        ],
+        "start_index": null,
+        "compared_regions": 56,
+        "compared_bytes": 91138,
+        "native_steps": 802
+      },
+      "file": "ghidra\\phase145-room-wander-native-d4b21151ea40.json",
+      "sha256": "61de9ebcbb3993def20c455177169934e69b1123fd9807cfd09b2fd7486f99d5"
+    },
+    {
+      "case": {
+        "name": "room-type-14",
+        "seed": 23,
+        "radius": 1,
+        "rooms": [
+          {
+            "type": 14,
+            "cells": [
+              [
+                20,
+                20
+              ]
+            ]
+          }
+        ]
+      },
+      "outcome": {
+        "seed": 1566604385,
+        "room_gate": 0,
+        "room_trials": [
+          0
+        ],
+        "selected_room": 0,
+        "target": [
+          83968,
+          83968,
+          0
+        ],
+        "queried_cells": [],
+        "rng_bounds": [
+          8,
+          1
+        ],
+        "start_index": null,
+        "compared_regions": 56,
+        "compared_bytes": 91138,
+        "native_steps": 802
+      },
+      "file": "ghidra\\phase145-room-wander-native-ea35f6a75ffe.json",
+      "sha256": "671b360f0559c55efb3dd74537975f972d5e58577b7b6a02933dd5b79a8b9194"
+    },
+    {
+      "case": {
+        "name": "room-type-15",
+        "seed": 23,
+        "radius": 1,
+        "rooms": [
+          {
+            "type": 15,
+            "cells": [
+              [
+                20,
+                20
+              ]
+            ]
+          }
+        ]
+      },
+      "outcome": {
+        "seed": 1566604385,
+        "room_gate": 0,
+        "room_trials": [
+          0
+        ],
+        "selected_room": 0,
+        "target": [
+          83968,
+          83968,
+          0
+        ],
+        "queried_cells": [],
+        "rng_bounds": [
+          8,
+          1
+        ],
+        "start_index": null,
+        "compared_regions": 56,
+        "compared_bytes": 91138,
+        "native_steps": 802
+      },
+      "file": "ghidra\\phase145-room-wander-native-feb1ebb47e97.json",
+      "sha256": "db81959a0ea26b67fd270b72f4199bde3ebf91674312c398cc0a6b291acc1b97"
+    },
+    {
+      "case": {
+        "name": "room-type-16",
+        "seed": 23,
+        "radius": 1,
+        "rooms": [
+          {
+            "type": 16,
+            "cells": [
+              [
+                20,
+                20
+              ]
+            ]
+          }
+        ]
+      },
+      "outcome": {
+        "seed": 1566604385,
+        "room_gate": 0,
+        "room_trials": [
+          0
+        ],
+        "selected_room": 0,
+        "target": [
+          83968,
+          83968,
+          0
+        ],
+        "queried_cells": [],
+        "rng_bounds": [
+          8,
+          1
+        ],
+        "start_index": null,
+        "compared_regions": 56,
+        "compared_bytes": 91138,
+        "native_steps": 802
+      },
+      "file": "ghidra\\phase145-room-wander-native-59f078e75a4c.json",
+      "sha256": "ab4aee5fefd6019cfb5055df4a87b47df5967591a19b633aafc8e6458186b72d"
+    },
+    {
+      "case": {
+        "name": "room-type-17",
+        "seed": 23,
+        "radius": 1,
+        "rooms": [
+          {
+            "type": 17,
+            "cells": [
+              [
+                20,
+                20
+              ]
+            ]
+          }
+        ]
+      },
+      "outcome": {
+        "seed": 1566604385,
+        "room_gate": 0,
+        "room_trials": [],
+        "selected_room": null,
+        "target": [
+          47104,
+          43008,
+          0
+        ],
+        "queried_cells": [
+          [
+            11,
+            10
+          ]
+        ],
+        "rng_bounds": [
+          8,
+          8
+        ],
+        "start_index": 3,
+        "compared_regions": 56,
+        "compared_bytes": 91138,
+        "native_steps": 275
+      },
+      "file": "ghidra\\phase145-room-wander-native-1d55e444d35c.json",
+      "sha256": "c6eb76561d79722010cfb906de282e741003a90d6afcc7fa11a9972d451b66cc"
+    },
+    {
+      "case": {
+        "name": "room-type-18",
+        "seed": 23,
+        "radius": 1,
+        "rooms": [
+          {
+            "type": 18,
+            "cells": [
+              [
+                20,
+                20
+              ]
+            ]
+          }
+        ]
+      },
+      "outcome": {
+        "seed": 1566604385,
+        "room_gate": 0,
+        "room_trials": [],
+        "selected_room": null,
+        "target": [
+          47104,
+          43008,
+          0
+        ],
+        "queried_cells": [
+          [
+            11,
+            10
+          ]
+        ],
+        "rng_bounds": [
+          8,
+          8
+        ],
+        "start_index": 3,
+        "compared_regions": 56,
+        "compared_bytes": 91138,
+        "native_steps": 275
+      },
+      "file": "ghidra\\phase145-room-wander-native-25249417eefd.json",
+      "sha256": "5a9dc84232188200a92ccea5f2b775928231d082672456eb602e630de14cab23"
+    },
+    {
+      "case": {
+        "name": "room-type-19",
+        "seed": 23,
+        "radius": 1,
+        "rooms": [
+          {
+            "type": 19,
+            "cells": [
+              [
+                20,
+                20
+              ]
+            ]
+          }
+        ]
+      },
+      "outcome": {
+        "seed": 1566604385,
+        "room_gate": 0,
+        "room_trials": [],
+        "selected_room": null,
+        "target": [
+          47104,
+          43008,
+          0
+        ],
+        "queried_cells": [
+          [
+            11,
+            10
+          ]
+        ],
+        "rng_bounds": [
+          8,
+          8
+        ],
+        "start_index": 3,
+        "compared_regions": 56,
+        "compared_bytes": 91138,
+        "native_steps": 275
+      },
+      "file": "ghidra\\phase145-room-wander-native-4c6c950cd9f6.json",
+      "sha256": "ed8fe34fc5459795d23b25dfb77238698a347753705a6187da2c0ce8be00c3fa"
+    },
+    {
+      "case": {
+        "name": "room-type-20",
+        "seed": 23,
+        "radius": 1,
+        "rooms": [
+          {
+            "type": 20,
+            "cells": [
+              [
+                20,
+                20
+              ]
+            ]
+          }
+        ]
+      },
+      "outcome": {
+        "seed": 1566604385,
+        "room_gate": 0,
+        "room_trials": [],
+        "selected_room": null,
+        "target": [
+          47104,
+          43008,
+          0
+        ],
+        "queried_cells": [
+          [
+            11,
+            10
+          ]
+        ],
+        "rng_bounds": [
+          8,
+          8
+        ],
+        "start_index": 3,
+        "compared_regions": 56,
+        "compared_bytes": 91138,
+        "native_steps": 275
+      },
+      "file": "ghidra\\phase145-room-wander-native-49fde8546efd.json",
+      "sha256": "43428256a9a27a720304f4df0e9d8b2b7339711cfa39d11bea29215de7d5d9f0"
+    },
+    {
+      "case": {
+        "name": "room-type-21",
+        "seed": 23,
+        "radius": 1,
+        "rooms": [
+          {
+            "type": 21,
+            "cells": [
+              [
+                20,
+                20
+              ]
+            ]
+          }
+        ]
+      },
+      "outcome": {
+        "seed": 1566604385,
+        "room_gate": 0,
+        "room_trials": [],
+        "selected_room": null,
+        "target": [
+          47104,
+          43008,
+          0
+        ],
+        "queried_cells": [
+          [
+            11,
+            10
+          ]
+        ],
+        "rng_bounds": [
+          8,
+          8
+        ],
+        "start_index": 3,
+        "compared_regions": 56,
+        "compared_bytes": 91138,
+        "native_steps": 275
+      },
+      "file": "ghidra\\phase145-room-wander-native-78c6dc347835.json",
+      "sha256": "212962c1aa7ff69600fa9279a8ee8fe5be6ee3e1e4946612ce7f3c7199d4f4b5"
+    },
+    {
+      "case": {
+        "name": "room-type-22",
+        "seed": 23,
+        "radius": 1,
+        "rooms": [
+          {
+            "type": 22,
+            "cells": [
+              [
+                20,
+                20
+              ]
+            ]
+          }
+        ]
+      },
+      "outcome": {
+        "seed": 1566604385,
+        "room_gate": 0,
+        "room_trials": [],
+        "selected_room": null,
+        "target": [
+          47104,
+          43008,
+          0
+        ],
+        "queried_cells": [
+          [
+            11,
+            10
+          ]
+        ],
+        "rng_bounds": [
+          8,
+          8
+        ],
+        "start_index": 3,
+        "compared_regions": 56,
+        "compared_bytes": 91138,
+        "native_steps": 275
+      },
+      "file": "ghidra\\phase145-room-wander-native-b12a37ca955c.json",
+      "sha256": "2fafb120234d63cbfe71b5f20334945dd2bc2e70400ff44097e9476880fc899f"
+    },
+    {
+      "case": {
+        "name": "room-type-23",
+        "seed": 23,
+        "radius": 1,
+        "rooms": [
+          {
+            "type": 23,
+            "cells": [
+              [
+                20,
+                20
+              ]
+            ]
+          }
+        ]
+      },
+      "outcome": {
+        "seed": 1566604385,
+        "room_gate": 0,
+        "room_trials": [],
+        "selected_room": null,
+        "target": [
+          47104,
+          43008,
+          0
+        ],
+        "queried_cells": [
+          [
+            11,
+            10
+          ]
+        ],
+        "rng_bounds": [
+          8,
+          8
+        ],
+        "start_index": 3,
+        "compared_regions": 56,
+        "compared_bytes": 91138,
+        "native_steps": 275
+      },
+      "file": "ghidra\\phase145-room-wander-native-3c25b004e6ab.json",
+      "sha256": "2c1514fda99a120e70bd980724e9a2bd1662197277117ee7716707eb1fb06121"
+    },
+    {
+      "case": {
+        "name": "room-type-24",
+        "seed": 23,
+        "radius": 1,
+        "rooms": [
+          {
+            "type": 24,
+            "cells": [
+              [
+                20,
+                20
+              ]
+            ]
+          }
+        ]
+      },
+      "outcome": {
+        "seed": 1566604385,
+        "room_gate": 0,
+        "room_trials": [],
+        "selected_room": null,
+        "target": [
+          47104,
+          43008,
+          0
+        ],
+        "queried_cells": [
+          [
+            11,
+            10
+          ]
+        ],
+        "rng_bounds": [
+          8,
+          8
+        ],
+        "start_index": 3,
+        "compared_regions": 56,
+        "compared_bytes": 91138,
+        "native_steps": 275
+      },
+      "file": "ghidra\\phase145-room-wander-native-e1a0a76cdf4f.json",
+      "sha256": "6f9f9ebac78f58959ff0fc2e83a01e8cc3813e3eb9af91615829cb0744df4ec7"
+    },
+    {
+      "case": {
+        "name": "room-type-25",
+        "seed": 23,
+        "radius": 1,
+        "rooms": [
+          {
+            "type": 25,
+            "cells": [
+              [
+                20,
+                20
+              ]
+            ]
+          }
+        ]
+      },
+      "outcome": {
+        "seed": 1566604385,
+        "room_gate": 0,
+        "room_trials": [],
+        "selected_room": null,
+        "target": [
+          47104,
+          43008,
+          0
+        ],
+        "queried_cells": [
+          [
+            11,
+            10
+          ]
+        ],
+        "rng_bounds": [
+          8,
+          8
+        ],
+        "start_index": 3,
+        "compared_regions": 56,
+        "compared_bytes": 91138,
+        "native_steps": 275
+      },
+      "file": "ghidra\\phase145-room-wander-native-a73e5481c558.json",
+      "sha256": "eff7126ec7c89a4f828fb0692076a0206af434ad3a4490fe4d3e1d524a599452"
+    },
+    {
+      "case": {
+        "name": "room-type-26",
+        "seed": 23,
+        "radius": 1,
+        "rooms": [
+          {
+            "type": 26,
+            "cells": [
+              [
+                20,
+                20
+              ]
+            ]
+          }
+        ]
+      },
+      "outcome": {
+        "seed": 1566604385,
+        "room_gate": 0,
+        "room_trials": [
+          0
+        ],
+        "selected_room": 0,
+        "target": [
+          83968,
+          83968,
+          0
+        ],
+        "queried_cells": [],
+        "rng_bounds": [
+          8,
+          1
+        ],
+        "start_index": null,
+        "compared_regions": 56,
+        "compared_bytes": 91138,
+        "native_steps": 802
+      },
+      "file": "ghidra\\phase145-room-wander-native-6c016a116d5a.json",
+      "sha256": "31996453af21801cec4141184ca9e21239368c1ce32c60dbf664cca7829dbb1b"
+    },
+    {
+      "case": {
+        "name": "cell-choice-0",
+        "seed": 63,
+        "radius": 1,
+        "rooms": [
+          {
+            "type": 26,
+            "cells": [
+              [
+                20,
+                20
+              ],
+              [
+                21,
+                20
+              ],
+              [
+                22,
+                20
+              ]
+            ]
+          }
+        ]
+      },
+      "outcome": {
+        "seed": 4264490697,
+        "room_gate": 0,
+        "room_trials": [
+          0
+        ],
+        "selected_room": 0,
+        "target": [
+          83968,
+          83968,
+          0
+        ],
+        "queried_cells": [],
+        "rng_bounds": [
+          8,
+          3
+        ],
+        "start_index": null,
+        "compared_regions": 56,
+        "compared_bytes": 91138,
+        "native_steps": 1300
+      },
+      "file": "ghidra\\phase145-room-wander-native-df66fd578a38.json",
+      "sha256": "66e7d4a71547963873f05b77c4a5d15689f5a4578f7a8cf75b1f6094775e2bd5"
+    },
+    {
+      "case": {
+        "name": "cell-choice-1",
+        "seed": 23,
+        "radius": 1,
+        "rooms": [
+          {
+            "type": 26,
+            "cells": [
+              [
+                20,
+                20
+              ],
+              [
+                21,
+                20
+              ],
+              [
+                22,
+                20
+              ]
+            ]
+          }
+        ]
+      },
+      "outcome": {
+        "seed": 1566604385,
+        "room_gate": 0,
+        "room_trials": [
+          0
+        ],
+        "selected_room": 0,
+        "target": [
+          88064,
+          83968,
+          0
+        ],
+        "queried_cells": [],
+        "rng_bounds": [
+          8,
+          3
+        ],
+        "start_index": null,
+        "compared_regions": 56,
+        "compared_bytes": 91138,
+        "native_steps": 1555
+      },
+      "file": "ghidra\\phase145-room-wander-native-1def7a457764.json",
+      "sha256": "c334ac903139c41402538577709089c78227853efcd7979fae3d083e27d52f84"
+    },
+    {
+      "case": {
+        "name": "cell-choice-2",
+        "seed": 28,
+        "radius": 1,
+        "rooms": [
+          {
+            "type": 26,
+            "cells": [
+              [
+                20,
+                20
+              ],
+              [
+                21,
+                20
+              ],
+              [
+                22,
+                20
+              ]
+            ]
+          }
+        ]
+      },
+      "outcome": {
+        "seed": 3514452910,
+        "room_gate": 0,
+        "room_trials": [
+          0
+        ],
+        "selected_room": 0,
+        "target": [
+          92160,
+          83968,
+          0
+        ],
+        "queried_cells": [],
+        "rng_bounds": [
+          8,
+          3
+        ],
+        "start_index": null,
+        "compared_regions": 56,
+        "compared_bytes": 91138,
+        "native_steps": 1810
+      },
+      "file": "ghidra\\phase145-room-wander-native-fcc98e621db3.json",
+      "sha256": "236795d163a63f16461b8eb060a10f6589bb377fd9fa532dcb3599e6db233f40"
+    },
+    {
+      "case": {
+        "name": "callback-room",
+        "seed": 8,
+        "callback": true,
+        "rooms": [
+          {
+            "type": 1,
+            "cells": [
+              [
+                3,
+                3
+              ]
+            ]
+          },
+          {
+            "type": 2,
+            "cells": [
+              [
+                20,
+                20
+              ]
+            ]
+          }
+        ]
+      },
+      "outcome": {
+        "seed": 4140339132,
+        "radius": 5,
+        "helper_runs": [
+          {
+            "radius": 5,
+            "seed": 1276464017,
+            "room_gate": 0,
+            "room_trials": [
+              1
+            ],
+            "selected_room": 1,
+            "target": [
+              83968,
+              83968,
+              0
+            ],
+            "queried_cells": [],
+            "rng_bounds": [
+              8,
+              1
+            ],
+            "start_index": null
+          }
+        ],
+        "target": [
+          82602,
+          82602,
+          0
+        ],
+        "rng_bounds": [
+          4,
+          8,
+          1,
+          9
+        ],
+        "room_trials": [
+          1
+        ],
+        "path_accepted": true,
+        "state_after": 6,
+        "compared_regions": 59,
+        "compared_bytes": 189856,
+        "native_steps": 71769
+      },
+      "file": "ghidra\\phase145-room-wander-native-97b2003051d6.json",
+      "sha256": "e97ca9820dec9c43289f60703f9215bd9c9908757920dec3ddbe7c11a122148e"
+    },
+    {
+      "case": {
+        "name": "callback-room-wander255",
+        "seed": 8,
+        "callback": true,
+        "rooms": [
+          {
+            "type": 1,
+            "cells": [
+              [
+                3,
+                3
+              ]
+            ]
+          },
+          {
+            "type": 2,
+            "cells": [
+              [
+                20,
+                20
+              ]
+            ]
+          }
+        ],
+        "wander": 255
+      },
+      "outcome": {
+        "seed": 4140339132,
+        "radius": 5,
+        "helper_runs": [
+          {
+            "radius": 5,
+            "seed": 1276464017,
+            "room_gate": 0,
+            "room_trials": [
+              1
+            ],
+            "selected_room": 1,
+            "target": [
+              83968,
+              83968,
+              0
+            ],
+            "queried_cells": [],
+            "rng_bounds": [
+              8,
+              1
+            ],
+            "start_index": null
+          }
+        ],
+        "target": [
+          82602,
+          82602,
+          0
+        ],
+        "rng_bounds": [
+          4,
+          8,
+          1,
+          9
+        ],
+        "room_trials": [
+          1
+        ],
+        "path_accepted": true,
+        "state_after": 6,
+        "compared_regions": 59,
+        "compared_bytes": 189856,
+        "native_steps": 71769
+      },
+      "file": "ghidra\\phase145-room-wander-native-184e4656c764.json",
+      "sha256": "b3995a6ccbacd806baf030a3e1388e780eed711282a8401f6c54d80509c32d72"
+    },
+    {
+      "case": {
+        "name": "callback-room-blocked",
+        "seed": 8,
+        "callback": true,
+        "rooms": [
+          {
+            "type": 1,
+            "cells": [
+              [
+                3,
+                3
+              ]
+            ]
+          },
+          {
+            "type": 2,
+            "cells": [
+              [
+                20,
+                20
+              ]
+            ]
+          }
+        ],
+        "blocked": true
+      },
+      "outcome": {
+        "seed": 4140339132,
+        "radius": 5,
+        "helper_runs": [
+          {
+            "radius": 5,
+            "seed": 1276464017,
+            "room_gate": 0,
+            "room_trials": [
+              1
+            ],
+            "selected_room": 1,
+            "target": [
+              83968,
+              83968,
+              0
+            ],
+            "queried_cells": [],
+            "rng_bounds": [
+              8,
+              1
+            ],
+            "start_index": null
+          }
+        ],
+        "target": [
+          82602,
+          82602,
+          0
+        ],
+        "rng_bounds": [
+          4,
+          8,
+          1,
+          9
+        ],
+        "room_trials": [
+          1
+        ],
+        "path_accepted": false,
+        "state_after": 87,
+        "compared_regions": 59,
+        "compared_bytes": 189856,
+        "native_steps": 72435
+      },
+      "file": "ghidra\\phase145-room-wander-native-c60b4d25e3bc.json",
+      "sha256": "110a64a467275bc051a0b5afd63d4d967a9d866863887b7d5b9933e7fd3b1aa7"
+    }
+  ],
+  "paired_control": {
+    "whole_regions": 59,
+    "whole_bytes": 189856,
+    "only_actor418_differs": true
+  }
+}

@@ -1,0 +1,129 @@
+{
+  "program_sha256": "d7a8b854e4e4f02709eba271bead6fe2307dd6e332b5a96e70857e5b0e19fb8a",
+  "warning": "Instruction-level memory candidates, not proof of object identity or semantics.\n\nDecode only Flame-mapped spans within .text. Embedded data, overlapping mappings,\nunrelated vtables and reused displacements still require manual verification.\n",
+  "mapped_spans_scanned": 8729,
+  "functions": [
+    {
+      "function": "0x491dc0",
+      "name": "constructor",
+      "size": 1135,
+      "matching_virtual_calls": [],
+      "field_candidates": [
+        {
+          "address": "0x491fff",
+          "text": "mov word ptr [esi + 0x68e], bx",
+          "displacement": "0x68e",
+          "memory_bytes": 2
+        },
+        {
+          "address": "0x4920f1",
+          "text": "mov byte ptr [esi + 0x6eb], bl",
+          "displacement": "0x6eb",
+          "memory_bytes": 1
+        },
+        {
+          "address": "0x492128",
+          "text": "mov dword ptr [esi + 0x75c], ebx",
+          "displacement": "0x75c",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x492320",
+      "name": "loadCreatureType",
+      "size": 8252,
+      "matching_virtual_calls": [],
+      "field_candidates": [
+        {
+          "address": "0x492551",
+          "text": "mov word ptr [ebx + 0x68e], ax",
+          "displacement": "0x68e",
+          "memory_bytes": 2
+        },
+        {
+          "address": "0x492562",
+          "text": "mov word ptr [ebx + 0x68e], cx",
+          "displacement": "0x68e",
+          "memory_bytes": 2
+        },
+        {
+          "address": "0x49262a",
+          "text": "mov byte ptr [ebx + 0x6eb], dl",
+          "displacement": "0x6eb",
+          "memory_bytes": 1
+        },
+        {
+          "address": "0x493bd7",
+          "text": "mov dword ptr [ebx + 0x75c], eax",
+          "displacement": "0x75c",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x494a70",
+      "name": "sub_494A70",
+      "size": 514,
+      "matching_virtual_calls": [],
+      "field_candidates": [
+        {
+          "address": "0x494bec",
+          "text": "mov word ptr [ecx + 0x68e], ax",
+          "displacement": "0x68e",
+          "memory_bytes": 2
+        },
+        {
+          "address": "0x494c0e",
+          "text": "mov dword ptr [ecx + 0x75c], edx",
+          "displacement": "0x75c",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x51f3b0",
+      "name": "copy",
+      "size": 2292,
+      "matching_virtual_calls": [],
+      "field_candidates": [
+        {
+          "address": "0x51f815",
+          "text": "mov cx, word ptr [edx + 0x68e]",
+          "displacement": "0x68e",
+          "memory_bytes": 2
+        },
+        {
+          "address": "0x51f81c",
+          "text": "mov word ptr [eax + 0x68e], cx",
+          "displacement": "0x68e",
+          "memory_bytes": 2
+        },
+        {
+          "address": "0x51fa14",
+          "text": "mov cl, byte ptr [edx + 0x6eb]",
+          "displacement": "0x6eb",
+          "memory_bytes": 1
+        },
+        {
+          "address": "0x51fa1a",
+          "text": "mov byte ptr [eax + 0x6eb], cl",
+          "displacement": "0x6eb",
+          "memory_bytes": 1
+        },
+        {
+          "address": "0x51fa7e",
+          "text": "mov ecx, dword ptr [edx + 0x75c]",
+          "displacement": "0x75c",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x51fa84",
+          "text": "mov dword ptr [eax + 0x75c], ecx",
+          "displacement": "0x75c",
+          "memory_bytes": 4
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "phase": 37,
+  "date": "2026-10-26",
+  "native_emulations": 62,
+  "native_case_kinds": {
+    "parser": 8,
+    "converter": 3,
+    "loader": 4,
+    "editor_load": 6,
+    "tick": 14,
+    "extent": 16,
+    "rng": 5,
+    "writer": 6
+  },
+  "boundary_cases": 1137,
+  "corpus_generators": 80,
+  "exact_in_memory_container_patches": 2880,
+  "whole_thing_files_roundtrip": 110,
+  "primary_instructions": 1703,
+  "primary_ranges_matching_pe": 23,
+  "original_main_inputs_unchanged": 17,
+  "original_main_executables_unchanged": 2,
+  "format_package_components": 49,
+  "modified_gameplay_runs": 0,
+  "limitations": [
+    "World registration, base entity initialization, allocation, checksum helper and actual visual effect creation are explicit fixtures. The complete real game/rendering is not run.",
+    "Tick clock/random/rejection/create callbacks are controlled; real5558D0 is separately tested in5 cases with debug switch0. Position rejection virtual20C meaning is not given a guessed terrain label.",
+    "Editor full callback uses actual generator constructor, bounds/effect setters and no-op flags setter. Base constructor, coordinate virtual setters, parent provider and map insertion are fixtures. No GUI panel ranges/control bindings are claimed.",
+    "Full native Things writer fixtures validate the CB payload; unrelated count/date/file helpers are substituted. Header counts are not claimed correct in these isolated fixtures. The36-byte header is captured before the final36-byte CB payload.",
+    "RawZ,rawFlags and six tail bytes retain unknown original purpose even where an inspected path ignores/discards them. Runtime flagsBYTE is not assumed to be rawFlags lowbyte.",
+    "Assembly/live memory and original PE bytes compared after all emulation. Superseded fixture snapshots retained outside final manifest: RNG log store initially addressed EBP-relative rather than absolute; writer capture initially expected1 len36 call instead of header+payload2.",
+    "Independent codec preserves every raw field and opaque bit; editor projections require explicit compatibility intent. All patch/roundtrip checks operate in memory, not on game inputs."
+  ]
+}

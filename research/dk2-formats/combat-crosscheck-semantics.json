@@ -1,0 +1,276 @@
+{
+  "phase": 118,
+  "date": "2026-10-29",
+  "family": "Independent Ghidra validation update for damage and poison",
+  "supersedes_validation_status": [
+    {
+      "component": "shot_damage_semantics",
+      "historical_phase": 114,
+      "old_independent_Ghidra_CPU_controls": 0,
+      "current_independent_Ghidra_CPU_controls": 5
+    },
+    {
+      "component": "poison_process_semantics",
+      "historical_phase": 115,
+      "old_independent_Ghidra_CPU_controls": 0,
+      "current_independent_Ghidra_CPU_controls": 3
+    }
+  ],
+  "history": "Earlier pending files and schemas remain byte-identical historical evidence. All eight exact prepared inputs have now executed successfully; do not read old executed:false as current pending status.",
+  "review_recovery": "After the stated13:56Europe/Moscow reset, the same reviewed local-MCP commands were allowed. Existing live JavaPID19308 was reused; no alternate network/approval route or restart.",
+  "controls": [
+    {
+      "historical_phase": 114,
+      "case": "hit-res100",
+      "input_sha256": "78922d9870c555373580567a34fc512fd4b1db5f51a8c7a990c735c480e24424",
+      "result": {
+        "file": "ghidra\\phase114-shot-Ghidra-hit-res100-78922d9870c5.json",
+        "sha256": "530d3e597c7a8391e76c707a076197c4939c9a0042b8f3821737c5a29023112f"
+      },
+      "historical_pending_file": {
+        "file": "phase114-pending-crosschecks.json",
+        "sha256": "90aed3d7dc93d4d194c4b3b4d6cbdcbfc8bff269dff8fac7cebdc834c21c69d6"
+      },
+      "original_input_unchanged": true,
+      "success": true,
+      "hit_return": true,
+      "registers": {
+        "EAX": "0x1",
+        "EBP": "0x1",
+        "EBX": "0x0",
+        "ECX": "0x0"
+      },
+      "checked_regions": 53,
+      "checked_bytes": 116385
+    },
+    {
+      "historical_phase": 114,
+      "case": "area-res100",
+      "input_sha256": "da1226c1b025c24ac1695071827bc501cf0ed1d103fb289d01175b279ea09098",
+      "result": {
+        "file": "ghidra\\phase114-shot-Ghidra-area-res100-da1226c1b025.json",
+        "sha256": "d8db30d4326efbddcba89596a41bb4ce522acd7e418841390e7748a3cf630d46"
+      },
+      "historical_pending_file": {
+        "file": "phase114-pending-crosschecks.json",
+        "sha256": "90aed3d7dc93d4d194c4b3b4d6cbdcbfc8bff269dff8fac7cebdc834c21c69d6"
+      },
+      "original_input_unchanged": true,
+      "success": true,
+      "hit_return": true,
+      "registers": {
+        "EAX": "0x1",
+        "EBP": "0x1",
+        "EBX": "0x0",
+        "ECX": "0x0"
+      },
+      "checked_regions": 53,
+      "checked_bytes": 116385
+    },
+    {
+      "historical_phase": 114,
+      "case": "range-half",
+      "input_sha256": "8673e314672cb17c651d717f3c87887a64924de1ae6a29acb53a2c27d5dc6dbb",
+      "result": {
+        "file": "ghidra\\phase114-shot-Ghidra-range-half-8673e314672c.json",
+        "sha256": "f583ef4b7be74d8020cd96581bdf6936442d8774377e24d23c8e305288dd1bff"
+      },
+      "historical_pending_file": {
+        "file": "phase114-pending-crosschecks.json",
+        "sha256": "90aed3d7dc93d4d194c4b3b4d6cbdcbfc8bff269dff8fac7cebdc834c21c69d6"
+      },
+      "original_input_unchanged": true,
+      "success": true,
+      "hit_return": true,
+      "registers": {
+        "EAX": "0x1",
+        "EBP": "0x1",
+        "EBX": "0x0",
+        "ECX": "0x0"
+      },
+      "checked_regions": 53,
+      "checked_bytes": 116385
+    },
+    {
+      "historical_phase": 114,
+      "case": "boulder-fire",
+      "input_sha256": "d7bf6c5b366262d5b47cf096ed875ab25a18369d55b2f244ae9b9a5eb09a54de",
+      "result": {
+        "file": "ghidra\\phase114-shot-Ghidra-boulder-fire-d7bf6c5b3662.json",
+        "sha256": "7564265347ee5e12b98b5bade7aae822ca366a7e03cd15bc02af8e5440441351"
+      },
+      "historical_pending_file": {
+        "file": "phase114-pending-crosschecks.json",
+        "sha256": "90aed3d7dc93d4d194c4b3b4d6cbdcbfc8bff269dff8fac7cebdc834c21c69d6"
+      },
+      "original_input_unchanged": true,
+      "success": true,
+      "hit_return": true,
+      "registers": {
+        "EAX": "0x1",
+        "EBP": "0x1",
+        "EBX": "0x0",
+        "ECX": "0x0"
+      },
+      "checked_regions": 54,
+      "checked_bytes": 116670
+    },
+    {
+      "historical_phase": 114,
+      "case": "boulder-projectile",
+      "input_sha256": "af301c2ce88096d54b30b59939aa54e06cdeeab0b8ea0e5b296618f76819e75c",
+      "result": {
+        "file": "ghidra\\phase114-shot-Ghidra-boulder-projectile-af301c2ce880.json",
+        "sha256": "3c1bf70d21a31e1d34cea6a18d65dc4a141ba1a3bed4ee73be723aadf8a17292"
+      },
+      "historical_pending_file": {
+        "file": "phase114-pending-crosschecks.json",
+        "sha256": "90aed3d7dc93d4d194c4b3b4d6cbdcbfc8bff269dff8fac7cebdc834c21c69d6"
+      },
+      "original_input_unchanged": true,
+      "success": true,
+      "hit_return": true,
+      "registers": {
+        "EAX": "0x1",
+        "EBP": "0x1",
+        "EBX": "0x0",
+        "ECX": "0x0"
+      },
+      "checked_regions": 54,
+      "checked_bytes": 116670
+    },
+    {
+      "historical_phase": 115,
+      "case": "tick1",
+      "input_sha256": "b221e6cf6bcfeac04f96ab1e63e9e5f96dc9abc66e78861b6ac744a0a4f1ac47",
+      "result": {
+        "file": "ghidra\\phase115-poison-Ghidra-tick1-b221e6cf6bcf.json",
+        "sha256": "c21601fbe62a97606f13f664408e2898a1243b627e10d4cf9102b3ea9f078ad0"
+      },
+      "historical_pending_file": {
+        "file": "phase115-pending-crosschecks.json",
+        "sha256": "4e7435e9da319d2c70b6f6ea9def526974c3b6a55078876aca7ce1e98e830cce"
+      },
+      "original_input_unchanged": true,
+      "success": true,
+      "hit_return": true,
+      "registers": {
+        "EAX": "0x1",
+        "EBP": "0x1",
+        "EBX": "0x0",
+        "ECX": "0x0"
+      },
+      "checked_regions": 68,
+      "checked_bytes": 139650
+    },
+    {
+      "historical_phase": 115,
+      "case": "frozen",
+      "input_sha256": "11ac327386a967d09d68b314f38287a3fae5505c1c621766e938844f87d292bc",
+      "result": {
+        "file": "ghidra\\phase115-poison-Ghidra-frozen-11ac327386a9.json",
+        "sha256": "05dbc34ae9e0ff26c55aebc10e6ee12aae8a0b9424086065702a9e384db49fc1"
+      },
+      "historical_pending_file": {
+        "file": "phase115-pending-crosschecks.json",
+        "sha256": "4e7435e9da319d2c70b6f6ea9def526974c3b6a55078876aca7ce1e98e830cce"
+      },
+      "original_input_unchanged": true,
+      "success": true,
+      "hit_return": true,
+      "registers": {
+        "EAX": "0x1",
+        "EBP": "0x1",
+        "EBX": "0x0",
+        "ECX": "0x0"
+      },
+      "checked_regions": 68,
+      "checked_bytes": 139650
+    },
+    {
+      "historical_phase": 115,
+      "case": "armoured",
+      "input_sha256": "90d725e1404e8d32c19e6012bc1e6ccb887c3fbb96661782052fc2bab4cc02ed",
+      "result": {
+        "file": "ghidra\\phase115-poison-Ghidra-armoured-90d725e1404e.json",
+        "sha256": "d35b6ca44de83b24ce6ba105f04f02b95e4f269ebea0e564c70e2e21eda155b6"
+      },
+      "historical_pending_file": {
+        "file": "phase115-pending-crosschecks.json",
+        "sha256": "4e7435e9da319d2c70b6f6ea9def526974c3b6a55078876aca7ce1e98e830cce"
+      },
+      "original_input_unchanged": true,
+      "success": true,
+      "hit_return": true,
+      "registers": {
+        "EAX": "0x1",
+        "EBP": "0x1",
+        "EBX": "0x0",
+        "ECX": "0x0"
+      },
+      "checked_regions": 68,
+      "checked_bytes": 139650
+    }
+  ],
+  "verified_Ghidra_CPU_controls": 8,
+  "remaining_prepared_controls": 0,
+  "totals": {
+    "checked_regions": 471,
+    "checked_bytes": 1001445,
+    "scope": "Sums across eight cases,not unique memory or records."
+  },
+  "observations": [
+    "Ghidra agrees with all prepared-context expectations fordirecthit andconstantAoE withres100.",
+    "DistanceAoE half-radius andBoulderfire/projectile controls agree.",
+    "Poison ordinary/frozen/armoured tick contexts agree withUnicorn snapshots.",
+    "This validates chosen native calculations/contexts,not everyspell,allAoEtargets orlivegame behaviour."
+  ],
+  "input_helpers": [
+    {
+      "file": "crosscheck_shot_damage.py",
+      "sha256": "da1d27f26bb9b4e432e7b68e958b268a6bdad23b681852bec0af80d7f315fc01"
+    },
+    {
+      "file": "crosscheck_poison.py",
+      "sha256": "e5269652ef6cd18429c7b09b8d91b79d6aadfd15a447effc21afa213c716231e"
+    }
+  ],
+  "result_manifests": [
+    {
+      "file": "phase114-shot-damage-crosschecks.json",
+      "sha256": "938c5691134610877f85fa690598ab85b992058d69284f59b27c32b86d5b2a48"
+    },
+    {
+      "file": "phase115-poison-crosschecks.json",
+      "sha256": "ddc30a3a25e5f6f540dd6e392aae9919363854a90c45bc5525c7d1398c881f6e"
+    }
+  ],
+  "source_executables_unchanged": [
+    {
+      "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\DKII-DX.exe",
+      "sha256": "d7a8b854e4e4f02709eba271bead6fe2307dd6e332b5a96e70857e5b0e19fb8a"
+    },
+    {
+      "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\DK2 Editor pro.exe",
+      "sha256": "989c45df779bccfc9a9e509b2ad0224a9bd269629f74792adc0320fa4b99fb09"
+    },
+    {
+      "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\DK2 Editor rc3.exe",
+      "sha256": "7368d200cc5ac7e0cdb28c9852d9aa51b960fd718d9eea8dd927c4084add102c"
+    },
+    {
+      "file": "D:/Games/DK2/DKII 13/Dungeon Keeper 2/DKII.exe",
+      "sha256": "93e826a142f677ef5120699feddb0572799d93399167ef1d05ec4b48a8b2a342"
+    }
+  ],
+  "new_gameplay_field_names": 0,
+  "new_container_rebuilds": 0,
+  "new_gameplay_function_substitutions": 0,
+  "limitations": [
+    "Exact supplied DX and previously prepared scenes/resources/World. No live game,GUI or natural flight/timing.",
+    "Independent emulator controls share explicit input fixtures and expected regions; this is not independent recovery of every opaque byte.",
+    "Five damage andthreepoison controls close only thehistorical pending set; otherdamage/processbranches remain open.",
+    "Earlier reported raw/container checks are historical and are not recounted as new runs.",
+    "Significant unknown fields across15families remain unresolved; goal incomplete."
+  ]
+}

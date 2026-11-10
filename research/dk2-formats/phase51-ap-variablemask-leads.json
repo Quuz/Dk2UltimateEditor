@@ -1,0 +1,102 @@
+[
+  {
+    "function": "0x52e0a0",
+    "name": "probably_copySurface_8bpp",
+    "address": "0x52e3b1",
+    "instructions": [
+      "0052e397: mov edx, ebp",
+      "0052e399: rol ebx, cl",
+      "0052e39b: mov ecx, dword ptr [esp + 0x54]",
+      "0052e39f: and bx, word ptr [edi + 4]",
+      "0052e3a3: ror edx, cl",
+      "0052e3a5: sub eax, edx",
+      "0052e3a7: xor edx, edx",
+      "0052e3a9: imul eax, esi",
+      "0052e3ac: shr eax, 8",
+      "0052e3af: ror ebp, cl",
+      "0052e3b1: mov dl, byte ptr [esp + 0x32]",
+      "0052e3b5: add eax, ebp",
+      "0052e3b7: mov ebp, dword ptr [esp + 0x2c]",
+      "0052e3bb: rol eax, cl",
+      "0052e3bd: mov ecx, dword ptr [esp + 0x1c]",
+      "0052e3c1: and ax, word ptr [edi + 8]",
+      "0052e3c5: or ebx, eax",
+      "0052e3c7: mov eax, ebp"
+    ]
+  },
+  {
+    "function": "0x5efca0",
+    "name": "sub_5EFCA0",
+    "address": "0x5efe33",
+    "instructions": [
+      "005efe18: shr esi, 8",
+      "005efe1b: add esi, ebx",
+      "005efe1d: mov ebx, dword ptr [esp + 0x18]",
+      "005efe21: and esi, ebx",
+      "005efe23: or eax, esi",
+      "005efe25: mov esi, dword ptr [esp + 0x1c]",
+      "005efe29: and esi, ecx",
+      "005efe2b: or eax, esi",
+      "005efe2d: mov dword ptr [esp + 0x30], eax",
+      "005efe31: mov byte ptr [edx], al",
+      "005efe33: mov al, byte ptr [esp + 0x32]",
+      "005efe37: mov byte ptr [edx + 1], ah",
+      "005efe3a: mov byte ptr [edx + 2], al",
+      "005efe3d: mov eax, dword ptr [esp + 0x38]",
+      "005efe41: dec eax",
+      "005efe42: mov dword ptr [esp + 0x38], eax",
+      "005efe46: jne 0x5efdd9",
+      "005efe48: pop edi"
+    ]
+  },
+  {
+    "function": "0x619d10",
+    "name": "sub_619D10",
+    "address": "0x619dda",
+    "instructions": [
+      "00619dbd: mov ecx, eax",
+      "00619dbf: shr ecx, 8",
+      "00619dc2: and cl, 0x7f",
+      "00619dc5: mov byte ptr [esp + 0x30], cl",
+      "00619dc9: mov ecx, eax",
+      "00619dcb: shr ecx, 0x10",
+      "00619dce: shr eax, 0x18",
+      "00619dd1: and cl, 0x7f",
+      "00619dd4: and al, 0x7f",
+      "00619dd6: mov byte ptr [esp + 0x31], cl",
+      "00619dda: mov byte ptr [esp + 0x32], al",
+      "00619dde: jmp 0x619e8b",
+      "00619de3: mov cl, byte ptr [eax + 8]",
+      "00619de6: mov byte ptr [esp + 0x2f], dl",
+      "00619dea: mov byte ptr [esp + 0x30], cl",
+      "00619dee: mov cl, byte ptr [eax + 0xa]",
+      "00619df1: mov byte ptr [esp + 0x32], cl",
+      "00619df5: mov ecx, dword ptr [esp + 0x84]"
+    ]
+  },
+  {
+    "function": "0x619d10",
+    "name": "sub_619D10",
+    "address": "0x619e7e",
+    "instructions": [
+      "00619e60: and cl, 0x7f",
+      "00619e63: mov byte ptr [esp + 0x30], cl",
+      "00619e67: mov ecx, eax",
+      "00619e69: shr edx, 8",
+      "00619e6c: shr ecx, 0x10",
+      "00619e6f: shr eax, 0x18",
+      "00619e72: and dl, 0x7f",
+      "00619e75: and cl, 0x7f",
+      "00619e78: and al, 0x7f",
+      "00619e7a: mov byte ptr [esp + 0x31], dl",
+      "00619e7e: mov byte ptr [esp + 0x32], cl",
+      "00619e82: mov byte ptr [esp + 0x33], al",
+      "00619e86: mov edx, 0xd",
+      "00619e8b: mov ecx, 0x10",
+      "00619e90: xor eax, eax",
+      "00619e92: lea edi, [esp + 0x3c]",
+      "00619e96: push 0x40",
+      "00619e98: rep stosd dword ptr es:[edi], eax"
+    ]
+  }
+]

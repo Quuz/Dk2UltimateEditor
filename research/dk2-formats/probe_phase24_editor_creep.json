@@ -1,0 +1,28 @@
+[
+  {
+    "id": "phase24-load-editor",
+    "tool": "load_program_from_project",
+    "args": {
+      "path": "/DK2-format-research/DK2 Editor pro.exe"
+    },
+    "print_limit": 100
+  },
+  {
+    "id": "phase24-editor-creature-model-assembly",
+    "tool": "disassemble_function",
+    "args": {
+      "program": "DK2 Editor pro.exe",
+      "address": "0x4A01B0"
+    },
+    "print_limit": 100
+  },
+  {
+    "id": "phase24-creature-converter-assembly",
+    "tool": "disassemble_function",
+    "args": {
+      "program": "DKII-DX.exe",
+      "address": "0x568E30"
+    },
+    "print_limit": 100
+  }
+]

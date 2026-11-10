@@ -1,0 +1,3446 @@
+{
+  "family": "Things HeroParty",
+  "tag": 201,
+  "canonical_payload_bytes": 555,
+  "executable_sha256": {
+    "Dungeon Keeper 2/DKII-DX.exe": "d7a8b854e4e4f02709eba271bead6fe2307dd6e332b5a96e70857e5b0e19fb8a",
+    "Dungeon Keeper 2/Data/editor/DK2 Editor pro.exe": "989c45df779bccfc9a9e509b2ad0224a9bd269629f74792adc0320fa4b99fb09"
+  },
+  "canonical_fields": {
+    "name": {
+      "offset": 0,
+      "bytes": 32,
+      "kind": "raw bytes; native name handling is separate"
+    },
+    "trigger_id": {
+      "offset": 32,
+      "bytes": 2
+    },
+    "party_id": {
+      "offset": 34,
+      "bytes": 1
+    },
+    "opaque_header": {
+      "offset": 35,
+      "bytes": 8,
+      "baseline_fields": [
+        "X23 DWORD",
+        "X27 DWORD"
+      ]
+    },
+    "members": {
+      "offset": 43,
+      "stride": 32,
+      "slots": 16,
+      "kind": "embedded Good C7 payload, no per-member8-byte envelope"
+    }
+  },
+  "variants": [
+    {
+      "payload_bytes": 264,
+      "header_bytes": 8,
+      "member_slots": 8,
+      "member_offset": 8,
+      "name": "No input name; zeroed canonical buffer yields empty name",
+      "trigger_offset": 0,
+      "party_offset": 2
+    },
+    {
+      "payload_bytes": 268,
+      "header_bytes": 12,
+      "member_slots": 8,
+      "member_offset": 12,
+      "name": "Native scans CString at temporary buffer+268, outside read input; result depends on preexisting stack",
+      "trigger_offset": 0,
+      "party_offset": 2
+    },
+    {
+      "payload_bytes": 300,
+      "header_bytes": 12,
+      "member_slots": 8,
+      "member_offset": 12,
+      "name": "Native scans CString starting input268, then unbounded copy to temporary name; bounded API requires NUL within32 bytes",
+      "trigger_offset": 0,
+      "party_offset": 2
+    },
+    {
+      "payload_bytes": 555,
+      "header_bytes": 43,
+      "member_slots": 16,
+      "member_offset": 43,
+      "name": "Input0..31 -> strncpy32; force intermediate name31=0",
+      "trigger_offset": 32,
+      "party_offset": 34
+    }
+  ],
+  "parsers": {
+    "game": "0x570210",
+    "editor": "0x430a70",
+    "editor_converter": "0x42f9e0",
+    "read_rule": "Only payload264/268/300 have special branches; every other declared length requests555 bytes, including556. Independent file parser must respect actual envelopes and not reproduce this fallback on malformed records.",
+    "intermediate": "631 bytes:19 DWORD presence flags0..4B all1, followed by555-byte canonical buffer4C..276. Header ID6E, trigger6C; member base77. Name padded after firstNUL, then byte6B forced0.",
+    "opaque_rule": "Both raw DWORDs23/27 are not copied. Intermediate canonical corresponding8 bytes remain0; all16 member records are copied verbatim even when CreatureId0. Raw name32nd byte forced0; name does not reach world-store entity state.",
+    "legacy_rule": "Legacy264 copies8 members from offset8,268/300 fromoffset12, then leaves8 remaining canonical slots0. Input legacy header gap bytes are not copied.268 name is not deterministic from file bytes alone.",
+    "checksum": "Callback5212A0 calls world checksum5108C0(mid,631) before storage. Raw opaque23/27 do not affect that intermediate because they were replaced by0; normalized name and member unused bytes remain included in checksum path. Name not used by world-store is not globally unused."
+  },
+  "game_store": {
+    "callback": "0x5212a0",
+    "helper": "0x50fa70",
+    "world_base": "0x4030",
+    "runtime_stride": 520,
+    "rule": "world+4030+u8PartyId*520: assign triggerWORD at0, ID byte2, copy all16*32 member bytes to8. Runtime bytes3..7 retain previous contents. No name or reserved-header DWORD assignment.",
+    "index": "No24 bounds check in helper; byte24 and255 still index by520. Editor count/get/writer iterate24 slots0..23. Raw ID255 additionally has auto-assignment meaning in editor array insertion48DE20, after member fields were assigned; full insertion/GUI consequences not emulated.",
+    "duplicate": "Storage directly replaces the same indexed trigger/ID/member block. Later same-ID records replace these fields in input order; preserved runtime bytes3..7 are not supplied by either raw record.",
+    "spawn_scope": "WorldTrigger519F90 subsequently loops16 member slots and skips only CreatureId0. Copies member raw1D/1E to instance418/417, not header PartyId. Header/embedded PartyId can disagree in hand-edited raw data. Complete spawn/action logic not emulated."
+  },
+  "native_editor": {
+    "callback": "0x491a40",
+    "selection": "Loop16 presence DWORDs, skip absent flag or embedded CreatureId0. Constructs only nonempty models; add4211B0 fills first free party slot, compacting holes.",
+    "fields": "After model creation: level=raw level byte (0 not normalized), PartyId=header byte overriding member raw1E, Wander=member1D, target/objective copied as bytes, AP DWORD narrowed by41CF40 to low8. Raw XYZ not assigned by this loop; model constructors determine position defaults.",
+    "modern_percent": "For map model major60!=1: low8 gold/health then min100, matching modern individual fields. Major1 has separate absolute conversion, excluded from API/emulations.",
+    "flags": "Loads all8 flags and low4 Flags2; no individual Good finalizer41CF20 and no ReturnToLair version reset here. If neither Leader nor Follower is set when adding, first member gets Leader, subsequent members Follower. Explicit Leader/Follower, including both set and multiple leaders, stay unchanged.",
+    "zero_objective": "Party member loading retains Objective0 and low8 AP; does not use individual Good callback default Objective19/AP3. Later serializer4952F0 changes objective0->19 but leaves AP getter value.",
+    "naming": "Callback formats Hero Party %u using headerID+1 into party model display name regardless original raw name. Full MFC naming/allocation/insertion path is inspected statically, not fully emulated.",
+    "unique": "Definition unique/clone lookup can construct a base-ID model with marker5A. Member field fragments start after creation; do not model complete clone resolution."
+  },
+  "native_writer": {
+    "function": "0x4947c0",
+    "party_range": [
+      4804470,
+      4804628
+    ],
+    "member_serializer": "0x4952f0",
+    "rule": "Iterate24 party pointers and16 member slots. Write envelopeC9/555. In555-byte scratch, assign triggerWORD20, partyID22 and16 serialized32-byte members at2B; null member serializer produces32 zeros. Do not assign name00..1F or reserved23..2A.",
+    "unknown_scope": "Name32 and reserved8 bytes retain scratch contents under the separately stated helper/write contracts, not stable metadata or member counts. Independent editor should preserve source raw bytes, not synthesize native stack residue.",
+    "stack_audit": {
+      "function": "0x4947c0",
+      "stop": "0x495008",
+      "instruction_states": 593,
+      "record_start_entry_sp": -556,
+      "untouched_intervals_entry_sp": [
+        [
+          -556,
+          -524
+        ],
+        [
+          -521,
+          -513
+        ]
+      ],
+      "direct_write_hits": [],
+      "writes": [
+        {
+          "address": "0x4947c6",
+          "start": -924,
+          "bytes": 4,
+          "text": "push ebx"
+        },
+        {
+          "address": "0x4947c7",
+          "start": -928,
+          "bytes": 4,
+          "text": "push ebp"
+        },
+        {
+          "address": "0x4947c8",
+          "start": -932,
+          "bytes": 4,
+          "text": "push esi"
+        },
+        {
+          "address": "0x4947c9",
+          "start": -936,
+          "bytes": 4,
+          "text": "push edi"
+        },
+        {
+          "address": "0x4947ef",
+          "start": -908,
+          "bytes": 4,
+          "text": "mov dword ptr [esp + 0x1c], eax"
+        },
+        {
+          "address": "0x4947f9",
+          "start": -900,
+          "bytes": 4,
+          "text": "mov dword ptr [esp + 0x24], ecx"
+        },
+        {
+          "address": "0x4947ff",
+          "start": -904,
+          "bytes": 4,
+          "text": "mov dword ptr [esp + 0x20], edx"
+        },
+        {
+          "address": "0x494803",
+          "start": -920,
+          "bytes": 4,
+          "text": "mov dword ptr [esp + 0x10], eax"
+        },
+        {
+          "address": "0x49481f",
+          "start": -940,
+          "bytes": 4,
+          "text": "push 1"
+        },
+        {
+          "address": "0x49484f",
+          "start": -940,
+          "bytes": 4,
+          "text": "push 1"
+        },
+        {
+          "address": "0x494865",
+          "start": -940,
+          "bytes": 4,
+          "text": "push 1"
+        },
+        {
+          "address": "0x494888",
+          "start": -940,
+          "bytes": 4,
+          "text": "push 0xc"
+        },
+        {
+          "address": "0x49488c",
+          "start": -748,
+          "bytes": 4,
+          "text": "mov dword ptr [esp + 0xc0], 0xbe"
+        },
+        {
+          "address": "0x494897",
+          "start": -744,
+          "bytes": 4,
+          "text": "mov dword ptr [esp + 0xc4], 4"
+        },
+        {
+          "address": "0x4948ba",
+          "start": -944,
+          "bytes": 4,
+          "text": "push ecx"
+        },
+        {
+          "address": "0x4948c5",
+          "start": -892,
+          "bytes": 4,
+          "text": "mov dword ptr [esp + 0x34], eax"
+        },
+        {
+          "address": "0x4948cc",
+          "start": -740,
+          "bytes": 4,
+          "text": "mov dword ptr [esp + 0xcc], eax"
+        },
+        {
+          "address": "0x4948ec",
+          "start": -700,
+          "bytes": 4,
+          "text": "mov dword ptr [esp + 0xec], 0xbf"
+        },
+        {
+          "address": "0x4948f7",
+          "start": -864,
+          "bytes": 4,
+          "text": "mov dword ptr [esp + 0x48], edx"
+        },
+        {
+          "address": "0x494907",
+          "start": -896,
+          "bytes": 4,
+          "text": "mov dword ptr [esp + 0x28], eax"
+        },
+        {
+          "address": "0x494911",
+          "start": -908,
+          "bytes": 4,
+          "text": "mov dword ptr [esp + 0x1c], ecx"
+        },
+        {
+          "address": "0x494915",
+          "start": -940,
+          "bytes": 4,
+          "text": "push 1"
+        },
+        {
+          "address": "0x494919",
+          "start": -920,
+          "bytes": 4,
+          "text": "mov dword ptr [esp + 0x14], edx"
+        },
+        {
+          "address": "0x49491d",
+          "start": -904,
+          "bytes": 4,
+          "text": "mov dword ptr [esp + 0x24], eax"
+        },
+        {
+          "address": "0x494938",
+          "start": -900,
+          "bytes": 4,
+          "text": "mov dword ptr [esp + 0x24], ebp"
+        },
+        {
+          "address": "0x494969",
+          "start": -688,
+          "bytes": 4,
+          "text": "mov dword ptr [esp + 0xf8], 1"
+        },
+        {
+          "address": "0x494986",
+          "start": -940,
+          "bytes": 4,
+          "text": "push eax"
+        },
+        {
+          "address": "0x494987",
+          "start": -692,
+          "bytes": 4,
+          "text": "mov dword ptr [esp + 0xf8], edx"
+        },
+        {
+          "address": "0x49499a",
+          "start": -940,
+          "bytes": 4,
+          "text": "push ecx"
+        },
+        {
+          "address": "0x4949ae",
+          "start": -940,
+          "bytes": 4,
+          "text": "push 0x24"
+        },
+        {
+          "address": "0x4949b0",
+          "start": -944,
+          "bytes": 4,
+          "text": "push eax"
+        },
+        {
+          "address": "0x4949b3",
+          "start": -696,
+          "bytes": 4,
+          "text": "mov dword ptr [esp + 0xf8], 0x1c"
+        },
+        {
+          "address": "0x4949ce",
+          "start": -776,
+          "bytes": 4,
+          "text": "mov dword ptr [esp + 0xa0], ecx"
+        },
+        {
+          "address": "0x4949d5",
+          "start": -940,
+          "bytes": 4,
+          "text": "push 8"
+        },
+        {
+          "address": "0x4949d7",
+          "start": -944,
+          "bytes": 4,
+          "text": "push eax"
+        },
+        {
+          "address": "0x4949da",
+          "start": -780,
+          "bytes": 4,
+          "text": "mov dword ptr [esp + 0xa4], 0xc0"
+        },
+        {
+          "address": "0x4949ec",
+          "start": -940,
+          "bytes": 4,
+          "text": "push ebx"
+        },
+        {
+          "address": "0x4949fa",
+          "start": -940,
+          "bytes": 4,
+          "text": "push ebx"
+        },
+        {
+          "address": "0x494a33",
+          "start": -940,
+          "bytes": 4,
+          "text": "push 8"
+        },
+        {
+          "address": "0x494a35",
+          "start": -944,
+          "bytes": 4,
+          "text": "push eax"
+        },
+        {
+          "address": "0x494a38",
+          "start": -916,
+          "bytes": 4,
+          "text": "mov dword ptr [esp + 0x1c], 0xc7"
+        },
+        {
+          "address": "0x494a40",
+          "start": -912,
+          "bytes": 4,
+          "text": "mov dword ptr [esp + 0x20], 0x20"
+        },
+        {
+          "address": "0x494a52",
+          "start": -940,
+          "bytes": 4,
+          "text": "push ecx"
+        },
+        {
+          "address": "0x494a53",
+          "start": -944,
+          "bytes": 4,
+          "text": "push ebp"
+        },
+        {
+          "address": "0x494a64",
+          "start": -940,
+          "bytes": 4,
+          "text": "push 0x20"
+        },
+        {
+          "address": "0x494a66",
+          "start": -944,
+          "bytes": 4,
+          "text": "push eax"
+        },
+        {
+          "address": "0x494c13",
+          "start": -940,
+          "bytes": 4,
+          "text": "push 0"
+        },
+        {
+          "address": "0x494c2f",
+          "start": -916,
+          "bytes": 4,
+          "text": "mov dword ptr [esp + 0x14], 0xc4"
+        },
+        {
+          "address": "0x494c37",
+          "start": -912,
+          "bytes": 4,
+          "text": "mov dword ptr [esp + 0x18], 0x14"
+        },
+        {
+          "address": "0x494c45",
+          "start": -940,
+          "bytes": 4,
+          "text": "push ebx"
+        },
+        {
+          "address": "0x494c65",
+          "start": -940,
+          "bytes": 4,
+          "text": "push 8"
+        },
+        {
+          "address": "0x494c67",
+          "start": -944,
+          "bytes": 4,
+          "text": "push ecx"
+        },
+        {
+          "address": "0x494c7c",
+          "start": -786,
+          "bytes": 1,
+          "text": "mov byte ptr [esp + 0x96], dl"
+        },
+        {
+          "address": "0x494c8c",
+          "start": -785,
+          "bytes": 1,
+          "text": "mov byte ptr [esp + 0x97], cl"
+        },
+        {
+          "address": "0x494c9b",
+          "start": -800,
+          "bytes": 4,
+          "text": "mov dword ptr [esp + 0x88], eax"
+        },
+        {
+          "address": "0x494caa",
+          "start": -796,
+          "bytes": 4,
+          "text": "mov dword ptr [esp + 0x8c], eax"
+        },
+        {
+          "address": "0x494cb1",
+          "start": -792,
+          "bytes": 4,
+          "text": "mov dword ptr [esp + 0x90], 0"
+        },
+        {
+          "address": "0x494cc6",
+          "start": -788,
+          "bytes": 2,
+          "text": "mov word ptr [esp + 0x94], ax"
+        },
+        {
+          "address": "0x494cda",
+          "start": -784,
+          "bytes": 1,
+          "text": "mov byte ptr [esp + 0x98], al"
+        },
+        {
+          "address": "0x494ce3",
+          "start": -940,
+          "bytes": 4,
+          "text": "push 0x14"
+        },
+        {
+          "address": "0x494ce5",
+          "start": -944,
+          "bytes": 4,
+          "text": "push ecx"
+        },
+        {
+          "address": "0x494d04",
+          "start": -916,
+          "bytes": 4,
+          "text": "mov dword ptr [esp + 0x14], 0xc3"
+        },
+        {
+          "address": "0x494d0c",
+          "start": -912,
+          "bytes": 4,
+          "text": "mov dword ptr [esp + 0x18], 0x10"
+        },
+        {
+          "address": "0x494d1a",
+          "start": -940,
+          "bytes": 4,
+          "text": "push ebx"
+        },
+        {
+          "address": "0x494d36",
+          "start": -940,
+          "bytes": 4,
+          "text": "push 8"
+        },
+        {
+          "address": "0x494d38",
+          "start": -944,
+          "bytes": 4,
+          "text": "push ecx"
+        },
+        {
+          "address": "0x494d4d",
+          "start": -819,
+          "bytes": 1,
+          "text": "mov byte ptr [esp + 0x75], dl"
+        },
+        {
+          "address": "0x494d5a",
+          "start": -818,
+          "bytes": 1,
+          "text": "mov byte ptr [esp + 0x76], cl"
+        },
+        {
+          "address": "0x494d66",
+          "start": -832,
+          "bytes": 4,
+          "text": "mov dword ptr [esp + 0x68], eax"
+        },
+        {
+          "address": "0x494d74",
+          "start": -828,
+          "bytes": 4,
+          "text": "mov dword ptr [esp + 0x6c], eax"
+        },
+        {
+          "address": "0x494d78",
+          "start": -824,
+          "bytes": 4,
+          "text": "mov dword ptr [esp + 0x70], 0"
+        },
+        {
+          "address": "0x494d87",
+          "start": -820,
+          "bytes": 1,
+          "text": "mov byte ptr [esp + 0x74], cl"
+        },
+        {
+          "address": "0x494d8b",
+          "start": -940,
+          "bytes": 4,
+          "text": "push 0x10"
+        },
+        {
+          "address": "0x494d8d",
+          "start": -944,
+          "bytes": 4,
+          "text": "push eax"
+        },
+        {
+          "address": "0x494dac",
+          "start": -916,
+          "bytes": 4,
+          "text": "mov dword ptr [esp + 0x14], 0xc2"
+        },
+        {
+          "address": "0x494db4",
+          "start": -912,
+          "bytes": 4,
+          "text": "mov dword ptr [esp + 0x18], 0x18"
+        },
+        {
+          "address": "0x494dc2",
+          "start": -940,
+          "bytes": 4,
+          "text": "push ebx"
+        },
+        {
+          "address": "0x494de2",
+          "start": -940,
+          "bytes": 4,
+          "text": "push 8"
+        },
+        {
+          "address": "0x494de4",
+          "start": -944,
+          "bytes": 4,
+          "text": "push ecx"
+        },
+        {
+          "address": "0x494df9",
+          "start": -750,
+          "bytes": 1,
+          "text": "mov byte ptr [esp + 0xba], dl"
+        },
+        {
+          "address": "0x494e09",
+          "start": -749,
+          "bytes": 1,
+          "text": "mov byte ptr [esp + 0xbb], cl"
+        },
+        {
+          "address": "0x494e18",
+          "start": -772,
+          "bytes": 4,
+          "text": "mov dword ptr [esp + 0xa4], eax"
+        },
+        {
+          "address": "0x494e27",
+          "start": -768,
+          "bytes": 4,
+          "text": "mov dword ptr [esp + 0xa8], eax"
+        },
+        {
+          "address": "0x494e2e",
+          "start": -764,
+          "bytes": 4,
+          "text": "mov dword ptr [esp + 0xac], 0"
+        },
+        {
+          "address": "0x494e43",
+          "start": -752,
+          "bytes": 2,
+          "text": "mov word ptr [esp + 0xb8], ax"
+        },
+        {
+          "address": "0x494e52",
+          "start": -760,
+          "bytes": 4,
+          "text": "mov dword ptr [esp + 0xb0], eax"
+        },
+        {
+          "address": "0x494e65",
+          "start": -756,
+          "bytes": 4,
+          "text": "mov dword ptr [esp + 0xb4], eax"
+        },
+        {
+          "address": "0x494e6e",
+          "start": -940,
+          "bytes": 4,
+          "text": "push 0x18"
+        },
+        {
+          "address": "0x494e70",
+          "start": -944,
+          "bytes": 4,
+          "text": "push ecx"
+        },
+        {
+          "address": "0x494e8f",
+          "start": -916,
+          "bytes": 4,
+          "text": "mov dword ptr [esp + 0x14], 0xc5"
+        },
+        {
+          "address": "0x494e97",
+          "start": -912,
+          "bytes": 4,
+          "text": "mov dword ptr [esp + 0x18], 0x38"
+        },
+        {
+          "address": "0x494e9f",
+          "start": -908,
+          "bytes": 4,
+          "text": "mov dword ptr [esp + 0x1c], eax"
+        },
+        {
+          "address": "0x494ea9",
+          "start": -940,
+          "bytes": 4,
+          "text": "push eax"
+        },
+        {
+          "address": "0x494eb9",
+          "start": -940,
+          "bytes": 4,
+          "text": "push 8"
+        },
+        {
+          "address": "0x494ebb",
+          "start": -944,
+          "bytes": 4,
+          "text": "push eax"
+        },
+        {
+          "address": "0x494ec4",
+          "start": -642,
+          "bytes": 1,
+          "text": "mov byte ptr [esp + 0x126], cl"
+        },
+        {
+          "address": "0x494ece",
+          "start": -664,
+          "bytes": 4,
+          "text": "mov dword ptr [esp + 0x110], edx"
+        },
+        {
+          "address": "0x494ed8",
+          "start": -660,
+          "bytes": 4,
+          "text": "mov dword ptr [esp + 0x114], eax"
+        },
+        {
+          "address": "0x494ee2",
+          "start": -656,
+          "bytes": 4,
+          "text": "mov dword ptr [esp + 0x118], ecx"
+        },
+        {
+          "address": "0x494eec",
+          "start": -652,
+          "bytes": 4,
+          "text": "mov dword ptr [esp + 0x11c], edx"
+        },
+        {
+          "address": "0x494efb",
+          "start": -644,
+          "bytes": 2,
+          "text": "mov word ptr [esp + 0x124], ax"
+        },
+        {
+          "address": "0x494f06",
+          "start": -641,
+          "bytes": 1,
+          "text": "mov byte ptr [esp + 0x127], cl"
+        },
+        {
+          "address": "0x494f20",
+          "start": -940,
+          "bytes": 4,
+          "text": "push ebx"
+        },
+        {
+          "address": "0x494f49",
+          "start": -648,
+          "bytes": 4,
+          "text": "mov dword ptr [esp + 0x120], eax"
+        },
+        {
+          "address": "0x494f57",
+          "start": -940,
+          "bytes": 4,
+          "text": "push 0x38"
+        },
+        {
+          "address": "0x494f59",
+          "start": -944,
+          "bytes": 4,
+          "text": "push eax"
+        },
+        {
+          "address": "0x494f6c",
+          "start": -908,
+          "bytes": 4,
+          "text": "mov dword ptr [esp + 0x1c], eax"
+        },
+        {
+          "address": "0x494f78",
+          "start": -916,
+          "bytes": 4,
+          "text": "mov dword ptr [esp + 0x14], 0xc9"
+        },
+        {
+          "address": "0x494f80",
+          "start": -912,
+          "bytes": 4,
+          "text": "mov dword ptr [esp + 0x18], 0x22b"
+        },
+        {
+          "address": "0x494f88",
+          "start": -908,
+          "bytes": 4,
+          "text": "mov dword ptr [esp + 0x1c], ebp"
+        },
+        {
+          "address": "0x494f8c",
+          "start": -940,
+          "bytes": 4,
+          "text": "push ebp"
+        },
+        {
+          "address": "0x494fa0",
+          "start": -940,
+          "bytes": 4,
+          "text": "push 8"
+        },
+        {
+          "address": "0x494fa2",
+          "start": -944,
+          "bytes": 4,
+          "text": "push eax"
+        },
+        {
+          "address": "0x494fab",
+          "start": -522,
+          "bytes": 1,
+          "text": "mov byte ptr [esp + 0x19e], cl"
+        },
+        {
+          "address": "0x494fb9",
+          "start": -524,
+          "bytes": 2,
+          "text": "mov word ptr [esp + 0x19c], ax"
+        },
+        {
+          "address": "0x494fca",
+          "start": -920,
+          "bytes": 4,
+          "text": "mov dword ptr [esp + 0x10], eax"
+        },
+        {
+          "address": "0x494fd2",
+          "start": -940,
+          "bytes": 4,
+          "text": "push ecx"
+        },
+        {
+          "address": "0x494fd3",
+          "start": -944,
+          "bytes": 4,
+          "text": "push ebp"
+        },
+        {
+          "address": "0x494fdb",
+          "start": -944,
+          "bytes": 4,
+          "text": "push eax"
+        },
+        {
+          "address": "0x494fee",
+          "start": -920,
+          "bytes": 4,
+          "text": "mov dword ptr [esp + 0x10], ecx"
+        },
+        {
+          "address": "0x494ffd",
+          "start": -940,
+          "bytes": 4,
+          "text": "push 0x22b"
+        },
+        {
+          "address": "0x495002",
+          "start": -944,
+          "bytes": 4,
+          "text": "push eax"
+        },
+        {
+          "address": "0x494a89",
+          "start": -940,
+          "bytes": 4,
+          "text": "push 8"
+        },
+        {
+          "address": "0x494a8b",
+          "start": -944,
+          "bytes": 4,
+          "text": "push ecx"
+        },
+        {
+          "address": "0x494a8e",
+          "start": -916,
+          "bytes": 4,
+          "text": "mov dword ptr [esp + 0x1c], 0xc6"
+        },
+        {
+          "address": "0x494a96",
+          "start": -912,
+          "bytes": 4,
+          "text": "mov dword ptr [esp + 0x20], 0x18"
+        },
+        {
+          "address": "0x494aae",
+          "start": -866,
+          "bytes": 1,
+          "text": "mov byte ptr [esp + 0x46], dl"
+        },
+        {
+          "address": "0x494ad9",
+          "start": -866,
+          "bytes": 1,
+          "text": "mov byte ptr [esp + 0x46], al"
+        },
+        {
+          "address": "0x494ae5",
+          "start": -888,
+          "bytes": 4,
+          "text": "mov dword ptr [esp + 0x30], eax"
+        },
+        {
+          "address": "0x494af1",
+          "start": -884,
+          "bytes": 4,
+          "text": "mov dword ptr [esp + 0x34], eax"
+        },
+        {
+          "address": "0x494af5",
+          "start": -880,
+          "bytes": 4,
+          "text": "mov dword ptr [esp + 0x38], 0"
+        },
+        {
+          "address": "0x494b02",
+          "start": -874,
+          "bytes": 1,
+          "text": "mov byte ptr [esp + 0x3e], al"
+        },
+        {
+          "address": "0x494b0b",
+          "start": -876,
+          "bytes": 2,
+          "text": "mov word ptr [esp + 0x3c], cx"
+        },
+        {
+          "address": "0x494b13",
+          "start": -872,
+          "bytes": 4,
+          "text": "mov dword ptr [esp + 0x40], edx"
+        },
+        {
+          "address": "0x494b1a",
+          "start": -865,
+          "bytes": 1,
+          "text": "mov byte ptr [esp + 0x47], al"
+        },
+        {
+          "address": "0x494b28",
+          "start": -868,
+          "bytes": 2,
+          "text": "mov word ptr [esp + 0x44], ax"
+        },
+        {
+          "address": "0x494b32",
+          "start": -873,
+          "bytes": 1,
+          "text": "mov byte ptr [esp + 0x3f], al"
+        },
+        {
+          "address": "0x494b38",
+          "start": -940,
+          "bytes": 4,
+          "text": "push 0x18"
+        },
+        {
+          "address": "0x494c0d",
+          "start": -944,
+          "bytes": 4,
+          "text": "push ecx"
+        },
+        {
+          "address": "0x494b49",
+          "start": -940,
+          "bytes": 4,
+          "text": "push 8"
+        },
+        {
+          "address": "0x494b4b",
+          "start": -944,
+          "bytes": 4,
+          "text": "push eax"
+        },
+        {
+          "address": "0x494b4e",
+          "start": -916,
+          "bytes": 4,
+          "text": "mov dword ptr [esp + 0x1c], 0xc8"
+        },
+        {
+          "address": "0x494b56",
+          "start": -912,
+          "bytes": 4,
+          "text": "mov dword ptr [esp + 0x20], 0x1c"
+        },
+        {
+          "address": "0x494b6e",
+          "start": -834,
+          "bytes": 1,
+          "text": "mov byte ptr [esp + 0x66], cl"
+        },
+        {
+          "address": "0x494b99",
+          "start": -834,
+          "bytes": 1,
+          "text": "mov byte ptr [esp + 0x66], al"
+        },
+        {
+          "address": "0x494baa",
+          "start": -833,
+          "bytes": 1,
+          "text": "mov byte ptr [esp + 0x67], al"
+        },
+        {
+          "address": "0x494bb4",
+          "start": -860,
+          "bytes": 4,
+          "text": "mov dword ptr [esp + 0x4c], eax"
+        },
+        {
+          "address": "0x494bc0",
+          "start": -856,
+          "bytes": 4,
+          "text": "mov dword ptr [esp + 0x50], eax"
+        },
+        {
+          "address": "0x494bc4",
+          "start": -852,
+          "bytes": 4,
+          "text": "mov dword ptr [esp + 0x54], 0"
+        },
+        {
+          "address": "0x494bd1",
+          "start": -846,
+          "bytes": 1,
+          "text": "mov byte ptr [esp + 0x5a], cl"
+        },
+        {
+          "address": "0x494bda",
+          "start": -848,
+          "bytes": 2,
+          "text": "mov word ptr [esp + 0x58], dx"
+        },
+        {
+          "address": "0x494be2",
+          "start": -844,
+          "bytes": 4,
+          "text": "mov dword ptr [esp + 0x5c], eax"
+        },
+        {
+          "address": "0x494be9",
+          "start": -840,
+          "bytes": 4,
+          "text": "mov dword ptr [esp + 0x60], ecx"
+        },
+        {
+          "address": "0x494bf7",
+          "start": -836,
+          "bytes": 2,
+          "text": "mov word ptr [esp + 0x64], ax"
+        },
+        {
+          "address": "0x494c01",
+          "start": -845,
+          "bytes": 1,
+          "text": "mov byte ptr [esp + 0x5b], al"
+        },
+        {
+          "address": "0x494c07",
+          "start": -940,
+          "bytes": 4,
+          "text": "push 0x1c"
+        }
+      ],
+      "calls": [
+        {
+          "address": "0x4947cc",
+          "stack_before": -936,
+          "cleanup": 0,
+          "target": "0x4022c0"
+        },
+        {
+          "address": "0x494807",
+          "stack_before": -936,
+          "cleanup": 0,
+          "target": "0x48b490"
+        },
+        {
+          "address": "0x494810",
+          "stack_before": -936,
+          "cleanup": 0,
+          "target": "0x48b340"
+        },
+        {
+          "address": "0x494830",
+          "stack_before": -940,
+          "cleanup": 4,
+          "target": "0x488bf0"
+        },
+        {
+          "address": "0x494846",
+          "stack_before": -936,
+          "cleanup": 0,
+          "target": "0x488c60"
+        },
+        {
+          "address": "0x49485b",
+          "stack_before": -940,
+          "cleanup": 4,
+          "target": "0x488b80"
+        },
+        {
+          "address": "0x49486f",
+          "stack_before": -940,
+          "cleanup": 4,
+          "target": "0x488cc0"
+        },
+        {
+          "address": "0x49487c",
+          "stack_before": -936,
+          "cleanup": 0,
+          "target": "0x48dde0"
+        },
+        {
+          "address": "0x4948d7",
+          "stack_before": -944,
+          "cleanup": 8,
+          "target": "dword ptr [eax + 0x38]"
+        },
+        {
+          "address": "0x494921",
+          "stack_before": -940,
+          "cleanup": 4,
+          "target": "0x488b30"
+        },
+        {
+          "address": "0x49492a",
+          "stack_before": -936,
+          "cleanup": 0,
+          "target": "0x48dde0"
+        },
+        {
+          "address": "0x494933",
+          "stack_before": -936,
+          "cleanup": 0,
+          "target": "0x48b490"
+        },
+        {
+          "address": "0x494942",
+          "stack_before": -936,
+          "cleanup": 0,
+          "target": "0x48b340"
+        },
+        {
+          "address": "0x49498e",
+          "stack_before": -940,
+          "cleanup": 4,
+          "target": "0x4ab320"
+        },
+        {
+          "address": "0x4949a0",
+          "stack_before": -940,
+          "cleanup": 4,
+          "target": "0x4ab320"
+        },
+        {
+          "address": "0x4949be",
+          "stack_before": -944,
+          "cleanup": 8,
+          "target": "dword ptr [edx + 0x38]"
+        },
+        {
+          "address": "0x4949e5",
+          "stack_before": -944,
+          "cleanup": 8,
+          "target": "dword ptr [edx + 0x38]"
+        },
+        {
+          "address": "0x4949ed",
+          "stack_before": -940,
+          "cleanup": 4,
+          "target": "0x488b30"
+        },
+        {
+          "address": "0x4949fd",
+          "stack_before": -940,
+          "cleanup": 4,
+          "target": "0x488d30"
+        },
+        {
+          "address": "0x494a14",
+          "stack_before": -936,
+          "cleanup": 0,
+          "target": "dword ptr [edx + 0x34]"
+        },
+        {
+          "address": "0x494a24",
+          "stack_before": -936,
+          "cleanup": 0,
+          "target": "dword ptr [eax + 4]"
+        },
+        {
+          "address": "0x494a48",
+          "stack_before": -944,
+          "cleanup": 8,
+          "target": "dword ptr [edx + 0x38]"
+        },
+        {
+          "address": "0x494a56",
+          "stack_before": -944,
+          "cleanup": 8,
+          "target": "0x4952f0"
+        },
+        {
+          "address": "0x494a69",
+          "stack_before": -944,
+          "cleanup": 8,
+          "target": "dword ptr [edx + 0x38]"
+        },
+        {
+          "address": "0x494c18",
+          "stack_before": -940,
+          "cleanup": 4,
+          "target": "0x488b30"
+        },
+        {
+          "address": "0x494c48",
+          "stack_before": -940,
+          "cleanup": 4,
+          "target": "0x489220"
+        },
+        {
+          "address": "0x494c54",
+          "stack_before": -936,
+          "cleanup": 0,
+          "target": "dword ptr [edx + 0x34]"
+        },
+        {
+          "address": "0x494c6a",
+          "stack_before": -944,
+          "cleanup": 8,
+          "target": "dword ptr [eax + 0x38]"
+        },
+        {
+          "address": "0x494c6f",
+          "stack_before": -936,
+          "cleanup": 0,
+          "target": "0x41ecd0"
+        },
+        {
+          "address": "0x494c86",
+          "stack_before": -936,
+          "cleanup": 0,
+          "target": "dword ptr [eax + 4]"
+        },
+        {
+          "address": "0x494c98",
+          "stack_before": -936,
+          "cleanup": 0,
+          "target": "dword ptr [edx + 0x14]"
+        },
+        {
+          "address": "0x494ca7",
+          "stack_before": -936,
+          "cleanup": 0,
+          "target": "dword ptr [eax + 0x18]"
+        },
+        {
+          "address": "0x494cc1",
+          "stack_before": -936,
+          "cleanup": 0,
+          "target": "dword ptr [edx + 0x28]"
+        },
+        {
+          "address": "0x494cce",
+          "stack_before": -936,
+          "cleanup": 0,
+          "target": "0x41ed10"
+        },
+        {
+          "address": "0x494ce8",
+          "stack_before": -944,
+          "cleanup": 8,
+          "target": "dword ptr [eax + 0x38]"
+        },
+        {
+          "address": "0x494d1d",
+          "stack_before": -940,
+          "cleanup": 4,
+          "target": "0x489610"
+        },
+        {
+          "address": "0x494d29",
+          "stack_before": -936,
+          "cleanup": 0,
+          "target": "dword ptr [edx + 0x34]"
+        },
+        {
+          "address": "0x494d3b",
+          "stack_before": -944,
+          "cleanup": 8,
+          "target": "dword ptr [eax + 0x38]"
+        },
+        {
+          "address": "0x494d40",
+          "stack_before": -936,
+          "cleanup": 0,
+          "target": "0x4258d0"
+        },
+        {
+          "address": "0x494d54",
+          "stack_before": -936,
+          "cleanup": 0,
+          "target": "dword ptr [eax + 4]"
+        },
+        {
+          "address": "0x494d63",
+          "stack_before": -936,
+          "cleanup": 0,
+          "target": "dword ptr [edx + 0x14]"
+        },
+        {
+          "address": "0x494d6f",
+          "stack_before": -936,
+          "cleanup": 0,
+          "target": "dword ptr [eax + 0x18]"
+        },
+        {
+          "address": "0x494d90",
+          "stack_before": -944,
+          "cleanup": 8,
+          "target": "dword ptr [edx + 0x38]"
+        },
+        {
+          "address": "0x494dc5",
+          "stack_before": -940,
+          "cleanup": 4,
+          "target": "0x489a00"
+        },
+        {
+          "address": "0x494dd1",
+          "stack_before": -936,
+          "cleanup": 0,
+          "target": "dword ptr [edx + 0x34]"
+        },
+        {
+          "address": "0x494de7",
+          "stack_before": -944,
+          "cleanup": 8,
+          "target": "dword ptr [eax + 0x38]"
+        },
+        {
+          "address": "0x494dec",
+          "stack_before": -936,
+          "cleanup": 0,
+          "target": "0x4205d0"
+        },
+        {
+          "address": "0x494e03",
+          "stack_before": -936,
+          "cleanup": 0,
+          "target": "dword ptr [eax + 4]"
+        },
+        {
+          "address": "0x494e15",
+          "stack_before": -936,
+          "cleanup": 0,
+          "target": "dword ptr [edx + 0x14]"
+        },
+        {
+          "address": "0x494e24",
+          "stack_before": -936,
+          "cleanup": 0,
+          "target": "dword ptr [eax + 0x18]"
+        },
+        {
+          "address": "0x494e3e",
+          "stack_before": -936,
+          "cleanup": 0,
+          "target": "dword ptr [edx + 0x28]"
+        },
+        {
+          "address": "0x494e4b",
+          "stack_before": -936,
+          "cleanup": 0,
+          "target": "0x420670"
+        },
+        {
+          "address": "0x494e59",
+          "stack_before": -936,
+          "cleanup": 0,
+          "target": "0x4206f0"
+        },
+        {
+          "address": "0x494e73",
+          "stack_before": -944,
+          "cleanup": 8,
+          "target": "dword ptr [eax + 0x38]"
+        },
+        {
+          "address": "0x494eac",
+          "stack_before": -940,
+          "cleanup": 4,
+          "target": "0x48a910"
+        },
+        {
+          "address": "0x494ebe",
+          "stack_before": -944,
+          "cleanup": 8,
+          "target": "dword ptr [edx + 0x38]"
+        },
+        {
+          "address": "0x494ef8",
+          "stack_before": -936,
+          "cleanup": 0,
+          "target": "dword ptr [eax + 0x28]"
+        },
+        {
+          "address": "0x494f23",
+          "stack_before": -940,
+          "cleanup": 4,
+          "target": "0x48a910"
+        },
+        {
+          "address": "0x494f42",
+          "stack_before": -936,
+          "cleanup": 0,
+          "target": "0x41b9b0"
+        },
+        {
+          "address": "0x494f5c",
+          "stack_before": -944,
+          "cleanup": 8,
+          "target": "dword ptr [edx + 0x38]"
+        },
+        {
+          "address": "0x494f8f",
+          "stack_before": -940,
+          "cleanup": 4,
+          "target": "0x48de00"
+        },
+        {
+          "address": "0x494fa5",
+          "stack_before": -944,
+          "cleanup": 8,
+          "target": "dword ptr [edx + 0x38]"
+        },
+        {
+          "address": "0x494fb6",
+          "stack_before": -936,
+          "cleanup": 0,
+          "target": "dword ptr [edx + 0x28]"
+        },
+        {
+          "address": "0x494fd6",
+          "stack_before": -944,
+          "cleanup": 4,
+          "target": "0x421190"
+        },
+        {
+          "address": "0x494fde",
+          "stack_before": -944,
+          "cleanup": 8,
+          "target": "0x4952f0"
+        },
+        {
+          "address": "0x495005",
+          "stack_before": -944,
+          "cleanup": 8,
+          "target": "dword ptr [edx + 0x38]"
+        },
+        {
+          "address": "0x494a76",
+          "stack_before": -936,
+          "cleanup": 0,
+          "target": "dword ptr [edx + 4]"
+        },
+        {
+          "address": "0x494a9e",
+          "stack_before": -944,
+          "cleanup": 8,
+          "target": "dword ptr [eax + 0x38]"
+        },
+        {
+          "address": "0x494aa3",
+          "stack_before": -936,
+          "cleanup": 0,
+          "target": "0x41ce20"
+        },
+        {
+          "address": "0x494abb",
+          "stack_before": -936,
+          "cleanup": 0,
+          "target": "0x41ce20"
+        },
+        {
+          "address": "0x494ac2",
+          "stack_before": -936,
+          "cleanup": 0,
+          "target": "0x41de60"
+        },
+        {
+          "address": "0x494acd",
+          "stack_before": -936,
+          "cleanup": 0,
+          "target": "0x41ce20"
+        },
+        {
+          "address": "0x494ad4",
+          "stack_before": -936,
+          "cleanup": 0,
+          "target": "0x41de60"
+        },
+        {
+          "address": "0x494ae2",
+          "stack_before": -936,
+          "cleanup": 0,
+          "target": "dword ptr [eax + 0x14]"
+        },
+        {
+          "address": "0x494aee",
+          "stack_before": -936,
+          "cleanup": 0,
+          "target": "dword ptr [edx + 0x18]"
+        },
+        {
+          "address": "0x494b23",
+          "stack_before": -936,
+          "cleanup": 0,
+          "target": "dword ptr [edx + 0x28]"
+        },
+        {
+          "address": "0x494b2d",
+          "stack_before": -936,
+          "cleanup": 0,
+          "target": "0x41d170"
+        },
+        {
+          "address": "0x494c10",
+          "stack_before": -944,
+          "cleanup": 8,
+          "target": "dword ptr [eax + 0x38]"
+        },
+        {
+          "address": "0x494b5e",
+          "stack_before": -944,
+          "cleanup": 8,
+          "target": "dword ptr [edx + 0x38]"
+        },
+        {
+          "address": "0x494b63",
+          "stack_before": -936,
+          "cleanup": 0,
+          "target": "0x41ce20"
+        },
+        {
+          "address": "0x494b7b",
+          "stack_before": -936,
+          "cleanup": 0,
+          "target": "0x41ce20"
+        },
+        {
+          "address": "0x494b82",
+          "stack_before": -936,
+          "cleanup": 0,
+          "target": "0x41de60"
+        },
+        {
+          "address": "0x494b8d",
+          "stack_before": -936,
+          "cleanup": 0,
+          "target": "0x41ce20"
+        },
+        {
+          "address": "0x494b94",
+          "stack_before": -936,
+          "cleanup": 0,
+          "target": "0x41de60"
+        },
+        {
+          "address": "0x494ba2",
+          "stack_before": -936,
+          "cleanup": 0,
+          "target": "dword ptr [edx + 4]"
+        },
+        {
+          "address": "0x494bb1",
+          "stack_before": -936,
+          "cleanup": 0,
+          "target": "dword ptr [edx + 0x14]"
+        },
+        {
+          "address": "0x494bbd",
+          "stack_before": -936,
+          "cleanup": 0,
+          "target": "dword ptr [eax + 0x18]"
+        },
+        {
+          "address": "0x494bf2",
+          "stack_before": -936,
+          "cleanup": 0,
+          "target": "dword ptr [edx + 0x28]"
+        },
+        {
+          "address": "0x494bfc",
+          "stack_before": -936,
+          "cleanup": 0,
+          "target": "0x41d170"
+        }
+      ],
+      "scope": "Bounded full-CFG prefix audit, through first C9 payload write.\n\nDirect stack writes/PUSHes only. Bounded date/Good serializer and readonly file\ncallback contracts are separate; this is not a general interprocedural alias proof.\n",
+      "helper_contracts": [
+        "Date4AB320 writes only supplied small header destinations, outside C9 scratch.",
+        "Good4952F0 writes32 bytes at supplied member slot, starting raw2B; previous standalone Good buffer ends immediately before party name.",
+        "Other getter calls receive model/count/index inputs, not a C9 name/reserved destination.",
+        "File virtual38 reads supplied buffer without modifying it."
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "file": "phase32-party-parser-assembly.txt",
+      "first": "0x570210",
+      "last": "0x5704f4",
+      "instructions": [
+        "00570210: MOV EAX,dword ptr [ESP + 0xc] ",
+        "00570214: SUB ESP,0x6b4 ",
+        "0057021a: MOV ECX,dword ptr [EAX + 0x94] ",
+        "00570220: PUSH EBX ",
+        "00570221: XOR EBX,EBX ",
+        "00570223: PUSH EBP ",
+        "00570224: PUSH ESI ",
+        "00570225: CMP ECX,EBX ",
+        "00570227: PUSH EDI ",
+        "00570228: JZ 0x005704a6 ",
+        "0057022e: MOV ECX,dword ptr [ESP + 0x6c8] ",
+        "00570235: MOV EDX,dword ptr [ECX + 0x4] ",
+        "00570238: CMP EDX,0x108 ",
+        "0057023e: JNZ 0x005702c7 ",
+        "00570244: MOV ECX,0x8a ",
+        "00570249: XOR EAX,EAX ",
+        "0057024b: LEA EDI,[ESP + 0x18] ",
+        "0057024f: LEA EDX,[ESP + 0x14] ",
+        "00570253: STOSD.REP ES:EDI ",
+        "00570255: MOV ECX,dword ptr [ESP + 0x6cc] ",
+        "0057025c: PUSH EDX ",
+        "0057025d: STOSW ES:EDI ",
+        "0057025f: MOV EDX,dword ptr [ECX] ",
+        "00570261: PUSH 0x108 ",
+        "00570266: STOSB ES:EDI ",
+        "00570267: LEA EAX,[ESP + 0x4c4] ",
+        "0057026e: PUSH EAX ",
+        "0057026f: LEA EAX,[ESP + 0x1c] ",
+        "00570273: PUSH EDX ",
+        "00570274: PUSH EAX ",
+        "00570275: CALL 0x005b3eb0 ",
+        "0057027a: MOV EDX,dword ptr [EAX] ",
+        "0057027c: ADD ESP,0x14 ",
+        "0057027f: XOR ECX,ECX ",
+        "00570281: CMP EDX,EBX ",
+        "00570283: SETGE CL ",
+        "00570286: XOR ECX,0x1 ",
+        "00570289: JZ 0x00570298 ",
+        "0057028b: XOR EAX,EAX ",
+        "0057028d: POP EDI ",
+        "0057028e: POP ESI ",
+        "0057028f: POP EBP ",
+        "00570290: POP EBX ",
+        "00570291: ADD ESP,0x6b4 ",
+        "00570297: RET ",
+        "00570298: MOV DL,byte ptr [ESP + 0x4be] ",
+        "0057029f: MOV AX,word ptr [ESP + 0x4bc] ",
+        "005702a7: MOV ECX,0x40 ",
+        "005702ac: LEA ESI,[ESP + 0x4c4] ",
+        "005702b3: LEA EDI,[ESP + 0x43] ",
+        "005702b7: MOV byte ptr [ESP + 0x3a],DL ",
+        "005702bb: MOV word ptr [ESP + 0x38],AX ",
+        "005702c0: MOVSD.REP ES:EDI,ESI ",
+        "005702c2: JMP 0x005703be ",
+        "005702c7: CMP EDX,0x10c ",
+        "005702cd: JZ 0x0057031c ",
+        "005702cf: CMP EDX,0x12c ",
+        "005702d5: JZ 0x0057031c ",
+        "005702d7: MOV EAX,dword ptr [ESP + 0x6cc] ",
+        "005702de: LEA ECX,[ESP + 0x14] ",
+        "005702e2: PUSH ECX ",
+        "005702e3: LEA EDX,[ESP + 0x1c] ",
+        "005702e7: MOV ECX,dword ptr [EAX] ",
+        "005702e9: PUSH 0x22b ",
+        "005702ee: PUSH EDX ",
+        "005702ef: LEA EDX,[ESP + 0x1c] ",
+        "005702f3: PUSH ECX ",
+        "005702f4: PUSH EDX ",
+        "005702f5: CALL 0x005b3eb0 ",
+        "005702fa: MOV EDX,dword ptr [EAX] ",
+        "005702fc: ADD ESP,0x14 ",
+        "005702ff: XOR ECX,ECX ",
+        "00570301: CMP EDX,EBX ",
+        "00570303: SETGE CL ",
+        "00570306: XOR ECX,0x1 ",
+        "00570309: JZ 0x005703be ",
+        "0057030f: XOR EAX,EAX ",
+        "00570311: POP EDI ",
+        "00570312: POP ESI ",
+        "00570313: POP EBP ",
+        "00570314: POP EBX ",
+        "00570315: ADD ESP,0x6b4 ",
+        "0057031b: RET ",
+        "0057031c: MOV ECX,0x8a ",
+        "00570321: XOR EAX,EAX ",
+        "00570323: LEA EDI,[ESP + 0x18] ",
+        "00570327: STOSD.REP ES:EDI ",
+        "00570329: STOSW ES:EDI ",
+        "0057032b: STOSB ES:EDI ",
+        "0057032c: LEA EAX,[ESP + 0x14] ",
+        "00570330: LEA ECX,[ESP + 0x4bc] ",
+        "00570337: PUSH EAX ",
+        "00570338: PUSH EDX ",
+        "00570339: MOV EDX,dword ptr [ESP + 0x6d4] ",
+        "00570340: PUSH ECX ",
+        "00570341: LEA ECX,[ESP + 0x1c] ",
+        "00570345: MOV EAX,dword ptr [EDX] ",
+        "00570347: PUSH EAX ",
+        "00570348: PUSH ECX ",
+        "00570349: CALL 0x005b3eb0 ",
+        "0057034e: MOV ECX,dword ptr [EAX] ",
+        "00570350: ADD ESP,0x14 ",
+        "00570353: XOR EDX,EDX ",
+        "00570355: CMP ECX,EBX ",
+        "00570357: SETGE DL ",
+        "0057035a: XOR EDX,0x1 ",
+        "0057035d: JZ 0x0057036c ",
+        "0057035f: XOR EAX,EAX ",
+        "00570361: POP EDI ",
+        "00570362: POP ESI ",
+        "00570363: POP EBP ",
+        "00570364: POP EBX ",
+        "00570365: ADD ESP,0x6b4 ",
+        "0057036b: RET ",
+        "0057036c: MOV CX,word ptr [ESP + 0x4bc] ",
+        "00570374: MOV AL,byte ptr [ESP + 0x4be] ",
+        "0057037b: MOV word ptr [ESP + 0x38],CX ",
+        "00570380: MOV ECX,0x40 ",
+        "00570385: LEA ESI,[ESP + 0x4c8] ",
+        "0057038c: LEA EDI,[ESP + 0x43] ",
+        "00570390: MOV byte ptr [ESP + 0x3a],AL ",
+        "00570394: XOR EAX,EAX ",
+        "00570396: MOVSD.REP ES:EDI,ESI ",
+        "00570398: LEA EDI,[ESP + 0x5c8] ",
+        "0057039f: OR ECX,0xffffffff ",
+        "005703a2: SCASB.REPNE ES:EDI ",
+        "005703a4: NOT ECX ",
+        "005703a6: SUB EDI,ECX ",
+        "005703a8: LEA EDX,[ESP + 0x18] ",
+        "005703ac: MOV EAX,ECX ",
+        "005703ae: MOV ESI,EDI ",
+        "005703b0: MOV EDI,EDX ",
+        "005703b2: SHR ECX,0x2 ",
+        "005703b5: MOVSD.REP ES:EDI,ESI ",
+        "005703b7: MOV ECX,EAX ",
+        "005703b9: AND ECX,0x3 ",
+        "005703bc: MOVSB.REP ES:EDI,ESI ",
+        "005703be: MOV ECX,0x10 ",
+        "005703c3: XOR EAX,EAX ",
+        "005703c5: LEA EDI,[ESP + 0x250] ",
+        "005703cc: MOV dword ptr [ESP + 0x244],EBX ",
+        "005703d3: MOV dword ptr [ESP + 0x24c],EBX ",
+        "005703da: MOV dword ptr [ESP + 0x248],EBX ",
+        "005703e1: STOSD.REP ES:EDI ",
+        "005703e3: MOV ECX,0x8a ",
+        "005703e8: LEA EDI,[ESP + 0x290] ",
+        "005703ef: STOSD.REP ES:EDI ",
+        "005703f1: STOSW ES:EDI ",
+        "005703f3: LEA ECX,[ESP + 0x18] ",
+        "005703f7: PUSH 0x20 ",
+        "005703f9: LEA EDX,[ESP + 0x294] ",
+        "00570400: MOV ESI,0x1 ",
+        "00570405: PUSH ECX ",
+        "00570406: PUSH EDX ",
+        "00570407: STOSB ES:EDI ",
+        "00570408: MOV dword ptr [ESP + 0x250],ESI ",
+        "0057040f: CALL 0x006361a0 ",
+        "00570414: MOV AL,byte ptr [ESP + 0x46] ",
+        "00570418: MOV CX,word ptr [ESP + 0x44] ",
+        "0057041d: MOV byte ptr [ESP + 0x2bb],BL ",
+        "00570424: MOV byte ptr [ESP + 0x2be],AL ",
+        "0057042b: ADD ESP,0xc ",
+        "0057042e: MOV dword ptr [ESP + 0x248],ESI ",
+        "00570435: MOV dword ptr [ESP + 0x24c],ESI ",
+        "0057043c: MOV word ptr [ESP + 0x2b0],CX ",
+        "00570444: LEA EDX,[ESP + 0x43] ",
+        "00570448: LEA EBX,[ESP + 0x2bb] ",
+        "0057044f: LEA EAX,[ESP + 0x250] ",
+        "00570456: MOV EBP,0x10 ",
+        "0057045b: MOV dword ptr [EAX],0x1 ",
+        "00570461: MOV ESI,EDX ",
+        "00570463: MOV EDI,EBX ",
+        "00570465: MOV ECX,0x8 ",
+        "0057046a: ADD EAX,0x4 ",
+        "0057046d: ADD EDX,0x20 ",
+        "00570470: ADD EBX,0x20 ",
+        "00570473: DEC EBP ",
+        "00570474: MOVSD.REP ES:EDI,ESI ",
+        "00570476: JNZ 0x0057045b ",
+        "00570478: MOV EAX,dword ptr [ESP + 0x6d0] ",
+        "0057047f: LEA ECX,[ESP + 0x244] ",
+        "00570486: MOV EDX,dword ptr [EAX + 0xac] ",
+        "0057048c: PUSH EDX ",
+        "0057048d: PUSH ECX ",
+        "0057048e: CALL dword ptr [EAX + 0x94] ",
+        "00570494: ADD ESP,0x8 ",
+        "00570497: TEST EAX,EAX ",
+        "00570499: JNZ 0x005704e5 ",
+        "0057049b: POP EDI ",
+        "0057049c: POP ESI ",
+        "0057049d: POP EBP ",
+        "0057049e: POP EBX ",
+        "0057049f: ADD ESP,0x6b4 ",
+        "005704a5: RET ",
+        "005704a6: MOV EBX,dword ptr [ESP + 0x6cc] ",
+        "005704ad: MOV EDX,dword ptr [ESP + 0x6c8] ",
+        "005704b4: MOV EAX,dword ptr [EBX] ",
+        "005704b6: MOV EDI,dword ptr [EDX + 0x4] ",
+        "005704b9: PUSH EAX ",
+        "005704ba: CALL 0x005b3a80 ",
+        "005704bf: MOV ECX,dword ptr [EBX] ",
+        "005704c1: ADD ESP,0x4 ",
+        "005704c4: MOV ESI,EAX ",
+        "005704c6: PUSH 0x1 ",
+        "005704c8: PUSH EDI ",
+        "005704c9: PUSH ECX ",
+        "005704ca: ADD ESI,EDI ",
+        "005704cc: CALL 0x005b3a90 ",
+        "005704d1: ADD ESP,0xc ",
+        "005704d4: CMP EAX,ESI ",
+        "005704d6: JZ 0x005704e5 ",
+        "005704d8: XOR EAX,EAX ",
+        "005704da: POP EDI ",
+        "005704db: POP ESI ",
+        "005704dc: POP EBP ",
+        "005704dd: POP EBX ",
+        "005704de: ADD ESP,0x6b4 ",
+        "005704e4: RET ",
+        "005704e5: POP EDI ",
+        "005704e6: POP ESI ",
+        "005704e7: POP EBP ",
+        "005704e8: MOV EAX,0x1 ",
+        "005704ed: POP EBX ",
+        "005704ee: ADD ESP,0x6b4 ",
+        "005704f4: RET "
+      ]
+    },
+    {
+      "file": "phase32-party-editor-reader-assembly.txt",
+      "first": "0x430a70",
+      "last": "0x430cc1",
+      "instructions": [
+        "00430a70: SUB ESP,0x6b4 ",
+        "00430a76: PUSH EBX ",
+        "00430a77: MOV EBX,dword ptr [ESP + 0x6c4] ",
+        "00430a7e: PUSH ESI ",
+        "00430a7f: PUSH EDI ",
+        "00430a80: MOV EAX,dword ptr [EBX + 0x94] ",
+        "00430a86: TEST EAX,EAX ",
+        "00430a88: JZ 0x00430c6a ",
+        "00430a8e: MOV EAX,dword ptr [ESP + 0x6c4] ",
+        "00430a95: MOV EDX,dword ptr [EAX + 0x4] ",
+        "00430a98: CMP EDX,0x108 ",
+        "00430a9e: JNZ 0x00430b30 ",
+        "00430aa4: MOV ECX,0x8a ",
+        "00430aa9: XOR EAX,EAX ",
+        "00430aab: LEA EDI,[ESP + 0x14] ",
+        "00430aaf: STOSD.REP ES:EDI ",
+        "00430ab1: STOSW ES:EDI ",
+        "00430ab3: LEA ECX,[ESP + 0x10] ",
+        "00430ab7: STOSB ES:EDI ",
+        "00430ab8: MOV EAX,dword ptr [ESP + 0x6c8] ",
+        "00430abf: PUSH ECX ",
+        "00430ac0: PUSH EDX ",
+        "00430ac1: LEA EDX,[ESP + 0x248] ",
+        "00430ac8: MOV ECX,dword ptr [EAX] ",
+        "00430aca: PUSH EDX ",
+        "00430acb: LEA EDX,[ESP + 0x18] ",
+        "00430acf: PUSH ECX ",
+        "00430ad0: PUSH EDX ",
+        "00430ad1: CALL 0x004b7f10 ",
+        "00430ad6: MOV EDX,dword ptr [EAX] ",
+        "00430ad8: ADD ESP,0x14 ",
+        "00430adb: XOR ECX,ECX ",
+        "00430add: TEST EDX,EDX ",
+        "00430adf: SETGE CL ",
+        "00430ae2: XOR ECX,0x1 ",
+        "00430ae5: JZ 0x00430b01 ",
+        "00430ae7: PUSH 0x0 ",
+        "00430ae9: PUSH 0x0 ",
+        "00430aeb: PUSH 0x532554 ",
+        "00430af0: CALL 0x004e4d4a ",
+        "00430af5: POP EDI ",
+        "00430af6: POP ESI ",
+        "00430af7: XOR EAX,EAX ",
+        "00430af9: POP EBX ",
+        "00430afa: ADD ESP,0x6b4 ",
+        "00430b00: RET ",
+        "00430b01: MOV DL,byte ptr [ESP + 0x242] ",
+        "00430b08: MOV AX,word ptr [ESP + 0x240] ",
+        "00430b10: MOV ECX,0x40 ",
+        "00430b15: LEA ESI,[ESP + 0x248] ",
+        "00430b1c: LEA EDI,[ESP + 0x3f] ",
+        "00430b20: MOV byte ptr [ESP + 0x36],DL ",
+        "00430b24: MOV word ptr [ESP + 0x34],AX ",
+        "00430b29: MOVSD.REP ES:EDI,ESI ",
+        "00430b2b: JMP 0x00430c27 ",
+        "00430b30: CMP EDX,0x10c ",
+        "00430b36: JZ 0x00430b92 ",
+        "00430b38: CMP EDX,0x12c ",
+        "00430b3e: JZ 0x00430b92 ",
+        "00430b40: MOV EAX,dword ptr [ESP + 0x6c8] ",
+        "00430b47: LEA ECX,[ESP + 0x10] ",
+        "00430b4b: PUSH ECX ",
+        "00430b4c: LEA EDX,[ESP + 0x18] ",
+        "00430b50: MOV ECX,dword ptr [EAX] ",
+        "00430b52: PUSH 0x22b ",
+        "00430b57: PUSH EDX ",
+        "00430b58: LEA EDX,[ESP + 0x18] ",
+        "00430b5c: PUSH ECX ",
+        "00430b5d: PUSH EDX ",
+        "00430b5e: CALL 0x004b7f10 ",
+        "00430b63: MOV EDX,dword ptr [EAX] ",
+        "00430b65: ADD ESP,0x14 ",
+        "00430b68: XOR ECX,ECX ",
+        "00430b6a: TEST EDX,EDX ",
+        "00430b6c: SETGE CL ",
+        "00430b6f: XOR ECX,0x1 ",
+        "00430b72: JZ 0x00430c27 ",
+        "00430b78: PUSH 0x0 ",
+        "00430b7a: PUSH 0x0 ",
+        "00430b7c: PUSH 0x532528 ",
+        "00430b81: CALL 0x004e4d4a ",
+        "00430b86: POP EDI ",
+        "00430b87: POP ESI ",
+        "00430b88: XOR EAX,EAX ",
+        "00430b8a: POP EBX ",
+        "00430b8b: ADD ESP,0x6b4 ",
+        "00430b91: RET ",
+        "00430b92: MOV ECX,0x8a ",
+        "00430b97: XOR EAX,EAX ",
+        "00430b99: LEA EDI,[ESP + 0x14] ",
+        "00430b9d: STOSD.REP ES:EDI ",
+        "00430b9f: STOSW ES:EDI ",
+        "00430ba1: STOSB ES:EDI ",
+        "00430ba2: LEA EAX,[ESP + 0x10] ",
+        "00430ba6: LEA ECX,[ESP + 0x240] ",
+        "00430bad: PUSH EAX ",
+        "00430bae: PUSH EDX ",
+        "00430baf: MOV EDX,dword ptr [ESP + 0x6d0] ",
+        "00430bb6: PUSH ECX ",
+        "00430bb7: LEA ECX,[ESP + 0x18] ",
+        "00430bbb: MOV EAX,dword ptr [EDX] ",
+        "00430bbd: PUSH EAX ",
+        "00430bbe: PUSH ECX ",
+        "00430bbf: CALL 0x004b7f10 ",
+        "00430bc4: MOV ECX,dword ptr [EAX] ",
+        "00430bc6: ADD ESP,0x14 ",
+        "00430bc9: XOR EDX,EDX ",
+        "00430bcb: TEST ECX,ECX ",
+        "00430bcd: SETGE DL ",
+        "00430bd0: XOR EDX,0x1 ",
+        "00430bd3: JNZ 0x00430b78 ",
+        "00430bd5: MOV CX,word ptr [ESP + 0x240] ",
+        "00430bdd: MOV AL,byte ptr [ESP + 0x242] ",
+        "00430be4: MOV word ptr [ESP + 0x34],CX ",
+        "00430be9: MOV ECX,0x40 ",
+        "00430bee: LEA ESI,[ESP + 0x24c] ",
+        "00430bf5: LEA EDI,[ESP + 0x3f] ",
+        "00430bf9: MOV byte ptr [ESP + 0x36],AL ",
+        "00430bfd: XOR EAX,EAX ",
+        "00430bff: MOVSD.REP ES:EDI,ESI ",
+        "00430c01: LEA EDI,[ESP + 0x34c] ",
+        "00430c08: OR ECX,0xffffffff ",
+        "00430c0b: SCASB.REPNE ES:EDI ",
+        "00430c0d: NOT ECX ",
+        "00430c0f: SUB EDI,ECX ",
+        "00430c11: LEA EDX,[ESP + 0x14] ",
+        "00430c15: MOV EAX,ECX ",
+        "00430c17: MOV ESI,EDI ",
+        "00430c19: MOV EDI,EDX ",
+        "00430c1b: SHR ECX,0x2 ",
+        "00430c1e: MOVSD.REP ES:EDI,ESI ",
+        "00430c20: MOV ECX,EAX ",
+        "00430c22: AND ECX,0x3 ",
+        "00430c25: MOVSB.REP ES:EDI,ESI ",
+        "00430c27: LEA ECX,[ESP + 0x448] ",
+        "00430c2e: CALL 0x0042f9a0 ",
+        "00430c33: LEA ECX,[ESP + 0x14] ",
+        "00430c37: PUSH ECX ",
+        "00430c38: LEA ECX,[ESP + 0x44c] ",
+        "00430c3f: CALL 0x0042f9e0 ",
+        "00430c44: MOV EDX,dword ptr [EBX + 0xb0] ",
+        "00430c4a: LEA EAX,[ESP + 0x448] ",
+        "00430c51: PUSH EDX ",
+        "00430c52: PUSH EAX ",
+        "00430c53: CALL dword ptr [EBX + 0x94] ",
+        "00430c59: ADD ESP,0x8 ",
+        "00430c5c: TEST EAX,EAX ",
+        "00430c5e: JNZ 0x00430cb3 ",
+        "00430c60: POP EDI ",
+        "00430c61: POP ESI ",
+        "00430c62: POP EBX ",
+        "00430c63: ADD ESP,0x6b4 ",
+        "00430c69: RET ",
+        "00430c6a: MOV EBX,dword ptr [ESP + 0x6c8] ",
+        "00430c71: MOV ECX,dword ptr [ESP + 0x6c4] ",
+        "00430c78: MOV EDX,dword ptr [EBX] ",
+        "00430c7a: MOV EDI,dword ptr [ECX + 0x4] ",
+        "00430c7d: PUSH EDX ",
+        "00430c7e: CALL 0x004b7e70 ",
+        "00430c83: MOV ESI,EAX ",
+        "00430c85: MOV EAX,dword ptr [EBX] ",
+        "00430c87: PUSH 0x1 ",
+        "00430c89: PUSH EDI ",
+        "00430c8a: PUSH EAX ",
+        "00430c8b: ADD ESI,EDI ",
+        "00430c8d: CALL 0x004b7e80 ",
+        "00430c92: ADD ESP,0x10 ",
+        "00430c95: CMP EAX,ESI ",
+        "00430c97: JZ 0x00430cb3 ",
+        "00430c99: PUSH 0x0 ",
+        "00430c9b: PUSH 0x0 ",
+        "00430c9d: PUSH 0x532500 ",
+        "00430ca2: CALL 0x004e4d4a ",
+        "00430ca7: POP EDI ",
+        "00430ca8: POP ESI ",
+        "00430ca9: XOR EAX,EAX ",
+        "00430cab: POP EBX ",
+        "00430cac: ADD ESP,0x6b4 ",
+        "00430cb2: RET ",
+        "00430cb3: POP EDI ",
+        "00430cb4: POP ESI ",
+        "00430cb5: MOV EAX,0x1 ",
+        "00430cba: POP EBX ",
+        "00430cbb: ADD ESP,0x6b4 ",
+        "00430cc1: RET "
+      ]
+    },
+    {
+      "file": "phase32-party-editor-init-assembly.txt",
+      "first": "0x42f9a0",
+      "last": "0x42f9d7",
+      "instructions": [
+        "0042f9a0: MOV EDX,ECX ",
+        "0042f9a2: PUSH EDI ",
+        "0042f9a3: LEA EAX,[EDX + 0x8] ",
+        "0042f9a6: LEA ECX,[EDX + 0x4] ",
+        "0042f9a9: MOV dword ptr [EDX],0x0 ",
+        "0042f9af: LEA EDI,[EDX + 0xc] ",
+        "0042f9b2: MOV dword ptr [EAX],0x0 ",
+        "0042f9b8: MOV dword ptr [ECX],0x0 ",
+        "0042f9be: MOV ECX,0x10 ",
+        "0042f9c3: XOR EAX,EAX ",
+        "0042f9c5: STOSD.REP ES:EDI ",
+        "0042f9c7: MOV ECX,0x8a ",
+        "0042f9cc: LEA EDI,[EDX + 0x4c] ",
+        "0042f9cf: STOSD.REP ES:EDI ",
+        "0042f9d1: STOSW ES:EDI ",
+        "0042f9d3: STOSB ES:EDI ",
+        "0042f9d4: MOV EAX,EDX ",
+        "0042f9d6: POP EDI ",
+        "0042f9d7: RET "
+      ]
+    },
+    {
+      "file": "phase32-party-editor-converter-assembly.txt",
+      "first": "0x42f9e0",
+      "last": "0x42fa5d",
+      "instructions": [
+        "0042f9e0: SUB ESP,0x20 ",
+        "0042f9e3: PUSH EBX ",
+        "0042f9e4: PUSH EBP ",
+        "0042f9e5: PUSH ESI ",
+        "0042f9e6: MOV ESI,ECX ",
+        "0042f9e8: PUSH EDI ",
+        "0042f9e9: MOV EDI,dword ptr [ESP + 0x34] ",
+        "0042f9ed: PUSH 0x20 ",
+        "0042f9ef: LEA EAX,[ESI + 0x4c] ",
+        "0042f9f2: MOV EBX,0x1 ",
+        "0042f9f7: PUSH EDI ",
+        "0042f9f8: PUSH EAX ",
+        "0042f9f9: MOV dword ptr [ESI],EBX ",
+        "0042f9fb: CALL 0x004acfd0 ",
+        "0042fa00: MOV byte ptr [ESI + 0x6b],0x0 ",
+        "0042fa04: MOV AL,byte ptr [EDI + 0x22] ",
+        "0042fa07: MOV dword ptr [ESI + 0x4],EBX ",
+        "0042fa0a: MOV byte ptr [ESI + 0x6e],AL ",
+        "0042fa0d: MOV AX,word ptr [EDI + 0x20] ",
+        "0042fa11: MOV dword ptr [ESI + 0x8],EBX ",
+        "0042fa14: MOV word ptr [ESI + 0x6c],AX ",
+        "0042fa18: ADD ESP,0xc ",
+        "0042fa1b: LEA EBX,[ESI + 0x77] ",
+        "0042fa1e: LEA EAX,[ESI + 0xc] ",
+        "0042fa21: LEA EDX,[EDI + 0x2b] ",
+        "0042fa24: MOV EBP,0x10 ",
+        "0042fa29: MOV ECX,0x8 ",
+        "0042fa2e: MOV ESI,EDX ",
+        "0042fa30: LEA EDI,[ESP + 0x10] ",
+        "0042fa34: ADD EAX,0x4 ",
+        "0042fa37: MOVSD.REP ES:EDI,ESI ",
+        "0042fa39: MOV dword ptr [EAX + -0x4],0x1 ",
+        "0042fa40: MOV EDI,EBX ",
+        "0042fa42: MOV ECX,0x8 ",
+        "0042fa47: LEA ESI,[ESP + 0x10] ",
+        "0042fa4b: ADD EDX,0x20 ",
+        "0042fa4e: ADD EBX,0x20 ",
+        "0042fa51: DEC EBP ",
+        "0042fa52: MOVSD.REP ES:EDI,ESI ",
+        "0042fa54: JNZ 0x0042fa29 ",
+        "0042fa56: POP EDI ",
+        "0042fa57: POP ESI ",
+        "0042fa58: POP EBP ",
+        "0042fa59: POP EBX ",
+        "0042fa5a: ADD ESP,0x20 ",
+        "0042fa5d: RET 0x4 "
+      ]
+    },
+    {
+      "file": "phase32-party-world-store-assembly.txt",
+      "first": "0x50fa70",
+      "last": "0x50fac9",
+      "instructions": [
+        "0050fa70: PUSH EBX ",
+        "0050fa71: PUSH EBP ",
+        "0050fa72: PUSH ESI ",
+        "0050fa73: MOV ESI,dword ptr [ESP + 0x10] ",
+        "0050fa77: PUSH EDI ",
+        "0050fa78: MOV EBX,0x10 ",
+        "0050fa7d: MOV DL,byte ptr [ESI + 0x6e] ",
+        "0050fa80: MOV EAX,EDX ",
+        "0050fa82: AND EAX,0xff ",
+        "0050fa87: MOV EDI,EAX ",
+        "0050fa89: SHL EDI,0x6 ",
+        "0050fa8c: ADD EDI,EAX ",
+        "0050fa8e: LEA EAX,[ESI + 0x77] ",
+        "0050fa91: LEA EBP,[ECX + EDI*0x8] ",
+        "0050fa94: MOV byte ptr [EBP + 0x4032],DL ",
+        "0050fa9a: LEA EDX,[EBP + 0x4038] ",
+        "0050faa0: MOV ESI,EAX ",
+        "0050faa2: MOV EDI,EDX ",
+        "0050faa4: MOV ECX,0x8 ",
+        "0050faa9: ADD EAX,0x20 ",
+        "0050faac: ADD EDX,0x20 ",
+        "0050faaf: DEC EBX ",
+        "0050fab0: MOVSD.REP ES:EDI,ESI ",
+        "0050fab2: JNZ 0x0050faa0 ",
+        "0050fab4: MOV EAX,dword ptr [ESP + 0x14] ",
+        "0050fab8: POP EDI ",
+        "0050fab9: POP ESI ",
+        "0050faba: MOV CX,word ptr [EAX + 0x6c] ",
+        "0050fabe: XOR EAX,EAX ",
+        "0050fac0: MOV word ptr [EBP + 0x4030],CX ",
+        "0050fac7: POP EBP ",
+        "0050fac8: POP EBX ",
+        "0050fac9: RET 0x4 "
+      ]
+    },
+    {
+      "file": "phase32-party-callback-assembly.txt",
+      "first": "0x5212a0",
+      "last": "0x5212c6",
+      "instructions": [
+        "005212a0: PUSH ESI ",
+        "005212a1: MOV ESI,dword ptr [ESP + 0x8] ",
+        "005212a5: PUSH EDI ",
+        "005212a6: MOV EDI,dword ptr [ESP + 0x10] ",
+        "005212aa: PUSH 0x277 ",
+        "005212af: PUSH ESI ",
+        "005212b0: MOV ECX,EDI ",
+        "005212b2: CALL 0x005108c0 ",
+        "005212b7: PUSH ESI ",
+        "005212b8: MOV ECX,EDI ",
+        "005212ba: CALL 0x0050fa70 ",
+        "005212bf: POP EDI ",
+        "005212c0: MOV EAX,0x1 ",
+        "005212c5: POP ESI ",
+        "005212c6: RET "
+      ]
+    },
+    {
+      "file": "phase32-party-member-add-assembly.txt",
+      "first": "0x4211b0",
+      "last": "0x421206",
+      "instructions": [
+        "004211b0: PUSH EDI ",
+        "004211b1: MOV EDI,ECX ",
+        "004211b3: CALL 0x00421170 ",
+        "004211b8: CMP EAX,0x10 ",
+        "004211bb: JNZ 0x004211c3 ",
+        "004211bd: XOR AL,AL ",
+        "004211bf: POP EDI ",
+        "004211c0: RET 0x4 ",
+        "004211c3: PUSH ESI ",
+        "004211c4: MOV ECX,EDI ",
+        "004211c6: CALL 0x00421340 ",
+        "004211cb: MOV ESI,dword ptr [ESP + 0xc] ",
+        "004211cf: MOV dword ptr [EDI + EAX*0x4 + 0x20],ESI ",
+        "004211d3: MOV EAX,dword ptr [ESI + 0x2c] ",
+        "004211d6: TEST EAX,EAX ",
+        "004211d8: JNZ 0x00421202 ",
+        "004211da: MOV EAX,dword ptr [ESI + 0x30] ",
+        "004211dd: TEST EAX,EAX ",
+        "004211df: JNZ 0x00421202 ",
+        "004211e1: MOV ECX,EDI ",
+        "004211e3: CALL 0x00421170 ",
+        "004211e8: CMP EAX,0x1 ",
+        "004211eb: PUSH 0x1 ",
+        "004211ed: MOV ECX,ESI ",
+        "004211ef: JNZ 0x004211fd ",
+        "004211f1: CALL 0x0041cfa0 ",
+        "004211f6: POP ESI ",
+        "004211f7: MOV AL,0x1 ",
+        "004211f9: POP EDI ",
+        "004211fa: RET 0x4 ",
+        "004211fd: CALL 0x0041cfc0 ",
+        "00421202: POP ESI ",
+        "00421203: MOV AL,0x1 ",
+        "00421205: POP EDI ",
+        "00421206: RET 0x4 "
+      ]
+    },
+    {
+      "file": "phase32-member-count-assembly.txt",
+      "first": "0x421170",
+      "last": "0x421186",
+      "instructions": [
+        "00421170: XOR EAX,EAX ",
+        "00421172: ADD ECX,0x20 ",
+        "00421175: MOV EDX,0x10 ",
+        "0042117a: CMP dword ptr [ECX],0x0 ",
+        "0042117d: JZ 0x00421180 ",
+        "0042117f: INC EAX ",
+        "00421180: ADD ECX,0x4 ",
+        "00421183: DEC EDX ",
+        "00421184: JNZ 0x0042117a ",
+        "00421186: RET "
+      ]
+    },
+    {
+      "file": "phase32-member-first-free-assembly.txt",
+      "first": "0x421340",
+      "last": "0x421356",
+      "instructions": [
+        "00421340: XOR EAX,EAX ",
+        "00421342: ADD ECX,0x20 ",
+        "00421345: CMP dword ptr [ECX],0x0 ",
+        "00421348: JZ 0x00421356 ",
+        "0042134a: INC EAX ",
+        "0042134b: ADD ECX,0x4 ",
+        "0042134e: CMP EAX,0x10 ",
+        "00421351: JC 0x00421345 ",
+        "00421353: OR EAX,0xffffffff ",
+        "00421356: RET "
+      ]
+    },
+    {
+      "file": "phase32-member-leader-setter-assembly.txt",
+      "first": "0x41cfa0",
+      "last": "0x41cfbc",
+      "instructions": [
+        "0041cfa0: MOV EAX,dword ptr [ESP + 0x4] ",
+        "0041cfa4: TEST EAX,EAX ",
+        "0041cfa6: MOV dword ptr [ECX + 0x2c],EAX ",
+        "0041cfa9: JZ 0x0041cfb5 ",
+        "0041cfab: MOV dword ptr [ECX + 0x30],0x0 ",
+        "0041cfb2: RET 0x4 ",
+        "0041cfb5: MOV dword ptr [ECX + 0x30],0x1 ",
+        "0041cfbc: RET 0x4 "
+      ]
+    },
+    {
+      "file": "phase32-member-follower-setter-assembly.txt",
+      "first": "0x41cfc0",
+      "last": "0x41cfdc",
+      "instructions": [
+        "0041cfc0: MOV EAX,dword ptr [ESP + 0x4] ",
+        "0041cfc4: TEST EAX,EAX ",
+        "0041cfc6: MOV dword ptr [ECX + 0x30],EAX ",
+        "0041cfc9: JZ 0x0041cfd5 ",
+        "0041cfcb: MOV dword ptr [ECX + 0x2c],0x0 ",
+        "0041cfd2: RET 0x4 ",
+        "0041cfd5: MOV dword ptr [ECX + 0x2c],0x1 ",
+        "0041cfdc: RET 0x4 "
+      ]
+    },
+    {
+      "file": "phase32-party-array-insert-assembly.txt",
+      "first": "0x48de20",
+      "last": "0x48de7b",
+      "instructions": [
+        "0048de20: PUSH EBX ",
+        "0048de21: PUSH ESI ",
+        "0048de22: PUSH EDI ",
+        "0048de23: MOV EDI,dword ptr [ESP + 0x10] ",
+        "0048de27: XOR EBX,EBX ",
+        "0048de29: MOV ESI,ECX ",
+        "0048de2b: MOV BL,byte ptr [EDI + 0x1c] ",
+        "0048de2e: CMP EBX,0xff ",
+        "0048de34: JNZ 0x0048de52 ",
+        "0048de36: CALL 0x0048df30 ",
+        "0048de3b: MOV EBX,EAX ",
+        "0048de3d: CMP EBX,0xff ",
+        "0048de43: JNZ 0x0048de4d ",
+        "0048de45: POP EDI ",
+        "0048de46: POP ESI ",
+        "0048de47: XOR AL,AL ",
+        "0048de49: POP EBX ",
+        "0048de4a: RET 0x4 ",
+        "0048de4d: MOV byte ptr [EDI + 0x1c],BL ",
+        "0048de50: JMP 0x0048de5b ",
+        "0048de52: MOV ECX,dword ptr [ESI + 0x50] ",
+        "0048de55: PUSH EDI ",
+        "0048de56: CALL 0x00479090 ",
+        "0048de5b: MOV dword ptr [ESI + EBX*0x4 + 0xa8c],EDI ",
+        "0048de62: MOV ECX,dword ptr [ESI + 0x50] ",
+        "0048de65: PUSH 0x1 ",
+        "0048de67: PUSH EDI ",
+        "0048de68: CALL 0x00478d40 ",
+        "0048de6d: MOV EAX,dword ptr [ESI] ",
+        "0048de6f: PUSH 0x1 ",
+        "0048de71: MOV ECX,ESI ",
+        "0048de73: CALL dword ptr [EAX + 0x5c] ",
+        "0048de76: POP EDI ",
+        "0048de77: POP ESI ",
+        "0048de78: MOV AL,0x1 ",
+        "0048de7a: POP EBX ",
+        "0048de7b: RET 0x4 "
+      ]
+    },
+    {
+      "file": "phase32-party-editor-load-assembly.txt",
+      "first": "0x491a8d",
+      "last": "0x491dbe",
+      "instructions": [
+        "00491a8d: MOV EBP,dword ptr [ESP + 0x90] ",
+        "00491a94: OR ESI,0xffffffff ",
+        "00491a97: MOV dword ptr [ESP + 0x88],ESI ",
+        "00491a9e: CMP dword ptr [EBP + 0x4],EDI ",
+        "00491aa1: JZ 0x00491aa9 ",
+        "00491aa3: MOV AL,byte ptr [EBP + 0x6e] ",
+        "00491aa6: MOV byte ptr [EBX + 0x1c],AL ",
+        "00491aa9: MOV EAX,dword ptr [EBP] ",
+        "00491aac: CMP EAX,EDI ",
+        "00491aae: JZ 0x00491aee ",
+        "00491ab0: LEA EAX,[EBP + 0x4c] ",
+        "00491ab3: LEA ECX,[ESP + 0x90] ",
+        "00491aba: PUSH EAX ",
+        "00491abb: CALL 0x004dde57 ",
+        "00491ac0: LEA ECX,[ESP + 0x90] ",
+        "00491ac7: MOV dword ptr [ESP + 0x88],0x1 ",
+        "00491ad2: PUSH ECX ",
+        "00491ad3: LEA ECX,[EBX + 0x18] ",
+        "00491ad6: CALL 0x004ddf22 ",
+        "00491adb: LEA ECX,[ESP + 0x90] ",
+        "00491ae2: MOV dword ptr [ESP + 0x88],ESI ",
+        "00491ae9: CALL 0x004ddde9 ",
+        "00491aee: MOV EDX,dword ptr [0x0053a7b4] ",
+        "00491af4: MOV dword ptr [ESP + 0x90],EDX ",
+        "00491afb: MOV AL,byte ptr [EBX + 0x1c] ",
+        "00491afe: LEA EDX,[ESP + 0x90] ",
+        "00491b05: MOV byte ptr [ESP + 0x1c],AL ",
+        "00491b09: MOV dword ptr [ESP + 0x88],0x2 ",
+        "00491b14: MOV ECX,dword ptr [ESP + 0x1c] ",
+        "00491b18: AND ECX,0xff ",
+        "00491b1e: INC ECX ",
+        "00491b1f: PUSH ECX ",
+        "00491b20: PUSH 0x52fe3c ",
+        "00491b25: PUSH EDX ",
+        "00491b26: CALL 0x004d64c4 ",
+        "00491b2b: ADD ESP,0xc ",
+        "00491b2e: LEA EAX,[ESP + 0x90] ",
+        "00491b35: LEA ECX,[EBX + 0x18] ",
+        "00491b38: PUSH EAX ",
+        "00491b39: CALL 0x004ddf22 ",
+        "00491b3e: LEA ECX,[ESP + 0x90] ",
+        "00491b45: MOV dword ptr [ESP + 0x88],ESI ",
+        "00491b4c: CALL 0x004ddde9 ",
+        "00491b51: CMP dword ptr [EBP + 0x8],EDI ",
+        "00491b54: JZ 0x00491b62 ",
+        "00491b56: MOV AX,word ptr [EBP + 0x6c] ",
+        "00491b5a: MOV EDX,dword ptr [EBX] ",
+        "00491b5c: PUSH EAX ",
+        "00491b5d: MOV ECX,EBX ",
+        "00491b5f: CALL dword ptr [EDX + 0x2c] ",
+        "00491b62: LEA EAX,[EBP + 0x77] ",
+        "00491b65: LEA ECX,[EBP + 0xc] ",
+        "00491b68: MOV dword ptr [ESP + 0x18],EAX ",
+        "00491b6c: MOV dword ptr [ESP + 0x90],ECX ",
+        "00491b73: MOV dword ptr [ESP + 0x1c],0x10 ",
+        "00491b7b: MOV EDX,dword ptr [ESP + 0x90] ",
+        "00491b82: CMP dword ptr [EDX],0x0 ",
+        "00491b85: JZ 0x00491d8f ",
+        "00491b8b: MOV ECX,0x8 ",
+        "00491b90: MOV ESI,EAX ",
+        "00491b92: LEA EDI,[ESP + 0x3c] ",
+        "00491b96: MOVSD.REP ES:EDI,ESI ",
+        "00491b98: MOV CL,byte ptr [ESP + 0x58] ",
+        "00491b9c: TEST CL,CL ",
+        "00491b9e: JZ 0x00491d8f ",
+        "00491ba4: MOV ECX,0x8 ",
+        "00491ba9: MOV ESI,EAX ",
+        "00491bab: LEA EDI,[ESP + 0x5c] ",
+        "00491baf: XOR BL,BL ",
+        "00491bb1: MOVSD.REP ES:EDI,ESI ",
+        "00491bb3: MOV ESI,dword ptr [0x0054f9d4] ",
+        "00491bb9: XOR EAX,EAX ",
+        "00491bbb: TEST ESI,ESI ",
+        "00491bbd: JBE 0x00491be3 ",
+        "00491bbf: MOV EDI,dword ptr [0x0054f9d0] ",
+        "00491bc5: CMP EAX,ESI ",
+        "00491bc7: JC 0x00491bcd ",
+        "00491bc9: XOR ECX,ECX ",
+        "00491bcb: JMP 0x00491bcf ",
+        "00491bcd: MOV ECX,dword ptr [EDI] ",
+        "00491bcf: MOV DL,byte ptr [ECX + 0x168] ",
+        "00491bd5: CMP DL,byte ptr [ESP + 0x78] ",
+        "00491bd9: JZ 0x00491be5 ",
+        "00491bdb: INC EAX ",
+        "00491bdc: ADD EDI,0x4 ",
+        "00491bdf: CMP EAX,ESI ",
+        "00491be1: JC 0x00491bcd ",
+        "00491be3: XOR ECX,ECX ",
+        "00491be5: MOV EAX,dword ptr [ECX + 0x186c] ",
+        "00491beb: TEST EAX,EAX ",
+        "00491bed: JZ 0x00491bfd ",
+        "00491bef: MOV AL,byte ptr [ECX + 0x169] ",
+        "00491bf5: MOV BL,0x1 ",
+        "00491bf7: MOV byte ptr [ESP + 0x14],AL ",
+        "00491bfb: JMP 0x00491c05 ",
+        "00491bfd: MOV CL,byte ptr [ESP + 0x78] ",
+        "00491c01: MOV byte ptr [ESP + 0x14],CL ",
+        "00491c05: PUSH 0x60 ",
+        "00491c07: CALL 0x004d8a63 ",
+        "00491c0c: ADD ESP,0x4 ",
+        "00491c0f: MOV dword ptr [ESP + 0x20],EAX ",
+        "00491c13: TEST EAX,EAX ",
+        "00491c15: MOV dword ptr [ESP + 0x88],0x3 ",
+        "00491c20: JZ 0x00491c34 ",
+        "00491c22: MOV EDX,dword ptr [ESP + 0x14] ",
+        "00491c26: PUSH 0x0 ",
+        "00491c28: PUSH EDX ",
+        "00491c29: MOV ECX,EAX ",
+        "00491c2b: CALL 0x0041cca0 ",
+        "00491c30: MOV ESI,EAX ",
+        "00491c32: JMP 0x00491c36 ",
+        "00491c34: XOR ESI,ESI ",
+        "00491c36: MOV EAX,dword ptr [ESI] ",
+        "00491c38: PUSH 0x1 ",
+        "00491c3a: MOV ECX,ESI ",
+        "00491c3c: MOV dword ptr [ESP + 0x8c],0xffffffff ",
+        "00491c47: CALL dword ptr [EAX + 0xc] ",
+        "00491c4a: MOV CL,byte ptr [ESP + 0x6a] ",
+        "00491c4e: MOV EDI,dword ptr [ESP + 0x94] ",
+        "00491c55: MOV byte ptr [ESI + 0x19],CL ",
+        "00491c58: MOV byte ptr [ESI + 0x5a],BL ",
+        "00491c5b: MOV DL,byte ptr [EBP + 0x6e] ",
+        "00491c5e: MOV byte ptr [ESI + 0x21],DL ",
+        "00491c61: MOV EAX,dword ptr [EDI + 0x60] ",
+        "00491c64: DEC EAX ",
+        "00491c65: MOV EAX,dword ptr [ESP + 0x68] ",
+        "00491c69: JZ 0x00491c76 ",
+        "00491c6b: CMP AL,0x64 ",
+        "00491c6d: JNC 0x00491cc1 ",
+        "00491c6f: AND EAX,0xff ",
+        "00491c74: JMP 0x00491cc6 ",
+        "00491c76: AND EAX,0xffff ",
+        "00491c7b: MOV ECX,ESI ",
+        "00491c7d: MOV dword ptr [ESP + 0x20],EAX ",
+        "00491c81: FILD dword ptr [ESP + 0x20] ",
+        "00491c85: FSTP double ptr [ESP + 0x34] ",
+        "00491c89: CALL 0x0041ce20 ",
+        "00491c8e: XOR ECX,ECX ",
+        "00491c90: MOV CX,word ptr [EAX + 0x1622] ",
+        "00491c97: MOV dword ptr [ESP + 0x20],ECX ",
+        "00491c9b: FILD dword ptr [ESP + 0x20] ",
+        "00491c9f: FDIVR double ptr [ESP + 0x34] ",
+        "00491ca3: FMUL double ptr [0x0050eab0] ",
+        "00491ca9: CALL 0x004acda8 ",
+        "00491cae: CMP AL,0x64 ",
+        "00491cb0: MOV byte ptr [ESP + 0x24],AL ",
+        "00491cb4: JNC 0x00491cc1 ",
+        "00491cb6: MOV EAX,dword ptr [ESP + 0x24] ",
+        "00491cba: AND EAX,0xff ",
+        "00491cbf: JMP 0x00491cc6 ",
+        "00491cc1: MOV EAX,0x64 ",
+        "00491cc6: MOV byte ptr [ESI + 0x1b],AL ",
+        "00491cc9: MOV EAX,dword ptr [EDI + 0x60] ",
+        "00491ccc: DEC EAX ",
+        "00491ccd: JZ 0x00491cde ",
+        "00491ccf: MOV EAX,dword ptr [ESP + 0x70] ",
+        "00491cd3: CMP AL,0x64 ",
+        "00491cd5: JNC 0x00491d30 ",
+        "00491cd7: AND EAX,0xff ",
+        "00491cdc: JMP 0x00491d35 ",
+        "00491cde: MOV EDX,dword ptr [ESP + 0x70] ",
+        "00491ce2: MOV dword ptr [ESP + 0x30],0x0 ",
+        "00491cea: MOV dword ptr [ESP + 0x2c],EDX ",
+        "00491cee: MOV ECX,ESI ",
+        "00491cf0: FILD qword ptr [ESP + 0x2c] ",
+        "00491cf4: FSTP double ptr [ESP + 0x34] ",
+        "00491cf8: CALL 0x0041ce20 ",
+        "00491cfd: XOR ECX,ECX ",
+        "00491cff: MOV CX,word ptr [EAX + 0x15ea] ",
+        "00491d06: MOV dword ptr [ESP + 0x20],ECX ",
+        "00491d0a: FILD dword ptr [ESP + 0x20] ",
+        "00491d0e: FDIVR double ptr [ESP + 0x34] ",
+        "00491d12: FMUL double ptr [0x0050eab0] ",
+        "00491d18: CALL 0x004acda8 ",
+        "00491d1d: CMP AL,0x64 ",
+        "00491d1f: MOV byte ptr [ESP + 0x28],AL ",
+        "00491d23: JNC 0x00491d30 ",
+        "00491d25: MOV EAX,dword ptr [ESP + 0x28] ",
+        "00491d29: AND EAX,0xff ",
+        "00491d2e: JMP 0x00491d35 ",
+        "00491d30: MOV EAX,0x64 ",
+        "00491d35: MOV DL,byte ptr [ESP + 0x79] ",
+        "00491d39: MOV CL,byte ptr [ESP + 0x77] ",
+        "00491d3d: MOV byte ptr [ESI + 0x20],DL ",
+        "00491d40: MOV EDX,dword ptr [ESP + 0x6c] ",
+        "00491d44: MOV byte ptr [ESI + 0x1a],AL ",
+        "00491d47: MOV AL,byte ptr [ESP + 0x76] ",
+        "00491d4b: MOV byte ptr [ESI + 0x22],CL ",
+        "00491d4e: PUSH EDX ",
+        "00491d4f: MOV ECX,ESI ",
+        "00491d51: MOV byte ptr [ESI + 0x23],AL ",
+        "00491d54: CALL 0x0041cf40 ",
+        "00491d59: MOV ECX,dword ptr [ESP + 0x74] ",
+        "00491d5d: MOV EAX,dword ptr [ESI] ",
+        "00491d5f: PUSH ECX ",
+        "00491d60: MOV ECX,ESI ",
+        "00491d62: CALL dword ptr [EAX + 0x2c] ",
+        "00491d65: MOV EDX,dword ptr [ESP + 0x6b] ",
+        "00491d69: MOV ECX,ESI ",
+        "00491d6b: PUSH EDX ",
+        "00491d6c: CALL 0x0041d1c0 ",
+        "00491d71: MOV EAX,dword ptr [ESP + 0x7b] ",
+        "00491d75: MOV ECX,ESI ",
+        "00491d77: PUSH EAX ",
+        "00491d78: CALL 0x0041d250 ",
+        "00491d7d: MOV ECX,dword ptr [ESP + 0x10] ",
+        "00491d81: PUSH ESI ",
+        "00491d82: CALL 0x004211b0 ",
+        "00491d87: MOV EBX,dword ptr [ESP + 0x10] ",
+        "00491d8b: MOV EAX,dword ptr [ESP + 0x18] ",
+        "00491d8f: MOV ESI,dword ptr [ESP + 0x90] ",
+        "00491d96: MOV ECX,dword ptr [ESP + 0x1c] ",
+        "00491d9a: ADD ESI,0x4 ",
+        "00491d9d: ADD EAX,0x20 ",
+        "00491da0: DEC ECX ",
+        "00491da1: MOV dword ptr [ESP + 0x90],ESI ",
+        "00491da8: MOV dword ptr [ESP + 0x18],EAX ",
+        "00491dac: MOV dword ptr [ESP + 0x1c],ECX ",
+        "00491db0: JNZ 0x00491b7b ",
+        "00491db6: MOV ECX,dword ptr [ESP + 0x94] ",
+        "00491dbd: PUSH EBX ",
+        "00491dbe: CALL 0x0048de20 "
+      ]
+    },
+    {
+      "file": "phase30-things-writer-before.txt",
+      "first": "0x494f76",
+      "last": "0x495014",
+      "instructions": [
+        "00494f76: XOR EBP,EBP ",
+        "00494f78: MOV dword ptr [ESP + 0x14],0xc9 ",
+        "00494f80: MOV dword ptr [ESP + 0x18],0x22b ",
+        "00494f88: MOV dword ptr [ESP + 0x1c],EBP ",
+        "00494f8c: PUSH EBP ",
+        "00494f8d: MOV ECX,ESI ",
+        "00494f8f: CALL 0x0048de00 ",
+        "00494f94: MOV EBX,EAX ",
+        "00494f96: TEST EBX,EBX ",
+        "00494f98: JZ 0x0049500c ",
+        "00494f9a: MOV EDX,dword ptr [EDI] ",
+        "00494f9c: LEA EAX,[ESP + 0x14] ",
+        "00494fa0: PUSH 0x8 ",
+        "00494fa2: PUSH EAX ",
+        "00494fa3: MOV ECX,EDI ",
+        "00494fa5: CALL dword ptr [EDX + 0x38] ",
+        "00494fa8: MOV CL,byte ptr [EBX + 0x1c] ",
+        "00494fab: MOV byte ptr [ESP + 0x19e],CL ",
+        "00494fb2: MOV EDX,dword ptr [EBX] ",
+        "00494fb4: MOV ECX,EBX ",
+        "00494fb6: CALL dword ptr [EDX + 0x28] ",
+        "00494fb9: MOV word ptr [ESP + 0x19c],AX ",
+        "00494fc1: LEA EAX,[ESP + 0x1a7] ",
+        "00494fc8: XOR EBP,EBP ",
+        "00494fca: MOV dword ptr [ESP + 0x10],EAX ",
+        "00494fce: MOV ECX,dword ptr [ESP + 0x10] ",
+        "00494fd2: PUSH ECX ",
+        "00494fd3: PUSH EBP ",
+        "00494fd4: MOV ECX,EBX ",
+        "00494fd6: CALL 0x00421190 ",
+        "00494fdb: PUSH EAX ",
+        "00494fdc: MOV ECX,ESI ",
+        "00494fde: CALL 0x004952f0 ",
+        "00494fe3: MOV ECX,dword ptr [ESP + 0x10] ",
+        "00494fe7: INC EBP ",
+        "00494fe8: ADD ECX,0x20 ",
+        "00494feb: CMP EBP,0x10 ",
+        "00494fee: MOV dword ptr [ESP + 0x10],ECX ",
+        "00494ff2: JC 0x00494fce ",
+        "00494ff4: MOV EDX,dword ptr [EDI] ",
+        "00494ff6: LEA EAX,[ESP + 0x17c] ",
+        "00494ffd: PUSH 0x22b ",
+        "00495002: PUSH EAX ",
+        "00495003: MOV ECX,EDI ",
+        "00495005: CALL dword ptr [EDX + 0x38] ",
+        "00495008: MOV EBP,dword ptr [ESP + 0x1c] ",
+        "0049500c: INC EBP ",
+        "0049500d: CMP EBP,0x18 ",
+        "00495010: MOV dword ptr [ESP + 0x1c],EBP ",
+        "00495014: JC 0x00494f8c "
+      ]
+    },
+    {
+      "file": "phase31-creature-trigger-party-assembly.txt",
+      "first": "0x51a17e",
+      "last": "0x51a1d5",
+      "instructions": [
+        "0051a17e: SHL EBX,0x6 ",
+        "0051a181: ADD EBX,EAX ",
+        "0051a183: SHL EBX,0x3 ",
+        "0051a186: MOV dword ptr [ESP + 0x24],EBX ",
+        "0051a18a: MOV AX,word ptr [EBP + EBX*0x1 + 0x4030] ",
+        "0051a192: CMP AX,DI ",
+        "0051a195: JZ 0x0051a1a1 ",
+        "0051a197: PUSH 0x1 ",
+        "0051a199: PUSH EAX ",
+        "0051a19a: MOV ECX,EBP ",
+        "0051a19c: CALL 0x00519a20 ",
+        "0051a1a1: MOV EAX,dword ptr [EBP] ",
+        "0051a1a4: MOV ECX,EBP ",
+        "0051a1a6: CALL dword ptr [EAX + 0xc4] ",
+        "0051a1ac: XOR EDX,EDX ",
+        "0051a1ae: MOV dword ptr [ESP + 0x2c],EAX ",
+        "0051a1b2: MOV dword ptr [ESP + 0x1c],EDX ",
+        "0051a1b6: MOV ECX,EDX ",
+        "0051a1b8: LEA EDI,[ESP + 0x5c] ",
+        "0051a1bc: SHL ECX,0x5 ",
+        "0051a1bf: ADD ECX,EBP ",
+        "0051a1c1: LEA ESI,[ECX + EBX*0x1 + 0x4038] ",
+        "0051a1c8: MOV ECX,0x8 ",
+        "0051a1cd: MOVSD.REP ES:EDI,ESI ",
+        "0051a1cf: MOV EAX,dword ptr [ESP + 0x78] ",
+        "0051a1d3: TEST AL,AL ",
+        "0051a1d5: JZ 0x0051a5d4 "
+      ]
+    },
+    {
+      "file": "phase31-creature-trigger-party-assembly.txt",
+      "first": "0x51a432",
+      "last": "0x51a44d",
+      "instructions": [
+        "0051a432: MOV CL,byte ptr [ESP + 0x79] ",
+        "0051a436: MOV dword ptr [EDX + 0x38],EBX ",
+        "0051a439: MOV EAX,dword ptr [ESP + 0x10] ",
+        "0051a43d: MOV byte ptr [EAX + 0x418],CL ",
+        "0051a443: MOV EDX,dword ptr [ESP + 0x10] ",
+        "0051a447: MOV AL,byte ptr [ESP + 0x7a] ",
+        "0051a44b: XOR ECX,ECX ",
+        "0051a44d: MOV byte ptr [EDX + 0x417],AL "
+      ]
+    },
+    {
+      "file": "phase31-creature-trigger-party-assembly.txt",
+      "first": "0x51a5d4",
+      "last": "0x51a5dc",
+      "instructions": [
+        "0051a5d4: INC EDX ",
+        "0051a5d5: CMP EDX,0x10 ",
+        "0051a5d8: MOV dword ptr [ESP + 0x1c],EDX ",
+        "0051a5dc: JC 0x0051a1b6 "
+      ]
+    }
+  ],
+  "primary_program_bytes": [
+    {
+      "before": "phase30-things-writer-before.txt",
+      "after": "phase32-after-phase30-things-writer-before.txt",
+      "memory": "phase32-memory-phase30-things-writer-before.txt",
+      "program": "DK2 Editor pro.exe",
+      "address": 4802496,
+      "length": 2875,
+      "bytes_sha256": "dda6f53e2f0646cd3b7094d41ca208c7496cd45c16f8e81343939419b569159e",
+      "before_sha256": "44fe8f6c732011d81b11295444397457b4f165b92877e045ddc09cffe5f068c7",
+      "memory_file_sha256": "11d59c5a3cca257a6bab37a98a4bb677f817b41c758d73615af6da10726437d8"
+    },
+    {
+      "before": "phase31-creature-trigger-party-assembly.txt",
+      "after": "phase32-after-phase31-creature-trigger-party-assembly.txt",
+      "memory": "phase32-memory-phase31-creature-trigger-party-assembly.txt",
+      "program": "DKII-DX.exe",
+      "address": 5349264,
+      "length": 2015,
+      "bytes_sha256": "a279e3804fa5ed6898a24b7ec8d148fa942ed16c01a3267304ca34dba025a75b",
+      "before_sha256": "79345936e171754fc36fd7389e386cea822e42a8886d62ea0a3475cf416fb31b",
+      "memory_file_sha256": "d09f638451e3274007a389558d20dafd44a9915d89e9d699ff2eca3fa3ecef8e"
+    },
+    {
+      "before": "phase32-editor-strncpy-assembly.txt",
+      "after": "phase32-after-phase32-editor-strncpy-assembly.txt",
+      "memory": "phase32-memory-phase32-editor-strncpy-assembly.txt",
+      "program": "DK2 Editor pro.exe",
+      "address": 4902864,
+      "length": 269,
+      "bytes_sha256": "c3ff64ca8f9e0f8175dd7a38980c33560ba1b95e81647358d4fe295e40db50af",
+      "before_sha256": "f9b57756ed8977b04c9a428a8d8265698fb1b9e4698b8eca71720daa62a0188f",
+      "memory_file_sha256": "26d84f17aacbcc85633b640fb72b85343e3ffd8ac5ae3c536bf49526895847f7"
+    },
+    {
+      "before": "phase32-game-strncpy-assembly.txt",
+      "after": "phase32-after-phase32-game-strncpy-assembly.txt",
+      "memory": "phase32-memory-phase32-game-strncpy-assembly.txt",
+      "program": "DKII-DX.exe",
+      "address": 6513056,
+      "length": 269,
+      "bytes_sha256": "c5a12cb17b7cfbf0ef7fb68e0c09d2fa0572fbea758d989f53d1903a1b8779f8",
+      "before_sha256": "b0e0d11e7cf673bf18b7ce3a03aa84c72f430f345f8016b33784a3a22d82361a",
+      "memory_file_sha256": "d835bbae71221bad2e41555c32b1d6477c942a8cda63076baf5f885e51456c46"
+    },
+    {
+      "before": "phase32-member-count-assembly.txt",
+      "after": "phase32-after-phase32-member-count-assembly.txt",
+      "memory": "phase32-memory-phase32-member-count-assembly.txt",
+      "program": "DK2 Editor pro.exe",
+      "address": 4329840,
+      "length": 38,
+      "bytes_sha256": "f8f633343e4656728205c297e0d21531a81a5b668c7d71362accaba66963182c",
+      "before_sha256": "fed8791110fadc882adabf3304f03c4040b615acdc157dbffcbb8b38e3a9ff21",
+      "memory_file_sha256": "7479de6a3af2b9c0aef77653bf86cf36219ab38fa7b274bd3058adee18ab0cb0"
+    },
+    {
+      "before": "phase32-member-first-free-assembly.txt",
+      "after": "phase32-after-phase32-member-first-free-assembly.txt",
+      "memory": "phase32-memory-phase32-member-first-free-assembly.txt",
+      "program": "DK2 Editor pro.exe",
+      "address": 4330304,
+      "length": 38,
+      "bytes_sha256": "6285ea2769abdda8cd42952d3510e6170e850ed7970790e968f96216cff01880",
+      "before_sha256": "11f5912fefff19a824a62d7817035eb4c8028de82ec8adc00c97fdba45bb1149",
+      "memory_file_sha256": "4cd64e10922e9a6795d9ab3dead33f1c929cde5e7f8acd3881cc78fb80f10630"
+    },
+    {
+      "before": "phase32-member-follower-setter-assembly.txt",
+      "after": "phase32-after-phase32-member-follower-setter-assembly.txt",
+      "memory": "phase32-memory-phase32-member-follower-setter-assembly.txt",
+      "program": "DK2 Editor pro.exe",
+      "address": 4313024,
+      "length": 44,
+      "bytes_sha256": "d95b38ace37af25b23e58601f416133c05560739e383664e48480aba3a884e22",
+      "before_sha256": "e8188e7ad6551af44ed5e6bc52d5a7d571cf1c9a69d07a25c3e0ebeb257bacf5",
+      "memory_file_sha256": "d045ba7a95d4c2ebc841cb01f1c6bf9b7016d257cc01ad609be3f8f79df41367"
+    },
+    {
+      "before": "phase32-member-leader-setter-assembly.txt",
+      "after": "phase32-after-phase32-member-leader-setter-assembly.txt",
+      "memory": "phase32-memory-phase32-member-leader-setter-assembly.txt",
+      "program": "DK2 Editor pro.exe",
+      "address": 4312992,
+      "length": 44,
+      "bytes_sha256": "de0149354e29086f449c6fbec4681076bbdbb4273cfd81b1314f1bd19780b3e5",
+      "before_sha256": "e70f2de68913f3eaeec44e340905189b57b7feeb199a7b7ffa206c04bcec1db6",
+      "memory_file_sha256": "c3c782c879acada36b2525cfb4dee62a1a9abcb962e399a453e01782c7dd413e"
+    },
+    {
+      "before": "phase32-party-array-insert-assembly.txt",
+      "after": "phase32-after-phase32-party-array-insert-assembly.txt",
+      "memory": "phase32-memory-phase32-party-array-insert-assembly.txt",
+      "program": "DK2 Editor pro.exe",
+      "address": 4775456,
+      "length": 107,
+      "bytes_sha256": "c4dcd930d028f818557dc11aa66484f9ccb6607e9682d0f92eac32968aa3ae28",
+      "before_sha256": "6fb90f440405b7efd6418b56af44034c4810081d9e35ab2b6a0e26ee36ce5345",
+      "memory_file_sha256": "fce28ed412429d6b2139d52a8005e7fccf63dc819ebfa939e5838cf94cc9bef7"
+    },
+    {
+      "before": "phase32-party-callback-assembly.txt",
+      "after": "phase32-after-phase32-party-callback-assembly.txt",
+      "memory": "phase32-memory-phase32-party-callback-assembly.txt",
+      "program": "DKII-DX.exe",
+      "address": 5378720,
+      "length": 54,
+      "bytes_sha256": "460733fb3211acb3fea5f40c64e507e66c5826bb7e7248e678aa1c030ae02b3c",
+      "before_sha256": "6af424540d16129714df02850415de0156b7b8bd091b1dcb65b1f9d7f503945b",
+      "memory_file_sha256": "4a5406aeca7d670b064b63ab4648d523eb629d164283b17f6372198fc9f0e0d6"
+    },
+    {
+      "before": "phase32-party-editor-converter-assembly.txt",
+      "after": "phase32-after-phase32-party-editor-converter-assembly.txt",
+      "memory": "phase32-memory-phase32-party-editor-converter-assembly.txt",
+      "program": "DK2 Editor pro.exe",
+      "address": 4389344,
+      "length": 141,
+      "bytes_sha256": "fee87481cdf18fe757bcce0f8022cbb8aafc69e14c901e880ec5c1b9a3b5235e",
+      "before_sha256": "cee2c2b2b5cbc055cf51f8c0af784424f99e15297eba47ec17c9cd1282e3b7c7",
+      "memory_file_sha256": "8004f4f08dc19f460e84c7344283edfcb3955c56ce268f7a98c90634a000cb58"
+    },
+    {
+      "before": "phase32-party-editor-init-assembly.txt",
+      "after": "phase32-after-phase32-party-editor-init-assembly.txt",
+      "memory": "phase32-memory-phase32-party-editor-init-assembly.txt",
+      "program": "DK2 Editor pro.exe",
+      "address": 4389280,
+      "length": 71,
+      "bytes_sha256": "4858a385311698f2fde6740e4a87aa037e131fbb1e20bd025dc6f5d27953acb3",
+      "before_sha256": "a6ce4850a8b844219862fb7dcb4770bc11d79b34d748778f78a6e98dd6706cd1",
+      "memory_file_sha256": "d91bf851143013085a6e3d70554ac9e263249f08aaa419c61b7806ec491286b5"
+    },
+    {
+      "before": "phase32-party-editor-load-assembly.txt",
+      "after": "phase32-after-phase32-party-editor-load-assembly.txt",
+      "memory": "phase32-memory-phase32-party-editor-load-assembly.txt",
+      "program": "DK2 Editor pro.exe",
+      "address": 4790848,
+      "length": 941,
+      "bytes_sha256": "1468314b124e6984540fa7bf809962518f0414ef5e7cb07bd95097b687f0a7de",
+      "before_sha256": "4c43365279b398b24a46aad8c88dd37023adbdbab6aebe067eb1ccfdc1127fd0",
+      "memory_file_sha256": "f1d01bef10c3ca4b0fb6511b95885bab1a1393c63c7a50de704f4517a4f1abe0"
+    },
+    {
+      "before": "phase32-party-editor-reader-assembly.txt",
+      "after": "phase32-after-phase32-party-editor-reader-assembly.txt",
+      "memory": "phase32-memory-phase32-party-editor-reader-assembly.txt",
+      "program": "DK2 Editor pro.exe",
+      "address": 4393584,
+      "length": 609,
+      "bytes_sha256": "7286d6aea3929cba3d830e6bf197e6f1b930dea3f913006e12bd42436cbdb3bb",
+      "before_sha256": "468a52d433de90ddb95090b5b858d3c14826c31f8d30dfac02ecbaed7d65aa56",
+      "memory_file_sha256": "eb0e8976cc5f97ccdbec8fc4cb48c04f89b3631dfe6d9f1e7fc65090049ec1d6"
+    },
+    {
+      "before": "phase32-party-member-add-assembly.txt",
+      "after": "phase32-after-phase32-party-member-add-assembly.txt",
+      "memory": "phase32-memory-phase32-party-member-add-assembly.txt",
+      "program": "DK2 Editor pro.exe",
+      "address": 4329904,
+      "length": 102,
+      "bytes_sha256": "386bf1e3f087ae5a3ecbed8be61595ad231cc8d307a1071e3531a4df3cc690c5",
+      "before_sha256": "da5ed00aa351511050aec972fd7160dadba622ad776b98501c0dab85c1417ffa",
+      "memory_file_sha256": "34511e6d9e001969ba6432c7bf2e73466c0e3c82a10db3e3afa0d167cef04ddc"
+    },
+    {
+      "before": "phase32-party-member-get-assembly.txt",
+      "after": "phase32-after-phase32-party-member-get-assembly.txt",
+      "memory": "phase32-memory-phase32-party-member-get-assembly.txt",
+      "program": "DK2 Editor pro.exe",
+      "address": 4329872,
+      "length": 34,
+      "bytes_sha256": "bfd2014a562f32319d9ec7a4bb8620cf5603c896c3445165267cfd96c3b318c0",
+      "before_sha256": "dc4b62a30bdc1a43f606adec4c02d3bdb34e3ab95905f0ebce89c4eb05ac0088",
+      "memory_file_sha256": "aad5a745c834b0736e8125ff5ca34c6d452cb1a7fe970be6cabc6a8cd01a89cc"
+    },
+    {
+      "before": "phase32-party-parser-assembly.txt",
+      "after": "phase32-after-phase32-party-parser-assembly.txt",
+      "memory": "phase32-memory-phase32-party-parser-assembly.txt",
+      "program": "DKII-DX.exe",
+      "address": 5702160,
+      "length": 756,
+      "bytes_sha256": "db58b29dfaeafb84a0f9577cc7a8ce425a819f5c9fe7b03c839b9edea129789e",
+      "before_sha256": "897cda78abfb4a87cf731fa11507a88a0fcadadaec9267bb424f6b474fdae17d",
+      "memory_file_sha256": "e7ea0aabaeb8606e9248004511eb6ff84bb02bd1233ea7f8e4330d7bf907a56c"
+    },
+    {
+      "before": "phase32-party-world-store-assembly.txt",
+      "after": "phase32-after-phase32-party-world-store-assembly.txt",
+      "memory": "phase32-memory-phase32-party-world-store-assembly.txt",
+      "program": "DKII-DX.exe",
+      "address": 5306992,
+      "length": 105,
+      "bytes_sha256": "9502fdd1468fca42616fec19b46e2ae60c563fd1c29c3fd8b9ba1684dc61ff2c",
+      "before_sha256": "a328b6c9e5d110eb161b837c8e322014d30fee3747b5dda23f1580a17a2433a1",
+      "memory_file_sha256": "0f4898a70808f0b57a985527f857619b2d757d932591fb60af8ddd2ce428d4cf"
+    },
+    {
+      "before": "phase32-prefix-callee-4022c0.txt",
+      "after": "phase32-after-phase32-prefix-callee-4022c0.txt",
+      "memory": "phase32-memory-phase32-prefix-callee-4022c0.txt",
+      "program": "DK2 Editor pro.exe",
+      "address": 4203200,
+      "length": 16,
+      "bytes_sha256": "499f1f307c1cb989f968a6b7fcaec591e1828877223d0b0e7e8e8b76cde8c9ca",
+      "before_sha256": "15774982ba120dfea9216bce0a0cb4518bddeba272b0ff8cca00cfec5fff519e",
+      "memory_file_sha256": "4770026d9aa9716a8b59c10620ae0ac22e53ed72ce405667ed92728707a5aaf1"
+    },
+    {
+      "before": "phase32-prefix-callee-41b9b0.txt",
+      "after": "phase32-after-phase32-prefix-callee-41b9b0.txt",
+      "memory": "phase32-memory-phase32-prefix-callee-41b9b0.txt",
+      "program": "DK2 Editor pro.exe",
+      "address": 4307376,
+      "length": 32,
+      "bytes_sha256": "432a525a9d83f7ce21f040cb1836445a6a856892ecacacbc0331d0b8c36606e6",
+      "before_sha256": "55fca9169933e57da37e564462c3ebf8547180886e2b97abc65eda08d3a3b524",
+      "memory_file_sha256": "71c5ec1fb6cdbbe84479f90229366a86f7027d9e269ab2fc1b2a7786e00db729"
+    },
+    {
+      "before": "phase32-prefix-callee-41ce20.txt",
+      "after": "phase32-after-phase32-prefix-callee-41ce20.txt",
+      "memory": "phase32-memory-phase32-prefix-callee-41ce20.txt",
+      "program": "DK2 Editor pro.exe",
+      "address": 4312608,
+      "length": 67,
+      "bytes_sha256": "17ededf0ab58eb491264b8f6f1a55bf54a0ce063cac855ff9f604d3f47477380",
+      "before_sha256": "a6bb5b8e8a49c22e4b6e103fb18f9443e80c1e5e24f1621f05255514ac90ebf2",
+      "memory_file_sha256": "e81c3546bedf5cf74ef256031174dcebc669b277db59f7775a5eccd3f761454a"
+    },
+    {
+      "before": "phase32-prefix-callee-41d170.txt",
+      "after": "phase32-after-phase32-prefix-callee-41d170.txt",
+      "memory": "phase32-memory-phase32-prefix-callee-41d170.txt",
+      "program": "DK2 Editor pro.exe",
+      "address": 4313456,
+      "length": 90,
+      "bytes_sha256": "04616837df7ae7dc544f386c85653a42e7c4de290abf902dfd5531946077258d",
+      "before_sha256": "04adae5d0fa1a558197c43c1055c34e2feda3222271ed0888881563e9f2e66cd",
+      "memory_file_sha256": "456dd6ec33ed6d2c0c82ae73fa462648eef689c31928cd8b4b391046db368d87"
+    },
+    {
+      "before": "phase32-prefix-callee-41de60.txt",
+      "after": "phase32-after-phase32-prefix-callee-41de60.txt",
+      "memory": "phase32-memory-phase32-prefix-callee-41de60.txt",
+      "program": "DK2 Editor pro.exe",
+      "address": 4316768,
+      "length": 100,
+      "bytes_sha256": "b67e8dee8ff6ce644aab446c64e4abdb09c1441a0de2f60d468ec1021280e4e1",
+      "before_sha256": "519a9c2797495b79be06584c5b88634e39761880be7a1f0d0b305a35568bd8ba",
+      "memory_file_sha256": "ef6c1f4d31be8e3579fe9d092c139a0c3c41314d6747fe858d0afabc43c35abf"
+    },
+    {
+      "before": "phase32-prefix-callee-41ecd0.txt",
+      "after": "phase32-after-phase32-prefix-callee-41ecd0.txt",
+      "memory": "phase32-memory-phase32-prefix-callee-41ecd0.txt",
+      "program": "DK2 Editor pro.exe",
+      "address": 4320464,
+      "length": 67,
+      "bytes_sha256": "8e9a5f9562740f068278cd49ba0ecdc6aa22a23119e5ad6d785242afec7d6887",
+      "before_sha256": "fef4a48b311a53a6a55922f5c23a546050d89c72f9fc7842cd6073918a4c8153",
+      "memory_file_sha256": "be5f8d91aef86cf7fdd279e1b0add73e16364335e87b90a5770b567b2e36ceae"
+    },
+    {
+      "before": "phase32-prefix-callee-41ed10.txt",
+      "after": "phase32-after-phase32-prefix-callee-41ed10.txt",
+      "memory": "phase32-memory-phase32-prefix-callee-41ed10.txt",
+      "program": "DK2 Editor pro.exe",
+      "address": 4320528,
+      "length": 36,
+      "bytes_sha256": "38dc802306f1d98bf6746ecc2db76294097ad9d496cb7f094ef5b58a722d8aa2",
+      "before_sha256": "ed396df026ac27b8f03e4e306f32fce8a40905a55991ffe18c0445eac643c3c5",
+      "memory_file_sha256": "e9a7b12f4e9af84249fc96710247787f30268b18fdddeac67249363aff0c4e0c"
+    },
+    {
+      "before": "phase32-prefix-callee-4205d0.txt",
+      "after": "phase32-after-phase32-prefix-callee-4205d0.txt",
+      "memory": "phase32-memory-phase32-prefix-callee-4205d0.txt",
+      "program": "DK2 Editor pro.exe",
+      "address": 4326864,
+      "length": 67,
+      "bytes_sha256": "d4d2d35854e91a921670cf8027869ceaa475b786da8cb2856774e48b3a0e7996",
+      "before_sha256": "a796d098a62076f4fdd99b0758add1c32376b0ef77ea132a656a20cd6c330219",
+      "memory_file_sha256": "c85ce09d1a8918ba2e39aa5554f706e4176ecaa36b0d9e3743c78479543f42c7"
+    },
+    {
+      "before": "phase32-prefix-callee-420670.txt",
+      "after": "phase32-after-phase32-prefix-callee-420670.txt",
+      "memory": "phase32-memory-phase32-prefix-callee-420670.txt",
+      "program": "DK2 Editor pro.exe",
+      "address": 4327024,
+      "length": 61,
+      "bytes_sha256": "5158f91c028d26d63fd020e44a125c645c2df881a337c5ce25537b64dff09bcf",
+      "before_sha256": "a0a18ac95cb3bb239bbdb5808c2b681fd960d9e6155949f620b262299d81add1",
+      "memory_file_sha256": "e5da4add682a0c15fa9261032c25b6c82d6bab6aed15c54f5924a54f978844b4"
+    },
+    {
+      "before": "phase32-prefix-callee-4206f0.txt",
+      "after": "phase32-after-phase32-prefix-callee-4206f0.txt",
+      "memory": "phase32-memory-phase32-prefix-callee-4206f0.txt",
+      "program": "DK2 Editor pro.exe",
+      "address": 4327152,
+      "length": 64,
+      "bytes_sha256": "4c53ec8a6fa9f778d207e38ea4e2ca22d88aa9c28f3e880a26c755a6bff8949a",
+      "before_sha256": "6589b1542a4704706424451d146d5e2c22634a74fa4531d128e1740a9a2b1926",
+      "memory_file_sha256": "6afc19510f6a45ec7363cd38dc986821f9c68c7ffda4d36565e6dec629e4825c"
+    },
+    {
+      "before": "phase32-prefix-callee-421190.txt",
+      "after": "phase32-after-phase32-prefix-callee-421190.txt",
+      "memory": "phase32-memory-phase32-prefix-callee-421190.txt",
+      "program": "DK2 Editor pro.exe",
+      "address": 4329872,
+      "length": 34,
+      "bytes_sha256": "bfd2014a562f32319d9ec7a4bb8620cf5603c896c3445165267cfd96c3b318c0",
+      "before_sha256": "dc4b62a30bdc1a43f606adec4c02d3bdb34e3ab95905f0ebce89c4eb05ac0088",
+      "memory_file_sha256": "aad5a745c834b0736e8125ff5ca34c6d452cb1a7fe970be6cabc6a8cd01a89cc"
+    },
+    {
+      "before": "phase32-prefix-callee-4258d0.txt",
+      "after": "phase32-after-phase32-prefix-callee-4258d0.txt",
+      "memory": "phase32-memory-phase32-prefix-callee-4258d0.txt",
+      "program": "DK2 Editor pro.exe",
+      "address": 4348112,
+      "length": 67,
+      "bytes_sha256": "e8082165726f02c6dfaf4369acd301206db8b57f1ea1ca0121fe8892f181247a",
+      "before_sha256": "1455e1faf79890e32efae6ab9d0217dc18e1b0eb9f09c002b3a4b5ee8d63965b",
+      "memory_file_sha256": "98fb7077d245820c9b74afc86eab5cb0771765a708c71b42ee99e5da2bc0dfc3"
+    },
+    {
+      "before": "phase32-prefix-callee-488b30.txt",
+      "after": "phase32-after-phase32-prefix-callee-488b30.txt",
+      "memory": "phase32-memory-phase32-prefix-callee-488b30.txt",
+      "program": "DK2 Editor pro.exe",
+      "address": 4754224,
+      "length": 89,
+      "bytes_sha256": "e0e72c6da485b89113c1b27931cf0c58e2f1d5e68c23a1f9ae344dc253406136",
+      "before_sha256": "4ab33db924afb22085ca8a763d220e1cc92c1c54f6cb5cc5e4b59dcd5b5419f6",
+      "memory_file_sha256": "84242ae914d0e9ddbe6a02e96bbbd89483323165a6190bb9ebe077156fec8017"
+    },
+    {
+      "before": "phase32-prefix-callee-488b80.txt",
+      "after": "phase32-after-phase32-prefix-callee-488b80.txt",
+      "memory": "phase32-memory-phase32-prefix-callee-488b80.txt",
+      "program": "DK2 Editor pro.exe",
+      "address": 4754304,
+      "length": 122,
+      "bytes_sha256": "15686763c347b628e8ba3110f5bcce0c52736b089bd3ba4af467b2bd9d88abff",
+      "before_sha256": "2cb5b5c9bacb8724142e4139eb15df50345ce775e93af568e591274b5dfec5eb",
+      "memory_file_sha256": "d63c211aae7ed9c06081c7b243937d0ec215d89f045f7221dd771a60534e29b1"
+    },
+    {
+      "before": "phase32-prefix-callee-488bf0.txt",
+      "after": "phase32-after-phase32-prefix-callee-488bf0.txt",
+      "memory": "phase32-memory-phase32-prefix-callee-488bf0.txt",
+      "program": "DK2 Editor pro.exe",
+      "address": 4754416,
+      "length": 125,
+      "bytes_sha256": "637535c6c7879895c42e5f8f636eb6cc1d07f570e343ca0d2c8d0dd514abe2b9",
+      "before_sha256": "96d6dc41db1f85e39db013476835fb23c58f4cff268970a180d6b08f84acc3fa",
+      "memory_file_sha256": "1aea8700f83414c7c2ba6f80ef07cfd0460e206dc87dc11d0a5ebf733e9b5998"
+    },
+    {
+      "before": "phase32-prefix-callee-488c60.txt",
+      "after": "phase32-after-phase32-prefix-callee-488c60.txt",
+      "memory": "phase32-memory-phase32-prefix-callee-488c60.txt",
+      "program": "DK2 Editor pro.exe",
+      "address": 4754528,
+      "length": 104,
+      "bytes_sha256": "acdc05d10ded48d8f4502c5c562e089f312ebfa3aa07ef8ae81b174ef2b61fdb",
+      "before_sha256": "c0b356d9bfed96408f6bbe181af156b61d641aeeef7d7238d42279f0f5307ee9",
+      "memory_file_sha256": "39c1f9a8559b7d0048aed134d5a476b5191c3626e0fdc54dda3d3871d1064d29"
+    },
+    {
+      "before": "phase32-prefix-callee-488cc0.txt",
+      "after": "phase32-after-phase32-prefix-callee-488cc0.txt",
+      "memory": "phase32-memory-phase32-prefix-callee-488cc0.txt",
+      "program": "DK2 Editor pro.exe",
+      "address": 4754624,
+      "length": 122,
+      "bytes_sha256": "cfa995f2c41bb8e625b46a99abfa87b3d39f7afdb8ae094c35bdd1edfd07fc73",
+      "before_sha256": "06d78662e0bdb8819759775016416485abd44f4360351166f70cb291ed986e3f",
+      "memory_file_sha256": "ff088b4ede7dc650d114cab6cdeb870cc8570b0a1536c40f16149f2e4ebbd2d5"
+    },
+    {
+      "before": "phase32-prefix-callee-488d30.txt",
+      "after": "phase32-after-phase32-prefix-callee-488d30.txt",
+      "memory": "phase32-memory-phase32-prefix-callee-488d30.txt",
+      "program": "DK2 Editor pro.exe",
+      "address": 4754736,
+      "length": 50,
+      "bytes_sha256": "41a7a99734b14b26f933ea2cf96b32466e293ee7ee71048a8ffb90464d5adae1",
+      "before_sha256": "557bc35ff0631c693beeb775020c8ed90500c2aacb0d8bd8b44ae415ef22382f",
+      "memory_file_sha256": "a20055d2d529517603ce68f98ffb2eea010c6cd6ae6f8294794b6188bcc8d4d0"
+    },
+    {
+      "before": "phase32-prefix-callee-489220.txt",
+      "after": "phase32-after-phase32-prefix-callee-489220.txt",
+      "memory": "phase32-memory-phase32-prefix-callee-489220.txt",
+      "program": "DK2 Editor pro.exe",
+      "address": 4756000,
+      "length": 44,
+      "bytes_sha256": "2b71de2c0040c5f0e2717554a2c1179654466996fe8b0a5f362b5ed3b29c231a",
+      "before_sha256": "ac924ae25180d383bf05fdc070bf1e0608f929aec26418a67d329b09d8c20039",
+      "memory_file_sha256": "d2d581794d9824e95a630f8fe9d018df42aa742dca46c0b7d4503092f607ad35"
+    },
+    {
+      "before": "phase32-prefix-callee-489610.txt",
+      "after": "phase32-after-phase32-prefix-callee-489610.txt",
+      "memory": "phase32-memory-phase32-prefix-callee-489610.txt",
+      "program": "DK2 Editor pro.exe",
+      "address": 4757008,
+      "length": 44,
+      "bytes_sha256": "3aa63b6a6ae0c0dc11a1ac1408e404d255f0d6057a49ccf566480e9b5714e795",
+      "before_sha256": "0ef60ec619a5cdc66c87644e5f79bb4b1e2d3d61a090b950ca0c3186ab620d4b",
+      "memory_file_sha256": "b6843a752924b77c199af861a03ee6b7d87bba40dd7ed179396766f11d92a772"
+    },
+    {
+      "before": "phase32-prefix-callee-489a00.txt",
+      "after": "phase32-after-phase32-prefix-callee-489a00.txt",
+      "memory": "phase32-memory-phase32-prefix-callee-489a00.txt",
+      "program": "DK2 Editor pro.exe",
+      "address": 4758016,
+      "length": 44,
+      "bytes_sha256": "6ef6c2b099ddcef664d7e74abd1ca0992afc2d711158999d11e7609ba575012b",
+      "before_sha256": "5e8398a057a583bf7f6e73881c9ee4c2a0fdaee5679559710d31b53fc54160db",
+      "memory_file_sha256": "29b47e178803fa94478d85d13c49d7121c54cdf37cdbc330a55fce1dd8acffc5"
+    },
+    {
+      "before": "phase32-prefix-callee-48a910.txt",
+      "after": "phase32-after-phase32-prefix-callee-48a910.txt",
+      "memory": "phase32-memory-phase32-prefix-callee-48a910.txt",
+      "program": "DK2 Editor pro.exe",
+      "address": 4761872,
+      "length": 44,
+      "bytes_sha256": "fa65cc9e35cf9a1485eaa84da8a81ccc1e65d613f4c0fb44274dfedc36b32df1",
+      "before_sha256": "fd41367214f8e37d26c220c4d2f8f2063995624f108b9006bfc52d2fc44f07d2",
+      "memory_file_sha256": "a989ffc0bb33ac2ef013a32a0aa8fdd487f5fc7aaa5fa3805e40ffa0d0855f99"
+    },
+    {
+      "before": "phase32-prefix-callee-48b340.txt",
+      "after": "phase32-after-phase32-prefix-callee-48b340.txt",
+      "memory": "phase32-memory-phase32-prefix-callee-48b340.txt",
+      "program": "DK2 Editor pro.exe",
+      "address": 4764480,
+      "length": 67,
+      "bytes_sha256": "5911ab9c16604516018c52c7a644fb8d3ade8b77184ccefdad2bfeb006c89d3a",
+      "before_sha256": "1589f4ed29884fa2336dfcc1aa3ec387d3df40b0a357047ee808a40c78b1b466",
+      "memory_file_sha256": "2f29221304c41297b9203fe571ab49f62354603180275f5bd59908f7eaf9e6be"
+    },
+    {
+      "before": "phase32-prefix-callee-48b490.txt",
+      "after": "phase32-after-phase32-prefix-callee-48b490.txt",
+      "memory": "phase32-memory-phase32-prefix-callee-48b490.txt",
+      "program": "DK2 Editor pro.exe",
+      "address": 4764816,
+      "length": 67,
+      "bytes_sha256": "66c0dae7c45203f3bd9d20ed7f04c1b81ba377afa4ad519ad764afbad9b9e3bf",
+      "before_sha256": "fabd9d42ffba2dfc15dddd0f604c0ed5b6c961bc138923fb207f19e4930f0190",
+      "memory_file_sha256": "e715e251bbe9cbb167e7035343037f3472e170147b96f8fe24a1f869416a4ed7"
+    },
+    {
+      "before": "phase32-prefix-callee-48dde0.txt",
+      "after": "phase32-after-phase32-prefix-callee-48dde0.txt",
+      "memory": "phase32-memory-phase32-prefix-callee-48dde0.txt",
+      "program": "DK2 Editor pro.exe",
+      "address": 4775392,
+      "length": 41,
+      "bytes_sha256": "479810e3d7156d2ae1c23e62e38ad2af8345468937c5bb9b0ec0d646a8ada2cf",
+      "before_sha256": "d10843d564d1adec44036a01d989dc6fff3906c6ab1dacb61de29eaf4a270bc1",
+      "memory_file_sha256": "29a27a2f44547569e2f085da3fa67f7ca6eeb19b2f81d15ed13b0a2a744eb044"
+    },
+    {
+      "before": "phase32-prefix-callee-48de00.txt",
+      "after": "phase32-after-phase32-prefix-callee-48de00.txt",
+      "memory": "phase32-memory-phase32-prefix-callee-48de00.txt",
+      "program": "DK2 Editor pro.exe",
+      "address": 4775424,
+      "length": 37,
+      "bytes_sha256": "18d9d26e27b21956c512c61d822feaaf7e46436fd349d85b6b1bd80dba1aa578",
+      "before_sha256": "748a4ec2aa6437bd8d95d1ab948fa40a4a85bbe9d159649532190b01a47654a0",
+      "memory_file_sha256": "4638371a51433d40c6ca2302a23f7e5b4829b1e96ebbce91d9aae8f7923379c0"
+    },
+    {
+      "before": "phase32-prefix-callee-4952f0.txt",
+      "after": "phase32-after-phase32-prefix-callee-4952f0.txt",
+      "memory": "phase32-memory-phase32-prefix-callee-4952f0.txt",
+      "program": "DK2 Editor pro.exe",
+      "address": 4805360,
+      "length": 232,
+      "bytes_sha256": "2932947adcb10c7469e1718e8b22f825ae9ed5a536d5a070074ea7dabb4868e8",
+      "before_sha256": "cff73f4a6c8c4ffd15789385efa496eed6daa5e31c08184b1532a7ce1bdec482",
+      "memory_file_sha256": "62a772cb2c2738ee2494ac67a1a5b5a6a14a3ff53f983d465e4485da029c3197"
+    },
+    {
+      "before": "phase32-prefix-callee-4ab320.txt",
+      "after": "phase32-after-phase32-prefix-callee-4ab320.txt",
+      "memory": "phase32-memory-phase32-prefix-callee-4ab320.txt",
+      "program": "DK2 Editor pro.exe",
+      "address": 4895520,
+      "length": 153,
+      "bytes_sha256": "08e6b0cea5851cb9dca303fbb12559c5187d35c3c74ce581955d18e6365e8c56",
+      "before_sha256": "e3346a4acff1f584de95f86835327a00f4d3d65d95579bc541ac547c3aa7a60d",
+      "memory_file_sha256": "152a5b1f19cbfa51a21b7a342a8e656744ca4747365e2a2d0fda305cb4d30660"
+    }
+  ],
+  "native_emulations": [
+    {
+      "file": "phase32-emulation-party-parser-game-264.json",
+      "sha256": "86bbae94ff642f06e149c23d7c62542f5e930fddfa5e05f1681e81f210d889da",
+      "case": "parser-game-264"
+    },
+    {
+      "file": "phase32-emulation-party-parser-game-268.json",
+      "sha256": "25a32790cdc816ba2c569962be6d8e87f8011f595d131b2c0a8c50f62937a294",
+      "case": "parser-game-268"
+    },
+    {
+      "file": "phase32-emulation-party-parser-game-300.json",
+      "sha256": "5269dcb0a9dcf8d0315c0df914e141db7b8be74c5f34200049f663bcdd00d349",
+      "case": "parser-game-300"
+    },
+    {
+      "file": "phase32-emulation-party-parser-game-555.json",
+      "sha256": "d93aea2e8c0d4ee7c8778f4b1450cd868502222afa21f0451ddeef3ba7e5f057",
+      "case": "parser-game-555"
+    },
+    {
+      "file": "phase32-emulation-party-parser-game-opaque-0.json",
+      "sha256": "492abb6c65d74d9cd5de66556017accc8b4c0ab4ac874fa25d1a1a5ba3515f09",
+      "case": "parser-game-opaque-0"
+    },
+    {
+      "file": "phase32-emulation-party-parser-game-opaque-255.json",
+      "sha256": "4b82059254534b369f993c5f63b3a7be932cf0ec99a9fae096e86563c9deeac4",
+      "case": "parser-game-opaque-255"
+    },
+    {
+      "file": "phase32-emulation-party-parser-game-fallback-length.json",
+      "sha256": "1dcd42b9df0630657c22be84b778f9b32fb70568cb3c180a2089cabae635f2bc",
+      "case": "parser-game-fallback-length"
+    },
+    {
+      "file": "phase32-emulation-party-parser-game-io-failure.json",
+      "sha256": "dab95c9406b39acadb858a68dfeb7bfa9aaf49fadf271e390ae2f273f01900f4",
+      "case": "parser-game-io-failure"
+    },
+    {
+      "file": "phase32-emulation-party-parser-editor-264.json",
+      "sha256": "1629abe7f17b0b49d664b7d900c781c46f0c90376805e3e51798d627545a765b",
+      "case": "parser-editor-264"
+    },
+    {
+      "file": "phase32-emulation-party-parser-editor-268.json",
+      "sha256": "e06867345c212185c9fa4555990b08d76cfe6fda520f07b6ebfa5b861a0b979b",
+      "case": "parser-editor-268"
+    },
+    {
+      "file": "phase32-emulation-party-parser-editor-300.json",
+      "sha256": "655d1fa122201ce2312b8329fb7c020cd8a2fb70eed726e0acda8b96fdba91de",
+      "case": "parser-editor-300"
+    },
+    {
+      "file": "phase32-emulation-party-parser-editor-555.json",
+      "sha256": "7797b2d341109c0aefd319ec14bca7dbf8d15f880d85aea58b8a4d06fdcccad9",
+      "case": "parser-editor-555"
+    },
+    {
+      "file": "phase32-emulation-party-parser-editor-opaque-0.json",
+      "sha256": "2f2e0714186eb86c86ddef7498136c19c3d3a81ff8e7640ab576852bde3ce750",
+      "case": "parser-editor-opaque-0"
+    },
+    {
+      "file": "phase32-emulation-party-parser-editor-opaque-255.json",
+      "sha256": "1cec44bc59bb61054d5089dff5f26844c41a0697248b668c4460ec925a77ea9d",
+      "case": "parser-editor-opaque-255"
+    },
+    {
+      "file": "phase32-emulation-party-parser-editor-fallback-length.json",
+      "sha256": "310e75375a67b19b706ac8582e893640d8a360ff2a7ba0d5252d1614eeee9d65",
+      "case": "parser-editor-fallback-length"
+    },
+    {
+      "file": "phase32-emulation-party-parser-editor-io-failure.json",
+      "sha256": "7e2dca3fa15b961142977cb4c268f4920d3c2ecb6479553cc0d9148f06e34a6d",
+      "case": "parser-editor-io-failure"
+    },
+    {
+      "file": "phase32-emulation-party-world-0.json",
+      "sha256": "6b5ca8f83807c272ac5dfd5798c2a1f9a735ffe2d93038f2511f41807874fc49",
+      "case": "world-0"
+    },
+    {
+      "file": "phase32-emulation-party-world-23.json",
+      "sha256": "a188306543ec74f016c29e38088af4d78dd7464a2bab382a8e079d7a145ba7fd",
+      "case": "world-23"
+    },
+    {
+      "file": "phase32-emulation-party-world-24.json",
+      "sha256": "ceebd0d3eaf72e767f1e3d92dfa794970f3f2c656fa9b8b40654d5e22ae8ee1c",
+      "case": "world-24"
+    },
+    {
+      "file": "phase32-emulation-party-world-255.json",
+      "sha256": "fce987fae2b2adc65f173ba3d049bc98c9de2f213e153f33cc5645ff5f8b9f8d",
+      "case": "world-255"
+    },
+    {
+      "file": "phase32-emulation-party-member-0-0-0.json",
+      "sha256": "89ef4d973c0a91d5f54aedd2273a4eb8af40e7af431270252f5f3b365c8f7850",
+      "case": "member-0-0-0"
+    },
+    {
+      "file": "phase32-emulation-party-member-0-0-1.json",
+      "sha256": "27208251a5da543ac353ff269925de3a97cc3e4bde58501ff36d3ba4ae8c43ea",
+      "case": "member-0-0-1"
+    },
+    {
+      "file": "phase32-emulation-party-member-0-2-0.json",
+      "sha256": "a94e292053689b92e5e6c2499844b4df5f082965948f3f1e01394b8e33e1ece9",
+      "case": "member-0-2-0"
+    },
+    {
+      "file": "phase32-emulation-party-member-0-2-1.json",
+      "sha256": "a65d2ada06644696ea15019e39a512e8120add79a6b12caa145a819dda0fea69",
+      "case": "member-0-2-1"
+    },
+    {
+      "file": "phase32-emulation-party-member-0-4-0.json",
+      "sha256": "91d38d76091aeed8ef578d49a3467adb98ffc245d6fa8c265e2706c9cfb51f3e",
+      "case": "member-0-4-0"
+    },
+    {
+      "file": "phase32-emulation-party-member-0-4-1.json",
+      "sha256": "875668adcb3605b178cd722f6d89bb66cd775d8b8e6b6bf68c8807099face4e3",
+      "case": "member-0-4-1"
+    },
+    {
+      "file": "phase32-emulation-party-member-0-6-0.json",
+      "sha256": "4f2a01fc4c5aa412f3f64bca1e15090bb7165308b05a965bb243a3c53e131428",
+      "case": "member-0-6-0"
+    },
+    {
+      "file": "phase32-emulation-party-member-0-6-1.json",
+      "sha256": "620ad298903d19fb69a27158867cab7abcbfcfd576070ba18841291297fd5f64",
+      "case": "member-0-6-1"
+    },
+    {
+      "file": "phase32-emulation-party-member-23-0-0.json",
+      "sha256": "509c311e6a91e22698d01d88fd79ffd0ba82c30ba6d4856a6df4b3962df89851",
+      "case": "member-23-0-0"
+    },
+    {
+      "file": "phase32-emulation-party-member-23-0-1.json",
+      "sha256": "b4a8896db8d8f3888fa320ecdeab182b6bf4d93d053f9b400d214eb8213314d9",
+      "case": "member-23-0-1"
+    },
+    {
+      "file": "phase32-emulation-party-member-23-2-0.json",
+      "sha256": "3aa0959ba86abf89814de0d5a4aa1384bddf8430c4c7db7fa10a6e8b74401835",
+      "case": "member-23-2-0"
+    },
+    {
+      "file": "phase32-emulation-party-member-23-2-1.json",
+      "sha256": "66ac28ef365fdaf10614b26160f6c85137c40224bc0ea0eeab3af9a9d008ea28",
+      "case": "member-23-2-1"
+    },
+    {
+      "file": "phase32-emulation-party-member-23-4-0.json",
+      "sha256": "cbcc9a7e2ae0d18cb6d77f7aa8e6559a420646017077f1c50ad6f4ea3aaebaef",
+      "case": "member-23-4-0"
+    },
+    {
+      "file": "phase32-emulation-party-member-23-4-1.json",
+      "sha256": "374007593ddf7a1d79e73c609be3463b44b6129be2e18ee743241c3f8afd1a04",
+      "case": "member-23-4-1"
+    },
+    {
+      "file": "phase32-emulation-party-member-23-6-0.json",
+      "sha256": "8f63030a3f4abda990c0e0491c607f9384ce5eab7102fba5ae09e0914674a133",
+      "case": "member-23-6-0"
+    },
+    {
+      "file": "phase32-emulation-party-member-23-6-1.json",
+      "sha256": "855b96721f1f0370da20f37e6dbc1de35d722a3c01800a09fe7a585a6e89f93a",
+      "case": "member-23-6-1"
+    },
+    {
+      "file": "phase32-emulation-party-member-255-0-0.json",
+      "sha256": "d0be03822aedaeb0ae0fe0b26a57b75d65b92ef4843b05b00fc35ae2aaa5de8a",
+      "case": "member-255-0-0"
+    },
+    {
+      "file": "phase32-emulation-party-member-255-0-1.json",
+      "sha256": "5eea161c0a3a819ee970eef024c3eb6847addbf6deba0dd7e475016fb431741e",
+      "case": "member-255-0-1"
+    },
+    {
+      "file": "phase32-emulation-party-member-255-2-0.json",
+      "sha256": "03d5a7d80965766cf80703032da1a1dac9020d89d7a94f3dc3edc73f7e0c6a7a",
+      "case": "member-255-2-0"
+    },
+    {
+      "file": "phase32-emulation-party-member-255-2-1.json",
+      "sha256": "9d268884b2a5a2e68ba335d99266f677aa775787ed8bc9677cff73e37be67e8b",
+      "case": "member-255-2-1"
+    },
+    {
+      "file": "phase32-emulation-party-member-255-4-0.json",
+      "sha256": "9c25a9f9680af2bbf431e952cc489bddb2cad78e2f2c9bfd604f4e173df1576c",
+      "case": "member-255-4-0"
+    },
+    {
+      "file": "phase32-emulation-party-member-255-4-1.json",
+      "sha256": "511fd201c2fb532ad77b41ab41fc256729713500b9470bcaf33d6daff14c2f8f",
+      "case": "member-255-4-1"
+    },
+    {
+      "file": "phase32-emulation-party-member-255-6-0.json",
+      "sha256": "43b69e7d5b5c0bdcf99158a81cd86513b668e31780f49cf82a14271a6efec200",
+      "case": "member-255-6-0"
+    },
+    {
+      "file": "phase32-emulation-party-member-255-6-1.json",
+      "sha256": "bae8b1ef5b0d2733ec0e92321dc2fff93c18492dbe40d007998d9ae1241522f0",
+      "case": "member-255-6-1"
+    },
+    {
+      "file": "phase32-emulation-party-writer-0-0.json",
+      "sha256": "eeb4b224d4f41643a70e1ec0739ca9c55ff30b8cddd9cbcba1d769f11f43e71c",
+      "case": "writer-0-0"
+    },
+    {
+      "file": "phase32-emulation-party-writer-0-1.json",
+      "sha256": "c6727f016deb5ddec4f5f77d073c6bac4d48c64688113704855f436bfa065a1d",
+      "case": "writer-0-1"
+    },
+    {
+      "file": "phase32-emulation-party-writer-165-0.json",
+      "sha256": "edc3220c6df1c0df8cdba026ba6cc02efaff23eaadc4b40034d500082f0b9d60",
+      "case": "writer-165-0"
+    },
+    {
+      "file": "phase32-emulation-party-writer-165-1.json",
+      "sha256": "bde726b5439acb7ecbad12859fb1fee01b70b0c59a8c9d597515c78abc81f0f8",
+      "case": "writer-165-1"
+    },
+    {
+      "file": "phase32-emulation-party-writer-255-0.json",
+      "sha256": "d971fffe38ab5a285edc8ca2326139ebc9601dd8bd13828a6e9645e7b74f1552",
+      "case": "writer-255-0"
+    },
+    {
+      "file": "phase32-emulation-party-writer-255-1.json",
+      "sha256": "5b1fb145c85d0521ff89b0c7b793d25d73921a85427aaeff3f4cffb5b68fa13d",
+      "case": "writer-255-1"
+    }
+  ],
+  "limitations": [
+    "Exact EXEs. No real GUI save/spawn, world simulation, modified game or changed original data.",
+    "16 full parser runs have explicit read/callback fixtures. Original initializers/converters/strncpy execute. Successful callbacks compare all631 bytes using REPE CMPSB; failure return paths and fallback555 read are separately asserted. Editor error-UI helper is stubbed in failure case.",
+    "Four complete game callbacks/world-store runs stub checksum and compare all520 target bytes with seeded runtime gap. IDs24/255 write only allocated EmulatorHelper fixture memory; no real game writes.",
+    "24 editor member fragments start after model construction and stop after native4211B0. Explicit trigger virtual storage fixture; actual field assignments/AP setter/flag codecs/count/free/default leader/follower helpers execute. Entire16-slot MFC callback and final array insertion are not emulated.",
+    "Six full Things writers use zero nonparty counts, one seeded party, three scratch patterns and empty/full16 member sets. Original party count/get, member get, definition lookup and full Good serializer execute; unrelated counts/date/virtual XY-trigger/file operations use fixtures. All555 captured bytes compared exactly.",
+    "Static prefix CFG covers593 instruction states; direct stack writes/PUSHes checked through first C9 write/skip. Bounded helper and readonly file contracts are explicit; not a universal interprocedural alias verifier.",
+    "Legacy268 name requires an explicit outside-input CString seed. Legacy300 API rejects unterminated/long names instead of reproducing unbounded native copy. Unknown raw fields remain unknown."
+  ]
+}

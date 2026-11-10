@@ -1,0 +1,51 @@
+{
+  "scope": "Bounded bit-origin extraction leads after prior Creature686 pointer hints.\n\nStraight-line register/partial-register move, logical mask and shift handling.\nStops at first branch/call; not a global nonuse or pointer identity proof.\n",
+  "prior_unique_flag_reads": 227,
+  "leads": [
+    {
+      "read": "0x498e48",
+      "root": {
+        "address": "0x498e39",
+        "next": "0x498e3f",
+        "family": "Creatures",
+        "register": "eax",
+        "producer": "entity-field-hint",
+        "instruction": "mov eax, dword ptr [edi + 0x370]",
+        "function_hint": "0x496de0",
+        "states": 15,
+        "limited": false,
+        "argument_contexts": 0,
+        "limited_argument_contexts": false
+      },
+      "read_instruction": "mov edx, dword ptr [eax + 0x686]",
+      "hits": [
+        {
+          "address": "0x498e51",
+          "instruction": "498e51: and edx, 1",
+          "source_bits": [
+            29
+          ],
+          "expression_register": "edx"
+        },
+        {
+          "address": "0x498e54",
+          "instruction": "498e54: shl edx, 0xc",
+          "source_bits": [
+            29
+          ],
+          "expression_register": "edx"
+        }
+      ],
+      "context": [
+        "498e4e: shr edx, 0x1d",
+        "498e51: and edx, 1",
+        "498e54: shl edx, 0xc",
+        "498e57: or ecx, edx",
+        "498e59: mov dword ptr [edi + 0x3ea], ecx",
+        "498e5f: mov cl, byte ptr [edi + 0x3e6]",
+        "498e65: test cl, 0x80",
+        "498e68: jne 0x498e96"
+      ]
+    }
+  ]
+}

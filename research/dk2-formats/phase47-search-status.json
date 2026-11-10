@@ -1,0 +1,38 @@
+{
+  "phase": 47,
+  "status": "exact_executable_layout_comparison_verified; unknown_gameplay_meanings_open",
+  "schema": "creature-version-layout-semantics.json",
+  "validation": "phase47-validation.json",
+  "findings": [
+    "Complete3 raw-to-intermediate converter instruction bodies identical across exact EXEs",
+    "Party/Wander/Trigger runtime diagnostic offsets differ1; old418 WORD is TriggerRoot, not WanderRadius"
+  ],
+  "unresolved": [
+    "KeeperSpellsC8 purpose",
+    "AP04/08 gameplay meaning",
+    "Creature AbilityJump75C/PickUpPriority6EB gameplay consumers",
+    "Terrain198/224,Traps204,Objects34C gameplay consumers",
+    "CreatureSpells Alternative Shot/Room effective gameplay replacement",
+    "WanderRadius418 effect and complete camera activation/renderer"
+  ],
+  "observed_input_drift": [
+    {
+      "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\AutoSave.kwd",
+      "historical_sha256": "2121d9b84566c4d69440825fe8af6f6b14dbbd22fa01dfaab36e9a4cc8523081",
+      "captured_sha256": "1ab10355a574e325525ba4d70adc7eeddddfe65ff4d4e8057d2b16982975a7fc"
+    },
+    {
+      "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\AutoSaveMap.kld",
+      "historical_sha256": "33ca15973cd57488d8663181a8a63f6cab5360451c032ec5cf1629c0657a30c2",
+      "captured_sha256": "7ea1c15447680af8a9988c5a9896bfa88df7631338c0611b150d8084c72a0b22"
+    },
+    {
+      "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\AutoSaveThings.kld",
+      "historical_sha256": "497baba367fc50e18d2ad535ee6969d506ce4934b8ac2524cd728a0ba050cd67",
+      "captured_sha256": "6be45fb802ecf66551805d0426de7f69eb3a3f014b7631e5572ad28e57ee8bda"
+    }
+  ],
+  "input_manifest": "phase47-input-manifest.json",
+  "next_action": "Use phase47 snapshots/new baseline-aware reads for AutoSave data; keep historical inputs/evidence intact. Continue unknown creature/catalogue gameplay consumers through aliases or specific callbacks; no repeated displacement-only conclusions.",
+  "scope": "No research writes to game data. Snapshot each changed source independently; both editors observed live, actual writer unidentified."
+}

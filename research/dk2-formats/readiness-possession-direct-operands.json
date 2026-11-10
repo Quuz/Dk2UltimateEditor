@@ -1,0 +1,53 @@
+{
+  "exe_sha256": "d7a8b854e4e4f02709eba271bead6fe2307dd6e332b5a96e70857e5b0e19fb8a",
+  "direct_absolute_operands": [
+    {
+      "address": "0x47bb4e",
+      "bytes": "8b0df0286f00",
+      "instruction": "mov ecx, dword ptr [0x6f28f0]"
+    },
+    {
+      "address": "0x51d14d",
+      "bytes": "66a3f2286f00",
+      "instruction": "mov word ptr [0x6f28f2], ax"
+    },
+    {
+      "address": "0x51d15b",
+      "bytes": "66a3f4286f00",
+      "instruction": "mov word ptr [0x6f28f4], ax"
+    }
+  ],
+  "candidate_relative_operands": [
+    {
+      "address": "0x4ea9d6",
+      "instruction": "mov dword ptr [esp + 0x3a4], edi",
+      "bytes": "89bc24a4030000"
+    },
+    {
+      "address": "0x56e218",
+      "instruction": "lea ecx, [ebx + 0x3a2]",
+      "bytes": "8d8ba2030000"
+    },
+    {
+      "address": "0x5a7b19",
+      "instruction": "mov dword ptr [esi + 0x3a4], 5",
+      "bytes": "c786a403000005000000"
+    },
+    {
+      "address": "0x5a7c92",
+      "instruction": "mov dword ptr [esi + 0x3a4], eax",
+      "bytes": "8986a4030000"
+    },
+    {
+      "address": "0x5a8d41",
+      "instruction": "mov edx, dword ptr [esi + 0x3a4]",
+      "bytes": "8b96a4030000"
+    },
+    {
+      "address": "0x5a8d76",
+      "instruction": "mov edx, dword ptr [esi + 0x3a4]",
+      "bytes": "8b96a4030000"
+    }
+  ],
+  "limitation": "Direct operands only. Pointer-relative or indexed reads are not excluded."
+}

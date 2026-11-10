@@ -1,0 +1,24 @@
+{
+  "phase": 36,
+  "date": "2026-10-26",
+  "native_emulations": 22,
+  "native_runs_per_exe": 11,
+  "boundary_cases": 28,
+  "exact_in_memory_container_patches": 10,
+  "primary_instructions": 6383,
+  "primary_ranges_matching_pe": 6,
+  "data_sources_unchanged": 10,
+  "original_main_inputs_unchanged": 17,
+  "original_main_executables_unchanged": 2,
+  "additional_executable_original_and_copy_match": "93e826a142f677ef5120699feddb0572799d93399167ef1d05ec4b48a8b2a342",
+  "format_package_components": 48,
+  "modified_gameplay_runs": 0,
+  "limitations": [
+    "Both supplied EXEs retain the immunity check; do not infer it was removed from all later releases.",
+    "King standalone flags1 vs inspected Globals flags0 is an actual data difference. A given running map must be traced to its chosen catalogue before claiming the cause of observed vulnerability.",
+    "Event helper runs before immunity check even when immune; native fixtures capture the call count, not its complete visual/audio/game effects.",
+    "Full health application is a captured fixture; nonimmune fixture has nonzero existing shock/state field to avoid unrelated aggro branches. Actual shock-timer assignment is checked.",
+    "local13 exact version provenance qualified above; original/copy SHA checked. Only research Ghidra database functions created, no binary edits.",
+    "All raw patch checks are in memory; original EXEs and data never modified."
+  ]
+}

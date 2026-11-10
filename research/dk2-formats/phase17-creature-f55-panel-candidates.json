@@ -1,0 +1,64 @@
+{
+  "program": "..\\..\\Dungeon Keeper 2\\Data\\editor\\DK2 Editor pro.exe",
+  "program_sha256": "989c45df779bccfc9a9e509b2ad0224a9bd269629f74792adc0320fa4b99fb09",
+  "text_origin": "0x401000",
+  "text_bytes": 1060864,
+  "offsets": [
+    "0x17ee"
+  ],
+  "warning": "Search all PE .text, including code absent from the saved function map.\n\nLinear disassembly and displacement-anchored decodes are only candidates.\nAnchored results can start inside another instruction or embedded data. Verify\neach candidate against a function body and object identity before using it.\n",
+  "candidates": [
+    {
+      "address": "0x43f787",
+      "instruction": "mov byte ptr [esi + 0x17ee], al",
+      "displacement": "0x17ee",
+      "memory_bytes": 1,
+      "base": "esi",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear",
+        "displacement-anchored"
+      ]
+    },
+    {
+      "address": "0x44017e",
+      "instruction": "mov byte ptr [esi + 0x17ee], al",
+      "displacement": "0x17ee",
+      "memory_bytes": 1,
+      "base": "esi",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear",
+        "displacement-anchored"
+      ]
+    },
+    {
+      "address": "0x440c27",
+      "instruction": "mov cl, byte ptr [esi + 0x17ee]",
+      "displacement": "0x17ee",
+      "memory_bytes": 1,
+      "base": "esi",
+      "index": null,
+      "access": 1,
+      "sources": [
+        "linear",
+        "displacement-anchored"
+      ]
+    },
+    {
+      "address": "0x4415cc",
+      "instruction": "mov al, byte ptr [esi + 0x17ee]",
+      "displacement": "0x17ee",
+      "memory_bytes": 1,
+      "base": "esi",
+      "index": null,
+      "access": 1,
+      "sources": [
+        "linear",
+        "displacement-anchored"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "phase": 44,
+  "date": "2026-10-26",
+  "native_emulations": 68,
+  "native_case_kinds": {
+    "writer": 22,
+    "init": 6,
+    "converter": 12,
+    "model": 12,
+    "loader": 16
+  },
+  "boundary_cases": 646,
+  "corpus_files": 82,
+  "corpus_records": 1066,
+  "whole_file_roundtrips": 82,
+  "exact_in_memory_container_patches": 522,
+  "primary_instructions": 1496,
+  "primary_ranges_matching_pe": 15,
+  "original_main_inputs_unchanged": 17,
+  "original_main_executables_unchanged": 2,
+  "format_package_components": 55,
+  "modified_gameplay_runs": 0,
+  "limitations": [
+    "68 native cases:22 complete writers,6 complete initializers,12 complete converters,12 model x87 fragments and16 complete scalar loaders. All emitted file bytes, all526 intermediate bytes, and all122 definition bytes compared.",
+    "Writer model arrays, date/header constants, file append callback and3 virtual scalar getters are fixtures. Resource getter41CE60, flag encoder420230, CString helper4AB3B0, getters424EA0/424EC0 and x87 ftol execute original instructions.",
+    "Model tests execute4A273B..4A2780 with construction and registration skipped. They do not prove a full GUI callback or editable control for C8.",
+    "Game loader uses null graphical resource provider and explicit sound virtual handler1C=11223344. It does not exercise resource success/failure branches or game casting.",
+    "C8 gameplay meaning remains unresolved. E0/E1 being ignored by these converters and unassigned by this writer is not proof for other versions/patches or for every historical producer.",
+    "No original game data/EXE modifications. No live GUI/gameplay runs. Saved Ghidra function ranges compared with live bytes and original PE after emulations."
+  ]
+}

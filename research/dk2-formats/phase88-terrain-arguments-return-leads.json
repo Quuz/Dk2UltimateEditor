@@ -1,0 +1,4053 @@
+{
+  "scope": "New indexed/return-alias leads over prior Terrain roots;do not alter old passes.\n\nReturn propagation is an overapproximate candidate source,not an ABI/type proof.\nBounded callers/callees,unknown return paths and missing stack pointees remain.\n",
+  "program_sha256": "d7a8b854e4e4f02709eba271bead6fe2307dd6e332b5a96e70857e5b0e19fb8a",
+  "decoded_instructions": 799810,
+  "producer_roots": [
+    {
+      "address": "0x40e33c",
+      "next": "0x40e33f",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x40e0d0",
+      "states": 2,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x42a11c",
+      "next": "0x42a11f",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x428a30",
+      "states": 2,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x42d45d",
+      "next": "0x42d460",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x42d1f0",
+      "states": 4,
+      "limited": false,
+      "argument_contexts": 2,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x43c8ca",
+      "next": "0x43c8cd",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [eax + 0x70]",
+      "function_hint": "0x43c260",
+      "states": 2,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x43ce68",
+      "next": "0x43ce6b",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [eax + 0x70]",
+      "function_hint": "0x43c260",
+      "states": 2,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x43d213",
+      "next": "0x43d216",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [esi + 0x70]",
+      "function_hint": "0x43c260",
+      "states": 96,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x43d810",
+      "next": "0x43d813",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x43d770",
+      "states": 12,
+      "limited": false,
+      "argument_contexts": 1,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x43e417",
+      "next": "0x43e41a",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x43e320",
+      "states": 38,
+      "limited": false,
+      "argument_contexts": 2,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x43e427",
+      "next": "0x43e42a",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [eax + 0x70]",
+      "function_hint": "0x43e320",
+      "states": 38,
+      "limited": false,
+      "argument_contexts": 2,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x43e9f6",
+      "next": "0x43e9f9",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [eax + 0x70]",
+      "function_hint": "0x43e860",
+      "states": 24,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x43ed19",
+      "next": "0x43ed1c",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x43e860",
+      "states": 30,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x43edb7",
+      "next": "0x43edba",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [eax + 0x70]",
+      "function_hint": "0x43e860",
+      "states": 30,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x43ee69",
+      "next": "0x43ee6c",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [eax + 0x70]",
+      "function_hint": "0x43e860",
+      "states": 63,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x43ef77",
+      "next": "0x43ef7a",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [eax + 0x70]",
+      "function_hint": "0x43e860",
+      "states": 63,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x43f077",
+      "next": "0x43f07a",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [eax + 0x70]",
+      "function_hint": "0x43e860",
+      "states": 63,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x43f561",
+      "next": "0x43f564",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x43e860",
+      "states": 55,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x43f61d",
+      "next": "0x43f620",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [eax + 0x70]",
+      "function_hint": "0x43e860",
+      "states": 55,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x43f6e1",
+      "next": "0x43f6e4",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [eax + 0x70]",
+      "function_hint": "0x43e860",
+      "states": 111,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x43f85f",
+      "next": "0x43f862",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [eax + 0x70]",
+      "function_hint": "0x43e860",
+      "states": 111,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x43f9cf",
+      "next": "0x43f9d2",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [eax + 0x70]",
+      "function_hint": "0x43e860",
+      "states": 111,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x4402ae",
+      "next": "0x4402b1",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [eax + 0x70]",
+      "function_hint": "0x43e860",
+      "states": 3,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x4413bd",
+      "next": "0x4413c0",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [eax + 0x70]",
+      "function_hint": "0x441250",
+      "states": 1,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x442d35",
+      "next": "0x442d38",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x441cd0",
+      "states": 1,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x443eec",
+      "next": "0x443eef",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x443910",
+      "states": 7,
+      "limited": false,
+      "argument_contexts": 1,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x4458ea",
+      "next": "0x4458ed",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [eax + 0x70]",
+      "function_hint": "0x444f10",
+      "states": 7,
+      "limited": false,
+      "argument_contexts": 1,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x44fdac",
+      "next": "0x44fdaf",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [eax + 0x70]",
+      "function_hint": "0x44fc40",
+      "states": 4,
+      "limited": false,
+      "argument_contexts": 1,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x452ca0",
+      "next": "0x452ca3",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x452bd0",
+      "states": 20,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x452e4e",
+      "next": "0x452e51",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x452dc0",
+      "states": 3,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x455d7b",
+      "next": "0x455d7e",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [eax + 0x70]",
+      "function_hint": "0x455d40",
+      "states": 6,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x48820a",
+      "next": "0x48820d",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x487c70",
+      "states": 17,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x4897ba",
+      "next": "0x4897bd",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [ebx + 0x70]",
+      "function_hint": "0x4888c0",
+      "states": 15,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x48b57e",
+      "next": "0x48b581",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [eax + 0x70]",
+      "function_hint": "0x48b500",
+      "states": 2,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x48b59b",
+      "next": "0x48b59e",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x48b500",
+      "states": 2,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x49b39d",
+      "next": "0x49b3a0",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x49b1c0",
+      "states": 1,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x4a32dd",
+      "next": "0x4a32e0",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [eax + 0x70]",
+      "function_hint": "0x4a10e0",
+      "states": 1,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x4b0fda",
+      "next": "0x4b0fdd",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x4b0f20",
+      "states": 1,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x4c5d43",
+      "next": "0x4c5d46",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x4c5c30",
+      "states": 1,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x4c5e7c",
+      "next": "0x4c5e7f",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x4c5db0",
+      "states": 37,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x4d9de3",
+      "next": "0x4d9de6",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x4d9690",
+      "states": 2,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x4d9fef",
+      "next": "0x4d9ff2",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x4d9690",
+      "states": 1,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x4da0bf",
+      "next": "0x4da0c2",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [eax + 0x70]",
+      "function_hint": "0x4d9690",
+      "states": 16,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x4e2da0",
+      "next": "0x4e2da3",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x4e2d40",
+      "states": 1,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x4e360e",
+      "next": "0x4e3611",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x4e35c0",
+      "states": 32,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x4e4bc4",
+      "next": "0x4e4bc7",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [eax + 0x70]",
+      "function_hint": "0x4e4b00",
+      "states": 13,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x4e5343",
+      "next": "0x4e5346",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x4e5300",
+      "states": 7,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x4e5371",
+      "next": "0x4e5374",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x4e5300",
+      "states": 5,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x4e6285",
+      "next": "0x4e6288",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x4e6220",
+      "states": 6,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x4e6c2d",
+      "next": "0x4e6c30",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x4e6c00",
+      "states": 8,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x4e6c74",
+      "next": "0x4e6c77",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x4e6c60",
+      "states": 3,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x4e928c",
+      "next": "0x4e928f",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [eax + 0x70]",
+      "function_hint": "0x4e9130",
+      "states": 6,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x4e92b6",
+      "next": "0x4e92b9",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [eax + 0x70]",
+      "function_hint": "0x4e9130",
+      "states": 11,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x4ebda5",
+      "next": "0x4ebda8",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [eax + 0x70]",
+      "function_hint": "0x4eacc0",
+      "states": 3,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x4ec627",
+      "next": "0x4ec62a",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x4ec5a0",
+      "states": 5,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x4ec7bf",
+      "next": "0x4ec7c2",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x4ec650",
+      "states": 4,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x50946f",
+      "next": "0x509472",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x508a10",
+      "states": 2,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x50949a",
+      "next": "0x50949d",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x508a10",
+      "states": 2,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x50be14",
+      "next": "0x50be17",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x50b5b0",
+      "states": 1,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x50be28",
+      "next": "0x50be2b",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x50b5b0",
+      "states": 1,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x50c931",
+      "next": "0x50c934",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x50c800",
+      "states": 58,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x51949b",
+      "next": "0x51949e",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x518ad0",
+      "states": 14,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x51eb83",
+      "next": "0x51eb86",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [eax + 0x70]",
+      "function_hint": "0x51e2c0",
+      "states": 4,
+      "limited": false,
+      "argument_contexts": 2,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x51ebf7",
+      "next": "0x51ebfa",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x51e2c0",
+      "states": 13,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x51ecb5",
+      "next": "0x51ecb8",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x51e2c0",
+      "states": 11,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x562fb8",
+      "next": "0x562fbb",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [eax + 0x70]",
+      "function_hint": "0x562c30",
+      "states": 2,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x563a4a",
+      "next": "0x563a4d",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [eax + 0x70]",
+      "function_hint": "0x563a20",
+      "states": 2,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x59863c",
+      "next": "0x59863f",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x598370",
+      "states": 6,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x5b49f8",
+      "next": "0x5b49fb",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [ecx + 0x70]",
+      "function_hint": "0x5b4390",
+      "states": 12,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x61769a",
+      "next": "0x61769d",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [eax + 0x70]",
+      "function_hint": "0x617510",
+      "states": 2,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x61a68e",
+      "next": "0x61a691",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edi + 0x70]",
+      "function_hint": "0x61a500",
+      "states": 1,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x61b8b3",
+      "next": "0x61b8b6",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [ecx + 0x70]",
+      "function_hint": "0x61b5e0",
+      "states": 1,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x61b8c3",
+      "next": "0x61b8c6",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x61b5e0",
+      "states": 2,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x61b8d7",
+      "next": "0x61b8da",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [ecx + 0x70]",
+      "function_hint": "0x61b5e0",
+      "states": 1,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x61b8e4",
+      "next": "0x61b8e7",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x61b5e0",
+      "states": 1,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x61b8ff",
+      "next": "0x61b902",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x61b5e0",
+      "states": 1,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x61b90f",
+      "next": "0x61b912",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [ecx + 0x70]",
+      "function_hint": "0x61b5e0",
+      "states": 1,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x61b923",
+      "next": "0x61b926",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x61b5e0",
+      "states": 1,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x61b934",
+      "next": "0x61b937",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x61b5e0",
+      "states": 1,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x61b953",
+      "next": "0x61b956",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [ecx + 0x70]",
+      "function_hint": "0x61b5e0",
+      "states": 1,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x61b967",
+      "next": "0x61b96a",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [ecx + 0x70]",
+      "function_hint": "0x61b5e0",
+      "states": 1,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x61b97b",
+      "next": "0x61b97e",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [ecx + 0x70]",
+      "function_hint": "0x61b5e0",
+      "states": 1,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x61b98c",
+      "next": "0x61b98f",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [ecx + 0x70]",
+      "function_hint": "0x61b5e0",
+      "states": 1,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x61b9a7",
+      "next": "0x61b9aa",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x61b5e0",
+      "states": 1,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x61b9b7",
+      "next": "0x61b9ba",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [ecx + 0x70]",
+      "function_hint": "0x61b5e0",
+      "states": 1,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x61b9cb",
+      "next": "0x61b9ce",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x61b5e0",
+      "states": 1,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x61b9dc",
+      "next": "0x61b9df",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x61b5e0",
+      "states": 1,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x61b9fa",
+      "next": "0x61b9fd",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [ecx + 0x70]",
+      "function_hint": "0x61b5e0",
+      "states": 1,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x61ba0e",
+      "next": "0x61ba11",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x61b5e0",
+      "states": 1,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x61ba22",
+      "next": "0x61ba25",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x61b5e0",
+      "states": 1,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x61ba32",
+      "next": "0x61ba35",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x61b5e0",
+      "states": 1,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x61ba50",
+      "next": "0x61ba53",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x61b5e0",
+      "states": 1,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x61ba64",
+      "next": "0x61ba67",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [ecx + 0x70]",
+      "function_hint": "0x61b5e0",
+      "states": 1,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x61ba74",
+      "next": "0x61ba77",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x70]",
+      "function_hint": "0x61b5e0",
+      "states": 1,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x61ba84",
+      "next": "0x61ba87",
+      "family": "Terrain",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [ecx + 0x70]",
+      "function_hint": "0x61b5e0",
+      "states": 1,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    }
+  ],
+  "root_states": 1320,
+  "limited_roots": 0,
+  "callee_summaries": 10,
+  "limited_callees": 1,
+  "candidates": [
+    {
+      "root": {
+        "address": "0x43d213",
+        "next": "0x43d216",
+        "family": "Terrain",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [esi + 0x70]",
+        "function_hint": "0x43c260",
+        "states": 96,
+        "limited": false,
+        "argument_contexts": 0,
+        "limited_argument_contexts": false
+      },
+      "field": "controlFlags",
+      "read": {
+        "address": "0x43d218",
+        "offset": 379,
+        "bytes": 4,
+        "instruction": "mov eax, dword ptr [esi + 0x17b]",
+        "trace": [
+          "43d216: mov esi, eax"
+        ],
+        "callee": null,
+        "call": null
+      }
+    },
+    {
+      "root": {
+        "address": "0x43d213",
+        "next": "0x43d216",
+        "family": "Terrain",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [esi + 0x70]",
+        "function_hint": "0x43c260",
+        "states": 96,
+        "limited": false,
+        "argument_contexts": 0,
+        "limited_argument_contexts": false
+      },
+      "field": "controlFlags",
+      "read": {
+        "address": "0x43d2f7",
+        "offset": 379,
+        "bytes": 1,
+        "instruction": "test byte ptr [esi + 0x17b], 1",
+        "trace": [
+          "43d216: mov esi, eax",
+          "43d218: mov eax, dword ptr [esi + 0x17b]",
+          "43d21e: test al, 1",
+          "43d220: jne 0x43d2f1",
+          "43d2f1: mov ecx, dword ptr [0x759ad8]"
+        ],
+        "callee": null,
+        "call": null
+      }
+    },
+    {
+      "root": {
+        "address": "0x43e417",
+        "next": "0x43e41a",
+        "family": "Terrain",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [edx + 0x70]",
+        "function_hint": "0x43e320",
+        "states": 38,
+        "limited": false,
+        "argument_contexts": 2,
+        "limited_argument_contexts": false
+      },
+      "field": "controlFlags",
+      "read": {
+        "address": "0x43e3ae",
+        "offset": 379,
+        "bytes": 1,
+        "instruction": "test byte ptr [eax + 0x17b], 0x10",
+        "trace": [
+          "43e41a: mov ebx, 1",
+          "43e41f: jmp 0x43e3ae"
+        ],
+        "callee": null,
+        "call": null
+      }
+    },
+    {
+      "root": {
+        "address": "0x43e427",
+        "next": "0x43e42a",
+        "family": "Terrain",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [eax + 0x70]",
+        "function_hint": "0x43e320",
+        "states": 38,
+        "limited": false,
+        "argument_contexts": 2,
+        "limited_argument_contexts": false
+      },
+      "field": "controlFlags",
+      "read": {
+        "address": "0x43e3ae",
+        "offset": 379,
+        "bytes": 1,
+        "instruction": "test byte ptr [eax + 0x17b], 0x10",
+        "trace": [
+          "43e42a: mov ebx, 1",
+          "43e42f: jmp 0x43e3ae"
+        ],
+        "callee": null,
+        "call": null
+      }
+    },
+    {
+      "root": {
+        "address": "0x43f561",
+        "next": "0x43f564",
+        "family": "Terrain",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [edx + 0x70]",
+        "function_hint": "0x43e860",
+        "states": 55,
+        "limited": false,
+        "argument_contexts": 0,
+        "limited_argument_contexts": false
+      },
+      "field": "controlFlags",
+      "read": {
+        "address": "0x43f5ce",
+        "offset": 379,
+        "bytes": 4,
+        "instruction": "mov eax, dword ptr [ebp + 0x17b]",
+        "trace": [
+          "43f5a4: mov dword ptr [ecx + 0x11], ebx",
+          "43f5a7: mov byte ptr [ecx + 0x15], bl",
+          "43f5aa: mov eax, dword ptr [edi]",
+          "43f5ac: lea ecx, [esp + 0x50]",
+          "43f5b0: push ecx",
+          "43f5b1: mov ecx, edi",
+          "43f5b3: call dword ptr [eax + 0x2a8]",
+          "43f5b9: mov ecx, dword ptr [esi + 0x2e8]",
+          "43f5bf: lea edx, [ecx + ecx*4]",
+          "43f5c2: lea ecx, [ecx + edx*2]",
+          "43f5c5: mov edx, dword ptr [eax]",
+          "43f5c7: mov dword ptr [esi + ecx*2 + 0x1c5], edx"
+        ],
+        "callee": null,
+        "call": null
+      }
+    },
+    {
+      "root": {
+        "address": "0x43f61d",
+        "next": "0x43f620",
+        "family": "Terrain",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [eax + 0x70]",
+        "function_hint": "0x43e860",
+        "states": 55,
+        "limited": false,
+        "argument_contexts": 0,
+        "limited_argument_contexts": false
+      },
+      "field": "controlFlags",
+      "read": {
+        "address": "0x43f68a",
+        "offset": 379,
+        "bytes": 4,
+        "instruction": "mov eax, dword ptr [ebp + 0x17b]",
+        "trace": [
+          "43f660: mov dword ptr [ecx + 0x11], ebx",
+          "43f663: mov byte ptr [ecx + 0x15], bl",
+          "43f666: mov eax, dword ptr [edi]",
+          "43f668: lea ecx, [esp + 0x54]",
+          "43f66c: push ecx",
+          "43f66d: mov ecx, edi",
+          "43f66f: call dword ptr [eax + 0x2a8]",
+          "43f675: mov ecx, dword ptr [esi + 0x2e8]",
+          "43f67b: lea edx, [ecx + ecx*4]",
+          "43f67e: lea ecx, [ecx + edx*2]",
+          "43f681: mov edx, dword ptr [eax]",
+          "43f683: mov dword ptr [esi + ecx*2 + 0x1c5], edx"
+        ],
+        "callee": null,
+        "call": null
+      }
+    },
+    {
+      "root": {
+        "address": "0x43f6e1",
+        "next": "0x43f6e4",
+        "family": "Terrain",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [eax + 0x70]",
+        "function_hint": "0x43e860",
+        "states": 111,
+        "limited": false,
+        "argument_contexts": 0,
+        "limited_argument_contexts": false
+      },
+      "field": "controlFlags",
+      "read": {
+        "address": "0x43f750",
+        "offset": 379,
+        "bytes": 4,
+        "instruction": "mov eax, dword ptr [ebp + 0x17b]",
+        "trace": [
+          "43f728: mov byte ptr [ecx + 0x1a], bl",
+          "43f72b: lea ecx, [esp + 0x58]",
+          "43f72f: mov dword ptr [esp + 0x20], eax",
+          "43f733: mov eax, dword ptr [edi]",
+          "43f735: push ecx",
+          "43f736: mov ecx, edi",
+          "43f738: call dword ptr [eax + 0x2a8]",
+          "43f73e: mov ecx, dword ptr [esi + 0x1b0]",
+          "43f744: mov eax, dword ptr [eax]",
+          "43f746: lea ecx, [ecx + ecx*2]",
+          "43f749: lea edx, [esi + ecx*8]",
+          "43f74c: mov dword ptr [ecx + edx + 0x11], eax"
+        ],
+        "callee": null,
+        "call": null
+      }
+    },
+    {
+      "root": {
+        "address": "0x43f6e1",
+        "next": "0x43f6e4",
+        "family": "Terrain",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [eax + 0x70]",
+        "function_hint": "0x43e860",
+        "states": 111,
+        "limited": false,
+        "argument_contexts": 0,
+        "limited_argument_contexts": false
+      },
+      "field": "controlFlags",
+      "read": {
+        "address": "0x43f80b",
+        "offset": 379,
+        "bytes": 4,
+        "instruction": "mov eax, dword ptr [ebp + 0x17b]",
+        "trace": [
+          "43f7e4: mov dword ptr [ecx + 0x16], edx",
+          "43f7e7: mov byte ptr [ecx + 0x1a], bl",
+          "43f7ea: mov eax, dword ptr [edi]",
+          "43f7ec: lea ecx, [esp + 0x5c]",
+          "43f7f0: push ecx",
+          "43f7f1: mov ecx, edi",
+          "43f7f3: call dword ptr [eax + 0x2a8]",
+          "43f7f9: mov ecx, dword ptr [esi + 0x1b0]",
+          "43f7ff: mov eax, dword ptr [eax]",
+          "43f801: lea ecx, [ecx + ecx*2]",
+          "43f804: lea edx, [esi + ecx*8]",
+          "43f807: mov dword ptr [ecx + edx + 0x11], eax"
+        ],
+        "callee": null,
+        "call": null
+      }
+    },
+    {
+      "root": {
+        "address": "0x43f85f",
+        "next": "0x43f862",
+        "family": "Terrain",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [eax + 0x70]",
+        "function_hint": "0x43e860",
+        "states": 111,
+        "limited": false,
+        "argument_contexts": 0,
+        "limited_argument_contexts": false
+      },
+      "field": "controlFlags",
+      "read": {
+        "address": "0x43f8ce",
+        "offset": 379,
+        "bytes": 4,
+        "instruction": "mov eax, dword ptr [ebp + 0x17b]",
+        "trace": [
+          "43f8a6: mov byte ptr [ecx + 0x1a], bl",
+          "43f8a9: lea ecx, [esp + 0x60]",
+          "43f8ad: mov dword ptr [esp + 0x20], eax",
+          "43f8b1: mov eax, dword ptr [edi]",
+          "43f8b3: push ecx",
+          "43f8b4: mov ecx, edi",
+          "43f8b6: call dword ptr [eax + 0x2a8]",
+          "43f8bc: mov ecx, dword ptr [esi + 0x1b0]",
+          "43f8c2: mov eax, dword ptr [eax]",
+          "43f8c4: lea ecx, [ecx + ecx*2]",
+          "43f8c7: lea edx, [esi + ecx*8]",
+          "43f8ca: mov dword ptr [ecx + edx + 0x11], eax"
+        ],
+        "callee": null,
+        "call": null
+      }
+    },
+    {
+      "root": {
+        "address": "0x43f85f",
+        "next": "0x43f862",
+        "family": "Terrain",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [eax + 0x70]",
+        "function_hint": "0x43e860",
+        "states": 111,
+        "limited": false,
+        "argument_contexts": 0,
+        "limited_argument_contexts": false
+      },
+      "field": "controlFlags",
+      "read": {
+        "address": "0x43f989",
+        "offset": 379,
+        "bytes": 4,
+        "instruction": "mov eax, dword ptr [ebp + 0x17b]",
+        "trace": [
+          "43f962: mov dword ptr [ecx + 0x16], edx",
+          "43f965: mov byte ptr [ecx + 0x1a], bl",
+          "43f968: mov eax, dword ptr [edi]",
+          "43f96a: lea ecx, [esp + 0x64]",
+          "43f96e: push ecx",
+          "43f96f: mov ecx, edi",
+          "43f971: call dword ptr [eax + 0x2a8]",
+          "43f977: mov ecx, dword ptr [esi + 0x1b0]",
+          "43f97d: mov eax, dword ptr [eax]",
+          "43f97f: lea ecx, [ecx + ecx*2]",
+          "43f982: lea edx, [esi + ecx*8]",
+          "43f985: mov dword ptr [ecx + edx + 0x11], eax"
+        ],
+        "callee": null,
+        "call": null
+      }
+    },
+    {
+      "root": {
+        "address": "0x43f9cf",
+        "next": "0x43f9d2",
+        "family": "Terrain",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [eax + 0x70]",
+        "function_hint": "0x43e860",
+        "states": 111,
+        "limited": false,
+        "argument_contexts": 0,
+        "limited_argument_contexts": false
+      },
+      "field": "controlFlags",
+      "read": {
+        "address": "0x43fa3e",
+        "offset": 379,
+        "bytes": 4,
+        "instruction": "mov eax, dword ptr [ebp + 0x17b]",
+        "trace": [
+          "43fa16: mov byte ptr [ecx + 0x1a], bl",
+          "43fa19: lea ecx, [esp + 0x68]",
+          "43fa1d: mov dword ptr [esp + 0x20], eax",
+          "43fa21: mov eax, dword ptr [edi]",
+          "43fa23: push ecx",
+          "43fa24: mov ecx, edi",
+          "43fa26: call dword ptr [eax + 0x2a8]",
+          "43fa2c: mov ecx, dword ptr [esi + 0x1b0]",
+          "43fa32: mov eax, dword ptr [eax]",
+          "43fa34: lea ecx, [ecx + ecx*2]",
+          "43fa37: lea edx, [esi + ecx*8]",
+          "43fa3a: mov dword ptr [ecx + edx + 0x11], eax"
+        ],
+        "callee": null,
+        "call": null
+      }
+    },
+    {
+      "root": {
+        "address": "0x43f9cf",
+        "next": "0x43f9d2",
+        "family": "Terrain",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [eax + 0x70]",
+        "function_hint": "0x43e860",
+        "states": 111,
+        "limited": false,
+        "argument_contexts": 0,
+        "limited_argument_contexts": false
+      },
+      "field": "controlFlags",
+      "read": {
+        "address": "0x43faf9",
+        "offset": 379,
+        "bytes": 4,
+        "instruction": "mov eax, dword ptr [ebp + 0x17b]",
+        "trace": [
+          "43fad2: mov dword ptr [ecx + 0x16], edx",
+          "43fad5: mov byte ptr [ecx + 0x1a], bl",
+          "43fad8: mov eax, dword ptr [edi]",
+          "43fada: lea ecx, [esp + 0x6c]",
+          "43fade: push ecx",
+          "43fadf: mov ecx, edi",
+          "43fae1: call dword ptr [eax + 0x2a8]",
+          "43fae7: mov ecx, dword ptr [esi + 0x1b0]",
+          "43faed: mov eax, dword ptr [eax]",
+          "43faef: lea ecx, [ecx + ecx*2]",
+          "43faf2: lea edx, [esi + ecx*8]",
+          "43faf5: mov dword ptr [ecx + edx + 0x11], eax"
+        ],
+        "callee": null,
+        "call": null
+      }
+    },
+    {
+      "root": {
+        "address": "0x443eec",
+        "next": "0x443eef",
+        "family": "Terrain",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [edx + 0x70]",
+        "function_hint": "0x443910",
+        "states": 7,
+        "limited": false,
+        "argument_contexts": 1,
+        "limited_argument_contexts": false
+      },
+      "field": "controlFlags",
+      "read": {
+        "address": "0x43e453",
+        "offset": 379,
+        "bytes": 4,
+        "instruction": "mov ecx, dword ptr [edi + 0x17b]",
+        "trace": [
+          "43e440: push ebx",
+          "43e441: push ebp",
+          "43e442: push esi",
+          "43e443: mov eax, dword ptr [0x759ad8]",
+          "43e448: mov ebp, dword ptr [esp + 0x20]",
+          "43e44c: push edi",
+          "43e44d: mov edi, dword ptr [esp + 0x1c]",
+          "43e451: xor ebx, ebx"
+        ],
+        "callee": "0x43e440",
+        "call": "0x443efe",
+        "caller_trace": [
+          "443eef: mov ecx, dword ptr [esp + 0x44]",
+          "443ef3: push eax",
+          "443ef4: mov eax, dword ptr [esp + 0x4c]",
+          "443ef8: push eax",
+          "443ef9: push ecx",
+          "443efa: mov ecx, dword ptr [esp + 0x3c]"
+        ],
+        "argument_chain": [
+          {
+            "address": "0x443efe",
+            "target": "0x43e440",
+            "registers": {},
+            "arguments": {
+              "12": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "root": {
+        "address": "0x443eec",
+        "next": "0x443eef",
+        "family": "Terrain",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [edx + 0x70]",
+        "function_hint": "0x443910",
+        "states": 7,
+        "limited": false,
+        "argument_contexts": 1,
+        "limited_argument_contexts": false
+      },
+      "field": "controlFlags",
+      "read": {
+        "address": "0x43e7cf",
+        "offset": 379,
+        "bytes": 4,
+        "instruction": "mov eax, dword ptr [edi + 0x17b]",
+        "trace": [
+          "43e7a3: lea ebp, [edi + edx*8]",
+          "43e7a6: lea eax, [ecx + eax*2 + 0x1b4]",
+          "43e7ad: mov edx, dword ptr [edx + ebp + 0x97]",
+          "43e7b4: mov dword ptr [eax], edx",
+          "43e7b6: mov dword ptr [eax + 4], esi",
+          "43e7b9: mov byte ptr [eax + 8], bl",
+          "43e7bc: mov byte ptr [eax + 9], bl",
+          "43e7bf: mov byte ptr [eax + 0xa], bl",
+          "43e7c2: mov dword ptr [eax + 0xc], ebx",
+          "43e7c5: mov byte ptr [eax + 0x10], 0xff",
+          "43e7c9: mov dword ptr [eax + 0x11], ebx",
+          "43e7cc: mov byte ptr [eax + 0x15], bl"
+        ],
+        "callee": "0x43e440",
+        "call": "0x443efe",
+        "caller_trace": [
+          "443eef: mov ecx, dword ptr [esp + 0x44]",
+          "443ef3: push eax",
+          "443ef4: mov eax, dword ptr [esp + 0x4c]",
+          "443ef8: push eax",
+          "443ef9: push ecx",
+          "443efa: mov ecx, dword ptr [esp + 0x3c]"
+        ],
+        "argument_chain": [
+          {
+            "address": "0x443efe",
+            "target": "0x43e440",
+            "registers": {},
+            "arguments": {
+              "12": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "root": {
+        "address": "0x443eec",
+        "next": "0x443eef",
+        "family": "Terrain",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [edx + 0x70]",
+        "function_hint": "0x443910",
+        "states": 7,
+        "limited": false,
+        "argument_contexts": 1,
+        "limited_argument_contexts": false
+      },
+      "field": "controlFlags",
+      "read": {
+        "address": "0x43e4f5",
+        "offset": 379,
+        "bytes": 4,
+        "instruction": "test dword ptr [edi + 0x17b], 0x20000000",
+        "trace": [
+          "43e4c6: mov edx, dword ptr [eax + 0x66dea1]",
+          "43e4cc: mov dword ptr [esp + 0x24], ecx",
+          "43e4d0: movsx eax, byte ptr [eax + 0x66dea0]",
+          "43e4d7: push edx",
+          "43e4d8: lea eax, [eax + eax*2]",
+          "43e4db: lea edx, [edi + eax*8]",
+          "43e4de: mov eax, dword ptr [eax + edx + 0x97]",
+          "43e4e5: push eax",
+          "43e4e6: call 0x43e830",
+          "43e4eb: mov eax, dword ptr [esp + 0x20]",
+          "43e4ef: mov dword ptr [eax + 0x16], ebx",
+          "43e4f2: mov byte ptr [eax + 0x1a], bl"
+        ],
+        "callee": "0x43e440",
+        "call": "0x443efe",
+        "caller_trace": [
+          "443eef: mov ecx, dword ptr [esp + 0x44]",
+          "443ef3: push eax",
+          "443ef4: mov eax, dword ptr [esp + 0x4c]",
+          "443ef8: push eax",
+          "443ef9: push ecx",
+          "443efa: mov ecx, dword ptr [esp + 0x3c]"
+        ],
+        "argument_chain": [
+          {
+            "address": "0x443efe",
+            "target": "0x43e440",
+            "registers": {},
+            "arguments": {
+              "12": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "root": {
+        "address": "0x443eec",
+        "next": "0x443eef",
+        "family": "Terrain",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [edx + 0x70]",
+        "function_hint": "0x443910",
+        "states": 7,
+        "limited": false,
+        "argument_contexts": 1,
+        "limited_argument_contexts": false
+      },
+      "field": "controlFlags",
+      "read": {
+        "address": "0x43e5ad",
+        "offset": 379,
+        "bytes": 4,
+        "instruction": "test dword ptr [edi + 0x17b], 0x20000000",
+        "trace": [
+          "43e57e: sub eax, edx",
+          "43e580: push eax",
+          "43e581: movsx eax, byte ptr [ecx + 0x66dea0]",
+          "43e588: lea eax, [eax + eax*2]",
+          "43e58b: lea ecx, [edi + eax*8]",
+          "43e58e: mov edx, dword ptr [eax + ecx + 0x97]",
+          "43e595: mov ecx, dword ptr [esp + 0x28]",
+          "43e599: push edx",
+          "43e59a: call 0x43e830",
+          "43e59f: mov eax, dword ptr [esp + 0x20]",
+          "43e5a3: mov dword ptr [eax + 0x16], 1",
+          "43e5aa: mov byte ptr [eax + 0x1a], bl"
+        ],
+        "callee": "0x43e440",
+        "call": "0x443efe",
+        "caller_trace": [
+          "443eef: mov ecx, dword ptr [esp + 0x44]",
+          "443ef3: push eax",
+          "443ef4: mov eax, dword ptr [esp + 0x4c]",
+          "443ef8: push eax",
+          "443ef9: push ecx",
+          "443efa: mov ecx, dword ptr [esp + 0x3c]"
+        ],
+        "argument_chain": [
+          {
+            "address": "0x443efe",
+            "target": "0x43e440",
+            "registers": {},
+            "arguments": {
+              "12": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "root": {
+        "address": "0x443eec",
+        "next": "0x443eef",
+        "family": "Terrain",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [edx + 0x70]",
+        "function_hint": "0x443910",
+        "states": 7,
+        "limited": false,
+        "argument_contexts": 1,
+        "limited_argument_contexts": false
+      },
+      "field": "controlFlags",
+      "read": {
+        "address": "0x43e677",
+        "offset": 379,
+        "bytes": 4,
+        "instruction": "test dword ptr [edi + 0x17b], 0x20000000",
+        "trace": [
+          "43e650: xor eax, edx",
+          "43e652: sub eax, edx",
+          "43e654: mov dword ptr [ecx + 4], eax",
+          "43e657: mov byte ptr [ecx + 8], bl",
+          "43e65a: mov byte ptr [ecx + 9], bl",
+          "43e65d: mov byte ptr [ecx + 0xa], bl",
+          "43e660: mov dword ptr [ecx + 0xc], ebx",
+          "43e663: mov byte ptr [ecx + 0x10], 0xff",
+          "43e667: mov dword ptr [ecx + 0x11], ebx",
+          "43e66a: mov byte ptr [ecx + 0x15], bl",
+          "43e66d: mov dword ptr [ecx + 0x16], 2",
+          "43e674: mov byte ptr [ecx + 0x1a], bl"
+        ],
+        "callee": "0x43e440",
+        "call": "0x443efe",
+        "caller_trace": [
+          "443eef: mov ecx, dword ptr [esp + 0x44]",
+          "443ef3: push eax",
+          "443ef4: mov eax, dword ptr [esp + 0x4c]",
+          "443ef8: push eax",
+          "443ef9: push ecx",
+          "443efa: mov ecx, dword ptr [esp + 0x3c]"
+        ],
+        "argument_chain": [
+          {
+            "address": "0x443efe",
+            "target": "0x43e440",
+            "registers": {},
+            "arguments": {
+              "12": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "root": {
+        "address": "0x443eec",
+        "next": "0x443eef",
+        "family": "Terrain",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [edx + 0x70]",
+        "function_hint": "0x443910",
+        "states": 7,
+        "limited": false,
+        "argument_contexts": 1,
+        "limited_argument_contexts": false
+      },
+      "field": "controlFlags",
+      "read": {
+        "address": "0x43e73a",
+        "offset": 379,
+        "bytes": 4,
+        "instruction": "test dword ptr [edi + 0x17b], 0x20000000",
+        "trace": [
+          "43e713: xor eax, edx",
+          "43e715: sub eax, edx",
+          "43e717: mov dword ptr [ecx + 4], eax",
+          "43e71a: mov byte ptr [ecx + 8], bl",
+          "43e71d: mov byte ptr [ecx + 9], bl",
+          "43e720: mov byte ptr [ecx + 0xa], bl",
+          "43e723: mov dword ptr [ecx + 0xc], ebx",
+          "43e726: mov byte ptr [ecx + 0x10], 0xff",
+          "43e72a: mov dword ptr [ecx + 0x11], ebx",
+          "43e72d: mov byte ptr [ecx + 0x15], bl",
+          "43e730: mov dword ptr [ecx + 0x16], 3",
+          "43e737: mov byte ptr [ecx + 0x1a], bl"
+        ],
+        "callee": "0x43e440",
+        "call": "0x443efe",
+        "caller_trace": [
+          "443eef: mov ecx, dword ptr [esp + 0x44]",
+          "443ef3: push eax",
+          "443ef4: mov eax, dword ptr [esp + 0x4c]",
+          "443ef8: push eax",
+          "443ef9: push ecx",
+          "443efa: mov ecx, dword ptr [esp + 0x3c]"
+        ],
+        "argument_chain": [
+          {
+            "address": "0x443efe",
+            "target": "0x43e440",
+            "registers": {},
+            "arguments": {
+              "12": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "root": {
+        "address": "0x4458ea",
+        "next": "0x4458ed",
+        "family": "Terrain",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [eax + 0x70]",
+        "function_hint": "0x444f10",
+        "states": 7,
+        "limited": false,
+        "argument_contexts": 1,
+        "limited_argument_contexts": false
+      },
+      "field": "controlFlags",
+      "read": {
+        "address": "0x4419f3",
+        "offset": 379,
+        "bytes": 4,
+        "instruction": "test dword ptr [ecx + 0x17b], 0x20000",
+        "trace": [
+          "4419d0: push -1",
+          "4419d2: push 0x64a9e0",
+          "4419d7: mov eax, dword ptr fs:[0]",
+          "4419dd: push eax",
+          "4419de: mov dword ptr fs:[0], esp",
+          "4419e5: push ecx",
+          "4419e6: mov ecx, dword ptr [esp + 0x1c]",
+          "4419ea: push esi",
+          "4419eb: mov dword ptr [esp + 4], 0"
+        ],
+        "callee": "0x4419d0",
+        "call": "0x4458fc",
+        "caller_trace": [
+          "4458ed: push eax",
+          "4458ee: lea ecx, [esp + 0x20]",
+          "4458f2: push ebx",
+          "4458f3: push ecx",
+          "4458f4: mov ecx, dword ptr [esp + 0x1c]",
+          "4458f8: mov dword ptr [esp + 0x24], eax"
+        ],
+        "argument_chain": [
+          {
+            "address": "0x4458fc",
+            "target": "0x4419d0",
+            "registers": {},
+            "arguments": {
+              "12": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "root": {
+        "address": "0x44fdac",
+        "next": "0x44fdaf",
+        "family": "Terrain",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [eax + 0x70]",
+        "function_hint": "0x44fc40",
+        "states": 4,
+        "limited": false,
+        "argument_contexts": 1,
+        "limited_argument_contexts": false
+      },
+      "field": "controlFlags",
+      "read": {
+        "address": "0x455baa",
+        "offset": 379,
+        "bytes": 1,
+        "instruction": "test byte ptr [edi + 0x17b], dl",
+        "trace": [
+          "455b90: mov al, byte ptr [ecx + 0xa]",
+          "455b93: push ebx",
+          "455b94: push edi",
+          "455b95: mov edi, dword ptr [esp + 0xc]",
+          "455b99: mov bl, byte ptr [edi + 0x1c4]",
+          "455b9f: cmp al, bl",
+          "455ba1: je 0x455c91",
+          "455ba7: mov dl, 0x10",
+          "455ba9: push esi"
+        ],
+        "callee": "0x455b90",
+        "call": "0x44fdb6",
+        "caller_trace": [
+          "44fdaf: push eax",
+          "44fdb0: mov ecx, ebp",
+          "44fdb2: mov dword ptr [esp + 0x18], eax"
+        ],
+        "argument_chain": [
+          {
+            "address": "0x44fdb6",
+            "target": "0x455b90",
+            "registers": {},
+            "arguments": {
+              "4": 0,
+              "28": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "root": {
+        "address": "0x452ca0",
+        "next": "0x452ca3",
+        "family": "Terrain",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [edx + 0x70]",
+        "function_hint": "0x452bd0",
+        "states": 20,
+        "limited": false,
+        "argument_contexts": 0,
+        "limited_argument_contexts": false
+      },
+      "field": "controlFlags",
+      "read": {
+        "address": "0x452ca3",
+        "offset": 379,
+        "bytes": 1,
+        "instruction": "test byte ptr [eax + 0x17b], 0x10",
+        "trace": [],
+        "callee": null,
+        "call": null
+      }
+    },
+    {
+      "root": {
+        "address": "0x452e4e",
+        "next": "0x452e51",
+        "family": "Terrain",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [edx + 0x70]",
+        "function_hint": "0x452dc0",
+        "states": 3,
+        "limited": false,
+        "argument_contexts": 0,
+        "limited_argument_contexts": false
+      },
+      "field": "controlFlags",
+      "read": {
+        "address": "0x452e57",
+        "offset": 379,
+        "bytes": 4,
+        "instruction": "mov eax, dword ptr [eax + 0x17b]",
+        "trace": [
+          "452e51: mov ecx, dword ptr [esp + 0x10]",
+          "452e55: mov dword ptr [ecx], eax"
+        ],
+        "callee": null,
+        "call": null
+      }
+    },
+    {
+      "root": {
+        "address": "0x4e6285",
+        "next": "0x4e6288",
+        "family": "Terrain",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [edx + 0x70]",
+        "function_hint": "0x4e6220",
+        "states": 6,
+        "limited": false,
+        "argument_contexts": 0,
+        "limited_argument_contexts": false
+      },
+      "field": "controlFlags",
+      "read": {
+        "address": "0x4e6288",
+        "offset": 379,
+        "bytes": 4,
+        "instruction": "test dword ptr [eax + 0x17b], 0x20000000",
+        "trace": [],
+        "callee": null,
+        "call": null
+      }
+    },
+    {
+      "root": {
+        "address": "0x51949b",
+        "next": "0x51949e",
+        "family": "Terrain",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [edx + 0x70]",
+        "function_hint": "0x518ad0",
+        "states": 14,
+        "limited": false,
+        "argument_contexts": 0,
+        "limited_argument_contexts": false
+      },
+      "field": "controlFlags",
+      "read": {
+        "address": "0x51949e",
+        "offset": 379,
+        "bytes": 1,
+        "instruction": "test byte ptr [eax + 0x17b], 0x10",
+        "trace": [],
+        "callee": null,
+        "call": null
+      }
+    },
+    {
+      "root": {
+        "address": "0x51eb83",
+        "next": "0x51eb86",
+        "family": "Terrain",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [eax + 0x70]",
+        "function_hint": "0x51e2c0",
+        "states": 4,
+        "limited": false,
+        "argument_contexts": 2,
+        "limited_argument_contexts": false
+      },
+      "field": "controlFlags",
+      "read": {
+        "address": "0x4f69cb",
+        "offset": 379,
+        "bytes": 4,
+        "instruction": "mov ecx, dword ptr [ebx + 0x17b]",
+        "trace": [
+          "4f68b5: cmp dword ptr [ebp + 0x48], edi",
+          "4f68b8: je 0x4f68c8",
+          "4f68c8: cmp dword ptr [ebp + 0x4c], edi",
+          "4f68cb: je 0x4f68db",
+          "4f68db: cmp dword ptr [ebp + 0x50], edi",
+          "4f68de: je 0x4f68ee",
+          "4f68ee: cmp dword ptr [0x6fcdcf], edi",
+          "4f68f4: jne 0x4f69a0",
+          "4f69a0: cmp dword ptr [ebp + 0xb0], edi",
+          "4f69a6: je 0x4f69b4",
+          "4f69b4: cmp dword ptr [ebp + 0x8c], edi",
+          "4f69ba: je 0x4f69cb"
+        ],
+        "callee": "0x4f66e0",
+        "call": "0x51eb8a",
+        "caller_trace": [
+          "51eb86: push ebp",
+          "51eb87: push edi",
+          "51eb88: mov ecx, eax"
+        ],
+        "argument_chain": [
+          {
+            "address": "0x51eb8a",
+            "target": "0x4f66e0",
+            "registers": {
+              "ecx": 0
+            },
+            "arguments": {}
+          }
+        ]
+      }
+    },
+    {
+      "root": {
+        "address": "0x51eb83",
+        "next": "0x51eb86",
+        "family": "Terrain",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [eax + 0x70]",
+        "function_hint": "0x51e2c0",
+        "states": 4,
+        "limited": false,
+        "argument_contexts": 2,
+        "limited_argument_contexts": false
+      },
+      "field": "controlFlags",
+      "read": {
+        "address": "0x4f6b39",
+        "offset": 379,
+        "bytes": 4,
+        "instruction": "mov eax, dword ptr [ebx + 0x17b]",
+        "trace": [
+          "4f6aa8: test ecx, 0x8000000",
+          "4f6aae: je 0x4f6ab7",
+          "4f6ab7: cmp dword ptr [ebp + 0xa8], edi",
+          "4f6abd: je 0x4f6acb",
+          "4f6acb: cmp dword ptr [ebp + 0xac], edi",
+          "4f6ad1: je 0x4f6adf",
+          "4f6adf: cmp dword ptr [ebp + 0x20], edi",
+          "4f6ae2: je 0x4f6b25",
+          "4f6b25: mov eax, dword ptr [0x6fcdcf]",
+          "4f6b2a: mov esi, dword ptr [esp + 0x178]",
+          "4f6b31: test eax, eax",
+          "4f6b33: jne 0x4f73c2"
+        ],
+        "callee": "0x4f66e0",
+        "call": "0x51eb8a",
+        "caller_trace": [
+          "51eb86: push ebp",
+          "51eb87: push edi",
+          "51eb88: mov ecx, eax"
+        ],
+        "argument_chain": [
+          {
+            "address": "0x51eb8a",
+            "target": "0x4f66e0",
+            "registers": {
+              "ecx": 0
+            },
+            "arguments": {}
+          }
+        ]
+      }
+    },
+    {
+      "root": {
+        "address": "0x51eb83",
+        "next": "0x51eb86",
+        "family": "Terrain",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [eax + 0x70]",
+        "function_hint": "0x51e2c0",
+        "states": 4,
+        "limited": false,
+        "argument_contexts": 2,
+        "limited_argument_contexts": false
+      },
+      "field": "controlFlags",
+      "read": {
+        "address": "0x4f7719",
+        "offset": 379,
+        "bytes": 1,
+        "instruction": "test byte ptr [ebx + 0x17b], 4",
+        "trace": [
+          "4f6abd: je 0x4f6acb",
+          "4f6acb: cmp dword ptr [ebp + 0xac], edi",
+          "4f6ad1: je 0x4f6adf",
+          "4f6adf: cmp dword ptr [ebp + 0x20], edi",
+          "4f6ae2: je 0x4f6b25",
+          "4f6b25: mov eax, dword ptr [0x6fcdcf]",
+          "4f6b2a: mov esi, dword ptr [esp + 0x178]",
+          "4f6b31: test eax, eax",
+          "4f6b33: jne 0x4f73c2",
+          "4f73c2: mov eax, dword ptr [0x6fcdcf]",
+          "4f73c7: test eax, eax",
+          "4f73c9: jne 0x4f7719"
+        ],
+        "callee": "0x4f66e0",
+        "call": "0x51eb8a",
+        "caller_trace": [
+          "51eb86: push ebp",
+          "51eb87: push edi",
+          "51eb88: mov ecx, eax"
+        ],
+        "argument_chain": [
+          {
+            "address": "0x51eb8a",
+            "target": "0x4f66e0",
+            "registers": {
+              "ecx": 0
+            },
+            "arguments": {}
+          }
+        ]
+      }
+    },
+    {
+      "root": {
+        "address": "0x51eb83",
+        "next": "0x51eb86",
+        "family": "Terrain",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [eax + 0x70]",
+        "function_hint": "0x51e2c0",
+        "states": 4,
+        "limited": false,
+        "argument_contexts": 2,
+        "limited_argument_contexts": false
+      },
+      "field": "controlFlags",
+      "read": {
+        "address": "0x4f73cf",
+        "offset": 379,
+        "bytes": 1,
+        "instruction": "test byte ptr [ebx + 0x17b], 0x80",
+        "trace": [
+          "4f6abd: je 0x4f6acb",
+          "4f6acb: cmp dword ptr [ebp + 0xac], edi",
+          "4f6ad1: je 0x4f6adf",
+          "4f6adf: cmp dword ptr [ebp + 0x20], edi",
+          "4f6ae2: je 0x4f6b25",
+          "4f6b25: mov eax, dword ptr [0x6fcdcf]",
+          "4f6b2a: mov esi, dword ptr [esp + 0x178]",
+          "4f6b31: test eax, eax",
+          "4f6b33: jne 0x4f73c2",
+          "4f73c2: mov eax, dword ptr [0x6fcdcf]",
+          "4f73c7: test eax, eax",
+          "4f73c9: jne 0x4f7719"
+        ],
+        "callee": "0x4f66e0",
+        "call": "0x51eb8a",
+        "caller_trace": [
+          "51eb86: push ebp",
+          "51eb87: push edi",
+          "51eb88: mov ecx, eax"
+        ],
+        "argument_chain": [
+          {
+            "address": "0x51eb8a",
+            "target": "0x4f66e0",
+            "registers": {
+              "ecx": 0
+            },
+            "arguments": {}
+          }
+        ]
+      }
+    },
+    {
+      "root": {
+        "address": "0x51eb83",
+        "next": "0x51eb86",
+        "family": "Terrain",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [eax + 0x70]",
+        "function_hint": "0x51e2c0",
+        "states": 4,
+        "limited": false,
+        "argument_contexts": 2,
+        "limited_argument_contexts": false
+      },
+      "field": "controlFlags",
+      "read": {
+        "address": "0x4f7573",
+        "offset": 379,
+        "bytes": 4,
+        "instruction": "mov eax, dword ptr [ebx + 0x17b]",
+        "trace": [
+          "4f6ad1: je 0x4f6adf",
+          "4f6adf: cmp dword ptr [ebp + 0x20], edi",
+          "4f6ae2: je 0x4f6b25",
+          "4f6b25: mov eax, dword ptr [0x6fcdcf]",
+          "4f6b2a: mov esi, dword ptr [esp + 0x178]",
+          "4f6b31: test eax, eax",
+          "4f6b33: jne 0x4f73c2",
+          "4f73c2: mov eax, dword ptr [0x6fcdcf]",
+          "4f73c7: test eax, eax",
+          "4f73c9: jne 0x4f7719",
+          "4f73cf: test byte ptr [ebx + 0x17b], 0x80",
+          "4f73d6: je 0x4f7573"
+        ],
+        "callee": "0x4f66e0",
+        "call": "0x51eb8a",
+        "caller_trace": [
+          "51eb86: push ebp",
+          "51eb87: push edi",
+          "51eb88: mov ecx, eax"
+        ],
+        "argument_chain": [
+          {
+            "address": "0x51eb8a",
+            "target": "0x4f66e0",
+            "registers": {
+              "ecx": 0
+            },
+            "arguments": {}
+          }
+        ]
+      }
+    },
+    {
+      "root": {
+        "address": "0x51ebf7",
+        "next": "0x51ebfa",
+        "family": "Terrain",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [edx + 0x70]",
+        "function_hint": "0x51e2c0",
+        "states": 13,
+        "limited": false,
+        "argument_contexts": 0,
+        "limited_argument_contexts": false
+      },
+      "field": "controlFlags",
+      "read": {
+        "address": "0x51ebfa",
+        "offset": 379,
+        "bytes": 1,
+        "instruction": "test byte ptr [eax + 0x17b], 0x80",
+        "trace": [],
+        "callee": null,
+        "call": null
+      }
+    },
+    {
+      "root": {
+        "address": "0x51ebf7",
+        "next": "0x51ebfa",
+        "family": "Terrain",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [edx + 0x70]",
+        "function_hint": "0x51e2c0",
+        "states": 13,
+        "limited": false,
+        "argument_contexts": 0,
+        "limited_argument_contexts": false
+      },
+      "field": "controlFlags",
+      "read": {
+        "address": "0x51ec0f",
+        "offset": 379,
+        "bytes": 4,
+        "instruction": "mov ecx, dword ptr [eax + 0x17b]",
+        "trace": [
+          "51ebfa: test byte ptr [eax + 0x17b], 0x80",
+          "51ec01: je 0x51ec0f"
+        ],
+        "callee": null,
+        "call": null
+      }
+    },
+    {
+      "root": {
+        "address": "0x51ecb5",
+        "next": "0x51ecb8",
+        "family": "Terrain",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [edx + 0x70]",
+        "function_hint": "0x51e2c0",
+        "states": 11,
+        "limited": false,
+        "argument_contexts": 0,
+        "limited_argument_contexts": false
+      },
+      "field": "controlFlags",
+      "read": {
+        "address": "0x51ecb8",
+        "offset": 379,
+        "bytes": 1,
+        "instruction": "test byte ptr [eax + 0x17b], 0x10",
+        "trace": [],
+        "callee": null,
+        "call": null
+      }
+    }
+  ],
+  "indexed_events": [
+    {
+      "root": {
+        "address": "0x443eec",
+        "next": "0x443eef",
+        "family": "Terrain",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [edx + 0x70]",
+        "function_hint": "0x443910",
+        "states": 7,
+        "limited": false,
+        "argument_contexts": 1,
+        "limited_argument_contexts": false
+      },
+      "event": {
+        "address": "0x43e7a3",
+        "constant": 0,
+        "index": "edx",
+        "scale": 8,
+        "bytes": 4,
+        "access": "address",
+        "instruction": "lea ebp, [edi + edx*8]",
+        "trace": [
+          "43e478: mov dl, byte ptr [eax]",
+          "43e47a: and ecx, ebp",
+          "43e47c: cmp cl, dl",
+          "43e47e: je 0x43e780",
+          "43e780: mov ecx, dword ptr [esp + 0x20]",
+          "43e784: lea edx, [esi + esi*4]",
+          "43e787: mov esi, dword ptr [edx + 0x66dec9]",
+          "43e78d: mov eax, dword ptr [ecx + 0x2e8]",
+          "43e793: movsx edx, byte ptr [edx + 0x66dec8]",
+          "43e79a: lea ebp, [eax + eax*4]",
+          "43e79d: lea edx, [edx + edx*2]",
+          "43e7a0: lea eax, [eax + ebp*2]"
+        ],
+        "callee": "0x43e440",
+        "call": "0x443efe",
+        "argument_chain": [
+          {
+            "address": "0x443efe",
+            "target": "0x43e440",
+            "registers": {},
+            "arguments": {
+              "12": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "root": {
+        "address": "0x443eec",
+        "next": "0x443eef",
+        "family": "Terrain",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [edx + 0x70]",
+        "function_hint": "0x443910",
+        "states": 7,
+        "limited": false,
+        "argument_contexts": 1,
+        "limited_argument_contexts": false
+      },
+      "event": {
+        "address": "0x43e4db",
+        "constant": 0,
+        "index": "eax",
+        "scale": 8,
+        "bytes": 4,
+        "access": "address",
+        "instruction": "lea edx, [edi + eax*8]",
+        "trace": [
+          "43e4b4: or eax, edx",
+          "43e4b6: lea ecx, [ecx + ecx*2]",
+          "43e4b9: mov dword ptr [esp + 0x24], edx",
+          "43e4bd: push ebx",
+          "43e4be: lea edx, [esi + ecx*8]",
+          "43e4c1: lea eax, [eax + eax*4]",
+          "43e4c4: add ecx, edx",
+          "43e4c6: mov edx, dword ptr [eax + 0x66dea1]",
+          "43e4cc: mov dword ptr [esp + 0x24], ecx",
+          "43e4d0: movsx eax, byte ptr [eax + 0x66dea0]",
+          "43e4d7: push edx",
+          "43e4d8: lea eax, [eax + eax*2]"
+        ],
+        "callee": "0x43e440",
+        "call": "0x443efe",
+        "argument_chain": [
+          {
+            "address": "0x443efe",
+            "target": "0x43e440",
+            "registers": {},
+            "arguments": {
+              "12": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "root": {
+        "address": "0x443eec",
+        "next": "0x443eef",
+        "family": "Terrain",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [edx + 0x70]",
+        "function_hint": "0x443910",
+        "states": 7,
+        "limited": false,
+        "argument_contexts": 1,
+        "limited_argument_contexts": false
+      },
+      "event": {
+        "address": "0x43e58b",
+        "constant": 0,
+        "index": "eax",
+        "scale": 8,
+        "bytes": 4,
+        "access": "address",
+        "instruction": "lea ecx, [edi + eax*8]",
+        "trace": [
+          "43e56a: lea ecx, [eax + eax*4]",
+          "43e56d: mov eax, dword ptr [ecx + 0x66dea1]",
+          "43e573: inc eax",
+          "43e574: cdq ",
+          "43e575: xor eax, edx",
+          "43e577: sub eax, edx",
+          "43e579: and eax, 3",
+          "43e57c: xor eax, edx",
+          "43e57e: sub eax, edx",
+          "43e580: push eax",
+          "43e581: movsx eax, byte ptr [ecx + 0x66dea0]",
+          "43e588: lea eax, [eax + eax*2]"
+        ],
+        "callee": "0x43e440",
+        "call": "0x443efe",
+        "argument_chain": [
+          {
+            "address": "0x443efe",
+            "target": "0x43e440",
+            "registers": {},
+            "arguments": {
+              "12": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "root": {
+        "address": "0x443eec",
+        "next": "0x443eef",
+        "family": "Terrain",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [edx + 0x70]",
+        "function_hint": "0x443910",
+        "states": 7,
+        "limited": false,
+        "argument_contexts": 1,
+        "limited_argument_contexts": false
+      },
+      "event": {
+        "address": "0x43e635",
+        "constant": 0,
+        "index": "eax",
+        "scale": 8,
+        "bytes": 4,
+        "access": "address",
+        "instruction": "lea edx, [edi + eax*8]",
+        "trace": [
+          "43e60d: or eax, edx",
+          "43e60f: mov edx, ebp",
+          "43e611: shr eax, 2",
+          "43e614: and edx, 4",
+          "43e617: or eax, edx",
+          "43e619: lea eax, [eax + eax*4]",
+          "43e61c: mov edx, dword ptr [eax + 0x66dea1]",
+          "43e622: movsx eax, byte ptr [eax + 0x66dea0]",
+          "43e629: mov dword ptr [esp + 0x20], edx",
+          "43e62d: lea edx, [esi + ecx*8]",
+          "43e630: lea eax, [eax + eax*2]",
+          "43e633: add ecx, edx"
+        ],
+        "callee": "0x43e440",
+        "call": "0x443efe",
+        "argument_chain": [
+          {
+            "address": "0x443efe",
+            "target": "0x43e440",
+            "registers": {},
+            "arguments": {
+              "12": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "root": {
+        "address": "0x443eec",
+        "next": "0x443eef",
+        "family": "Terrain",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [edx + 0x70]",
+        "function_hint": "0x443910",
+        "states": 7,
+        "limited": false,
+        "argument_contexts": 1,
+        "limited_argument_contexts": false
+      },
+      "event": {
+        "address": "0x43e6fc",
+        "constant": 0,
+        "index": "eax",
+        "scale": 8,
+        "bytes": 4,
+        "access": "address",
+        "instruction": "lea ebp, [edi + eax*8]",
+        "trace": [
+          "43e6d4: and eax, 0x20",
+          "43e6d7: lea ecx, [ecx + ecx*2]",
+          "43e6da: or eax, edx",
+          "43e6dc: shr eax, 2",
+          "43e6df: or eax, ebp",
+          "43e6e1: lea ebp, [esi + ecx*8]",
+          "43e6e4: shr eax, 2",
+          "43e6e7: add ecx, ebp",
+          "43e6e9: lea eax, [eax + eax*4]",
+          "43e6ec: mov edx, dword ptr [eax + 0x66dea1]",
+          "43e6f2: movsx eax, byte ptr [eax + 0x66dea0]",
+          "43e6f9: lea eax, [eax + eax*2]"
+        ],
+        "callee": "0x43e440",
+        "call": "0x443efe",
+        "argument_chain": [
+          {
+            "address": "0x443efe",
+            "target": "0x43e440",
+            "registers": {},
+            "arguments": {
+              "12": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "root": {
+        "address": "0x51eb83",
+        "next": "0x51eb86",
+        "family": "Terrain",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [eax + 0x70]",
+        "function_hint": "0x51e2c0",
+        "states": 4,
+        "limited": false,
+        "argument_contexts": 2,
+        "limited_argument_contexts": false
+      },
+      "event": {
+        "address": "0x4f6826",
+        "constant": 418,
+        "index": "eax",
+        "scale": 1,
+        "bytes": 1,
+        "access": "other",
+        "instruction": "mov byte ptr [eax + ebx + 0x1a2], dl",
+        "trace": [
+          "4f67ce: je 0x4f67de",
+          "4f67de: cmp dword ptr [ebp + 0x88], edi",
+          "4f67e4: je 0x4f67f4",
+          "4f67f4: cmp dword ptr [ebp + 0x54], edi",
+          "4f67f7: je 0x4f6805",
+          "4f6805: cmp dword ptr [ebp + 0x64], edi",
+          "4f6808: je 0x4f6816",
+          "4f6816: xor eax, eax",
+          "4f6818: lea esi, [ebp + 0x58]",
+          "4f681b: cmp dword ptr [esi], edi",
+          "4f681d: je 0x4f682d",
+          "4f681f: mov dl, byte ptr [eax + ebp + 0x287]"
+        ],
+        "pointer_in_index": true,
+        "callee": "0x4f66e0",
+        "call": "0x51eb8a",
+        "argument_chain": [
+          {
+            "address": "0x51eb8a",
+            "target": "0x4f66e0",
+            "registers": {
+              "ecx": 0
+            },
+            "arguments": {}
+          }
+        ]
+      }
+    },
+    {
+      "root": {
+        "address": "0x51eb83",
+        "next": "0x51eb86",
+        "family": "Terrain",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [eax + 0x70]",
+        "function_hint": "0x51e2c0",
+        "states": 4,
+        "limited": false,
+        "argument_contexts": 2,
+        "limited_argument_contexts": false
+      },
+      "event": {
+        "address": "0x4f6846",
+        "constant": 422,
+        "index": "eax",
+        "scale": 1,
+        "bytes": 1,
+        "access": "other",
+        "instruction": "mov byte ptr [eax + ebx + 0x1a6], cl",
+        "trace": [
+          "4f6818: lea esi, [ebp + 0x58]",
+          "4f681b: cmp dword ptr [esi], edi",
+          "4f681d: je 0x4f682d",
+          "4f682d: inc eax",
+          "4f682e: add esi, 4",
+          "4f6831: cmp eax, 3",
+          "4f6834: jb 0x4f681b",
+          "4f6836: xor eax, eax",
+          "4f6838: lea esi, [ebp + 0x68]",
+          "4f683b: cmp dword ptr [esi], edi",
+          "4f683d: je 0x4f684d",
+          "4f683f: mov cl, byte ptr [eax + ebp + 0x28b]"
+        ],
+        "pointer_in_index": true,
+        "callee": "0x4f66e0",
+        "call": "0x51eb8a",
+        "argument_chain": [
+          {
+            "address": "0x51eb8a",
+            "target": "0x4f66e0",
+            "registers": {
+              "ecx": 0
+            },
+            "arguments": {}
+          }
+        ]
+      }
+    }
+  ],
+  "return_alias_events": [],
+  "limited_contexts": [
+    {
+      "target": "0x4f66e0",
+      "registers": {
+        "ecx": 0
+      },
+      "arguments": {},
+      "summary": {
+        "reads": [
+          {
+            "address": "0x4f6706",
+            "offset": 132,
+            "bytes": 4,
+            "instruction": "mov esi, dword ptr [ebx + 0x84]",
+            "trace": [
+              "4f66e5: sub esp, 0x160",
+              "4f66eb: push ebx",
+              "4f66ec: push ebp",
+              "4f66ed: mov ebp, dword ptr [esp + 0x16c]",
+              "4f66f4: push esi",
+              "4f66f5: push edi",
+              "4f66f6: xor edi, edi",
+              "4f66f8: cmp eax, edi",
+              "4f66fa: mov ebx, ecx",
+              "4f66fc: jne 0x4f6721",
+              "4f66fe: mov dword ptr [ebx + 0x84], edi",
+              "4f6704: xor eax, eax"
+            ]
+          },
+          {
+            "address": "0x4f6706",
+            "offset": 132,
+            "bytes": 4,
+            "instruction": "mov esi, dword ptr [ebx + 0x84]",
+            "trace": [
+              "4f66fa: mov ebx, ecx",
+              "4f66fc: jne 0x4f6721",
+              "4f66fe: mov dword ptr [ebx + 0x84], edi",
+              "4f6704: xor eax, eax",
+              "4f6706: mov esi, dword ptr [ebx + 0x84]",
+              "4f670c: xor ecx, ecx",
+              "4f670e: mov cl, byte ptr [eax + ebp]",
+              "4f6711: add esi, ecx",
+              "4f6713: inc eax",
+              "4f6714: cmp eax, 0x2e0",
+              "4f6719: mov dword ptr [ebx + 0x84], esi",
+              "4f671f: jb 0x4f6706"
+            ]
+          },
+          {
+            "address": "0x4f6937",
+            "offset": 452,
+            "bytes": 1,
+            "instruction": "cmp byte ptr [ebx + 0x1c4], 0x16",
+            "trace": [
+              "4f68a2: cmp dword ptr [ebp + 0x44], edi",
+              "4f68a5: je 0x4f68b5",
+              "4f68b5: cmp dword ptr [ebp + 0x48], edi",
+              "4f68b8: je 0x4f68c8",
+              "4f68c8: cmp dword ptr [ebp + 0x4c], edi",
+              "4f68cb: je 0x4f68db",
+              "4f68db: cmp dword ptr [ebp + 0x50], edi",
+              "4f68de: je 0x4f68ee",
+              "4f68ee: cmp dword ptr [0x6fcdcf], edi",
+              "4f68f4: jne 0x4f69a0",
+              "4f68fa: cmp dword ptr [ebp + 8], edi",
+              "4f68fd: je 0x4f6937"
+            ]
+          },
+          {
+            "address": "0x4f69cb",
+            "offset": 379,
+            "bytes": 4,
+            "instruction": "mov ecx, dword ptr [ebx + 0x17b]",
+            "trace": [
+              "4f68b5: cmp dword ptr [ebp + 0x48], edi",
+              "4f68b8: je 0x4f68c8",
+              "4f68c8: cmp dword ptr [ebp + 0x4c], edi",
+              "4f68cb: je 0x4f68db",
+              "4f68db: cmp dword ptr [ebp + 0x50], edi",
+              "4f68de: je 0x4f68ee",
+              "4f68ee: cmp dword ptr [0x6fcdcf], edi",
+              "4f68f4: jne 0x4f69a0",
+              "4f69a0: cmp dword ptr [ebp + 0xb0], edi",
+              "4f69a6: je 0x4f69b4",
+              "4f69b4: cmp dword ptr [ebp + 0x8c], edi",
+              "4f69ba: je 0x4f69cb"
+            ]
+          },
+          {
+            "address": "0x4f6937",
+            "offset": 452,
+            "bytes": 1,
+            "instruction": "cmp byte ptr [ebx + 0x1c4], 0x16",
+            "trace": [
+              "4f68b5: cmp dword ptr [ebp + 0x48], edi",
+              "4f68b8: je 0x4f68c8",
+              "4f68ba: mov cx, word ptr [ebp + 0x260]",
+              "4f68c1: mov word ptr [ebx + 0x18f], cx",
+              "4f68c8: cmp dword ptr [ebp + 0x4c], edi",
+              "4f68cb: je 0x4f68db",
+              "4f68db: cmp dword ptr [ebp + 0x50], edi",
+              "4f68de: je 0x4f68ee",
+              "4f68ee: cmp dword ptr [0x6fcdcf], edi",
+              "4f68f4: jne 0x4f69a0",
+              "4f68fa: cmp dword ptr [ebp + 8], edi",
+              "4f68fd: je 0x4f6937"
+            ]
+          },
+          {
+            "address": "0x4f69cb",
+            "offset": 379,
+            "bytes": 4,
+            "instruction": "mov ecx, dword ptr [ebx + 0x17b]",
+            "trace": [
+              "4f68c8: cmp dword ptr [ebp + 0x4c], edi",
+              "4f68cb: je 0x4f68db",
+              "4f68db: cmp dword ptr [ebp + 0x50], edi",
+              "4f68de: je 0x4f68ee",
+              "4f68ee: cmp dword ptr [0x6fcdcf], edi",
+              "4f68f4: jne 0x4f69a0",
+              "4f69a0: cmp dword ptr [ebp + 0xb0], edi",
+              "4f69a6: je 0x4f69b4",
+              "4f69b4: cmp dword ptr [ebp + 0x8c], edi",
+              "4f69ba: je 0x4f69cb",
+              "4f69bc: movzx cx, byte ptr [ebp + 0x293]",
+              "4f69c4: mov word ptr [ebx + 0x1af], cx"
+            ]
+          },
+          {
+            "address": "0x4f69de",
+            "offset": 431,
+            "bytes": 2,
+            "instruction": "add word ptr [ebx + 0x1af], ax",
+            "trace": [
+              "4f68db: cmp dword ptr [ebp + 0x50], edi",
+              "4f68de: je 0x4f68ee",
+              "4f68ee: cmp dword ptr [0x6fcdcf], edi",
+              "4f68f4: jne 0x4f69a0",
+              "4f69a0: cmp dword ptr [ebp + 0xb0], edi",
+              "4f69a6: je 0x4f69b4",
+              "4f69b4: cmp dword ptr [ebp + 0x8c], edi",
+              "4f69ba: je 0x4f69cb",
+              "4f69cb: mov ecx, dword ptr [ebx + 0x17b]",
+              "4f69d1: mov eax, 0xff",
+              "4f69d6: test ecx, 0x80000",
+              "4f69dc: je 0x4f69e5"
+            ]
+          },
+          {
+            "address": "0x4f6a04",
+            "offset": 433,
+            "bytes": 2,
+            "instruction": "add word ptr [ebx + 0x1b1], ax",
+            "trace": [
+              "4f69a0: cmp dword ptr [ebp + 0xb0], edi",
+              "4f69a6: je 0x4f69b4",
+              "4f69b4: cmp dword ptr [ebp + 0x8c], edi",
+              "4f69ba: je 0x4f69cb",
+              "4f69cb: mov ecx, dword ptr [ebx + 0x17b]",
+              "4f69d1: mov eax, 0xff",
+              "4f69d6: test ecx, 0x80000",
+              "4f69dc: je 0x4f69e5",
+              "4f69e5: cmp dword ptr [ebp + 0x90], edi",
+              "4f69eb: je 0x4f69fc",
+              "4f69fc: test ecx, 0x100000",
+              "4f6a02: je 0x4f6a0b"
+            ]
+          },
+          {
+            "address": "0x4f6937",
+            "offset": 452,
+            "bytes": 1,
+            "instruction": "cmp byte ptr [ebx + 0x1c4], 0x16",
+            "trace": [
+              "4f6905: push 0x20",
+              "4f6907: push ecx",
+              "4f6908: push 0x740c20",
+              "4f690d: call 0x6361a0",
+              "4f6912: mov ecx, dword ptr [0x75b468]",
+              "4f6918: add esp, 0xc",
+              "4f691b: mov byte ptr [0x740c3f], 0",
+              "4f6922: mov edx, dword ptr [ecx]",
+              "4f6924: push 0x740c20",
+              "4f6929: push 0x68ed34",
+              "4f692e: call dword ptr [edx + 0x1c]",
+              "4f6931: mov dword ptr [ebx + 0x195], eax"
+            ]
+          },
+          {
+            "address": "0x4f6a2a",
+            "offset": 435,
+            "bytes": 2,
+            "instruction": "add word ptr [ebx + 0x1b3], ax",
+            "trace": [
+              "4f69cb: mov ecx, dword ptr [ebx + 0x17b]",
+              "4f69d1: mov eax, 0xff",
+              "4f69d6: test ecx, 0x80000",
+              "4f69dc: je 0x4f69e5",
+              "4f69e5: cmp dword ptr [ebp + 0x90], edi",
+              "4f69eb: je 0x4f69fc",
+              "4f69fc: test ecx, 0x100000",
+              "4f6a02: je 0x4f6a0b",
+              "4f6a0b: cmp dword ptr [ebp + 0x94], edi",
+              "4f6a11: je 0x4f6a22",
+              "4f6a22: test ecx, 0x200000",
+              "4f6a28: je 0x4f6a31"
+            ]
+          },
+          {
+            "address": "0x4f69cb",
+            "offset": 379,
+            "bytes": 4,
+            "instruction": "mov ecx, dword ptr [ebx + 0x17b]",
+            "trace": [
+              "4f6946: push 0x6a306c",
+              "4f694b: push 0x68ed34",
+              "4f6950: mov eax, dword ptr [ecx]",
+              "4f6952: call dword ptr [eax + 0x1c]",
+              "4f6955: mov dword ptr [ebx + 0x199], eax",
+              "4f695b: jmp 0x4f6963",
+              "4f6963: cmp dword ptr [ebp + 0xc], edi",
+              "4f6966: je 0x4f69a0",
+              "4f69a0: cmp dword ptr [ebp + 0xb0], edi",
+              "4f69a6: je 0x4f69b4",
+              "4f69b4: cmp dword ptr [ebp + 0x8c], edi",
+              "4f69ba: je 0x4f69cb"
+            ]
+          },
+          {
+            "address": "0x4f69de",
+            "offset": 431,
+            "bytes": 2,
+            "instruction": "add word ptr [ebx + 0x1af], ax",
+            "trace": [
+              "4f6955: mov dword ptr [ebx + 0x199], eax",
+              "4f695b: jmp 0x4f6963",
+              "4f6963: cmp dword ptr [ebp + 0xc], edi",
+              "4f6966: je 0x4f69a0",
+              "4f69a0: cmp dword ptr [ebp + 0xb0], edi",
+              "4f69a6: je 0x4f69b4",
+              "4f69b4: cmp dword ptr [ebp + 0x8c], edi",
+              "4f69ba: je 0x4f69cb",
+              "4f69cb: mov ecx, dword ptr [ebx + 0x17b]",
+              "4f69d1: mov eax, 0xff",
+              "4f69d6: test ecx, 0x80000",
+              "4f69dc: je 0x4f69e5"
+            ]
+          },
+          {
+            "address": "0x4f6a64",
+            "offset": 441,
+            "bytes": 2,
+            "instruction": "add word ptr [ebx + 0x1b9], ax",
+            "trace": [
+              "4f69fc: test ecx, 0x100000",
+              "4f6a02: je 0x4f6a0b",
+              "4f6a0b: cmp dword ptr [ebp + 0x94], edi",
+              "4f6a11: je 0x4f6a22",
+              "4f6a22: test ecx, 0x200000",
+              "4f6a28: je 0x4f6a31",
+              "4f6a31: cmp dword ptr [ebp + 0x98], edi",
+              "4f6a37: je 0x4f6a45",
+              "4f6a45: cmp dword ptr [ebp + 0x9c], edi",
+              "4f6a4b: je 0x4f6a5c",
+              "4f6a5c: test ecx, 0x2000000",
+              "4f6a62: je 0x4f6a6b"
+            ]
+          },
+          {
+            "address": "0x4f6a04",
+            "offset": 433,
+            "bytes": 2,
+            "instruction": "add word ptr [ebx + 0x1b1], ax",
+            "trace": [
+              "4f69a0: cmp dword ptr [ebp + 0xb0], edi",
+              "4f69a6: je 0x4f69b4",
+              "4f69b4: cmp dword ptr [ebp + 0x8c], edi",
+              "4f69ba: je 0x4f69cb",
+              "4f69cb: mov ecx, dword ptr [ebx + 0x17b]",
+              "4f69d1: mov eax, 0xff",
+              "4f69d6: test ecx, 0x80000",
+              "4f69dc: je 0x4f69e5",
+              "4f69e5: cmp dword ptr [ebp + 0x90], edi",
+              "4f69eb: je 0x4f69fc",
+              "4f69fc: test ecx, 0x100000",
+              "4f6a02: je 0x4f6a0b"
+            ]
+          },
+          {
+            "address": "0x4f6a8a",
+            "offset": 443,
+            "bytes": 2,
+            "instruction": "add word ptr [ebx + 0x1bb], ax",
+            "trace": [
+              "4f6a22: test ecx, 0x200000",
+              "4f6a28: je 0x4f6a31",
+              "4f6a31: cmp dword ptr [ebp + 0x98], edi",
+              "4f6a37: je 0x4f6a45",
+              "4f6a45: cmp dword ptr [ebp + 0x9c], edi",
+              "4f6a4b: je 0x4f6a5c",
+              "4f6a5c: test ecx, 0x2000000",
+              "4f6a62: je 0x4f6a6b",
+              "4f6a6b: cmp dword ptr [ebp + 0xa0], edi",
+              "4f6a71: je 0x4f6a82",
+              "4f6a82: test ecx, 0x4000000",
+              "4f6a88: je 0x4f6a91"
+            ]
+          },
+          {
+            "address": "0x4f6a2a",
+            "offset": 435,
+            "bytes": 2,
+            "instruction": "add word ptr [ebx + 0x1b3], ax",
+            "trace": [
+              "4f69cb: mov ecx, dword ptr [ebx + 0x17b]",
+              "4f69d1: mov eax, 0xff",
+              "4f69d6: test ecx, 0x80000",
+              "4f69dc: je 0x4f69e5",
+              "4f69e5: cmp dword ptr [ebp + 0x90], edi",
+              "4f69eb: je 0x4f69fc",
+              "4f69fc: test ecx, 0x100000",
+              "4f6a02: je 0x4f6a0b",
+              "4f6a0b: cmp dword ptr [ebp + 0x94], edi",
+              "4f6a11: je 0x4f6a22",
+              "4f6a22: test ecx, 0x200000",
+              "4f6a28: je 0x4f6a31"
+            ]
+          },
+          {
+            "address": "0x4f6ab0",
+            "offset": 445,
+            "bytes": 2,
+            "instruction": "add word ptr [ebx + 0x1bd], ax",
+            "trace": [
+              "4f6a45: cmp dword ptr [ebp + 0x9c], edi",
+              "4f6a4b: je 0x4f6a5c",
+              "4f6a5c: test ecx, 0x2000000",
+              "4f6a62: je 0x4f6a6b",
+              "4f6a6b: cmp dword ptr [ebp + 0xa0], edi",
+              "4f6a71: je 0x4f6a82",
+              "4f6a82: test ecx, 0x4000000",
+              "4f6a88: je 0x4f6a91",
+              "4f6a91: cmp dword ptr [ebp + 0xa4], edi",
+              "4f6a97: je 0x4f6aa8",
+              "4f6aa8: test ecx, 0x8000000",
+              "4f6aae: je 0x4f6ab7"
+            ]
+          },
+          {
+            "address": "0x4f6a64",
+            "offset": 441,
+            "bytes": 2,
+            "instruction": "add word ptr [ebx + 0x1b9], ax",
+            "trace": [
+              "4f69fc: test ecx, 0x100000",
+              "4f6a02: je 0x4f6a0b",
+              "4f6a0b: cmp dword ptr [ebp + 0x94], edi",
+              "4f6a11: je 0x4f6a22",
+              "4f6a22: test ecx, 0x200000",
+              "4f6a28: je 0x4f6a31",
+              "4f6a31: cmp dword ptr [ebp + 0x98], edi",
+              "4f6a37: je 0x4f6a45",
+              "4f6a45: cmp dword ptr [ebp + 0x9c], edi",
+              "4f6a4b: je 0x4f6a5c",
+              "4f6a5c: test ecx, 0x2000000",
+              "4f6a62: je 0x4f6a6b"
+            ]
+          },
+          {
+            "address": "0x4f6a8a",
+            "offset": 443,
+            "bytes": 2,
+            "instruction": "add word ptr [ebx + 0x1bb], ax",
+            "trace": [
+              "4f6a22: test ecx, 0x200000",
+              "4f6a28: je 0x4f6a31",
+              "4f6a31: cmp dword ptr [ebp + 0x98], edi",
+              "4f6a37: je 0x4f6a45",
+              "4f6a45: cmp dword ptr [ebp + 0x9c], edi",
+              "4f6a4b: je 0x4f6a5c",
+              "4f6a5c: test ecx, 0x2000000",
+              "4f6a62: je 0x4f6a6b",
+              "4f6a6b: cmp dword ptr [ebp + 0xa0], edi",
+              "4f6a71: je 0x4f6a82",
+              "4f6a82: test ecx, 0x4000000",
+              "4f6a88: je 0x4f6a91"
+            ]
+          },
+          {
+            "address": "0x4f6b39",
+            "offset": 379,
+            "bytes": 4,
+            "instruction": "mov eax, dword ptr [ebx + 0x17b]",
+            "trace": [
+              "4f6aa8: test ecx, 0x8000000",
+              "4f6aae: je 0x4f6ab7",
+              "4f6ab7: cmp dword ptr [ebp + 0xa8], edi",
+              "4f6abd: je 0x4f6acb",
+              "4f6acb: cmp dword ptr [ebp + 0xac], edi",
+              "4f6ad1: je 0x4f6adf",
+              "4f6adf: cmp dword ptr [ebp + 0x20], edi",
+              "4f6ae2: je 0x4f6b25",
+              "4f6b25: mov eax, dword ptr [0x6fcdcf]",
+              "4f6b2a: mov esi, dword ptr [esp + 0x178]",
+              "4f6b31: test eax, eax",
+              "4f6b33: jne 0x4f73c2"
+            ]
+          },
+          {
+            "address": "0x4f7719",
+            "offset": 379,
+            "bytes": 1,
+            "instruction": "test byte ptr [ebx + 0x17b], 4",
+            "trace": [
+              "4f6abd: je 0x4f6acb",
+              "4f6acb: cmp dword ptr [ebp + 0xac], edi",
+              "4f6ad1: je 0x4f6adf",
+              "4f6adf: cmp dword ptr [ebp + 0x20], edi",
+              "4f6ae2: je 0x4f6b25",
+              "4f6b25: mov eax, dword ptr [0x6fcdcf]",
+              "4f6b2a: mov esi, dword ptr [esp + 0x178]",
+              "4f6b31: test eax, eax",
+              "4f6b33: jne 0x4f73c2",
+              "4f73c2: mov eax, dword ptr [0x6fcdcf]",
+              "4f73c7: test eax, eax",
+              "4f73c9: jne 0x4f7719"
+            ]
+          },
+          {
+            "address": "0x4f73cf",
+            "offset": 379,
+            "bytes": 1,
+            "instruction": "test byte ptr [ebx + 0x17b], 0x80",
+            "trace": [
+              "4f6abd: je 0x4f6acb",
+              "4f6acb: cmp dword ptr [ebp + 0xac], edi",
+              "4f6ad1: je 0x4f6adf",
+              "4f6adf: cmp dword ptr [ebp + 0x20], edi",
+              "4f6ae2: je 0x4f6b25",
+              "4f6b25: mov eax, dword ptr [0x6fcdcf]",
+              "4f6b2a: mov esi, dword ptr [esp + 0x178]",
+              "4f6b31: test eax, eax",
+              "4f6b33: jne 0x4f73c2",
+              "4f73c2: mov eax, dword ptr [0x6fcdcf]",
+              "4f73c7: test eax, eax",
+              "4f73c9: jne 0x4f7719"
+            ]
+          },
+          {
+            "address": "0x4f6ab0",
+            "offset": 445,
+            "bytes": 2,
+            "instruction": "add word ptr [ebx + 0x1bd], ax",
+            "trace": [
+              "4f6a45: cmp dword ptr [ebp + 0x9c], edi",
+              "4f6a4b: je 0x4f6a5c",
+              "4f6a5c: test ecx, 0x2000000",
+              "4f6a62: je 0x4f6a6b",
+              "4f6a6b: cmp dword ptr [ebp + 0xa0], edi",
+              "4f6a71: je 0x4f6a82",
+              "4f6a82: test ecx, 0x4000000",
+              "4f6a88: je 0x4f6a91",
+              "4f6a91: cmp dword ptr [ebp + 0xa4], edi",
+              "4f6a97: je 0x4f6aa8",
+              "4f6aa8: test ecx, 0x8000000",
+              "4f6aae: je 0x4f6ab7"
+            ]
+          },
+          {
+            "address": "0x4f7722",
+            "offset": 427,
+            "bytes": 2,
+            "instruction": "mov ax, word ptr [ebx + 0x1ab]",
+            "trace": [
+              "4f6ad1: je 0x4f6adf",
+              "4f6adf: cmp dword ptr [ebp + 0x20], edi",
+              "4f6ae2: je 0x4f6b25",
+              "4f6b25: mov eax, dword ptr [0x6fcdcf]",
+              "4f6b2a: mov esi, dword ptr [esp + 0x178]",
+              "4f6b31: test eax, eax",
+              "4f6b33: jne 0x4f73c2",
+              "4f73c2: mov eax, dword ptr [0x6fcdcf]",
+              "4f73c7: test eax, eax",
+              "4f73c9: jne 0x4f7719",
+              "4f7719: test byte ptr [ebx + 0x17b], 4",
+              "4f7720: jne 0x4f7749"
+            ]
+          },
+          {
+            "address": "0x4f7573",
+            "offset": 379,
+            "bytes": 4,
+            "instruction": "mov eax, dword ptr [ebx + 0x17b]",
+            "trace": [
+              "4f6ad1: je 0x4f6adf",
+              "4f6adf: cmp dword ptr [ebp + 0x20], edi",
+              "4f6ae2: je 0x4f6b25",
+              "4f6b25: mov eax, dword ptr [0x6fcdcf]",
+              "4f6b2a: mov esi, dword ptr [esp + 0x178]",
+              "4f6b31: test eax, eax",
+              "4f6b33: jne 0x4f73c2",
+              "4f73c2: mov eax, dword ptr [0x6fcdcf]",
+              "4f73c7: test eax, eax",
+              "4f73c9: jne 0x4f7719",
+              "4f73cf: test byte ptr [ebx + 0x17b], 0x80",
+              "4f73d6: je 0x4f7573"
+            ]
+          },
+          {
+            "address": "0x4f6dcb",
+            "offset": 452,
+            "bytes": 1,
+            "instruction": "mov al, byte ptr [ebx + 0x1c4]",
+            "trace": [
+              "4f6ad1: je 0x4f6adf",
+              "4f6adf: cmp dword ptr [ebp + 0x20], edi",
+              "4f6ae2: je 0x4f6b25",
+              "4f6b25: mov eax, dword ptr [0x6fcdcf]",
+              "4f6b2a: mov esi, dword ptr [esp + 0x178]",
+              "4f6b31: test eax, eax",
+              "4f6b33: jne 0x4f73c2",
+              "4f6b39: mov eax, dword ptr [ebx + 0x17b]",
+              "4f6b3f: test ah, 0x10",
+              "4f6b42: je 0x4f6be3",
+              "4f6be3: test ah, 0x20",
+              "4f6be6: je 0x4f6dcb"
+            ]
+          },
+          {
+            "address": "0x4f774b",
+            "offset": 459,
+            "bytes": 1,
+            "instruction": "mov cl, byte ptr [ebx + 0x1cb]",
+            "trace": [
+              "4f6adf: cmp dword ptr [ebp + 0x20], edi",
+              "4f6ae2: je 0x4f6b25",
+              "4f6b25: mov eax, dword ptr [0x6fcdcf]",
+              "4f6b2a: mov esi, dword ptr [esp + 0x178]",
+              "4f6b31: test eax, eax",
+              "4f6b33: jne 0x4f73c2",
+              "4f73c2: mov eax, dword ptr [0x6fcdcf]",
+              "4f73c7: test eax, eax",
+              "4f73c9: jne 0x4f7719",
+              "4f7719: test byte ptr [ebx + 0x17b], 4",
+              "4f7720: jne 0x4f7749",
+              "4f7749: xor edx, edx"
+            ]
+          },
+          {
+            "address": "0x4f7729",
+            "offset": 429,
+            "bytes": 2,
+            "instruction": "cmp ax, word ptr [ebx + 0x1ad]",
+            "trace": [
+              "4f6adf: cmp dword ptr [ebp + 0x20], edi",
+              "4f6ae2: je 0x4f6b25",
+              "4f6b25: mov eax, dword ptr [0x6fcdcf]",
+              "4f6b2a: mov esi, dword ptr [esp + 0x178]",
+              "4f6b31: test eax, eax",
+              "4f6b33: jne 0x4f73c2",
+              "4f73c2: mov eax, dword ptr [0x6fcdcf]",
+              "4f73c7: test eax, eax",
+              "4f73c9: jne 0x4f7719",
+              "4f7719: test byte ptr [ebx + 0x17b], 4",
+              "4f7720: jne 0x4f7749",
+              "4f7722: mov ax, word ptr [ebx + 0x1ab]"
+            ]
+          },
+          {
+            "address": "0x4f6b16",
+            "offset": 124,
+            "bytes": 4,
+            "instruction": "mov ecx, dword ptr [edx + 0x10]",
+            "trace": [
+              "4f6adf: cmp dword ptr [ebp + 0x20], edi",
+              "4f6ae2: je 0x4f6b25",
+              "4f6ae4: lea eax, [ebp + 0x228]",
+              "4f6aea: lea edx, [ebx + 0x6c]",
+              "4f6aed: mov ecx, 6",
+              "4f6af2: mov esi, eax",
+              "4f6af4: mov edi, edx",
+              "4f6af6: rep movsd dword ptr es:[edi], dword ptr [esi]",
+              "4f6af8: mov cl, byte ptr [eax + 0x14]",
+              "4f6afb: test cl, cl",
+              "4f6afd: jne 0x4f6b11",
+              "4f6b11: mov esi, 1"
+            ]
+          },
+          {
+            "address": "0x4f7732",
+            "offset": 452,
+            "bytes": 1,
+            "instruction": "mov cl, byte ptr [ebx + 0x1c4]",
+            "trace": [
+              "4f6b25: mov eax, dword ptr [0x6fcdcf]",
+              "4f6b2a: mov esi, dword ptr [esp + 0x178]",
+              "4f6b31: test eax, eax",
+              "4f6b33: jne 0x4f73c2",
+              "4f73c2: mov eax, dword ptr [0x6fcdcf]",
+              "4f73c7: test eax, eax",
+              "4f73c9: jne 0x4f7719",
+              "4f7719: test byte ptr [ebx + 0x17b], 4",
+              "4f7720: jne 0x4f7749",
+              "4f7722: mov ax, word ptr [ebx + 0x1ab]",
+              "4f7729: cmp ax, word ptr [ebx + 0x1ad]",
+              "4f7730: jae 0x4f7749"
+            ]
+          },
+          {
+            "address": "0x4f7738",
+            "offset": 453,
+            "bytes": 1,
+            "instruction": "mov al, byte ptr [ebx + 0x1c5]",
+            "trace": [
+              "4f6b2a: mov esi, dword ptr [esp + 0x178]",
+              "4f6b31: test eax, eax",
+              "4f6b33: jne 0x4f73c2",
+              "4f73c2: mov eax, dword ptr [0x6fcdcf]",
+              "4f73c7: test eax, eax",
+              "4f73c9: jne 0x4f7719",
+              "4f7719: test byte ptr [ebx + 0x17b], 4",
+              "4f7720: jne 0x4f7749",
+              "4f7722: mov ax, word ptr [ebx + 0x1ab]",
+              "4f7729: cmp ax, word ptr [ebx + 0x1ad]",
+              "4f7730: jae 0x4f7749",
+              "4f7732: mov cl, byte ptr [ebx + 0x1c4]"
+            ]
+          },
+          {
+            "address": "0x4f6b39",
+            "offset": 379,
+            "bytes": 4,
+            "instruction": "mov eax, dword ptr [ebx + 0x17b]",
+            "trace": [
+              "4f6aa8: test ecx, 0x8000000",
+              "4f6aae: je 0x4f6ab7",
+              "4f6ab7: cmp dword ptr [ebp + 0xa8], edi",
+              "4f6abd: je 0x4f6acb",
+              "4f6acb: cmp dword ptr [ebp + 0xac], edi",
+              "4f6ad1: je 0x4f6adf",
+              "4f6adf: cmp dword ptr [ebp + 0x20], edi",
+              "4f6ae2: je 0x4f6b25",
+              "4f6b25: mov eax, dword ptr [0x6fcdcf]",
+              "4f6b2a: mov esi, dword ptr [esp + 0x178]",
+              "4f6b31: test eax, eax",
+              "4f6b33: jne 0x4f73c2"
+            ]
+          },
+          {
+            "address": "0x4f6b39",
+            "offset": 379,
+            "bytes": 4,
+            "instruction": "mov eax, dword ptr [ebx + 0x17b]",
+            "trace": [
+              "4f6afd: jne 0x4f6b11",
+              "4f6b11: mov esi, 1",
+              "4f6b16: mov ecx, dword ptr [edx + 0x10]",
+              "4f6b19: xor eax, eax",
+              "4f6b1b: test esi, esi",
+              "4f6b1d: setne al",
+              "4f6b20: or ecx, eax",
+              "4f6b22: mov dword ptr [edx + 0x10], ecx",
+              "4f6b25: mov eax, dword ptr [0x6fcdcf]",
+              "4f6b2a: mov esi, dword ptr [esp + 0x178]",
+              "4f6b31: test eax, eax",
+              "4f6b33: jne 0x4f73c2"
+            ]
+          },
+          {
+            "address": "0x4f7719",
+            "offset": 379,
+            "bytes": 1,
+            "instruction": "test byte ptr [ebx + 0x17b], 4",
+            "trace": [
+              "4f6abd: je 0x4f6acb",
+              "4f6acb: cmp dword ptr [ebp + 0xac], edi",
+              "4f6ad1: je 0x4f6adf",
+              "4f6adf: cmp dword ptr [ebp + 0x20], edi",
+              "4f6ae2: je 0x4f6b25",
+              "4f6b25: mov eax, dword ptr [0x6fcdcf]",
+              "4f6b2a: mov esi, dword ptr [esp + 0x178]",
+              "4f6b31: test eax, eax",
+              "4f6b33: jne 0x4f73c2",
+              "4f73c2: mov eax, dword ptr [0x6fcdcf]",
+              "4f73c7: test eax, eax",
+              "4f73c9: jne 0x4f7719"
+            ]
+          },
+          {
+            "address": "0x4f73cf",
+            "offset": 379,
+            "bytes": 1,
+            "instruction": "test byte ptr [ebx + 0x17b], 0x80",
+            "trace": [
+              "4f6abd: je 0x4f6acb",
+              "4f6acb: cmp dword ptr [ebp + 0xac], edi",
+              "4f6ad1: je 0x4f6adf",
+              "4f6adf: cmp dword ptr [ebp + 0x20], edi",
+              "4f6ae2: je 0x4f6b25",
+              "4f6b25: mov eax, dword ptr [0x6fcdcf]",
+              "4f6b2a: mov esi, dword ptr [esp + 0x178]",
+              "4f6b31: test eax, eax",
+              "4f6b33: jne 0x4f73c2",
+              "4f73c2: mov eax, dword ptr [0x6fcdcf]",
+              "4f73c7: test eax, eax",
+              "4f73c9: jne 0x4f7719"
+            ]
+          },
+          {
+            "address": "0x4f7722",
+            "offset": 427,
+            "bytes": 2,
+            "instruction": "mov ax, word ptr [ebx + 0x1ab]",
+            "trace": [
+              "4f6ad1: je 0x4f6adf",
+              "4f6adf: cmp dword ptr [ebp + 0x20], edi",
+              "4f6ae2: je 0x4f6b25",
+              "4f6b25: mov eax, dword ptr [0x6fcdcf]",
+              "4f6b2a: mov esi, dword ptr [esp + 0x178]",
+              "4f6b31: test eax, eax",
+              "4f6b33: jne 0x4f73c2",
+              "4f73c2: mov eax, dword ptr [0x6fcdcf]",
+              "4f73c7: test eax, eax",
+              "4f73c9: jne 0x4f7719",
+              "4f7719: test byte ptr [ebx + 0x17b], 4",
+              "4f7720: jne 0x4f7749"
+            ]
+          },
+          {
+            "address": "0x4f7573",
+            "offset": 379,
+            "bytes": 4,
+            "instruction": "mov eax, dword ptr [ebx + 0x17b]",
+            "trace": [
+              "4f6ad1: je 0x4f6adf",
+              "4f6adf: cmp dword ptr [ebp + 0x20], edi",
+              "4f6ae2: je 0x4f6b25",
+              "4f6b25: mov eax, dword ptr [0x6fcdcf]",
+              "4f6b2a: mov esi, dword ptr [esp + 0x178]",
+              "4f6b31: test eax, eax",
+              "4f6b33: jne 0x4f73c2",
+              "4f73c2: mov eax, dword ptr [0x6fcdcf]",
+              "4f73c7: test eax, eax",
+              "4f73c9: jne 0x4f7719",
+              "4f73cf: test byte ptr [ebx + 0x17b], 0x80",
+              "4f73d6: je 0x4f7573"
+            ]
+          },
+          {
+            "address": "0x4f6dcb",
+            "offset": 452,
+            "bytes": 1,
+            "instruction": "mov al, byte ptr [ebx + 0x1c4]",
+            "trace": [
+              "4f6ad1: je 0x4f6adf",
+              "4f6adf: cmp dword ptr [ebp + 0x20], edi",
+              "4f6ae2: je 0x4f6b25",
+              "4f6b25: mov eax, dword ptr [0x6fcdcf]",
+              "4f6b2a: mov esi, dword ptr [esp + 0x178]",
+              "4f6b31: test eax, eax",
+              "4f6b33: jne 0x4f73c2",
+              "4f6b39: mov eax, dword ptr [ebx + 0x17b]",
+              "4f6b3f: test ah, 0x10",
+              "4f6b42: je 0x4f6be3",
+              "4f6be3: test ah, 0x20",
+              "4f6be6: je 0x4f6dcb"
+            ]
+          },
+          {
+            "address": "0x4f7719",
+            "offset": 379,
+            "bytes": 1,
+            "instruction": "test byte ptr [ebx + 0x17b], 4",
+            "trace": [
+              "4f6b19: xor eax, eax",
+              "4f6b1b: test esi, esi",
+              "4f6b1d: setne al",
+              "4f6b20: or ecx, eax",
+              "4f6b22: mov dword ptr [edx + 0x10], ecx",
+              "4f6b25: mov eax, dword ptr [0x6fcdcf]",
+              "4f6b2a: mov esi, dword ptr [esp + 0x178]",
+              "4f6b31: test eax, eax",
+              "4f6b33: jne 0x4f73c2",
+              "4f73c2: mov eax, dword ptr [0x6fcdcf]",
+              "4f73c7: test eax, eax",
+              "4f73c9: jne 0x4f7719"
+            ]
+          },
+          {
+            "address": "0x4f73cf",
+            "offset": 379,
+            "bytes": 1,
+            "instruction": "test byte ptr [ebx + 0x17b], 0x80",
+            "trace": [
+              "4f6b19: xor eax, eax",
+              "4f6b1b: test esi, esi",
+              "4f6b1d: setne al",
+              "4f6b20: or ecx, eax",
+              "4f6b22: mov dword ptr [edx + 0x10], ecx",
+              "4f6b25: mov eax, dword ptr [0x6fcdcf]",
+              "4f6b2a: mov esi, dword ptr [esp + 0x178]",
+              "4f6b31: test eax, eax",
+              "4f6b33: jne 0x4f73c2",
+              "4f73c2: mov eax, dword ptr [0x6fcdcf]",
+              "4f73c7: test eax, eax",
+              "4f73c9: jne 0x4f7719"
+            ]
+          },
+          {
+            "address": "0x4f774b",
+            "offset": 459,
+            "bytes": 1,
+            "instruction": "mov cl, byte ptr [ebx + 0x1cb]",
+            "trace": [
+              "4f6adf: cmp dword ptr [ebp + 0x20], edi",
+              "4f6ae2: je 0x4f6b25",
+              "4f6b25: mov eax, dword ptr [0x6fcdcf]",
+              "4f6b2a: mov esi, dword ptr [esp + 0x178]",
+              "4f6b31: test eax, eax",
+              "4f6b33: jne 0x4f73c2",
+              "4f73c2: mov eax, dword ptr [0x6fcdcf]",
+              "4f73c7: test eax, eax",
+              "4f73c9: jne 0x4f7719",
+              "4f7719: test byte ptr [ebx + 0x17b], 4",
+              "4f7720: jne 0x4f7749",
+              "4f7749: xor edx, edx"
+            ]
+          },
+          {
+            "address": "0x4f7729",
+            "offset": 429,
+            "bytes": 2,
+            "instruction": "cmp ax, word ptr [ebx + 0x1ad]",
+            "trace": [
+              "4f6adf: cmp dword ptr [ebp + 0x20], edi",
+              "4f6ae2: je 0x4f6b25",
+              "4f6b25: mov eax, dword ptr [0x6fcdcf]",
+              "4f6b2a: mov esi, dword ptr [esp + 0x178]",
+              "4f6b31: test eax, eax",
+              "4f6b33: jne 0x4f73c2",
+              "4f73c2: mov eax, dword ptr [0x6fcdcf]",
+              "4f73c7: test eax, eax",
+              "4f73c9: jne 0x4f7719",
+              "4f7719: test byte ptr [ebx + 0x17b], 4",
+              "4f7720: jne 0x4f7749",
+              "4f7722: mov ax, word ptr [ebx + 0x1ab]"
+            ]
+          },
+          {
+            "address": "0x4f6b16",
+            "offset": 124,
+            "bytes": 4,
+            "instruction": "mov ecx, dword ptr [edx + 0x10]",
+            "trace": [
+              "4f6adf: cmp dword ptr [ebp + 0x20], edi",
+              "4f6ae2: je 0x4f6b25",
+              "4f6ae4: lea eax, [ebp + 0x228]",
+              "4f6aea: lea edx, [ebx + 0x6c]",
+              "4f6aed: mov ecx, 6",
+              "4f6af2: mov esi, eax",
+              "4f6af4: mov edi, edx",
+              "4f6af6: rep movsd dword ptr es:[edi], dword ptr [esi]",
+              "4f6af8: mov cl, byte ptr [eax + 0x14]",
+              "4f6afb: test cl, cl",
+              "4f6afd: jne 0x4f6b11",
+              "4f6b11: mov esi, 1"
+            ]
+          },
+          {
+            "address": "0x4f7722",
+            "offset": 427,
+            "bytes": 2,
+            "instruction": "mov ax, word ptr [ebx + 0x1ab]",
+            "trace": [
+              "4f6b1d: setne al",
+              "4f6b20: or ecx, eax",
+              "4f6b22: mov dword ptr [edx + 0x10], ecx",
+              "4f6b25: mov eax, dword ptr [0x6fcdcf]",
+              "4f6b2a: mov esi, dword ptr [esp + 0x178]",
+              "4f6b31: test eax, eax",
+              "4f6b33: jne 0x4f73c2",
+              "4f73c2: mov eax, dword ptr [0x6fcdcf]",
+              "4f73c7: test eax, eax",
+              "4f73c9: jne 0x4f7719",
+              "4f7719: test byte ptr [ebx + 0x17b], 4",
+              "4f7720: jne 0x4f7749"
+            ]
+          },
+          {
+            "address": "0x4f7573",
+            "offset": 379,
+            "bytes": 4,
+            "instruction": "mov eax, dword ptr [ebx + 0x17b]",
+            "trace": [
+              "4f6b1d: setne al",
+              "4f6b20: or ecx, eax",
+              "4f6b22: mov dword ptr [edx + 0x10], ecx",
+              "4f6b25: mov eax, dword ptr [0x6fcdcf]",
+              "4f6b2a: mov esi, dword ptr [esp + 0x178]",
+              "4f6b31: test eax, eax",
+              "4f6b33: jne 0x4f73c2",
+              "4f73c2: mov eax, dword ptr [0x6fcdcf]",
+              "4f73c7: test eax, eax",
+              "4f73c9: jne 0x4f7719",
+              "4f73cf: test byte ptr [ebx + 0x17b], 0x80",
+              "4f73d6: je 0x4f7573"
+            ]
+          },
+          {
+            "address": "0x4f6dcb",
+            "offset": 452,
+            "bytes": 1,
+            "instruction": "mov al, byte ptr [ebx + 0x1c4]",
+            "trace": [
+              "4f6b1d: setne al",
+              "4f6b20: or ecx, eax",
+              "4f6b22: mov dword ptr [edx + 0x10], ecx",
+              "4f6b25: mov eax, dword ptr [0x6fcdcf]",
+              "4f6b2a: mov esi, dword ptr [esp + 0x178]",
+              "4f6b31: test eax, eax",
+              "4f6b33: jne 0x4f73c2",
+              "4f6b39: mov eax, dword ptr [ebx + 0x17b]",
+              "4f6b3f: test ah, 0x10",
+              "4f6b42: je 0x4f6be3",
+              "4f6be3: test ah, 0x20",
+              "4f6be6: je 0x4f6dcb"
+            ]
+          },
+          {
+            "address": "0x4f7732",
+            "offset": 452,
+            "bytes": 1,
+            "instruction": "mov cl, byte ptr [ebx + 0x1c4]",
+            "trace": [
+              "4f6b25: mov eax, dword ptr [0x6fcdcf]",
+              "4f6b2a: mov esi, dword ptr [esp + 0x178]",
+              "4f6b31: test eax, eax",
+              "4f6b33: jne 0x4f73c2",
+              "4f73c2: mov eax, dword ptr [0x6fcdcf]",
+              "4f73c7: test eax, eax",
+              "4f73c9: jne 0x4f7719",
+              "4f7719: test byte ptr [ebx + 0x17b], 4",
+              "4f7720: jne 0x4f7749",
+              "4f7722: mov ax, word ptr [ebx + 0x1ab]",
+              "4f7729: cmp ax, word ptr [ebx + 0x1ad]",
+              "4f7730: jae 0x4f7749"
+            ]
+          },
+          {
+            "address": "0x4f774b",
+            "offset": 459,
+            "bytes": 1,
+            "instruction": "mov cl, byte ptr [ebx + 0x1cb]",
+            "trace": [
+              "4f6b20: or ecx, eax",
+              "4f6b22: mov dword ptr [edx + 0x10], ecx",
+              "4f6b25: mov eax, dword ptr [0x6fcdcf]",
+              "4f6b2a: mov esi, dword ptr [esp + 0x178]",
+              "4f6b31: test eax, eax",
+              "4f6b33: jne 0x4f73c2",
+              "4f73c2: mov eax, dword ptr [0x6fcdcf]",
+              "4f73c7: test eax, eax",
+              "4f73c9: jne 0x4f7719",
+              "4f7719: test byte ptr [ebx + 0x17b], 4",
+              "4f7720: jne 0x4f7749",
+              "4f7749: xor edx, edx"
+            ]
+          },
+          {
+            "address": "0x4f7729",
+            "offset": 429,
+            "bytes": 2,
+            "instruction": "cmp ax, word ptr [ebx + 0x1ad]",
+            "trace": [
+              "4f6b20: or ecx, eax",
+              "4f6b22: mov dword ptr [edx + 0x10], ecx",
+              "4f6b25: mov eax, dword ptr [0x6fcdcf]",
+              "4f6b2a: mov esi, dword ptr [esp + 0x178]",
+              "4f6b31: test eax, eax",
+              "4f6b33: jne 0x4f73c2",
+              "4f73c2: mov eax, dword ptr [0x6fcdcf]",
+              "4f73c7: test eax, eax",
+              "4f73c9: jne 0x4f7719",
+              "4f7719: test byte ptr [ebx + 0x17b], 4",
+              "4f7720: jne 0x4f7749",
+              "4f7722: mov ax, word ptr [ebx + 0x1ab]"
+            ]
+          },
+          {
+            "address": "0x4f7738",
+            "offset": 453,
+            "bytes": 1,
+            "instruction": "mov al, byte ptr [ebx + 0x1c5]",
+            "trace": [
+              "4f6b2a: mov esi, dword ptr [esp + 0x178]",
+              "4f6b31: test eax, eax",
+              "4f6b33: jne 0x4f73c2",
+              "4f73c2: mov eax, dword ptr [0x6fcdcf]",
+              "4f73c7: test eax, eax",
+              "4f73c9: jne 0x4f7719",
+              "4f7719: test byte ptr [ebx + 0x17b], 4",
+              "4f7720: jne 0x4f7749",
+              "4f7722: mov ax, word ptr [ebx + 0x1ab]",
+              "4f7729: cmp ax, word ptr [ebx + 0x1ad]",
+              "4f7730: jae 0x4f7749",
+              "4f7732: mov cl, byte ptr [ebx + 0x1c4]"
+            ]
+          },
+          {
+            "address": "0x4f7732",
+            "offset": 452,
+            "bytes": 1,
+            "instruction": "mov cl, byte ptr [ebx + 0x1c4]",
+            "trace": [
+              "4f6b25: mov eax, dword ptr [0x6fcdcf]",
+              "4f6b2a: mov esi, dword ptr [esp + 0x178]",
+              "4f6b31: test eax, eax",
+              "4f6b33: jne 0x4f73c2",
+              "4f73c2: mov eax, dword ptr [0x6fcdcf]",
+              "4f73c7: test eax, eax",
+              "4f73c9: jne 0x4f7719",
+              "4f7719: test byte ptr [ebx + 0x17b], 4",
+              "4f7720: jne 0x4f7749",
+              "4f7722: mov ax, word ptr [ebx + 0x1ab]",
+              "4f7729: cmp ax, word ptr [ebx + 0x1ad]",
+              "4f7730: jae 0x4f7749"
+            ]
+          },
+          {
+            "address": "0x4f7738",
+            "offset": 453,
+            "bytes": 1,
+            "instruction": "mov al, byte ptr [ebx + 0x1c5]",
+            "trace": [
+              "4f6b2a: mov esi, dword ptr [esp + 0x178]",
+              "4f6b31: test eax, eax",
+              "4f6b33: jne 0x4f73c2",
+              "4f73c2: mov eax, dword ptr [0x6fcdcf]",
+              "4f73c7: test eax, eax",
+              "4f73c9: jne 0x4f7719",
+              "4f7719: test byte ptr [ebx + 0x17b], 4",
+              "4f7720: jne 0x4f7749",
+              "4f7722: mov ax, word ptr [ebx + 0x1ab]",
+              "4f7729: cmp ax, word ptr [ebx + 0x1ad]",
+              "4f7730: jae 0x4f7749",
+              "4f7732: mov cl, byte ptr [ebx + 0x1c4]"
+            ]
+          },
+          {
+            "address": "0x4f7430",
+            "offset": 65,
+            "bytes": 1,
+            "instruction": "test byte ptr [ebx + 0x41], 8",
+            "trace": [
+              "4f7407: lea ecx, [esp + 0x18]",
+              "4f740b: push 1",
+              "4f740d: push ecx",
+              "4f740e: mov ecx, dword ptr [edi]",
+              "4f7410: push ecx",
+              "4f7411: push eax",
+              "4f7412: lea eax, [ebp + 0x180]",
+              "4f7418: mov ecx, esi",
+              "4f741a: push eax",
+              "4f741b: call dword ptr [edx + 0x54]",
+              "4f741e: test eax, eax",
+              "4f7420: je 0x4f7430"
+            ]
+          }
+        ],
+        "calls": [
+          {
+            "address": "0x4f6b89",
+            "target": 6507952,
+            "registers": {
+              "ecx": 136
+            },
+            "arguments": {},
+            "trace": [
+              "4f6b66: rep stosd dword ptr es:[edi], eax",
+              "4f6b68: stosw word ptr es:[edi], ax",
+              "4f6b6a: stosb byte ptr es:[edi], al",
+              "4f6b6b: lea ecx, [ebx + 0x88]",
+              "4f6b71: xor edi, edi",
+              "4f6b73: mov dword ptr [esp + 0x10], ecx",
+              "4f6b77: lea eax, [ebp + 0xd8]",
+              "4f6b7d: push edi",
+              "4f6b7e: push eax",
+              "4f6b7f: lea edx, [esp + 0x34]",
+              "4f6b83: push 0x69ff1c",
+              "4f6b88: push edx"
+            ]
+          }
+        ],
+        "indexed": [
+          {
+            "address": "0x4f6826",
+            "constant": 418,
+            "index": "eax",
+            "scale": 1,
+            "bytes": 1,
+            "access": "other",
+            "instruction": "mov byte ptr [eax + ebx + 0x1a2], dl",
+            "trace": [
+              "4f67ce: je 0x4f67de",
+              "4f67de: cmp dword ptr [ebp + 0x88], edi",
+              "4f67e4: je 0x4f67f4",
+              "4f67f4: cmp dword ptr [ebp + 0x54], edi",
+              "4f67f7: je 0x4f6805",
+              "4f6805: cmp dword ptr [ebp + 0x64], edi",
+              "4f6808: je 0x4f6816",
+              "4f6816: xor eax, eax",
+              "4f6818: lea esi, [ebp + 0x58]",
+              "4f681b: cmp dword ptr [esi], edi",
+              "4f681d: je 0x4f682d",
+              "4f681f: mov dl, byte ptr [eax + ebp + 0x287]"
+            ],
+            "pointer_in_index": true
+          },
+          {
+            "address": "0x4f6826",
+            "constant": 418,
+            "index": "eax",
+            "scale": 1,
+            "bytes": 1,
+            "access": "other",
+            "instruction": "mov byte ptr [eax + ebx + 0x1a2], dl",
+            "trace": [
+              "4f67e4: je 0x4f67f4",
+              "4f67f4: cmp dword ptr [ebp + 0x54], edi",
+              "4f67f7: je 0x4f6805",
+              "4f6805: cmp dword ptr [ebp + 0x64], edi",
+              "4f6808: je 0x4f6816",
+              "4f680a: mov cl, byte ptr [ebp + 0x28a]",
+              "4f6810: mov byte ptr [ebx + 0x1a5], cl",
+              "4f6816: xor eax, eax",
+              "4f6818: lea esi, [ebp + 0x58]",
+              "4f681b: cmp dword ptr [esi], edi",
+              "4f681d: je 0x4f682d",
+              "4f681f: mov dl, byte ptr [eax + ebp + 0x287]"
+            ],
+            "pointer_in_index": true
+          },
+          {
+            "address": "0x4f6846",
+            "constant": 422,
+            "index": "eax",
+            "scale": 1,
+            "bytes": 1,
+            "access": "other",
+            "instruction": "mov byte ptr [eax + ebx + 0x1a6], cl",
+            "trace": [
+              "4f6818: lea esi, [ebp + 0x58]",
+              "4f681b: cmp dword ptr [esi], edi",
+              "4f681d: je 0x4f682d",
+              "4f682d: inc eax",
+              "4f682e: add esi, 4",
+              "4f6831: cmp eax, 3",
+              "4f6834: jb 0x4f681b",
+              "4f6836: xor eax, eax",
+              "4f6838: lea esi, [ebp + 0x68]",
+              "4f683b: cmp dword ptr [esi], edi",
+              "4f683d: je 0x4f684d",
+              "4f683f: mov cl, byte ptr [eax + ebp + 0x28b]"
+            ],
+            "pointer_in_index": true
+          }
+        ],
+        "returns": [],
+        "states": 1000,
+        "limited": true
+      }
+    }
+  ],
+  "original_seed_count": 93,
+  "generated_return_seeds": 0
+}

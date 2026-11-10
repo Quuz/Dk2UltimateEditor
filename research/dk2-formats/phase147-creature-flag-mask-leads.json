@@ -1,0 +1,226 @@
+{
+  "scope": "Narrow new flag-mask leads from prior typed-pointer hints, not universal nonuse.\n\nOnly a short straight-line suffix after known686 reads. Masked register paths\nand indirect dispatch need native verification; this pass does not name flags.\n",
+  "source": "phase85-creature-index-diagnostics.json",
+  "unique_prior_flag_reads": 227,
+  "leads": [
+    {
+      "read": "0x424ef5",
+      "root": {
+        "address": "0x424eef",
+        "next": "0x424ef5",
+        "family": "Creatures",
+        "register": "ebp",
+        "producer": "entity-field-hint",
+        "instruction": "mov ebp, dword ptr [ecx + 0x370]",
+        "function_hint": "0x424ec0",
+        "states": 4,
+        "limited": false,
+        "argument_contexts": 0,
+        "limited_argument_contexts": false
+      },
+      "read_instruction": "test dword ptr [ebp + 0x686], edx",
+      "hits": [
+        "424f23: test ch, 0x10"
+      ],
+      "context": [
+        "424ef5: test dword ptr [ebp + 0x686], edx",
+        "424efb: je 0x424f02",
+        "424efd: mov esi, 1",
+        "424f02: xor ebp, ebp",
+        "424f04: mov bp, word ptr [ecx + 0x10]",
+        "424f08: mov ecx, dword ptr [ebp*4 + 0x6ee540]",
+        "424f0f: test ecx, ecx",
+        "424f11: jne 0x424eef",
+        "424f13: test esi, esi",
+        "424f15: jne 0x424f43",
+        "424f17: cmp dword ptr [edi + 0x197b], 1",
+        "424f1e: jne 0x424f31",
+        "424f20: mov ecx, dword ptr [eax + 0x76]",
+        "424f23: test ch, 0x10",
+        "424f26: jne 0x424f31",
+        "424f28: mov eax, 1",
+        "424f2d: pop edi",
+        "424f2e: pop esi",
+        "424f2f: pop ebp",
+        "424f30: ret "
+      ]
+    },
+    {
+      "read": "0x45d861",
+      "root": {
+        "address": "0x45d85b",
+        "next": "0x45d861",
+        "family": "Creatures",
+        "register": "eax",
+        "producer": "entity-field-hint",
+        "instruction": "mov eax, dword ptr [esi + 0x370]",
+        "function_hint": "0x45cb00",
+        "states": 19,
+        "limited": false,
+        "argument_contexts": 0,
+        "limited_argument_contexts": false
+      },
+      "read_instruction": "test byte ptr [eax + 0x686], 1",
+      "hits": [
+        "45d86a: cmp ebx, 0x800"
+      ],
+      "context": [
+        "45d861: test byte ptr [eax + 0x686], 1",
+        "45d868: je 0x45d872",
+        "45d86a: cmp ebx, 0x800",
+        "45d870: jge 0x45d8a8",
+        "45d872: cmp ebx, dword ptr [ebp - 0x3c]",
+        "45d875: jge 0x45d8a8",
+        "45d877: cmp ebx, dword ptr [ebp - 0x18]",
+        "45d87a: jg 0x45d8a8",
+        "45d87c: push 1",
+        "45d87e: push 0",
+        "45d880: push ecx",
+        "45d881: mov ecx, dword ptr [0x6e5050]",
+        "45d887: push edi",
+        "45d888: add ecx, 0x9da",
+        "45d88e: call 0x4512f0"
+      ]
+    },
+    {
+      "read": "0x48bf55",
+      "root": {
+        "address": "0x48bf4f",
+        "next": "0x48bf55",
+        "family": "Creatures",
+        "register": "ecx",
+        "producer": "entity-field-hint",
+        "instruction": "mov ecx, dword ptr [esi + 0x370]",
+        "function_hint": "0x48be50",
+        "states": 15,
+        "limited": false,
+        "argument_contexts": 0,
+        "limited_argument_contexts": false
+      },
+      "read_instruction": "mov eax, dword ptr [ecx + 0x686]",
+      "hits": [
+        "48bf68: mov dword ptr [esp + 0x30], 0x1000"
+      ],
+      "context": [
+        "48bf55: mov eax, dword ptr [ecx + 0x686]",
+        "48bf5b: test ah, 0x40",
+        "48bf5e: jne 0x48bf88",
+        "48bf60: cmp dword ptr [0x75aeaf], ebp",
+        "48bf66: jne 0x48bf88",
+        "48bf68: mov dword ptr [esp + 0x30], 0x1000",
+        "48bf70: lea edx, [esp + 0x30]",
+        "48bf74: mov ecx, esi",
+        "48bf76: push edx",
+        "48bf77: mov dword ptr [esp + 0x4c], ebp",
+        "48bf7b: call 0x48fd70"
+      ]
+    },
+    {
+      "read": "0x4ad92e",
+      "root": {
+        "address": "0x4ad928",
+        "next": "0x4ad92e",
+        "family": "Creatures",
+        "register": "eax",
+        "producer": "entity-field-hint",
+        "instruction": "mov eax, dword ptr [edx + 0x370]",
+        "function_hint": "0x4ad730",
+        "states": 10,
+        "limited": false,
+        "argument_contexts": 0,
+        "limited_argument_contexts": false
+      },
+      "read_instruction": "test byte ptr [eax + 0x686], 1",
+      "hits": [
+        "4ad952: push 0x800"
+      ],
+      "context": [
+        "4ad92e: test byte ptr [eax + 0x686], 1",
+        "4ad935: je 0x4ad9f3",
+        "4ad93b: mov ecx, dword ptr [0x6e5050]",
+        "4ad941: push 0xbd",
+        "4ad946: add ecx, 0x15a0",
+        "4ad94c: push 0x69eb08",
+        "4ad951: push ecx",
+        "4ad952: push 0x800",
+        "4ad957: call 0x5558d0"
+      ]
+    },
+    {
+      "read": "0x4afef2",
+      "root": {
+        "address": "0x4afeec",
+        "next": "0x4afef2",
+        "family": "Creatures",
+        "register": "edx",
+        "producer": "entity-field-hint",
+        "instruction": "mov edx, dword ptr [ecx + 0x370]",
+        "function_hint": "0x4af000",
+        "states": 11,
+        "limited": false,
+        "argument_contexts": 0,
+        "limited_argument_contexts": false
+      },
+      "read_instruction": "test byte ptr [edx + 0x686], 1",
+      "hits": [
+        "4aff13: add eax, 0x800"
+      ],
+      "context": [
+        "4afef2: test byte ptr [edx + 0x686], 1",
+        "4afef9: je 0x4aff24",
+        "4afefb: mov eax, dword ptr [esp + 0x14]",
+        "4afeff: mov edx, dword ptr [esp + 0x18]",
+        "4aff03: mov dword ptr [esp + 0x20], eax",
+        "4aff07: mov eax, dword ptr [esp + 0x1c]",
+        "4aff0b: mov dword ptr [esp + 0x24], edx",
+        "4aff0f: lea edx, [esp + 0x20]",
+        "4aff13: add eax, 0x800",
+        "4aff18: push edx",
+        "4aff19: mov dword ptr [esp + 0x2c], eax",
+        "4aff1d: call 0x4b5560"
+      ]
+    },
+    {
+      "read": "0x4bb9c6",
+      "root": {
+        "address": "0x4bb9c0",
+        "next": "0x4bb9c6",
+        "family": "Creatures",
+        "register": "edx",
+        "producer": "entity-field-hint",
+        "instruction": "mov edx, dword ptr [eax + 0x370]",
+        "function_hint": "0x4bb8a0",
+        "states": 9,
+        "limited": false,
+        "argument_contexts": 0,
+        "limited_argument_contexts": false
+      },
+      "read_instruction": "test dword ptr [edx + 0x686], ecx",
+      "hits": [
+        "4bb9e7: test ah, 0x10"
+      ],
+      "context": [
+        "4bb9c6: test dword ptr [edx + 0x686], ecx",
+        "4bb9cc: jne 0x4bba14",
+        "4bb9ce: xor edx, edx",
+        "4bb9d0: mov dx, word ptr [eax + 0x10]",
+        "4bb9d4: mov eax, dword ptr [edx*4 + 0x6ee540]",
+        "4bb9db: test eax, eax",
+        "4bb9dd: jne 0x4bb9c0",
+        "4bb9df: cmp bl, 0xe",
+        "4bb9e2: jne 0x4bb9f5",
+        "4bb9e4: mov eax, dword ptr [ebp + 0x76]",
+        "4bb9e7: test ah, 0x10",
+        "4bb9ea: je 0x4bb9f5",
+        "4bb9ec: xor eax, eax",
+        "4bb9ee: pop edi",
+        "4bb9ef: pop esi",
+        "4bb9f0: pop ebp",
+        "4bb9f1: pop ebx",
+        "4bb9f2: ret 0xc",
+        "4bb9f5: mov esi, dword ptr [esp + 0x18]",
+        "4bb9f9: mov edi, dword ptr [esp + 0x1c]"
+      ]
+    }
+  ]
+}

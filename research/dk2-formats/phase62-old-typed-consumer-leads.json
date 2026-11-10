@@ -1,0 +1,348 @@
+{
+  "scope": "Old EXE producer-rooted bounded CFG leads; every type still needs proof.\n\nRoots are known catalogue lookup returns, same-vslot hints, and entity field\nF7/12D hints. F7 is shared by Door and Trap types. Follow constant aliases and\nESP spills; compose one direct ECX-relative callee read summary. Calls discard\nvolatile aliases and stack knowledge. Dynamic indices/indirect call returns,\nnumeric loop bounds and arbitrary argument-pointee semantics are unresolved.\nNo match is not a proof of global non-use. Linear seed discovery may miss code.\n",
+  "program_sha256": "93e826a142f677ef5120699feddb0572799d93399167ef1d05ec4b48a8b2a342",
+  "decoded_instructions": 780881,
+  "producer_roots": [
+    {
+      "address": "0x40a47a",
+      "next": "0x40a480",
+      "family": "Traps",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [eax + 0x160]",
+      "function_hint": "0x40a400"
+    },
+    {
+      "address": "0x40f9cd",
+      "next": "0x40f9d3",
+      "family": "Traps",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x160]",
+      "function_hint": "0x40f500"
+    },
+    {
+      "address": "0x40fb39",
+      "next": "0x40fb3f",
+      "family": "Traps",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [eax + 0x160]",
+      "function_hint": "0x40fae0"
+    },
+    {
+      "address": "0x412152",
+      "next": "0x412158",
+      "family": "Traps",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x160]",
+      "function_hint": "0x4114c0"
+    },
+    {
+      "address": "0x41585d",
+      "next": "0x415863",
+      "family": "Traps",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x160]",
+      "function_hint": "0x415570"
+    },
+    {
+      "address": "0x42b859",
+      "next": "0x42b85f",
+      "family": "Traps",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [eax + 0x160]",
+      "function_hint": "0x42b6a0"
+    },
+    {
+      "address": "0x42ca2e",
+      "next": "0x42ca34",
+      "family": "Traps",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x160]",
+      "function_hint": "0x42c950"
+    },
+    {
+      "address": "0x44017b",
+      "next": "0x440181",
+      "family": "Traps",
+      "register": "ecx",
+      "producer": "entity-field-hint",
+      "instruction": "mov ecx, dword ptr [esi + 0xf7]",
+      "function_hint": "0x43fcb0"
+    },
+    {
+      "address": "0x4497cf",
+      "next": "0x4497d5",
+      "family": "Objects",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x188]",
+      "function_hint": "0x449770"
+    },
+    {
+      "address": "0x451e23",
+      "next": "0x451e29",
+      "family": "Objects",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x188]",
+      "function_hint": "0x451dd0"
+    },
+    {
+      "address": "0x4653a2",
+      "next": "0x4653a8",
+      "family": "Objects",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [eax + 0x188]",
+      "function_hint": "0x463940"
+    },
+    {
+      "address": "0x46f57e",
+      "next": "0x46f584",
+      "family": "Objects",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [eax + 0x188]",
+      "function_hint": "0x46f110"
+    },
+    {
+      "address": "0x48460e",
+      "next": "0x484614",
+      "family": "Objects",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [eax + 0x188]",
+      "function_hint": "0x484390"
+    },
+    {
+      "address": "0x48463e",
+      "next": "0x484644",
+      "family": "Objects",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x188]",
+      "function_hint": "0x484390"
+    },
+    {
+      "address": "0x4923a6",
+      "next": "0x4923ac",
+      "family": "Objects",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [eax + 0x188]",
+      "function_hint": "0x492370"
+    },
+    {
+      "address": "0x49d162",
+      "next": "0x49d168",
+      "family": "Traps",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x160]",
+      "function_hint": "0x49c140"
+    },
+    {
+      "address": "0x49e66f",
+      "next": "0x49e675",
+      "family": "Traps",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x160]",
+      "function_hint": "0x49e640"
+    },
+    {
+      "address": "0x49e7a0",
+      "next": "0x49e7a6",
+      "family": "Traps",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [eax + 0x160]",
+      "function_hint": "0x49e770"
+    },
+    {
+      "address": "0x4a7c09",
+      "next": "0x4a7c0f",
+      "family": "Objects",
+      "register": "edx",
+      "producer": "entity-field-hint",
+      "instruction": "mov edx, dword ptr [esi + 0x12d]",
+      "function_hint": "0x4a7be0"
+    },
+    {
+      "address": "0x4a7ee0",
+      "next": "0x4a7ee6",
+      "family": "Objects",
+      "register": "eax",
+      "producer": "entity-field-hint",
+      "instruction": "mov eax, dword ptr [esi + 0x12d]",
+      "function_hint": "0x4a7be0"
+    },
+    {
+      "address": "0x4b925b",
+      "next": "0x4b9261",
+      "family": "Objects",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [eax + 0x188]",
+      "function_hint": "0x4b9080"
+    },
+    {
+      "address": "0x4b9640",
+      "next": "0x4b9646",
+      "family": "Objects",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [eax + 0x188]",
+      "function_hint": "0x4b9560"
+    },
+    {
+      "address": "0x4b9915",
+      "next": "0x4b991b",
+      "family": "Traps",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [eax + 0x160]",
+      "function_hint": "0x4b9710"
+    },
+    {
+      "address": "0x4b9c09",
+      "next": "0x4b9c0f",
+      "family": "Traps",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [eax + 0x160]",
+      "function_hint": "0x4b9bc0"
+    },
+    {
+      "address": "0x4bcee4",
+      "next": "0x4bceea",
+      "family": "Objects",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x188]",
+      "function_hint": "0x4bce70"
+    },
+    {
+      "address": "0x4be3f3",
+      "next": "0x4be3f9",
+      "family": "Traps",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [eax + 0x160]",
+      "function_hint": "0x4bdbb0"
+    },
+    {
+      "address": "0x4d34b5",
+      "next": "0x4d34bb",
+      "family": "Objects",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [eax + 0x188]",
+      "function_hint": "0x4d3480"
+    },
+    {
+      "address": "0x4e9f0a",
+      "next": "0x4e9f10",
+      "family": "Traps",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x160]",
+      "function_hint": "0x4e9e50"
+    },
+    {
+      "address": "0x4f4aaf",
+      "next": "0x4f4ab5",
+      "family": "Traps",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [eax + 0x160]",
+      "function_hint": "0x4f4940"
+    },
+    {
+      "address": "0x4fa61f",
+      "next": "0x4fa625",
+      "family": "Traps",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x160]",
+      "function_hint": "0x4fa220"
+    },
+    {
+      "address": "0x4fb1b7",
+      "next": "0x4fb1bd",
+      "family": "Traps",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [eax + 0x160]",
+      "function_hint": "0x4fb180"
+    },
+    {
+      "address": "0x4fb662",
+      "next": "0x4fb668",
+      "family": "Traps",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x160]",
+      "function_hint": "0x4fb640"
+    }
+  ],
+  "root_states": 855,
+  "limited_roots": 0,
+  "callee_summaries": 1,
+  "limited_callees": 0,
+  "candidates": [
+    {
+      "root": {
+        "address": "0x42b859",
+        "next": "0x42b85f",
+        "family": "Traps",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [eax + 0x160]",
+        "function_hint": "0x42b6a0"
+      },
+      "field": "controlManaUsage",
+      "read": {
+        "address": "0x4a1bb0",
+        "offset": 150,
+        "bytes": 2,
+        "instruction": "movsx edx, word ptr [ecx + 0x96]",
+        "trace": [],
+        "callee": "0x4a1bb0",
+        "call": "0x42b868",
+        "caller_trace": [
+          "42b85f: mov edi, eax",
+          "42b861: push 0x7305e0",
+          "42b866: mov ecx, edi"
+        ]
+      }
+    },
+    {
+      "root": {
+        "address": "0x49e66f",
+        "next": "0x49e675",
+        "family": "Traps",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [edx + 0x160]",
+        "function_hint": "0x49e640"
+      },
+      "field": "controlManaUsage",
+      "read": {
+        "address": "0x49e675",
+        "offset": 150,
+        "bytes": 2,
+        "instruction": "movsx ecx, word ptr [eax + 0x96]",
+        "trace": [],
+        "callee": null,
+        "call": null
+      }
+    }
+  ]
+}

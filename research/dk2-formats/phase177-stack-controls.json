@@ -1,0 +1,108 @@
+{
+  "phase": 177,
+  "passed": true,
+  "scope": "Independent x86 executions for search-stack controls; not DK2 gameplay.\n\nSmall constructed callers exercise a real saved owner pointer across stdcall,\ncdecl and unknown cleanup. Unicorn records actual memory reads; the static\nwalker must retain the same pointer field. Synthetic tests do not name a\ngame field or prove any original callee's complete ABI.\n",
+  "controls": [
+    {
+      "case": "frame",
+      "synthetic": true,
+      "callee_cleanup": 8,
+      "static_offsets": [
+        4234
+      ],
+      "legacy_static_offsets": [],
+      "native_reads": [
+        {
+          "offset": 4234,
+          "size": 1
+        }
+      ],
+      "call_statistics": {
+        "known_cleanup": 1,
+        "known_cleanup_with_spills": 1
+      },
+      "states": 11
+    },
+    {
+      "case": "esp",
+      "synthetic": true,
+      "callee_cleanup": 8,
+      "static_offsets": [
+        4234
+      ],
+      "legacy_static_offsets": [],
+      "native_reads": [
+        {
+          "offset": 4234,
+          "size": 1
+        }
+      ],
+      "call_statistics": {
+        "known_cleanup": 1,
+        "known_cleanup_with_spills": 1
+      },
+      "states": 9
+    },
+    {
+      "case": "cdecl",
+      "synthetic": true,
+      "callee_cleanup": 0,
+      "static_offsets": [
+        4234
+      ],
+      "legacy_static_offsets": [],
+      "native_reads": [
+        {
+          "offset": 4234,
+          "size": 1
+        }
+      ],
+      "call_statistics": {
+        "known_cleanup": 1,
+        "known_cleanup_with_spills": 1
+      },
+      "states": 12
+    },
+    {
+      "case": "indirect",
+      "synthetic": true,
+      "callee_cleanup": 8,
+      "static_offsets": [
+        4234
+      ],
+      "legacy_static_offsets": [],
+      "native_reads": [
+        {
+          "offset": 4234,
+          "size": 1
+        }
+      ],
+      "call_statistics": {
+        "unknown_cleanup": 1
+      },
+      "states": 12
+    },
+    {
+      "case": "mixed",
+      "synthetic": true,
+      "callee_cleanup": null,
+      "static_offsets": [
+        4234
+      ],
+      "legacy_static_offsets": [],
+      "native_reads": [
+        {
+          "offset": 4234,
+          "size": 1
+        }
+      ],
+      "call_statistics": {
+        "unknown_cleanup": 1
+      },
+      "states": 11
+    }
+  ],
+  "no_gameplay_claim": true,
+  "legacy_scanner_sha256": "130842ba0d7564917a402c6237797e41d98d57b0cf4012f6c29d320111efb1ae",
+  "stack_scanner_sha256": "db56956e12108b28a8a1992c3f37eee75dc4d05b0e7d96795a126e319ea59779"
+}

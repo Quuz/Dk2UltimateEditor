@@ -1,0 +1,35 @@
+{
+  "phase": 52,
+  "date": "2026-10-27",
+  "native_emulations": 90,
+  "native_case_kinds": {
+    "spell": 36,
+    "converter": 12,
+    "init": 6,
+    "ap_write": 12,
+    "ap_read": 12,
+    "noop": 6,
+    "variable_init": 2,
+    "ap_factory": 4
+  },
+  "primary_function_ranges_matching_pe": 26,
+  "native_rtti_ranges_matching_pe": 6,
+  "native_label_strings": 18,
+  "byte_identical_initializer_pairs": 1,
+  "converter_pairs_equivalent_except_one_call": 1,
+  "byte_identical_strncpy_pairs": 1,
+  "api_boundary_cases": 1158,
+  "whole_creature_spell_catalogue_roundtrips": 82,
+  "creature_spell_records": 3535,
+  "exact_in_memory_container_patches": 7070,
+  "original_executables_unchanged": 4,
+  "format_package_components": 63,
+  "research_writes_to_game_data": 0,
+  "modified_gameplay_runs": 0,
+  "limitations": [
+    "90nativecases:36loaders,12converters,6initializers,12APwriters,12APreaders,6no-opcallbacks,2variabletableinitializers,4oldAPfactories. Wholemodelcomparisons applyonlywiththeexplicitfixturesandboundaries.",
+    "Fullspellresourceprovider branchesnotrun. APbase-stateI/O/postloadnotrun. AP08 effect,CreatureSpellsalternativereplacementandotherunknowncataloguepurposesremainopen.",
+    "Initial discovery4EC430wasonlyRET;actualspellloader4EC440 isused. OneinitialAPwriterI/Ofixturehadwrongstackoffsetsandtimedout;excludedfrommanifest. Correctedv2casesareseparatelysavedandvalidated.",
+    "Read-onlyresearchoriginals,noGUIorlivegameplay.Registryandparallel editoruntouched. Nochangeofwholefilehashbaselinesdueto independentAutoSaveactivity."
+  ]
+}

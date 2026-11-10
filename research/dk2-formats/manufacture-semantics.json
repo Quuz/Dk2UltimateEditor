@@ -1,0 +1,599 @@
+{
+  "executables": {
+    "Dungeon Keeper 2/DKII-DX.exe": "d7a8b854e4e4f02709eba271bead6fe2307dd6e332b5a96e70857e5b0e19fb8a",
+    "Dungeon Keeper 2/Data/editor/DK2 Editor pro.exe": "989c45df779bccfc9a9e509b2ad0224a9bd269629f74792adc0320fa4b99fb09"
+  },
+  "scope": "Selected static and isolated P-code emulation results for this exact DKII-DX.exe; no complete game/workshop simulation.",
+  "manufacture_fields": [
+    {
+      "family": "Doors",
+      "record_bytes": 616,
+      "kind": 0,
+      "id_offset": 580,
+      "crate_object_id_offset": 582,
+      "storage_path": {
+        "raw_offset": "0x234",
+        "raw_bytes": 2,
+        "baseline_field": "ManufToBuild",
+        "intermediate_offset": "0x2a8",
+        "runtime_offset": "0x95",
+        "runtime_bytes": 2,
+        "transform": "copy",
+        "runtime_expression": "*(undefined2 *)(param_2 + 0x2a8)",
+        "converter_evidence": [
+          {
+            "line": 145,
+            "assignment": "uVar2 = *(undefined2 *)(param_2 + 0x234);"
+          },
+          {
+            "line": 149,
+            "assignment": "*(undefined2 *)(param_1 + 0xaa) = uVar2;"
+          }
+        ],
+        "runtime_evidence": {
+          "line": 67,
+          "assignment": "*(undefined2 *)(param_1 + 0x95) = *(undefined2 *)(param_2 + 0x2a8);"
+        }
+      },
+      "interpretation": "Unscaled unsigned16 manufacture points copied into queue item+0, not a32-bit requirement."
+    },
+    {
+      "family": "Traps",
+      "record_bytes": 579,
+      "kind": 1,
+      "id_offset": 524,
+      "crate_object_id_offset": 526,
+      "storage_path": {
+        "raw_offset": "0x1fa",
+        "raw_bytes": 2,
+        "baseline_field": "ManufToBuild",
+        "intermediate_offset": "0x2a2",
+        "runtime_offset": "0x94",
+        "runtime_bytes": 2,
+        "transform": "copy",
+        "runtime_expression": "*(undefined2 *)(param_2 + 0x2a2)",
+        "converter_evidence": [
+          {
+            "line": 125,
+            "assignment": "uVar2 = *(undefined2 *)(param_2 + 0x1fa);"
+          },
+          {
+            "line": 129,
+            "assignment": "*(undefined2 *)((int)param_1 + 0x2a2) = uVar2;"
+          }
+        ],
+        "runtime_evidence": {
+          "line": 75,
+          "assignment": "*(undefined2 *)(param_1 + 0x94) = *(undefined2 *)(param_2 + 0x2a2);"
+        }
+      },
+      "interpretation": "Unscaled unsigned16 manufacture points copied into queue item+0, not a32-bit requirement."
+    }
+  ],
+  "queue": {
+    "runtime_only": true,
+    "bytes": 2056,
+    "capacity": 128,
+    "item_bytes": 16,
+    "fields": [
+      {
+        "offset": 0,
+        "bytes": 2,
+        "name": "manufacture_required",
+        "read": "unsigned16 in completion/percent helpers"
+      },
+      {
+        "offset": 2,
+        "bytes": 1,
+        "name": "kind",
+        "values": {
+          "0": "Doors",
+          "1": "Traps"
+        }
+      },
+      {
+        "offset": 3,
+        "bytes": 1,
+        "name": "catalogue_id"
+      },
+      {
+        "offset": 4,
+        "bytes": 12,
+        "name": "position_xyz"
+      }
+    ],
+    "indices": {
+      "opened": 2048,
+      "head": 2049,
+      "next_free": 2050,
+      "count": 2051,
+      "world_pointer": 2052
+    },
+    "add_function": "0x5066e0",
+    "get_function": "0x506930",
+    "pop_function": "0x506970",
+    "add_note": "Rejects count>=128, invalid kind or missing definition. May return1 without insertion when existing matching crates already cover counted blueprints.",
+    "demand_note": "Blueprint count matches the requested catalogue ID. Crate count matches kind and definition ManufCrateObjectId; shared crate IDs can affect coverage.",
+    "add_argument_note": "Decompiler stack parameters in this function are misleading: item+2 gets first stack argument(kind), item+3 gets second(ID). Assembly stores are authoritative.",
+    "evidence": [
+      {
+        "file": "phase15-manufacture-add-task-assembly.txt",
+        "first": "0x5066e9",
+        "last": "0x506704",
+        "instructions": [
+          "005066e9: CMP byte ptr [EBP + 0x803],0x80 ",
+          "005066f0: JNC 0x00506917 ",
+          "005066f6: MOV EAX,dword ptr [ESP + 0x1c] ",
+          "005066fa: SUB EAX,0x0 ",
+          "005066fd: JZ 0x005067df ",
+          "00506703: DEC EAX ",
+          "00506704: JNZ 0x00506917 "
+        ]
+      },
+      {
+        "file": "phase15-manufacture-add-task-assembly.txt",
+        "first": "0x506725",
+        "last": "0x506732",
+        "instructions": [
+          "00506725: MOV CX,word ptr [EAX + 0x94] ",
+          "0050672c: MOV DL,byte ptr [EAX + 0xbc] ",
+          "00506732: MOV word ptr [ESP + 0x14],CX "
+        ]
+      },
+      {
+        "file": "phase15-manufacture-add-task-assembly.txt",
+        "first": "0x5067df",
+        "last": "0x506807",
+        "instructions": [
+          "005067df: MOV ECX,dword ptr [EBP + 0x804] ",
+          "005067e5: MOV EAX,dword ptr [ESP + 0x20] ",
+          "005067e9: PUSH EAX ",
+          "005067ea: MOV EDX,dword ptr [ECX] ",
+          "005067ec: CALL dword ptr [EDX + 0x138] ",
+          "005067f2: TEST EAX,EAX ",
+          "005067f4: JZ 0x00506917 ",
+          "005067fa: MOV CX,word ptr [EAX + 0x95] ",
+          "00506801: MOV DL,byte ptr [EAX + 0xb1] ",
+          "00506807: MOV word ptr [ESP + 0x14],CX "
+        ]
+      },
+      {
+        "file": "phase15-manufacture-add-task-assembly.txt",
+        "first": "0x5068a5",
+        "last": "0x506902",
+        "instructions": [
+          "005068a5: MOV CL,byte ptr [ESP + 0x1c] ",
+          "005068a9: XOR EAX,EAX ",
+          "005068ab: MOV AL,byte ptr [EBP + 0x802] ",
+          "005068b1: MOV DL,byte ptr [ESP + 0x20] ",
+          "005068b5: SHL EAX,0x4 ",
+          "005068b8: ADD EAX,EBP ",
+          "005068ba: MOV byte ptr [EAX + 0x2],CL ",
+          "005068bd: MOV CX,word ptr [ESP + 0x14] ",
+          "005068c2: MOV byte ptr [EAX + 0x3],DL ",
+          "005068c5: MOV EDX,dword ptr [ESP + 0x24] ",
+          "005068c9: MOV word ptr [EAX],CX ",
+          "005068cc: MOV ECX,dword ptr [ESP + 0x28] ",
+          "005068d0: ADD EAX,0x4 ",
+          "005068d3: MOV dword ptr [EAX],EDX ",
+          "005068d5: MOV EDX,dword ptr [ESP + 0x2c] ",
+          "005068d9: MOV dword ptr [EAX + 0x4],ECX ",
+          "005068dc: MOV dword ptr [EAX + 0x8],EDX ",
+          "005068df: MOV CL,byte ptr [EBP + 0x802] ",
+          "005068e5: INC CL ",
+          "005068e7: MOV AL,CL ",
+          "005068e9: MOV byte ptr [EBP + 0x802],CL ",
+          "005068ef: CMP AL,0x80 ",
+          "005068f1: JC 0x005068fa ",
+          "005068f3: MOV byte ptr [EBP + 0x802],0x0 ",
+          "005068fa: MOV AL,byte ptr [EBP + 0x803] ",
+          "00506900: INC AL ",
+          "00506902: MOV byte ptr [EBP + 0x803],AL "
+        ]
+      },
+      {
+        "file": "phase15-manufacture-get-assembly.txt",
+        "first": "0x50693a",
+        "last": "0x506961",
+        "instructions": [
+          "0050693a: XOR EAX,EAX ",
+          "0050693c: MOV AL,byte ptr [ECX + 0x801] ",
+          "00506942: SHL EAX,0x4 ",
+          "00506945: ADD EAX,ECX ",
+          "00506947: MOV ECX,dword ptr [ESP + 0x4] ",
+          "0050694b: MOV EDX,dword ptr [EAX] ",
+          "0050694d: MOV dword ptr [ECX],EDX ",
+          "0050694f: MOV EDX,dword ptr [EAX + 0x4] ",
+          "00506952: MOV dword ptr [ECX + 0x4],EDX ",
+          "00506955: MOV EDX,dword ptr [EAX + 0x8] ",
+          "00506958: MOV dword ptr [ECX + 0x8],EDX ",
+          "0050695b: MOV EAX,dword ptr [EAX + 0xc] ",
+          "0050695e: MOV dword ptr [ECX + 0xc],EAX ",
+          "00506961: MOV EAX,0x1 "
+        ]
+      },
+      {
+        "file": "phase15-manufacture-pop-assembly.txt",
+        "first": "0x50697a",
+        "last": "0x5069c4",
+        "instructions": [
+          "0050697a: XOR EAX,EAX ",
+          "0050697c: MOV EDX,dword ptr [ESP + 0x4] ",
+          "00506980: MOV AL,byte ptr [ECX + 0x801] ",
+          "00506986: PUSH ESI ",
+          "00506987: SHL EAX,0x4 ",
+          "0050698a: ADD EAX,ECX ",
+          "0050698c: MOV ESI,dword ptr [EAX] ",
+          "0050698e: MOV dword ptr [EDX],ESI ",
+          "00506990: MOV ESI,dword ptr [EAX + 0x4] ",
+          "00506993: MOV dword ptr [EDX + 0x4],ESI ",
+          "00506996: MOV ESI,dword ptr [EAX + 0x8] ",
+          "00506999: MOV dword ptr [EDX + 0x8],ESI ",
+          "0050699c: MOV EAX,dword ptr [EAX + 0xc] ",
+          "0050699f: MOV dword ptr [EDX + 0xc],EAX ",
+          "005069a2: MOV AL,byte ptr [ECX + 0x803] ",
+          "005069a8: MOV DL,byte ptr [ECX + 0x801] ",
+          "005069ae: DEC AL ",
+          "005069b0: INC DL ",
+          "005069b2: MOV byte ptr [ECX + 0x803],AL ",
+          "005069b8: MOV AL,DL ",
+          "005069ba: MOV byte ptr [ECX + 0x801],DL ",
+          "005069c0: CMP AL,0x80 ",
+          "005069c2: JC 0x005069cb ",
+          "005069c4: MOV byte ptr [ECX + 0x801],0x0 "
+        ]
+      }
+    ]
+  },
+  "queue_threshold_discrepancy": {
+    "completion_function": "0x506b50",
+    "percent_function": "0x506b70",
+    "completion": "count!=0 and u16(progress)>=u16(queue+0)",
+    "percent": "count==0 ?0: floor((u16(progress)*100)/u16(queue+0)); no100-percent clamp",
+    "threshold_address": "queue+0, physical item0; not queue+16*head",
+    "task_read_address": "queue+16*head",
+    "caller_queue_address": "player+0x219 in both progress update and percent wrapper",
+    "zero_cost": "When count!=0 and physical slot0 requirement==0, percent helper reaches IDIV0 at0x506B93. Completion helper returns true. This does not establish a whole-game crash for every zero-cost item.",
+    "reproduction": {
+      "first_slot_required": 3000,
+      "head_index": 1,
+      "current_head_required": 12000,
+      "progress": 4000,
+      "native_completed": true,
+      "native_percent": 133
+    },
+    "evidence": [
+      {
+        "file": "phase15-manufacture-completed-assembly.txt",
+        "first": "0x506b50",
+        "last": "0x506b6a",
+        "instructions": [
+          "00506b50: MOV AL,byte ptr [ECX + 0x803] ",
+          "00506b56: TEST AL,AL ",
+          "00506b58: JZ 0x00506b68 ",
+          "00506b5a: MOV AX,word ptr [ESP + 0x4] ",
+          "00506b5f: CMP AX,word ptr [ECX] ",
+          "00506b62: SBB EAX,EAX ",
+          "00506b64: INC EAX ",
+          "00506b65: RET 0x4 ",
+          "00506b68: XOR EAX,EAX ",
+          "00506b6a: RET 0x4 "
+        ]
+      },
+      {
+        "file": "phase15-manufacture-percent-core-assembly.txt",
+        "first": "0x506b70",
+        "last": "0x506b9b",
+        "instructions": [
+          "00506b70: MOV AL,byte ptr [ECX + 0x803] ",
+          "00506b76: TEST AL,AL ",
+          "00506b78: JZ 0x00506b99 ",
+          "00506b7a: MOV EAX,dword ptr [ESP + 0x4] ",
+          "00506b7e: PUSH ESI ",
+          "00506b7f: AND EAX,0xffff ",
+          "00506b84: XOR ESI,ESI ",
+          "00506b86: MOV SI,word ptr [ECX] ",
+          "00506b89: LEA EAX,[EAX + EAX*0x4] ",
+          "00506b8c: LEA EAX,[EAX + EAX*0x4] ",
+          "00506b8f: SHL EAX,0x2 ",
+          "00506b92: CDQ ",
+          "00506b93: IDIV ESI ",
+          "00506b95: POP ESI ",
+          "00506b96: RET 0x4 ",
+          "00506b99: XOR EAX,EAX ",
+          "00506b9b: RET 0x4 "
+        ]
+      },
+      {
+        "file": "phase15-manufacture-player-tick-assembly.txt",
+        "first": "0x4c3282",
+        "last": "0x4c329e",
+        "instructions": [
+          "004c3282: MOV AX,word ptr [ESP + 0x28] ",
+          "004c3287: LEA EDI,[ESI + 0x219] ",
+          "004c328d: ADD word ptr [ESI + 0x217],AX ",
+          "004c3294: MOV AX,word ptr [ESI + 0x217] ",
+          "004c329b: PUSH EAX ",
+          "004c329c: MOV ECX,EDI ",
+          "004c329e: CALL 0x00506b50 "
+        ]
+      },
+      {
+        "file": "phase15-manufacture-percent-wrapper-assembly.txt",
+        "first": "0x4c31b0",
+        "last": "0x4c31c3",
+        "instructions": [
+          "004c31b0: MOV AX,word ptr [ECX + 0x217] ",
+          "004c31b7: ADD ECX,0x219 ",
+          "004c31bd: PUSH EAX ",
+          "004c31be: CALL 0x00506b70 ",
+          "004c31c3: RET "
+        ]
+      }
+    ]
+  },
+  "progress": {
+    "player_runtime_offset": 535,
+    "bytes": 2,
+    "read": "unsigned16 in threshold helper",
+    "update": "low16(old_progress+contribution)",
+    "apply_function": "0x4c3200",
+    "completion_reset": "Only after completion predicate and additional placement/capacity gate0x4C3B50 pass: progress=0, pop item, attempt spawn.",
+    "excess": "Successful reset discards excess progress; there is no subtraction of requirement in this branch.",
+    "failed_placement_gate": "Progress remains accumulated; a later addition can wrap before rechecking completion.",
+    "caveat": "Local assignments only. Spawn results, worker scheduling, changes by other callers and queue maintenance are not simulated.",
+    "evidence": [
+      {
+        "file": "phase15-manufacture-player-tick-assembly.txt",
+        "first": "0x4c3282",
+        "last": "0x4c32a5",
+        "instructions": [
+          "004c3282: MOV AX,word ptr [ESP + 0x28] ",
+          "004c3287: LEA EDI,[ESI + 0x219] ",
+          "004c328d: ADD word ptr [ESI + 0x217],AX ",
+          "004c3294: MOV AX,word ptr [ESI + 0x217] ",
+          "004c329b: PUSH EAX ",
+          "004c329c: MOV ECX,EDI ",
+          "004c329e: CALL 0x00506b50 ",
+          "004c32a3: TEST EAX,EAX ",
+          "004c32a5: JZ 0x004c3331 "
+        ]
+      },
+      {
+        "file": "phase15-manufacture-player-tick-assembly.txt",
+        "first": "0x4c32fd",
+        "last": "0x4c3323",
+        "instructions": [
+          "004c32fd: CALL 0x004c3b50 ",
+          "004c3302: TEST EAX,EAX ",
+          "004c3304: JZ 0x004c3331 ",
+          "004c3306: LEA ECX,[ESP + 0x14] ",
+          "004c330a: MOV word ptr [ESI + 0x217],BX ",
+          "004c3311: PUSH ECX ",
+          "004c3312: MOV ECX,EDI ",
+          "004c3314: CALL 0x00506970 ",
+          "004c3319: MOV ECX,dword ptr [ESP + 0x28] ",
+          "004c331d: LEA EDX,[ESP + 0x14] ",
+          "004c3321: PUSH EBP ",
+          "004c3322: PUSH EDX ",
+          "004c3323: CALL 0x004f5240 "
+        ]
+      }
+    ]
+  },
+  "creature_rate": {
+    "family": "Creatures",
+    "raw_offset": 3850,
+    "bytes": 2,
+    "intermediate_offset": 4858,
+    "runtime_offset": 1725,
+    "load_function": "0x492320",
+    "load": "raw==0?0:max(1,floor(u16(raw)/positive_TPS))",
+    "contribution_function": "0x47b190",
+    "level_instance_offset": 1027,
+    "level_one": "Uses unsigned runtime word directly; skips level multiplier and65534 clamp.",
+    "other_levels": "clamp(truncate_toward_zero(signed16(level_multiplier)*unsigned16(runtime_rate)/100),0,65534)",
+    "multiplier_address": "global_variables_runtime+0x213+2*unsigned_level; table value must be supplied explicitly",
+    "setter_override": "Creature stat setter0x494A70 case0x12 directly writes low16(argument) into runtime+0x6BD without TPS division; do not apply raw load scaling twice.",
+    "evidence": [
+      {
+        "file": "game-creature-convert.txt",
+        "line": 339,
+        "excerpt": "uVar4 = *(undefined2 *)(param_2 + 0xf0a);"
+      },
+      {
+        "file": "game-creature-type-assembly.txt",
+        "first": "0x4938a4",
+        "last": "0x4938cf",
+        "instructions": [
+          "004938a4: MOV EAX,dword ptr [EBP + 0x128] ",
+          "004938aa: TEST EAX,EAX ",
+          "004938ac: JZ 0x004938d6 ",
+          "004938ae: XOR EAX,EAX ",
+          "004938b0: MOV AX,word ptr [EBP + 0x12fa] ",
+          "004938b7: CDQ ",
+          "004938b8: IDIV EDI ",
+          "004938ba: TEST AX,AX ",
+          "004938bd: MOV word ptr [EBX + 0x6bd],AX ",
+          "004938c4: JNZ 0x004938d6 ",
+          "004938c6: CMP word ptr [EBP + 0x12fa],AX ",
+          "004938cd: JZ 0x004938d6 ",
+          "004938cf: MOV word ptr [EBX + 0x6bd],CX "
+        ]
+      },
+      {
+        "file": "phase15-manufacture-contribution-assembly.txt",
+        "first": "0x47b195",
+        "last": "0x47b214",
+        "instructions": [
+          "0047b195: MOV CL,byte ptr [ESI + 0x403] ",
+          "0047b19b: MOV EAX,dword ptr [ESI + 0x370] ",
+          "0047b1a1: CMP CL,0x1 ",
+          "0047b1a4: MOV byte ptr [ESP + 0x4],CL ",
+          "0047b1a8: JNZ 0x0047b1b3 ",
+          "0047b1aa: MOV AX,word ptr [EAX + 0x6bd] ",
+          "0047b1b1: JMP 0x0047b20a ",
+          "0047b1b3: MOV ECX,dword ptr [ESP + 0x4] ",
+          "0047b1b7: MOV EDX,dword ptr [0x006e4154] ",
+          "0047b1bd: AND ECX,0xff ",
+          "0047b1c3: MOVSX ECX,word ptr [EDX + ECX*0x2 + 0x213] ",
+          "0047b1cb: XOR EDX,EDX ",
+          "0047b1cd: MOV DX,word ptr [EAX + 0x6bd] ",
+          "0047b1d4: MOV EAX,0x51eb851f ",
+          "0047b1d9: IMUL ECX,EDX ",
+          "0047b1dc: IMUL ECX ",
+          "0047b1de: SAR EDX,0x5 ",
+          "0047b1e1: MOV EAX,EDX ",
+          "0047b1e3: SHR EAX,0x1f ",
+          "0047b1e6: ADD EDX,EAX ",
+          "0047b1e8: XOR EAX,EAX ",
+          "0047b1ea: TEST EDX,EDX ",
+          "0047b1ec: SETLE AL ",
+          "0047b1ef: DEC EAX ",
+          "0047b1f0: AND EAX,EDX ",
+          "0047b1f2: CMP EAX,0xfffe ",
+          "0047b1f7: JGE 0x0047b205 ",
+          "0047b1f9: XOR EAX,EAX ",
+          "0047b1fb: TEST EDX,EDX ",
+          "0047b1fd: SETLE AL ",
+          "0047b200: DEC EAX ",
+          "0047b201: AND EAX,EDX ",
+          "0047b203: JMP 0x0047b20a ",
+          "0047b205: MOV EAX,0xfffe ",
+          "0047b20a: TEST AX,AX ",
+          "0047b20d: JZ 0x0047b221 ",
+          "0047b20f: MOV ECX,dword ptr [ESI + 0x2a] ",
+          "0047b212: PUSH ESI ",
+          "0047b213: PUSH EAX ",
+          "0047b214: CALL 0x004c3200 "
+        ]
+      },
+      {
+        "file": "game-creature-stat-set.txt",
+        "line": 109,
+        "excerpt": "*(undefined2 *)(param_1 + 0x6bd) = (undefined2)param_3;"
+      }
+    ]
+  },
+  "unresolved_door_236": {
+    "raw_offset": 566,
+    "runtime_offset": 153,
+    "status": "meaning remains unresolved",
+    "search_file": "phase15-door-word-candidates.json",
+    "rejection": "Mapped exact-displacement word reads at0x49BA45/0x49BA53 belong to CObject stream serialization of three signed coordinate words0x95/0x97/0x99, not MyDoorDataObj.",
+    "evidence": [
+      {
+        "file": "phase15-rejected-object-word-reader.txt",
+        "line": 22,
+        "excerpt": "iStack_c = (int)*(short *)(param_1 + 0x95);"
+      },
+      {
+        "file": "phase15-rejected-object-word-reader.txt",
+        "line": 24,
+        "excerpt": "iStack_4 = (int)*(short *)(param_1 + 0x99);"
+      }
+    ],
+    "limitation": "Mapped exact-displacement searches do not rule out aliases, computed pointers, other executables or unknown functions."
+  },
+  "native_emulations": [
+    {
+      "file": "phase15-emulation-empty-completed.json",
+      "sha256": "74fdb13aeacef0ac8cf6598d0e06b51920a378e9e74d94b5dd4a5b04fb28ed17",
+      "name": "empty-completed",
+      "expected_eax": 0,
+      "expected_fault": false
+    },
+    {
+      "file": "phase15-emulation-empty-percent.json",
+      "sha256": "bed8cf3a021c5989de859c836fb79a4b80064f2feaef050015337f926da8d0a3",
+      "name": "empty-percent",
+      "expected_eax": 0,
+      "expected_fault": false
+    },
+    {
+      "file": "phase15-emulation-head1-completed.json",
+      "sha256": "324bf6e9f9ac7e8559b9123dda0b6793affea1b832d53bec201b0086e298b356",
+      "name": "head1-completed",
+      "expected_eax": 1,
+      "expected_fault": false
+    },
+    {
+      "file": "phase15-emulation-head1-percent.json",
+      "sha256": "fb90e0039000968e788d245b0bf2fddd6ca258a2755b593fdd243b1c081fbd09",
+      "name": "head1-percent",
+      "expected_eax": 133,
+      "expected_fault": false
+    },
+    {
+      "file": "phase15-emulation-over-100-percent-completed.json",
+      "sha256": "38a4a4d08acce09e53bd8c46741613307f8bf5a4f198d2dea15b7370280f8bf1",
+      "name": "over-100-percent-completed",
+      "expected_eax": 1,
+      "expected_fault": false
+    },
+    {
+      "file": "phase15-emulation-over-100-percent-percent.json",
+      "sha256": "dc5e1d22700703cddafae3ffd75eaade4e4a0793c57e78bdb69806a1c79ef34b",
+      "name": "over-100-percent-percent",
+      "expected_eax": 6553500,
+      "expected_fault": false
+    },
+    {
+      "file": "phase15-emulation-reverse-head1-completed.json",
+      "sha256": "cfc8e249bd9ab5af6c103dca3427a8350e3a015c2b484a46af7fe0f6a69ae6d5",
+      "name": "reverse-head1-completed",
+      "expected_eax": 0,
+      "expected_fault": false
+    },
+    {
+      "file": "phase15-emulation-reverse-head1-percent.json",
+      "sha256": "d1b7ba6638c37293eca10889d986d0a9fd6327138e556b62f64c3d1a81220694",
+      "name": "reverse-head1-percent",
+      "expected_eax": 33,
+      "expected_fault": false
+    },
+    {
+      "file": "phase15-emulation-unsigned-at-max-completed.json",
+      "sha256": "7e88aafaf906c8ce59f06e366795b1f62153ad81f6c9975f332e9c01450d9981",
+      "name": "unsigned-at-max-completed",
+      "expected_eax": 1,
+      "expected_fault": false
+    },
+    {
+      "file": "phase15-emulation-unsigned-at-max-percent.json",
+      "sha256": "cfa7e269db78f553a88b722482780230d56a4b637c6afd30d12ccb5f1b6a5af0",
+      "name": "unsigned-at-max-percent",
+      "expected_eax": 100,
+      "expected_fault": false
+    },
+    {
+      "file": "phase15-emulation-unsigned-below-max-completed.json",
+      "sha256": "4b2f42251f556ca4b993617fd70d88d2f69e068b4f1fd0cababc31adbbc030a2",
+      "name": "unsigned-below-max-completed",
+      "expected_eax": 0,
+      "expected_fault": false
+    },
+    {
+      "file": "phase15-emulation-unsigned-below-max-percent.json",
+      "sha256": "41992d36ed1508152df02d0231f4328992f893d5a6ebfb94db33b267b3cfb1ba",
+      "name": "unsigned-below-max-percent",
+      "expected_eax": 99,
+      "expected_fault": false
+    },
+    {
+      "file": "phase15-emulation-zero-cost-active-completed.json",
+      "sha256": "c11a8f2eabd85066fd2f7adb0d27a7cf653f76543acc16db42c5d97b377ca590",
+      "name": "zero-cost-active-completed",
+      "expected_eax": 1,
+      "expected_fault": false
+    },
+    {
+      "file": "phase15-emulation-zero-cost-active-percent.json",
+      "sha256": "fa03dc02a8d49763a6a00db85d981879504e3d0206722840145cfe2b36ea80ae",
+      "name": "zero-cost-active-percent",
+      "expected_eax": null,
+      "expected_fault": true
+    }
+  ],
+  "emulation_note": "Isolated original Ghidra P-code with initialized queue/stack memory.13 normal returns and1 expected IDIV0 fault; does not execute the game process or write original files."
+}

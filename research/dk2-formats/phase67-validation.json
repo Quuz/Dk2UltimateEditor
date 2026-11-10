@@ -1,0 +1,31 @@
+{
+  "phase": 67,
+  "date": "2026-10-27",
+  "native_emulations": 58,
+  "native_cases": {
+    "init": 6,
+    "converter": 12,
+    "loader": 16,
+    "chain": 24
+  },
+  "captured_sound_lookups": 30,
+  "complete_executed_native_functions": 8,
+  "complete_primary_pe_functions": 8,
+  "primary_data_ranges": 2,
+  "source_files_roundtripped": 82,
+  "door_records": 656,
+  "new_exact_in_memory_patches": 656,
+  "api_boundary_checks": 17,
+  "source_executables_unchanged": 4,
+  "package_components": 67,
+  "research_writes_to_game_data": 0,
+  "modified_gameplay_runs": 0,
+  "word236_gameplay_still_open": true,
+  "limitations": [
+    "Eight complete original functions execute: two initializers, converters, loaders and bounded-string helpers. Complete bodies are re-read after emulation and matched to source PE.",
+    "Visual resource provider is NULL. Full functions execute, but visual success/failure branches, renderer and resource allocation are outside the tested contract.",
+    "No full filesystem parser, world insertion or interactive GUI/gameplay session in this stage.",
+    "Traps204 and Door236 gameplay meanings remain open. Similar offsets in other native types do not prove bad editor serialization.",
+    "Existing2624 phase66 Door patches are not rerun as new work; phase67 adds only ResearchTime224 WORD container patches."
+  ]
+}

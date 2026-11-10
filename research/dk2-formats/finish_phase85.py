@@ -1,0 +1,31 @@
+"""Index verified Creature-definition results while retaining the complete goal."""
+from pathlib import Path
+import json,hashlib
+ROOT=Path(__file__).resolve().parent
+def load(n):return json.loads((ROOT/n).read_text(encoding='utf8'))
+def insert(n,text):
+    p=ROOT/n;s=p.read_text(encoding='utf8');head,rest=s.split('\n',1)
+    if text not in s:p.write_text(head+'\n\n'+text+'\n'+rest,encoding='utf8')
+def main():
+    v=load('phase85-validation.json');assert v['native_emulation_invocations']==171 and v['new_exact_container_patches']==5904 and not v['goal_achieved']
+    insert('INTEGRATION_RU.md','Актуальный этап 85: `CREATURE_DEFINITION_RU.md` / `catalogue-loading.json.phase85_complete_definition`. Полная native-цепочка Creatures: конструктор2199 байт, intermediate6457, raw initializer/converter и полный loader. 171 эмуляция/19 полных образов,54 raw-цепочки;8XYZ-троек,условия presence,границы getter,прямой DWORD Jump в отличие от4 TPS-длительностей,WorldA3C7 checksum gate. Искусственный mid-index7 пересекается с чужим presence308 и меняет WORD6CD;это не восьмая дополнительная XYZ-тройка и не доказательство ошибки редактора.249 seed-зависимых байт конструктора не объявляются padding.5904 exact container patches/82файла/3734записи;17PE+1World-vtable/4EXE сверены. Priority/Jump gameplay и остальные существенные неизвестные открыты;полный образ не означает полной расшифровки.')
+    p=ROOT/'INTEGRATION_RU.md';p.write_text(p.read_text(encoding='utf8').replace('Актуальный этап 84:','Предыдущий этап 84:',1),encoding='utf8')
+    insert('CATALOGUE_LOADING_RU.md','Продолжение этапа85 — `CREATURE_DEFINITION_RU.md`: полностью выполнены ctor491DC0,raw568820/568E30,loader492320 и getter494650. 171повтор/19образов уточняют8XYZ,семь дополнительных presence-флагов,Jump безTPS,249seed-зависимых байт иWorldA3C7 checksum. Искусственныйфлагmid308 имеет независимыйWORD6CD-потребитель;не интерпретировать его как восьмую дополнительную координату. Полная схема встроена в `catalogue-loading.json.phase85_complete_definition`.')
+    insert('CREATURE_SUBRECORDS.md','Продолжение этапа85 — `CREATURE_DEFINITION_RU.md`: проверены runtime8XYZ = одна безусловная тройка rawE94 плюс7условных raw127B+12*i. Private getter принимаетлишний intermediate-index7,но caller ограничен7;mid308 уже управляетWORD6CD другого массива. Данные этой границы и полные2199-байтные образы находятся в `catalogue_loading.phase85_complete_definition` общего пакета.')
+    insert('SOURCES.md','## Этап85: полный Creature definition,координаты и presence\n\n`CREATURE_DEFINITION_RU.md`,`creature-definition-semantics.json`,`phase85-primary-manifest.json`,`phase85-validation.json`;`emulate_creature_definition.py`,`emulate_raw_creature_definition.py`,`memory_readout_ymm.py`,`prepare_creature_definition_primary.py`,`build_creature_definition.py`,`audit_creature_definition.py`,`finish_phase85.py`.171успешная эмуляция/19полных2199-байтных образов,54rawinit/converter/loader-цепочки,1710getters;17wholePE+1World-vtable.5904exact-пересборки координатныхDWORD/82файла/3734записи;4EXEunchanged. НулевойmainGFX,пустыеWorldref-массивы,фиксированныйsound;глобальныйPriority/Jump gameplay неизвестен. Старыйsynthetic self-jump иunsupportedAVX512 исключены. Индексные диагностические зацепки сохранены отдельно;14прочих уникальныхсобытий не объявлены классифицированными.')
+    evidence=['creature-definition-semantics.json','phase85-validation.json','phase85-primary-manifest.json','phase85-creature-definition-emulations.json','phase85-raw-creature-definition-emulations.json','phase85-raw-driver-diagnostic.json','prepare_creature_definition_primary.py','build_creature_definition.py','audit_creature_definition.py','emulate_creature_definition.py','emulate_raw_creature_definition.py','memory_readout_ymm.py']
+    s=dict(phase=85,date='2026-10-28',status='Full native Creature ctor/raw-converter/definition-loader and8XYZ boundary published;significant gameplay unknowns remain',
+      previous_goal_turn_classification='Progress:existing headless project saved and cleanly exited;actualGUI CodeBrowser opened with DKII-DX.exe andMCP reconnected. Phase85 now publishes new full-chain evidence,not a repeat of phase84.',
+      schema='creature-definition-semantics.json',package_location='catalogue_loading.phase85_complete_definition',validation='phase85-validation.json',
+      findings=['171nativeinvocations/19whole2199-byte images;54rawchains,153loaders,171constructors,1710getters.',
+        '8XYZ rows occupy6EC..74B:rawE94 portal-labelled row unconditional;7raw127B rows conditional. Distinct fromPriority6EB/Jump75C.',
+        'mid index7 maps16BF resource and presence308 ofindependentWORD6CD array;actualXYZloader bound7. Whole-image delta includes6CD,notmemorycorruption/editorbug proof.',
+        'Jump32bitsdirect vs4low32product/TPS>>12duration fields;WorldA3C7 controls6457-byte-sum checksum5AF;ctor249seeddependentbytes observed00/A5.',
+        '5904exactpatches across24DWORDfields/82containers/3734records;17wholePE+1vtable,4sourceEXEsunchanged,67packagecomponents.',
+        'Priorharnessself-jump diagnosed,preservedandexcluded;fixed loopbackverifiedbefore54newrawruns. AVX512unsupporteddiagnosticexcluded.'],
+      evidence=[dict(file=n,sha256=hashlib.sha256((ROOT/n).read_bytes()).hexdigest()) for n in evidence],
+      significant_unknowns_remain=True,goal_achieved=False,
+      scope='ExactDX nativeisolatedcompositions;emptyWorld catalogue refs,nullmainGFX,fixedsound,noactualgame/AI/editorGUI/render. GhidraGUIitselfrunning.',
+      next_action='Do not repeat171successfulcases/5904patches. Classify remaining14unique Creature indexed-event leads using exactnativecontexts andrealreceiver/bounds,especially494380/480/4D0/550/5D0/700/720/860/880/A00,48C5E6/48C5EE,4967F0,4C4972. Entity-field hints notautomatic typeproof. PriorityF55/JumpEE0 gameplay remainunknown;alternateunknowns Terrain198/224,Traps204,Objects34C,Doors236,AP04/08,ElementB1/B2,CreatureSpellE8/E9. Do notrediscoverlightningimmunity. Full15familyobjectiveunachieved.')
+    (ROOT/'phase85-search-status.json').write_text(json.dumps(s,ensure_ascii=False,indent=2),encoding='utf8');print('Phase85published;full15-family goal remains active and incomplete.')
+if __name__=='__main__':main()

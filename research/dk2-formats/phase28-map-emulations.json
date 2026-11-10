@@ -1,0 +1,115 @@
+{
+  "cases": [
+    {
+      "file": "phase28-emulation-map-writer-0.json",
+      "sha256": "858a90c634c88b5e3ac3806518d2810c9a8acb07416c0fafa706cb846e957e46",
+      "case": "writer-0"
+    },
+    {
+      "file": "phase28-emulation-map-writer-1.json",
+      "sha256": "4f3eb8691cce5b991bd810ef85fbeddc828454267e780872ca1c9724b81e1544",
+      "case": "writer-1"
+    },
+    {
+      "file": "phase28-emulation-map-writer-2.json",
+      "sha256": "2ff5733d9aba87d7ffabc985c09aeb020b166251dde4f01f250af6c29d131d19",
+      "case": "writer-2"
+    },
+    {
+      "file": "phase28-emulation-map-writer-3.json",
+      "sha256": "fffab1cea4176eb67a45cded72ad787b1077cb48d3e67f511090424636cc28d0",
+      "case": "writer-3"
+    },
+    {
+      "file": "phase28-emulation-map-writer-4.json",
+      "sha256": "39e9d4984d778147bdf5506d99cfd84bb2011bf30222484d13dc65efa8487923",
+      "case": "writer-4"
+    },
+    {
+      "file": "phase28-emulation-map-writer-5.json",
+      "sha256": "33f1e2a25383e1cb120db0d4bba15da766b883acb2d04fa638ad3b83396f8baa",
+      "case": "writer-5"
+    },
+    {
+      "file": "phase28-emulation-map-writer-6.json",
+      "sha256": "838020c88b437472959bbbf0fa35888796ddccbbe493512aa13131049a1aeede",
+      "case": "writer-6"
+    },
+    {
+      "file": "phase28-emulation-map-writer-7.json",
+      "sha256": "8abf3a40e69d963979125850d5755705afde33b1c2afd4a86e3e3c156f640aeb",
+      "case": "writer-7"
+    },
+    {
+      "file": "phase28-emulation-map-parser-0.json",
+      "sha256": "bf405f251334a0a06850e629902d6593cd2803f5ba450c8737ee4d1a46a76fb3",
+      "case": "parser-0"
+    },
+    {
+      "file": "phase28-emulation-map-parser-1.json",
+      "sha256": "7611ebf21b070a537a8a8e81c0e77eba167274032bf2fbaa7df298aa6ddfb451",
+      "case": "parser-1"
+    },
+    {
+      "file": "phase28-emulation-map-parser-2.json",
+      "sha256": "aff9c43fa5a2fb96240293c4ac615d743a500657ad8add0adf53d5cc05b1c442",
+      "case": "parser-2"
+    },
+    {
+      "file": "phase28-emulation-map-parser-3.json",
+      "sha256": "332836dcbdd9e2315f9e2a8c08d58547c30c3a9e81f638731700bfebc181d40f",
+      "case": "parser-3"
+    },
+    {
+      "file": "phase28-emulation-map-converter-0.json",
+      "sha256": "8f70d54f4214fac404ade96e773801fad45f7660adfede032d6027a69a5932c6",
+      "case": "converter-0"
+    },
+    {
+      "file": "phase28-emulation-map-converter-1.json",
+      "sha256": "056c8863edd3460b8477fbb242439912a75a0976cb9d005875f1cc3adffdc602",
+      "case": "converter-1"
+    },
+    {
+      "file": "phase28-emulation-map-converter-2.json",
+      "sha256": "29238ba4c309e7358612a833280b3d9dbcb48367217e64a39d9404296519e827",
+      "case": "converter-2"
+    },
+    {
+      "file": "phase28-emulation-map-converter-3.json",
+      "sha256": "a09e8f3023c7db0066beb771fe01cee3abc450d6d044d35beace0c28289eee8a",
+      "case": "converter-3"
+    },
+    {
+      "file": "phase28-emulation-map-runtime-0.json",
+      "sha256": "bda369f59f9d65a789d6b5700a9123750e8ffe9ffd7c85c9222cbbe5b91dd7a3",
+      "case": "runtime-0"
+    },
+    {
+      "file": "phase28-emulation-map-runtime-1.json",
+      "sha256": "ff07a7ba2d94cd768b090e5811ed7bbffea6fd9433416b2c6f7d54aea042fec0",
+      "case": "runtime-1"
+    },
+    {
+      "file": "phase28-emulation-map-runtime-2.json",
+      "sha256": "af8f2b0a55bd9cc49a0e5e00d6e9d4a383ca3518bb77bd89ab9e3e8913743314",
+      "case": "runtime-2"
+    },
+    {
+      "file": "phase28-emulation-map-runtime-3.json",
+      "sha256": "05b945134fb813ff102c5a3d3aad8b00e0a0f7bc908fe8d4540b200b77bd024f",
+      "case": "runtime-3"
+    },
+    {
+      "file": "phase28-emulation-map-runtime-4.json",
+      "sha256": "3eb0978684f0d920de5824bff62850a16b4af06c0d8e94c0939a2d8a3820bf16",
+      "case": "runtime-4"
+    },
+    {
+      "file": "phase28-emulation-map-runtime-5.json",
+      "sha256": "5a8b360f41e808c8317c8a0572c166d3074e91730bfebb98c8f370510f9ee380",
+      "case": "runtime-5"
+    }
+  ],
+  "scope": "Native map writer, parser and selected cell/flag paths in emulator memory.\n\nFull editor writer uses a read-only file-capture vcall; original row/cell loops\nand unchecked neighbor accesses execute with explicit exterior guard bytes.\nFull game parser uses a controlled file-read stub and callback capture instead\nof constructing the world. Runtime flag fragment skips terrain/room setup.\n"
+}

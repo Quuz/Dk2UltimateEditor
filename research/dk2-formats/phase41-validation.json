@@ -1,0 +1,37 @@
+{
+  "phase": 41,
+  "date": "2026-10-26",
+  "native_emulations": 61,
+  "native_case_kinds": {
+    "writer": 19,
+    "flags": 10,
+    "model": 20,
+    "converter": 12
+  },
+  "boundary_cases": 393,
+  "corpus_files": 82,
+  "corpus_records": 3535,
+  "nonzero_tail_records": 2707,
+  "distinct_tail_buffers": 4,
+  "whole_file_roundtrips": 82,
+  "exact_in_memory_container_patches": 360,
+  "primary_instructions": 963,
+  "primary_ranges_matching_pe": 12,
+  "original_main_inputs_unchanged": 17,
+  "original_main_executables_unchanged": 2,
+  "format_package_components": 52,
+  "modified_gameplay_runs": 0,
+  "limitations": [
+    "61 native cases:19 full writers,10 encoders,20 model flag fragments,12 full game/editor converters. Entire output bytes and320-byte intermediates compared, not only a checksum.",
+    "Full writers use explicit virtual getters, file append capture, date/header constants and prebuilt model arrays. Real resource getter, flag encoder, CString copy and ftol run. Model callbacks execute only flags fragment with skipped construction/array registration.",
+    "Floating fixtures are exactly representable values whose product4096 is an integer. General x87 fractional rounding and GUI numeric parsing not established.",
+    "Tail stack preservation applies to bounded names. A240-byte CString overwrites a tail byte; native helper count32 does not cap copying. This is a synthetic model fixture, not a demonstrated GUI input.",
+    "No game process, native GUI open/save or original input changes. Live Ghidra initialized ranges match original PE after emulations. No universal claim about other builds or runtime Flame patches."
+  ],
+  "scope_correction_phase42": {
+    "native_intermediate_bytes": 346,
+    "phase41_compared_prefix_bytes": 320,
+    "phase42_complete_buffer_validation": "phase42-validation.json",
+    "note": "Original61 native inputs/results retained. Phase41 converter cases compared a320-byte prefix, not the whole346-byte native intermediate. Writer/model/flags results unchanged."
+  }
+}

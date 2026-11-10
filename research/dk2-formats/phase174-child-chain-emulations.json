@@ -1,0 +1,4549 @@
+{
+  "scope": "Phase174 selected original parent/hit-child/death-child/Inferno chain.\n\nWhole Shot ticks selected explicitly from naturally created registered native\nobjects. Four unchanged source definitions, sorted native lookup and arenas.\nNo full World scheduler, Creature recovery ticks, terminal cleanup or live-game\nbalance claim; prepared HP100000 isolates negative-damage composition.\n",
+  "replays": [
+    {
+      "case": {
+        "name": "parent-first",
+        "parent_ticks": 1
+      },
+      "file": "ghidra\\phase174-child-chain-parent-first-7c830b328722.json",
+      "sha256": "3db36c2430a9dd955a070c12e67d3b8a18917a3f161dfc28e0ba3628e38f6537",
+      "outcome": {
+        "HP": [
+          100000,
+          99900,
+          99950
+        ],
+        "requests": [
+          {
+            "target": 271581184,
+            "delta": -50,
+            "before": 100000,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 452984832,
+            "delta": -50,
+            "before": 100000,
+            "caller": "0x4ac666"
+          }
+        ],
+        "shots": [
+          {
+            "tag": 202,
+            "address": 471007372,
+            "ID": 152,
+            "HP": 7,
+            "ticks": 1,
+            "Data1": 50,
+            "Data2": 3,
+            "target": 2,
+            "owner": 7,
+            "caster": 0
+          },
+          {
+            "tag": 203,
+            "address": 540016780,
+            "ID": 153,
+            "HP": 4,
+            "ticks": 0,
+            "Data1": 50,
+            "Data2": 3,
+            "target": 2,
+            "owner": 7,
+            "caster": 0
+          }
+        ],
+        "parameter_copy_writes": [
+          {
+            "ShotID": 153,
+            "field": "Data1",
+            "write": {
+              "pc": "0x4abf7d",
+              "address": "0x203001c9",
+              "size": 4,
+              "value": 50
+            }
+          },
+          {
+            "ShotID": 153,
+            "field": "Data2",
+            "write": {
+              "pc": "0x4abf83",
+              "address": "0x203001cd",
+              "size": 4,
+              "value": 3
+            }
+          }
+        ],
+        "full_regions": 104,
+        "full_bytes": 274112,
+        "native_steps": 131328,
+        "events": [
+          {
+            "caller_return": 4895366,
+            "event_mask": 64,
+            "instance": 471007372,
+            "tick": 1,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 471007372,
+            "tick": 1,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4898758,
+            "event_mask": 4,
+            "instance": 471007372,
+            "tick": 1,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 0
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 471007372,
+            "tick": 1,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          }
+        ]
+      }
+    },
+    {
+      "case": {
+        "name": "hit-child-first",
+        "parent_ticks": 1,
+        "child_ticks": 1
+      },
+      "file": "ghidra\\phase174-child-chain-hit-child-first-2e98afb1861f.json",
+      "sha256": "151bfe69970ca64c58a0520ec12e53f90a2d0e9b3aa6242636c1f22a0ad52be0",
+      "outcome": {
+        "HP": [
+          100000,
+          99800,
+          99900
+        ],
+        "requests": [
+          {
+            "target": 271581184,
+            "delta": -50,
+            "before": 100000,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 452984832,
+            "delta": -50,
+            "before": 100000,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 271581184,
+            "delta": -50,
+            "before": 99900,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 452984832,
+            "delta": -50,
+            "before": 99950,
+            "caller": "0x4ac666"
+          }
+        ],
+        "shots": [
+          {
+            "tag": 202,
+            "address": 471007372,
+            "ID": 152,
+            "HP": 7,
+            "ticks": 1,
+            "Data1": 50,
+            "Data2": 3,
+            "target": 2,
+            "owner": 7,
+            "caster": 0
+          },
+          {
+            "tag": 203,
+            "address": 540016780,
+            "ID": 153,
+            "HP": 3,
+            "ticks": 1,
+            "Data1": 50,
+            "Data2": 3,
+            "target": 2,
+            "owner": 7,
+            "caster": 0
+          }
+        ],
+        "parameter_copy_writes": [
+          {
+            "ShotID": 153,
+            "field": "Data1",
+            "write": {
+              "pc": "0x4abf7d",
+              "address": "0x203001c9",
+              "size": 4,
+              "value": 50
+            }
+          },
+          {
+            "ShotID": 153,
+            "field": "Data2",
+            "write": {
+              "pc": "0x4abf83",
+              "address": "0x203001cd",
+              "size": 4,
+              "value": 3
+            }
+          }
+        ],
+        "full_regions": 104,
+        "full_bytes": 274112,
+        "native_steps": 133692,
+        "events": [
+          {
+            "caller_return": 4895366,
+            "event_mask": 64,
+            "instance": 471007372,
+            "tick": 1,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 471007372,
+            "tick": 1,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4898758,
+            "event_mask": 4,
+            "instance": 471007372,
+            "tick": 1,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 0
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 471007372,
+            "tick": 1,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895366,
+            "event_mask": 64,
+            "instance": 540016780,
+            "tick": 1,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 540016780,
+            "tick": 1,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 540016780,
+            "tick": 1,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          }
+        ]
+      }
+    },
+    {
+      "case": {
+        "name": "parent-expired",
+        "parent_ticks": 8
+      },
+      "file": "ghidra\\phase174-child-chain-parent-expired-b29e2638dc87.json",
+      "sha256": "412369ab278f9406945f5aab910c209ccdf2d8fc78cc76e02f938359dea74ddd",
+      "outcome": {
+        "HP": [
+          100000,
+          99200,
+          99600
+        ],
+        "requests": [
+          {
+            "target": 271581184,
+            "delta": -50,
+            "before": 100000,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 452984832,
+            "delta": -50,
+            "before": 100000,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 271581184,
+            "delta": -50,
+            "before": 99900,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 452984832,
+            "delta": -50,
+            "before": 99950,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 271581184,
+            "delta": -50,
+            "before": 99800,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 452984832,
+            "delta": -50,
+            "before": 99900,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 271581184,
+            "delta": -50,
+            "before": 99700,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 452984832,
+            "delta": -50,
+            "before": 99850,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 271581184,
+            "delta": -50,
+            "before": 99600,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 452984832,
+            "delta": -50,
+            "before": 99800,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 271581184,
+            "delta": -50,
+            "before": 99500,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 452984832,
+            "delta": -50,
+            "before": 99750,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 271581184,
+            "delta": -50,
+            "before": 99400,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 452984832,
+            "delta": -50,
+            "before": 99700,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 271581184,
+            "delta": -50,
+            "before": 99300,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 452984832,
+            "delta": -50,
+            "before": 99650,
+            "caller": "0x4ac666"
+          }
+        ],
+        "shots": [
+          {
+            "tag": 202,
+            "address": 471007372,
+            "ID": 152,
+            "HP": 0,
+            "ticks": 8,
+            "Data1": 50,
+            "Data2": 3,
+            "target": 2,
+            "owner": 7,
+            "caster": 0
+          },
+          {
+            "tag": 203,
+            "address": 540016780,
+            "ID": 153,
+            "HP": 4,
+            "ticks": 0,
+            "Data1": 50,
+            "Data2": 3,
+            "target": 2,
+            "owner": 7,
+            "caster": 0
+          },
+          {
+            "tag": 204,
+            "address": 540020876,
+            "ID": 158,
+            "HP": 8,
+            "ticks": 0,
+            "Data1": 50,
+            "Data2": 3,
+            "target": 2,
+            "owner": 7,
+            "caster": 0
+          }
+        ],
+        "parameter_copy_writes": [
+          {
+            "ShotID": 153,
+            "field": "Data1",
+            "write": {
+              "pc": "0x4abf7d",
+              "address": "0x203001c9",
+              "size": 4,
+              "value": 50
+            }
+          },
+          {
+            "ShotID": 153,
+            "field": "Data2",
+            "write": {
+              "pc": "0x4abf83",
+              "address": "0x203001cd",
+              "size": 4,
+              "value": 3
+            }
+          },
+          {
+            "ShotID": 158,
+            "field": "Data1",
+            "write": {
+              "pc": "0x4ab61b",
+              "address": "0x203011c9",
+              "size": 4,
+              "value": 50
+            }
+          },
+          {
+            "ShotID": 158,
+            "field": "Data2",
+            "write": {
+              "pc": "0x4ab621",
+              "address": "0x203011cd",
+              "size": 4,
+              "value": 3
+            }
+          }
+        ],
+        "full_regions": 104,
+        "full_bytes": 274112,
+        "native_steps": 148782,
+        "events": [
+          {
+            "caller_return": 4895366,
+            "event_mask": 64,
+            "instance": 471007372,
+            "tick": 1,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 471007372,
+            "tick": 1,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4898758,
+            "event_mask": 4,
+            "instance": 471007372,
+            "tick": 1,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 0
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 471007372,
+            "tick": 1,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 471007372,
+            "tick": 2,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 471007372,
+            "tick": 2,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 471007372,
+            "tick": 3,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 471007372,
+            "tick": 3,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 471007372,
+            "tick": 4,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 471007372,
+            "tick": 4,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 471007372,
+            "tick": 5,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 471007372,
+            "tick": 5,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 471007372,
+            "tick": 6,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 471007372,
+            "tick": 6,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 471007372,
+            "tick": 7,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 471007372,
+            "tick": 7,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 471007372,
+            "tick": 8,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 471007372,
+            "tick": 8,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4896359,
+            "event_mask": 128,
+            "instance": 471007372,
+            "tick": 8,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          }
+        ]
+      }
+    },
+    {
+      "case": {
+        "name": "wait-before-expiry",
+        "parent_ticks": 8,
+        "wait_ticks": 7
+      },
+      "file": "ghidra\\phase174-child-chain-wait-before-expiry-c1bdf7f77dd8.json",
+      "sha256": "b0d061af3206c24248748ad29add07fa69c6048a4c7ad72f4d89a5f15bda01b5",
+      "outcome": {
+        "HP": [
+          100000,
+          99200,
+          99600
+        ],
+        "requests": [
+          {
+            "target": 271581184,
+            "delta": -50,
+            "before": 100000,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 452984832,
+            "delta": -50,
+            "before": 100000,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 271581184,
+            "delta": -50,
+            "before": 99900,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 452984832,
+            "delta": -50,
+            "before": 99950,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 271581184,
+            "delta": -50,
+            "before": 99800,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 452984832,
+            "delta": -50,
+            "before": 99900,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 271581184,
+            "delta": -50,
+            "before": 99700,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 452984832,
+            "delta": -50,
+            "before": 99850,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 271581184,
+            "delta": -50,
+            "before": 99600,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 452984832,
+            "delta": -50,
+            "before": 99800,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 271581184,
+            "delta": -50,
+            "before": 99500,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 452984832,
+            "delta": -50,
+            "before": 99750,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 271581184,
+            "delta": -50,
+            "before": 99400,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 452984832,
+            "delta": -50,
+            "before": 99700,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 271581184,
+            "delta": -50,
+            "before": 99300,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 452984832,
+            "delta": -50,
+            "before": 99650,
+            "caller": "0x4ac666"
+          }
+        ],
+        "shots": [
+          {
+            "tag": 202,
+            "address": 471007372,
+            "ID": 152,
+            "HP": 0,
+            "ticks": 8,
+            "Data1": 50,
+            "Data2": 3,
+            "target": 2,
+            "owner": 7,
+            "caster": 0
+          },
+          {
+            "tag": 203,
+            "address": 540016780,
+            "ID": 153,
+            "HP": 4,
+            "ticks": 0,
+            "Data1": 50,
+            "Data2": 3,
+            "target": 2,
+            "owner": 7,
+            "caster": 0
+          },
+          {
+            "tag": 204,
+            "address": 540020876,
+            "ID": 158,
+            "HP": 1,
+            "ticks": 7,
+            "Data1": 50,
+            "Data2": 3,
+            "target": 2,
+            "owner": 7,
+            "caster": 0
+          }
+        ],
+        "parameter_copy_writes": [
+          {
+            "ShotID": 153,
+            "field": "Data1",
+            "write": {
+              "pc": "0x4abf7d",
+              "address": "0x203001c9",
+              "size": 4,
+              "value": 50
+            }
+          },
+          {
+            "ShotID": 153,
+            "field": "Data2",
+            "write": {
+              "pc": "0x4abf83",
+              "address": "0x203001cd",
+              "size": 4,
+              "value": 3
+            }
+          },
+          {
+            "ShotID": 158,
+            "field": "Data1",
+            "write": {
+              "pc": "0x4ab61b",
+              "address": "0x203011c9",
+              "size": 4,
+              "value": 50
+            }
+          },
+          {
+            "ShotID": 158,
+            "field": "Data2",
+            "write": {
+              "pc": "0x4ab621",
+              "address": "0x203011cd",
+              "size": 4,
+              "value": 3
+            }
+          }
+        ],
+        "full_regions": 104,
+        "full_bytes": 274112,
+        "native_steps": 151135,
+        "events": [
+          {
+            "caller_return": 4895366,
+            "event_mask": 64,
+            "instance": 471007372,
+            "tick": 1,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 471007372,
+            "tick": 1,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4898758,
+            "event_mask": 4,
+            "instance": 471007372,
+            "tick": 1,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 0
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 471007372,
+            "tick": 1,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 471007372,
+            "tick": 2,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 471007372,
+            "tick": 2,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 471007372,
+            "tick": 3,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 471007372,
+            "tick": 3,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 471007372,
+            "tick": 4,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 471007372,
+            "tick": 4,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 471007372,
+            "tick": 5,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 471007372,
+            "tick": 5,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 471007372,
+            "tick": 6,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 471007372,
+            "tick": 6,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 471007372,
+            "tick": 7,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 471007372,
+            "tick": 7,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 471007372,
+            "tick": 8,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 471007372,
+            "tick": 8,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4896359,
+            "event_mask": 128,
+            "instance": 471007372,
+            "tick": 8,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895366,
+            "event_mask": 64,
+            "instance": 540020876,
+            "tick": 1,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 540020876,
+            "tick": 1,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 540020876,
+            "tick": 1,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 540020876,
+            "tick": 2,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 540020876,
+            "tick": 2,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 540020876,
+            "tick": 3,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 540020876,
+            "tick": 3,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 540020876,
+            "tick": 4,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 540020876,
+            "tick": 4,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 540020876,
+            "tick": 5,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 540020876,
+            "tick": 5,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 540020876,
+            "tick": 6,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 540020876,
+            "tick": 6,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 540020876,
+            "tick": 7,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 540020876,
+            "tick": 7,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          }
+        ]
+      }
+    },
+    {
+      "case": {
+        "name": "wait-expired",
+        "parent_ticks": 8,
+        "wait_ticks": 8
+      },
+      "file": "ghidra\\phase174-child-chain-wait-expired-d2878b7398a4.json",
+      "sha256": "ba41cecc287d6c6b65347eacd6000be3f7a25abbfb7c1e00cf0f5a8de0720f41",
+      "outcome": {
+        "HP": [
+          100000,
+          99200,
+          99600
+        ],
+        "requests": [
+          {
+            "target": 271581184,
+            "delta": -50,
+            "before": 100000,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 452984832,
+            "delta": -50,
+            "before": 100000,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 271581184,
+            "delta": -50,
+            "before": 99900,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 452984832,
+            "delta": -50,
+            "before": 99950,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 271581184,
+            "delta": -50,
+            "before": 99800,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 452984832,
+            "delta": -50,
+            "before": 99900,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 271581184,
+            "delta": -50,
+            "before": 99700,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 452984832,
+            "delta": -50,
+            "before": 99850,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 271581184,
+            "delta": -50,
+            "before": 99600,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 452984832,
+            "delta": -50,
+            "before": 99800,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 271581184,
+            "delta": -50,
+            "before": 99500,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 452984832,
+            "delta": -50,
+            "before": 99750,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 271581184,
+            "delta": -50,
+            "before": 99400,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 452984832,
+            "delta": -50,
+            "before": 99700,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 271581184,
+            "delta": -50,
+            "before": 99300,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 452984832,
+            "delta": -50,
+            "before": 99650,
+            "caller": "0x4ac666"
+          }
+        ],
+        "shots": [
+          {
+            "tag": 202,
+            "address": 471007372,
+            "ID": 152,
+            "HP": 0,
+            "ticks": 8,
+            "Data1": 50,
+            "Data2": 3,
+            "target": 2,
+            "owner": 7,
+            "caster": 0
+          },
+          {
+            "tag": 203,
+            "address": 540016780,
+            "ID": 153,
+            "HP": 4,
+            "ticks": 0,
+            "Data1": 50,
+            "Data2": 3,
+            "target": 2,
+            "owner": 7,
+            "caster": 0
+          },
+          {
+            "tag": 204,
+            "address": 540020876,
+            "ID": 158,
+            "HP": 0,
+            "ticks": 8,
+            "Data1": 50,
+            "Data2": 3,
+            "target": 2,
+            "owner": 7,
+            "caster": 0
+          },
+          {
+            "tag": 205,
+            "address": 540024972,
+            "ID": 49,
+            "HP": 32,
+            "ticks": 0,
+            "Data1": 50,
+            "Data2": 3,
+            "target": 2,
+            "owner": 7,
+            "caster": 0
+          }
+        ],
+        "parameter_copy_writes": [
+          {
+            "ShotID": 153,
+            "field": "Data1",
+            "write": {
+              "pc": "0x4abf7d",
+              "address": "0x203001c9",
+              "size": 4,
+              "value": 50
+            }
+          },
+          {
+            "ShotID": 153,
+            "field": "Data2",
+            "write": {
+              "pc": "0x4abf83",
+              "address": "0x203001cd",
+              "size": 4,
+              "value": 3
+            }
+          },
+          {
+            "ShotID": 158,
+            "field": "Data1",
+            "write": {
+              "pc": "0x4ab61b",
+              "address": "0x203011c9",
+              "size": 4,
+              "value": 50
+            }
+          },
+          {
+            "ShotID": 158,
+            "field": "Data2",
+            "write": {
+              "pc": "0x4ab621",
+              "address": "0x203011cd",
+              "size": 4,
+              "value": 3
+            }
+          },
+          {
+            "ShotID": 49,
+            "field": "Data1",
+            "write": {
+              "pc": "0x4ab61b",
+              "address": "0x203021c9",
+              "size": 4,
+              "value": 50
+            }
+          },
+          {
+            "ShotID": 49,
+            "field": "Data2",
+            "write": {
+              "pc": "0x4ab621",
+              "address": "0x203021cd",
+              "size": 4,
+              "value": 3
+            }
+          }
+        ],
+        "full_regions": 104,
+        "full_bytes": 274112,
+        "native_steps": 152679,
+        "events": [
+          {
+            "caller_return": 4895366,
+            "event_mask": 64,
+            "instance": 471007372,
+            "tick": 1,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 471007372,
+            "tick": 1,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4898758,
+            "event_mask": 4,
+            "instance": 471007372,
+            "tick": 1,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 0
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 471007372,
+            "tick": 1,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 471007372,
+            "tick": 2,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 471007372,
+            "tick": 2,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 471007372,
+            "tick": 3,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 471007372,
+            "tick": 3,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 471007372,
+            "tick": 4,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 471007372,
+            "tick": 4,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 471007372,
+            "tick": 5,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 471007372,
+            "tick": 5,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 471007372,
+            "tick": 6,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 471007372,
+            "tick": 6,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 471007372,
+            "tick": 7,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 471007372,
+            "tick": 7,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 471007372,
+            "tick": 8,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 471007372,
+            "tick": 8,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4896359,
+            "event_mask": 128,
+            "instance": 471007372,
+            "tick": 8,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895366,
+            "event_mask": 64,
+            "instance": 540020876,
+            "tick": 1,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 540020876,
+            "tick": 1,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 540020876,
+            "tick": 1,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 540020876,
+            "tick": 2,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 540020876,
+            "tick": 2,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 540020876,
+            "tick": 3,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 540020876,
+            "tick": 3,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 540020876,
+            "tick": 4,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 540020876,
+            "tick": 4,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 540020876,
+            "tick": 5,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 540020876,
+            "tick": 5,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 540020876,
+            "tick": 6,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 540020876,
+            "tick": 6,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 540020876,
+            "tick": 7,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 540020876,
+            "tick": 7,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 540020876,
+            "tick": 8,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 540020876,
+            "tick": 8,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4896359,
+            "event_mask": 128,
+            "instance": 540020876,
+            "tick": 8,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          }
+        ]
+      }
+    },
+    {
+      "case": {
+        "name": "inferno-first",
+        "parent_ticks": 8,
+        "wait_ticks": 8,
+        "inferno_ticks": 1
+      },
+      "file": "ghidra\\phase174-child-chain-inferno-first-4ff1470f3a78.json",
+      "sha256": "852c7f515dd753c4410a3137db99f7d84d0928ac117e8c1b4b3619c7d28ab044",
+      "outcome": {
+        "HP": [
+          99950,
+          99000,
+          99500
+        ],
+        "requests": [
+          {
+            "target": 271581184,
+            "delta": -50,
+            "before": 100000,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 452984832,
+            "delta": -50,
+            "before": 100000,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 271581184,
+            "delta": -50,
+            "before": 99900,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 452984832,
+            "delta": -50,
+            "before": 99950,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 271581184,
+            "delta": -50,
+            "before": 99800,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 452984832,
+            "delta": -50,
+            "before": 99900,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 271581184,
+            "delta": -50,
+            "before": 99700,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 452984832,
+            "delta": -50,
+            "before": 99850,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 271581184,
+            "delta": -50,
+            "before": 99600,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 452984832,
+            "delta": -50,
+            "before": 99800,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 271581184,
+            "delta": -50,
+            "before": 99500,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 452984832,
+            "delta": -50,
+            "before": 99750,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 271581184,
+            "delta": -50,
+            "before": 99400,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 452984832,
+            "delta": -50,
+            "before": 99700,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 271581184,
+            "delta": -50,
+            "before": 99300,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 452984832,
+            "delta": -50,
+            "before": 99650,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 268959744,
+            "delta": -50,
+            "before": 100000,
+            "caller": "0x4af83d"
+          },
+          {
+            "target": 271581184,
+            "delta": -50,
+            "before": 99200,
+            "caller": "0x4af83d"
+          },
+          {
+            "target": 452984832,
+            "delta": -50,
+            "before": 99600,
+            "caller": "0x4af83d"
+          },
+          {
+            "target": 271581184,
+            "delta": -50,
+            "before": 99100,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 452984832,
+            "delta": -50,
+            "before": 99550,
+            "caller": "0x4ac666"
+          }
+        ],
+        "shots": [
+          {
+            "tag": 202,
+            "address": 471007372,
+            "ID": 152,
+            "HP": 0,
+            "ticks": 8,
+            "Data1": 50,
+            "Data2": 3,
+            "target": 2,
+            "owner": 7,
+            "caster": 0
+          },
+          {
+            "tag": 203,
+            "address": 540016780,
+            "ID": 153,
+            "HP": 4,
+            "ticks": 0,
+            "Data1": 50,
+            "Data2": 3,
+            "target": 2,
+            "owner": 7,
+            "caster": 0
+          },
+          {
+            "tag": 204,
+            "address": 540020876,
+            "ID": 158,
+            "HP": 0,
+            "ticks": 8,
+            "Data1": 50,
+            "Data2": 3,
+            "target": 2,
+            "owner": 7,
+            "caster": 0
+          },
+          {
+            "tag": 205,
+            "address": 540024972,
+            "ID": 49,
+            "HP": 31,
+            "ticks": 1,
+            "Data1": 50,
+            "Data2": 3,
+            "target": 2,
+            "owner": 7,
+            "caster": 0
+          }
+        ],
+        "parameter_copy_writes": [
+          {
+            "ShotID": 153,
+            "field": "Data1",
+            "write": {
+              "pc": "0x4abf7d",
+              "address": "0x203001c9",
+              "size": 4,
+              "value": 50
+            }
+          },
+          {
+            "ShotID": 153,
+            "field": "Data2",
+            "write": {
+              "pc": "0x4abf83",
+              "address": "0x203001cd",
+              "size": 4,
+              "value": 3
+            }
+          },
+          {
+            "ShotID": 158,
+            "field": "Data1",
+            "write": {
+              "pc": "0x4ab61b",
+              "address": "0x203011c9",
+              "size": 4,
+              "value": 50
+            }
+          },
+          {
+            "ShotID": 158,
+            "field": "Data2",
+            "write": {
+              "pc": "0x4ab621",
+              "address": "0x203011cd",
+              "size": 4,
+              "value": 3
+            }
+          },
+          {
+            "ShotID": 49,
+            "field": "Data1",
+            "write": {
+              "pc": "0x4ab61b",
+              "address": "0x203021c9",
+              "size": 4,
+              "value": 50
+            }
+          },
+          {
+            "ShotID": 49,
+            "field": "Data2",
+            "write": {
+              "pc": "0x4ab621",
+              "address": "0x203021cd",
+              "size": 4,
+              "value": 3
+            }
+          }
+        ],
+        "full_regions": 104,
+        "full_bytes": 274112,
+        "native_steps": 157751,
+        "events": [
+          {
+            "caller_return": 4895366,
+            "event_mask": 64,
+            "instance": 471007372,
+            "tick": 1,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 471007372,
+            "tick": 1,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4898758,
+            "event_mask": 4,
+            "instance": 471007372,
+            "tick": 1,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 0
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 471007372,
+            "tick": 1,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 471007372,
+            "tick": 2,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 471007372,
+            "tick": 2,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 471007372,
+            "tick": 3,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 471007372,
+            "tick": 3,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 471007372,
+            "tick": 4,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 471007372,
+            "tick": 4,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 471007372,
+            "tick": 5,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 471007372,
+            "tick": 5,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 471007372,
+            "tick": 6,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 471007372,
+            "tick": 6,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 471007372,
+            "tick": 7,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 471007372,
+            "tick": 7,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 471007372,
+            "tick": 8,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 471007372,
+            "tick": 8,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4896359,
+            "event_mask": 128,
+            "instance": 471007372,
+            "tick": 8,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895366,
+            "event_mask": 64,
+            "instance": 540020876,
+            "tick": 1,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 540020876,
+            "tick": 1,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 540020876,
+            "tick": 1,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 540020876,
+            "tick": 2,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 540020876,
+            "tick": 2,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 540020876,
+            "tick": 3,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 540020876,
+            "tick": 3,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 540020876,
+            "tick": 4,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 540020876,
+            "tick": 4,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 540020876,
+            "tick": 5,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 540020876,
+            "tick": 5,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 540020876,
+            "tick": 6,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 540020876,
+            "tick": 6,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 540020876,
+            "tick": 7,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 540020876,
+            "tick": 7,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 540020876,
+            "tick": 8,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 540020876,
+            "tick": 8,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4896359,
+            "event_mask": 128,
+            "instance": 540020876,
+            "tick": 8,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895366,
+            "event_mask": 64,
+            "instance": 540024972,
+            "tick": 1,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 540024972,
+            "tick": 1,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 540024972,
+            "tick": 1,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          }
+        ]
+      }
+    },
+    {
+      "case": {
+        "name": "full-selected-chain",
+        "parent_ticks": 8,
+        "child_ticks": 4,
+        "wait_ticks": 8,
+        "inferno_ticks": 1
+      },
+      "file": "ghidra\\phase174-child-chain-full-selected-chain-b1b38673539a.json",
+      "sha256": "de8201874cfdc77110cdeac794e7042bfdd40cc2ef1b4876d06d2ba7d51777f5",
+      "outcome": {
+        "HP": [
+          99950,
+          98600,
+          99300
+        ],
+        "requests": [
+          {
+            "target": 271581184,
+            "delta": -50,
+            "before": 100000,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 452984832,
+            "delta": -50,
+            "before": 100000,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 271581184,
+            "delta": -50,
+            "before": 99900,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 452984832,
+            "delta": -50,
+            "before": 99950,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 271581184,
+            "delta": -50,
+            "before": 99800,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 452984832,
+            "delta": -50,
+            "before": 99900,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 271581184,
+            "delta": -50,
+            "before": 99700,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 452984832,
+            "delta": -50,
+            "before": 99850,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 271581184,
+            "delta": -50,
+            "before": 99600,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 452984832,
+            "delta": -50,
+            "before": 99800,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 271581184,
+            "delta": -50,
+            "before": 99500,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 452984832,
+            "delta": -50,
+            "before": 99750,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 271581184,
+            "delta": -50,
+            "before": 99400,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 452984832,
+            "delta": -50,
+            "before": 99700,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 271581184,
+            "delta": -50,
+            "before": 99300,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 452984832,
+            "delta": -50,
+            "before": 99650,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 271581184,
+            "delta": -50,
+            "before": 99200,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 452984832,
+            "delta": -50,
+            "before": 99600,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 271581184,
+            "delta": -50,
+            "before": 99100,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 452984832,
+            "delta": -50,
+            "before": 99550,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 271581184,
+            "delta": -50,
+            "before": 99000,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 452984832,
+            "delta": -50,
+            "before": 99500,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 271581184,
+            "delta": -50,
+            "before": 98900,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 452984832,
+            "delta": -50,
+            "before": 99450,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 268959744,
+            "delta": -50,
+            "before": 100000,
+            "caller": "0x4af83d"
+          },
+          {
+            "target": 271581184,
+            "delta": -50,
+            "before": 98800,
+            "caller": "0x4af83d"
+          },
+          {
+            "target": 452984832,
+            "delta": -50,
+            "before": 99400,
+            "caller": "0x4af83d"
+          },
+          {
+            "target": 271581184,
+            "delta": -50,
+            "before": 98700,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 452984832,
+            "delta": -50,
+            "before": 99350,
+            "caller": "0x4ac666"
+          }
+        ],
+        "shots": [
+          {
+            "tag": 202,
+            "address": 471007372,
+            "ID": 152,
+            "HP": 0,
+            "ticks": 8,
+            "Data1": 50,
+            "Data2": 3,
+            "target": 2,
+            "owner": 7,
+            "caster": 0
+          },
+          {
+            "tag": 203,
+            "address": 540016780,
+            "ID": 153,
+            "HP": 0,
+            "ticks": 4,
+            "Data1": 50,
+            "Data2": 3,
+            "target": 2,
+            "owner": 7,
+            "caster": 0
+          },
+          {
+            "tag": 204,
+            "address": 540020876,
+            "ID": 158,
+            "HP": 0,
+            "ticks": 8,
+            "Data1": 50,
+            "Data2": 3,
+            "target": 2,
+            "owner": 7,
+            "caster": 0
+          },
+          {
+            "tag": 205,
+            "address": 540024972,
+            "ID": 49,
+            "HP": 31,
+            "ticks": 1,
+            "Data1": 50,
+            "Data2": 3,
+            "target": 2,
+            "owner": 7,
+            "caster": 0
+          }
+        ],
+        "parameter_copy_writes": [
+          {
+            "ShotID": 153,
+            "field": "Data1",
+            "write": {
+              "pc": "0x4abf7d",
+              "address": "0x203001c9",
+              "size": 4,
+              "value": 50
+            }
+          },
+          {
+            "ShotID": 153,
+            "field": "Data2",
+            "write": {
+              "pc": "0x4abf83",
+              "address": "0x203001cd",
+              "size": 4,
+              "value": 3
+            }
+          },
+          {
+            "ShotID": 158,
+            "field": "Data1",
+            "write": {
+              "pc": "0x4ab61b",
+              "address": "0x203011c9",
+              "size": 4,
+              "value": 50
+            }
+          },
+          {
+            "ShotID": 158,
+            "field": "Data2",
+            "write": {
+              "pc": "0x4ab621",
+              "address": "0x203011cd",
+              "size": 4,
+              "value": 3
+            }
+          },
+          {
+            "ShotID": 49,
+            "field": "Data1",
+            "write": {
+              "pc": "0x4ab61b",
+              "address": "0x203021c9",
+              "size": 4,
+              "value": 50
+            }
+          },
+          {
+            "ShotID": 49,
+            "field": "Data2",
+            "write": {
+              "pc": "0x4ab621",
+              "address": "0x203021cd",
+              "size": 4,
+              "value": 3
+            }
+          }
+        ],
+        "full_regions": 104,
+        "full_bytes": 274112,
+        "native_steps": 167274,
+        "events": [
+          {
+            "caller_return": 4895366,
+            "event_mask": 64,
+            "instance": 471007372,
+            "tick": 1,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 471007372,
+            "tick": 1,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4898758,
+            "event_mask": 4,
+            "instance": 471007372,
+            "tick": 1,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 0
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 471007372,
+            "tick": 1,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 471007372,
+            "tick": 2,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 471007372,
+            "tick": 2,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 471007372,
+            "tick": 3,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 471007372,
+            "tick": 3,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 471007372,
+            "tick": 4,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 471007372,
+            "tick": 4,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 471007372,
+            "tick": 5,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 471007372,
+            "tick": 5,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 471007372,
+            "tick": 6,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 471007372,
+            "tick": 6,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 471007372,
+            "tick": 7,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 471007372,
+            "tick": 7,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 471007372,
+            "tick": 8,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 471007372,
+            "tick": 8,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4896359,
+            "event_mask": 128,
+            "instance": 471007372,
+            "tick": 8,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895366,
+            "event_mask": 64,
+            "instance": 540016780,
+            "tick": 1,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 540016780,
+            "tick": 1,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 540016780,
+            "tick": 1,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 540016780,
+            "tick": 2,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 540016780,
+            "tick": 2,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 540016780,
+            "tick": 3,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 540016780,
+            "tick": 3,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 540016780,
+            "tick": 4,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 540016780,
+            "tick": 4,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4896359,
+            "event_mask": 128,
+            "instance": 540016780,
+            "tick": 4,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895366,
+            "event_mask": 64,
+            "instance": 540020876,
+            "tick": 1,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 540020876,
+            "tick": 1,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 540020876,
+            "tick": 1,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 540020876,
+            "tick": 2,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 540020876,
+            "tick": 2,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 540020876,
+            "tick": 3,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 540020876,
+            "tick": 3,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 540020876,
+            "tick": 4,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 540020876,
+            "tick": 4,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 540020876,
+            "tick": 5,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 540020876,
+            "tick": 5,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 540020876,
+            "tick": 6,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 540020876,
+            "tick": 6,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 540020876,
+            "tick": 7,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 540020876,
+            "tick": 7,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 540020876,
+            "tick": 8,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 540020876,
+            "tick": 8,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4896359,
+            "event_mask": 128,
+            "instance": 540020876,
+            "tick": 8,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895366,
+            "event_mask": 64,
+            "instance": 540024972,
+            "tick": 1,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 540024972,
+            "tick": 1,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 540024972,
+            "tick": 1,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          }
+        ]
+      }
+    },
+    {
+      "case": {
+        "name": "trap-overrides-through-chain",
+        "parent_ticks": 8,
+        "child_ticks": 4,
+        "wait_ticks": 8,
+        "inferno_ticks": 1,
+        "trap_data1": 80,
+        "trap_data2": 2
+      },
+      "file": "ghidra\\phase174-child-chain-trap-overrides-through-chain-c9eaafb29196.json",
+      "sha256": "a9faf63d6dd709b133171050239070c7148e60fe49d537d2e400bdbc5e344de5",
+      "outcome": {
+        "HP": [
+          99920,
+          97760,
+          98880
+        ],
+        "requests": [
+          {
+            "target": 271581184,
+            "delta": -80,
+            "before": 100000,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 452984832,
+            "delta": -80,
+            "before": 100000,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 271581184,
+            "delta": -80,
+            "before": 99840,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 452984832,
+            "delta": -80,
+            "before": 99920,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 271581184,
+            "delta": -80,
+            "before": 99680,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 452984832,
+            "delta": -80,
+            "before": 99840,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 271581184,
+            "delta": -80,
+            "before": 99520,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 452984832,
+            "delta": -80,
+            "before": 99760,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 271581184,
+            "delta": -80,
+            "before": 99360,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 452984832,
+            "delta": -80,
+            "before": 99680,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 271581184,
+            "delta": -80,
+            "before": 99200,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 452984832,
+            "delta": -80,
+            "before": 99600,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 271581184,
+            "delta": -80,
+            "before": 99040,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 452984832,
+            "delta": -80,
+            "before": 99520,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 271581184,
+            "delta": -80,
+            "before": 98880,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 452984832,
+            "delta": -80,
+            "before": 99440,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 271581184,
+            "delta": -80,
+            "before": 98720,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 452984832,
+            "delta": -80,
+            "before": 99360,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 271581184,
+            "delta": -80,
+            "before": 98560,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 452984832,
+            "delta": -80,
+            "before": 99280,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 271581184,
+            "delta": -80,
+            "before": 98400,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 452984832,
+            "delta": -80,
+            "before": 99200,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 271581184,
+            "delta": -80,
+            "before": 98240,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 452984832,
+            "delta": -80,
+            "before": 99120,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 268959744,
+            "delta": -80,
+            "before": 100000,
+            "caller": "0x4af83d"
+          },
+          {
+            "target": 271581184,
+            "delta": -80,
+            "before": 98080,
+            "caller": "0x4af83d"
+          },
+          {
+            "target": 452984832,
+            "delta": -80,
+            "before": 99040,
+            "caller": "0x4af83d"
+          },
+          {
+            "target": 271581184,
+            "delta": -80,
+            "before": 97920,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 452984832,
+            "delta": -80,
+            "before": 98960,
+            "caller": "0x4ac666"
+          }
+        ],
+        "shots": [
+          {
+            "tag": 202,
+            "address": 471007372,
+            "ID": 152,
+            "HP": 0,
+            "ticks": 8,
+            "Data1": 80,
+            "Data2": 2,
+            "target": 2,
+            "owner": 7,
+            "caster": 0
+          },
+          {
+            "tag": 203,
+            "address": 540016780,
+            "ID": 153,
+            "HP": 0,
+            "ticks": 4,
+            "Data1": 80,
+            "Data2": 2,
+            "target": 2,
+            "owner": 7,
+            "caster": 0
+          },
+          {
+            "tag": 204,
+            "address": 540020876,
+            "ID": 158,
+            "HP": 0,
+            "ticks": 8,
+            "Data1": 80,
+            "Data2": 2,
+            "target": 2,
+            "owner": 7,
+            "caster": 0
+          },
+          {
+            "tag": 205,
+            "address": 540024972,
+            "ID": 49,
+            "HP": 31,
+            "ticks": 1,
+            "Data1": 80,
+            "Data2": 2,
+            "target": 2,
+            "owner": 7,
+            "caster": 0
+          }
+        ],
+        "parameter_copy_writes": [
+          {
+            "ShotID": 153,
+            "field": "Data1",
+            "write": {
+              "pc": "0x4abf7d",
+              "address": "0x203001c9",
+              "size": 4,
+              "value": 80
+            }
+          },
+          {
+            "ShotID": 153,
+            "field": "Data2",
+            "write": {
+              "pc": "0x4abf83",
+              "address": "0x203001cd",
+              "size": 4,
+              "value": 2
+            }
+          },
+          {
+            "ShotID": 158,
+            "field": "Data1",
+            "write": {
+              "pc": "0x4ab61b",
+              "address": "0x203011c9",
+              "size": 4,
+              "value": 80
+            }
+          },
+          {
+            "ShotID": 158,
+            "field": "Data2",
+            "write": {
+              "pc": "0x4ab621",
+              "address": "0x203011cd",
+              "size": 4,
+              "value": 2
+            }
+          },
+          {
+            "ShotID": 49,
+            "field": "Data1",
+            "write": {
+              "pc": "0x4ab61b",
+              "address": "0x203021c9",
+              "size": 4,
+              "value": 80
+            }
+          },
+          {
+            "ShotID": 49,
+            "field": "Data2",
+            "write": {
+              "pc": "0x4ab621",
+              "address": "0x203021cd",
+              "size": 4,
+              "value": 2
+            }
+          }
+        ],
+        "full_regions": 104,
+        "full_bytes": 274112,
+        "native_steps": 155788,
+        "events": [
+          {
+            "caller_return": 4895366,
+            "event_mask": 64,
+            "instance": 471007372,
+            "tick": 1,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 471007372,
+            "tick": 1,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4898758,
+            "event_mask": 4,
+            "instance": 471007372,
+            "tick": 1,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 0
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 471007372,
+            "tick": 1,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 471007372,
+            "tick": 2,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 471007372,
+            "tick": 2,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 471007372,
+            "tick": 3,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 471007372,
+            "tick": 3,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 471007372,
+            "tick": 4,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 471007372,
+            "tick": 4,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 471007372,
+            "tick": 5,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 471007372,
+            "tick": 5,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 471007372,
+            "tick": 6,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 471007372,
+            "tick": 6,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 471007372,
+            "tick": 7,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 471007372,
+            "tick": 7,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 471007372,
+            "tick": 8,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 471007372,
+            "tick": 8,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4896359,
+            "event_mask": 128,
+            "instance": 471007372,
+            "tick": 8,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895366,
+            "event_mask": 64,
+            "instance": 540016780,
+            "tick": 1,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 540016780,
+            "tick": 1,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 540016780,
+            "tick": 1,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 540016780,
+            "tick": 2,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 540016780,
+            "tick": 2,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 540016780,
+            "tick": 3,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 540016780,
+            "tick": 3,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 540016780,
+            "tick": 4,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 540016780,
+            "tick": 4,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4896359,
+            "event_mask": 128,
+            "instance": 540016780,
+            "tick": 4,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895366,
+            "event_mask": 64,
+            "instance": 540020876,
+            "tick": 1,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 540020876,
+            "tick": 1,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 540020876,
+            "tick": 1,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 540020876,
+            "tick": 2,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 540020876,
+            "tick": 2,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 540020876,
+            "tick": 3,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 540020876,
+            "tick": 3,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 540020876,
+            "tick": 4,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 540020876,
+            "tick": 4,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 540020876,
+            "tick": 5,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 540020876,
+            "tick": 5,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 540020876,
+            "tick": 6,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 540020876,
+            "tick": 6,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 540020876,
+            "tick": 7,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 540020876,
+            "tick": 7,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 540020876,
+            "tick": 8,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 540020876,
+            "tick": 8,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4896359,
+            "event_mask": 128,
+            "instance": 540020876,
+            "tick": 8,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895366,
+            "event_mask": 64,
+            "instance": 540024972,
+            "tick": 1,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 540024972,
+            "tick": 1,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 540024972,
+            "tick": 1,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 1
+          }
+        ]
+      }
+    },
+    {
+      "case": {
+        "name": "invulnerable-chain",
+        "parent_ticks": 8,
+        "child_ticks": 4,
+        "wait_ticks": 8,
+        "inferno_ticks": 1,
+        "invulnerable": 1
+      },
+      "file": "ghidra\\phase174-child-chain-invulnerable-chain-722ab33c6ede.json",
+      "sha256": "38e399686b21ef38b91c3fb81d0c0be4f8c65e092d71fab7ff2136cd5e7c1b35",
+      "outcome": {
+        "HP": [
+          99950,
+          99900,
+          99300
+        ],
+        "requests": [
+          {
+            "target": 452984832,
+            "delta": -50,
+            "before": 100000,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 452984832,
+            "delta": -50,
+            "before": 99950,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 452984832,
+            "delta": -50,
+            "before": 99900,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 452984832,
+            "delta": -50,
+            "before": 99850,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 452984832,
+            "delta": -50,
+            "before": 99800,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 452984832,
+            "delta": -50,
+            "before": 99750,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 452984832,
+            "delta": -50,
+            "before": 99700,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 452984832,
+            "delta": -50,
+            "before": 99650,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 452984832,
+            "delta": -50,
+            "before": 99600,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 452984832,
+            "delta": -50,
+            "before": 99550,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 452984832,
+            "delta": -50,
+            "before": 99500,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 452984832,
+            "delta": -50,
+            "before": 99450,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 268959744,
+            "delta": -50,
+            "before": 100000,
+            "caller": "0x4af83d"
+          },
+          {
+            "target": 271581184,
+            "delta": -50,
+            "before": 100000,
+            "caller": "0x4af83d"
+          },
+          {
+            "target": 452984832,
+            "delta": -50,
+            "before": 99400,
+            "caller": "0x4af83d"
+          },
+          {
+            "target": 452984832,
+            "delta": -50,
+            "before": 99350,
+            "caller": "0x4ac666"
+          }
+        ],
+        "shots": [
+          {
+            "tag": 202,
+            "address": 471007372,
+            "ID": 152,
+            "HP": 0,
+            "ticks": 8,
+            "Data1": 50,
+            "Data2": 3,
+            "target": 2,
+            "owner": 7,
+            "caster": 0
+          },
+          {
+            "tag": 203,
+            "address": 540016780,
+            "ID": 153,
+            "HP": 0,
+            "ticks": 4,
+            "Data1": 50,
+            "Data2": 3,
+            "target": 2,
+            "owner": 7,
+            "caster": 0
+          },
+          {
+            "tag": 204,
+            "address": 540020876,
+            "ID": 158,
+            "HP": 0,
+            "ticks": 8,
+            "Data1": 50,
+            "Data2": 3,
+            "target": 2,
+            "owner": 7,
+            "caster": 0
+          },
+          {
+            "tag": 205,
+            "address": 540024972,
+            "ID": 49,
+            "HP": 31,
+            "ticks": 1,
+            "Data1": 50,
+            "Data2": 3,
+            "target": 2,
+            "owner": 7,
+            "caster": 0
+          }
+        ],
+        "parameter_copy_writes": [
+          {
+            "ShotID": 153,
+            "field": "Data1",
+            "write": {
+              "pc": "0x4abf7d",
+              "address": "0x203001c9",
+              "size": 4,
+              "value": 50
+            }
+          },
+          {
+            "ShotID": 153,
+            "field": "Data2",
+            "write": {
+              "pc": "0x4abf83",
+              "address": "0x203001cd",
+              "size": 4,
+              "value": 3
+            }
+          },
+          {
+            "ShotID": 158,
+            "field": "Data1",
+            "write": {
+              "pc": "0x4ab61b",
+              "address": "0x203011c9",
+              "size": 4,
+              "value": 50
+            }
+          },
+          {
+            "ShotID": 158,
+            "field": "Data2",
+            "write": {
+              "pc": "0x4ab621",
+              "address": "0x203011cd",
+              "size": 4,
+              "value": 3
+            }
+          },
+          {
+            "ShotID": 49,
+            "field": "Data1",
+            "write": {
+              "pc": "0x4ab61b",
+              "address": "0x203021c9",
+              "size": 4,
+              "value": 50
+            }
+          },
+          {
+            "ShotID": 49,
+            "field": "Data2",
+            "write": {
+              "pc": "0x4ab621",
+              "address": "0x203021cd",
+              "size": 4,
+              "value": 3
+            }
+          }
+        ],
+        "full_regions": 104,
+        "full_bytes": 274112,
+        "native_steps": 163946,
+        "events": [
+          {
+            "caller_return": 4895366,
+            "event_mask": 64,
+            "instance": 471007372,
+            "tick": 1,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 471007372,
+            "tick": 1,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4898758,
+            "event_mask": 4,
+            "instance": 471007372,
+            "tick": 1,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 0
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 471007372,
+            "tick": 1,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 471007372,
+            "tick": 2,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 471007372,
+            "tick": 2,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 471007372,
+            "tick": 3,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 471007372,
+            "tick": 3,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 471007372,
+            "tick": 4,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 471007372,
+            "tick": 4,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 471007372,
+            "tick": 5,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 471007372,
+            "tick": 5,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 471007372,
+            "tick": 6,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 471007372,
+            "tick": 6,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 471007372,
+            "tick": 7,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 471007372,
+            "tick": 7,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 471007372,
+            "tick": 8,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 471007372,
+            "tick": 8,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4896359,
+            "event_mask": 128,
+            "instance": 471007372,
+            "tick": 8,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895366,
+            "event_mask": 64,
+            "instance": 540016780,
+            "tick": 1,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 540016780,
+            "tick": 1,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 540016780,
+            "tick": 1,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 540016780,
+            "tick": 2,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 540016780,
+            "tick": 2,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 540016780,
+            "tick": 3,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 540016780,
+            "tick": 3,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 540016780,
+            "tick": 4,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 540016780,
+            "tick": 4,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4896359,
+            "event_mask": 128,
+            "instance": 540016780,
+            "tick": 4,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895366,
+            "event_mask": 64,
+            "instance": 540020876,
+            "tick": 1,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 540020876,
+            "tick": 1,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 540020876,
+            "tick": 1,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 540020876,
+            "tick": 2,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 540020876,
+            "tick": 2,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 540020876,
+            "tick": 3,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 540020876,
+            "tick": 3,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 540020876,
+            "tick": 4,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 540020876,
+            "tick": 4,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 540020876,
+            "tick": 5,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 540020876,
+            "tick": 5,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 540020876,
+            "tick": 6,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 540020876,
+            "tick": 6,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 540020876,
+            "tick": 7,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 540020876,
+            "tick": 7,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 540020876,
+            "tick": 8,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 540020876,
+            "tick": 8,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4896359,
+            "event_mask": 128,
+            "instance": 540020876,
+            "tick": 8,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895366,
+            "event_mask": 64,
+            "instance": 540024972,
+            "tick": 1,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 540024972,
+            "tick": 1,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895914,
+            "event_mask": 8,
+            "instance": 540024972,
+            "tick": 1,
+            "Data1": 50,
+            "Data2": 3,
+            "return_EAX": 1
+          }
+        ]
+      }
+    }
+  ]
+}

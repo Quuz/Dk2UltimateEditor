@@ -1,0 +1,124 @@
+{
+  "phase": 160,
+  "status": "unpublished_initial_triage",
+  "date": "2026-11-01",
+  "published_package_phase": 159,
+  "package_components": 138,
+  "scope": "Review of existing Door236 leads to avoid repeating phases67/142. No new gameplay meaning or native replay counted.",
+  "historical_searches": [
+    {
+      "file": "phase67-DX-door-word236-leads.json",
+      "sha256": "d2c95be6647fdb09ef11c9aa70b911de56d37ab36916e68b64ca627791446d28",
+      "producer_roots": 173,
+      "states": 2310,
+      "limited_roots": 0,
+      "limited_callees": 0,
+      "unknown_candidates": [
+        {
+          "seed": "0x4a7d3a",
+          "read": "0x4a7d58",
+          "instruction": "mov edx, dword ptr [eax + 0x9a]"
+        },
+        {
+          "seed": "0x4a7dbb",
+          "read": "0x4a7dd9",
+          "instruction": "mov edx, dword ptr [eax + 0x9a]"
+        },
+        {
+          "seed": "0x4a7ea1",
+          "read": "0x4a7ebf",
+          "instruction": "mov edx, dword ptr [eax + 0x9a]"
+        },
+        {
+          "seed": "0x4a8363",
+          "read": "0x4a8381",
+          "instruction": "mov edx, dword ptr [eax + 0x9a]"
+        },
+        {
+          "seed": "0x4a8392",
+          "read": "0x4a839b",
+          "instruction": "mov edx, dword ptr [ecx + 0x9a]"
+        },
+        {
+          "seed": "0x4a9145",
+          "read": "0x4a9163",
+          "instruction": "mov edx, dword ptr [eax + 0x9a]"
+        },
+        {
+          "seed": "0x4a9c8c",
+          "read": "0x4a9c99",
+          "instruction": "mov ecx, dword ptr [eax + 0x9a]"
+        }
+      ]
+    },
+    {
+      "file": "phase67-old-door-word236-leads.json",
+      "sha256": "ef8b27bb316635ad283cd396546959bedf848600977acddb4f1e074173cb6538",
+      "producer_roots": 162,
+      "states": 2239,
+      "limited_roots": 0,
+      "limited_callees": 0,
+      "unknown_candidates": [
+        {
+          "seed": "0x49eb4a",
+          "read": "0x49eb68",
+          "instruction": "mov edx, dword ptr [eax + 0x9a]"
+        },
+        {
+          "seed": "0x49ebd1",
+          "read": "0x49ebef",
+          "instruction": "mov edx, dword ptr [eax + 0x9a]"
+        },
+        {
+          "seed": "0x49edd1",
+          "read": "0x49edef",
+          "instruction": "mov edx, dword ptr [eax + 0x9a]"
+        },
+        {
+          "seed": "0x49f1fc",
+          "read": "0x49f21a",
+          "instruction": "mov edx, dword ptr [eax + 0x9a]"
+        },
+        {
+          "seed": "0x49f22b",
+          "read": "0x49f234",
+          "instruction": "mov edx, dword ptr [ecx + 0x9a]"
+        },
+        {
+          "seed": "0x4a0146",
+          "read": "0x4a0164",
+          "instruction": "mov edx, dword ptr [eax + 0x9a]"
+        },
+        {
+          "seed": "0x4a0c7c",
+          "read": "0x4a0c89",
+          "instruction": "mov ecx, dword ptr [eax + 0x9a]"
+        }
+      ]
+    }
+  ],
+  "findings": [
+    "Door236 rawWORD is definition99, independent of manufactureWORD95; all656 source records zero as historically measured.",
+    "Both profiles historical seven unknown candidates are DWORD9A accesses from shared entityF7 hints; not typed Door99 consumers. CDoor/CTrap both have F7 pointers.",
+    "Existing DOOR_LOADING_RU explicitly leaves these DWORD9A leads untyped. Do not claim new discovery, globalnonuse or broken editor.",
+    "sgmap associates DX4A7D10/4A7D90/4A7E70 with CTrap, but hint requires original vtable/constructor attestation for a new typed conclusion."
+  ],
+  "references": [
+    {
+      "file": "DOOR_LOADING_RU.md",
+      "sha256": "4f0edb6128b76437ed1624fd4e64af44383ff61ad7bdc8e02297b1490a74c1ab"
+    },
+    {
+      "file": "DOOR_MANUFACTURE_SPLIT_RU.md",
+      "sha256": "819eb00474fd3a39952674c82159e2efcfc726546c89cb7539f934b460885968"
+    },
+    {
+      "file": "sources/DKII_EXE_v170.sgmap",
+      "sha256": "a0d2fa1169c7760cf45c8ddad42560956c24bea58c4c8d3748f44646a2183b37"
+    }
+  ],
+  "next_action": "Find a fresh typed Door definition consumer/forwarded pointer or build a conservative bounded search with actual RET cleanup evidence. Do not repeat raw loader/WORD split or relabel these sharedF7 hints.",
+  "new_primary_confirmed_opaque_meanings": 0,
+  "source_writes": 0,
+  "goal_achieved": false
+}

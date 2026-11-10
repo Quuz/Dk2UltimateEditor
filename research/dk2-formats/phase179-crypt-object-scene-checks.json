@@ -1,0 +1,1367 @@
+{
+  "status": "bounded_native_checks_passed",
+  "publication": "Phase179 full primary/Ghidra/package audit pending; not a completed goal.",
+  "room_terrain_loader_replay": {
+    "file": "ghidra\\phase150-room-resource-loader-native-00df156f844e.json",
+    "sha256": "78b37bdc4466260891efdd1063e205a62d829883a606db89483aa88fe86eca3e"
+  },
+  "scope": "Bounded phase179 checks; the full phase179 package audit is still pending.\n\nActual original Object create/unlink/destruct/free in an isolated CPU context.\nThis does not execute automatic Crypt job selection or visible animations.\n",
+  "source_hashes": {
+    "D:\\Games\\DK2\\Dungeon Keeper 2\\DKII-DX.exe": "d7a8b854e4e4f02709eba271bead6fe2307dd6e332b5a96e70857e5b0e19fb8a",
+    "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\Objects.kwd": "36d607b408eeeb17da0fbea01e374a614a327021d2a30eea4aaa0311bf9b334c",
+    "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\Rooms.kwd": "24546825ac6cf3f8455bf9b26fbffe9e2ded05ea3b176c0e00354ee1ccf0a465",
+    "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\Terrain.kwd": "1b4296b0cf696d5428e6d3d94eb8571e2601bd78fc51caa6c3e1e13c0695e77d"
+  },
+  "probe_sha256": "bd0456fea6ba55c5f4267827b9de28601344c9b273311c3ee61877f4bc306636",
+  "scenes": [
+    {
+      "case": {
+        "name": "create-zero",
+        "count": 0,
+        "spare_blocks": 2,
+        "expected_ids": []
+      },
+      "nodes": {},
+      "room55": 0,
+      "pool": {
+        "free": {
+          "blocks": 3,
+          "bytes": 1152
+        },
+        "used": {
+          "blocks": 1,
+          "bytes": 384
+        }
+      },
+      "low_page_accesses_only_FS0": true,
+      "invalid_readability_probes": 0,
+      "original_object_deletions": 0,
+      "native_steps": 54652,
+      "trace": "ghidra\\phase179-crypt-objects-discovery-f17fd501ed17.json",
+      "trace_sha256": "31f3d60f005adb37bb9914421be3750d3f7f33baa7951deb8c7b4f431dbc52de"
+    },
+    {
+      "case": {
+        "name": "create-two",
+        "count": 2,
+        "spare_blocks": 2,
+        "expected_ids": [
+          143,
+          143
+        ]
+      },
+      "nodes": {
+        "103": {
+          "address": 251662452,
+          "ID": 143,
+          "previous": 104,
+          "next": 0,
+          "room": 300,
+          "state": 57,
+          "marker": 1
+        },
+        "104": {
+          "address": 251658356,
+          "ID": 143,
+          "previous": 0,
+          "next": 103,
+          "room": 300,
+          "state": 57,
+          "marker": 1
+        }
+      },
+      "room55": 2,
+      "pool": {
+        "free": {
+          "blocks": 3,
+          "bytes": 336
+        },
+        "used": {
+          "blocks": 3,
+          "bytes": 1200
+        }
+      },
+      "low_page_accesses_only_FS0": true,
+      "invalid_readability_probes": 0,
+      "original_object_deletions": 0,
+      "native_steps": 57568,
+      "trace": "ghidra\\phase179-crypt-objects-discovery-8ddfec6593b4.json",
+      "trace_sha256": "53ddb5f7e0b57269a0259f403f16454ccb455731f3e262119b3679de27a59242"
+    },
+    {
+      "case": {
+        "name": "remove-two",
+        "count": 2,
+        "spare_blocks": 2,
+        "cleanup": true,
+        "expected_ids": []
+      },
+      "nodes": {},
+      "room55": 0,
+      "pool": {
+        "free": {
+          "blocks": 3,
+          "bytes": 1152
+        },
+        "used": {
+          "blocks": 1,
+          "bytes": 384
+        }
+      },
+      "low_page_accesses_only_FS0": true,
+      "invalid_readability_probes": 0,
+      "original_object_deletions": 2,
+      "native_steps": 58432,
+      "trace": "ghidra\\phase179-crypt-objects-discovery-d4003660ca70.json",
+      "trace_sha256": "5748e94368ec64c3f1ca725545bcb339ee8f8cde0fc0b963365aa34d96f85525"
+    },
+    {
+      "case": {
+        "name": "reuse-freed-block",
+        "count": 2,
+        "spare_blocks": 2,
+        "cleanup": true,
+        "recreate": 1,
+        "expected_ids": [
+          143
+        ]
+      },
+      "nodes": {
+        "105": {
+          "address": 251662452,
+          "ID": 143,
+          "previous": 0,
+          "next": 0,
+          "room": 300,
+          "state": 57,
+          "marker": 1
+        }
+      },
+      "room55": 1,
+      "pool": {
+        "free": {
+          "blocks": 3,
+          "bytes": 744
+        },
+        "used": {
+          "blocks": 2,
+          "bytes": 792
+        }
+      },
+      "low_page_accesses_only_FS0": true,
+      "invalid_readability_probes": 0,
+      "original_object_deletions": 2,
+      "native_steps": 60137,
+      "trace": "ghidra\\phase179-crypt-objects-discovery-9b832106a397.json",
+      "trace_sha256": "7f18d8a8011ef9af48119979d6dc955727f7ff42576067b83709fe0b7a6b6d38"
+    },
+    {
+      "case": {
+        "name": "preserve-other-room-objects",
+        "count": 2,
+        "spare_blocks": 4,
+        "extras_before": [
+          142,
+          144
+        ],
+        "cleanup": true,
+        "expected_ids": [
+          142,
+          144
+        ]
+      },
+      "nodes": {
+        "103": {
+          "address": 251670644,
+          "ID": 142,
+          "previous": 104,
+          "next": 0,
+          "room": 300,
+          "state": 0,
+          "marker": 0
+        },
+        "104": {
+          "address": 251666548,
+          "ID": 144,
+          "previous": 0,
+          "next": 103,
+          "room": 300,
+          "state": 0,
+          "marker": 0
+        }
+      },
+      "room55": 0,
+      "pool": {
+        "free": {
+          "blocks": 5,
+          "bytes": 1360
+        },
+        "used": {
+          "blocks": 3,
+          "bytes": 1200
+        }
+      },
+      "low_page_accesses_only_FS0": true,
+      "invalid_readability_probes": 0,
+      "original_object_deletions": 2,
+      "native_steps": 60610,
+      "trace": "ghidra\\phase179-crypt-objects-discovery-d87449a42823.json",
+      "trace_sha256": "c7dcef6c35f42f85ddb446e593a8d43c85d35e229f570cf620926829a090b741"
+    },
+    {
+      "case": {
+        "name": "no-old-registration",
+        "count": 2,
+        "spare_blocks": 2,
+        "cleanup": true,
+        "old_registered": false,
+        "expected_ids": [
+          143,
+          143
+        ]
+      },
+      "nodes": {
+        "103": {
+          "address": 251662452,
+          "ID": 143,
+          "previous": 104,
+          "next": 0,
+          "room": 300,
+          "state": 57,
+          "marker": 1
+        },
+        "104": {
+          "address": 251658356,
+          "ID": 143,
+          "previous": 0,
+          "next": 103,
+          "room": 300,
+          "state": 57,
+          "marker": 1
+        }
+      },
+      "room55": 2,
+      "pool": {
+        "free": {
+          "blocks": 3,
+          "bytes": 336
+        },
+        "used": {
+          "blocks": 3,
+          "bytes": 1200
+        }
+      },
+      "low_page_accesses_only_FS0": true,
+      "invalid_readability_probes": 0,
+      "original_object_deletions": 0,
+      "native_steps": 57586,
+      "trace": "ghidra\\phase179-crypt-objects-discovery-19ed2678025b.json",
+      "trace_sha256": "7d3fba8c605269ccf1397ab890dd4625646d8f68176ffdc79ebae8ab3f2ad281"
+    },
+    {
+      "case": {
+        "name": "create-one",
+        "count": 1,
+        "spare_blocks": 1,
+        "expected_ids": [
+          143
+        ]
+      },
+      "nodes": {
+        "103": {
+          "address": 251658356,
+          "ID": 143,
+          "previous": 0,
+          "next": 0,
+          "room": 300,
+          "state": 57,
+          "marker": 1
+        }
+      },
+      "room55": 1,
+      "pool": {
+        "free": {
+          "blocks": 2,
+          "bytes": 232
+        },
+        "used": {
+          "blocks": 2,
+          "bytes": 792
+        }
+      },
+      "low_page_accesses_only_FS0": true,
+      "invalid_readability_probes": 0,
+      "original_object_deletions": 0,
+      "native_steps": 56105,
+      "trace": "ghidra\\phase179-crypt-objects-discovery-b1fbd6deedb4.json",
+      "trace_sha256": "cd829d72d8b536c7d67b164177c7848f5e8566af63e79330021508836b9a4e0f"
+    },
+    {
+      "case": {
+        "name": "create-ten",
+        "count": 10,
+        "spare_blocks": 10,
+        "expected_ids": [
+          143,
+          143,
+          143,
+          143,
+          143,
+          143,
+          143,
+          143,
+          143,
+          143
+        ]
+      },
+      "nodes": {
+        "103": {
+          "address": 251695220,
+          "ID": 143,
+          "previous": 104,
+          "next": 0,
+          "room": 300,
+          "state": 57,
+          "marker": 1
+        },
+        "104": {
+          "address": 251691124,
+          "ID": 143,
+          "previous": 105,
+          "next": 103,
+          "room": 300,
+          "state": 57,
+          "marker": 1
+        },
+        "105": {
+          "address": 251687028,
+          "ID": 143,
+          "previous": 106,
+          "next": 104,
+          "room": 300,
+          "state": 57,
+          "marker": 1
+        },
+        "106": {
+          "address": 251682932,
+          "ID": 143,
+          "previous": 107,
+          "next": 105,
+          "room": 300,
+          "state": 57,
+          "marker": 1
+        },
+        "107": {
+          "address": 251678836,
+          "ID": 143,
+          "previous": 108,
+          "next": 106,
+          "room": 300,
+          "state": 57,
+          "marker": 1
+        },
+        "108": {
+          "address": 251674740,
+          "ID": 143,
+          "previous": 109,
+          "next": 107,
+          "room": 300,
+          "state": 57,
+          "marker": 1
+        },
+        "109": {
+          "address": 251670644,
+          "ID": 143,
+          "previous": 110,
+          "next": 108,
+          "room": 300,
+          "state": 57,
+          "marker": 1
+        },
+        "110": {
+          "address": 251666548,
+          "ID": 143,
+          "previous": 111,
+          "next": 109,
+          "room": 300,
+          "state": 57,
+          "marker": 1
+        },
+        "111": {
+          "address": 251662452,
+          "ID": 143,
+          "previous": 112,
+          "next": 110,
+          "room": 300,
+          "state": 57,
+          "marker": 1
+        },
+        "112": {
+          "address": 251658356,
+          "ID": 143,
+          "previous": 0,
+          "next": 111,
+          "room": 300,
+          "state": 57,
+          "marker": 1
+        }
+      },
+      "room55": 10,
+      "pool": {
+        "free": {
+          "blocks": 11,
+          "bytes": 1168
+        },
+        "used": {
+          "blocks": 11,
+          "bytes": 4464
+        }
+      },
+      "low_page_accesses_only_FS0": true,
+      "invalid_readability_probes": 0,
+      "original_object_deletions": 0,
+      "native_steps": 69913,
+      "trace": "ghidra\\phase179-crypt-objects-discovery-4de0c12553b4.json",
+      "trace_sha256": "9701dbd4a38c2df358c25d1e9ed0e805c7129f44a1c91661e35be7faf3be1d08"
+    },
+    {
+      "case": {
+        "name": "create-twenty",
+        "count": 20,
+        "spare_blocks": 20,
+        "expected_ids": [
+          143,
+          143,
+          143,
+          143,
+          143,
+          143,
+          143,
+          143,
+          143,
+          143,
+          143,
+          143,
+          143,
+          143,
+          143,
+          143,
+          143,
+          143,
+          143,
+          143
+        ]
+      },
+      "nodes": {
+        "103": {
+          "address": 251736180,
+          "ID": 143,
+          "previous": 104,
+          "next": 0,
+          "room": 300,
+          "state": 57,
+          "marker": 1
+        },
+        "104": {
+          "address": 251732084,
+          "ID": 143,
+          "previous": 105,
+          "next": 103,
+          "room": 300,
+          "state": 57,
+          "marker": 1
+        },
+        "105": {
+          "address": 251727988,
+          "ID": 143,
+          "previous": 106,
+          "next": 104,
+          "room": 300,
+          "state": 57,
+          "marker": 1
+        },
+        "106": {
+          "address": 251723892,
+          "ID": 143,
+          "previous": 107,
+          "next": 105,
+          "room": 300,
+          "state": 57,
+          "marker": 1
+        },
+        "107": {
+          "address": 251719796,
+          "ID": 143,
+          "previous": 108,
+          "next": 106,
+          "room": 300,
+          "state": 57,
+          "marker": 1
+        },
+        "108": {
+          "address": 251715700,
+          "ID": 143,
+          "previous": 109,
+          "next": 107,
+          "room": 300,
+          "state": 57,
+          "marker": 1
+        },
+        "109": {
+          "address": 251711604,
+          "ID": 143,
+          "previous": 110,
+          "next": 108,
+          "room": 300,
+          "state": 57,
+          "marker": 1
+        },
+        "110": {
+          "address": 251707508,
+          "ID": 143,
+          "previous": 111,
+          "next": 109,
+          "room": 300,
+          "state": 57,
+          "marker": 1
+        },
+        "111": {
+          "address": 251703412,
+          "ID": 143,
+          "previous": 112,
+          "next": 110,
+          "room": 300,
+          "state": 57,
+          "marker": 1
+        },
+        "112": {
+          "address": 251699316,
+          "ID": 143,
+          "previous": 113,
+          "next": 111,
+          "room": 300,
+          "state": 57,
+          "marker": 1
+        },
+        "113": {
+          "address": 251695220,
+          "ID": 143,
+          "previous": 114,
+          "next": 112,
+          "room": 300,
+          "state": 57,
+          "marker": 1
+        },
+        "114": {
+          "address": 251691124,
+          "ID": 143,
+          "previous": 115,
+          "next": 113,
+          "room": 300,
+          "state": 57,
+          "marker": 1
+        },
+        "115": {
+          "address": 251687028,
+          "ID": 143,
+          "previous": 116,
+          "next": 114,
+          "room": 300,
+          "state": 57,
+          "marker": 1
+        },
+        "116": {
+          "address": 251682932,
+          "ID": 143,
+          "previous": 117,
+          "next": 115,
+          "room": 300,
+          "state": 57,
+          "marker": 1
+        },
+        "117": {
+          "address": 251678836,
+          "ID": 143,
+          "previous": 118,
+          "next": 116,
+          "room": 300,
+          "state": 57,
+          "marker": 1
+        },
+        "118": {
+          "address": 251674740,
+          "ID": 143,
+          "previous": 119,
+          "next": 117,
+          "room": 300,
+          "state": 57,
+          "marker": 1
+        },
+        "119": {
+          "address": 251670644,
+          "ID": 143,
+          "previous": 120,
+          "next": 118,
+          "room": 300,
+          "state": 57,
+          "marker": 1
+        },
+        "120": {
+          "address": 251666548,
+          "ID": 143,
+          "previous": 121,
+          "next": 119,
+          "room": 300,
+          "state": 57,
+          "marker": 1
+        },
+        "121": {
+          "address": 251662452,
+          "ID": 143,
+          "previous": 122,
+          "next": 120,
+          "room": 300,
+          "state": 57,
+          "marker": 1
+        },
+        "122": {
+          "address": 251658356,
+          "ID": 143,
+          "previous": 0,
+          "next": 121,
+          "room": 300,
+          "state": 57,
+          "marker": 1
+        }
+      },
+      "room55": 20,
+      "pool": {
+        "free": {
+          "blocks": 21,
+          "bytes": 2208
+        },
+        "used": {
+          "blocks": 21,
+          "bytes": 8544
+        }
+      },
+      "low_page_accesses_only_FS0": true,
+      "invalid_readability_probes": 0,
+      "original_object_deletions": 0,
+      "native_steps": 85312,
+      "trace": "ghidra\\phase179-crypt-objects-discovery-023ca5fb28c3.json",
+      "trace_sha256": "616ae11ed7abc64832632d1aa52b1d3d46362a1e78589b724c40baccf5bc74f9"
+    },
+    {
+      "case": {
+        "name": "create-forty",
+        "count": 40,
+        "spare_blocks": 40,
+        "expected_ids": [
+          143,
+          143,
+          143,
+          143,
+          143,
+          143,
+          143,
+          143,
+          143,
+          143,
+          143,
+          143,
+          143,
+          143,
+          143,
+          143,
+          143,
+          143,
+          143,
+          143,
+          143,
+          143,
+          143,
+          143,
+          143,
+          143,
+          143,
+          143,
+          143,
+          143,
+          143,
+          143,
+          143,
+          143,
+          143,
+          143,
+          143,
+          143,
+          143,
+          143
+        ]
+      },
+      "nodes": {
+        "103": {
+          "address": 251818100,
+          "ID": 143,
+          "previous": 104,
+          "next": 0,
+          "room": 300,
+          "state": 57,
+          "marker": 1
+        },
+        "104": {
+          "address": 251814004,
+          "ID": 143,
+          "previous": 105,
+          "next": 103,
+          "room": 300,
+          "state": 57,
+          "marker": 1
+        },
+        "105": {
+          "address": 251809908,
+          "ID": 143,
+          "previous": 106,
+          "next": 104,
+          "room": 300,
+          "state": 57,
+          "marker": 1
+        },
+        "106": {
+          "address": 251805812,
+          "ID": 143,
+          "previous": 107,
+          "next": 105,
+          "room": 300,
+          "state": 57,
+          "marker": 1
+        },
+        "107": {
+          "address": 251801716,
+          "ID": 143,
+          "previous": 108,
+          "next": 106,
+          "room": 300,
+          "state": 57,
+          "marker": 1
+        },
+        "108": {
+          "address": 251797620,
+          "ID": 143,
+          "previous": 109,
+          "next": 107,
+          "room": 300,
+          "state": 57,
+          "marker": 1
+        },
+        "109": {
+          "address": 251793524,
+          "ID": 143,
+          "previous": 110,
+          "next": 108,
+          "room": 300,
+          "state": 57,
+          "marker": 1
+        },
+        "110": {
+          "address": 251789428,
+          "ID": 143,
+          "previous": 111,
+          "next": 109,
+          "room": 300,
+          "state": 57,
+          "marker": 1
+        },
+        "111": {
+          "address": 251785332,
+          "ID": 143,
+          "previous": 112,
+          "next": 110,
+          "room": 300,
+          "state": 57,
+          "marker": 1
+        },
+        "112": {
+          "address": 251781236,
+          "ID": 143,
+          "previous": 113,
+          "next": 111,
+          "room": 300,
+          "state": 57,
+          "marker": 1
+        },
+        "113": {
+          "address": 251777140,
+          "ID": 143,
+          "previous": 114,
+          "next": 112,
+          "room": 300,
+          "state": 57,
+          "marker": 1
+        },
+        "114": {
+          "address": 251773044,
+          "ID": 143,
+          "previous": 115,
+          "next": 113,
+          "room": 300,
+          "state": 57,
+          "marker": 1
+        },
+        "115": {
+          "address": 251768948,
+          "ID": 143,
+          "previous": 116,
+          "next": 114,
+          "room": 300,
+          "state": 57,
+          "marker": 1
+        },
+        "116": {
+          "address": 251764852,
+          "ID": 143,
+          "previous": 117,
+          "next": 115,
+          "room": 300,
+          "state": 57,
+          "marker": 1
+        },
+        "117": {
+          "address": 251760756,
+          "ID": 143,
+          "previous": 118,
+          "next": 116,
+          "room": 300,
+          "state": 57,
+          "marker": 1
+        },
+        "118": {
+          "address": 251756660,
+          "ID": 143,
+          "previous": 119,
+          "next": 117,
+          "room": 300,
+          "state": 57,
+          "marker": 1
+        },
+        "119": {
+          "address": 251752564,
+          "ID": 143,
+          "previous": 120,
+          "next": 118,
+          "room": 300,
+          "state": 57,
+          "marker": 1
+        },
+        "120": {
+          "address": 251748468,
+          "ID": 143,
+          "previous": 121,
+          "next": 119,
+          "room": 300,
+          "state": 57,
+          "marker": 1
+        },
+        "121": {
+          "address": 251744372,
+          "ID": 143,
+          "previous": 122,
+          "next": 120,
+          "room": 300,
+          "state": 57,
+          "marker": 1
+        },
+        "122": {
+          "address": 251740276,
+          "ID": 143,
+          "previous": 123,
+          "next": 121,
+          "room": 300,
+          "state": 57,
+          "marker": 1
+        },
+        "123": {
+          "address": 251736180,
+          "ID": 143,
+          "previous": 124,
+          "next": 122,
+          "room": 300,
+          "state": 57,
+          "marker": 1
+        },
+        "124": {
+          "address": 251732084,
+          "ID": 143,
+          "previous": 125,
+          "next": 123,
+          "room": 300,
+          "state": 57,
+          "marker": 1
+        },
+        "125": {
+          "address": 251727988,
+          "ID": 143,
+          "previous": 126,
+          "next": 124,
+          "room": 300,
+          "state": 57,
+          "marker": 1
+        },
+        "126": {
+          "address": 251723892,
+          "ID": 143,
+          "previous": 127,
+          "next": 125,
+          "room": 300,
+          "state": 57,
+          "marker": 1
+        },
+        "127": {
+          "address": 251719796,
+          "ID": 143,
+          "previous": 128,
+          "next": 126,
+          "room": 300,
+          "state": 57,
+          "marker": 1
+        },
+        "128": {
+          "address": 251715700,
+          "ID": 143,
+          "previous": 129,
+          "next": 127,
+          "room": 300,
+          "state": 57,
+          "marker": 1
+        },
+        "129": {
+          "address": 251711604,
+          "ID": 143,
+          "previous": 130,
+          "next": 128,
+          "room": 300,
+          "state": 57,
+          "marker": 1
+        },
+        "130": {
+          "address": 251707508,
+          "ID": 143,
+          "previous": 131,
+          "next": 129,
+          "room": 300,
+          "state": 57,
+          "marker": 1
+        },
+        "131": {
+          "address": 251703412,
+          "ID": 143,
+          "previous": 132,
+          "next": 130,
+          "room": 300,
+          "state": 57,
+          "marker": 1
+        },
+        "132": {
+          "address": 251699316,
+          "ID": 143,
+          "previous": 133,
+          "next": 131,
+          "room": 300,
+          "state": 57,
+          "marker": 1
+        },
+        "133": {
+          "address": 251695220,
+          "ID": 143,
+          "previous": 134,
+          "next": 132,
+          "room": 300,
+          "state": 57,
+          "marker": 1
+        },
+        "134": {
+          "address": 251691124,
+          "ID": 143,
+          "previous": 135,
+          "next": 133,
+          "room": 300,
+          "state": 57,
+          "marker": 1
+        },
+        "135": {
+          "address": 251687028,
+          "ID": 143,
+          "previous": 136,
+          "next": 134,
+          "room": 300,
+          "state": 57,
+          "marker": 1
+        },
+        "136": {
+          "address": 251682932,
+          "ID": 143,
+          "previous": 137,
+          "next": 135,
+          "room": 300,
+          "state": 57,
+          "marker": 1
+        },
+        "137": {
+          "address": 251678836,
+          "ID": 143,
+          "previous": 138,
+          "next": 136,
+          "room": 300,
+          "state": 57,
+          "marker": 1
+        },
+        "138": {
+          "address": 251674740,
+          "ID": 143,
+          "previous": 139,
+          "next": 137,
+          "room": 300,
+          "state": 57,
+          "marker": 1
+        },
+        "139": {
+          "address": 251670644,
+          "ID": 143,
+          "previous": 140,
+          "next": 138,
+          "room": 300,
+          "state": 57,
+          "marker": 1
+        },
+        "140": {
+          "address": 251666548,
+          "ID": 143,
+          "previous": 141,
+          "next": 139,
+          "room": 300,
+          "state": 57,
+          "marker": 1
+        },
+        "141": {
+          "address": 251662452,
+          "ID": 143,
+          "previous": 142,
+          "next": 140,
+          "room": 300,
+          "state": 57,
+          "marker": 1
+        },
+        "142": {
+          "address": 251658356,
+          "ID": 143,
+          "previous": 0,
+          "next": 141,
+          "room": 300,
+          "state": 57,
+          "marker": 1
+        }
+      },
+      "room55": 40,
+      "pool": {
+        "free": {
+          "blocks": 41,
+          "bytes": 4288
+        },
+        "used": {
+          "blocks": 41,
+          "bytes": 16704
+        }
+      },
+      "low_page_accesses_only_FS0": true,
+      "invalid_readability_probes": 0,
+      "original_object_deletions": 0,
+      "native_steps": 118444,
+      "trace": "ghidra\\phase179-crypt-objects-discovery-239e934d8889.json",
+      "trace_sha256": "2dc87e103174314392c73c660e32369004bad1834b54ab2891f55148c501322f"
+    },
+    {
+      "case": {
+        "name": "remove-forty",
+        "count": 40,
+        "spare_blocks": 40,
+        "cleanup": true,
+        "expected_ids": []
+      },
+      "nodes": {},
+      "room55": 0,
+      "pool": {
+        "free": {
+          "blocks": 41,
+          "bytes": 20608
+        },
+        "used": {
+          "blocks": 1,
+          "bytes": 384
+        }
+      },
+      "low_page_accesses_only_FS0": true,
+      "invalid_readability_probes": 0,
+      "original_object_deletions": 40,
+      "native_steps": 140952,
+      "trace": "ghidra\\phase179-crypt-objects-discovery-143e11346059.json",
+      "trace_sha256": "4f4ac5cc73b9de009858f8f207f04400590a9e51fdf926c19334134933faf93f"
+    },
+    {
+      "case": {
+        "name": "zero-with-prior-count",
+        "count": 0,
+        "initial55": 3,
+        "spare_blocks": 1,
+        "expected_ids": []
+      },
+      "nodes": {},
+      "room55": 3,
+      "pool": {
+        "free": {
+          "blocks": 2,
+          "bytes": 640
+        },
+        "used": {
+          "blocks": 1,
+          "bytes": 384
+        }
+      },
+      "low_page_accesses_only_FS0": true,
+      "invalid_readability_probes": 0,
+      "original_object_deletions": 0,
+      "native_steps": 54652,
+      "trace": "ghidra\\phase179-crypt-objects-discovery-5a0df50e9ff1.json",
+      "trace_sha256": "1721057549dd36d79386593991865dc7e044b8bac2572b2e025b83dae655d9c6"
+    },
+    {
+      "case": {
+        "name": "negative-diagnostic",
+        "count": -1,
+        "initial55": 3,
+        "spare_blocks": 1,
+        "expected_ids": []
+      },
+      "nodes": {},
+      "room55": 2,
+      "pool": {
+        "free": {
+          "blocks": 2,
+          "bytes": 640
+        },
+        "used": {
+          "blocks": 1,
+          "bytes": 384
+        }
+      },
+      "low_page_accesses_only_FS0": true,
+      "invalid_readability_probes": 0,
+      "original_object_deletions": 0,
+      "native_steps": 54652,
+      "trace": "ghidra\\phase179-crypt-objects-discovery-bca026ae47fa.json",
+      "trace_sha256": "d20393ce8aaa68eade1ebfb01d963546354ca16eea899485a0355f08670ce3fe"
+    },
+    {
+      "case": {
+        "name": "no-free-object-space",
+        "count": 2,
+        "spare_blocks": 0,
+        "expected_ids": []
+      },
+      "nodes": {},
+      "room55": 2,
+      "pool": {
+        "free": {
+          "blocks": 1,
+          "bytes": 128
+        },
+        "used": {
+          "blocks": 1,
+          "bytes": 384
+        }
+      },
+      "low_page_accesses_only_FS0": true,
+      "invalid_readability_probes": 0,
+      "original_object_deletions": 0,
+      "native_steps": 55033,
+      "trace": "ghidra\\phase179-crypt-objects-discovery-da30dd122ad0.json",
+      "trace_sha256": "a983d4df678306bca88f74262c4fcb02f7125d7ee0f3144e506cfabfa5e78059"
+    },
+    {
+      "case": {
+        "name": "one-free-object-space",
+        "count": 2,
+        "spare_blocks": 1,
+        "expected_ids": [
+          143
+        ]
+      },
+      "nodes": {
+        "103": {
+          "address": 251658356,
+          "ID": 143,
+          "previous": 0,
+          "next": 0,
+          "room": 300,
+          "state": 57,
+          "marker": 1
+        }
+      },
+      "room55": 2,
+      "pool": {
+        "free": {
+          "blocks": 2,
+          "bytes": 232
+        },
+        "used": {
+          "blocks": 2,
+          "bytes": 792
+        }
+      },
+      "low_page_accesses_only_FS0": true,
+      "invalid_readability_probes": 0,
+      "original_object_deletions": 0,
+      "native_steps": 56299,
+      "trace": "ghidra\\phase179-crypt-objects-discovery-3db389bb302b.json",
+      "trace_sha256": "63fb9ad42fa92f89dd16481424f622b374f0d85d7b45da3cce9aca2854802faf"
+    },
+    {
+      "case": {
+        "name": "remove-partial-create",
+        "count": 2,
+        "spare_blocks": 1,
+        "cleanup": true,
+        "expected_ids": []
+      },
+      "nodes": {},
+      "room55": 0,
+      "pool": {
+        "free": {
+          "blocks": 2,
+          "bytes": 640
+        },
+        "used": {
+          "blocks": 1,
+          "bytes": 384
+        }
+      },
+      "low_page_accesses_only_FS0": true,
+      "invalid_readability_probes": 0,
+      "original_object_deletions": 1,
+      "native_steps": 56753,
+      "trace": "ghidra\\phase179-crypt-objects-discovery-dee993cf00d4.json",
+      "trace_sha256": "0fa09f2e7a56ebe9b46fdf473e48d251a9eb345b662471ac8dce0f87cd53a057"
+    },
+    {
+      "case": {
+        "name": "skip-nondancers-before-tail",
+        "count": 1,
+        "spare_blocks": 3,
+        "extras_after": [
+          142,
+          144
+        ],
+        "cleanup": true,
+        "expected_ids": [
+          142,
+          144
+        ]
+      },
+      "nodes": {
+        "104": {
+          "address": 251662452,
+          "ID": 142,
+          "previous": 105,
+          "next": 0,
+          "room": 300,
+          "state": 0,
+          "marker": 0
+        },
+        "105": {
+          "address": 251658356,
+          "ID": 144,
+          "previous": 0,
+          "next": 104,
+          "room": 300,
+          "state": 0,
+          "marker": 0
+        }
+      },
+      "room55": 0,
+      "pool": {
+        "free": {
+          "blocks": 4,
+          "bytes": 848
+        },
+        "used": {
+          "blocks": 3,
+          "bytes": 1200
+        }
+      },
+      "low_page_accesses_only_FS0": true,
+      "invalid_readability_probes": 0,
+      "original_object_deletions": 1,
+      "native_steps": 58746,
+      "trace": "ghidra\\phase179-crypt-objects-discovery-663a237d3a0d.json",
+      "trace_sha256": "ee8d60bda9b6fafae1776fa166bd4cc89fb298ebb4da30fb8f7b34f867561041"
+    },
+    {
+      "case": {
+        "name": "remove-factory-default-dancer",
+        "count": 0,
+        "spare_blocks": 1,
+        "extras_before": [
+          143
+        ],
+        "cleanup": true,
+        "expected_ids": []
+      },
+      "nodes": {},
+      "room55": 0,
+      "pool": {
+        "free": {
+          "blocks": 2,
+          "bytes": 640
+        },
+        "used": {
+          "blocks": 1,
+          "bytes": 384
+        }
+      },
+      "low_page_accesses_only_FS0": true,
+      "invalid_readability_probes": 0,
+      "original_object_deletions": 1,
+      "native_steps": 56161,
+      "trace": "ghidra\\phase179-crypt-objects-discovery-226f4eeae8e4.json",
+      "trace_sha256": "e6fdff79fb9f84da5d4e94c61fbe50c549bd11b96e7d34bce626e668ed670824"
+    },
+    {
+      "case": {
+        "name": "objects-and-actual-occupants",
+        "count": 2,
+        "spare_blocks": 2,
+        "occupants": 2,
+        "cleanup": true,
+        "expected_ids": []
+      },
+      "nodes": {},
+      "room55": 0,
+      "pool": {
+        "free": {
+          "blocks": 3,
+          "bytes": 1152
+        },
+        "used": {
+          "blocks": 1,
+          "bytes": 384
+        }
+      },
+      "low_page_accesses_only_FS0": true,
+      "invalid_readability_probes": 0,
+      "original_object_deletions": 2,
+      "native_steps": 58708,
+      "trace": "ghidra\\phase179-crypt-objects-discovery-cf7d192e11c1.json",
+      "trace_sha256": "14cb2cb86bc1ac1c83f8ca3b95142b1ebb43f37cd85d50247de875949d0324e0"
+    }
+  ]
+}

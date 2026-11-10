@@ -1,0 +1,1506 @@
+{
+  "scope": "Accepted mode8 rawShot/rawTerrain/fullNAV paths, including complete Rock destruction.",
+  "replays": [
+    {
+      "case": {
+        "name": "ordinary"
+      },
+      "file": "ghidra\\phase151-tremor-native-645fbcb67b5d.json",
+      "sha256": "4d06522db362ab6785d5840139e91233ec0c3bbbed57a67382666ea9daec0884",
+      "outcome": {
+        "extent_cells": 1,
+        "rounds": 1,
+        "requests": [
+          {
+            "x": 4,
+            "y": 5,
+            "delta": -80,
+            "owner": 0,
+            "HP_before": 165,
+            "terrain_id": 2
+          },
+          {
+            "x": 4,
+            "y": 6,
+            "delta": -80,
+            "owner": 0,
+            "HP_before": 165,
+            "terrain_id": 2
+          },
+          {
+            "x": 5,
+            "y": 5,
+            "delta": -80,
+            "owner": 0,
+            "HP_before": 165,
+            "terrain_id": 2
+          }
+        ],
+        "destroyed": [],
+        "final_affected_HP": [
+          85,
+          85,
+          85
+        ],
+        "compared_regions": 74,
+        "compared_bytes": 348840,
+        "native_steps": 144278,
+        "low_reads_only_FS_SEH": true,
+        "FS_reads": 17
+      }
+    },
+    {
+      "case": {
+        "name": "full-tick",
+        "tick": true
+      },
+      "file": "ghidra\\phase151-tremor-native-34f09e9d24af.json",
+      "sha256": "7563765bb4207048bd9ad69170b359ccb93f0112e4866153e11d227365a8c140",
+      "outcome": {
+        "extent_cells": 1,
+        "rounds": 1,
+        "requests": [
+          {
+            "x": 4,
+            "y": 5,
+            "delta": -80,
+            "owner": 0,
+            "HP_before": 165,
+            "terrain_id": 2
+          },
+          {
+            "x": 4,
+            "y": 6,
+            "delta": -80,
+            "owner": 0,
+            "HP_before": 165,
+            "terrain_id": 2
+          },
+          {
+            "x": 5,
+            "y": 5,
+            "delta": -80,
+            "owner": 0,
+            "HP_before": 165,
+            "terrain_id": 2
+          }
+        ],
+        "destroyed": [],
+        "final_affected_HP": [
+          85,
+          85,
+          85
+        ],
+        "compared_regions": 74,
+        "compared_bytes": 348840,
+        "native_steps": 144675,
+        "low_reads_only_FS_SEH": true,
+        "FS_reads": 19
+      }
+    },
+    {
+      "case": {
+        "name": "second-full-tick",
+        "tick": true,
+        "pre_ticks": 1
+      },
+      "file": "ghidra\\phase151-tremor-native-8a17443aadbf.json",
+      "sha256": "58e8e268e3bccf009185d50be83fe3041b3044d89706ec08a46e9949abef42e7",
+      "outcome": {
+        "extent_cells": 1,
+        "rounds": 2,
+        "requests": [
+          {
+            "x": 4,
+            "y": 5,
+            "delta": -80,
+            "owner": 0,
+            "HP_before": 165,
+            "terrain_id": 2
+          },
+          {
+            "x": 4,
+            "y": 6,
+            "delta": -80,
+            "owner": 0,
+            "HP_before": 165,
+            "terrain_id": 2
+          },
+          {
+            "x": 5,
+            "y": 5,
+            "delta": -80,
+            "owner": 0,
+            "HP_before": 165,
+            "terrain_id": 2
+          },
+          {
+            "x": 4,
+            "y": 5,
+            "delta": -80,
+            "owner": 0,
+            "HP_before": 85,
+            "terrain_id": 2
+          },
+          {
+            "x": 4,
+            "y": 6,
+            "delta": -80,
+            "owner": 0,
+            "HP_before": 85,
+            "terrain_id": 2
+          },
+          {
+            "x": 5,
+            "y": 5,
+            "delta": -80,
+            "owner": 0,
+            "HP_before": 85,
+            "terrain_id": 2
+          }
+        ],
+        "destroyed": [],
+        "final_affected_HP": [
+          5,
+          5,
+          5,
+          5,
+          5,
+          5
+        ],
+        "compared_regions": 74,
+        "compared_bytes": 348840,
+        "native_steps": 145390,
+        "low_reads_only_FS_SEH": true,
+        "FS_reads": 24
+      }
+    },
+    {
+      "case": {
+        "name": "extent-zero",
+        "data2": 0
+      },
+      "file": "ghidra\\phase151-tremor-native-bed6ad7f8fb3.json",
+      "sha256": "3b35988a035e8540abc264e9a32937792048fd63302d4823d1df06486f3f981c",
+      "outcome": {
+        "extent_cells": 0,
+        "rounds": 1,
+        "requests": [],
+        "destroyed": [],
+        "final_affected_HP": [],
+        "compared_regions": 74,
+        "compared_bytes": 348840,
+        "native_steps": 143917,
+        "low_reads_only_FS_SEH": true,
+        "FS_reads": 14
+      }
+    },
+    {
+      "case": {
+        "name": "extent-subcell",
+        "data2": 4095
+      },
+      "file": "ghidra\\phase151-tremor-native-db6104306681.json",
+      "sha256": "bca8231c0fe5ce7445fa860b354e0278c09fc6f553246c20af7f5ffd06637381",
+      "outcome": {
+        "extent_cells": 0,
+        "rounds": 1,
+        "requests": [],
+        "destroyed": [],
+        "final_affected_HP": [],
+        "compared_regions": 74,
+        "compared_bytes": 348840,
+        "native_steps": 143917,
+        "low_reads_only_FS_SEH": true,
+        "FS_reads": 14
+      }
+    },
+    {
+      "case": {
+        "name": "extent-raw1",
+        "data2": 1
+      },
+      "file": "ghidra\\phase151-tremor-native-fbb5307a5c4b.json",
+      "sha256": "b99cfe4e37a4afdefe4a588dbea42c6393b6da028a65069255a5445a1a68b4a7",
+      "outcome": {
+        "extent_cells": 0,
+        "rounds": 1,
+        "requests": [],
+        "destroyed": [],
+        "final_affected_HP": [],
+        "compared_regions": 74,
+        "compared_bytes": 348840,
+        "native_steps": 143917,
+        "low_reads_only_FS_SEH": true,
+        "FS_reads": 14
+      }
+    },
+    {
+      "case": {
+        "name": "extent-negative",
+        "data2": 4294963200
+      },
+      "file": "ghidra\\phase151-tremor-native-cf5f79ea3ddf.json",
+      "sha256": "6979c03d97abfe83a7c861287c33945240a5525429c4821c86d927c0e55f3e4a",
+      "outcome": {
+        "extent_cells": -1,
+        "rounds": 1,
+        "requests": [],
+        "destroyed": [],
+        "final_affected_HP": [],
+        "compared_regions": 74,
+        "compared_bytes": 348840,
+        "native_steps": 143917,
+        "low_reads_only_FS_SEH": true,
+        "FS_reads": 14
+      }
+    },
+    {
+      "case": {
+        "name": "extent2-filled-square",
+        "data2": 8192,
+        "tiles": [
+          [
+            -2,
+            -2,
+            2
+          ],
+          [
+            -2,
+            -1,
+            2
+          ],
+          [
+            -2,
+            0,
+            2
+          ],
+          [
+            -2,
+            1,
+            2
+          ],
+          [
+            -1,
+            -2,
+            2
+          ],
+          [
+            -1,
+            -1,
+            2
+          ],
+          [
+            -1,
+            0,
+            2
+          ],
+          [
+            -1,
+            1,
+            2
+          ],
+          [
+            0,
+            -2,
+            2
+          ],
+          [
+            0,
+            -1,
+            2
+          ],
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            1,
+            -2,
+            2
+          ],
+          [
+            1,
+            -1,
+            2
+          ],
+          [
+            1,
+            0,
+            2
+          ],
+          [
+            1,
+            1,
+            2
+          ]
+        ]
+      },
+      "file": "ghidra\\phase151-tremor-native-c524e7a38fb8.json",
+      "sha256": "6089e78a44af6c8ce8509af1c844e70965d01ed28ebbce073ce4090fcf3089e6",
+      "outcome": {
+        "extent_cells": 2,
+        "rounds": 1,
+        "requests": [
+          {
+            "x": 3,
+            "y": 4,
+            "delta": -80,
+            "owner": 0,
+            "HP_before": 165,
+            "terrain_id": 2
+          },
+          {
+            "x": 3,
+            "y": 5,
+            "delta": -80,
+            "owner": 0,
+            "HP_before": 165,
+            "terrain_id": 2
+          },
+          {
+            "x": 3,
+            "y": 6,
+            "delta": -80,
+            "owner": 0,
+            "HP_before": 165,
+            "terrain_id": 2
+          },
+          {
+            "x": 3,
+            "y": 7,
+            "delta": -80,
+            "owner": 0,
+            "HP_before": 165,
+            "terrain_id": 2
+          },
+          {
+            "x": 4,
+            "y": 4,
+            "delta": -80,
+            "owner": 0,
+            "HP_before": 165,
+            "terrain_id": 2
+          },
+          {
+            "x": 4,
+            "y": 5,
+            "delta": -80,
+            "owner": 0,
+            "HP_before": 165,
+            "terrain_id": 2
+          },
+          {
+            "x": 4,
+            "y": 6,
+            "delta": -80,
+            "owner": 0,
+            "HP_before": 165,
+            "terrain_id": 2
+          },
+          {
+            "x": 4,
+            "y": 7,
+            "delta": -80,
+            "owner": 0,
+            "HP_before": 165,
+            "terrain_id": 2
+          },
+          {
+            "x": 5,
+            "y": 4,
+            "delta": -80,
+            "owner": 0,
+            "HP_before": 165,
+            "terrain_id": 2
+          },
+          {
+            "x": 5,
+            "y": 5,
+            "delta": -80,
+            "owner": 0,
+            "HP_before": 165,
+            "terrain_id": 2
+          },
+          {
+            "x": 5,
+            "y": 7,
+            "delta": -80,
+            "owner": 0,
+            "HP_before": 165,
+            "terrain_id": 2
+          },
+          {
+            "x": 6,
+            "y": 4,
+            "delta": -80,
+            "owner": 0,
+            "HP_before": 165,
+            "terrain_id": 2
+          },
+          {
+            "x": 6,
+            "y": 5,
+            "delta": -80,
+            "owner": 0,
+            "HP_before": 165,
+            "terrain_id": 2
+          },
+          {
+            "x": 6,
+            "y": 6,
+            "delta": -80,
+            "owner": 0,
+            "HP_before": 165,
+            "terrain_id": 2
+          },
+          {
+            "x": 6,
+            "y": 7,
+            "delta": -80,
+            "owner": 0,
+            "HP_before": 165,
+            "terrain_id": 2
+          }
+        ],
+        "destroyed": [],
+        "final_affected_HP": [
+          85,
+          85,
+          85,
+          85,
+          85,
+          85,
+          85,
+          85,
+          85,
+          85,
+          85,
+          85,
+          85,
+          85,
+          85
+        ],
+        "compared_regions": 74,
+        "compared_bytes": 348840,
+        "native_steps": 181692,
+        "low_reads_only_FS_SEH": true,
+        "FS_reads": 29
+      }
+    },
+    {
+      "case": {
+        "name": "positive-boundary-excluded",
+        "tiles": [
+          [
+            -1,
+            -1,
+            2
+          ],
+          [
+            -1,
+            1,
+            2
+          ],
+          [
+            1,
+            -1,
+            2
+          ]
+        ]
+      },
+      "file": "ghidra\\phase151-tremor-native-b10ea2a2d05e.json",
+      "sha256": "c2c30fe63e48166d2d554b8bbb329481ef81c062756908da31f0761f69b7e2e7",
+      "outcome": {
+        "extent_cells": 1,
+        "rounds": 1,
+        "requests": [
+          {
+            "x": 4,
+            "y": 5,
+            "delta": -80,
+            "owner": 0,
+            "HP_before": 165,
+            "terrain_id": 2
+          }
+        ],
+        "destroyed": [],
+        "final_affected_HP": [
+          85
+        ],
+        "compared_regions": 74,
+        "compared_bytes": 348840,
+        "native_steps": 181881,
+        "low_reads_only_FS_SEH": true,
+        "FS_reads": 15
+      }
+    },
+    {
+      "case": {
+        "name": "edge-zero",
+        "origin_tile": [
+          0,
+          0
+        ],
+        "data2": 8192,
+        "tiles": [
+          [
+            -2,
+            -2,
+            2
+          ],
+          [
+            -2,
+            -1,
+            2
+          ],
+          [
+            -2,
+            0,
+            2
+          ],
+          [
+            -2,
+            1,
+            2
+          ],
+          [
+            -1,
+            -2,
+            2
+          ],
+          [
+            -1,
+            -1,
+            2
+          ],
+          [
+            -1,
+            0,
+            2
+          ],
+          [
+            -1,
+            1,
+            2
+          ],
+          [
+            0,
+            -2,
+            2
+          ],
+          [
+            0,
+            -1,
+            2
+          ],
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            1,
+            -2,
+            2
+          ],
+          [
+            1,
+            -1,
+            2
+          ],
+          [
+            1,
+            0,
+            2
+          ],
+          [
+            1,
+            1,
+            2
+          ]
+        ]
+      },
+      "file": "ghidra\\phase151-tremor-native-dda215df13b1.json",
+      "sha256": "c44c215e58bf2cb24cd12d005cf84b5d15aee5cf1020bc5064a05bce7d5c4458",
+      "outcome": {
+        "extent_cells": 2,
+        "rounds": 1,
+        "requests": [
+          {
+            "x": 0,
+            "y": 1,
+            "delta": -80,
+            "owner": 0,
+            "HP_before": 165,
+            "terrain_id": 2
+          },
+          {
+            "x": 1,
+            "y": 0,
+            "delta": -80,
+            "owner": 0,
+            "HP_before": 165,
+            "terrain_id": 2
+          },
+          {
+            "x": 1,
+            "y": 1,
+            "delta": -80,
+            "owner": 0,
+            "HP_before": 165,
+            "terrain_id": 2
+          }
+        ],
+        "destroyed": [],
+        "final_affected_HP": [
+          85,
+          85,
+          85
+        ],
+        "compared_regions": 74,
+        "compared_bytes": 348840,
+        "native_steps": 138012,
+        "low_reads_only_FS_SEH": true,
+        "FS_reads": 17
+      }
+    },
+    {
+      "case": {
+        "name": "edge-last",
+        "origin_tile": [
+          31,
+          31
+        ],
+        "data2": 8192,
+        "tiles": [
+          [
+            -2,
+            -2,
+            2
+          ],
+          [
+            -2,
+            -1,
+            2
+          ],
+          [
+            -2,
+            0,
+            2
+          ],
+          [
+            -2,
+            1,
+            2
+          ],
+          [
+            -1,
+            -2,
+            2
+          ],
+          [
+            -1,
+            -1,
+            2
+          ],
+          [
+            -1,
+            0,
+            2
+          ],
+          [
+            -1,
+            1,
+            2
+          ],
+          [
+            0,
+            -2,
+            2
+          ],
+          [
+            0,
+            -1,
+            2
+          ],
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            1,
+            -2,
+            2
+          ],
+          [
+            1,
+            -1,
+            2
+          ],
+          [
+            1,
+            0,
+            2
+          ],
+          [
+            1,
+            1,
+            2
+          ]
+        ]
+      },
+      "file": "ghidra\\phase151-tremor-native-f26b5044bb8f.json",
+      "sha256": "74db361e3fa692e06db93c1bc1018d111980bbda95827c70a5c7bd672ce0310a",
+      "outcome": {
+        "extent_cells": 2,
+        "rounds": 1,
+        "requests": [
+          {
+            "x": 29,
+            "y": 29,
+            "delta": -80,
+            "owner": 0,
+            "HP_before": 165,
+            "terrain_id": 2
+          },
+          {
+            "x": 29,
+            "y": 30,
+            "delta": -80,
+            "owner": 0,
+            "HP_before": 165,
+            "terrain_id": 2
+          },
+          {
+            "x": 29,
+            "y": 31,
+            "delta": -80,
+            "owner": 0,
+            "HP_before": 165,
+            "terrain_id": 2
+          },
+          {
+            "x": 30,
+            "y": 29,
+            "delta": -80,
+            "owner": 0,
+            "HP_before": 165,
+            "terrain_id": 2
+          },
+          {
+            "x": 30,
+            "y": 30,
+            "delta": -80,
+            "owner": 0,
+            "HP_before": 165,
+            "terrain_id": 2
+          },
+          {
+            "x": 30,
+            "y": 31,
+            "delta": -80,
+            "owner": 0,
+            "HP_before": 165,
+            "terrain_id": 2
+          },
+          {
+            "x": 31,
+            "y": 29,
+            "delta": -80,
+            "owner": 0,
+            "HP_before": 165,
+            "terrain_id": 2
+          },
+          {
+            "x": 31,
+            "y": 30,
+            "delta": -80,
+            "owner": 0,
+            "HP_before": 165,
+            "terrain_id": 2
+          }
+        ],
+        "destroyed": [],
+        "final_affected_HP": [
+          85,
+          85,
+          85,
+          85,
+          85,
+          85,
+          85,
+          85
+        ],
+        "compared_regions": 74,
+        "compared_bytes": 348840,
+        "native_steps": 136238,
+        "low_reads_only_FS_SEH": true,
+        "FS_reads": 22
+      }
+    },
+    {
+      "case": {
+        "name": "terrain-filter",
+        "tiles": [
+          [
+            -1,
+            -1,
+            2
+          ],
+          [
+            -1,
+            0,
+            1
+          ],
+          [
+            0,
+            -1,
+            3
+          ]
+        ]
+      },
+      "file": "ghidra\\phase151-tremor-native-fa0426637c4b.json",
+      "sha256": "ba68340492579bd50b2c70a4dc8fdab53e7ef63973bc18b46937e5c6d10917e5",
+      "outcome": {
+        "extent_cells": 1,
+        "rounds": 1,
+        "requests": [
+          {
+            "x": 4,
+            "y": 5,
+            "delta": -80,
+            "owner": 0,
+            "HP_before": 165,
+            "terrain_id": 2
+          }
+        ],
+        "destroyed": [],
+        "final_affected_HP": [
+          85
+        ],
+        "compared_regions": 74,
+        "compared_bytes": 348840,
+        "native_steps": 125804,
+        "low_reads_only_FS_SEH": true,
+        "FS_reads": 15
+      }
+    },
+    {
+      "case": {
+        "name": "owner7",
+        "owner": 7
+      },
+      "file": "ghidra\\phase151-tremor-native-b7e1c2ec48ed.json",
+      "sha256": "be09fb02696a7f429926f3ec187c97b437a27e95ccdfb511fde87beaca631119",
+      "outcome": {
+        "extent_cells": 1,
+        "rounds": 1,
+        "requests": [
+          {
+            "x": 4,
+            "y": 5,
+            "delta": -80,
+            "owner": 7,
+            "HP_before": 165,
+            "terrain_id": 2
+          },
+          {
+            "x": 4,
+            "y": 6,
+            "delta": -80,
+            "owner": 7,
+            "HP_before": 165,
+            "terrain_id": 2
+          },
+          {
+            "x": 5,
+            "y": 5,
+            "delta": -80,
+            "owner": 7,
+            "HP_before": 165,
+            "terrain_id": 2
+          }
+        ],
+        "destroyed": [],
+        "final_affected_HP": [
+          85,
+          85,
+          85
+        ],
+        "compared_regions": 74,
+        "compared_bytes": 348840,
+        "native_steps": 144278,
+        "low_reads_only_FS_SEH": true,
+        "FS_reads": 17
+      }
+    },
+    {
+      "case": {
+        "name": "owner-highbits",
+        "owner": 7,
+        "owner_high": 61440
+      },
+      "file": "ghidra\\phase151-tremor-native-c32b92f578e2.json",
+      "sha256": "e96c9772401d029d37a9da1c84bca5a265fc4f7c3b70148b61858ed707946335",
+      "outcome": {
+        "extent_cells": 1,
+        "rounds": 1,
+        "requests": [
+          {
+            "x": 4,
+            "y": 5,
+            "delta": -80,
+            "owner": 7,
+            "HP_before": 165,
+            "terrain_id": 2
+          },
+          {
+            "x": 4,
+            "y": 6,
+            "delta": -80,
+            "owner": 7,
+            "HP_before": 165,
+            "terrain_id": 2
+          },
+          {
+            "x": 5,
+            "y": 5,
+            "delta": -80,
+            "owner": 7,
+            "HP_before": 165,
+            "terrain_id": 2
+          }
+        ],
+        "destroyed": [],
+        "final_affected_HP": [
+          85,
+          85,
+          85
+        ],
+        "compared_regions": 74,
+        "compared_bytes": 348840,
+        "native_steps": 144278,
+        "low_reads_only_FS_SEH": true,
+        "FS_reads": 17
+      }
+    },
+    {
+      "case": {
+        "name": "data1-zero",
+        "damage": 0
+      },
+      "file": "ghidra\\phase151-tremor-native-9bfa380270e1.json",
+      "sha256": "3d88cc8fa0203449dd28ebc40e163579b9752eadee98448ff974bfb40eebd486",
+      "outcome": {
+        "extent_cells": 1,
+        "rounds": 1,
+        "requests": [
+          {
+            "x": 4,
+            "y": 5,
+            "delta": 0,
+            "owner": 0,
+            "HP_before": 165,
+            "terrain_id": 2
+          },
+          {
+            "x": 4,
+            "y": 6,
+            "delta": 0,
+            "owner": 0,
+            "HP_before": 165,
+            "terrain_id": 2
+          },
+          {
+            "x": 5,
+            "y": 5,
+            "delta": 0,
+            "owner": 0,
+            "HP_before": 165,
+            "terrain_id": 2
+          }
+        ],
+        "destroyed": [],
+        "final_affected_HP": [
+          165,
+          165,
+          165
+        ],
+        "compared_regions": 74,
+        "compared_bytes": 348840,
+        "native_steps": 144287,
+        "low_reads_only_FS_SEH": true,
+        "FS_reads": 17
+      }
+    },
+    {
+      "case": {
+        "name": "data1-negative80",
+        "damage": 4294967216
+      },
+      "file": "ghidra\\phase151-tremor-native-5be9fe3ed1e4.json",
+      "sha256": "cb829e6add31aec48b25c03097f4bde10025ef2bd05a312d37093439e628f881",
+      "outcome": {
+        "extent_cells": 1,
+        "rounds": 1,
+        "requests": [
+          {
+            "x": 4,
+            "y": 5,
+            "delta": 80,
+            "owner": 0,
+            "HP_before": 165,
+            "terrain_id": 2
+          },
+          {
+            "x": 4,
+            "y": 6,
+            "delta": 80,
+            "owner": 0,
+            "HP_before": 165,
+            "terrain_id": 2
+          },
+          {
+            "x": 5,
+            "y": 5,
+            "delta": 80,
+            "owner": 0,
+            "HP_before": 165,
+            "terrain_id": 2
+          }
+        ],
+        "destroyed": [],
+        "final_affected_HP": [
+          245,
+          245,
+          245
+        ],
+        "compared_regions": 74,
+        "compared_bytes": 348840,
+        "native_steps": 144287,
+        "low_reads_only_FS_SEH": true,
+        "FS_reads": 17
+      }
+    },
+    {
+      "case": {
+        "name": "data1-65536",
+        "damage": 65536
+      },
+      "file": "ghidra\\phase151-tremor-native-5c9ac05b8da1.json",
+      "sha256": "601e7ce3c65e2fc3e89ad906d73f97c95afd2891925607065fa386ccac477e67",
+      "outcome": {
+        "extent_cells": 1,
+        "rounds": 1,
+        "requests": [
+          {
+            "x": 4,
+            "y": 5,
+            "delta": -65536,
+            "owner": 0,
+            "HP_before": 165,
+            "terrain_id": 2
+          },
+          {
+            "x": 4,
+            "y": 6,
+            "delta": -65536,
+            "owner": 0,
+            "HP_before": 165,
+            "terrain_id": 2
+          },
+          {
+            "x": 5,
+            "y": 5,
+            "delta": -65536,
+            "owner": 0,
+            "HP_before": 165,
+            "terrain_id": 2
+          }
+        ],
+        "destroyed": [],
+        "final_affected_HP": [
+          165,
+          165,
+          165
+        ],
+        "compared_regions": 74,
+        "compared_bytes": 348840,
+        "native_steps": 144278,
+        "low_reads_only_FS_SEH": true,
+        "FS_reads": 17
+      }
+    },
+    {
+      "case": {
+        "name": "data1-65537",
+        "damage": 65537
+      },
+      "file": "ghidra\\phase151-tremor-native-286cd7535d73.json",
+      "sha256": "a110ab604785cb2199ad85a29d6a8ede1133f3326cbd9f793ce4aafc17b6d902",
+      "outcome": {
+        "extent_cells": 1,
+        "rounds": 1,
+        "requests": [
+          {
+            "x": 4,
+            "y": 5,
+            "delta": -65537,
+            "owner": 0,
+            "HP_before": 165,
+            "terrain_id": 2
+          },
+          {
+            "x": 4,
+            "y": 6,
+            "delta": -65537,
+            "owner": 0,
+            "HP_before": 165,
+            "terrain_id": 2
+          },
+          {
+            "x": 5,
+            "y": 5,
+            "delta": -65537,
+            "owner": 0,
+            "HP_before": 165,
+            "terrain_id": 2
+          }
+        ],
+        "destroyed": [],
+        "final_affected_HP": [
+          164,
+          164,
+          164
+        ],
+        "compared_regions": 74,
+        "compared_bytes": 348840,
+        "native_steps": 144278,
+        "low_reads_only_FS_SEH": true,
+        "FS_reads": 17
+      }
+    },
+    {
+      "case": {
+        "name": "data1-INTMIN",
+        "damage": 2147483648
+      },
+      "file": "ghidra\\phase151-tremor-native-b2b0165049b0.json",
+      "sha256": "7b8fa51547e9661e7aecf7aebb30a2622c9b07c6215f15c10db1602ba3d5334a",
+      "outcome": {
+        "extent_cells": 1,
+        "rounds": 1,
+        "requests": [
+          {
+            "x": 4,
+            "y": 5,
+            "delta": -2147483648,
+            "owner": 0,
+            "HP_before": 165,
+            "terrain_id": 2
+          },
+          {
+            "x": 4,
+            "y": 6,
+            "delta": -2147483648,
+            "owner": 0,
+            "HP_before": 165,
+            "terrain_id": 2
+          },
+          {
+            "x": 5,
+            "y": 5,
+            "delta": -2147483648,
+            "owner": 0,
+            "HP_before": 165,
+            "terrain_id": 2
+          }
+        ],
+        "destroyed": [],
+        "final_affected_HP": [
+          165,
+          165,
+          165
+        ],
+        "compared_regions": 74,
+        "compared_bytes": 348840,
+        "native_steps": 144278,
+        "low_reads_only_FS_SEH": true,
+        "FS_reads": 17
+      }
+    },
+    {
+      "case": {
+        "name": "data1-negative65536",
+        "damage": 4294901760
+      },
+      "file": "ghidra\\phase151-tremor-native-de989797e414.json",
+      "sha256": "48932ac09012ee1febdaad6be24ca94a618287e3e260213584099e8c41026a85",
+      "outcome": {
+        "extent_cells": 1,
+        "rounds": 1,
+        "requests": [
+          {
+            "x": 4,
+            "y": 5,
+            "delta": 65536,
+            "owner": 0,
+            "HP_before": 165,
+            "terrain_id": 2
+          },
+          {
+            "x": 4,
+            "y": 6,
+            "delta": 65536,
+            "owner": 0,
+            "HP_before": 165,
+            "terrain_id": 2
+          },
+          {
+            "x": 5,
+            "y": 5,
+            "delta": 65536,
+            "owner": 0,
+            "HP_before": 165,
+            "terrain_id": 2
+          }
+        ],
+        "destroyed": [],
+        "final_affected_HP": [
+          165,
+          165,
+          165
+        ],
+        "compared_regions": 74,
+        "compared_bytes": 348840,
+        "native_steps": 144287,
+        "low_reads_only_FS_SEH": true,
+        "FS_reads": 17
+      }
+    },
+    {
+      "case": {
+        "name": "destroy-single",
+        "damage": 165,
+        "tiles": [
+          [
+            -1,
+            -1,
+            2
+          ]
+        ],
+        "long_run": true
+      },
+      "file": "ghidra\\phase151-tremor-native-7e04d6dd8ed7.json",
+      "sha256": "5f11ca48a2a2d210e0912bc5fd5673d2c6a450156dd67202254756f07707bc6d",
+      "outcome": {
+        "extent_cells": 1,
+        "rounds": 1,
+        "requests": [
+          {
+            "x": 4,
+            "y": 5,
+            "delta": -165,
+            "owner": 0,
+            "HP_before": 165,
+            "terrain_id": 2
+          }
+        ],
+        "destroyed": [
+          [
+            4,
+            5
+          ]
+        ],
+        "final_affected_HP": [
+          1
+        ],
+        "compared_regions": 74,
+        "compared_bytes": 348840,
+        "native_steps": 1334559,
+        "low_reads_only_FS_SEH": true,
+        "FS_reads": 161
+      }
+    },
+    {
+      "case": {
+        "name": "destroy-three",
+        "damage": 165,
+        "long_run": true
+      },
+      "file": "ghidra\\phase151-tremor-native-0d1648969d58.json",
+      "sha256": "d6283d102025d319def2bc493aa1ae99b97a8fcdc52575f6135aca68c65a7246",
+      "outcome": {
+        "extent_cells": 1,
+        "rounds": 1,
+        "requests": [
+          {
+            "x": 4,
+            "y": 5,
+            "delta": -165,
+            "owner": 0,
+            "HP_before": 165,
+            "terrain_id": 2
+          },
+          {
+            "x": 4,
+            "y": 6,
+            "delta": -165,
+            "owner": 0,
+            "HP_before": 165,
+            "terrain_id": 2
+          },
+          {
+            "x": 5,
+            "y": 5,
+            "delta": -165,
+            "owner": 0,
+            "HP_before": 165,
+            "terrain_id": 2
+          }
+        ],
+        "destroyed": [
+          [
+            4,
+            5
+          ],
+          [
+            4,
+            6
+          ],
+          [
+            5,
+            5
+          ]
+        ],
+        "final_affected_HP": [
+          1,
+          1,
+          1
+        ],
+        "compared_regions": 74,
+        "compared_bytes": 348840,
+        "native_steps": 3082476,
+        "low_reads_only_FS_SEH": true,
+        "FS_reads": 325
+      }
+    },
+    {
+      "case": {
+        "name": "destroy-full-tick",
+        "damage": 165,
+        "tick": true,
+        "long_run": true
+      },
+      "file": "ghidra\\phase151-tremor-native-8f8aabc60f28.json",
+      "sha256": "07a25846e1bdf9c909d231b4bdc612e56d5d87809ab5fabe4f25c8bc17b6026a",
+      "outcome": {
+        "extent_cells": 1,
+        "rounds": 1,
+        "requests": [
+          {
+            "x": 4,
+            "y": 5,
+            "delta": -165,
+            "owner": 0,
+            "HP_before": 165,
+            "terrain_id": 2
+          },
+          {
+            "x": 4,
+            "y": 6,
+            "delta": -165,
+            "owner": 0,
+            "HP_before": 165,
+            "terrain_id": 2
+          },
+          {
+            "x": 5,
+            "y": 5,
+            "delta": -165,
+            "owner": 0,
+            "HP_before": 165,
+            "terrain_id": 2
+          }
+        ],
+        "destroyed": [
+          [
+            4,
+            5
+          ],
+          [
+            4,
+            6
+          ],
+          [
+            5,
+            5
+          ]
+        ],
+        "final_affected_HP": [
+          1,
+          1,
+          1
+        ],
+        "compared_regions": 74,
+        "compared_bytes": 348840,
+        "native_steps": 3082873,
+        "low_reads_only_FS_SEH": true,
+        "FS_reads": 327
+      }
+    },
+    {
+      "case": {
+        "name": "zeroHP-same-type",
+        "damage": 165,
+        "destroyed_type": 2
+      },
+      "file": "ghidra\\phase151-tremor-native-8b0c2b44d996.json",
+      "sha256": "fbdf123513755eeb4640b98df003d4db42b835f1073adafc9d13dd571daafa4f",
+      "outcome": {
+        "extent_cells": 1,
+        "rounds": 1,
+        "requests": [
+          {
+            "x": 4,
+            "y": 5,
+            "delta": -165,
+            "owner": 0,
+            "HP_before": 165,
+            "terrain_id": 2
+          },
+          {
+            "x": 4,
+            "y": 6,
+            "delta": -165,
+            "owner": 0,
+            "HP_before": 165,
+            "terrain_id": 2
+          },
+          {
+            "x": 5,
+            "y": 5,
+            "delta": -165,
+            "owner": 0,
+            "HP_before": 165,
+            "terrain_id": 2
+          }
+        ],
+        "destroyed": [],
+        "final_affected_HP": [
+          0,
+          0,
+          0
+        ],
+        "compared_regions": 74,
+        "compared_bytes": 348840,
+        "native_steps": 144281,
+        "low_reads_only_FS_SEH": true,
+        "FS_reads": 17
+      }
+    }
+  ]
+}

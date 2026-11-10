@@ -1,0 +1,1096 @@
+{
+  "scope": "Whole56AC80 reader -> native MyFile/Disc -> World Door callbacks -> lookup.\n\nPrepared World/array storage with original per-slot constructors, null visual\nprovider and declared sound lookup0. Original Windows imports use bounded\nmemory-backed external adapters, unchanged IAT/vtables. No wholeWorld bootstrap.\n",
+  "replays": [
+    {
+      "case": {
+        "name": "source"
+      },
+      "outcome": {
+        "reader_return": 1,
+        "expected_divide_error": false,
+        "processed_records": 8,
+        "catalogue_records": 8,
+        "capacity": 8,
+        "sorted_runtime_IDs": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "runtime_unknown_WORDs": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "World_checksum": 97373,
+        "lookup_query": 8,
+        "lookup_slot": 7,
+        "lookup_pointer": 402719987,
+        "stream_position": 4984,
+        "read_requests": [
+          36,
+          8,
+          616,
+          616,
+          616,
+          616,
+          616,
+          616,
+          616,
+          616
+        ],
+        "short_reads": 0,
+        "original_callbacks": 8,
+        "compared_regions": 22,
+        "compared_bytes": 53348,
+        "native_steps": 62390
+      },
+      "file": "ghidra\\phase160-native-door-reader-source-b80eed521b7a.json",
+      "sha256": "551d90f83ff8023a43755166bd1a0b43526dbf61451b3ef08b4a7b1815b4fa53"
+    },
+    {
+      "case": {
+        "name": "source-two-pass",
+        "two_pass": true,
+        "header_callback": false
+      },
+      "outcome": {
+        "reader_return": 1,
+        "expected_divide_error": false,
+        "processed_records": 8,
+        "catalogue_records": 8,
+        "capacity": 8,
+        "sorted_runtime_IDs": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "runtime_unknown_WORDs": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "World_checksum": 97373,
+        "lookup_query": 8,
+        "lookup_slot": 7,
+        "lookup_pointer": 402719987,
+        "stream_position": 4984,
+        "read_requests": [
+          36,
+          8,
+          36,
+          8,
+          616,
+          616,
+          616,
+          616,
+          616,
+          616,
+          616,
+          616
+        ],
+        "short_reads": 0,
+        "original_callbacks": 8,
+        "compared_regions": 23,
+        "compared_bytes": 53404,
+        "native_steps": 62848
+      },
+      "file": "ghidra\\phase160-native-door-reader-source-two-pass-1e21dedfadb8.json",
+      "sha256": "ebf696387488adb0a36f180696f428065a817beb5a299a84ae60d1dc22e91312"
+    },
+    {
+      "case": {
+        "name": "source-appended",
+        "append": true
+      },
+      "outcome": {
+        "reader_return": 1,
+        "expected_divide_error": false,
+        "processed_records": 9,
+        "catalogue_records": 9,
+        "capacity": 9,
+        "sorted_runtime_IDs": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "runtime_unknown_WORDs": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          48879
+        ],
+        "World_checksum": 109870,
+        "lookup_query": 8,
+        "lookup_slot": 7,
+        "lookup_pointer": 402719987,
+        "stream_position": 5600,
+        "read_requests": [
+          36,
+          8,
+          616,
+          616,
+          616,
+          616,
+          616,
+          616,
+          616,
+          616,
+          616
+        ],
+        "short_reads": 0,
+        "original_callbacks": 9,
+        "compared_regions": 22,
+        "compared_bytes": 53964,
+        "native_steps": 69981
+      },
+      "file": "ghidra\\phase160-native-door-reader-source-appended-1a8faadb7725.json",
+      "sha256": "3319eee925fc605073153b2502b365fffcc3efaf20be5fa373a016a6d652351d"
+    },
+    {
+      "case": {
+        "name": "source-opaque",
+        "opaque_source": true
+      },
+      "outcome": {
+        "reader_return": 1,
+        "expected_divide_error": false,
+        "processed_records": 8,
+        "catalogue_records": 8,
+        "capacity": 8,
+        "sorted_runtime_IDs": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "runtime_unknown_WORDs": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          48879
+        ],
+        "World_checksum": 97802,
+        "lookup_query": 8,
+        "lookup_slot": 7,
+        "lookup_pointer": 402719987,
+        "stream_position": 4984,
+        "read_requests": [
+          36,
+          8,
+          616,
+          616,
+          616,
+          616,
+          616,
+          616,
+          616,
+          616
+        ],
+        "short_reads": 0,
+        "original_callbacks": 8,
+        "compared_regions": 22,
+        "compared_bytes": 53348,
+        "native_steps": 62390
+      },
+      "file": "ghidra\\phase160-native-door-reader-source-opaque-082a5781c6d9.json",
+      "sha256": "592cd5176efabfcbe87e2cdf68705d6dc2dd92e8b3cb7d149c5f9bc5f4f319ec"
+    },
+    {
+      "case": {
+        "name": "reverse-source",
+        "reverse": true
+      },
+      "outcome": {
+        "reader_return": 1,
+        "expected_divide_error": false,
+        "processed_records": 8,
+        "catalogue_records": 8,
+        "capacity": 8,
+        "sorted_runtime_IDs": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "runtime_unknown_WORDs": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "World_checksum": 97373,
+        "lookup_query": 8,
+        "lookup_slot": 7,
+        "lookup_pointer": 402719987,
+        "stream_position": 4984,
+        "read_requests": [
+          36,
+          8,
+          616,
+          616,
+          616,
+          616,
+          616,
+          616,
+          616,
+          616
+        ],
+        "short_reads": 0,
+        "original_callbacks": 8,
+        "compared_regions": 22,
+        "compared_bytes": 53348,
+        "native_steps": 63979
+      },
+      "file": "ghidra\\phase160-native-door-reader-reverse-source-0a7c8da13b5c.json",
+      "sha256": "c581849d9c5bdcf07178b9024d638f136d3db73697e974731cc3c7b46392fe75"
+    },
+    {
+      "case": {
+        "name": "unsorted",
+        "ids": [
+          4,
+          1,
+          3,
+          2
+        ],
+        "query": 3
+      },
+      "outcome": {
+        "reader_return": 1,
+        "expected_divide_error": false,
+        "processed_records": 4,
+        "catalogue_records": 4,
+        "capacity": 4,
+        "sorted_runtime_IDs": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "runtime_unknown_WORDs": [
+          4353,
+          4355,
+          4354,
+          4352
+        ],
+        "World_checksum": 47847,
+        "lookup_query": 3,
+        "lookup_slot": 2,
+        "lookup_pointer": 402719082,
+        "stream_position": 2520,
+        "read_requests": [
+          36,
+          8,
+          616,
+          616,
+          616,
+          616
+        ],
+        "short_reads": 0,
+        "original_callbacks": 4,
+        "compared_regions": 22,
+        "compared_bytes": 50884,
+        "native_steps": 32190
+      },
+      "file": "ghidra\\phase160-native-door-reader-unsorted-921e791e556e.json",
+      "sha256": "f30228af725951b97750a79c253f4a702715037d02e3f504fd1e507e87dee635"
+    },
+    {
+      "case": {
+        "name": "duplicate-low",
+        "ids": [
+          1,
+          1,
+          2,
+          3
+        ],
+        "query": 1
+      },
+      "outcome": {
+        "reader_return": 1,
+        "expected_divide_error": false,
+        "processed_records": 4,
+        "catalogue_records": 4,
+        "capacity": 4,
+        "sorted_runtime_IDs": [
+          1,
+          1,
+          2,
+          3
+        ],
+        "runtime_unknown_WORDs": [
+          4353,
+          4352,
+          4354,
+          4355
+        ],
+        "World_checksum": 47927,
+        "lookup_query": 1,
+        "lookup_slot": 0,
+        "lookup_pointer": 402718720,
+        "stream_position": 2520,
+        "read_requests": [
+          36,
+          8,
+          616,
+          616,
+          616,
+          616
+        ],
+        "short_reads": 0,
+        "original_callbacks": 4,
+        "compared_regions": 22,
+        "compared_bytes": 50884,
+        "native_steps": 32013
+      },
+      "file": "ghidra\\phase160-native-door-reader-duplicate-low-082a99a08d96.json",
+      "sha256": "ac44a05c8f331d5f360dcfde5420a1b1101d10dfcf841b2904980588e16e18f5"
+    },
+    {
+      "case": {
+        "name": "duplicate-high",
+        "ids": [
+          4,
+          4,
+          1,
+          2
+        ],
+        "query": 4
+      },
+      "outcome": {
+        "reader_return": 1,
+        "expected_divide_error": false,
+        "processed_records": 4,
+        "catalogue_records": 4,
+        "capacity": 4,
+        "sorted_runtime_IDs": [
+          1,
+          2,
+          4,
+          4
+        ],
+        "runtime_unknown_WORDs": [
+          4354,
+          4355,
+          4353,
+          4352
+        ],
+        "World_checksum": 48056,
+        "lookup_query": 4,
+        "lookup_slot": 3,
+        "lookup_pointer": 402719263,
+        "stream_position": 2520,
+        "read_requests": [
+          36,
+          8,
+          616,
+          616,
+          616,
+          616
+        ],
+        "short_reads": 0,
+        "original_callbacks": 4,
+        "compared_regions": 22,
+        "compared_bytes": 50884,
+        "native_steps": 32239
+      },
+      "file": "ghidra\\phase160-native-door-reader-duplicate-high-7bfdf0763ec3.json",
+      "sha256": "332bab4eacfe7debbf7c21f46d2bc0ad6341ea1954b557d1e6c34f82f5e26e47"
+    },
+    {
+      "case": {
+        "name": "missing-id",
+        "ids": [
+          1,
+          3
+        ],
+        "query": 2
+      },
+      "outcome": {
+        "reader_return": 1,
+        "expected_divide_error": false,
+        "processed_records": 2,
+        "catalogue_records": 2,
+        "capacity": 2,
+        "sorted_runtime_IDs": [
+          1,
+          3
+        ],
+        "runtime_unknown_WORDs": [
+          4352,
+          4353
+        ],
+        "World_checksum": 23866,
+        "lookup_query": 2,
+        "lookup_slot": null,
+        "lookup_pointer": 0,
+        "stream_position": 1288,
+        "read_requests": [
+          36,
+          8,
+          616,
+          616
+        ],
+        "short_reads": 0,
+        "original_callbacks": 2,
+        "compared_regions": 22,
+        "compared_bytes": 49652,
+        "native_steps": 16782
+      },
+      "file": "ghidra\\phase160-native-door-reader-missing-id-002a4757e3ec.json",
+      "sha256": "080bad41538329fa9212f810ffa94b48928390a457f6cca55dc8cba35b545e79"
+    },
+    {
+      "case": {
+        "name": "zero-id",
+        "ids": [
+          0,
+          2
+        ],
+        "query": 0
+      },
+      "outcome": {
+        "reader_return": 1,
+        "expected_divide_error": false,
+        "processed_records": 2,
+        "catalogue_records": 2,
+        "capacity": 2,
+        "sorted_runtime_IDs": [
+          0,
+          2
+        ],
+        "runtime_unknown_WORDs": [
+          4352,
+          4353
+        ],
+        "World_checksum": 24056,
+        "lookup_query": 0,
+        "lookup_slot": null,
+        "lookup_pointer": 0,
+        "stream_position": 1288,
+        "read_requests": [
+          36,
+          8,
+          616,
+          616
+        ],
+        "short_reads": 0,
+        "original_callbacks": 2,
+        "compared_regions": 22,
+        "compared_bytes": 49652,
+        "native_steps": 16762
+      },
+      "file": "ghidra\\phase160-native-door-reader-zero-id-abcffd48af71.json",
+      "sha256": "1a5b1d272cdfae008d0b7d5bbe9939c53130386b1aa0a6585a0589f50dca0cc8"
+    },
+    {
+      "case": {
+        "name": "query-highword",
+        "ids": [
+          1,
+          2
+        ],
+        "query": 257
+      },
+      "outcome": {
+        "reader_return": 1,
+        "expected_divide_error": false,
+        "processed_records": 2,
+        "catalogue_records": 2,
+        "capacity": 2,
+        "sorted_runtime_IDs": [
+          1,
+          2
+        ],
+        "runtime_unknown_WORDs": [
+          4352,
+          4353
+        ],
+        "World_checksum": 24057,
+        "lookup_query": 257,
+        "lookup_slot": 0,
+        "lookup_pointer": 402718720,
+        "stream_position": 1288,
+        "read_requests": [
+          36,
+          8,
+          616,
+          616
+        ],
+        "short_reads": 0,
+        "original_callbacks": 2,
+        "compared_regions": 22,
+        "compared_bytes": 49652,
+        "native_steps": 16774
+      },
+      "file": "ghidra\\phase160-native-door-reader-query-highword-14fdd4a2e039.json",
+      "sha256": "fd3936c48d528b57a45f9f70a09076e39b39aa34ae45d166735b12e33a05826a"
+    },
+    {
+      "case": {
+        "name": "capacity-two",
+        "ids": [
+          3,
+          1,
+          2,
+          4
+        ],
+        "capacity": 2,
+        "header_callback": false,
+        "query": 3
+      },
+      "outcome": {
+        "reader_return": 1,
+        "expected_divide_error": false,
+        "processed_records": 4,
+        "catalogue_records": 2,
+        "capacity": 2,
+        "sorted_runtime_IDs": [
+          1,
+          3
+        ],
+        "runtime_unknown_WORDs": [
+          4353,
+          4352
+        ],
+        "World_checksum": 23866,
+        "lookup_query": 3,
+        "lookup_slot": 1,
+        "lookup_pointer": 402718901,
+        "stream_position": 2520,
+        "read_requests": [
+          36,
+          8,
+          616,
+          616,
+          616,
+          616
+        ],
+        "short_reads": 0,
+        "original_callbacks": 4,
+        "compared_regions": 22,
+        "compared_bytes": 50884,
+        "native_steps": 19678
+      },
+      "file": "ghidra\\phase160-native-door-reader-capacity-two-d15c7f996c77.json",
+      "sha256": "08bfaaffbc2b19a1c7bd0d87b789c46aa641816c1653790e5764ccb9644fdef9"
+    },
+    {
+      "case": {
+        "name": "update-existing",
+        "ids": [
+          3,
+          1
+        ],
+        "existing": [
+          1,
+          3
+        ],
+        "update": true,
+        "header_callback": false,
+        "query": 3
+      },
+      "outcome": {
+        "reader_return": 1,
+        "expected_divide_error": false,
+        "processed_records": 2,
+        "catalogue_records": 2,
+        "capacity": 2,
+        "sorted_runtime_IDs": [
+          1,
+          3
+        ],
+        "runtime_unknown_WORDs": [
+          4353,
+          4352
+        ],
+        "World_checksum": 1431655765,
+        "lookup_query": 3,
+        "lookup_slot": 1,
+        "lookup_pointer": 402718901,
+        "stream_position": 1288,
+        "read_requests": [
+          36,
+          8,
+          616,
+          616
+        ],
+        "short_reads": 0,
+        "original_callbacks": 2,
+        "compared_regions": 25,
+        "compared_bytes": 51808,
+        "native_steps": 30274
+      },
+      "file": "ghidra\\phase160-native-door-reader-update-existing-cd3246c29ec1.json",
+      "sha256": "04533c5bd27f751f72379fd491892c988d220341f80d50522831392c2f49acf9"
+    },
+    {
+      "case": {
+        "name": "gate1",
+        "gate": 1
+      },
+      "outcome": {
+        "reader_return": 1,
+        "expected_divide_error": false,
+        "processed_records": 8,
+        "catalogue_records": 8,
+        "capacity": 8,
+        "sorted_runtime_IDs": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "runtime_unknown_WORDs": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "World_checksum": 757935400,
+        "lookup_query": 8,
+        "lookup_slot": 7,
+        "lookup_pointer": 402719987,
+        "stream_position": 4984,
+        "read_requests": [
+          36,
+          8,
+          616,
+          616,
+          616,
+          616,
+          616,
+          616,
+          616,
+          616
+        ],
+        "short_reads": 0,
+        "original_callbacks": 8,
+        "compared_regions": 22,
+        "compared_bytes": 53348,
+        "native_steps": 14412
+      },
+      "file": "ghidra\\phase160-native-door-reader-gate1-683de62b9c61.json",
+      "sha256": "9f4b32933086cac1f8e8ac6b9c5b8fa520113d2b42c0ce6d227e10342ec8aa1b"
+    },
+    {
+      "case": {
+        "name": "short-stride",
+        "stride": 600
+      },
+      "outcome": {
+        "reader_return": 1,
+        "expected_divide_error": false,
+        "processed_records": 8,
+        "catalogue_records": 8,
+        "capacity": 8,
+        "sorted_runtime_IDs": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "runtime_unknown_WORDs": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "World_checksum": 97373,
+        "lookup_query": 8,
+        "lookup_slot": 7,
+        "lookup_pointer": 402719987,
+        "stream_position": 4856,
+        "read_requests": [
+          36,
+          8,
+          600,
+          600,
+          600,
+          600,
+          600,
+          600,
+          600,
+          600
+        ],
+        "short_reads": 0,
+        "original_callbacks": 8,
+        "compared_regions": 22,
+        "compared_bytes": 53220,
+        "native_steps": 63534
+      },
+      "file": "ghidra\\phase160-native-door-reader-short-stride-cb8b6a74cb37.json",
+      "sha256": "91215333cde367ddba1bdc1aa4f56d55509cd830336526e25f7f8c14c49254b2"
+    },
+    {
+      "case": {
+        "name": "size-remainder",
+        "remainder": 1
+      },
+      "outcome": {
+        "reader_return": 1,
+        "expected_divide_error": false,
+        "processed_records": 8,
+        "catalogue_records": 8,
+        "capacity": 8,
+        "sorted_runtime_IDs": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "runtime_unknown_WORDs": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "World_checksum": 97373,
+        "lookup_query": 8,
+        "lookup_slot": 7,
+        "lookup_pointer": 402719987,
+        "stream_position": 4984,
+        "read_requests": [
+          36,
+          8,
+          616,
+          616,
+          616,
+          616,
+          616,
+          616,
+          616,
+          616
+        ],
+        "short_reads": 0,
+        "original_callbacks": 8,
+        "compared_regions": 22,
+        "compared_bytes": 53349,
+        "native_steps": 62390
+      },
+      "file": "ghidra\\phase160-native-door-reader-size-remainder-8e8ea1d372b9.json",
+      "sha256": "00a07018d240f7cf2d463efefe4c1f161d1c0c1a6c09f09fbed4cd3a09041ecc"
+    },
+    {
+      "case": {
+        "name": "truncated-tail",
+        "ids": [
+          1,
+          2
+        ],
+        "truncate": 60,
+        "query": 2
+      },
+      "outcome": {
+        "reader_return": 1,
+        "expected_divide_error": false,
+        "processed_records": 2,
+        "catalogue_records": 2,
+        "capacity": 2,
+        "sorted_runtime_IDs": [
+          1,
+          1
+        ],
+        "runtime_unknown_WORDs": [
+          4352,
+          4352
+        ],
+        "World_checksum": 24051,
+        "lookup_query": 2,
+        "lookup_slot": null,
+        "lookup_pointer": 0,
+        "stream_position": 1228,
+        "read_requests": [
+          36,
+          8,
+          616,
+          616
+        ],
+        "short_reads": 1,
+        "original_callbacks": 2,
+        "compared_regions": 22,
+        "compared_bytes": 49592,
+        "native_steps": 16761
+      },
+      "file": "ghidra\\phase160-native-door-reader-truncated-tail-a743e329219d.json",
+      "sha256": "47546517ba2919bc7c8086e61483d070be353efa9462ce73a0d4770b8ef91ddd"
+    },
+    {
+      "case": {
+        "name": "wrong-header",
+        "header_tag": 140
+      },
+      "outcome": {
+        "reader_return": 0,
+        "expected_divide_error": false,
+        "processed_records": 0,
+        "catalogue_records": 0,
+        "capacity": 0,
+        "sorted_runtime_IDs": [],
+        "runtime_unknown_WORDs": [],
+        "World_checksum": 0,
+        "lookup_query": 8,
+        "lookup_slot": null,
+        "lookup_pointer": 0,
+        "stream_position": 48,
+        "read_requests": [
+          36
+        ],
+        "short_reads": 0,
+        "original_callbacks": 0,
+        "compared_regions": 22,
+        "compared_bytes": 53348,
+        "native_steps": 1383
+      },
+      "file": "ghidra\\phase160-native-door-reader-wrong-header-bc7c61475111.json",
+      "sha256": "a8f3cf6f232a271ff511bac8d157ae7ebc56283256039efc11d5a7204a2167d2"
+    },
+    {
+      "case": {
+        "name": "wrong-data",
+        "data_tag": 143
+      },
+      "outcome": {
+        "reader_return": 0,
+        "expected_divide_error": false,
+        "processed_records": 0,
+        "catalogue_records": 0,
+        "capacity": 8,
+        "sorted_runtime_IDs": [],
+        "runtime_unknown_WORDs": [],
+        "World_checksum": 0,
+        "lookup_query": 8,
+        "lookup_slot": null,
+        "lookup_pointer": 0,
+        "stream_position": 56,
+        "read_requests": [
+          36,
+          8
+        ],
+        "short_reads": 0,
+        "original_callbacks": 0,
+        "compared_regions": 22,
+        "compared_bytes": 53348,
+        "native_steps": 1575
+      },
+      "file": "ghidra\\phase160-native-door-reader-wrong-data-dbddd3c405d1.json",
+      "sha256": "4bec87338b7dc99bd743fbd79e56603ac08b97bc47da0a745e6ec0571a7088e3"
+    },
+    {
+      "case": {
+        "name": "zero-count",
+        "ids": [],
+        "expected_divzero": true
+      },
+      "outcome": {
+        "reader_return": null,
+        "expected_divide_error": true,
+        "processed_records": 0,
+        "catalogue_records": 0,
+        "capacity": 0,
+        "sorted_runtime_IDs": [],
+        "runtime_unknown_WORDs": [],
+        "World_checksum": 0,
+        "lookup_query": 8,
+        "lookup_slot": null,
+        "lookup_pointer": 0,
+        "stream_position": 56,
+        "read_requests": [
+          36,
+          8
+        ],
+        "short_reads": 0,
+        "original_callbacks": 0,
+        "compared_regions": 22,
+        "compared_bytes": 48420,
+        "native_steps": 1560
+      },
+      "file": "ghidra\\phase160-native-door-reader-zero-count-f0e89bd3c02e.json",
+      "sha256": "8224642240a6402d920269dad03f65bbd4d671096d3a57fcf56f8a5ff0c4ffd6"
+    },
+    {
+      "case": {
+        "name": "zero-count-skip",
+        "ids": [],
+        "data_callback": false
+      },
+      "outcome": {
+        "reader_return": 1,
+        "expected_divide_error": false,
+        "processed_records": 0,
+        "catalogue_records": 0,
+        "capacity": 0,
+        "sorted_runtime_IDs": [],
+        "runtime_unknown_WORDs": [],
+        "World_checksum": 0,
+        "lookup_query": 8,
+        "lookup_slot": null,
+        "lookup_pointer": 0,
+        "stream_position": 56,
+        "read_requests": [
+          36,
+          8
+        ],
+        "short_reads": 0,
+        "original_callbacks": 0,
+        "compared_regions": 22,
+        "compared_bytes": 48420,
+        "native_steps": 1652
+      },
+      "file": "ghidra\\phase160-native-door-reader-zero-count-skip-b9a8878ca5b8.json",
+      "sha256": "85fae1babfbf281c21c91b9c836eb76535246bc17d8b72dfa6d01b06d9e96cfd"
+    }
+  ],
+  "paired_controls": [
+    {
+      "cases": [
+        "source",
+        "source-opaque"
+      ],
+      "compared_regions": 22,
+      "compared_bytes": 53348,
+      "allowed_storage_differences": {
+        "0x18060000": [
+          [
+            4934,
+            2
+          ]
+        ],
+        "0x746ec0": [
+          [
+            566,
+            2
+          ],
+          [
+            1298,
+            2
+          ]
+        ],
+        "0x18010000": [
+          [
+            1420,
+            2
+          ],
+          [
+            1402,
+            4
+          ]
+        ],
+        "0x18000000": [
+          [
+            5600,
+            4
+          ]
+        ]
+      },
+      "actual_differences": [
+        {
+          "region": "0x18000000",
+          "changed_byte_offsets": [
+            5600,
+            5601
+          ]
+        },
+        {
+          "region": "0x18010000",
+          "changed_byte_offsets": [
+            1402,
+            1403,
+            1420,
+            1421
+          ]
+        },
+        {
+          "region": "0x18060000",
+          "changed_byte_offsets": [
+            4934,
+            4935
+          ]
+        },
+        {
+          "region": "0x746ec0",
+          "changed_byte_offsets": [
+            566,
+            567,
+            1298,
+            1299
+          ]
+        }
+      ],
+      "catalogue_IDs_lookup_and_file_IO_identical": true,
+      "scope": "WORD236 remains stored/checksummed; insertion may copy whole definitions. No new gameplay meaning/nonuse proof."
+    }
+  ],
+  "source_reverse_runtime_array_equal": true
+}

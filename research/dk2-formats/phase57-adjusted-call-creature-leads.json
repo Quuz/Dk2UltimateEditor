@@ -1,0 +1,2149 @@
+{
+  "program_sha256": "d7a8b854e4e4f02709eba271bead6fe2307dd6e332b5a96e70857e5b0e19fb8a",
+  "scope": "Short, straight-line adjusted-pointer candidates; no structure identity proof.\n\nSeeds LEA/ADD/SUB constant pointer adjustments in mapped native function spans.\nTracks register aliases for up to40 instructions on the fall-through path. Calls\nkill EAX/ECX/EDX; indirect accesses, merges and stack reloads are not resolved.\nEvery candidate still needs primary disassembly and object identity verification.\n",
+  "mapped_spans_scanned": 8729,
+  "seeds": 24722,
+  "candidates": [
+    {
+      "function": "0x4acdf0",
+      "name": "sub_4ACDF0",
+      "seed": "0x4ad14e",
+      "instruction": "0x4ad170",
+      "text": "mov cl, byte ptr [eax + 0x16]",
+      "effective_offset": "0x112",
+      "adjusted_register": "eax",
+      "adjustment": 252,
+      "memory_bytes": 1,
+      "targets": [
+        "ObjectPickUpPriority"
+      ],
+      "trace": [
+        "004ad14e: lea eax, [esi + 0xfc]",
+        "004ad154: lea edx, [edi + 0x1b]",
+        "004ad157: mov ecx, 6",
+        "004ad15c: mov esi, eax",
+        "004ad15e: mov edi, edx",
+        "004ad160: rep movsd dword ptr es:[edi], dword ptr [esi]",
+        "004ad162: mov cl, byte ptr [eax + 0x14]",
+        "004ad165: test cl, cl",
+        "004ad167: jne 0x4ad17b",
+        "004ad169: mov cl, byte ptr [eax + 0x15]",
+        "004ad16c: test cl, cl",
+        "004ad16e: jne 0x4ad17b",
+        "004ad170: mov cl, byte ptr [eax + 0x16]"
+      ]
+    },
+    {
+      "function": "0x598880",
+      "name": "maybe_cameraFun",
+      "seed": "0x598fd7",
+      "instruction": "0x599030",
+      "text": "rep movsd dword ptr es:[edi], dword ptr [esi]",
+      "effective_offset": "0x110",
+      "adjusted_register": "esi",
+      "adjustment": 272,
+      "memory_bytes": 4,
+      "targets": [
+        "ObjectPickUpPriority"
+      ],
+      "trace": [
+        "00598fd7: lea esi, [esp + 0x110]",
+        "00598fde: lea edi, [esp + 0x9c]",
+        "00598fe5: add esp, 0x50",
+        "00598fe8: fadd dword ptr [esp + 0x1c]",
+        "00598fec: fld dword ptr [esp + 0x28]",
+        "00598ff0: fsub dword ptr [esp + 0x24]",
+        "00598ff4: fmul dword ptr [ebx + 0xeca]",
+        "00598ffa: mov dword ptr [esp + 0x44], eax",
+        "00598ffe: mov eax, dword ptr [0x756eec]",
+        "00599003: mov dword ptr [esp + 0x28], eax",
+        "00599007: mov dword ptr [esp + 0x40], edx",
+        "0059900b: fadd dword ptr [esp + 0x24]",
+        "0059900f: fstp dword ptr [esp + 0x10]",
+        "00599013: fld dword ptr [esp + 0xa0]",
+        "0059901a: fsub dword ptr [0x6704bc]",
+        "00599020: fstp dword ptr [esp + 0x48]",
+        "00599024: fild qword ptr [esp + 0x28]",
+        "00599028: fxch st(1)",
+        "0059902a: fmul dword ptr [0x67050c]",
+        "00599030: rep movsd dword ptr es:[edi], dword ptr [esi]"
+      ]
+    }
+  ],
+  "forward_matches": [
+    {
+      "function": "0x412fc0",
+      "name": "CButton_render_412FC0",
+      "seed": "0x4140e0",
+      "call": "0x4140e7",
+      "target": "0x4b37d0",
+      "read": {
+        "address": "0x4b3841",
+        "offset": 78,
+        "bytes": 1,
+        "instruction": "mov al, byte ptr [esi + 0x4e]"
+      },
+      "effective_offset": 274,
+      "adjustment": 196,
+      "targets": [
+        "ObjectPickUpPriority"
+      ],
+      "trace": [
+        "004140e0: lea ecx, [esp + 0xc4]"
+      ]
+    },
+    {
+      "function": "0x412fc0",
+      "name": "CButton_render_412FC0",
+      "seed": "0x4140e0",
+      "call": "0x4140e7",
+      "target": "0x4b37d0",
+      "read": {
+        "address": "0x4b3918",
+        "offset": 78,
+        "bytes": 1,
+        "instruction": "test byte ptr [esi + 0x4e], 0x40"
+      },
+      "effective_offset": 274,
+      "adjustment": 196,
+      "targets": [
+        "ObjectPickUpPriority"
+      ],
+      "trace": [
+        "004140e0: lea ecx, [esp + 0xc4]"
+      ]
+    },
+    {
+      "function": "0x412fc0",
+      "name": "CButton_render_412FC0",
+      "seed": "0x414192",
+      "call": "0x414199",
+      "target": "0x4b37d0",
+      "read": {
+        "address": "0x4b3841",
+        "offset": 78,
+        "bytes": 1,
+        "instruction": "mov al, byte ptr [esi + 0x4e]"
+      },
+      "effective_offset": 274,
+      "adjustment": 196,
+      "targets": [
+        "ObjectPickUpPriority"
+      ],
+      "trace": [
+        "00414192: lea ecx, [esp + 0xc4]"
+      ]
+    },
+    {
+      "function": "0x412fc0",
+      "name": "CButton_render_412FC0",
+      "seed": "0x414192",
+      "call": "0x414199",
+      "target": "0x4b37d0",
+      "read": {
+        "address": "0x4b3918",
+        "offset": 78,
+        "bytes": 1,
+        "instruction": "test byte ptr [esi + 0x4e], 0x40"
+      },
+      "effective_offset": 274,
+      "adjustment": 196,
+      "targets": [
+        "ObjectPickUpPriority"
+      ],
+      "trace": [
+        "00414192: lea ecx, [esp + 0xc4]"
+      ]
+    },
+    {
+      "function": "0x418080",
+      "name": "CButton_handleLeftClick_418080",
+      "seed": "0x4182a2",
+      "call": "0x4182a8",
+      "target": "0x4871e0",
+      "read": {
+        "address": "0x4871ea",
+        "offset": 1148,
+        "bytes": 4,
+        "instruction": "mov esi, dword ptr [eax]"
+      },
+      "effective_offset": 1770,
+      "adjustment": 622,
+      "targets": [
+        "CreaturePickUpPriority"
+      ],
+      "trace": [
+        "004182a2: lea ecx, [esi + 0x26e]"
+      ]
+    },
+    {
+      "function": "0x418080",
+      "name": "CButton_handleLeftClick_418080",
+      "seed": "0x4182a2",
+      "call": "0x4182a8",
+      "target": "0x4871e0",
+      "read": {
+        "address": "0x4871ea",
+        "offset": 1260,
+        "bytes": 4,
+        "instruction": "mov esi, dword ptr [eax]"
+      },
+      "effective_offset": 1882,
+      "adjustment": 622,
+      "targets": [
+        "CreatureAbilityJump"
+      ],
+      "trace": [
+        "004182a2: lea ecx, [esi + 0x26e]"
+      ]
+    },
+    {
+      "function": "0x418080",
+      "name": "CButton_handleLeftClick_418080",
+      "seed": "0x4182a2",
+      "call": "0x4182a8",
+      "target": "0x4871e0",
+      "read": {
+        "address": "0x4871ea",
+        "offset": 1264,
+        "bytes": 4,
+        "instruction": "mov esi, dword ptr [eax]"
+      },
+      "effective_offset": 1886,
+      "adjustment": 622,
+      "targets": [
+        "CreatureAbilityJump"
+      ],
+      "trace": [
+        "004182a2: lea ecx, [esi + 0x26e]"
+      ]
+    },
+    {
+      "function": "0x420d10",
+      "name": "sub_420D10",
+      "seed": "0x420fba",
+      "call": "0x420fc7",
+      "target": "0x4b37d0",
+      "read": {
+        "address": "0x4b3841",
+        "offset": 78,
+        "bytes": 1,
+        "instruction": "mov al, byte ptr [esi + 0x4e]"
+      },
+      "effective_offset": 274,
+      "adjustment": 196,
+      "targets": [
+        "ObjectPickUpPriority"
+      ],
+      "trace": [
+        "00420fba: lea ecx, [esp + 0xc4]",
+        "00420fc1: add eax, 0x510",
+        "00420fc6: push eax"
+      ]
+    },
+    {
+      "function": "0x420d10",
+      "name": "sub_420D10",
+      "seed": "0x420fba",
+      "call": "0x420fc7",
+      "target": "0x4b37d0",
+      "read": {
+        "address": "0x4b3918",
+        "offset": 78,
+        "bytes": 1,
+        "instruction": "test byte ptr [esi + 0x4e], 0x40"
+      },
+      "effective_offset": 274,
+      "adjustment": 196,
+      "targets": [
+        "ObjectPickUpPriority"
+      ],
+      "trace": [
+        "00420fba: lea ecx, [esp + 0xc4]",
+        "00420fc1: add eax, 0x510",
+        "00420fc6: push eax"
+      ]
+    },
+    {
+      "function": "0x420d10",
+      "name": "sub_420D10",
+      "seed": "0x42122e",
+      "call": "0x42123b",
+      "target": "0x4b37d0",
+      "read": {
+        "address": "0x4b3841",
+        "offset": 78,
+        "bytes": 1,
+        "instruction": "mov al, byte ptr [esi + 0x4e]"
+      },
+      "effective_offset": 274,
+      "adjustment": 196,
+      "targets": [
+        "ObjectPickUpPriority"
+      ],
+      "trace": [
+        "0042122e: lea ecx, [esp + 0xc4]",
+        "00421235: add eax, 0xbeb",
+        "0042123a: push eax"
+      ]
+    },
+    {
+      "function": "0x420d10",
+      "name": "sub_420D10",
+      "seed": "0x42122e",
+      "call": "0x42123b",
+      "target": "0x4b37d0",
+      "read": {
+        "address": "0x4b3918",
+        "offset": 78,
+        "bytes": 1,
+        "instruction": "test byte ptr [esi + 0x4e], 0x40"
+      },
+      "effective_offset": 274,
+      "adjustment": 196,
+      "targets": [
+        "ObjectPickUpPriority"
+      ],
+      "trace": [
+        "0042122e: lea ecx, [esp + 0xc4]",
+        "00421235: add eax, 0xbeb",
+        "0042123a: push eax"
+      ]
+    },
+    {
+      "function": "0x420d10",
+      "name": "sub_420D10",
+      "seed": "0x421478",
+      "call": "0x421485",
+      "target": "0x4b37d0",
+      "read": {
+        "address": "0x4b3841",
+        "offset": 78,
+        "bytes": 1,
+        "instruction": "mov al, byte ptr [esi + 0x4e]"
+      },
+      "effective_offset": 274,
+      "adjustment": 196,
+      "targets": [
+        "ObjectPickUpPriority"
+      ],
+      "trace": [
+        "00421478: lea ecx, [esp + 0xc4]",
+        "0042147f: add eax, 0x123f",
+        "00421484: push eax"
+      ]
+    },
+    {
+      "function": "0x420d10",
+      "name": "sub_420D10",
+      "seed": "0x421478",
+      "call": "0x421485",
+      "target": "0x4b37d0",
+      "read": {
+        "address": "0x4b3918",
+        "offset": 78,
+        "bytes": 1,
+        "instruction": "test byte ptr [esi + 0x4e], 0x40"
+      },
+      "effective_offset": 274,
+      "adjustment": 196,
+      "targets": [
+        "ObjectPickUpPriority"
+      ],
+      "trace": [
+        "00421478: lea ecx, [esp + 0xc4]",
+        "0042147f: add eax, 0x123f",
+        "00421484: push eax"
+      ]
+    },
+    {
+      "function": "0x420d10",
+      "name": "sub_420D10",
+      "seed": "0x4214c7",
+      "call": "0x4214cf",
+      "target": "0x4b37d0",
+      "read": {
+        "address": "0x4b3841",
+        "offset": 78,
+        "bytes": 1,
+        "instruction": "mov al, byte ptr [esi + 0x4e]"
+      },
+      "effective_offset": 274,
+      "adjustment": 196,
+      "targets": [
+        "ObjectPickUpPriority"
+      ],
+      "trace": [
+        "004214c7: lea ecx, [esp + 0xc4]",
+        "004214ce: push edx"
+      ]
+    },
+    {
+      "function": "0x420d10",
+      "name": "sub_420D10",
+      "seed": "0x4214c7",
+      "call": "0x4214cf",
+      "target": "0x4b37d0",
+      "read": {
+        "address": "0x4b3918",
+        "offset": 78,
+        "bytes": 1,
+        "instruction": "test byte ptr [esi + 0x4e], 0x40"
+      },
+      "effective_offset": 274,
+      "adjustment": 196,
+      "targets": [
+        "ObjectPickUpPriority"
+      ],
+      "trace": [
+        "004214c7: lea ecx, [esp + 0xc4]",
+        "004214ce: push edx"
+      ]
+    },
+    {
+      "function": "0x420d10",
+      "name": "sub_420D10",
+      "seed": "0x4216b2",
+      "call": "0x4216bf",
+      "target": "0x4b37d0",
+      "read": {
+        "address": "0x4b3841",
+        "offset": 78,
+        "bytes": 1,
+        "instruction": "mov al, byte ptr [esi + 0x4e]"
+      },
+      "effective_offset": 274,
+      "adjustment": 196,
+      "targets": [
+        "ObjectPickUpPriority"
+      ],
+      "trace": [
+        "004216b2: lea ecx, [esp + 0xc4]",
+        "004216b9: add eax, 0x1275",
+        "004216be: push eax"
+      ]
+    },
+    {
+      "function": "0x420d10",
+      "name": "sub_420D10",
+      "seed": "0x4216b2",
+      "call": "0x4216bf",
+      "target": "0x4b37d0",
+      "read": {
+        "address": "0x4b3918",
+        "offset": 78,
+        "bytes": 1,
+        "instruction": "test byte ptr [esi + 0x4e], 0x40"
+      },
+      "effective_offset": 274,
+      "adjustment": 196,
+      "targets": [
+        "ObjectPickUpPriority"
+      ],
+      "trace": [
+        "004216b2: lea ecx, [esp + 0xc4]",
+        "004216b9: add eax, 0x1275",
+        "004216be: push eax"
+      ]
+    },
+    {
+      "function": "0x420d10",
+      "name": "sub_420D10",
+      "seed": "0x4218b4",
+      "call": "0x4218c2",
+      "target": "0x4b37d0",
+      "read": {
+        "address": "0x4b3841",
+        "offset": 78,
+        "bytes": 1,
+        "instruction": "mov al, byte ptr [esi + 0x4e]"
+      },
+      "effective_offset": 274,
+      "adjustment": 196,
+      "targets": [
+        "ObjectPickUpPriority"
+      ],
+      "trace": [
+        "004218b4: lea ecx, [esp + 0xc4]",
+        "004218bb: add edx, 0x123f",
+        "004218c1: push edx"
+      ]
+    },
+    {
+      "function": "0x420d10",
+      "name": "sub_420D10",
+      "seed": "0x4218b4",
+      "call": "0x4218c2",
+      "target": "0x4b37d0",
+      "read": {
+        "address": "0x4b3918",
+        "offset": 78,
+        "bytes": 1,
+        "instruction": "test byte ptr [esi + 0x4e], 0x40"
+      },
+      "effective_offset": 274,
+      "adjustment": 196,
+      "targets": [
+        "ObjectPickUpPriority"
+      ],
+      "trace": [
+        "004218b4: lea ecx, [esp + 0xc4]",
+        "004218bb: add edx, 0x123f",
+        "004218c1: push edx"
+      ]
+    },
+    {
+      "function": "0x420d10",
+      "name": "sub_420D10",
+      "seed": "0x4218fc",
+      "call": "0x42190a",
+      "target": "0x4b37d0",
+      "read": {
+        "address": "0x4b3841",
+        "offset": 78,
+        "bytes": 1,
+        "instruction": "mov al, byte ptr [esi + 0x4e]"
+      },
+      "effective_offset": 274,
+      "adjustment": 196,
+      "targets": [
+        "ObjectPickUpPriority"
+      ],
+      "trace": [
+        "004218fc: lea ecx, [esp + 0xc4]",
+        "00421903: add edx, 0xa3b",
+        "00421909: push edx"
+      ]
+    },
+    {
+      "function": "0x420d10",
+      "name": "sub_420D10",
+      "seed": "0x4218fc",
+      "call": "0x42190a",
+      "target": "0x4b37d0",
+      "read": {
+        "address": "0x4b3918",
+        "offset": 78,
+        "bytes": 1,
+        "instruction": "test byte ptr [esi + 0x4e], 0x40"
+      },
+      "effective_offset": 274,
+      "adjustment": 196,
+      "targets": [
+        "ObjectPickUpPriority"
+      ],
+      "trace": [
+        "004218fc: lea ecx, [esp + 0xc4]",
+        "00421903: add edx, 0xa3b",
+        "00421909: push edx"
+      ]
+    },
+    {
+      "function": "0x420d10",
+      "name": "sub_420D10",
+      "seed": "0x4219a6",
+      "call": "0x4219b4",
+      "target": "0x4b37d0",
+      "read": {
+        "address": "0x4b3841",
+        "offset": 78,
+        "bytes": 1,
+        "instruction": "mov al, byte ptr [esi + 0x4e]"
+      },
+      "effective_offset": 274,
+      "adjustment": 196,
+      "targets": [
+        "ObjectPickUpPriority"
+      ],
+      "trace": [
+        "004219a6: lea ecx, [esp + 0xc4]",
+        "004219ad: add edx, 0xa05",
+        "004219b3: push edx"
+      ]
+    },
+    {
+      "function": "0x420d10",
+      "name": "sub_420D10",
+      "seed": "0x4219a6",
+      "call": "0x4219b4",
+      "target": "0x4b37d0",
+      "read": {
+        "address": "0x4b3918",
+        "offset": 78,
+        "bytes": 1,
+        "instruction": "test byte ptr [esi + 0x4e], 0x40"
+      },
+      "effective_offset": 274,
+      "adjustment": 196,
+      "targets": [
+        "ObjectPickUpPriority"
+      ],
+      "trace": [
+        "004219a6: lea ecx, [esp + 0xc4]",
+        "004219ad: add edx, 0xa05",
+        "004219b3: push edx"
+      ]
+    },
+    {
+      "function": "0x420d10",
+      "name": "sub_420D10",
+      "seed": "0x421a74",
+      "call": "0x421a81",
+      "target": "0x4b37d0",
+      "read": {
+        "address": "0x4b3841",
+        "offset": 78,
+        "bytes": 1,
+        "instruction": "mov al, byte ptr [esi + 0x4e]"
+      },
+      "effective_offset": 274,
+      "adjustment": 196,
+      "targets": [
+        "ObjectPickUpPriority"
+      ],
+      "trace": [
+        "00421a74: lea ecx, [esp + 0xc4]",
+        "00421a7b: add eax, 0x123f",
+        "00421a80: push eax"
+      ]
+    },
+    {
+      "function": "0x420d10",
+      "name": "sub_420D10",
+      "seed": "0x421a74",
+      "call": "0x421a81",
+      "target": "0x4b37d0",
+      "read": {
+        "address": "0x4b3918",
+        "offset": 78,
+        "bytes": 1,
+        "instruction": "test byte ptr [esi + 0x4e], 0x40"
+      },
+      "effective_offset": 274,
+      "adjustment": 196,
+      "targets": [
+        "ObjectPickUpPriority"
+      ],
+      "trace": [
+        "00421a74: lea ecx, [esp + 0xc4]",
+        "00421a7b: add eax, 0x123f",
+        "00421a80: push eax"
+      ]
+    },
+    {
+      "function": "0x420d10",
+      "name": "sub_420D10",
+      "seed": "0x421afb",
+      "call": "0x421b08",
+      "target": "0x4b37d0",
+      "read": {
+        "address": "0x4b3841",
+        "offset": 78,
+        "bytes": 1,
+        "instruction": "mov al, byte ptr [esi + 0x4e]"
+      },
+      "effective_offset": 274,
+      "adjustment": 196,
+      "targets": [
+        "ObjectPickUpPriority"
+      ],
+      "trace": [
+        "00421afb: lea ecx, [esp + 0xc4]",
+        "00421b02: add eax, 0x123f",
+        "00421b07: push eax"
+      ]
+    },
+    {
+      "function": "0x420d10",
+      "name": "sub_420D10",
+      "seed": "0x421afb",
+      "call": "0x421b08",
+      "target": "0x4b37d0",
+      "read": {
+        "address": "0x4b3918",
+        "offset": 78,
+        "bytes": 1,
+        "instruction": "test byte ptr [esi + 0x4e], 0x40"
+      },
+      "effective_offset": 274,
+      "adjustment": 196,
+      "targets": [
+        "ObjectPickUpPriority"
+      ],
+      "trace": [
+        "00421afb: lea ecx, [esp + 0xc4]",
+        "00421b02: add eax, 0x123f",
+        "00421b07: push eax"
+      ]
+    },
+    {
+      "function": "0x420d10",
+      "name": "sub_420D10",
+      "seed": "0x421b84",
+      "call": "0x421b91",
+      "target": "0x4b37d0",
+      "read": {
+        "address": "0x4b3841",
+        "offset": 78,
+        "bytes": 1,
+        "instruction": "mov al, byte ptr [esi + 0x4e]"
+      },
+      "effective_offset": 274,
+      "adjustment": 196,
+      "targets": [
+        "ObjectPickUpPriority"
+      ],
+      "trace": [
+        "00421b84: lea ecx, [esp + 0xc4]",
+        "00421b8b: add eax, 0x123f",
+        "00421b90: push eax"
+      ]
+    },
+    {
+      "function": "0x420d10",
+      "name": "sub_420D10",
+      "seed": "0x421b84",
+      "call": "0x421b91",
+      "target": "0x4b37d0",
+      "read": {
+        "address": "0x4b3918",
+        "offset": 78,
+        "bytes": 1,
+        "instruction": "test byte ptr [esi + 0x4e], 0x40"
+      },
+      "effective_offset": 274,
+      "adjustment": 196,
+      "targets": [
+        "ObjectPickUpPriority"
+      ],
+      "trace": [
+        "00421b84: lea ecx, [esp + 0xc4]",
+        "00421b8b: add eax, 0x123f",
+        "00421b90: push eax"
+      ]
+    },
+    {
+      "function": "0x420d10",
+      "name": "sub_420D10",
+      "seed": "0x421c55",
+      "call": "0x421c62",
+      "target": "0x4b37d0",
+      "read": {
+        "address": "0x4b3841",
+        "offset": 78,
+        "bytes": 1,
+        "instruction": "mov al, byte ptr [esi + 0x4e]"
+      },
+      "effective_offset": 274,
+      "adjustment": 196,
+      "targets": [
+        "ObjectPickUpPriority"
+      ],
+      "trace": [
+        "00421c55: lea ecx, [esp + 0xc4]",
+        "00421c5c: add eax, 0x123f",
+        "00421c61: push eax"
+      ]
+    },
+    {
+      "function": "0x420d10",
+      "name": "sub_420D10",
+      "seed": "0x421c55",
+      "call": "0x421c62",
+      "target": "0x4b37d0",
+      "read": {
+        "address": "0x4b3918",
+        "offset": 78,
+        "bytes": 1,
+        "instruction": "test byte ptr [esi + 0x4e], 0x40"
+      },
+      "effective_offset": 274,
+      "adjustment": 196,
+      "targets": [
+        "ObjectPickUpPriority"
+      ],
+      "trace": [
+        "00421c55: lea ecx, [esp + 0xc4]",
+        "00421c5c: add eax, 0x123f",
+        "00421c61: push eax"
+      ]
+    },
+    {
+      "function": "0x420d10",
+      "name": "sub_420D10",
+      "seed": "0x421d67",
+      "call": "0x421d74",
+      "target": "0x4b37d0",
+      "read": {
+        "address": "0x4b3841",
+        "offset": 78,
+        "bytes": 1,
+        "instruction": "mov al, byte ptr [esi + 0x4e]"
+      },
+      "effective_offset": 274,
+      "adjustment": 196,
+      "targets": [
+        "ObjectPickUpPriority"
+      ],
+      "trace": [
+        "00421d67: lea ecx, [esp + 0xc4]",
+        "00421d6e: add eax, 0x18ff",
+        "00421d73: push eax"
+      ]
+    },
+    {
+      "function": "0x420d10",
+      "name": "sub_420D10",
+      "seed": "0x421d67",
+      "call": "0x421d74",
+      "target": "0x4b37d0",
+      "read": {
+        "address": "0x4b3918",
+        "offset": 78,
+        "bytes": 1,
+        "instruction": "test byte ptr [esi + 0x4e], 0x40"
+      },
+      "effective_offset": 274,
+      "adjustment": 196,
+      "targets": [
+        "ObjectPickUpPriority"
+      ],
+      "trace": [
+        "00421d67: lea ecx, [esp + 0xc4]",
+        "00421d6e: add eax, 0x18ff",
+        "00421d73: push eax"
+      ]
+    },
+    {
+      "function": "0x420d10",
+      "name": "sub_420D10",
+      "seed": "0x421edf",
+      "call": "0x421eec",
+      "target": "0x4b37d0",
+      "read": {
+        "address": "0x4b3841",
+        "offset": 78,
+        "bytes": 1,
+        "instruction": "mov al, byte ptr [esi + 0x4e]"
+      },
+      "effective_offset": 274,
+      "adjustment": 196,
+      "targets": [
+        "ObjectPickUpPriority"
+      ],
+      "trace": [
+        "00421edf: lea ecx, [esp + 0xc4]",
+        "00421ee6: add eax, 0xbeb",
+        "00421eeb: push eax"
+      ]
+    },
+    {
+      "function": "0x420d10",
+      "name": "sub_420D10",
+      "seed": "0x421edf",
+      "call": "0x421eec",
+      "target": "0x4b37d0",
+      "read": {
+        "address": "0x4b3918",
+        "offset": 78,
+        "bytes": 1,
+        "instruction": "test byte ptr [esi + 0x4e], 0x40"
+      },
+      "effective_offset": 274,
+      "adjustment": 196,
+      "targets": [
+        "ObjectPickUpPriority"
+      ],
+      "trace": [
+        "00421edf: lea ecx, [esp + 0xc4]",
+        "00421ee6: add eax, 0xbeb",
+        "00421eeb: push eax"
+      ]
+    },
+    {
+      "function": "0x420d10",
+      "name": "sub_420D10",
+      "seed": "0x421f54",
+      "call": "0x421f62",
+      "target": "0x4b37d0",
+      "read": {
+        "address": "0x4b3841",
+        "offset": 78,
+        "bytes": 1,
+        "instruction": "mov al, byte ptr [esi + 0x4e]"
+      },
+      "effective_offset": 274,
+      "adjustment": 196,
+      "targets": [
+        "ObjectPickUpPriority"
+      ],
+      "trace": [
+        "00421f54: lea ecx, [esp + 0xc4]",
+        "00421f5b: add edx, 0xbb5",
+        "00421f61: push edx"
+      ]
+    },
+    {
+      "function": "0x420d10",
+      "name": "sub_420D10",
+      "seed": "0x421f54",
+      "call": "0x421f62",
+      "target": "0x4b37d0",
+      "read": {
+        "address": "0x4b3918",
+        "offset": 78,
+        "bytes": 1,
+        "instruction": "test byte ptr [esi + 0x4e], 0x40"
+      },
+      "effective_offset": 274,
+      "adjustment": 196,
+      "targets": [
+        "ObjectPickUpPriority"
+      ],
+      "trace": [
+        "00421f54: lea ecx, [esp + 0xc4]",
+        "00421f5b: add edx, 0xbb5",
+        "00421f61: push edx"
+      ]
+    },
+    {
+      "function": "0x420d10",
+      "name": "sub_420D10",
+      "seed": "0x42240d",
+      "call": "0x42241a",
+      "target": "0x4b37d0",
+      "read": {
+        "address": "0x4b3841",
+        "offset": 78,
+        "bytes": 1,
+        "instruction": "mov al, byte ptr [esi + 0x4e]"
+      },
+      "effective_offset": 274,
+      "adjustment": 196,
+      "targets": [
+        "ObjectPickUpPriority"
+      ],
+      "trace": [
+        "0042240d: lea ecx, [esp + 0xc4]",
+        "00422414: add eax, 0x798",
+        "00422419: push eax"
+      ]
+    },
+    {
+      "function": "0x420d10",
+      "name": "sub_420D10",
+      "seed": "0x42240d",
+      "call": "0x42241a",
+      "target": "0x4b37d0",
+      "read": {
+        "address": "0x4b3918",
+        "offset": 78,
+        "bytes": 1,
+        "instruction": "test byte ptr [esi + 0x4e], 0x40"
+      },
+      "effective_offset": 274,
+      "adjustment": 196,
+      "targets": [
+        "ObjectPickUpPriority"
+      ],
+      "trace": [
+        "0042240d: lea ecx, [esp + 0xc4]",
+        "00422414: add eax, 0x798",
+        "00422419: push eax"
+      ]
+    },
+    {
+      "function": "0x463760",
+      "name": "sub_463760",
+      "seed": "0x46385e",
+      "call": "0x463864",
+      "target": "0x486f80",
+      "read": {
+        "address": "0x486fd7",
+        "offset": 240,
+        "bytes": 4,
+        "instruction": "mov edx, dword ptr [esi]"
+      },
+      "effective_offset": 272,
+      "adjustment": 32,
+      "targets": [
+        "ObjectPickUpPriority"
+      ],
+      "trace": [
+        "0046385e: lea ecx, [esi + 0x20]",
+        "00463861: mov dword ptr [edi + 0x2e], eax"
+      ]
+    },
+    {
+      "function": "0x463a10",
+      "name": "_ai_handleHungerAndHealth",
+      "seed": "0x463b6a",
+      "call": "0x463b6d",
+      "target": "0x486f80",
+      "read": {
+        "address": "0x486fd7",
+        "offset": 240,
+        "bytes": 4,
+        "instruction": "mov edx, dword ptr [esi]"
+      },
+      "effective_offset": 272,
+      "adjustment": 32,
+      "targets": [
+        "ObjectPickUpPriority"
+      ],
+      "trace": [
+        "00463b6a: lea ecx, [edi + 0x20]"
+      ]
+    },
+    {
+      "function": "0x46f6b0",
+      "name": "makingAHome_80_46F6B0",
+      "seed": "0x46f77a",
+      "call": "0x46f77d",
+      "target": "0x486f80",
+      "read": {
+        "address": "0x486fd7",
+        "offset": 240,
+        "bytes": 4,
+        "instruction": "mov edx, dword ptr [esi]"
+      },
+      "effective_offset": 272,
+      "adjustment": 32,
+      "targets": [
+        "ObjectPickUpPriority"
+      ],
+      "trace": [
+        "0046f77a: lea ecx, [esi + 0x20]"
+      ]
+    },
+    {
+      "function": "0x46fa60",
+      "name": "sleeping_83_46FA60",
+      "seed": "0x46fb16",
+      "call": "0x46fb19",
+      "target": "0x486f80",
+      "read": {
+        "address": "0x486fd7",
+        "offset": 240,
+        "bytes": 4,
+        "instruction": "mov edx, dword ptr [esi]"
+      },
+      "effective_offset": 272,
+      "adjustment": 32,
+      "targets": [
+        "ObjectPickUpPriority"
+      ],
+      "trace": [
+        "0046fb16: lea ecx, [esi + 0x20]"
+      ]
+    },
+    {
+      "function": "0x472740",
+      "name": "sub_472740",
+      "seed": "0x47284d",
+      "call": "0x472850",
+      "target": "0x486f80",
+      "read": {
+        "address": "0x486fd7",
+        "offset": 240,
+        "bytes": 4,
+        "instruction": "mov edx, dword ptr [esi]"
+      },
+      "effective_offset": 272,
+      "adjustment": 32,
+      "targets": [
+        "ObjectPickUpPriority"
+      ],
+      "trace": [
+        "0047284d: lea ecx, [esi + 0x20]"
+      ]
+    },
+    {
+      "function": "0x473750",
+      "name": "sub_473750",
+      "seed": "0x4737d4",
+      "call": "0x4737d7",
+      "target": "0x486f80",
+      "read": {
+        "address": "0x486fd7",
+        "offset": 240,
+        "bytes": 4,
+        "instruction": "mov edx, dword ptr [esi]"
+      },
+      "effective_offset": 272,
+      "adjustment": 32,
+      "targets": [
+        "ObjectPickUpPriority"
+      ],
+      "trace": [
+        "004737d4: lea ecx, [ebp + 0x20]"
+      ]
+    },
+    {
+      "function": "0x478b80",
+      "name": "fun_478B80",
+      "seed": "0x478ba8",
+      "call": "0x478bab",
+      "target": "0x487030",
+      "read": {
+        "address": "0x487085",
+        "offset": 240,
+        "bytes": 4,
+        "instruction": "mov edx, dword ptr [esi]"
+      },
+      "effective_offset": 272,
+      "adjustment": 32,
+      "targets": [
+        "ObjectPickUpPriority"
+      ],
+      "trace": [
+        "00478ba8: lea ecx, [esi + 0x20]"
+      ]
+    },
+    {
+      "function": "0x478c30",
+      "name": "sub_478C30",
+      "seed": "0x478c58",
+      "call": "0x478c5b",
+      "target": "0x4870e0",
+      "read": {
+        "address": "0x487148",
+        "offset": 240,
+        "bytes": 4,
+        "instruction": "mov edx, dword ptr [esi]"
+      },
+      "effective_offset": 272,
+      "adjustment": 32,
+      "targets": [
+        "ObjectPickUpPriority"
+      ],
+      "trace": [
+        "00478c58: lea ecx, [esi + 0x20]"
+      ]
+    },
+    {
+      "function": "0x479200",
+      "name": "dump",
+      "seed": "0x479283",
+      "call": "0x479286",
+      "target": "0x487210",
+      "read": {
+        "address": "0x48726a",
+        "offset": 240,
+        "bytes": 4,
+        "instruction": "mov edx, dword ptr [esi]"
+      },
+      "effective_offset": 272,
+      "adjustment": 32,
+      "targets": [
+        "ObjectPickUpPriority"
+      ],
+      "trace": [
+        "00479283: lea ecx, [esi + 0x20]"
+      ]
+    },
+    {
+      "function": "0x4bcb60",
+      "name": "calcChecksum",
+      "seed": "0x4bccf0",
+      "call": "0x4bccf6",
+      "target": "0x506bf0",
+      "read": {
+        "address": "0x506c42",
+        "offset": 1234,
+        "bytes": 1,
+        "instruction": "mov bl, byte ptr [ecx - 0x10]"
+      },
+      "effective_offset": 1771,
+      "adjustment": 537,
+      "targets": [
+        "CreaturePickUpPriority"
+      ],
+      "trace": [
+        "004bccf0: lea ecx, [edi + 0x219]"
+      ]
+    },
+    {
+      "function": "0x4bcb60",
+      "name": "calcChecksum",
+      "seed": "0x4bccf0",
+      "call": "0x4bccf6",
+      "target": "0x506bf0",
+      "read": {
+        "address": "0x506c26",
+        "offset": 1347,
+        "bytes": 1,
+        "instruction": "mov dl, byte ptr [ecx + 1]"
+      },
+      "effective_offset": 1884,
+      "adjustment": 537,
+      "targets": [
+        "CreatureAbilityJump"
+      ],
+      "trace": [
+        "004bccf0: lea ecx, [edi + 0x219]"
+      ]
+    },
+    {
+      "function": "0x4bcb60",
+      "name": "calcChecksum",
+      "seed": "0x4bccf0",
+      "call": "0x4bccf6",
+      "target": "0x506bf0",
+      "read": {
+        "address": "0x506c39",
+        "offset": 1348,
+        "bytes": 4,
+        "instruction": "mov ebx, dword ptr [ecx - 0xe]"
+      },
+      "effective_offset": 1885,
+      "adjustment": 537,
+      "targets": [
+        "CreatureAbilityJump"
+      ],
+      "trace": [
+        "004bccf0: lea ecx, [edi + 0x219]"
+      ]
+    },
+    {
+      "function": "0x4c2c30",
+      "name": "sub_4C2C30",
+      "seed": "0x4c2d40",
+      "call": "0x4c2d47",
+      "target": "0x4871e0",
+      "read": {
+        "address": "0x4871ea",
+        "offset": 1148,
+        "bytes": 4,
+        "instruction": "mov esi, dword ptr [eax]"
+      },
+      "effective_offset": 1770,
+      "adjustment": 622,
+      "targets": [
+        "CreaturePickUpPriority"
+      ],
+      "trace": [
+        "004c2d40: lea ecx, [esi + 0x26e]",
+        "004c2d46: inc edi"
+      ]
+    },
+    {
+      "function": "0x4c2c30",
+      "name": "sub_4C2C30",
+      "seed": "0x4c2d40",
+      "call": "0x4c2d47",
+      "target": "0x4871e0",
+      "read": {
+        "address": "0x4871ea",
+        "offset": 1260,
+        "bytes": 4,
+        "instruction": "mov esi, dword ptr [eax]"
+      },
+      "effective_offset": 1882,
+      "adjustment": 622,
+      "targets": [
+        "CreatureAbilityJump"
+      ],
+      "trace": [
+        "004c2d40: lea ecx, [esi + 0x26e]",
+        "004c2d46: inc edi"
+      ]
+    },
+    {
+      "function": "0x4c2c30",
+      "name": "sub_4C2C30",
+      "seed": "0x4c2d40",
+      "call": "0x4c2d47",
+      "target": "0x4871e0",
+      "read": {
+        "address": "0x4871ea",
+        "offset": 1264,
+        "bytes": 4,
+        "instruction": "mov esi, dword ptr [eax]"
+      },
+      "effective_offset": 1886,
+      "adjustment": 622,
+      "targets": [
+        "CreatureAbilityJump"
+      ],
+      "trace": [
+        "004c2d40: lea ecx, [esi + 0x26e]",
+        "004c2d46: inc edi"
+      ]
+    },
+    {
+      "function": "0x525370",
+      "name": "mainGuiLoop",
+      "seed": "0x525c37",
+      "call": "0x525c3e",
+      "target": "0x62cae0",
+      "read": {
+        "address": "0x62cb71",
+        "offset": 104,
+        "bytes": 4,
+        "instruction": "mov ecx, dword ptr [esi + 0x68]"
+      },
+      "effective_offset": 272,
+      "adjustment": 168,
+      "targets": [
+        "ObjectPickUpPriority"
+      ],
+      "trace": [
+        "00525c37: lea ecx, [esp + 0xa8]"
+      ]
+    },
+    {
+      "function": "0x53d270",
+      "name": "CButton_render_53D270",
+      "seed": "0x53d427",
+      "call": "0x53d42e",
+      "target": "0x62cae0",
+      "read": {
+        "address": "0x62cb6e",
+        "offset": 92,
+        "bytes": 4,
+        "instruction": "mov edx, dword ptr [esi + 0x5c]"
+      },
+      "effective_offset": 272,
+      "adjustment": 180,
+      "targets": [
+        "ObjectPickUpPriority"
+      ],
+      "trace": [
+        "0053d427: lea ecx, [esp + 0xb4]"
+      ]
+    },
+    {
+      "function": "0x53d270",
+      "name": "CButton_render_53D270",
+      "seed": "0x53d4bc",
+      "call": "0x53d4c3",
+      "target": "0x62cae0",
+      "read": {
+        "address": "0x62cb6e",
+        "offset": 92,
+        "bytes": 4,
+        "instruction": "mov edx, dword ptr [esi + 0x5c]"
+      },
+      "effective_offset": 272,
+      "adjustment": 180,
+      "targets": [
+        "ObjectPickUpPriority"
+      ],
+      "trace": [
+        "0053d4bc: lea ecx, [esp + 0xb4]"
+      ]
+    },
+    {
+      "function": "0x53d270",
+      "name": "CButton_render_53D270",
+      "seed": "0x53d508",
+      "call": "0x53d517",
+      "target": "0x62c9b0",
+      "read": {
+        "address": "0x62c9b5",
+        "offset": 112,
+        "bytes": 4,
+        "instruction": "mov esi, dword ptr [edi + 0x70]"
+      },
+      "effective_offset": 272,
+      "adjustment": 160,
+      "targets": [
+        "ObjectPickUpPriority"
+      ],
+      "trace": [
+        "0053d508: lea ecx, [esp + 0xa0]",
+        "0053d50f: mov byte ptr [esp + 0x128], 0"
+      ]
+    },
+    {
+      "function": "0x540bc0",
+      "name": "CButton_render_540BC0",
+      "seed": "0x540e74",
+      "call": "0x540e7b",
+      "target": "0x62cae0",
+      "read": {
+        "address": "0x62cb71",
+        "offset": 104,
+        "bytes": 4,
+        "instruction": "mov ecx, dword ptr [esi + 0x68]"
+      },
+      "effective_offset": 272,
+      "adjustment": 168,
+      "targets": [
+        "ObjectPickUpPriority"
+      ],
+      "trace": [
+        "00540e74: lea ecx, [esp + 0xa8]"
+      ]
+    },
+    {
+      "function": "0x540bc0",
+      "name": "CButton_render_540BC0",
+      "seed": "0x540f13",
+      "call": "0x540f21",
+      "target": "0x62cae0",
+      "read": {
+        "address": "0x62cb71",
+        "offset": 104,
+        "bytes": 4,
+        "instruction": "mov ecx, dword ptr [esi + 0x68]"
+      },
+      "effective_offset": 272,
+      "adjustment": 168,
+      "targets": [
+        "ObjectPickUpPriority"
+      ],
+      "trace": [
+        "00540f13: lea ecx, [esp + 0xa8]",
+        "00540f1a: mov dword ptr [esp + 0x88], eax"
+      ]
+    },
+    {
+      "function": "0x540bc0",
+      "name": "CButton_render_540BC0",
+      "seed": "0x540fc4",
+      "call": "0x540fcf",
+      "target": "0x62cae0",
+      "read": {
+        "address": "0x62cb71",
+        "offset": 104,
+        "bytes": 4,
+        "instruction": "mov ecx, dword ptr [esi + 0x68]"
+      },
+      "effective_offset": 272,
+      "adjustment": 168,
+      "targets": [
+        "ObjectPickUpPriority"
+      ],
+      "trace": [
+        "00540fc4: lea ecx, [esp + 0xa8]",
+        "00540fcb: mov dword ptr [esp + 0x58], edx"
+      ]
+    },
+    {
+      "function": "0x5410c0",
+      "name": "CButton_render_5410C0",
+      "seed": "0x541374",
+      "call": "0x54137b",
+      "target": "0x62cae0",
+      "read": {
+        "address": "0x62cb71",
+        "offset": 104,
+        "bytes": 4,
+        "instruction": "mov ecx, dword ptr [esi + 0x68]"
+      },
+      "effective_offset": 272,
+      "adjustment": 168,
+      "targets": [
+        "ObjectPickUpPriority"
+      ],
+      "trace": [
+        "00541374: lea ecx, [esp + 0xa8]"
+      ]
+    },
+    {
+      "function": "0x5410c0",
+      "name": "CButton_render_5410C0",
+      "seed": "0x541413",
+      "call": "0x541421",
+      "target": "0x62cae0",
+      "read": {
+        "address": "0x62cb71",
+        "offset": 104,
+        "bytes": 4,
+        "instruction": "mov ecx, dword ptr [esi + 0x68]"
+      },
+      "effective_offset": 272,
+      "adjustment": 168,
+      "targets": [
+        "ObjectPickUpPriority"
+      ],
+      "trace": [
+        "00541413: lea ecx, [esp + 0xa8]",
+        "0054141a: mov dword ptr [esp + 0x88], eax"
+      ]
+    },
+    {
+      "function": "0x5410c0",
+      "name": "CButton_render_5410C0",
+      "seed": "0x5414c4",
+      "call": "0x5414cf",
+      "target": "0x62cae0",
+      "read": {
+        "address": "0x62cb71",
+        "offset": 104,
+        "bytes": 4,
+        "instruction": "mov ecx, dword ptr [esi + 0x68]"
+      },
+      "effective_offset": 272,
+      "adjustment": 168,
+      "targets": [
+        "ObjectPickUpPriority"
+      ],
+      "trace": [
+        "005414c4: lea ecx, [esp + 0xa8]",
+        "005414cb: mov dword ptr [esp + 0x58], edx"
+      ]
+    },
+    {
+      "function": "0x54be30",
+      "name": "CListBox_render_54BE30",
+      "seed": "0x54c0ec",
+      "call": "0x54c0f3",
+      "target": "0x62cae0",
+      "read": {
+        "address": "0x62cb71",
+        "offset": 104,
+        "bytes": 4,
+        "instruction": "mov ecx, dword ptr [esi + 0x68]"
+      },
+      "effective_offset": 272,
+      "adjustment": 168,
+      "targets": [
+        "ObjectPickUpPriority"
+      ],
+      "trace": [
+        "0054c0ec: lea ecx, [esp + 0xa8]"
+      ]
+    },
+    {
+      "function": "0x54be30",
+      "name": "CListBox_render_54BE30",
+      "seed": "0x54c160",
+      "call": "0x54c167",
+      "target": "0x62cae0",
+      "read": {
+        "address": "0x62cb71",
+        "offset": 104,
+        "bytes": 4,
+        "instruction": "mov ecx, dword ptr [esi + 0x68]"
+      },
+      "effective_offset": 272,
+      "adjustment": 168,
+      "targets": [
+        "ObjectPickUpPriority"
+      ],
+      "trace": [
+        "0054c160: lea ecx, [esp + 0xa8]"
+      ]
+    },
+    {
+      "function": "0x54be30",
+      "name": "CListBox_render_54BE30",
+      "seed": "0x54c1cf",
+      "call": "0x54c1da",
+      "target": "0x62cae0",
+      "read": {
+        "address": "0x62cb71",
+        "offset": 104,
+        "bytes": 4,
+        "instruction": "mov ecx, dword ptr [esi + 0x68]"
+      },
+      "effective_offset": 272,
+      "adjustment": 168,
+      "targets": [
+        "ObjectPickUpPriority"
+      ],
+      "trace": [
+        "0054c1cf: lea ecx, [esp + 0xa8]",
+        "0054c1d6: mov dword ptr [esp + 0x4c], edx"
+      ]
+    },
+    {
+      "function": "0x54f160",
+      "name": "CListBox_LoadGame_SaveList_render",
+      "seed": "0x54f3f3",
+      "call": "0x54f3fa",
+      "target": "0x62cae0",
+      "read": {
+        "address": "0x62cb74",
+        "offset": 100,
+        "bytes": 4,
+        "instruction": "mov eax, dword ptr [esi + 0x64]"
+      },
+      "effective_offset": 272,
+      "adjustment": 172,
+      "targets": [
+        "ObjectPickUpPriority"
+      ],
+      "trace": [
+        "0054f3f3: lea ecx, [esp + 0xac]"
+      ]
+    },
+    {
+      "function": "0x54f160",
+      "name": "CListBox_LoadGame_SaveList_render",
+      "seed": "0x54f4bb",
+      "call": "0x54f4ce",
+      "target": "0x62cae0",
+      "read": {
+        "address": "0x62cb74",
+        "offset": 100,
+        "bytes": 4,
+        "instruction": "mov eax, dword ptr [esi + 0x64]"
+      },
+      "effective_offset": 272,
+      "adjustment": 172,
+      "targets": [
+        "ObjectPickUpPriority"
+      ],
+      "trace": [
+        "0054f4bb: lea ecx, [esp + 0xac]",
+        "0054f4c2: mov dword ptr [esp + 0x68], eax",
+        "0054f4c6: mov dword ptr [esp + 0x6c], 0x7fff"
+      ]
+    },
+    {
+      "function": "0x57aff0",
+      "name": "sub_57AFF0",
+      "seed": "0x57b08c",
+      "call": "0x57b093",
+      "target": "0x57bf00",
+      "read": {
+        "address": "0x57c03a",
+        "offset": 232,
+        "bytes": 4,
+        "instruction": "fld dword ptr [eax + 0x14]"
+      },
+      "effective_offset": 272,
+      "adjustment": 40,
+      "targets": [
+        "ObjectPickUpPriority"
+      ],
+      "trace": [
+        "0057b08c: lea ecx, [esp + 0x28]",
+        "0057b090: mov dword ptr [eax + 0x24], ebx"
+      ]
+    },
+    {
+      "function": "0x57aff0",
+      "name": "sub_57AFF0",
+      "seed": "0x57b08c",
+      "call": "0x57b093",
+      "target": "0x57bf00",
+      "read": {
+        "address": "0x57c01f",
+        "offset": 232,
+        "bytes": 4,
+        "instruction": "fld dword ptr [eax + 0x14]"
+      },
+      "effective_offset": 272,
+      "adjustment": 40,
+      "targets": [
+        "ObjectPickUpPriority"
+      ],
+      "trace": [
+        "0057b08c: lea ecx, [esp + 0x28]",
+        "0057b090: mov dword ptr [eax + 0x24], ebx"
+      ]
+    },
+    {
+      "function": "0x57b6d0",
+      "name": "sub_57B6D0",
+      "seed": "0x57b8b3",
+      "call": "0x57b8d4",
+      "target": "0x57bf00",
+      "read": {
+        "address": "0x57bf0c",
+        "offset": 0,
+        "bytes": 4,
+        "instruction": "cmp dword ptr [eax], 0"
+      },
+      "effective_offset": 272,
+      "adjustment": 272,
+      "targets": [
+        "ObjectPickUpPriority"
+      ],
+      "trace": [
+        "0057b8b3: lea ecx, [esp + 0x110]",
+        "0057b8ba: fstp dword ptr [esp + 0x1c]",
+        "0057b8be: fld dword ptr [esi + 0x20]",
+        "0057b8c1: fadd dword ptr [esp + 0x20]",
+        "0057b8c5: fstp dword ptr [esp + 0x20]",
+        "0057b8c9: fld dword ptr [esi + 0x24]",
+        "0057b8cc: fadd dword ptr [esp + 0x24]",
+        "0057b8d0: fstp dword ptr [esp + 0x24]"
+      ]
+    },
+    {
+      "function": "0x57b6d0",
+      "name": "sub_57B6D0",
+      "seed": "0x57b8b3",
+      "call": "0x57b8d4",
+      "target": "0x57bf00",
+      "read": {
+        "address": "0x57c067",
+        "offset": 0,
+        "bytes": 4,
+        "instruction": "cmp ebx, dword ptr [ecx]"
+      },
+      "effective_offset": 272,
+      "adjustment": 272,
+      "targets": [
+        "ObjectPickUpPriority"
+      ],
+      "trace": [
+        "0057b8b3: lea ecx, [esp + 0x110]",
+        "0057b8ba: fstp dword ptr [esp + 0x1c]",
+        "0057b8be: fld dword ptr [esi + 0x20]",
+        "0057b8c1: fadd dword ptr [esp + 0x20]",
+        "0057b8c5: fstp dword ptr [esp + 0x20]",
+        "0057b8c9: fld dword ptr [esi + 0x24]",
+        "0057b8cc: fadd dword ptr [esp + 0x24]",
+        "0057b8d0: fstp dword ptr [esp + 0x24]"
+      ]
+    },
+    {
+      "function": "0x57b6d0",
+      "name": "sub_57B6D0",
+      "seed": "0x57b9d0",
+      "call": "0x57b9f1",
+      "target": "0x57bf00",
+      "read": {
+        "address": "0x57bf0c",
+        "offset": 0,
+        "bytes": 4,
+        "instruction": "cmp dword ptr [eax], 0"
+      },
+      "effective_offset": 272,
+      "adjustment": 272,
+      "targets": [
+        "ObjectPickUpPriority"
+      ],
+      "trace": [
+        "0057b9d0: lea ecx, [esp + 0x110]",
+        "0057b9d7: fstp dword ptr [esp + 0x1c]",
+        "0057b9db: fld dword ptr [edi + 0x20]",
+        "0057b9de: fadd dword ptr [esp + 0x20]",
+        "0057b9e2: fstp dword ptr [esp + 0x20]",
+        "0057b9e6: fld dword ptr [edi + 0x24]",
+        "0057b9e9: fadd dword ptr [esp + 0x24]",
+        "0057b9ed: fstp dword ptr [esp + 0x24]"
+      ]
+    },
+    {
+      "function": "0x57b6d0",
+      "name": "sub_57B6D0",
+      "seed": "0x57b9d0",
+      "call": "0x57b9f1",
+      "target": "0x57bf00",
+      "read": {
+        "address": "0x57c067",
+        "offset": 0,
+        "bytes": 4,
+        "instruction": "cmp ebx, dword ptr [ecx]"
+      },
+      "effective_offset": 272,
+      "adjustment": 272,
+      "targets": [
+        "ObjectPickUpPriority"
+      ],
+      "trace": [
+        "0057b9d0: lea ecx, [esp + 0x110]",
+        "0057b9d7: fstp dword ptr [esp + 0x1c]",
+        "0057b9db: fld dword ptr [edi + 0x20]",
+        "0057b9de: fadd dword ptr [esp + 0x20]",
+        "0057b9e2: fstp dword ptr [esp + 0x20]",
+        "0057b9e6: fld dword ptr [edi + 0x24]",
+        "0057b9e9: fadd dword ptr [esp + 0x24]",
+        "0057b9ed: fstp dword ptr [esp + 0x24]"
+      ]
+    },
+    {
+      "function": "0x57b6d0",
+      "name": "sub_57B6D0",
+      "seed": "0x57bade",
+      "call": "0x57baff",
+      "target": "0x57bf00",
+      "read": {
+        "address": "0x57bf0c",
+        "offset": 0,
+        "bytes": 4,
+        "instruction": "cmp dword ptr [eax], 0"
+      },
+      "effective_offset": 272,
+      "adjustment": 272,
+      "targets": [
+        "ObjectPickUpPriority"
+      ],
+      "trace": [
+        "0057bade: lea ecx, [esp + 0x110]",
+        "0057bae5: fstp dword ptr [esp + 0x1c]",
+        "0057bae9: fld dword ptr [ebp + 0x20]",
+        "0057baec: fadd dword ptr [esp + 0x20]",
+        "0057baf0: fstp dword ptr [esp + 0x20]",
+        "0057baf4: fld dword ptr [ebp + 0x24]",
+        "0057baf7: fadd dword ptr [esp + 0x24]",
+        "0057bafb: fstp dword ptr [esp + 0x24]"
+      ]
+    },
+    {
+      "function": "0x57b6d0",
+      "name": "sub_57B6D0",
+      "seed": "0x57bade",
+      "call": "0x57baff",
+      "target": "0x57bf00",
+      "read": {
+        "address": "0x57c067",
+        "offset": 0,
+        "bytes": 4,
+        "instruction": "cmp ebx, dword ptr [ecx]"
+      },
+      "effective_offset": 272,
+      "adjustment": 272,
+      "targets": [
+        "ObjectPickUpPriority"
+      ],
+      "trace": [
+        "0057bade: lea ecx, [esp + 0x110]",
+        "0057bae5: fstp dword ptr [esp + 0x1c]",
+        "0057bae9: fld dword ptr [ebp + 0x20]",
+        "0057baec: fadd dword ptr [esp + 0x20]",
+        "0057baf0: fstp dword ptr [esp + 0x20]",
+        "0057baf4: fld dword ptr [ebp + 0x24]",
+        "0057baf7: fadd dword ptr [esp + 0x24]",
+        "0057bafb: fstp dword ptr [esp + 0x24]"
+      ]
+    },
+    {
+      "function": "0x57f3d0",
+      "name": "fun_57F3D0",
+      "seed": "0x57f44a",
+      "call": "0x57f451",
+      "target": "0x57c080",
+      "read": {
+        "address": "0x57c14d",
+        "offset": 80,
+        "bytes": 4,
+        "instruction": "fld dword ptr [eax + 0x20]"
+      },
+      "effective_offset": 272,
+      "adjustment": 192,
+      "targets": [
+        "ObjectPickUpPriority"
+      ],
+      "trace": [
+        "0057f44a: lea ecx, [esp + 0xc0]"
+      ]
+    },
+    {
+      "function": "0x57f3d0",
+      "name": "fun_57F3D0",
+      "seed": "0x57f44a",
+      "call": "0x57f451",
+      "target": "0x57c080",
+      "read": {
+        "address": "0x57c16c",
+        "offset": 80,
+        "bytes": 4,
+        "instruction": "fld dword ptr [eax + 0x20]"
+      },
+      "effective_offset": 272,
+      "adjustment": 192,
+      "targets": [
+        "ObjectPickUpPriority"
+      ],
+      "trace": [
+        "0057f44a: lea ecx, [esp + 0xc0]"
+      ]
+    },
+    {
+      "function": "0x57fb80",
+      "name": "fun_57FB80",
+      "seed": "0x57fbfa",
+      "call": "0x57fc01",
+      "target": "0x57c080",
+      "read": {
+        "address": "0x57c12a",
+        "offset": 60,
+        "bytes": 4,
+        "instruction": "fmul dword ptr [eax + 0xc]"
+      },
+      "effective_offset": 272,
+      "adjustment": 212,
+      "targets": [
+        "ObjectPickUpPriority"
+      ],
+      "trace": [
+        "0057fbfa: lea ecx, [esp + 0xd4]"
+      ]
+    },
+    {
+      "function": "0x580ec0",
+      "name": "appendToSceneObject2EList",
+      "seed": "0x5810f9",
+      "call": "0x581102",
+      "target": "0x57c080",
+      "read": {
+        "address": "0x57c127",
+        "offset": 148,
+        "bytes": 4,
+        "instruction": "fmul dword ptr [eax + 0x14]"
+      },
+      "effective_offset": 272,
+      "adjustment": 124,
+      "targets": [
+        "ObjectPickUpPriority"
+      ],
+      "trace": [
+        "005810f9: lea ecx, [esp + 0x7c]",
+        "005810fd: push eax",
+        "005810fe: lea eax, [esi + 0x3c]",
+        "00581101: push eax"
+      ]
+    },
+    {
+      "function": "0x581be0",
+      "name": "sub_581BE0",
+      "seed": "0x581eb4",
+      "call": "0x581ebb",
+      "target": "0x57c190",
+      "read": {
+        "address": "0x57c1f2",
+        "offset": 28,
+        "bytes": 4,
+        "instruction": "fmul dword ptr [eax + 0x10]"
+      },
+      "effective_offset": 272,
+      "adjustment": 244,
+      "targets": [
+        "ObjectPickUpPriority"
+      ],
+      "trace": [
+        "00581eb4: lea ecx, [esp + 0xf4]"
+      ]
+    },
+    {
+      "function": "0x581be0",
+      "name": "sub_581BE0",
+      "seed": "0x581fa5",
+      "call": "0x581fac",
+      "target": "0x57c190",
+      "read": {
+        "address": "0x57c1f2",
+        "offset": 28,
+        "bytes": 4,
+        "instruction": "fmul dword ptr [eax + 0x10]"
+      },
+      "effective_offset": 272,
+      "adjustment": 244,
+      "targets": [
+        "ObjectPickUpPriority"
+      ],
+      "trace": [
+        "00581fa5: lea ecx, [esp + 0xf4]"
+      ]
+    },
+    {
+      "function": "0x581be0",
+      "name": "sub_581BE0",
+      "seed": "0x58207e",
+      "call": "0x582085",
+      "target": "0x57c190",
+      "read": {
+        "address": "0x57c1f2",
+        "offset": 28,
+        "bytes": 4,
+        "instruction": "fmul dword ptr [eax + 0x10]"
+      },
+      "effective_offset": 272,
+      "adjustment": 244,
+      "targets": [
+        "ObjectPickUpPriority"
+      ],
+      "trace": [
+        "0058207e: lea ecx, [esp + 0xf4]"
+      ]
+    },
+    {
+      "function": "0x5836a0",
+      "name": "sub_5836A0",
+      "seed": "0x583aaf",
+      "call": "0x583ade",
+      "target": "0x57c190",
+      "read": {
+        "address": "0x57c1e9",
+        "offset": 64,
+        "bytes": 4,
+        "instruction": "fld dword ptr [eax + 0xc]"
+      },
+      "effective_offset": 272,
+      "adjustment": 208,
+      "targets": [
+        "ObjectPickUpPriority"
+      ],
+      "trace": [
+        "00583aaf: lea ecx, [esp + 0xd0]",
+        "00583ab6: fstp dword ptr [esp + 0xc4]",
+        "00583abd: fld dword ptr [eax + 4]",
+        "00583ac0: fsub dword ptr [esp + 0x48]",
+        "00583ac4: fstp dword ptr [esp + 0xc8]",
+        "00583acb: fld dword ptr [eax + 8]",
+        "00583ace: fsub dword ptr [esp + 0x4c]",
+        "00583ad2: lea eax, [esp + 0x34]",
+        "00583ad6: push eax",
+        "00583ad7: fstp dword ptr [esp + 0xd0]"
+      ]
+    },
+    {
+      "function": "0x5836a0",
+      "name": "sub_5836A0",
+      "seed": "0x583bcd",
+      "call": "0x583bf3",
+      "target": "0x57c190",
+      "read": {
+        "address": "0x57c1e9",
+        "offset": 64,
+        "bytes": 4,
+        "instruction": "fld dword ptr [eax + 0xc]"
+      },
+      "effective_offset": 272,
+      "adjustment": 208,
+      "targets": [
+        "ObjectPickUpPriority"
+      ],
+      "trace": [
+        "00583bcd: lea ecx, [esp + 0xd0]",
+        "00583bd4: fstp dword ptr [esp + 0x60]",
+        "00583bd8: fld dword ptr [eax + 4]",
+        "00583bdb: fsub dword ptr [esp + 0x48]",
+        "00583bdf: fstp dword ptr [esp + 0x64]",
+        "00583be3: fld dword ptr [eax + 8]",
+        "00583be6: fsub dword ptr [esp + 0x4c]",
+        "00583bea: lea eax, [esp + 0x34]",
+        "00583bee: push eax",
+        "00583bef: fstp dword ptr [esp + 0x6c]"
+      ]
+    },
+    {
+      "function": "0x583dc0",
+      "name": "sub_583DC0",
+      "seed": "0x58412d",
+      "call": "0x58413c",
+      "target": "0x41c4c0",
+      "read": {
+        "address": "0x41c4d9",
+        "offset": 0,
+        "bytes": 4,
+        "instruction": "fld dword ptr [ecx]"
+      },
+      "effective_offset": 272,
+      "adjustment": 272,
+      "targets": [
+        "ObjectPickUpPriority"
+      ],
+      "trace": [
+        "0058412d: lea ecx, [esp + 0x110]",
+        "00584134: fstp dword ptr [esp + 0x118]",
+        "0058413b: push eax"
+      ]
+    },
+    {
+      "function": "0x584900",
+      "name": "appendToSceneObject2EList",
+      "seed": "0x584ba2",
+      "call": "0x584ba9",
+      "target": "0x57c080",
+      "read": {
+        "address": "0x57c12a",
+        "offset": 140,
+        "bytes": 4,
+        "instruction": "fmul dword ptr [eax + 0xc]"
+      },
+      "effective_offset": 272,
+      "adjustment": 132,
+      "targets": [
+        "ObjectPickUpPriority"
+      ],
+      "trace": [
+        "00584ba2: lea ecx, [esp + 0x84]"
+      ]
+    },
+    {
+      "function": "0x5a3590",
+      "name": "sub_5A3590",
+      "seed": "0x5a37c4",
+      "call": "0x5a37c8",
+      "target": "0x58ef80",
+      "read": {
+        "address": "0x58efe2",
+        "offset": 176,
+        "bytes": 4,
+        "instruction": "fstp dword ptr [eax - 0xc]"
+      },
+      "effective_offset": 272,
+      "adjustment": 96,
+      "targets": [
+        "ObjectPickUpPriority"
+      ],
+      "trace": [
+        "005a37c4: lea ecx, [esp + 0x60]"
+      ]
+    },
+    {
+      "function": "0x5a37f0",
+      "name": "sub_5A37F0",
+      "seed": "0x5a3a16",
+      "call": "0x5a3a50",
+      "target": "0x59e6e0",
+      "read": {
+        "address": "0x59e6f6",
+        "offset": 8,
+        "bytes": 4,
+        "instruction": "fadd dword ptr [ecx + 8]"
+      },
+      "effective_offset": 272,
+      "adjustment": 264,
+      "targets": [
+        "ObjectPickUpPriority"
+      ],
+      "trace": [
+        "005a3a2c: call 0x59e6e0",
+        "005a3a31: push edi",
+        "005a3a32: lea ecx, [esi - 0x18]",
+        "005a3a35: call 0x59e6e0",
+        "005a3a3a: lea ecx, [ebp + esi]",
+        "005a3a3e: push ecx",
+        "005a3a3f: mov ecx, esi",
+        "005a3a41: call 0x59e6e0",
+        "005a3a46: mov edx, dword ptr [esp + 0x10]",
+        "005a3a4a: lea ecx, [esi + 0xc]",
+        "005a3a4d: add edx, esi",
+        "005a3a4f: push edx"
+      ]
+    },
+    {
+      "function": "0x5a37f0",
+      "name": "sub_5A37F0",
+      "seed": "0x5a3a16",
+      "call": "0x5a3a50",
+      "target": "0x59e6e0",
+      "read": {
+        "address": "0x59e6f9",
+        "offset": 8,
+        "bytes": 4,
+        "instruction": "fstp dword ptr [ecx + 8]"
+      },
+      "effective_offset": 272,
+      "adjustment": 264,
+      "targets": [
+        "ObjectPickUpPriority"
+      ],
+      "trace": [
+        "005a3a2c: call 0x59e6e0",
+        "005a3a31: push edi",
+        "005a3a32: lea ecx, [esi - 0x18]",
+        "005a3a35: call 0x59e6e0",
+        "005a3a3a: lea ecx, [ebp + esi]",
+        "005a3a3e: push ecx",
+        "005a3a3f: mov ecx, esi",
+        "005a3a41: call 0x59e6e0",
+        "005a3a46: mov edx, dword ptr [esp + 0x10]",
+        "005a3a4a: lea ecx, [esi + 0xc]",
+        "005a3a4d: add edx, esi",
+        "005a3a4f: push edx"
+      ]
+    }
+  ]
+}

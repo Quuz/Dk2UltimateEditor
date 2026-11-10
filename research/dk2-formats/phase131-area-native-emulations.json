@@ -1,0 +1,935 @@
+{
+  "scope": "Raw Creature/Shot loaders, native Shot factory and multi-target area damage.\n\nExtra targets are explicit copies of the prepared native Creature snapshot,\nwith tags/positions and a valid doubly linked cell list. They share the loaded\nCreature definition; new Creature factories/full world scheduler are not run.\nOptional lifetime changes use original generic HP method4B2CE0 on the Shot.\n",
+  "replays": [
+    {
+      "case": "range-centre-first",
+      "file": "ghidra\\phase131-area-native-a2b0b90bd406.json",
+      "sha256": "9cc78d20c36459806bad303a10a6eb9b380e00e76c38d9e9c7502bb5562b0978",
+      "outcome": {
+        "HP": [
+          920,
+          930
+        ],
+        "requests": [
+          {
+            "target": 271581184,
+            "delta": -80,
+            "HP_before": 1000
+          },
+          {
+            "target": 452984832,
+            "delta": -70,
+            "HP_before": 1000
+          }
+        ],
+        "shot_health": 32,
+        "extent_cells": 2,
+        "debug_log_lines": 0,
+        "damage_type": 2,
+        "category": 6,
+        "resistance_value": 100,
+        "resistance_pairs_read": false,
+        "instance_Data1_preserved": true,
+        "cell_lists_valid": true,
+        "instructions": 17741,
+        "complete_context_regions": 57,
+        "complete_context_bytes": 135420
+      }
+    },
+    {
+      "case": "range-centre-last",
+      "file": "ghidra\\phase131-area-native-fb01f4e50cf4.json",
+      "sha256": "4facd026a8f4cd13fc08be4a88b409951265b454aa48a902179c6486032fccd5",
+      "outcome": {
+        "HP": [
+          930,
+          930
+        ],
+        "requests": [
+          {
+            "target": 452984832,
+            "delta": -70,
+            "HP_before": 1000
+          },
+          {
+            "target": 271581184,
+            "delta": -70,
+            "HP_before": 1000
+          }
+        ],
+        "shot_health": 32,
+        "extent_cells": 2,
+        "debug_log_lines": 0,
+        "damage_type": 2,
+        "category": 6,
+        "resistance_value": 100,
+        "resistance_pairs_read": false,
+        "instance_Data1_preserved": true,
+        "cell_lists_valid": true,
+        "instructions": 17741,
+        "complete_context_regions": 57,
+        "complete_context_bytes": 135420
+      }
+    },
+    {
+      "case": "constant-centre-first",
+      "file": "ghidra\\phase131-area-native-215dcb214c19.json",
+      "sha256": "947fd148449a659df659a476ec09929a140e25fb7155096a424ef72e6283d387",
+      "outcome": {
+        "HP": [
+          920,
+          920
+        ],
+        "requests": [
+          {
+            "target": 271581184,
+            "delta": -80,
+            "HP_before": 1000
+          },
+          {
+            "target": 452984832,
+            "delta": -80,
+            "HP_before": 1000
+          }
+        ],
+        "shot_health": 32,
+        "extent_cells": 2,
+        "debug_log_lines": 0,
+        "damage_type": 1,
+        "category": 6,
+        "resistance_value": 100,
+        "resistance_pairs_read": false,
+        "instance_Data1_preserved": true,
+        "cell_lists_valid": true,
+        "instructions": 17833,
+        "complete_context_regions": 57,
+        "complete_context_bytes": 135420
+      }
+    },
+    {
+      "case": "constant-centre-last",
+      "file": "ghidra\\phase131-area-native-215575691101.json",
+      "sha256": "8222850b5ab1b40cef8c894b53ce4c0b38310acad5a1ab7cbe20616b3f6fa952",
+      "outcome": {
+        "HP": [
+          920,
+          920
+        ],
+        "requests": [
+          {
+            "target": 452984832,
+            "delta": -80,
+            "HP_before": 1000
+          },
+          {
+            "target": 271581184,
+            "delta": -80,
+            "HP_before": 1000
+          }
+        ],
+        "shot_health": 32,
+        "extent_cells": 2,
+        "debug_log_lines": 0,
+        "damage_type": 1,
+        "category": 6,
+        "resistance_value": 100,
+        "resistance_pairs_read": false,
+        "instance_Data1_preserved": true,
+        "cell_lists_valid": true,
+        "instructions": 17833,
+        "complete_context_regions": 57,
+        "complete_context_bytes": 135420
+      }
+    },
+    {
+      "case": "time-half-health",
+      "file": "ghidra\\phase131-area-native-02b5f5764ed0.json",
+      "sha256": "32a602c77b0000e18b9ad93abd1a4ea3d724a4c08cfccb39560fd03849a9e950",
+      "outcome": {
+        "HP": [
+          960,
+          960
+        ],
+        "requests": [
+          {
+            "target": 268525708,
+            "delta": -16,
+            "HP_before": 32
+          },
+          {
+            "target": 271581184,
+            "delta": -40,
+            "HP_before": 1000
+          },
+          {
+            "target": 452984832,
+            "delta": -40,
+            "HP_before": 1000
+          }
+        ],
+        "shot_health": 16,
+        "extent_cells": 2,
+        "debug_log_lines": 4,
+        "damage_type": 3,
+        "category": 6,
+        "resistance_value": 100,
+        "resistance_pairs_read": false,
+        "instance_Data1_preserved": true,
+        "cell_lists_valid": true,
+        "instructions": 29842,
+        "complete_context_regions": 57,
+        "complete_context_bytes": 135420
+      }
+    },
+    {
+      "case": "ring-half-health",
+      "file": "ghidra\\phase131-area-native-524adf5f8a13.json",
+      "sha256": "389c477cd5220fe30ddc9649f67183131287f3d7ca2add81998aaf01eaa76fae",
+      "outcome": {
+        "HP": [
+          920,
+          920
+        ],
+        "requests": [
+          {
+            "target": 268525708,
+            "delta": -16,
+            "HP_before": 32
+          },
+          {
+            "target": 271581184,
+            "delta": -80,
+            "HP_before": 1000
+          },
+          {
+            "target": 452984832,
+            "delta": -80,
+            "HP_before": 1000
+          }
+        ],
+        "shot_health": 16,
+        "extent_cells": 1,
+        "debug_log_lines": 4,
+        "damage_type": 4,
+        "category": 6,
+        "resistance_value": 100,
+        "resistance_pairs_read": false,
+        "instance_Data1_preserved": true,
+        "cell_lists_valid": true,
+        "instructions": 29344,
+        "complete_context_regions": 57,
+        "complete_context_bytes": 135420
+      }
+    },
+    {
+      "case": "range-three-far-first",
+      "file": "ghidra\\phase131-area-native-80a5e7752377.json",
+      "sha256": "cb3ce02c5a4ea73aa1720e1b7cb85ebaa642a4231b51944d467da9b0ababe58a",
+      "outcome": {
+        "HP": [
+          944,
+          930,
+          944
+        ],
+        "requests": [
+          {
+            "target": 452984832,
+            "delta": -70,
+            "HP_before": 1000
+          },
+          {
+            "target": 453050368,
+            "delta": -56,
+            "HP_before": 1000
+          },
+          {
+            "target": 271581184,
+            "delta": -56,
+            "HP_before": 1000
+          }
+        ],
+        "shot_health": 32,
+        "extent_cells": 2,
+        "debug_log_lines": 0,
+        "damage_type": 2,
+        "category": 6,
+        "resistance_value": 100,
+        "resistance_pairs_read": false,
+        "instance_Data1_preserved": true,
+        "cell_lists_valid": true,
+        "instructions": 17984,
+        "complete_context_regions": 58,
+        "complete_context_bytes": 137019
+      }
+    },
+    {
+      "case": "range-three-centre-first",
+      "file": "ghidra\\phase131-area-native-131667925dde.json",
+      "sha256": "fa9da384f667c85060f8c16954b6760168b61f00e68601ac8dc79b09543a1660",
+      "outcome": {
+        "HP": [
+          920,
+          944,
+          935
+        ],
+        "requests": [
+          {
+            "target": 271581184,
+            "delta": -80,
+            "HP_before": 1000
+          },
+          {
+            "target": 453050368,
+            "delta": -65,
+            "HP_before": 1000
+          },
+          {
+            "target": 452984832,
+            "delta": -56,
+            "HP_before": 1000
+          }
+        ],
+        "shot_health": 32,
+        "extent_cells": 2,
+        "debug_log_lines": 0,
+        "damage_type": 2,
+        "category": 6,
+        "resistance_value": 100,
+        "resistance_pairs_read": false,
+        "instance_Data1_preserved": true,
+        "cell_lists_valid": true,
+        "instructions": 17984,
+        "complete_context_regions": 58,
+        "complete_context_bytes": 137019
+      }
+    },
+    {
+      "case": "range-opposite-cells",
+      "file": "ghidra\\phase131-area-native-d2647719d20c.json",
+      "sha256": "3b1f14d62c7c4bd63fc96535d71fe7c424631369be83dbcb8eef75fbb608d173",
+      "outcome": {
+        "HP": [
+          960,
+          980
+        ],
+        "requests": [
+          {
+            "target": 271581184,
+            "delta": -40,
+            "HP_before": 1000
+          },
+          {
+            "target": 452984832,
+            "delta": -20,
+            "HP_before": 1000
+          }
+        ],
+        "shot_health": 32,
+        "extent_cells": 2,
+        "debug_log_lines": 0,
+        "damage_type": 2,
+        "category": 6,
+        "resistance_value": 100,
+        "resistance_pairs_read": false,
+        "instance_Data1_preserved": true,
+        "cell_lists_valid": true,
+        "instructions": 17759,
+        "complete_context_regions": 57,
+        "complete_context_bytes": 135420
+      }
+    },
+    {
+      "case": "range-cell-scan-y-first",
+      "file": "ghidra\\phase131-area-native-e89adbffd015.json",
+      "sha256": "5cc0f63081748b911111646190af13997935640e494ae957b8ca869c61f32ebb",
+      "outcome": {
+        "HP": [
+          994,
+          977,
+          977
+        ],
+        "requests": [
+          {
+            "target": 452984832,
+            "delta": -23,
+            "HP_before": 1000
+          },
+          {
+            "target": 453050368,
+            "delta": -23,
+            "HP_before": 1000
+          },
+          {
+            "target": 271581184,
+            "delta": -6,
+            "HP_before": 1000
+          }
+        ],
+        "shot_health": 32,
+        "extent_cells": 2,
+        "debug_log_lines": 0,
+        "damage_type": 2,
+        "category": 6,
+        "resistance_value": 100,
+        "resistance_pairs_read": false,
+        "instance_Data1_preserved": true,
+        "cell_lists_valid": true,
+        "instructions": 17986,
+        "complete_context_regions": 58,
+        "complete_context_bytes": 137019
+      }
+    },
+    {
+      "case": "range-repeat-dispatch",
+      "file": "ghidra\\phase131-area-native-7ead4c22da1d.json",
+      "sha256": "919dc834084fdad874c63f041aac271c6839c0c5c05d0c8689aa80fd5b85774e",
+      "outcome": {
+        "HP": [
+          840,
+          860
+        ],
+        "requests": [
+          {
+            "target": 271581184,
+            "delta": -80,
+            "HP_before": 1000
+          },
+          {
+            "target": 452984832,
+            "delta": -70,
+            "HP_before": 1000
+          },
+          {
+            "target": 271581184,
+            "delta": -80,
+            "HP_before": 920
+          },
+          {
+            "target": 452984832,
+            "delta": -70,
+            "HP_before": 930
+          }
+        ],
+        "shot_health": 32,
+        "extent_cells": 2,
+        "debug_log_lines": 0,
+        "damage_type": 2,
+        "category": 6,
+        "resistance_value": 100,
+        "resistance_pairs_read": false,
+        "instance_Data1_preserved": true,
+        "cell_lists_valid": true,
+        "instructions": 18703,
+        "complete_context_regions": 57,
+        "complete_context_bytes": 135420
+      }
+    },
+    {
+      "case": "range-friendly-first",
+      "file": "ghidra\\phase131-area-native-ed4b090e11a8.json",
+      "sha256": "3ef1a21e5063a6e53b095ee4624ac5359615a9b743510b30cc350cba18e5d854",
+      "outcome": {
+        "HP": [
+          1000,
+          920
+        ],
+        "requests": [
+          {
+            "target": 452984832,
+            "delta": -80,
+            "HP_before": 1000
+          }
+        ],
+        "shot_health": 32,
+        "extent_cells": 2,
+        "debug_log_lines": 0,
+        "damage_type": 2,
+        "category": 6,
+        "resistance_value": 100,
+        "resistance_pairs_read": false,
+        "instance_Data1_preserved": true,
+        "cell_lists_valid": true,
+        "instructions": 17514,
+        "complete_context_regions": 57,
+        "complete_context_bytes": 135420
+      }
+    },
+    {
+      "case": "range-invulnerable-first",
+      "file": "ghidra\\phase131-area-native-7c26e71e1b6d.json",
+      "sha256": "155cd3ceeb0b6624b2679314fe46fae60bdb0035989b54dd18355da73e6f3dfc",
+      "outcome": {
+        "HP": [
+          1000,
+          920
+        ],
+        "requests": [
+          {
+            "target": 452984832,
+            "delta": -80,
+            "HP_before": 1000
+          }
+        ],
+        "shot_health": 32,
+        "extent_cells": 2,
+        "debug_log_lines": 0,
+        "damage_type": 2,
+        "category": 6,
+        "resistance_value": 100,
+        "resistance_pairs_read": false,
+        "instance_Data1_preserved": true,
+        "cell_lists_valid": true,
+        "instructions": 17516,
+        "complete_context_regions": 57,
+        "complete_context_bytes": 135420
+      }
+    },
+    {
+      "case": "range-resistance-zero",
+      "file": "ghidra\\phase131-area-native-52bb6d1cdc50.json",
+      "sha256": "9aece61291d08d7ab1536ed651b039da2dde8b671393840d1b7d705291dca19f",
+      "outcome": {
+        "HP": [
+          930,
+          930
+        ],
+        "requests": [
+          {
+            "target": 452984832,
+            "delta": -70,
+            "HP_before": 1000
+          },
+          {
+            "target": 271581184,
+            "delta": -70,
+            "HP_before": 1000
+          }
+        ],
+        "shot_health": 32,
+        "extent_cells": 2,
+        "debug_log_lines": 0,
+        "damage_type": 2,
+        "category": 6,
+        "resistance_value": 0,
+        "resistance_pairs_read": false,
+        "instance_Data1_preserved": true,
+        "cell_lists_valid": true,
+        "instructions": 17741,
+        "complete_context_regions": 57,
+        "complete_context_bytes": 135420
+      }
+    },
+    {
+      "case": "range-radius-zero",
+      "file": "ghidra\\phase131-area-native-ad9e95c21689.json",
+      "sha256": "0eec39ed76e09a9d11ce10e1f1163d6fe938586f5f7f29a37cdf856fb52db278",
+      "outcome": {
+        "HP": [
+          1000,
+          1000
+        ],
+        "requests": [],
+        "shot_health": 32,
+        "extent_cells": 0,
+        "debug_log_lines": 0,
+        "damage_type": 2,
+        "category": 6,
+        "resistance_value": 100,
+        "resistance_pairs_read": false,
+        "instance_Data1_preserved": true,
+        "cell_lists_valid": true,
+        "instructions": 17014,
+        "complete_context_regions": 57,
+        "complete_context_bytes": 135420
+      }
+    },
+    {
+      "case": "range-outside-circle",
+      "file": "ghidra\\phase131-area-native-f875ce26417d.json",
+      "sha256": "5fab520c230c846b19471d800137b074c933e14cfc31bc8467896a61d21a83fe",
+      "outcome": {
+        "HP": [
+          1000,
+          920
+        ],
+        "requests": [
+          {
+            "target": 452984832,
+            "delta": -80,
+            "HP_before": 1000
+          }
+        ],
+        "shot_health": 32,
+        "extent_cells": 2,
+        "debug_log_lines": 0,
+        "damage_type": 2,
+        "category": 6,
+        "resistance_value": 100,
+        "resistance_pairs_read": false,
+        "instance_Data1_preserved": true,
+        "cell_lists_valid": true,
+        "instructions": 17550,
+        "complete_context_regions": 57,
+        "complete_context_bytes": 135420
+      }
+    },
+    {
+      "case": "constant-outside-circle",
+      "file": "ghidra\\phase131-area-native-ec5de65daeab.json",
+      "sha256": "5945fca2258381f19dbd02e5f29cb4ed21ad1a35bf1db846cdcd4b152afa4120",
+      "outcome": {
+        "HP": [
+          920,
+          920
+        ],
+        "requests": [
+          {
+            "target": 271581184,
+            "delta": -80,
+            "HP_before": 1000
+          },
+          {
+            "target": 452984832,
+            "delta": -80,
+            "HP_before": 1000
+          }
+        ],
+        "shot_health": 32,
+        "extent_cells": 2,
+        "debug_log_lines": 0,
+        "damage_type": 1,
+        "category": 6,
+        "resistance_value": 100,
+        "resistance_pairs_read": false,
+        "instance_Data1_preserved": true,
+        "cell_lists_valid": true,
+        "instructions": 17833,
+        "complete_context_regions": 57,
+        "complete_context_bytes": 135420
+      }
+    },
+    {
+      "case": "range-radius-boundary",
+      "file": "ghidra\\phase131-area-native-a3373f7970da.json",
+      "sha256": "0f1c1681b757298044f7cf89bf4fd3454c0b7ab47e7fcfbffd95dff09446cdb6",
+      "outcome": {
+        "HP": [
+          1000,
+          920
+        ],
+        "requests": [
+          {
+            "target": 452984832,
+            "delta": -80,
+            "HP_before": 1000
+          }
+        ],
+        "shot_health": 32,
+        "extent_cells": 2,
+        "debug_log_lines": 0,
+        "damage_type": 2,
+        "category": 6,
+        "resistance_value": 100,
+        "resistance_pairs_read": false,
+        "instance_Data1_preserved": true,
+        "cell_lists_valid": true,
+        "instructions": 17550,
+        "complete_context_regions": 57,
+        "complete_context_bytes": 135420
+      }
+    },
+    {
+      "case": "time-full-health",
+      "file": "ghidra\\phase131-area-native-9908d8e16031.json",
+      "sha256": "e8de2c98cd7fbcac3c6203e99fe7459cc78d596a7036260bc3f09409fc8a7c26",
+      "outcome": {
+        "HP": [
+          920,
+          920
+        ],
+        "requests": [
+          {
+            "target": 271581184,
+            "delta": -80,
+            "HP_before": 1000
+          },
+          {
+            "target": 452984832,
+            "delta": -80,
+            "HP_before": 1000
+          }
+        ],
+        "shot_health": 32,
+        "extent_cells": 2,
+        "debug_log_lines": 4,
+        "damage_type": 3,
+        "category": 6,
+        "resistance_value": 100,
+        "resistance_pairs_read": false,
+        "instance_Data1_preserved": true,
+        "cell_lists_valid": true,
+        "instructions": 29807,
+        "complete_context_regions": 57,
+        "complete_context_bytes": 135420
+      }
+    },
+    {
+      "case": "time-quarter-health",
+      "file": "ghidra\\phase131-area-native-0bc6eaed11de.json",
+      "sha256": "3a9254e25580beb10c1fbe2b6a6786b2b3811becba8ff26818eb3e6120f054ad",
+      "outcome": {
+        "HP": [
+          980,
+          980
+        ],
+        "requests": [
+          {
+            "target": 268525708,
+            "delta": -24,
+            "HP_before": 32
+          },
+          {
+            "target": 271581184,
+            "delta": -20,
+            "HP_before": 1000
+          },
+          {
+            "target": 452984832,
+            "delta": -20,
+            "HP_before": 1000
+          }
+        ],
+        "shot_health": 8,
+        "extent_cells": 2,
+        "debug_log_lines": 4,
+        "damage_type": 3,
+        "category": 6,
+        "resistance_value": 100,
+        "resistance_pairs_read": false,
+        "instance_Data1_preserved": true,
+        "cell_lists_valid": true,
+        "instructions": 29842,
+        "complete_context_regions": 57,
+        "complete_context_bytes": 135420
+      }
+    },
+    {
+      "case": "time-subcell-data2",
+      "file": "ghidra\\phase131-area-native-64b9fd40e2c4.json",
+      "sha256": "f456776220351512014e54d1bcfbaadb78e9927498b390fd7d468a0d5f15d453",
+      "outcome": {
+        "HP": [
+          1000,
+          1000
+        ],
+        "requests": [
+          {
+            "target": 268525708,
+            "delta": -16,
+            "HP_before": 32
+          }
+        ],
+        "shot_health": 16,
+        "extent_cells": 0,
+        "debug_log_lines": 0,
+        "damage_type": 3,
+        "category": 6,
+        "resistance_value": 100,
+        "resistance_pairs_read": false,
+        "instance_Data1_preserved": true,
+        "cell_lists_valid": true,
+        "instructions": 16876,
+        "complete_context_regions": 57,
+        "complete_context_bytes": 135420
+      }
+    },
+    {
+      "case": "ring-initial-health",
+      "file": "ghidra\\phase131-area-native-0100db125f33.json",
+      "sha256": "ff39dbf828b22d31266a8aeb8a8856a03b9ce9d361adc05ed1695aeeaef3bbd3",
+      "outcome": {
+        "HP": [
+          1000,
+          1000
+        ],
+        "requests": [],
+        "shot_health": 32,
+        "extent_cells": 0,
+        "debug_log_lines": 0,
+        "damage_type": 4,
+        "category": 6,
+        "resistance_value": 100,
+        "resistance_pairs_read": false,
+        "instance_Data1_preserved": true,
+        "cell_lists_valid": true,
+        "instructions": 16843,
+        "complete_context_regions": 57,
+        "complete_context_bytes": 135420
+      }
+    },
+    {
+      "case": "ring-subcell-data2",
+      "file": "ghidra\\phase131-area-native-92d1a6890d0b.json",
+      "sha256": "51c52ed95e9d2568cef0e7b063f8e37437b2a4dfd0f422b3788b620d07c30c26",
+      "outcome": {
+        "HP": [
+          1000,
+          1000
+        ],
+        "requests": [
+          {
+            "target": 268525708,
+            "delta": -16,
+            "HP_before": 32
+          }
+        ],
+        "shot_health": 16,
+        "extent_cells": 0,
+        "debug_log_lines": 0,
+        "damage_type": 4,
+        "category": 6,
+        "resistance_value": 100,
+        "resistance_pairs_read": false,
+        "instance_Data1_preserved": true,
+        "cell_lists_valid": true,
+        "instructions": 16878,
+        "complete_context_regions": 57,
+        "complete_context_bytes": 135420
+      }
+    },
+    {
+      "case": "ring-filled-square",
+      "file": "ghidra\\phase131-area-native-913c4f0a34e2.json",
+      "sha256": "1086d0e9c264a66a0d3d7143f5713786664171b1044ea41e155e65ed8d8533be",
+      "outcome": {
+        "HP": [
+          920,
+          920
+        ],
+        "requests": [
+          {
+            "target": 268525708,
+            "delta": -16,
+            "HP_before": 32
+          },
+          {
+            "target": 271581184,
+            "delta": -80,
+            "HP_before": 1000
+          },
+          {
+            "target": 452984832,
+            "delta": -80,
+            "HP_before": 1000
+          }
+        ],
+        "shot_health": 16,
+        "extent_cells": 2,
+        "debug_log_lines": 4,
+        "damage_type": 4,
+        "category": 6,
+        "resistance_value": 100,
+        "resistance_pairs_read": false,
+        "instance_Data1_preserved": true,
+        "cell_lists_valid": true,
+        "instructions": 29844,
+        "complete_context_regions": 57,
+        "complete_context_bytes": 135420
+      }
+    },
+    {
+      "case": "boulder-range",
+      "file": "ghidra\\phase131-area-native-dd6375d1b8e7.json",
+      "sha256": "a05246e713976b57d64ef3cd4173a636a24f0152b5a300f5a5446c9f73c14731",
+      "outcome": {
+        "HP": [
+          920,
+          930
+        ],
+        "requests": [
+          {
+            "target": 271581184,
+            "delta": -80,
+            "HP_before": 1000
+          },
+          {
+            "target": 452984832,
+            "delta": -70,
+            "HP_before": 1000
+          }
+        ],
+        "shot_health": 32,
+        "extent_cells": 2,
+        "debug_log_lines": 0,
+        "damage_type": 2,
+        "category": 6,
+        "resistance_value": 100,
+        "resistance_pairs_read": false,
+        "instance_Data1_preserved": true,
+        "cell_lists_valid": true,
+        "instructions": 17581,
+        "complete_context_regions": 58,
+        "complete_context_bytes": 135705
+      }
+    },
+    {
+      "case": "boulder-range-below-four",
+      "file": "ghidra\\phase131-area-native-e9b3526d06de.json",
+      "sha256": "ca7a7b94124cf01abeecf38e71d2ccfda1dded9d0a38b6acc713489944914aa4",
+      "outcome": {
+        "HP": [
+          1000,
+          1000
+        ],
+        "requests": [],
+        "shot_health": 32,
+        "extent_cells": 2,
+        "debug_log_lines": 0,
+        "damage_type": 2,
+        "category": 6,
+        "resistance_value": 100,
+        "resistance_pairs_read": false,
+        "instance_Data1_preserved": true,
+        "cell_lists_valid": true,
+        "instructions": 17335,
+        "complete_context_regions": 58,
+        "complete_context_bytes": 135705
+      }
+    },
+    {
+      "case": "boulder-constant",
+      "file": "ghidra\\phase131-area-native-79f575737f7c.json",
+      "sha256": "8deb9e39db702f1647175abe8531c386768a6c9cf6c83ae7ecfeb8866047db96",
+      "outcome": {
+        "HP": [
+          960,
+          960
+        ],
+        "requests": [
+          {
+            "target": 271581184,
+            "delta": -40,
+            "HP_before": 1000
+          },
+          {
+            "target": 452984832,
+            "delta": -40,
+            "HP_before": 1000
+          }
+        ],
+        "shot_health": 32,
+        "extent_cells": 2,
+        "debug_log_lines": 0,
+        "damage_type": 1,
+        "category": 6,
+        "resistance_value": 100,
+        "resistance_pairs_read": false,
+        "instance_Data1_preserved": true,
+        "cell_lists_valid": true,
+        "instructions": 17671,
+        "complete_context_regions": 58,
+        "complete_context_bytes": 135705
+      }
+    }
+  ]
+}

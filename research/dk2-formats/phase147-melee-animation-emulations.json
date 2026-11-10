@@ -1,0 +1,323 @@
+{
+  "scope": "Accepted new raw bit29/melee and separate whole animation-selection contexts.",
+  "replays": [
+    {
+      "case": {
+        "name": "melee-0-initial0",
+        "kind": "melee",
+        "enabled": false,
+        "initial_runtime": false
+      },
+      "file": "ghidra\\phase147-melee-animation-native-cbb9b9305e1b.json",
+      "sha256": "06bee61c5e78d1f2111b03d42393c3dee4869398e54905d50b806bec3548b1a5",
+      "outcome": {
+        "runtime_PlayInstanceAnimation": false,
+        "target_HP": 334,
+        "damage_HP": 666,
+        "root_return": 0,
+        "early": false,
+        "compared_regions": 44,
+        "compared_bytes": 112482,
+        "native_steps": 13389
+      }
+    },
+    {
+      "case": {
+        "name": "melee-0-initial1",
+        "kind": "melee",
+        "enabled": false,
+        "initial_runtime": true
+      },
+      "file": "ghidra\\phase147-melee-animation-native-a8ab9840de1d.json",
+      "sha256": "3d8e4fea767008d59637413a011d83c72841d1063a9586f77b43193f1560cd9c",
+      "outcome": {
+        "runtime_PlayInstanceAnimation": false,
+        "target_HP": 334,
+        "damage_HP": 666,
+        "root_return": 0,
+        "early": false,
+        "compared_regions": 44,
+        "compared_bytes": 112482,
+        "native_steps": 13389
+      }
+    },
+    {
+      "case": {
+        "name": "melee-0-missing_target",
+        "kind": "melee",
+        "enabled": false,
+        "initial_runtime": true,
+        "missing_target": true
+      },
+      "file": "ghidra\\phase147-melee-animation-native-42947adcf9a1.json",
+      "sha256": "4a4afd005e3f9cbedf237e0f761080107448e29d7a902350a232401303246066",
+      "outcome": {
+        "runtime_PlayInstanceAnimation": false,
+        "target_HP": 1000,
+        "damage_HP": 0,
+        "root_return": 0,
+        "early": true,
+        "compared_regions": 44,
+        "compared_bytes": 112482,
+        "native_steps": 12880
+      }
+    },
+    {
+      "case": {
+        "name": "melee-0-cooldown",
+        "kind": "melee",
+        "enabled": false,
+        "initial_runtime": true,
+        "cooldown": true
+      },
+      "file": "ghidra\\phase147-melee-animation-native-f7e145f4e2fd.json",
+      "sha256": "4ee9c3cccb9efa208d7826ec3f69fad4c9b368ecf1ddcae36325c125754c65cc",
+      "outcome": {
+        "runtime_PlayInstanceAnimation": false,
+        "target_HP": 1000,
+        "damage_HP": 0,
+        "root_return": 1,
+        "early": true,
+        "compared_regions": 44,
+        "compared_bytes": 112482,
+        "native_steps": 12875
+      }
+    },
+    {
+      "case": {
+        "name": "animation-0-moving0",
+        "kind": "animation",
+        "enabled": false,
+        "moving": false
+      },
+      "file": "ghidra\\phase147-instance-animation-native-1e6a03e0e56f.json",
+      "sha256": "70e02f8ee642ddaed39b5a9821ebb3088dac8f2cb97ad0a30dde3a2fd2752892",
+      "outcome": {
+        "runtime_PlayInstanceAnimation": false,
+        "chosen_resource_slot": 39,
+        "resource_name": "STAND_STILL",
+        "moving": false,
+        "action": 17,
+        "separate_prepared_render_context": true,
+        "compared_regions": 44,
+        "compared_bytes": 112482,
+        "native_steps": 1306
+      }
+    },
+    {
+      "case": {
+        "name": "animation-0-moving1",
+        "kind": "animation",
+        "enabled": false,
+        "moving": true
+      },
+      "file": "ghidra\\phase147-instance-animation-native-829114e14215.json",
+      "sha256": "389b95caca2554633a123863caa1825764e84578342458e1f8e304454a18fa88",
+      "outcome": {
+        "runtime_PlayInstanceAnimation": false,
+        "chosen_resource_slot": 5,
+        "resource_name": "MELEE_ATTACK",
+        "moving": true,
+        "action": 17,
+        "separate_prepared_render_context": true,
+        "compared_regions": 44,
+        "compared_bytes": 112482,
+        "native_steps": 1424
+      }
+    },
+    {
+      "case": {
+        "name": "animation-0-no-action",
+        "kind": "animation",
+        "enabled": false,
+        "moving": false,
+        "action": 0
+      },
+      "file": "ghidra\\phase147-instance-animation-native-a07c485fff98.json",
+      "sha256": "580223633044de65477e8bb4f0797772d4e82e4b751a4a9c412995b04bba25bb",
+      "outcome": {
+        "runtime_PlayInstanceAnimation": false,
+        "chosen_resource_slot": 39,
+        "resource_name": "STAND_STILL",
+        "moving": false,
+        "action": 0,
+        "separate_prepared_render_context": true,
+        "compared_regions": 44,
+        "compared_bytes": 112482,
+        "native_steps": 1290
+      }
+    },
+    {
+      "case": {
+        "name": "melee-1-initial0",
+        "kind": "melee",
+        "enabled": true,
+        "initial_runtime": false
+      },
+      "file": "ghidra\\phase147-melee-animation-native-8bfc128e3837.json",
+      "sha256": "001c6fb5184ec099aedbf03490af8d1458f300762cc9d0af9481a0f2507dc840",
+      "outcome": {
+        "runtime_PlayInstanceAnimation": true,
+        "target_HP": 334,
+        "damage_HP": 666,
+        "root_return": 0,
+        "early": false,
+        "compared_regions": 44,
+        "compared_bytes": 112482,
+        "native_steps": 13389
+      }
+    },
+    {
+      "case": {
+        "name": "melee-1-initial1",
+        "kind": "melee",
+        "enabled": true,
+        "initial_runtime": true
+      },
+      "file": "ghidra\\phase147-melee-animation-native-20d6d8bfe753.json",
+      "sha256": "fab75b34a4b32968be7608b94d9d432a6f772cd9f5705b20554df537f5ffdd34",
+      "outcome": {
+        "runtime_PlayInstanceAnimation": true,
+        "target_HP": 334,
+        "damage_HP": 666,
+        "root_return": 0,
+        "early": false,
+        "compared_regions": 44,
+        "compared_bytes": 112482,
+        "native_steps": 13389
+      }
+    },
+    {
+      "case": {
+        "name": "melee-1-missing_target",
+        "kind": "melee",
+        "enabled": true,
+        "initial_runtime": false,
+        "missing_target": true
+      },
+      "file": "ghidra\\phase147-melee-animation-native-0d4c14f9c918.json",
+      "sha256": "936f3592fa9e502faace13604e8c498343c0f0b8ef30d0b16dbc9c4fe050eec4",
+      "outcome": {
+        "runtime_PlayInstanceAnimation": true,
+        "target_HP": 1000,
+        "damage_HP": 0,
+        "root_return": 0,
+        "early": true,
+        "compared_regions": 44,
+        "compared_bytes": 112482,
+        "native_steps": 12880
+      }
+    },
+    {
+      "case": {
+        "name": "melee-1-cooldown",
+        "kind": "melee",
+        "enabled": true,
+        "initial_runtime": false,
+        "cooldown": true
+      },
+      "file": "ghidra\\phase147-melee-animation-native-d3f9f81c95b0.json",
+      "sha256": "4fd1d2f3ecf396921e53abf3c055786e434c835467cf49e7029a021c88da4ebb",
+      "outcome": {
+        "runtime_PlayInstanceAnimation": true,
+        "target_HP": 1000,
+        "damage_HP": 0,
+        "root_return": 1,
+        "early": true,
+        "compared_regions": 44,
+        "compared_bytes": 112482,
+        "native_steps": 12875
+      }
+    },
+    {
+      "case": {
+        "name": "animation-1-moving0",
+        "kind": "animation",
+        "enabled": true,
+        "moving": false
+      },
+      "file": "ghidra\\phase147-instance-animation-native-50984c9af991.json",
+      "sha256": "3ae5e7f37af9c7013e6141fb1296fd8e33e72f56506f2652aa99ae8171825497",
+      "outcome": {
+        "runtime_PlayInstanceAnimation": true,
+        "chosen_resource_slot": 5,
+        "resource_name": "MELEE_ATTACK",
+        "moving": false,
+        "action": 17,
+        "separate_prepared_render_context": true,
+        "compared_regions": 44,
+        "compared_bytes": 112482,
+        "native_steps": 1340
+      }
+    },
+    {
+      "case": {
+        "name": "animation-1-moving1",
+        "kind": "animation",
+        "enabled": true,
+        "moving": true
+      },
+      "file": "ghidra\\phase147-instance-animation-native-9edb4579ca4c.json",
+      "sha256": "cf625c242ae7a96087eaef23e879a91df0e6da8ca64032f40887e339b8b59365",
+      "outcome": {
+        "runtime_PlayInstanceAnimation": true,
+        "chosen_resource_slot": 5,
+        "resource_name": "MELEE_ATTACK",
+        "moving": true,
+        "action": 17,
+        "separate_prepared_render_context": true,
+        "compared_regions": 44,
+        "compared_bytes": 112482,
+        "native_steps": 1424
+      }
+    },
+    {
+      "case": {
+        "name": "animation-1-no-action",
+        "kind": "animation",
+        "enabled": true,
+        "moving": false,
+        "action": 0
+      },
+      "file": "ghidra\\phase147-instance-animation-native-3b3ba3992c72.json",
+      "sha256": "f50fb34911a3682cbe40afb3a1a2c194709c3d4ce904a5d6a56fbf27a04af438",
+      "outcome": {
+        "runtime_PlayInstanceAnimation": true,
+        "chosen_resource_slot": 39,
+        "resource_name": "STAND_STILL",
+        "moving": false,
+        "action": 0,
+        "separate_prepared_render_context": true,
+        "compared_regions": 44,
+        "compared_bytes": 112482,
+        "native_steps": 1290
+      }
+    }
+  ],
+  "whole_raw_melee_pair_differences": [
+    {
+      "region": "0x10080000",
+      "offsets": [
+        1003
+      ]
+    },
+    {
+      "region": "0x100c0000",
+      "offsets": [
+        1673
+      ]
+    },
+    {
+      "region": "0x10900000",
+      "offsets": [
+        3839
+      ]
+    },
+    {
+      "region": "0x10910000",
+      "offsets": [
+        4847
+      ]
+    }
+  ]
+}

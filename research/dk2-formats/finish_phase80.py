@@ -1,0 +1,30 @@
+"""Publish original native success without claiming full gameplay/goal completion."""
+from pathlib import Path
+import json,hashlib
+ROOT=Path(__file__).resolve().parent
+def load(n):return json.loads((ROOT/n).read_text(encoding='utf8'))
+def insert(name,text):
+    p=ROOT/name;s=p.read_text(encoding='utf8');head,rest=s.split('\n',1)
+    if text not in s:p.write_text(head+'\n\n'+text+'\n'+rest,encoding='utf8')
+def main():
+    v=load('phase80-validation.json');assert v['logical_scenarios']==45 and v['native_emulation_invocations']==117
+    insert('INTEGRATION_RU.md','Актуальный этап80: `NATIVE_SHOT_SUCCESS_RU.md` / `shot-creation-semantics.json.phase80_native_pool_and_cast`.45сценариев/117native-запусков:9pool,14factory,22успешныхCreatureSpell. Оригинальные allocator/base/owner/map/resource/math иShotvtable сохранены.33успешных состояния,все371байт собираются из3детерминированных readout-прогонов;GFXnull/soundfixture. Установлено post-factory замещение Data1/2 изCreatureSpellsC8/CC,64-bit trajectory arithmetic иособаяID30ветвь4984D0. E8/E9пары дали одинаковый полныйShot вдвухпутях;globalnonuseне заявляется.40PE/8data,492newpatches,83inputs+Shotexample/4EXE unchanged,67компонентов. Поздниеticks/AI/renderer ипрочиеunknowns открыты.')
+    p=ROOT/'INTEGRATION_RU.md';p.write_text(p.read_text(encoding='utf8').replace('Актуальный этап79:','Предыдущий этап79:',1),encoding='utf8')
+    insert('SHOT_CREATION_RU.md','Продолжение этап80 — `NATIVE_SHOT_SUCCESS_RU.md`:старые32 fixture-case этап54 сохранены в прежних границах. Новый путь исполняет настоящие554B30/507850/base/ownership/map/resource иоригинальнуюShotvtable безподмены кода.45сценариев/117invocations,22успешныхCreatureSpell,33allocatedstate,полные371байт snapshots через3freshreadoutreplays. GFXnull иsoundadapter остаются. Это расширение проверки,не заявление о livegame/renderer/process ticks.')
+    insert('CREATURE_SHOT_REQUEST_RU.md','Продолжение этап80 — `NATIVE_SHOT_SUCCESS_RU.md`:pre-allocation ограничение этого этапа преодолено вновых22успешныхCreatureSpell состояниях с настоящимиpool/base/registration/math. Data1/2 замещаются послефабрики;ID30имеетособуюветвь в4984D0. Полные371байт snapshots подтверждают scoped-равенство4парE8/E9. Исходные52preallocationсценария остаются отдельным доказательством.')
+    insert('SPELL_ALTERNATIVES_RU.md','Дополнение этап80 — `NATIVE_SHOT_SUCCESS_RU.md`:успешные4982B0/4984D0 теперь выполнены снастоящимиpool/factory/base/registration/направлением. ДлячетырёхпарE8/E9созданный371-байтныйShotполностьюсовпадает вкаждомwrapper приописанныхprovider/data условиях. ПолныйAI/renderer/Shotprocess tickнеисполнялся;глобальноеигровоеназначениеE8/E9остаётсяоткрытым.')
+    insert('SOURCES.md','## Этап80: native pool/Shot creation/CreatureSpell success\n\n`NATIVE_SHOT_SUCCESS_RU.md`,`native-shot-success-semantics.json`,`phase80-validation.json`,`phase80-primary-manifest.json`;`memory_readout.py`,`emulate_native_shot_pool.py`,`emulate_native_shot_success.py`,`emulate_native_creature_shot.py`,`prepare_native_shot_success_primary.py`,`build_native_shot_success.py`,`audit_native_shot_success.py`,`finish_phase80.py`.45logicalscenarios/117nativeinvocations,40PE/8data;33allocatedstates,36rawsnapshots(include3unallocateddiagnostics).492exactpatches,83inputs+Shotexample/4EXE unchanged. No originalcode/Shotvtablepatches;nullGFX/fixedsound/cardinalcoefficientsdataremainexplicit. Tables65FB14/65FC94arefilebackedmathconstants;preparedtrigcoefficientsnotclaimedasactualpopulation.')
+    status=load('phase79-search-status.json');status.update(phase=80,status='native_pool_factory_and_CreatureSpell_success_published;globalAlternativeIDs_and_other_unknowns_open',
+      previous_goal_turn_classification='progress:phase79preallocationproofextendedtoactualnativepool/base/listregistration/motionand22successfulcasts;novelfullbufferreadoutwithoutcodepatches',
+      schema='native-shot-success-semantics.json;embedded shot-creation-semantics.phase80_native_pool_and_cast',validation='phase80-validation.json',supplement='shot-creation-semantics.json.phase80_native_pool_and_cast',
+      findings=['45logicalscenarios/117nativeinvocations;33successfulallocatedstates;40originalPEfunctionspans/8data',
+        'Nativepoolandtag/owner/map/resourceconstructorsplusoriginalShotvtableexecute;externalgfx0/soundfixedremainfixtures',
+        'CreatureSpellsC8/CCData1/2overwriteShot98/9Cparametersafterfactory;all32bits;notKeeperC8meaning',
+        'Trajectoryuses64bitproducts;originuseslow32. ID30branchin4984D0storescreaturetargetwithoutordinaryvelocitysetup;localcatalogueLightningShotProcess9notnewlyrun',
+        'FourE8/E9pairsproduceidenticalfull371byteShotperwrapperunderfixtures;no globalnonuseclaim',
+        '492newexactpatches;83inputs+Shotexample/4EXEsunchanged;67components'],
+      evidence=[dict(file=n,sha256=hashlib.sha256((ROOT/n).read_bytes()).hexdigest()) for n in ['phase80-native-pool-emulations.json','phase80-native-shot-success-emulations.json','phase80-native-creature-shot-emulations.json','phase80-primary-manifest.json','phase80-validation.json','native-shot-success-semantics.json']],
+      scope='Successfulnativeallocation/registration/castparameterandtrajectorysetupwithprepareddata,notfullAI/collision/tick/renderer. Threefreshreadoutreplaysassembleobject;unknown19seeddependentbytesremainopaque.',
+      next_action='Do not repeat45scenarios/117invocationsor492patches. UsecreatedShot30target147snapshottoadvanceactualProcessType9/hitconsumeronlyafterreadingexistingcreature-lightning-immunity.json(totallyavoidrediscoveringconfirmedmask/versionassignment),orprioritizeanotherremainingunknownindirectconsumer. Newreadouthelperenablesfullbufferswithoutoriginalcodepatch. GlobalE8/E9,C8Keeper,AP04/08,Jump/Priority,Terrain198/224,Trap204,Object34C,Door236stillopen;goalactive.')
+    (ROOT/'phase80-search-status.json').write_text(json.dumps(status,ensure_ascii=False,indent=2),encoding='utf8');print('Phase80published;fulloriginalgoalremainsactive;allremainingunknownspreserved')
+if __name__=='__main__':main()

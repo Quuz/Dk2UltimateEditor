@@ -1,0 +1,119 @@
+{
+  "program": "..\\..\\Dungeon Keeper 2\\DKII-DX.exe",
+  "program_sha256": "d7a8b854e4e4f02709eba271bead6fe2307dd6e332b5a96e70857e5b0e19fb8a",
+  "text_origin": "0x401000",
+  "text_bytes": 2432000,
+  "offsets": [
+    "0x684"
+  ],
+  "warning": "Search all PE .text, including code absent from the saved function map.\n\nLinear disassembly and displacement-anchored decodes are only candidates.\nAnchored results can start inside another instruction or embedded data. Verify\neach candidate against a function body and object identity before using it.\n",
+  "candidates": [
+    {
+      "address": "0x410501",
+      "instruction": "mov al, byte ptr [esi + 0x684]",
+      "displacement": "0x684",
+      "memory_bytes": 1,
+      "base": "esi",
+      "index": null,
+      "access": 1,
+      "sources": [
+        "linear",
+        "displacement-anchored"
+      ],
+      "mapped_span": {
+        "address": "0x4100f0",
+        "name": "sub_4100F0",
+        "size": 1158
+      }
+    },
+    {
+      "address": "0x491fe7",
+      "instruction": "mov byte ptr [esi + 0x684], bl",
+      "displacement": "0x684",
+      "memory_bytes": 1,
+      "base": "esi",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear",
+        "displacement-anchored"
+      ],
+      "mapped_span": {
+        "address": "0x491dc0",
+        "name": "constructor",
+        "size": 1135
+      }
+    },
+    {
+      "address": "0x4941e9",
+      "instruction": "mov byte ptr [ebx + 0x684], dl",
+      "displacement": "0x684",
+      "memory_bytes": 1,
+      "base": "ebx",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear",
+        "displacement-anchored"
+      ],
+      "mapped_span": {
+        "address": "0x492320",
+        "name": "loadCreatureType",
+        "size": 8252
+      }
+    },
+    {
+      "address": "0x51f7df",
+      "instruction": "mov cl, byte ptr [edx + 0x684]",
+      "displacement": "0x684",
+      "memory_bytes": 1,
+      "base": "edx",
+      "index": null,
+      "access": 1,
+      "sources": [
+        "displacement-anchored"
+      ],
+      "mapped_span": {
+        "address": "0x51f3b0",
+        "name": "copy",
+        "size": 2292
+      }
+    },
+    {
+      "address": "0x51f7e0",
+      "instruction": "mov cl, byte ptr [edx + 0x684]",
+      "displacement": "0x684",
+      "memory_bytes": 1,
+      "base": "edx",
+      "index": null,
+      "access": 1,
+      "sources": [
+        "linear",
+        "displacement-anchored"
+      ],
+      "mapped_span": {
+        "address": "0x51f3b0",
+        "name": "copy",
+        "size": 2292
+      }
+    },
+    {
+      "address": "0x51f7eb",
+      "instruction": "mov byte ptr [eax + 0x684], cl",
+      "displacement": "0x684",
+      "memory_bytes": 1,
+      "base": "eax",
+      "index": null,
+      "access": 2,
+      "sources": [
+        "linear",
+        "displacement-anchored"
+      ],
+      "mapped_span": {
+        "address": "0x51f3b0",
+        "name": "copy",
+        "size": 2292
+      }
+    }
+  ]
+}

@@ -1,0 +1,1010 @@
+{
+  "scope": "Phase168: original loaded ProcessType/DamageType pairs through real collision.\n\nPrepared Creature snapshots, owners, map and original resource adapters reuse\nthe accepted phase115 fixture. Original loaders, spell wrapper, collision,\nprocess table initialization, HP/status methods and optional Creature ticks run\nunchanged. Diagnostic pairs are explicitly distinguished from source usage.\n",
+  "replays": [
+    {
+      "case": {
+        "process": 0,
+        "mode": 7,
+        "data1": 80,
+        "data2": 5,
+        "mask": 4,
+        "ticks": 0,
+        "armour": 0,
+        "invulnerable": 0,
+        "initial_HP": 1000,
+        "name": "hit-only"
+      },
+      "file": "ghidra\\phase168-shot-combinations-hit-only-4b3661594387.json",
+      "sha256": "4da136ccf27bc369a68c2fabc02d77ed564bc8ad5103257bffc50443803e11b7",
+      "outcome": {
+        "HP": 920,
+        "armour": 0,
+        "invulnerable": 0,
+        "freeze": 0,
+        "poison": 0,
+        "severity": 0,
+        "poison_owner": 0,
+        "requests": [
+          {
+            "target": 271581184,
+            "delta": -80,
+            "before": 1000,
+            "caller": "0x4ac58e"
+          }
+        ],
+        "callbacks": {
+          "0x4abd60": 1,
+          "0x4ad730": 1,
+          "0x4ae0d0": 0,
+          "0x4ae180": 0,
+          "0x4ae1d0": 0,
+          "0x484940": 0,
+          "0x4b0270": 0,
+          "0x4ac420": 1,
+          "0x488930": 0
+        }
+      }
+    },
+    {
+      "case": {
+        "process": 0,
+        "mode": 0,
+        "data1": 80,
+        "data2": 5,
+        "mask": 4,
+        "ticks": 0,
+        "armour": 0,
+        "invulnerable": 0,
+        "initial_HP": 1000,
+        "name": "no-process-no-damage"
+      },
+      "file": "ghidra\\phase168-shot-combinations-no-process-no-damage-bd9a3a4ca5aa.json",
+      "sha256": "158658a60714ff7c6dda94c0d0ba0ad2b25be663d3b9d9322e16a8b7d868c5b9",
+      "outcome": {
+        "HP": 1000,
+        "armour": 0,
+        "invulnerable": 0,
+        "freeze": 0,
+        "poison": 0,
+        "severity": 0,
+        "poison_owner": 0,
+        "requests": [],
+        "callbacks": {
+          "0x4abd60": 1,
+          "0x4ad730": 1,
+          "0x4ae0d0": 0,
+          "0x4ae180": 0,
+          "0x4ae1d0": 0,
+          "0x484940": 0,
+          "0x4b0270": 0,
+          "0x4ac420": 0,
+          "0x488930": 0
+        }
+      }
+    },
+    {
+      "case": {
+        "process": 5,
+        "mode": 0,
+        "data1": 80,
+        "data2": 5,
+        "mask": 4,
+        "ticks": 0,
+        "armour": 0,
+        "invulnerable": 0,
+        "initial_HP": 1000,
+        "name": "armour-only"
+      },
+      "file": "ghidra\\phase168-shot-combinations-armour-only-be6d96fad611.json",
+      "sha256": "4cd947768ea60dea088627783ec17b370f05a40fdf285d83a62a0c4492b0893c",
+      "outcome": {
+        "HP": 1000,
+        "armour": 80,
+        "invulnerable": 0,
+        "freeze": 0,
+        "poison": 0,
+        "severity": 0,
+        "poison_owner": 0,
+        "requests": [],
+        "callbacks": {
+          "0x4abd60": 1,
+          "0x4ad730": 1,
+          "0x4ae0d0": 1,
+          "0x4ae180": 0,
+          "0x4ae1d0": 0,
+          "0x484940": 0,
+          "0x4b0270": 0,
+          "0x4ac420": 0,
+          "0x488930": 0
+        }
+      }
+    },
+    {
+      "case": {
+        "process": 5,
+        "mode": 7,
+        "data1": 80,
+        "data2": 5,
+        "mask": 4,
+        "ticks": 0,
+        "armour": 0,
+        "invulnerable": 0,
+        "initial_HP": 1000,
+        "name": "armour-and-hit"
+      },
+      "file": "ghidra\\phase168-shot-combinations-armour-and-hit-bac6d6ccc480.json",
+      "sha256": "c8d9075e6e84fe8d5da98713d9074f871738e0dfa206dc3b2bdcb95af1ebf999",
+      "outcome": {
+        "HP": 960,
+        "armour": 80,
+        "invulnerable": 0,
+        "freeze": 0,
+        "poison": 0,
+        "severity": 0,
+        "poison_owner": 0,
+        "requests": [
+          {
+            "target": 271581184,
+            "delta": -80,
+            "before": 1000,
+            "caller": "0x4ac58e"
+          }
+        ],
+        "callbacks": {
+          "0x4abd60": 1,
+          "0x4ad730": 1,
+          "0x4ae0d0": 1,
+          "0x4ae180": 0,
+          "0x4ae1d0": 0,
+          "0x484940": 0,
+          "0x4b0270": 0,
+          "0x4ac420": 1,
+          "0x488930": 0
+        }
+      }
+    },
+    {
+      "case": {
+        "process": 5,
+        "mode": 7,
+        "data1": 80,
+        "data2": 5,
+        "mask": 2,
+        "ticks": 0,
+        "armour": 0,
+        "invulnerable": 0,
+        "initial_HP": 1000,
+        "name": "armour-mask-miss"
+      },
+      "file": "ghidra\\phase168-shot-combinations-armour-mask-miss-2efb81b428a1.json",
+      "sha256": "36ed79bc35ea21a67a55c0f408663bea21f543c04b1760c634f7b737f248a3c6",
+      "outcome": {
+        "HP": 920,
+        "armour": 0,
+        "invulnerable": 0,
+        "freeze": 0,
+        "poison": 0,
+        "severity": 0,
+        "poison_owner": 0,
+        "requests": [
+          {
+            "target": 271581184,
+            "delta": -80,
+            "before": 1000,
+            "caller": "0x4ac58e"
+          }
+        ],
+        "callbacks": {
+          "0x4abd60": 1,
+          "0x4ad730": 1,
+          "0x4ae0d0": 0,
+          "0x4ae180": 0,
+          "0x4ae1d0": 0,
+          "0x484940": 0,
+          "0x4b0270": 0,
+          "0x4ac420": 1,
+          "0x488930": 0
+        }
+      }
+    },
+    {
+      "case": {
+        "process": 5,
+        "mode": 7,
+        "data1": 0,
+        "data2": 5,
+        "mask": 4,
+        "ticks": 0,
+        "armour": 0,
+        "invulnerable": 0,
+        "initial_HP": 1000,
+        "name": "armour-zero-and-hit"
+      },
+      "file": "ghidra\\phase168-shot-combinations-armour-zero-and-hit-2f254eebb171.json",
+      "sha256": "8aafb05e34f20b8caca713028bb0098d03926613340664a7d750c760e8954791",
+      "outcome": {
+        "HP": 1000,
+        "armour": 0,
+        "invulnerable": 0,
+        "freeze": 0,
+        "poison": 0,
+        "severity": 0,
+        "poison_owner": 0,
+        "requests": [],
+        "callbacks": {
+          "0x4abd60": 1,
+          "0x4ad730": 1,
+          "0x4ae0d0": 1,
+          "0x4ae180": 0,
+          "0x4ae1d0": 0,
+          "0x484940": 0,
+          "0x4b0270": 0,
+          "0x4ac420": 1,
+          "0x488930": 0
+        }
+      }
+    },
+    {
+      "case": {
+        "process": 10,
+        "mode": 0,
+        "data1": 80,
+        "data2": 5,
+        "mask": 4,
+        "ticks": 0,
+        "armour": 0,
+        "invulnerable": 0,
+        "initial_HP": 1000,
+        "name": "invulnerable-only"
+      },
+      "file": "ghidra\\phase168-shot-combinations-invulnerable-only-7442d5d1820e.json",
+      "sha256": "fe6d1382ee89879fe379252406c3e6ec5576fe982eeac860cc11399743376f39",
+      "outcome": {
+        "HP": 1000,
+        "armour": 0,
+        "invulnerable": 1600,
+        "freeze": 0,
+        "poison": 0,
+        "severity": 0,
+        "poison_owner": 0,
+        "requests": [],
+        "callbacks": {
+          "0x4abd60": 1,
+          "0x4ad730": 1,
+          "0x4ae0d0": 0,
+          "0x4ae180": 1,
+          "0x4ae1d0": 0,
+          "0x484940": 0,
+          "0x4b0270": 0,
+          "0x4ac420": 0,
+          "0x488930": 0
+        }
+      }
+    },
+    {
+      "case": {
+        "process": 10,
+        "mode": 7,
+        "data1": 80,
+        "data2": 5,
+        "mask": 4,
+        "ticks": 0,
+        "armour": 0,
+        "invulnerable": 0,
+        "initial_HP": 1000,
+        "name": "invulnerable-and-hit"
+      },
+      "file": "ghidra\\phase168-shot-combinations-invulnerable-and-hit-f26eaa5dec91.json",
+      "sha256": "99aa48007d0101a44c1ad1240b466934d40a0c8fe27887d88282500d7ae01d61",
+      "outcome": {
+        "HP": 1000,
+        "armour": 0,
+        "invulnerable": 1600,
+        "freeze": 0,
+        "poison": 0,
+        "severity": 0,
+        "poison_owner": 0,
+        "requests": [],
+        "callbacks": {
+          "0x4abd60": 1,
+          "0x4ad730": 1,
+          "0x4ae0d0": 0,
+          "0x4ae180": 1,
+          "0x4ae1d0": 0,
+          "0x484940": 0,
+          "0x4b0270": 0,
+          "0x4ac420": 1,
+          "0x488930": 0
+        }
+      }
+    },
+    {
+      "case": {
+        "process": 10,
+        "mode": 7,
+        "data1": 80,
+        "data2": 5,
+        "mask": 2,
+        "ticks": 0,
+        "armour": 0,
+        "invulnerable": 0,
+        "initial_HP": 1000,
+        "name": "invulnerable-mask-miss"
+      },
+      "file": "ghidra\\phase168-shot-combinations-invulnerable-mask-miss-6e8f8d7053b3.json",
+      "sha256": "8f4dbb7739e1950824d6a39727b1b7c4d81403414998b9f26595f195de1ef84c",
+      "outcome": {
+        "HP": 920,
+        "armour": 0,
+        "invulnerable": 0,
+        "freeze": 0,
+        "poison": 0,
+        "severity": 0,
+        "poison_owner": 0,
+        "requests": [
+          {
+            "target": 271581184,
+            "delta": -80,
+            "before": 1000,
+            "caller": "0x4ac58e"
+          }
+        ],
+        "callbacks": {
+          "0x4abd60": 1,
+          "0x4ad730": 1,
+          "0x4ae0d0": 0,
+          "0x4ae180": 0,
+          "0x4ae1d0": 0,
+          "0x484940": 0,
+          "0x4b0270": 0,
+          "0x4ac420": 1,
+          "0x488930": 0
+        }
+      }
+    },
+    {
+      "case": {
+        "process": 10,
+        "mode": 7,
+        "data1": 16384,
+        "data2": 5,
+        "mask": 4,
+        "ticks": 0,
+        "armour": 0,
+        "invulnerable": 0,
+        "initial_HP": 100000,
+        "name": "invulnerable-wrap-and-hit"
+      },
+      "file": "ghidra\\phase168-shot-combinations-invulnerable-wrap-and-hit-e15e69fdaf84.json",
+      "sha256": "181a249675f11fa43998bf6b48b6653cc4f2d044191e7e337c9afc84767c2858",
+      "outcome": {
+        "HP": 83616,
+        "armour": 0,
+        "invulnerable": 0,
+        "freeze": 0,
+        "poison": 0,
+        "severity": 0,
+        "poison_owner": 0,
+        "requests": [
+          {
+            "target": 271581184,
+            "delta": -16384,
+            "before": 100000,
+            "caller": "0x4ac58e"
+          }
+        ],
+        "callbacks": {
+          "0x4abd60": 1,
+          "0x4ad730": 1,
+          "0x4ae0d0": 0,
+          "0x4ae180": 1,
+          "0x4ae1d0": 0,
+          "0x484940": 0,
+          "0x4b0270": 0,
+          "0x4ac420": 1,
+          "0x488930": 0
+        }
+      }
+    },
+    {
+      "case": {
+        "process": 11,
+        "mode": 0,
+        "data1": 80,
+        "data2": 5,
+        "mask": 4,
+        "ticks": 0,
+        "armour": 0,
+        "invulnerable": 0,
+        "initial_HP": 1000,
+        "name": "freeze-only"
+      },
+      "file": "ghidra\\phase168-shot-combinations-freeze-only-1759ee6eff5c.json",
+      "sha256": "facc26a36a68907747aa405d63645bc74bb122a8c08df5da6f439767400f49d9",
+      "outcome": {
+        "HP": 1000,
+        "armour": 0,
+        "invulnerable": 0,
+        "freeze": 1600,
+        "poison": 0,
+        "severity": 0,
+        "poison_owner": 0,
+        "requests": [],
+        "callbacks": {
+          "0x4abd60": 1,
+          "0x4ad730": 1,
+          "0x4ae0d0": 0,
+          "0x4ae180": 0,
+          "0x4ae1d0": 1,
+          "0x484940": 0,
+          "0x4b0270": 0,
+          "0x4ac420": 0,
+          "0x488930": 0
+        }
+      }
+    },
+    {
+      "case": {
+        "process": 11,
+        "mode": 7,
+        "data1": 80,
+        "data2": 5,
+        "mask": 4,
+        "ticks": 0,
+        "armour": 0,
+        "invulnerable": 0,
+        "initial_HP": 1000,
+        "name": "freeze-and-hit"
+      },
+      "file": "ghidra\\phase168-shot-combinations-freeze-and-hit-7c9b7d8dff32.json",
+      "sha256": "024532adb802bdb5ca7246314eb563d4dc7ad2443a4a72c6c7f3700750798efd",
+      "outcome": {
+        "HP": 900,
+        "armour": 0,
+        "invulnerable": 0,
+        "freeze": 1600,
+        "poison": 0,
+        "severity": 0,
+        "poison_owner": 0,
+        "requests": [
+          {
+            "target": 271581184,
+            "delta": -80,
+            "before": 1000,
+            "caller": "0x4ac58e"
+          }
+        ],
+        "callbacks": {
+          "0x4abd60": 1,
+          "0x4ad730": 1,
+          "0x4ae0d0": 0,
+          "0x4ae180": 0,
+          "0x4ae1d0": 1,
+          "0x484940": 0,
+          "0x4b0270": 0,
+          "0x4ac420": 1,
+          "0x488930": 0
+        }
+      }
+    },
+    {
+      "case": {
+        "process": 11,
+        "mode": 7,
+        "data1": 80,
+        "data2": 5,
+        "mask": 2,
+        "ticks": 0,
+        "armour": 0,
+        "invulnerable": 0,
+        "initial_HP": 1000,
+        "name": "freeze-mask-miss"
+      },
+      "file": "ghidra\\phase168-shot-combinations-freeze-mask-miss-bfccc54c2a3a.json",
+      "sha256": "9f5661a698c25d6ed25d70a9f2b38415cd565749574b4c6f1a286f4b73a90397",
+      "outcome": {
+        "HP": 920,
+        "armour": 0,
+        "invulnerable": 0,
+        "freeze": 0,
+        "poison": 0,
+        "severity": 0,
+        "poison_owner": 0,
+        "requests": [
+          {
+            "target": 271581184,
+            "delta": -80,
+            "before": 1000,
+            "caller": "0x4ac58e"
+          }
+        ],
+        "callbacks": {
+          "0x4abd60": 1,
+          "0x4ad730": 1,
+          "0x4ae0d0": 0,
+          "0x4ae180": 0,
+          "0x4ae1d0": 0,
+          "0x484940": 0,
+          "0x4b0270": 0,
+          "0x4ac420": 1,
+          "0x488930": 0
+        }
+      }
+    },
+    {
+      "case": {
+        "process": 38,
+        "mode": 0,
+        "data1": 80,
+        "data2": 5,
+        "mask": 4,
+        "ticks": 0,
+        "armour": 0,
+        "invulnerable": 0,
+        "initial_HP": 1000,
+        "name": "poison-only"
+      },
+      "file": "ghidra\\phase168-shot-combinations-poison-only-e6e627f2e801.json",
+      "sha256": "a7c4a4018fce856191c8eb7fa302f39f6feeab24c25202135b96595a0a41d170",
+      "outcome": {
+        "HP": 1000,
+        "armour": 0,
+        "invulnerable": 0,
+        "freeze": 0,
+        "poison": 80,
+        "severity": 5,
+        "poison_owner": 7,
+        "requests": [],
+        "callbacks": {
+          "0x4abd60": 1,
+          "0x4ad730": 1,
+          "0x4ae0d0": 0,
+          "0x4ae180": 0,
+          "0x4ae1d0": 0,
+          "0x484940": 0,
+          "0x4b0270": 1,
+          "0x4ac420": 0,
+          "0x488930": 0
+        }
+      }
+    },
+    {
+      "case": {
+        "process": 38,
+        "mode": 7,
+        "data1": 80,
+        "data2": 5,
+        "mask": 4,
+        "ticks": 0,
+        "armour": 0,
+        "invulnerable": 0,
+        "initial_HP": 1000,
+        "name": "poison-and-hit"
+      },
+      "file": "ghidra\\phase168-shot-combinations-poison-and-hit-ed420de3b53a.json",
+      "sha256": "48daba8cdf58bcf43e9d0e5ac48ac78847a099cea3e7feb0351eb5f15952a475",
+      "outcome": {
+        "HP": 920,
+        "armour": 0,
+        "invulnerable": 0,
+        "freeze": 0,
+        "poison": 80,
+        "severity": 5,
+        "poison_owner": 7,
+        "requests": [
+          {
+            "target": 271581184,
+            "delta": -80,
+            "before": 1000,
+            "caller": "0x4ac58e"
+          }
+        ],
+        "callbacks": {
+          "0x4abd60": 1,
+          "0x4ad730": 1,
+          "0x4ae0d0": 0,
+          "0x4ae180": 0,
+          "0x4ae1d0": 0,
+          "0x484940": 0,
+          "0x4b0270": 1,
+          "0x4ac420": 1,
+          "0x488930": 0
+        }
+      }
+    },
+    {
+      "case": {
+        "process": 38,
+        "mode": 7,
+        "data1": 80,
+        "data2": 5,
+        "mask": 2,
+        "ticks": 0,
+        "armour": 0,
+        "invulnerable": 0,
+        "initial_HP": 1000,
+        "name": "poison-mask-miss"
+      },
+      "file": "ghidra\\phase168-shot-combinations-poison-mask-miss-7fd11cb89eab.json",
+      "sha256": "d44b4cd88fa58a2e7052a8d4da7e332338baf54d1add291d1312fa751cca2ab3",
+      "outcome": {
+        "HP": 920,
+        "armour": 0,
+        "invulnerable": 0,
+        "freeze": 0,
+        "poison": 0,
+        "severity": 0,
+        "poison_owner": 0,
+        "requests": [
+          {
+            "target": 271581184,
+            "delta": -80,
+            "before": 1000,
+            "caller": "0x4ac58e"
+          }
+        ],
+        "callbacks": {
+          "0x4abd60": 1,
+          "0x4ad730": 1,
+          "0x4ae0d0": 0,
+          "0x4ae180": 0,
+          "0x4ae1d0": 0,
+          "0x484940": 0,
+          "0x4b0270": 0,
+          "0x4ac420": 1,
+          "0x488930": 0
+        }
+      }
+    },
+    {
+      "case": {
+        "process": 38,
+        "mode": 7,
+        "data1": 80,
+        "data2": 5,
+        "mask": 4,
+        "ticks": 1,
+        "armour": 0,
+        "invulnerable": 0,
+        "initial_HP": 1000,
+        "name": "poison-and-hit-tick"
+      },
+      "file": "ghidra\\phase168-shot-combinations-poison-and-hit-tick-7ffaa617fcb3.json",
+      "sha256": "7efe57a5f575c776028019cafe6e2c8d6d8997132bcfd13464d355c26c140c63",
+      "outcome": {
+        "HP": 915,
+        "armour": 0,
+        "invulnerable": 0,
+        "freeze": 0,
+        "poison": 79,
+        "severity": 5,
+        "poison_owner": 7,
+        "requests": [
+          {
+            "target": 271581184,
+            "delta": -80,
+            "before": 1000,
+            "caller": "0x4ac58e"
+          },
+          {
+            "target": 271581184,
+            "delta": -5,
+            "before": 920,
+            "caller": "0x48e364"
+          }
+        ],
+        "callbacks": {
+          "0x4abd60": 1,
+          "0x4ad730": 1,
+          "0x4ae0d0": 0,
+          "0x4ae180": 0,
+          "0x4ae1d0": 0,
+          "0x484940": 0,
+          "0x4b0270": 1,
+          "0x4ac420": 1,
+          "0x488930": 1
+        }
+      }
+    },
+    {
+      "case": {
+        "process": 38,
+        "mode": 7,
+        "data1": 80,
+        "data2": 5,
+        "mask": 4,
+        "ticks": 1,
+        "armour": 2,
+        "invulnerable": 0,
+        "initial_HP": 1000,
+        "name": "poison-and-hit-armoured"
+      },
+      "file": "ghidra\\phase168-shot-combinations-poison-and-hit-armoured-3d533492aa70.json",
+      "sha256": "8c13f16be9d0baaf3039f903f91dd9d52ad612dbf8760ea0d9ddaef309f2d3a4",
+      "outcome": {
+        "HP": 958,
+        "armour": 1,
+        "invulnerable": 0,
+        "freeze": 0,
+        "poison": 79,
+        "severity": 5,
+        "poison_owner": 7,
+        "requests": [
+          {
+            "target": 271581184,
+            "delta": -80,
+            "before": 1000,
+            "caller": "0x4ac58e"
+          },
+          {
+            "target": 271581184,
+            "delta": -5,
+            "before": 960,
+            "caller": "0x48e364"
+          }
+        ],
+        "callbacks": {
+          "0x4abd60": 1,
+          "0x4ad730": 1,
+          "0x4ae0d0": 0,
+          "0x4ae180": 0,
+          "0x4ae1d0": 0,
+          "0x484940": 0,
+          "0x4b0270": 1,
+          "0x4ac420": 1,
+          "0x488930": 1
+        }
+      }
+    },
+    {
+      "case": {
+        "process": 38,
+        "mode": 7,
+        "data1": 80,
+        "data2": 5,
+        "mask": 4,
+        "ticks": 1,
+        "armour": 0,
+        "invulnerable": 2,
+        "initial_HP": 1000,
+        "name": "poison-and-hit-blocked"
+      },
+      "file": "ghidra\\phase168-shot-combinations-poison-and-hit-blocked-e3a14a0a5389.json",
+      "sha256": "fd82feee013ea419882eb3a7a82a18d3d2367ce1037fbc76ee40e6aef9fa7e12",
+      "outcome": {
+        "HP": 995,
+        "armour": 0,
+        "invulnerable": 1,
+        "freeze": 0,
+        "poison": 79,
+        "severity": 5,
+        "poison_owner": 7,
+        "requests": [
+          {
+            "target": 271581184,
+            "delta": -5,
+            "before": 1000,
+            "caller": "0x48e364"
+          }
+        ],
+        "callbacks": {
+          "0x4abd60": 1,
+          "0x4ad730": 1,
+          "0x4ae0d0": 0,
+          "0x4ae180": 0,
+          "0x4ae1d0": 0,
+          "0x484940": 0,
+          "0x4b0270": 1,
+          "0x4ac420": 1,
+          "0x488930": 1
+        }
+      }
+    },
+    {
+      "case": {
+        "process": 38,
+        "mode": 7,
+        "data1": 65538,
+        "data2": 65541,
+        "mask": 4,
+        "ticks": 0,
+        "armour": 0,
+        "invulnerable": 0,
+        "initial_HP": 100000,
+        "name": "poison-wide-and-hit"
+      },
+      "file": "ghidra\\phase168-shot-combinations-poison-wide-and-hit-ba0b28a95420.json",
+      "sha256": "cf1dd369cf8f09e70d4b1369d456a82a816c64f9d3ace75f419c1d89d0011b2c",
+      "outcome": {
+        "HP": 34462,
+        "armour": 0,
+        "invulnerable": 0,
+        "freeze": 0,
+        "poison": 2,
+        "severity": 5,
+        "poison_owner": 7,
+        "requests": [
+          {
+            "target": 271581184,
+            "delta": -65538,
+            "before": 100000,
+            "caller": "0x4ac58e"
+          }
+        ],
+        "callbacks": {
+          "0x4abd60": 1,
+          "0x4ad730": 1,
+          "0x4ae0d0": 0,
+          "0x4ae180": 0,
+          "0x4ae1d0": 0,
+          "0x484940": 0,
+          "0x4b0270": 1,
+          "0x4ac420": 1,
+          "0x488930": 0
+        }
+      }
+    },
+    {
+      "case": {
+        "process": 38,
+        "mode": 7,
+        "data1": 4294967295,
+        "data2": 5,
+        "mask": 4,
+        "ticks": 0,
+        "armour": 0,
+        "invulnerable": 0,
+        "initial_HP": 1000,
+        "name": "poison-negative-hit"
+      },
+      "file": "ghidra\\phase168-shot-combinations-poison-negative-hit-de728181affb.json",
+      "sha256": "2c38b9b190eea212f5cc87b15a260394be40075946874933d9b3525ded561c0e",
+      "outcome": {
+        "HP": 1000,
+        "armour": 0,
+        "invulnerable": 0,
+        "freeze": 0,
+        "poison": 65535,
+        "severity": 5,
+        "poison_owner": 7,
+        "requests": [],
+        "callbacks": {
+          "0x4abd60": 1,
+          "0x4ad730": 1,
+          "0x4ae0d0": 0,
+          "0x4ae180": 0,
+          "0x4ae1d0": 0,
+          "0x484940": 0,
+          "0x4b0270": 1,
+          "0x4ac420": 1,
+          "0x488930": 0
+        }
+      }
+    },
+    {
+      "case": {
+        "process": 21,
+        "mode": 7,
+        "data1": 80,
+        "data2": 5,
+        "mask": 4,
+        "ticks": 0,
+        "armour": 0,
+        "invulnerable": 0,
+        "initial_HP": 1000,
+        "name": "noop-fear-and-hit"
+      },
+      "file": "ghidra\\phase168-shot-combinations-noop-fear-and-hit-5b63ea74cc21.json",
+      "sha256": "a4f019cd53cbedf2d88abf28e02d1fe9a9b2ef17577f7f8146b81e9d3881ff99",
+      "outcome": {
+        "HP": 920,
+        "armour": 0,
+        "invulnerable": 0,
+        "freeze": 0,
+        "poison": 0,
+        "severity": 0,
+        "poison_owner": 0,
+        "requests": [
+          {
+            "target": 271581184,
+            "delta": -80,
+            "before": 1000,
+            "caller": "0x4ac58e"
+          }
+        ],
+        "callbacks": {
+          "0x4abd60": 1,
+          "0x4ad730": 1,
+          "0x4ae0d0": 0,
+          "0x4ae180": 0,
+          "0x4ae1d0": 0,
+          "0x484940": 1,
+          "0x4b0270": 0,
+          "0x4ac420": 1,
+          "0x488930": 0
+        }
+      }
+    },
+    {
+      "case": {
+        "process": 0,
+        "mode": 7,
+        "data1": 80,
+        "data2": 5,
+        "mask": 4,
+        "ticks": 0,
+        "armour": 2,
+        "invulnerable": 0,
+        "initial_HP": 1000,
+        "name": "armour-preexisting-hit"
+      },
+      "file": "ghidra\\phase168-shot-combinations-armour-preexisting-hit-eaa763fae649.json",
+      "sha256": "a3d6a815ca0942b4cf4ace23f478143d3bc609fdb94e04aa9bd70662607a8088",
+      "outcome": {
+        "HP": 960,
+        "armour": 2,
+        "invulnerable": 0,
+        "freeze": 0,
+        "poison": 0,
+        "severity": 0,
+        "poison_owner": 0,
+        "requests": [
+          {
+            "target": 271581184,
+            "delta": -80,
+            "before": 1000,
+            "caller": "0x4ac58e"
+          }
+        ],
+        "callbacks": {
+          "0x4abd60": 1,
+          "0x4ad730": 1,
+          "0x4ae0d0": 0,
+          "0x4ae180": 0,
+          "0x4ae1d0": 0,
+          "0x484940": 0,
+          "0x4b0270": 0,
+          "0x4ac420": 1,
+          "0x488930": 0
+        }
+      }
+    },
+    {
+      "case": {
+        "process": 0,
+        "mode": 7,
+        "data1": 80,
+        "data2": 5,
+        "mask": 4,
+        "ticks": 0,
+        "armour": 0,
+        "invulnerable": 2,
+        "initial_HP": 1000,
+        "name": "invulnerable-preexisting-hit"
+      },
+      "file": "ghidra\\phase168-shot-combinations-invulnerable-preexisting-hit-0f5413a58ce4.json",
+      "sha256": "cadb7618faeeee4bfbfb5694a662761fe9c28b66ea477dd72d7c0975ec332d42",
+      "outcome": {
+        "HP": 1000,
+        "armour": 0,
+        "invulnerable": 2,
+        "freeze": 0,
+        "poison": 0,
+        "severity": 0,
+        "poison_owner": 0,
+        "requests": [],
+        "callbacks": {
+          "0x4abd60": 1,
+          "0x4ad730": 1,
+          "0x4ae0d0": 0,
+          "0x4ae180": 0,
+          "0x4ae1d0": 0,
+          "0x484940": 0,
+          "0x4b0270": 0,
+          "0x4ac420": 1,
+          "0x488930": 0
+        }
+      }
+    }
+  ]
+}

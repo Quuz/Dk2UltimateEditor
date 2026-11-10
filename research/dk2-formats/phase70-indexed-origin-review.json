@@ -1,0 +1,270 @@
+{
+  "scope": "Prove global-table origins for indexed leads using verified function CFGs.\n\nCalls invalidate EAX/ECX/EDX; other registers use the x86 callee-saved ABI.\nOnly direct branch destinations inside each complete Ghidra body are followed.\nUnresolved indirect branches are reported, never treated as absence evidence.\n",
+  "global_pointer": 7139400,
+  "initialized_target": 7198168,
+  "reads": [
+    {
+      "read": 4577741,
+      "function": 4577520,
+      "origin_verified_on_reached_states": true,
+      "reached_alias_states": [
+        true
+      ]
+    },
+    {
+      "read": 4657338,
+      "function": 4656720,
+      "origin_verified_on_reached_states": true,
+      "reached_alias_states": [
+        true
+      ]
+    },
+    {
+      "read": 4848272,
+      "function": 4846864,
+      "origin_verified_on_reached_states": true,
+      "reached_alias_states": [
+        true
+      ]
+    },
+    {
+      "read": 5171531,
+      "function": 5170944,
+      "origin_verified_on_reached_states": true,
+      "reached_alias_states": [
+        true
+      ]
+    },
+    {
+      "read": 5171811,
+      "function": 5170944,
+      "origin_verified_on_reached_states": true,
+      "reached_alias_states": [
+        true
+      ]
+    },
+    {
+      "read": 5173042,
+      "function": 5172448,
+      "origin_verified_on_reached_states": true,
+      "reached_alias_states": [
+        true
+      ]
+    },
+    {
+      "read": 5173322,
+      "function": 5172448,
+      "origin_verified_on_reached_states": true,
+      "reached_alias_states": [
+        true
+      ]
+    },
+    {
+      "read": 5175837,
+      "function": 5175648,
+      "origin_verified_on_reached_states": true,
+      "reached_alias_states": [
+        true
+      ]
+    },
+    {
+      "read": 5176662,
+      "function": 5176176,
+      "origin_verified_on_reached_states": true,
+      "reached_alias_states": [
+        true
+      ]
+    },
+    {
+      "read": 5176789,
+      "function": 5176176,
+      "origin_verified_on_reached_states": true,
+      "reached_alias_states": [
+        true
+      ]
+    },
+    {
+      "read": 5178685,
+      "function": 5176176,
+      "origin_verified_on_reached_states": true,
+      "reached_alias_states": [
+        true
+      ]
+    },
+    {
+      "read": 5178832,
+      "function": 5176176,
+      "origin_verified_on_reached_states": true,
+      "reached_alias_states": [
+        true
+      ]
+    },
+    {
+      "read": 5189062,
+      "function": 5188560,
+      "origin_verified_on_reached_states": true,
+      "reached_alias_states": [
+        true
+      ]
+    },
+    {
+      "read": 5190492,
+      "function": 5188560,
+      "origin_verified_on_reached_states": true,
+      "reached_alias_states": [
+        true
+      ]
+    },
+    {
+      "read": 5192094,
+      "function": 5191536,
+      "origin_verified_on_reached_states": true,
+      "reached_alias_states": [
+        true
+      ]
+    },
+    {
+      "read": 5208942,
+      "function": 5208672,
+      "origin_verified_on_reached_states": true,
+      "reached_alias_states": [
+        true
+      ]
+    },
+    {
+      "read": 5217941,
+      "function": 5217712,
+      "origin_verified_on_reached_states": true,
+      "reached_alias_states": [
+        true
+      ]
+    }
+  ],
+  "functions": [
+    {
+      "function": 4577520,
+      "assembly": "phase70-old-45d8f0-assembly.txt",
+      "states": 204,
+      "indirect_branch_stops": [],
+      "recovered_instruction_count": 0,
+      "recovered_assembly": null,
+      "switches": []
+    },
+    {
+      "function": 4656720,
+      "assembly": "phase70-old-470e50-assembly.txt",
+      "states": 225,
+      "indirect_branch_stops": [],
+      "recovered_instruction_count": 0,
+      "recovered_assembly": null,
+      "switches": []
+    },
+    {
+      "function": 4846864,
+      "assembly": "phase70-old-49f510-assembly.txt",
+      "states": 709,
+      "indirect_branch_stops": [],
+      "recovered_instruction_count": 0,
+      "recovered_assembly": null,
+      "switches": []
+    },
+    {
+      "function": 5170944,
+      "assembly": "phase70-old-4ee700-assembly.txt",
+      "states": 462,
+      "indirect_branch_stops": [],
+      "recovered_instruction_count": 0,
+      "recovered_assembly": null,
+      "switches": []
+    },
+    {
+      "function": 5172448,
+      "assembly": "phase70-old-4eece0-assembly.txt",
+      "states": 434,
+      "indirect_branch_stops": [],
+      "recovered_instruction_count": 0,
+      "recovered_assembly": null,
+      "switches": []
+    },
+    {
+      "function": 5175648,
+      "assembly": "phase70-old-4ef960-assembly.txt",
+      "states": 86,
+      "indirect_branch_stops": [],
+      "recovered_instruction_count": 0,
+      "recovered_assembly": null,
+      "switches": []
+    },
+    {
+      "function": 5176176,
+      "assembly": "phase70-old-4efb70-assembly.txt",
+      "states": 1162,
+      "indirect_branch_stops": [],
+      "recovered_instruction_count": 130,
+      "recovered_assembly": "phase70-old-4efb70-recovered-switch-CFG.txt",
+      "switches": [
+        {
+          "jump": 5177467,
+          "table": 5179912,
+          "count": 4,
+          "targets": [
+            5177474,
+            5177492,
+            5177508,
+            5177651
+          ],
+          "bound": "Native AND EAX,3 and CMP EAX,3 precede this jump;all four possible indices covered."
+        },
+        {
+          "jump": 5177813,
+          "table": 5179928,
+          "count": 4,
+          "targets": [
+            5177820,
+            5177832,
+            5177841,
+            5177857
+          ],
+          "bound": "Native AND EAX,3 and CMP EAX,3 precede this jump;all four possible indices covered."
+        }
+      ]
+    },
+    {
+      "function": 5188560,
+      "assembly": "phase70-old-4f2bd0-assembly.txt",
+      "states": 664,
+      "indirect_branch_stops": [],
+      "recovered_instruction_count": 0,
+      "recovered_assembly": null,
+      "switches": []
+    },
+    {
+      "function": 5191536,
+      "assembly": "phase70-old-4f3770-assembly.txt",
+      "states": 212,
+      "indirect_branch_stops": [],
+      "recovered_instruction_count": 0,
+      "recovered_assembly": null,
+      "switches": []
+    },
+    {
+      "function": 5208672,
+      "assembly": "phase70-old-4f7a60-assembly.txt",
+      "states": 576,
+      "indirect_branch_stops": [],
+      "recovered_instruction_count": 0,
+      "recovered_assembly": null,
+      "switches": []
+    },
+    {
+      "function": 5217712,
+      "assembly": "phase70-old-4f9db0-assembly.txt",
+      "states": 149,
+      "indirect_branch_stops": [],
+      "recovered_instruction_count": 0,
+      "recovered_assembly": null,
+      "switches": []
+    }
+  ],
+  "caveat": "Only reported reached states are proved. Empty or mixed state sets remain unresolved. Global target identity refers to the attested initializer contract,not an arbitrary corrupted runtime."
+}

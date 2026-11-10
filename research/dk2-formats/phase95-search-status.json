@@ -1,0 +1,45 @@
+{
+  "phase": 95,
+  "date": "2026-10-28",
+  "status": "Actual secondary speed flag producer, native XY-ray and raw Door dependency published",
+  "published_phase": 95,
+  "previous_goal_turn_classification": "progress:phase94 room counters/HP published;phase95 composes actual source setter,neighbour flag writer,ray,tile/map helpers and target speed plus rawDoor loader paths",
+  "findings": [
+    "4BFD00 sets or clears actor3EA/08 for other owner-list members according to actual XY-ray when source possessed;unpossessed-source branch clears listedmembers.",
+    "Raw224/21P200 gives neighbour speed×1.5 versus×3 possessed;P0 secondary-only gives×0.5. Blocked ray removes neighbourflag.",
+    "Native original Door init/converter/loader proved rawDWORD228/40→mid29C→def8B→ray→flag→speed in4newrawpaths;loadergate1 explicit.",
+    "34newnativecases,153whole spans/9blocks;82Doorfiles/656records/1312exact bit40 patches;package74 withprior73 unchanged;4EXEs unchanged."
+  ],
+  "evidence": [
+    {
+      "file": "possession-neighbour-semantics.json",
+      "sha256": "2b46cda338de5ab5a0bcc47d8aaf73a843ffc0b108eb0c3e0b9265a78361cb7b"
+    },
+    {
+      "file": "phase95-validation.json",
+      "sha256": "7c59c363a6aeb5e3efce9ccac885965b9a58155e74d5a5533fca30b0d9b38c61"
+    },
+    {
+      "file": "phase95-primary-manifest.json",
+      "sha256": "3f60a7c14acff5eaa322d6b8637d0c70cc47482f39a65e31dae76c2eccc4e2d2"
+    },
+    {
+      "file": "phase95-possession-neighbour-emulations.json",
+      "sha256": "1f2632d784812faa583494c3b571a9726713df6aa65d2ca6cc340331bd44a349"
+    },
+    {
+      "file": "native_possession_neighbours.py",
+      "sha256": "269078d6935017f98f058a60534cc89886f6c67b37e3b643a555be2b8fc1bf6f"
+    },
+    {
+      "file": "POSSESSION_NEIGHBOURS_RU.md",
+      "sha256": "6da3ce010008f9a4d2ad65416f66a6d08f5bce94a838abdcedb38d69a170a221"
+    }
+  ],
+  "next_action": "Trace remaining raw224 consumers:4F7AB0 queriesStat31 and scalar6F29B0 while reading receiverDWORD2D;identify caller/receiver from original xrefs before naming effect. Also revisit488930 calls at489903/489934;phase96correctedtheoperand:hex15=decimal21,not25. Fullscalar98/113/114 meaning and other15-formatunknowns remain objective.",
+  "native_cases": 34,
+  "package_components": 74,
+  "goal_achieved": false,
+  "significant_unknowns_remain": true,
+  "pending_native_jobs": []
+}

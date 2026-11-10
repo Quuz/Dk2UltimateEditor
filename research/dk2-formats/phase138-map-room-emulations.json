@@ -1,0 +1,1059 @@
+{
+  "phase": 138,
+  "scope": "Complete native Map callback -> Room creation/join -> decoration/remesh.\n\nThe scene is still a prepared 5x5 world, with a bounded one-room free-list,\nnative constructors and fixed-size Object allocator. Host-produced MapMID is\nthe established parser projection; the full native file reader is not executed.\nSemantic and paired-memory checks are separate from whole-scene CPU agreement.\n",
+  "replays": [
+    {
+      "case": "baseline",
+      "file": "ghidra\\phase138-map-room-native-55b7b1edae68.json",
+      "sha256": "038d0fe402852136b59fce91dea617f14f891a1df026e08ebed3329533b87a20",
+      "outcome": {
+        "room_count": 0,
+        "room_tiles": 0,
+        "room_health_sum": null,
+        "masks": {},
+        "nav": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "live_objects": [],
+        "used_object_pool_bytes": 0,
+        "signed_MapMID_sum": 0,
+        "full_native_remesh_calls": 1,
+        "steps": 181860,
+        "whole_prepared_regions": 66,
+        "whole_prepared_bytes": 330219,
+        "semantic_oracle_scope": "Map owners/terrain/health/RoomTag/masks/NAV bytes, room tile chain/count/health, pool partition/linkage and live Object registry; other output bytes opaque measured CPU state."
+      }
+    },
+    {
+      "case": "single",
+      "file": "ghidra\\phase138-map-room-native-140bb4b67f7c.json",
+      "sha256": "eb2f4688bcd877383b39e207f846dc78f9aeb3278a04a8fce22aa0e8e5335459",
+      "outcome": {
+        "room_count": 1,
+        "room_tiles": 1,
+        "room_health_sum": 10000,
+        "masks": {
+          "2,2": 0
+        },
+        "nav": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "live_objects": [
+          {
+            "address": 406863488,
+            "tag": 1002,
+            "ObjectId": 111,
+            "position": [
+              11264,
+              9216,
+              4096
+            ]
+          },
+          {
+            "address": 406863080,
+            "tag": 1003,
+            "ObjectId": 111,
+            "position": [
+              11264,
+              11264,
+              4096
+            ]
+          },
+          {
+            "address": 406862672,
+            "tag": 1004,
+            "ObjectId": 111,
+            "position": [
+              9216,
+              11264,
+              4096
+            ]
+          },
+          {
+            "address": 406862264,
+            "tag": 1005,
+            "ObjectId": 111,
+            "position": [
+              9216,
+              9216,
+              4096
+            ]
+          }
+        ],
+        "used_object_pool_bytes": 1632,
+        "signed_MapMID_sum": 27,
+        "full_native_remesh_calls": 1,
+        "steps": 203187,
+        "whole_prepared_regions": 66,
+        "whole_prepared_bytes": 330235,
+        "semantic_oracle_scope": "Map owners/terrain/health/RoomTag/masks/NAV bytes, room tile chain/count/health, pool partition/linkage and live Object registry; other output bytes opaque measured CPU state."
+      }
+    },
+    {
+      "case": "pair",
+      "file": "ghidra\\phase138-map-room-native-e7d843962697.json",
+      "sha256": "e2586c17873d4f893e88e836f30bea60b5167db7a5faf2d1b1ad7ba7754332f0",
+      "outcome": {
+        "room_count": 1,
+        "room_tiles": 2,
+        "room_health_sum": 20000,
+        "masks": {
+          "2,2": 4,
+          "3,2": 64
+        },
+        "nav": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "live_objects": [
+          {
+            "address": 406863488,
+            "tag": 1006,
+            "ObjectId": 111,
+            "position": [
+              9216,
+              11264,
+              4096
+            ]
+          },
+          {
+            "address": 406863080,
+            "tag": 1007,
+            "ObjectId": 111,
+            "position": [
+              9216,
+              9216,
+              4096
+            ]
+          },
+          {
+            "address": 406862672,
+            "tag": 1008,
+            "ObjectId": 111,
+            "position": [
+              15360,
+              9216,
+              4096
+            ]
+          },
+          {
+            "address": 406862264,
+            "tag": 1009,
+            "ObjectId": 111,
+            "position": [
+              15360,
+              11264,
+              4096
+            ]
+          }
+        ],
+        "used_object_pool_bytes": 1632,
+        "signed_MapMID_sum": 54,
+        "full_native_remesh_calls": 1,
+        "steps": 225401,
+        "whole_prepared_regions": 66,
+        "whole_prepared_bytes": 330251,
+        "semantic_oracle_scope": "Map owners/terrain/health/RoomTag/masks/NAV bytes, room tile chain/count/health, pool partition/linkage and live Object registry; other output bytes opaque measured CPU state."
+      }
+    },
+    {
+      "case": "square",
+      "file": "ghidra\\phase138-map-room-native-9455ace5f671.json",
+      "sha256": "5581301f9f5675c6ca8fc7d6e450df651b0b07e14b27257458892b710768b03f",
+      "outcome": {
+        "room_count": 1,
+        "room_tiles": 9,
+        "room_health_sum": 90000,
+        "masks": {
+          "1,1": 28,
+          "2,1": 124,
+          "3,1": 112,
+          "1,2": 31,
+          "2,2": 255,
+          "3,2": 241,
+          "1,3": 7,
+          "2,3": 199,
+          "3,3": 193
+        },
+        "nav": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "live_objects": [
+          {
+            "address": 406863488,
+            "tag": 1038,
+            "ObjectId": 111,
+            "position": [
+              5120,
+              5120,
+              4096
+            ]
+          },
+          {
+            "address": 406863080,
+            "tag": 1039,
+            "ObjectId": 111,
+            "position": [
+              15360,
+              5120,
+              4096
+            ]
+          },
+          {
+            "address": 406862672,
+            "tag": 1040,
+            "ObjectId": 111,
+            "position": [
+              5120,
+              15360,
+              4096
+            ]
+          },
+          {
+            "address": 406862264,
+            "tag": 1041,
+            "ObjectId": 111,
+            "position": [
+              15360,
+              15360,
+              4096
+            ]
+          }
+        ],
+        "used_object_pool_bytes": 1632,
+        "signed_MapMID_sum": 243,
+        "full_native_remesh_calls": 2,
+        "steps": 421522,
+        "whole_prepared_regions": 66,
+        "whole_prepared_bytes": 330363,
+        "semantic_oracle_scope": "Map owners/terrain/health/RoomTag/masks/NAV bytes, room tile chain/count/health, pool partition/linkage and live Object registry; other output bytes opaque measured CPU state."
+      }
+    },
+    {
+      "case": "square-substrate",
+      "file": "ghidra\\phase138-map-room-native-3a998866d5ef.json",
+      "sha256": "222a5eb395d2928d9fba21667f0c6918151420cad718613d2f4bb8f90044dd76",
+      "outcome": {
+        "room_count": 1,
+        "room_tiles": 9,
+        "room_health_sum": 90000,
+        "masks": {
+          "1,1": 28,
+          "2,1": 124,
+          "3,1": 112,
+          "1,2": 31,
+          "2,2": 255,
+          "3,2": 241,
+          "1,3": 7,
+          "2,3": 199,
+          "3,3": 193
+        },
+        "nav": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "live_objects": [
+          {
+            "address": 406863488,
+            "tag": 1038,
+            "ObjectId": 111,
+            "position": [
+              5120,
+              5120,
+              4096
+            ]
+          },
+          {
+            "address": 406863080,
+            "tag": 1039,
+            "ObjectId": 111,
+            "position": [
+              15360,
+              5120,
+              4096
+            ]
+          },
+          {
+            "address": 406862672,
+            "tag": 1040,
+            "ObjectId": 111,
+            "position": [
+              5120,
+              15360,
+              4096
+            ]
+          },
+          {
+            "address": 406862264,
+            "tag": 1041,
+            "ObjectId": 111,
+            "position": [
+              15360,
+              15360,
+              4096
+            ]
+          }
+        ],
+        "used_object_pool_bytes": 1632,
+        "signed_MapMID_sum": 261,
+        "full_native_remesh_calls": 2,
+        "steps": 421522,
+        "whole_prepared_regions": 66,
+        "whole_prepared_bytes": 330363,
+        "semantic_oracle_scope": "Map owners/terrain/health/RoomTag/masks/NAV bytes, room tile chain/count/health, pool partition/linkage and live Object registry; other output bytes opaque measured CPU state."
+      }
+    },
+    {
+      "case": "square-flag1",
+      "file": "ghidra\\phase138-map-room-native-dc3201d0c852.json",
+      "sha256": "e9c3f5beed64290eb85512ee4c79d42d9b667f133fe71cce4d03104d78687034",
+      "outcome": {
+        "room_count": 1,
+        "room_tiles": 9,
+        "room_health_sum": 90000,
+        "masks": {
+          "1,1": 28,
+          "2,1": 124,
+          "3,1": 112,
+          "1,2": 31,
+          "2,2": 255,
+          "3,2": 241,
+          "1,3": 7,
+          "2,3": 199,
+          "3,3": 193
+        },
+        "nav": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "live_objects": [
+          {
+            "address": 406863488,
+            "tag": 1038,
+            "ObjectId": 111,
+            "position": [
+              5120,
+              5120,
+              4096
+            ]
+          },
+          {
+            "address": 406863080,
+            "tag": 1039,
+            "ObjectId": 111,
+            "position": [
+              15360,
+              5120,
+              4096
+            ]
+          },
+          {
+            "address": 406862672,
+            "tag": 1040,
+            "ObjectId": 111,
+            "position": [
+              5120,
+              15360,
+              4096
+            ]
+          },
+          {
+            "address": 406862264,
+            "tag": 1041,
+            "ObjectId": 111,
+            "position": [
+              15360,
+              15360,
+              4096
+            ]
+          }
+        ],
+        "used_object_pool_bytes": 1632,
+        "signed_MapMID_sum": 252,
+        "full_native_remesh_calls": 2,
+        "steps": 421522,
+        "whole_prepared_regions": 66,
+        "whole_prepared_bytes": 330363,
+        "semantic_oracle_scope": "Map owners/terrain/health/RoomTag/masks/NAV bytes, room tile chain/count/health, pool partition/linkage and live Object registry; other output bytes opaque measured CPU state."
+      }
+    },
+    {
+      "case": "square-flag80",
+      "file": "ghidra\\phase138-map-room-native-066f96b3478a.json",
+      "sha256": "0959d01d6b28e36e383afc2d15017844f64364af9524780fa8d80748c052716b",
+      "outcome": {
+        "room_count": 1,
+        "room_tiles": 9,
+        "room_health_sum": 90000,
+        "masks": {
+          "1,1": 28,
+          "2,1": 124,
+          "3,1": 112,
+          "1,2": 31,
+          "2,2": 255,
+          "3,2": 241,
+          "1,3": 7,
+          "2,3": 199,
+          "3,3": 193
+        },
+        "nav": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "live_objects": [
+          {
+            "address": 406863488,
+            "tag": 1038,
+            "ObjectId": 111,
+            "position": [
+              5120,
+              5120,
+              4096
+            ]
+          },
+          {
+            "address": 406863080,
+            "tag": 1039,
+            "ObjectId": 111,
+            "position": [
+              15360,
+              5120,
+              4096
+            ]
+          },
+          {
+            "address": 406862672,
+            "tag": 1040,
+            "ObjectId": 111,
+            "position": [
+              5120,
+              15360,
+              4096
+            ]
+          },
+          {
+            "address": 406862264,
+            "tag": 1041,
+            "ObjectId": 111,
+            "position": [
+              15360,
+              15360,
+              4096
+            ]
+          }
+        ],
+        "used_object_pool_bytes": 1632,
+        "signed_MapMID_sum": 4294966387,
+        "full_native_remesh_calls": 2,
+        "steps": 421522,
+        "whole_prepared_regions": 66,
+        "whole_prepared_bytes": 330363,
+        "semantic_oracle_scope": "Map owners/terrain/health/RoomTag/masks/NAV bytes, room tile chain/count/health, pool partition/linkage and live Object registry; other output bytes opaque measured CPU state."
+      }
+    },
+    {
+      "case": "square-flagFF",
+      "file": "ghidra\\phase138-map-room-native-ef9f645c93d0.json",
+      "sha256": "22773371c10ace303bcbd6e95568b938833beae8949b6c206d455d137aab7863",
+      "outcome": {
+        "room_count": 1,
+        "room_tiles": 9,
+        "room_health_sum": 90000,
+        "masks": {
+          "1,1": 28,
+          "2,1": 124,
+          "3,1": 112,
+          "1,2": 31,
+          "2,2": 255,
+          "3,2": 241,
+          "1,3": 7,
+          "2,3": 199,
+          "3,3": 193
+        },
+        "nav": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "live_objects": [
+          {
+            "address": 406863488,
+            "tag": 1038,
+            "ObjectId": 111,
+            "position": [
+              5120,
+              5120,
+              4096
+            ]
+          },
+          {
+            "address": 406863080,
+            "tag": 1039,
+            "ObjectId": 111,
+            "position": [
+              15360,
+              5120,
+              4096
+            ]
+          },
+          {
+            "address": 406862672,
+            "tag": 1040,
+            "ObjectId": 111,
+            "position": [
+              5120,
+              15360,
+              4096
+            ]
+          },
+          {
+            "address": 406862264,
+            "tag": 1041,
+            "ObjectId": 111,
+            "position": [
+              15360,
+              15360,
+              4096
+            ]
+          }
+        ],
+        "used_object_pool_bytes": 1632,
+        "signed_MapMID_sum": 234,
+        "full_native_remesh_calls": 2,
+        "steps": 421522,
+        "whole_prepared_regions": 66,
+        "whole_prepared_bytes": 330363,
+        "semantic_oracle_scope": "Map owners/terrain/health/RoomTag/masks/NAV bytes, room tile chain/count/health, pool partition/linkage and live Object registry; other output bytes opaque measured CPU state."
+      }
+    },
+    {
+      "case": "missing-diagonal",
+      "file": "ghidra\\phase138-map-room-native-345e2df396eb.json",
+      "sha256": "c0fc61cef7945b20c1b653111aa43e1e2f999278dc10dd4fbd4398f533b779f2",
+      "outcome": {
+        "room_count": 1,
+        "room_tiles": 8,
+        "room_health_sum": 80000,
+        "masks": {
+          "1,1": 28,
+          "2,1": 120,
+          "1,2": 31,
+          "2,2": 253,
+          "3,2": 240,
+          "1,3": 7,
+          "2,3": 199,
+          "3,3": 193
+        },
+        "nav": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "live_objects": [
+          {
+            "address": 406863488,
+            "tag": 1036,
+            "ObjectId": 111,
+            "position": [
+              5120,
+              5120,
+              4096
+            ]
+          },
+          {
+            "address": 406863080,
+            "tag": 1037,
+            "ObjectId": 111,
+            "position": [
+              11264,
+              5120,
+              4096
+            ]
+          },
+          {
+            "address": 406862672,
+            "tag": 1038,
+            "ObjectId": 111,
+            "position": [
+              15360,
+              9216,
+              4096
+            ]
+          },
+          {
+            "address": 406862264,
+            "tag": 1039,
+            "ObjectId": 111,
+            "position": [
+              5120,
+              15360,
+              4096
+            ]
+          },
+          {
+            "address": 406861856,
+            "tag": 1040,
+            "ObjectId": 111,
+            "position": [
+              15360,
+              15360,
+              4096
+            ]
+          }
+        ],
+        "used_object_pool_bytes": 2040,
+        "signed_MapMID_sum": 216,
+        "full_native_remesh_calls": 1,
+        "steps": 373766,
+        "whole_prepared_regions": 66,
+        "whole_prepared_bytes": 330347,
+        "semantic_oracle_scope": "Map owners/terrain/health/RoomTag/masks/NAV bytes, room tile chain/count/health, pool partition/linkage and live Object registry; other output bytes opaque measured CPU state."
+      }
+    },
+    {
+      "case": "reverse-square",
+      "file": "ghidra\\phase138-map-room-native-e8d4e247a7f9.json",
+      "sha256": "34bcbc66cbfd529626dd21ac2baa7a76c0e5bd84d538840dcd44d878421dd906",
+      "outcome": {
+        "room_count": 1,
+        "room_tiles": 9,
+        "room_health_sum": 90000,
+        "masks": {
+          "1,1": 28,
+          "2,1": 124,
+          "3,1": 112,
+          "1,2": 31,
+          "2,2": 255,
+          "3,2": 241,
+          "1,3": 7,
+          "2,3": 199,
+          "3,3": 193
+        },
+        "nav": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "live_objects": [
+          {
+            "address": 406863488,
+            "tag": 1038,
+            "ObjectId": 111,
+            "position": [
+              15360,
+              15360,
+              4096
+            ]
+          },
+          {
+            "address": 406863080,
+            "tag": 1039,
+            "ObjectId": 111,
+            "position": [
+              5120,
+              15360,
+              4096
+            ]
+          },
+          {
+            "address": 406862672,
+            "tag": 1040,
+            "ObjectId": 111,
+            "position": [
+              15360,
+              5120,
+              4096
+            ]
+          },
+          {
+            "address": 406862264,
+            "tag": 1041,
+            "ObjectId": 111,
+            "position": [
+              5120,
+              5120,
+              4096
+            ]
+          }
+        ],
+        "used_object_pool_bytes": 1632,
+        "signed_MapMID_sum": 243,
+        "full_native_remesh_calls": 2,
+        "steps": 421678,
+        "whole_prepared_regions": 66,
+        "whole_prepared_bytes": 330363,
+        "semantic_oracle_scope": "Map owners/terrain/health/RoomTag/masks/NAV bytes, room tile chain/count/health, pool partition/linkage and live Object registry; other output bytes opaque measured CPU state."
+      }
+    },
+    {
+      "case": "rectangle",
+      "file": "ghidra\\phase138-map-room-native-82296d807640.json",
+      "sha256": "d0f3e3ca06960fa9c9f51ab931e9d07c275e01a8f6d4c6e55faed62fa87f513b",
+      "outcome": {
+        "room_count": 1,
+        "room_tiles": 6,
+        "room_health_sum": 60000,
+        "masks": {
+          "1,1": 28,
+          "2,1": 112,
+          "1,2": 31,
+          "2,2": 241,
+          "1,3": 7,
+          "2,3": 193
+        },
+        "nav": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "live_objects": [
+          {
+            "address": 406863488,
+            "tag": 1024,
+            "ObjectId": 111,
+            "position": [
+              5120,
+              5120,
+              4096
+            ]
+          },
+          {
+            "address": 406863080,
+            "tag": 1025,
+            "ObjectId": 111,
+            "position": [
+              11264,
+              5120,
+              4096
+            ]
+          },
+          {
+            "address": 406862672,
+            "tag": 1026,
+            "ObjectId": 111,
+            "position": [
+              5120,
+              15360,
+              4096
+            ]
+          },
+          {
+            "address": 406862264,
+            "tag": 1027,
+            "ObjectId": 111,
+            "position": [
+              11264,
+              15360,
+              4096
+            ]
+          }
+        ],
+        "used_object_pool_bytes": 1632,
+        "signed_MapMID_sum": 162,
+        "full_native_remesh_calls": 1,
+        "steps": 318897,
+        "whole_prepared_regions": 66,
+        "whole_prepared_bytes": 330315,
+        "semantic_oracle_scope": "Map owners/terrain/health/RoomTag/masks/NAV bytes, room tile chain/count/health, pool partition/linkage and live Object registry; other output bytes opaque measured CPU state."
+      }
+    }
+  ],
+  "paired_controls": [
+    {
+      "case": "square-substrate",
+      "whole_compared_regions": 66,
+      "whole_compared_bytes": 330363,
+      "allowed_outputs": [
+        "input MapMID flags",
+        "World+72E7 signed sum",
+        "Map cell WORD8 bit1000"
+      ],
+      "all_other_prepared_bytes_equal": true
+    },
+    {
+      "case": "square-flag1",
+      "whole_compared_regions": 66,
+      "whole_compared_bytes": 330363,
+      "allowed_outputs": [
+        "input MapMID flags",
+        "World+72E7 signed sum",
+        "Map cell WORD8 bit1000"
+      ],
+      "all_other_prepared_bytes_equal": true
+    },
+    {
+      "case": "square-flag80",
+      "whole_compared_regions": 66,
+      "whole_compared_bytes": 330363,
+      "allowed_outputs": [
+        "input MapMID flags",
+        "World+72E7 signed sum",
+        "Map cell WORD8 bit1000"
+      ],
+      "all_other_prepared_bytes_equal": true
+    },
+    {
+      "case": "square-flagFF",
+      "whole_compared_regions": 66,
+      "whole_compared_bytes": 330363,
+      "allowed_outputs": [
+        "input MapMID flags",
+        "World+72E7 signed sum",
+        "Map cell WORD8 bit1000"
+      ],
+      "all_other_prepared_bytes_equal": true
+    }
+  ]
+}

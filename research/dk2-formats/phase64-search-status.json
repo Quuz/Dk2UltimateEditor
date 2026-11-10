@@ -1,0 +1,91 @@
+{
+  "phase": 64,
+  "status": "AP_HeroLair_native_retreat_consumer_and_read_search_policy_published;unknown_gameplay_purposes_open",
+  "previous_goal_turn_classification": "progress:phase63published;phase64restoredmissingTESTreads,replayed4passes,nativelyverifiedAPretreatpipeline,publishedrawpatchchecks",
+  "schema": "ap-retreat-semantics.json;embeddedaction-point-semantics.phase64_retreat;memory-read-policy.json",
+  "validation": "phase64-validation.json",
+  "findings": [
+    "23fullnative4611D0andreal517490;owner-matchbranchfirstreachableHeroLair01AP,startcellQ12;04/08effectnotestablished",
+    "Native52A/52CbothfromentityX;intendedness/visibleeffectunknown",
+    "Capstone5.0.7TESTmem,regaccess0blindspot;7nativecalibrations;4correctedpassesrestore21Creatureflagchecksand2knownAPToolboxcontrolreads",
+    "OldCreature822roots14506states356controlreads,noJump/Prioritypurpose;oldTraps/Objects408roots5966states10sameleads;Keeper45roots838statesnoC8read",
+    "APuntypedtagtable/getters2623roots135454states274leads,8roots28calleeslimited;noglobalabsenceproof",
+    "396initializeddatadisplacementcoincidencesinthe2EXEs,noverifiedunknownoffsettableconsumer",
+    "106sources3501AP10503exactflagpatches;67components;4EXEsunchanged"
+  ],
+  "unresolved": [
+    "KeeperSpellsC8 purpose",
+    "AP04 gameplay; AP08 native RC3 HeroGate label established, actualgameplay consumer unresolved",
+    "Creature AbilityJump75C/PickUpPriority6EB gameplay consumers",
+    "Terrain198/224,Traps204,Objects34C gameplay consumers",
+    "CreatureSpells Alternative Shot/Room effective gameplay replacement",
+    "WanderRadius418 effect;camera mode11kind6,per-frame interpolation,orientation-table population andrenderer"
+  ],
+  "input_manifest": "phase47-input-manifest.json",
+  "observed_input_drift": [
+    {
+      "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\AutoSave.kwd",
+      "historical_sha256": "2121d9b84566c4d69440825fe8af6f6b14dbbd22fa01dfaab36e9a4cc8523081",
+      "captured_sha256": "1ab10355a574e325525ba4d70adc7eeddddfe65ff4d4e8057d2b16982975a7fc"
+    },
+    {
+      "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\AutoSaveMap.kld",
+      "historical_sha256": "33ca15973cd57488d8663181a8a63f6cab5360451c032ec5cf1629c0657a30c2",
+      "captured_sha256": "7ea1c15447680af8a9988c5a9896bfa88df7631338c0611b150d8084c72a0b22"
+    },
+    {
+      "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\AutoSaveThings.kld",
+      "historical_sha256": "497baba367fc50e18d2ad535ee6969d506ce4934b8ac2524cd728a0ba050cd67",
+      "captured_sha256": "6be45fb802ecf66551805d0426de7f69eb3a3f014b7631e5572ad28e57ee8bda"
+    }
+  ],
+  "later_source_updates": "phase49-survey-updates.json",
+  "next_action": "Do not repeat23APretreatcalls,phase63camera68cases orcorrectedold822/408searchesunchanged. CarryreadpolicyfallbackintoDXgeneric-this/readsummaryandtypedpasses,and/ortracefielddata throughbulk/indexed/indirectpaths. AP04/08 remainsgloballyunknown;inspectunprovenold/runtimeconsumerswithoutassumingeditorlabels. SignificantKeeperC8/CreatureJumpPriority/Terrain198224/Traps204/Objects34C/CreatureSpellalternatives/WanderRadius/cameraunknownsremain.",
+  "scope": "Full4611D0 onlyowner-match/APbranch withnavigation/state/movement/audiofixtures;notfullAI/navigation/gameplay. Readpolicyreplayanddescriptorsearchareboundedcandidateevidence.",
+  "supplement": "action-point-semantics.json.phase64_retreat;unresolved/creature-version schemaslinkmemory-read-policy.json",
+  "evidence": [
+    {
+      "file": "phase64-old-creature-argument-leads-v2.json",
+      "sha256": "54c7ab0030939d45059f2ff88eebbd877213fd4f225be8a7503dfac614c2a34e",
+      "roots": 822,
+      "states": 14506,
+      "control_reads": 356,
+      "added_test_flag_checks": 21,
+      "unknown_field_purpose": "Still unresolved",
+      "limits": 0
+    },
+    {
+      "file": "phase64-old-typed-consumer-leads-v4.json",
+      "sha256": "18422e95582c13db93653033265210766adfdd2c54badab527c2246cf325ebf3",
+      "roots": 408,
+      "states": 5966,
+      "reads": 10,
+      "changed_candidates": 0,
+      "limits": 0
+    },
+    {
+      "file": "phase64-keeper-cfg-alias-leads-v2.json",
+      "sha256": "093489079298229104a2865f7db430fa40df9fd0e1214f06bf339b7713cc1b2f",
+      "roots": 45,
+      "states": 838,
+      "overlap_reads": 0,
+      "pointer_forwards": 9
+    },
+    {
+      "file": "phase64-ap-pointer-leads-v2.json",
+      "sha256": "d4c22af5e074d2622196cdf8e76674908b9b2cb6175eb78115a0ef2429df0f17",
+      "roots": 2623,
+      "states": 135454,
+      "reads": 274,
+      "added_test_control_reads": 2,
+      "limited_roots": 8,
+      "limited_callees": 28,
+      "callee_contexts": 609,
+      "producer_types": {
+        "global-tag-table-untyped": 2615,
+        "vslot-return-hint": 8
+      },
+      "scope": "Globaltagtable/vslotseeds are untyped candidates;AP class/fieldidentity needs independentnativeproof."
+    }
+  ]
+}

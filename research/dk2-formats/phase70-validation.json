@@ -1,0 +1,31 @@
+{
+  "phase": 70,
+  "date": "2026-10-27",
+  "old_text_decoded_instructions": 780881,
+  "candidate_reads": 146,
+  "new_address_candidates": 24,
+  "indexed_WORD_origins_verified": 17,
+  "CFG_states": 4883,
+  "recovered_switch_instructions": 130,
+  "resolved_computed_jumps": 2,
+  "unresolved_indirect_jumps_in_reviewed_contexts": 0,
+  "primary_code_extents": 11,
+  "primary_code_and_data_ranges": 3,
+  "canonical_prefix_false_leads": 1,
+  "other_new_anchored_candidates_open": 6,
+  "source_files_hashchecked": 84,
+  "source_executables_unchanged": 4,
+  "package_components": 67,
+  "new_native_execution_cases": 0,
+  "new_raw_patch_cases": 0,
+  "research_writes_to_game_data": 0,
+  "modified_gameplay_runs": 0,
+  "Objects34C_gameplay_still_open": true,
+  "limitations": [
+    "Static proof only:11 code extents,including10 ordinary full bodies andone reconstructed-switch extent;3 explicit code/data ranges. No new native function executions or gameplay runs.",
+    "Alias proof uses ordinary x86 callee-saved ABI;calls invalidate volatile EAX/ECX/EDX. It concerns these17 local consumer paths and the attested initialization contract,not arbitrary corrupted pointers or whole-program non-use.",
+    "17 indexed WORD candidates do not establish an Objects106 consumer. Six new non-WORD anchored candidates remain unclassified;historical wider/alias/other-EXE questions remain open.",
+    "Global coefficient table context is not a new gameplay interpretation of the hidden Mana Gen editor control. Unknown raw bytes remain preserved.",
+    "No new raw patch cases. Existing phase62 13705 patches and84-file roundtrips remain separate prior evidence,not fresh counts."
+  ]
+}

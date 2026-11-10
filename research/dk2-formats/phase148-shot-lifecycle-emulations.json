@@ -1,0 +1,715 @@
+{
+  "scope": "Accepted original Shot first-tick/terminal damage scheduling and signed Data1.",
+  "replays": [
+    {
+      "case": {
+        "name": "start-factory",
+        "mode": 5,
+        "root": "factory"
+      },
+      "file": "ghidra\\phase148-shot-lifecycle-native-84e7740b8799.json",
+      "sha256": "57c48ec69798b2e15853bb21e63e3e9b3c61b7f9783ecc3c3472d2f22c25ffe6",
+      "outcome": {
+        "HP": [
+          1000,
+          1000
+        ],
+        "requests": [],
+        "ticks": 0,
+        "packets": 0,
+        "shot_health": 32,
+        "first_tick_flag": 0,
+        "state": 0,
+        "compared_regions": 58,
+        "compared_bytes": 135460,
+        "native_steps": 16782
+      }
+    },
+    {
+      "case": {
+        "name": "start-first-tick",
+        "mode": 5,
+        "root": "tick"
+      },
+      "file": "ghidra\\phase148-shot-lifecycle-native-5467eddda34b.json",
+      "sha256": "5c3543d7a747b404eca60420b7400a6f31e114f1a7c61eb73e4ed90b4d1951f8",
+      "outcome": {
+        "HP": [
+          920,
+          920
+        ],
+        "requests": [
+          [
+            271581184,
+            -80,
+            1000
+          ],
+          [
+            452984832,
+            -80,
+            1000
+          ]
+        ],
+        "ticks": 1,
+        "packets": 1,
+        "shot_health": 31,
+        "first_tick_flag": 1,
+        "state": 0,
+        "compared_regions": 58,
+        "compared_bytes": 135460,
+        "native_steps": 18230
+      }
+    },
+    {
+      "case": {
+        "name": "start-second-tick",
+        "mode": 5,
+        "root": "tick",
+        "pre_ticks": 1
+      },
+      "file": "ghidra\\phase148-shot-lifecycle-native-5a648e4d168c.json",
+      "sha256": "bc8a74df495f6eee00dfa82ffa16e213e98efd62c4d8cba223a80833da2d3b36",
+      "outcome": {
+        "HP": [
+          920,
+          920
+        ],
+        "requests": [
+          [
+            271581184,
+            -80,
+            1000
+          ],
+          [
+            452984832,
+            -80,
+            1000
+          ]
+        ],
+        "ticks": 2,
+        "packets": 1,
+        "shot_health": 30,
+        "first_tick_flag": 1,
+        "state": 0,
+        "compared_regions": 58,
+        "compared_bytes": 135460,
+        "native_steps": 18563
+      }
+    },
+    {
+      "case": {
+        "name": "start-creation-arg1",
+        "mode": 5,
+        "root": "tick",
+        "creation_arg": 1
+      },
+      "file": "ghidra\\phase148-shot-lifecycle-native-9f9527c39abd.json",
+      "sha256": "a93f50a510abf95719eabf1f934cdbf8174e6a94dabe541c0e48dbc1455c6a63",
+      "outcome": {
+        "HP": [
+          920,
+          920
+        ],
+        "requests": [
+          [
+            271581184,
+            -80,
+            1000
+          ],
+          [
+            452984832,
+            -80,
+            1000
+          ]
+        ],
+        "ticks": 1,
+        "packets": 1,
+        "shot_health": 31,
+        "first_tick_flag": 1,
+        "state": 0,
+        "compared_regions": 58,
+        "compared_bytes": 135460,
+        "native_steps": 18243
+      }
+    },
+    {
+      "case": {
+        "name": "start-end-before-tick",
+        "mode": 5,
+        "root": "end"
+      },
+      "file": "ghidra\\phase148-shot-lifecycle-native-7bd65e890637.json",
+      "sha256": "e9be8fb6e44ba1c91e0b1eaddb810f04077ca000054f7ad26a243cae3d223eca",
+      "outcome": {
+        "HP": [
+          1000,
+          1000
+        ],
+        "requests": [],
+        "ticks": 0,
+        "packets": 0,
+        "shot_health": 32,
+        "first_tick_flag": 0,
+        "state": 2,
+        "compared_regions": 58,
+        "compared_bytes": 135460,
+        "native_steps": 16961
+      }
+    },
+    {
+      "case": {
+        "name": "start-tick-then-end",
+        "mode": 5,
+        "root": "end",
+        "pre_ticks": 1
+      },
+      "file": "ghidra\\phase148-shot-lifecycle-native-d6003cb3cbb4.json",
+      "sha256": "466a4ce81b7cafd575170d3600359a88549f3caa3b45070e8748344124686b2c",
+      "outcome": {
+        "HP": [
+          920,
+          920
+        ],
+        "requests": [
+          [
+            271581184,
+            -80,
+            1000
+          ],
+          [
+            452984832,
+            -80,
+            1000
+          ]
+        ],
+        "ticks": 1,
+        "packets": 1,
+        "shot_health": 31,
+        "first_tick_flag": 1,
+        "state": 2,
+        "compared_regions": 58,
+        "compared_bytes": 135460,
+        "native_steps": 18414
+      }
+    },
+    {
+      "case": {
+        "name": "end-factory",
+        "mode": 6,
+        "root": "factory"
+      },
+      "file": "ghidra\\phase148-shot-lifecycle-native-74dac66dc128.json",
+      "sha256": "c9b278f584103d2b000a940d84893e85180e366e17d8685590894ec5cd7bb3bb",
+      "outcome": {
+        "HP": [
+          1000,
+          1000
+        ],
+        "requests": [],
+        "ticks": 0,
+        "packets": 0,
+        "shot_health": 32,
+        "first_tick_flag": 0,
+        "state": 0,
+        "compared_regions": 58,
+        "compared_bytes": 135460,
+        "native_steps": 16782
+      }
+    },
+    {
+      "case": {
+        "name": "end-first-tick",
+        "mode": 6,
+        "root": "tick"
+      },
+      "file": "ghidra\\phase148-shot-lifecycle-native-d424cb51a620.json",
+      "sha256": "c8cdbe1d9c096e708212734fe8d8ac936a0de89db49176731367aa74d01d8ead",
+      "outcome": {
+        "HP": [
+          1000,
+          1000
+        ],
+        "requests": [],
+        "ticks": 1,
+        "packets": 0,
+        "shot_health": 31,
+        "first_tick_flag": 1,
+        "state": 0,
+        "compared_regions": 58,
+        "compared_bytes": 135460,
+        "native_steps": 17182
+      }
+    },
+    {
+      "case": {
+        "name": "end-second-tick",
+        "mode": 6,
+        "root": "tick",
+        "pre_ticks": 1
+      },
+      "file": "ghidra\\phase148-shot-lifecycle-native-36a6695c30b6.json",
+      "sha256": "28164a74a14b343b58b3876137db6b440edce39547f5a3ac27f36e0ee853af5e",
+      "outcome": {
+        "HP": [
+          1000,
+          1000
+        ],
+        "requests": [],
+        "ticks": 2,
+        "packets": 0,
+        "shot_health": 30,
+        "first_tick_flag": 1,
+        "state": 0,
+        "compared_regions": 58,
+        "compared_bytes": 135460,
+        "native_steps": 17515
+      }
+    },
+    {
+      "case": {
+        "name": "end-handler",
+        "mode": 6,
+        "root": "end"
+      },
+      "file": "ghidra\\phase148-shot-lifecycle-native-ea83b0949c00.json",
+      "sha256": "209f51f07567271421b5edc7770ad1fbe226deeff3cc9821c44f769c76772cda",
+      "outcome": {
+        "HP": [
+          920,
+          920
+        ],
+        "requests": [
+          [
+            271581184,
+            -80,
+            1000
+          ],
+          [
+            452984832,
+            -80,
+            1000
+          ]
+        ],
+        "ticks": 0,
+        "packets": 1,
+        "shot_health": 32,
+        "first_tick_flag": 0,
+        "state": 2,
+        "compared_regions": 58,
+        "compared_bytes": 135460,
+        "native_steps": 18009
+      }
+    },
+    {
+      "case": {
+        "name": "end-gate1",
+        "mode": 6,
+        "root": "end",
+        "world_gate": 1
+      },
+      "file": "ghidra\\phase148-shot-lifecycle-native-3be962eaed60.json",
+      "sha256": "5d64894d4ad06695afcf75675651d2b31cd4cfe6169f887899439094cd23c8fb",
+      "outcome": {
+        "HP": [
+          1000,
+          1000
+        ],
+        "requests": [],
+        "ticks": 0,
+        "packets": 0,
+        "shot_health": 32,
+        "first_tick_flag": 0,
+        "state": 2,
+        "compared_regions": 58,
+        "compared_bytes": 135460,
+        "native_steps": 16958
+      }
+    },
+    {
+      "case": {
+        "name": "end-gate2",
+        "mode": 6,
+        "root": "end",
+        "world_gate": 2
+      },
+      "file": "ghidra\\phase148-shot-lifecycle-native-a7438b4d01e6.json",
+      "sha256": "6c789ad401808aca17b7055b011d9d174335bc7f18d915061b72bc4e1d0127a7",
+      "outcome": {
+        "HP": [
+          1000,
+          1000
+        ],
+        "requests": [],
+        "ticks": 0,
+        "packets": 0,
+        "shot_health": 32,
+        "first_tick_flag": 0,
+        "state": 2,
+        "compared_regions": 58,
+        "compared_bytes": 135460,
+        "native_steps": 16958
+      }
+    },
+    {
+      "case": {
+        "name": "end-tick-then-handler",
+        "mode": 6,
+        "root": "end",
+        "pre_ticks": 1
+      },
+      "file": "ghidra\\phase148-shot-lifecycle-native-99c21103a718.json",
+      "sha256": "71bb86b40a16de39905846c82bf7d540806790b48b0b59432b5c228de56bda19",
+      "outcome": {
+        "HP": [
+          920,
+          920
+        ],
+        "requests": [
+          [
+            271581184,
+            -80,
+            1000
+          ],
+          [
+            452984832,
+            -80,
+            1000
+          ]
+        ],
+        "ticks": 1,
+        "packets": 1,
+        "shot_health": 31,
+        "first_tick_flag": 1,
+        "state": 2,
+        "compared_regions": 58,
+        "compared_bytes": 135460,
+        "native_steps": 18414
+      }
+    },
+    {
+      "case": {
+        "name": "end-expire-tick",
+        "mode": 6,
+        "root": "tick",
+        "health_delta": -31
+      },
+      "file": "ghidra\\phase148-shot-lifecycle-native-5810dec74a7d.json",
+      "sha256": "9193a24ec9b4d538905c5e7bc89604d8555266487a8c963bc8ba4306d34232b7",
+      "outcome": {
+        "HP": [
+          1000,
+          1000
+        ],
+        "requests": [
+          [
+            268525708,
+            -31,
+            32
+          ]
+        ],
+        "ticks": 1,
+        "packets": 0,
+        "shot_health": 0,
+        "first_tick_flag": 1,
+        "state": 0,
+        "compared_regions": 58,
+        "compared_bytes": 135460,
+        "native_steps": 17255
+      }
+    },
+    {
+      "case": {
+        "name": "end-expire-then-handler",
+        "mode": 6,
+        "root": "end",
+        "health_delta": -31,
+        "pre_ticks": 1
+      },
+      "file": "ghidra\\phase148-shot-lifecycle-native-39fdf9c7cfe4.json",
+      "sha256": "818c5e5eda3d3240e8952aa4df143557b0db425e32e545716d409b394fe6b33b",
+      "outcome": {
+        "HP": [
+          920,
+          920
+        ],
+        "requests": [
+          [
+            268525708,
+            -31,
+            32
+          ],
+          [
+            271581184,
+            -80,
+            1000
+          ],
+          [
+            452984832,
+            -80,
+            1000
+          ]
+        ],
+        "ticks": 1,
+        "packets": 1,
+        "shot_health": 0,
+        "first_tick_flag": 1,
+        "state": 2,
+        "compared_regions": 58,
+        "compared_bytes": 135460,
+        "native_steps": 18487
+      }
+    },
+    {
+      "case": {
+        "name": "continuous-second-tick",
+        "mode": 1,
+        "root": "tick",
+        "pre_ticks": 1
+      },
+      "file": "ghidra\\phase148-shot-lifecycle-native-9cc124664b6f.json",
+      "sha256": "502ed632e73da0332696508584c25993aa7edb586392b37a5d202fd81a040e4a",
+      "outcome": {
+        "HP": [
+          840,
+          840
+        ],
+        "requests": [
+          [
+            271581184,
+            -80,
+            1000
+          ],
+          [
+            452984832,
+            -80,
+            1000
+          ],
+          [
+            271581184,
+            -80,
+            920
+          ],
+          [
+            452984832,
+            -80,
+            920
+          ]
+        ],
+        "ticks": 2,
+        "packets": 2,
+        "shot_health": 30,
+        "first_tick_flag": 1,
+        "state": 0,
+        "compared_regions": 58,
+        "compared_bytes": 135460,
+        "native_steps": 19607
+      }
+    },
+    {
+      "case": {
+        "name": "start-no-decay-second-tick",
+        "mode": 5,
+        "root": "tick",
+        "pre_ticks": 1,
+        "flags": 0
+      },
+      "file": "ghidra\\phase148-shot-lifecycle-native-8add968a48ee.json",
+      "sha256": "3a02b7ed6d43c758b2cb58705bcc114f88ced9e867b63c8d01fa81cd16a43352",
+      "outcome": {
+        "HP": [
+          920,
+          920
+        ],
+        "requests": [
+          [
+            271581184,
+            -80,
+            1000
+          ],
+          [
+            452984832,
+            -80,
+            1000
+          ]
+        ],
+        "ticks": 2,
+        "packets": 1,
+        "shot_health": 32,
+        "first_tick_flag": 1,
+        "state": 0,
+        "compared_regions": 58,
+        "compared_bytes": 135460,
+        "native_steps": 18561
+      }
+    },
+    {
+      "case": {
+        "name": "start-negative-data1",
+        "mode": 5,
+        "root": "tick",
+        "damage": 4294967216
+      },
+      "file": "ghidra\\phase148-shot-lifecycle-native-8b7cf24b7d40.json",
+      "sha256": "4def734c01cc7104fa06118e8a621eb27cb049781eefc4a0f28696935464905d",
+      "outcome": {
+        "HP": [
+          1080,
+          1080
+        ],
+        "requests": [
+          [
+            271581184,
+            80,
+            1000
+          ],
+          [
+            452984832,
+            80,
+            1000
+          ]
+        ],
+        "ticks": 1,
+        "packets": 1,
+        "shot_health": 31,
+        "first_tick_flag": 1,
+        "state": 0,
+        "compared_regions": 58,
+        "compared_bytes": 135460,
+        "native_steps": 18184
+      }
+    },
+    {
+      "case": {
+        "name": "end-negative-data1",
+        "mode": 6,
+        "root": "end",
+        "damage": 4294967216
+      },
+      "file": "ghidra\\phase148-shot-lifecycle-native-98e9d49a3bf1.json",
+      "sha256": "7785c5cb26f5ee1d7de184e69e237357182cea46881d842f4fa5b0641abf2feb",
+      "outcome": {
+        "HP": [
+          1080,
+          1080
+        ],
+        "requests": [
+          [
+            271581184,
+            80,
+            1000
+          ],
+          [
+            452984832,
+            80,
+            1000
+          ]
+        ],
+        "ticks": 0,
+        "packets": 1,
+        "shot_health": 32,
+        "first_tick_flag": 0,
+        "state": 2,
+        "compared_regions": 58,
+        "compared_bytes": 135460,
+        "native_steps": 17963
+      }
+    },
+    {
+      "case": {
+        "name": "start-radius-zero",
+        "mode": 5,
+        "root": "tick",
+        "radius": 0
+      },
+      "file": "ghidra\\phase148-shot-lifecycle-native-5ba849ab1af7.json",
+      "sha256": "3cea6df499d65434282c8f9d9100983ccb58635ab00ab89563c76275797708eb",
+      "outcome": {
+        "HP": [
+          1000,
+          1000
+        ],
+        "requests": [],
+        "ticks": 1,
+        "packets": 1,
+        "shot_health": 31,
+        "first_tick_flag": 1,
+        "state": 0,
+        "compared_regions": 58,
+        "compared_bytes": 135460,
+        "native_steps": 17230
+      }
+    },
+    {
+      "case": {
+        "name": "start-data1-zero",
+        "mode": 5,
+        "root": "tick",
+        "damage": 0
+      },
+      "file": "ghidra\\phase148-shot-lifecycle-native-f1f1d7c4975a.json",
+      "sha256": "ba9f33ba300699e60b82ee5131b57187dca16675ca99be8bc466f7c47e13b7da",
+      "outcome": {
+        "HP": [
+          1000,
+          1000
+        ],
+        "requests": [
+          [
+            271581184,
+            0,
+            1000
+          ],
+          [
+            452984832,
+            0,
+            1000
+          ]
+        ],
+        "ticks": 1,
+        "packets": 1,
+        "shot_health": 31,
+        "first_tick_flag": 1,
+        "state": 0,
+        "compared_regions": 58,
+        "compared_bytes": 135460,
+        "native_steps": 18012
+      }
+    },
+    {
+      "case": {
+        "name": "start-gate1",
+        "mode": 5,
+        "root": "tick",
+        "world_gate": 1
+      },
+      "file": "ghidra\\phase148-shot-lifecycle-native-3187178e552b.json",
+      "sha256": "7d46959a672ef49cb085c7fc438d3846281bb1a8a0e23769fa701b4eca731642",
+      "outcome": {
+        "HP": [
+          920,
+          920
+        ],
+        "requests": [
+          [
+            271581184,
+            -80,
+            1000
+          ],
+          [
+            452984832,
+            -80,
+            1000
+          ]
+        ],
+        "ticks": 1,
+        "packets": 1,
+        "shot_health": 31,
+        "first_tick_flag": 1,
+        "state": 0,
+        "compared_regions": 58,
+        "compared_bytes": 135460,
+        "native_steps": 18230
+      }
+    }
+  ]
+}

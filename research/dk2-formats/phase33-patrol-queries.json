@@ -1,0 +1,86 @@
+[
+  {
+    "id": "phase33-AP-patrol-create",
+    "tool": "create_function",
+    "args": {
+      "program": "DKII-DX.exe",
+      "address": "0x471eb0",
+      "disassemble_first": true
+    },
+    "print_limit": 0
+  },
+  {
+    "id": "phase33-AP-patrol",
+    "tool": "force_decompile",
+    "args": {
+      "program": "DKII-DX.exe",
+      "address": "0x471eb0"
+    },
+    "print_limit": 1600
+  },
+  {
+    "id": "phase33-AP-patrol-assembly",
+    "tool": "disassemble_function",
+    "args": {
+      "program": "DKII-DX.exe",
+      "address": "0x471eb0"
+    },
+    "print_limit": 0
+  },
+  {
+    "id": "phase33-AP-flag-search-create",
+    "tool": "create_function",
+    "args": {
+      "program": "DKII-DX.exe",
+      "address": "0x510e20",
+      "disassemble_first": true
+    },
+    "print_limit": 0
+  },
+  {
+    "id": "phase33-AP-flag-search",
+    "tool": "force_decompile",
+    "args": {
+      "program": "DKII-DX.exe",
+      "address": "0x510e20"
+    },
+    "print_limit": 1600
+  },
+  {
+    "id": "phase33-AP-flag-search-assembly",
+    "tool": "disassemble_function",
+    "args": {
+      "program": "DKII-DX.exe",
+      "address": "0x510e20"
+    },
+    "print_limit": 0
+  },
+  {
+    "id": "phase33-AP-editor-flags-setter-create",
+    "tool": "create_function",
+    "args": {
+      "program": "DK2 Editor pro.exe",
+      "address": "0x41b9d0",
+      "disassemble_first": true
+    },
+    "print_limit": 0
+  },
+  {
+    "id": "phase33-AP-editor-flags-setter",
+    "tool": "force_decompile",
+    "args": {
+      "program": "DK2 Editor pro.exe",
+      "address": "0x41b9d0"
+    },
+    "print_limit": 1600
+  },
+  {
+    "id": "phase33-AP-editor-flags-setter-assembly",
+    "tool": "disassemble_function",
+    "args": {
+      "program": "DK2 Editor pro.exe",
+      "address": "0x41b9d0"
+    },
+    "print_limit": 0
+  }
+]

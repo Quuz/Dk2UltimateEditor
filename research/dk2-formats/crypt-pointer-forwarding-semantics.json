@@ -1,0 +1,571 @@
+{
+  "phase": 191,
+  "status": "verified_bounded_search_extension_no_additional_counter_meanings",
+  "counts": {
+    "typed_hint_roots": 539,
+    "previous_callee_contexts": 164,
+    "EDX_callee_contexts": 199,
+    "additional_callee_contexts": 35,
+    "previous_root_states": 9961,
+    "root_states_with_returns": 10057,
+    "additional_root_states": 96,
+    "counter_candidate_witnesses_preserved": 33,
+    "indexed_witnesses_preserved": 84,
+    "new_counter_candidate_witnesses": 0,
+    "limited_roots": 1,
+    "limited_callees": 12,
+    "verified_pointer_arithmetic_return_contracts": 2,
+    "synthetic_analyser_controls": 5,
+    "native_PE_scenes": 4,
+    "native_exact_owner_bytes": 32768,
+    "independent_Ghidra_register_controls": 4,
+    "independent_Ghidra_memory_comparison_bytes": 0,
+    "primary_extents": 2,
+    "unique_executed_original_PCs": 13,
+    "new_raw_fields": 0,
+    "new_raw_edits": 0,
+    "new_counter_meanings": 0,
+    "source_writes": 0,
+    "prior_components_preserved": 168,
+    "source_files_preserved": 420,
+    "EXE_paths_preserved": 7,
+    "Crypt_passive_counter_meanings_assigned": 8,
+    "Crypt_active_groups_assigned": 10,
+    "Crypt_counter_meanings_remaining": 10
+  },
+  "profile": {
+    "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\DKII-DX.exe",
+    "sha256": "d7a8b854e4e4f02709eba271bead6fe2307dd6e332b5a96e70857e5b0e19fb8a"
+  },
+  "searches": {
+    "EDX_delta": {
+      "file": "phase191-edx-search-delta.json",
+      "sha256": "a68f121c3a3c1debf4aa6540a1ecd0331fe5c224f67b9441361aec0f81462a43"
+    },
+    "verified_return_delta": {
+      "file": "phase191-verified-return-delta.json",
+      "sha256": "c6e0ea4243969e595d97519e3e65dacc2ff5648653a25e8224d3dd718c5a43d0"
+    },
+    "return_hints": {
+      "file": "phase191-pointer-return-leads.json",
+      "sha256": "0041ce7a8f276f5326160d413e71f4f42865db767851512965a6fd964330e6b4"
+    },
+    "transfer": "Frozen178 plus EDX call argument collection and exactly two byte-attested EAX arithmetic returns; no arbitrary EAX survivors promoted to a contract.",
+    "limits": {
+      "states_per_context": 5000,
+      "direct_call_levels": 6,
+      "contexts_per_root": 512,
+      "callee_span": 16384
+    },
+    "retained_limited_contexts": [
+      {
+        "target": "0x518090",
+        "registers": {},
+        "arguments": {
+          "24": 0
+        },
+        "states": 5000,
+        "limited": true
+      },
+      {
+        "target": "0x4c6460",
+        "registers": {
+          "ecx": 0
+        },
+        "arguments": {},
+        "states": 5000,
+        "limited": true
+      },
+      {
+        "target": "0x5056e0",
+        "registers": {
+          "ecx": 2593
+        },
+        "arguments": {},
+        "states": 5000,
+        "limited": true
+      },
+      {
+        "target": "0x4c6860",
+        "registers": {
+          "ecx": 0
+        },
+        "arguments": {},
+        "states": 5000,
+        "limited": true
+      },
+      {
+        "target": "0x4e53b0",
+        "registers": {},
+        "arguments": {
+          "32": 0
+        },
+        "states": 5000,
+        "limited": true
+      },
+      {
+        "target": "0x4c3000",
+        "registers": {
+          "ecx": 0
+        },
+        "arguments": {},
+        "states": 5000,
+        "limited": true
+      },
+      {
+        "target": "0x4c6cf0",
+        "registers": {
+          "ecx": 0
+        },
+        "arguments": {},
+        "states": 5000,
+        "limited": true
+      },
+      {
+        "target": "0x4bcae0",
+        "registers": {
+          "ecx": 0
+        },
+        "arguments": {},
+        "states": 5000,
+        "limited": true
+      },
+      {
+        "target": "0x4bdda0",
+        "registers": {
+          "ecx": 0
+        },
+        "arguments": {},
+        "states": 5000,
+        "limited": true
+      },
+      {
+        "target": "0x4b2ce0",
+        "registers": {},
+        "arguments": {
+          "32": 0
+        },
+        "states": 5000,
+        "limited": true
+      },
+      {
+        "target": "0x4dbd90",
+        "registers": {
+          "ecx": 0
+        },
+        "arguments": {},
+        "states": 5000,
+        "limited": true
+      },
+      {
+        "target": "0x4dc810",
+        "registers": {
+          "ecx": 0
+        },
+        "arguments": {},
+        "states": 5000,
+        "limited": true
+      }
+    ]
+  },
+  "return_contracts": [
+    {
+      "entry": "0x4c5f50",
+      "receiver": "ECX",
+      "return_register": "EAX",
+      "returned_offset": 2883,
+      "meaning": "Arithmetic address relative to input receiver; receiver type not proved by this contract."
+    },
+    {
+      "entry": "0x4dc7e0",
+      "receiver": "ECX",
+      "return_register": "EAX",
+      "returned_offset": 3745,
+      "meaning": "Arithmetic address relative to input receiver; receiver type not proved by this contract."
+    }
+  ],
+  "diagnostic_return_hints": {
+    "contexts": 13,
+    "not_universal_contracts": true,
+    "rejected_example": "4FAC40 first stack argument reaches EAX only on observed null-return path. It cannot certify a non-null Owner-pointer return.",
+    "other_hints": "Earlier root witnesses in48FA70/4B32A0/4D8E60/4DA560 are conditional/midfunction; they remain hints, not whole-function contracts."
+  },
+  "primary": {
+    "program_sha256": "d7a8b854e4e4f02709eba271bead6fe2307dd6e332b5a96e70857e5b0e19fb8a",
+    "extents": [
+      {
+        "address": "0x4c5f50",
+        "length": 7,
+        "scope": "complete_function",
+        "sha256": "dcfca30e28d05fe3781437a2d6d3708d7f6d3cb2fe30edd6a165f27b7f050c00",
+        "memory": {
+          "file": "ghidra/phase168-primary-4c5f50-memory.txt",
+          "sha256": "05ef55aa56bd9e3ea227f6e4f4b1465acbb93646b99044bce9d778dc5fe83ce0"
+        },
+        "assembly": {
+          "file": "ghidra/phase168-primary-4c5f50-assembly.txt",
+          "sha256": "fc2e9cfa7f50b79bce35597185dc90aedc8f76dfa79f91058aec4ca449c8e054"
+        }
+      },
+      {
+        "address": "0x4dc7e0",
+        "length": 41,
+        "scope": "complete_function",
+        "sha256": "71562b516333aec2627bd378872a9c88680942c4b2e8301196238ae8a5334cb7",
+        "memory": {
+          "file": "ghidra/phase157-primary-4dc7e0-memory.txt",
+          "sha256": "8823d9f84b08a141f0a84a52a7d17f552685d0b08d265aa87124330c0666649e"
+        },
+        "assembly": {
+          "file": "ghidra/phase157-primary-4dc7e0-assembly.txt",
+          "sha256": "8445429d20cf0a1b0e941438b35841b4aeace9df96c8d2bff1de87a72a0b3679"
+        }
+      }
+    ],
+    "unique_executed_original_PCs": 13,
+    "provenance": "Reuse of frozen Ghidra byte captures, independently compared against current supplied PE; not fresh Ghidra byte queries."
+  },
+  "native_executions": [
+    {
+      "case": {
+        "name": "getter",
+        "entry": 5005136
+      },
+      "file": "ghidra/phase191-pointer-native-getter-087426004dee.json",
+      "sha256": "450e2f50c0f63a5a574c1ad9333a183abce63d45481d45121c018df6e238cb1d",
+      "return_offset": 2883,
+      "expected_owner_sha256": "898b290d267828334efec1bcc64294d2f2fd36a51999d2c270a8cdb2110661d1",
+      "exact_expected_owner": true,
+      "counter_accesses": 0,
+      "original_instructions": 6
+    },
+    {
+      "case": {
+        "name": "setter-all",
+        "entry": 5097440,
+        "match": "all"
+      },
+      "file": "ghidra/phase191-pointer-native-setter-all-7072469d78f0.json",
+      "sha256": "0987a5916486ff5c4b8e48199d9055777ae76c34259f4c526f4630b63842486c",
+      "return_offset": 3745,
+      "expected_owner_sha256": "ed3a7d30f2ab4e9018b2ecfd57ad59593294f421f086b5239dd0293f49436306",
+      "exact_expected_owner": true,
+      "counter_accesses": 0,
+      "original_instructions": 286
+    },
+    {
+      "case": {
+        "name": "setter-alternate",
+        "entry": 5097440,
+        "match": "alternate"
+      },
+      "file": "ghidra/phase191-pointer-native-setter-alternate-6042b25f76db.json",
+      "sha256": "2c870e446412ac34535ca60ed5defb75c135cd94dd4caa55c59c7f508961a82d",
+      "return_offset": 3745,
+      "expected_owner_sha256": "b1e5dc5e2e60a1b6b0babab8c5c00c273f1aaf9b3d7974a5e280349d3c93a23f",
+      "exact_expected_owner": true,
+      "counter_accesses": 0,
+      "original_instructions": 263
+    },
+    {
+      "case": {
+        "name": "setter-none",
+        "entry": 5097440,
+        "match": "none"
+      },
+      "file": "ghidra/phase191-pointer-native-setter-none-4442e209193c.json",
+      "sha256": "82950ae1d4b14f2e84cd8758481e377b3aea030f5f726d7153e9f90acb6915bc",
+      "return_offset": 3745,
+      "expected_owner_sha256": "92c6901ed52dd20aec03f8cfbc4449f654c057edfed0a5814df296c42ad51c36",
+      "exact_expected_owner": true,
+      "counter_accesses": 0,
+      "original_instructions": 240
+    }
+  ],
+  "independent_Ghidra_register_controls": [
+    {
+      "case": {
+        "name": "getter",
+        "entry": 5005136
+      },
+      "file": "ghidra/phase191-pointer-Ghidra-getter-5bbaf17de984.json",
+      "sha256": "7a0d783e9f111bbce67b75ce847148f5a59db61b5957aa6ede58c2d7cf6fe7e7",
+      "checked_registers": [
+        "EAX",
+        "ECX"
+      ]
+    },
+    {
+      "case": {
+        "name": "setter-all",
+        "entry": 5097440,
+        "match": "all"
+      },
+      "file": "ghidra/phase191-pointer-Ghidra-setter-all-6bc803214270.json",
+      "sha256": "4e6256c4b9fcef53f855680759bdb41b177e6b483e5475b00cae04abf51ac275",
+      "checked_registers": [
+        "EAX",
+        "ECX"
+      ]
+    },
+    {
+      "case": {
+        "name": "setter-alternate",
+        "entry": 5097440,
+        "match": "alternate"
+      },
+      "file": "ghidra/phase191-pointer-Ghidra-setter-alternate-91224bb9f19c.json",
+      "sha256": "8b40429d9b4651c1d2e96a51191d549a774af84889b959fe6072b1023e4bf389",
+      "checked_registers": [
+        "EAX",
+        "ECX"
+      ]
+    },
+    {
+      "case": {
+        "name": "setter-none",
+        "entry": 5097440,
+        "match": "none"
+      },
+      "file": "ghidra/phase191-pointer-Ghidra-setter-none-865f822d7ab8.json",
+      "sha256": "d60005bfe678d1bba261e25f854b73cd4244bd91cb47480be83771b249336b2d",
+      "checked_registers": [
+        "EAX",
+        "ECX"
+      ]
+    }
+  ],
+  "analyser_controls": [
+    {
+      "case": "EDX",
+      "synthetic": true,
+      "old_offsets": [],
+      "EDX_offsets": [
+        4234
+      ],
+      "new_offsets": [
+        4234
+      ],
+      "native_reads": [
+        {
+          "offset": 4234,
+          "bytes": 1
+        }
+      ],
+      "image_sha256": "72870ac1d62b873e00e16b694681a65a09955de8cf77956474150a5d0f2f010c"
+    },
+    {
+      "case": "EDX-adjusted",
+      "synthetic": true,
+      "old_offsets": [],
+      "EDX_offsets": [
+        4234
+      ],
+      "new_offsets": [
+        4234
+      ],
+      "native_reads": [
+        {
+          "offset": 4234,
+          "bytes": 1
+        }
+      ],
+      "image_sha256": "c654bd3095efb7dc5205ef5e318d0fda93e0ba264604e86087d50014991e7c3f"
+    },
+    {
+      "case": "EDX-clobbered",
+      "synthetic": true,
+      "old_offsets": [],
+      "EDX_offsets": [],
+      "new_offsets": [],
+      "native_reads": [],
+      "image_sha256": "fafe53d309d2f146ee097b8e32d38d2164fd1e237d78df21cac4027d51910672"
+    },
+    {
+      "case": "return-leaf",
+      "synthetic": true,
+      "old_offsets": [],
+      "EDX_offsets": [],
+      "new_offsets": [
+        4234
+      ],
+      "native_reads": [
+        {
+          "offset": 4234,
+          "bytes": 1
+        }
+      ],
+      "image_sha256": "caf49d33155459f87839d15683808e0e0c75e7dc34ac4d169548dc2af837b36e"
+    },
+    {
+      "case": "return-clobbered",
+      "synthetic": true,
+      "old_offsets": [],
+      "EDX_offsets": [],
+      "new_offsets": [],
+      "native_reads": [],
+      "image_sha256": "80e3a3339f3b5e2c32d6e940ba047681d7243183b6fb6c1f0daf1b90b32a61e0"
+    }
+  ],
+  "source_baseline": {
+    "file": "phase165-source-baseline.json",
+    "sha256": "e032a4b5a485cbec505b114e3a22ab4e995af3fb5d2e878d738197e74fc916f8"
+  },
+  "storage": {
+    "new_raw_fields": 0,
+    "new_raw_edits": 0,
+    "rechecked": {
+      "prior_seven_source_roundtrips": {
+        "status": "passed",
+        "source_files": [
+          {
+            "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\Creatures.kwd",
+            "sha256": "e215c03c7722e89f7736ced7c710406dc10d6cf48e5ad37bed45faf2055c52e2",
+            "bytes": 250710,
+            "exact_public_decode_rebuild": true
+          },
+          {
+            "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\Objects.kwd",
+            "sha256": "36d607b408eeeb17da0fbea01e374a614a327021d2a30eea4aaa0311bf9b334c",
+            "bytes": 129686,
+            "exact_public_decode_rebuild": true
+          },
+          {
+            "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\KeeperSpells.kwd",
+            "sha256": "1836b4dfd708f56568ac22135ac2526eeeeaa5e06b34acd6fbe5afd516cd0b16",
+            "bytes": 5334,
+            "exact_public_decode_rebuild": true
+          },
+          {
+            "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\GlobalVariables.kwd",
+            "sha256": "d14b6a28694254dad722071267268d4f36c8535cd3a9c610f9ee0447fe9b941a",
+            "bytes": 13636,
+            "exact_public_decode_rebuild": true
+          },
+          {
+            "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\Rooms.kwd",
+            "sha256": "24546825ac6cf3f8455bf9b26fbffe9e2ded05ea3b176c0e00354ee1ccf0a465",
+            "bytes": 27486,
+            "exact_public_decode_rebuild": true
+          },
+          {
+            "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\Terrain.kwd",
+            "sha256": "1b4296b0cf696d5428e6d3d94eb8571e2601bd78fc51caa6c3e1e13c0695e77d",
+            "bytes": 22688,
+            "exact_public_decode_rebuild": true
+          },
+          {
+            "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\CreatureSpells.kwd",
+            "sha256": "125f19e82b96cc5480ce3648342c9c1749e448b88db2133436737a22758e8d17",
+            "bytes": 10962,
+            "exact_public_decode_rebuild": true
+          }
+        ],
+        "selected_variable": 102,
+        "raw_value_offset": 4,
+        "value_bytes": 4,
+        "source_signed32": -275,
+        "edited_signed32": -369,
+        "exact_container_edits": 1,
+        "unchanged_headers_suffix_other_records_and_reserved_bytes": true,
+        "inverse_edit_restores_source": true,
+        "source_writes": 0,
+        "new_codec_field_names": 0
+      },
+      "source_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\Creatures.kwd",
+      "sha256": "e215c03c7722e89f7736ced7c710406dc10d6cf48e5ad37bed45faf2055c52e2",
+      "selected_creature": 5,
+      "raw_offset": 4747,
+      "edits": [
+        {
+          "signed_value": 0,
+          "width": 4,
+          "exact_container_edit": true,
+          "inverse_restores_source": true,
+          "native_movement_tested": true
+        },
+        {
+          "signed_value": -1490,
+          "width": 4,
+          "exact_container_edit": true,
+          "inverse_restores_source": true,
+          "native_movement_tested": true
+        },
+        {
+          "signed_value": 4096,
+          "width": 4,
+          "exact_container_edit": true,
+          "inverse_restores_source": true,
+          "native_movement_tested": true
+        },
+        {
+          "signed_value": -2147483648,
+          "width": 4,
+          "exact_container_edit": true,
+          "inverse_restores_source": true,
+          "native_movement_tested": false
+        },
+        {
+          "signed_value": 2147483647,
+          "width": 4,
+          "exact_container_edit": true,
+          "inverse_restores_source": true,
+          "native_movement_tested": false
+        }
+      ],
+      "extra88_bytes_preserved": true,
+      "source_writes": 0
+    }
+  },
+  "helpers": [
+    {
+      "file": "scan_edx_crypt_pointers.py",
+      "sha256": "48e033fcbcefcb473bac55de3ae0d1f84a9bccfa61ced253d13b420faa38bcf5"
+    },
+    {
+      "file": "scan_crypt_pointer_returns.py",
+      "sha256": "a1de782f2b37012b9e6d9e81057ddd734e8c930818f1e4218675e5b3f0c26db9"
+    },
+    {
+      "file": "scan_crypt_verified_returns.py",
+      "sha256": "16820cc846ab2e20ab1e717f9fd70ac0aefef3dba21eb940f66145270f93b0ca"
+    },
+    {
+      "file": "check_crypt_pointer_forwarding.py",
+      "sha256": "8e78733c4ae3a8a3e17c72778782e98f421b060868308006774fc3bdc38e083e"
+    },
+    {
+      "file": "build_crypt_pointer_forwarding.py",
+      "sha256": "3300636465ff7ae1092ecef74361b3dc9146575c185c30cfedea7c72e65c2a17"
+    },
+    {
+      "file": "scan_deep_crypt_pointers.py",
+      "sha256": "2577d87461894311e5a780254295d37b41cb83e074aa5b6d128751bb323bfa4e"
+    },
+    {
+      "file": "constant_branch_domain.py",
+      "sha256": "7b8c56fb58724a4ac0d72d3c4d76eb3038f198a1fe7815d87501527ae8da908f"
+    },
+    {
+      "file": "native_shot_pair_trace.py",
+      "sha256": "fc4cd91ea4d91ac6c3b7f52127c9fd92dbd3e793d326c1011d88b20f70b80890"
+    }
+  ],
+  "priority": {
+    "current": "Crypt groups",
+    "block_complete": false,
+    "next": [
+      "Ten unassigned runtime counter gameplay consumers; unknown pointers, storage aliases and indirect dispatch remain open.",
+      "Full naturally scheduled lifecycle and further Crypt interruptions; conditional return witnesses require caller-specific validation.",
+      "Globals remain the next user-priority block after Crypt; no readiness percentage increase."
+    ]
+  },
+  "limitations": [
+    "Bounded static search, not proof of global absence of consumers.",
+    "Only two arithmetic return contracts; unknown/indirect return values and pointer-escaped memory remain unresolved.",
+    "Entity+2A roots are type hints; no Owner type is inferred merely from a numeric offset.",
+    "Four original scenes have exact8192-byte output verification. Four independent Ghidra controls compare EAX/ECX only, not memory.",
+    "Five synthetic controls test the search model, not original gameplay.",
+    "This stage adds no KWD field/API or counter bonus; all15 families and Crypt goal remain active."
+  ]
+}

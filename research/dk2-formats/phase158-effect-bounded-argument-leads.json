@@ -1,0 +1,1619 @@
+{
+  "scope": "Effect pointer search with numeric stack locals and scoped native call cleanup.\n\nOriginal argument/return/entity hints retained; memory values remain unknown.\nSix indirect callsites use original-vtable associations from earlier complete\nnative fixtures. Other indirect calls reset knowledge conservatively. No global\nnonuse proof; unsupported accesses, context limits and ABI assumptions explicit.\n",
+  "program_sha256": "d7a8b854e4e4f02709eba271bead6fe2307dd6e332b5a96e70857e5b0e19fb8a",
+  "decoded_instructions": 799810,
+  "producer_roots": [
+    {
+      "address": "0x434863",
+      "next": "0x434869",
+      "family": "Effects",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x184]",
+      "function_hint": "0x4347e0",
+      "states": 34,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x43491f",
+      "next": "0x434925",
+      "family": "Effects",
+      "register": "ecx",
+      "producer": "entity-field-hint",
+      "instruction": "mov ecx, dword ptr [esi + 0x107]",
+      "function_hint": "0x4347e0",
+      "states": 7,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x43495d",
+      "next": "0x434963",
+      "family": "Effects",
+      "register": "ecx",
+      "producer": "entity-field-hint",
+      "instruction": "mov ecx, dword ptr [esi + 0x107]",
+      "function_hint": "0x4347e0",
+      "states": 6,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x4349c4",
+      "next": "0x4349ca",
+      "family": "Effects",
+      "register": "eax",
+      "producer": "entity-field-hint",
+      "instruction": "mov eax, dword ptr [esi + 0x107]",
+      "function_hint": "0x4347e0",
+      "states": 2,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x4349ec",
+      "next": "0x4349f2",
+      "family": "Effects",
+      "register": "ecx",
+      "producer": "entity-field-hint",
+      "instruction": "mov ecx, dword ptr [esi + 0x107]",
+      "function_hint": "0x4347e0",
+      "states": 3,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x434a10",
+      "next": "0x434a16",
+      "family": "Effects",
+      "register": "eax",
+      "producer": "entity-field-hint",
+      "instruction": "mov eax, dword ptr [esi + 0x107]",
+      "function_hint": "0x4347e0",
+      "states": 12,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x434a50",
+      "next": "0x434a56",
+      "family": "Effects",
+      "register": "eax",
+      "producer": "entity-field-hint",
+      "instruction": "mov eax, dword ptr [esi + 0x107]",
+      "function_hint": "0x4347e0",
+      "states": 36,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x434a6e",
+      "next": "0x434a74",
+      "family": "Effects",
+      "register": "eax",
+      "producer": "entity-field-hint",
+      "instruction": "mov eax, dword ptr [esi + 0x107]",
+      "function_hint": "0x4347e0",
+      "states": 4,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x434ac5",
+      "next": "0x434acb",
+      "family": "Effects",
+      "register": "eax",
+      "producer": "entity-field-hint",
+      "instruction": "mov eax, dword ptr [esi + 0x107]",
+      "function_hint": "0x4347e0",
+      "states": 4,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x434b1a",
+      "next": "0x434b20",
+      "family": "Effects",
+      "register": "eax",
+      "producer": "entity-field-hint",
+      "instruction": "mov eax, dword ptr [esi + 0x107]",
+      "function_hint": "0x4347e0",
+      "states": 3,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x434bab",
+      "next": "0x434bb1",
+      "family": "Effects",
+      "register": "eax",
+      "producer": "entity-field-hint",
+      "instruction": "mov eax, dword ptr [esi + 0x107]",
+      "function_hint": "0x4347e0",
+      "states": 5,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x434bf9",
+      "next": "0x434bff",
+      "family": "Effects",
+      "register": "eax",
+      "producer": "entity-field-hint",
+      "instruction": "mov eax, dword ptr [esi + 0x107]",
+      "function_hint": "0x4347e0",
+      "states": 6,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x434c48",
+      "next": "0x434c4e",
+      "family": "Effects",
+      "register": "eax",
+      "producer": "entity-field-hint",
+      "instruction": "mov eax, dword ptr [esi + 0x107]",
+      "function_hint": "0x4347e0",
+      "states": 23,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x434da2",
+      "next": "0x434da8",
+      "family": "Effects",
+      "register": "eax",
+      "producer": "entity-field-hint",
+      "instruction": "mov eax, dword ptr [esi + 0x107]",
+      "function_hint": "0x4347e0",
+      "states": 11,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x434dcf",
+      "next": "0x434dd5",
+      "family": "Effects",
+      "register": "eax",
+      "producer": "entity-field-hint",
+      "instruction": "mov eax, dword ptr [esi + 0x107]",
+      "function_hint": "0x4347e0",
+      "states": 32,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x434e40",
+      "next": "0x434e46",
+      "family": "Effects",
+      "register": "eax",
+      "producer": "entity-field-hint",
+      "instruction": "mov eax, dword ptr [ecx + 0x107]",
+      "function_hint": "0x434e40",
+      "states": 1,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x435050",
+      "next": "0x435056",
+      "family": "Effects",
+      "register": "ecx",
+      "producer": "entity-field-hint",
+      "instruction": "mov ecx, dword ptr [edi + 0x107]",
+      "function_hint": "0x434e80",
+      "states": 6,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x4350e1",
+      "next": "0x4350e7",
+      "family": "Effects",
+      "register": "ecx",
+      "producer": "entity-field-hint",
+      "instruction": "mov ecx, dword ptr [edi + 0x107]",
+      "function_hint": "0x434e80",
+      "states": 16,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x435176",
+      "next": "0x43517c",
+      "family": "Effects",
+      "register": "edi",
+      "producer": "entity-field-hint",
+      "instruction": "mov edi, dword ptr [edi + 0x107]",
+      "function_hint": "0x434e80",
+      "states": 21,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x43558f",
+      "next": "0x435595",
+      "family": "Effects",
+      "register": "eax",
+      "producer": "entity-field-hint",
+      "instruction": "mov eax, dword ptr [esi + 0x107]",
+      "function_hint": "0x4354f0",
+      "states": 7,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x4357b3",
+      "next": "0x4357b9",
+      "family": "Effects",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [eax + 0x184]",
+      "function_hint": "0x4357a0",
+      "states": 8,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x436098",
+      "next": "0x43609e",
+      "family": "Effects",
+      "register": "ecx",
+      "producer": "entity-field-hint",
+      "instruction": "mov ecx, dword ptr [eax + 0x107]",
+      "function_hint": "0x435f20",
+      "states": 15,
+      "limited": false,
+      "argument_contexts": 1,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x4378b0",
+      "next": "0x4378b6",
+      "family": "Effects",
+      "register": "eax",
+      "producer": "entity-field-hint",
+      "instruction": "mov eax, dword ptr [esi + 0x107]",
+      "function_hint": "0x437270",
+      "states": 5,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x43871a",
+      "next": "0x438720",
+      "family": "Effects",
+      "register": "ecx",
+      "producer": "entity-field-hint",
+      "instruction": "mov ecx, dword ptr [esi + 0x107]",
+      "function_hint": "0x438620",
+      "states": 32,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x438749",
+      "next": "0x43874f",
+      "family": "Effects",
+      "register": "edx",
+      "producer": "entity-field-hint",
+      "instruction": "mov edx, dword ptr [esi + 0x107]",
+      "function_hint": "0x438620",
+      "states": 25,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x438951",
+      "next": "0x438957",
+      "family": "Effects",
+      "register": "ecx",
+      "producer": "entity-field-hint",
+      "instruction": "mov ecx, dword ptr [esi + 0x107]",
+      "function_hint": "0x438620",
+      "states": 151,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x43915f",
+      "next": "0x439165",
+      "family": "Effects",
+      "register": "edx",
+      "producer": "entity-field-hint",
+      "instruction": "mov edx, dword ptr [esi + 0x107]",
+      "function_hint": "0x4390d0",
+      "states": 93,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x4403f4",
+      "next": "0x4403fa",
+      "family": "Effects",
+      "register": "edx",
+      "producer": "entity-field-hint",
+      "instruction": "mov edx, dword ptr [esi + 0x107]",
+      "function_hint": "0x43e860",
+      "states": 16,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x44048e",
+      "next": "0x440494",
+      "family": "Effects",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [eax + 0x184]",
+      "function_hint": "0x43e860",
+      "states": 9,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x4407f5",
+      "next": "0x4407fb",
+      "family": "Effects",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x184]",
+      "function_hint": "0x43e860",
+      "states": 5,
+      "limited": false,
+      "argument_contexts": 2,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x446ffd",
+      "next": "0x447003",
+      "family": "Effects",
+      "register": "ebx",
+      "producer": "entity-field-hint",
+      "instruction": "mov ebx, dword ptr [esi + 0x107]",
+      "function_hint": "0x446c70",
+      "states": 14,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x44794b",
+      "next": "0x447951",
+      "family": "Effects",
+      "register": "edi",
+      "producer": "entity-field-hint",
+      "instruction": "mov edi, dword ptr [esi + 0x107]",
+      "function_hint": "0x4476e0",
+      "states": 24,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x4a8e40",
+      "next": "0x4a8e46",
+      "family": "Effects",
+      "register": "ecx",
+      "producer": "entity-field-hint",
+      "instruction": "mov ecx, dword ptr [edi + 0x107]",
+      "function_hint": "0x4a8490",
+      "states": 1,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x4aa182",
+      "next": "0x4aa188",
+      "family": "Effects",
+      "register": "eax",
+      "producer": "entity-field-hint",
+      "instruction": "mov eax, dword ptr [esi + 0x107]",
+      "function_hint": "0x4aa110",
+      "states": 5,
+      "limited": false,
+      "argument_contexts": 1,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x4b6b21",
+      "next": "0x4b6b27",
+      "family": "Effects",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [edx + 0x184]",
+      "function_hint": "0x4b65e0",
+      "states": 4,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x4b7a9f",
+      "next": "0x4b7aa5",
+      "family": "Effects",
+      "register": "eax",
+      "producer": "vslot-return-hint",
+      "instruction": "call dword ptr [eax + 0x184]",
+      "function_hint": "0x4b7a90",
+      "states": 6,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x4375c0",
+      "next": "0x4375c0",
+      "family": "Effects",
+      "register": null,
+      "producer": "generation-callback-stack-argument",
+      "mode": 1,
+      "instruction": "First native stack argument is current Effect definition",
+      "function_hint": "0x437270",
+      "states": 109,
+      "limited": false,
+      "argument_contexts": 1,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x4376e0",
+      "next": "0x4376e0",
+      "family": "Effects",
+      "register": null,
+      "producer": "generation-callback-stack-argument",
+      "mode": 2,
+      "instruction": "First native stack argument is current Effect definition",
+      "function_hint": "0x437270",
+      "states": 1500,
+      "limited": true,
+      "argument_contexts": 13,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x438020",
+      "next": "0x438020",
+      "family": "Effects",
+      "register": null,
+      "producer": "generation-callback-stack-argument",
+      "mode": 3,
+      "instruction": "First native stack argument is current Effect definition",
+      "function_hint": "0x437fe0",
+      "states": 1500,
+      "limited": true,
+      "argument_contexts": 3,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x4386f0",
+      "next": "0x4386f0",
+      "family": "Effects",
+      "register": null,
+      "producer": "generation-callback-stack-argument",
+      "mode": 4,
+      "instruction": "First native stack argument is current Effect definition",
+      "function_hint": "0x438620",
+      "states": 1500,
+      "limited": true,
+      "argument_contexts": 3,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x439210",
+      "next": "0x439210",
+      "family": "Effects",
+      "register": null,
+      "producer": "generation-callback-stack-argument",
+      "mode": 5,
+      "instruction": "First native stack argument is current Effect definition",
+      "function_hint": "0x4390d0",
+      "states": 84,
+      "limited": false,
+      "argument_contexts": 2,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x439330",
+      "next": "0x439330",
+      "family": "Effects",
+      "register": null,
+      "producer": "generation-callback-stack-argument",
+      "mode": 6,
+      "instruction": "First native stack argument is current Effect definition",
+      "function_hint": "0x4390d0",
+      "states": 118,
+      "limited": false,
+      "argument_contexts": 2,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x436c80",
+      "next": "0x436c80",
+      "family": "Effects",
+      "register": null,
+      "producer": "generation-callback-stack-argument",
+      "mode": 7,
+      "instruction": "First native stack argument is current Effect definition",
+      "function_hint": "0x4366a0",
+      "states": 1500,
+      "limited": true,
+      "argument_contexts": 2,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x436970",
+      "next": "0x436970",
+      "family": "Effects",
+      "register": null,
+      "producer": "generation-callback-stack-argument",
+      "mode": 8,
+      "instruction": "First native stack argument is current Effect definition",
+      "function_hint": "0x4366a0",
+      "states": 1500,
+      "limited": true,
+      "argument_contexts": 2,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x436af0",
+      "next": "0x436af0",
+      "family": "Effects",
+      "register": null,
+      "producer": "generation-callback-stack-argument",
+      "mode": 9,
+      "instruction": "First native stack argument is current Effect definition",
+      "function_hint": "0x4366a0",
+      "states": 1500,
+      "limited": true,
+      "argument_contexts": 2,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x4372a0",
+      "next": "0x4372a0",
+      "family": "Effects",
+      "register": null,
+      "producer": "generation-callback-stack-argument",
+      "mode": 10,
+      "instruction": "First native stack argument is current Effect definition",
+      "function_hint": "0x437270",
+      "states": 198,
+      "limited": false,
+      "argument_contexts": 2,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x436e60",
+      "next": "0x436e60",
+      "family": "Effects",
+      "register": null,
+      "producer": "generation-callback-stack-argument",
+      "mode": 11,
+      "instruction": "First native stack argument is current Effect definition",
+      "function_hint": "0x4366a0",
+      "states": 130,
+      "limited": false,
+      "argument_contexts": 2,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x437480",
+      "next": "0x437480",
+      "family": "Effects",
+      "register": null,
+      "producer": "generation-callback-stack-argument",
+      "mode": 12,
+      "instruction": "First native stack argument is current Effect definition",
+      "function_hint": "0x437270",
+      "states": 109,
+      "limited": false,
+      "argument_contexts": 1,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x4375a0",
+      "next": "0x4375a0",
+      "family": "Effects",
+      "register": null,
+      "producer": "generation-callback-stack-argument",
+      "mode": 13,
+      "instruction": "First native stack argument is current Effect definition",
+      "function_hint": "0x437270",
+      "states": 5,
+      "limited": false,
+      "argument_contexts": 1,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x439480",
+      "next": "0x439480",
+      "family": "Effects",
+      "register": null,
+      "producer": "generation-callback-stack-argument",
+      "mode": 14,
+      "instruction": "First native stack argument is current Effect definition",
+      "function_hint": "0x4390d0",
+      "states": 1500,
+      "limited": true,
+      "argument_contexts": 1,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x4395f0",
+      "next": "0x4395f0",
+      "family": "Effects",
+      "register": null,
+      "producer": "generation-callback-stack-argument",
+      "mode": 15,
+      "instruction": "First native stack argument is current Effect definition",
+      "function_hint": "0x4390d0",
+      "states": 69,
+      "limited": false,
+      "argument_contexts": 2,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x5282f0",
+      "next": "0x5282f0",
+      "family": "Effects",
+      "register": null,
+      "producer": "generation-callback-stack-argument",
+      "mode": 16,
+      "instruction": "First native stack argument is current Effect definition",
+      "function_hint": "0x5282f0",
+      "states": 2,
+      "limited": false,
+      "argument_contexts": 0,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x4375a0",
+      "next": "0x4375a0",
+      "family": "Effects",
+      "register": null,
+      "producer": "generation-callback-stack-argument",
+      "mode": 17,
+      "instruction": "First native stack argument is current Effect definition",
+      "function_hint": "0x437270",
+      "states": 5,
+      "limited": false,
+      "argument_contexts": 1,
+      "limited_argument_contexts": false
+    },
+    {
+      "address": "0x439100",
+      "next": "0x439100",
+      "family": "Effects",
+      "register": null,
+      "producer": "generation-callback-stack-argument",
+      "mode": 18,
+      "instruction": "First native stack argument is current Effect definition",
+      "function_hint": "0x4390d0",
+      "states": 223,
+      "limited": false,
+      "argument_contexts": 2,
+      "limited_argument_contexts": false
+    }
+  ],
+  "root_states": 12204,
+  "limited_roots": 7,
+  "callee_summaries": 20,
+  "limited_callees": 1,
+  "candidates": [
+    {
+      "root": {
+        "address": "0x434863",
+        "next": "0x434869",
+        "family": "Effects",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [edx + 0x184]",
+        "function_hint": "0x4347e0",
+        "states": 34,
+        "limited": false,
+        "argument_contexts": 0,
+        "limited_argument_contexts": false
+      },
+      "field": "controlFlags",
+      "read": {
+        "address": "0x434898",
+        "offset": 95,
+        "bytes": 4,
+        "instruction": "mov ecx, dword ptr [eax + 0x5f]",
+        "trace": [
+          "434869: xor ecx, ecx",
+          "43486b: mov dword ptr [esi + 0x107], eax",
+          "434871: mov cx, word ptr [eax + 0x69]",
+          "434875: xor edi, edi",
+          "434877: mov dword ptr [esi + 0xf8], ecx",
+          "43487d: mov cl, byte ptr [esi + 0x100]",
+          "434883: movsx edx, word ptr [eax + 0x67]",
+          "434887: and cl, 0xfd",
+          "43488a: mov dword ptr [esi + 0xfc], edx",
+          "434890: mov byte ptr [esi + 0x100], cl",
+          "434896: mov dl, cl"
+        ],
+        "callee": null,
+        "call": null
+      }
+    },
+    {
+      "root": {
+        "address": "0x434863",
+        "next": "0x434869",
+        "family": "Effects",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [edx + 0x184]",
+        "function_hint": "0x4347e0",
+        "states": 34,
+        "limited": false,
+        "argument_contexts": 0,
+        "limited_argument_contexts": false
+      },
+      "field": "controlFlags",
+      "read": {
+        "address": "0x4348b7",
+        "offset": 95,
+        "bytes": 4,
+        "instruction": "mov ecx, dword ptr [eax + 0x5f]",
+        "trace": [
+          "434890: mov byte ptr [esi + 0x100], cl",
+          "434896: mov dl, cl",
+          "434898: mov ecx, dword ptr [eax + 0x5f]",
+          "43489b: and dl, 0xfb",
+          "43489e: and ecx, 1",
+          "4348a1: mov byte ptr [ebp + 0xb], dl",
+          "4348a4: and cl, 1",
+          "4348a7: shl cl, 2",
+          "4348aa: mov dl, cl",
+          "4348ac: mov cl, byte ptr [ebp + 0xb]",
+          "4348af: or dl, cl",
+          "4348b1: mov byte ptr [esi + 0x100], dl"
+        ],
+        "callee": null,
+        "call": null
+      }
+    },
+    {
+      "root": {
+        "address": "0x434a50",
+        "next": "0x434a56",
+        "family": "Effects",
+        "register": "eax",
+        "producer": "entity-field-hint",
+        "instruction": "mov eax, dword ptr [esi + 0x107]",
+        "function_hint": "0x4347e0",
+        "states": 36,
+        "limited": false,
+        "argument_contexts": 0,
+        "limited_argument_contexts": false
+      },
+      "field": "controlFlags",
+      "read": {
+        "address": "0x434a56",
+        "offset": 95,
+        "bytes": 1,
+        "instruction": "test byte ptr [eax + 0x5f], 2",
+        "trace": [],
+        "callee": null,
+        "call": null
+      }
+    },
+    {
+      "root": {
+        "address": "0x434a50",
+        "next": "0x434a56",
+        "family": "Effects",
+        "register": "eax",
+        "producer": "entity-field-hint",
+        "instruction": "mov eax, dword ptr [esi + 0x107]",
+        "function_hint": "0x4347e0",
+        "states": 36,
+        "limited": false,
+        "argument_contexts": 0,
+        "limited_argument_contexts": false
+      },
+      "field": "controlFlags",
+      "read": {
+        "address": "0x434aaa",
+        "offset": 95,
+        "bytes": 1,
+        "instruction": "mov cl, byte ptr [eax + 0x5f]",
+        "trace": [
+          "434a56: test byte ptr [eax + 0x5f], 2",
+          "434a5a: je 0x434aaa"
+        ],
+        "callee": null,
+        "call": null
+      }
+    },
+    {
+      "root": {
+        "address": "0x434a50",
+        "next": "0x434a56",
+        "family": "Effects",
+        "register": "eax",
+        "producer": "entity-field-hint",
+        "instruction": "mov eax, dword ptr [esi + 0x107]",
+        "function_hint": "0x4347e0",
+        "states": 36,
+        "limited": false,
+        "argument_contexts": 0,
+        "limited_argument_contexts": false
+      },
+      "field": "controlFlags",
+      "read": {
+        "address": "0x434b00",
+        "offset": 95,
+        "bytes": 1,
+        "instruction": "test byte ptr [eax + 0x5f], 0x20",
+        "trace": [
+          "434a56: test byte ptr [eax + 0x5f], 2",
+          "434a5a: je 0x434aaa",
+          "434aaa: mov cl, byte ptr [eax + 0x5f]",
+          "434aad: mov dl, 4",
+          "434aaf: test dl, cl",
+          "434ab1: je 0x434b00"
+        ],
+        "callee": null,
+        "call": null
+      }
+    },
+    {
+      "root": {
+        "address": "0x434dcf",
+        "next": "0x434dd5",
+        "family": "Effects",
+        "register": "eax",
+        "producer": "entity-field-hint",
+        "instruction": "mov eax, dword ptr [esi + 0x107]",
+        "function_hint": "0x4347e0",
+        "states": 32,
+        "limited": false,
+        "argument_contexts": 0,
+        "limited_argument_contexts": false
+      },
+      "field": "controlFlags",
+      "read": {
+        "address": "0x434de3",
+        "offset": 95,
+        "bytes": 4,
+        "instruction": "mov edx, dword ptr [eax + 0x5f]",
+        "trace": [
+          "434dd5: mov dx, word ptr [ecx + 0xf2]",
+          "434ddc: mov word ptr [esi + 0x12b], dx"
+        ],
+        "callee": null,
+        "call": null
+      }
+    },
+    {
+      "root": {
+        "address": "0x434dcf",
+        "next": "0x434dd5",
+        "family": "Effects",
+        "register": "eax",
+        "producer": "entity-field-hint",
+        "instruction": "mov eax, dword ptr [esi + 0x107]",
+        "function_hint": "0x4347e0",
+        "states": 32,
+        "limited": false,
+        "argument_contexts": 0,
+        "limited_argument_contexts": false
+      },
+      "field": "controlFlags",
+      "read": {
+        "address": "0x434df9",
+        "offset": 95,
+        "bytes": 4,
+        "instruction": "mov edx, dword ptr [eax + 0x5f]",
+        "trace": [
+          "434dd5: mov dx, word ptr [ecx + 0xf2]",
+          "434ddc: mov word ptr [esi + 0x12b], dx",
+          "434de3: mov edx, dword ptr [eax + 0x5f]",
+          "434de6: test dh, 8",
+          "434de9: je 0x434df9"
+        ],
+        "callee": null,
+        "call": null
+      }
+    },
+    {
+      "root": {
+        "address": "0x434dcf",
+        "next": "0x434dd5",
+        "family": "Effects",
+        "register": "eax",
+        "producer": "entity-field-hint",
+        "instruction": "mov eax, dword ptr [esi + 0x107]",
+        "function_hint": "0x4347e0",
+        "states": 32,
+        "limited": false,
+        "argument_contexts": 0,
+        "limited_argument_contexts": false
+      },
+      "field": "controlFlags",
+      "read": {
+        "address": "0x434e0f",
+        "offset": 95,
+        "bytes": 4,
+        "instruction": "mov edx, dword ptr [eax + 0x5f]",
+        "trace": [
+          "434dd5: mov dx, word ptr [ecx + 0xf2]",
+          "434ddc: mov word ptr [esi + 0x12b], dx",
+          "434de3: mov edx, dword ptr [eax + 0x5f]",
+          "434de6: test dh, 8",
+          "434de9: je 0x434df9",
+          "434df9: mov edx, dword ptr [eax + 0x5f]",
+          "434dfc: test dh, 0x10",
+          "434dff: je 0x434e0f"
+        ],
+        "callee": null,
+        "call": null
+      }
+    },
+    {
+      "root": {
+        "address": "0x4378b0",
+        "next": "0x4378b6",
+        "family": "Effects",
+        "register": "eax",
+        "producer": "entity-field-hint",
+        "instruction": "mov eax, dword ptr [esi + 0x107]",
+        "function_hint": "0x437270",
+        "states": 5,
+        "limited": false,
+        "argument_contexts": 0,
+        "limited_argument_contexts": false
+      },
+      "field": "controlFlags",
+      "read": {
+        "address": "0x4378bf",
+        "offset": 95,
+        "bytes": 1,
+        "instruction": "mov cl, byte ptr [eax + 0x5f]",
+        "trace": [
+          "4378b6: mov ecx, dword ptr [ebp + 8]",
+          "4378b9: mov ebp, edx",
+          "4378bb: mov dword ptr [esp + 0x3c], ecx"
+        ],
+        "callee": null,
+        "call": null
+      }
+    },
+    {
+      "root": {
+        "address": "0x43871a",
+        "next": "0x438720",
+        "family": "Effects",
+        "register": "ecx",
+        "producer": "entity-field-hint",
+        "instruction": "mov ecx, dword ptr [esi + 0x107]",
+        "function_hint": "0x438620",
+        "states": 32,
+        "limited": false,
+        "argument_contexts": 0,
+        "limited_argument_contexts": false
+      },
+      "field": "controlFlags",
+      "read": {
+        "address": "0x438720",
+        "offset": 95,
+        "bytes": 1,
+        "instruction": "test byte ptr [ecx + 0x5f], 0x40",
+        "trace": [],
+        "callee": null,
+        "call": null
+      }
+    },
+    {
+      "root": {
+        "address": "0x438749",
+        "next": "0x43874f",
+        "family": "Effects",
+        "register": "edx",
+        "producer": "entity-field-hint",
+        "instruction": "mov edx, dword ptr [esi + 0x107]",
+        "function_hint": "0x438620",
+        "states": 25,
+        "limited": false,
+        "argument_contexts": 0,
+        "limited_argument_contexts": false
+      },
+      "field": "controlFlags",
+      "read": {
+        "address": "0x43874f",
+        "offset": 95,
+        "bytes": 1,
+        "instruction": "test byte ptr [edx + 0x5f], 0x40",
+        "trace": [],
+        "callee": null,
+        "call": null
+      }
+    },
+    {
+      "root": {
+        "address": "0x438951",
+        "next": "0x438957",
+        "family": "Effects",
+        "register": "ecx",
+        "producer": "entity-field-hint",
+        "instruction": "mov ecx, dword ptr [esi + 0x107]",
+        "function_hint": "0x438620",
+        "states": 151,
+        "limited": false,
+        "argument_contexts": 0,
+        "limited_argument_contexts": false
+      },
+      "field": "controlFlags",
+      "read": {
+        "address": "0x43895a",
+        "offset": 95,
+        "bytes": 4,
+        "instruction": "mov eax, dword ptr [ecx + 0x5f]",
+        "trace": [
+          "438957: add esp, 8"
+        ],
+        "callee": null,
+        "call": null
+      }
+    },
+    {
+      "root": {
+        "address": "0x43915f",
+        "next": "0x439165",
+        "family": "Effects",
+        "register": "edx",
+        "producer": "entity-field-hint",
+        "instruction": "mov edx, dword ptr [esi + 0x107]",
+        "function_hint": "0x4390d0",
+        "states": 93,
+        "limited": false,
+        "argument_contexts": 0,
+        "limited_argument_contexts": false
+      },
+      "field": "controlFlags",
+      "read": {
+        "address": "0x439165",
+        "offset": 95,
+        "bytes": 1,
+        "instruction": "test byte ptr [edx + 0x5f], 0x40",
+        "trace": [],
+        "callee": null,
+        "call": null
+      }
+    },
+    {
+      "root": {
+        "address": "0x44048e",
+        "next": "0x440494",
+        "family": "Effects",
+        "register": "eax",
+        "producer": "vslot-return-hint",
+        "instruction": "call dword ptr [eax + 0x184]",
+        "function_hint": "0x43e860",
+        "states": 9,
+        "limited": false,
+        "argument_contexts": 0,
+        "limited_argument_contexts": false
+      },
+      "field": "controlFlags",
+      "read": {
+        "address": "0x440494",
+        "offset": 95,
+        "bytes": 4,
+        "instruction": "mov ecx, dword ptr [eax + 0x5f]",
+        "trace": [],
+        "callee": null,
+        "call": null
+      }
+    },
+    {
+      "root": {
+        "address": "0x4376e0",
+        "next": "0x4376e0",
+        "family": "Effects",
+        "register": null,
+        "producer": "generation-callback-stack-argument",
+        "mode": 2,
+        "instruction": "First native stack argument is current Effect definition",
+        "function_hint": "0x437270",
+        "states": 1500,
+        "limited": true,
+        "argument_contexts": 13,
+        "limited_argument_contexts": false
+      },
+      "field": "controlFlags",
+      "read": {
+        "address": "0x4378c2",
+        "offset": 95,
+        "bytes": 4,
+        "instruction": "mov eax, dword ptr [ebx + 0x5f]",
+        "trace": [
+          "437894: je 0x437f91",
+          "43789a: mov edx, dword ptr [ebp]",
+          "43789d: mov dword ptr [esp + 0x34], edx",
+          "4378a1: xor edx, edx",
+          "4378a3: mov eax, dword ptr [ebp + 4]",
+          "4378a6: mov dl, byte ptr [ebx + 0x8a]",
+          "4378ac: mov dword ptr [esp + 0x38], eax",
+          "4378b0: mov eax, dword ptr [esi + 0x107]",
+          "4378b6: mov ecx, dword ptr [ebp + 8]",
+          "4378b9: mov ebp, edx",
+          "4378bb: mov dword ptr [esp + 0x3c], ecx",
+          "4378bf: mov cl, byte ptr [eax + 0x5f]"
+        ],
+        "callee": null,
+        "call": null
+      }
+    },
+    {
+      "root": {
+        "address": "0x4386f0",
+        "next": "0x4386f0",
+        "family": "Effects",
+        "register": null,
+        "producer": "generation-callback-stack-argument",
+        "mode": 4,
+        "instruction": "First native stack argument is current Effect definition",
+        "function_hint": "0x438620",
+        "states": 1500,
+        "limited": true,
+        "argument_contexts": 3,
+        "limited_argument_contexts": false
+      },
+      "field": "controlGenerateRandomness",
+      "read": {
+        "address": "0x438841",
+        "offset": 73,
+        "bytes": 2,
+        "instruction": "movsx ecx, word ptr [ebx + 0x49]",
+        "trace": [
+          "43870f: movsx eax, word ptr [ebx + 0x41]",
+          "438713: test eax, eax",
+          "438715: push edi",
+          "438716: mov esi, ecx",
+          "438718: je 0x43873d",
+          "43873d: movsx edi, word ptr [ebx + 0x45]",
+          "438741: test edi, edi",
+          "438743: je 0x438832",
+          "438832: mov eax, dword ptr [esp + 0x88]",
+          "438839: mov ecx, esi",
+          "43883b: push eax",
+          "43883c: call 0x435600"
+        ],
+        "callee": null,
+        "call": null
+      }
+    },
+    {
+      "root": {
+        "address": "0x4386f0",
+        "next": "0x4386f0",
+        "family": "Effects",
+        "register": null,
+        "producer": "generation-callback-stack-argument",
+        "mode": 4,
+        "instruction": "First native stack argument is current Effect definition",
+        "function_hint": "0x438620",
+        "states": 1500,
+        "limited": true,
+        "argument_contexts": 3,
+        "limited_argument_contexts": false
+      },
+      "field": "controlFlags",
+      "read": {
+        "address": "0x438969",
+        "offset": 95,
+        "bytes": 4,
+        "instruction": "mov eax, dword ptr [ebx + 0x5f]",
+        "trace": [
+          "43893e: mov eax, dword ptr [esi + 0x117]",
+          "438944: sub eax, ebp",
+          "438946: push edx",
+          "438947: push eax",
+          "438948: mov dword ptr [esp + 0x48], ecx",
+          "43894c: call 0x65fb54",
+          "438951: mov ecx, dword ptr [esi + 0x107]",
+          "438957: add esp, 8",
+          "43895a: mov eax, dword ptr [ecx + 0x5f]",
+          "43895d: test al, 0x40",
+          "43895f: je 0x438cf1",
+          "438965: movsx edx, word ptr [ebx + 0x43]"
+        ],
+        "callee": null,
+        "call": null
+      }
+    },
+    {
+      "root": {
+        "address": "0x4386f0",
+        "next": "0x4386f0",
+        "family": "Effects",
+        "register": null,
+        "producer": "generation-callback-stack-argument",
+        "mode": 4,
+        "instruction": "First native stack argument is current Effect definition",
+        "function_hint": "0x438620",
+        "states": 1500,
+        "limited": true,
+        "argument_contexts": 3,
+        "limited_argument_contexts": false
+      },
+      "field": "controlFlags",
+      "read": {
+        "address": "0x438d44",
+        "offset": 95,
+        "bytes": 4,
+        "instruction": "mov ecx, dword ptr [ebx + 0x5f]",
+        "trace": [
+          "438946: push edx",
+          "438947: push eax",
+          "438948: mov dword ptr [esp + 0x48], ecx",
+          "43894c: call 0x65fb54",
+          "438951: mov ecx, dword ptr [esi + 0x107]",
+          "438957: add esp, 8",
+          "43895a: mov eax, dword ptr [ecx + 0x5f]",
+          "43895d: test al, 0x40",
+          "43895f: je 0x438cf1",
+          "438cf1: test ah, 0x40",
+          "438cf4: je 0x438d3d",
+          "438d3d: mov eax, dword ptr [esp + 0x88]"
+        ],
+        "callee": null,
+        "call": null
+      }
+    }
+  ],
+  "constant_domain_sha256": "7b8c56fb58724a4ac0d72d3c4d76eb3038f198a1fe7815d87501527ae8da908f",
+  "ABI_evidence_sha256": "5c6dbdb22794de7d8358ccb7d182db575755364007ecb04f3105fb5127854e41",
+  "limited_contexts": [
+    {
+      "target": "0x4358c0",
+      "registers": {
+        "ecx": 0
+      },
+      "arguments": {},
+      "summary": {
+        "reads": [
+          {
+            "address": "0x435961",
+            "offset": 11,
+            "bytes": 1,
+            "instruction": "test byte ptr [ebp + 0xb], 8",
+            "trace": [
+              "435939: lea ecx, [esp + 0x14]",
+              "43593d: push 1",
+              "43593f: push ecx",
+              "435940: mov ecx, dword ptr [edi]",
+              "435942: push ecx",
+              "435943: push eax",
+              "435944: lea eax, [ebx + 0xd4]",
+              "43594a: mov ecx, esi",
+              "43594c: push eax",
+              "43594d: call dword ptr [edx + 0x54]",
+              "435950: test eax, eax",
+              "435952: je 0x435961"
+            ]
+          },
+          {
+            "address": "0x4359aa",
+            "offset": 11,
+            "bytes": 1,
+            "instruction": "test byte ptr [ebp + 0xb], 0x10",
+            "trace": [
+              "43593f: push ecx",
+              "435940: mov ecx, dword ptr [edi]",
+              "435942: push ecx",
+              "435943: push eax",
+              "435944: lea eax, [ebx + 0xd4]",
+              "43594a: mov ecx, esi",
+              "43594c: push eax",
+              "43594d: call dword ptr [edx + 0x54]",
+              "435950: test eax, eax",
+              "435952: je 0x435961",
+              "435961: test byte ptr [ebp + 0xb], 8",
+              "435965: je 0x4359aa"
+            ]
+          },
+          {
+            "address": "0x435bab",
+            "offset": 43,
+            "bytes": 4,
+            "instruction": "mov ecx, dword ptr [edx + 0x10]",
+            "trace": [
+              "435b75: test eax, eax",
+              "435b77: je 0x435bba",
+              "435b79: lea eax, [ebx + 0x128]",
+              "435b7f: lea edx, [ebp + 0x1b]",
+              "435b82: mov ecx, 6",
+              "435b87: mov esi, eax",
+              "435b89: mov edi, edx",
+              "435b8b: rep movsd dword ptr es:[edi], dword ptr [esi]",
+              "435b8d: mov cl, byte ptr [eax + 0x14]",
+              "435b90: test cl, cl",
+              "435b92: jne 0x435ba6",
+              "435ba6: mov esi, 1"
+            ]
+          },
+          {
+            "address": "0x435bab",
+            "offset": 43,
+            "bytes": 4,
+            "instruction": "mov ecx, dword ptr [edx + 0x10]",
+            "trace": [
+              "435b8b: rep movsd dword ptr es:[edi], dword ptr [esi]",
+              "435b8d: mov cl, byte ptr [eax + 0x14]",
+              "435b90: test cl, cl",
+              "435b92: jne 0x435ba6",
+              "435b94: mov cl, byte ptr [eax + 0x15]",
+              "435b97: test cl, cl",
+              "435b99: jne 0x435ba6",
+              "435b9b: mov cl, byte ptr [eax + 0x16]",
+              "435b9e: test cl, cl",
+              "435ba0: jne 0x435ba6",
+              "435ba2: xor esi, esi",
+              "435ba4: jmp 0x435bab"
+            ]
+          },
+          {
+            "address": "0x435bab",
+            "offset": 43,
+            "bytes": 4,
+            "instruction": "mov ecx, dword ptr [edx + 0x10]",
+            "trace": [
+              "435b75: test eax, eax",
+              "435b77: je 0x435bba",
+              "435b79: lea eax, [ebx + 0x128]",
+              "435b7f: lea edx, [ebp + 0x1b]",
+              "435b82: mov ecx, 6",
+              "435b87: mov esi, eax",
+              "435b89: mov edi, edx",
+              "435b8b: rep movsd dword ptr es:[edi], dword ptr [esi]",
+              "435b8d: mov cl, byte ptr [eax + 0x14]",
+              "435b90: test cl, cl",
+              "435b92: jne 0x435ba6",
+              "435ba6: mov esi, 1"
+            ]
+          },
+          {
+            "address": "0x435bab",
+            "offset": 43,
+            "bytes": 4,
+            "instruction": "mov ecx, dword ptr [edx + 0x10]",
+            "trace": [
+              "435b8b: rep movsd dword ptr es:[edi], dword ptr [esi]",
+              "435b8d: mov cl, byte ptr [eax + 0x14]",
+              "435b90: test cl, cl",
+              "435b92: jne 0x435ba6",
+              "435b94: mov cl, byte ptr [eax + 0x15]",
+              "435b97: test cl, cl",
+              "435b99: jne 0x435ba6",
+              "435b9b: mov cl, byte ptr [eax + 0x16]",
+              "435b9e: test cl, cl",
+              "435ba0: jne 0x435ba6",
+              "435ba2: xor esi, esi",
+              "435ba4: jmp 0x435bab"
+            ]
+          },
+          {
+            "address": "0x435be9",
+            "offset": 11,
+            "bytes": 1,
+            "instruction": "test byte ptr [ebp + 0xb], 1",
+            "trace": [
+              "435bd9: dec esi",
+              "435bda: jne 0x435bc8",
+              "435bc8: mov ax, word ptr [edx]",
+              "435bcb: test ax, ax",
+              "435bce: je 0x435bd3",
+              "435bd3: add ecx, 2",
+              "435bd6: add edx, 2",
+              "435bd9: dec esi",
+              "435bda: jne 0x435bc8",
+              "435bdc: mov eax, dword ptr [0x6d6321]",
+              "435be1: test eax, eax",
+              "435be3: jne 0x435da5"
+            ]
+          },
+          {
+            "address": "0x435bf3",
+            "offset": 10,
+            "bytes": 1,
+            "instruction": "cmp byte ptr [ebp + 0xa], 8",
+            "trace": [
+              "435bc8: mov ax, word ptr [edx]",
+              "435bcb: test ax, ax",
+              "435bce: je 0x435bd3",
+              "435bd3: add ecx, 2",
+              "435bd6: add edx, 2",
+              "435bd9: dec esi",
+              "435bda: jne 0x435bc8",
+              "435bdc: mov eax, dword ptr [0x6d6321]",
+              "435be1: test eax, eax",
+              "435be3: jne 0x435da5",
+              "435be9: test byte ptr [ebp + 0xb], 1",
+              "435bed: je 0x435da5"
+            ]
+          },
+          {
+            "address": "0x435bfd",
+            "offset": 15,
+            "bytes": 4,
+            "instruction": "mov eax, dword ptr [ebp + 0xf]",
+            "trace": [
+              "435bce: je 0x435bd3",
+              "435bd3: add ecx, 2",
+              "435bd6: add edx, 2",
+              "435bd9: dec esi",
+              "435bda: jne 0x435bc8",
+              "435bdc: mov eax, dword ptr [0x6d6321]",
+              "435be1: test eax, eax",
+              "435be3: jne 0x435da5",
+              "435be9: test byte ptr [ebp + 0xb], 1",
+              "435bed: je 0x435da5",
+              "435bf3: cmp byte ptr [ebp + 0xa], 8",
+              "435bf7: jne 0x435da5"
+            ]
+          },
+          {
+            "address": "0x435d89",
+            "offset": 15,
+            "bytes": 4,
+            "instruction": "mov eax, dword ptr [ebp + 0xf]",
+            "trace": [
+              "435bf3: cmp byte ptr [ebp + 0xa], 8",
+              "435bf7: jne 0x435da5",
+              "435bfd: mov eax, dword ptr [ebp + 0xf]",
+              "435c00: mov edx, dword ptr [0x766a6c]",
+              "435c06: lea ecx, [eax + eax*2]",
+              "435c09: mov eax, dword ptr [edx + ecx*4 + 4]",
+              "435c0d: push eax",
+              "435c0e: call 0x57ed30",
+              "435c13: add esp, 4",
+              "435c16: mov dword ptr [esp + 0x18], eax",
+              "435c1a: test eax, eax",
+              "435c1c: je 0x435d89"
+            ]
+          },
+          {
+            "address": "0x435be9",
+            "offset": 11,
+            "bytes": 1,
+            "instruction": "test byte ptr [ebp + 0xb], 1",
+            "trace": [
+              "435bd9: dec esi",
+              "435bda: jne 0x435bc8",
+              "435bc8: mov ax, word ptr [edx]",
+              "435bcb: test ax, ax",
+              "435bce: je 0x435bd3",
+              "435bd3: add ecx, 2",
+              "435bd6: add edx, 2",
+              "435bd9: dec esi",
+              "435bda: jne 0x435bc8",
+              "435bdc: mov eax, dword ptr [0x6d6321]",
+              "435be1: test eax, eax",
+              "435be3: jne 0x435da5"
+            ]
+          },
+          {
+            "address": "0x435d89",
+            "offset": 15,
+            "bytes": 4,
+            "instruction": "mov eax, dword ptr [ebp + 0xf]",
+            "trace": [
+              "435c06: lea ecx, [eax + eax*2]",
+              "435c09: mov eax, dword ptr [edx + ecx*4 + 4]",
+              "435c0d: push eax",
+              "435c0e: call 0x57ed30",
+              "435c13: add esp, 4",
+              "435c16: mov dword ptr [esp + 0x18], eax",
+              "435c1a: test eax, eax",
+              "435c1c: je 0x435d89",
+              "435c22: mov esi, dword ptr [eax + 8]",
+              "435c25: test esi, esi",
+              "435c27: mov dword ptr [ebp + 0x8f], esi",
+              "435c2d: je 0x435d89"
+            ]
+          },
+          {
+            "address": "0x435bf3",
+            "offset": 10,
+            "bytes": 1,
+            "instruction": "cmp byte ptr [ebp + 0xa], 8",
+            "trace": [
+              "435bc8: mov ax, word ptr [edx]",
+              "435bcb: test ax, ax",
+              "435bce: je 0x435bd3",
+              "435bd3: add ecx, 2",
+              "435bd6: add edx, 2",
+              "435bd9: dec esi",
+              "435bda: jne 0x435bc8",
+              "435bdc: mov eax, dword ptr [0x6d6321]",
+              "435be1: test eax, eax",
+              "435be3: jne 0x435da5",
+              "435be9: test byte ptr [ebp + 0xb], 1",
+              "435bed: je 0x435da5"
+            ]
+          },
+          {
+            "address": "0x435bfd",
+            "offset": 15,
+            "bytes": 4,
+            "instruction": "mov eax, dword ptr [ebp + 0xf]",
+            "trace": [
+              "435bce: je 0x435bd3",
+              "435bd3: add ecx, 2",
+              "435bd6: add edx, 2",
+              "435bd9: dec esi",
+              "435bda: jne 0x435bc8",
+              "435bdc: mov eax, dword ptr [0x6d6321]",
+              "435be1: test eax, eax",
+              "435be3: jne 0x435da5",
+              "435be9: test byte ptr [ebp + 0xb], 1",
+              "435bed: je 0x435da5",
+              "435bf3: cmp byte ptr [ebp + 0xa], 8",
+              "435bf7: jne 0x435da5"
+            ]
+          }
+        ],
+        "calls": [
+          {
+            "address": "0x43595c",
+            "target": 5262720,
+            "registers": {
+              "ecx": 0
+            },
+            "arguments": {},
+            "trace": [
+              "435942: push ecx",
+              "435943: push eax",
+              "435944: lea eax, [ebx + 0xd4]",
+              "43594a: mov ecx, esi",
+              "43594c: push eax",
+              "43594d: call dword ptr [edx + 0x54]",
+              "435950: test eax, eax",
+              "435952: je 0x435961",
+              "435954: mov edx, dword ptr [esp + 0x10]",
+              "435958: push edi",
+              "435959: push edx",
+              "43595a: mov ecx, ebp"
+            ]
+          }
+        ],
+        "states": 1000,
+        "limited": true
+      }
+    }
+  ]
+}

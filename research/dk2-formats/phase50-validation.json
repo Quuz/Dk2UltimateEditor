@@ -1,0 +1,37 @@
+{
+  "phase": 50,
+  "date": "2026-10-26",
+  "native_emulations": 166,
+  "native_case_kinds": {
+    "writer": 25,
+    "codec": 14,
+    "parser": 4,
+    "converter": 6,
+    "catalogue": 18,
+    "chain": 9,
+    "comparison": 90
+  },
+  "whole_main_converter_pairs_equivalent_except_calls": 10,
+  "external_helper_pairs_byte_identical": 2,
+  "primary_function_ranges_matching_pe": 37,
+  "api_boundary_cases": 605,
+  "exact_in_memory_container_patches": 120,
+  "patches_by_profile": {
+    "RC3": 72,
+    "Pro": 48
+  },
+  "whole_creature_catalogue_roundtrips": 82,
+  "original_executables_unchanged": 4,
+  "format_package_components": 61,
+  "research_writes_to_game_data": 0,
+  "modified_gameplay_runs": 0,
+  "input_scope": "UnchangedCreaturecatalogues+3explicitinputs;phase47/49AutoSavesnapshotsarenotrewrittenorclaimedcurrent.",
+  "limitations": [
+    "166 nativecases:25fullwriters,14fullmodelcodecs,4fullparsers,6pairedCreatureconverters,18catalogueoraclecases,9conversion/modelfragment/writerchains,90Pro/RC3convertercomparisons.",
+    "Tenconverterequivalenceclaimislimitedtocapturedfullbodiesand2wholeidenticalhelpers;otherparsersorGUI/saverscanstilldiffer. Creaturesisdemonstrablydifferent.",
+    "OnlyextraFlagsiscarriedacross9chainmodelfragments;otherfieldsuseprebuiltwriterfixturemodel.Wehavenotexecutedcomplete4A58F0construction/resource/registrationcallback.",
+    "NoGUI,registry,gameprocessororiginalfilewrites.TheRC3resultdescribesnativeencodingandloadercompatibility;gameplayimmunitymeaningreliesonseparatephase36Process9evidence.",
+    "Negativeunknownfieldsearchesdonotproveunused:Terrain198/224,Traps204,Objects34C,KeeperC8andCreature/APunknownsremainopen. RC3PlinthCEUIandotherexclusivepathsremainfuturework.",
+    "Earlierbad-boundarydiscovery41B5D0onlycontainedRET4;correctparser41B5E0isusedandverified. Codecfixtureoverlapwascaughtbeforeemulationandfixed;nofailednativecaseisincluded."
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "phase": 72,
+  "date": "2026-10-27",
+  "native_lookup_cases": 26,
+  "complete_executed_native_functions": 2,
+  "primary_data_and_code_fragments": 2,
+  "DX_search_roots": 45,
+  "old_search_roots": 48,
+  "DX_root_states": 835,
+  "old_root_states": 711,
+  "DX_callee_summaries": 9,
+  "old_callee_summaries": 5,
+  "control_read_leads": 54,
+  "unknown_C8_read_leads": 0,
+  "saturated_budget_limits": 0,
+  "api_invalid_input_checks": 4,
+  "source_files_hashchecked": 82,
+  "source_executables_unchanged": 4,
+  "package_components": 67,
+  "new_raw_patch_cases": 0,
+  "research_writes_to_game_data": 0,
+  "modified_gameplay_runs": 0,
+  "KeeperC8_gameplay_still_open": true,
+  "limitations": [
+    "26 full lookup executions;two complete nativefunctions;2 separately labelleddata/codefragmentranges. No providers or originalcodepatches.",
+    "EachobservercapturesexactnativeEAXbeforecomparisonandcomparesentire5888-byteworldand122-byte-rowsarrayunchanged. FinalEAX/EBPbelongtoobserver.",
+    "Fulloldrawconverter/loader,worldinsertion,GUIandspecialSightOfEvilShotpathnotexecutedinthisstage.",
+    "C8purpose,AP0408,Terrain198224,CreatureJump/PickUpPriority,Objects34C/Traps204/Doors236andotherfullgoalunknownsremainopen.",
+    "No new raw patchcases;previous Keeper exactpatches fromphases44/53retainedseparately,not countedagain."
+  ],
+  "search_limitations": [
+    "Dynamicindices,indirectcallee/return identities,computedjumpdestinations,arbitraryheapspillsandunknownABIarenotfullyresolved.",
+    "Walkermaystopwhenaliasesdieorindirectjumpsappear. Zero state/argument budget limits means no budget saturation,not whole-program coverage.",
+    "Potentialstackslotsareforwardsleads,notprovenformalarguments. Onlyactualcallee loadsseedaliases;3-leveldepthnotexhaustive.",
+    "Functionhintsfromnearestdirectcallarelabelsforselection,notproofactualfunctionownership. Instructionlinearpasscanmisscodeorinterpretdata."
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "phase": 38,
+  "date": "2026-10-26",
+  "native_emulations": 74,
+  "native_case_kinds": {
+    "parser": 8,
+    "converter": 3,
+    "loader": 18,
+    "editor": 29,
+    "scale": 7,
+    "writer": 9
+  },
+  "legacy_callback_cases_with_explicit_integer_fixture": 9,
+  "boundary_cases": 244,
+  "corpus_dead_bodies": 12,
+  "exact_in_memory_container_patches": 144,
+  "whole_thing_files_roundtrip": 110,
+  "primary_instructions": 1968,
+  "primary_ranges_matching_pe": 21,
+  "original_main_inputs_unchanged": 17,
+  "original_main_executables_unchanged": 2,
+  "format_package_components": 51,
+  "modified_gameplay_runs": 0,
+  "limitations": [
+    "Legacy fractional conversion: original4ACDA8 in Ghidra emulator produced10 for9.9 despite setting truncation mode. Failed snapshot and debug capture retained; this result is not treated as CPU behavior. Final9 legacy callback cases capture actual ST0 narrowed to double and use explicit integer-return fixture. Modern18 cases and2 missing-presence cases need no floating fixture.",
+    "native_dead_bodies.editor_health is exact for modern byte/clamp; major1 requires explicit signed64 legacy_integer. It does not silently approximate the x87 conversion or normalize raw loading.",
+    "Game full creation substitutes base entity initialization, world lookup/link/position registration, allocation, checksum, RNG and render helpers. Actual constructor/initializer/reset/vector-zero code runs; all320 bytes compared within that fixture contract.",
+    "Full Things writer substitutes unrelated count/date/file getters and virtual XY/enabled providers. Provider ABI was corrected in phase39:488850 RET4 and4889D0 RET16 replace the earlier net-balanced RET12/RET8 fixtures; all29 editor cases rerun with identical field results. Actual48B30/48D30 and41CE20 execute; payload16 is validated, not whole-header counts or full GUI saving.",
+    "Seven scale runs execute only the arithmetic/render assignment fragment and real4363F0; the complete body tick physics/effects/timer/deletion branches are not executed.",
+    "Initial function-address guess4B1460 was inside another function and failed creation; retained as discovery error, not part of final primary manifest. Writer initial fixture missed virtual enabled getter34; its failed snapshot is retained outside final manifest.",
+    "RawWORD0C and rawZ remain authoritative even when this placement ignores them. Do not strip or regenerate these fields automatically. All patches/roundtrips are in memory; no original game files modified."
+  ]
+}

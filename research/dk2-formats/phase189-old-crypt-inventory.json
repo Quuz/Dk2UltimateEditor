@@ -1,0 +1,513 @@
+{
+  "phase": 189,
+  "status": "untyped_static_leads",
+  "file": "D:\\Games\\DK2\\Tools\\dk2-format-research\\source-binaries\\DKII-local13.exe",
+  "sha256": "93e826a142f677ef5120699feddb0572799d93399167ef1d05ec4b48a8b2a342",
+  "source_strings": [],
+  "source_references": [],
+  "direct_counter_offset_hints": [
+    {
+      "address": "0x40331b",
+      "instruction": "mov dword ptr [esi + 0x1096], ebx",
+      "displacement": "0x1096",
+      "bytes": 4,
+      "read": false,
+      "access": 2,
+      "preceding": [
+        "40330a: mov eax, dword ptr [ebp - 0x10]",
+        "40330d: push eax",
+        "40330e: call 0x415500",
+        "403313: mov ecx, dword ptr [ebp - 8]",
+        "403316: add esp, 4",
+        "403319: add ecx, eax"
+      ],
+      "nearest_direct_CALL_target_hint": "0x403220"
+    },
+    {
+      "address": "0x403375",
+      "instruction": "mov dword ptr [esi + 0x1092], ebx",
+      "displacement": "0x1092",
+      "bytes": 4,
+      "read": false,
+      "access": 2,
+      "preceding": [
+        "403354: or al, 1",
+        "403356: mov byte ptr [esi + 0x1397], al",
+        "40335c: mov dword ptr [esi + 0x10b2], ebx",
+        "403362: mov dword ptr [esi + 0x1398], ebx",
+        "403368: mov dword ptr [esi + 0xef8], ebx",
+        "40336e: mov word ptr [esi + 0x1088], bx"
+      ],
+      "nearest_direct_CALL_target_hint": "0x403220"
+    },
+    {
+      "address": "0x403386",
+      "instruction": "mov dword ptr [esi + 0x109a], eax",
+      "displacement": "0x109a",
+      "bytes": 4,
+      "read": false,
+      "access": 2,
+      "preceding": [
+        "403362: mov dword ptr [esi + 0x1398], ebx",
+        "403368: mov dword ptr [esi + 0xef8], ebx",
+        "40336e: mov word ptr [esi + 0x1088], bx",
+        "403375: mov dword ptr [esi + 0x1092], ebx",
+        "40337b: call 0x5aad80",
+        "403380: mov cl, byte ptr [esi + 0x12ec]"
+      ],
+      "nearest_direct_CALL_target_hint": "0x403220"
+    },
+    {
+      "address": "0x404b35",
+      "instruction": "mov dword ptr [esi + 0x109a], eax",
+      "displacement": "0x109a",
+      "bytes": 4,
+      "read": false,
+      "access": 2,
+      "preceding": [
+        "404b21: mov ecx, dword ptr [ecx + 0x10]",
+        "404b24: mov edx, dword ptr [ecx]",
+        "404b26: call dword ptr [edx + 0xc0]",
+        "404b2c: mov ebp, eax",
+        "404b2e: call 0x5aad80",
+        "404b33: xor ebx, ebx"
+      ],
+      "nearest_direct_CALL_target_hint": "0x404a80"
+    },
+    {
+      "address": "0x405ca4",
+      "instruction": "mov eax, dword ptr [esi + 0x1092]",
+      "displacement": "0x1092",
+      "bytes": 4,
+      "read": true,
+      "access": 1,
+      "preceding": [
+        "405c8e: jmp 0x406346",
+        "405c93: cmp eax, 1",
+        "405c96: jne 0x405ca4",
+        "405c98: mov ecx, esi",
+        "405c9a: call 0x40e460",
+        "405c9f: jmp 0x406346"
+      ],
+      "nearest_direct_CALL_target_hint": "0x405bb0"
+    },
+    {
+      "address": "0x405cb4",
+      "instruction": "mov dword ptr [esi + 0x1092], eax",
+      "displacement": "0x1092",
+      "bytes": 4,
+      "read": false,
+      "access": 2,
+      "preceding": [
+        "405caa: cmp eax, ebx",
+        "405cac: jle 0x405cb1",
+        "405cae: dec eax",
+        "405caf: jmp 0x405cb4",
+        "405cb1: jge 0x405cba",
+        "405cb3: inc eax"
+      ],
+      "nearest_direct_CALL_target_hint": "0x405bb0"
+    },
+    {
+      "address": "0x405cba",
+      "instruction": "mov eax, dword ptr [esi + 0x1096]",
+      "displacement": "0x1096",
+      "bytes": 4,
+      "read": true,
+      "access": 1,
+      "preceding": [
+        "405cac: jle 0x405cb1",
+        "405cae: dec eax",
+        "405caf: jmp 0x405cb4",
+        "405cb1: jge 0x405cba",
+        "405cb3: inc eax",
+        "405cb4: mov dword ptr [esi + 0x1092], eax"
+      ],
+      "nearest_direct_CALL_target_hint": "0x405bb0"
+    },
+    {
+      "address": "0x405cca",
+      "instruction": "mov dword ptr [esi + 0x1096], eax",
+      "displacement": "0x1096",
+      "bytes": 4,
+      "read": false,
+      "access": 2,
+      "preceding": [
+        "405cc0: cmp eax, ebx",
+        "405cc2: jle 0x405cc7",
+        "405cc4: dec eax",
+        "405cc5: jmp 0x405cca",
+        "405cc7: jge 0x405cd0",
+        "405cc9: inc eax"
+      ],
+      "nearest_direct_CALL_target_hint": "0x405bb0"
+    },
+    {
+      "address": "0x40653e",
+      "instruction": "mov eax, dword ptr [esi + 0x1092]",
+      "displacement": "0x1092",
+      "bytes": 4,
+      "read": true,
+      "access": 1,
+      "preceding": [
+        "406530: test eax, eax",
+        "406532: je 0x40653e",
+        "406534: push ebp",
+        "406535: push 3",
+        "406537: mov ecx, esi",
+        "406539: call 0x4065e0"
+      ],
+      "nearest_direct_CALL_target_hint": "0x406360"
+    },
+    {
+      "address": "0x406548",
+      "instruction": "mov ecx, dword ptr [esi + 0x1096]",
+      "displacement": "0x1096",
+      "bytes": 4,
+      "read": true,
+      "access": 1,
+      "preceding": [
+        "406535: push 3",
+        "406537: mov ecx, esi",
+        "406539: call 0x4065e0",
+        "40653e: mov eax, dword ptr [esi + 0x1092]",
+        "406544: test eax, eax",
+        "406546: jne 0x406552"
+      ],
+      "nearest_direct_CALL_target_hint": "0x406360"
+    },
+    {
+      "address": "0x406577",
+      "instruction": "mov ecx, dword ptr [esi + 0x1096]",
+      "displacement": "0x1096",
+      "bytes": 4,
+      "read": true,
+      "access": 1,
+      "preceding": [
+        "406560: mov ecx, edi",
+        "406562: mov dword ptr [esp + 0x34], 3",
+        "40656a: imul ecx, eax",
+        "40656d: shl ecx, 6",
+        "406570: mov eax, 0x66666667",
+        "406575: imul ecx"
+      ],
+      "nearest_direct_CALL_target_hint": "0x406360"
+    },
+    {
+      "address": "0x406663",
+      "instruction": "add dword ptr [esi + 0x1092], -2",
+      "displacement": "0x1092",
+      "bytes": 4,
+      "read": true,
+      "access": 3,
+      "preceding": [
+        "40664e: mov word ptr [esp + 0x14], dx",
+        "406653: mov dword ptr [esp + 0x5c], eax",
+        "406657: lea eax, [esp + 4]",
+        "40665b: push eax",
+        "40665c: mov ecx, esi",
+        "40665e: call 0x42d8a0"
+      ],
+      "nearest_direct_CALL_target_hint": "0x4065e0"
+    },
+    {
+      "address": "0x4066a9",
+      "instruction": "add dword ptr [esi + 0x1092], 2",
+      "displacement": "0x1092",
+      "bytes": 4,
+      "read": true,
+      "access": 3,
+      "preceding": [
+        "406694: mov word ptr [esp + 0x28], dx",
+        "406699: mov dword ptr [esp + 0x5c], eax",
+        "40669d: lea eax, [esp + 0x18]",
+        "4066a1: push eax",
+        "4066a2: mov ecx, esi",
+        "4066a4: call 0x42d8a0"
+      ],
+      "nearest_direct_CALL_target_hint": "0x4065e0"
+    },
+    {
+      "address": "0x4066f2",
+      "instruction": "mov eax, dword ptr [esi + 0x1096]",
+      "displacement": "0x1096",
+      "bytes": 4,
+      "read": true,
+      "access": 1,
+      "preceding": [
+        "4066d9: mov word ptr [esp + 0x3c], dx",
+        "4066de: lea eax, [esp + 0x2c]",
+        "4066e2: mov ecx, esi",
+        "4066e4: push eax",
+        "4066e5: mov dword ptr [esp + 0x60], 2",
+        "4066ed: call 0x42d8a0"
+      ],
+      "nearest_direct_CALL_target_hint": "0x4065e0"
+    },
+    {
+      "address": "0x40673a",
+      "instruction": "mov eax, dword ptr [esi + 0x1096]",
+      "displacement": "0x1096",
+      "bytes": 4,
+      "read": true,
+      "access": 1,
+      "preceding": [
+        "406721: mov word ptr [esp + 0x50], dx",
+        "406726: lea eax, [esp + 0x40]",
+        "40672a: mov ecx, esi",
+        "40672c: push eax",
+        "40672d: mov dword ptr [esp + 0x60], 3",
+        "406735: call 0x42d8a0"
+      ],
+      "nearest_direct_CALL_target_hint": "0x4065e0"
+    },
+    {
+      "address": "0x406743",
+      "instruction": "mov dword ptr [esi + 0x1096], eax",
+      "displacement": "0x1096",
+      "bytes": 4,
+      "read": false,
+      "access": 2,
+      "preceding": [
+        "40672a: mov ecx, esi",
+        "40672c: push eax",
+        "40672d: mov dword ptr [esp + 0x60], 3",
+        "406735: call 0x42d8a0",
+        "40673a: mov eax, dword ptr [esi + 0x1096]",
+        "406740: add eax, 2"
+      ],
+      "nearest_direct_CALL_target_hint": "0x4065e0"
+    },
+    {
+      "address": "0x406749",
+      "instruction": "mov eax, dword ptr [esi + 0x1092]",
+      "displacement": "0x1092",
+      "bytes": 4,
+      "read": true,
+      "access": 1,
+      "preceding": [
+        "40672c: push eax",
+        "40672d: mov dword ptr [esp + 0x60], 3",
+        "406735: call 0x42d8a0",
+        "40673a: mov eax, dword ptr [esi + 0x1096]",
+        "406740: add eax, 2",
+        "406743: mov dword ptr [esi + 0x1096], eax"
+      ],
+      "nearest_direct_CALL_target_hint": "0x4065e0"
+    },
+    {
+      "address": "0x406771",
+      "instruction": "mov dword ptr [esi + 0x1092], eax",
+      "displacement": "0x1092",
+      "bytes": 4,
+      "read": false,
+      "access": 2,
+      "preceding": [
+        "40675e: jge 0x40676c",
+        "406760: cmp eax, -6",
+        "406763: jg 0x406771",
+        "406765: mov eax, 0xfffffffa",
+        "40676a: jmp 0x406771",
+        "40676c: mov eax, 6"
+      ],
+      "nearest_direct_CALL_target_hint": "0x4065e0"
+    },
+    {
+      "address": "0x406777",
+      "instruction": "mov eax, dword ptr [esi + 0x1096]",
+      "displacement": "0x1096",
+      "bytes": 4,
+      "read": true,
+      "access": 1,
+      "preceding": [
+        "406760: cmp eax, -6",
+        "406763: jg 0x406771",
+        "406765: mov eax, 0xfffffffa",
+        "40676a: jmp 0x406771",
+        "40676c: mov eax, 6",
+        "406771: mov dword ptr [esi + 0x1092], eax"
+      ],
+      "nearest_direct_CALL_target_hint": "0x4065e0"
+    },
+    {
+      "address": "0x40679f",
+      "instruction": "mov dword ptr [esi + 0x1096], eax",
+      "displacement": "0x1096",
+      "bytes": 4,
+      "read": false,
+      "access": 2,
+      "preceding": [
+        "40678c: jge 0x40679a",
+        "40678e: cmp eax, -6",
+        "406791: jg 0x40679f",
+        "406793: mov eax, 0xfffffffa",
+        "406798: jmp 0x40679f",
+        "40679a: mov eax, 6"
+      ],
+      "nearest_direct_CALL_target_hint": "0x4065e0"
+    },
+    {
+      "address": "0x40681d",
+      "instruction": "mov dword ptr [esi + 0x109a], eax",
+      "displacement": "0x109a",
+      "bytes": 4,
+      "read": false,
+      "access": 2,
+      "preceding": [
+        "406805: je 0x40682d",
+        "406807: mov ecx, dword ptr [eax]",
+        "406809: mov dword ptr [esi + 0x10aa], ecx",
+        "40680f: mov edx, dword ptr [eax + 4]",
+        "406812: mov dword ptr [esi + 0x10ae], edx",
+        "406818: call 0x5aad80"
+      ],
+      "nearest_direct_CALL_target_hint": "0x4067d0"
+    },
+    {
+      "address": "0x40684e",
+      "instruction": "sub eax, dword ptr [esi + 0x109a]",
+      "displacement": "0x109a",
+      "bytes": 4,
+      "read": true,
+      "access": 1,
+      "preceding": [
+        "406832: cmp eax, 3",
+        "406835: je 0x406962",
+        "40683b: mov eax, dword ptr [esi + 0x109e]",
+        "406841: test eax, eax",
+        "406843: jne 0x406962",
+        "406849: call 0x5aad80"
+      ],
+      "nearest_direct_CALL_target_hint": "0x4067d0"
+    },
+    {
+      "address": "0x406967",
+      "instruction": "sub eax, dword ptr [esi + 0x109a]",
+      "displacement": "0x109a",
+      "bytes": 4,
+      "read": true,
+      "access": 1,
+      "preceding": [
+        "406951: push ecx",
+        "406952: mov ecx, dword ptr [esi + 0x53]",
+        "406955: push 0x50",
+        "406957: add ecx, 0x2de4",
+        "40695d: call 0x4ba8e0",
+        "406962: call 0x5aad80"
+      ],
+      "nearest_direct_CALL_target_hint": "0x4067d0"
+    },
+    {
+      "address": "0x40aec7",
+      "instruction": "mov ecx, dword ptr [esi + 0x108a]",
+      "displacement": "0x108a",
+      "bytes": 4,
+      "read": true,
+      "access": 1,
+      "preceding": [
+        "40aeb5: jne 0x40af0b",
+        "40aeb7: mov ecx, esi",
+        "40aeb9: call 0x40b0d0",
+        "40aebe: test eax, eax",
+        "40aec0: jne 0x40af0b",
+        "40aec2: call 0x5aad80"
+      ],
+      "nearest_direct_CALL_target_hint": "0x40ae40"
+    },
+    {
+      "address": "0x40b132",
+      "instruction": "mov dword ptr [esi + 0x108a], eax",
+      "displacement": "0x108a",
+      "bytes": 4,
+      "read": false,
+      "access": 2,
+      "preceding": [
+        "40b112: call 0x486690",
+        "40b117: test eax, eax",
+        "40b119: je 0x40b416",
+        "40b11f: mov word ptr [esi + 0x10ba], bx",
+        "40b126: mov word ptr [esi + 0x1088], bx",
+        "40b12d: call 0x5aad80"
+      ],
+      "nearest_direct_CALL_target_hint": "0x40b0d0"
+    },
+    {
+      "address": "0x40b138",
+      "instruction": "mov dword ptr [esi + 0x108e], 2",
+      "displacement": "0x108e",
+      "bytes": 4,
+      "read": false,
+      "access": 2,
+      "preceding": [
+        "40b117: test eax, eax",
+        "40b119: je 0x40b416",
+        "40b11f: mov word ptr [esi + 0x10ba], bx",
+        "40b126: mov word ptr [esi + 0x1088], bx",
+        "40b12d: call 0x5aad80",
+        "40b132: mov dword ptr [esi + 0x108a], eax"
+      ],
+      "nearest_direct_CALL_target_hint": "0x40b0d0"
+    },
+    {
+      "address": "0x40b2da",
+      "instruction": "mov dword ptr [esi + 0x108a], eax",
+      "displacement": "0x108a",
+      "bytes": 4,
+      "read": false,
+      "access": 2,
+      "preceding": [
+        "40b2ba: call 0x486690",
+        "40b2bf: test eax, eax",
+        "40b2c1: je 0x40b416",
+        "40b2c7: mov word ptr [esi + 0x10ba], di",
+        "40b2ce: mov word ptr [esi + 0x1088], di",
+        "40b2d5: call 0x5aad80"
+      ],
+      "nearest_direct_CALL_target_hint": "0x40b0d0"
+    },
+    {
+      "address": "0x40b2e0",
+      "instruction": "mov dword ptr [esi + 0x108e], 3",
+      "displacement": "0x108e",
+      "bytes": 4,
+      "read": false,
+      "access": 2,
+      "preceding": [
+        "40b2bf: test eax, eax",
+        "40b2c1: je 0x40b416",
+        "40b2c7: mov word ptr [esi + 0x10ba], di",
+        "40b2ce: mov word ptr [esi + 0x1088], di",
+        "40b2d5: call 0x5aad80",
+        "40b2da: mov dword ptr [esi + 0x108a], eax"
+      ],
+      "nearest_direct_CALL_target_hint": "0x40b0d0"
+    },
+    {
+      "address": "0x40b466",
+      "instruction": "mov eax, dword ptr [esi + 0x108e]",
+      "displacement": "0x108e",
+      "bytes": 4,
+      "read": true,
+      "access": 1,
+      "preceding": [
+        "40b451: mov esi, ecx",
+        "40b453: push edi",
+        "40b454: xor ecx, ecx",
+        "40b456: mov di, word ptr [esi + 0x1088]",
+        "40b45d: cmp di, cx",
+        "40b460: je 0x40b535"
+      ],
+      "nearest_direct_CALL_target_hint": "0x40b450"
+    }
+  ],
+  "decoded_items": 780976,
+  "direct_call_targets": 5071,
+  "histogram": {
+    "0x1096": 10,
+    "0x1092": 8,
+    "0x109a": 5,
+    "0x108a": 3,
+    "0x108e": 3
+  },
+  "scope": "Directliteraloperandsinoneoldtextsection; missesindexed/offsetbases. Hintpointersnottyped. CounterlayoutmaydifferfromDX. Noabsenceofuseclaim."
+}

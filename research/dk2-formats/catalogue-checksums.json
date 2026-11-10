@@ -1,0 +1,896 @@
+{
+  "program": "DKII-DX.exe",
+  "program_sha256": "d7a8b854e4e4f02709eba271bead6fe2307dd6e332b5a96e70857e5b0e19fb8a",
+  "scope": "Nine CWorld catalogue definition loaders. Effects and EffectElements are outside this schema.",
+  "byte_order": "little",
+  "families": [
+    {
+      "family": "Terrain",
+      "loader": 5203680,
+      "intermediate_bytes": 736,
+      "runtime_checksum_offset": 132,
+      "runtime_checksum_bytes": 4,
+      "gate": {
+        "kind": "global DWORD",
+        "address": 7327183
+      },
+      "rule": "gate == 0: checksum = sum(unsigned8(intermediate[i])) for every i in [0,length); gate !=0: retain previous checksum",
+      "family_world_accumulator_offset": 5552,
+      "callback_evidence": {
+        "file": "game-phase7-terrain-record.txt",
+        "line": 41,
+        "excerpt": "param_2[0x56c] = param_2[0x56c] + iVar3;"
+      },
+      "accumulator_scope": "Normal insertion callback adds the resulting per-definition DWORD modulo2^32. Update branch returns before that addition.",
+      "evidence": {
+        "file": "phase22-terrain-checksum-assembly.txt",
+        "first": "0x4f66e0",
+        "last": "0x4f6720",
+        "instructions": [
+          "004f66e0: MOV EAX,[0x006fcdcf] ",
+          "004f66e5: SUB ESP,0x160 ",
+          "004f66eb: PUSH EBX ",
+          "004f66ec: PUSH EBP ",
+          "004f66ed: MOV EBP,dword ptr [ESP + 0x16c] ",
+          "004f66f4: PUSH ESI ",
+          "004f66f5: PUSH EDI ",
+          "004f66f6: XOR EDI,EDI ",
+          "004f66f8: CMP EAX,EDI ",
+          "004f66fa: MOV EBX,ECX ",
+          "004f66fc: JNZ 0x004f6721 ",
+          "004f66fe: MOV dword ptr [EBX + 0x84],EDI ",
+          "004f6704: XOR EAX,EAX ",
+          "004f6706: MOV ESI,dword ptr [EBX + 0x84] ",
+          "004f670c: XOR ECX,ECX ",
+          "004f670e: MOV CL,byte ptr [EAX + EBP*0x1] ",
+          "004f6711: ADD ESI,ECX ",
+          "004f6713: INC EAX ",
+          "004f6714: CMP EAX,0x2e0 ",
+          "004f6719: MOV dword ptr [EBX + 0x84],ESI ",
+          "004f671f: JC 0x004f6706 "
+        ]
+      },
+      "emulator": {
+        "entry": 5203680,
+        "start": 5203704,
+        "end_exclusive": 5203745,
+        "destination_register": "EBX",
+        "source_register": "EBP"
+      }
+    },
+    {
+      "family": "Rooms",
+      "loader": 5156032,
+      "intermediate_bytes": 1267,
+      "runtime_checksum_offset": 162,
+      "runtime_checksum_bytes": 4,
+      "gate": {
+        "kind": "world DWORD",
+        "offset": 41927
+      },
+      "rule": "gate == 0: checksum = sum(unsigned8(intermediate[i])) for every i in [0,length); gate !=0: retain previous checksum",
+      "family_world_accumulator_offset": 5568,
+      "callback_evidence": {
+        "file": "game-phase7-rooms-record.txt",
+        "line": 85,
+        "excerpt": "param_2[0x570] = param_2[0x570] + *(int *)(param_2[0x56d] + 0x528 + iVar4 * 0x486);"
+      },
+      "accumulator_scope": "Normal insertion callback adds the resulting per-definition DWORD modulo2^32. Update branch returns before that addition.",
+      "evidence": {
+        "file": "game-phase11-room-loader-assembly.txt",
+        "first": "0x4eacc0",
+        "last": "0x4ead0e",
+        "instructions": [
+          "004eacc0: SUB ESP,0x1a8 ",
+          "004eacc6: PUSH EBX ",
+          "004eacc7: PUSH EBP ",
+          "004eacc8: PUSH ESI ",
+          "004eacc9: PUSH EDI ",
+          "004eacca: MOV EDI,ECX ",
+          "004eaccc: MOV EBP,dword ptr [ESP + 0x1bc] ",
+          "004eacd3: MOV ECX,dword ptr [ESP + 0x1c0] ",
+          "004eacda: MOV dword ptr [ESP + 0x20],EDI ",
+          "004eacde: MOV EAX,dword ptr [ECX + 0xa3c7] ",
+          "004eace4: TEST EAX,EAX ",
+          "004eace6: JNZ 0x004ead44 ",
+          "004eace8: MOV dword ptr [EDI + 0xa2],0x0 ",
+          "004eacf2: XOR EAX,EAX ",
+          "004eacf4: MOV EBX,dword ptr [EDI + 0xa2] ",
+          "004eacfa: XOR EDX,EDX ",
+          "004eacfc: MOV DL,byte ptr [EAX + EBP*0x1] ",
+          "004eacff: ADD EBX,EDX ",
+          "004ead01: INC EAX ",
+          "004ead02: CMP EAX,0x4f3 ",
+          "004ead07: MOV dword ptr [EDI + 0xa2],EBX ",
+          "004ead0d: JC 0x004eacf4 "
+        ]
+      },
+      "emulator": {
+        "entry": 5156032,
+        "start": 5156068,
+        "end_exclusive": 5156111,
+        "destination_register": "EDI",
+        "source_register": "EBP"
+      }
+    },
+    {
+      "family": "Creatures",
+      "loader": 4793120,
+      "intermediate_bytes": 6457,
+      "runtime_checksum_offset": 1455,
+      "runtime_checksum_bytes": 4,
+      "gate": {
+        "kind": "world DWORD",
+        "offset": 41927
+      },
+      "rule": "gate == 0: checksum = sum(unsigned8(intermediate[i])) for every i in [0,length); gate !=0: retain previous checksum",
+      "family_world_accumulator_offset": 5584,
+      "callback_evidence": {
+        "file": "game-phase7-creatures-record.txt",
+        "line": 81,
+        "excerpt": "param_2[0x574] = param_2[0x574] + *(int *)(iVar4 * 0x897 + 0xe46 + param_2[0x571]);"
+      },
+      "accumulator_scope": "Normal insertion callback adds the resulting per-definition DWORD modulo2^32. Update branch returns before that addition.",
+      "evidence": {
+        "file": "game-creature-type-assembly.txt",
+        "first": "0x492320",
+        "last": "0x492374",
+        "instructions": [
+          "00492320: SUB ESP,0x254 ",
+          "00492326: MOV EAX,[0x006e4154] ",
+          "0049232b: PUSH EBX ",
+          "0049232c: MOV EBX,ECX ",
+          "0049232e: PUSH EBP ",
+          "0049232f: MOV ECX,dword ptr [ESP + 0x264] ",
+          "00492336: MOV EBP,dword ptr [ESP + 0x260] ",
+          "0049233d: PUSH ESI ",
+          "0049233e: MOV ESI,dword ptr [EAX + 0x40] ",
+          "00492341: MOV EAX,dword ptr [ECX + 0xa3c7] ",
+          "00492347: PUSH EDI ",
+          "00492348: XOR EDI,EDI ",
+          "0049234a: MOV dword ptr [ESP + 0x30],ESI ",
+          "0049234e: CMP EAX,EDI ",
+          "00492350: JNZ 0x00492375 ",
+          "00492352: MOV dword ptr [EBX + 0x5af],EDI ",
+          "00492358: XOR EAX,EAX ",
+          "0049235a: MOV ECX,dword ptr [EBX + 0x5af] ",
+          "00492360: XOR EDX,EDX ",
+          "00492362: MOV DL,byte ptr [EAX + EBP*0x1] ",
+          "00492365: ADD ECX,EDX ",
+          "00492367: INC EAX ",
+          "00492368: CMP EAX,0x1939 ",
+          "0049236d: MOV dword ptr [EBX + 0x5af],ECX ",
+          "00492373: JC 0x0049235a "
+        ]
+      },
+      "emulator": {
+        "entry": 4793120,
+        "start": 4793166,
+        "end_exclusive": 4793205,
+        "destination_register": "EBX",
+        "source_register": "EBP"
+      }
+    },
+    {
+      "family": "Doors",
+      "loader": 4878592,
+      "intermediate_bytes": 732,
+      "runtime_checksum_offset": 135,
+      "runtime_checksum_bytes": 4,
+      "gate": {
+        "kind": "global DWORD",
+        "address": 7327183
+      },
+      "rule": "gate == 0: checksum = sum(unsigned8(intermediate[i])) for every i in [0,length); gate !=0: retain previous checksum",
+      "family_world_accumulator_offset": 5600,
+      "callback_evidence": {
+        "file": "game-phase7-doors-record.txt",
+        "line": 85,
+        "excerpt": "param_2[0x578] = param_2[0x578] + *(int *)(iVar4 * 0xb5 + 0x13c + param_2[0x575]);"
+      },
+      "accumulator_scope": "Normal insertion callback adds the resulting per-definition DWORD modulo2^32. Update branch returns before that addition.",
+      "evidence": {
+        "file": "phase22-doors-checksum-assembly.txt",
+        "first": "0x4a7100",
+        "last": "0x4a7142",
+        "instructions": [
+          "004a7100: MOV EAX,[0x006fcdcf] ",
+          "004a7105: SUB ESP,0x110 ",
+          "004a710b: TEST EAX,EAX ",
+          "004a710d: PUSH EBX ",
+          "004a710e: PUSH EBP ",
+          "004a710f: PUSH ESI ",
+          "004a7110: MOV ESI,dword ptr [ESP + 0x120] ",
+          "004a7117: PUSH EDI ",
+          "004a7118: MOV EBP,ECX ",
+          "004a711a: JNZ 0x004a7143 ",
+          "004a711c: MOV dword ptr [EBP + 0x87],0x0 ",
+          "004a7126: XOR EAX,EAX ",
+          "004a7128: MOV EDI,dword ptr [EBP + 0x87] ",
+          "004a712e: XOR ECX,ECX ",
+          "004a7130: MOV CL,byte ptr [EAX + ESI*0x1] ",
+          "004a7133: ADD EDI,ECX ",
+          "004a7135: INC EAX ",
+          "004a7136: CMP EAX,0x2dc ",
+          "004a713b: MOV dword ptr [EBP + 0x87],EDI ",
+          "004a7141: JC 0x004a7128 "
+        ]
+      },
+      "emulator": {
+        "entry": 4878592,
+        "start": 4878618,
+        "end_exclusive": 4878659,
+        "destination_register": "EBP",
+        "source_register": "ESI"
+      }
+    },
+    {
+      "family": "Traps",
+      "loader": 4891712,
+      "intermediate_bytes": 747,
+      "runtime_checksum_offset": 108,
+      "runtime_checksum_bytes": 4,
+      "gate": {
+        "kind": "global DWORD",
+        "address": 7327183
+      },
+      "rule": "gate == 0: checksum = sum(unsigned8(intermediate[i])) for every i in [0,length); gate !=0: retain previous checksum",
+      "family_world_accumulator_offset": 5616,
+      "callback_evidence": {
+        "file": "game-phase7-traps-record.txt",
+        "line": 85,
+        "excerpt": "param_2[0x57c] = param_2[0x57c] + *(int *)(iVar4 * 0xd1 + 0x13d + param_2[0x579]);"
+      },
+      "accumulator_scope": "Normal insertion callback adds the resulting per-definition DWORD modulo2^32. Update branch returns before that addition.",
+      "evidence": {
+        "file": "phase22-traps-checksum-assembly.txt",
+        "first": "0x4aa440",
+        "last": "0x4aa482",
+        "instructions": [
+          "004aa440: SUB ESP,0x120 ",
+          "004aa446: MOV EAX,[0x006f2590] ",
+          "004aa44b: PUSH EBX ",
+          "004aa44c: MOV dword ptr [ESP + 0x10],EAX ",
+          "004aa450: MOV EAX,[0x006fcdcf] ",
+          "004aa455: PUSH EBP ",
+          "004aa456: PUSH ESI ",
+          "004aa457: MOV ESI,dword ptr [ESP + 0x130] ",
+          "004aa45e: PUSH EDI ",
+          "004aa45f: TEST EAX,EAX ",
+          "004aa461: MOV EBP,ECX ",
+          "004aa463: JNZ 0x004aa483 ",
+          "004aa465: MOV dword ptr [EBP + 0x6c],0x0 ",
+          "004aa46c: XOR EAX,EAX ",
+          "004aa46e: MOV EDI,dword ptr [EBP + 0x6c] ",
+          "004aa471: XOR ECX,ECX ",
+          "004aa473: MOV CL,byte ptr [EAX + ESI*0x1] ",
+          "004aa476: ADD EDI,ECX ",
+          "004aa478: INC EAX ",
+          "004aa479: CMP EAX,0x2eb ",
+          "004aa47e: MOV dword ptr [EBP + 0x6c],EDI ",
+          "004aa481: JC 0x004aa46e "
+        ]
+      },
+      "emulator": {
+        "entry": 4891712,
+        "start": 4891747,
+        "end_exclusive": 4891779,
+        "destination_register": "EBP",
+        "source_register": "ESI"
+      }
+    },
+    {
+      "family": "Objects",
+      "loader": 4840800,
+      "intermediate_bytes": 1022,
+      "runtime_checksum_offset": 240,
+      "runtime_checksum_bytes": 4,
+      "gate": {
+        "kind": "global DWORD",
+        "address": 7327183
+      },
+      "rule": "gate == 0: checksum = sum(unsigned8(intermediate[i])) for every i in [0,length); gate !=0: retain previous checksum",
+      "family_world_accumulator_offset": 5632,
+      "callback_evidence": {
+        "file": "game-phase7-objects-record.txt",
+        "line": 85,
+        "excerpt": "param_2[0x580] = param_2[0x580] + *(int *)(iVar4 * 0x11d + 0x20d + param_2[0x57d]);"
+      },
+      "accumulator_scope": "Normal insertion callback adds the resulting per-definition DWORD modulo2^32. Update branch returns before that addition.",
+      "evidence": {
+        "file": "phase22-objects-checksum-assembly.txt",
+        "first": "0x49dd60",
+        "last": "0x49ddac",
+        "instructions": [
+          "0049dd60: SUB ESP,0x120 ",
+          "0049dd66: MOV EAX,[0x006fcdcf] ",
+          "0049dd6b: PUSH EBX ",
+          "0049dd6c: PUSH EBP ",
+          "0049dd6d: MOV EBP,dword ptr [ESP + 0x12c] ",
+          "0049dd74: MOV EBX,ECX ",
+          "0049dd76: PUSH ESI ",
+          "0049dd77: MOV ESI,dword ptr [0x006f2590] ",
+          "0049dd7d: PUSH EDI ",
+          "0049dd7e: TEST EAX,EAX ",
+          "0049dd80: MOV dword ptr [ESP + 0x24],EBX ",
+          "0049dd84: JNZ 0x0049ddad ",
+          "0049dd86: MOV dword ptr [EBX + 0xf0],0x0 ",
+          "0049dd90: XOR EAX,EAX ",
+          "0049dd92: MOV EDI,dword ptr [EBX + 0xf0] ",
+          "0049dd98: XOR ECX,ECX ",
+          "0049dd9a: MOV CL,byte ptr [EAX + EBP*0x1] ",
+          "0049dd9d: ADD EDI,ECX ",
+          "0049dd9f: INC EAX ",
+          "0049dda0: CMP EAX,0x3fe ",
+          "0049dda5: MOV dword ptr [EBX + 0xf0],EDI ",
+          "0049ddab: JC 0x0049dd92 "
+        ]
+      },
+      "emulator": {
+        "entry": 4840800,
+        "start": 4840836,
+        "end_exclusive": 4840877,
+        "destination_register": "EBX",
+        "source_register": "EBP"
+      }
+    },
+    {
+      "family": "KeeperSpells",
+      "loader": 5209312,
+      "intermediate_bytes": 526,
+      "runtime_checksum_offset": 54,
+      "runtime_checksum_bytes": 4,
+      "gate": {
+        "kind": "global DWORD",
+        "address": 7327183
+      },
+      "rule": "gate == 0: checksum = sum(unsigned8(intermediate[i])) for every i in [0,length); gate !=0: retain previous checksum",
+      "family_world_accumulator_offset": 5648,
+      "callback_evidence": {
+        "file": "game-phase7-keeperspells-record.txt",
+        "line": 85,
+        "excerpt": "param_2[0x584] = param_2[0x584] + *(int *)(param_2[0x581] + 0xb0 + iVar4 * 0x7a);"
+      },
+      "accumulator_scope": "Normal insertion callback adds the resulting per-definition DWORD modulo2^32. Update branch returns before that addition.",
+      "evidence": {
+        "file": "phase22-keeperspells-checksum-assembly.txt",
+        "first": "0x4f7ce0",
+        "last": "0x4f7d1f",
+        "instructions": [
+          "004f7ce0: MOV EAX,[0x006fcdcf] ",
+          "004f7ce5: SUB ESP,0x110 ",
+          "004f7ceb: TEST EAX,EAX ",
+          "004f7ced: PUSH EBX ",
+          "004f7cee: PUSH EBP ",
+          "004f7cef: PUSH ESI ",
+          "004f7cf0: MOV ESI,dword ptr [ESP + 0x120] ",
+          "004f7cf7: PUSH EDI ",
+          "004f7cf8: MOV EDI,ECX ",
+          "004f7cfa: MOV ECX,dword ptr [0x006f2590] ",
+          "004f7d00: JNZ 0x004f7d20 ",
+          "004f7d02: MOV dword ptr [EDI + 0x36],0x0 ",
+          "004f7d09: XOR EAX,EAX ",
+          "004f7d0b: MOV EBP,dword ptr [EDI + 0x36] ",
+          "004f7d0e: XOR EDX,EDX ",
+          "004f7d10: MOV DL,byte ptr [EAX + ESI*0x1] ",
+          "004f7d13: ADD EBP,EDX ",
+          "004f7d15: INC EAX ",
+          "004f7d16: CMP EAX,0x20e ",
+          "004f7d1b: MOV dword ptr [EDI + 0x36],EBP ",
+          "004f7d1e: JC 0x004f7d0b "
+        ]
+      },
+      "emulator": {
+        "entry": 5209312,
+        "start": 5209344,
+        "end_exclusive": 5209376,
+        "destination_register": "EDI",
+        "source_register": "ESI"
+      }
+    },
+    {
+      "family": "CreatureSpells",
+      "loader": 5208160,
+      "intermediate_bytes": 346,
+      "runtime_checksum_offset": 27,
+      "runtime_checksum_bytes": 4,
+      "gate": {
+        "kind": "global DWORD",
+        "address": 7327183
+      },
+      "rule": "gate == 0: checksum = sum(unsigned8(intermediate[i])) for every i in [0,length); gate !=0: retain previous checksum",
+      "family_world_accumulator_offset": 5664,
+      "callback_evidence": {
+        "file": "game-phase7-creaturespells-record.txt",
+        "line": 85,
+        "excerpt": "param_2[0x588] = param_2[0x588] + *(int *)(param_2[0x585] + 0x61 + iVar4 * 0x46);"
+      },
+      "accumulator_scope": "Normal insertion callback adds the resulting per-definition DWORD modulo2^32. Update branch returns before that addition.",
+      "evidence": {
+        "file": "phase22-creaturespells-checksum-assembly.txt",
+        "first": "0x4f7860",
+        "last": "0x4f789f",
+        "instructions": [
+          "004f7860: MOV EAX,[0x006fcdcf] ",
+          "004f7865: SUB ESP,0x110 ",
+          "004f786b: TEST EAX,EAX ",
+          "004f786d: PUSH EBX ",
+          "004f786e: PUSH EBP ",
+          "004f786f: PUSH ESI ",
+          "004f7870: MOV ESI,dword ptr [ESP + 0x120] ",
+          "004f7877: PUSH EDI ",
+          "004f7878: MOV EDI,ECX ",
+          "004f787a: MOV ECX,dword ptr [0x006f2590] ",
+          "004f7880: JNZ 0x004f78a0 ",
+          "004f7882: MOV dword ptr [EDI + 0x1b],0x0 ",
+          "004f7889: XOR EAX,EAX ",
+          "004f788b: MOV EBP,dword ptr [EDI + 0x1b] ",
+          "004f788e: XOR EDX,EDX ",
+          "004f7890: MOV DL,byte ptr [EAX + ESI*0x1] ",
+          "004f7893: ADD EBP,EDX ",
+          "004f7895: INC EAX ",
+          "004f7896: CMP EAX,0x15a ",
+          "004f789b: MOV dword ptr [EDI + 0x1b],EBP ",
+          "004f789e: JC 0x004f788b "
+        ]
+      },
+      "emulator": {
+        "entry": 5208160,
+        "start": 5208192,
+        "end_exclusive": 5208224,
+        "destination_register": "EDI",
+        "source_register": "ESI"
+      }
+    },
+    {
+      "family": "Shots",
+      "loader": 4902384,
+      "intermediate_bytes": 375,
+      "runtime_checksum_offset": 51,
+      "runtime_checksum_bytes": 4,
+      "gate": {
+        "kind": "global DWORD",
+        "address": 7327183
+      },
+      "rule": "gate == 0: checksum = sum(unsigned8(intermediate[i])) for every i in [0,length); gate !=0: retain previous checksum",
+      "family_world_accumulator_offset": 5680,
+      "callback_evidence": {
+        "file": "game-phase7-shots-record.txt",
+        "line": 85,
+        "excerpt": "param_2[0x58c] = param_2[0x58c] + *(int *)(param_2[0x589] + 0xa9 + iVar4 * 0x76);"
+      },
+      "accumulator_scope": "Normal insertion callback adds the resulting per-definition DWORD modulo2^32. Update branch returns before that addition.",
+      "evidence": {
+        "file": "phase22-shots-checksum-assembly.txt",
+        "first": "0x4acdf0",
+        "last": "0x4ace29",
+        "instructions": [
+          "004acdf0: MOV EAX,[0x006fcdcf] ",
+          "004acdf5: SUB ESP,0x110 ",
+          "004acdfb: TEST EAX,EAX ",
+          "004acdfd: PUSH EBX ",
+          "004acdfe: PUSH EBP ",
+          "004acdff: PUSH ESI ",
+          "004ace00: MOV ESI,dword ptr [ESP + 0x120] ",
+          "004ace07: PUSH EDI ",
+          "004ace08: MOV EDI,ECX ",
+          "004ace0a: JNZ 0x004ace2a ",
+          "004ace0c: MOV dword ptr [EDI + 0x33],0x0 ",
+          "004ace13: XOR EAX,EAX ",
+          "004ace15: MOV EBX,dword ptr [EDI + 0x33] ",
+          "004ace18: XOR ECX,ECX ",
+          "004ace1a: MOV CL,byte ptr [EAX + ESI*0x1] ",
+          "004ace1d: ADD EBX,ECX ",
+          "004ace1f: INC EAX ",
+          "004ace20: CMP EAX,0x177 ",
+          "004ace25: MOV dword ptr [EDI + 0x33],EBX ",
+          "004ace28: JC 0x004ace15 "
+        ]
+      },
+      "emulator": {
+        "entry": 4902384,
+        "start": 4902410,
+        "end_exclusive": 4902442,
+        "destination_register": "EDI",
+        "source_register": "ESI"
+      }
+    }
+  ],
+  "input_contract": "Exact bytes of the populated native intermediate structure, including presence DWORDs and all bytes in the scanned extent. Not raw KWD bytes and not the final runtime definition.",
+  "reset": "The per-definition accumulator is reset when its gate is zero; supplied previous does not participate in that branch.",
+  "collision_warning": "Byte sums are order-independent: swapping any two bytes leaves the checksum unchanged. No claim of cryptographic hashing or checksum rejection on file load.",
+  "signed_world_accumulator": {
+    "function": 5310656,
+    "world_offset": 29415,
+    "rule": "existing DWORD + sum(signed8(payload bytes)), modulo2^32; zero length leaves existing value unchanged",
+    "evidence": {
+      "file": "phase22-world-byte-accumulator-assembly.txt",
+      "first": "0x5108c0",
+      "last": "0x5108eb",
+      "instructions": [
+        "005108c0: MOV EDX,dword ptr [ESP + 0x8] ",
+        "005108c4: XOR EAX,EAX ",
+        "005108c6: TEST EDX,EDX ",
+        "005108c8: JBE 0x005108eb ",
+        "005108ca: PUSH EDI ",
+        "005108cb: PUSH ESI ",
+        "005108cc: MOV ESI,dword ptr [ESP + 0xc] ",
+        "005108d0: PUSH EBX ",
+        "005108d1: MOVSX EDI,byte ptr [EAX + ESI*0x1] ",
+        "005108d5: MOV EBX,dword ptr [ECX + 0x72e7] ",
+        "005108db: ADD EBX,EDI ",
+        "005108dd: INC EAX ",
+        "005108de: CMP EAX,EDX ",
+        "005108e0: MOV dword ptr [ECX + 0x72e7],EBX ",
+        "005108e6: JC 0x005108d1 ",
+        "005108e8: POP EBX ",
+        "005108e9: POP ESI ",
+        "005108ea: POP EDI ",
+        "005108eb: RET 0x8 "
+      ]
+    }
+  },
+  "terrain_array": {
+    "raw_offset": 430,
+    "item_bytes": 2,
+    "count": 16,
+    "intermediate_offset": 614,
+    "editor_model_offset": 808,
+    "meaning": "unresolved",
+    "preservation": "Keep all32 raw bytes. The unsigned checksum includes the intermediate array because 0x266..0x285 is inside0x2E0.",
+    "inspected_xrefs": "Direct setter xref is editor loader0x49F5E0; direct getter xref is writer0x4A7690. No UI or gameplay meaning follows from this.",
+    "evidence": [
+      {
+        "file": "game-terrain-convert.txt",
+        "line": 311,
+        "excerpt": "puVar7 = (undefined2 *)((int)param_1 + 0x266);"
+      },
+      {
+        "file": "game-terrain-convert.txt",
+        "line": 313,
+        "excerpt": "pcVar6 = param_2 + 0x1ae;"
+      },
+      {
+        "file": "phase22-terrain-array-intermediate-get.txt",
+        "line": 13,
+        "excerpt": "return *(undefined2 *)((int)this + param_1 * 2 + 0x266);"
+      },
+      {
+        "file": "phase22-terrain-array-editor-get.txt",
+        "line": 17,
+        "excerpt": "return *(undefined2 *)((int)this + param_1 * 2 + 0x328);"
+      },
+      {
+        "file": "phase22-terrain-array-editor-get-refs.txt",
+        "line": 1,
+        "excerpt": "From 004a7972 in FUN_004a7690 [UNCONDITIONAL_CALL]"
+      },
+      {
+        "file": "phase22-terrain-array-editor-refs.txt",
+        "line": 1,
+        "excerpt": "From 0049f883 in FUN_0049f5e0 [UNCONDITIONAL_CALL]"
+      },
+      {
+        "file": "editor-phase8-terrain-writer-assembly.txt",
+        "first": "0x4a7966",
+        "last": "0x4a7981",
+        "instructions": [
+          "004a7966: XOR ESI,ESI ",
+          "004a7968: LEA EDI,[ESP + 0x1fa] ",
+          "004a796f: PUSH ESI ",
+          "004a7970: MOV ECX,EBX ",
+          "004a7972: CALL 0x00425400 ",
+          "004a7977: MOV word ptr [EDI],AX ",
+          "004a797a: INC ESI ",
+          "004a797b: ADD EDI,0x2 ",
+          "004a797e: CMP ESI,0x10 ",
+          "004a7981: JC 0x004a796f "
+        ]
+      },
+      {
+        "file": "editor-phase8-terrain-writer-assembly.txt",
+        "first": "0x4a7a68",
+        "last": "0x4a7a7b",
+        "instructions": [
+          "004a7a68: MOV ECX,dword ptr [ESP + 0x278] ",
+          "004a7a6f: LEA EDX,[ESP + 0x4c] ",
+          "004a7a73: PUSH 0x228 ",
+          "004a7a78: PUSH EDX ",
+          "004a7a79: MOV EAX,dword ptr [ECX] ",
+          "004a7a7b: CALL dword ptr [EAX + 0x38] "
+        ]
+      }
+    ]
+  },
+  "rejected_unknown_field_candidate": {
+    "field": "Objects raw+0x34C / runtime+0x106 WORD",
+    "candidate": 5069824,
+    "reason": "Candidate uses a navigation DWORD at the same numerical offset, labeled path_last_progress; structure identity and width differ.",
+    "evidence": [
+      {
+        "file": "phase22-object106-path-dump.txt",
+        "line": 91,
+        "excerpt": "FUN_005595c0(&DAT_00756ee8,s_path_last_progress__d_006a1700,*(undefined4 *)(param_1 + 0x106));"
+      },
+      {
+        "file": "phase22-object106-path-dump.txt",
+        "line": 17,
+        "excerpt": "FUN_005595c0(&DAT_00756ee8,s_Pilot_Navigation__006a1890);"
+      }
+    ]
+  },
+  "native_emulations": [
+    {
+      "file": "phase22-emulation-checksum-Terrain-zero-gate0.json",
+      "sha256": "fbd680b61f8aefde0e42b4b985dcf70cc5e934d29ebc9bdffaa2714914bea239",
+      "case": "Terrain-zero-gate0"
+    },
+    {
+      "file": "phase22-emulation-checksum-Terrain-ff-gate0.json",
+      "sha256": "b84f924d1403ed5b77eb1d628b68799fb434eb45621fe0f605724502788652d6",
+      "case": "Terrain-ff-gate0"
+    },
+    {
+      "file": "phase22-emulation-checksum-Terrain-ramp-gate0.json",
+      "sha256": "f6fc34d8ba84121efac0f7ec52b480848036d677a4d3e56c51ffe71a2d71f14e",
+      "case": "Terrain-ramp-gate0"
+    },
+    {
+      "file": "phase22-emulation-checksum-Terrain-ramp-gate1.json",
+      "sha256": "16275208b218496f7aa96f050ec59bd732f63b242a2e68589a08e005273125de",
+      "case": "Terrain-ramp-gate1"
+    },
+    {
+      "file": "phase22-emulation-checksum-Terrain-ramp-gate4294967295.json",
+      "sha256": "c5602f2e482355dd022d9238b4cb1cdd4c652cc00584c58ad07469d6685775e0",
+      "case": "Terrain-ramp-gate4294967295"
+    },
+    {
+      "file": "phase22-emulation-checksum-Rooms-zero-gate0.json",
+      "sha256": "0838659d63bf990cf4fbbceab6879c26bfd57517fe6eb9876245b4b125e87b55",
+      "case": "Rooms-zero-gate0"
+    },
+    {
+      "file": "phase22-emulation-checksum-Rooms-ff-gate0.json",
+      "sha256": "32792081931cc3b052ef8df917f3f38c7daa95974b9ee88320cf9f65320b8460",
+      "case": "Rooms-ff-gate0"
+    },
+    {
+      "file": "phase22-emulation-checksum-Rooms-ramp-gate0.json",
+      "sha256": "537b369ee8205dc894b12bf37a6c867158dce57eaeca44a071f8a48d41ff84a8",
+      "case": "Rooms-ramp-gate0"
+    },
+    {
+      "file": "phase22-emulation-checksum-Rooms-ramp-gate1.json",
+      "sha256": "57d95827f7d7d20bb7495b1b645c99687249992b30e457c2e52aafd4c64642c2",
+      "case": "Rooms-ramp-gate1"
+    },
+    {
+      "file": "phase22-emulation-checksum-Rooms-ramp-gate4294967295.json",
+      "sha256": "a838482df2cc2d440a853aa456f9df22b38476e0b212fab50faf9aa8873d032f",
+      "case": "Rooms-ramp-gate4294967295"
+    },
+    {
+      "file": "phase22-emulation-checksum-Creatures-zero-gate0.json",
+      "sha256": "92b03844f540a0537caac24fc38093a42f541c7c711ab4a1a2093ebb5b020da7",
+      "case": "Creatures-zero-gate0"
+    },
+    {
+      "file": "phase22-emulation-checksum-Creatures-ff-gate0.json",
+      "sha256": "fcb8927777ad74f31513ccf0e7797e8a3d72839d8c36aa53c55229e2afa1e250",
+      "case": "Creatures-ff-gate0"
+    },
+    {
+      "file": "phase22-emulation-checksum-Creatures-ramp-gate0.json",
+      "sha256": "9d341d98d8c9298d63d7bb113663b45ce3ec8eb3007e0b8ebbb95cf93247b1cd",
+      "case": "Creatures-ramp-gate0"
+    },
+    {
+      "file": "phase22-emulation-checksum-Creatures-ramp-gate1.json",
+      "sha256": "a4ea40a75f6983dc89de0985341b48003479c845431a4810244bf562cf480e22",
+      "case": "Creatures-ramp-gate1"
+    },
+    {
+      "file": "phase22-emulation-checksum-Creatures-ramp-gate4294967295.json",
+      "sha256": "45b688763a2685ac433c2093e4b77d4f1e0b2dcf380dc18b5c2a0857fd8811e7",
+      "case": "Creatures-ramp-gate4294967295"
+    },
+    {
+      "file": "phase22-emulation-checksum-Doors-zero-gate0.json",
+      "sha256": "06abc15b3326b3f16ba386fa0b8f2e6cef93e5253e5a26e4fde47999469a09c2",
+      "case": "Doors-zero-gate0"
+    },
+    {
+      "file": "phase22-emulation-checksum-Doors-ff-gate0.json",
+      "sha256": "4cd0a5566e5adf097060d53de0169c5896749e170defaf43b80de60456cf2e3f",
+      "case": "Doors-ff-gate0"
+    },
+    {
+      "file": "phase22-emulation-checksum-Doors-ramp-gate0.json",
+      "sha256": "0e528f037fea95ddea9d0aa70976d8fff2a292b807a4a45bbdc4e94626f6ec70",
+      "case": "Doors-ramp-gate0"
+    },
+    {
+      "file": "phase22-emulation-checksum-Doors-ramp-gate1.json",
+      "sha256": "37b4b11b4d8781eb0e26a2ecc0b94948f3febcb9a43472e2ad70525aabe4d669",
+      "case": "Doors-ramp-gate1"
+    },
+    {
+      "file": "phase22-emulation-checksum-Doors-ramp-gate4294967295.json",
+      "sha256": "dfe73bfc71ef8ac73b3f6777e07c6e219e2042b7d7c6f071bb696af3caf2a05a",
+      "case": "Doors-ramp-gate4294967295"
+    },
+    {
+      "file": "phase22-emulation-checksum-Traps-zero-gate0.json",
+      "sha256": "f099c2044efa81449d1f47eb9cbb51d3d8f28168bb489a5c0b115796f478430d",
+      "case": "Traps-zero-gate0"
+    },
+    {
+      "file": "phase22-emulation-checksum-Traps-ff-gate0.json",
+      "sha256": "4eaa23acc0aca641a150193150db91268a82d8d5d8a5018614f9eb63985e7817",
+      "case": "Traps-ff-gate0"
+    },
+    {
+      "file": "phase22-emulation-checksum-Traps-ramp-gate0.json",
+      "sha256": "a1cdc385ce2fd74b3964debe2d5a5b33bbb14c1985733d7460289f87eeb23586",
+      "case": "Traps-ramp-gate0"
+    },
+    {
+      "file": "phase22-emulation-checksum-Traps-ramp-gate1.json",
+      "sha256": "0ff3f3e30a082b078abba81ba76ae00f331c000c8184487c296fcac38b961034",
+      "case": "Traps-ramp-gate1"
+    },
+    {
+      "file": "phase22-emulation-checksum-Traps-ramp-gate4294967295.json",
+      "sha256": "cae3e185583c556795288c9bfd6d22b61c90ebff9451ab4e151c86ab812985bb",
+      "case": "Traps-ramp-gate4294967295"
+    },
+    {
+      "file": "phase22-emulation-checksum-Objects-zero-gate0.json",
+      "sha256": "9d785bd50a979d585a497bf507a5fc19e86a55053868c7aef91fc9a027470ed5",
+      "case": "Objects-zero-gate0"
+    },
+    {
+      "file": "phase22-emulation-checksum-Objects-ff-gate0.json",
+      "sha256": "8ebf52c76ddc1f28277b753c155d8bb8bb7a67bb23267fb5be91e5db7b08b35a",
+      "case": "Objects-ff-gate0"
+    },
+    {
+      "file": "phase22-emulation-checksum-Objects-ramp-gate0.json",
+      "sha256": "40de00be8bbe74b9f03a4c9776d1805c6a2a28dc088eacafe2d168afd93fa8b7",
+      "case": "Objects-ramp-gate0"
+    },
+    {
+      "file": "phase22-emulation-checksum-Objects-ramp-gate1.json",
+      "sha256": "68c3360a69665735e65cced8cf53c8dcfc5e92003256aa3f66757eb660f577e8",
+      "case": "Objects-ramp-gate1"
+    },
+    {
+      "file": "phase22-emulation-checksum-Objects-ramp-gate4294967295.json",
+      "sha256": "401226a4f6de63f577dada8395c88e65a28b50c9fe9de6c6c5afb52d4fcfca74",
+      "case": "Objects-ramp-gate4294967295"
+    },
+    {
+      "file": "phase22-emulation-checksum-KeeperSpells-zero-gate0.json",
+      "sha256": "990b651722a8d1958e3d57a86517456c2698cb8ed26bf61f043ffb8e18956e13",
+      "case": "KeeperSpells-zero-gate0"
+    },
+    {
+      "file": "phase22-emulation-checksum-KeeperSpells-ff-gate0.json",
+      "sha256": "e6ab6102b0569eb00f00e904cdf67ffaa286498513ec1bdf900aa04e7421c89a",
+      "case": "KeeperSpells-ff-gate0"
+    },
+    {
+      "file": "phase22-emulation-checksum-KeeperSpells-ramp-gate0.json",
+      "sha256": "1f74356e01476dade7e35e460e875763a10c7e2a996b7353cf20fd3af374f6e8",
+      "case": "KeeperSpells-ramp-gate0"
+    },
+    {
+      "file": "phase22-emulation-checksum-KeeperSpells-ramp-gate1.json",
+      "sha256": "81ba89b8178952f60f82b8e4463fde9c87c6bd2fc11cabc38c9c1b2974d8dd24",
+      "case": "KeeperSpells-ramp-gate1"
+    },
+    {
+      "file": "phase22-emulation-checksum-KeeperSpells-ramp-gate4294967295.json",
+      "sha256": "a9cfac1b5855cb38f7c4fdd0b033ad0b448c49d139eef17bf562ddff8e444d23",
+      "case": "KeeperSpells-ramp-gate4294967295"
+    },
+    {
+      "file": "phase22-emulation-checksum-CreatureSpells-zero-gate0.json",
+      "sha256": "2178b57a7f740112fa3f5368cebcdbdf5f0870495418e4f4703eb047b22c995e",
+      "case": "CreatureSpells-zero-gate0"
+    },
+    {
+      "file": "phase22-emulation-checksum-CreatureSpells-ff-gate0.json",
+      "sha256": "c2cad8984b832a28cb201e40a3dea724a47d8acf63332ed40771fd1ed605d67c",
+      "case": "CreatureSpells-ff-gate0"
+    },
+    {
+      "file": "phase22-emulation-checksum-CreatureSpells-ramp-gate0.json",
+      "sha256": "4ee220113a6ce236c16c59515a5bb704f1656e480cf7bdd025921cb34f0bca42",
+      "case": "CreatureSpells-ramp-gate0"
+    },
+    {
+      "file": "phase22-emulation-checksum-CreatureSpells-ramp-gate1.json",
+      "sha256": "462f619720229d8807f3e386575432d09b326edc6b1f30bc8035d71991d8f2e8",
+      "case": "CreatureSpells-ramp-gate1"
+    },
+    {
+      "file": "phase22-emulation-checksum-CreatureSpells-ramp-gate4294967295.json",
+      "sha256": "f5d699143123e8056bd5b0cd6cdd5a01a5bf3c00fe68bb7ac25d24e5585105e1",
+      "case": "CreatureSpells-ramp-gate4294967295"
+    },
+    {
+      "file": "phase22-emulation-checksum-Shots-zero-gate0.json",
+      "sha256": "b0d95564a21545d6b5b732624663ff6ed93ddc2070a0bbd1b8541ca3ad7cf1ee",
+      "case": "Shots-zero-gate0"
+    },
+    {
+      "file": "phase22-emulation-checksum-Shots-ff-gate0.json",
+      "sha256": "114a7232b0deb419d3e5878a477c02411f82b33aad239ff45f2a8844ae745b35",
+      "case": "Shots-ff-gate0"
+    },
+    {
+      "file": "phase22-emulation-checksum-Shots-ramp-gate0.json",
+      "sha256": "ef579689e713bed8f2411b2e6951cb25e8296151c27312fb09baaa3e58044a02",
+      "case": "Shots-ramp-gate0"
+    },
+    {
+      "file": "phase22-emulation-checksum-Shots-ramp-gate1.json",
+      "sha256": "bf7253e64a13ec8df89a68d5a1cc8f92ca7b6c311d0253c7accd58642964bfd9",
+      "case": "Shots-ramp-gate1"
+    },
+    {
+      "file": "phase22-emulation-checksum-Shots-ramp-gate4294967295.json",
+      "sha256": "e5ef281a97387acc9f04dd0410e487637600c8a152def5b1e32179406a225313",
+      "case": "Shots-ramp-gate4294967295"
+    },
+    {
+      "file": "phase22-emulation-checksum-world-0.json",
+      "sha256": "7bec8878842339c5691e44f833703827b76aa825927672934dd6de13c7eaf455",
+      "case": "world-0"
+    },
+    {
+      "file": "phase22-emulation-checksum-world-1.json",
+      "sha256": "5a9e668d44842a500510efb6ba005dcba1b27af77c15ef059eca17bc2856faac",
+      "case": "world-1"
+    },
+    {
+      "file": "phase22-emulation-checksum-world-2.json",
+      "sha256": "2144a355138f975113387fb5acaef60c8215331762ab4b2fd26cb044d9a50ca1",
+      "case": "world-2"
+    },
+    {
+      "file": "phase22-emulation-checksum-world-3.json",
+      "sha256": "0f3e55c1b1a9f57ecf647d9b7454330c30f9a54059afeffc9c815a46887c7991",
+      "case": "world-3"
+    },
+    {
+      "file": "phase22-emulation-checksum-world-4.json",
+      "sha256": "bfa962b4c0692c88fc41cadb7b6af93e0c155addd5830199816acdb6099ca183",
+      "case": "world-4"
+    },
+    {
+      "file": "phase22-emulation-checksum-world-5.json",
+      "sha256": "6bc0bd3c6e279c5843ab54d1315e5679d18b8293382ef548700b593abc19b131",
+      "case": "world-5"
+    },
+    {
+      "file": "phase22-emulation-checksum-world-6.json",
+      "sha256": "8a3165490e0bf05289aa7e6ab33fce5cc0711afab4869b4ef0e1a50865245d74",
+      "case": "world-6"
+    },
+    {
+      "file": "phase22-emulation-checksum-world-7.json",
+      "sha256": "1a6ebc113fbe2b476efa71a83d4db77a67ac5417cd907f249982ed1abc0b88a6",
+      "case": "world-7"
+    }
+  ],
+  "limitations": [
+    "No complete raw-to-intermediate checksum reconstruction is supplied: constructors, resource expansion, merge flags and byte initialization must be reproduced first.",
+    "Unknown field semantics are not inferred from being included in a checksum.",
+    "KWD header N/D/S are separately serialized counts and lengths; these native checksums are not extra file-header fields.",
+    "The global0x6FCDCF gate is distinct from world+0xA3C7; activation of modes is not inferred.",
+    "No modified-game execution or networking/desync behavior was tested."
+  ]
+}

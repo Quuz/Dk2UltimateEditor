@@ -1,0 +1,3968 @@
+{
+  "family": "Creatures",
+  "record_variants": [
+    5449,
+    5537
+  ],
+  "native_writer_record_bytes": 5537,
+  "executable_sha256": {
+    "Dungeon Keeper 2/DKII-DX.exe": "d7a8b854e4e4f02709eba271bead6fe2307dd6e332b5a96e70857e5b0e19fb8a",
+    "Dungeon Keeper 2/Data/editor/DK2 Editor pro.exe": "989c45df779bccfc9a9e509b2ad0224a9bd269629f74792adc0320fa4b99fb09"
+  },
+  "functions": {
+    "converter": 4360128,
+    "model": 4850096,
+    "fill": 4453024,
+    "extract": 4457952,
+    "update": 4455776,
+    "commit": 4460896,
+    "writer": 4882176
+  },
+  "scope": "Join primitive creature properties through saved native editor functions.\n\nIntentionally excludes scaled doubles, indexed tables, inferred pointer aliases,\nand labels that do not have a complete direct fill/commit/writer chain.\n",
+  "fields": [
+    {
+      "raw_offset": 3308,
+      "raw_offset_hex": "0xcec",
+      "raw_bytes": 2,
+      "baseline_name": "Unkcec",
+      "native_label": "Swipe Speed [ Frames Per Second ]",
+      "property_id": 63585,
+      "editor_intermediate_offset": 4332,
+      "editor_model_offset": 5976,
+      "editor_panel_offset": 6296,
+      "editor_display_kind": "u16",
+      "gui_validation_range": null,
+      "scale": 1,
+      "label_resource": {
+        "id": 63585,
+        "id_hex": "0xf861",
+        "text": "Swipe Speed [ Frames Per Second ]",
+        "resource_path": [
+          6,
+          3975,
+          2057
+        ],
+        "text_file_offset": 1590510,
+        "text_rva": 1688814,
+        "utf16_bytes": 66,
+        "text_sha256": "3a6c9d755bec95debafbe445360dfac57c6392b783908db609af070dc1bb32de",
+        "block_sha256": "30dba624381eb7929c87d701faf4c5d2ddf10f8d3d03d2dfac35b8c82147ad1a"
+      },
+      "runtime_storage_paths": [
+        {
+          "raw_offset": "0xcec",
+          "raw_bytes": 2,
+          "baseline_field": "Unkcec",
+          "intermediate_offset": "0x10dc",
+          "runtime_offset": "0x791",
+          "runtime_bytes": 2,
+          "transform": "copy",
+          "runtime_expression": "*(undefined2 *)(param_2 + 0x10dc)",
+          "converter_evidence": [
+            {
+              "line": 631,
+              "assignment": "uVar4 = *(undefined2 *)(param_2 + 0xcec);"
+            },
+            {
+              "line": 635,
+              "assignment": "*(undefined2 *)(param_1 + 0x437) = uVar4;"
+            }
+          ],
+          "runtime_evidence": {
+            "line": 2207,
+            "assignment": "*(undefined2 *)(param_1 + 0x791) = *(undefined2 *)(param_2 + 0x10dc);"
+          }
+        }
+      ],
+      "existing_engine_override": {
+        "name": "SwipeSpeedRaw",
+        "offset": 3308,
+        "offset_hex": "0xcec",
+        "size": 2,
+        "kind": "u16",
+        "baseline_names": [
+          "Unkcec"
+        ],
+        "confidence": "UI use and divide constraint confirmed",
+        "evidence": [
+          "game-creature-convert.txt",
+          "game-creature-type.txt",
+          "../sources/creatures_struct.bt",
+          "game-creature-swipe-ui.txt",
+          "game-swipe-speed-use.txt",
+          "game-swipe-speed-use-assembly.txt"
+        ],
+        "note": "Runtime+0x791 u16 passed with swipe ID to0x5075A0. Nonzero swipe computes22000/speed; IDIV0 at0x507615 when speed=0. Both current catalogues store75 for all46 creatures."
+      },
+      "evidence": [
+        {
+          "file": "creature-record-decoder.txt",
+          "line": 621,
+          "excerpt": "uVar2 = *(undefined2 *)(param_1 + 0xcec);"
+        },
+        {
+          "file": "creature-record-decoder.txt",
+          "line": 625,
+          "excerpt": "*(undefined2 *)((int)this + 0x10ec) = uVar2;"
+        },
+        {
+          "file": "phase17-creature-editor-model.txt",
+          "line": 619,
+          "excerpt": "*(short *)(this + 0x5d6) = (short)piVar1[0x43b];"
+        },
+        {
+          "file": "phase17-creature-main-panel-fill.txt",
+          "line": 113,
+          "excerpt": "*(undefined2 *)((int)this + 0x1898) = *(undefined2 *)(*(int *)((int)this + 0x134) + 0x1758);"
+        },
+        {
+          "file": "phase17-creature-f55-panel-extract.txt",
+          "line": 261,
+          "excerpt": "case 0xf861:"
+        },
+        {
+          "file": "phase17-creature-f55-panel-extract.txt",
+          "line": 262,
+          "excerpt": "*(double *)((int)param_1 + 0x60) = (double)*(ushort *)((int)param_1 + 0x1898);"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 241,
+          "excerpt": "case 0xf861:"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 242,
+          "excerpt": "lVar2 = __ftol();"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 243,
+          "excerpt": "*(short *)(param_1 + 0x1898) = (short)lVar2;"
+        },
+        {
+          "file": "phase17-creature-main-panel-commit.txt",
+          "line": 88,
+          "excerpt": "*(undefined2 *)(*(int *)(param_1 + 0x134) + 0x1758) = *(undefined2 *)(param_1 + 0x1898);"
+        },
+        {
+          "file": "phase17-creature-writer-assembly.txt",
+          "first": "0x4a85e3",
+          "last": "0x4a85ea",
+          "instructions": [
+            "004a85e3: MOV CX,word ptr [EBX + 0x1758] ",
+            "004a85ea: MOV word ptr [ESP + 0xd80],CX "
+          ]
+        }
+      ]
+    },
+    {
+      "raw_offset": 3776,
+      "raw_offset_hex": "0xec0",
+      "raw_bytes": 4,
+      "baseline_name": "TimeAwake",
+      "native_label": "Time Awake (Seconds)",
+      "property_id": 63200,
+      "editor_intermediate_offset": 4800,
+      "editor_model_offset": 5768,
+      "editor_panel_offset": 6088,
+      "editor_display_kind": "u32",
+      "gui_validation_range": null,
+      "scale": 1,
+      "label_resource": {
+        "id": 63200,
+        "id_hex": "0xf6e0",
+        "text": "Time Awake (Seconds)",
+        "resource_path": [
+          6,
+          3951,
+          2057
+        ],
+        "text_file_offset": 1587402,
+        "text_rva": 1685706,
+        "utf16_bytes": 40,
+        "text_sha256": "df0037eb253b8e09eda1e75e57bf7de5ca082e82f7d6e9c3cde412383106375b",
+        "block_sha256": "896d35c2d77b25f3b6e17019bb4183a71fc25155591f0e5126e559492fb9eec3"
+      },
+      "runtime_storage_paths": [
+        {
+          "raw_offset": "0xec0",
+          "raw_bytes": 4,
+          "baseline_field": "TimeAwake",
+          "intermediate_offset": "0x12b0",
+          "runtime_offset": "0x5d2",
+          "runtime_bytes": 4,
+          "transform": "expression",
+          "runtime_expression": "*(int *)(param_2 + 0x12b0) * uVar19",
+          "converter_evidence": [
+            {
+              "line": 441,
+              "assignment": "uVar6 = *(undefined4 *)(param_2 + 0xec0);"
+            },
+            {
+              "line": 445,
+              "assignment": "param_1[0x4ac] = uVar6;"
+            }
+          ],
+          "runtime_evidence": {
+            "line": 1301,
+            "assignment": "*(uint *)(param_1 + 0x5d2) = *(int *)(param_2 + 0x12b0) * uVar19;"
+          }
+        }
+      ],
+      "existing_engine_override": null,
+      "evidence": [
+        {
+          "file": "creature-record-decoder.txt",
+          "line": 431,
+          "excerpt": "uVar3 = *(undefined4 *)(param_1 + 0xec0);"
+        },
+        {
+          "file": "creature-record-decoder.txt",
+          "line": 435,
+          "excerpt": "*(undefined4 *)((int)this + 0x12c0) = uVar3;"
+        },
+        {
+          "file": "phase17-creature-editor-model.txt",
+          "line": 225,
+          "excerpt": "this[0x5a2] = piVar1[0x4b0];"
+        },
+        {
+          "file": "phase17-creature-main-panel-fill.txt",
+          "line": 88,
+          "excerpt": "*(undefined4 *)((int)this + 0x17c8) = *(undefined4 *)(*(int *)((int)this + 0x134) + 0x1688);"
+        },
+        {
+          "file": "phase17-creature-f55-panel-extract.txt",
+          "line": 113,
+          "excerpt": "case 0xf6e0:"
+        },
+        {
+          "file": "phase17-creature-f55-panel-extract.txt",
+          "line": 114,
+          "excerpt": "*(double *)((int)param_1 + 0x60) = (double)*(uint *)((int)param_1 + 0x17c8);"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 104,
+          "excerpt": "case 0xf6e0:"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 105,
+          "excerpt": "lVar2 = __ftol();"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 106,
+          "excerpt": "*(int *)(param_1 + 0x17c8) = (int)lVar2;"
+        },
+        {
+          "file": "phase17-creature-main-panel-commit.txt",
+          "line": 65,
+          "excerpt": "*(undefined4 *)(*(int *)(param_1 + 0x134) + 0x1688) = *(undefined4 *)(param_1 + 0x17c8);"
+        },
+        {
+          "file": "phase17-creature-writer-assembly.txt",
+          "first": "0x4a82ff",
+          "last": "0x4a8305",
+          "instructions": [
+            "004a82ff: MOV EAX,dword ptr [EBX + 0x1688] ",
+            "004a8305: MOV dword ptr [ESP + 0xf54],EAX "
+          ]
+        }
+      ]
+    },
+    {
+      "raw_offset": 3780,
+      "raw_offset_hex": "0xec4",
+      "raw_bytes": 4,
+      "baseline_name": "TimeSleep",
+      "native_label": "Sleep Duration (Seconds)",
+      "property_id": 63201,
+      "editor_intermediate_offset": 4804,
+      "editor_model_offset": 5772,
+      "editor_panel_offset": 6092,
+      "editor_display_kind": "u32",
+      "gui_validation_range": null,
+      "scale": 1,
+      "label_resource": {
+        "id": 63201,
+        "id_hex": "0xf6e1",
+        "text": "Sleep Duration (Seconds)",
+        "resource_path": [
+          6,
+          3951,
+          2057
+        ],
+        "text_file_offset": 1587444,
+        "text_rva": 1685748,
+        "utf16_bytes": 48,
+        "text_sha256": "acfbd497c7b9840b90f98c30f7bed18b17e196985be84cd53c1889c02e12b227",
+        "block_sha256": "896d35c2d77b25f3b6e17019bb4183a71fc25155591f0e5126e559492fb9eec3"
+      },
+      "runtime_storage_paths": [
+        {
+          "raw_offset": "0xec4",
+          "raw_bytes": 4,
+          "baseline_field": "TimeSleep",
+          "intermediate_offset": "0x12b4",
+          "runtime_offset": "0x5d6",
+          "runtime_bytes": 4,
+          "transform": "expression",
+          "runtime_expression": "*(int *)(param_2 + 0x12b4) * uVar19",
+          "converter_evidence": [
+            {
+              "line": 447,
+              "assignment": "uVar6 = *(undefined4 *)(param_2 + 0xec4);"
+            },
+            {
+              "line": 451,
+              "assignment": "param_1[0x4ad] = uVar6;"
+            }
+          ],
+          "runtime_evidence": {
+            "line": 1303,
+            "assignment": "*(uint *)(param_1 + 0x5d6) = *(int *)(param_2 + 0x12b4) * uVar19;"
+          }
+        }
+      ],
+      "existing_engine_override": null,
+      "evidence": [
+        {
+          "file": "creature-record-decoder.txt",
+          "line": 437,
+          "excerpt": "uVar3 = *(undefined4 *)(param_1 + 0xec4);"
+        },
+        {
+          "file": "creature-record-decoder.txt",
+          "line": 441,
+          "excerpt": "*(undefined4 *)((int)this + 0x12c4) = uVar3;"
+        },
+        {
+          "file": "phase17-creature-editor-model.txt",
+          "line": 228,
+          "excerpt": "this[0x5a3] = piVar1[0x4b1];"
+        },
+        {
+          "file": "phase17-creature-main-panel-fill.txt",
+          "line": 89,
+          "excerpt": "*(undefined4 *)((int)this + 0x17cc) = *(undefined4 *)(*(int *)((int)this + 0x134) + 0x168c);"
+        },
+        {
+          "file": "phase17-creature-f55-panel-extract.txt",
+          "line": 117,
+          "excerpt": "case 0xf6e1:"
+        },
+        {
+          "file": "phase17-creature-f55-panel-extract.txt",
+          "line": 118,
+          "excerpt": "*(double *)((int)param_1 + 0x60) = (double)*(uint *)((int)param_1 + 0x17cc);"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 108,
+          "excerpt": "case 0xf6e1:"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 109,
+          "excerpt": "lVar2 = __ftol();"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 110,
+          "excerpt": "*(int *)(param_1 + 0x17cc) = (int)lVar2;"
+        },
+        {
+          "file": "phase17-creature-main-panel-commit.txt",
+          "line": 66,
+          "excerpt": "*(undefined4 *)(*(int *)(param_1 + 0x134) + 0x168c) = *(undefined4 *)(param_1 + 0x17cc);"
+        },
+        {
+          "file": "phase17-creature-writer-assembly.txt",
+          "first": "0x4a830c",
+          "last": "0x4a8312",
+          "instructions": [
+            "004a830c: MOV ECX,dword ptr [EBX + 0x168c] ",
+            "004a8312: MOV dword ptr [ESP + 0xf58],ECX "
+          ]
+        }
+      ]
+    },
+    {
+      "raw_offset": 3816,
+      "raw_offset_hex": "0xee8",
+      "raw_bytes": 2,
+      "baseline_name": "PossessionManaCost",
+      "native_label": "Possession Mana Cost (Per Second)",
+      "property_id": 63581,
+      "editor_intermediate_offset": 4840,
+      "editor_model_offset": 5954,
+      "editor_panel_offset": 6274,
+      "editor_display_kind": "u16",
+      "gui_validation_range": null,
+      "scale": 1,
+      "label_resource": {
+        "id": 63581,
+        "id_hex": "0xf85d",
+        "text": "Possession Mana Cost (Per Second)",
+        "resource_path": [
+          6,
+          3974,
+          2057
+        ],
+        "text_file_offset": 1590258,
+        "text_rva": 1688562,
+        "utf16_bytes": 66,
+        "text_sha256": "7314bdce8f7d5806e70a4971a90e3f3f9382d143e33363b3c5a228dd069c6351",
+        "block_sha256": "3c197b0572851038667d2bc5b759afbf1069cd36f05ac9d4af0f994eaf1a76f8"
+      },
+      "runtime_storage_paths": [
+        {
+          "raw_offset": "0xee8",
+          "raw_bytes": 2,
+          "baseline_field": "PossessionManaCost",
+          "intermediate_offset": "0x12d8",
+          "runtime_offset": "0x764",
+          "runtime_bytes": 2,
+          "transform": "copy",
+          "runtime_expression": "*(undefined2 *)(param_2 + 0x12d8)",
+          "converter_evidence": [
+            {
+              "line": 607,
+              "assignment": "uVar4 = *(undefined2 *)(param_2 + 0xee8);"
+            },
+            {
+              "line": 611,
+              "assignment": "*(undefined2 *)(param_1 + 0x4b6) = uVar4;"
+            }
+          ],
+          "runtime_evidence": {
+            "line": 1753,
+            "assignment": "*(undefined2 *)(param_1 + 0x764) = *(undefined2 *)(param_2 + 0x12d8);"
+          }
+        }
+      ],
+      "existing_engine_override": null,
+      "evidence": [
+        {
+          "file": "creature-record-decoder.txt",
+          "line": 597,
+          "excerpt": "uVar2 = *(undefined2 *)(param_1 + 0xee8);"
+        },
+        {
+          "file": "creature-record-decoder.txt",
+          "line": 601,
+          "excerpt": "*(undefined2 *)((int)this + 0x12e8) = uVar2;"
+        },
+        {
+          "file": "phase17-creature-editor-model.txt",
+          "line": 586,
+          "excerpt": "*(short *)((int)this + 0x1742) = (short)piVar1[0x4ba];"
+        },
+        {
+          "file": "phase17-creature-main-panel-fill.txt",
+          "line": 111,
+          "excerpt": "*(undefined2 *)((int)this + 0x1882) = *(undefined2 *)(*(int *)((int)this + 0x134) + 0x1742);"
+        },
+        {
+          "file": "phase17-creature-f55-panel-extract.txt",
+          "line": 244,
+          "excerpt": "case 0xf85d:"
+        },
+        {
+          "file": "phase17-creature-f55-panel-extract.txt",
+          "line": 245,
+          "excerpt": "*(double *)((int)param_1 + 0x60) = (double)*(ushort *)((int)param_1 + 0x1882);"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 225,
+          "excerpt": "case 0xf85d:"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 226,
+          "excerpt": "lVar2 = __ftol();"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 227,
+          "excerpt": "*(short *)(param_1 + 0x1882) = (short)lVar2;"
+        },
+        {
+          "file": "phase17-creature-main-panel-commit.txt",
+          "line": 86,
+          "excerpt": "*(undefined2 *)(*(int *)(param_1 + 0x134) + 0x1742) = *(undefined2 *)(param_1 + 0x1882);"
+        },
+        {
+          "file": "phase17-creature-writer-assembly.txt",
+          "first": "0x4a84ca",
+          "last": "0x4a84d1",
+          "instructions": [
+            "004a84ca: MOV DX,word ptr [EBX + 0x1742] ",
+            "004a84d1: MOV word ptr [ESP + 0xf7c],DX "
+          ]
+        }
+      ]
+    },
+    {
+      "raw_offset": 3818,
+      "raw_offset_hex": "0xeea",
+      "raw_bytes": 2,
+      "baseline_name": "OwnLandHealthIncrease",
+      "native_label": "Own Land Health Increase (Per Second)",
+      "property_id": 63582,
+      "editor_intermediate_offset": 4842,
+      "editor_model_offset": 5660,
+      "editor_panel_offset": 5980,
+      "editor_display_kind": "u16",
+      "gui_validation_range": null,
+      "scale": 1,
+      "label_resource": {
+        "id": 63582,
+        "id_hex": "0xf85e",
+        "text": "Own Land Health Increase (Per Second)",
+        "resource_path": [
+          6,
+          3974,
+          2057
+        ],
+        "text_file_offset": 1590326,
+        "text_rva": 1688630,
+        "utf16_bytes": 74,
+        "text_sha256": "39d6f4bef20f82c35bf5acc554931d94f04ee270fab6f2127c9ab39a2f5df182",
+        "block_sha256": "3c197b0572851038667d2bc5b759afbf1069cd36f05ac9d4af0f994eaf1a76f8"
+      },
+      "runtime_storage_paths": [
+        {
+          "raw_offset": "0xeea",
+          "raw_bytes": 2,
+          "baseline_field": "OwnLandHealthIncrease",
+          "intermediate_offset": "0x12da",
+          "runtime_offset": "0x6a6",
+          "runtime_bytes": 2,
+          "transform": "copy",
+          "runtime_expression": "*(undefined2 *)(param_2 + 0x12da)",
+          "converter_evidence": [
+            {
+              "line": 303,
+              "assignment": "uVar4 = *(undefined2 *)(param_2 + 0xeea);"
+            },
+            {
+              "line": 307,
+              "assignment": "*(undefined2 *)((int)param_1 + 0x12da) = uVar4;"
+            }
+          ],
+          "runtime_evidence": {
+            "line": 1561,
+            "assignment": "*(undefined2 *)(param_1 + 0x6a6) = *(undefined2 *)(param_2 + 0x12da);"
+          }
+        }
+      ],
+      "existing_engine_override": null,
+      "evidence": [
+        {
+          "file": "creature-record-decoder.txt",
+          "line": 293,
+          "excerpt": "uVar2 = *(undefined2 *)(param_1 + 0xeea);"
+        },
+        {
+          "file": "creature-record-decoder.txt",
+          "line": 297,
+          "excerpt": "*(undefined2 *)((int)this + 0x12ea) = uVar2;"
+        },
+        {
+          "file": "phase17-creature-editor-model.txt",
+          "line": 589,
+          "excerpt": "*(undefined2 *)(this + 0x587) = *(undefined2 *)((int)piVar1 + 0x12ea);"
+        },
+        {
+          "file": "phase17-creature-main-panel-fill.txt",
+          "line": 60,
+          "excerpt": "*(undefined2 *)((int)this + 0x175c) = *(undefined2 *)(*(int *)((int)this + 0x134) + 0x161c);"
+        },
+        {
+          "file": "phase17-creature-f55-panel-extract.txt",
+          "line": 248,
+          "excerpt": "case 0xf85e:"
+        },
+        {
+          "file": "phase17-creature-f55-panel-extract.txt",
+          "line": 249,
+          "excerpt": "*(double *)((int)param_1 + 0x60) = (double)*(ushort *)((int)param_1 + 0x175c);"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 229,
+          "excerpt": "case 0xf85e:"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 230,
+          "excerpt": "lVar2 = __ftol();"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 231,
+          "excerpt": "*(short *)(param_1 + 0x175c) = (short)lVar2;"
+        },
+        {
+          "file": "phase17-creature-main-panel-commit.txt",
+          "line": 38,
+          "excerpt": "*(undefined2 *)(*(int *)(param_1 + 0x134) + 0x161c) = *(undefined2 *)(param_1 + 0x175c);"
+        },
+        {
+          "file": "phase17-creature-writer-assembly.txt",
+          "first": "0x4a84d9",
+          "last": "0x4a84e0",
+          "instructions": [
+            "004a84d9: MOV AX,word ptr [EBX + 0x161c] ",
+            "004a84e0: MOV word ptr [ESP + 0xf7e],AX "
+          ]
+        }
+      ]
+    },
+    {
+      "raw_offset": 3840,
+      "raw_offset_hex": "0xf00",
+      "raw_bytes": 2,
+      "baseline_name": "ExpForNextLevel",
+      "native_label": "Experience Points For Next Level",
+      "property_id": 63491,
+      "editor_intermediate_offset": 4864,
+      "editor_model_offset": 5568,
+      "editor_panel_offset": 5888,
+      "editor_display_kind": "u16",
+      "gui_validation_range": null,
+      "scale": 1,
+      "label_resource": {
+        "id": 63491,
+        "id_hex": "0xf803",
+        "text": "Experience Points For Next Level",
+        "resource_path": [
+          6,
+          3969,
+          2057
+        ],
+        "text_file_offset": 1589220,
+        "text_rva": 1687524,
+        "utf16_bytes": 64,
+        "text_sha256": "f3efe43ecd53e7a612a17b4aaa5f1198513fd8817abd2d4f5f11e493c8204d78",
+        "block_sha256": "2d181a74d7b0a28b255df82420e8f1ef16041e3f028d8b8172297e7941b63f38"
+      },
+      "runtime_storage_paths": [
+        {
+          "raw_offset": "0xf00",
+          "raw_bytes": 2,
+          "baseline_field": "ExpForNextLevel",
+          "intermediate_offset": "0x12f0",
+          "runtime_offset": "0x6b5",
+          "runtime_bytes": 2,
+          "transform": "copy",
+          "runtime_expression": "*(undefined2 *)(param_2 + 0x12f0)",
+          "converter_evidence": [
+            {
+              "line": 315,
+              "assignment": "uVar4 = *(undefined2 *)(param_2 + 0xf00);"
+            },
+            {
+              "line": 319,
+              "assignment": "*(undefined2 *)(param_1 + 0x4bc) = uVar4;"
+            }
+          ],
+          "runtime_evidence": {
+            "line": 1497,
+            "assignment": "*(undefined2 *)(param_1 + 0x6b5) = *(undefined2 *)(param_2 + 0x12f0);"
+          }
+        }
+      ],
+      "existing_engine_override": null,
+      "evidence": [
+        {
+          "file": "creature-record-decoder.txt",
+          "line": 305,
+          "excerpt": "uVar2 = *(undefined2 *)(param_1 + 0xf00);"
+        },
+        {
+          "file": "creature-record-decoder.txt",
+          "line": 309,
+          "excerpt": "*(undefined2 *)((int)this + 0x1300) = uVar2;"
+        },
+        {
+          "file": "phase17-creature-editor-model.txt",
+          "line": 96,
+          "excerpt": "*(short *)(this + 0x570) = (short)piVar1[0x4c0];"
+        },
+        {
+          "file": "phase17-creature-main-panel-fill.txt",
+          "line": 45,
+          "excerpt": "*(undefined2 *)((int)this + 0x1700) = *(undefined2 *)(*(int *)((int)this + 0x134) + 0x15c0);"
+        },
+        {
+          "file": "phase17-creature-f55-panel-extract.txt",
+          "line": 183,
+          "excerpt": "case 0xf803:"
+        },
+        {
+          "file": "phase17-creature-f55-panel-extract.txt",
+          "line": 184,
+          "excerpt": "*(double *)((int)param_1 + 0x60) = (double)*(ushort *)((int)param_1 + 0x1700);"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 172,
+          "excerpt": "case 0xf803:"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 173,
+          "excerpt": "lVar2 = __ftol();"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 174,
+          "excerpt": "*(short *)(param_1 + 0x1700) = (short)lVar2;"
+        },
+        {
+          "file": "phase17-creature-main-panel-commit.txt",
+          "line": 23,
+          "excerpt": "*(undefined2 *)(*(int *)(param_1 + 0x134) + 0x15c0) = *(undefined2 *)(param_1 + 0x1700);"
+        },
+        {
+          "file": "phase17-creature-writer-assembly.txt",
+          "first": "0x4a8090",
+          "last": "0x4a8097",
+          "instructions": [
+            "004a8090: MOV CX,word ptr [EBX + 0x15c0] ",
+            "004a8097: MOV word ptr [ESP + 0xf94],CX "
+          ]
+        }
+      ]
+    },
+    {
+      "raw_offset": 3844,
+      "raw_offset_hex": "0xf04",
+      "raw_bytes": 2,
+      "baseline_name": "ExpPerSecond",
+      "native_label": "Experience Points (Per Second)",
+      "property_id": 63143,
+      "editor_intermediate_offset": 4868,
+      "editor_model_offset": 5570,
+      "editor_panel_offset": 5890,
+      "editor_display_kind": "u16",
+      "gui_validation_range": null,
+      "scale": 1,
+      "label_resource": {
+        "id": 63143,
+        "id_hex": "0xf6a7",
+        "text": "Experience Points (Per Second)",
+        "resource_path": [
+          6,
+          3947,
+          2057
+        ],
+        "text_file_offset": 1585268,
+        "text_rva": 1683572,
+        "utf16_bytes": 60,
+        "text_sha256": "cac0c1d234e11e38671d9af7605a34b81f28c036d31db4e28da2ade495634650",
+        "block_sha256": "3df0c5f328a19cf37ed1a3de963ac97519b84becf2eb931bd3bf09ad737faa28"
+      },
+      "runtime_storage_paths": [],
+      "existing_engine_override": null,
+      "evidence": [
+        {
+          "file": "creature-record-decoder.txt",
+          "line": 311,
+          "excerpt": "uVar2 = *(undefined2 *)(param_1 + 0xf04);"
+        },
+        {
+          "file": "creature-record-decoder.txt",
+          "line": 315,
+          "excerpt": "*(undefined2 *)((int)this + 0x1304) = uVar2;"
+        },
+        {
+          "file": "phase17-creature-editor-model.txt",
+          "line": 99,
+          "excerpt": "*(short *)((int)this + 0x15c2) = (short)piVar1[0x4c1];"
+        },
+        {
+          "file": "phase17-creature-main-panel-fill.txt",
+          "line": 46,
+          "excerpt": "*(undefined2 *)((int)this + 0x1702) = *(undefined2 *)(*(int *)((int)this + 0x134) + 0x15c2);"
+        },
+        {
+          "file": "phase17-creature-f55-panel-extract.txt",
+          "line": 100,
+          "excerpt": "case 0xf6a7:"
+        },
+        {
+          "file": "phase17-creature-f55-panel-extract.txt",
+          "line": 101,
+          "excerpt": "*(double *)((int)param_1 + 0x60) = (double)*(ushort *)((int)param_1 + 0x1702);"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 92,
+          "excerpt": "case 0xf6a7:"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 93,
+          "excerpt": "lVar2 = __ftol();"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 94,
+          "excerpt": "*(short *)(param_1 + 0x1702) = (short)lVar2;"
+        },
+        {
+          "file": "phase17-creature-main-panel-commit.txt",
+          "line": 24,
+          "excerpt": "*(undefined2 *)(*(int *)(param_1 + 0x134) + 0x15c2) = *(undefined2 *)(param_1 + 0x1702);"
+        },
+        {
+          "file": "phase17-creature-writer-assembly.txt",
+          "first": "0x4a809f",
+          "last": "0x4a80a6",
+          "instructions": [
+            "004a809f: MOV DX,word ptr [EBX + 0x15c2] ",
+            "004a80a6: MOV word ptr [ESP + 0xf98],DX "
+          ]
+        }
+      ]
+    },
+    {
+      "raw_offset": 3846,
+      "raw_offset_hex": "0xf06",
+      "raw_bytes": 2,
+      "baseline_name": "ExpPerSecondTraining",
+      "native_label": "Experience Points From Training (Per Second)",
+      "property_id": 63144,
+      "editor_intermediate_offset": 4870,
+      "editor_model_offset": 5572,
+      "editor_panel_offset": 5892,
+      "editor_display_kind": "u16",
+      "gui_validation_range": null,
+      "scale": 1,
+      "label_resource": {
+        "id": 63144,
+        "id_hex": "0xf6a8",
+        "text": "Experience Points From Training (Per Second)",
+        "resource_path": [
+          6,
+          3947,
+          2057
+        ],
+        "text_file_offset": 1585330,
+        "text_rva": 1683634,
+        "utf16_bytes": 88,
+        "text_sha256": "b529cc843ec23ef6abc43817d7e81e32789cce76fa8dd4ba71eeae0795ea09d3",
+        "block_sha256": "3df0c5f328a19cf37ed1a3de963ac97519b84becf2eb931bd3bf09ad737faa28"
+      },
+      "runtime_storage_paths": [],
+      "existing_engine_override": null,
+      "evidence": [
+        {
+          "file": "creature-record-decoder.txt",
+          "line": 317,
+          "excerpt": "uVar2 = *(undefined2 *)(param_1 + 0xf06);"
+        },
+        {
+          "file": "creature-record-decoder.txt",
+          "line": 321,
+          "excerpt": "*(undefined2 *)((int)this + 0x1306) = uVar2;"
+        },
+        {
+          "file": "phase17-creature-editor-model.txt",
+          "line": 102,
+          "excerpt": "*(undefined2 *)(this + 0x571) = *(undefined2 *)((int)piVar1 + 0x1306);"
+        },
+        {
+          "file": "phase17-creature-main-panel-fill.txt",
+          "line": 47,
+          "excerpt": "*(undefined2 *)((int)this + 0x1704) = *(undefined2 *)(*(int *)((int)this + 0x134) + 0x15c4);"
+        },
+        {
+          "file": "phase17-creature-f55-panel-extract.txt",
+          "line": 104,
+          "excerpt": "case 0xf6a8:"
+        },
+        {
+          "file": "phase17-creature-f55-panel-extract.txt",
+          "line": 105,
+          "excerpt": "*(double *)((int)param_1 + 0x60) = (double)*(ushort *)((int)param_1 + 0x1704);"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 96,
+          "excerpt": "case 0xf6a8:"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 97,
+          "excerpt": "lVar2 = __ftol();"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 98,
+          "excerpt": "*(short *)(param_1 + 0x1704) = (short)lVar2;"
+        },
+        {
+          "file": "phase17-creature-main-panel-commit.txt",
+          "line": 25,
+          "excerpt": "*(undefined2 *)(*(int *)(param_1 + 0x134) + 0x15c4) = *(undefined2 *)(param_1 + 0x1704);"
+        },
+        {
+          "file": "phase17-creature-writer-assembly.txt",
+          "first": "0x4a80ae",
+          "last": "0x4a80b5",
+          "instructions": [
+            "004a80ae: MOV AX,word ptr [EBX + 0x15c4] ",
+            "004a80b5: MOV word ptr [ESP + 0xf9a],AX "
+          ]
+        }
+      ]
+    },
+    {
+      "raw_offset": 3848,
+      "raw_offset_hex": "0xf08",
+      "raw_bytes": 2,
+      "baseline_name": "ResearchPerSecond",
+      "native_label": "Research Points (Per Second)",
+      "property_id": 63486,
+      "editor_intermediate_offset": 4872,
+      "editor_model_offset": 5574,
+      "editor_panel_offset": 5894,
+      "editor_display_kind": "u16",
+      "gui_validation_range": null,
+      "scale": 1,
+      "label_resource": {
+        "id": 63486,
+        "id_hex": "0xf7fe",
+        "text": "Research Points (Per Second)",
+        "resource_path": [
+          6,
+          3968,
+          2057
+        ],
+        "text_file_offset": 1589092,
+        "text_rva": 1687396,
+        "utf16_bytes": 56,
+        "text_sha256": "f61516fb5416b61b9d458619ee57814440b89697e50622bc1fbb5fa1b18bf502",
+        "block_sha256": "aab1ea8de3fa83e5489129844dffcb706a3ba965acd3452c1611c494654c121b"
+      },
+      "runtime_storage_paths": [],
+      "existing_engine_override": null,
+      "evidence": [
+        {
+          "file": "creature-record-decoder.txt",
+          "line": 323,
+          "excerpt": "uVar2 = *(undefined2 *)(param_1 + 0xf08);"
+        },
+        {
+          "file": "creature-record-decoder.txt",
+          "line": 327,
+          "excerpt": "*(undefined2 *)((int)this + 0x1308) = uVar2;"
+        },
+        {
+          "file": "phase17-creature-editor-model.txt",
+          "line": 105,
+          "excerpt": "*(short *)((int)this + 0x15c6) = (short)piVar1[0x4c2];"
+        },
+        {
+          "file": "phase17-creature-main-panel-fill.txt",
+          "line": 48,
+          "excerpt": "*(undefined2 *)((int)this + 0x1706) = *(undefined2 *)(*(int *)((int)this + 0x134) + 0x15c6);"
+        },
+        {
+          "file": "phase17-creature-f55-panel-extract.txt",
+          "line": 175,
+          "excerpt": "case 0xf7fe:"
+        },
+        {
+          "file": "phase17-creature-f55-panel-extract.txt",
+          "line": 176,
+          "excerpt": "*(double *)((int)param_1 + 0x60) = (double)*(ushort *)((int)param_1 + 0x1706);"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 164,
+          "excerpt": "case 0xf7fe:"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 165,
+          "excerpt": "lVar2 = __ftol();"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 166,
+          "excerpt": "*(short *)(param_1 + 0x1706) = (short)lVar2;"
+        },
+        {
+          "file": "phase17-creature-main-panel-commit.txt",
+          "line": 26,
+          "excerpt": "*(undefined2 *)(*(int *)(param_1 + 0x134) + 0x15c6) = *(undefined2 *)(param_1 + 0x1706);"
+        },
+        {
+          "file": "phase17-creature-writer-assembly.txt",
+          "first": "0x4a80bd",
+          "last": "0x4a80c4",
+          "instructions": [
+            "004a80bd: MOV CX,word ptr [EBX + 0x15c6] ",
+            "004a80c4: MOV word ptr [ESP + 0xf9c],CX "
+          ]
+        }
+      ]
+    },
+    {
+      "raw_offset": 3850,
+      "raw_offset_hex": "0xf0a",
+      "raw_bytes": 2,
+      "baseline_name": "ManufacturePerSecond",
+      "native_label": "Manufacture Points (Per Second)",
+      "property_id": 63487,
+      "editor_intermediate_offset": 4874,
+      "editor_model_offset": 5576,
+      "editor_panel_offset": 5896,
+      "editor_display_kind": "u16",
+      "gui_validation_range": null,
+      "scale": 1,
+      "label_resource": {
+        "id": 63487,
+        "id_hex": "0xf7ff",
+        "text": "Manufacture Points (Per Second)",
+        "resource_path": [
+          6,
+          3968,
+          2057
+        ],
+        "text_file_offset": 1589150,
+        "text_rva": 1687454,
+        "utf16_bytes": 62,
+        "text_sha256": "2ca544b2b989708e2ab4fe9dddade7bfe06f13074d253f3cf5ac8086fc0aabbb",
+        "block_sha256": "aab1ea8de3fa83e5489129844dffcb706a3ba965acd3452c1611c494654c121b"
+      },
+      "runtime_storage_paths": [],
+      "existing_engine_override": null,
+      "evidence": [
+        {
+          "file": "creature-record-decoder.txt",
+          "line": 329,
+          "excerpt": "uVar2 = *(undefined2 *)(param_1 + 0xf0a);"
+        },
+        {
+          "file": "creature-record-decoder.txt",
+          "line": 333,
+          "excerpt": "*(undefined2 *)((int)this + 0x130a) = uVar2;"
+        },
+        {
+          "file": "phase17-creature-editor-model.txt",
+          "line": 108,
+          "excerpt": "*(undefined2 *)(this + 0x572) = *(undefined2 *)((int)piVar1 + 0x130a);"
+        },
+        {
+          "file": "phase17-creature-main-panel-fill.txt",
+          "line": 49,
+          "excerpt": "*(undefined2 *)((int)this + 0x1708) = *(undefined2 *)(*(int *)((int)this + 0x134) + 0x15c8);"
+        },
+        {
+          "file": "phase17-creature-f55-panel-extract.txt",
+          "line": 179,
+          "excerpt": "case 0xf7ff:"
+        },
+        {
+          "file": "phase17-creature-f55-panel-extract.txt",
+          "line": 180,
+          "excerpt": "*(double *)((int)param_1 + 0x60) = (double)*(ushort *)((int)param_1 + 0x1708);"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 168,
+          "excerpt": "case 0xf7ff:"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 169,
+          "excerpt": "lVar2 = __ftol();"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 170,
+          "excerpt": "*(short *)(param_1 + 0x1708) = (short)lVar2;"
+        },
+        {
+          "file": "phase17-creature-main-panel-commit.txt",
+          "line": 27,
+          "excerpt": "*(undefined2 *)(*(int *)(param_1 + 0x134) + 0x15c8) = *(undefined2 *)(param_1 + 0x1708);"
+        },
+        {
+          "file": "phase17-creature-writer-assembly.txt",
+          "first": "0x4a80cc",
+          "last": "0x4a80d3",
+          "instructions": [
+            "004a80cc: MOV DX,word ptr [EBX + 0x15c8] ",
+            "004a80d3: MOV word ptr [ESP + 0xf9e],DX "
+          ]
+        }
+      ]
+    },
+    {
+      "raw_offset": 3852,
+      "raw_offset_hex": "0xf0c",
+      "raw_bytes": 2,
+      "baseline_name": "Hp",
+      "native_label": "Health",
+      "property_id": 63088,
+      "editor_intermediate_offset": 4876,
+      "editor_model_offset": 5610,
+      "editor_panel_offset": 5930,
+      "editor_display_kind": "u16",
+      "gui_validation_range": null,
+      "scale": 1,
+      "label_resource": {
+        "id": 63088,
+        "id_hex": "0xf670",
+        "text": "Health",
+        "resource_path": [
+          6,
+          3944,
+          2057
+        ],
+        "text_file_offset": 1583846,
+        "text_rva": 1682150,
+        "utf16_bytes": 12,
+        "text_sha256": "e5801f4626211e7c3c2c7ec6885b77f9b294e1ee0ff4f8e499c559292f68ecdd",
+        "block_sha256": "8b850bf2d24d75ef2198f53b375c5babf50b5b5e5a185285509b6437635eab6a"
+      },
+      "runtime_storage_paths": [
+        {
+          "raw_offset": "0xf0c",
+          "raw_bytes": 2,
+          "baseline_field": "Hp",
+          "intermediate_offset": "0x12fc",
+          "runtime_offset": "0x692",
+          "runtime_bytes": 2,
+          "transform": "copy",
+          "runtime_expression": "*(undefined2 *)(param_2 + 0x12fc)",
+          "converter_evidence": [
+            {
+              "line": 97,
+              "assignment": "uVar4 = *(undefined2 *)(param_2 + 0xf0c);"
+            },
+            {
+              "line": 101,
+              "assignment": "*(undefined2 *)(param_1 + 0x4bf) = uVar4;"
+            }
+          ],
+          "runtime_evidence": {
+            "line": 181,
+            "assignment": "*(undefined2 *)(param_1 + 0x692) = *(undefined2 *)(param_2 + 0x12fc);"
+          }
+        }
+      ],
+      "existing_engine_override": null,
+      "evidence": [
+        {
+          "file": "creature-record-decoder.txt",
+          "line": 87,
+          "excerpt": "uVar2 = *(undefined2 *)(param_1 + 0xf0c);"
+        },
+        {
+          "file": "creature-record-decoder.txt",
+          "line": 91,
+          "excerpt": "*(undefined2 *)((int)this + 0x130c) = uVar2;"
+        },
+        {
+          "file": "phase17-creature-editor-model.txt",
+          "line": 154,
+          "excerpt": "*(short *)((int)this + 0x15ea) = (short)piVar1[0x4c3];"
+        },
+        {
+          "file": "phase17-creature-main-panel-fill.txt",
+          "line": 55,
+          "excerpt": "*(undefined2 *)((int)this + 0x172a) = *(undefined2 *)(*(int *)((int)this + 0x134) + 0x15ea);"
+        },
+        {
+          "file": "phase17-creature-f55-panel-extract.txt",
+          "line": 29,
+          "excerpt": "case 0xf670:"
+        },
+        {
+          "file": "phase17-creature-f55-panel-extract.txt",
+          "line": 30,
+          "excerpt": "*(double *)((int)param_1 + 0x60) = (double)*(ushort *)((int)param_1 + 0x172a);"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 25,
+          "excerpt": "case 0xf670:"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 26,
+          "excerpt": "lVar2 = __ftol();"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 27,
+          "excerpt": "*(short *)(param_1 + 0x172a) = (short)lVar2;"
+        },
+        {
+          "file": "phase17-creature-main-panel-commit.txt",
+          "line": 33,
+          "excerpt": "*(undefined2 *)(*(int *)(param_1 + 0x134) + 0x15ea) = *(undefined2 *)(param_1 + 0x172a);"
+        },
+        {
+          "file": "phase17-creature-writer-assembly.txt",
+          "first": "0x4a8160",
+          "last": "0x4a8167",
+          "instructions": [
+            "004a8160: MOV CX,word ptr [EBX + 0x15ea] ",
+            "004a8167: MOV word ptr [ESP + 0xfa0],CX "
+          ]
+        }
+      ]
+    },
+    {
+      "raw_offset": 3854,
+      "raw_offset_hex": "0xf0e",
+      "raw_bytes": 2,
+      "baseline_name": "HpFromChicken",
+      "native_label": "Health From Chicken",
+      "property_id": 63482,
+      "editor_intermediate_offset": 4878,
+      "editor_model_offset": 5612,
+      "editor_panel_offset": 5932,
+      "editor_display_kind": "u16",
+      "gui_validation_range": null,
+      "scale": 1,
+      "label_resource": {
+        "id": 63482,
+        "id_hex": "0xf7fa",
+        "text": "Health From Chicken",
+        "resource_path": [
+          6,
+          3968,
+          2057
+        ],
+        "text_file_offset": 1589016,
+        "text_rva": 1687320,
+        "utf16_bytes": 38,
+        "text_sha256": "cf4c038462dcec66d8f766146263e9f4b98081f6e5720936e4d437663849e88b",
+        "block_sha256": "aab1ea8de3fa83e5489129844dffcb706a3ba965acd3452c1611c494654c121b"
+      },
+      "runtime_storage_paths": [
+        {
+          "raw_offset": "0xf0e",
+          "raw_bytes": 2,
+          "baseline_field": "HpFromChicken",
+          "intermediate_offset": "0x12fe",
+          "runtime_offset": "0x694",
+          "runtime_bytes": 2,
+          "transform": "copy",
+          "runtime_expression": "*(undefined2 *)(param_2 + 0x12fe)",
+          "converter_evidence": [
+            {
+              "line": 103,
+              "assignment": "uVar4 = *(undefined2 *)(param_2 + 0xf0e);"
+            },
+            {
+              "line": 107,
+              "assignment": "*(undefined2 *)((int)param_1 + 0x12fe) = uVar4;"
+            }
+          ],
+          "runtime_evidence": {
+            "line": 187,
+            "assignment": "*(undefined2 *)(param_1 + 0x694) = *(undefined2 *)(param_2 + 0x12fe);"
+          }
+        }
+      ],
+      "existing_engine_override": null,
+      "evidence": [
+        {
+          "file": "creature-record-decoder.txt",
+          "line": 93,
+          "excerpt": "uVar2 = *(undefined2 *)(param_1 + 0xf0e);"
+        },
+        {
+          "file": "creature-record-decoder.txt",
+          "line": 97,
+          "excerpt": "*(undefined2 *)((int)this + 0x130e) = uVar2;"
+        },
+        {
+          "file": "phase17-creature-editor-model.txt",
+          "line": 157,
+          "excerpt": "*(undefined2 *)(this + 0x57b) = *(undefined2 *)((int)piVar1 + 0x130e);"
+        },
+        {
+          "file": "phase17-creature-main-panel-fill.txt",
+          "line": 56,
+          "excerpt": "*(undefined2 *)((int)this + 0x172c) = *(undefined2 *)(*(int *)((int)this + 0x134) + 0x15ec);"
+        },
+        {
+          "file": "phase17-creature-f55-panel-extract.txt",
+          "line": 167,
+          "excerpt": "case 0xf7fa:"
+        },
+        {
+          "file": "phase17-creature-f55-panel-extract.txt",
+          "line": 168,
+          "excerpt": "*(double *)((int)param_1 + 0x60) = (double)*(ushort *)((int)param_1 + 0x172c);"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 156,
+          "excerpt": "case 0xf7fa:"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 157,
+          "excerpt": "lVar2 = __ftol();"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 158,
+          "excerpt": "*(short *)(param_1 + 0x172c) = (short)lVar2;"
+        },
+        {
+          "file": "phase17-creature-main-panel-commit.txt",
+          "line": 34,
+          "excerpt": "*(undefined2 *)(*(int *)(param_1 + 0x134) + 0x15ec) = *(undefined2 *)(param_1 + 0x172c);"
+        },
+        {
+          "file": "phase17-creature-writer-assembly.txt",
+          "first": "0x4a816f",
+          "last": "0x4a8176",
+          "instructions": [
+            "004a816f: MOV DX,word ptr [EBX + 0x15ec] ",
+            "004a8176: MOV word ptr [ESP + 0xfa2],DX "
+          ]
+        }
+      ]
+    },
+    {
+      "raw_offset": 3856,
+      "raw_offset_hex": "0xf10",
+      "raw_bytes": 2,
+      "baseline_name": "Fear",
+      "native_label": "Fear",
+      "property_id": 63091,
+      "editor_intermediate_offset": 4880,
+      "editor_model_offset": 5614,
+      "editor_panel_offset": 5934,
+      "editor_display_kind": "u16",
+      "gui_validation_range": null,
+      "scale": 1,
+      "label_resource": {
+        "id": 63091,
+        "id_hex": "0xf673",
+        "text": "Fear",
+        "resource_path": [
+          6,
+          3944,
+          2057
+        ],
+        "text_file_offset": 1583864,
+        "text_rva": 1682168,
+        "utf16_bytes": 8,
+        "text_sha256": "6977cedcdec60ec3d5097147a31a3513b299726a838ea2bbe9c3548c1bb27444",
+        "block_sha256": "8b850bf2d24d75ef2198f53b375c5babf50b5b5e5a185285509b6437635eab6a"
+      },
+      "runtime_storage_paths": [
+        {
+          "raw_offset": "0xf10",
+          "raw_bytes": 2,
+          "baseline_field": "Fear",
+          "intermediate_offset": "0x1300",
+          "runtime_offset": "0x696",
+          "runtime_bytes": 2,
+          "transform": "copy",
+          "runtime_expression": "*(undefined2 *)(param_2 + 0x1300)",
+          "converter_evidence": [
+            {
+              "line": 109,
+              "assignment": "uVar4 = *(undefined2 *)(param_2 + 0xf10);"
+            },
+            {
+              "line": 113,
+              "assignment": "*(undefined2 *)(param_1 + 0x4c0) = uVar4;"
+            }
+          ],
+          "runtime_evidence": {
+            "line": 193,
+            "assignment": "*(undefined2 *)(param_1 + 0x696) = *(undefined2 *)(param_2 + 0x1300);"
+          }
+        }
+      ],
+      "existing_engine_override": null,
+      "evidence": [
+        {
+          "file": "creature-record-decoder.txt",
+          "line": 99,
+          "excerpt": "uVar2 = *(undefined2 *)(param_1 + 0xf10);"
+        },
+        {
+          "file": "creature-record-decoder.txt",
+          "line": 103,
+          "excerpt": "*(undefined2 *)((int)this + 0x1310) = uVar2;"
+        },
+        {
+          "file": "phase17-creature-editor-model.txt",
+          "line": 160,
+          "excerpt": "*(short *)((int)this + 0x15ee) = (short)piVar1[0x4c4];"
+        },
+        {
+          "file": "phase17-creature-main-panel-fill.txt",
+          "line": 57,
+          "excerpt": "*(undefined2 *)((int)this + 0x172e) = *(undefined2 *)(*(int *)((int)this + 0x134) + 0x15ee);"
+        },
+        {
+          "file": "phase17-creature-f55-panel-extract.txt",
+          "line": 33,
+          "excerpt": "case 0xf673:"
+        },
+        {
+          "file": "phase17-creature-f55-panel-extract.txt",
+          "line": 34,
+          "excerpt": "*(double *)((int)param_1 + 0x60) = (double)*(ushort *)((int)param_1 + 0x172e);"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 29,
+          "excerpt": "case 0xf673:"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 30,
+          "excerpt": "lVar2 = __ftol();"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 31,
+          "excerpt": "*(short *)(param_1 + 0x172e) = (short)lVar2;"
+        },
+        {
+          "file": "phase17-creature-main-panel-commit.txt",
+          "line": 35,
+          "excerpt": "*(undefined2 *)(*(int *)(param_1 + 0x134) + 0x15ee) = *(undefined2 *)(param_1 + 0x172e);"
+        },
+        {
+          "file": "phase17-creature-writer-assembly.txt",
+          "first": "0x4a817e",
+          "last": "0x4a8185",
+          "instructions": [
+            "004a817e: MOV AX,word ptr [EBX + 0x15ee] ",
+            "004a8185: MOV word ptr [ESP + 0xfa4],AX "
+          ]
+        }
+      ]
+    },
+    {
+      "raw_offset": 3858,
+      "raw_offset_hex": "0xf12",
+      "raw_bytes": 2,
+      "baseline_name": "Threat",
+      "native_label": "Threat",
+      "property_id": 63396,
+      "editor_intermediate_offset": 4882,
+      "editor_model_offset": 5616,
+      "editor_panel_offset": 5936,
+      "editor_display_kind": "u16",
+      "gui_validation_range": null,
+      "scale": 1,
+      "label_resource": {
+        "id": 63396,
+        "id_hex": "0xf7a4",
+        "text": "Threat",
+        "resource_path": [
+          6,
+          3963,
+          2057
+        ],
+        "text_file_offset": 1588460,
+        "text_rva": 1686764,
+        "utf16_bytes": 12,
+        "text_sha256": "84a2e90e2d73008cf82c878af7b4268361fa51a0290325ab79bbbba5eb3d5965",
+        "block_sha256": "63e861985f8287f4deac6619e59cee1d52a95cc55bf19fb0b6a55046d6354db1"
+      },
+      "runtime_storage_paths": [
+        {
+          "raw_offset": "0xf12",
+          "raw_bytes": 2,
+          "baseline_field": "Threat",
+          "intermediate_offset": "0x1302",
+          "runtime_offset": "0x698",
+          "runtime_bytes": 2,
+          "transform": "copy",
+          "runtime_expression": "*(undefined2 *)(param_2 + 0x1302)",
+          "converter_evidence": [
+            {
+              "line": 115,
+              "assignment": "uVar4 = *(undefined2 *)(param_2 + 0xf12);"
+            },
+            {
+              "line": 119,
+              "assignment": "*(undefined2 *)((int)param_1 + 0x1302) = uVar4;"
+            }
+          ],
+          "runtime_evidence": {
+            "line": 199,
+            "assignment": "*(undefined2 *)(param_1 + 0x698) = *(undefined2 *)(param_2 + 0x1302);"
+          }
+        }
+      ],
+      "existing_engine_override": null,
+      "evidence": [
+        {
+          "file": "creature-record-decoder.txt",
+          "line": 105,
+          "excerpt": "uVar2 = *(undefined2 *)(param_1 + 0xf12);"
+        },
+        {
+          "file": "creature-record-decoder.txt",
+          "line": 109,
+          "excerpt": "*(undefined2 *)((int)this + 0x1312) = uVar2;"
+        },
+        {
+          "file": "phase17-creature-editor-model.txt",
+          "line": 163,
+          "excerpt": "*(undefined2 *)(this + 0x57c) = *(undefined2 *)((int)piVar1 + 0x1312);"
+        },
+        {
+          "file": "phase17-creature-main-panel-fill.txt",
+          "line": 58,
+          "excerpt": "*(undefined2 *)((int)this + 0x1730) = *(undefined2 *)(*(int *)((int)this + 0x134) + 0x15f0);"
+        },
+        {
+          "file": "phase17-creature-f55-panel-extract.txt",
+          "line": 158,
+          "excerpt": "case 0xf7a4:"
+        },
+        {
+          "file": "phase17-creature-f55-panel-extract.txt",
+          "line": 159,
+          "excerpt": "*(double *)((int)param_1 + 0x60) = (double)*(ushort *)((int)param_1 + 0x1730);"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 148,
+          "excerpt": "case 0xf7a4:"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 149,
+          "excerpt": "lVar2 = __ftol();"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 150,
+          "excerpt": "*(short *)(param_1 + 0x1730) = (short)lVar2;"
+        },
+        {
+          "file": "phase17-creature-main-panel-commit.txt",
+          "line": 36,
+          "excerpt": "*(undefined2 *)(*(int *)(param_1 + 0x134) + 0x15f0) = *(undefined2 *)(param_1 + 0x1730);"
+        },
+        {
+          "file": "phase17-creature-writer-assembly.txt",
+          "first": "0x4a818d",
+          "last": "0x4a8194",
+          "instructions": [
+            "004a818d: MOV CX,word ptr [EBX + 0x15f0] ",
+            "004a8194: MOV word ptr [ESP + 0xfa6],CX "
+          ]
+        }
+      ]
+    },
+    {
+      "raw_offset": 3862,
+      "raw_offset_hex": "0xf16",
+      "raw_bytes": 2,
+      "baseline_name": "SlapDamage",
+      "native_label": "Slap Damage",
+      "property_id": 63101,
+      "editor_intermediate_offset": 4886,
+      "editor_model_offset": 5736,
+      "editor_panel_offset": 6056,
+      "editor_display_kind": "s16",
+      "gui_validation_range": null,
+      "scale": 1,
+      "label_resource": {
+        "id": 63101,
+        "id_hex": "0xf67d",
+        "text": "Slap Damage",
+        "resource_path": [
+          6,
+          3944,
+          2057
+        ],
+        "text_file_offset": 1584142,
+        "text_rva": 1682446,
+        "utf16_bytes": 22,
+        "text_sha256": "196bebde43f898efc3f16ecbb9d6bdab582446f39b5b9220e422b41156a76a2b",
+        "block_sha256": "8b850bf2d24d75ef2198f53b375c5babf50b5b5e5a185285509b6437635eab6a"
+      },
+      "runtime_storage_paths": [
+        {
+          "raw_offset": "0xf16",
+          "raw_bytes": 2,
+          "baseline_field": "SlapDamage",
+          "intermediate_offset": "0x1306",
+          "runtime_offset": "0x61a",
+          "runtime_bytes": 2,
+          "transform": "copy",
+          "runtime_expression": "*(undefined2 *)(param_2 + 0x1306)",
+          "converter_evidence": [
+            {
+              "line": 187,
+              "assignment": "uVar4 = *(undefined2 *)(param_2 + 0xf16);"
+            },
+            {
+              "line": 191,
+              "assignment": "*(undefined2 *)((int)param_1 + 0x1306) = uVar4;"
+            }
+          ],
+          "runtime_evidence": {
+            "line": 295,
+            "assignment": "*(undefined2 *)(param_1 + 0x61a) = *(undefined2 *)(param_2 + 0x1306);"
+          }
+        }
+      ],
+      "existing_engine_override": null,
+      "evidence": [
+        {
+          "file": "creature-record-decoder.txt",
+          "line": 177,
+          "excerpt": "uVar2 = *(undefined2 *)(param_1 + 0xf16);"
+        },
+        {
+          "file": "creature-record-decoder.txt",
+          "line": 181,
+          "excerpt": "*(undefined2 *)((int)this + 0x1316) = uVar2;"
+        },
+        {
+          "file": "phase17-creature-editor-model.txt",
+          "line": 205,
+          "excerpt": "*(undefined2 *)(this + 0x59a) = *(undefined2 *)((int)piVar1 + 0x1316);"
+        },
+        {
+          "file": "phase17-creature-main-panel-fill.txt",
+          "line": 76,
+          "excerpt": "*(undefined2 *)((int)this + 0x17a8) = *(undefined2 *)(*(int *)((int)this + 0x134) + 0x1668);"
+        },
+        {
+          "file": "phase17-creature-f55-panel-extract.txt",
+          "line": 68,
+          "excerpt": "case 0xf67d:"
+        },
+        {
+          "file": "phase17-creature-f55-panel-extract.txt",
+          "line": 69,
+          "excerpt": "*(double *)((int)param_1 + 0x60) = (double)(int)*(short *)((int)param_1 + 0x17a8);"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 61,
+          "excerpt": "case 0xf67d:"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 62,
+          "excerpt": "lVar2 = __ftol();"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 63,
+          "excerpt": "*(short *)(param_1 + 0x17a8) = (short)lVar2;"
+        },
+        {
+          "file": "phase17-creature-main-panel-commit.txt",
+          "line": 53,
+          "excerpt": "*(undefined2 *)(*(int *)(param_1 + 0x134) + 0x1668) = *(undefined2 *)(param_1 + 0x17a8);"
+        },
+        {
+          "file": "phase17-creature-writer-assembly.txt",
+          "first": "0x4a829e",
+          "last": "0x4a82a5",
+          "instructions": [
+            "004a829e: MOV CX,word ptr [EBX + 0x1668] ",
+            "004a82a5: MOV word ptr [ESP + 0xfaa],CX "
+          ]
+        }
+      ]
+    },
+    {
+      "raw_offset": 3864,
+      "raw_offset_hex": "0xf18",
+      "raw_bytes": 2,
+      "baseline_name": "ManaGenPrayer",
+      "native_label": "Mana Generated By Prayer",
+      "property_id": 63130,
+      "editor_intermediate_offset": 4888,
+      "editor_model_offset": 5656,
+      "editor_panel_offset": 5976,
+      "editor_display_kind": "s16",
+      "gui_validation_range": null,
+      "scale": 1,
+      "label_resource": {
+        "id": 63130,
+        "id_hex": "0xf69a",
+        "text": "Mana Generated By Prayer",
+        "resource_path": [
+          6,
+          3946,
+          2057
+        ],
+        "text_file_offset": 1585184,
+        "text_rva": 1683488,
+        "utf16_bytes": 48,
+        "text_sha256": "d941bac844575db20613758ee8c499585f3bed1bfbc381f5e278d6e7362e3175",
+        "block_sha256": "6628d9ba67afe98d7a760b20faeaed2c86c109c6acb55a871ed809572b6f1651"
+      },
+      "runtime_storage_paths": [
+        {
+          "raw_offset": "0xf18",
+          "raw_bytes": 2,
+          "baseline_field": "ManaGenPrayer",
+          "intermediate_offset": "0x1308",
+          "runtime_offset": "0x6a2",
+          "runtime_bytes": 2,
+          "transform": "copy",
+          "runtime_expression": "*(undefined2 *)(param_2 + 0x1308)",
+          "converter_evidence": [
+            {
+              "line": 285,
+              "assignment": "uVar4 = *(undefined2 *)(param_2 + 0xf18);"
+            },
+            {
+              "line": 289,
+              "assignment": "*(undefined2 *)(param_1 + 0x4c2) = uVar4;"
+            }
+          ],
+          "runtime_evidence": {
+            "line": 1235,
+            "assignment": "*(undefined2 *)(param_1 + 0x6a2) = *(undefined2 *)(param_2 + 0x1308);"
+          }
+        }
+      ],
+      "existing_engine_override": null,
+      "evidence": [
+        {
+          "file": "creature-record-decoder.txt",
+          "line": 275,
+          "excerpt": "uVar2 = *(undefined2 *)(param_1 + 0xf18);"
+        },
+        {
+          "file": "creature-record-decoder.txt",
+          "line": 279,
+          "excerpt": "*(undefined2 *)((int)this + 0x1318) = uVar2;"
+        },
+        {
+          "file": "phase17-creature-editor-model.txt",
+          "line": 166,
+          "excerpt": "*(short *)(this + 0x586) = (short)piVar1[0x4c6];"
+        },
+        {
+          "file": "phase17-creature-main-panel-fill.txt",
+          "line": 59,
+          "excerpt": "*(undefined2 *)((int)this + 0x1758) = *(undefined2 *)(*(int *)((int)this + 0x134) + 0x1618);"
+        },
+        {
+          "file": "phase17-creature-f55-panel-extract.txt",
+          "line": 13,
+          "excerpt": "if (uVar1 == 0xf69a) {"
+        },
+        {
+          "file": "phase17-creature-f55-panel-extract.txt",
+          "line": 14,
+          "excerpt": "*(double *)((int)param_1 + 0x60) = (double)(int)*(short *)((int)param_1 + 0x1758);"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 11,
+          "excerpt": "if (uVar1 == 0xf69a) {"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 12,
+          "excerpt": "lVar2 = __ftol();"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 13,
+          "excerpt": "*(short *)(param_1 + 0x1758) = (short)lVar2;"
+        },
+        {
+          "file": "phase17-creature-main-panel-commit.txt",
+          "line": 37,
+          "excerpt": "*(undefined2 *)(*(int *)(param_1 + 0x134) + 0x1618) = *(undefined2 *)(param_1 + 0x1758);"
+        },
+        {
+          "file": "phase17-creature-writer-assembly.txt",
+          "first": "0x4a819c",
+          "last": "0x4a81a3",
+          "instructions": [
+            "004a819c: MOV DX,word ptr [EBX + 0x1618] ",
+            "004a81a3: MOV word ptr [ESP + 0xfac],DX "
+          ]
+        }
+      ]
+    },
+    {
+      "raw_offset": 3868,
+      "raw_offset_hex": "0xf1c",
+      "raw_bytes": 2,
+      "baseline_name": "Pay",
+      "native_label": "Pay",
+      "property_id": 63094,
+      "editor_intermediate_offset": 4892,
+      "editor_model_offset": 5664,
+      "editor_panel_offset": 5984,
+      "editor_display_kind": "u16",
+      "gui_validation_range": null,
+      "scale": 1,
+      "label_resource": {
+        "id": 63094,
+        "id_hex": "0xf676",
+        "text": "Pay",
+        "resource_path": [
+          6,
+          3944,
+          2057
+        ],
+        "text_file_offset": 1583878,
+        "text_rva": 1682182,
+        "utf16_bytes": 6,
+        "text_sha256": "61a73b3e5fbd122cabf48dd54ebd24668c0d97582cb0df2c578cbff80392459c",
+        "block_sha256": "8b850bf2d24d75ef2198f53b375c5babf50b5b5e5a185285509b6437635eab6a"
+      },
+      "runtime_storage_paths": [
+        {
+          "raw_offset": "0xf1c",
+          "raw_bytes": 2,
+          "baseline_field": "Pay",
+          "intermediate_offset": "0x130c",
+          "runtime_offset": "0x69a",
+          "runtime_bytes": 2,
+          "transform": "copy",
+          "runtime_expression": "*(undefined2 *)(param_2 + 0x130c)",
+          "converter_evidence": [
+            {
+              "line": 121,
+              "assignment": "uVar4 = *(undefined2 *)(param_2 + 0xf1c);"
+            },
+            {
+              "line": 125,
+              "assignment": "*(undefined2 *)(param_1 + 0x4c3) = uVar4;"
+            }
+          ],
+          "runtime_evidence": {
+            "line": 205,
+            "assignment": "*(undefined2 *)(param_1 + 0x69a) = *(undefined2 *)(param_2 + 0x130c);"
+          }
+        }
+      ],
+      "existing_engine_override": null,
+      "evidence": [
+        {
+          "file": "creature-record-decoder.txt",
+          "line": 111,
+          "excerpt": "uVar2 = *(undefined2 *)(param_1 + 0xf1c);"
+        },
+        {
+          "file": "creature-record-decoder.txt",
+          "line": 115,
+          "excerpt": "*(undefined2 *)((int)this + 0x131c) = uVar2;"
+        },
+        {
+          "file": "phase17-creature-editor-model.txt",
+          "line": 175,
+          "excerpt": "*(short *)(this + 0x588) = (short)piVar1[0x4c7];"
+        },
+        {
+          "file": "phase17-creature-main-panel-fill.txt",
+          "line": 62,
+          "excerpt": "*(undefined2 *)((int)this + 0x1760) = *(undefined2 *)(*(int *)((int)this + 0x134) + 0x1620);"
+        },
+        {
+          "file": "phase17-creature-f55-panel-extract.txt",
+          "line": 37,
+          "excerpt": "case 0xf676:"
+        },
+        {
+          "file": "phase17-creature-f55-panel-extract.txt",
+          "line": 38,
+          "excerpt": "*(double *)((int)param_1 + 0x60) = (double)*(ushort *)((int)param_1 + 0x1760);"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 33,
+          "excerpt": "case 0xf676:"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 34,
+          "excerpt": "lVar2 = __ftol();"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 35,
+          "excerpt": "*(short *)(param_1 + 0x1760) = (short)lVar2;"
+        },
+        {
+          "file": "phase17-creature-main-panel-commit.txt",
+          "line": 40,
+          "excerpt": "*(undefined2 *)(*(int *)(param_1 + 0x134) + 0x1620) = *(undefined2 *)(param_1 + 0x1760);"
+        },
+        {
+          "file": "phase17-creature-writer-assembly.txt",
+          "first": "0x4a81c7",
+          "last": "0x4a81ce",
+          "instructions": [
+            "004a81c7: MOV DX,word ptr [EBX + 0x1620] ",
+            "004a81ce: MOV word ptr [ESP + 0xfb0],DX "
+          ]
+        }
+      ]
+    },
+    {
+      "raw_offset": 3870,
+      "raw_offset_hex": "0xf1e",
+      "raw_bytes": 2,
+      "baseline_name": "MaxGoldHeld",
+      "native_label": "Max Gold Held",
+      "property_id": 63095,
+      "editor_intermediate_offset": 4894,
+      "editor_model_offset": 5666,
+      "editor_panel_offset": 5986,
+      "editor_display_kind": "u16",
+      "gui_validation_range": null,
+      "scale": 1,
+      "label_resource": {
+        "id": 63095,
+        "id_hex": "0xf677",
+        "text": "Max Gold Held",
+        "resource_path": [
+          6,
+          3944,
+          2057
+        ],
+        "text_file_offset": 1583886,
+        "text_rva": 1682190,
+        "utf16_bytes": 26,
+        "text_sha256": "7bb580ca097aac6ae009d04930a3b5e089946e029279e229616b6d879a806944",
+        "block_sha256": "8b850bf2d24d75ef2198f53b375c5babf50b5b5e5a185285509b6437635eab6a"
+      },
+      "runtime_storage_paths": [
+        {
+          "raw_offset": "0xf1e",
+          "raw_bytes": 2,
+          "baseline_field": "MaxGoldHeld",
+          "intermediate_offset": "0x130e",
+          "runtime_offset": "0x69c",
+          "runtime_bytes": 2,
+          "transform": "copy",
+          "runtime_expression": "*(undefined2 *)(param_2 + 0x130e)",
+          "converter_evidence": [
+            {
+              "line": 127,
+              "assignment": "uVar4 = *(undefined2 *)(param_2 + 0xf1e);"
+            },
+            {
+              "line": 131,
+              "assignment": "*(undefined2 *)((int)param_1 + 0x130e) = uVar4;"
+            }
+          ],
+          "runtime_evidence": {
+            "line": 211,
+            "assignment": "*(undefined2 *)(param_1 + 0x69c) = *(undefined2 *)(param_2 + 0x130e);"
+          }
+        }
+      ],
+      "existing_engine_override": null,
+      "evidence": [
+        {
+          "file": "creature-record-decoder.txt",
+          "line": 117,
+          "excerpt": "uVar2 = *(undefined2 *)(param_1 + 0xf1e);"
+        },
+        {
+          "file": "creature-record-decoder.txt",
+          "line": 121,
+          "excerpt": "*(undefined2 *)((int)this + 0x131e) = uVar2;"
+        },
+        {
+          "file": "phase17-creature-editor-model.txt",
+          "line": 178,
+          "excerpt": "*(undefined2 *)((int)this + 0x1622) = *(undefined2 *)((int)piVar1 + 0x131e);"
+        },
+        {
+          "file": "phase17-creature-main-panel-fill.txt",
+          "line": 63,
+          "excerpt": "*(undefined2 *)((int)this + 0x1762) = *(undefined2 *)(*(int *)((int)this + 0x134) + 0x1622);"
+        },
+        {
+          "file": "phase17-creature-f55-panel-extract.txt",
+          "line": 41,
+          "excerpt": "case 0xf677:"
+        },
+        {
+          "file": "phase17-creature-f55-panel-extract.txt",
+          "line": 42,
+          "excerpt": "*(double *)((int)param_1 + 0x60) = (double)*(ushort *)((int)param_1 + 0x1762);"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 37,
+          "excerpt": "case 0xf677:"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 38,
+          "excerpt": "lVar2 = __ftol();"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 39,
+          "excerpt": "*(short *)(param_1 + 0x1762) = (short)lVar2;"
+        },
+        {
+          "file": "phase17-creature-main-panel-commit.txt",
+          "line": 41,
+          "excerpt": "*(undefined2 *)(*(int *)(param_1 + 0x134) + 0x1622) = *(undefined2 *)(param_1 + 0x1762);"
+        },
+        {
+          "file": "phase17-creature-writer-assembly.txt",
+          "first": "0x4a81d6",
+          "last": "0x4a81dd",
+          "instructions": [
+            "004a81d6: MOV AX,word ptr [EBX + 0x1622] ",
+            "004a81dd: MOV word ptr [ESP + 0xfb2],AX "
+          ]
+        }
+      ]
+    },
+    {
+      "raw_offset": 3872,
+      "raw_offset_hex": "0xf20",
+      "raw_bytes": 2,
+      "baseline_name": "Unk3cc",
+      "native_label": "Max Angle Change",
+      "property_id": 63098,
+      "editor_intermediate_offset": 4896,
+      "editor_model_offset": 5704,
+      "editor_panel_offset": 6024,
+      "editor_display_kind": "u16",
+      "gui_validation_range": null,
+      "scale": 1,
+      "label_resource": {
+        "id": 63098,
+        "id_hex": "0xf67a",
+        "text": "Max Angle Change",
+        "resource_path": [
+          6,
+          3944,
+          2057
+        ],
+        "text_file_offset": 1584006,
+        "text_rva": 1682310,
+        "utf16_bytes": 32,
+        "text_sha256": "1325edb06c000beb5c6182ebcb9402ff1ef5c95f7b0a3c1f4dc363a19a9f1355",
+        "block_sha256": "8b850bf2d24d75ef2198f53b375c5babf50b5b5e5a185285509b6437635eab6a"
+      },
+      "runtime_storage_paths": [],
+      "existing_engine_override": {
+        "name": "MaxAngleChangeRaw",
+        "offset": 3872,
+        "offset_hex": "0xf20",
+        "size": 2,
+        "kind": "u16",
+        "baseline_names": [
+          "Unk3cc"
+        ],
+        "confidence": "engine units and unsigned read",
+        "evidence": [
+          "game-creature-convert.txt",
+          "game-creature-type.txt",
+          "game-turning-apply.txt",
+          "game-turning-tick.txt"
+        ],
+        "note": "2048 angular units per full turn. Per-tick limit = floor(raw / simulationTPS); positive raw clamped to at least 1. Degrees per second before quantization = raw*360/2048. Not signed /4096."
+      },
+      "evidence": [
+        {
+          "file": "creature-record-decoder.txt",
+          "line": 153,
+          "excerpt": "uVar2 = *(undefined2 *)(param_1 + 0xf20);"
+        },
+        {
+          "file": "creature-record-decoder.txt",
+          "line": 157,
+          "excerpt": "*(undefined2 *)((int)this + 0x1320) = uVar2;"
+        },
+        {
+          "file": "phase17-creature-editor-model.txt",
+          "line": 187,
+          "excerpt": "*(short *)(this + 0x592) = (short)piVar1[0x4c8];"
+        },
+        {
+          "file": "phase17-creature-main-panel-fill.txt",
+          "line": 72,
+          "excerpt": "*(undefined2 *)((int)this + 0x1788) = *(undefined2 *)(*(int *)((int)this + 0x134) + 0x1648);"
+        },
+        {
+          "file": "phase17-creature-f55-panel-extract.txt",
+          "line": 54,
+          "excerpt": "case 0xf67a:"
+        },
+        {
+          "file": "phase17-creature-f55-panel-extract.txt",
+          "line": 55,
+          "excerpt": "*(double *)((int)param_1 + 0x60) = (double)*(ushort *)((int)param_1 + 0x1788);"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 49,
+          "excerpt": "case 0xf67a:"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 50,
+          "excerpt": "lVar2 = __ftol();"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 51,
+          "excerpt": "*(short *)(param_1 + 0x1788) = (short)lVar2;"
+        },
+        {
+          "file": "phase17-creature-main-panel-commit.txt",
+          "line": 49,
+          "excerpt": "*(undefined2 *)(*(int *)(param_1 + 0x134) + 0x1648) = *(undefined2 *)(param_1 + 0x1788);"
+        },
+        {
+          "file": "phase17-creature-writer-assembly.txt",
+          "first": "0x4a8247",
+          "last": "0x4a824e",
+          "instructions": [
+            "004a8247: MOV AX,word ptr [EBX + 0x1648] ",
+            "004a824e: MOV word ptr [ESP + 0xfb4],AX "
+          ]
+        }
+      ]
+    },
+    {
+      "raw_offset": 3874,
+      "raw_offset_hex": "0xf22",
+      "raw_bytes": 2,
+      "baseline_name": "DecomposeValue",
+      "native_label": "Decompose Value",
+      "property_id": 63334,
+      "editor_intermediate_offset": 4898,
+      "editor_model_offset": 5780,
+      "editor_panel_offset": 6100,
+      "editor_display_kind": "u16",
+      "gui_validation_range": null,
+      "scale": 1,
+      "label_resource": {
+        "id": 63334,
+        "id_hex": "0xf766",
+        "text": "Decompose Value",
+        "resource_path": [
+          6,
+          3959,
+          2057
+        ],
+        "text_file_offset": 1587990,
+        "text_rva": 1686294,
+        "utf16_bytes": 30,
+        "text_sha256": "6a397c16855019a1b04fd1d27d922fdfb96ddf9e7a2cfc02ba32bd62e76c6722",
+        "block_sha256": "d2418663434b89a9691d6f1e4c065f76ea2c2a8d1ed5654e41c5cd302d2c14ce"
+      },
+      "runtime_storage_paths": [
+        {
+          "raw_offset": "0xf22",
+          "raw_bytes": 2,
+          "baseline_field": "DecomposeValue",
+          "intermediate_offset": "0x1312",
+          "runtime_offset": "0x6bf",
+          "runtime_bytes": 2,
+          "transform": "copy",
+          "runtime_expression": "*(undefined2 *)(param_2 + 0x1312)",
+          "converter_evidence": [
+            {
+              "line": 459,
+              "assignment": "uVar4 = *(undefined2 *)(param_2 + 0xf22);"
+            },
+            {
+              "line": 463,
+              "assignment": "*(undefined2 *)((int)param_1 + 0x1312) = uVar4;"
+            }
+          ],
+          "runtime_evidence": {
+            "line": 1543,
+            "assignment": "*(undefined2 *)(param_1 + 0x6bf) = *(undefined2 *)(param_2 + 0x1312);"
+          }
+        }
+      ],
+      "existing_engine_override": null,
+      "evidence": [
+        {
+          "file": "creature-record-decoder.txt",
+          "line": 449,
+          "excerpt": "uVar2 = *(undefined2 *)(param_1 + 0xf22);"
+        },
+        {
+          "file": "creature-record-decoder.txt",
+          "line": 453,
+          "excerpt": "*(undefined2 *)((int)this + 0x1322) = uVar2;"
+        },
+        {
+          "file": "phase17-creature-editor-model.txt",
+          "line": 234,
+          "excerpt": "*(undefined2 *)(this + 0x5a5) = *(undefined2 *)((int)piVar1 + 0x1322);"
+        },
+        {
+          "file": "phase17-creature-main-panel-fill.txt",
+          "line": 91,
+          "excerpt": "*(undefined2 *)((int)this + 0x17d4) = *(undefined2 *)(*(int *)((int)this + 0x134) + 0x1694);"
+        },
+        {
+          "file": "phase17-creature-f55-panel-extract.txt",
+          "line": 130,
+          "excerpt": "case 0xf766:"
+        },
+        {
+          "file": "phase17-creature-f55-panel-extract.txt",
+          "line": 131,
+          "excerpt": "*(double *)((int)param_1 + 0x60) = (double)*(ushort *)((int)param_1 + 0x17d4);"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 120,
+          "excerpt": "case 0xf766:"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 121,
+          "excerpt": "lVar2 = __ftol();"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 122,
+          "excerpt": "*(short *)(param_1 + 0x17d4) = (short)lVar2;"
+        },
+        {
+          "file": "phase17-creature-main-panel-commit.txt",
+          "line": 68,
+          "excerpt": "*(undefined2 *)(*(int *)(param_1 + 0x134) + 0x1694) = *(undefined2 *)(param_1 + 0x17d4);"
+        },
+        {
+          "file": "phase17-creature-writer-assembly.txt",
+          "first": "0x4a8326",
+          "last": "0x4a832d",
+          "instructions": [
+            "004a8326: MOV AX,word ptr [EBX + 0x1694] ",
+            "004a832d: MOV word ptr [ESP + 0xfb6],AX "
+          ]
+        }
+      ]
+    },
+    {
+      "raw_offset": 3880,
+      "raw_offset_hex": "0xf28",
+      "raw_bytes": 2,
+      "baseline_name": "AngerNoLair",
+      "native_label": "Anger (No Lair)",
+      "property_id": 63335,
+      "editor_intermediate_offset": 4904,
+      "editor_model_offset": 5792,
+      "editor_panel_offset": 6112,
+      "editor_display_kind": "s16",
+      "gui_validation_range": null,
+      "scale": 1,
+      "label_resource": {
+        "id": 63335,
+        "id_hex": "0xf767",
+        "text": "Anger (No Lair)",
+        "resource_path": [
+          6,
+          3959,
+          2057
+        ],
+        "text_file_offset": 1588022,
+        "text_rva": 1686326,
+        "utf16_bytes": 30,
+        "text_sha256": "daf01a4e990a9cba31f99105ca1afa862afe99a411ccbb9b7400e4f55998a664",
+        "block_sha256": "d2418663434b89a9691d6f1e4c065f76ea2c2a8d1ed5654e41c5cd302d2c14ce"
+      },
+      "runtime_storage_paths": [],
+      "existing_engine_override": null,
+      "evidence": [
+        {
+          "file": "creature-record-decoder.txt",
+          "line": 473,
+          "excerpt": "uVar2 = *(undefined2 *)(param_1 + 0xf28);"
+        },
+        {
+          "file": "creature-record-decoder.txt",
+          "line": 477,
+          "excerpt": "*(undefined2 *)((int)this + 0x1328) = uVar2;"
+        },
+        {
+          "file": "phase17-creature-editor-model.txt",
+          "line": 243,
+          "excerpt": "*(short *)(this + 0x5a8) = (short)piVar1[0x4ca];"
+        },
+        {
+          "file": "phase17-creature-main-panel-fill.txt",
+          "line": 94,
+          "excerpt": "*(undefined2 *)((int)this + 0x17e0) = *(undefined2 *)(*(int *)((int)this + 0x134) + 0x16a0);"
+        },
+        {
+          "file": "phase17-creature-f55-panel-extract.txt",
+          "line": 134,
+          "excerpt": "case 0xf767:"
+        },
+        {
+          "file": "phase17-creature-f55-panel-extract.txt",
+          "line": 135,
+          "excerpt": "*(double *)((int)param_1 + 0x60) = (double)(int)*(short *)((int)param_1 + 0x17e0);"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 124,
+          "excerpt": "case 0xf767:"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 125,
+          "excerpt": "lVar2 = __ftol();"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 126,
+          "excerpt": "*(short *)(param_1 + 0x17e0) = (short)lVar2;"
+        },
+        {
+          "file": "phase17-creature-main-panel-commit.txt",
+          "line": 71,
+          "excerpt": "*(undefined2 *)(*(int *)(param_1 + 0x134) + 0x16a0) = *(undefined2 *)(param_1 + 0x17e0);"
+        },
+        {
+          "file": "phase17-creature-writer-assembly.txt",
+          "first": "0x4a8351",
+          "last": "0x4a8358",
+          "instructions": [
+            "004a8351: MOV AX,word ptr [EBX + 0x16a0] ",
+            "004a8358: MOV word ptr [ESP + 0xfbc],AX "
+          ]
+        }
+      ]
+    },
+    {
+      "raw_offset": 3882,
+      "raw_offset_hex": "0xf2a",
+      "raw_bytes": 2,
+      "baseline_name": "AngerNoFood",
+      "native_label": "Anger (No Food)",
+      "property_id": 63336,
+      "editor_intermediate_offset": 4906,
+      "editor_model_offset": 5794,
+      "editor_panel_offset": 6114,
+      "editor_display_kind": "s16",
+      "gui_validation_range": null,
+      "scale": 1,
+      "label_resource": {
+        "id": 63336,
+        "id_hex": "0xf768",
+        "text": "Anger (No Food)",
+        "resource_path": [
+          6,
+          3959,
+          2057
+        ],
+        "text_file_offset": 1588054,
+        "text_rva": 1686358,
+        "utf16_bytes": 30,
+        "text_sha256": "0e65d1c501492b7f4b12c06d4ba40ac4c98f7a2ca0fb4b4857816ce572b7c3db",
+        "block_sha256": "d2418663434b89a9691d6f1e4c065f76ea2c2a8d1ed5654e41c5cd302d2c14ce"
+      },
+      "runtime_storage_paths": [],
+      "existing_engine_override": null,
+      "evidence": [
+        {
+          "file": "creature-record-decoder.txt",
+          "line": 479,
+          "excerpt": "uVar2 = *(undefined2 *)(param_1 + 0xf2a);"
+        },
+        {
+          "file": "creature-record-decoder.txt",
+          "line": 483,
+          "excerpt": "*(undefined2 *)((int)this + 0x132a) = uVar2;"
+        },
+        {
+          "file": "phase17-creature-editor-model.txt",
+          "line": 246,
+          "excerpt": "*(undefined2 *)((int)this + 0x16a2) = *(undefined2 *)((int)piVar1 + 0x132a);"
+        },
+        {
+          "file": "phase17-creature-main-panel-fill.txt",
+          "line": 95,
+          "excerpt": "*(undefined2 *)((int)this + 0x17e2) = *(undefined2 *)(*(int *)((int)this + 0x134) + 0x16a2);"
+        },
+        {
+          "file": "phase17-creature-f55-panel-extract.txt",
+          "line": 138,
+          "excerpt": "case 0xf768:"
+        },
+        {
+          "file": "phase17-creature-f55-panel-extract.txt",
+          "line": 139,
+          "excerpt": "*(double *)((int)param_1 + 0x60) = (double)(int)*(short *)((int)param_1 + 0x17e2);"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 128,
+          "excerpt": "case 0xf768:"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 129,
+          "excerpt": "lVar2 = __ftol();"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 130,
+          "excerpt": "*(short *)(param_1 + 0x17e2) = (short)lVar2;"
+        },
+        {
+          "file": "phase17-creature-main-panel-commit.txt",
+          "line": 72,
+          "excerpt": "*(undefined2 *)(*(int *)(param_1 + 0x134) + 0x16a2) = *(undefined2 *)(param_1 + 0x17e2);"
+        },
+        {
+          "file": "phase17-creature-writer-assembly.txt",
+          "first": "0x4a8360",
+          "last": "0x4a8367",
+          "instructions": [
+            "004a8360: MOV CX,word ptr [EBX + 0x16a2] ",
+            "004a8367: MOV word ptr [ESP + 0xfbe],CX "
+          ]
+        }
+      ]
+    },
+    {
+      "raw_offset": 3884,
+      "raw_offset_hex": "0xf2c",
+      "raw_bytes": 2,
+      "baseline_name": "AngerNoPay",
+      "native_label": "Anger (No Pay)",
+      "property_id": 63337,
+      "editor_intermediate_offset": 4908,
+      "editor_model_offset": 5796,
+      "editor_panel_offset": 6116,
+      "editor_display_kind": "s16",
+      "gui_validation_range": null,
+      "scale": 1,
+      "label_resource": {
+        "id": 63337,
+        "id_hex": "0xf769",
+        "text": "Anger (No Pay)",
+        "resource_path": [
+          6,
+          3959,
+          2057
+        ],
+        "text_file_offset": 1588086,
+        "text_rva": 1686390,
+        "utf16_bytes": 28,
+        "text_sha256": "1dc6ace9dd2e9ab0f1d410cae0719e4b78bba0f08b7365e787ff2d1786686c29",
+        "block_sha256": "d2418663434b89a9691d6f1e4c065f76ea2c2a8d1ed5654e41c5cd302d2c14ce"
+      },
+      "runtime_storage_paths": [],
+      "existing_engine_override": null,
+      "evidence": [
+        {
+          "file": "creature-record-decoder.txt",
+          "line": 485,
+          "excerpt": "uVar2 = *(undefined2 *)(param_1 + 0xf2c);"
+        },
+        {
+          "file": "creature-record-decoder.txt",
+          "line": 489,
+          "excerpt": "*(undefined2 *)((int)this + 0x132c) = uVar2;"
+        },
+        {
+          "file": "phase17-creature-editor-model.txt",
+          "line": 249,
+          "excerpt": "*(short *)(this + 0x5a9) = (short)piVar1[0x4cb];"
+        },
+        {
+          "file": "phase17-creature-main-panel-fill.txt",
+          "line": 96,
+          "excerpt": "*(undefined2 *)((int)this + 0x17e4) = *(undefined2 *)(*(int *)((int)this + 0x134) + 0x16a4);"
+        },
+        {
+          "file": "phase17-creature-f55-panel-extract.txt",
+          "line": 90,
+          "excerpt": "if (uVar1 == 0xf769) {"
+        },
+        {
+          "file": "phase17-creature-f55-panel-extract.txt",
+          "line": 91,
+          "excerpt": "*(double *)((int)param_1 + 0x60) = (double)(int)*(short *)((int)param_1 + 0x17e4);"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 82,
+          "excerpt": "if (uVar1 == 0xf769) {"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 83,
+          "excerpt": "lVar2 = __ftol();"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 84,
+          "excerpt": "*(short *)(param_1 + 0x17e4) = (short)lVar2;"
+        },
+        {
+          "file": "phase17-creature-main-panel-commit.txt",
+          "line": 73,
+          "excerpt": "*(undefined2 *)(*(int *)(param_1 + 0x134) + 0x16a4) = *(undefined2 *)(param_1 + 0x17e4);"
+        },
+        {
+          "file": "phase17-creature-writer-assembly.txt",
+          "first": "0x4a836f",
+          "last": "0x4a8376",
+          "instructions": [
+            "004a836f: MOV DX,word ptr [EBX + 0x16a4] ",
+            "004a8376: MOV word ptr [ESP + 0xfc0],DX "
+          ]
+        }
+      ]
+    },
+    {
+      "raw_offset": 3886,
+      "raw_offset_hex": "0xf2e",
+      "raw_bytes": 2,
+      "baseline_name": "AngerNoWork",
+      "native_label": "Anger (No Work)",
+      "property_id": 63338,
+      "editor_intermediate_offset": 4910,
+      "editor_model_offset": 5798,
+      "editor_panel_offset": 6118,
+      "editor_display_kind": "s16",
+      "gui_validation_range": null,
+      "scale": 1,
+      "label_resource": {
+        "id": 63338,
+        "id_hex": "0xf76a",
+        "text": "Anger (No Work)",
+        "resource_path": [
+          6,
+          3959,
+          2057
+        ],
+        "text_file_offset": 1588116,
+        "text_rva": 1686420,
+        "utf16_bytes": 30,
+        "text_sha256": "9a112ce7976966a0291dff3cac77e52884197697b467973abd01f2ad3cad36ea",
+        "block_sha256": "d2418663434b89a9691d6f1e4c065f76ea2c2a8d1ed5654e41c5cd302d2c14ce"
+      },
+      "runtime_storage_paths": [],
+      "existing_engine_override": null,
+      "evidence": [
+        {
+          "file": "creature-record-decoder.txt",
+          "line": 491,
+          "excerpt": "uVar2 = *(undefined2 *)(param_1 + 0xf2e);"
+        },
+        {
+          "file": "creature-record-decoder.txt",
+          "line": 495,
+          "excerpt": "*(undefined2 *)((int)this + 0x132e) = uVar2;"
+        },
+        {
+          "file": "phase17-creature-editor-model.txt",
+          "line": 252,
+          "excerpt": "*(undefined2 *)((int)this + 0x16a6) = *(undefined2 *)((int)piVar1 + 0x132e);"
+        },
+        {
+          "file": "phase17-creature-main-panel-fill.txt",
+          "line": 97,
+          "excerpt": "*(undefined2 *)((int)this + 0x17e6) = *(undefined2 *)(*(int *)((int)this + 0x134) + 0x16a6);"
+        },
+        {
+          "file": "phase17-creature-f55-panel-extract.txt",
+          "line": 146,
+          "excerpt": "case 0xf76a:"
+        },
+        {
+          "file": "phase17-creature-f55-panel-extract.txt",
+          "line": 147,
+          "excerpt": "*(double *)((int)param_1 + 0x60) = (double)(int)*(short *)((int)param_1 + 0x17e6);"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 136,
+          "excerpt": "case 0xf76a:"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 137,
+          "excerpt": "lVar2 = __ftol();"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 138,
+          "excerpt": "*(short *)(param_1 + 0x17e6) = (short)lVar2;"
+        },
+        {
+          "file": "phase17-creature-main-panel-commit.txt",
+          "line": 74,
+          "excerpt": "*(undefined2 *)(*(int *)(param_1 + 0x134) + 0x16a6) = *(undefined2 *)(param_1 + 0x17e6);"
+        },
+        {
+          "file": "phase17-creature-writer-assembly.txt",
+          "first": "0x4a837e",
+          "last": "0x4a8385",
+          "instructions": [
+            "004a837e: MOV AX,word ptr [EBX + 0x16a6] ",
+            "004a8385: MOV word ptr [ESP + 0xfc2],AX "
+          ]
+        }
+      ]
+    },
+    {
+      "raw_offset": 3888,
+      "raw_offset_hex": "0xf30",
+      "raw_bytes": 2,
+      "baseline_name": "AngerSlap",
+      "native_label": "Anger (Slap)",
+      "property_id": 63339,
+      "editor_intermediate_offset": 4912,
+      "editor_model_offset": 5800,
+      "editor_panel_offset": 6120,
+      "editor_display_kind": "s16",
+      "gui_validation_range": null,
+      "scale": 1,
+      "label_resource": {
+        "id": 63339,
+        "id_hex": "0xf76b",
+        "text": "Anger (Slap)",
+        "resource_path": [
+          6,
+          3959,
+          2057
+        ],
+        "text_file_offset": 1588148,
+        "text_rva": 1686452,
+        "utf16_bytes": 24,
+        "text_sha256": "d4ddd52747b9eba3a4f98a6498856593b5ab83ece9f3d92d02db2c75054d041f",
+        "block_sha256": "d2418663434b89a9691d6f1e4c065f76ea2c2a8d1ed5654e41c5cd302d2c14ce"
+      },
+      "runtime_storage_paths": [
+        {
+          "raw_offset": "0xf30",
+          "raw_bytes": 2,
+          "baseline_field": "AngerSlap",
+          "intermediate_offset": "0x1320",
+          "runtime_offset": "0x6c9",
+          "runtime_bytes": 2,
+          "transform": "copy",
+          "runtime_expression": "*(undefined2 *)(param_2 + 0x1320)",
+          "converter_evidence": [
+            {
+              "line": 507,
+              "assignment": "uVar4 = *(undefined2 *)(param_2 + 0xf30);"
+            },
+            {
+              "line": 511,
+              "assignment": "*(undefined2 *)(param_1 + 0x4c8) = uVar4;"
+            }
+          ],
+          "runtime_evidence": {
+            "line": 1615,
+            "assignment": "*(undefined2 *)(param_1 + 0x6c9) = *(undefined2 *)(param_2 + 0x1320);"
+          }
+        }
+      ],
+      "existing_engine_override": null,
+      "evidence": [
+        {
+          "file": "creature-record-decoder.txt",
+          "line": 497,
+          "excerpt": "uVar2 = *(undefined2 *)(param_1 + 0xf30);"
+        },
+        {
+          "file": "creature-record-decoder.txt",
+          "line": 501,
+          "excerpt": "*(undefined2 *)((int)this + 0x1330) = uVar2;"
+        },
+        {
+          "file": "phase17-creature-editor-model.txt",
+          "line": 255,
+          "excerpt": "*(short *)(this + 0x5aa) = (short)piVar1[0x4cc];"
+        },
+        {
+          "file": "phase17-creature-main-panel-fill.txt",
+          "line": 98,
+          "excerpt": "*(undefined2 *)((int)this + 0x17e8) = *(undefined2 *)(*(int *)((int)this + 0x134) + 0x16a8);"
+        },
+        {
+          "file": "phase17-creature-f55-panel-extract.txt",
+          "line": 150,
+          "excerpt": "case 0xf76b:"
+        },
+        {
+          "file": "phase17-creature-f55-panel-extract.txt",
+          "line": 151,
+          "excerpt": "*(double *)((int)param_1 + 0x60) = (double)(int)*(short *)((int)param_1 + 0x17e8);"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 140,
+          "excerpt": "case 0xf76b:"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 141,
+          "excerpt": "lVar2 = __ftol();"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 142,
+          "excerpt": "*(short *)(param_1 + 0x17e8) = (short)lVar2;"
+        },
+        {
+          "file": "phase17-creature-main-panel-commit.txt",
+          "line": 75,
+          "excerpt": "*(undefined2 *)(*(int *)(param_1 + 0x134) + 0x16a8) = *(undefined2 *)(param_1 + 0x17e8);"
+        },
+        {
+          "file": "phase17-creature-writer-assembly.txt",
+          "first": "0x4a838d",
+          "last": "0x4a8394",
+          "instructions": [
+            "004a838d: MOV CX,word ptr [EBX + 0x16a8] ",
+            "004a8394: MOV word ptr [ESP + 0xfc4],CX "
+          ]
+        }
+      ]
+    },
+    {
+      "raw_offset": 3890,
+      "raw_offset_hex": "0xf32",
+      "raw_bytes": 2,
+      "baseline_name": "AngerInHand",
+      "native_label": "Anger (In Hand)",
+      "property_id": 63483,
+      "editor_intermediate_offset": 4914,
+      "editor_model_offset": 5802,
+      "editor_panel_offset": 6122,
+      "editor_display_kind": "s16",
+      "gui_validation_range": null,
+      "scale": 1,
+      "label_resource": {
+        "id": 63483,
+        "id_hex": "0xf7fb",
+        "text": "Anger (In Hand)",
+        "resource_path": [
+          6,
+          3968,
+          2057
+        ],
+        "text_file_offset": 1589056,
+        "text_rva": 1687360,
+        "utf16_bytes": 30,
+        "text_sha256": "eae2499e2c91a5b73b4750c703cc5f891c3df0f3ad138fb94ac1dfb50c599841",
+        "block_sha256": "aab1ea8de3fa83e5489129844dffcb706a3ba965acd3452c1611c494654c121b"
+      },
+      "runtime_storage_paths": [],
+      "existing_engine_override": null,
+      "evidence": [
+        {
+          "file": "creature-record-decoder.txt",
+          "line": 503,
+          "excerpt": "uVar2 = *(undefined2 *)(param_1 + 0xf32);"
+        },
+        {
+          "file": "creature-record-decoder.txt",
+          "line": 507,
+          "excerpt": "*(undefined2 *)((int)this + 0x1332) = uVar2;"
+        },
+        {
+          "file": "phase17-creature-editor-model.txt",
+          "line": 258,
+          "excerpt": "*(undefined2 *)((int)this + 0x16aa) = *(undefined2 *)((int)piVar1 + 0x1332);"
+        },
+        {
+          "file": "phase17-creature-main-panel-fill.txt",
+          "line": 99,
+          "excerpt": "*(undefined2 *)((int)this + 0x17ea) = *(undefined2 *)(*(int *)((int)this + 0x134) + 0x16aa);"
+        },
+        {
+          "file": "phase17-creature-f55-panel-extract.txt",
+          "line": 171,
+          "excerpt": "case 0xf7fb:"
+        },
+        {
+          "file": "phase17-creature-f55-panel-extract.txt",
+          "line": 172,
+          "excerpt": "*(double *)((int)param_1 + 0x60) = (double)(int)*(short *)((int)param_1 + 0x17ea);"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 160,
+          "excerpt": "case 0xf7fb:"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 161,
+          "excerpt": "lVar2 = __ftol();"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 162,
+          "excerpt": "*(short *)(param_1 + 0x17ea) = (short)lVar2;"
+        },
+        {
+          "file": "phase17-creature-main-panel-commit.txt",
+          "line": 76,
+          "excerpt": "*(undefined2 *)(*(int *)(param_1 + 0x134) + 0x16aa) = *(undefined2 *)(param_1 + 0x17ea);"
+        },
+        {
+          "file": "phase17-creature-writer-assembly.txt",
+          "first": "0x4a839c",
+          "last": "0x4a83a3",
+          "instructions": [
+            "004a839c: MOV DX,word ptr [EBX + 0x16aa] ",
+            "004a83a3: MOV word ptr [ESP + 0xfc6],DX "
+          ]
+        }
+      ]
+    },
+    {
+      "raw_offset": 3892,
+      "raw_offset_hex": "0xf34",
+      "raw_bytes": 2,
+      "baseline_name": "InitialGoldHeld",
+      "native_label": "Initial Gold Held",
+      "property_id": 63557,
+      "editor_intermediate_offset": 4916,
+      "editor_model_offset": 5778,
+      "editor_panel_offset": 6098,
+      "editor_display_kind": "u16",
+      "gui_validation_range": null,
+      "scale": 1,
+      "label_resource": {
+        "id": 63557,
+        "id_hex": "0xf845",
+        "text": "Initial Gold Held",
+        "resource_path": [
+          6,
+          3973,
+          2057
+        ],
+        "text_file_offset": 1589640,
+        "text_rva": 1687944,
+        "utf16_bytes": 34,
+        "text_sha256": "21aee8492cea553f9773a1f3a1c87959112785f93ef293f081d64c7fa911238a",
+        "block_sha256": "414af766fa07f1c5b061256aca7779eeb299c012ab0655f0a53b872060519694"
+      },
+      "runtime_storage_paths": [
+        {
+          "raw_offset": "0xf34",
+          "raw_bytes": 2,
+          "baseline_field": "InitialGoldHeld",
+          "intermediate_offset": "0x1324",
+          "runtime_offset": "0x69e",
+          "runtime_bytes": 2,
+          "transform": "copy",
+          "runtime_expression": "*(undefined2 *)(param_2 + 0x1324)",
+          "converter_evidence": [
+            {
+              "line": 477,
+              "assignment": "uVar4 = *(undefined2 *)(param_2 + 0xf34);"
+            },
+            {
+              "line": 481,
+              "assignment": "*(undefined2 *)(param_1 + 0x4c9) = uVar4;"
+            }
+          ],
+          "runtime_evidence": {
+            "line": 217,
+            "assignment": "*(undefined2 *)(param_1 + 0x69e) = *(undefined2 *)(param_2 + 0x1324);"
+          }
+        }
+      ],
+      "existing_engine_override": null,
+      "evidence": [
+        {
+          "file": "creature-record-decoder.txt",
+          "line": 467,
+          "excerpt": "uVar2 = *(undefined2 *)(param_1 + 0xf34);"
+        },
+        {
+          "file": "creature-record-decoder.txt",
+          "line": 471,
+          "excerpt": "*(undefined2 *)((int)this + 0x1334) = uVar2;"
+        },
+        {
+          "file": "phase17-creature-editor-model.txt",
+          "line": 237,
+          "excerpt": "*(short *)((int)this + 0x1692) = (short)piVar1[0x4cd];"
+        },
+        {
+          "file": "phase17-creature-main-panel-fill.txt",
+          "line": 92,
+          "excerpt": "*(undefined2 *)((int)this + 0x17d2) = *(undefined2 *)(*(int *)((int)this + 0x134) + 0x1692);"
+        },
+        {
+          "file": "phase17-creature-f55-panel-extract.txt",
+          "line": 84,
+          "excerpt": "if (uVar1 == 0xf845) {"
+        },
+        {
+          "file": "phase17-creature-f55-panel-extract.txt",
+          "line": 85,
+          "excerpt": "*(double *)((int)param_1 + 0x60) = (double)*(ushort *)((int)param_1 + 0x17d2);"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 76,
+          "excerpt": "if (uVar1 == 0xf845) {"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 77,
+          "excerpt": "lVar2 = __ftol();"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 78,
+          "excerpt": "*(short *)(param_1 + 0x17d2) = (short)lVar2;"
+        },
+        {
+          "file": "phase17-creature-main-panel-commit.txt",
+          "line": 69,
+          "excerpt": "*(undefined2 *)(*(int *)(param_1 + 0x134) + 0x1692) = *(undefined2 *)(param_1 + 0x17d2);"
+        },
+        {
+          "file": "phase17-creature-writer-assembly.txt",
+          "first": "0x4a8335",
+          "last": "0x4a833c",
+          "instructions": [
+            "004a8335: MOV CX,word ptr [EBX + 0x1692] ",
+            "004a833c: MOV word ptr [ESP + 0xfc8],CX "
+          ]
+        }
+      ]
+    },
+    {
+      "raw_offset": 3916,
+      "raw_offset_hex": "0xf4c",
+      "raw_bytes": 1,
+      "baseline_name": "unk3ea[0].unk3ea",
+      "native_label": "Score",
+      "property_id": 63134,
+      "editor_intermediate_offset": 4940,
+      "editor_model_offset": 5618,
+      "editor_panel_offset": 5938,
+      "editor_display_kind": "u8",
+      "gui_validation_range": null,
+      "scale": 1,
+      "label_resource": {
+        "id": 63134,
+        "id_hex": "0xf69e",
+        "text": "Score",
+        "resource_path": [
+          6,
+          3946,
+          2057
+        ],
+        "text_file_offset": 1585240,
+        "text_rva": 1683544,
+        "utf16_bytes": 10,
+        "text_sha256": "61005d9c3bfae506b3865b6005e46e6ab6cb6d12783e1c7bdfce3a48d485732f",
+        "block_sha256": "6628d9ba67afe98d7a760b20faeaed2c86c109c6acb55a871ed809572b6f1651"
+      },
+      "runtime_storage_paths": [
+        {
+          "raw_offset": "0xf4c",
+          "raw_bytes": 1,
+          "baseline_field": "unk3ea[0].unk3ea",
+          "intermediate_offset": "0x133c",
+          "runtime_offset": "0x787",
+          "runtime_bytes": 1,
+          "transform": "copy",
+          "runtime_expression": "*(undefined1 *)(param_2 + 0x133c)",
+          "converter_evidence": [
+            {
+              "line": 297,
+              "assignment": "cVar1 = param_2[0xf4c];"
+            },
+            {
+              "line": 301,
+              "assignment": "*(char *)(param_1 + 0x4cf) = cVar1;"
+            }
+          ],
+          "runtime_evidence": {
+            "line": 1253,
+            "assignment": "*(undefined1 *)(param_1 + 0x787) = *(undefined1 *)(param_2 + 0x133c);"
+          }
+        }
+      ],
+      "existing_engine_override": {
+        "name": "ScoreRatingRaw",
+        "offset": 3916,
+        "offset_hex": "0xf4c",
+        "size": 1,
+        "kind": "u8",
+        "baseline_names": [
+          "unk3ea[0].unk3ea"
+        ],
+        "confidence": "numeric score consumers confirmed",
+        "evidence": [
+          "game-creature-convert.txt",
+          "game-creature-type.txt",
+          "../sources/creatures_struct.bt",
+          "game-creature-score-a.txt",
+          "game-creature-score-b.txt"
+        ],
+        "note": "Runtime+0x787 u8. 0x4BCB20 sums values over a creature list; 0x4FA8D0 compares candidates to select a minimum. Full AI strategy semantics are not inferred."
+      },
+      "evidence": [
+        {
+          "file": "creature-record-decoder.txt",
+          "line": 287,
+          "excerpt": "cVar1 = param_1[0xf4c];"
+        },
+        {
+          "file": "creature-record-decoder.txt",
+          "line": 291,
+          "excerpt": "*(char *)((int)this + 0x134c) = cVar1;"
+        },
+        {
+          "file": "phase17-creature-editor-model.txt",
+          "line": 172,
+          "excerpt": "*(char *)((int)this + 0x15f2) = (char)piVar1[0x4d3];"
+        },
+        {
+          "file": "phase17-creature-main-panel-fill.txt",
+          "line": 61,
+          "excerpt": "*(undefined1 *)((int)this + 0x1732) = *(undefined1 *)(*(int *)((int)this + 0x134) + 0x15f2);"
+        },
+        {
+          "file": "phase17-creature-f55-panel-extract.txt",
+          "line": 96,
+          "excerpt": "case 0xf69e:"
+        },
+        {
+          "file": "phase17-creature-f55-panel-extract.txt",
+          "line": 97,
+          "excerpt": "*(double *)((int)param_1 + 0x60) = (double)*(byte *)((int)param_1 + 0x1732);"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 88,
+          "excerpt": "case 0xf69e:"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 89,
+          "excerpt": "lVar2 = __ftol();"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 90,
+          "excerpt": "*(char *)(param_1 + 0x1732) = (char)lVar2;"
+        },
+        {
+          "file": "phase17-creature-main-panel-commit.txt",
+          "line": 39,
+          "excerpt": "*(undefined1 *)(*(int *)(param_1 + 0x134) + 0x15f2) = *(undefined1 *)(param_1 + 0x1732);"
+        },
+        {
+          "file": "phase17-creature-writer-assembly.txt",
+          "first": "0x4a81ba",
+          "last": "0x4a81c0",
+          "instructions": [
+            "004a81ba: MOV CL,byte ptr [EBX + 0x15f2] ",
+            "004a81c0: MOV byte ptr [ESP + 0xfe0],CL "
+          ]
+        }
+      ]
+    },
+    {
+      "raw_offset": 3917,
+      "raw_offset_hex": "0xf4d",
+      "raw_bytes": 1,
+      "baseline_name": "unk3ea[1].unk3ea",
+      "native_label": "Room Capacity Needed",
+      "property_id": 63096,
+      "editor_intermediate_offset": 4941,
+      "editor_model_offset": 5668,
+      "editor_panel_offset": 5988,
+      "editor_display_kind": "u8",
+      "gui_validation_range": null,
+      "scale": 1,
+      "label_resource": {
+        "id": 63096,
+        "id_hex": "0xf678",
+        "text": "Room Capacity Needed",
+        "resource_path": [
+          6,
+          3944,
+          2057
+        ],
+        "text_file_offset": 1583914,
+        "text_rva": 1682218,
+        "utf16_bytes": 40,
+        "text_sha256": "5dad506111c43dca6fd567e94e0f9f0dd6ad28799af4b857fd45d005de34a120",
+        "block_sha256": "8b850bf2d24d75ef2198f53b375c5babf50b5b5e5a185285509b6437635eab6a"
+      },
+      "runtime_storage_paths": [
+        {
+          "raw_offset": "0xf4d",
+          "raw_bytes": 1,
+          "baseline_field": "unk3ea[1].unk3ea",
+          "intermediate_offset": "0x133d",
+          "runtime_offset": "0x672",
+          "runtime_bytes": 1,
+          "transform": "copy",
+          "runtime_expression": "*(undefined1 *)(param_2 + 0x133d)",
+          "converter_evidence": [
+            {
+              "line": 387,
+              "assignment": "cVar1 = param_2[0xf4d];"
+            },
+            {
+              "line": 391,
+              "assignment": "*(char *)((int)param_1 + 0x133d) = cVar1;"
+            }
+          ],
+          "runtime_evidence": {
+            "line": 1439,
+            "assignment": "*(undefined1 *)(param_1 + 0x672) = *(undefined1 *)(param_2 + 0x133d);"
+          }
+        }
+      ],
+      "existing_engine_override": {
+        "name": "RoomCapacityNeededRaw",
+        "offset": 3917,
+        "offset_hex": "0xf4d",
+        "size": 1,
+        "kind": "u8",
+        "baseline_names": [
+          "unk3ea[1].unk3ea"
+        ],
+        "confidence": "room capacity consumer confirmed",
+        "evidence": [
+          "game-creature-convert.txt",
+          "game-creature-type.txt",
+          "../sources/creatures_struct.bt",
+          "game-creature-room-capacity.txt"
+        ],
+        "note": "Runtime+0x672 u8. Room routine 0x4E69B0 subtracts this amount for processed occupants; zero skips that subtraction path."
+      },
+      "evidence": [
+        {
+          "file": "creature-record-decoder.txt",
+          "line": 377,
+          "excerpt": "cVar1 = param_1[0xf4d];"
+        },
+        {
+          "file": "creature-record-decoder.txt",
+          "line": 381,
+          "excerpt": "*(char *)((int)this + 0x134d) = cVar1;"
+        },
+        {
+          "file": "phase17-creature-editor-model.txt",
+          "line": 181,
+          "excerpt": "*(undefined1 *)(this + 0x589) = *(undefined1 *)((int)piVar1 + 0x134d);"
+        },
+        {
+          "file": "phase17-creature-main-panel-fill.txt",
+          "line": 64,
+          "excerpt": "*(undefined1 *)((int)this + 0x1764) = *(undefined1 *)(*(int *)((int)this + 0x134) + 0x1624);"
+        },
+        {
+          "file": "phase17-creature-f55-panel-extract.txt",
+          "line": 45,
+          "excerpt": "case 0xf678:"
+        },
+        {
+          "file": "phase17-creature-f55-panel-extract.txt",
+          "line": 46,
+          "excerpt": "*(double *)((int)param_1 + 0x60) = (double)*(byte *)((int)param_1 + 0x1764);"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 41,
+          "excerpt": "case 0xf678:"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 42,
+          "excerpt": "lVar2 = __ftol();"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 43,
+          "excerpt": "*(char *)(param_1 + 0x1764) = (char)lVar2;"
+        },
+        {
+          "file": "phase17-creature-main-panel-commit.txt",
+          "line": 42,
+          "excerpt": "*(undefined1 *)(*(int *)(param_1 + 0x134) + 0x1624) = *(undefined1 *)(param_1 + 0x1764);"
+        },
+        {
+          "file": "phase17-creature-writer-assembly.txt",
+          "first": "0x4a81e5",
+          "last": "0x4a81eb",
+          "instructions": [
+            "004a81e5: MOV CL,byte ptr [EBX + 0x1624] ",
+            "004a81eb: MOV byte ptr [ESP + 0xfe1],CL "
+          ]
+        }
+      ]
+    },
+    {
+      "raw_offset": 3918,
+      "raw_offset_hex": "0xf4e",
+      "raw_bytes": 1,
+      "baseline_name": "HungerFill",
+      "native_label": "Hunger Fill",
+      "property_id": 63103,
+      "editor_intermediate_offset": 4942,
+      "editor_model_offset": 5752,
+      "editor_panel_offset": 6072,
+      "editor_display_kind": "u8",
+      "gui_validation_range": null,
+      "scale": 1,
+      "label_resource": {
+        "id": 63103,
+        "id_hex": "0xf67f",
+        "text": "Hunger Fill",
+        "resource_path": [
+          6,
+          3944,
+          2057
+        ],
+        "text_file_offset": 1584190,
+        "text_rva": 1682494,
+        "utf16_bytes": 22,
+        "text_sha256": "332d424c6fd160ad52b609029c26917858364a3f8e061b8b9f03cdc5cddb4136",
+        "block_sha256": "8b850bf2d24d75ef2198f53b375c5babf50b5b5e5a185285509b6437635eab6a"
+      },
+      "runtime_storage_paths": [
+        {
+          "raw_offset": "0xf4e",
+          "raw_bytes": 1,
+          "baseline_field": "HungerFill",
+          "intermediate_offset": "0x133e",
+          "runtime_offset": "0x66d",
+          "runtime_bytes": 1,
+          "transform": "copy",
+          "runtime_expression": "*(undefined1 *)(param_2 + 0x133e)",
+          "converter_evidence": [
+            {
+              "line": 199,
+              "assignment": "cVar1 = param_2[0xf4e];"
+            },
+            {
+              "line": 203,
+              "assignment": "*(char *)((int)param_1 + 0x133e) = cVar1;"
+            }
+          ],
+          "runtime_evidence": {
+            "line": 307,
+            "assignment": "*(undefined1 *)(param_1 + 0x66d) = *(undefined1 *)(param_2 + 0x133e);"
+          }
+        }
+      ],
+      "existing_engine_override": null,
+      "evidence": [
+        {
+          "file": "creature-record-decoder.txt",
+          "line": 189,
+          "excerpt": "cVar1 = param_1[0xf4e];"
+        },
+        {
+          "file": "creature-record-decoder.txt",
+          "line": 193,
+          "excerpt": "*(char *)((int)this + 0x134e) = cVar1;"
+        },
+        {
+          "file": "phase17-creature-editor-model.txt",
+          "line": 222,
+          "excerpt": "*(undefined1 *)(this + 0x59e) = *(undefined1 *)((int)piVar1 + 0x134e);"
+        },
+        {
+          "file": "phase17-creature-main-panel-fill.txt",
+          "line": 86,
+          "excerpt": "*(undefined1 *)((int)this + 0x17b8) = *(undefined1 *)(*(int *)((int)this + 0x134) + 0x1678);"
+        },
+        {
+          "file": "phase17-creature-f55-panel-extract.txt",
+          "line": 77,
+          "excerpt": "case 0xf67f:"
+        },
+        {
+          "file": "phase17-creature-f55-panel-extract.txt",
+          "line": 78,
+          "excerpt": "*(double *)((int)param_1 + 0x60) = (double)*(byte *)((int)param_1 + 0x17b8);"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 69,
+          "excerpt": "case 0xf67f:"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 70,
+          "excerpt": "lVar2 = __ftol();"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 71,
+          "excerpt": "*(char *)(param_1 + 0x17b8) = (char)lVar2;"
+        },
+        {
+          "file": "phase17-creature-main-panel-commit.txt",
+          "line": 63,
+          "excerpt": "*(undefined1 *)(*(int *)(param_1 + 0x134) + 0x1678) = *(undefined1 *)(param_1 + 0x17b8);"
+        },
+        {
+          "file": "phase17-creature-writer-assembly.txt",
+          "first": "0x4a82f2",
+          "last": "0x4a82f8",
+          "instructions": [
+            "004a82f2: MOV DL,byte ptr [EBX + 0x1678] ",
+            "004a82f8: MOV byte ptr [ESP + 0xfe2],DL "
+          ]
+        }
+      ]
+    },
+    {
+      "raw_offset": 3919,
+      "raw_offset_hex": "0xf4f",
+      "raw_bytes": 1,
+      "baseline_name": "UnhappyThreshold",
+      "native_label": "Mood Unhappy Threshold",
+      "property_id": 63273,
+      "editor_intermediate_offset": 4943,
+      "editor_model_offset": 5776,
+      "editor_panel_offset": 6096,
+      "editor_display_kind": "u8",
+      "gui_validation_range": null,
+      "scale": 1,
+      "label_resource": {
+        "id": 63273,
+        "id_hex": "0xf729",
+        "text": "Mood Unhappy Threshold",
+        "resource_path": [
+          6,
+          3955,
+          2057
+        ],
+        "text_file_offset": 1587590,
+        "text_rva": 1685894,
+        "utf16_bytes": 44,
+        "text_sha256": "4a81ef7f2acac878ca028179c9a73a5cdcbcedfbc9aff1c3b69ef242271a99e3",
+        "block_sha256": "e205881f83c79e4d3f413705911e8925adfeea93874a43e3842f3b75bd345725"
+      },
+      "runtime_storage_paths": [
+        {
+          "raw_offset": "0xf4f",
+          "raw_bytes": 1,
+          "baseline_field": "UnhappyThreshold",
+          "intermediate_offset": "0x133f",
+          "runtime_offset": "0x76a",
+          "runtime_bytes": 2,
+          "transform": "expression",
+          "runtime_expression": "(short)(((uint)*(byte *)(param_2 + 0x133f) * 0x7fff) / 100)",
+          "converter_evidence": [
+            {
+              "line": 453,
+              "assignment": "cVar1 = param_2[0xf4f];"
+            },
+            {
+              "line": 457,
+              "assignment": "*(char *)((int)param_1 + 0x133f) = cVar1;"
+            }
+          ],
+          "runtime_evidence": {
+            "line": 2217,
+            "assignment": "*(short *)(param_1 + 0x76a) = (short)(((uint)*(byte *)(param_2 + 0x133f) * 0x7fff) / 100);"
+          }
+        }
+      ],
+      "existing_engine_override": null,
+      "evidence": [
+        {
+          "file": "creature-record-decoder.txt",
+          "line": 443,
+          "excerpt": "cVar1 = param_1[0xf4f];"
+        },
+        {
+          "file": "creature-record-decoder.txt",
+          "line": 447,
+          "excerpt": "*(char *)((int)this + 0x134f) = cVar1;"
+        },
+        {
+          "file": "phase17-creature-editor-model.txt",
+          "line": 231,
+          "excerpt": "*(undefined1 *)(this + 0x5a4) = *(undefined1 *)((int)piVar1 + 0x134f);"
+        },
+        {
+          "file": "phase17-creature-main-panel-fill.txt",
+          "line": 90,
+          "excerpt": "*(undefined1 *)((int)this + 0x17d0) = *(undefined1 *)(*(int *)((int)this + 0x134) + 0x1690);"
+        },
+        {
+          "file": "phase17-creature-f55-panel-extract.txt",
+          "line": 126,
+          "excerpt": "case 0xf729:"
+        },
+        {
+          "file": "phase17-creature-f55-panel-extract.txt",
+          "line": 127,
+          "excerpt": "*(double *)((int)param_1 + 0x60) = (double)*(byte *)((int)param_1 + 0x17d0);"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 116,
+          "excerpt": "case 0xf729:"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 117,
+          "excerpt": "lVar2 = __ftol();"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 118,
+          "excerpt": "*(char *)(param_1 + 0x17d0) = (char)lVar2;"
+        },
+        {
+          "file": "phase17-creature-main-panel-commit.txt",
+          "line": 67,
+          "excerpt": "*(undefined1 *)(*(int *)(param_1 + 0x134) + 0x1690) = *(undefined1 *)(param_1 + 0x17d0);"
+        },
+        {
+          "file": "phase17-creature-writer-assembly.txt",
+          "first": "0x4a8319",
+          "last": "0x4a831f",
+          "instructions": [
+            "004a8319: MOV DL,byte ptr [EBX + 0x1690] ",
+            "004a831f: MOV byte ptr [ESP + 0xfe3],DL "
+          ]
+        }
+      ]
+    },
+    {
+      "raw_offset": 3921,
+      "raw_offset_hex": "0xf51",
+      "raw_bytes": 1,
+      "baseline_name": "Unk3eb2",
+      "native_label": "Disarm Failure Percentage",
+      "property_id": 63394,
+      "editor_intermediate_offset": 4945,
+      "editor_model_offset": 5782,
+      "editor_panel_offset": 6102,
+      "editor_display_kind": "u8",
+      "gui_validation_range": null,
+      "scale": 1,
+      "label_resource": {
+        "id": 63394,
+        "id_hex": "0xf7a2",
+        "text": "Disarm Failure Percentage",
+        "resource_path": [
+          6,
+          3963,
+          2057
+        ],
+        "text_file_offset": 1588406,
+        "text_rva": 1686710,
+        "utf16_bytes": 50,
+        "text_sha256": "fe085d6ebbbaf75736eff2a87e22909600668348ccf7f98da9cac2e1ec699a5b",
+        "block_sha256": "63e861985f8287f4deac6619e59cee1d52a95cc55bf19fb0b6a55046d6354db1"
+      },
+      "runtime_storage_paths": [
+        {
+          "raw_offset": "0xf51",
+          "raw_bytes": 1,
+          "baseline_field": "Unk3eb2",
+          "intermediate_offset": "0x1341",
+          "runtime_offset": "0x5e0",
+          "runtime_bytes": 1,
+          "transform": "copy",
+          "runtime_expression": "*(undefined1 *)(param_2 + 0x1341)",
+          "converter_evidence": [
+            {
+              "line": 465,
+              "assignment": "cVar1 = param_2[0xf51];"
+            },
+            {
+              "line": 469,
+              "assignment": "*(char *)((int)param_1 + 0x1341) = cVar1;"
+            }
+          ],
+          "runtime_evidence": {
+            "line": 1549,
+            "assignment": "*(undefined1 *)(param_1 + 0x5e0) = *(undefined1 *)(param_2 + 0x1341);"
+          }
+        }
+      ],
+      "existing_engine_override": {
+        "name": "DisarmFailurePercentageRaw",
+        "offset": 3921,
+        "offset_hex": "0xf51",
+        "size": 1,
+        "kind": "u8",
+        "baseline_names": [
+          "Unk3eb2"
+        ],
+        "confidence": "failure threshold and RNG bound confirmed",
+        "evidence": [
+          "game-creature-convert.txt",
+          "game-creature-type.txt",
+          "../sources/creatures_struct.bt",
+          "game-creature-disarm.txt",
+          "game-random-bound.txt"
+        ],
+        "note": "Runtime+0x5E0 u8, stat20 growth. Disarm routine compares random(100), range0..99, against level-scaled threshold; grown threshold clamped0..254. Values>=100 always enter the compared branch."
+      },
+      "evidence": [
+        {
+          "file": "creature-record-decoder.txt",
+          "line": 455,
+          "excerpt": "cVar1 = param_1[0xf51];"
+        },
+        {
+          "file": "creature-record-decoder.txt",
+          "line": 459,
+          "excerpt": "*(char *)((int)this + 0x1351) = cVar1;"
+        },
+        {
+          "file": "phase17-creature-editor-model.txt",
+          "line": 240,
+          "excerpt": "*(undefined1 *)((int)this + 0x1696) = *(undefined1 *)((int)piVar1 + 0x1351);"
+        },
+        {
+          "file": "phase17-creature-main-panel-fill.txt",
+          "line": 93,
+          "excerpt": "*(undefined1 *)((int)this + 0x17d6) = *(undefined1 *)(*(int *)((int)this + 0x134) + 0x1696);"
+        },
+        {
+          "file": "phase17-creature-f55-panel-extract.txt",
+          "line": 154,
+          "excerpt": "case 0xf7a2:"
+        },
+        {
+          "file": "phase17-creature-f55-panel-extract.txt",
+          "line": 155,
+          "excerpt": "*(double *)((int)param_1 + 0x60) = (double)*(byte *)((int)param_1 + 0x17d6);"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 144,
+          "excerpt": "case 0xf7a2:"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 145,
+          "excerpt": "lVar2 = __ftol();"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 146,
+          "excerpt": "*(char *)(param_1 + 0x17d6) = (char)lVar2;"
+        },
+        {
+          "file": "phase17-creature-main-panel-commit.txt",
+          "line": 70,
+          "excerpt": "*(undefined1 *)(*(int *)(param_1 + 0x134) + 0x1696) = *(undefined1 *)(param_1 + 0x17d6);"
+        },
+        {
+          "file": "phase17-creature-writer-assembly.txt",
+          "first": "0x4a8344",
+          "last": "0x4a834a",
+          "instructions": [
+            "004a8344: MOV DL,byte ptr [EBX + 0x1696] ",
+            "004a834a: MOV byte ptr [ESP + 0xfe5],DL "
+          ]
+        }
+      ]
+    },
+    {
+      "raw_offset": 3923,
+      "raw_offset_hex": "0xf53",
+      "raw_bytes": 1,
+      "baseline_name": "Unk3f1",
+      "native_label": "Fly Height Percentage",
+      "property_id": 63571,
+      "editor_intermediate_offset": 4947,
+      "editor_model_offset": 5608,
+      "editor_panel_offset": 5928,
+      "editor_display_kind": "u8",
+      "gui_validation_range": null,
+      "scale": 1,
+      "label_resource": {
+        "id": 63571,
+        "id_hex": "0xf853",
+        "text": "Fly Height Percentage",
+        "resource_path": [
+          6,
+          3974,
+          2057
+        ],
+        "text_file_offset": 1589788,
+        "text_rva": 1688092,
+        "utf16_bytes": 42,
+        "text_sha256": "a939cae7dafbf144f01b58f8a860b0a3af57f48528d5a97463bd13d89377859f",
+        "block_sha256": "3c197b0572851038667d2bc5b759afbf1069cd36f05ac9d4af0f994eaf1a76f8"
+      },
+      "runtime_storage_paths": [],
+      "existing_engine_override": null,
+      "evidence": [
+        {
+          "file": "creature-record-decoder.txt",
+          "line": 75,
+          "excerpt": "cVar1 = param_1[0xf53];"
+        },
+        {
+          "file": "creature-record-decoder.txt",
+          "line": 79,
+          "excerpt": "*(char *)((int)this + 0x1353) = cVar1;"
+        },
+        {
+          "file": "phase17-creature-editor-model.txt",
+          "line": 126,
+          "excerpt": "*(undefined1 *)(this + 0x57a) = *(undefined1 *)((int)piVar1 + 0x1353);"
+        },
+        {
+          "file": "phase17-creature-main-panel-fill.txt",
+          "line": 54,
+          "excerpt": "*(undefined1 *)((int)this + 0x1728) = *(undefined1 *)(*(int *)((int)this + 0x134) + 0x15e8);"
+        },
+        {
+          "file": "phase17-creature-f55-panel-extract.txt",
+          "line": 197,
+          "excerpt": "case 0xf853:"
+        },
+        {
+          "file": "phase17-creature-f55-panel-extract.txt",
+          "line": 198,
+          "excerpt": "*(double *)((int)param_1 + 0x60) = (double)*(byte *)((int)param_1 + 0x1728);"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 185,
+          "excerpt": "case 0xf853:"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 186,
+          "excerpt": "lVar2 = __ftol();"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 187,
+          "excerpt": "*(char *)(param_1 + 0x1728) = (char)lVar2;"
+        },
+        {
+          "file": "phase17-creature-main-panel-commit.txt",
+          "line": 32,
+          "excerpt": "*(undefined1 *)(*(int *)(param_1 + 0x134) + 0x15e8) = *(undefined1 *)(param_1 + 0x1728);"
+        },
+        {
+          "file": "phase17-creature-writer-assembly.txt",
+          "first": "0x4a8123",
+          "last": "0x4a8129",
+          "instructions": [
+            "004a8123: MOV AL,byte ptr [EBX + 0x15e8] ",
+            "004a8129: MOV byte ptr [ESP + 0xfe7],AL "
+          ]
+        }
+      ]
+    },
+    {
+      "raw_offset": 3925,
+      "raw_offset_hex": "0xf55",
+      "raw_bytes": 1,
+      "baseline_name": "Unk3f2",
+      "native_label": "Pick-Up Priority",
+      "property_id": 63573,
+      "editor_intermediate_offset": 4949,
+      "editor_model_offset": 5806,
+      "editor_panel_offset": 6126,
+      "editor_display_kind": "u8",
+      "gui_validation_range": null,
+      "scale": 1,
+      "label_resource": {
+        "id": 63573,
+        "id_hex": "0xf855",
+        "text": "Pick-Up Priority",
+        "resource_path": [
+          6,
+          3974,
+          2057
+        ],
+        "text_file_offset": 1589852,
+        "text_rva": 1688156,
+        "utf16_bytes": 32,
+        "text_sha256": "733cdd37c90dd2a084cc298d3263b4c2e716cd450412607a995090da2b1b6b68",
+        "block_sha256": "3c197b0572851038667d2bc5b759afbf1069cd36f05ac9d4af0f994eaf1a76f8"
+      },
+      "runtime_storage_paths": [
+        {
+          "raw_offset": "0xf55",
+          "raw_bytes": 1,
+          "baseline_field": "Unk3f2",
+          "intermediate_offset": "0x1345",
+          "runtime_offset": "0x6eb",
+          "runtime_bytes": 1,
+          "transform": "copy",
+          "runtime_expression": "*(undefined1 *)(param_2 + 0x1345)",
+          "converter_evidence": [
+            {
+              "line": 553,
+              "assignment": "cVar1 = param_2[0xf55];"
+            },
+            {
+              "line": 557,
+              "assignment": "*(char *)((int)param_1 + 0x1345) = cVar1;"
+            }
+          ],
+          "runtime_evidence": {
+            "line": 313,
+            "assignment": "*(undefined1 *)(param_1 + 0x6eb) = *(undefined1 *)(param_2 + 0x1345);"
+          }
+        }
+      ],
+      "existing_engine_override": null,
+      "evidence": [
+        {
+          "file": "creature-record-decoder.txt",
+          "line": 543,
+          "excerpt": "cVar1 = param_1[0xf55];"
+        },
+        {
+          "file": "creature-record-decoder.txt",
+          "line": 547,
+          "excerpt": "*(char *)((int)this + 0x1355) = cVar1;"
+        },
+        {
+          "file": "phase17-creature-editor-model.txt",
+          "line": 550,
+          "excerpt": "*(undefined1 *)((int)this + 0x16ae) = *(undefined1 *)((int)piVar1 + 0x1355);"
+        },
+        {
+          "file": "phase17-creature-main-panel-fill.txt",
+          "line": 103,
+          "excerpt": "*(undefined1 *)((int)this + 0x17ee) = *(undefined1 *)(*(int *)((int)this + 0x134) + 0x16ae);"
+        },
+        {
+          "file": "phase17-creature-f55-panel-extract.txt",
+          "line": 206,
+          "excerpt": "case 0xf855:"
+        },
+        {
+          "file": "phase17-creature-f55-panel-extract.txt",
+          "line": 207,
+          "excerpt": "*(double *)((int)param_1 + 0x60) = (double)*(byte *)((int)param_1 + 0x17ee);"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 193,
+          "excerpt": "case 0xf855:"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 194,
+          "excerpt": "lVar2 = __ftol();"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 195,
+          "excerpt": "*(char *)(param_1 + 0x17ee) = (char)lVar2;"
+        },
+        {
+          "file": "phase17-creature-main-panel-commit.txt",
+          "line": 80,
+          "excerpt": "*(undefined1 *)(*(int *)(param_1 + 0x134) + 0x16ae) = *(undefined1 *)(param_1 + 0x17ee);"
+        },
+        {
+          "file": "phase17-creature-writer-assembly.txt",
+          "first": "0x4a841e",
+          "last": "0x4a8424",
+          "instructions": [
+            "004a841e: MOV AL,byte ptr [EBX + 0x16ae] ",
+            "004a8424: MOV byte ptr [ESP + 0xfe9],AL "
+          ]
+        }
+      ]
+    },
+    {
+      "raw_offset": 4043,
+      "raw_offset_hex": "0xfcb",
+      "raw_bytes": 2,
+      "baseline_name": "Unkfcb",
+      "native_label": "Satisfy Anger Treat (Gold)",
+      "property_id": 63583,
+      "editor_intermediate_offset": 5067,
+      "editor_model_offset": 5804,
+      "editor_panel_offset": 6124,
+      "editor_display_kind": "u16",
+      "gui_validation_range": null,
+      "scale": 1,
+      "label_resource": {
+        "id": 63583,
+        "id_hex": "0xf85f",
+        "text": "Satisfy Anger Treat (Gold)",
+        "resource_path": [
+          6,
+          3974,
+          2057
+        ],
+        "text_file_offset": 1590402,
+        "text_rva": 1688706,
+        "utf16_bytes": 52,
+        "text_sha256": "f11fdd3004fdbc8cef81ea54f8c8d77c30d75c2d482dc52d3bec6272693f4757",
+        "block_sha256": "3c197b0572851038667d2bc5b759afbf1069cd36f05ac9d4af0f994eaf1a76f8"
+      },
+      "runtime_storage_paths": [
+        {
+          "raw_offset": "0xfcb",
+          "raw_bytes": 2,
+          "baseline_field": "Unkfcb",
+          "intermediate_offset": "0x13bb",
+          "runtime_offset": "0x6e1",
+          "runtime_bytes": 2,
+          "transform": "copy",
+          "runtime_expression": "*(undefined2 *)(param_2 + 0x13bb)",
+          "converter_evidence": [
+            {
+              "line": 519,
+              "assignment": "uVar4 = *(undefined2 *)(param_2 + 0xfcb);"
+            },
+            {
+              "line": 523,
+              "assignment": "*(undefined2 *)((int)param_1 + 0x13bb) = uVar4;"
+            }
+          ],
+          "runtime_evidence": {
+            "line": 1653,
+            "assignment": "*(undefined2 *)(param_1 + 0x6e1) = *(undefined2 *)(param_2 + 0x13bb);"
+          }
+        }
+      ],
+      "existing_engine_override": {
+        "name": "SatisfyAngerTreatRaw",
+        "offset": 4043,
+        "offset_hex": "0xfcb",
+        "size": 2,
+        "kind": "u16",
+        "baseline_names": [
+          "Unkfcb"
+        ],
+        "confidence": "unsigned consumer and gift IDs confirmed",
+        "evidence": [
+          "game-creature-convert.txt",
+          "game-creature-type.txt",
+          "../sources/creatures_struct.bt",
+          "game-creature-treat-anger.txt",
+          "game-emotionless-event-a.txt"
+        ],
+        "note": "Runtime+0x6E1 read as u16; gold IDs1..3 / Chicken ID9 gift branches call mood handler category5 with negative of this value. Emotionless bit4 suppresses the inspected handler."
+      },
+      "evidence": [
+        {
+          "file": "creature-record-decoder.txt",
+          "line": 509,
+          "excerpt": "uVar2 = *(undefined2 *)(param_1 + 0xfcb);"
+        },
+        {
+          "file": "creature-record-decoder.txt",
+          "line": 513,
+          "excerpt": "*(undefined2 *)((int)this + 0x13cb) = uVar2;"
+        },
+        {
+          "file": "phase17-creature-editor-model.txt",
+          "line": 261,
+          "excerpt": "*(undefined2 *)(this + 0x5ab) = *(undefined2 *)((int)piVar1 + 0x13cb);"
+        },
+        {
+          "file": "phase17-creature-main-panel-fill.txt",
+          "line": 100,
+          "excerpt": "*(undefined2 *)((int)this + 0x17ec) = *(undefined2 *)(*(int *)((int)this + 0x134) + 0x16ac);"
+        },
+        {
+          "file": "phase17-creature-f55-panel-extract.txt",
+          "line": 252,
+          "excerpt": "case 0xf85f:"
+        },
+        {
+          "file": "phase17-creature-f55-panel-extract.txt",
+          "line": 253,
+          "excerpt": "*(double *)((int)param_1 + 0x60) = (double)*(ushort *)((int)param_1 + 0x17ec);"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 233,
+          "excerpt": "case 0xf85f:"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 234,
+          "excerpt": "lVar2 = __ftol();"
+        },
+        {
+          "file": "phase17-creature-f55-panel-update.txt",
+          "line": 235,
+          "excerpt": "*(short *)(param_1 + 0x17ec) = (short)lVar2;"
+        },
+        {
+          "file": "phase17-creature-main-panel-commit.txt",
+          "line": 77,
+          "excerpt": "*(undefined2 *)(*(int *)(param_1 + 0x134) + 0x16ac) = *(undefined2 *)(param_1 + 0x17ec);"
+        },
+        {
+          "file": "phase17-creature-writer-assembly.txt",
+          "first": "0x4a83ab",
+          "last": "0x4a83b2",
+          "instructions": [
+            "004a83ab: MOV AX,word ptr [EBX + 0x16ac] ",
+            "004a83b2: MOV word ptr [ESP + 0x105f],AX "
+          ]
+        }
+      ]
+    }
+  ],
+  "writer_buffer_evidence": {
+    "file": "phase17-creature-writer-assembly.txt",
+    "first": "0x4a8b7d",
+    "last": "0x4a8b84",
+    "instructions": [
+      "004a8b7d: LEA EAX,[ESP + 0x94] ",
+      "004a8b84: PUSH 0x15a1 "
+    ]
+  },
+  "limitations": [
+    "Native labels and numeric display confirmed; labels do not independently prove gameplay units or consumers.",
+    "No0..100 GUI limit inferred from Percentage labels; full native GUI validation was not reconstructed.",
+    "Update narrowing models the integer result after __ftol, not arbitrary floating-point input.",
+    "Raw values and unknown bytes remain authoritative. No automatic fixed-point conversion for Max Angle Change.",
+    "Runtime paths are pre-existing literal-copy traces. An empty path list is not proof of non-use by all game code.",
+    "No new Ghidra calls, native emulation or modified-map gameplay validation were performed in this pass."
+  ]
+}

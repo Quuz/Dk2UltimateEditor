@@ -1,0 +1,95 @@
+{
+  "status": "passed",
+  "purpose": "Explanation of existing phase94/107 findings and explicit static context.",
+  "executable": {
+    "path": "D:\\Games\\DK2\\Dungeon Keeper 2\\DKII-DX.exe",
+    "sha256": "d7a8b854e4e4f02709eba271bead6fe2307dd6e332b5a96e70857e5b0e19fb8a"
+  },
+  "primary_code": [
+    {
+      "address": 4732816,
+      "length": 218,
+      "ghidra_bytes": "ghidra/crypt-gameplay-primary-483790.txt",
+      "assembly": "ghidra\\crypt-gameplay-483790-disassemble_function.txt",
+      "sha256": "2d4e4c779425b1a91917e73464fc76ee0c1140a3ec8ef92fe4dbb3d2cab35966",
+      "coverage": "Static reading only; no new execution of these enclosing paths."
+    },
+    {
+      "address": 4733040,
+      "length": 288,
+      "ghidra_bytes": "ghidra/crypt-gameplay-primary-483870.txt",
+      "assembly": "ghidra\\crypt-gameplay-483870-disassemble_function.txt",
+      "sha256": "7c61f9e5a6286255f9a9a1f97967384dde6900acf6415ea255b454f9b876b2dc",
+      "coverage": "Static reading only; no new execution of these enclosing paths."
+    },
+    {
+      "address": 4733408,
+      "length": 218,
+      "ghidra_bytes": "ghidra/crypt-gameplay-primary-4839e0.txt",
+      "assembly": "ghidra\\crypt-gameplay-4839e0-disassemble_function.txt",
+      "sha256": "ce204219214838723f831393fa8778d1823736e1a6abff1d41b4d3d472c8eeee",
+      "coverage": "Static reading only; no new execution of these enclosing paths."
+    },
+    {
+      "address": 5082288,
+      "length": 423,
+      "ghidra_bytes": "ghidra/crypt-gameplay-primary-4d8cb0.txt",
+      "assembly": "ghidra\\crypt-gameplay-4d8cb0-disassemble_function.txt",
+      "sha256": "354d24ed3c990a416bfc65189ed681be55a322bd314ac4a2bb6483d09f24c036",
+      "coverage": "Static reading only; no new execution of these enclosing paths."
+    }
+  ],
+  "initialized_state_rows": [
+    {
+      "state": 274,
+      "category": 11,
+      "category_writer": "0x480481",
+      "callback": 4732816
+    },
+    {
+      "state": 275,
+      "category": 11,
+      "category_writer": "0x4804b1",
+      "callback": 4733040
+    },
+    {
+      "state": 276,
+      "category": 11,
+      "category_writer": "0x4804e1",
+      "callback": 4733408
+    }
+  ],
+  "source_catalogues": [
+    {
+      "path": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\Rooms.kwd",
+      "sha256": "24546825ac6cf3f8455bf9b26fbffe9e2ded05ea3b176c0e00354ee1ccf0a465"
+    },
+    {
+      "path": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\Objects.kwd",
+      "sha256": "36d607b408eeeb17da0fbea01e374a614a327021d2a30eea4aaa0311bf9b334c"
+    }
+  ],
+  "source_names": {
+    "Crypt": 26,
+    "Graveyard": 14,
+    "CryptBell": 142
+  },
+  "cross_species_recipient": {
+    "CreatureID": 8,
+    "source": "ghidra/phase90-creature-factory-base.bin",
+    "sha256": "40104e4f71d413770bb222fe4daabbaaf31ce876714ab13814b2946072e2934e",
+    "checks": "Phase107 Fairy/Wizard registration paths update this Vampire recipient."
+  },
+  "assigned_Crypt_groups": 8,
+  "total_Crypt_groups": 18,
+  "native_execution_dependencies": [
+    "phase94-validation.json",
+    "phase107-validation.json"
+  ],
+  "limitations": [
+    "New caller paths are static only.",
+    "No automatic AI entry or live visible animation claimed.",
+    "No exact job output or actual distance with Fairy claimed.",
+    "No new KWD fields or changes to frozen package schemas."
+  ]
+}

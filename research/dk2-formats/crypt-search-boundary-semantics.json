@@ -1,0 +1,2025 @@
+{
+  "phase": 186,
+  "status": "verified_three_false_search_lead_families_not_counter_meanings",
+  "counts": {
+    "revisited_contexts": 13,
+    "old_callee_contexts": 12,
+    "old_root_contexts": 1,
+    "baseline_reproductions": 13,
+    "static_states": 632986,
+    "contexts_now_finished": 1,
+    "contexts_still_limited": 12,
+    "new_counter_overlap_leads": 54,
+    "new_unknown_counter_overlap_leads": 30,
+    "rejected_overlap_leads": 54,
+    "new_counter_meanings": 0,
+    "native_scenes": 9,
+    "independent_Ghidra_controls": 3,
+    "Ghidra_compared_regions": 3,
+    "Ghidra_compared_bytes": 24576,
+    "unique_executed_original_PCs": 46,
+    "Crypt_passive_counter_meanings_assigned": 8,
+    "Crypt_active_groups_assigned": 10,
+    "Crypt_counter_meanings_remaining": 10,
+    "prior_components_preserved": 163,
+    "new_raw_fields": 0,
+    "new_raw_edits": 0,
+    "source_writes": 0
+  },
+  "search": {
+    "evidence": {
+      "file": "phase186-crypt-limited-rescan.json",
+      "sha256": "e2f754e702423f40062b87b3d42b60c319c2d2a51206f799ca00f6b01e38d2b9"
+    },
+    "unchanged_transfer": "Frozenphase178; diagnostictracecap64only, stateidentityunchanged. All13old5000resultsreproducedbefore50000.",
+    "remaining_limits": [
+      {
+        "context": "518090",
+        "states": 50000
+      },
+      {
+        "context": "4c6460",
+        "states": 50000
+      },
+      {
+        "context": "5056e0",
+        "states": 50000
+      },
+      {
+        "context": "4c6860",
+        "states": 50000
+      },
+      {
+        "context": "4e53b0",
+        "states": 50000
+      },
+      {
+        "context": "4c3000",
+        "states": 50000
+      },
+      {
+        "context": "4c6cf0",
+        "states": 50000
+      },
+      {
+        "context": "4bcae0",
+        "states": 50000
+      },
+      {
+        "context": "4bdda0",
+        "states": 50000
+      },
+      {
+        "context": "4dbd90",
+        "states": 50000
+      },
+      {
+        "context": "4dc810",
+        "states": 50000
+      },
+      {
+        "context": "root-4dc0d8",
+        "states": 50000
+      }
+    ],
+    "completed_context": "4b2ce0 stackargument+32:32986states; boundedsearchcompletiononly,notallfunctionbehavior."
+  },
+  "bounds": {
+    "5056e0": {
+      "start": 2593,
+      "element_bytes": 2,
+      "count_offset": 2852,
+      "maximum_count": 255,
+      "maximum_index": 255,
+      "maximum_word_offset": 3103,
+      "witness_pcs": [
+        "0x505701",
+        "0x50570e",
+        "0x50571c"
+      ],
+      "reason": "Bytecountmasked255. Searchindices0..N-1; terminalcheckalsoindexN. Shiftreadindex<=255 evenifbytecountisupdated. Owner+A21 is a search context, not a new raw KWD field."
+    },
+    "4bcae0": {
+      "start": 178,
+      "element_bytes": 2,
+      "count_offset": 447,
+      "maximum_count": 255,
+      "maximum_index": 254,
+      "maximum_word_offset": 686,
+      "witness_pcs": [
+        "0x4bcafa"
+      ],
+      "reason": "ZeroedEDXreceivesDLbytecount; unsignedindexcomparison. AtN255onlyindices0..254."
+    },
+    "4bdda0": {
+      "start": 178,
+      "element_bytes": 2,
+      "count_offset": 447,
+      "maximum_count": 255,
+      "maximum_index": 254,
+      "maximum_word_offset": 686,
+      "witness_pcs": [
+        "0x4bddd9"
+      ],
+      "reason": "SamezeroedEDX/DLbytecountandunsignedindexcomparison. This proofcoversfirstarraylooponly,notwholefunctionorotherpointers."
+    }
+  },
+  "rejected_candidates": [
+    {
+      "context": "5056e0",
+      "field": "CryptCounter00",
+      "unknown": true,
+      "read": {
+        "address": "0x505701",
+        "offset": 4233,
+        "bytes": 2,
+        "instruction": "cmp word ptr [eax], cx",
+        "trace": [
+          "505701: cmp word ptr [eax], cx",
+          "505704: je 0x50570e",
+          "505706: inc edx",
+          "505707: add eax, 2",
+          "50570a: cmp edx, esi",
+          "50570c: jl 0x505701",
+          "505701: cmp word ptr [eax], cx",
+          "505704: je 0x50570e",
+          "505706: inc edx",
+          "505707: add eax, 2",
+          "50570a: cmp edx, esi",
+          "50570c: jl 0x505701"
+        ],
+        "observations": 1
+      },
+      "new_beyond_previous_limit": true
+    },
+    {
+      "context": "5056e0",
+      "field": "CryptCounter01",
+      "unknown": true,
+      "read": {
+        "address": "0x505701",
+        "offset": 4235,
+        "bytes": 2,
+        "instruction": "cmp word ptr [eax], cx",
+        "trace": [
+          "505701: cmp word ptr [eax], cx",
+          "505704: je 0x50570e",
+          "505706: inc edx",
+          "505707: add eax, 2",
+          "50570a: cmp edx, esi",
+          "50570c: jl 0x505701",
+          "505701: cmp word ptr [eax], cx",
+          "505704: je 0x50570e",
+          "505706: inc edx",
+          "505707: add eax, 2",
+          "50570a: cmp edx, esi",
+          "50570c: jl 0x505701"
+        ],
+        "observations": 1
+      },
+      "new_beyond_previous_limit": true
+    },
+    {
+      "context": "5056e0",
+      "field": "CryptCounter02",
+      "unknown": false,
+      "read": {
+        "address": "0x505701",
+        "offset": 4235,
+        "bytes": 2,
+        "instruction": "cmp word ptr [eax], cx",
+        "trace": [
+          "505701: cmp word ptr [eax], cx",
+          "505704: je 0x50570e",
+          "505706: inc edx",
+          "505707: add eax, 2",
+          "50570a: cmp edx, esi",
+          "50570c: jl 0x505701",
+          "505701: cmp word ptr [eax], cx",
+          "505704: je 0x50570e",
+          "505706: inc edx",
+          "505707: add eax, 2",
+          "50570a: cmp edx, esi",
+          "50570c: jl 0x505701"
+        ],
+        "observations": 1
+      },
+      "new_beyond_previous_limit": true
+    },
+    {
+      "context": "5056e0",
+      "field": "CryptCounter03",
+      "unknown": false,
+      "read": {
+        "address": "0x505701",
+        "offset": 4237,
+        "bytes": 2,
+        "instruction": "cmp word ptr [eax], cx",
+        "trace": [
+          "505701: cmp word ptr [eax], cx",
+          "505704: je 0x50570e",
+          "505706: inc edx",
+          "505707: add eax, 2",
+          "50570a: cmp edx, esi",
+          "50570c: jl 0x505701",
+          "505701: cmp word ptr [eax], cx",
+          "505704: je 0x50570e",
+          "505706: inc edx",
+          "505707: add eax, 2",
+          "50570a: cmp edx, esi",
+          "50570c: jl 0x505701"
+        ],
+        "observations": 1
+      },
+      "new_beyond_previous_limit": true
+    },
+    {
+      "context": "5056e0",
+      "field": "CryptCounter04",
+      "unknown": false,
+      "read": {
+        "address": "0x505701",
+        "offset": 4237,
+        "bytes": 2,
+        "instruction": "cmp word ptr [eax], cx",
+        "trace": [
+          "505701: cmp word ptr [eax], cx",
+          "505704: je 0x50570e",
+          "505706: inc edx",
+          "505707: add eax, 2",
+          "50570a: cmp edx, esi",
+          "50570c: jl 0x505701",
+          "505701: cmp word ptr [eax], cx",
+          "505704: je 0x50570e",
+          "505706: inc edx",
+          "505707: add eax, 2",
+          "50570a: cmp edx, esi",
+          "50570c: jl 0x505701"
+        ],
+        "observations": 1
+      },
+      "new_beyond_previous_limit": true
+    },
+    {
+      "context": "5056e0",
+      "field": "CryptCounter05",
+      "unknown": false,
+      "read": {
+        "address": "0x505701",
+        "offset": 4239,
+        "bytes": 2,
+        "instruction": "cmp word ptr [eax], cx",
+        "trace": [
+          "505701: cmp word ptr [eax], cx",
+          "505704: je 0x50570e",
+          "505706: inc edx",
+          "505707: add eax, 2",
+          "50570a: cmp edx, esi",
+          "50570c: jl 0x505701",
+          "505701: cmp word ptr [eax], cx",
+          "505704: je 0x50570e",
+          "505706: inc edx",
+          "505707: add eax, 2",
+          "50570a: cmp edx, esi",
+          "50570c: jl 0x505701"
+        ],
+        "observations": 1
+      },
+      "new_beyond_previous_limit": true
+    },
+    {
+      "context": "5056e0",
+      "field": "CryptCounter06",
+      "unknown": false,
+      "read": {
+        "address": "0x505701",
+        "offset": 4239,
+        "bytes": 2,
+        "instruction": "cmp word ptr [eax], cx",
+        "trace": [
+          "505701: cmp word ptr [eax], cx",
+          "505704: je 0x50570e",
+          "505706: inc edx",
+          "505707: add eax, 2",
+          "50570a: cmp edx, esi",
+          "50570c: jl 0x505701",
+          "505701: cmp word ptr [eax], cx",
+          "505704: je 0x50570e",
+          "505706: inc edx",
+          "505707: add eax, 2",
+          "50570a: cmp edx, esi",
+          "50570c: jl 0x505701"
+        ],
+        "observations": 1
+      },
+      "new_beyond_previous_limit": true
+    },
+    {
+      "context": "5056e0",
+      "field": "CryptCounter07",
+      "unknown": false,
+      "read": {
+        "address": "0x505701",
+        "offset": 4241,
+        "bytes": 2,
+        "instruction": "cmp word ptr [eax], cx",
+        "trace": [
+          "505701: cmp word ptr [eax], cx",
+          "505704: je 0x50570e",
+          "505706: inc edx",
+          "505707: add eax, 2",
+          "50570a: cmp edx, esi",
+          "50570c: jl 0x505701",
+          "505701: cmp word ptr [eax], cx",
+          "505704: je 0x50570e",
+          "505706: inc edx",
+          "505707: add eax, 2",
+          "50570a: cmp edx, esi",
+          "50570c: jl 0x505701"
+        ],
+        "observations": 1
+      },
+      "new_beyond_previous_limit": true
+    },
+    {
+      "context": "5056e0",
+      "field": "CryptCounter08",
+      "unknown": true,
+      "read": {
+        "address": "0x505701",
+        "offset": 4241,
+        "bytes": 2,
+        "instruction": "cmp word ptr [eax], cx",
+        "trace": [
+          "505701: cmp word ptr [eax], cx",
+          "505704: je 0x50570e",
+          "505706: inc edx",
+          "505707: add eax, 2",
+          "50570a: cmp edx, esi",
+          "50570c: jl 0x505701",
+          "505701: cmp word ptr [eax], cx",
+          "505704: je 0x50570e",
+          "505706: inc edx",
+          "505707: add eax, 2",
+          "50570a: cmp edx, esi",
+          "50570c: jl 0x505701"
+        ],
+        "observations": 1
+      },
+      "new_beyond_previous_limit": true
+    },
+    {
+      "context": "5056e0",
+      "field": "CryptCounter09",
+      "unknown": true,
+      "read": {
+        "address": "0x505701",
+        "offset": 4243,
+        "bytes": 2,
+        "instruction": "cmp word ptr [eax], cx",
+        "trace": [
+          "505701: cmp word ptr [eax], cx",
+          "505704: je 0x50570e",
+          "505706: inc edx",
+          "505707: add eax, 2",
+          "50570a: cmp edx, esi",
+          "50570c: jl 0x505701",
+          "505701: cmp word ptr [eax], cx",
+          "505704: je 0x50570e",
+          "505706: inc edx",
+          "505707: add eax, 2",
+          "50570a: cmp edx, esi",
+          "50570c: jl 0x505701"
+        ],
+        "observations": 1
+      },
+      "new_beyond_previous_limit": true
+    },
+    {
+      "context": "5056e0",
+      "field": "CryptCounter10",
+      "unknown": false,
+      "read": {
+        "address": "0x505701",
+        "offset": 4243,
+        "bytes": 2,
+        "instruction": "cmp word ptr [eax], cx",
+        "trace": [
+          "505701: cmp word ptr [eax], cx",
+          "505704: je 0x50570e",
+          "505706: inc edx",
+          "505707: add eax, 2",
+          "50570a: cmp edx, esi",
+          "50570c: jl 0x505701",
+          "505701: cmp word ptr [eax], cx",
+          "505704: je 0x50570e",
+          "505706: inc edx",
+          "505707: add eax, 2",
+          "50570a: cmp edx, esi",
+          "50570c: jl 0x505701"
+        ],
+        "observations": 1
+      },
+      "new_beyond_previous_limit": true
+    },
+    {
+      "context": "5056e0",
+      "field": "CryptCounter11",
+      "unknown": false,
+      "read": {
+        "address": "0x505701",
+        "offset": 4245,
+        "bytes": 2,
+        "instruction": "cmp word ptr [eax], cx",
+        "trace": [
+          "505701: cmp word ptr [eax], cx",
+          "505704: je 0x50570e",
+          "505706: inc edx",
+          "505707: add eax, 2",
+          "50570a: cmp edx, esi",
+          "50570c: jl 0x505701",
+          "505701: cmp word ptr [eax], cx",
+          "505704: je 0x50570e",
+          "505706: inc edx",
+          "505707: add eax, 2",
+          "50570a: cmp edx, esi",
+          "50570c: jl 0x505701"
+        ],
+        "observations": 1
+      },
+      "new_beyond_previous_limit": true
+    },
+    {
+      "context": "5056e0",
+      "field": "CryptCounter12",
+      "unknown": true,
+      "read": {
+        "address": "0x505701",
+        "offset": 4245,
+        "bytes": 2,
+        "instruction": "cmp word ptr [eax], cx",
+        "trace": [
+          "505701: cmp word ptr [eax], cx",
+          "505704: je 0x50570e",
+          "505706: inc edx",
+          "505707: add eax, 2",
+          "50570a: cmp edx, esi",
+          "50570c: jl 0x505701",
+          "505701: cmp word ptr [eax], cx",
+          "505704: je 0x50570e",
+          "505706: inc edx",
+          "505707: add eax, 2",
+          "50570a: cmp edx, esi",
+          "50570c: jl 0x505701"
+        ],
+        "observations": 1
+      },
+      "new_beyond_previous_limit": true
+    },
+    {
+      "context": "5056e0",
+      "field": "CryptCounter13",
+      "unknown": true,
+      "read": {
+        "address": "0x505701",
+        "offset": 4247,
+        "bytes": 2,
+        "instruction": "cmp word ptr [eax], cx",
+        "trace": [
+          "505701: cmp word ptr [eax], cx",
+          "505704: je 0x50570e",
+          "505706: inc edx",
+          "505707: add eax, 2",
+          "50570a: cmp edx, esi",
+          "50570c: jl 0x505701",
+          "505701: cmp word ptr [eax], cx",
+          "505704: je 0x50570e",
+          "505706: inc edx",
+          "505707: add eax, 2",
+          "50570a: cmp edx, esi",
+          "50570c: jl 0x505701"
+        ],
+        "observations": 1
+      },
+      "new_beyond_previous_limit": true
+    },
+    {
+      "context": "5056e0",
+      "field": "CryptCounter14",
+      "unknown": true,
+      "read": {
+        "address": "0x505701",
+        "offset": 4247,
+        "bytes": 2,
+        "instruction": "cmp word ptr [eax], cx",
+        "trace": [
+          "505701: cmp word ptr [eax], cx",
+          "505704: je 0x50570e",
+          "505706: inc edx",
+          "505707: add eax, 2",
+          "50570a: cmp edx, esi",
+          "50570c: jl 0x505701",
+          "505701: cmp word ptr [eax], cx",
+          "505704: je 0x50570e",
+          "505706: inc edx",
+          "505707: add eax, 2",
+          "50570a: cmp edx, esi",
+          "50570c: jl 0x505701"
+        ],
+        "observations": 1
+      },
+      "new_beyond_previous_limit": true
+    },
+    {
+      "context": "5056e0",
+      "field": "CryptCounter15",
+      "unknown": true,
+      "read": {
+        "address": "0x505701",
+        "offset": 4249,
+        "bytes": 2,
+        "instruction": "cmp word ptr [eax], cx",
+        "trace": [
+          "505701: cmp word ptr [eax], cx",
+          "505704: je 0x50570e",
+          "505706: inc edx",
+          "505707: add eax, 2",
+          "50570a: cmp edx, esi",
+          "50570c: jl 0x505701",
+          "505701: cmp word ptr [eax], cx",
+          "505704: je 0x50570e",
+          "505706: inc edx",
+          "505707: add eax, 2",
+          "50570a: cmp edx, esi",
+          "50570c: jl 0x505701"
+        ],
+        "observations": 1
+      },
+      "new_beyond_previous_limit": true
+    },
+    {
+      "context": "5056e0",
+      "field": "CryptCounter16",
+      "unknown": true,
+      "read": {
+        "address": "0x505701",
+        "offset": 4249,
+        "bytes": 2,
+        "instruction": "cmp word ptr [eax], cx",
+        "trace": [
+          "505701: cmp word ptr [eax], cx",
+          "505704: je 0x50570e",
+          "505706: inc edx",
+          "505707: add eax, 2",
+          "50570a: cmp edx, esi",
+          "50570c: jl 0x505701",
+          "505701: cmp word ptr [eax], cx",
+          "505704: je 0x50570e",
+          "505706: inc edx",
+          "505707: add eax, 2",
+          "50570a: cmp edx, esi",
+          "50570c: jl 0x505701"
+        ],
+        "observations": 1
+      },
+      "new_beyond_previous_limit": true
+    },
+    {
+      "context": "5056e0",
+      "field": "CryptCounter17",
+      "unknown": true,
+      "read": {
+        "address": "0x505701",
+        "offset": 4251,
+        "bytes": 2,
+        "instruction": "cmp word ptr [eax], cx",
+        "trace": [
+          "505701: cmp word ptr [eax], cx",
+          "505704: je 0x50570e",
+          "505706: inc edx",
+          "505707: add eax, 2",
+          "50570a: cmp edx, esi",
+          "50570c: jl 0x505701",
+          "505701: cmp word ptr [eax], cx",
+          "505704: je 0x50570e",
+          "505706: inc edx",
+          "505707: add eax, 2",
+          "50570a: cmp edx, esi",
+          "50570c: jl 0x505701"
+        ],
+        "observations": 1
+      },
+      "new_beyond_previous_limit": true
+    },
+    {
+      "context": "4bcae0",
+      "field": "CryptCounter00",
+      "unknown": true,
+      "read": {
+        "address": "0x4bcafa",
+        "offset": 4234,
+        "bytes": 2,
+        "instruction": "cmp word ptr [ecx], si",
+        "trace": [
+          "4bcafa: cmp word ptr [ecx], si",
+          "4bcafd: je 0x4bcb0d",
+          "4bcaff: inc eax",
+          "4bcb00: add ecx, 2",
+          "4bcb03: cmp eax, edx",
+          "4bcb05: jb 0x4bcafa",
+          "4bcafa: cmp word ptr [ecx], si",
+          "4bcafd: je 0x4bcb0d",
+          "4bcaff: inc eax",
+          "4bcb00: add ecx, 2",
+          "4bcb03: cmp eax, edx",
+          "4bcb05: jb 0x4bcafa"
+        ],
+        "observations": 1
+      },
+      "new_beyond_previous_limit": true
+    },
+    {
+      "context": "4bcae0",
+      "field": "CryptCounter01",
+      "unknown": true,
+      "read": {
+        "address": "0x4bcafa",
+        "offset": 4234,
+        "bytes": 2,
+        "instruction": "cmp word ptr [ecx], si",
+        "trace": [
+          "4bcafa: cmp word ptr [ecx], si",
+          "4bcafd: je 0x4bcb0d",
+          "4bcaff: inc eax",
+          "4bcb00: add ecx, 2",
+          "4bcb03: cmp eax, edx",
+          "4bcb05: jb 0x4bcafa",
+          "4bcafa: cmp word ptr [ecx], si",
+          "4bcafd: je 0x4bcb0d",
+          "4bcaff: inc eax",
+          "4bcb00: add ecx, 2",
+          "4bcb03: cmp eax, edx",
+          "4bcb05: jb 0x4bcafa"
+        ],
+        "observations": 1
+      },
+      "new_beyond_previous_limit": true
+    },
+    {
+      "context": "4bcae0",
+      "field": "CryptCounter02",
+      "unknown": false,
+      "read": {
+        "address": "0x4bcafa",
+        "offset": 4236,
+        "bytes": 2,
+        "instruction": "cmp word ptr [ecx], si",
+        "trace": [
+          "4bcafa: cmp word ptr [ecx], si",
+          "4bcafd: je 0x4bcb0d",
+          "4bcaff: inc eax",
+          "4bcb00: add ecx, 2",
+          "4bcb03: cmp eax, edx",
+          "4bcb05: jb 0x4bcafa",
+          "4bcafa: cmp word ptr [ecx], si",
+          "4bcafd: je 0x4bcb0d",
+          "4bcaff: inc eax",
+          "4bcb00: add ecx, 2",
+          "4bcb03: cmp eax, edx",
+          "4bcb05: jb 0x4bcafa"
+        ],
+        "observations": 1
+      },
+      "new_beyond_previous_limit": true
+    },
+    {
+      "context": "4bcae0",
+      "field": "CryptCounter03",
+      "unknown": false,
+      "read": {
+        "address": "0x4bcafa",
+        "offset": 4236,
+        "bytes": 2,
+        "instruction": "cmp word ptr [ecx], si",
+        "trace": [
+          "4bcafa: cmp word ptr [ecx], si",
+          "4bcafd: je 0x4bcb0d",
+          "4bcaff: inc eax",
+          "4bcb00: add ecx, 2",
+          "4bcb03: cmp eax, edx",
+          "4bcb05: jb 0x4bcafa",
+          "4bcafa: cmp word ptr [ecx], si",
+          "4bcafd: je 0x4bcb0d",
+          "4bcaff: inc eax",
+          "4bcb00: add ecx, 2",
+          "4bcb03: cmp eax, edx",
+          "4bcb05: jb 0x4bcafa"
+        ],
+        "observations": 1
+      },
+      "new_beyond_previous_limit": true
+    },
+    {
+      "context": "4bcae0",
+      "field": "CryptCounter04",
+      "unknown": false,
+      "read": {
+        "address": "0x4bcafa",
+        "offset": 4238,
+        "bytes": 2,
+        "instruction": "cmp word ptr [ecx], si",
+        "trace": [
+          "4bcafa: cmp word ptr [ecx], si",
+          "4bcafd: je 0x4bcb0d",
+          "4bcaff: inc eax",
+          "4bcb00: add ecx, 2",
+          "4bcb03: cmp eax, edx",
+          "4bcb05: jb 0x4bcafa",
+          "4bcafa: cmp word ptr [ecx], si",
+          "4bcafd: je 0x4bcb0d",
+          "4bcaff: inc eax",
+          "4bcb00: add ecx, 2",
+          "4bcb03: cmp eax, edx",
+          "4bcb05: jb 0x4bcafa"
+        ],
+        "observations": 1
+      },
+      "new_beyond_previous_limit": true
+    },
+    {
+      "context": "4bcae0",
+      "field": "CryptCounter05",
+      "unknown": false,
+      "read": {
+        "address": "0x4bcafa",
+        "offset": 4238,
+        "bytes": 2,
+        "instruction": "cmp word ptr [ecx], si",
+        "trace": [
+          "4bcafa: cmp word ptr [ecx], si",
+          "4bcafd: je 0x4bcb0d",
+          "4bcaff: inc eax",
+          "4bcb00: add ecx, 2",
+          "4bcb03: cmp eax, edx",
+          "4bcb05: jb 0x4bcafa",
+          "4bcafa: cmp word ptr [ecx], si",
+          "4bcafd: je 0x4bcb0d",
+          "4bcaff: inc eax",
+          "4bcb00: add ecx, 2",
+          "4bcb03: cmp eax, edx",
+          "4bcb05: jb 0x4bcafa"
+        ],
+        "observations": 1
+      },
+      "new_beyond_previous_limit": true
+    },
+    {
+      "context": "4bcae0",
+      "field": "CryptCounter06",
+      "unknown": false,
+      "read": {
+        "address": "0x4bcafa",
+        "offset": 4240,
+        "bytes": 2,
+        "instruction": "cmp word ptr [ecx], si",
+        "trace": [
+          "4bcafa: cmp word ptr [ecx], si",
+          "4bcafd: je 0x4bcb0d",
+          "4bcaff: inc eax",
+          "4bcb00: add ecx, 2",
+          "4bcb03: cmp eax, edx",
+          "4bcb05: jb 0x4bcafa",
+          "4bcafa: cmp word ptr [ecx], si",
+          "4bcafd: je 0x4bcb0d",
+          "4bcaff: inc eax",
+          "4bcb00: add ecx, 2",
+          "4bcb03: cmp eax, edx",
+          "4bcb05: jb 0x4bcafa"
+        ],
+        "observations": 1
+      },
+      "new_beyond_previous_limit": true
+    },
+    {
+      "context": "4bcae0",
+      "field": "CryptCounter07",
+      "unknown": false,
+      "read": {
+        "address": "0x4bcafa",
+        "offset": 4240,
+        "bytes": 2,
+        "instruction": "cmp word ptr [ecx], si",
+        "trace": [
+          "4bcafa: cmp word ptr [ecx], si",
+          "4bcafd: je 0x4bcb0d",
+          "4bcaff: inc eax",
+          "4bcb00: add ecx, 2",
+          "4bcb03: cmp eax, edx",
+          "4bcb05: jb 0x4bcafa",
+          "4bcafa: cmp word ptr [ecx], si",
+          "4bcafd: je 0x4bcb0d",
+          "4bcaff: inc eax",
+          "4bcb00: add ecx, 2",
+          "4bcb03: cmp eax, edx",
+          "4bcb05: jb 0x4bcafa"
+        ],
+        "observations": 1
+      },
+      "new_beyond_previous_limit": true
+    },
+    {
+      "context": "4bcae0",
+      "field": "CryptCounter08",
+      "unknown": true,
+      "read": {
+        "address": "0x4bcafa",
+        "offset": 4242,
+        "bytes": 2,
+        "instruction": "cmp word ptr [ecx], si",
+        "trace": [
+          "4bcafa: cmp word ptr [ecx], si",
+          "4bcafd: je 0x4bcb0d",
+          "4bcaff: inc eax",
+          "4bcb00: add ecx, 2",
+          "4bcb03: cmp eax, edx",
+          "4bcb05: jb 0x4bcafa",
+          "4bcafa: cmp word ptr [ecx], si",
+          "4bcafd: je 0x4bcb0d",
+          "4bcaff: inc eax",
+          "4bcb00: add ecx, 2",
+          "4bcb03: cmp eax, edx",
+          "4bcb05: jb 0x4bcafa"
+        ],
+        "observations": 1
+      },
+      "new_beyond_previous_limit": true
+    },
+    {
+      "context": "4bcae0",
+      "field": "CryptCounter09",
+      "unknown": true,
+      "read": {
+        "address": "0x4bcafa",
+        "offset": 4242,
+        "bytes": 2,
+        "instruction": "cmp word ptr [ecx], si",
+        "trace": [
+          "4bcafa: cmp word ptr [ecx], si",
+          "4bcafd: je 0x4bcb0d",
+          "4bcaff: inc eax",
+          "4bcb00: add ecx, 2",
+          "4bcb03: cmp eax, edx",
+          "4bcb05: jb 0x4bcafa",
+          "4bcafa: cmp word ptr [ecx], si",
+          "4bcafd: je 0x4bcb0d",
+          "4bcaff: inc eax",
+          "4bcb00: add ecx, 2",
+          "4bcb03: cmp eax, edx",
+          "4bcb05: jb 0x4bcafa"
+        ],
+        "observations": 1
+      },
+      "new_beyond_previous_limit": true
+    },
+    {
+      "context": "4bcae0",
+      "field": "CryptCounter10",
+      "unknown": false,
+      "read": {
+        "address": "0x4bcafa",
+        "offset": 4244,
+        "bytes": 2,
+        "instruction": "cmp word ptr [ecx], si",
+        "trace": [
+          "4bcafa: cmp word ptr [ecx], si",
+          "4bcafd: je 0x4bcb0d",
+          "4bcaff: inc eax",
+          "4bcb00: add ecx, 2",
+          "4bcb03: cmp eax, edx",
+          "4bcb05: jb 0x4bcafa",
+          "4bcafa: cmp word ptr [ecx], si",
+          "4bcafd: je 0x4bcb0d",
+          "4bcaff: inc eax",
+          "4bcb00: add ecx, 2",
+          "4bcb03: cmp eax, edx",
+          "4bcb05: jb 0x4bcafa"
+        ],
+        "observations": 1
+      },
+      "new_beyond_previous_limit": true
+    },
+    {
+      "context": "4bcae0",
+      "field": "CryptCounter11",
+      "unknown": false,
+      "read": {
+        "address": "0x4bcafa",
+        "offset": 4244,
+        "bytes": 2,
+        "instruction": "cmp word ptr [ecx], si",
+        "trace": [
+          "4bcafa: cmp word ptr [ecx], si",
+          "4bcafd: je 0x4bcb0d",
+          "4bcaff: inc eax",
+          "4bcb00: add ecx, 2",
+          "4bcb03: cmp eax, edx",
+          "4bcb05: jb 0x4bcafa",
+          "4bcafa: cmp word ptr [ecx], si",
+          "4bcafd: je 0x4bcb0d",
+          "4bcaff: inc eax",
+          "4bcb00: add ecx, 2",
+          "4bcb03: cmp eax, edx",
+          "4bcb05: jb 0x4bcafa"
+        ],
+        "observations": 1
+      },
+      "new_beyond_previous_limit": true
+    },
+    {
+      "context": "4bcae0",
+      "field": "CryptCounter12",
+      "unknown": true,
+      "read": {
+        "address": "0x4bcafa",
+        "offset": 4246,
+        "bytes": 2,
+        "instruction": "cmp word ptr [ecx], si",
+        "trace": [
+          "4bcafa: cmp word ptr [ecx], si",
+          "4bcafd: je 0x4bcb0d",
+          "4bcaff: inc eax",
+          "4bcb00: add ecx, 2",
+          "4bcb03: cmp eax, edx",
+          "4bcb05: jb 0x4bcafa",
+          "4bcafa: cmp word ptr [ecx], si",
+          "4bcafd: je 0x4bcb0d",
+          "4bcaff: inc eax",
+          "4bcb00: add ecx, 2",
+          "4bcb03: cmp eax, edx",
+          "4bcb05: jb 0x4bcafa"
+        ],
+        "observations": 1
+      },
+      "new_beyond_previous_limit": true
+    },
+    {
+      "context": "4bcae0",
+      "field": "CryptCounter13",
+      "unknown": true,
+      "read": {
+        "address": "0x4bcafa",
+        "offset": 4246,
+        "bytes": 2,
+        "instruction": "cmp word ptr [ecx], si",
+        "trace": [
+          "4bcafa: cmp word ptr [ecx], si",
+          "4bcafd: je 0x4bcb0d",
+          "4bcaff: inc eax",
+          "4bcb00: add ecx, 2",
+          "4bcb03: cmp eax, edx",
+          "4bcb05: jb 0x4bcafa",
+          "4bcafa: cmp word ptr [ecx], si",
+          "4bcafd: je 0x4bcb0d",
+          "4bcaff: inc eax",
+          "4bcb00: add ecx, 2",
+          "4bcb03: cmp eax, edx",
+          "4bcb05: jb 0x4bcafa"
+        ],
+        "observations": 1
+      },
+      "new_beyond_previous_limit": true
+    },
+    {
+      "context": "4bcae0",
+      "field": "CryptCounter14",
+      "unknown": true,
+      "read": {
+        "address": "0x4bcafa",
+        "offset": 4248,
+        "bytes": 2,
+        "instruction": "cmp word ptr [ecx], si",
+        "trace": [
+          "4bcafa: cmp word ptr [ecx], si",
+          "4bcafd: je 0x4bcb0d",
+          "4bcaff: inc eax",
+          "4bcb00: add ecx, 2",
+          "4bcb03: cmp eax, edx",
+          "4bcb05: jb 0x4bcafa",
+          "4bcafa: cmp word ptr [ecx], si",
+          "4bcafd: je 0x4bcb0d",
+          "4bcaff: inc eax",
+          "4bcb00: add ecx, 2",
+          "4bcb03: cmp eax, edx",
+          "4bcb05: jb 0x4bcafa"
+        ],
+        "observations": 1
+      },
+      "new_beyond_previous_limit": true
+    },
+    {
+      "context": "4bcae0",
+      "field": "CryptCounter15",
+      "unknown": true,
+      "read": {
+        "address": "0x4bcafa",
+        "offset": 4248,
+        "bytes": 2,
+        "instruction": "cmp word ptr [ecx], si",
+        "trace": [
+          "4bcafa: cmp word ptr [ecx], si",
+          "4bcafd: je 0x4bcb0d",
+          "4bcaff: inc eax",
+          "4bcb00: add ecx, 2",
+          "4bcb03: cmp eax, edx",
+          "4bcb05: jb 0x4bcafa",
+          "4bcafa: cmp word ptr [ecx], si",
+          "4bcafd: je 0x4bcb0d",
+          "4bcaff: inc eax",
+          "4bcb00: add ecx, 2",
+          "4bcb03: cmp eax, edx",
+          "4bcb05: jb 0x4bcafa"
+        ],
+        "observations": 1
+      },
+      "new_beyond_previous_limit": true
+    },
+    {
+      "context": "4bcae0",
+      "field": "CryptCounter16",
+      "unknown": true,
+      "read": {
+        "address": "0x4bcafa",
+        "offset": 4250,
+        "bytes": 2,
+        "instruction": "cmp word ptr [ecx], si",
+        "trace": [
+          "4bcafa: cmp word ptr [ecx], si",
+          "4bcafd: je 0x4bcb0d",
+          "4bcaff: inc eax",
+          "4bcb00: add ecx, 2",
+          "4bcb03: cmp eax, edx",
+          "4bcb05: jb 0x4bcafa",
+          "4bcafa: cmp word ptr [ecx], si",
+          "4bcafd: je 0x4bcb0d",
+          "4bcaff: inc eax",
+          "4bcb00: add ecx, 2",
+          "4bcb03: cmp eax, edx",
+          "4bcb05: jb 0x4bcafa"
+        ],
+        "observations": 1
+      },
+      "new_beyond_previous_limit": true
+    },
+    {
+      "context": "4bcae0",
+      "field": "CryptCounter17",
+      "unknown": true,
+      "read": {
+        "address": "0x4bcafa",
+        "offset": 4250,
+        "bytes": 2,
+        "instruction": "cmp word ptr [ecx], si",
+        "trace": [
+          "4bcafa: cmp word ptr [ecx], si",
+          "4bcafd: je 0x4bcb0d",
+          "4bcaff: inc eax",
+          "4bcb00: add ecx, 2",
+          "4bcb03: cmp eax, edx",
+          "4bcb05: jb 0x4bcafa",
+          "4bcafa: cmp word ptr [ecx], si",
+          "4bcafd: je 0x4bcb0d",
+          "4bcaff: inc eax",
+          "4bcb00: add ecx, 2",
+          "4bcb03: cmp eax, edx",
+          "4bcb05: jb 0x4bcafa"
+        ],
+        "observations": 1
+      },
+      "new_beyond_previous_limit": true
+    },
+    {
+      "context": "4bdda0",
+      "field": "CryptCounter00",
+      "unknown": true,
+      "read": {
+        "address": "0x4bddd9",
+        "offset": 4234,
+        "bytes": 2,
+        "instruction": "cmp word ptr [ecx], si",
+        "trace": [
+          "4bddd9: cmp word ptr [ecx], si",
+          "4bdddc: je 0x4bdfa2",
+          "4bdde2: inc eax",
+          "4bdde3: add ecx, 2",
+          "4bdde6: cmp eax, edx",
+          "4bdde8: jb 0x4bddd9",
+          "4bddd9: cmp word ptr [ecx], si",
+          "4bdddc: je 0x4bdfa2",
+          "4bdde2: inc eax",
+          "4bdde3: add ecx, 2",
+          "4bdde6: cmp eax, edx",
+          "4bdde8: jb 0x4bddd9"
+        ],
+        "observations": 1
+      },
+      "new_beyond_previous_limit": true
+    },
+    {
+      "context": "4bdda0",
+      "field": "CryptCounter01",
+      "unknown": true,
+      "read": {
+        "address": "0x4bddd9",
+        "offset": 4234,
+        "bytes": 2,
+        "instruction": "cmp word ptr [ecx], si",
+        "trace": [
+          "4bddd9: cmp word ptr [ecx], si",
+          "4bdddc: je 0x4bdfa2",
+          "4bdde2: inc eax",
+          "4bdde3: add ecx, 2",
+          "4bdde6: cmp eax, edx",
+          "4bdde8: jb 0x4bddd9",
+          "4bddd9: cmp word ptr [ecx], si",
+          "4bdddc: je 0x4bdfa2",
+          "4bdde2: inc eax",
+          "4bdde3: add ecx, 2",
+          "4bdde6: cmp eax, edx",
+          "4bdde8: jb 0x4bddd9"
+        ],
+        "observations": 1
+      },
+      "new_beyond_previous_limit": true
+    },
+    {
+      "context": "4bdda0",
+      "field": "CryptCounter02",
+      "unknown": false,
+      "read": {
+        "address": "0x4bddd9",
+        "offset": 4236,
+        "bytes": 2,
+        "instruction": "cmp word ptr [ecx], si",
+        "trace": [
+          "4bddd9: cmp word ptr [ecx], si",
+          "4bdddc: je 0x4bdfa2",
+          "4bdde2: inc eax",
+          "4bdde3: add ecx, 2",
+          "4bdde6: cmp eax, edx",
+          "4bdde8: jb 0x4bddd9",
+          "4bddd9: cmp word ptr [ecx], si",
+          "4bdddc: je 0x4bdfa2",
+          "4bdde2: inc eax",
+          "4bdde3: add ecx, 2",
+          "4bdde6: cmp eax, edx",
+          "4bdde8: jb 0x4bddd9"
+        ],
+        "observations": 1
+      },
+      "new_beyond_previous_limit": true
+    },
+    {
+      "context": "4bdda0",
+      "field": "CryptCounter03",
+      "unknown": false,
+      "read": {
+        "address": "0x4bddd9",
+        "offset": 4236,
+        "bytes": 2,
+        "instruction": "cmp word ptr [ecx], si",
+        "trace": [
+          "4bddd9: cmp word ptr [ecx], si",
+          "4bdddc: je 0x4bdfa2",
+          "4bdde2: inc eax",
+          "4bdde3: add ecx, 2",
+          "4bdde6: cmp eax, edx",
+          "4bdde8: jb 0x4bddd9",
+          "4bddd9: cmp word ptr [ecx], si",
+          "4bdddc: je 0x4bdfa2",
+          "4bdde2: inc eax",
+          "4bdde3: add ecx, 2",
+          "4bdde6: cmp eax, edx",
+          "4bdde8: jb 0x4bddd9"
+        ],
+        "observations": 1
+      },
+      "new_beyond_previous_limit": true
+    },
+    {
+      "context": "4bdda0",
+      "field": "CryptCounter04",
+      "unknown": false,
+      "read": {
+        "address": "0x4bddd9",
+        "offset": 4238,
+        "bytes": 2,
+        "instruction": "cmp word ptr [ecx], si",
+        "trace": [
+          "4bddd9: cmp word ptr [ecx], si",
+          "4bdddc: je 0x4bdfa2",
+          "4bdde2: inc eax",
+          "4bdde3: add ecx, 2",
+          "4bdde6: cmp eax, edx",
+          "4bdde8: jb 0x4bddd9",
+          "4bddd9: cmp word ptr [ecx], si",
+          "4bdddc: je 0x4bdfa2",
+          "4bdde2: inc eax",
+          "4bdde3: add ecx, 2",
+          "4bdde6: cmp eax, edx",
+          "4bdde8: jb 0x4bddd9"
+        ],
+        "observations": 1
+      },
+      "new_beyond_previous_limit": true
+    },
+    {
+      "context": "4bdda0",
+      "field": "CryptCounter05",
+      "unknown": false,
+      "read": {
+        "address": "0x4bddd9",
+        "offset": 4238,
+        "bytes": 2,
+        "instruction": "cmp word ptr [ecx], si",
+        "trace": [
+          "4bddd9: cmp word ptr [ecx], si",
+          "4bdddc: je 0x4bdfa2",
+          "4bdde2: inc eax",
+          "4bdde3: add ecx, 2",
+          "4bdde6: cmp eax, edx",
+          "4bdde8: jb 0x4bddd9",
+          "4bddd9: cmp word ptr [ecx], si",
+          "4bdddc: je 0x4bdfa2",
+          "4bdde2: inc eax",
+          "4bdde3: add ecx, 2",
+          "4bdde6: cmp eax, edx",
+          "4bdde8: jb 0x4bddd9"
+        ],
+        "observations": 1
+      },
+      "new_beyond_previous_limit": true
+    },
+    {
+      "context": "4bdda0",
+      "field": "CryptCounter06",
+      "unknown": false,
+      "read": {
+        "address": "0x4bddd9",
+        "offset": 4240,
+        "bytes": 2,
+        "instruction": "cmp word ptr [ecx], si",
+        "trace": [
+          "4bddd9: cmp word ptr [ecx], si",
+          "4bdddc: je 0x4bdfa2",
+          "4bdde2: inc eax",
+          "4bdde3: add ecx, 2",
+          "4bdde6: cmp eax, edx",
+          "4bdde8: jb 0x4bddd9",
+          "4bddd9: cmp word ptr [ecx], si",
+          "4bdddc: je 0x4bdfa2",
+          "4bdde2: inc eax",
+          "4bdde3: add ecx, 2",
+          "4bdde6: cmp eax, edx",
+          "4bdde8: jb 0x4bddd9"
+        ],
+        "observations": 1
+      },
+      "new_beyond_previous_limit": true
+    },
+    {
+      "context": "4bdda0",
+      "field": "CryptCounter07",
+      "unknown": false,
+      "read": {
+        "address": "0x4bddd9",
+        "offset": 4240,
+        "bytes": 2,
+        "instruction": "cmp word ptr [ecx], si",
+        "trace": [
+          "4bddd9: cmp word ptr [ecx], si",
+          "4bdddc: je 0x4bdfa2",
+          "4bdde2: inc eax",
+          "4bdde3: add ecx, 2",
+          "4bdde6: cmp eax, edx",
+          "4bdde8: jb 0x4bddd9",
+          "4bddd9: cmp word ptr [ecx], si",
+          "4bdddc: je 0x4bdfa2",
+          "4bdde2: inc eax",
+          "4bdde3: add ecx, 2",
+          "4bdde6: cmp eax, edx",
+          "4bdde8: jb 0x4bddd9"
+        ],
+        "observations": 1
+      },
+      "new_beyond_previous_limit": true
+    },
+    {
+      "context": "4bdda0",
+      "field": "CryptCounter08",
+      "unknown": true,
+      "read": {
+        "address": "0x4bddd9",
+        "offset": 4242,
+        "bytes": 2,
+        "instruction": "cmp word ptr [ecx], si",
+        "trace": [
+          "4bddd9: cmp word ptr [ecx], si",
+          "4bdddc: je 0x4bdfa2",
+          "4bdde2: inc eax",
+          "4bdde3: add ecx, 2",
+          "4bdde6: cmp eax, edx",
+          "4bdde8: jb 0x4bddd9",
+          "4bddd9: cmp word ptr [ecx], si",
+          "4bdddc: je 0x4bdfa2",
+          "4bdde2: inc eax",
+          "4bdde3: add ecx, 2",
+          "4bdde6: cmp eax, edx",
+          "4bdde8: jb 0x4bddd9"
+        ],
+        "observations": 1
+      },
+      "new_beyond_previous_limit": true
+    },
+    {
+      "context": "4bdda0",
+      "field": "CryptCounter09",
+      "unknown": true,
+      "read": {
+        "address": "0x4bddd9",
+        "offset": 4242,
+        "bytes": 2,
+        "instruction": "cmp word ptr [ecx], si",
+        "trace": [
+          "4bddd9: cmp word ptr [ecx], si",
+          "4bdddc: je 0x4bdfa2",
+          "4bdde2: inc eax",
+          "4bdde3: add ecx, 2",
+          "4bdde6: cmp eax, edx",
+          "4bdde8: jb 0x4bddd9",
+          "4bddd9: cmp word ptr [ecx], si",
+          "4bdddc: je 0x4bdfa2",
+          "4bdde2: inc eax",
+          "4bdde3: add ecx, 2",
+          "4bdde6: cmp eax, edx",
+          "4bdde8: jb 0x4bddd9"
+        ],
+        "observations": 1
+      },
+      "new_beyond_previous_limit": true
+    },
+    {
+      "context": "4bdda0",
+      "field": "CryptCounter10",
+      "unknown": false,
+      "read": {
+        "address": "0x4bddd9",
+        "offset": 4244,
+        "bytes": 2,
+        "instruction": "cmp word ptr [ecx], si",
+        "trace": [
+          "4bddd9: cmp word ptr [ecx], si",
+          "4bdddc: je 0x4bdfa2",
+          "4bdde2: inc eax",
+          "4bdde3: add ecx, 2",
+          "4bdde6: cmp eax, edx",
+          "4bdde8: jb 0x4bddd9",
+          "4bddd9: cmp word ptr [ecx], si",
+          "4bdddc: je 0x4bdfa2",
+          "4bdde2: inc eax",
+          "4bdde3: add ecx, 2",
+          "4bdde6: cmp eax, edx",
+          "4bdde8: jb 0x4bddd9"
+        ],
+        "observations": 1
+      },
+      "new_beyond_previous_limit": true
+    },
+    {
+      "context": "4bdda0",
+      "field": "CryptCounter11",
+      "unknown": false,
+      "read": {
+        "address": "0x4bddd9",
+        "offset": 4244,
+        "bytes": 2,
+        "instruction": "cmp word ptr [ecx], si",
+        "trace": [
+          "4bddd9: cmp word ptr [ecx], si",
+          "4bdddc: je 0x4bdfa2",
+          "4bdde2: inc eax",
+          "4bdde3: add ecx, 2",
+          "4bdde6: cmp eax, edx",
+          "4bdde8: jb 0x4bddd9",
+          "4bddd9: cmp word ptr [ecx], si",
+          "4bdddc: je 0x4bdfa2",
+          "4bdde2: inc eax",
+          "4bdde3: add ecx, 2",
+          "4bdde6: cmp eax, edx",
+          "4bdde8: jb 0x4bddd9"
+        ],
+        "observations": 1
+      },
+      "new_beyond_previous_limit": true
+    },
+    {
+      "context": "4bdda0",
+      "field": "CryptCounter12",
+      "unknown": true,
+      "read": {
+        "address": "0x4bddd9",
+        "offset": 4246,
+        "bytes": 2,
+        "instruction": "cmp word ptr [ecx], si",
+        "trace": [
+          "4bddd9: cmp word ptr [ecx], si",
+          "4bdddc: je 0x4bdfa2",
+          "4bdde2: inc eax",
+          "4bdde3: add ecx, 2",
+          "4bdde6: cmp eax, edx",
+          "4bdde8: jb 0x4bddd9",
+          "4bddd9: cmp word ptr [ecx], si",
+          "4bdddc: je 0x4bdfa2",
+          "4bdde2: inc eax",
+          "4bdde3: add ecx, 2",
+          "4bdde6: cmp eax, edx",
+          "4bdde8: jb 0x4bddd9"
+        ],
+        "observations": 1
+      },
+      "new_beyond_previous_limit": true
+    },
+    {
+      "context": "4bdda0",
+      "field": "CryptCounter13",
+      "unknown": true,
+      "read": {
+        "address": "0x4bddd9",
+        "offset": 4246,
+        "bytes": 2,
+        "instruction": "cmp word ptr [ecx], si",
+        "trace": [
+          "4bddd9: cmp word ptr [ecx], si",
+          "4bdddc: je 0x4bdfa2",
+          "4bdde2: inc eax",
+          "4bdde3: add ecx, 2",
+          "4bdde6: cmp eax, edx",
+          "4bdde8: jb 0x4bddd9",
+          "4bddd9: cmp word ptr [ecx], si",
+          "4bdddc: je 0x4bdfa2",
+          "4bdde2: inc eax",
+          "4bdde3: add ecx, 2",
+          "4bdde6: cmp eax, edx",
+          "4bdde8: jb 0x4bddd9"
+        ],
+        "observations": 1
+      },
+      "new_beyond_previous_limit": true
+    },
+    {
+      "context": "4bdda0",
+      "field": "CryptCounter14",
+      "unknown": true,
+      "read": {
+        "address": "0x4bddd9",
+        "offset": 4248,
+        "bytes": 2,
+        "instruction": "cmp word ptr [ecx], si",
+        "trace": [
+          "4bddd9: cmp word ptr [ecx], si",
+          "4bdddc: je 0x4bdfa2",
+          "4bdde2: inc eax",
+          "4bdde3: add ecx, 2",
+          "4bdde6: cmp eax, edx",
+          "4bdde8: jb 0x4bddd9",
+          "4bddd9: cmp word ptr [ecx], si",
+          "4bdddc: je 0x4bdfa2",
+          "4bdde2: inc eax",
+          "4bdde3: add ecx, 2",
+          "4bdde6: cmp eax, edx",
+          "4bdde8: jb 0x4bddd9"
+        ],
+        "observations": 1
+      },
+      "new_beyond_previous_limit": true
+    },
+    {
+      "context": "4bdda0",
+      "field": "CryptCounter15",
+      "unknown": true,
+      "read": {
+        "address": "0x4bddd9",
+        "offset": 4248,
+        "bytes": 2,
+        "instruction": "cmp word ptr [ecx], si",
+        "trace": [
+          "4bddd9: cmp word ptr [ecx], si",
+          "4bdddc: je 0x4bdfa2",
+          "4bdde2: inc eax",
+          "4bdde3: add ecx, 2",
+          "4bdde6: cmp eax, edx",
+          "4bdde8: jb 0x4bddd9",
+          "4bddd9: cmp word ptr [ecx], si",
+          "4bdddc: je 0x4bdfa2",
+          "4bdde2: inc eax",
+          "4bdde3: add ecx, 2",
+          "4bdde6: cmp eax, edx",
+          "4bdde8: jb 0x4bddd9"
+        ],
+        "observations": 1
+      },
+      "new_beyond_previous_limit": true
+    },
+    {
+      "context": "4bdda0",
+      "field": "CryptCounter16",
+      "unknown": true,
+      "read": {
+        "address": "0x4bddd9",
+        "offset": 4250,
+        "bytes": 2,
+        "instruction": "cmp word ptr [ecx], si",
+        "trace": [
+          "4bddd9: cmp word ptr [ecx], si",
+          "4bdddc: je 0x4bdfa2",
+          "4bdde2: inc eax",
+          "4bdde3: add ecx, 2",
+          "4bdde6: cmp eax, edx",
+          "4bdde8: jb 0x4bddd9",
+          "4bddd9: cmp word ptr [ecx], si",
+          "4bdddc: je 0x4bdfa2",
+          "4bdde2: inc eax",
+          "4bdde3: add ecx, 2",
+          "4bdde6: cmp eax, edx",
+          "4bdde8: jb 0x4bddd9"
+        ],
+        "observations": 1
+      },
+      "new_beyond_previous_limit": true
+    },
+    {
+      "context": "4bdda0",
+      "field": "CryptCounter17",
+      "unknown": true,
+      "read": {
+        "address": "0x4bddd9",
+        "offset": 4250,
+        "bytes": 2,
+        "instruction": "cmp word ptr [ecx], si",
+        "trace": [
+          "4bddd9: cmp word ptr [ecx], si",
+          "4bdddc: je 0x4bdfa2",
+          "4bdde2: inc eax",
+          "4bdde3: add ecx, 2",
+          "4bdde6: cmp eax, edx",
+          "4bdde8: jb 0x4bddd9",
+          "4bddd9: cmp word ptr [ecx], si",
+          "4bdddc: je 0x4bdfa2",
+          "4bdde2: inc eax",
+          "4bdde3: add ecx, 2",
+          "4bdde6: cmp eax, edx",
+          "4bdde8: jb 0x4bddd9"
+        ],
+        "observations": 1
+      },
+      "new_beyond_previous_limit": true
+    }
+  ],
+  "primary": {
+    "profile": {
+      "file": "phase185-validation.json",
+      "sha256": "2d5b9e74d7bfa9f6b2b9133faccfb3cdda99b8c680ae2ab5a107579010de4b95"
+    },
+    "program_sha256": "d7a8b854e4e4f02709eba271bead6fe2307dd6e332b5a96e70857e5b0e19fb8a",
+    "extents": [
+      {
+        "address": "0x5056e0",
+        "length": 99,
+        "kind": "complete-function",
+        "sha256": "4f8ab9df516141811946b2826779bc9bdda8aba59fcc2b79d7ec49e5db087cc0",
+        "memory": {
+          "file": "ghidra/phase186-search-5056e0-memory.txt",
+          "sha256": "c8bdea3718b1abf6e7dfc835da4b47a817d6ee6133f9755e56b4e8480eabd05a"
+        },
+        "assembly": {
+          "file": "ghidra/phase186-search-5056e0-assembly.txt",
+          "sha256": "a784c302c5b13faf1bcd83178b943e9e05008884e5139a6818fc74acf0ef381a"
+        }
+      },
+      {
+        "address": "0x4bcae0",
+        "length": 60,
+        "kind": "complete-function",
+        "sha256": "2fa9205507fad4749c6fbcd47ceb316ad49286ee229a328959c7e3c4e0db1bb4",
+        "memory": {
+          "file": "ghidra/phase186-search-4bcae0-memory.txt",
+          "sha256": "1fe39668ce4f5a5fb6842a69037dee98e106f30536aed9c6baf943751fe47302"
+        },
+        "assembly": {
+          "file": "ghidra/phase186-search-4bcae0-assembly.txt",
+          "sha256": "0a2b38dec013dfca40ce0810ad3dc3c4bbe32ce4ceec38b49027ae55e9ac48aa"
+        }
+      },
+      {
+        "address": "0x4bdda0",
+        "length": 74,
+        "kind": "bounded-array-loop-only",
+        "sha256": "cd408121ecaa1ef719c3f7056148728d71d4e897af7057558efdf61e0d44b6bd",
+        "memory": {
+          "file": "ghidra/phase186-search-4bdda0-memory.txt",
+          "sha256": "702c6faa1540c87b8bcbddb3d1557de1fc6e2f910fb2a80b94f80a879b0c850f"
+        },
+        "assembly": {
+          "file": "ghidra/phase186-search-4bdda0-assembly.txt",
+          "sha256": "cf7c556a1888cb81c863b23aab8f16f614567bc09e8bee4052ebbe319ad17260"
+        }
+      }
+    ],
+    "instruction_checks": [
+      {
+        "address": "0x5056e4",
+        "hex": "8a8703010000",
+        "mnemonic": "mov",
+        "operands": "al, byte ptr [edi + 0x103]"
+      },
+      {
+        "address": "0x5056f7",
+        "hex": "81e6ff000000",
+        "mnemonic": "and",
+        "operands": "esi, 0xff"
+      },
+      {
+        "address": "0x50570a",
+        "hex": "3bd6",
+        "mnemonic": "cmp",
+        "operands": "edx, esi"
+      },
+      {
+        "address": "0x50570c",
+        "hex": "7cf3",
+        "mnemonic": "jl",
+        "operands": "0x505701"
+      },
+      {
+        "address": "0x50570e",
+        "hex": "66390c57",
+        "mnemonic": "cmp",
+        "operands": "word ptr [edi + edx*2], cx"
+      },
+      {
+        "address": "0x4bcae0",
+        "hex": "33d2",
+        "mnemonic": "xor",
+        "operands": "edx, edx"
+      },
+      {
+        "address": "0x4bcae4",
+        "hex": "8a91bf010000",
+        "mnemonic": "mov",
+        "operands": "dl, byte ptr [ecx + 0x1bf]"
+      },
+      {
+        "address": "0x4bcb03",
+        "hex": "3bc2",
+        "mnemonic": "cmp",
+        "operands": "eax, edx"
+      },
+      {
+        "address": "0x4bcb05",
+        "hex": "72f3",
+        "mnemonic": "jb",
+        "operands": "0x4bcafa"
+      },
+      {
+        "address": "0x4bddc5",
+        "hex": "33d2",
+        "mnemonic": "xor",
+        "operands": "edx, edx"
+      },
+      {
+        "address": "0x4bddc9",
+        "hex": "8a95bf010000",
+        "mnemonic": "mov",
+        "operands": "dl, byte ptr [ebp + 0x1bf]"
+      },
+      {
+        "address": "0x4bdde6",
+        "hex": "3bc2",
+        "mnemonic": "cmp",
+        "operands": "eax, edx"
+      },
+      {
+        "address": "0x4bdde8",
+        "hex": "72ef",
+        "mnemonic": "jb",
+        "operands": "0x4bddd9"
+      }
+    ]
+  },
+  "native_executions": {
+    "scope": "Original PE array-search functions: finite byte counts vs Crypt false leads.\n\nCounts128/255 are representable adversarial fixtures, not asserted legal game\ncapacities. No game/virtual function, code byte, or return value is replaced.\n",
+    "program_sha256": "d7a8b854e4e4f02709eba271bead6fe2307dd6e332b5a96e70857e5b0e19fb8a",
+    "replays": [
+      {
+        "case": {
+          "name": "subarray-0-absent",
+          "kind": "subarray",
+          "count": 0,
+          "match": false
+        },
+        "file": "phase186-array-native-subarray-0-absent-45bb19e5383c.json",
+        "sha256": "f053b3481ab10e89ae3b77bd8db26fdcbe6ca4271313aaf3baa5778c364e7b58",
+        "states": 14,
+        "array_reads": 0,
+        "maximum_array_word_offset": null,
+        "counter_reads": 0,
+        "owner_unchanged": true
+      },
+      {
+        "case": {
+          "name": "subarray-1-absent",
+          "kind": "subarray",
+          "count": 1,
+          "match": false
+        },
+        "file": "phase186-array-native-subarray-1-absent-a42e6cb589b5.json",
+        "sha256": "62cb3269d9c83a286cba1060247e68928b369a56d7f725c06f628247e851f1c0",
+        "states": 28,
+        "array_reads": 2,
+        "maximum_array_word_offset": "0xa23",
+        "counter_reads": 0,
+        "owner_unchanged": true
+      },
+      {
+        "case": {
+          "name": "subarray-128-absent",
+          "kind": "subarray",
+          "count": 128,
+          "match": false
+        },
+        "file": "phase186-array-native-subarray-128-absent-877c81553a65.json",
+        "sha256": "dc83263524033d0fc3ff86219eac46d8e28f4db34674101f5148305c090441b3",
+        "states": 790,
+        "array_reads": 129,
+        "maximum_array_word_offset": "0xb21",
+        "counter_reads": 0,
+        "owner_unchanged": true
+      },
+      {
+        "case": {
+          "name": "subarray-255-absent",
+          "kind": "subarray",
+          "count": 255,
+          "match": false
+        },
+        "file": "phase186-array-native-subarray-255-absent-cb63ea4d9455.json",
+        "sha256": "90c3d88c0ea48918bd64435d2c65795c3d9681fcd134c802eea9e46267207730",
+        "states": 1552,
+        "array_reads": 256,
+        "maximum_array_word_offset": "0xc1f",
+        "counter_reads": 0,
+        "owner_unchanged": true
+      },
+      {
+        "case": {
+          "name": "hand-0-absent",
+          "kind": "hand",
+          "count": 0,
+          "match": false
+        },
+        "file": "phase186-array-native-hand-0-absent-282cba32453f.json",
+        "sha256": "57472e2a7da696830d87b5664285a3d52eaa34e0e65ac39f0c6b74c2b7aba1ee",
+        "states": 14,
+        "array_reads": 0,
+        "maximum_array_word_offset": null,
+        "counter_reads": 0,
+        "owner_unchanged": true
+      },
+      {
+        "case": {
+          "name": "hand-1-absent",
+          "kind": "hand",
+          "count": 1,
+          "match": false
+        },
+        "file": "phase186-array-native-hand-1-absent-d7c8e97162bb.json",
+        "sha256": "b22e753930d6ebc89ea4f51fcec3dc646c8e5bf5dfd30cf602aa6d27e5d65722",
+        "states": 22,
+        "array_reads": 1,
+        "maximum_array_word_offset": "0xb2",
+        "counter_reads": 0,
+        "owner_unchanged": true
+      },
+      {
+        "case": {
+          "name": "hand-8-absent",
+          "kind": "hand",
+          "count": 8,
+          "match": false
+        },
+        "file": "phase186-array-native-hand-8-absent-e9b0a5e43d7b.json",
+        "sha256": "c379f3621ebae0007105968ae2a62ea8559ab29df18f1ff6b5f13d1058ba837d",
+        "states": 64,
+        "array_reads": 8,
+        "maximum_array_word_offset": "0xc0",
+        "counter_reads": 0,
+        "owner_unchanged": true
+      },
+      {
+        "case": {
+          "name": "hand-255-absent",
+          "kind": "hand",
+          "count": 255,
+          "match": false
+        },
+        "file": "phase186-array-native-hand-255-absent-570460ce1bbe.json",
+        "sha256": "8d155163c66b1bc04c8516ad2cb6e17a84a356dbf395a77451665143f8c0c78a",
+        "states": 1546,
+        "array_reads": 255,
+        "maximum_array_word_offset": "0x2ae",
+        "counter_reads": 0,
+        "owner_unchanged": true
+      },
+      {
+        "case": {
+          "name": "hand-255-last",
+          "kind": "hand",
+          "count": 255,
+          "match": true
+        },
+        "file": "phase186-array-native-hand-255-last-ba966744c3fc.json",
+        "sha256": "4c594209dae57d4b19cc5cb4c87cf806bba9f5513b3f0b0bb7841fb8eeda9186",
+        "states": 1542,
+        "array_reads": 255,
+        "maximum_array_word_offset": "0x2ae",
+        "counter_reads": 0,
+        "owner_unchanged": true
+      }
+    ]
+  },
+  "independent_Ghidra_controls": [
+    {
+      "case": "subarray-255-absent",
+      "file": "ghidra/phase186-array-Ghidra-subarray-255-absent-40a643e15d02.json",
+      "sha256": "0a0c2c4a1985975560df91fb8b55f0db33f300bf9217bdb5db1f263567c197b9",
+      "checked_regions": 1,
+      "checked_bytes": 8192
+    },
+    {
+      "case": "hand-255-absent",
+      "file": "ghidra/phase186-array-Ghidra-hand-255-absent-6bc6d3474594.json",
+      "sha256": "cd62d1469e21f12d05d96f57cb8eccb4fb4f3cc254a062cef695e7f826cf0957",
+      "checked_regions": 1,
+      "checked_bytes": 8192
+    },
+    {
+      "case": "hand-255-last",
+      "file": "ghidra/phase186-array-Ghidra-hand-255-last-d37a18a3da8a.json",
+      "sha256": "9481ed45ba95cae506e88e07a522cc88acbf5186fe4e9bcb0032abc6f61dcf90",
+      "checked_regions": 1,
+      "checked_bytes": 8192
+    }
+  ],
+  "storage": {
+    "new_raw_fields": 0,
+    "new_raw_edits": 0,
+    "rechecked": {
+      "prior_seven_source_roundtrips": {
+        "status": "passed",
+        "source_files": [
+          {
+            "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\Creatures.kwd",
+            "sha256": "e215c03c7722e89f7736ced7c710406dc10d6cf48e5ad37bed45faf2055c52e2",
+            "bytes": 250710,
+            "exact_public_decode_rebuild": true
+          },
+          {
+            "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\Objects.kwd",
+            "sha256": "36d607b408eeeb17da0fbea01e374a614a327021d2a30eea4aaa0311bf9b334c",
+            "bytes": 129686,
+            "exact_public_decode_rebuild": true
+          },
+          {
+            "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\KeeperSpells.kwd",
+            "sha256": "1836b4dfd708f56568ac22135ac2526eeeeaa5e06b34acd6fbe5afd516cd0b16",
+            "bytes": 5334,
+            "exact_public_decode_rebuild": true
+          },
+          {
+            "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\GlobalVariables.kwd",
+            "sha256": "d14b6a28694254dad722071267268d4f36c8535cd3a9c610f9ee0447fe9b941a",
+            "bytes": 13636,
+            "exact_public_decode_rebuild": true
+          },
+          {
+            "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\Rooms.kwd",
+            "sha256": "24546825ac6cf3f8455bf9b26fbffe9e2ded05ea3b176c0e00354ee1ccf0a465",
+            "bytes": 27486,
+            "exact_public_decode_rebuild": true
+          },
+          {
+            "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\Terrain.kwd",
+            "sha256": "1b4296b0cf696d5428e6d3d94eb8571e2601bd78fc51caa6c3e1e13c0695e77d",
+            "bytes": 22688,
+            "exact_public_decode_rebuild": true
+          },
+          {
+            "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\CreatureSpells.kwd",
+            "sha256": "125f19e82b96cc5480ce3648342c9c1749e448b88db2133436737a22758e8d17",
+            "bytes": 10962,
+            "exact_public_decode_rebuild": true
+          }
+        ],
+        "selected_variable": 102,
+        "raw_value_offset": 4,
+        "value_bytes": 4,
+        "source_signed32": -275,
+        "edited_signed32": -369,
+        "exact_container_edits": 1,
+        "unchanged_headers_suffix_other_records_and_reserved_bytes": true,
+        "inverse_edit_restores_source": true,
+        "source_writes": 0,
+        "new_codec_field_names": 0
+      },
+      "source_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\Creatures.kwd",
+      "sha256": "e215c03c7722e89f7736ced7c710406dc10d6cf48e5ad37bed45faf2055c52e2",
+      "selected_creature": 5,
+      "raw_offset": 4747,
+      "edits": [
+        {
+          "signed_value": 0,
+          "width": 4,
+          "exact_container_edit": true,
+          "inverse_restores_source": true,
+          "native_movement_tested": true
+        },
+        {
+          "signed_value": -1490,
+          "width": 4,
+          "exact_container_edit": true,
+          "inverse_restores_source": true,
+          "native_movement_tested": true
+        },
+        {
+          "signed_value": 4096,
+          "width": 4,
+          "exact_container_edit": true,
+          "inverse_restores_source": true,
+          "native_movement_tested": true
+        },
+        {
+          "signed_value": -2147483648,
+          "width": 4,
+          "exact_container_edit": true,
+          "inverse_restores_source": true,
+          "native_movement_tested": false
+        },
+        {
+          "signed_value": 2147483647,
+          "width": 4,
+          "exact_container_edit": true,
+          "inverse_restores_source": true,
+          "native_movement_tested": false
+        }
+      ],
+      "extra88_bytes_preserved": true,
+      "source_writes": 0
+    },
+    "reference": {
+      "file": "phase184-validation.json",
+      "sha256": "ccc25a622e45f7295172d6046631440b004f2626571c3e824eb843b60bc8e810"
+    }
+  },
+  "source_baseline": {
+    "file": "phase165-source-baseline.json",
+    "sha256": "e032a4b5a485cbec505b114e3a22ab4e995af3fb5d2e878d738197e74fc916f8"
+  },
+  "helpers": [
+    {
+      "file": "rescan_crypt_limited_contexts.py",
+      "sha256": "04c2fe28c505ec7a9129103bfaa80efde8e1dee6397f630210f87bb823f7d12d"
+    },
+    {
+      "file": "emulate_crypt_search_bounds.py",
+      "sha256": "752564efe1b9d24e9d7921178c36dd3312dfc751ebbb0cdc71d1e91e73f28d08"
+    },
+    {
+      "file": "build_crypt_search_bounds.py",
+      "sha256": "789ac75a8420e15ec03cf849bbc237a2c73426d05bd9442045611b4bc78b84bd"
+    }
+  ],
+  "priority": {
+    "current": "Crypt groups",
+    "block_complete": false,
+    "next": [
+      "Realconsumersof10unassignedownercounters; indirectionandsearchlimitsremain.",
+      "NaturalCryptselection/terminationunderactualscheduler; livingparticipationproved,notsalary/experience/mandatorysacrifice.",
+      "Pretimeout255graphicscontextisaseparateopenboundary; notnewformatsemantics."
+    ]
+  },
+  "limitations": [
+    "StaticpointerhintsarenotOwner-typeproof. Noabsenceofconsumersinwholeprogramproved.",
+    "Native/Ghidrascenescovertwocompletefunctionsatselectedcounts,notallbranches;4BDDA0loopboundisstaticonly.",
+    "Count128/255fixturesarebyte-representablestresscases,notprovedlegalgamearraycapacities.",
+    "ThisstageassignsnoCryptbonus/rawfieldanddoesnotchangecodec,effectiveviewsorreadinesspercentage."
+  ]
+}

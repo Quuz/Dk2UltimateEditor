@@ -1,0 +1,930 @@
+{
+  "scope": "Original44DEC0 cursor fallback after real Creature/Object raw loaders.\n\nPrepared cell lists and Actor instances; native World vtable and all code\nremain intact. This is the fallback helper, not complete primary ray picking.\n",
+  "replays": [
+    {
+      "case": {
+        "name": "first-farther-creature"
+      },
+      "file": "ghidra\\phase153-pickup-native-e62ef42ace05.json",
+      "sha256": "8c9ed7dc57e5d1073bab909eac64d066a0c7131368b98b512339676800bd099e",
+      "outcome": {
+        "selected_index": 0,
+        "selected_tag": 9,
+        "scan_order": [
+          0,
+          1
+        ],
+        "native_return": 1,
+        "priority_or_Jump_reads_in_fallback": 0,
+        "compared_regions": 33,
+        "compared_bytes": 81461,
+        "native_steps": 139749
+      }
+    },
+    {
+      "case": {
+        "name": "reversed-creatures",
+        "order": [
+          1,
+          0
+        ]
+      },
+      "file": "ghidra\\phase153-pickup-native-f26a0b3fdbd2.json",
+      "sha256": "4855cf187af360f2a5952947c0781087e9a714ed86e9fe3430721c3db026104c",
+      "outcome": {
+        "selected_index": 1,
+        "selected_tag": 10,
+        "scan_order": [
+          1,
+          0
+        ],
+        "native_return": 1,
+        "priority_or_Jump_reads_in_fallback": 0,
+        "compared_regions": 33,
+        "compared_bytes": 81461,
+        "native_steps": 139744
+      }
+    },
+    {
+      "case": {
+        "name": "near-object-before-creature",
+        "nodes": [
+          {
+            "kind": 2,
+            "dx": 16
+          },
+          {
+            "kind": 0,
+            "dx": 1000
+          }
+        ]
+      },
+      "file": "ghidra\\phase153-pickup-native-48db5ad76ec7.json",
+      "sha256": "e6198a74596acac1f9b460127ea37394fb32adef92bd8d787922de10bd9bf0e3",
+      "outcome": {
+        "selected_index": 1,
+        "selected_tag": 10,
+        "scan_order": [
+          0,
+          1
+        ],
+        "native_return": 1,
+        "priority_or_Jump_reads_in_fallback": 0,
+        "compared_regions": 33,
+        "compared_bytes": 81461,
+        "native_steps": 139763
+      }
+    },
+    {
+      "case": {
+        "name": "nearer-creature-after-object",
+        "nodes": [
+          {
+            "kind": 2,
+            "dx": 800
+          },
+          {
+            "kind": 0,
+            "dx": 64
+          }
+        ]
+      },
+      "file": "ghidra\\phase153-pickup-native-a4b41294cc77.json",
+      "sha256": "33c0fd9313fec0a7ea66388ab4b0da2c179da86a0ee00d280b29aefe75c2e958",
+      "outcome": {
+        "selected_index": 1,
+        "selected_tag": 10,
+        "scan_order": [
+          0,
+          1
+        ],
+        "native_return": 1,
+        "priority_or_Jump_reads_in_fallback": 0,
+        "compared_regions": 33,
+        "compared_bytes": 81461,
+        "native_steps": 139763
+      }
+    },
+    {
+      "case": {
+        "name": "objects-nearest",
+        "nodes": [
+          {
+            "kind": 2,
+            "dx": 800
+          },
+          {
+            "kind": 2,
+            "dx": 64
+          }
+        ]
+      },
+      "file": "ghidra\\phase153-pickup-native-fa7207a6ac9e.json",
+      "sha256": "763b66db993a0d0219ccb12ba40e28b26f174fbc0c74737ba6fe2abc2d7e7ad6",
+      "outcome": {
+        "selected_index": 1,
+        "selected_tag": 10,
+        "scan_order": [
+          0,
+          1
+        ],
+        "native_return": 1,
+        "priority_or_Jump_reads_in_fallback": 0,
+        "compared_regions": 33,
+        "compared_bytes": 81461,
+        "native_steps": 139765
+      }
+    },
+    {
+      "case": {
+        "name": "objects-tie",
+        "nodes": [
+          {
+            "kind": 2,
+            "dx": 64
+          },
+          {
+            "kind": 2,
+            "dx": -64
+          }
+        ]
+      },
+      "file": "ghidra\\phase153-pickup-native-d5fb4e3f1e56.json",
+      "sha256": "0140745f147ec13cbcea539d3536e1020cb69c6a57969e4710a99f09af4f0afc",
+      "outcome": {
+        "selected_index": 0,
+        "selected_tag": 9,
+        "scan_order": [
+          0,
+          1
+        ],
+        "native_return": 1,
+        "priority_or_Jump_reads_in_fallback": 0,
+        "compared_regions": 33,
+        "compared_bytes": 81461,
+        "native_steps": 139761
+      }
+    },
+    {
+      "case": {
+        "name": "creatures-tie",
+        "nodes": [
+          {
+            "kind": 0,
+            "dx": 64
+          },
+          {
+            "kind": 0,
+            "dx": -64
+          }
+        ]
+      },
+      "file": "ghidra\\phase153-pickup-native-15d1ca32e597.json",
+      "sha256": "24193179a50d8d8eec06e9e2deb112b7bf1059fbf0a1c6fc9878783ea9618c26",
+      "outcome": {
+        "selected_index": 0,
+        "selected_tag": 9,
+        "scan_order": [
+          0,
+          1
+        ],
+        "native_return": 1,
+        "priority_or_Jump_reads_in_fallback": 0,
+        "compared_regions": 33,
+        "compared_bytes": 81461,
+        "native_steps": 139744
+      }
+    },
+    {
+      "case": {
+        "name": "object-unpickable",
+        "nodes": [
+          {
+            "kind": 2,
+            "dx": 16
+          }
+        ],
+        "object_id": 17
+      },
+      "file": "ghidra\\phase153-pickup-native-a6df9e8b26c9.json",
+      "sha256": "13711f7c70476ed7857b4b0c365d83f32bf33f2fc22b7e65cd970d1f4b6ee1b6",
+      "outcome": {
+        "selected_index": null,
+        "selected_tag": null,
+        "scan_order": [
+          0
+        ],
+        "native_return": 0,
+        "priority_or_Jump_reads_in_fallback": 0,
+        "compared_regions": 32,
+        "compared_bytes": 80181,
+        "native_steps": 139672
+      }
+    },
+    {
+      "case": {
+        "name": "heart-special-ID13",
+        "nodes": [
+          {
+            "kind": 2,
+            "dx": 16
+          }
+        ],
+        "object_id": 13
+      },
+      "file": "ghidra\\phase153-pickup-native-184eeceea667.json",
+      "sha256": "ef632313dc426fe60e4f167a07b80da8140454aa14cb152675ccb912831a4c5a",
+      "outcome": {
+        "selected_index": 0,
+        "selected_tag": 9,
+        "scan_order": [
+          0
+        ],
+        "native_return": 1,
+        "priority_or_Jump_reads_in_fallback": 0,
+        "compared_regions": 32,
+        "compared_bytes": 80181,
+        "native_steps": 139740
+      }
+    },
+    {
+      "case": {
+        "name": "no-candidates",
+        "nodes": []
+      },
+      "file": "ghidra\\phase153-pickup-native-024b3dfbc554.json",
+      "sha256": "6849c7e891906e91523ebd4ea474aeb96dd40709db4c39193df6fb79767cebea",
+      "outcome": {
+        "selected_index": null,
+        "selected_tag": null,
+        "scan_order": [],
+        "native_return": 0,
+        "priority_or_Jump_reads_in_fallback": 0,
+        "compared_regions": 31,
+        "compared_bytes": 78901,
+        "native_steps": 139673
+      }
+    },
+    {
+      "case": {
+        "name": "outside-radius",
+        "nodes": [
+          {
+            "kind": 0,
+            "dx": 2048
+          }
+        ]
+      },
+      "file": "ghidra\\phase153-pickup-native-93db768db13a.json",
+      "sha256": "488eaebc34e492b07d8bcfb35603b691b32d648daa01aa4b92ad310d61410ad4",
+      "outcome": {
+        "selected_index": null,
+        "selected_tag": null,
+        "scan_order": [
+          0
+        ],
+        "native_return": 0,
+        "priority_or_Jump_reads_in_fallback": 0,
+        "compared_regions": 32,
+        "compared_bytes": 80181,
+        "native_steps": 139699
+      }
+    },
+    {
+      "case": {
+        "name": "object-default-boundary",
+        "nodes": [
+          {
+            "kind": 2,
+            "dx": 1024
+          }
+        ]
+      },
+      "file": "ghidra\\phase153-pickup-native-d8e8056d610f.json",
+      "sha256": "1446cf52fbafe77f68bfeddecfa4798187a2c9ba2580b5484a2eade7ff337d20",
+      "outcome": {
+        "selected_index": null,
+        "selected_tag": null,
+        "scan_order": [
+          0
+        ],
+        "native_return": 0,
+        "priority_or_Jump_reads_in_fallback": 0,
+        "compared_regions": 32,
+        "compared_bytes": 80181,
+        "native_steps": 139714
+      }
+    },
+    {
+      "case": {
+        "name": "object-default-inside",
+        "nodes": [
+          {
+            "kind": 2,
+            "dx": 1023
+          }
+        ]
+      },
+      "file": "ghidra\\phase153-pickup-native-e336f72c42b4.json",
+      "sha256": "4f885bf8bb9892a3fb918c9dfac2476b99ed5256cfb88eebff6cfd98f887d9dc",
+      "outcome": {
+        "selected_index": 0,
+        "selected_tag": 9,
+        "scan_order": [
+          0
+        ],
+        "native_return": 1,
+        "priority_or_Jump_reads_in_fallback": 0,
+        "compared_regions": 32,
+        "compared_bytes": 80181,
+        "native_steps": 139721
+      }
+    },
+    {
+      "case": {
+        "name": "object-only-boundary",
+        "nodes": [
+          {
+            "kind": 2,
+            "dx": 2048
+          }
+        ],
+        "mode": 1
+      },
+      "file": "ghidra\\phase153-pickup-native-d73950dbf0b7.json",
+      "sha256": "22e8882ee34435dffa6a816bba1214ac914f8bdeebaebe8debd1db1d23ce1e01",
+      "outcome": {
+        "selected_index": null,
+        "selected_tag": null,
+        "scan_order": [
+          0
+        ],
+        "native_return": 0,
+        "priority_or_Jump_reads_in_fallback": 0,
+        "compared_regions": 32,
+        "compared_bytes": 80181,
+        "native_steps": 139699
+      }
+    },
+    {
+      "case": {
+        "name": "object-only-inside",
+        "nodes": [
+          {
+            "kind": 2,
+            "dx": 2047
+          }
+        ],
+        "mode": 1
+      },
+      "file": "ghidra\\phase153-pickup-native-f6748f225697.json",
+      "sha256": "582248fb775489bb3632832e31eb3066c52534f1ea19f356fe2b7a7c407da005",
+      "outcome": {
+        "selected_index": 0,
+        "selected_tag": 9,
+        "scan_order": [
+          0
+        ],
+        "native_return": 1,
+        "priority_or_Jump_reads_in_fallback": 0,
+        "compared_regions": 32,
+        "compared_bytes": 80181,
+        "native_steps": 139708
+      }
+    },
+    {
+      "case": {
+        "name": "object-only-nearest",
+        "nodes": [
+          {
+            "kind": 0,
+            "dx": 16
+          },
+          {
+            "kind": 2,
+            "dx": 800
+          },
+          {
+            "kind": 2,
+            "dx": 64
+          }
+        ],
+        "mode": 1
+      },
+      "file": "ghidra\\phase153-pickup-native-9465a97272f5.json",
+      "sha256": "59fd09e62b547c3021c8300a61c6f079e0ca28b2d17b86f30a5e2be7b2ecd954",
+      "outcome": {
+        "selected_index": 2,
+        "selected_tag": 11,
+        "scan_order": [
+          0,
+          1,
+          2
+        ],
+        "native_return": 1,
+        "priority_or_Jump_reads_in_fallback": 0,
+        "compared_regions": 34,
+        "compared_bytes": 82741,
+        "native_steps": 139775
+      }
+    },
+    {
+      "case": {
+        "name": "first-excluded-state",
+        "nodes": [
+          {
+            "kind": 0,
+            "dx": 100,
+            "state": 209
+          },
+          {
+            "kind": 0,
+            "dx": 800
+          }
+        ]
+      },
+      "file": "ghidra\\phase153-pickup-native-b8c3ee44a732.json",
+      "sha256": "0397be327904bed5c39ccb1547aefa3f53b3d2651116021b96a8ef20483f2f66",
+      "outcome": {
+        "selected_index": 1,
+        "selected_tag": 10,
+        "scan_order": [
+          0,
+          1
+        ],
+        "native_return": 1,
+        "priority_or_Jump_reads_in_fallback": 0,
+        "compared_regions": 33,
+        "compared_bytes": 81461,
+        "native_steps": 139763
+      }
+    },
+    {
+      "case": {
+        "name": "first-excluded-typebyte",
+        "nodes": [
+          {
+            "kind": 0,
+            "dx": 100,
+            "typebyte": 46
+          },
+          {
+            "kind": 0,
+            "dx": 800
+          }
+        ]
+      },
+      "file": "ghidra\\phase153-pickup-native-f44e5dd40f03.json",
+      "sha256": "666877bbbad1158c0c046c0eda78123c45123f0b3a3a2a34982e8ceab420bd84",
+      "outcome": {
+        "selected_index": 1,
+        "selected_tag": 10,
+        "scan_order": [
+          0,
+          1
+        ],
+        "native_return": 1,
+        "priority_or_Jump_reads_in_fallback": 0,
+        "compared_regions": 33,
+        "compared_bytes": 81461,
+        "native_steps": 139754
+      }
+    },
+    {
+      "case": {
+        "name": "first-excluded-flag",
+        "nodes": [
+          {
+            "kind": 0,
+            "dx": 100,
+            "flags": 2097152
+          },
+          {
+            "kind": 0,
+            "dx": 800
+          }
+        ]
+      },
+      "file": "ghidra\\phase153-pickup-native-e35544e5c357.json",
+      "sha256": "ac9b12dc7fe94abdcad38172776bfe5c691de7cb374f370f569eb2859044c6aa",
+      "outcome": {
+        "selected_index": 1,
+        "selected_tag": 10,
+        "scan_order": [
+          0,
+          1
+        ],
+        "native_return": 1,
+        "priority_or_Jump_reads_in_fallback": 0,
+        "compared_regions": 33,
+        "compared_bytes": 81461,
+        "native_steps": 139756
+      }
+    },
+    {
+      "case": {
+        "name": "earlier-cell-first",
+        "origin": [
+          33024,
+          33024
+        ],
+        "nodes": [
+          {
+            "kind": 0,
+            "dx": -1000,
+            "dy": -1000
+          },
+          {
+            "kind": 0,
+            "dx": 16
+          }
+        ]
+      },
+      "file": "ghidra\\phase153-pickup-native-7f779f8d4063.json",
+      "sha256": "dc318122d0392b466eb1df9216b80db5ec00d047a1274bbcb374c9b1e8436045",
+      "outcome": {
+        "selected_index": 0,
+        "selected_tag": 9,
+        "scan_order": [
+          0,
+          1
+        ],
+        "native_return": 1,
+        "priority_or_Jump_reads_in_fallback": 0,
+        "compared_regions": 33,
+        "compared_bytes": 81461,
+        "native_steps": 139750
+      }
+    },
+    {
+      "case": {
+        "name": "Y-outer-X-inner-order",
+        "origin": [
+          36608,
+          36608
+        ],
+        "nodes": [
+          {
+            "kind": 0,
+            "dx": 1000,
+            "dy": -100
+          },
+          {
+            "kind": 0,
+            "dx": -100,
+            "dy": 1000
+          }
+        ]
+      },
+      "file": "ghidra\\phase153-pickup-native-a1d897c663c8.json",
+      "sha256": "e7366a3f1ff988a254ebdad6094602d3afe79b486a4c17af5206f6a566f84c68",
+      "outcome": {
+        "selected_index": 0,
+        "selected_tag": 9,
+        "scan_order": [
+          0,
+          1
+        ],
+        "native_return": 1,
+        "priority_or_Jump_reads_in_fallback": 0,
+        "compared_regions": 33,
+        "compared_bytes": 81461,
+        "native_steps": 139745
+      }
+    },
+    {
+      "case": {
+        "name": "edge-zero",
+        "origin": [
+          256,
+          256
+        ],
+        "nodes": [
+          {
+            "kind": 0,
+            "dx": 16
+          }
+        ]
+      },
+      "file": "ghidra\\phase153-pickup-native-1b5c4d6afa90.json",
+      "sha256": "9547dddcc918af0f92bd52100ff6dbe895fee5f4b95b322bec478884673d2e28",
+      "outcome": {
+        "selected_index": 0,
+        "selected_tag": 9,
+        "scan_order": [
+          0
+        ],
+        "native_return": 1,
+        "priority_or_Jump_reads_in_fallback": 0,
+        "compared_regions": 32,
+        "compared_bytes": 80181,
+        "native_steps": 139587
+      }
+    },
+    {
+      "case": {
+        "name": "edge-last",
+        "origin": [
+          65280,
+          65280
+        ],
+        "nodes": [
+          {
+            "kind": 0,
+            "dx": -16
+          }
+        ]
+      },
+      "file": "ghidra\\phase153-pickup-native-6ec0ce1038da.json",
+      "sha256": "9c614610b8a2aaa5f6565a60b423c22033b70b1629ab853c08324c16e2dc2f79",
+      "outcome": {
+        "selected_index": 0,
+        "selected_tag": 9,
+        "scan_order": [
+          0
+        ],
+        "native_return": 1,
+        "priority_or_Jump_reads_in_fallback": 0,
+        "compared_regions": 32,
+        "compared_bytes": 80181,
+        "native_steps": 139597
+      }
+    },
+    {
+      "case": {
+        "name": "priority-0-255",
+        "priorities": [
+          0,
+          255
+        ]
+      },
+      "file": "ghidra\\phase153-pickup-native-e62ef42ace05.json",
+      "sha256": "8c9ed7dc57e5d1073bab909eac64d066a0c7131368b98b512339676800bd099e",
+      "outcome": {
+        "selected_index": 0,
+        "selected_tag": 9,
+        "scan_order": [
+          0,
+          1
+        ],
+        "native_return": 1,
+        "priority_or_Jump_reads_in_fallback": 0,
+        "compared_regions": 33,
+        "compared_bytes": 81461,
+        "native_steps": 139749
+      }
+    },
+    {
+      "case": {
+        "name": "priority-255-0",
+        "priorities": [
+          255,
+          0
+        ]
+      },
+      "file": "ghidra\\phase153-pickup-native-ee96594e1ab3.json",
+      "sha256": "a46f69a1e274ce0ae263905857d7754f9ab5724241e8790aed1576b2960e194f",
+      "outcome": {
+        "selected_index": 0,
+        "selected_tag": 9,
+        "scan_order": [
+          0,
+          1
+        ],
+        "native_return": 1,
+        "priority_or_Jump_reads_in_fallback": 0,
+        "compared_regions": 33,
+        "compared_bytes": 81461,
+        "native_steps": 139749
+      }
+    },
+    {
+      "case": {
+        "name": "priority-1-40",
+        "priorities": [
+          1,
+          40
+        ]
+      },
+      "file": "ghidra\\phase153-pickup-native-c12f5a48419a.json",
+      "sha256": "27bf977521c437a98acb302f85a224d54332c5f9c0e8303cc17896edc07fdf17",
+      "outcome": {
+        "selected_index": 0,
+        "selected_tag": 9,
+        "scan_order": [
+          0,
+          1
+        ],
+        "native_return": 1,
+        "priority_or_Jump_reads_in_fallback": 0,
+        "compared_regions": 33,
+        "compared_bytes": 81461,
+        "native_steps": 139749
+      }
+    },
+    {
+      "case": {
+        "name": "priority-128-255",
+        "priorities": [
+          128,
+          255
+        ]
+      },
+      "file": "ghidra\\phase153-pickup-native-766097eecd86.json",
+      "sha256": "fe29a5d2864ec5120c6d5be093d72c5eb647b3af91113eb50996dbbeaa83f26b",
+      "outcome": {
+        "selected_index": 0,
+        "selected_tag": 9,
+        "scan_order": [
+          0,
+          1
+        ],
+        "native_return": 1,
+        "priority_or_Jump_reads_in_fallback": 0,
+        "compared_regions": 33,
+        "compared_bytes": 81461,
+        "native_steps": 139749
+      }
+    },
+    {
+      "case": {
+        "name": "priority-255-255",
+        "priorities": [
+          255,
+          255
+        ]
+      },
+      "file": "ghidra\\phase153-pickup-native-5686ed2ef2e9.json",
+      "sha256": "cce8fc92374ddeb97830f05a381fcce1471417fcbd1599f71e8866a5e330ab4d",
+      "outcome": {
+        "selected_index": 0,
+        "selected_tag": 9,
+        "scan_order": [
+          0,
+          1
+        ],
+        "native_return": 1,
+        "priority_or_Jump_reads_in_fallback": 0,
+        "compared_regions": 33,
+        "compared_bytes": 81461,
+        "native_steps": 139749
+      }
+    },
+    {
+      "case": {
+        "name": "object-priority-0",
+        "nodes": [
+          {
+            "kind": 2,
+            "dx": 800
+          },
+          {
+            "kind": 2,
+            "dx": 64
+          }
+        ],
+        "object_priority": 0
+      },
+      "file": "ghidra\\phase153-pickup-native-99ee4b3487a6.json",
+      "sha256": "4c847edf4105a96fb5fa872b871aa8c38003299afbd3dc556e6cfa0b015eeb5f",
+      "outcome": {
+        "selected_index": 1,
+        "selected_tag": 10,
+        "scan_order": [
+          0,
+          1
+        ],
+        "native_return": 1,
+        "priority_or_Jump_reads_in_fallback": 0,
+        "compared_regions": 33,
+        "compared_bytes": 81461,
+        "native_steps": 139765
+      }
+    },
+    {
+      "case": {
+        "name": "object-priority-1",
+        "nodes": [
+          {
+            "kind": 2,
+            "dx": 800
+          },
+          {
+            "kind": 2,
+            "dx": 64
+          }
+        ],
+        "object_priority": 1
+      },
+      "file": "ghidra\\phase153-pickup-native-f2f3dcb1fc49.json",
+      "sha256": "188dd0f135f09c5fb3ae5f9c27267dac3735fc8e76ada40d3c21a9262a816b05",
+      "outcome": {
+        "selected_index": 1,
+        "selected_tag": 10,
+        "scan_order": [
+          0,
+          1
+        ],
+        "native_return": 1,
+        "priority_or_Jump_reads_in_fallback": 0,
+        "compared_regions": 33,
+        "compared_bytes": 81461,
+        "native_steps": 139765
+      }
+    },
+    {
+      "case": {
+        "name": "object-priority-255",
+        "nodes": [
+          {
+            "kind": 2,
+            "dx": 800
+          },
+          {
+            "kind": 2,
+            "dx": 64
+          }
+        ],
+        "object_priority": 255
+      },
+      "file": "ghidra\\phase153-pickup-native-677e9ec8373a.json",
+      "sha256": "b530ed025da108894ad959d0772442bf2ab21b112936f1652b1a95eb1a0e022e",
+      "outcome": {
+        "selected_index": 1,
+        "selected_tag": 10,
+        "scan_order": [
+          0,
+          1
+        ],
+        "native_return": 1,
+        "priority_or_Jump_reads_in_fallback": 0,
+        "compared_regions": 33,
+        "compared_bytes": 81461,
+        "native_steps": 139765
+      }
+    },
+    {
+      "case": {
+        "name": "jump-00000000",
+        "jump": 0
+      },
+      "file": "ghidra\\phase153-pickup-native-e62ef42ace05.json",
+      "sha256": "8c9ed7dc57e5d1073bab909eac64d066a0c7131368b98b512339676800bd099e",
+      "outcome": {
+        "selected_index": 0,
+        "selected_tag": 9,
+        "scan_order": [
+          0,
+          1
+        ],
+        "native_return": 1,
+        "priority_or_Jump_reads_in_fallback": 0,
+        "compared_regions": 33,
+        "compared_bytes": 81461,
+        "native_steps": 139749
+      }
+    },
+    {
+      "case": {
+        "name": "jump-80000000",
+        "jump": 2147483648
+      },
+      "file": "ghidra\\phase153-pickup-native-4f032b7ef23c.json",
+      "sha256": "e8c1d4e83fb92cf545e04b71067599c539af59e5d9a29bf055e11d0231f32862",
+      "outcome": {
+        "selected_index": 0,
+        "selected_tag": 9,
+        "scan_order": [
+          0,
+          1
+        ],
+        "native_return": 1,
+        "priority_or_Jump_reads_in_fallback": 0,
+        "compared_regions": 33,
+        "compared_bytes": 81461,
+        "native_steps": 139749
+      }
+    },
+    {
+      "case": {
+        "name": "jump-ffffffff",
+        "jump": 4294967295
+      },
+      "file": "ghidra\\phase153-pickup-native-7f1359fb3315.json",
+      "sha256": "f09ce4f545707665f1dfb9f880485ec68dd1a0c59be477cddcc4aa165e77c605",
+      "outcome": {
+        "selected_index": 0,
+        "selected_tag": 9,
+        "scan_order": [
+          0,
+          1
+        ],
+        "native_return": 1,
+        "priority_or_Jump_reads_in_fallback": 0,
+        "compared_regions": 33,
+        "compared_bytes": 81461,
+        "native_steps": 139749
+      }
+    }
+  ]
+}

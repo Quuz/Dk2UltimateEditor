@@ -1,0 +1,800 @@
+{
+  "scope": "New overlap/address-exposure inventory for the placed-creature radius.\n\nIncludes wide reads crossing the byte, LEA and selected offset immediates,\nunlike phase47's exact-displacement inventory. Candidates remain untyped.\nAlso inventories DWORD writes to StateUtils+AF to trace its separate radius.\n",
+  "profiles": [
+    {
+      "profile": "DX",
+      "exe": "D:\\Games\\DK2\\Dungeon Keeper 2\\DKII-DX.exe",
+      "sha256": "d7a8b854e4e4f02709eba271bead6fe2307dd6e332b5a96e70857e5b0e19fb8a",
+      "target": 1048,
+      "decoded_instructions": 799810,
+      "candidates": [
+        {
+          "address": 4748820,
+          "instruction": "mov byte ptr [esi + 0x418], bl",
+          "mapped_hint": {
+            "address": 4747936,
+            "name": "init",
+            "bytes": 2367
+          },
+          "kind": "memory",
+          "displacement": 1048,
+          "bytes": 1,
+          "index": null,
+          "base": "esi",
+          "read": false,
+          "write": true
+        },
+        {
+          "address": 4787443,
+          "instruction": "mov al, byte ptr [esi + 0x418]",
+          "mapped_hint": {
+            "address": 4784704,
+            "name": "dump",
+            "bytes": 5008
+          },
+          "kind": "memory",
+          "displacement": 1048,
+          "bytes": 1,
+          "index": null,
+          "base": "esi",
+          "read": true,
+          "write": false
+        },
+        {
+          "address": 4796326,
+          "instruction": "mov dword ptr [ebx + 0x415], edx",
+          "mapped_hint": {
+            "address": 4793120,
+            "name": "loadCreatureType",
+            "bytes": 8252
+          },
+          "kind": "memory",
+          "displacement": 1045,
+          "bytes": 4,
+          "index": null,
+          "base": "ebx",
+          "read": false,
+          "write": true
+        },
+        {
+          "address": 4955585,
+          "instruction": "push 0x418",
+          "mapped_hint": {
+            "address": 4953920,
+            "name": "fun_4B9740",
+            "bytes": 1909
+          },
+          "kind": "immediate"
+        },
+        {
+          "address": 5151803,
+          "instruction": "mov dword ptr [esp + 0x418], edi",
+          "mapped_hint": {
+            "address": 5149264,
+            "name": "fun_4E9250",
+            "bytes": 6340
+          },
+          "kind": "memory",
+          "displacement": 1048,
+          "bytes": 4,
+          "index": null,
+          "base": "esp",
+          "read": false,
+          "write": true
+        },
+        {
+          "address": 5350461,
+          "instruction": "mov byte ptr [eax + 0x418], cl",
+          "mapped_hint": {
+            "address": 5349264,
+            "name": "WorldTrigger_cpp_519F90",
+            "bytes": 2002
+          },
+          "kind": "memory",
+          "displacement": 1048,
+          "bytes": 1,
+          "index": null,
+          "base": "eax",
+          "read": false,
+          "write": true
+        },
+        {
+          "address": 5374859,
+          "instruction": "mov byte ptr [ecx + 0x418], al",
+          "mapped_hint": {
+            "address": 5374336,
+            "name": "CWorld_loadThing_NeutralCreature",
+            "bytes": 721
+          },
+          "kind": "memory",
+          "displacement": 1048,
+          "bytes": 1,
+          "index": null,
+          "base": "ecx",
+          "read": false,
+          "write": true
+        },
+        {
+          "address": 5375830,
+          "instruction": "mov byte ptr [ecx + 0x418], al",
+          "mapped_hint": {
+            "address": 5375072,
+            "name": "CWorld_loadThing_GoodCreature",
+            "bytes": 1098
+          },
+          "kind": "memory",
+          "displacement": 1048,
+          "bytes": 1,
+          "index": null,
+          "base": "ecx",
+          "read": false,
+          "write": true
+        },
+        {
+          "address": 5607884,
+          "instruction": "mov ecx, dword ptr [esp + 0x418]",
+          "mapped_hint": {
+            "address": 5607744,
+            "name": "handleError",
+            "bytes": 520
+          },
+          "kind": "memory",
+          "displacement": 1048,
+          "bytes": 4,
+          "index": null,
+          "base": "esp",
+          "read": true,
+          "write": false
+        },
+        {
+          "address": 5608076,
+          "instruction": "mov edx, dword ptr [esp + 0x418]",
+          "mapped_hint": {
+            "address": 5607744,
+            "name": "handleError",
+            "bytes": 520
+          },
+          "kind": "memory",
+          "displacement": 1048,
+          "bytes": 4,
+          "index": null,
+          "base": "esp",
+          "read": true,
+          "write": false
+        },
+        {
+          "address": 5628054,
+          "instruction": "mov dword ptr [ebx + 0x416], ebp",
+          "mapped_hint": {
+            "address": 5627744,
+            "name": "readOrCreate",
+            "bytes": 340
+          },
+          "kind": "memory",
+          "displacement": 1046,
+          "bytes": 4,
+          "index": null,
+          "base": "ebx",
+          "read": false,
+          "write": true
+        },
+        {
+          "address": 5637983,
+          "instruction": "mov dword ptr [esi + 0x417], edi",
+          "mapped_hint": {
+            "address": 5637312,
+            "name": "fillKeyMaps",
+            "bytes": 852
+          },
+          "kind": "memory",
+          "displacement": 1047,
+          "bytes": 4,
+          "index": null,
+          "base": "esi",
+          "read": false,
+          "write": true
+        },
+        {
+          "address": 5755706,
+          "instruction": "mov eax, dword ptr [esp + 0x418]",
+          "mapped_hint": {
+            "address": 5755504,
+            "name": "CMeshResourceBase_load",
+            "bytes": 284
+          },
+          "kind": "memory",
+          "displacement": 1048,
+          "bytes": 4,
+          "index": null,
+          "base": "esp",
+          "read": true,
+          "write": false
+        },
+        {
+          "address": 5755729,
+          "instruction": "mov ecx, dword ptr [esp + 0x418]",
+          "mapped_hint": {
+            "address": 5755504,
+            "name": "CMeshResourceBase_load",
+            "bytes": 284
+          },
+          "kind": "memory",
+          "displacement": 1048,
+          "bytes": 4,
+          "index": null,
+          "base": "esp",
+          "read": true,
+          "write": false
+        },
+        {
+          "address": 6279951,
+          "instruction": "mov dword ptr [ebx + 0x418], eax",
+          "mapped_hint": {
+            "address": 6279712,
+            "name": "init",
+            "bytes": 404
+          },
+          "kind": "memory",
+          "displacement": 1048,
+          "bytes": 4,
+          "index": null,
+          "base": "ebx",
+          "read": false,
+          "write": true
+        },
+        {
+          "address": 6280037,
+          "instruction": "mov edx, dword ptr [ebx + 0x418]",
+          "mapped_hint": {
+            "address": 6279712,
+            "name": "init",
+            "bytes": 404
+          },
+          "kind": "memory",
+          "displacement": 1048,
+          "bytes": 4,
+          "index": null,
+          "base": "ebx",
+          "read": true,
+          "write": false
+        },
+        {
+          "address": 6280266,
+          "instruction": "mov ebp, dword ptr [esi + 0x418]",
+          "mapped_hint": {
+            "address": 6280160,
+            "name": "convertPixel",
+            "bytes": 289
+          },
+          "kind": "memory",
+          "displacement": 1048,
+          "bytes": 4,
+          "index": null,
+          "base": "esi",
+          "read": true,
+          "write": false
+        },
+        {
+          "address": 6280376,
+          "instruction": "mov edx, dword ptr [esi + 0x418]",
+          "mapped_hint": {
+            "address": 6280160,
+            "name": "convertPixel",
+            "bytes": 289
+          },
+          "kind": "memory",
+          "displacement": 1048,
+          "bytes": 4,
+          "index": null,
+          "base": "esi",
+          "read": true,
+          "write": false
+        },
+        {
+          "address": 6280587,
+          "instruction": "mov ebp, dword ptr [esi + 0x418]",
+          "mapped_hint": {
+            "address": 6280464,
+            "name": "selfConvertPixel",
+            "bytes": 306
+          },
+          "kind": "memory",
+          "displacement": 1048,
+          "bytes": 4,
+          "index": null,
+          "base": "esi",
+          "read": true,
+          "write": false
+        },
+        {
+          "address": 6280669,
+          "instruction": "mov eax, dword ptr [esi + 0x418]",
+          "mapped_hint": {
+            "address": 6280464,
+            "name": "selfConvertPixel",
+            "bytes": 306
+          },
+          "kind": "memory",
+          "displacement": 1048,
+          "bytes": 4,
+          "index": null,
+          "base": "esi",
+          "read": true,
+          "write": false
+        },
+        {
+          "address": 6428647,
+          "instruction": "movq mm6, qword ptr [ebx + 0x418]",
+          "mapped_hint": {
+            "address": 6427072,
+            "name": "sub_6211C0",
+            "bytes": 8629
+          },
+          "kind": "memory",
+          "displacement": 1048,
+          "bytes": 8,
+          "index": null,
+          "base": "ebx",
+          "read": true,
+          "write": false
+        },
+        {
+          "address": 6431411,
+          "instruction": "movq mm6, qword ptr [ebx + 0x418]",
+          "mapped_hint": {
+            "address": 6427072,
+            "name": "sub_6211C0",
+            "bytes": 8629
+          },
+          "kind": "memory",
+          "displacement": 1048,
+          "bytes": 8,
+          "index": null,
+          "base": "ebx",
+          "read": true,
+          "write": false
+        },
+        {
+          "address": 6433508,
+          "instruction": "movq mm6, qword ptr [ebx + 0x418]",
+          "mapped_hint": {
+            "address": 6427072,
+            "name": "sub_6211C0",
+            "bytes": 8629
+          },
+          "kind": "memory",
+          "displacement": 1048,
+          "bytes": 8,
+          "index": null,
+          "base": "ebx",
+          "read": true,
+          "write": false
+        },
+        {
+          "address": 6434920,
+          "instruction": "movq mm6, qword ptr [ebx + 0x418]",
+          "mapped_hint": {
+            "address": 6427072,
+            "name": "sub_6211C0",
+            "bytes": 8629
+          },
+          "kind": "memory",
+          "displacement": 1048,
+          "bytes": 8,
+          "index": null,
+          "base": "ebx",
+          "read": true,
+          "write": false
+        }
+      ],
+      "context_AF_writers": [
+        {
+          "address": 4740033,
+          "instruction": "mov dword ptr [esi + 0xaf], edx",
+          "mapped_hint": {
+            "address": 4739856,
+            "name": "TrainState_cpp_485310",
+            "bytes": 621
+          },
+          "base": "esi",
+          "index": null
+        },
+        {
+          "address": 4741889,
+          "instruction": "mov dword ptr [esi + 0xaf], edx",
+          "mapped_hint": {
+            "address": 4741808,
+            "name": "fun_485AB0",
+            "bytes": 151
+          },
+          "base": "esi",
+          "index": null
+        },
+        {
+          "address": 4742086,
+          "instruction": "mov dword ptr [esi + 0xaf], ecx",
+          "mapped_hint": {
+            "address": 4742016,
+            "name": "fun_485B80",
+            "bytes": 138
+          },
+          "base": "esi",
+          "index": null
+        },
+        {
+          "address": 4743016,
+          "instruction": "mov dword ptr [edi + 0xaf], ecx",
+          "mapped_hint": {
+            "address": 4742896,
+            "name": "sub_485EF0",
+            "bytes": 1925
+          },
+          "base": "edi",
+          "index": null
+        },
+        {
+          "address": 4743415,
+          "instruction": "mov dword ptr [edi + 0xaf], ebp",
+          "mapped_hint": {
+            "address": 4742896,
+            "name": "sub_485EF0",
+            "bytes": 1925
+          },
+          "base": "edi",
+          "index": null
+        },
+        {
+          "address": 4744597,
+          "instruction": "mov dword ptr [edi + 0xaf], edx",
+          "mapped_hint": {
+            "address": 4742896,
+            "name": "sub_485EF0",
+            "bytes": 1925
+          },
+          "base": "edi",
+          "index": null
+        },
+        {
+          "address": 4744702,
+          "instruction": "mov dword ptr [edi + 0xaf], edx",
+          "mapped_hint": {
+            "address": 4742896,
+            "name": "sub_485EF0",
+            "bytes": 1925
+          },
+          "base": "edi",
+          "index": null
+        },
+        {
+          "address": 4744786,
+          "instruction": "mov dword ptr [edi + 0xaf], edx",
+          "mapped_hint": {
+            "address": 4742896,
+            "name": "sub_485EF0",
+            "bytes": 1925
+          },
+          "base": "edi",
+          "index": null
+        }
+      ]
+    },
+    {
+      "profile": "old",
+      "exe": "D:\\Games\\DK2\\Tools\\dk2-format-research\\source-binaries\\DKII-local13.exe",
+      "sha256": "93e826a142f677ef5120699feddb0572799d93399167ef1d05ec4b48a8b2a342",
+      "target": 1047,
+      "decoded_instructions": 780881,
+      "candidates": [
+        {
+          "address": 4716810,
+          "instruction": "mov byte ptr [esi + 0x417], bl",
+          "kind": "memory",
+          "displacement": 1047,
+          "bytes": 1,
+          "index": null,
+          "base": "esi",
+          "read": false,
+          "write": true
+        },
+        {
+          "address": 4754630,
+          "instruction": "mov al, byte ptr [esi + 0x417]",
+          "kind": "memory",
+          "displacement": 1047,
+          "bytes": 1,
+          "index": null,
+          "base": "esi",
+          "read": true,
+          "write": false
+        },
+        {
+          "address": 4763009,
+          "instruction": "mov dword ptr [ebx + 0x415], edx",
+          "kind": "memory",
+          "displacement": 1045,
+          "bytes": 4,
+          "index": null,
+          "base": "ebx",
+          "read": false,
+          "write": true
+        },
+        {
+          "address": 5300837,
+          "instruction": "mov byte ptr [edx + 0x417], al",
+          "kind": "memory",
+          "displacement": 1047,
+          "bytes": 1,
+          "index": null,
+          "base": "edx",
+          "read": false,
+          "write": true
+        },
+        {
+          "address": 5324459,
+          "instruction": "mov byte ptr [ecx + 0x417], al",
+          "kind": "memory",
+          "displacement": 1047,
+          "bytes": 1,
+          "index": null,
+          "base": "ecx",
+          "read": false,
+          "write": true
+        },
+        {
+          "address": 5325415,
+          "instruction": "mov byte ptr [ecx + 0x417], al",
+          "kind": "memory",
+          "displacement": 1047,
+          "bytes": 1,
+          "index": null,
+          "base": "ecx",
+          "read": false,
+          "write": true
+        },
+        {
+          "address": 5591686,
+          "instruction": "mov dword ptr [ebx + 0x416], ebp",
+          "kind": "memory",
+          "displacement": 1046,
+          "bytes": 4,
+          "index": null,
+          "base": "ebx",
+          "read": false,
+          "write": true
+        },
+        {
+          "address": 5600983,
+          "instruction": "mov dword ptr [edx + 0x416], 0x26",
+          "kind": "memory",
+          "displacement": 1046,
+          "bytes": 4,
+          "index": null,
+          "base": "edx",
+          "read": false,
+          "write": true
+        },
+        {
+          "address": 5702784,
+          "instruction": "mov dword ptr [eax + 0x414], ecx",
+          "kind": "memory",
+          "displacement": 1044,
+          "bytes": 4,
+          "index": null,
+          "base": "eax",
+          "read": false,
+          "write": true
+        },
+        {
+          "address": 5702953,
+          "instruction": "mov ecx, dword ptr [esi + 0x414]",
+          "kind": "memory",
+          "displacement": 1044,
+          "bytes": 4,
+          "index": null,
+          "base": "esi",
+          "read": true,
+          "write": false
+        },
+        {
+          "address": 5703754,
+          "instruction": "mov dword ptr [eax + 0x414], ecx",
+          "kind": "memory",
+          "displacement": 1044,
+          "bytes": 4,
+          "index": null,
+          "base": "eax",
+          "read": false,
+          "write": true
+        },
+        {
+          "address": 5703987,
+          "instruction": "mov ecx, dword ptr [esi + 0x414]",
+          "kind": "memory",
+          "displacement": 1044,
+          "bytes": 4,
+          "index": null,
+          "base": "esi",
+          "read": true,
+          "write": false
+        },
+        {
+          "address": 5721229,
+          "instruction": "mov ecx, dword ptr [esp + 0x414]",
+          "kind": "memory",
+          "displacement": 1044,
+          "bytes": 4,
+          "index": null,
+          "base": "esp",
+          "read": true,
+          "write": false
+        },
+        {
+          "address": 6237957,
+          "instruction": "mov dword ptr [ebx + 0x414], eax",
+          "kind": "memory",
+          "displacement": 1044,
+          "bytes": 4,
+          "index": null,
+          "base": "ebx",
+          "read": false,
+          "write": true
+        },
+        {
+          "address": 6238043,
+          "instruction": "mov edx, dword ptr [ebx + 0x414]",
+          "kind": "memory",
+          "displacement": 1044,
+          "bytes": 4,
+          "index": null,
+          "base": "ebx",
+          "read": true,
+          "write": false
+        },
+        {
+          "address": 6238210,
+          "instruction": "mov ebx, dword ptr [esi + 0x414]",
+          "kind": "memory",
+          "displacement": 1044,
+          "bytes": 4,
+          "index": null,
+          "base": "esi",
+          "read": true,
+          "write": false
+        },
+        {
+          "address": 6238376,
+          "instruction": "mov edx, dword ptr [esi + 0x414]",
+          "kind": "memory",
+          "displacement": 1044,
+          "bytes": 4,
+          "index": null,
+          "base": "esi",
+          "read": true,
+          "write": false
+        },
+        {
+          "address": 6238555,
+          "instruction": "mov ecx, dword ptr [esi + 0x414]",
+          "kind": "memory",
+          "displacement": 1044,
+          "bytes": 4,
+          "index": null,
+          "base": "esi",
+          "read": true,
+          "write": false
+        },
+        {
+          "address": 6238683,
+          "instruction": "mov ecx, dword ptr [esi + 0x414]",
+          "kind": "memory",
+          "displacement": 1044,
+          "bytes": 4,
+          "index": null,
+          "base": "esi",
+          "read": true,
+          "write": false
+        },
+        {
+          "address": 6378061,
+          "instruction": "movq mm4, qword ptr [ebx + 0x410]",
+          "kind": "memory",
+          "displacement": 1040,
+          "bytes": 8,
+          "index": null,
+          "base": "ebx",
+          "read": true,
+          "write": false
+        },
+        {
+          "address": 6380825,
+          "instruction": "movq mm4, qword ptr [ebx + 0x410]",
+          "kind": "memory",
+          "displacement": 1040,
+          "bytes": 8,
+          "index": null,
+          "base": "ebx",
+          "read": true,
+          "write": false
+        },
+        {
+          "address": 6382922,
+          "instruction": "movq mm4, qword ptr [ebx + 0x410]",
+          "kind": "memory",
+          "displacement": 1040,
+          "bytes": 8,
+          "index": null,
+          "base": "ebx",
+          "read": true,
+          "write": false
+        },
+        {
+          "address": 6384334,
+          "instruction": "movq mm4, qword ptr [ebx + 0x410]",
+          "kind": "memory",
+          "displacement": 1040,
+          "bytes": 8,
+          "index": null,
+          "base": "ebx",
+          "read": true,
+          "write": false
+        }
+      ],
+      "context_AF_writers": [
+        {
+          "address": 4550957,
+          "instruction": "mov dword ptr [esi + 0xaf], edx",
+          "base": "esi",
+          "index": null
+        },
+        {
+          "address": 4711060,
+          "instruction": "mov dword ptr [esi + 0xaf], ecx",
+          "base": "esi",
+          "index": null
+        },
+        {
+          "address": 4711217,
+          "instruction": "mov dword ptr [esi + 0xaf], edx",
+          "base": "esi",
+          "index": null
+        },
+        {
+          "address": 4711414,
+          "instruction": "mov dword ptr [esi + 0xaf], ecx",
+          "base": "esi",
+          "index": null
+        },
+        {
+          "address": 4711618,
+          "instruction": "mov dword ptr [edi + 0xaf], ecx",
+          "base": "edi",
+          "index": null
+        },
+        {
+          "address": 4712018,
+          "instruction": "mov dword ptr [edi + 0xaf], ebp",
+          "base": "edi",
+          "index": null
+        },
+        {
+          "address": 4713220,
+          "instruction": "mov dword ptr [edi + 0xaf], edx",
+          "base": "edi",
+          "index": null
+        },
+        {
+          "address": 4713325,
+          "instruction": "mov dword ptr [edi + 0xaf], edx",
+          "base": "edi",
+          "index": null
+        },
+        {
+          "address": 4713409,
+          "instruction": "mov dword ptr [edi + 0xaf], edx",
+          "base": "edi",
+          "index": null
+        }
+      ]
+    }
+  ]
+}

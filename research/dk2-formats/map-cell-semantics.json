@@ -1,0 +1,466 @@
+{
+  "family": "Map",
+  "section_signature": 100,
+  "header_bytes": 36,
+  "cell_bytes": 4,
+  "cell_order": "x fastest; then y; byte index4*(y*width+x)",
+  "width_offset": 20,
+  "height_offset": 24,
+  "data_tag": 102,
+  "data_size_offset": 32,
+  "whole_size_offset": 8,
+  "executable_sha256": {
+    "Dungeon Keeper 2/DKII-DX.exe": "d7a8b854e4e4f02709eba271bead6fe2307dd6e332b5a96e70857e5b0e19fb8a",
+    "Dungeon Keeper 2/Data/editor/DK2 Editor pro.exe": "989c45df779bccfc9a9e509b2ad0224a9bd269629f74792adc0320fa4b99fb09"
+  },
+  "physical_fields": [
+    {
+      "offset": 0,
+      "bytes": 1,
+      "name": "TerrainId"
+    },
+    {
+      "offset": 1,
+      "bytes": 1,
+      "name": "PlayerId"
+    },
+    {
+      "offset": 2,
+      "bytes": 1,
+      "name": "NativeMapFlags",
+      "legacy_name": "bridge"
+    },
+    {
+      "offset": 3,
+      "bytes": 1,
+      "name": "OpaqueFourthByte",
+      "meaning": "Preserve raw; inspected parsers ignore it"
+    }
+  ],
+  "parser": {
+    "game": 5690064,
+    "editor": 4379120,
+    "editor_converter": 4379056,
+    "intermediate": "16 bytes: three presence DWORDs1 at0/4/8; terrain byteC, player byteD, flags byteE. ByteF initialized0 and not loaded from cell byte3.",
+    "game_rule": "Parser reads raw byte0/1/2, initializes intermediate DWORD+C to0, ORs raw flags into byteE. Fourth raw byte is skipped by source increment4.",
+    "editor_rule": "Init42D1A0 zeroes intermediate DWORD+C. Converter sets presence0/4/8 to1, assigns terrain/player and ORs flags into byteE. When called without init, old flag bits persist.",
+    "chunks": "Game/editor reader process up to0x4000 cells per I/O chunk, keeping x/y across chunks.",
+    "evidence": [
+      {
+        "file": "phase28-map-game-parser-assembly.txt",
+        "first": "0x56d428",
+        "last": "0x56d49d",
+        "instructions": [
+          "0056d428: MOV ESI,0x746ec2 ",
+          "0056d42d: MOV DL,byte ptr [ESI + -0x2] ",
+          "0056d430: MOV CL,byte ptr [ESI + -0x1] ",
+          "0056d433: MOV EAX,0x1 ",
+          "0056d438: MOV dword ptr [ESP + 0x38],0x0 ",
+          "0056d440: MOV dword ptr [ESP + 0x2c],EAX ",
+          "0056d444: MOV byte ptr [ESP + 0x38],DL ",
+          "0056d448: MOV DL,byte ptr [ESI] ",
+          "0056d44a: MOV dword ptr [ESP + 0x30],EAX ",
+          "0056d44e: MOV dword ptr [ESP + 0x34],EAX ",
+          "0056d452: MOV AL,byte ptr [ESP + 0x3a] ",
+          "0056d456: OR AL,DL ",
+          "0056d458: MOV byte ptr [ESP + 0x39],CL ",
+          "0056d45c: MOV byte ptr [ESP + 0x3a],AL ",
+          "0056d460: MOV EAX,dword ptr [EBX + 0x1c] ",
+          "0056d463: LEA ECX,[ESP + 0x2c] ",
+          "0056d467: PUSH EAX ",
+          "0056d468: PUSH ECX ",
+          "0056d469: PUSH EBP ",
+          "0056d46a: PUSH EDI ",
+          "0056d46b: CALL dword ptr [EBX + 0x18] ",
+          "0056d46e: ADD ESP,0x10 ",
+          "0056d471: TEST EAX,EAX ",
+          "0056d473: JZ 0x0056d4d5 ",
+          "0056d475: MOV EAX,dword ptr [ESP + 0x44] ",
+          "0056d479: INC EDI ",
+          "0056d47a: CMP EDI,EAX ",
+          "0056d47c: JNZ 0x0056d481 ",
+          "0056d47e: INC EBP ",
+          "0056d47f: XOR EDI,EDI ",
+          "0056d481: MOV EAX,dword ptr [ESP + 0x18] ",
+          "0056d485: ADD ESI,0x4 ",
+          "0056d488: DEC EAX ",
+          "0056d489: MOV dword ptr [ESP + 0x18],EAX ",
+          "0056d48d: JNZ 0x0056d42d ",
+          "0056d48f: MOV ESI,dword ptr [ESP + 0x54] ",
+          "0056d493: MOV EAX,dword ptr [ESP + 0x10] ",
+          "0056d497: SUB EAX,ESI ",
+          "0056d499: MOV dword ptr [ESP + 0x10],EAX ",
+          "0056d49d: JNZ 0x0056d3ca "
+        ]
+      },
+      {
+        "file": "phase28-map-editor-cell-converter-assembly.txt",
+        "first": "0x42d1b0",
+        "last": "0x42d1de",
+        "instructions": [
+          "0042d1b0: MOV EAX,dword ptr [ESP + 0x4] ",
+          "0042d1b4: MOV DL,byte ptr [EAX] ",
+          "0042d1b6: MOV dword ptr [ECX],0x1 ",
+          "0042d1bc: MOV byte ptr [ECX + 0xc],DL ",
+          "0042d1bf: MOV DL,byte ptr [EAX + 0x1] ",
+          "0042d1c2: MOV dword ptr [ECX + 0x4],0x1 ",
+          "0042d1c9: MOV byte ptr [ECX + 0xd],DL ",
+          "0042d1cc: MOV AL,byte ptr [EAX + 0x2] ",
+          "0042d1cf: MOV DL,byte ptr [ECX + 0xe] ",
+          "0042d1d2: OR DL,AL ",
+          "0042d1d4: MOV dword ptr [ECX + 0x8],0x1 ",
+          "0042d1db: MOV byte ptr [ECX + 0xe],DL ",
+          "0042d1de: RET 0x4 "
+        ]
+      },
+      {
+        "file": "phase28-map-editor-cell-init.txt",
+        "line": 11,
+        "excerpt": "*(undefined4 *)(param_1 + 0xc) = 0;"
+      }
+    ]
+  },
+  "game_flag": {
+    "function": 5368928,
+    "intermediate_mask": 2,
+    "runtime_word_offset": 8,
+    "runtime_mask": 4096,
+    "map_runtime_cell_bytes": 16,
+    "rule": "After terrain/room placement, only raw flags bit02 controls runtime cell WORD+8 bit1000. New=(old &EFFF)|(1000 if flags&2 else0); low12 owner bits and other high bits preserved in this fragment.",
+    "address": "grid.data +16*(y*grid.width+x); CMap fields width+C and data+14.",
+    "interpretation": "Native editor writer associates02 with a bridge adjacent to Lava terrain5;01 with Water terrain4 or an ordinary tile default. This establishes substrate encoding for that writer; not every bridge/liquid gameplay path is modeled.",
+    "scope": "Other map callback branches construct terrain and rooms using definitions and ownership; only final bit assignment is emulated here.",
+    "evidence": {
+      "file": "phase28-map-game-cell-assembly.txt",
+      "first": "0x51ede4",
+      "last": "0x51ee30",
+      "instructions": [
+        "0051ede4: MOV EAX,dword ptr [ESP + 0x24] ",
+        "0051ede8: MOV CL,byte ptr [EAX + 0xe] ",
+        "0051edeb: MOV EAX,dword ptr [EDI + 0xc] ",
+        "0051edee: TEST CL,0x2 ",
+        "0051edf1: JZ 0x0051ee11 ",
+        "0051edf3: IMUL EAX,EBX ",
+        "0051edf6: MOV EDX,dword ptr [EDI + 0x14] ",
+        "0051edf9: ADD EAX,EBP ",
+        "0051edfb: SHL EAX,0x4 ",
+        "0051edfe: ADD EAX,EDX ",
+        "0051ee00: POP EBX ",
+        "0051ee01: POP EBP ",
+        "0051ee02: OR byte ptr [EAX + 0x9],0x10 ",
+        "0051ee06: MOV EAX,0x1 ",
+        "0051ee0b: POP EDI ",
+        "0051ee0c: POP ESI ",
+        "0051ee0d: ADD ESP,0x8 ",
+        "0051ee10: RET ",
+        "0051ee11: IMUL EAX,EBX ",
+        "0051ee14: MOV EDX,dword ptr [EDI + 0x14] ",
+        "0051ee17: ADD EAX,EBP ",
+        "0051ee19: SHL EAX,0x4 ",
+        "0051ee1c: ADD EAX,EDX ",
+        "0051ee1e: POP EBX ",
+        "0051ee1f: POP EBP ",
+        "0051ee20: POP EDI ",
+        "0051ee21: AND word ptr [EAX + 0x8],0xefff ",
+        "0051ee27: MOV EAX,0x1 ",
+        "0051ee2c: POP ESI ",
+        "0051ee2d: ADD ESP,0x8 ",
+        "0051ee30: RET "
+      ]
+    }
+  },
+  "native_writer": {
+    "function": 4801648,
+    "terrain_array_offset": 2384,
+    "owner_array_offset": 2388,
+    "width_offset": 2448,
+    "height_offset": 2452,
+    "count_offset": 2456,
+    "outer_header": "Writes100/4/(4*storedCount+36);101/8/width/height;102/(4*storedCount); then width*height cell DWORDs. Separate storedCount must agree with dimensions for consistent headers.",
+    "special_bridge_ids": [
+      17,
+      26,
+      36
+    ],
+    "water_terrain_id": 4,
+    "lava_terrain_id": 5,
+    "bridge_rule": "For bridge IDs17/26/36: examine source indices i+1,i-1,i+width,i-width. Any neighbor4 assigns flag01; afterwards any neighbor5 assigns02, so Lava wins when both occur. No qualifying neighbor performs no flag assignment: previous scratch flag survives, including previous cells/rows or initial stack byte.",
+    "ordinary_rule": "Every terrain ID outside17/26/36 sets flags01; this is not a generic bridge-category enum for all cells.",
+    "boundary_rule": "Reads linear ±1 and ±width without x/y bounds tests in this writer. ±1 crosses row boundaries in packed arrays. Exterior bytes depend on actual surrounding memory; projection accepts explicit guard bytes, not an invented clamp.",
+    "fourth_byte": "Writer writes terrain/player/flags bytes at canonical frameESP+10/+11/+12, but not frameESP+13. Vcall38 passes four bytes from frame+10. Fourth emitted byte therefore retains stack contents in tested ordinary read-only output path.",
+    "raw_preservation": "Native load/save does not preserve original flag byte or fourth byte. Independent editor should retain all4 physical bytes unless a specific edit explicitly changes one; provide native generation as a separate explicit projection.",
+    "evidence": [
+      {
+        "file": "phase28-map-editor-writer-assembly.txt",
+        "first": "0x494470",
+        "last": "0x49450e",
+        "instructions": [
+          "00494470: SUB ESP,0x30 ",
+          "00494473: PUSH EBX ",
+          "00494474: PUSH EBP ",
+          "00494475: MOV EBP,ECX ",
+          "00494477: PUSH ESI ",
+          "00494478: MOV ESI,dword ptr [ESP + 0x40] ",
+          "0049447c: PUSH 0xc ",
+          "0049447e: MOV EAX,dword ptr [EBP + 0x998] ",
+          "00494484: MOV dword ptr [ESP + 0x24],0x64 ",
+          "0049448c: MOV EDX,dword ptr [ESI] ",
+          "0049448e: MOV dword ptr [ESP + 0x28],0x4 ",
+          "00494496: LEA ECX,[EAX*0x4 + 0x24] ",
+          "0049449d: LEA EAX,[ESP + 0x24] ",
+          "004944a1: MOV dword ptr [ESP + 0x2c],ECX ",
+          "004944a5: PUSH EAX ",
+          "004944a6: MOV ECX,ESI ",
+          "004944a8: CALL dword ptr [EDX + 0x38] ",
+          "004944ab: MOV ECX,dword ptr [EBP + 0x990] ",
+          "004944b1: MOV EDX,dword ptr [EBP + 0x994] ",
+          "004944b7: MOV EAX,dword ptr [ESI] ",
+          "004944b9: MOV dword ptr [ESP + 0x34],ECX ",
+          "004944bd: LEA ECX,[ESP + 0x2c] ",
+          "004944c1: PUSH 0x10 ",
+          "004944c3: PUSH ECX ",
+          "004944c4: MOV ECX,ESI ",
+          "004944c6: MOV dword ptr [ESP + 0x34],0x65 ",
+          "004944ce: MOV dword ptr [ESP + 0x40],EDX ",
+          "004944d2: MOV dword ptr [ESP + 0x38],0x8 ",
+          "004944da: CALL dword ptr [EAX + 0x38] ",
+          "004944dd: MOV EDX,dword ptr [EBP + 0x998] ",
+          "004944e3: MOV EAX,dword ptr [ESI] ",
+          "004944e5: LEA ECX,[ESP + 0x18] ",
+          "004944e9: PUSH 0x8 ",
+          "004944eb: SHL EDX,0x2 ",
+          "004944ee: PUSH ECX ",
+          "004944ef: MOV ECX,ESI ",
+          "004944f1: MOV dword ptr [ESP + 0x20],0x66 ",
+          "004944f9: MOV dword ptr [ESP + 0x24],EDX ",
+          "004944fd: CALL dword ptr [EAX + 0x38] ",
+          "00494500: MOV EAX,dword ptr [EBP + 0x994] ",
+          "00494506: XOR EBX,EBX ",
+          "00494508: TEST EAX,EAX ",
+          "0049450a: MOV dword ptr [ESP + 0x10],EBX ",
+          "0049450e: JBE 0x00494618 "
+        ]
+      },
+      {
+        "file": "phase28-map-editor-writer-assembly.txt",
+        "first": "0x494514",
+        "last": "0x494620",
+        "instructions": [
+          "00494514: PUSH EDI ",
+          "00494515: MOV ECX,dword ptr [EBP + 0x990] ",
+          "0049451b: XOR ESI,ESI ",
+          "0049451d: TEST ECX,ECX ",
+          "0049451f: JBE 0x004945f9 ",
+          "00494525: MOV EAX,ECX ",
+          "00494527: MOV EDI,dword ptr [EBP + 0x950] ",
+          "0049452d: IMUL EAX,EBX ",
+          "00494530: MOV EBX,dword ptr [EBP + 0x954] ",
+          "00494536: LEA EDX,[EDI + EAX*0x1] ",
+          "00494539: ADD EBX,EAX ",
+          "0049453b: ADD EDX,ESI ",
+          "0049453d: MOV dword ptr [ESP + 0x18],EDX ",
+          "00494541: MOV DL,byte ptr [EDX] ",
+          "00494543: MOV byte ptr [ESP + 0x10],DL ",
+          "00494547: MOV AL,byte ptr [EBX + ESI*0x1] ",
+          "0049454a: CMP DL,0x11 ",
+          "0049454d: MOV byte ptr [ESP + 0x11],AL ",
+          "00494551: JZ 0x00494568 ",
+          "00494553: CMP DL,0x1a ",
+          "00494556: JZ 0x00494568 ",
+          "00494558: CMP DL,0x24 ",
+          "0049455b: JZ 0x00494568 ",
+          "0049455d: MOV EBX,dword ptr [ESP + 0x14] ",
+          "00494561: MOV byte ptr [ESP + 0x12],0x1 ",
+          "00494566: JMP 0x004945da ",
+          "00494568: MOV EAX,dword ptr [ESP + 0x18] ",
+          "0049456c: CMP byte ptr [EAX + 0x1],0x4 ",
+          "00494570: JNZ 0x00494577 ",
+          "00494572: MOV byte ptr [ESP + 0x12],0x1 ",
+          "00494577: CMP byte ptr [EAX + -0x1],0x4 ",
+          "0049457b: JNZ 0x00494582 ",
+          "0049457d: MOV byte ptr [ESP + 0x12],0x1 ",
+          "00494582: MOV EBX,dword ptr [ESP + 0x14] ",
+          "00494586: LEA EDX,[EBX + 0x1] ",
+          "00494589: IMUL EDX,ECX ",
+          "0049458c: ADD EDX,EDI ",
+          "0049458e: ADD EDX,ESI ",
+          "00494590: CMP byte ptr [EDX],0x4 ",
+          "00494593: JNZ 0x0049459a ",
+          "00494595: MOV byte ptr [ESP + 0x12],0x1 ",
+          "0049459a: LEA EAX,[EBX + -0x1] ",
+          "0049459d: IMUL EAX,ECX ",
+          "004945a0: ADD EAX,EDI ",
+          "004945a2: ADD EAX,ESI ",
+          "004945a4: CMP byte ptr [EAX],0x4 ",
+          "004945a7: JNZ 0x004945ae ",
+          "004945a9: MOV byte ptr [ESP + 0x12],0x1 ",
+          "004945ae: MOV EDI,dword ptr [ESP + 0x18] ",
+          "004945b2: MOV CL,0x5 ",
+          "004945b4: CMP byte ptr [EDI + 0x1],CL ",
+          "004945b7: JNZ 0x004945be ",
+          "004945b9: MOV byte ptr [ESP + 0x12],0x2 ",
+          "004945be: CMP byte ptr [EDI + -0x1],CL ",
+          "004945c1: JNZ 0x004945c8 ",
+          "004945c3: MOV byte ptr [ESP + 0x12],0x2 ",
+          "004945c8: CMP byte ptr [EDX],CL ",
+          "004945ca: JNZ 0x004945d1 ",
+          "004945cc: MOV byte ptr [ESP + 0x12],0x2 ",
+          "004945d1: CMP byte ptr [EAX],CL ",
+          "004945d3: JNZ 0x004945da ",
+          "004945d5: MOV byte ptr [ESP + 0x12],0x2 ",
+          "004945da: MOV ECX,dword ptr [ESP + 0x44] ",
+          "004945de: LEA EAX,[ESP + 0x10] ",
+          "004945e2: PUSH 0x4 ",
+          "004945e4: PUSH EAX ",
+          "004945e5: MOV EDX,dword ptr [ECX] ",
+          "004945e7: CALL dword ptr [EDX + 0x38] ",
+          "004945ea: MOV ECX,dword ptr [EBP + 0x990] ",
+          "004945f0: INC ESI ",
+          "004945f1: CMP ESI,ECX ",
+          "004945f3: JC 0x00494525 ",
+          "004945f9: MOV EAX,dword ptr [EBP + 0x994] ",
+          "004945ff: INC EBX ",
+          "00494600: CMP EBX,EAX ",
+          "00494602: MOV dword ptr [ESP + 0x14],EBX ",
+          "00494606: JC 0x00494515 ",
+          "0049460c: POP EDI ",
+          "0049460d: POP ESI ",
+          "0049460e: POP EBP ",
+          "0049460f: MOV AL,0x1 ",
+          "00494611: POP EBX ",
+          "00494612: ADD ESP,0x30 ",
+          "00494615: RET 0x4 ",
+          "00494618: POP ESI ",
+          "00494619: POP EBP ",
+          "0049461a: MOV AL,0x1 ",
+          "0049461c: POP EBX ",
+          "0049461d: ADD ESP,0x30 ",
+          "00494620: RET 0x4 "
+        ]
+      }
+    ]
+  },
+  "legacy_aliases": {
+    "bridge": "byte2 is flags, not a universal enum. Legacy bridge_values summary remains for compatibility.",
+    "unknown": "physical fourth byte remains opaque even when ignored by inspected loaders."
+  },
+  "native_emulations": [
+    {
+      "file": "phase28-emulation-map-writer-0.json",
+      "sha256": "858a90c634c88b5e3ac3806518d2810c9a8acb07416c0fafa706cb846e957e46",
+      "case": "writer-0"
+    },
+    {
+      "file": "phase28-emulation-map-writer-1.json",
+      "sha256": "4f3eb8691cce5b991bd810ef85fbeddc828454267e780872ca1c9724b81e1544",
+      "case": "writer-1"
+    },
+    {
+      "file": "phase28-emulation-map-writer-2.json",
+      "sha256": "2ff5733d9aba87d7ffabc985c09aeb020b166251dde4f01f250af6c29d131d19",
+      "case": "writer-2"
+    },
+    {
+      "file": "phase28-emulation-map-writer-3.json",
+      "sha256": "fffab1cea4176eb67a45cded72ad787b1077cb48d3e67f511090424636cc28d0",
+      "case": "writer-3"
+    },
+    {
+      "file": "phase28-emulation-map-writer-4.json",
+      "sha256": "39e9d4984d778147bdf5506d99cfd84bb2011bf30222484d13dc65efa8487923",
+      "case": "writer-4"
+    },
+    {
+      "file": "phase28-emulation-map-writer-5.json",
+      "sha256": "33f1e2a25383e1cb120db0d4bba15da766b883acb2d04fa638ad3b83396f8baa",
+      "case": "writer-5"
+    },
+    {
+      "file": "phase28-emulation-map-writer-6.json",
+      "sha256": "838020c88b437472959bbbf0fa35888796ddccbbe493512aa13131049a1aeede",
+      "case": "writer-6"
+    },
+    {
+      "file": "phase28-emulation-map-writer-7.json",
+      "sha256": "8abf3a40e69d963979125850d5755705afde33b1c2afd4a86e3e3c156f640aeb",
+      "case": "writer-7"
+    },
+    {
+      "file": "phase28-emulation-map-parser-0.json",
+      "sha256": "bf405f251334a0a06850e629902d6593cd2803f5ba450c8737ee4d1a46a76fb3",
+      "case": "parser-0"
+    },
+    {
+      "file": "phase28-emulation-map-parser-1.json",
+      "sha256": "7611ebf21b070a537a8a8e81c0e77eba167274032bf2fbaa7df298aa6ddfb451",
+      "case": "parser-1"
+    },
+    {
+      "file": "phase28-emulation-map-parser-2.json",
+      "sha256": "aff9c43fa5a2fb96240293c4ac615d743a500657ad8add0adf53d5cc05b1c442",
+      "case": "parser-2"
+    },
+    {
+      "file": "phase28-emulation-map-parser-3.json",
+      "sha256": "332836dcbdd9e2315f9e2a8c08d58547c30c3a9e81f638731700bfebc181d40f",
+      "case": "parser-3"
+    },
+    {
+      "file": "phase28-emulation-map-converter-0.json",
+      "sha256": "8f70d54f4214fac404ade96e773801fad45f7660adfede032d6027a69a5932c6",
+      "case": "converter-0"
+    },
+    {
+      "file": "phase28-emulation-map-converter-1.json",
+      "sha256": "056c8863edd3460b8477fbb242439912a75a0976cb9d005875f1cc3adffdc602",
+      "case": "converter-1"
+    },
+    {
+      "file": "phase28-emulation-map-converter-2.json",
+      "sha256": "29238ba4c309e7358612a833280b3d9dbcb48367217e64a39d9404296519e827",
+      "case": "converter-2"
+    },
+    {
+      "file": "phase28-emulation-map-converter-3.json",
+      "sha256": "a09e8f3023c7db0066beb771fe01cee3abc450d6d044d35beace0c28289eee8a",
+      "case": "converter-3"
+    },
+    {
+      "file": "phase28-emulation-map-runtime-0.json",
+      "sha256": "bda369f59f9d65a789d6b5700a9123750e8ffe9ffd7c85c9222cbbe5b91dd7a3",
+      "case": "runtime-0"
+    },
+    {
+      "file": "phase28-emulation-map-runtime-1.json",
+      "sha256": "ff07a7ba2d94cd768b090e5811ed7bbffea6fd9433416b2c6f7d54aea042fec0",
+      "case": "runtime-1"
+    },
+    {
+      "file": "phase28-emulation-map-runtime-2.json",
+      "sha256": "af8f2b0a55bd9cc49a0e5e00d6e9d4a383ca3518bb77bd89ab9e3e8913743314",
+      "case": "runtime-2"
+    },
+    {
+      "file": "phase28-emulation-map-runtime-3.json",
+      "sha256": "05b945134fb813ff102c5a3d3aad8b00e0a0f7bc908fe8d4540b200b77bd024f",
+      "case": "runtime-3"
+    },
+    {
+      "file": "phase28-emulation-map-runtime-4.json",
+      "sha256": "3eb0978684f0d920de5824bff62850a16b4af06c0d8e94c0939a2d8a3820bf16",
+      "case": "runtime-4"
+    },
+    {
+      "file": "phase28-emulation-map-runtime-5.json",
+      "sha256": "5a8b360f41e808c8317c8a0572c166d3074e91730bfebb98c8f370510f9ee380",
+      "case": "runtime-5"
+    }
+  ],
+  "limitations": [
+    "Exact supplied EXEs. No live-game terrain/room construction, GUI or rendering test.",
+    "Eight complete editor-writer runs use explicit packed arrays/exterior guard bytes, seeds for scratch flags/fourth byte and a read-only file capture callback. Entire output including36-byte header is checked with FNV/length and first/last cell DWORDs.",
+    "Four complete game-parser runs use a controlled read stub and callback capture; dimensions/chunk/cell code execute, header callback is absent. No world objects are constructed.",
+    "Four editor converter runs start with explicit old flag bits; six game flag-fragment runs skip terrain/room setup and read out only after original store.",
+    "FNV is a fixture checksum only. Ignored fourth byte and stack-backed native output do not authorize zeroing original raw files or claim no consumer exists in every version."
+  ]
+}

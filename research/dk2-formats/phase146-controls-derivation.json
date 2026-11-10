@@ -1,0 +1,28 @@
+{
+  "source": "crosscheck_terrain_model_chain.py",
+  "source_sha256": "b5b3bcc287aef5ca601a09ba4f8ca0de15869e2bc3d711010b3f4fd09a655323",
+  "output": "crosscheck_trap_model_chain.py",
+  "output_sha256": "d23c58b2c665d5db489566470241006f9408e458d0625346ceb809758d158415",
+  "changes": [
+    [
+      "import emulate_terrain_model_chain as native",
+      "import emulate_trap_model_chain as native"
+    ],
+    [
+      "CONTROLS = ['catalogue41', 'boundary-ffffffff']",
+      "CONTROLS = ['catalogue16', 'word-ffff']"
+    ],
+    [
+      "0x49F5E0",
+      "0x4A1770"
+    ],
+    [
+      "phase128-Terrain-model-Ghidra-",
+      "phase146-Traps-model-Ghidra-"
+    ],
+    [
+      "phase128-terrain-model-crosschecks.json",
+      "phase146-Traps-model-crosschecks.json"
+    ]
+  ]
+}

@@ -1,0 +1,1457 @@
+{
+  "family": "Things",
+  "tag": 194,
+  "payload_bytes": 24,
+  "executable_sha256": {
+    "Dungeon Keeper 2/DKII-DX.exe": "d7a8b854e4e4f02709eba271bead6fe2307dd6e332b5a96e70857e5b0e19fb8a",
+    "Dungeon Keeper 2/Data/editor/DK2 Editor pro.exe": "989c45df779bccfc9a9e509b2ad0224a9bd269629f74792adc0320fa4b99fb09"
+  },
+  "physical_fields": [
+    {
+      "name": "x_bits",
+      "offset": 0,
+      "bytes": 4
+    },
+    {
+      "name": "y_bits",
+      "offset": 4,
+      "bytes": 4
+    },
+    {
+      "name": "opaque_position_word",
+      "offset": 8,
+      "bytes": 4
+    },
+    {
+      "name": "spell_bits",
+      "offset": 12,
+      "bytes": 4
+    },
+    {
+      "name": "money_bits",
+      "offset": 16,
+      "bytes": 4
+    },
+    {
+      "name": "trigger_id",
+      "offset": 20,
+      "bytes": 2
+    },
+    {
+      "name": "object_id",
+      "offset": 22,
+      "bytes": 1
+    },
+    {
+      "name": "player_id",
+      "offset": 23,
+      "bytes": 1
+    }
+  ],
+  "converter": {
+    "address": "0x56f730",
+    "intermediate_bytes": 48,
+    "rule": "Copies XYZ DWORDs to18/1C/20, spell DWORD to24, money DWORD to28, trigger WORD to2C, object/player bytes to2E/2F. All six presence DWORDs0..14 are1. Raw widths are preserved here.",
+    "evidence": [
+      {
+        "file": "phase30-object-converter-before.txt",
+        "first": "0x56f730",
+        "last": "0x56f781",
+        "instructions": [
+          "0056f730: MOV EAX,dword ptr [ESP + 0x4] ",
+          "0056f734: PUSH EBX ",
+          "0056f735: PUSH ESI ",
+          "0056f736: MOV ESI,0x1 ",
+          "0056f73b: MOV DL,byte ptr [EAX + 0x16] ",
+          "0056f73e: PUSH EDI ",
+          "0056f73f: MOV dword ptr [ECX],ESI ",
+          "0056f741: MOV byte ptr [ECX + 0x2e],DL ",
+          "0056f744: MOV EDX,dword ptr [EAX + 0x8] ",
+          "0056f747: MOV EDI,dword ptr [EAX + 0x4] ",
+          "0056f74a: MOV EBX,dword ptr [EAX] ",
+          "0056f74c: MOV dword ptr [ECX + 0x4],ESI ",
+          "0056f74f: MOV dword ptr [ECX + 0x18],EBX ",
+          "0056f752: MOV dword ptr [ECX + 0x1c],EDI ",
+          "0056f755: MOV dword ptr [ECX + 0x20],EDX ",
+          "0056f758: MOV DL,byte ptr [EAX + 0x17] ",
+          "0056f75b: MOV dword ptr [ECX + 0x8],ESI ",
+          "0056f75e: MOV byte ptr [ECX + 0x2f],DL ",
+          "0056f761: MOV DX,word ptr [EAX + 0x14] ",
+          "0056f765: MOV dword ptr [ECX + 0x14],ESI ",
+          "0056f768: MOV word ptr [ECX + 0x2c],DX ",
+          "0056f76c: MOV EDX,dword ptr [EAX + 0xc] ",
+          "0056f76f: MOV dword ptr [ECX + 0xc],ESI ",
+          "0056f772: MOV dword ptr [ECX + 0x24],EDX ",
+          "0056f775: MOV EAX,dword ptr [EAX + 0x10] ",
+          "0056f778: MOV dword ptr [ECX + 0x10],ESI ",
+          "0056f77b: POP EDI ",
+          "0056f77c: POP ESI ",
+          "0056f77d: MOV dword ptr [ECX + 0x28],EAX ",
+          "0056f780: POP EBX ",
+          "0056f781: RET 0x4 "
+        ]
+      }
+    ]
+  },
+  "game": {
+    "callback": "0x520bb0",
+    "checksum_first": "Calls world checksum5108C0(mid,48) before skip/remap/create. Stubbed in these emulations; algorithm established separately in catalogue_checksums.",
+    "skip": "Raw ObjectId28 returns1 after checksum without invoking creation. This is not a missing-record error.",
+    "remap": "Only raw ObjectId7 is replaced by hardcoded selector mapping. Lookup compares the full32-bit raw spell value; values outside2..18 and holes keep7. Standalone Objects.kwd names target117..129 as Special powerups, not spell books; baseline KeeperSpellId is an overloaded field. No dynamic lookup by KeeperSpell name.",
+    "position": "Created X/Y=low32((tileBits<<12)+800), Z=0. Raw+8 copied and checksummed but not used for placement position in this callback.",
+    "player": "Creator receives low16 owner identity from [world84+(u8player-1)*1125+4]. Valid-player ranges are not established by this expression.",
+    "trigger": "Raw TriggerId is copied/checksummed, but no read of intermediate2C or forwarding of it occurs in this placement callback. No broader claim about trigger processing elsewhere.",
+    "creation": "4B7A90(world+8,createdIdByte,ownerWord,&position,&outNode). Failure returns0; success returns1 after payload branch. Actual returned instance ID12C and its definition12D determine the crate/flag behavior, rather than blindly reusing raw ObjectId.",
+    "priority": [
+      "flags40 gold",
+      "else flags08 spellbook",
+      "else flags10 recognized crate",
+      "else keep instance payload"
+    ],
+    "flags_source": "Raw Objects catalogue344 DWORD -> definition runtimeF4; names Gold/Spell Book/Crate corroborated by earlier native editor type labels.",
+    "payload": "Instance DWORD14A and BYTE14E are a type/value union for book/crate, and amount/value for gold. Book:14A=4,14E=low8(raw spell). Trap crate:14A=1,14E=actualObjectId. Door crate:14A=0,14E=actualObjectId. Unrecognized crate ID leaves preexisting payload unchanged.",
+    "gold": {
+      "helper": "0x49c760",
+      "rule": "t=low32(initial instance14A+raw MoneyAmount); instance14A=0 if sign bit(t) else t. Negative mathematical additions can wrap positive; positive sums can wrap negative and be zeroed. No numeric saturation at INT_MAX.",
+      "initial_scope": "Initial instance amount comes from actual creation; fixtures explicitly seed it. This schema does not assume all creators initialize0.",
+      "visual_scope": "For actual IDs1/2 helper additionally updates instance48/4C/58/5C using amount threshold5000 and x87 calculation. Static assembly retained, no visual units inferred or floating branch emulation claimed.",
+      "evidence": [
+        {
+          "file": "phase30-object-money-setter-assembly.txt",
+          "first": "0x49c760",
+          "last": "0x49c7f5",
+          "instructions": [
+            "0049c760: MOV EAX,dword ptr [ESP + 0x4] ",
+            "0049c764: SUB ESP,0x8 ",
+            "0049c767: PUSH ESI ",
+            "0049c768: MOV ESI,ECX ",
+            "0049c76a: PUSH EDI ",
+            "0049c76b: MOV ECX,0x0 ",
+            "0049c770: ADD EAX,dword ptr [ESI + 0x14a] ",
+            "0049c776: SETS CL ",
+            "0049c779: DEC ECX ",
+            "0049c77a: AND EAX,ECX ",
+            "0049c77c: MOV CL,byte ptr [ESI + 0x12c] ",
+            "0049c782: CMP CL,0x2 ",
+            "0049c785: MOV dword ptr [ESI + 0x14a],EAX ",
+            "0049c78b: JNZ 0x0049c7ab ",
+            "0049c78d: XOR EDI,EDI ",
+            "0049c78f: CMP EAX,0x1388 ",
+            "0049c794: JC 0x0049c79d ",
+            "0049c796: MOV ECX,0x11c4 ",
+            "0049c79b: JMP 0x0049c7de ",
+            "0049c79d: MOV dword ptr [ESP + 0x8],EAX ",
+            "0049c7a1: MOV dword ptr [ESP + 0xc],EDI ",
+            "0049c7a5: FILD qword ptr [ESP + 0x8] ",
+            "0049c7a9: JMP 0x0049c7cc ",
+            "0049c7ab: CMP CL,0x1 ",
+            "0049c7ae: JNZ 0x0049c7ea ",
+            "0049c7b0: XOR EDI,EDI ",
+            "0049c7b2: CMP EAX,0x1388 ",
+            "0049c7b7: JC 0x0049c7c0 ",
+            "0049c7b9: MOV ECX,0x11c4 ",
+            "0049c7be: JMP 0x0049c7de ",
+            "0049c7c0: MOV dword ptr [ESP + 0x8],EAX ",
+            "0049c7c4: MOV dword ptr [ESP + 0xc],EDI ",
+            "0049c7c8: FILD qword ptr [ESP + 0x8] ",
+            "0049c7cc: FMUL double ptr [0x0066d428] ",
+            "0049c7d2: CALL 0x00634f30 ",
+            "0049c7d7: MOV ECX,0x800 ",
+            "0049c7dc: SUB ECX,EAX ",
+            "0049c7de: MOV dword ptr [ESI + 0x48],ECX ",
+            "0049c7e1: MOV dword ptr [ESI + 0x4c],ECX ",
+            "0049c7e4: MOV dword ptr [ESI + 0x58],EDI ",
+            "0049c7e7: MOV dword ptr [ESI + 0x5c],EDI ",
+            "0049c7ea: MOV EAX,dword ptr [ESI + 0x14a] ",
+            "0049c7f0: POP EDI ",
+            "0049c7f1: POP ESI ",
+            "0049c7f2: ADD ESP,0x8 ",
+            "0049c7f5: RET 0x4 "
+          ]
+        }
+      ]
+    },
+    "tables": {
+      "spell_remap": [
+        {
+          "spell_dword": 2,
+          "target": "0x520c37",
+          "created_id": 117
+        },
+        {
+          "spell_dword": 3,
+          "target": "0x520c90",
+          "created_id": 7
+        },
+        {
+          "spell_dword": 4,
+          "target": "0x520c90",
+          "created_id": 7
+        },
+        {
+          "spell_dword": 5,
+          "target": "0x520c90",
+          "created_id": 7
+        },
+        {
+          "spell_dword": 6,
+          "target": "0x520c3e",
+          "created_id": 118
+        },
+        {
+          "spell_dword": 7,
+          "target": "0x520c45",
+          "created_id": 119
+        },
+        {
+          "spell_dword": 8,
+          "target": "0x520c4c",
+          "created_id": 120
+        },
+        {
+          "spell_dword": 9,
+          "target": "0x520c90",
+          "created_id": 7
+        },
+        {
+          "spell_dword": 10,
+          "target": "0x520c53",
+          "created_id": 121
+        },
+        {
+          "spell_dword": 11,
+          "target": "0x520c5a",
+          "created_id": 122
+        },
+        {
+          "spell_dword": 12,
+          "target": "0x520c61",
+          "created_id": 123
+        },
+        {
+          "spell_dword": 13,
+          "target": "0x520c68",
+          "created_id": 124
+        },
+        {
+          "spell_dword": 14,
+          "target": "0x520c6f",
+          "created_id": 125
+        },
+        {
+          "spell_dword": 15,
+          "target": "0x520c76",
+          "created_id": 126
+        },
+        {
+          "spell_dword": 16,
+          "target": "0x520c7d",
+          "created_id": 127
+        },
+        {
+          "spell_dword": 17,
+          "target": "0x520c8b",
+          "created_id": 129
+        },
+        {
+          "spell_dword": 18,
+          "target": "0x520c84",
+          "created_id": 128
+        }
+      ],
+      "crate_cases": [
+        {
+          "actual_object_id": 5,
+          "target": "0x520d47",
+          "payload_type": 1
+        },
+        {
+          "actual_object_id": 36,
+          "target": "0x520d47",
+          "payload_type": 1
+        },
+        {
+          "actual_object_id": 37,
+          "target": "0x520d47",
+          "payload_type": 1
+        },
+        {
+          "actual_object_id": 38,
+          "target": "0x520d47",
+          "payload_type": 1
+        },
+        {
+          "actual_object_id": 39,
+          "target": "0x520d47",
+          "payload_type": 1
+        },
+        {
+          "actual_object_id": 40,
+          "target": "0x520d47",
+          "payload_type": 1
+        },
+        {
+          "actual_object_id": 41,
+          "target": "0x520d47",
+          "payload_type": 1
+        },
+        {
+          "actual_object_id": 42,
+          "target": "0x520d47",
+          "payload_type": 1
+        },
+        {
+          "actual_object_id": 43,
+          "target": "0x520d47",
+          "payload_type": 1
+        },
+        {
+          "actual_object_id": 44,
+          "target": "0x520d47",
+          "payload_type": 1
+        },
+        {
+          "actual_object_id": 52,
+          "target": "0x520d2c",
+          "payload_type": 0
+        },
+        {
+          "actual_object_id": 53,
+          "target": "0x520d2c",
+          "payload_type": 0
+        },
+        {
+          "actual_object_id": 54,
+          "target": "0x520d2c",
+          "payload_type": 0
+        },
+        {
+          "actual_object_id": 55,
+          "target": "0x520d2c",
+          "payload_type": 0
+        },
+        {
+          "actual_object_id": 56,
+          "target": "0x520d2c",
+          "payload_type": 0
+        },
+        {
+          "actual_object_id": 57,
+          "target": "0x520d2c",
+          "payload_type": 0
+        },
+        {
+          "actual_object_id": 92,
+          "target": "0x520d47",
+          "payload_type": 1
+        },
+        {
+          "actual_object_id": 138,
+          "target": "0x520d47",
+          "payload_type": 1
+        }
+      ],
+      "physical_tables": [
+        {
+          "address": "0x520d64",
+          "size": 68,
+          "hex": "370c5200900c5200900c5200900c52003e0c5200450c52004c0c5200900c5200530c52005a0c5200610c5200680c52006f0c5200760c52007d0c52008b0c5200840c5200",
+          "sha256": "bd0a02889e576dc59782a0bf2cf3fc54093f43b3ef1b0ebbbcd33c40b1f0c55e"
+        },
+        {
+          "address": "0x520da8",
+          "size": 24,
+          "hex": "470d5200470d52002c0d5200470d5200470d5200570d5200",
+          "sha256": "b4fdd836f053db084bef43e6f1e69f8321ac0c993cde2c31cd9236d203c745d7"
+        },
+        {
+          "address": "0x520dc0",
+          "size": 134,
+          "hex": "0005050505050505050505050505050505050505050505050505050505050501010101010101010105050505050505020202020202050505050505050505050505050505050505050505050505050505050505050505050305050505050505050505050505050505050505050505050505050505050505050505050505050505050505050504",
+          "sha256": "d2b51a7e114b6aaeecb5fd7557c6e4f52e3f3ad4a824afee8a98dd40f732045a"
+        }
+      ]
+    },
+    "evidence": [
+      {
+        "file": "phase30-object-callback-before.txt",
+        "first": "0x520bb0",
+        "last": "0x520d61",
+        "instructions": [
+          "00520bb0: SUB ESP,0xc ",
+          "00520bb3: PUSH ESI ",
+          "00520bb4: MOV ESI,dword ptr [ESP + 0x14] ",
+          "00520bb8: PUSH EDI ",
+          "00520bb9: MOV EDI,dword ptr [ESP + 0x1c] ",
+          "00520bbd: PUSH 0x30 ",
+          "00520bbf: PUSH ESI ",
+          "00520bc0: MOV ECX,EDI ",
+          "00520bc2: CALL 0x005108c0 ",
+          "00520bc7: MOV CL,byte ptr [ESI + 0x2e] ",
+          "00520bca: CMP CL,0x1c ",
+          "00520bcd: JZ 0x00520d57 ",
+          "00520bd3: XOR EAX,EAX ",
+          "00520bd5: MOV dword ptr [ESP + 0x10],0x0 ",
+          "00520bdd: MOV AL,byte ptr [ESI + 0x2f] ",
+          "00520be0: MOV EDX,EAX ",
+          "00520be2: SHL EDX,0x4 ",
+          "00520be5: ADD EDX,EAX ",
+          "00520be7: LEA EDX,[EAX + EDX*0x8] ",
+          "00520bea: LEA EDX,[EAX + EDX*0x8] ",
+          "00520bed: LEA EAX,[EAX + EDX*0x4] ",
+          "00520bf0: MOV EDX,dword ptr [EDI + 0x84] ",
+          "00520bf6: LEA EDX,[EDX + EAX*0x1 + 0xffffeedb] ",
+          "00520bfd: MOV EAX,dword ptr [ESI + 0x18] ",
+          "00520c00: SHL EAX,0xc ",
+          "00520c03: ADD EAX,0x800 ",
+          "00520c08: MOV dword ptr [ESP + 0x8],EAX ",
+          "00520c0c: MOV EAX,dword ptr [ESI + 0x1c] ",
+          "00520c0f: SHL EAX,0xc ",
+          "00520c12: ADD EAX,0x800 ",
+          "00520c17: MOV dword ptr [ESP + 0xc],EAX ",
+          "00520c1b: MOV AL,CL ",
+          "00520c1d: CMP AL,0x7 ",
+          "00520c1f: MOV byte ptr [ESP + 0x18],AL ",
+          "00520c23: JNZ 0x00520c90 ",
+          "00520c25: MOV EAX,dword ptr [ESI + 0x24] ",
+          "00520c28: ADD EAX,-0x2 ",
+          "00520c2b: CMP EAX,0x10 ",
+          "00520c2e: JA 0x00520c90 ",
+          "00520c30: JMP dword ptr [EAX*0x4 + 0x520d64] ",
+          "00520c37: MOV byte ptr [ESP + 0x18],0x75 ",
+          "00520c3c: JMP 0x00520c90 ",
+          "00520c3e: MOV byte ptr [ESP + 0x18],0x76 ",
+          "00520c43: JMP 0x00520c90 ",
+          "00520c45: MOV byte ptr [ESP + 0x18],0x77 ",
+          "00520c4a: JMP 0x00520c90 ",
+          "00520c4c: MOV byte ptr [ESP + 0x18],0x78 ",
+          "00520c51: JMP 0x00520c90 ",
+          "00520c53: MOV byte ptr [ESP + 0x18],0x79 ",
+          "00520c58: JMP 0x00520c90 ",
+          "00520c5a: MOV byte ptr [ESP + 0x18],0x7a ",
+          "00520c5f: JMP 0x00520c90 ",
+          "00520c61: MOV byte ptr [ESP + 0x18],0x7b ",
+          "00520c66: JMP 0x00520c90 ",
+          "00520c68: MOV byte ptr [ESP + 0x18],0x7c ",
+          "00520c6d: JMP 0x00520c90 ",
+          "00520c6f: MOV byte ptr [ESP + 0x18],0x7d ",
+          "00520c74: JMP 0x00520c90 ",
+          "00520c76: MOV byte ptr [ESP + 0x18],0x7e ",
+          "00520c7b: JMP 0x00520c90 ",
+          "00520c7d: MOV byte ptr [ESP + 0x18],0x7f ",
+          "00520c82: JMP 0x00520c90 ",
+          "00520c84: MOV byte ptr [ESP + 0x18],0x80 ",
+          "00520c89: JMP 0x00520c90 ",
+          "00520c8b: MOV byte ptr [ESP + 0x18],0x81 ",
+          "00520c90: LEA ECX,[ESP + 0x1c] ",
+          "00520c94: LEA EAX,[ESP + 0x8] ",
+          "00520c98: PUSH ECX ",
+          "00520c99: MOV CX,word ptr [EDX + 0x4] ",
+          "00520c9d: MOV EDX,dword ptr [ESP + 0x1c] ",
+          "00520ca1: PUSH EAX ",
+          "00520ca2: PUSH ECX ",
+          "00520ca3: PUSH EDX ",
+          "00520ca4: LEA ECX,[EDI + 0x8] ",
+          "00520ca7: CALL 0x004b7a90 ",
+          "00520cac: TEST EAX,EAX ",
+          "00520cae: JNZ 0x00520cb6 ",
+          "00520cb0: POP EDI ",
+          "00520cb1: POP ESI ",
+          "00520cb2: ADD ESP,0xc ",
+          "00520cb5: RET ",
+          "00520cb6: MOV ECX,dword ptr [ESP + 0x1c] ",
+          "00520cba: MOV EAX,dword ptr [ECX + 0x12d] ",
+          "00520cc0: MOV EAX,dword ptr [EAX + 0xf4] ",
+          "00520cc6: TEST AL,0x40 ",
+          "00520cc8: JZ 0x00520cde ",
+          "00520cca: MOV EAX,dword ptr [ESI + 0x28] ",
+          "00520ccd: PUSH EAX ",
+          "00520cce: CALL 0x0049c760 ",
+          "00520cd3: MOV EAX,0x1 ",
+          "00520cd8: POP EDI ",
+          "00520cd9: POP ESI ",
+          "00520cda: ADD ESP,0xc ",
+          "00520cdd: RET ",
+          "00520cde: TEST AL,0x8 ",
+          "00520ce0: JZ 0x00520d00 ",
+          "00520ce2: MOV EAX,dword ptr [ESI + 0x24] ",
+          "00520ce5: MOV dword ptr [ECX + 0x14a],0x4 ",
+          "00520cef: MOV byte ptr [ECX + 0x14e],AL ",
+          "00520cf5: MOV EAX,0x1 ",
+          "00520cfa: POP EDI ",
+          "00520cfb: POP ESI ",
+          "00520cfc: ADD ESP,0xc ",
+          "00520cff: RET ",
+          "00520d00: TEST AL,0x10 ",
+          "00520d02: JZ 0x00520d57 ",
+          "00520d04: MOV AL,byte ptr [ECX + 0x12c] ",
+          "00520d0a: MOV EDX,EAX ",
+          "00520d0c: AND EDX,0xff ",
+          "00520d12: LEA ESI,[EDX + -0x5] ",
+          "00520d15: CMP ESI,0x85 ",
+          "00520d1b: JA 0x00520d57 ",
+          "00520d1d: XOR EDX,EDX ",
+          "00520d1f: MOV DL,byte ptr [ESI + 0x520dc0] ",
+          "00520d25: JMP dword ptr [EDX*0x4 + 0x520da8] ",
+          "00520d2c: MOV dword ptr [ECX + 0x14a],0x0 ",
+          "00520d36: MOV byte ptr [ECX + 0x14e],AL ",
+          "00520d3c: MOV EAX,0x1 ",
+          "00520d41: POP EDI ",
+          "00520d42: POP ESI ",
+          "00520d43: ADD ESP,0xc ",
+          "00520d46: RET ",
+          "00520d47: MOV dword ptr [ECX + 0x14a],0x1 ",
+          "00520d51: MOV byte ptr [ECX + 0x14e],AL ",
+          "00520d57: POP EDI ",
+          "00520d58: MOV EAX,0x1 ",
+          "00520d5d: POP ESI ",
+          "00520d5e: ADD ESP,0xc ",
+          "00520d61: RET "
+        ]
+      }
+    ]
+  },
+  "native_editor": {
+    "load_callback": "0x4916b0",
+    "writer": "0x4947c0",
+    "definition_lookup": "Original4205D0 linearly searches model definitions for BYTE model18 ==definition168. Missing-definition behavior is not made safe by this schema; helper dereferences the result.",
+    "flags_models": {
+      "special_mask4": "3D8",
+      "book_mask8": "3DC",
+      "crate_mask10": "3E4",
+      "gold_mask40": "3EC"
+    },
+    "spell_load": "4206A0: if notGold and (Book or Crate), store low8(input DWORD) at model19; otherwise retain old model19.",
+    "money_load": "420730: if Gold or Special, store input DWORD at model1C; otherwise retain old model1C.",
+    "remap": "4916B0 then checks definition ID7 and calls420610. This returns model19 only if notGold and Book, otherwise AL0. Full EAX is maskedFF before table lookup. Thus raw258 with book flag8 becomes model object117; game leaves7.",
+    "spell_write": "420670 returns zero-extended model19 only if notGold and Book, otherwise0. Assembly explicitly XOR EAX before MOV AL; undefined upper-byte decompiler annotation is not the real writer behavior.",
+    "money_write": "4206F0 returns complete model1C DWORD if Gold or Special, otherwise0. A standalone Crate flag does not retain raw spell DWORD in the writer getter.",
+    "position_write": "Writer explicitly writes raw+8 DWORD0; X/Y come from virtual getters, trigger from low16 getter, object ID from definition168, owner from owner model1C byte.",
+    "projection_scope": "Load projection API assumes all presence flags1 as set by converter and accepts explicit initial model spell/money. Writer getter API uses the definition corresponding to the current model ID. Remapping changes that ID; a combined full load/save needs the target definition flags and catalogue.",
+    "evidence": [
+      {
+        "file": "phase30-object-spell-setter-assembly.txt",
+        "first": "0x4206a0",
+        "last": "0x4206e7",
+        "instructions": [
+          "004206a0: PUSH ESI ",
+          "004206a1: MOV ESI,ECX ",
+          "004206a3: CALL 0x004205d0 ",
+          "004206a8: MOV ECX,dword ptr [EAX + 0x3ec] ",
+          "004206ae: TEST ECX,ECX ",
+          "004206b0: JNZ 0x004206e6 ",
+          "004206b2: MOV ECX,ESI ",
+          "004206b4: CALL 0x004205d0 ",
+          "004206b9: MOV ECX,dword ptr [EAX + 0x3dc] ",
+          "004206bf: TEST ECX,ECX ",
+          "004206c1: JZ 0x004206ce ",
+          "004206c3: MOV AL,byte ptr [ESP + 0x8] ",
+          "004206c7: MOV byte ptr [ESI + 0x19],AL ",
+          "004206ca: POP ESI ",
+          "004206cb: RET 0x4 ",
+          "004206ce: MOV ECX,ESI ",
+          "004206d0: CALL 0x004205d0 ",
+          "004206d5: MOV ECX,dword ptr [EAX + 0x3e4] ",
+          "004206db: TEST ECX,ECX ",
+          "004206dd: JZ 0x004206e6 ",
+          "004206df: MOV CL,byte ptr [ESP + 0x8] ",
+          "004206e3: MOV byte ptr [ESI + 0x19],CL ",
+          "004206e6: POP ESI ",
+          "004206e7: RET 0x4 "
+        ]
+      },
+      {
+        "file": "phase30-object-money-model-setter-assembly.txt",
+        "first": "0x420730",
+        "last": "0x420766",
+        "instructions": [
+          "00420730: PUSH ESI ",
+          "00420731: MOV ESI,ECX ",
+          "00420733: CALL 0x004205d0 ",
+          "00420738: MOV ECX,dword ptr [EAX + 0x3ec] ",
+          "0042073e: TEST ECX,ECX ",
+          "00420740: JZ 0x0042074d ",
+          "00420742: MOV EAX,dword ptr [ESP + 0x8] ",
+          "00420746: MOV dword ptr [ESI + 0x1c],EAX ",
+          "00420749: POP ESI ",
+          "0042074a: RET 0x4 ",
+          "0042074d: MOV ECX,ESI ",
+          "0042074f: CALL 0x004205d0 ",
+          "00420754: MOV ECX,dword ptr [EAX + 0x3d8] ",
+          "0042075a: TEST ECX,ECX ",
+          "0042075c: JZ 0x00420765 ",
+          "0042075e: MOV ECX,dword ptr [ESP + 0x8] ",
+          "00420762: MOV dword ptr [ESI + 0x1c],ECX ",
+          "00420765: POP ESI ",
+          "00420766: RET 0x4 "
+        ]
+      },
+      {
+        "file": "phase30-object-spell-crate-getter-assembly.txt",
+        "first": "0x420610",
+        "last": "0x42063b",
+        "instructions": [
+          "00420610: PUSH ESI ",
+          "00420611: MOV ESI,ECX ",
+          "00420613: CALL 0x004205d0 ",
+          "00420618: MOV ECX,dword ptr [EAX + 0x3ec] ",
+          "0042061e: TEST ECX,ECX ",
+          "00420620: JNZ 0x00420638 ",
+          "00420622: MOV ECX,ESI ",
+          "00420624: CALL 0x004205d0 ",
+          "00420629: MOV ECX,dword ptr [EAX + 0x3dc] ",
+          "0042062f: TEST ECX,ECX ",
+          "00420631: JZ 0x00420638 ",
+          "00420633: MOV AL,byte ptr [ESI + 0x19] ",
+          "00420636: POP ESI ",
+          "00420637: RET ",
+          "00420638: XOR AL,AL ",
+          "0042063a: POP ESI ",
+          "0042063b: RET "
+        ]
+      },
+      {
+        "file": "phase30-object-spell-getter-assembly.txt",
+        "first": "0x420670",
+        "last": "0x42069d",
+        "instructions": [
+          "00420670: PUSH ESI ",
+          "00420671: MOV ESI,ECX ",
+          "00420673: CALL 0x004205d0 ",
+          "00420678: MOV ECX,dword ptr [EAX + 0x3ec] ",
+          "0042067e: TEST ECX,ECX ",
+          "00420680: JNZ 0x0042069a ",
+          "00420682: MOV ECX,ESI ",
+          "00420684: CALL 0x004205d0 ",
+          "00420689: MOV ECX,dword ptr [EAX + 0x3dc] ",
+          "0042068f: TEST ECX,ECX ",
+          "00420691: JZ 0x0042069a ",
+          "00420693: XOR EAX,EAX ",
+          "00420695: MOV AL,byte ptr [ESI + 0x19] ",
+          "00420698: POP ESI ",
+          "00420699: RET ",
+          "0042069a: XOR EAX,EAX ",
+          "0042069c: POP ESI ",
+          "0042069d: RET "
+        ]
+      },
+      {
+        "file": "phase30-object-money-getter-assembly.txt",
+        "first": "0x4206f0",
+        "last": "0x420720",
+        "instructions": [
+          "004206f0: PUSH ESI ",
+          "004206f1: MOV ESI,ECX ",
+          "004206f3: CALL 0x004205d0 ",
+          "004206f8: MOV ECX,dword ptr [EAX + 0x3ec] ",
+          "004206fe: TEST ECX,ECX ",
+          "00420700: JZ 0x00420707 ",
+          "00420702: MOV EAX,dword ptr [ESI + 0x1c] ",
+          "00420705: POP ESI ",
+          "00420706: RET ",
+          "00420707: MOV ECX,ESI ",
+          "00420709: CALL 0x004205d0 ",
+          "0042070e: MOV ECX,dword ptr [EAX + 0x3d8] ",
+          "00420714: TEST ECX,ECX ",
+          "00420716: JZ 0x0042071d ",
+          "00420718: MOV EAX,dword ptr [ESI + 0x1c] ",
+          "0042071b: POP ESI ",
+          "0042071c: RET ",
+          "0042071d: XOR EAX,EAX ",
+          "0042071f: POP ESI ",
+          "00420720: RET "
+        ]
+      },
+      {
+        "file": "phase30-object-definition-getter-assembly.txt",
+        "first": "0x4205d0",
+        "last": "0x420603",
+        "instructions": [
+          "004205d0: PUSH ESI ",
+          "004205d1: MOV ESI,dword ptr [0x0054fa7c] ",
+          "004205d7: XOR EDX,EDX ",
+          "004205d9: TEST ESI,ESI ",
+          "004205db: PUSH EDI ",
+          "004205dc: JBE 0x004205ff ",
+          "004205de: MOV CL,byte ptr [ECX + 0x18] ",
+          "004205e1: MOV EDI,dword ptr [0x0054fa78] ",
+          "004205e7: CMP EDX,ESI ",
+          "004205e9: JC 0x004205ef ",
+          "004205eb: XOR EAX,EAX ",
+          "004205ed: JMP 0x004205f2 ",
+          "004205ef: MOV EAX,dword ptr [EDI + EDX*0x4] ",
+          "004205f2: CMP byte ptr [EAX + 0x168],CL ",
+          "004205f8: JZ 0x00420601 ",
+          "004205fa: INC EDX ",
+          "004205fb: CMP EDX,ESI ",
+          "004205fd: JC 0x004205ef ",
+          "004205ff: XOR EAX,EAX ",
+          "00420601: POP EDI ",
+          "00420602: POP ESI ",
+          "00420603: RET "
+        ]
+      },
+      {
+        "file": "phase30-object-editor-load-before.txt",
+        "first": "0x4916b0",
+        "last": "0x491866",
+        "instructions": [
+          "004916b0: SUB ESP,0xc ",
+          "004916b3: PUSH EBX ",
+          "004916b4: PUSH EBP ",
+          "004916b5: PUSH ESI ",
+          "004916b6: MOV ESI,dword ptr [ESP + 0x1c] ",
+          "004916ba: PUSH EDI ",
+          "004916bb: MOV EAX,dword ptr [ESI + 0x20] ",
+          "004916be: MOV ECX,dword ptr [ESI + 0x1c] ",
+          "004916c1: MOV EDX,dword ptr [ESI + 0x18] ",
+          "004916c4: PUSH EAX ",
+          "004916c5: PUSH ECX ",
+          "004916c6: PUSH EDX ",
+          "004916c7: LEA ECX,[ESP + 0x1c] ",
+          "004916cb: CALL 0x00492380 ",
+          "004916d0: MOV EDX,EAX ",
+          "004916d2: MOV EBP,dword ptr [0x0054fa7c] ",
+          "004916d8: MOV BL,byte ptr [ESI + 0x2e] ",
+          "004916db: XOR EDI,EDI ",
+          "004916dd: MOV EAX,dword ptr [EDX] ",
+          "004916df: TEST EBP,EBP ",
+          "004916e1: MOV ECX,dword ptr [EDX + 0x4] ",
+          "004916e4: MOV EDX,dword ptr [EDX + 0x8] ",
+          "004916e7: MOV dword ptr [ESP + 0x10],EAX ",
+          "004916eb: MOV dword ptr [ESP + 0x18],EDX ",
+          "004916ef: MOV dword ptr [ESP + 0x14],ECX ",
+          "004916f3: JBE 0x0049170d ",
+          "004916f5: PUSH EDI ",
+          "004916f6: MOV ECX,0x54f550 ",
+          "004916fb: CALL 0x0045ba10 ",
+          "00491700: CMP byte ptr [EAX + 0x168],BL ",
+          "00491706: JZ 0x0049170f ",
+          "00491708: INC EDI ",
+          "00491709: CMP EDI,EBP ",
+          "0049170b: JC 0x004916f5 ",
+          "0049170d: XOR EAX,EAX ",
+          "0049170f: LEA ECX,[ESP + 0x10] ",
+          "00491713: PUSH ECX ",
+          "00491714: MOV ECX,dword ptr [ESP + 0x28] ",
+          "00491718: PUSH EAX ",
+          "00491719: CALL 0x004898c0 ",
+          "0049171e: MOV EDI,EAX ",
+          "00491720: MOV EAX,dword ptr [ESI + 0x14] ",
+          "00491723: TEST EAX,EAX ",
+          "00491725: JZ 0x00491733 ",
+          "00491727: MOV AX,word ptr [ESI + 0x2c] ",
+          "0049172b: MOV EDX,dword ptr [EDI] ",
+          "0049172d: PUSH EAX ",
+          "0049172e: MOV ECX,EDI ",
+          "00491730: CALL dword ptr [EDX + 0x2c] ",
+          "00491733: MOV EAX,dword ptr [ESI + 0xc] ",
+          "00491736: TEST EAX,EAX ",
+          "00491738: JZ 0x00491745 ",
+          "0049173a: MOV ECX,dword ptr [ESI + 0x24] ",
+          "0049173d: PUSH ECX ",
+          "0049173e: MOV ECX,EDI ",
+          "00491740: CALL 0x004206a0 ",
+          "00491745: MOV EAX,dword ptr [ESI + 0x10] ",
+          "00491748: TEST EAX,EAX ",
+          "0049174a: JZ 0x00491757 ",
+          "0049174c: MOV EDX,dword ptr [ESI + 0x28] ",
+          "0049174f: MOV ECX,EDI ",
+          "00491751: PUSH EDX ",
+          "00491752: CALL 0x00420730 ",
+          "00491757: MOV ECX,EDI ",
+          "00491759: CALL 0x004205d0 ",
+          "0049175e: CMP byte ptr [EAX + 0x168],0x7 ",
+          "00491765: JNZ 0x0049185a ",
+          "0049176b: MOV ECX,EDI ",
+          "0049176d: CALL 0x00420610 ",
+          "00491772: AND EAX,0xff ",
+          "00491777: ADD EAX,-0x2 ",
+          "0049177a: CMP EAX,0x10 ",
+          "0049177d: JA 0x0049185a ",
+          "00491783: JMP dword ptr [EAX*0x4 + 0x491868] ",
+          "0049178a: MOV byte ptr [EDI + 0x18],0x75 ",
+          "0049178e: POP EDI ",
+          "0049178f: POP ESI ",
+          "00491790: POP EBP ",
+          "00491791: MOV EAX,0x1 ",
+          "00491796: POP EBX ",
+          "00491797: ADD ESP,0xc ",
+          "0049179a: RET ",
+          "0049179b: MOV byte ptr [EDI + 0x18],0x76 ",
+          "0049179f: POP EDI ",
+          "004917a0: POP ESI ",
+          "004917a1: POP EBP ",
+          "004917a2: MOV EAX,0x1 ",
+          "004917a7: POP EBX ",
+          "004917a8: ADD ESP,0xc ",
+          "004917ab: RET ",
+          "004917ac: MOV byte ptr [EDI + 0x18],0x77 ",
+          "004917b0: POP EDI ",
+          "004917b1: POP ESI ",
+          "004917b2: POP EBP ",
+          "004917b3: MOV EAX,0x1 ",
+          "004917b8: POP EBX ",
+          "004917b9: ADD ESP,0xc ",
+          "004917bc: RET ",
+          "004917bd: MOV byte ptr [EDI + 0x18],0x78 ",
+          "004917c1: POP EDI ",
+          "004917c2: POP ESI ",
+          "004917c3: POP EBP ",
+          "004917c4: MOV EAX,0x1 ",
+          "004917c9: POP EBX ",
+          "004917ca: ADD ESP,0xc ",
+          "004917cd: RET ",
+          "004917ce: MOV byte ptr [EDI + 0x18],0x79 ",
+          "004917d2: POP EDI ",
+          "004917d3: POP ESI ",
+          "004917d4: POP EBP ",
+          "004917d5: MOV EAX,0x1 ",
+          "004917da: POP EBX ",
+          "004917db: ADD ESP,0xc ",
+          "004917de: RET ",
+          "004917df: MOV byte ptr [EDI + 0x18],0x7a ",
+          "004917e3: POP EDI ",
+          "004917e4: POP ESI ",
+          "004917e5: POP EBP ",
+          "004917e6: MOV EAX,0x1 ",
+          "004917eb: POP EBX ",
+          "004917ec: ADD ESP,0xc ",
+          "004917ef: RET ",
+          "004917f0: MOV byte ptr [EDI + 0x18],0x7b ",
+          "004917f4: POP EDI ",
+          "004917f5: POP ESI ",
+          "004917f6: POP EBP ",
+          "004917f7: MOV EAX,0x1 ",
+          "004917fc: POP EBX ",
+          "004917fd: ADD ESP,0xc ",
+          "00491800: RET ",
+          "00491801: MOV byte ptr [EDI + 0x18],0x7c ",
+          "00491805: POP EDI ",
+          "00491806: POP ESI ",
+          "00491807: POP EBP ",
+          "00491808: MOV EAX,0x1 ",
+          "0049180d: POP EBX ",
+          "0049180e: ADD ESP,0xc ",
+          "00491811: RET ",
+          "00491812: MOV byte ptr [EDI + 0x18],0x7d ",
+          "00491816: POP EDI ",
+          "00491817: POP ESI ",
+          "00491818: POP EBP ",
+          "00491819: MOV EAX,0x1 ",
+          "0049181e: POP EBX ",
+          "0049181f: ADD ESP,0xc ",
+          "00491822: RET ",
+          "00491823: MOV byte ptr [EDI + 0x18],0x7e ",
+          "00491827: POP EDI ",
+          "00491828: POP ESI ",
+          "00491829: POP EBP ",
+          "0049182a: MOV EAX,0x1 ",
+          "0049182f: POP EBX ",
+          "00491830: ADD ESP,0xc ",
+          "00491833: RET ",
+          "00491834: MOV byte ptr [EDI + 0x18],0x7f ",
+          "00491838: POP EDI ",
+          "00491839: POP ESI ",
+          "0049183a: POP EBP ",
+          "0049183b: MOV EAX,0x1 ",
+          "00491840: POP EBX ",
+          "00491841: ADD ESP,0xc ",
+          "00491844: RET ",
+          "00491845: MOV byte ptr [EDI + 0x18],0x80 ",
+          "00491849: POP EDI ",
+          "0049184a: POP ESI ",
+          "0049184b: POP EBP ",
+          "0049184c: MOV EAX,0x1 ",
+          "00491851: POP EBX ",
+          "00491852: ADD ESP,0xc ",
+          "00491855: RET ",
+          "00491856: MOV byte ptr [EDI + 0x18],0x81 ",
+          "0049185a: POP EDI ",
+          "0049185b: POP ESI ",
+          "0049185c: POP EBP ",
+          "0049185d: MOV EAX,0x1 ",
+          "00491862: POP EBX ",
+          "00491863: ADD ESP,0xc ",
+          "00491866: RET "
+        ]
+      },
+      {
+        "file": "phase30-things-writer-before.txt",
+        "first": "0x494dea",
+        "last": "0x494e73",
+        "instructions": [
+          "00494dea: MOV ECX,EBP ",
+          "00494dec: CALL 0x004205d0 ",
+          "00494df1: MOV DL,byte ptr [EAX + 0x168] ",
+          "00494df7: MOV ECX,EBP ",
+          "00494df9: MOV byte ptr [ESP + 0xba],DL ",
+          "00494e00: MOV EAX,dword ptr [EBP] ",
+          "00494e03: CALL dword ptr [EAX + 0x4] ",
+          "00494e06: MOV CL,byte ptr [EAX + 0x1c] ",
+          "00494e09: MOV byte ptr [ESP + 0xbb],CL ",
+          "00494e10: MOV EDX,dword ptr [EBP] ",
+          "00494e13: MOV ECX,EBP ",
+          "00494e15: CALL dword ptr [EDX + 0x14] ",
+          "00494e18: MOV dword ptr [ESP + 0xa4],EAX ",
+          "00494e1f: MOV EAX,dword ptr [EBP] ",
+          "00494e22: MOV ECX,EBP ",
+          "00494e24: CALL dword ptr [EAX + 0x18] ",
+          "00494e27: MOV dword ptr [ESP + 0xa8],EAX ",
+          "00494e2e: MOV dword ptr [ESP + 0xac],0x0 ",
+          "00494e39: MOV EDX,dword ptr [EBP] ",
+          "00494e3c: MOV ECX,EBP ",
+          "00494e3e: CALL dword ptr [EDX + 0x28] ",
+          "00494e41: MOV ECX,EBP ",
+          "00494e43: MOV word ptr [ESP + 0xb8],AX ",
+          "00494e4b: CALL 0x00420670 ",
+          "00494e50: MOV ECX,EBP ",
+          "00494e52: MOV dword ptr [ESP + 0xb0],EAX ",
+          "00494e59: CALL 0x004206f0 ",
+          "00494e5e: LEA ECX,[ESP + 0xa4] ",
+          "00494e65: MOV dword ptr [ESP + 0xb4],EAX ",
+          "00494e6c: MOV EAX,dword ptr [EDI] ",
+          "00494e6e: PUSH 0x18 ",
+          "00494e70: PUSH ECX ",
+          "00494e71: MOV ECX,EDI ",
+          "00494e73: CALL dword ptr [EAX + 0x38] "
+        ]
+      },
+      {
+        "file": "phase30-object-editor-flags-before.txt",
+        "first": "0x420e9c",
+        "last": "0x420eea",
+        "instructions": [
+          "00420e9c: MOV EDX,EAX ",
+          "00420e9e: SHR EDX,0x2 ",
+          "00420ea1: AND EDX,0x1 ",
+          "00420ea4: MOV dword ptr [ECX + 0x3d8],EDX ",
+          "00420eaa: MOV EDX,EAX ",
+          "00420eac: SHR EDX,0x3 ",
+          "00420eaf: AND EDX,0x1 ",
+          "00420eb2: MOV dword ptr [ECX + 0x3dc],EDX ",
+          "00420eb8: MOV EDX,EAX ",
+          "00420eba: SHR EDX,0xc ",
+          "00420ebd: AND EDX,0x1 ",
+          "00420ec0: MOV dword ptr [ECX + 0x3e0],EDX ",
+          "00420ec6: MOV EDX,EAX ",
+          "00420ec8: SHR EDX,0x4 ",
+          "00420ecb: AND EDX,0x1 ",
+          "00420ece: MOV dword ptr [ECX + 0x3e4],EDX ",
+          "00420ed4: MOV EDX,EAX ",
+          "00420ed6: SHR EDX,0x5 ",
+          "00420ed9: AND EDX,0x1 ",
+          "00420edc: MOV dword ptr [ECX + 0x3e8],EDX ",
+          "00420ee2: MOV EDX,EAX ",
+          "00420ee4: SHR EDX,0x6 ",
+          "00420ee7: AND EDX,0x1 ",
+          "00420eea: MOV dword ptr [ECX + 0x3ec],EDX "
+        ]
+      }
+    ]
+  },
+  "native_emulations": [
+    {
+      "file": "phase30-emulation-object-spell-0.json",
+      "sha256": "0efeab1c3bdc6f47ef640953d20d64d0e1f71b5085f499dd075e1e13c0f6fc8b",
+      "case": "spell-0"
+    },
+    {
+      "file": "phase30-emulation-object-spell-1.json",
+      "sha256": "3261d58f7cd36792ceae856223ad003c3040bd56f32d630bf1b7dfe9cc337072",
+      "case": "spell-1"
+    },
+    {
+      "file": "phase30-emulation-object-spell-2.json",
+      "sha256": "2f3fb9274c1a479e5b2275437cda90cb9014e636d34979009072badf0c2f51aa",
+      "case": "spell-2"
+    },
+    {
+      "file": "phase30-emulation-object-spell-3.json",
+      "sha256": "62c90235012763fc8f123f6cdc0b20858128229e67159aa069e08bb0de49c091",
+      "case": "spell-3"
+    },
+    {
+      "file": "phase30-emulation-object-spell-4.json",
+      "sha256": "52ab9584d09e3a2c20a3e62c9962d85a13bdb0b140008f9c8d6f123f3354eafe",
+      "case": "spell-4"
+    },
+    {
+      "file": "phase30-emulation-object-spell-5.json",
+      "sha256": "a62f03a1839e57fd761471a2390e0c101a6d02ca2eb2c270530961fd45129829",
+      "case": "spell-5"
+    },
+    {
+      "file": "phase30-emulation-object-spell-6.json",
+      "sha256": "41f43068b4b017b91effa0676e843e5be7ab44def1620cc394efcac8249f94f6",
+      "case": "spell-6"
+    },
+    {
+      "file": "phase30-emulation-object-spell-7.json",
+      "sha256": "26c11c7f9414e3bcf103c713daed1a6651f6e6eb45ff27369a544ecaeb247311",
+      "case": "spell-7"
+    },
+    {
+      "file": "phase30-emulation-object-spell-8.json",
+      "sha256": "afef74000881900f6686efcdca4bfc56a03770b888aab9302039a2ea411af2a2",
+      "case": "spell-8"
+    },
+    {
+      "file": "phase30-emulation-object-spell-9.json",
+      "sha256": "7134aecb4cfc52e6bf570e8f73658768ef272cd0cb0934b3fb4847f92066a102",
+      "case": "spell-9"
+    },
+    {
+      "file": "phase30-emulation-object-spell-10.json",
+      "sha256": "00ab9257cc864844d40773819181c8969a18be2c3ae275611ce0f202cea2bc57",
+      "case": "spell-10"
+    },
+    {
+      "file": "phase30-emulation-object-spell-11.json",
+      "sha256": "9a8f91bca90b5605f2fcc124a5a07ccebf4d0dfd01e8e376f990d4d89af45cba",
+      "case": "spell-11"
+    },
+    {
+      "file": "phase30-emulation-object-spell-12.json",
+      "sha256": "04ee355ce0d5d86e4cb1a39a45ff33662e58de2b55f75940aa94f4aeee56d36d",
+      "case": "spell-12"
+    },
+    {
+      "file": "phase30-emulation-object-spell-13.json",
+      "sha256": "835315aa339959073553cc54611b1fda8527569332eb3dad3b54d95c5028fac7",
+      "case": "spell-13"
+    },
+    {
+      "file": "phase30-emulation-object-spell-14.json",
+      "sha256": "f0b1b236765304baac5fc0f28033994e4191e48a623f6c3523d3c0d6e76e5823",
+      "case": "spell-14"
+    },
+    {
+      "file": "phase30-emulation-object-spell-15.json",
+      "sha256": "3eef9df45ffd40ce61d3ddccf0e8842c6bf8eed47f6e59548f0a1c12f3a61824",
+      "case": "spell-15"
+    },
+    {
+      "file": "phase30-emulation-object-spell-16.json",
+      "sha256": "12739806d88984d7d928d8899c2ed581af2f524938c05dd01f105a5f234d0877",
+      "case": "spell-16"
+    },
+    {
+      "file": "phase30-emulation-object-spell-17.json",
+      "sha256": "a8b2f3a6769514428ede49c1f11c8da31469ffaf097b9582a40024fbdfef9393",
+      "case": "spell-17"
+    },
+    {
+      "file": "phase30-emulation-object-spell-18.json",
+      "sha256": "93ae3dd3c2ca830a8545902054aeda8dfe9f096349b6ceb22d193f28e6a15af2",
+      "case": "spell-18"
+    },
+    {
+      "file": "phase30-emulation-object-spell-19.json",
+      "sha256": "eae4ec43c602d837dd40eeebab4938b09ffe1f05d96d7ec7a6cf2b99fab24895",
+      "case": "spell-19"
+    },
+    {
+      "file": "phase30-emulation-object-spell-258.json",
+      "sha256": "b3a609d1bca8eb8f0b1f4766f9daa027e6916b411ceb883441ba83145901bbe3",
+      "case": "spell-258"
+    },
+    {
+      "file": "phase30-emulation-object-spell-4294967295.json",
+      "sha256": "0438d1c153e9ceae167e496eb7abfb84d2c4e4623b6e9de7fcba5e00397162bf",
+      "case": "spell-4294967295"
+    },
+    {
+      "file": "phase30-emulation-object-crate-0.json",
+      "sha256": "6b0c57b7907b47d86970d89a0a62258e57f69234d1912e032c1e8044bd68a170",
+      "case": "crate-0"
+    },
+    {
+      "file": "phase30-emulation-object-crate-4.json",
+      "sha256": "c1d732c71432b3a7ad9bcd9e4781e7287ad689d18906d900fe71e8d56835eaa6",
+      "case": "crate-4"
+    },
+    {
+      "file": "phase30-emulation-object-crate-5.json",
+      "sha256": "1ece41d620baa46b23180df5b4237aa7a0093e5c685dfe0143d23f3217467c7a",
+      "case": "crate-5"
+    },
+    {
+      "file": "phase30-emulation-object-crate-6.json",
+      "sha256": "fdcc38edad3b306095564a4feaa9835d4ca3bec96a73e461247e2d1e3728a42f",
+      "case": "crate-6"
+    },
+    {
+      "file": "phase30-emulation-object-crate-28.json",
+      "sha256": "82885a4eff22b2eea845e2978971b1839a385e620edaf014298382b2aa36e81c",
+      "case": "crate-28"
+    },
+    {
+      "file": "phase30-emulation-object-crate-35.json",
+      "sha256": "763fef7efb57407f0fa2d8951925af94c49762fe9ffb3dfec3dda64f74a8f0b9",
+      "case": "crate-35"
+    },
+    {
+      "file": "phase30-emulation-object-crate-36.json",
+      "sha256": "566238d818797d3c69d090e4f5c64af27e2995359a43b5c8b25bdee979f686b0",
+      "case": "crate-36"
+    },
+    {
+      "file": "phase30-emulation-object-crate-37.json",
+      "sha256": "420690b48873b915bf1049cdc0aeed4998ec3eda56d9f662aad97ed5d0c32674",
+      "case": "crate-37"
+    },
+    {
+      "file": "phase30-emulation-object-crate-38.json",
+      "sha256": "55fffa727c1c7064fd39f65822a2006c8b08155119e7da22ac266ac3a7edcf82",
+      "case": "crate-38"
+    },
+    {
+      "file": "phase30-emulation-object-crate-39.json",
+      "sha256": "9e718327f9887ee38f73943651ed73496188fc7dd3f4206e7752480c88f0e2ea",
+      "case": "crate-39"
+    },
+    {
+      "file": "phase30-emulation-object-crate-40.json",
+      "sha256": "36d1338439e96ad43f3f6d4546251ccd0d6215f6afc94032d7d991e08b1a3172",
+      "case": "crate-40"
+    },
+    {
+      "file": "phase30-emulation-object-crate-41.json",
+      "sha256": "a71a6905c35636cb9a55dca6273cbc59990e9fa166689d42bc57ac95e73bcc55",
+      "case": "crate-41"
+    },
+    {
+      "file": "phase30-emulation-object-crate-42.json",
+      "sha256": "c03ad1a123e37183b356c4a85d1f6cdfaa72f215b06e4396e6fd2fb117b3b5b0",
+      "case": "crate-42"
+    },
+    {
+      "file": "phase30-emulation-object-crate-43.json",
+      "sha256": "7d5a6e1ad0720dcb55a9c109a661d2f398844dae87db0506775156efdb02b627",
+      "case": "crate-43"
+    },
+    {
+      "file": "phase30-emulation-object-crate-44.json",
+      "sha256": "fe4b86de11de0bcae8d64cf36fc7124e501ab9998041ea9dde941a99e71e2cee",
+      "case": "crate-44"
+    },
+    {
+      "file": "phase30-emulation-object-crate-45.json",
+      "sha256": "e00ce809651062f6ba50ea19a61d5b6f158f886fc8d7e906b1f3573131647c74",
+      "case": "crate-45"
+    },
+    {
+      "file": "phase30-emulation-object-crate-51.json",
+      "sha256": "7a6e3311cdda67cd15689739ec263d37b7b7cdf41999210376da869f35119a48",
+      "case": "crate-51"
+    },
+    {
+      "file": "phase30-emulation-object-crate-52.json",
+      "sha256": "bab41ddf9931045e1ff3257c564b6070dd26b12eac31d097214f39974927efeb",
+      "case": "crate-52"
+    },
+    {
+      "file": "phase30-emulation-object-crate-53.json",
+      "sha256": "dc003b2722c809efc4dc79314ee6882b0e1e7773ac79252b534083bf7097a1c0",
+      "case": "crate-53"
+    },
+    {
+      "file": "phase30-emulation-object-crate-54.json",
+      "sha256": "847f003db090e5bdd2544d7cafda9eeb449a8dde6c55e7f9c5cdd6de3a60e522",
+      "case": "crate-54"
+    },
+    {
+      "file": "phase30-emulation-object-crate-55.json",
+      "sha256": "86922608718de13e9060675d5e48b6313663a365883c8d1ff0d1bab87333abb7",
+      "case": "crate-55"
+    },
+    {
+      "file": "phase30-emulation-object-crate-56.json",
+      "sha256": "f8ca75bddf083370ef47c3428b84c481a9157efd7b044d13e3c0b79a7706b026",
+      "case": "crate-56"
+    },
+    {
+      "file": "phase30-emulation-object-crate-57.json",
+      "sha256": "3fbb429ff6835feb3e3e83f28f6c93724aab968e272669467ceb31a5d6bf5cf9",
+      "case": "crate-57"
+    },
+    {
+      "file": "phase30-emulation-object-crate-58.json",
+      "sha256": "6dcac4329d4cd117364f8bbd2f51eced81e606f10585962b53a91200b909c0e0",
+      "case": "crate-58"
+    },
+    {
+      "file": "phase30-emulation-object-crate-91.json",
+      "sha256": "7abeab184badb866dfaec954a9c79eb7cd9f8b5baf2edd6b42e142505d46637a",
+      "case": "crate-91"
+    },
+    {
+      "file": "phase30-emulation-object-crate-92.json",
+      "sha256": "c0b55e1e10fa9d826456036e4b07272aa1bc6f6eb5547c4fe77eaff0c842c10c",
+      "case": "crate-92"
+    },
+    {
+      "file": "phase30-emulation-object-crate-93.json",
+      "sha256": "5c3e32b35c799f1a158572b7893d10f002e3236b0f5562eef97138e2a5559a26",
+      "case": "crate-93"
+    },
+    {
+      "file": "phase30-emulation-object-crate-137.json",
+      "sha256": "b3e2eb1bafa7469459caa84973a129e9caa128d1e35dd1154703b9531a2e8db9",
+      "case": "crate-137"
+    },
+    {
+      "file": "phase30-emulation-object-crate-138.json",
+      "sha256": "88a8fa922263101f5999015c7ce0169f03a975a325011d529f97bbceece6aed2",
+      "case": "crate-138"
+    },
+    {
+      "file": "phase30-emulation-object-crate-139.json",
+      "sha256": "68203714a6024ee1b21c6607a3b9a842eb1570234c739f3317124762185598eb",
+      "case": "crate-139"
+    },
+    {
+      "file": "phase30-emulation-object-crate-255.json",
+      "sha256": "fa5159a88272fff440f1578a29bec56598e6b9e8202f447906f0d9f7b5641f8e",
+      "case": "crate-255"
+    },
+    {
+      "file": "phase30-emulation-object-priority-0.json",
+      "sha256": "68f6821a5d6d7d183d811ee8ed9be4c3de8be6acf854ecc15f749f811b165426",
+      "case": "priority-0"
+    },
+    {
+      "file": "phase30-emulation-object-priority-4.json",
+      "sha256": "5807f68a283a761eb909e4118b6eac67fe6c098c02c77cc4ced30d77ca82d7bb",
+      "case": "priority-4"
+    },
+    {
+      "file": "phase30-emulation-object-priority-24.json",
+      "sha256": "982a4c1f47d17c16bf0abd696a451905d1989c8844477e4b5b68f0b12df7f779",
+      "case": "priority-24"
+    },
+    {
+      "file": "phase30-emulation-object-priority-72.json",
+      "sha256": "8519cbd65d24f2394f586746e06c1b4792f23e07a5798b5a3453baafb7f02977",
+      "case": "priority-72"
+    },
+    {
+      "file": "phase30-emulation-object-priority-80.json",
+      "sha256": "c5df455ea878feaa8337f433d6f40d2a6495093de89b9af1145f19badef64b66",
+      "case": "priority-80"
+    },
+    {
+      "file": "phase30-emulation-object-priority-88.json",
+      "sha256": "93b6ccb2808635a83b9c07456a2c4fafc07fef816ff4ef89bc56b7cdeb461a5d",
+      "case": "priority-88"
+    },
+    {
+      "file": "phase30-emulation-object-priority-4294967295.json",
+      "sha256": "94be15cff556ff630bb474e846c70f06b34ba158e42b201bd81bc833a207ef51",
+      "case": "priority-4294967295"
+    },
+    {
+      "file": "phase30-emulation-object-gold-0-0.json",
+      "sha256": "d65fe279d70fe033ba1c6abc0f03c0c274c85c766be515219564b086ef2509da",
+      "case": "gold-0-0"
+    },
+    {
+      "file": "phase30-emulation-object-gold-55-0.json",
+      "sha256": "6c5feb498eafd6a2a1ce229f0c2c766ca994ad86a13727bed8abdea8015bb375",
+      "case": "gold-55-0"
+    },
+    {
+      "file": "phase30-emulation-object-gold-55-4294967295.json",
+      "sha256": "2c7e52c7ff83dba50eba410153bde95f6bee9b6c9adec0994c23b8a418a80e70",
+      "case": "gold-55-4294967295"
+    },
+    {
+      "file": "phase30-emulation-object-gold-0-4294967295.json",
+      "sha256": "fa88ee5c0636c7cacd5c0a5e37f54a51459f5bfe3a3d62be77f1e504345176c1",
+      "case": "gold-0-4294967295"
+    },
+    {
+      "file": "phase30-emulation-object-gold-0-2147483648.json",
+      "sha256": "6a32abadc6012900af78ab7c9093b06e10322029bc82d49475402d669a119125",
+      "case": "gold-0-2147483648"
+    },
+    {
+      "file": "phase30-emulation-object-gold-0-2147483647.json",
+      "sha256": "c0b562cb9a5f91606683fb238a9c2809f716057bffc73a844bda4d8433d9ccb6",
+      "case": "gold-0-2147483647"
+    },
+    {
+      "file": "phase30-emulation-object-gold-55-2147483647.json",
+      "sha256": "cf02460a8042e068877da849b5e10a56327e54529992a1d42771709dc3a70c1a",
+      "case": "gold-55-2147483647"
+    },
+    {
+      "file": "phase30-emulation-object-gold-4294967295-1.json",
+      "sha256": "e80a345ff11df6bd09ffb1dab459bf27596e5bf9384dc36f045d2bbdb33c345d",
+      "case": "gold-4294967295-1"
+    },
+    {
+      "file": "phase30-emulation-object-gold-4294967040-512.json",
+      "sha256": "0e7b643228cea3b85a702650c220bed4fa640c6319882239fbc51010b6ec1be3",
+      "case": "gold-4294967040-512"
+    },
+    {
+      "file": "phase30-emulation-object-creator-actual-id.json",
+      "sha256": "16c92b3c46c7d5a198f2008a347b93572ba7d79def4afb257c54839ed36e49f0",
+      "case": "creator-actual-id"
+    },
+    {
+      "file": "phase30-emulation-object-creator-failure.json",
+      "sha256": "1eaf235e805de6ffc5d106d04164baaed07b221f372c97debefe4782bf8e63a2",
+      "case": "creator-failure"
+    },
+    {
+      "file": "phase30-emulation-object-negative-coordinate.json",
+      "sha256": "0feeae4d1fce880f0f7ed0085796ae9afdcb6efb67077d97f326fa260722de2c",
+      "case": "negative-coordinate"
+    },
+    {
+      "file": "phase30-emulation-object-placement-opaque-0.json",
+      "sha256": "0ce5bf77784c41d8820b498cc62a0dc5dfc71f72d199725248c108851cf19132",
+      "case": "placement-opaque-0"
+    },
+    {
+      "file": "phase30-emulation-object-placement-opaque-4294967295.json",
+      "sha256": "953c0afc542f8afaf9d01a078348fc940e606e95a59c861f5f842413b9d61aa5",
+      "case": "placement-opaque-4294967295"
+    },
+    {
+      "file": "phase30-emulation-object-writer-0.json",
+      "sha256": "b3609e23cba3a45bc70b75eccf0de3a97b4748d4cb0ecf7e209ec8db55bcafbe",
+      "case": "writer-0"
+    },
+    {
+      "file": "phase30-emulation-object-writer-4.json",
+      "sha256": "0621701d39b860132b35cbc05cd3dcee5829afaebd84005759aca3a0dddd2cca",
+      "case": "writer-4"
+    },
+    {
+      "file": "phase30-emulation-object-writer-8.json",
+      "sha256": "b335a859308503b011c4cb2e8f0b5c92eb3ebe7e0f36281d43afeb42663b12f2",
+      "case": "writer-8"
+    },
+    {
+      "file": "phase30-emulation-object-writer-16.json",
+      "sha256": "24e1dde7180fe36c7d64842d8fa598176f6bfdf35c8d00b8949d9aef04d24f3f",
+      "case": "writer-16"
+    },
+    {
+      "file": "phase30-emulation-object-writer-24.json",
+      "sha256": "f3c5ad231c9795c0540a156dafdaf9319c03ae57fe9a437e2ffd503ae62671ca",
+      "case": "writer-24"
+    },
+    {
+      "file": "phase30-emulation-object-writer-64.json",
+      "sha256": "34d34d1b95689291cd3f4e1ae8c43ebc1b6ce62a6f8bb51b7f0142f8404ce245",
+      "case": "writer-64"
+    },
+    {
+      "file": "phase30-emulation-object-writer-72.json",
+      "sha256": "1efe9c3db223d7e648c1aa378e03bef22392aa87a9fa02ad6b594f21ab47320f",
+      "case": "writer-72"
+    },
+    {
+      "file": "phase30-emulation-object-writer-68.json",
+      "sha256": "98eb775fe5a4f39999b078a45b1005f87e572d23b3e67da350a69b4227579971",
+      "case": "writer-68"
+    },
+    {
+      "file": "phase30-emulation-object-writer-88.json",
+      "sha256": "95d3c15181d589ac081c3d5dd9d6fa8f9e05e5c510863f6ade137024eb57a57f",
+      "case": "writer-88"
+    },
+    {
+      "file": "phase30-emulation-object-writer-4294967295.json",
+      "sha256": "e5b0323df6a8199afa14e0ab9272a53abcec74ec78533c0281147fd046446c2c",
+      "case": "writer-4294967295"
+    },
+    {
+      "file": "phase30-emulation-object-editor-load-0.json",
+      "sha256": "c6133cc5c628c7ae89725dfde3e551e62d9c55dcd5ff813d1a6afd174c2be135",
+      "case": "editor-load-0"
+    },
+    {
+      "file": "phase30-emulation-object-editor-load-4.json",
+      "sha256": "cedc7cf701f83d7aeffa19ba5fde1682bedc6ba06fa05fddbf4a592e027665f1",
+      "case": "editor-load-4"
+    },
+    {
+      "file": "phase30-emulation-object-editor-load-8.json",
+      "sha256": "c36e075ad2224f956e4378c194b763940dcdc18c260bc5245196cd032ff2504e",
+      "case": "editor-load-8"
+    },
+    {
+      "file": "phase30-emulation-object-editor-load-16.json",
+      "sha256": "e9dbf4973df228c3924e06cfce9e3786e46a90e539bc2f4f67f5b4969ba9148f",
+      "case": "editor-load-16"
+    },
+    {
+      "file": "phase30-emulation-object-editor-load-24.json",
+      "sha256": "cddd59f0174652c3f08364a7c676e6ef37e8a8c2d26d131d44ad785f4a11fdce",
+      "case": "editor-load-24"
+    },
+    {
+      "file": "phase30-emulation-object-editor-load-64.json",
+      "sha256": "865128f038dace20e3dc88b06375ce4bcc50d50b5358eb132b8ee202c4d2e3d7",
+      "case": "editor-load-64"
+    },
+    {
+      "file": "phase30-emulation-object-editor-load-72.json",
+      "sha256": "226ea95cb91ccc3c98c22c4ad7bd7dd3bbac9b90d526f94acaab7513f4413387",
+      "case": "editor-load-72"
+    },
+    {
+      "file": "phase30-emulation-object-editor-load-68.json",
+      "sha256": "bcee215a55977eda2952c14c815d57c0ac548e711a64a73c952330d59a63016c",
+      "case": "editor-load-68"
+    },
+    {
+      "file": "phase30-emulation-object-editor-selector-0.json",
+      "sha256": "4e4ad66c7881c647a6ccd42a3178eb54c197404c5c76ac8e5687f2a78f70d94d",
+      "case": "editor-selector-0"
+    },
+    {
+      "file": "phase30-emulation-object-editor-selector-17.json",
+      "sha256": "57dea75cfd1d68ccf355c0bed64cb69224524b52c03cbfa6c2ae50f6baa0dea8",
+      "case": "editor-selector-17"
+    },
+    {
+      "file": "phase30-emulation-object-editor-selector-18.json",
+      "sha256": "2b7b71ac077b1d9088d6926e6288b7d1ab45110b120731d692c82b97d2359037",
+      "case": "editor-selector-18"
+    },
+    {
+      "file": "phase30-emulation-object-editor-selector-4294967295.json",
+      "sha256": "152bf4cca76e7fe7f571ce3b49d9ce494a216ff5509b3fb99c37f299f867b6a3",
+      "case": "editor-selector-4294967295"
+    },
+    {
+      "file": "phase30-emulation-object-converter-0.json",
+      "sha256": "dda8319766564b9c8bf9cb89c179f962628326e1d86a422b24646286bd786e71",
+      "case": "converter-0"
+    },
+    {
+      "file": "phase30-emulation-object-converter-4294967295.json",
+      "sha256": "f9b19105ebe952854213e2862d2d24964e0dd6359562722cb32c196df85e5e9e",
+      "case": "converter-4294967295"
+    },
+    {
+      "file": "phase30-emulation-object-converter-305419896.json",
+      "sha256": "bdc0b078e71662bd617fc1731a78d04ec76b890ae073921bcc9428e3ac42ee25",
+      "case": "converter-305419896"
+    }
+  ],
+  "limitations": [
+    "Exact inspected EXEs. No complete level load, real editor GUI save or modified gameplay run.",
+    "Full game placement callbacks use explicit checksum/create fixtures. Original49C760 runs for IDs other than1/2, avoiding unverified x87 visual branches. Creation output IDs/flags/initial union fields are controlled inputs.",
+    "Full editor load callbacks use explicit creation and catalogue-array fixtures; original vector constructor, definition lookup, setters and selector execute. No model constructor side effects or missing-definition recovery are asserted.",
+    "Ten native writer runs execute payload assignment fragment only, after envelope/header. All24 payload bytes are captured and asserted via six DWORDs; actual getter and definition lookup bodies run, owner/XY/trigger providers and file I/O are fixtures.",
+    "Converter runs assert physical copy fields; checksum, world construction, triggering and book research are separate paths. Opaque bytes, high spell bytes and signed bit patterns remain raw-preserved by independent patch API."
+  ]
+}

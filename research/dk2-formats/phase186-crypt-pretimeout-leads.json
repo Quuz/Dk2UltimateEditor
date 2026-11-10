@@ -1,0 +1,30 @@
+{
+  "phase": 186,
+  "status": "static_leads_only_not_published_or_executed_successfully",
+  "goal_status": "active",
+  "current_block": "Crypt groups",
+  "starting_point": "phase185-validation.json passed; full bounded clock40 release/recovery/ritual chain published. The first update of state255 before its40tick timeout remains a separate incomplete context.",
+  "original_predeadline_path": {
+    "callback": "4810E0",
+    "condition": "unsigned(clock-entryTime)<definitionDWORD74C; contextDWORD1C==1",
+    "graphics_query": "OriginalCPCEngineInterface vslot10C ->59D380 receives Creature and attachment-ID5000, output position and count.",
+    "source_pipeline": "59D380 executes actual Creature vslot54 and2C then59D260(RenderInfo). 59D260 tests descriptorBYTEB mask0x01 and RenderInfoBYTEAF mask0x01; type6 invokes59C880.",
+    "graphics_builder": "59C880 uses engine primitive allocation57CEB0(99h) and583120. Current headless resource handle0 fixture lacks its concrete primitive/engine context; failure is not evidence of a game crash.",
+    "following_visual_request": "The original callback requests World vslot38C with ID101/65h; actual source definition and factory context must be supplied before accepting this branch. No semantic meaning inferred from the ID alone."
+  },
+  "primary_reuse": [
+    "ghidra/phase185-primary-4810e0-assembly.txt",
+    "ghidra/phase105-attack-59d380-force_decompile.txt",
+    "ghidra/phase102-builder-59d260-force_decompile.txt",
+    "ghidra/phase102-graphics-59c880-force_decompile.txt"
+  ],
+  "additional_lead": "Writes to RenderInfoBYTEAF were seen at original4B36E6/4B36F4 and4B4145/4B4155. The latter is inside the known4B4120 entry. Exact writer arguments/purpose need primary tracing; no visibility flag semantics assigned yet.",
+  "next_actions": [
+    "Inspect existing procedural/model primitive fixtures before constructing a new engine context; preserve original game methods and vtables.",
+    "Trace native RenderInfo flag writer contract. A disabled-graphics causal control may be useful but must not be presented as the ordinary visible game path.",
+    "Supply actual definition/factory for visual request101, then test pretimeout39, boundary40 and appropriate independentGhidra controls.",
+    "Return to ordinary Crypt job selection and10 unassigned owner-counter readers after closing the entry-context question."
+  ],
+  "limitations": "No new raw fields or counter meanings assigned by these static leads. No native code patches, source-file edits, GPU rendering or goal completion.",
+  "source_writes": 0
+}

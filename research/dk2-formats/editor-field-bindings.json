@@ -1,0 +1,1051 @@
+{
+  "program": "DK2 Editor pro.exe",
+  "sha256": "989c45df779bccfc9a9e509b2ad0224a9bd269629f74792adc0320fa4b99fb09",
+  "scope": "Selected raw/intermediate/editor/dialog chains, static examination of the supplied Editor Pro build.",
+  "warning": "Template visibility is not proof of live visibility. Editor labels/ranges are not proof of game behavior or universal file limits.",
+  "constants": {
+    "raw_to_editor_double": {
+      "address": "0x50ac48",
+      "value": 0.000244140625
+    },
+    "editor_double_to_raw": {
+      "address": "0x50ac58",
+      "value": 4096.0
+    }
+  },
+  "bindings": [
+    {
+      "family": "Terrain",
+      "baseline_field": "StartingHealth",
+      "raw_offset": 471,
+      "raw_bytes": 2,
+      "intermediate_offset": "0x28f",
+      "editor_model_offset": "0x348",
+      "editor_dialog_offset": "0x5e",
+      "label": "Starting Health:",
+      "control": {
+        "dialog": 143,
+        "control_id": 10531,
+        "control_id_hex": "0x2923",
+        "resource_path": [
+          5,
+          143,
+          2057
+        ],
+        "control": {
+          "id": 10531,
+          "title": "",
+          "window_class": {
+            "ordinal": 129
+          },
+          "style": "0x50812080",
+          "template_visible": true,
+          "template_disabled": false,
+          "x": 143,
+          "y": 158,
+          "width": 35,
+          "height": 13
+        }
+      },
+      "editor_interpretation": "signed_word",
+      "editor_validation_range": [
+        0,
+        32767
+      ],
+      "editor_scale": 1,
+      "evidence": [
+        {
+          "file": "editor-phase8-terrain-panel-load.txt",
+          "line": 39,
+          "excerpt": "*(undefined2 *)((int)this + 0x5e) = *(undefined2 *)(*(int *)((int)this + 0x10c) + 0x348);"
+        },
+        {
+          "file": "editor-phase8-terrain-ddx-actual.txt",
+          "line": 7,
+          "excerpt": "FUN_004e47c1(param_2,0x2923);"
+        }
+      ]
+    },
+    {
+      "family": "Terrain",
+      "baseline_field": "MaxHealth",
+      "raw_offset": 511,
+      "raw_bytes": 2,
+      "intermediate_offset": "0x2b7",
+      "editor_model_offset": "0x34a",
+      "editor_dialog_offset": "0x5c",
+      "label": "Max Health:",
+      "control": {
+        "dialog": 143,
+        "control_id": 10931,
+        "control_id_hex": "0x2ab3",
+        "resource_path": [
+          5,
+          143,
+          2057
+        ],
+        "control": {
+          "id": 10931,
+          "title": "",
+          "window_class": {
+            "ordinal": 129
+          },
+          "style": "0x50812080",
+          "template_visible": true,
+          "template_disabled": false,
+          "x": 48,
+          "y": 158,
+          "width": 35,
+          "height": 13
+        }
+      },
+      "editor_interpretation": "signed_word",
+      "editor_validation_range": [
+        0,
+        32767
+      ],
+      "editor_scale": 1,
+      "evidence": [
+        {
+          "file": "editor-phase8-terrain-panel-load.txt",
+          "line": 38,
+          "excerpt": "*(undefined2 *)((int)this + 0x5c) = *(undefined2 *)(*(int *)((int)this + 0x10c) + 0x34a);"
+        },
+        {
+          "file": "editor-phase8-terrain-ddx-actual.txt",
+          "line": 5,
+          "excerpt": "FUN_004e47c1(param_2,0x2ab3);"
+        }
+      ]
+    },
+    {
+      "family": "Terrain",
+      "baseline_field": "Damage",
+      "raw_offset": 404,
+      "raw_bytes": 2,
+      "intermediate_offset": "0x24c",
+      "editor_model_offset": "0x368",
+      "editor_dialog_offset": "0x68",
+      "label": "Damage:",
+      "control": {
+        "dialog": 143,
+        "control_id": 1052,
+        "control_id_hex": "0x41c",
+        "resource_path": [
+          5,
+          143,
+          2057
+        ],
+        "control": {
+          "id": 1052,
+          "title": "",
+          "window_class": {
+            "ordinal": 129
+          },
+          "style": "0x50810080",
+          "template_visible": true,
+          "template_disabled": false,
+          "x": 48,
+          "y": 118,
+          "width": 35,
+          "height": 13
+        }
+      },
+      "editor_interpretation": "signed_word_to_int",
+      "editor_validation_range": [
+        -32767,
+        32767
+      ],
+      "editor_scale": 1,
+      "evidence": [
+        {
+          "file": "editor-phase8-terrain-panel-load.txt",
+          "line": 44,
+          "excerpt": "*(int *)((int)this + 0x68) = (int)*(short *)(*(int *)((int)this + 0x10c) + 0x368);"
+        },
+        {
+          "file": "editor-phase8-terrain-ddx-actual.txt",
+          "line": 15,
+          "excerpt": "DDX_Text(param_2,0x41c);"
+        }
+      ]
+    },
+    {
+      "family": "Terrain",
+      "baseline_field": "GoldValue",
+      "raw_offset": 410,
+      "raw_bytes": 2,
+      "intermediate_offset": "0x252",
+      "editor_model_offset": "0x36a",
+      "editor_dialog_offset": "0x64",
+      "label": "Gold Value:",
+      "control": {
+        "dialog": 143,
+        "control_id": 1049,
+        "control_id_hex": "0x419",
+        "resource_path": [
+          5,
+          143,
+          2057
+        ],
+        "control": {
+          "id": 1049,
+          "title": "",
+          "window_class": {
+            "ordinal": 129
+          },
+          "style": "0x50812080",
+          "template_visible": true,
+          "template_disabled": false,
+          "x": 48,
+          "y": 138,
+          "width": 35,
+          "height": 13
+        }
+      },
+      "editor_interpretation": "unsigned_word_to_int",
+      "editor_validation_range": [
+        0,
+        32767
+      ],
+      "editor_scale": 1,
+      "evidence": [
+        {
+          "file": "editor-phase8-terrain-panel-load.txt",
+          "line": 42,
+          "excerpt": "*(uint *)((int)this + 100) = (uint)*(ushort *)(*(int *)((int)this + 0x10c) + 0x36a);"
+        },
+        {
+          "file": "editor-phase8-terrain-ddx-actual.txt",
+          "line": 13,
+          "excerpt": "DDX_Text(param_2,0x419);"
+        }
+      ]
+    },
+    {
+      "family": "Terrain",
+      "baseline_field": "ManaGain",
+      "raw_offset": 412,
+      "raw_bytes": 2,
+      "intermediate_offset": "0x254",
+      "editor_model_offset": "0x36c",
+      "editor_dialog_offset": "0x60",
+      "label": "Mana Gain:",
+      "control": {
+        "dialog": 143,
+        "control_id": 1051,
+        "control_id_hex": "0x41b",
+        "resource_path": [
+          5,
+          143,
+          2057
+        ],
+        "control": {
+          "id": 1051,
+          "title": "",
+          "window_class": {
+            "ordinal": 129
+          },
+          "style": "0x50810080",
+          "template_visible": true,
+          "template_disabled": false,
+          "x": 48,
+          "y": 178,
+          "width": 35,
+          "height": 13
+        }
+      },
+      "editor_interpretation": "signed_word",
+      "editor_validation_range": [
+        -32767,
+        32767
+      ],
+      "editor_scale": 1,
+      "evidence": [
+        {
+          "file": "editor-phase8-terrain-panel-load.txt",
+          "line": 40,
+          "excerpt": "*(undefined2 *)((int)this + 0x60) = *(undefined2 *)(*(int *)((int)this + 0x10c) + 0x36c);"
+        },
+        {
+          "file": "editor-phase8-terrain-ddx-actual.txt",
+          "line": 9,
+          "excerpt": "FUN_004e47c1(param_2,0x41b);"
+        }
+      ]
+    },
+    {
+      "family": "Terrain",
+      "baseline_field": "MaxManaGain",
+      "raw_offset": 414,
+      "raw_bytes": 2,
+      "intermediate_offset": "0x256",
+      "editor_model_offset": "0x36e",
+      "editor_dialog_offset": "0x62",
+      "label": "Max Mana Gain:",
+      "control": {
+        "dialog": 143,
+        "control_id": 10511,
+        "control_id_hex": "0x290f",
+        "resource_path": [
+          5,
+          143,
+          2057
+        ],
+        "control": {
+          "id": 10511,
+          "title": "",
+          "window_class": {
+            "ordinal": 129
+          },
+          "style": "0x50810080",
+          "template_visible": true,
+          "template_disabled": false,
+          "x": 143,
+          "y": 178,
+          "width": 35,
+          "height": 13
+        }
+      },
+      "editor_interpretation": "signed_word",
+      "editor_validation_range": [
+        -32767,
+        32767
+      ],
+      "editor_scale": 1,
+      "evidence": [
+        {
+          "file": "editor-phase8-terrain-panel-load.txt",
+          "line": 41,
+          "excerpt": "*(undefined2 *)((int)this + 0x62) = *(undefined2 *)(*(int *)((int)this + 0x10c) + 0x36e);"
+        },
+        {
+          "file": "editor-phase8-terrain-ddx-actual.txt",
+          "line": 11,
+          "excerpt": "FUN_004e47c1(param_2,0x290f);"
+        }
+      ]
+    },
+    {
+      "family": "Terrain",
+      "baseline_field": "WibbleH",
+      "raw_offset": 462,
+      "raw_bytes": 1,
+      "intermediate_offset": "0x286",
+      "editor_model_offset": "0x360",
+      "editor_dialog_offset": "0x6c",
+      "label": "Wibble H:",
+      "control": {
+        "dialog": 143,
+        "control_id": 1053,
+        "control_id_hex": "0x41d",
+        "resource_path": [
+          5,
+          143,
+          2057
+        ],
+        "control": {
+          "id": 1053,
+          "title": "",
+          "window_class": {
+            "ordinal": 129
+          },
+          "style": "0x50812080",
+          "template_visible": true,
+          "template_disabled": false,
+          "x": 220,
+          "y": 158,
+          "width": 35,
+          "height": 13
+        }
+      },
+      "editor_interpretation": "unsigned_byte",
+      "editor_validation_range": [
+        0,
+        255
+      ],
+      "editor_scale": 1,
+      "evidence": [
+        {
+          "file": "editor-phase8-terrain-panel-load.txt",
+          "line": 45,
+          "excerpt": "*(undefined1 *)((int)this + 0x6c) = *(undefined1 *)(*(int *)((int)this + 0x10c) + 0x360);"
+        },
+        {
+          "file": "editor-phase8-terrain-ddx-actual.txt",
+          "line": 17,
+          "excerpt": "FUN_004e4750(param_2,0x41d,(byte *)(param_1 + 0x6c));"
+        }
+      ]
+    },
+    {
+      "family": "Terrain",
+      "baseline_field": "WibbleV",
+      "raw_offset": 466,
+      "raw_bytes": 1,
+      "intermediate_offset": "0x28a",
+      "editor_model_offset": "0x361",
+      "editor_dialog_offset": "0x6d",
+      "label": "Wibble V:",
+      "control": {
+        "dialog": 143,
+        "control_id": 10512,
+        "control_id_hex": "0x2910",
+        "resource_path": [
+          5,
+          143,
+          2057
+        ],
+        "control": {
+          "id": 10512,
+          "title": "",
+          "window_class": {
+            "ordinal": 129
+          },
+          "style": "0x50812080",
+          "template_visible": true,
+          "template_disabled": false,
+          "x": 220,
+          "y": 178,
+          "width": 35,
+          "height": 13
+        }
+      },
+      "editor_interpretation": "unsigned_byte",
+      "editor_validation_range": [
+        0,
+        255
+      ],
+      "editor_scale": 1,
+      "evidence": [
+        {
+          "file": "editor-phase8-terrain-panel-load.txt",
+          "line": 46,
+          "excerpt": "*(undefined1 *)((int)this + 0x6d) = *(undefined1 *)(*(int *)((int)this + 0x10c) + 0x361);"
+        },
+        {
+          "file": "editor-phase8-terrain-ddx-actual.txt",
+          "line": 19,
+          "excerpt": "FUN_004e4750(param_2,0x2910,(byte *)(param_1 + 0x6d));"
+        }
+      ]
+    },
+    {
+      "family": "Terrain",
+      "baseline_field": "Depth",
+      "raw_offset": 392,
+      "raw_bytes": 4,
+      "intermediate_offset": "0x240",
+      "editor_model_offset": "0x358",
+      "editor_dialog_offset": "0x70",
+      "label": "Depth:",
+      "control": {
+        "dialog": 143,
+        "control_id": 1050,
+        "control_id_hex": "0x41a",
+        "resource_path": [
+          5,
+          143,
+          2057
+        ],
+        "control": {
+          "id": 1050,
+          "title": "",
+          "window_class": {
+            "ordinal": 129
+          },
+          "style": "0x50810080",
+          "template_visible": true,
+          "template_disabled": false,
+          "x": 48,
+          "y": 98,
+          "width": 35,
+          "height": 13
+        }
+      },
+      "editor_interpretation": "fixed_u32_to_double",
+      "editor_validation_range": [
+        0,
+        16
+      ],
+      "editor_scale": 0.000244140625,
+      "evidence": [
+        {
+          "file": "editor-phase8-terrain-panel-load.txt",
+          "line": 43,
+          "excerpt": "*(undefined8 *)((int)this + 0x70) = *(undefined8 *)(*(int *)((int)this + 0x10c) + 0x358);"
+        },
+        {
+          "file": "editor-phase8-terrain-ddx-actual.txt",
+          "line": 21,
+          "excerpt": "FUN_004e4f78(param_2,0x41a,(double *)(param_1 + 0x70));"
+        }
+      ]
+    },
+    {
+      "family": "Terrain",
+      "baseline_field": "LightHeight",
+      "raw_offset": 396,
+      "raw_bytes": 4,
+      "intermediate_offset": "0x244",
+      "editor_model_offset": "0x318",
+      "editor_dialog_offset": "0x98",
+      "label": "Height:",
+      "control": {
+        "dialog": 143,
+        "control_id": 1777,
+        "control_id_hex": "0x6f1",
+        "resource_path": [
+          5,
+          143,
+          2057
+        ],
+        "control": {
+          "id": 1777,
+          "title": "",
+          "window_class": {
+            "ordinal": 129
+          },
+          "style": "0x50810080",
+          "template_visible": true,
+          "template_disabled": false,
+          "x": 237,
+          "y": 209,
+          "width": 35,
+          "height": 13
+        }
+      },
+      "editor_interpretation": "fixed_u32_to_double",
+      "editor_validation_range": [
+        0,
+        16384
+      ],
+      "editor_scale": 0.000244140625,
+      "evidence": [
+        {
+          "file": "editor-phase8-terrain-panel-load.txt",
+          "line": 54,
+          "excerpt": "*(undefined8 *)((int)this + 0x98) = *(undefined8 *)(*(int *)((int)this + 0x10c) + 0x318);"
+        },
+        {
+          "file": "editor-phase8-terrain-ddx-actual.txt",
+          "line": 34,
+          "excerpt": "FUN_004e4f78(param_2,0x6f1,(double *)(param_1 + 0x98));"
+        }
+      ]
+    },
+    {
+      "family": "Traps",
+      "baseline_field": "Height",
+      "raw_offset": 452,
+      "raw_bytes": 4,
+      "intermediate_offset": "0x26c",
+      "editor_model_offset": "0x228",
+      "editor_dialog_offset": "0x68",
+      "label": "Height:",
+      "control": {
+        "dialog": 326,
+        "control_id": 1872,
+        "control_id_hex": "0x750",
+        "resource_path": [
+          5,
+          326,
+          2057
+        ],
+        "control": {
+          "id": 1872,
+          "title": "",
+          "window_class": {
+            "ordinal": 129
+          },
+          "style": "0x50810080",
+          "template_visible": true,
+          "template_disabled": false,
+          "x": 62,
+          "y": 146,
+          "width": 35,
+          "height": 13
+        }
+      },
+      "editor_interpretation": "fixed_u32_to_double",
+      "editor_validation_range": [
+        0,
+        1000
+      ],
+      "editor_scale": 0.000244140625,
+      "evidence": [
+        {
+          "file": "editor-phase8-traps-panel-load.txt",
+          "line": 44,
+          "excerpt": "*(undefined8 *)((int)this + 0x68) = *(undefined8 *)(*(int *)((int)this + 0x148) + 0x228);"
+        },
+        {
+          "file": "editor-phase8-traps-ddx.txt",
+          "line": 7,
+          "excerpt": "FUN_004e4f78(param_1,0x750,(double *)((int)this + 0x68));"
+        }
+      ],
+      "caveat": null
+    },
+    {
+      "family": "Traps",
+      "baseline_field": "Health",
+      "raw_offset": 496,
+      "raw_bytes": 2,
+      "intermediate_offset": "0x298",
+      "editor_model_offset": "0x232",
+      "editor_dialog_offset": "0x70",
+      "label": "Health:",
+      "control": {
+        "dialog": 326,
+        "control_id": 1281,
+        "control_id_hex": "0x501",
+        "resource_path": [
+          5,
+          326,
+          2057
+        ],
+        "control": {
+          "id": 1281,
+          "title": "",
+          "window_class": {
+            "ordinal": 129
+          },
+          "style": "0x50812080",
+          "template_visible": true,
+          "template_disabled": false,
+          "x": 62,
+          "y": 26,
+          "width": 35,
+          "height": 13
+        }
+      },
+      "editor_interpretation": "unsigned_word_to_int",
+      "editor_validation_range": [
+        0,
+        32767
+      ],
+      "editor_scale": 1,
+      "evidence": [
+        {
+          "file": "editor-phase8-traps-panel-load.txt",
+          "line": 45,
+          "excerpt": "*(uint *)((int)this + 0x70) = (uint)*(ushort *)(*(int *)((int)this + 0x148) + 0x232);"
+        },
+        {
+          "file": "editor-phase8-traps-ddx.txt",
+          "line": 13,
+          "excerpt": "DDX_Text(param_1,0x501);"
+        }
+      ],
+      "caveat": null
+    },
+    {
+      "family": "Traps",
+      "baseline_field": "HealthGain",
+      "raw_offset": 577,
+      "raw_bytes": 2,
+      "intermediate_offset": "0x2e9",
+      "editor_model_offset": "0x234",
+      "editor_dialog_offset": "0x74",
+      "label": "Health Gain:",
+      "control": {
+        "dialog": 326,
+        "control_id": 1282,
+        "control_id_hex": "0x502",
+        "resource_path": [
+          5,
+          326,
+          2057
+        ],
+        "control": {
+          "id": 1282,
+          "title": "",
+          "window_class": {
+            "ordinal": 129
+          },
+          "style": "0x50812080",
+          "template_visible": true,
+          "template_disabled": false,
+          "x": 62,
+          "y": 166,
+          "width": 35,
+          "height": 13
+        }
+      },
+      "editor_interpretation": "signed_word_to_int",
+      "editor_validation_range": [
+        0,
+        32767
+      ],
+      "editor_scale": 1,
+      "evidence": [
+        {
+          "file": "editor-phase8-traps-panel-load.txt",
+          "line": 46,
+          "excerpt": "*(int *)((int)this + 0x74) = (int)*(short *)(*(int *)((int)this + 0x148) + 0x234);"
+        },
+        {
+          "file": "editor-phase8-traps-ddx.txt",
+          "line": 15,
+          "excerpt": "DDX_Text(param_1,0x502);"
+        }
+      ],
+      "caveat": null
+    },
+    {
+      "family": "Traps",
+      "baseline_field": "ManaUsage",
+      "raw_offset": 514,
+      "raw_bytes": 2,
+      "intermediate_offset": "0x2aa",
+      "editor_model_offset": "0x236",
+      "editor_dialog_offset": "0x60",
+      "label": "Mana Usage:",
+      "control": {
+        "dialog": 326,
+        "control_id": 1786,
+        "control_id_hex": "0x6fa",
+        "resource_path": [
+          5,
+          326,
+          2057
+        ],
+        "control": {
+          "id": 1786,
+          "title": "",
+          "window_class": {
+            "ordinal": 129
+          },
+          "style": "0x50810080",
+          "template_visible": true,
+          "template_disabled": false,
+          "x": 62,
+          "y": 106,
+          "width": 35,
+          "height": 13
+        }
+      },
+      "editor_interpretation": "signed_word_to_int",
+      "editor_validation_range": [
+        -32767,
+        32767
+      ],
+      "editor_scale": 1,
+      "evidence": [
+        {
+          "file": "editor-phase8-traps-panel-load.txt",
+          "line": 48,
+          "excerpt": "*(int *)((int)this + 0x60) = (int)*(short *)(*(int *)((int)this + 0x148) + 0x236);"
+        },
+        {
+          "file": "editor-phase8-traps-ddx.txt",
+          "line": 9,
+          "excerpt": "DDX_Text(param_1,0x6fa);"
+        }
+      ],
+      "caveat": null
+    },
+    {
+      "family": "Traps",
+      "baseline_field": "GoldCost",
+      "raw_offset": 498,
+      "raw_bytes": 2,
+      "intermediate_offset": "0x29a",
+      "editor_model_offset": "0x230",
+      "editor_dialog_offset": "0x7c",
+      "label": "Mana Cost:",
+      "control": {
+        "dialog": 326,
+        "control_id": 12983,
+        "control_id_hex": "0x32b7",
+        "resource_path": [
+          5,
+          326,
+          2057
+        ],
+        "control": {
+          "id": 12983,
+          "title": "",
+          "window_class": {
+            "ordinal": 129
+          },
+          "style": "0x50812080",
+          "template_visible": true,
+          "template_disabled": false,
+          "x": 62,
+          "y": 66,
+          "width": 35,
+          "height": 13
+        }
+      },
+      "editor_interpretation": "unsigned_word_to_int",
+      "editor_validation_range": [
+        0,
+        32767
+      ],
+      "editor_scale": 1,
+      "evidence": [
+        {
+          "file": "editor-phase8-traps-panel-load.txt",
+          "line": 47,
+          "excerpt": "*(uint *)((int)this + 0x7c) = (uint)*(ushort *)(*(int *)((int)this + 0x148) + 0x230);"
+        },
+        {
+          "file": "editor-phase8-traps-ddx.txt",
+          "line": 30,
+          "excerpt": "DDX_Text(param_1,0x32b7);"
+        }
+      ],
+      "caveat": "Baseline name GoldCost differs from the literal native editor label Mana Cost. Currency use is not established by the label alone."
+    },
+    {
+      "family": "Traps",
+      "baseline_field": "ManaCostToFire",
+      "raw_offset": 468,
+      "raw_bytes": 4,
+      "intermediate_offset": "0x27c",
+      "editor_model_offset": "0x23c",
+      "editor_dialog_offset": "0x84",
+      "label": "Mana Cost To Fire:",
+      "control": {
+        "dialog": 326,
+        "control_id": 1799,
+        "control_id_hex": "0x707",
+        "resource_path": [
+          5,
+          326,
+          2057
+        ],
+        "control": {
+          "id": 1799,
+          "title": "",
+          "window_class": {
+            "ordinal": 129
+          },
+          "style": "0x50812080",
+          "template_visible": true,
+          "template_disabled": false,
+          "x": 170,
+          "y": 86,
+          "width": 35,
+          "height": 13
+        }
+      },
+      "editor_interpretation": "raw_u32_to_int",
+      "editor_validation_range": [
+        0,
+        16000
+      ],
+      "editor_scale": 1,
+      "evidence": [
+        {
+          "file": "editor-phase8-traps-panel-load.txt",
+          "line": 49,
+          "excerpt": "*(undefined4 *)((int)this + 0x84) = *(undefined4 *)(*(int *)((int)this + 0x148) + 0x23c);"
+        },
+        {
+          "file": "editor-phase8-traps-ddx.txt",
+          "line": 32,
+          "excerpt": "DDX_Text(param_1,0x707);"
+        }
+      ],
+      "caveat": null
+    }
+  ],
+  "unknown_field_paths": [
+    {
+      "family": "Terrain",
+      "raw_offset": "0x198",
+      "raw_bytes": 2,
+      "intermediate_offset": "0x250",
+      "editor_model_offset": "0x3d0",
+      "meaning": "unresolved",
+      "evidence": [
+        {
+          "file": "editor-phase8-terrain-model-load.txt",
+          "line": 122,
+          "excerpt": "*(short *)(this + 0xf4) = (short)piVar1[0x94];"
+        },
+        {
+          "file": "editor-phase8-terrain-writer-assembly.txt",
+          "line": 115,
+          "excerpt": "004a78cb: MOV AX,word ptr [EBX + 0x3d0]"
+        }
+      ]
+    },
+    {
+      "family": "Terrain",
+      "raw_offset": "0x224",
+      "raw_bytes": 4,
+      "intermediate_offset": "0x2dc",
+      "editor_model_offset": "0x320",
+      "editor_scale": 0.000244140625,
+      "inverse_scale": 4096.0,
+      "meaning": "unresolved; native editor stores an unsigned raw DWORD as scaled double",
+      "ui_binding": "not established in the inspected Terrain properties panel",
+      "evidence": [
+        {
+          "file": "editor-phase8-terrain-model-load.txt",
+          "line": 201,
+          "excerpt": "*(double *)(this + 200) = (double)local_14 * _DAT_0050ac48;"
+        },
+        {
+          "file": "editor-phase8-terrain-writer-assembly.txt",
+          "line": 127,
+          "excerpt": "004a7919: FLD double ptr [EBX + 0x320]"
+        },
+        {
+          "file": "editor-phase8-terrain-writer-assembly.txt",
+          "line": 128,
+          "excerpt": "004a791f: FMUL double ptr [0x0050ac58]"
+        }
+      ]
+    },
+    {
+      "family": "Traps",
+      "raw_offset": "0x204",
+      "raw_bytes": 2,
+      "intermediate_offset": "0x2ac",
+      "editor_model_offset": "0x238",
+      "game_runtime_offset": "0x98",
+      "meaning": "unresolved",
+      "evidence": [
+        {
+          "file": "editor-phase8-traps-convert.txt",
+          "line": 69,
+          "excerpt": "uVar2 = *(undefined2 *)(param_1 + 0x204);"
+        },
+        {
+          "file": "editor-phase8-traps-model-load-assembly.txt",
+          "line": 131,
+          "excerpt": "004a192d: MOV word ptr [EBX + 0x238],AX"
+        },
+        {
+          "file": "editor-phase8-traps-writer.txt",
+          "line": 99,
+          "excerpt": "uStack_60 = (undefined2)piVar1[0x8e];"
+        }
+      ],
+      "rejected_label": "Mana Gen.",
+      "label_status": "Hidden static text; no control-to-field binding established.",
+      "different_field": {
+        "name": "ResearchTime",
+        "raw_offset": "0x1e8",
+        "intermediate_offset": "0x290",
+        "editor_model_offset": "0x158",
+        "editor_dialog_offset": "0x64",
+        "control": {
+          "dialog": 326,
+          "control_id": 12984,
+          "control_id_hex": "0x32b8",
+          "resource_path": [
+            5,
+            326,
+            2057
+          ],
+          "control": {
+            "id": 12984,
+            "title": "",
+            "window_class": {
+              "ordinal": 129
+            },
+            "style": "0x48810080",
+            "template_visible": false,
+            "template_disabled": true,
+            "x": 7,
+            "y": 7,
+            "width": 35,
+            "height": 13
+          }
+        },
+        "evidence": [
+          {
+            "file": "editor-phase8-traps-model-load-assembly.txt",
+            "line": 217,
+            "excerpt": "004a1ab4: MOV word ptr [EBX + 0x158],AX"
+          },
+          {
+            "file": "editor-phase8-traps-panel-load-assembly.txt",
+            "line": 93,
+            "excerpt": "00471ac0: MOV AX,word ptr [ECX + 0x158]"
+          },
+          {
+            "file": "editor-phase8-traps-ddx-assembly.txt",
+            "line": 115,
+            "excerpt": "00470883: PUSH 0x32b8"
+          }
+        ]
+      }
+    },
+    {
+      "family": "Objects",
+      "raw_offset": "0x34c",
+      "raw_bytes": 2,
+      "intermediate_offset": "0x3cc",
+      "editor_model_offset": "0x3be",
+      "meaning": "unresolved",
+      "evidence": [
+        {
+          "file": "editor-phase8-candidate-1d80.txt",
+          "line": 116,
+          "excerpt": "*(short *)((int)local_1c + 0x3be) = (short)piVar1[0xf3];"
+        }
+      ]
+    }
+  ],
+  "editor_commit_side_effects": [
+    {
+      "family": "Traps",
+      "raw_offset": "0x1d4",
+      "field": "ManaCostToFire",
+      "condition": "editor dialog Require Mana unchecked",
+      "flag_raw_offset": "0x1ec",
+      "flag_mask": "0x100",
+      "behavior": "Panel commit writes zero to model+0x23c; otherwise writes dialog+0x84.",
+      "effect": "A native editor properties commit can change this field even without a direct cost edit.",
+      "evidence": [
+        {
+          "file": "editor-phase8-traps-panel-save.txt",
+          "line": 16,
+          "excerpt": "if (*(int *)(param_1 + 0x120) == 0) {"
+        },
+        {
+          "file": "editor-phase8-traps-panel-save.txt",
+          "line": 17,
+          "excerpt": "*(undefined4 *)(*(int *)(param_1 + 0x148) + 0x23c) = 0;"
+        },
+        {
+          "file": "editor-phase8-traps-ddx.txt",
+          "line": 66,
+          "excerpt": "FUN_004e490a(param_1,0x706,(int *)((int)this + 0x120));"
+        },
+        {
+          "file": "editor-phase8-traps-flags-captured.txt",
+          "line": 7,
+          "excerpt": "uVar1 = (uint)(ushort)(bVar2 | 0x100);"
+        }
+      ]
+    }
+  ],
+  "orphan_labels": [
+    {
+      "dialog": 326,
+      "control": {
+        "id": 4294967295,
+        "title": "&Mana Gen.:",
+        "window_class": {
+          "ordinal": 130
+        },
+        "style": "0x48020002",
+        "template_visible": false,
+        "template_disabled": true,
+        "x": 7,
+        "y": 7,
+        "width": 70,
+        "height": 9
+      },
+      "conclusion": "No proven binding to raw+0x204. Do not rename that field ManaGen."
+    }
+  ]
+}

@@ -1,0 +1,361 @@
+[
+  {
+    "read": 4577741,
+    "lines": [
+      "0045d992: add edx, eax",
+      "0045d994: mov al, byte ptr [ebx + 0x402]",
+      "0045d99a: cmp al, 1",
+      "0045d99c: mov word ptr [ebx + 0x519], dx",
+      "0045d9a3: mov byte ptr [esp + 0x10], al",
+      "0045d9a7: jne 0x45d9b4",
+      "0045d9a9: xor edx, edx",
+      "0045d9ab: mov dx, word ptr [esi + 0x698]",
+      "0045d9b2: jmp 0x45d9e9",
+      "0045d9b4: mov ecx, dword ptr [esp + 0x10]",
+      "0045d9b8: mov edx, dword ptr [0x6cf048]",
+      "0045d9be: and ecx, 0xff",
+      "0045d9c4: xor eax, eax",
+      "0045d9c6: mov ax, word ptr [esi + 0x698]",
+      "0045d9cd: movsx ecx, word ptr [edx + ecx*2 + 0x105]"
+    ],
+    "function_hint": 4577520
+  },
+  {
+    "read": 4657338,
+    "lines": [
+      "00471079: mov ecx, esi",
+      "0047107b: call 0x480ce0",
+      "00471080: mov dword ptr [esi + 0x2cb], 0",
+      "0047108a: mov cl, byte ptr [esi + 0x402]",
+      "00471090: mov eax, dword ptr [esi + 0x36f]",
+      "00471096: cmp cl, 1",
+      "00471099: mov byte ptr [esp + 0x20], cl",
+      "0047109d: jne 0x4710aa",
+      "0047109f: xor edx, edx",
+      "004710a1: mov dx, word ptr [eax + 0x698]",
+      "004710a8: jmp 0x4710df",
+      "004710aa: mov edx, dword ptr [esp + 0x20]",
+      "004710ae: mov ecx, dword ptr [0x6cf048]",
+      "004710b4: and edx, 0xff",
+      "004710ba: movsx ecx, word ptr [ecx + edx*2 + 0x105]"
+    ],
+    "function_hint": 4656720,
+    "superseded_function_hint": 4656560
+  },
+  {
+    "read": 4848272,
+    "lines": [
+      "0049fa51: push 1",
+      "0049fa53: call 0x480ce0",
+      "0049fa58: mov dword ptr [esi + 0x2cb], 0",
+      "0049fa62: mov cl, byte ptr [esi + 0x402]",
+      "0049fa68: mov eax, dword ptr [esi + 0x36f]",
+      "0049fa6e: cmp cl, 1",
+      "0049fa71: mov byte ptr [ebp - 0x20], cl",
+      "0049fa74: jne 0x49fa81",
+      "0049fa76: xor edx, edx",
+      "0049fa78: mov dx, word ptr [eax + 0x698]",
+      "0049fa7f: jmp 0x49fab5",
+      "0049fa81: mov ecx, dword ptr [ebp - 0x20]",
+      "0049fa84: mov edx, dword ptr [0x6cf048]",
+      "0049fa8a: and ecx, 0xff",
+      "0049fa90: movsx ecx, word ptr [edx + ecx*2 + 0x105]"
+    ],
+    "function_hint": 4846864,
+    "superseded_function_hint": 4846496
+  },
+  {
+    "read": 5171531,
+    "lines": [
+      "004ee914: add eax, edx",
+      "004ee916: cmp eax, 0x64000",
+      "004ee91b: jae 0x4ee972",
+      "004ee91d: mov dl, byte ptr [ecx + 0x402]",
+      "004ee923: mov eax, dword ptr [ecx + 0x36f]",
+      "004ee929: cmp dl, 1",
+      "004ee92c: mov byte ptr [ebp - 8], dl",
+      "004ee92f: jne 0x4ee93c",
+      "004ee931: xor edx, edx",
+      "004ee933: mov dx, word ptr [eax + 0x698]",
+      "004ee93a: jmp 0x4ee970",
+      "004ee93c: mov edx, dword ptr [ebp - 8]",
+      "004ee93f: mov ebx, dword ptr [0x6cf048]",
+      "004ee945: and edx, 0xff",
+      "004ee94b: movsx edx, word ptr [ebx + edx*2 + 0x105]"
+    ],
+    "function_hint": 5170944
+  },
+  {
+    "read": 5171811,
+    "lines": [
+      "004eea2b: add edx, eax",
+      "004eea2d: cmp edx, 0x10000",
+      "004eea33: jae 0x4eea8a",
+      "004eea35: mov dl, byte ptr [ecx + 0x402]",
+      "004eea3b: mov eax, dword ptr [ecx + 0x36f]",
+      "004eea41: cmp dl, 1",
+      "004eea44: mov byte ptr [ebp - 0x38], dl",
+      "004eea47: jne 0x4eea54",
+      "004eea49: xor edx, edx",
+      "004eea4b: mov dx, word ptr [eax + 0x698]",
+      "004eea52: jmp 0x4eea88",
+      "004eea54: mov edx, dword ptr [ebp - 0x38]",
+      "004eea57: mov ebx, dword ptr [0x6cf048]",
+      "004eea5d: and edx, 0xff",
+      "004eea63: movsx edx, word ptr [ebx + edx*2 + 0x105]"
+    ],
+    "function_hint": 5170944
+  },
+  {
+    "read": 5173042,
+    "lines": [
+      "004eeefa: add edx, eax",
+      "004eeefc: cmp edx, 0x19000",
+      "004eef02: jae 0x4eef59",
+      "004eef04: mov dl, byte ptr [ecx + 0x402]",
+      "004eef0a: mov eax, dword ptr [ecx + 0x36f]",
+      "004eef10: cmp dl, 1",
+      "004eef13: mov byte ptr [ebp - 8], dl",
+      "004eef16: jne 0x4eef23",
+      "004eef18: xor edx, edx",
+      "004eef1a: mov dx, word ptr [eax + 0x698]",
+      "004eef21: jmp 0x4eef57",
+      "004eef23: mov edx, dword ptr [ebp - 8]",
+      "004eef26: mov ebx, dword ptr [0x6cf048]",
+      "004eef2c: and edx, 0xff",
+      "004eef32: movsx edx, word ptr [ebx + edx*2 + 0x105]"
+    ],
+    "function_hint": 5172448
+  },
+  {
+    "read": 5173322,
+    "lines": [
+      "004ef012: add edx, eax",
+      "004ef014: cmp edx, 0x19000",
+      "004ef01a: jae 0x4ef071",
+      "004ef01c: mov dl, byte ptr [ecx + 0x402]",
+      "004ef022: mov eax, dword ptr [ecx + 0x36f]",
+      "004ef028: cmp dl, 1",
+      "004ef02b: mov byte ptr [ebp - 0x38], dl",
+      "004ef02e: jne 0x4ef03b",
+      "004ef030: xor edx, edx",
+      "004ef032: mov dx, word ptr [eax + 0x698]",
+      "004ef039: jmp 0x4ef06f",
+      "004ef03b: mov edx, dword ptr [ebp - 0x38]",
+      "004ef03e: mov ebx, dword ptr [0x6cf048]",
+      "004ef044: and edx, 0xff",
+      "004ef04a: movsx edx, word ptr [ebx + edx*2 + 0x105]"
+    ],
+    "function_hint": 5172448
+  },
+  {
+    "read": 5175837,
+    "lines": [
+      "004ef9e9: add eax, edx",
+      "004ef9eb: cmp eax, esi",
+      "004ef9ed: jae 0x4efa45",
+      "004ef9ef: mov dl, byte ptr [ecx + 0x402]",
+      "004ef9f5: mov eax, dword ptr [ecx + 0x36f]",
+      "004ef9fb: cmp dl, 1",
+      "004ef9fe: mov byte ptr [ebp - 0x10], dl",
+      "004efa01: jne 0x4efa0e",
+      "004efa03: xor edx, edx",
+      "004efa05: mov dx, word ptr [eax + 0x698]",
+      "004efa0c: jmp 0x4efa42",
+      "004efa0e: mov edx, dword ptr [ebp - 0x10]",
+      "004efa11: mov ebx, dword ptr [0x6cf048]",
+      "004efa17: and edx, 0xff",
+      "004efa1d: movsx edx, word ptr [ebx + edx*2 + 0x105]"
+    ],
+    "function_hint": 5175648
+  },
+  {
+    "read": 5176662,
+    "lines": [
+      "004efd1e: je 0x4efd86",
+      "004efd20: mov dl, byte ptr [edi + 0x402]",
+      "004efd26: mov eax, dword ptr [edi + 0x36f]",
+      "004efd2c: cmp dl, 1",
+      "004efd2f: mov byte ptr [ebp - 0x1c], dl",
+      "004efd32: jne 0x4efd3f",
+      "004efd34: xor edx, edx",
+      "004efd36: mov dx, word ptr [eax + 0x698]",
+      "004efd3d: jmp 0x4efd6d",
+      "004efd3f: mov edx, dword ptr [ebp - 0x1c]",
+      "004efd42: xor ecx, ecx",
+      "004efd44: mov cx, word ptr [eax + 0x698]",
+      "004efd4b: and edx, 0xff",
+      "004efd51: mov eax, 0x51eb851f",
+      "004efd56: movsx edx, word ptr [ebx + edx*2 + 0x105]"
+    ],
+    "function_hint": 5176176
+  },
+  {
+    "read": 5176789,
+    "lines": [
+      "004efd9e: mov ax, word ptr [edx + 6]",
+      "004efda2: mov edi, dword ptr [eax*4 + 0x6d95c8]",
+      "004efda9: test edi, edi",
+      "004efdab: je 0x4efe13",
+      "004efdad: mov dl, byte ptr [edi + 0x402]",
+      "004efdb3: mov eax, dword ptr [edi + 0x36f]",
+      "004efdb9: cmp dl, 1",
+      "004efdbc: mov byte ptr [ebp - 0x24], dl",
+      "004efdbf: jne 0x4efdcc",
+      "004efdc1: xor edx, edx",
+      "004efdc3: mov dx, word ptr [eax + 0x698]",
+      "004efdca: jmp 0x4efe00",
+      "004efdcc: mov edx, dword ptr [ebp - 0x24]",
+      "004efdcf: and edx, 0xff",
+      "004efdd5: movsx edx, word ptr [ebx + edx*2 + 0x105]"
+    ],
+    "function_hint": 5176176
+  },
+  {
+    "read": 5178685,
+    "lines": [
+      "004f0504: mov edi, dword ptr [edx*4 + 0x6d95c8]",
+      "004f050b: cmp edi, ecx",
+      "004f050d: je 0x4f057b",
+      "004f050f: mov dl, byte ptr [edi + 0x402]",
+      "004f0515: mov eax, dword ptr [edi + 0x36f]",
+      "004f051b: cmp dl, 1",
+      "004f051e: mov byte ptr [ebp - 0x30], dl",
+      "004f0521: jne 0x4f052e",
+      "004f0523: xor edx, edx",
+      "004f0525: mov dx, word ptr [eax + 0x698]",
+      "004f052c: jmp 0x4f0562",
+      "004f052e: mov ecx, dword ptr [ebp - 0x30]",
+      "004f0531: mov edx, dword ptr [0x6cf048]",
+      "004f0537: and ecx, 0xff",
+      "004f053d: movsx edx, word ptr [edx + ecx*2 + 0x105]"
+    ],
+    "function_hint": 5176176
+  },
+  {
+    "read": 5178832,
+    "lines": [
+      "004f0597: mov edi, dword ptr [eax*4 + 0x6d95c8]",
+      "004f059e: cmp edi, ecx",
+      "004f05a0: je 0x4f060e",
+      "004f05a2: mov dl, byte ptr [edi + 0x402]",
+      "004f05a8: mov eax, dword ptr [edi + 0x36f]",
+      "004f05ae: cmp dl, 1",
+      "004f05b1: mov byte ptr [ebp - 0x30], dl",
+      "004f05b4: jne 0x4f05c1",
+      "004f05b6: xor edx, edx",
+      "004f05b8: mov dx, word ptr [eax + 0x698]",
+      "004f05bf: jmp 0x4f05f5",
+      "004f05c1: mov ecx, dword ptr [ebp - 0x30]",
+      "004f05c4: mov edx, dword ptr [0x6cf048]",
+      "004f05ca: and ecx, 0xff",
+      "004f05d0: movsx edx, word ptr [edx + ecx*2 + 0x105]"
+    ],
+    "function_hint": 5176176
+  },
+  {
+    "read": 5189062,
+    "lines": [
+      "004f2d8e: mov dword ptr [ebp - 0x38], edx",
+      "004f2d91: mov word ptr [ebp - 2], dx",
+      "004f2d95: call 0x4b31c0",
+      "004f2d9a: mov al, byte ptr [edi + 0x402]",
+      "004f2da0: mov edi, dword ptr [edi + 0x36f]",
+      "004f2da6: cmp al, 1",
+      "004f2da8: mov byte ptr [ebp - 0x14], al",
+      "004f2dab: jne 0x4f2db8",
+      "004f2dad: xor edx, edx",
+      "004f2daf: mov dx, word ptr [edi + 0x698]",
+      "004f2db6: jmp 0x4f2deb",
+      "004f2db8: mov edx, dword ptr [ebp - 0x14]",
+      "004f2dbb: mov eax, dword ptr [0x6cf048]",
+      "004f2dc0: and edx, 0xff",
+      "004f2dc6: movsx ecx, word ptr [eax + edx*2 + 0x105]"
+    ],
+    "function_hint": 5188560
+  },
+  {
+    "read": 5190492,
+    "lines": [
+      "004f3322: mov dword ptr [ebp - 0x3c], edx",
+      "004f3325: mov word ptr [ebp - 2], 0",
+      "004f332b: call 0x4b31c0",
+      "004f3330: mov al, byte ptr [edi + 0x402]",
+      "004f3336: mov edi, dword ptr [edi + 0x36f]",
+      "004f333c: cmp al, 1",
+      "004f333e: mov byte ptr [ebp - 0x34], al",
+      "004f3341: jne 0x4f334e",
+      "004f3343: xor edx, edx",
+      "004f3345: mov dx, word ptr [edi + 0x698]",
+      "004f334c: jmp 0x4f3381",
+      "004f334e: mov edx, dword ptr [ebp - 0x34]",
+      "004f3351: mov eax, dword ptr [0x6cf048]",
+      "004f3356: and edx, 0xff",
+      "004f335c: movsx ecx, word ptr [eax + edx*2 + 0x105]"
+    ],
+    "function_hint": 5188560
+  },
+  {
+    "read": 5192094,
+    "lines": [
+      "004f3963: mov esi, dword ptr [edx*4 + 0x6d95c8]",
+      "004f396a: test esi, esi",
+      "004f396c: je 0x4f39de",
+      "004f396e: mov cl, byte ptr [esi + 0x402]",
+      "004f3974: mov eax, dword ptr [esi + 0x36f]",
+      "004f397a: cmp cl, 1",
+      "004f397d: mov byte ptr [esp + 0x34], cl",
+      "004f3981: jne 0x4f398e",
+      "004f3983: xor edx, edx",
+      "004f3985: mov dx, word ptr [eax + 0x698]",
+      "004f398c: jmp 0x4f39c3",
+      "004f398e: mov ecx, dword ptr [esp + 0x34]",
+      "004f3992: mov edx, dword ptr [0x6cf048]",
+      "004f3998: and ecx, 0xff",
+      "004f399e: movsx ecx, word ptr [edx + ecx*2 + 0x105]"
+    ],
+    "function_hint": 5191536
+  },
+  {
+    "read": 5208942,
+    "lines": [
+      "004f7b34: call 0x44fd60",
+      "004f7b39: cmp eax, 0xfff90000",
+      "004f7b3e: jae 0x4f7b96",
+      "004f7b40: mov cl, byte ptr [edi + 0x402]",
+      "004f7b46: mov eax, dword ptr [edi + 0x36f]",
+      "004f7b4c: cmp cl, 1",
+      "004f7b4f: mov byte ptr [ebp - 0x14], cl",
+      "004f7b52: jne 0x4f7b5f",
+      "004f7b54: xor edx, edx",
+      "004f7b56: mov dx, word ptr [eax + 0x698]",
+      "004f7b5d: jmp 0x4f7b93",
+      "004f7b5f: mov ecx, dword ptr [ebp - 0x14]",
+      "004f7b62: mov edx, dword ptr [0x6cf048]",
+      "004f7b68: and ecx, 0xff",
+      "004f7b6e: movsx ecx, word ptr [edx + ecx*2 + 0x105]"
+    ],
+    "function_hint": 5208672
+  },
+  {
+    "read": 5217941,
+    "lines": [
+      "004f9e5c: je 0x4f9eb5",
+      "004f9e5e: mov al, byte ptr [esi + 0x402]",
+      "004f9e64: mov esi, dword ptr [esi + 0x36f]",
+      "004f9e6a: cmp al, 1",
+      "004f9e6c: mov byte ptr [esp + 0x18], al",
+      "004f9e70: jne 0x4f9e7d",
+      "004f9e72: xor edx, edx",
+      "004f9e74: mov dx, word ptr [esi + 0x698]",
+      "004f9e7b: jmp 0x4f9eb1",
+      "004f9e7d: mov eax, dword ptr [esp + 0x18]",
+      "004f9e81: mov ecx, dword ptr [0x6cf048]",
+      "004f9e87: and eax, 0xff",
+      "004f9e8c: xor edx, edx",
+      "004f9e8e: mov dx, word ptr [esi + 0x698]",
+      "004f9e95: movsx ecx, word ptr [ecx + eax*2 + 0x105]"
+    ],
+    "function_hint": 5217712
+  }
+]

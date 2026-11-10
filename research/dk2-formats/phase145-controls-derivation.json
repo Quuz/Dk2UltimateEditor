@@ -1,0 +1,24 @@
+{
+  "source": "crosscheck_wander_target_paths.py",
+  "source_sha256": "2a6a77db058b6779adec95330a7d5396dd72621efa6ab34e5c8a4fdde67a6972",
+  "output": "crosscheck_room_wander.py",
+  "output_sha256": "bbc89562a97bb083c503f06f524afda8d75d133f336b7bbf5afd4944a9371713",
+  "changes": [
+    [
+      "import emulate_wander_target_paths as native",
+      "import emulate_room_wander as native"
+    ],
+    [
+      "CONTROLS=['helper-only-before-start','helper-unvisited-corner','callback-open','callback-wander255','callback-blocked','callback-foreign-fallback']",
+      "CONTROLS=['two-eligible-last','last-empty-skips-earlier','trailing-excluded-selected','callback-room','callback-room-wander255','callback-room-blocked']"
+    ],
+    [
+      "phase144-wander-Ghidra-",
+      "phase145-room-wander-Ghidra-"
+    ],
+    [
+      "phase144-wander-target-path-crosschecks.json",
+      "phase145-room-wander-crosschecks.json"
+    ]
+  ]
+}

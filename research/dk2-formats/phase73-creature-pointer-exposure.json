@@ -1,0 +1,199 @@
+{
+  "scope": "Find address-taking/indexed operations omitted by read-only field searches.\n\nAll exact displacement matches are untyped leads. Includes writes and LEA,\nwhich do not themselves establish semantic reads;no global non-use proof.\n",
+  "profiles": [
+    {
+      "profile": "DX",
+      "exe": "D:\\Games\\DK2\\Dungeon Keeper 2\\DKII-DX.exe",
+      "sha256": "d7a8b854e4e4f02709eba271bead6fe2307dd6e332b5a96e70857e5b0e19fb8a",
+      "candidates": [
+        {
+          "address": 4792561,
+          "field": "PickUpPriority",
+          "kind": "memory",
+          "instruction": "mov byte ptr [esi + 0x6eb], bl",
+          "bytes": 1,
+          "access": 2,
+          "index": null,
+          "base": "esi"
+        },
+        {
+          "address": 4792616,
+          "field": "AbilityJump",
+          "kind": "memory",
+          "instruction": "mov dword ptr [esi + 0x75c], ebx",
+          "bytes": 4,
+          "access": 2,
+          "index": null,
+          "base": "esi"
+        },
+        {
+          "address": 4793898,
+          "field": "PickUpPriority",
+          "kind": "memory",
+          "instruction": "mov byte ptr [ebx + 0x6eb], dl",
+          "bytes": 1,
+          "access": 2,
+          "index": null,
+          "base": "ebx"
+        },
+        {
+          "address": 4799447,
+          "field": "AbilityJump",
+          "kind": "memory",
+          "instruction": "mov dword ptr [ebx + 0x75c], eax",
+          "bytes": 4,
+          "access": 2,
+          "index": null,
+          "base": "ebx"
+        },
+        {
+          "address": 4803598,
+          "field": "AbilityJump",
+          "kind": "memory",
+          "instruction": "mov dword ptr [ecx + 0x75c], edx",
+          "bytes": 4,
+          "access": 2,
+          "index": null,
+          "base": "ecx"
+        },
+        {
+          "address": 5372436,
+          "field": "PickUpPriority",
+          "kind": "memory",
+          "instruction": "mov cl, byte ptr [edx + 0x6eb]",
+          "bytes": 1,
+          "access": 1,
+          "index": null,
+          "base": "edx"
+        },
+        {
+          "address": 5372442,
+          "field": "PickUpPriority",
+          "kind": "memory",
+          "instruction": "mov byte ptr [eax + 0x6eb], cl",
+          "bytes": 1,
+          "access": 2,
+          "index": null,
+          "base": "eax"
+        },
+        {
+          "address": 5372542,
+          "field": "AbilityJump",
+          "kind": "memory",
+          "instruction": "mov ecx, dword ptr [edx + 0x75c]",
+          "bytes": 4,
+          "access": 1,
+          "index": null,
+          "base": "edx"
+        },
+        {
+          "address": 5372548,
+          "field": "AbilityJump",
+          "kind": "memory",
+          "instruction": "mov dword ptr [eax + 0x75c], ecx",
+          "bytes": 4,
+          "access": 2,
+          "index": null,
+          "base": "eax"
+        }
+      ]
+    },
+    {
+      "profile": "old",
+      "exe": "D:\\Games\\DK2\\Tools\\dk2-format-research\\source-binaries\\DKII-local13.exe",
+      "sha256": "93e826a142f677ef5120699feddb0572799d93399167ef1d05ec4b48a8b2a342",
+      "candidates": [
+        {
+          "address": 4759329,
+          "field": "PickUpPriority",
+          "kind": "memory",
+          "instruction": "mov byte ptr [esi + 0x6eb], bl",
+          "bytes": 1,
+          "access": 2,
+          "index": null,
+          "base": "esi"
+        },
+        {
+          "address": 4759384,
+          "field": "AbilityJump",
+          "kind": "memory",
+          "instruction": "mov dword ptr [esi + 0x75c], ebx",
+          "bytes": 4,
+          "access": 2,
+          "index": null,
+          "base": "esi"
+        },
+        {
+          "address": 4760705,
+          "field": "PickUpPriority",
+          "kind": "memory",
+          "instruction": "mov byte ptr [ebx + 0x6eb], al",
+          "bytes": 1,
+          "access": 2,
+          "index": null,
+          "base": "ebx"
+        },
+        {
+          "address": 4766063,
+          "field": "AbilityJump",
+          "kind": "memory",
+          "instruction": "mov dword ptr [ebx + 0x75c], eax",
+          "bytes": 4,
+          "access": 2,
+          "index": null,
+          "base": "ebx"
+        },
+        {
+          "address": 4770174,
+          "field": "AbilityJump",
+          "kind": "memory",
+          "instruction": "mov dword ptr [ecx + 0x75c], edx",
+          "bytes": 4,
+          "access": 2,
+          "index": null,
+          "base": "ecx"
+        },
+        {
+          "address": 5322244,
+          "field": "PickUpPriority",
+          "kind": "memory",
+          "instruction": "mov cl, byte ptr [edx + 0x6eb]",
+          "bytes": 1,
+          "access": 1,
+          "index": null,
+          "base": "edx"
+        },
+        {
+          "address": 5322250,
+          "field": "PickUpPriority",
+          "kind": "memory",
+          "instruction": "mov byte ptr [eax + 0x6eb], cl",
+          "bytes": 1,
+          "access": 2,
+          "index": null,
+          "base": "eax"
+        },
+        {
+          "address": 5322350,
+          "field": "AbilityJump",
+          "kind": "memory",
+          "instruction": "mov ecx, dword ptr [edx + 0x75c]",
+          "bytes": 4,
+          "access": 1,
+          "index": null,
+          "base": "edx"
+        },
+        {
+          "address": 5322356,
+          "field": "AbilityJump",
+          "kind": "memory",
+          "instruction": "mov dword ptr [eax + 0x75c], ecx",
+          "bytes": 4,
+          "access": 2,
+          "index": null,
+          "base": "eax"
+        }
+      ]
+    }
+  ]
+}

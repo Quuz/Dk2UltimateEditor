@@ -1,0 +1,180 @@
+[
+  {
+    "id": "phase33-AP-random-position-create",
+    "tool": "create_function",
+    "args": {
+      "program": "DKII-DX.exe",
+      "address": "0x4b0620",
+      "disassemble_first": true
+    },
+    "print_limit": 0
+  },
+  {
+    "id": "phase33-AP-random-position",
+    "tool": "force_decompile",
+    "args": {
+      "program": "DKII-DX.exe",
+      "address": "0x4b0620"
+    },
+    "print_limit": 1000
+  },
+  {
+    "id": "phase33-AP-random-position-assembly",
+    "tool": "disassemble_function",
+    "args": {
+      "program": "DKII-DX.exe",
+      "address": "0x4b0620"
+    },
+    "print_limit": 0
+  },
+  {
+    "id": "phase33-AP-random-room-create",
+    "tool": "create_function",
+    "args": {
+      "program": "DKII-DX.exe",
+      "address": "0x4b07e0",
+      "disassemble_first": true
+    },
+    "print_limit": 0
+  },
+  {
+    "id": "phase33-AP-random-room",
+    "tool": "force_decompile",
+    "args": {
+      "program": "DKII-DX.exe",
+      "address": "0x4b07e0"
+    },
+    "print_limit": 1000
+  },
+  {
+    "id": "phase33-AP-random-room-assembly",
+    "tool": "disassemble_function",
+    "args": {
+      "program": "DKII-DX.exe",
+      "address": "0x4b07e0"
+    },
+    "print_limit": 0
+  },
+  {
+    "id": "phase33-AP-special-cells-create",
+    "tool": "create_function",
+    "args": {
+      "program": "DKII-DX.exe",
+      "address": "0x4b0a00",
+      "disassemble_first": true
+    },
+    "print_limit": 0
+  },
+  {
+    "id": "phase33-AP-special-cells",
+    "tool": "force_decompile",
+    "args": {
+      "program": "DKII-DX.exe",
+      "address": "0x4b0a00"
+    },
+    "print_limit": 1000
+  },
+  {
+    "id": "phase33-AP-special-cells-assembly",
+    "tool": "disassemble_function",
+    "args": {
+      "program": "DKII-DX.exe",
+      "address": "0x4b0a00"
+    },
+    "print_limit": 0
+  },
+  {
+    "id": "phase33-AP-next-helper-create",
+    "tool": "create_function",
+    "args": {
+      "program": "DKII-DX.exe",
+      "address": "0x4b0a80",
+      "disassemble_first": true
+    },
+    "print_limit": 0
+  },
+  {
+    "id": "phase33-AP-next-helper",
+    "tool": "force_decompile",
+    "args": {
+      "program": "DKII-DX.exe",
+      "address": "0x4b0a80"
+    },
+    "print_limit": 1000
+  },
+  {
+    "id": "phase33-AP-next-helper-assembly",
+    "tool": "disassemble_function",
+    "args": {
+      "program": "DKII-DX.exe",
+      "address": "0x4b0a80"
+    },
+    "print_limit": 0
+  },
+  {
+    "id": "phase33-AP-event-create",
+    "tool": "create_function",
+    "args": {
+      "program": "DKII-DX.exe",
+      "address": "0x4b0600",
+      "disassemble_first": true
+    },
+    "print_limit": 0
+  },
+  {
+    "id": "phase33-AP-event",
+    "tool": "force_decompile",
+    "args": {
+      "program": "DKII-DX.exe",
+      "address": "0x4b0600"
+    },
+    "print_limit": 1000
+  },
+  {
+    "id": "phase33-AP-event-assembly",
+    "tool": "disassemble_function",
+    "args": {
+      "program": "DKII-DX.exe",
+      "address": "0x4b0600"
+    },
+    "print_limit": 0
+  },
+  {
+    "id": "phase33-AP-editor-model-copy-create",
+    "tool": "create_function",
+    "args": {
+      "program": "DK2 Editor pro.exe",
+      "address": "0x41b780",
+      "disassemble_first": true
+    },
+    "print_limit": 0
+  },
+  {
+    "id": "phase33-AP-editor-model-copy",
+    "tool": "force_decompile",
+    "args": {
+      "program": "DK2 Editor pro.exe",
+      "address": "0x41b780"
+    },
+    "print_limit": 1000
+  },
+  {
+    "id": "phase33-AP-editor-model-copy-assembly",
+    "tool": "disassemble_function",
+    "args": {
+      "program": "DK2 Editor pro.exe",
+      "address": "0x41b780"
+    },
+    "print_limit": 0
+  },
+  {
+    "id": "phase33-AP-editor-model-constructor-xrefs",
+    "tool": "get_xrefs_to",
+    "args": {
+      "program": "DK2 Editor pro.exe",
+      "address": "0x41B780",
+      "limit": 30
+    },
+    "print_limit": 700
+  }
+]

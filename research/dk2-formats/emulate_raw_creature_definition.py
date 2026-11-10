@@ -1,0 +1,97 @@
+"""Actual raw Creature→native initializer/converter→complete native definition loader.
+
+Ctor/loader/code/vtables are original. World references are empty;graphics
+declines requests with explicit out-handle0,sound handle is fixed. Full2199
+bytes captured via9fresh YMM replays;unknown bytes remain opaque.
+"""
+from pathlib import Path
+import asyncio,json,os,struct,hashlib,sys
+from mcp import ClientSession,StdioServerParameters
+from mcp.client.stdio import stdio_client
+from emulate_element_colors import region,pack32
+from emulate_hero_parties import compare_code
+import emulate_creature_definition as parent
+import memory_readout_ymm as readout
+import dk2_formats as fmt
+ROOT=Path(__file__).resolve().parent
+SHADOW=0x10014000;RAW=0x10018000
+SOURCE=ROOT.parent.parent/'Dungeon Keeper 2/Data/editor/Creatures.kwd'
+SOURCE_BYTES=SOURCE.read_bytes();RECORDS=next(s.records for s in fmt.parse(SOURCE_BYTES) if s.signature==170)
+
+def cases():return [dict(name=n,id=i,modify=mod) for n,i,mod in [('raw-imp',1,None),('raw-warlock',5,None),('raw-king',21,None),('raw-imp-offsets',1,'offsets'),('raw-imp-priority-jump',1,'scalars'),('raw-imp-long-tail',1,'long')]]
+def raw_record(c):
+    raw=bytearray(next(r for r in RECORDS if r[0xF4B]==c['id']))
+    if c['modify']=='offsets':
+        for j,v in enumerate([0xFFFFFFFF,0x80000000,0x7FFFFFFF]):parent.put(raw,0xE94+4*j,v)
+        for i in range(7):
+            for j in range(3):parent.put(raw,0x127B+12*i+4*j,0x12340000+i*3+j)
+    if c['modify']=='scalars':raw[0xF55]=255;parent.put(raw,0xEE0,0x80000000)
+    if c['modify']=='long':
+        assert len(raw)==5449;raw+=bytes([165])*80+struct.pack('<II',1,0xFFFFFFFF)
+    return bytes(raw)
+def build(c,page):
+    base=next(v for v in parent.cases() if v['name']=='empty-mid');args,_=parent.build(base,page)
+    inputs={int(v['address'],16):bytearray.fromhex(v['hex']) for v in json.loads(args['memory'])['regions'] if int(v['address'],16)<0x11000000 and int(v['address'],16) not in [parent.DRIVER,parent.OBS,0x7FFEE000]}
+    raw=raw_record(c);inputs[RAW]=bytearray(raw);inputs[SHADOW]=bytearray([204])*6457
+    # Actual graphics v54 has6arguments,out-handle is the4th argument.
+    inputs[parent.GFX_CB]=bytearray(bytes.fromhex('ff05')+pack32(parent.OUT+0x104)+bytes.fromhex('8b442410c7000000000033c0c21800'))
+    driver=bytearray()
+    def emit(b):driver.extend(b)
+    def call(a):emit(parent.call(parent.DRIVER+len(driver),a))
+    emit(b'\xB9'+pack32(parent.MID));call(0x568820);emit(b'\x68'+pack32(RAW)+b'\xB9'+pack32(parent.MID));call(0x568E30)
+    emit(b'\xBE'+pack32(parent.MID)+b'\xBF'+pack32(SHADOW)+b'\xB9'+pack32(6457)+bytes.fromhex('f3a4'))
+    emit(bytes.fromhex('31c031c9'));loop=parent.DRIVER+len(driver)
+    emit(bytes.fromhex('0fb691')+pack32(SHADOW)+bytes.fromhex('01d04181f9')+pack32(6457))
+    branch=parent.DRIVER+len(driver)
+    emit(bytes.fromhex('0f82')+pack32(loop-(branch+6)))
+    assert branch-loop==16 and int.from_bytes(driver[branch-parent.DRIVER+2:branch-parent.DRIVER+6],'little',signed=True)==-22
+    emit(b'\xA3'+pack32(parent.OUT+0x110))
+    emit(b'\x6A\x00'+b'\x68'+pack32(parent.WORLD)+b'\x68'+pack32(parent.MID)+b'\xB9'+pack32(parent.DEF));call(0x492320)
+    wanted=bytearray(0x100);offsets=[list(struct.unpack_from('<3I',raw,0xE94))]+[list(struct.unpack_from('<3I',raw,0x127B+12*i)) for i in range(7)]
+    for i,index in enumerate([*range(8),8,0xFFFFFFFF]):
+        emit(b'\x68'+pack32(index)+b'\xB9'+pack32(parent.DEF));call(0x494650);emit(b'\xA3'+pack32(parent.OUT+4*i))
+        parent.put(wanted,4*i,parent.DEF+0x6EC+12*i if i<8 else 0x6E4148)
+        xyz=offsets[i] if i<8 else [0,0,0]
+        for j,v in enumerate(xyz):parent.put(wanted,0x40+12*i+4*j,v)
+        for j in range(3):emit(bytes.fromhex('8b50')+bytes([4*j])+bytes.fromhex('8915')+pack32(parent.OUT+0x40+12*i+4*j))
+    emit(b'\x68'+pack32(parent.OBS)+b'\xC3');inputs[parent.DRIVER]=driver
+    fixed=[(a,bytes(inputs[a])) for a in [parent.WORLD,parent.VARS,parent.SESSION,parent.GFX,parent.GV,parent.SOUND,parent.SV,0x6E4154,0x75B468,0x6E4144,0x6E4148,0]]
+    fixed+=[(RAW,raw),(parent.OUT,wanted),(parent.DEF+2199,bytes([165])*(2560-2199))]
+    observer=b'\xBD'+pack32(1)+b'\x31\xDB';mem=[region(a,b) for a,b in inputs.items()];at=0x11000000
+    for i,(a,b) in enumerate(fixed):
+        mem.append(region(at,b));observer+=compare_code(a,at,len(b))+bytes.fromhex('85c07505bb')+pack32(i+1)+bytes.fromhex('21c5');at+=((len(b)+15)//16)*16
+    for a,b,n in [(parent.MID,SHADOW,6457),(parent.DEF+0x5AF,parent.OUT+0x110,4)]:observer+=compare_code(a,b,n)+bytes.fromhex('85c07505bb')+pack32(999)+bytes.fromhex('21c5')
+    observer+=readout.code(parent.DEF+256*page)+bytes.fromhex('8b15')+pack32(parent.OUT+0x100)+bytes.fromhex('8b35')+pack32(parent.OUT+0x104)+bytes.fromhex('8b3d')+pack32(parent.OUT+0x110)+b'\x68'+pack32(0xDEADBEEF)+b'\xC3'
+    mem.append(region(parent.OBS,observer));stack=bytearray([165])*16384;parent.put(stack,8192,parent.DRIVER);mem.append(region(0x7FFEE000,stack))
+    spans=sorted((int(v['address'],16),len(bytes.fromhex(v['hex']))) for v in mem);assert all(a+n<=b for (a,n),(b,_) in zip(spans,spans[1:])),spans
+    args['memory']=json.dumps(dict(regions=mem))
+    return args,dict(raw_id=c['id'],raw_bytes=len(raw),raw_sha256=hashlib.sha256(raw).hexdigest(),source=dict(file=str(SOURCE),sha256=hashlib.sha256(SOURCE_BYTES).hexdigest()),
+      offsets=offsets,priority=raw[0xF55],jump=int.from_bytes(raw[0xEE0:0xEE4],'little'),durations=[((int.from_bytes(raw[o:o+4],'little')*20)&0xFFFFFFFF)>>12 for o in [0xED0,0xED4,0xED8,0xEDC]],
+      harness_revision=2,checksum='Compared to independent post-converter unsigned-byte sum of all6457shadow bytes;MID preserved throughloader',checks=[dict(address=hex(a),bytes=len(b)) for a,b in fixed])
+def verify(c,b,e):
+    assert len(b)==2199 and b[0x770]==c['id'] and b[0x6EB]==e['priority'] and int.from_bytes(b[0x75C:0x760],'little')==e['jump']
+    assert list(struct.unpack_from('<24I',b,0x6EC))==sum(e['offsets'],[]) and list(struct.unpack_from('<4I',b,0x74C))==e['durations']
+async def main():
+    selected=cases()
+    if len(sys.argv)>1:selected=[c for c in selected if c['name']==sys.argv[1]];assert selected
+    params=StdioServerParameters(command=str(ROOT.parent/'ghidra-mcp-runtime/venv/Scripts/python.exe'),args=[str(ROOT.parent/'ghidra-mcp/bridge_mcp_ghidra.py'),'--transport','stdio'],env={**os.environ,'GHIDRA_MCP_URL':'http://127.0.0.1:8089'})
+    rows=[]
+    async with stdio_client(params) as (rd,wr):
+      async with ClientSession(rd,wr) as session:
+        await session.initialize()
+        for c in selected:
+            chunks=[];counts=[]
+            for page in range(9):
+                args,e=build(c,page);p=ROOT/'ghidra'/f'phase85-emulation-raw-creature-definition-{c["name"]}-page{page}.json'
+                if p.exists():saved=json.loads(p.read_text());assert saved['input']==args and saved['expected']==e
+                else:
+                    print(c['name'],'page',page,'request',flush=True)
+                    response=await session.call_tool('emulate_function',args);r=json.loads('\n'.join(x.text for x in response.content if x.type=='text'))
+                    if response.isError or 'error' in r:raise RuntimeError(str(r))
+                    saved=dict(case=c,page=page,input=args,expected=e,result=r.get('data',r));p.write_text(json.dumps(saved,indent=2),encoding='utf8')
+                r=saved['result'];assert r['success'] and r['hit_return'] and all(int(r['registers'][k],16)==v for k,v in dict(EAX=1,ECX=0,EBP=1,EBX=0).items()),(c['name'],page,r,e)
+                chunks.append(readout.decode(r['registers']));counts.append([int(r['registers'][k],16) for k in ['EDX','ESI','EDI']]);rows.append(dict(file=p.name,sha256=hashlib.sha256(p.read_bytes()).hexdigest(),case=c['name'],page=page))
+            assert all(v==counts[0] for v in counts);b=b''.join(chunks)[:2199];verify(c,b,e);(ROOT/'ghidra'/f'phase85-raw-creature-definition-{c["name"]}.bin').write_bytes(b)
+            print(c['name'],'verified;sound/gfx/checksum',counts[0],flush=True)
+    if len(selected)==len(cases()):(ROOT/'phase85-raw-creature-definition-emulations.json').write_text(json.dumps(dict(scope=__doc__,replays=rows),indent=2),encoding='utf8')
+if __name__=='__main__':asyncio.run(main())

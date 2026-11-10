@@ -1,0 +1,658 @@
+{
+  "scope": "Raw Terrain -> native cache -> actual Light factory -> full tile-light submission.\n\nPrepared CBridge prefix, sparse World catalogue and runtime tile; original\nvtables/constructors/getters/pools/tag registry. Sound lookup and engine E0\nsubmission are explicit external sinks. No final rendered pixel claim.\n",
+  "replays": [
+    {
+      "case": {
+        "name": "dirt"
+      },
+      "file": "ghidra\\phase159-terrain-light-probe-864f7ba6be43.json",
+      "sha256": "2003b42568681db9e9570f397d536fa34502ea0de90614f20b23062610c3daf1",
+      "outcome": {
+        "selected_terrain": 3,
+        "submitted": true,
+        "global_colour_override": false,
+        "runtime_RGB_WORDs": [
+          115,
+          97,
+          65
+        ],
+        "position_Q12": [
+          10240,
+          14336,
+          6144
+        ],
+        "unchanged_Light_parameter117": 4608,
+        "Light_flags": 32882,
+        "native_Light_tag": 1,
+        "sink_arguments": [
+          1,
+          2,
+          3,
+          272760504,
+          0,
+          4278190080
+        ],
+        "unknown_definition_reads": 0,
+        "compared_regions": 61,
+        "compared_bytes": 200400,
+        "native_steps": 16774
+      }
+    },
+    {
+      "case": {
+        "name": "gold",
+        "terrain": 6
+      },
+      "file": "ghidra\\phase159-terrain-light-probe-d974e5a491f6.json",
+      "sha256": "7b3b1711b000c61d680ce965cdbdd7958c32a34d1da8eea9629e2122890b0173",
+      "outcome": {
+        "selected_terrain": 6,
+        "submitted": true,
+        "global_colour_override": false,
+        "runtime_RGB_WORDs": [
+          218,
+          180,
+          76
+        ],
+        "position_Q12": [
+          10240,
+          14336,
+          6144
+        ],
+        "unchanged_Light_parameter117": 4608,
+        "Light_flags": 32882,
+        "native_Light_tag": 1,
+        "sink_arguments": [
+          1,
+          2,
+          3,
+          272760504,
+          0,
+          4278190080
+        ],
+        "unknown_definition_reads": 0,
+        "compared_regions": 61,
+        "compared_bytes": 200400,
+        "native_steps": 16727
+      }
+    },
+    {
+      "case": {
+        "name": "encoded-high",
+        "rgb": [
+          255,
+          0,
+          1
+        ],
+        "high": [
+          1,
+          0,
+          1
+        ]
+      },
+      "file": "ghidra\\phase159-terrain-light-probe-26ee02383c29.json",
+      "sha256": "ffd10d0ba3b4a291269ee8e1d9ba23dfc103f26212e1cd6fd29e97bf237cf9e9",
+      "outcome": {
+        "selected_terrain": 3,
+        "submitted": true,
+        "global_colour_override": false,
+        "runtime_RGB_WORDs": [
+          510,
+          0,
+          256
+        ],
+        "position_Q12": [
+          10240,
+          14336,
+          6144
+        ],
+        "unchanged_Light_parameter117": 4608,
+        "Light_flags": 32882,
+        "native_Light_tag": 1,
+        "sink_arguments": [
+          1,
+          2,
+          3,
+          272760504,
+          0,
+          4278190080
+        ],
+        "unknown_definition_reads": 0,
+        "compared_regions": 61,
+        "compared_bytes": 200400,
+        "native_steps": 16776
+      }
+    },
+    {
+      "case": {
+        "name": "black",
+        "rgb": [
+          0,
+          0,
+          0
+        ]
+      },
+      "file": "ghidra\\phase159-terrain-light-probe-c2a119a5e18b.json",
+      "sha256": "98e72c73e56e46b13e6f5c0edf6229a05dba24c2813dc8e06541af36dd4fac36",
+      "outcome": {
+        "selected_terrain": 3,
+        "submitted": true,
+        "global_colour_override": false,
+        "runtime_RGB_WORDs": [
+          0,
+          0,
+          0
+        ],
+        "position_Q12": [
+          10240,
+          14336,
+          6144
+        ],
+        "unchanged_Light_parameter117": 4608,
+        "Light_flags": 32882,
+        "native_Light_tag": 1,
+        "sink_arguments": [
+          1,
+          2,
+          3,
+          272760504,
+          0,
+          4278190080
+        ],
+        "unknown_definition_reads": 0,
+        "compared_regions": 61,
+        "compared_bytes": 200400,
+        "native_steps": 16774
+      }
+    },
+    {
+      "case": {
+        "name": "disabled",
+        "disabled": true
+      },
+      "file": "ghidra\\phase159-terrain-light-probe-4f6bbef170c6.json",
+      "sha256": "15ad9affe644fe0d93d71179292452db9a66a5ea1320ba5b75dae89936f20ab4",
+      "outcome": {
+        "selected_terrain": 3,
+        "submitted": false,
+        "global_colour_override": false,
+        "runtime_RGB_WORDs": [
+          500,
+          500,
+          500
+        ],
+        "position_Q12": [
+          2048,
+          2048,
+          4608
+        ],
+        "unchanged_Light_parameter117": 4608,
+        "Light_flags": 32,
+        "native_Light_tag": 1,
+        "sink_arguments": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "unknown_definition_reads": 0,
+        "compared_regions": 61,
+        "compared_bytes": 200400,
+        "native_steps": 16502
+      }
+    },
+    {
+      "case": {
+        "name": "cellC-blocked",
+        "cellC": 0
+      },
+      "file": "ghidra\\phase159-terrain-light-probe-c9df4777ff91.json",
+      "sha256": "908234d28eaf93732c821b0bd5650fa0732419159b0c7a745f83ac3a4e42a0bc",
+      "outcome": {
+        "selected_terrain": 3,
+        "submitted": false,
+        "global_colour_override": false,
+        "runtime_RGB_WORDs": [
+          500,
+          500,
+          500
+        ],
+        "position_Q12": [
+          2048,
+          2048,
+          4608
+        ],
+        "unchanged_Light_parameter117": 4608,
+        "Light_flags": 32,
+        "native_Light_tag": 1,
+        "sink_arguments": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "unknown_definition_reads": 0,
+        "compared_regions": 61,
+        "compared_bytes": 200400,
+        "native_steps": 16497
+      }
+    },
+    {
+      "case": {
+        "name": "global-dirt",
+        "cell9": 0,
+        "cellB": 64
+      },
+      "file": "ghidra\\phase159-terrain-light-probe-db86feeedf4b.json",
+      "sha256": "2f6c3637f7a16ac2449dbbb3d7b801dde462b1875681f44c01fd3a9a0241ccfa",
+      "outcome": {
+        "selected_terrain": 3,
+        "submitted": true,
+        "global_colour_override": true,
+        "runtime_RGB_WORDs": [
+          111,
+          222,
+          333
+        ],
+        "position_Q12": [
+          10240,
+          14336,
+          6144
+        ],
+        "unchanged_Light_parameter117": 4608,
+        "Light_flags": 32882,
+        "native_Light_tag": 1,
+        "sink_arguments": [
+          1,
+          2,
+          3,
+          272760504,
+          0,
+          4278190080
+        ],
+        "unknown_definition_reads": 0,
+        "compared_regions": 61,
+        "compared_bytes": 200400,
+        "native_steps": 16785
+      }
+    },
+    {
+      "case": {
+        "name": "global-gold",
+        "terrain": 6,
+        "cell9": 0,
+        "cellB": 64
+      },
+      "file": "ghidra\\phase159-terrain-light-probe-a30ec84bfd8c.json",
+      "sha256": "1e215e082e4bdf3224801a01add3f867e435ea7e726be13a311c9d25a4b33529",
+      "outcome": {
+        "selected_terrain": 6,
+        "submitted": true,
+        "global_colour_override": false,
+        "runtime_RGB_WORDs": [
+          218,
+          180,
+          76
+        ],
+        "position_Q12": [
+          10240,
+          14336,
+          6144
+        ],
+        "unchanged_Light_parameter117": 4608,
+        "Light_flags": 32882,
+        "native_Light_tag": 1,
+        "sink_arguments": [
+          1,
+          2,
+          3,
+          272760504,
+          0,
+          4278190080
+        ],
+        "unknown_definition_reads": 0,
+        "compared_regions": 61,
+        "compared_bytes": 200400,
+        "native_steps": 16731
+      }
+    },
+    {
+      "case": {
+        "name": "unknowns",
+        "unknown198": 48879,
+        "unknown224": 2309737967
+      },
+      "file": "ghidra\\phase159-terrain-light-probe-59e2cd428924.json",
+      "sha256": "cec711581edf495c027fd654d99873d387fe49c6b290e4a3a787ce9ab6b0ed34",
+      "outcome": {
+        "selected_terrain": 3,
+        "submitted": true,
+        "global_colour_override": false,
+        "runtime_RGB_WORDs": [
+          115,
+          97,
+          65
+        ],
+        "position_Q12": [
+          10240,
+          14336,
+          6144
+        ],
+        "unchanged_Light_parameter117": 4608,
+        "Light_flags": 32882,
+        "native_Light_tag": 1,
+        "sink_arguments": [
+          1,
+          2,
+          3,
+          272760504,
+          0,
+          4278190080
+        ],
+        "unknown_definition_reads": 0,
+        "compared_regions": 61,
+        "compared_bytes": 200400,
+        "native_steps": 16774
+      }
+    },
+    {
+      "case": {
+        "name": "negative-height",
+        "light_height": 4294965248
+      },
+      "file": "ghidra\\phase159-terrain-light-probe-af80163ebefb.json",
+      "sha256": "8fe1fa0e266125e6335b0211ea39e3c70700be73aae3f31ccf95bb01caaa22c4",
+      "outcome": {
+        "selected_terrain": 3,
+        "submitted": true,
+        "global_colour_override": false,
+        "runtime_RGB_WORDs": [
+          115,
+          97,
+          65
+        ],
+        "position_Q12": [
+          10240,
+          14336,
+          0
+        ],
+        "unchanged_Light_parameter117": 4608,
+        "Light_flags": 32882,
+        "native_Light_tag": 1,
+        "sink_arguments": [
+          1,
+          2,
+          3,
+          272760504,
+          0,
+          4278190080
+        ],
+        "unknown_definition_reads": 0,
+        "compared_regions": 61,
+        "compared_bytes": 200400,
+        "native_steps": 16824
+      }
+    },
+    {
+      "case": {
+        "name": "raised-floor",
+        "floor": 8192
+      },
+      "file": "ghidra\\phase159-terrain-light-probe-39e30510819e.json",
+      "sha256": "3565ffe3e38be4b12849f4b3dbf0d3d6ade80fcd3e185b42d7b0b3e0b5679812",
+      "outcome": {
+        "selected_terrain": 3,
+        "submitted": true,
+        "global_colour_override": false,
+        "runtime_RGB_WORDs": [
+          115,
+          97,
+          65
+        ],
+        "position_Q12": [
+          10240,
+          14336,
+          8192
+        ],
+        "unchanged_Light_parameter117": 4608,
+        "Light_flags": 32882,
+        "native_Light_tag": 1,
+        "sink_arguments": [
+          1,
+          2,
+          3,
+          272760504,
+          0,
+          4278190080
+        ],
+        "unknown_definition_reads": 0,
+        "compared_regions": 61,
+        "compared_bytes": 200400,
+        "native_steps": 16874
+      }
+    },
+    {
+      "case": {
+        "name": "negative-floor",
+        "floor": -4096,
+        "light_height": 4294965248
+      },
+      "file": "ghidra\\phase159-terrain-light-probe-12a73f3ad8c4.json",
+      "sha256": "ff5814a202ba810dee06e9ebb82607fb1e14d2a449429e330ad55a0cbd5681b0",
+      "outcome": {
+        "selected_terrain": 3,
+        "submitted": true,
+        "global_colour_override": false,
+        "runtime_RGB_WORDs": [
+          115,
+          97,
+          65
+        ],
+        "position_Q12": [
+          10240,
+          14336,
+          -2048
+        ],
+        "unchanged_Light_parameter117": 4608,
+        "Light_flags": 32882,
+        "native_Light_tag": 1,
+        "sink_arguments": [
+          1,
+          2,
+          3,
+          272760504,
+          0,
+          4278190080
+        ],
+        "unknown_definition_reads": 0,
+        "compared_regions": 61,
+        "compared_bytes": 200400,
+        "native_steps": 16774
+      }
+    },
+    {
+      "case": {
+        "name": "fallback-global",
+        "fallback": true
+      },
+      "file": "ghidra\\phase159-terrain-light-probe-b259fa38b677.json",
+      "sha256": "180a83249fbab08174c047d5619926f3dabb1ca74bf4c805e44883dd70685ee7",
+      "outcome": {
+        "selected_terrain": 38,
+        "submitted": true,
+        "global_colour_override": true,
+        "runtime_RGB_WORDs": [
+          111,
+          222,
+          333
+        ],
+        "position_Q12": [
+          10240,
+          14336,
+          6144
+        ],
+        "unchanged_Light_parameter117": 4608,
+        "Light_flags": 32882,
+        "native_Light_tag": 1,
+        "sink_arguments": [
+          1,
+          2,
+          3,
+          272760504,
+          0,
+          4278190080
+        ],
+        "unknown_definition_reads": 0,
+        "compared_regions": 61,
+        "compared_bytes": 200400,
+        "native_steps": 16802
+      }
+    },
+    {
+      "case": {
+        "name": "fallback-colour",
+        "fallback": true,
+        "fallback_gold": 1
+      },
+      "file": "ghidra\\phase159-terrain-light-probe-216a6b560a52.json",
+      "sha256": "5fc6d1d35f436ae74aa9f663456a487d6f91bce93690593b0d8e6ec7d7ea25a7",
+      "outcome": {
+        "selected_terrain": 38,
+        "submitted": true,
+        "global_colour_override": false,
+        "runtime_RGB_WORDs": [
+          200,
+          80,
+          35
+        ],
+        "position_Q12": [
+          10240,
+          14336,
+          6144
+        ],
+        "unchanged_Light_parameter117": 4608,
+        "Light_flags": 32882,
+        "native_Light_tag": 1,
+        "sink_arguments": [
+          1,
+          2,
+          3,
+          272760504,
+          0,
+          4278190080
+        ],
+        "unknown_definition_reads": 0,
+        "compared_regions": 61,
+        "compared_bytes": 200400,
+        "native_steps": 16795
+      }
+    },
+    {
+      "case": {
+        "name": "fallback-disabled",
+        "fallback": true,
+        "fallback_disabled": true
+      },
+      "file": "ghidra\\phase159-terrain-light-probe-c972c6d385e2.json",
+      "sha256": "481883527cac523cdda1a044f0f8f6dd80c221e9a620a565c8370564c9155eed",
+      "outcome": {
+        "selected_terrain": 38,
+        "submitted": false,
+        "global_colour_override": false,
+        "runtime_RGB_WORDs": [
+          500,
+          500,
+          500
+        ],
+        "position_Q12": [
+          2048,
+          2048,
+          4608
+        ],
+        "unchanged_Light_parameter117": 4608,
+        "Light_flags": 32,
+        "native_Light_tag": 1,
+        "sink_arguments": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "unknown_definition_reads": 0,
+        "compared_regions": 61,
+        "compared_bytes": 200400,
+        "native_steps": 16521
+      }
+    }
+  ],
+  "paired_controls": [
+    {
+      "cases": [
+        "dirt",
+        "unknowns"
+      ],
+      "compared_regions": 61,
+      "compared_bytes": 200400,
+      "allowed_storage_differences": {
+        "0x18200000": [
+          [
+            408,
+            2
+          ],
+          [
+            548,
+            4
+          ]
+        ],
+        "0x18100000": [
+          [
+            1512,
+            4
+          ],
+          [
+            1767,
+            2
+          ],
+          [
+            1817,
+            4
+          ]
+        ]
+      },
+      "actual_differences": [
+        {
+          "region": "0x18100000",
+          "changed_byte_offsets": [
+            1512,
+            1513,
+            1767,
+            1768,
+            1817,
+            1818,
+            1819,
+            1820
+          ]
+        },
+        {
+          "region": "0x18200000",
+          "changed_byte_offsets": [
+            408,
+            409,
+            548,
+            549,
+            550,
+            551
+          ]
+        }
+      ],
+      "Light_and_submission_identical": true,
+      "scope": "Only prepared selected441CD0 path; no globalnonuse or gameplay name for raw198/224."
+    }
+  ]
+}

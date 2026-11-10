@@ -1,0 +1,142 @@
+{
+  "phase": 64,
+  "capstone_version": "5.0.7",
+  "policy": {
+    "file": "native_memory_access.py",
+    "sha256": "be38c08f91955d4fd1ca0e03ce9c954238926498889325adf6ba63e61edbd7f4"
+  },
+  "native_calibration": [
+    {
+      "program": "DX",
+      "address": "0x510e36",
+      "hex": "845132",
+      "instruction": "test byte ptr [ecx + 0x32], dl",
+      "capstone_access": 0,
+      "reason": "opcode_read_fallback",
+      "expected_data_read": true
+    },
+    {
+      "program": "old",
+      "address": "0x423645",
+      "hex": "859586060000",
+      "instruction": "test dword ptr [ebp + 0x686], edx",
+      "capstone_access": 0,
+      "reason": "opcode_read_fallback",
+      "expected_data_read": true
+    },
+    {
+      "program": "DX",
+      "address": "0x46122c",
+      "hex": "f6473201",
+      "instruction": "test byte ptr [edi + 0x32], 1",
+      "capstone_access": 1,
+      "reason": "capstone_read",
+      "expected_data_read": true
+    },
+    {
+      "program": "DX",
+      "address": "0x461236",
+      "hex": "668b473a",
+      "instruction": "mov ax, word ptr [edi + 0x3a]",
+      "capstone_access": 1,
+      "reason": "capstone_read",
+      "expected_data_read": true
+    },
+    {
+      "program": "DX",
+      "address": "0x4b0438",
+      "hex": "884632",
+      "instruction": "mov byte ptr [esi + 0x32], al",
+      "capstone_access": 2,
+      "reason": null,
+      "expected_data_read": false
+    },
+    {
+      "program": "DX",
+      "address": "0x461246",
+      "hex": "8d542418",
+      "instruction": "lea edx, [esp + 0x18]",
+      "capstone_access": 1,
+      "reason": null,
+      "expected_data_read": false
+    },
+    {
+      "program": "DX",
+      "address": "0x426c44",
+      "hex": "ff92c8020000",
+      "instruction": "call dword ptr [edx + 0x2c8]",
+      "capstone_access": 1,
+      "reason": null,
+      "expected_data_read": false
+    }
+  ],
+  "defect": "Capstone5.0.7 reports memory operand access0 for observed TEST mem,reg. Historical READ-bit-only candidate scanners can omit these reads;not a change to actual nativecode or validatedemulations.",
+  "corrected_passes": [
+    {
+      "file": "phase64-old-creature-argument-leads-v2.json",
+      "sha256": "54c7ab0030939d45059f2ff88eebbd877213fd4f225be8a7503dfac614c2a34e",
+      "roots": 822,
+      "states": 14506,
+      "control_reads": 356,
+      "added_test_flag_checks": 21,
+      "unknown_field_purpose": "Still unresolved",
+      "limits": 0
+    },
+    {
+      "file": "phase64-old-typed-consumer-leads-v4.json",
+      "sha256": "18422e95582c13db93653033265210766adfdd2c54badab527c2246cf325ebf3",
+      "roots": 408,
+      "states": 5966,
+      "reads": 10,
+      "changed_candidates": 0,
+      "limits": 0
+    },
+    {
+      "file": "phase64-keeper-cfg-alias-leads-v2.json",
+      "sha256": "093489079298229104a2865f7db430fa40df9fd0e1214f06bf339b7713cc1b2f",
+      "roots": 45,
+      "states": 838,
+      "overlap_reads": 0,
+      "pointer_forwards": 9
+    },
+    {
+      "file": "phase64-ap-pointer-leads-v2.json",
+      "sha256": "d4c22af5e074d2622196cdf8e76674908b9b2cb6175eb78115a0ef2429df0f17",
+      "roots": 2623,
+      "states": 135454,
+      "reads": 274,
+      "added_test_control_reads": 2,
+      "limited_roots": 8,
+      "limited_callees": 28,
+      "callee_contexts": 609,
+      "producer_types": {
+        "global-tag-table-untyped": 2615,
+        "vslot-return-hint": 8
+      },
+      "scope": "Globaltagtable/vslotseeds are untyped candidates;AP class/fieldidentity needs independentnativeproof."
+    }
+  ],
+  "descriptor_search": {
+    "file": "phase64-offset-table-candidates.json",
+    "sha256": "4681a74263b272f640368c59150e40747ee25ee0a3d0d981e46db65225cfa6ed",
+    "programs": 2,
+    "candidates": 396,
+    "large_word_rejections": [
+      {
+        "exe": "D:\\Games\\DK2\\Dungeon Keeper 2\\DKII-DX.exe",
+        "address": "0x6af640",
+        "numeric_word": 1884,
+        "containing_dword": "0x6b075c",
+        "rule": "Low WORD coincidence inside pointer-sizedvalue,not a verified Creature offset descriptor."
+      }
+    ],
+    "scope": "Initialized readable non-executable nonresource/nonreloc sections only;not runtime-built,byte-encoded,compressed or text-embeddedtables."
+  },
+  "limitations": [
+    "Native/read candidate classifier is not a global non-use proof.",
+    "Legacy READ-bit-only searches remain historical and have this additional blind spot. Four specified passes replayed;allhistorical scans are not retroactively declared corrected.",
+    "Fallback covers known TEST/CMP reads;completeCapstoneinstructionmetadata validation notclaimed.",
+    "CorrectedAP globaltagtable search has8bounded roots and28boundedcallees;no global AP04/08absenceclaim.",
+    "No new AbilityJump/PickUpPriority/Traps204/Objects34C/KeeperC8 gameplay purpose assigned."
+  ]
+}

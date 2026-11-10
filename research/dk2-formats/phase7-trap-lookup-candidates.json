@@ -1,0 +1,100 @@
+{
+  "program_sha256": "d7a8b854e4e4f02709eba271bead6fe2307dd6e332b5a96e70857e5b0e19fb8a",
+  "warning": "Instruction-level memory candidates, not proof of object identity or semantics.\n\nDecode only Flame-mapped spans within .text. Embedded data, overlapping mappings,\nunrelated vtables and reused displacements still require manual verification.\n",
+  "mapped_spans_scanned": 8729,
+  "functions": [
+    {
+      "function": "0x412fc0",
+      "name": "CButton_render_412FC0",
+      "size": 4649,
+      "matching_virtual_calls": [
+        {
+          "address": "0x413673",
+          "text": "call dword ptr [edx + 0x160]",
+          "displacement": "0x160",
+          "memory_bytes": 4
+        }
+      ],
+      "field_candidates": [
+        {
+          "address": "0x413064",
+          "text": "mov dword ptr [esp + 0x98], edi",
+          "displacement": "0x98",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x413402",
+          "text": "mov dword ptr [esp + 0x98], eax",
+          "displacement": "0x98",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x41408d",
+          "text": "cmp dword ptr [esp + 0x98], ebp",
+          "displacement": "0x98",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x4a55f0",
+      "name": "tick",
+      "size": 4231,
+      "matching_virtual_calls": [
+        {
+          "address": "0x4a62c0",
+          "text": "call dword ptr [edx + 0x160]",
+          "displacement": "0x160",
+          "memory_bytes": 4
+        }
+      ],
+      "field_candidates": [
+        {
+          "address": "0x4a62c8",
+          "text": "mov ecx, dword ptr [edi + 0x9a]",
+          "displacement": "0x9a",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x4a6431",
+          "text": "mov ecx, dword ptr [edi + 0x9a]",
+          "displacement": "0x9a",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x4a6445",
+          "text": "mov edx, dword ptr [edi + 0x9a]",
+          "displacement": "0x9a",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x4a7810",
+      "name": "sub_4A7810",
+      "size": 244,
+      "matching_virtual_calls": [
+        {
+          "address": "0x4a783f",
+          "text": "call dword ptr [edx + 0x160]",
+          "displacement": "0x160",
+          "memory_bytes": 4
+        }
+      ],
+      "field_candidates": [
+        {
+          "address": "0x4a7845",
+          "text": "movsx ecx, word ptr [eax + 0x96]",
+          "displacement": "0x96",
+          "memory_bytes": 2
+        },
+        {
+          "address": "0x4a784c",
+          "text": "mov eax, dword ptr [eax + 0x9a]",
+          "displacement": "0x9a",
+          "memory_bytes": 4
+        }
+      ]
+    }
+  ]
+}

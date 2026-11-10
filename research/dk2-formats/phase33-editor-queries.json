@@ -1,0 +1,58 @@
+[
+  {
+    "id": "phase33-AP-editor-load-create",
+    "tool": "create_function",
+    "args": {
+      "program": "DK2 Editor pro.exe",
+      "address": "0x4918b0",
+      "disassemble_first": true
+    },
+    "print_limit": 0
+  },
+  {
+    "id": "phase33-AP-editor-load",
+    "tool": "force_decompile",
+    "args": {
+      "program": "DK2 Editor pro.exe",
+      "address": "0x4918b0"
+    },
+    "print_limit": 1700
+  },
+  {
+    "id": "phase33-AP-editor-load-assembly",
+    "tool": "disassemble_function",
+    "args": {
+      "program": "DK2 Editor pro.exe",
+      "address": "0x4918b0"
+    },
+    "print_limit": 0
+  },
+  {
+    "id": "phase33-AP-editor-constructor-create",
+    "tool": "create_function",
+    "args": {
+      "program": "DK2 Editor pro.exe",
+      "address": "0x41b6c0",
+      "disassemble_first": true
+    },
+    "print_limit": 0
+  },
+  {
+    "id": "phase33-AP-editor-constructor",
+    "tool": "force_decompile",
+    "args": {
+      "program": "DK2 Editor pro.exe",
+      "address": "0x41b6c0"
+    },
+    "print_limit": 1700
+  },
+  {
+    "id": "phase33-AP-editor-constructor-assembly",
+    "tool": "disassemble_function",
+    "args": {
+      "program": "DK2 Editor pro.exe",
+      "address": "0x41b6c0"
+    },
+    "print_limit": 0
+  }
+]

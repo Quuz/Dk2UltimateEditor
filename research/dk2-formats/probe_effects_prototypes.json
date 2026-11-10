@@ -1,0 +1,10 @@
+[
+ {"id":"game-effect-spawn-child-prototype-before","tool":"get_function_signature","args":{"program":"DKII-DX.exe","address":"0x4352e0"},"print_limit":1000},
+ {"id":"game-effect-spawn-child-prototype-set","tool":"set_function_prototype","args":{"program":"DKII-DX.exe","function_address":"0x4352e0","prototype":"int spawnElement(unsigned short id, int *position, unsigned short *orientation, int **outElement);","calling_convention":"__thiscall"},"print_limit":200},
+ {"id":"game-effect-position-prototype-set","tool":"set_function_prototype","args":{"program":"DKII-DX.exe","function_address":"0x435660","prototype":"int *choosePosition(int *outVector, int innerRadius, int outerRadius, int lowerHeight, int upperHeight);","calling_convention":"__stdcall"},"print_limit":200},
+ {"id":"game-effect-spin-prototype-set","tool":"set_function_prototype","args":{"program":"DKII-DX.exe","function_address":"0x435720","prototype":"void chooseOrientation(unsigned short *outAngle, int range);","calling_convention":"__stdcall"},"print_limit":200},
+ {"id":"game-effect-spawn-child-typed","tool":"force_decompile","args":{"program":"DKII-DX.exe","address":"0x4352e0"},"print_limit":1500},
+ {"id":"game-effect-generation-4-typed","tool":"force_decompile","args":{"program":"DKII-DX.exe","address":"0x4386f0"},"print_limit":30},
+ {"id":"game-effect-position-assembly","tool":"disassemble_function","args":{"program":"DKII-DX.exe","address":"0x435660"},"print_limit":30},
+ {"id":"game-effect-spin-assembly","tool":"disassemble_function","args":{"program":"DKII-DX.exe","address":"0x435720"},"print_limit":30}
+]

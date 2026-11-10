@@ -1,0 +1,343 @@
+{
+  "program": "DKII-DX.exe",
+  "sha256": "d7a8b854e4e4f02709eba271bead6fe2307dd6e332b5a96e70857e5b0e19fb8a",
+  "creature_fields": [
+    {
+      "name": "MaxAngleChangeRaw",
+      "offset": 3872,
+      "offset_hex": "0xf20",
+      "size": 2,
+      "kind": "u16",
+      "baseline_names": [
+        "Unk3cc"
+      ],
+      "confidence": "engine units and unsigned read",
+      "evidence": [
+        "game-creature-convert.txt",
+        "game-creature-type.txt",
+        "game-turning-apply.txt",
+        "game-turning-tick.txt"
+      ],
+      "note": "2048 angular units per full turn. Per-tick limit = floor(raw / simulationTPS); positive raw clamped to at least 1. Degrees per second before quantization = raw*360/2048. Not signed /4096."
+    },
+    {
+      "name": "GameExtraFlagsRaw",
+      "offset": 5445,
+      "offset_hex": "0x1545",
+      "size": 4,
+      "kind": "u32",
+      "baseline_names": [
+        "Flags3"
+      ],
+      "confidence": "engine read confirmed",
+      "evidence": [
+        "game-creature-convert.txt",
+        "game-creature-type.txt"
+      ],
+      "note": "Runtime +0x68A. Game converter reads this slot for both measured strides. Do not auto-copy the editor slot."
+    },
+    {
+      "name": "EditorExtraFlagsRaw",
+      "offset": 5529,
+      "offset_hex": "0x1599",
+      "size": 4,
+      "kind": "u32",
+      "baseline_names": [],
+      "confidence": "editor read confirmed",
+      "evidence": [
+        "creature-record-decoder.txt"
+      ],
+      "note": "Only present in 5537-byte variant. Separate from GameExtraFlagsRaw."
+    },
+    {
+      "name": "WidthRaw",
+      "offset": 3744,
+      "offset_hex": "0xea0",
+      "size": 4,
+      "kind": "u32",
+      "baseline_names": [
+        "Unkea0"
+      ],
+      "confidence": "consumer confirms half-width",
+      "evidence": [
+        "game-creature-convert.txt",
+        "game-creature-type.txt",
+        "../sources/creatures_struct.bt",
+        "game-creature-radius-getter.txt",
+        "game-creature-width-consumer.txt",
+        "game-creature-width-use.txt"
+      ],
+      "note": "Raw fixed-point width; loader stores low16 in runtime+0x63A. Consumers use width>>1; 0x48F690 adds clearance 0x80. Not an independently stored radius."
+    },
+    {
+      "name": "MassRaw",
+      "offset": 3752,
+      "offset_hex": "0xea8",
+      "size": 4,
+      "kind": "u32",
+      "baseline_names": [
+        "Unkea8"
+      ],
+      "confidence": "collision consumer and table confirmed",
+      "evidence": [
+        "game-creature-convert.txt",
+        "game-creature-type.txt",
+        "../sources/creatures_struct.bt",
+        "game-creature-mass-collision.txt",
+        "game-creature-mass-ratio.txt",
+        "game-creature-mass-ratio-assembly.txt",
+        "game-creature-mass-collision-assembly.txt"
+      ],
+      "note": "Loader stores low16 in runtime+0x624. Collision helper uses (mass>>12) as a 1..5 class in a 5x5 lookup; fractional bits do not affect that lookup. No bounds clamp in helper."
+    },
+    {
+      "name": "AirFrictionRaw",
+      "offset": 3756,
+      "offset_hex": "0xeac",
+      "size": 4,
+      "kind": "u32",
+      "baseline_names": [
+        "Unk3ab"
+      ],
+      "confidence": "storage and instance initialization confirmed",
+      "evidence": [
+        "game-creature-convert.txt",
+        "game-creature-type.txt",
+        "../sources/creatures_struct.bt",
+        "game-creature-instance-init.txt"
+      ],
+      "note": "Low16 copied into runtime+0x690 and instance+0x11E at initialization; full physical interpretation not proven."
+    },
+    {
+      "name": "ScoreRatingRaw",
+      "offset": 3916,
+      "offset_hex": "0xf4c",
+      "size": 1,
+      "kind": "u8",
+      "baseline_names": [
+        "unk3ea[0].unk3ea"
+      ],
+      "confidence": "numeric score consumers confirmed",
+      "evidence": [
+        "game-creature-convert.txt",
+        "game-creature-type.txt",
+        "../sources/creatures_struct.bt",
+        "game-creature-score-a.txt",
+        "game-creature-score-b.txt"
+      ],
+      "note": "Runtime+0x787 u8. 0x4BCB20 sums values over a creature list; 0x4FA8D0 compares candidates to select a minimum. Full AI strategy semantics are not inferred."
+    },
+    {
+      "name": "RoomCapacityNeededRaw",
+      "offset": 3917,
+      "offset_hex": "0xf4d",
+      "size": 1,
+      "kind": "u8",
+      "baseline_names": [
+        "unk3ea[1].unk3ea"
+      ],
+      "confidence": "room capacity consumer confirmed",
+      "evidence": [
+        "game-creature-convert.txt",
+        "game-creature-type.txt",
+        "../sources/creatures_struct.bt",
+        "game-creature-room-capacity.txt"
+      ],
+      "note": "Runtime+0x672 u8. Room routine 0x4E69B0 subtracts this amount for processed occupants; zero skips that subtraction path."
+    },
+    {
+      "name": "DisarmFailurePercentageRaw",
+      "offset": 3921,
+      "offset_hex": "0xf51",
+      "size": 1,
+      "kind": "u8",
+      "baseline_names": [
+        "Unk3eb2"
+      ],
+      "confidence": "failure threshold and RNG bound confirmed",
+      "evidence": [
+        "game-creature-convert.txt",
+        "game-creature-type.txt",
+        "../sources/creatures_struct.bt",
+        "game-creature-disarm.txt",
+        "game-random-bound.txt"
+      ],
+      "note": "Runtime+0x5E0 u8, stat20 growth. Disarm routine compares random(100), range0..99, against level-scaled threshold; grown threshold clamped0..254. Values>=100 always enter the compared branch."
+    },
+    {
+      "name": "SatisfyAngerTreatRaw",
+      "offset": 4043,
+      "offset_hex": "0xfcb",
+      "size": 2,
+      "kind": "u16",
+      "baseline_names": [
+        "Unkfcb"
+      ],
+      "confidence": "unsigned consumer and gift IDs confirmed",
+      "evidence": [
+        "game-creature-convert.txt",
+        "game-creature-type.txt",
+        "../sources/creatures_struct.bt",
+        "game-creature-treat-anger.txt",
+        "game-emotionless-event-a.txt"
+      ],
+      "note": "Runtime+0x6E1 read as u16; gold IDs1..3 / Chicken ID9 gift branches call mood handler category5 with negative of this value. Emotionless bit4 suppresses the inspected handler."
+    },
+    {
+      "name": "ScaleRaw",
+      "offset": 4045,
+      "offset_hex": "0xfcd",
+      "size": 4,
+      "kind": "u32",
+      "baseline_names": [
+        "Unk4"
+      ],
+      "confidence": "storage read confirmed; semantic name from template",
+      "evidence": [
+        "game-creature-convert.txt",
+        "game-creature-type.txt",
+        "../sources/creatures_struct.bt"
+      ],
+      "note": "Raw integer view. Signedness, displayed scale and full gameplay semantics not inferred from memcpy."
+    },
+    {
+      "name": "SniperZoomMultiplierRaw",
+      "offset": 4219,
+      "offset_hex": "0x107b",
+      "size": 4,
+      "kind": "u32",
+      "baseline_names": [
+        "Unk6"
+      ],
+      "confidence": "quantized multiplier consumer confirmed",
+      "evidence": [
+        "game-creature-convert.txt",
+        "game-creature-type.txt",
+        "../sources/creatures_struct.bt",
+        "game-creature-sniper-use.txt"
+      ],
+      "note": "Runtime+0x79B u32. 0x40FDF0 uses raw>>12, returns when result<2, and multiplies an ability range parameter by that integer in one toggle branch. Fractions are discarded; this is not proof of continuous camera zoom."
+    },
+    {
+      "name": "AbilityCreepPercentageRaw",
+      "offset": 3812,
+      "offset_hex": "0xee4",
+      "size": 4,
+      "kind": "u32",
+      "baseline_names": [
+        "Unkee4"
+      ],
+      "confidence": "runtime consumer confirmed; source names qualified",
+      "evidence": [
+        "game-creature-convert.txt",
+        "game-creature-type.txt",
+        "../sources/creatures_struct.bt",
+        "game-creature-possession-sneak1.txt",
+        "game-creature-possession-sneak2.txt"
+      ],
+      "note": "Runtime+0x760 used under instance flag0x1000; level-scaled by stat26, then multiplies a squared-distance quantity /100 in both inspected consumers. Do not present as ordinary movement speed."
+    },
+    {
+      "name": "SwipeSpeedRaw",
+      "offset": 3308,
+      "offset_hex": "0xcec",
+      "size": 2,
+      "kind": "u16",
+      "baseline_names": [
+        "Unkcec"
+      ],
+      "confidence": "UI use and divide constraint confirmed",
+      "evidence": [
+        "game-creature-convert.txt",
+        "game-creature-type.txt",
+        "../sources/creatures_struct.bt",
+        "game-creature-swipe-ui.txt",
+        "game-swipe-speed-use.txt",
+        "game-swipe-speed-use-assembly.txt"
+      ],
+      "note": "Runtime+0x791 u16 passed with swipe ID to0x5075A0. Nonzero swipe computes22000/speed; IDIV0 at0x507615 when speed=0. Both current catalogues store75 for all46 creatures."
+    },
+    {
+      "name": "WorkModifierDefaultRaw",
+      "offset": 3310,
+      "offset_hex": "0xcee",
+      "size": 4,
+      "kind": "u32",
+      "baseline_names": [
+        "Unkcee"
+      ],
+      "confidence": "normal constructor bypass confirmed",
+      "evidence": [
+        "game-creature-convert.txt",
+        "game-creature-type.txt",
+        "../sources/creatures_struct.bt",
+        "game-creature-instance-init.txt"
+      ],
+      "note": "Copied to type+0x793, but normal instance constructor sets work modifier+0x3AF to literal0xCCC (~0.8), independently of this field. No universal unused claim."
+    },
+    {
+      "name": "WorkModifierLevelIncreaseRaw",
+      "offset": 3314,
+      "offset_hex": "0xcf2",
+      "size": 4,
+      "kind": "u32",
+      "baseline_names": [
+        "Unkcf2"
+      ],
+      "confidence": "level-up consumer confirmed",
+      "evidence": [
+        "game-creature-convert.txt",
+        "game-creature-type.txt",
+        "../sources/creatures_struct.bt",
+        "game-creature-work-levelup.txt",
+        "game-creature-level-up.txt"
+      ],
+      "note": "Type+0x797 getter 0x48B330 feeds addition to instance+0x3AF in 0x48B120. Current two catalogues contain zero for all46 creatures."
+    }
+  ],
+  "creature_arrays": [
+    {
+      "name": "FootstepFrames",
+      "offset": 4899,
+      "size": 192,
+      "count": 48,
+      "element_size": 4,
+      "element_fields": [
+        {
+          "name": "LeftFrame",
+          "offset": 0,
+          "size": 2,
+          "kind": "u16"
+        },
+        {
+          "name": "RightFrame",
+          "offset": 2,
+          "size": 2,
+          "kind": "u16"
+        }
+      ],
+      "evidence": [
+        "game-creature-convert.txt",
+        "game-creature-type.txt",
+        "game-creature-footstep-tick.txt",
+        "game-creature-footstep-access.txt"
+      ],
+      "note": "Runtime data +0x7A3: pairs per animation slot. Instance phases = floor(frame*4096 / loadedAnimationFrameCount)."
+    }
+  ],
+  "extra_flags": {
+    "game_offset": 5445,
+    "editor_offset": 5529,
+    "editor_writer_known_mask": 15,
+    "editor_writer_evidence": [
+      "editor-creature-extra-flags-save-assembly.txt",
+      "editor-creature-writer-assembly.txt"
+    ],
+    "observed_runtime_bits": {
+      "1": "checked in lightning damage path 0x4AF1E0",
+      "4": "skips call in 0x478CE0; emotionless name from template",
+      "8": "hero portal room 0x19 eligibility in 0x4DBF90"
+    },
+    "bit_2": "Stone Knight name from sources; gameplay effect not independently verified"
+  }
+}

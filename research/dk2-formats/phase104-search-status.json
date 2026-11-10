@@ -1,0 +1,76 @@
+{
+  "phase": 104,
+  "date": "2026-10-29",
+  "status": "Published/audited exact rawVariables-to-possession melee getter",
+  "published_phase": 104,
+  "previous_goal_turn_classification": "progress:phase103 published model/native CPU evidence;phase104 verifies new possessionDamage consumer",
+  "package_components": 83,
+  "accepted_native_cases": 27,
+  "raw_callbacks": 60,
+  "exact_container_rebuilds": 1452,
+  "changed_containers": 1447,
+  "identity_containers": 5,
+  "evidence": [
+    {
+      "file": "possession-damage-semantics.json",
+      "sha256": "7cc198ca6f3a022de0430e05cc1f5f05fad5def1cfce9bb07310494b94b021a5"
+    },
+    {
+      "file": "POSSESSION_DAMAGE_RU.md",
+      "sha256": "e71e7a8a2362f97a21d0a803fc93d085e64da00456a750129af87630ca9faa2e"
+    },
+    {
+      "file": "phase104-validation.json",
+      "sha256": "8ea7fc868d0b061f66bb44ca95c28fbcdf67fbb88d2437da0749491388e73e73"
+    },
+    {
+      "file": "phase104-primary-manifest.json",
+      "sha256": "9d9538d9d61bf864d18900d903aba5aee0cf229929dec1e52c476280f20a4a60"
+    },
+    {
+      "file": "phase104-possession-damage-emulations.json",
+      "sha256": "bb7f3fbdea140bb1bf3c3913fdac7c083fce7750759d32db706209586f8b7578"
+    },
+    {
+      "file": "phase104-damage-api-validation.json",
+      "sha256": "0f22f5065250d877001d78aa0707299ad493feaaba13abf7406453f1d129c220"
+    },
+    {
+      "file": "INTEGRATION_RU.md",
+      "sha256": "67153c1b61de6e34600e1817562a554f04fe1caf87aff9ac846b903f66d3fcd1"
+    },
+    {
+      "file": "READINESS_RU.md",
+      "sha256": "98066929c87ceab1d413b93926791abad2953f8e337570c7b5aab8803f6602fa"
+    },
+    {
+      "file": "editor-format-package.json",
+      "sha256": "915bbd9715c121b99c54b5c22b47d30eeddfd8b195d50488b5f8bf1c7d858fb9"
+    }
+  ],
+  "pending_native_jobs": [],
+  "findings": [
+    "Type224/stat4 modifies native494D00 melee damage; currentP60/base20 produces31,not32 becauseQ12.",
+    "Type65/stat4 level coefficient precedes last modifier; current125/level2 withbase20 gives39.",
+    "225 adds100 inCombatPitFighter branch;possession andsecondary08 branches takepriority.",
+    "Wholecontexts andraw callbacks checked;actual498E30attack/targetHP staticonly.",
+    "Jump75C lead51F3B0 isdefinitioncopy;494D00/494EF0 consume5C4/5C6,not newJump meaning.",
+    "1452 edits across557 Variables preserveheaders/order/opaque bits;prior82schemas/4EXEs preserved."
+  ],
+  "next_action": "Do not repeat accepted27 getter permutations or wideJump searches. Inspect complete498E30 attack-to-targetHP path using real target class/vtable,valid lookup andoriginal modifiers. Keep targetfacing,ownerbonuses, targetprotection,impact/sound boundaries explicit;do not replace gameplay functions just to pass. Use Ghidra forprimary bytes andappropriate CPU backend forunsupported floatingops;keep phase103 helper hashes intact. Jump/113114 andother15-family unknowns remain priorities when newconsumerleads emerge.",
+  "readiness_estimate_percent": 75,
+  "goal_achieved": false,
+  "significant_unknowns_remain": true,
+  "limitations": [
+    "Exact DX hash;not automatically otherversions.",
+    "Prefix+raw16 callbacks run;whole Variables file parser not in newnative composition.",
+    "Prepared phase90 actor/world/definition;no newfactory,rawCreature loader orlivegame.",
+    "No original game function/vtable patch. Inherited external fixture services not exercised by this complete getter path.",
+    "Whole498E30 caller is static only;no actualhit/targetHP/animation/facing/ownerbonus composition executed.",
+    "Pit bit prepared;fullCombatPit lifecycle/registration not executed.",
+    "Q12 overflow and signed boundary outcomes are storage diagnostics,not recommended UI ranges.",
+    "27 accepted cases;one rejected expected-pit projection retained separately,not counted as a passing check.",
+    "Earlier24 strict Variables refusals retained;not repaired or declared damaged.",
+    "Jump,113/114,otherstats andremaining15-family unknowns remain open. Goalnot achieved."
+  ]
+}

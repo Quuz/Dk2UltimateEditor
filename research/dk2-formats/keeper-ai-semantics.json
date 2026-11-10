@@ -1,0 +1,953 @@
+{
+  "family": "KeeperSpells",
+  "record_variants": [
+    406
+  ],
+  "raw_flags_offset": 220,
+  "raw_flags_bytes": 4,
+  "game_intermediate_offset": 340,
+  "game_presence_offset": 116,
+  "runtime_offset": 84,
+  "raw_mana_cost_offset": 284,
+  "runtime_mana_cost_offset": 88,
+  "executable_sha256": {
+    "Dungeon Keeper 2/DKII-DX.exe": "d7a8b854e4e4f02709eba271bead6fe2307dd6e332b5a96e70857e5b0e19fb8a",
+    "Dungeon Keeper 2/Data/editor/DK2 Editor pro.exe": "989c45df779bccfc9a9e509b2ad0224a9bd269629f74792adc0320fa4b99fb09"
+  },
+  "flags_storage": {
+    "converter": 5683888,
+    "loader": 5209312,
+    "rule": "Converter ORs raw DWORD into intermediate+154; initialized intermediate0 gives exact raw bits. Loader copies complete DWORD when presence74 is nonzero. No mask1E in game path.",
+    "evidence": [
+      {
+        "file": "phase26-keeper-game-converter-assembly.txt",
+        "first": "0x56bcc8",
+        "last": "0x56bcdc",
+        "instructions": [
+          "0056bcc8: MOV EBX,dword ptr [EBX + 0xdc] ",
+          "0056bcce: MOV EAX,dword ptr [EBP + 0x154] ",
+          "0056bcd4: ADD ESP,0xc ",
+          "0056bcd7: OR EAX,EBX ",
+          "0056bcd9: MOV dword ptr [EBP + 0x74],ESI ",
+          "0056bcdc: MOV dword ptr [EBP + 0x154],EAX "
+        ]
+      },
+      {
+        "file": "game-keeperspell-load-assembly.txt",
+        "first": "0x4f7eb6",
+        "last": "0x4f7ec3",
+        "instructions": [
+          "004f7eb6: MOV EAX,dword ptr [ESI + 0x74] ",
+          "004f7eb9: TEST EAX,EAX ",
+          "004f7ebb: JZ 0x004f7ec6 ",
+          "004f7ebd: MOV EDX,dword ptr [ESI + 0x154] ",
+          "004f7ec3: MOV dword ptr [EDI + 0x54],EDX "
+        ]
+      }
+    ]
+  },
+  "native_editor": {
+    "converter": 4372256,
+    "callback": 4859360,
+    "decoder": 4326000,
+    "encoder": 4325936,
+    "writer": 4889008,
+    "model_bools": [
+      {
+        "mask": 2,
+        "name": "Create Worker",
+        "model_offset": 516,
+        "panel_offset": 180,
+        "control": {
+          "id": 1796,
+          "title": "Create Worker",
+          "window_class": {
+            "ordinal": 128
+          },
+          "style": "0x50010003",
+          "template_visible": true,
+          "template_disabled": false,
+          "x": 107,
+          "y": 105,
+          "width": 62,
+          "height": 10
+        },
+        "ddx_evidence": {
+          "file": "phase26-keeper-ddx.txt",
+          "line": 81,
+          "excerpt": "FUN_004e490a(param_1,0x704,(int *)((int)this + 0xb4));"
+        }
+      },
+      {
+        "mask": 4,
+        "name": "Attacking",
+        "model_offset": 520,
+        "panel_offset": 184,
+        "control": {
+          "id": 1797,
+          "title": "Attacking",
+          "window_class": {
+            "ordinal": 128
+          },
+          "style": "0x50010003",
+          "template_visible": true,
+          "template_disabled": false,
+          "x": 174,
+          "y": 105,
+          "width": 46,
+          "height": 10
+        },
+        "ddx_evidence": {
+          "file": "phase26-keeper-ddx.txt",
+          "line": 83,
+          "excerpt": "FUN_004e490a(param_1,0x705,(int *)((int)this + 0xb8));"
+        }
+      },
+      {
+        "mask": 8,
+        "name": "Defensive",
+        "model_offset": 524,
+        "panel_offset": 188,
+        "control": {
+          "id": 1798,
+          "title": "Defensive",
+          "window_class": {
+            "ordinal": 128
+          },
+          "style": "0x50010003",
+          "template_visible": true,
+          "template_disabled": false,
+          "x": 107,
+          "y": 117,
+          "width": 48,
+          "height": 10
+        },
+        "ddx_evidence": {
+          "file": "phase26-keeper-ddx.txt",
+          "line": 85,
+          "excerpt": "FUN_004e490a(param_1,0x706,(int *)((int)this + 0xbc));"
+        }
+      },
+      {
+        "mask": 16,
+        "name": "Don't Cast On Creatures",
+        "model_offset": 528,
+        "panel_offset": 192,
+        "control": {
+          "id": 1799,
+          "title": "Don't Cast On Creatures",
+          "window_class": {
+            "ordinal": 128
+          },
+          "style": "0x50010003",
+          "template_visible": true,
+          "template_disabled": false,
+          "x": 155,
+          "y": 117,
+          "width": 92,
+          "height": 10
+        },
+        "ddx_evidence": {
+          "file": "phase26-keeper-ddx.txt",
+          "line": 87,
+          "excerpt": "FUN_004e490a(param_1,0x707,(int *)((int)this + 0xc0));"
+        }
+      }
+    ],
+    "dialog_resource_path": [
+      5,
+      258,
+      2057
+    ],
+    "dialog_title": "Modify Keeper Spell Properties",
+    "constructor": 4524560,
+    "fill": 4529344,
+    "ddx": 4525952,
+    "commit": 4530128,
+    "projection": "Decoder extracts only bits2/4/8/10 into four BOOL DWORDs. Encoder rebuilds only these four bits. Complete native load/model -> writer flag projection is raw &1E, even without changing a checkbox. Other raw bits need independent preservation.",
+    "evidence": [
+      {
+        "file": "phase26-keeper-flags-decode-assembly.txt",
+        "first": "0x420270",
+        "last": "0x4202a9",
+        "instructions": [
+          "00420270: MOV EAX,dword ptr [ESP + 0x4] ",
+          "00420274: MOV EDX,EAX ",
+          "00420276: SHR EDX,0x1 ",
+          "00420278: AND EDX,0x1 ",
+          "0042027b: MOV dword ptr [ECX + 0x204],EDX ",
+          "00420281: MOV EDX,EAX ",
+          "00420283: SHR EDX,0x2 ",
+          "00420286: AND EDX,0x1 ",
+          "00420289: MOV dword ptr [ECX + 0x208],EDX ",
+          "0042028f: MOV EDX,EAX ",
+          "00420291: SHR EDX,0x3 ",
+          "00420294: SHR EAX,0x4 ",
+          "00420297: AND EDX,0x1 ",
+          "0042029a: AND EAX,0x1 ",
+          "0042029d: MOV dword ptr [ECX + 0x20c],EDX ",
+          "004202a3: MOV dword ptr [ECX + 0x210],EAX ",
+          "004202a9: RET 0x4 "
+        ]
+      },
+      {
+        "file": "phase26-keeper-flags-encode-assembly.txt",
+        "first": "0x420230",
+        "last": "0x420265",
+        "instructions": [
+          "00420230: MOV EDX,dword ptr [ECX + 0x204] ",
+          "00420236: XOR EAX,EAX ",
+          "00420238: TEST EDX,EDX ",
+          "0042023a: JZ 0x00420241 ",
+          "0042023c: MOV EAX,0x2 ",
+          "00420241: MOV EDX,dword ptr [ECX + 0x208] ",
+          "00420247: TEST EDX,EDX ",
+          "00420249: JZ 0x0042024d ",
+          "0042024b: OR AL,0x4 ",
+          "0042024d: MOV EDX,dword ptr [ECX + 0x20c] ",
+          "00420253: TEST EDX,EDX ",
+          "00420255: JZ 0x00420259 ",
+          "00420257: OR AL,0x8 ",
+          "00420259: MOV EDX,dword ptr [ECX + 0x210] ",
+          "0042025f: TEST EDX,EDX ",
+          "00420261: JZ 0x00420265 ",
+          "00420263: OR AL,0x10 ",
+          "00420265: RET "
+        ]
+      },
+      {
+        "file": "phase26-keeper-editor-mid-init.txt",
+        "line": 77,
+        "excerpt": "puVar2 = param_1 + 0x1e;"
+      },
+      {
+        "file": "phase26-keeper-editor-mid-init.txt",
+        "line": 79,
+        "excerpt": "for (iVar1 = 0x65; iVar1 != 0; iVar1 = iVar1 + -1) {"
+      },
+      {
+        "file": "phase26-keeper-editor-converter.txt",
+        "line": 227,
+        "excerpt": "uVar4 = *(uint *)(param_1 + 0xdc);"
+      },
+      {
+        "file": "phase26-keeper-editor-converter.txt",
+        "line": 231,
+        "excerpt": "*(uint *)((int)this + 0x154) = *(uint *)((int)this + 0x154) | uVar4;"
+      },
+      {
+        "file": "phase26-keeper-editor-model-assembly.txt",
+        "first": "0x4a28ee",
+        "last": "0x4a28fc",
+        "instructions": [
+          "004a28ee: CMP dword ptr [ESI + 0x74],EDI ",
+          "004a28f1: JZ 0x004a2901 ",
+          "004a28f3: MOV ECX,dword ptr [ESI + 0x154] ",
+          "004a28f9: PUSH ECX ",
+          "004a28fa: MOV ECX,EBX ",
+          "004a28fc: CALL 0x00420270 "
+        ]
+      },
+      {
+        "file": "phase26-keeper-actual-fill-assembly.txt",
+        "first": "0x451e7d",
+        "last": "0x451ea7",
+        "instructions": [
+          "00451e7d: MOV EAX,dword ptr [ECX + 0x204] ",
+          "00451e83: MOV dword ptr [ESI + 0xb4],EAX ",
+          "00451e89: MOV EAX,dword ptr [ECX + 0x208] ",
+          "00451e8f: MOV dword ptr [ESI + 0xb8],EAX ",
+          "00451e95: MOV EAX,dword ptr [ECX + 0x20c] ",
+          "00451e9b: MOV dword ptr [ESI + 0xbc],EAX ",
+          "00451ea1: MOV EAX,dword ptr [ECX + 0x210] ",
+          "00451ea7: MOV dword ptr [ESI + 0xc0],EAX "
+        ]
+      },
+      {
+        "file": "phase26-keeper-ddx-assembly.txt",
+        "first": "0x4511ae",
+        "last": "0x4511f1",
+        "instructions": [
+          "004511ae: LEA EDX,[EDI + 0xb4] ",
+          "004511b4: PUSH EDX ",
+          "004511b5: PUSH 0x704 ",
+          "004511ba: PUSH ESI ",
+          "004511bb: CALL 0x004e490a ",
+          "004511c0: LEA EAX,[EDI + 0xb8] ",
+          "004511c6: PUSH EAX ",
+          "004511c7: PUSH 0x705 ",
+          "004511cc: PUSH ESI ",
+          "004511cd: CALL 0x004e490a ",
+          "004511d2: LEA ECX,[EDI + 0xbc] ",
+          "004511d8: PUSH ECX ",
+          "004511d9: PUSH 0x706 ",
+          "004511de: PUSH ESI ",
+          "004511df: CALL 0x004e490a ",
+          "004511e4: ADD EDI,0xc0 ",
+          "004511ea: PUSH EDI ",
+          "004511eb: PUSH 0x707 ",
+          "004511f0: PUSH ESI ",
+          "004511f1: CALL 0x004e490a "
+        ]
+      },
+      {
+        "file": "phase26-keeper-actual-commit-assembly.txt",
+        "first": "0x4521c1",
+        "last": "0x452204",
+        "instructions": [
+          "004521c1: MOV EAX,dword ptr [ESI + 0xc4] ",
+          "004521c7: MOV ECX,dword ptr [ESI + 0xb4] ",
+          "004521cd: MOV dword ptr [EAX + 0x204],ECX ",
+          "004521d3: MOV EDX,dword ptr [ESI + 0xc4] ",
+          "004521d9: MOV EAX,dword ptr [ESI + 0xb8] ",
+          "004521df: MOV dword ptr [EDX + 0x208],EAX ",
+          "004521e5: MOV ECX,dword ptr [ESI + 0xc4] ",
+          "004521eb: MOV EDX,dword ptr [ESI + 0xbc] ",
+          "004521f1: MOV dword ptr [ECX + 0x20c],EDX ",
+          "004521f7: MOV EAX,dword ptr [ESI + 0xc4] ",
+          "004521fd: MOV ECX,dword ptr [ESI + 0xc0] ",
+          "00452203: POP ESI ",
+          "00452204: MOV dword ptr [EAX + 0x210],ECX "
+        ]
+      },
+      {
+        "file": "phase26-keeper-editor-writer-assembly.txt",
+        "first": "0x4a9c0c",
+        "last": "0x4a9c16",
+        "instructions": [
+          "004a9c0c: MOV ECX,EBX ",
+          "004a9c0e: CALL 0x00420230 ",
+          "004a9c13: LEA ECX,[EBX + 0x10] ",
+          "004a9c16: MOV dword ptr [ESP + 0x12c],EAX "
+        ]
+      },
+      {
+        "file": "phase26-keeper-editor-writer-assembly.txt",
+        "first": "0x4a9cab",
+        "last": "0x4a9cb6",
+        "instructions": [
+          "004a9cab: LEA EAX,[ESP + 0x50] ",
+          "004a9caf: PUSH 0x196 ",
+          "004a9cb4: PUSH EAX ",
+          "004a9cb5: MOV EDX,dword ptr [ECX] "
+        ]
+      }
+    ],
+    "writer_offset": "Original writer record starts at ESP+50. Encoder result stored at ESP+12C => raw+DC; no intervening stack displacement in this span.",
+    "constructor_evidence": {
+      "file": "phase26-keeper-actual-constructor.txt",
+      "line": 27,
+      "excerpt": "FUN_004d9a8b(this,0x102,param_2);"
+    }
+  },
+  "battle_ai": {
+    "function": 5255264,
+    "definition_lookup_world_vtable_offset": 272,
+    "count_world_vtable_offset": 276,
+    "caller_gates": "Function traverses a creature list and checks category16. Additional owner/room/CTA branch and random/personality gates select whether and which spell-search branch runs. These are not complete AI behavior in the provided API.",
+    "branch_choice": "At50328B a random helper is requested with bound4. Unsigned result <((AI+4B2 >>26)&7) chooses defensive; otherwise attacking. Earlier gate requires random helper result for bound4 >=(AI+4B6 &7). PRNG implementation/distribution is outside this projection.",
+    "enumeration": "Both branches iterate integer i=1..worldCount (signed loop comparisons), query player availability helper4BAFA0(i)==3 and cooldown helper4BE390(i)==0, then lookup definition by i. This does not prove every sparse ID above count is visited.",
+    "flag_gates": "Defensive requires flags&8, attacking flags&4. Both require !(flags&10). Bit2 alone qualifies for neither branch. Unrelated high bits do not block these tests.",
+    "random_bound": "Cost is read as unsigned DWORD. q=(unsigned64(costBits)*D1CC931B)>>43, equivalent to floor(costBits/2499) over u32 domain. Requested bound=q+1 defensive, q+2 attacking.",
+    "random_source": {
+      "function": 5593296,
+      "rule": "For nonzero bound: seed=low32(seed*19660D+3C6EF35F); result=ROR32(seed,13)%bound, hence0<=result<bound. AI passes world+15A0 as seed pointer. Logging branch is not modeled; distribution/uniformity is not asserted.",
+      "evidence": {
+        "file": "phase26-random-helper-assembly.txt",
+        "first": "0x555967",
+        "last": "0x55598a",
+        "instructions": [
+          "00555967: MOV EAX,dword ptr [EDI] ",
+          "00555969: IMUL EAX,EAX,0x19660d ",
+          "0055596f: ADD EAX,0x3c6ef35f ",
+          "00555974: MOV dword ptr [EBP + 0x10],EAX ",
+          "00555977: MOV dword ptr [EDI],EAX ",
+          "00555979: ROR dword ptr [EBP + 0x10],0xd ",
+          "0055597d: MOV EAX,dword ptr [EBP + 0x10] ",
+          "00555980: XOR EDX,EDX ",
+          "00555982: DIV EBX ",
+          "00555984: POP ESI ",
+          "00555985: POP EDI ",
+          "00555986: POP EBX ",
+          "00555987: MOV EAX,EDX ",
+          "00555989: POP EBP ",
+          "0055598a: RET "
+        ]
+      }
+    },
+    "threshold": "power=(AI DWORD+4B6 >>23)&7; threshold=unsigned32(4-power). A random result succeeds iff unsigned result>=threshold. Power5..7 wraps threshold near FFFFFFFF, rather than clamping to0.",
+    "defensive": "For each eligible definition, selectedId=low8(i) BEFORE random test. Stop at first random success; if none succeed, selectedId remains the LAST eligible ID. No eligible ->0.",
+    "attacking": "Set selectedId=low8(i) ONLY after random success, then stop. No successful candidate ->0.",
+    "scope": "Chosen ID is only a candidate. Later distance/health/status target checks and cast-rule validation can prevent a cast; API does not execute them.",
+    "target_notes": "Defensive subsequent path examines own creatures with squared XY distance <19000 hex, health strictly below half of level-adjusted maximum, and no instance bit200000. Attacking subsequent path uses an opponent group and a distance gate. These are evidence notes, not a complete target API.",
+    "evidence": [
+      {
+        "file": "phase26-keeper-ai-assembly.txt",
+        "first": "0x503219",
+        "last": "0x5032dc",
+        "instructions": [
+          "00503219: MOV EAX,dword ptr [ESI + 0xa] ",
+          "0050321c: PUSH 0x1c98 ",
+          "00503221: ADD EAX,0x15a0 ",
+          "00503226: PUSH 0x6a3348 ",
+          "0050322b: PUSH EAX ",
+          "0050322c: PUSH 0x4 ",
+          "0050322e: CALL 0x005558d0 ",
+          "00503233: MOV ECX,dword ptr [ESI + 0x4b6] ",
+          "00503239: ADD ESP,0x10 ",
+          "0050323c: AND ECX,0x7 ",
+          "0050323f: CMP EAX,ECX ",
+          "00503241: JNC 0x0050328b ",
+          "00503243: XOR EDX,EDX ",
+          "00503245: MOV DX,word ptr [EDI + 0x10] ",
+          "00503249: MOV EAX,dword ptr [EDX*0x4 + 0x6ee540] ",
+          "00503250: TEST EAX,EAX ",
+          "00503252: MOV dword ptr [EBP + -0x4],EAX ",
+          "00503255: JNZ 0x0050308f ",
+          "0050325b: MOV EAX,dword ptr [EBP + 0x8] ",
+          "0050325e: POP EDI ",
+          "0050325f: POP ESI ",
+          "00503260: POP EBX ",
+          "00503261: MOV ESP,EBP ",
+          "00503263: POP EBP ",
+          "00503264: RET 0x4 ",
+          "00503267: MOV ECX,dword ptr [EBP + 0x8] ",
+          "0050326a: XOR EAX,EAX ",
+          "0050326c: MOV AX,word ptr [ESI + 0x4e9] ",
+          "00503273: MOV dword ptr [ESI + 0x4ef],EAX ",
+          "00503279: MOV EAX,dword ptr [ESI] ",
+          "0050327b: OR AL,0x80 ",
+          "0050327d: MOV dword ptr [ESI],EAX ",
+          "0050327f: LEA EAX,[ECX + -0x1] ",
+          "00503282: POP EDI ",
+          "00503283: POP ESI ",
+          "00503284: POP EBX ",
+          "00503285: MOV ESP,EBP ",
+          "00503287: POP EBP ",
+          "00503288: RET 0x4 ",
+          "0050328b: MOV EDX,dword ptr [ESI + 0xa] ",
+          "0050328e: PUSH 0x1c9f ",
+          "00503293: ADD EDX,0x15a0 ",
+          "00503299: PUSH 0x6a3348 ",
+          "0050329e: PUSH EDX ",
+          "0050329f: PUSH 0x4 ",
+          "005032a1: MOV dword ptr [EBP + -0xc],0x0 ",
+          "005032a8: MOV byte ptr [EBP + -0x8],0x0 ",
+          "005032ac: CALL 0x005558d0 ",
+          "005032b1: MOV ECX,dword ptr [ESI + 0x4b2] ",
+          "005032b7: ADD ESP,0x10 ",
+          "005032ba: SHR ECX,0x1a ",
+          "005032bd: AND ECX,0x7 ",
+          "005032c0: CMP EAX,ECX ",
+          "005032c2: MOV ECX,dword ptr [ESI + 0xa] ",
+          "005032c5: MOV EDX,dword ptr [ECX] ",
+          "005032c7: JNC 0x00503480 ",
+          "005032cd: CALL dword ptr [EDX + 0x114] ",
+          "005032d3: MOV EDI,EAX ",
+          "005032d5: MOV EBX,0x1 ",
+          "005032da: CMP EDI,EBX ",
+          "005032dc: JL 0x0050335a "
+        ]
+      },
+      {
+        "file": "phase26-keeper-ai-assembly.txt",
+        "first": "0x5032de",
+        "last": "0x50335f",
+        "instructions": [
+          "005032de: MOV ECX,dword ptr [ESI + 0xe] ",
+          "005032e1: PUSH EBX ",
+          "005032e2: CALL 0x004bafa0 ",
+          "005032e7: CMP EAX,0x3 ",
+          "005032ea: JNZ 0x00503355 ",
+          "005032ec: MOV ECX,dword ptr [ESI + 0xe] ",
+          "005032ef: PUSH EBX ",
+          "005032f0: CALL 0x004be390 ",
+          "005032f5: TEST EAX,EAX ",
+          "005032f7: JNZ 0x00503355 ",
+          "005032f9: MOV ECX,dword ptr [ESI + 0xa] ",
+          "005032fc: PUSH EBX ",
+          "005032fd: MOV EAX,dword ptr [ECX] ",
+          "005032ff: CALL dword ptr [EAX + 0x110] ",
+          "00503305: MOV ECX,EAX ",
+          "00503307: MOV EAX,dword ptr [ECX + 0x54] ",
+          "0050330a: TEST AL,0x8 ",
+          "0050330c: JZ 0x00503355 ",
+          "0050330e: TEST AL,0x10 ",
+          "00503310: JNZ 0x00503355 ",
+          "00503312: MOV EDX,dword ptr [ESI + 0xa] ",
+          "00503315: PUSH 0x1cb2 ",
+          "0050331a: ADD EDX,0x15a0 ",
+          "00503320: PUSH 0x6a3348 ",
+          "00503325: MOV EAX,0xd1cc931b ",
+          "0050332a: PUSH EDX ",
+          "0050332b: MUL dword ptr [ECX + 0x58] ",
+          "0050332e: SHR EDX,0xb ",
+          "00503331: INC EDX ",
+          "00503332: MOV byte ptr [EBP + -0x8],BL ",
+          "00503335: PUSH EDX ",
+          "00503336: CALL 0x005558d0 ",
+          "0050333b: MOV ECX,dword ptr [ESI + 0x4b6] ",
+          "00503341: MOV EDX,0x4 ",
+          "00503346: SHR ECX,0x17 ",
+          "00503349: AND ECX,0x7 ",
+          "0050334c: ADD ESP,0x10 ",
+          "0050334f: SUB EDX,ECX ",
+          "00503351: CMP EAX,EDX ",
+          "00503353: JNC 0x0050335a ",
+          "00503355: INC EBX ",
+          "00503356: CMP EBX,EDI ",
+          "00503358: JLE 0x005032de ",
+          "0050335a: MOV AL,byte ptr [EBP + -0x8] ",
+          "0050335d: TEST AL,AL ",
+          "0050335f: JZ 0x005035f0 "
+        ]
+      },
+      {
+        "file": "phase26-keeper-ai-assembly.txt",
+        "first": "0x503480",
+        "last": "0x50351e",
+        "instructions": [
+          "00503480: CALL dword ptr [EDX + 0x114] ",
+          "00503486: MOV EBX,0x1 ",
+          "0050348b: MOV dword ptr [EBP + -0x20],EAX ",
+          "0050348e: CMP EAX,EBX ",
+          "00503490: JL 0x00503519 ",
+          "00503496: MOV ECX,dword ptr [ESI + 0xe] ",
+          "00503499: PUSH EBX ",
+          "0050349a: CALL 0x004bafa0 ",
+          "0050349f: CMP EAX,0x3 ",
+          "005034a2: JNZ 0x0050350c ",
+          "005034a4: MOV ECX,dword ptr [ESI + 0xe] ",
+          "005034a7: PUSH EBX ",
+          "005034a8: CALL 0x004be390 ",
+          "005034ad: TEST EAX,EAX ",
+          "005034af: JNZ 0x0050350c ",
+          "005034b1: MOV ECX,dword ptr [ESI + 0xa] ",
+          "005034b4: PUSH EBX ",
+          "005034b5: MOV EAX,dword ptr [ECX] ",
+          "005034b7: CALL dword ptr [EAX + 0x110] ",
+          "005034bd: MOV ECX,EAX ",
+          "005034bf: MOV EAX,dword ptr [ECX + 0x54] ",
+          "005034c2: TEST AL,0x4 ",
+          "005034c4: JZ 0x0050350c ",
+          "005034c6: TEST AL,0x10 ",
+          "005034c8: JNZ 0x0050350c ",
+          "005034ca: MOV EDX,dword ptr [ESI + 0xa] ",
+          "005034cd: PUSH 0x1ce8 ",
+          "005034d2: ADD EDX,0x15a0 ",
+          "005034d8: PUSH 0x6a3348 ",
+          "005034dd: MOV EAX,0xd1cc931b ",
+          "005034e2: PUSH EDX ",
+          "005034e3: MUL dword ptr [ECX + 0x58] ",
+          "005034e6: SHR EDX,0xb ",
+          "005034e9: ADD EDX,0x2 ",
+          "005034ec: PUSH EDX ",
+          "005034ed: CALL 0x005558d0 ",
+          "005034f2: MOV ECX,dword ptr [ESI + 0x4b6] ",
+          "005034f8: MOV EDX,0x4 ",
+          "005034fd: SHR ECX,0x17 ",
+          "00503500: AND ECX,0x7 ",
+          "00503503: ADD ESP,0x10 ",
+          "00503506: SUB EDX,ECX ",
+          "00503508: CMP EAX,EDX ",
+          "0050350a: JNC 0x00503516 ",
+          "0050350c: MOV EAX,dword ptr [EBP + -0x20] ",
+          "0050350f: INC EBX ",
+          "00503510: CMP EBX,EAX ",
+          "00503512: JLE 0x00503496 ",
+          "00503514: JMP 0x00503519 ",
+          "00503516: MOV byte ptr [EBP + -0x8],BL ",
+          "00503519: MOV AL,byte ptr [EBP + -0x8] ",
+          "0050351c: TEST AL,AL ",
+          "0050351e: JZ 0x005035f0 "
+        ]
+      },
+      {
+        "file": "phase26-keeper-ai-assembly.txt",
+        "first": "0x5035f0",
+        "last": "0x503687",
+        "instructions": [
+          "005035f0: MOV EDI,dword ptr [EBP + -0xc] ",
+          "005035f3: TEST DI,DI ",
+          "005035f6: JZ 0x0050367e ",
+          "005035fc: MOV AL,byte ptr [EBP + -0x8] ",
+          "005035ff: TEST AL,AL ",
+          "00503601: JZ 0x0050367e ",
+          "00503603: MOV ECX,dword ptr [ESI + 0xa] ",
+          "00503606: MOV EBX,dword ptr [EBP + -0x8] ",
+          "00503609: PUSH EBX ",
+          "0050360a: MOV EDX,dword ptr [ECX] ",
+          "0050360c: CALL dword ptr [EDX + 0x250] ",
+          "00503612: TEST EAX,EAX ",
+          "00503614: JZ 0x00503634 ",
+          "00503616: MOV ECX,dword ptr [ESI + 0xe] ",
+          "00503619: PUSH 0x0 ",
+          "0050361b: PUSH EDI ",
+          "0050361c: PUSH EBX ",
+          "0050361d: CALL 0x004bba40 ",
+          "00503622: TEST EAX,EAX ",
+          "00503624: JZ 0x0050367e ",
+          "00503626: MOV ECX,dword ptr [ESI + 0xe] ",
+          "00503629: PUSH 0x0 ",
+          "0050362b: PUSH EDI ",
+          "0050362c: PUSH EBX ",
+          "0050362d: CALL 0x004bbf90 ",
+          "00503632: JMP 0x0050367b ",
+          "00503634: AND EDI,0xffff ",
+          "0050363a: PUSH 0x0 ",
+          "0050363c: MOV EAX,dword ptr [EDI*0x4 + 0x6ee540] ",
+          "00503643: ADD EAX,0x1a ",
+          "00503646: MOV ECX,dword ptr [EAX] ",
+          "00503648: MOV dword ptr [EBP + -0x2c],ECX ",
+          "0050364b: LEA ECX,[EBP + -0x2c] ",
+          "0050364e: MOV EDX,dword ptr [EAX + 0x4] ",
+          "00503651: PUSH ECX ",
+          "00503652: MOV ECX,dword ptr [ESI + 0xe] ",
+          "00503655: MOV dword ptr [EBP + -0x28],EDX ",
+          "00503658: MOV EAX,dword ptr [EAX + 0x8] ",
+          "0050365b: PUSH EBX ",
+          "0050365c: MOV dword ptr [EBP + -0x24],EAX ",
+          "0050365f: CALL 0x004bb8a0 ",
+          "00503664: TEST EAX,EAX ",
+          "00503666: JZ 0x0050367e ",
+          "00503668: MOV ECX,dword ptr [ESI + 0xe] ",
+          "0050366b: LEA EDX,[EBP + -0x2c] ",
+          "0050366e: PUSH 0x0 ",
+          "00503670: PUSH EDX ",
+          "00503671: PUSH EBX ",
+          "00503672: CALL 0x004bbd30 ",
+          "00503677: TEST EAX,EAX ",
+          "00503679: JZ 0x0050367e ",
+          "0050367b: DEC dword ptr [EBP + 0x8] ",
+          "0050367e: MOV EAX,dword ptr [EBP + 0x8] ",
+          "00503681: POP EDI ",
+          "00503682: POP ESI ",
+          "00503683: POP EBX ",
+          "00503684: MOV ESP,EBP ",
+          "00503686: POP EBP ",
+          "00503687: RET 0x4 "
+        ]
+      }
+    ]
+  },
+  "opaque_c8": {
+    "raw_offset": 200,
+    "raw_bytes": 4,
+    "meaning": "still unresolved",
+    "intermediate_offset": 320,
+    "runtime_offset": 58,
+    "editor_model_offset": 376,
+    "editor_rule": "Editor callback treats raw as unsigned DWORD and divides by4096 into model double178. Writer multiplies that double by4096, converts via4ACDA8 and stores low32 at rawC8.",
+    "main_panel": "Verified Keeper panel451CC0 uses model180 ->panel78 for Recharge Time, not model178. Similar-looking fill4439A0 belongs to a different catalogue (array getter count+59C), so its model178 read is not proof that Keeper C8 is Recharge Time.",
+    "unresolved": "No new semantic game consumer of runtime3A established. Do not rename C8 or assume zero/unused; preserve its four bytes.",
+    "scale_constants": [
+      {
+        "address": 5286984,
+        "bytes": "000000000000303f",
+        "value": 0.000244140625
+      },
+      {
+        "address": 5287000,
+        "bytes": "000000000000b040",
+        "value": 4096.0
+      }
+    ],
+    "evidence": [
+      {
+        "file": "phase26-keeper-editor-converter.txt",
+        "line": 83,
+        "excerpt": "uVar3 = *(undefined4 *)(param_1 + 200);"
+      },
+      {
+        "file": "phase26-keeper-editor-converter.txt",
+        "line": 87,
+        "excerpt": "*(undefined4 *)((int)this + 0x140) = uVar3;"
+      },
+      {
+        "file": "phase26-keeper-editor-model-assembly.txt",
+        "first": "0x4a273b",
+        "last": "0x4a2758",
+        "instructions": [
+          "004a273b: CMP dword ptr [ESI + 0x18],EDI ",
+          "004a273e: JZ 0x004a275e ",
+          "004a2740: MOV EAX,dword ptr [ESI + 0x140] ",
+          "004a2746: MOV dword ptr [ESP + 0x1c],EDI ",
+          "004a274a: MOV dword ptr [ESP + 0x18],EAX ",
+          "004a274e: FILD qword ptr [ESP + 0x18] ",
+          "004a2752: FMUL double ptr [0x0050ac48] ",
+          "004a2758: FSTP double ptr [EBX + 0x178] "
+        ]
+      },
+      {
+        "file": "phase26-keeper-editor-writer-assembly.txt",
+        "first": "0x4a9b2a",
+        "last": "0x4a9b3b",
+        "instructions": [
+          "004a9b2a: FLD double ptr [EBX + 0x178] ",
+          "004a9b30: FMUL double ptr [0x0050ac58] ",
+          "004a9b36: CALL 0x004acda8 ",
+          "004a9b3b: MOV dword ptr [ESP + 0x118],EAX "
+        ]
+      },
+      {
+        "file": "phase26-keeper-actual-451cc0.txt",
+        "line": 85,
+        "excerpt": "*(undefined8 *)((int)this + 0x78) = *(undefined8 *)(iVar5 + 0x180);"
+      },
+      {
+        "file": "phase26-keeper-actual-commit.txt",
+        "line": 27,
+        "excerpt": "*(undefined8 *)(*(int *)(param_1 + 0xc4) + 0x180) = *(undefined8 *)(param_1 + 0x78);"
+      }
+    ],
+    "writer_offset": "record baseESP+50; C8 storeESP+118. Separate CC storeESP+11C uses model180."
+  },
+  "native_emulations": [
+    {
+      "file": "phase26-emulation-keeper-ai-defensive-power0.json",
+      "sha256": "2260c988ace038e1866b9acf9128f8530e41dcd64e225098c043aa58c6c531b3",
+      "case": "defensive-power0"
+    },
+    {
+      "file": "phase26-emulation-keeper-ai-defensive-power1.json",
+      "sha256": "9fdf02cfcd94c31d1695e7bf127a37d7feff52a14e3e524fa3f229af63fb0c38",
+      "case": "defensive-power1"
+    },
+    {
+      "file": "phase26-emulation-keeper-ai-defensive-power2.json",
+      "sha256": "16346568040710313a61eef4da80f050467fed75ee0c57f55ca3164f0e500576",
+      "case": "defensive-power2"
+    },
+    {
+      "file": "phase26-emulation-keeper-ai-defensive-power3.json",
+      "sha256": "bbbdb7c333a19a8472a57ffe740f78f234f45a9612295dcac84b0442f874923a",
+      "case": "defensive-power3"
+    },
+    {
+      "file": "phase26-emulation-keeper-ai-defensive-power4.json",
+      "sha256": "603bb37b848d846c6fe35dfb09afb9fbf60edd54d9c7ef598ffe3a739ca24518",
+      "case": "defensive-power4"
+    },
+    {
+      "file": "phase26-emulation-keeper-ai-defensive-power5.json",
+      "sha256": "5f9249267ce373fc21c3193c435af77ed8bfedf1ed0176d233c13d2a960b381c",
+      "case": "defensive-power5"
+    },
+    {
+      "file": "phase26-emulation-keeper-ai-defensive-power6.json",
+      "sha256": "094f3e063b663def253653e6a376974ce5bebac5c56438befd923484008c93cc",
+      "case": "defensive-power6"
+    },
+    {
+      "file": "phase26-emulation-keeper-ai-defensive-power7.json",
+      "sha256": "50083ac72fbcb5330b23ab3220f1c600d45e9f3c823425eb2e585d2d36ce011d",
+      "case": "defensive-power7"
+    },
+    {
+      "file": "phase26-emulation-keeper-ai-defensive-variant0.json",
+      "sha256": "08b55e7fbf4802a52bbe7aaff52aa2bb3979404915b8a45f36bc2ad5a3fe4710",
+      "case": "defensive-variant0"
+    },
+    {
+      "file": "phase26-emulation-keeper-ai-defensive-variant1.json",
+      "sha256": "eb080f737ae0d7b7ac58a104464dfce21623c121c59acd22bfc624b43a3c6710",
+      "case": "defensive-variant1"
+    },
+    {
+      "file": "phase26-emulation-keeper-ai-defensive-variant2.json",
+      "sha256": "94ebfaba869223235c8900ab522f57497d14c58bbc5adfbd52ddb1cdbdeb1ea7",
+      "case": "defensive-variant2"
+    },
+    {
+      "file": "phase26-emulation-keeper-ai-defensive-variant3.json",
+      "sha256": "b149161dae615ff125e158982bd9ac8bd563a79c6e913a95bddb3cfa75d2a1b9",
+      "case": "defensive-variant3"
+    },
+    {
+      "file": "phase26-emulation-keeper-ai-defensive-variant4.json",
+      "sha256": "42d541630b4fa9d34afe5163442910313480de5d10e967f9467a8c549d0669f6",
+      "case": "defensive-variant4"
+    },
+    {
+      "file": "phase26-emulation-keeper-ai-defensive-variant5.json",
+      "sha256": "e7040d6c5f188291702b15a40af0d649d97b4d78d59ad9740e9917e1608630d2",
+      "case": "defensive-variant5"
+    },
+    {
+      "file": "phase26-emulation-keeper-ai-defensive-variant6.json",
+      "sha256": "4c38ca3f142204ca23a449a73ce9511df2a08e8efd5293eb8c0bacb74b940baf",
+      "case": "defensive-variant6"
+    },
+    {
+      "file": "phase26-emulation-keeper-ai-defensive-variant7.json",
+      "sha256": "addab7a6e1bbf9dc736d77ba17849c8f44d902ad7321261f1b561585ee23a506",
+      "case": "defensive-variant7"
+    },
+    {
+      "file": "phase26-emulation-keeper-ai-attacking-power0.json",
+      "sha256": "c9fa769e8a629f1569748d9e2e4ac2a6896b1792191f447ec566dda2a531bad1",
+      "case": "attacking-power0"
+    },
+    {
+      "file": "phase26-emulation-keeper-ai-attacking-power1.json",
+      "sha256": "95f55382ed21171a196bdae9b00941833e20cf05ab184913aea20e901eebdbc0",
+      "case": "attacking-power1"
+    },
+    {
+      "file": "phase26-emulation-keeper-ai-attacking-power2.json",
+      "sha256": "644f3b2ef469b7a8b19cd82456bb28971b9f2790499c8466d75c55f825d0d9b2",
+      "case": "attacking-power2"
+    },
+    {
+      "file": "phase26-emulation-keeper-ai-attacking-power3.json",
+      "sha256": "b07beed81c5f84a5638ed8be1befd882a3af444960b5e4ea49e55b52d2b15f1f",
+      "case": "attacking-power3"
+    },
+    {
+      "file": "phase26-emulation-keeper-ai-attacking-power4.json",
+      "sha256": "c42978a66d43eeee4871e9dc547290f81f65f58bbeb0a3637322d54fe80cacbb",
+      "case": "attacking-power4"
+    },
+    {
+      "file": "phase26-emulation-keeper-ai-attacking-power5.json",
+      "sha256": "2f23539ce7c80e6fb714873b80c32e096cb1ccd8a31ff85955fe308c41ca08fc",
+      "case": "attacking-power5"
+    },
+    {
+      "file": "phase26-emulation-keeper-ai-attacking-power6.json",
+      "sha256": "018fb33f4af2244d498f36d393c01ae4dbc650531994b1b637d70e87190211ea",
+      "case": "attacking-power6"
+    },
+    {
+      "file": "phase26-emulation-keeper-ai-attacking-power7.json",
+      "sha256": "58aa7625af94e2f378a3b373fed3dbcd441f6774194aacb18183e3dc0fd8dcce",
+      "case": "attacking-power7"
+    },
+    {
+      "file": "phase26-emulation-keeper-ai-attacking-variant0.json",
+      "sha256": "fd9a0ed32b761e0cfcbf152676dcff7456b915676dac68f960fe0aadeae5f992",
+      "case": "attacking-variant0"
+    },
+    {
+      "file": "phase26-emulation-keeper-ai-attacking-variant1.json",
+      "sha256": "8407913f03bc17051a9649884f9fe93a09de76568d2be63aa915c6d4509af414",
+      "case": "attacking-variant1"
+    },
+    {
+      "file": "phase26-emulation-keeper-ai-attacking-variant2.json",
+      "sha256": "e2faf5d02308eeab7a7768506681a7d41e67618ec6b2cdbdea0a5121bc06a246",
+      "case": "attacking-variant2"
+    },
+    {
+      "file": "phase26-emulation-keeper-ai-attacking-variant3.json",
+      "sha256": "50707aab3201555a54b8133e07e1772a6c60e5ed3324230f27241e4b4ef961a8",
+      "case": "attacking-variant3"
+    },
+    {
+      "file": "phase26-emulation-keeper-ai-attacking-variant4.json",
+      "sha256": "6eeeb3676f03c855045f21bd1852b007f9b11d459773ae443da1ff8dea75f9c4",
+      "case": "attacking-variant4"
+    },
+    {
+      "file": "phase26-emulation-keeper-ai-attacking-variant5.json",
+      "sha256": "a4461d1b451d0f6308dfb553d689ecf2fddb46ad6bbc5a17bc22c83fcbd74177",
+      "case": "attacking-variant5"
+    },
+    {
+      "file": "phase26-emulation-keeper-ai-attacking-variant6.json",
+      "sha256": "5e602f74be157649faca0989ca68339b69b6f567c64f5e8b4c1f90359ca27159",
+      "case": "attacking-variant6"
+    },
+    {
+      "file": "phase26-emulation-keeper-ai-attacking-variant7.json",
+      "sha256": "220f8403a190826aea0363b0be3c743093876cfafeb9111745975cd7e9d5dc72",
+      "case": "attacking-variant7"
+    },
+    {
+      "file": "phase26-emulation-keeper-ai-editor-0.json",
+      "sha256": "f76a2350b093a9ad2c4102c80c314614a2bdd1173617843c86efda71409e3fa1",
+      "case": "editor-0"
+    },
+    {
+      "file": "phase26-emulation-keeper-ai-game-0.json",
+      "sha256": "d8bf838142c5af5da8273139ca4403825a92491bfb581364aa5ac2d96affecb0",
+      "case": "game-0"
+    },
+    {
+      "file": "phase26-emulation-keeper-ai-editor-1.json",
+      "sha256": "7c16de660bcf3551390c698d446886d8ae8b07fe59d22b8b984fa503a3663c5a",
+      "case": "editor-1"
+    },
+    {
+      "file": "phase26-emulation-keeper-ai-game-1.json",
+      "sha256": "c8859dd387944dd48b9d3d27de2bfb025a49cdfd63ca40235fa07da15a1648f8",
+      "case": "game-1"
+    },
+    {
+      "file": "phase26-emulation-keeper-ai-editor-2.json",
+      "sha256": "752698e77395b2ac21f57fe2729225468b9dca030728a39871e901184a3703d4",
+      "case": "editor-2"
+    },
+    {
+      "file": "phase26-emulation-keeper-ai-game-2.json",
+      "sha256": "88e78d973f9181c2c04a8a8867b0e2da1e881c9fbae8d5db9cf90a0026a0e576",
+      "case": "game-2"
+    },
+    {
+      "file": "phase26-emulation-keeper-ai-editor-4.json",
+      "sha256": "dc61ce24103e9869aa7e7c32a4834903d9a5e49ec639ec76c257a7edd038abd5",
+      "case": "editor-4"
+    },
+    {
+      "file": "phase26-emulation-keeper-ai-game-4.json",
+      "sha256": "61ecada33fa6803f08810ec4a2e4c45c5644d53c801b8626556094ec59b15477",
+      "case": "game-4"
+    },
+    {
+      "file": "phase26-emulation-keeper-ai-editor-8.json",
+      "sha256": "9c46170a82b4d6f3048ce4ed7bfc83d8f6e5559d1f0cfe3ff01630bf33c801bc",
+      "case": "editor-8"
+    },
+    {
+      "file": "phase26-emulation-keeper-ai-game-8.json",
+      "sha256": "e39972845c378b1e471b95c9dfd6878e2cd4b72840eeeae7b0aee5815be3fd10",
+      "case": "game-8"
+    },
+    {
+      "file": "phase26-emulation-keeper-ai-editor-16.json",
+      "sha256": "7d8c3bbabab0deba2e905d8cc63753c7887e67d93ac5668c592a588158e9ff8b",
+      "case": "editor-16"
+    },
+    {
+      "file": "phase26-emulation-keeper-ai-game-16.json",
+      "sha256": "0c6a3c30081bd05fc965f5d54f046261f3e3fb04e8618a0bfdce0c34acc102f9",
+      "case": "game-16"
+    },
+    {
+      "file": "phase26-emulation-keeper-ai-editor-31.json",
+      "sha256": "cd5c39f0e0dd4cc2a71490ffa25dc3cf22dfbf7205a44f6d5b4acc0e50f31424",
+      "case": "editor-31"
+    },
+    {
+      "file": "phase26-emulation-keeper-ai-game-31.json",
+      "sha256": "d8050665bf09fde5d18c01b38d5c2ca4ee0d1cbcf5be42e876a57927ef3771b9",
+      "case": "game-31"
+    },
+    {
+      "file": "phase26-emulation-keeper-ai-editor-4294967295.json",
+      "sha256": "6e07d25cc5279d068a2086b2fd1e5e69ce0fba7c27a8f21d88127bdc75e999b1",
+      "case": "editor-4294967295"
+    },
+    {
+      "file": "phase26-emulation-keeper-ai-game-4294967295.json",
+      "sha256": "b0dd25b31b296ac567a22c7d99de6c43f23f87de9d967a265f3e841642a4f8ed",
+      "case": "game-4294967295"
+    }
+  ],
+  "limitations": [
+    "Exact inspected EXEs only. No complete AI, GUI or live-game cast/render test.",
+    "32 original selection-loop runs use explicit availability/cooldown/catalogue/count/random stubs. Original loop comparisons, flag tests, cost arithmetic and selection stores execute. Caller gates and target search skipped.",
+    "Eight game pipeline runs connect original converter OR and loader copy fragments with memory-only adapters; eight editor runs execute original decoder -> encoder. Full writer resource serialization and x87 C8 path were not emulated.",
+    "C8 remains semantically unknown. Editor projection losing unknown flags is documented behavior, not recommended automatic normalization for a new editor."
+  ]
+}

@@ -1,0 +1,12 @@
+"""Current integration/readiness entry for the newly identified Creature bit29."""
+from pathlib import Path
+ROOT=Path(__file__).resolve().parent
+def main():
+    p=ROOT/'INTEGRATION_RU.md';s=p.read_text(encoding='utf8')
+    prefix='Актуальный этап 147: пакет содержит 126 компонентов, прежние 125 схем сохранены побайтно. `melee_animation_flag_semantics` раскрывает прежний Creature.Flags UNKNOWN_5: rawEFC/20000000→MID12EC→definition686→melee498E30→Actor3EA/1000. Нативный formatter490240 называет runtimeбит PlayInstanceAnimation. Актуальное имя PLAY_MELEE_INSTANCE_ANIMATION: whole48BE50 при standing/action17 выбирает STAND_STILL39 безбита иMELEE_ATTACK5 с ним; movingmode0 обходит эту проверку. В выбранном rawVampire ударе HP334 одинаков с/безбита. 14новыхсценариев (8raw/melee,6отдельныхanimation),4Ghidra/180областей/449944байта;95диапазонов/4727оригинальныхPC/4блока. Полная44области/112482байта raw/meleeпара отличается только4байтами флагов. 82одно-битныепересборки/publicdecode→rebuild на3734записях сохраняют остальныеданные. Новый currentcodec и effective_creature_flag_enum используют подтверждённоеимя; enums.json и dk2_formats_phase146.py сохраняют UNKNOWN_5. Renderingконтекст отдельно подготовлен послеmelee: presence/cache/modelID0 идвижение заданыявно, реальныхассетов/GPU/обычногоAIнет. SHA310источников/7EXE сохранены. См. `MELEE_ANIMATION_FLAG_RU.md`; одиннеизвестныйбит назначен, остальная цель15семейств открыта, около75%.\n\n'
+    if not s.startswith('Актуальный этап 147:'):p.write_text(prefix+s,encoding='utf8')
+    p=ROOT/'READINESS_RU.md';s=p.read_text(encoding='utf8');_,rest=s.split('\n',1)
+    prefix='\nЭтап147: пакет содержит 126 компонентов. Раскрыт один прежнийUNKNOWN_5 вCreature.Flags: маска20000000 управляет runtimePlayInstanceAnimation приmelee ивыбором instanceресурса вstandingветви. 14сценариев/4Ghidra/95диапазонов/4727PC,82точныеодно-битныепересборки; полностьюсохранены прежние125схемы иSHA310источников/7EXE. Standingвыбирает39/5 пофлагу, movingmode0 ввыбранныхсценах выбирает5 в обоихслучаях. Нативноеимяизformatterподтвержденобайтами;raw/melee иотдельныйpreparedrenderне являютсяцелойAI/GPUцепочкой. Одинновыйигровойбит получаетназначение; общаяэкспертнаяоценка около75% сохраняется. См. `MELEE_ANIMATION_FLAG_RU.md`.\n'
+    if not rest.lstrip().startswith('Этап147:'):rest=prefix+rest
+    p.write_text('# Оценка готовности на 31 октября 2026 — после этапа 147\n'+rest,encoding='utf8');print('Published phase147 entries')
+if __name__=='__main__':main()

@@ -1,0 +1,187 @@
+{
+  "executable_sha256": {
+    "game": "d7a8b854e4e4f02709eba271bead6fe2307dd6e332b5a96e70857e5b0e19fb8a",
+    "editor": "989c45df779bccfc9a9e509b2ad0224a9bd269629f74792adc0320fa4b99fb09"
+  },
+  "family": "Creatures",
+  "record_variants": [
+    5449,
+    5537
+  ],
+  "baseline_name": "Unk3f2",
+  "native_label": "Pick-Up Priority",
+  "field": {
+    "raw_offset": 3925,
+    "raw_bytes": 1,
+    "raw_type": "u8",
+    "game_intermediate_offset": 4933,
+    "editor_intermediate_offset": 4949,
+    "presence_offset": 488,
+    "game_runtime_offset": 1771,
+    "editor_model_offset": 5806,
+    "editor_panel_offset": 6126,
+    "property_id": 63573
+  },
+  "label_resource": {
+    "id": 63573,
+    "id_hex": "0xf855",
+    "text": "Pick-Up Priority",
+    "resource_path": [
+      6,
+      3974,
+      2057
+    ],
+    "text_file_offset": 1589852,
+    "text_rva": 1688156,
+    "utf16_bytes": 32,
+    "text_sha256": "733cdd37c90dd2a084cc298d3263b4c2e716cd450412607a995090da2b1b6b68",
+    "block_sha256": "3c197b0572851038667d2bc5b759afbf1069cd36f05ac9d4af0f994eaf1a76f8"
+  },
+  "native_editor": {
+    "fill_function": 4453024,
+    "read_function": 4457952,
+    "update_function": 4455776,
+    "commit_function": 4460896,
+    "writer_function": 4882176,
+    "display": "Zero-extended byte converted to double.",
+    "commit": "__ftol result narrowed to byte; then panel byte copied to model byte.",
+    "validated_gui_range": null,
+    "writer": {
+      "record_bytes": 5537,
+      "buffer_stack_offset": 148,
+      "field_stack_offset": 4073,
+      "field_offset_calculation": "0xFE9 - 0x94 = 0xF55"
+    }
+  },
+  "distinct_spell_swipe": {
+    "raw_offset": 3909,
+    "raw_bytes": 1,
+    "game_intermediate_offset": 4917,
+    "editor_intermediate_offset": 4933,
+    "game_runtime_offset": 1668,
+    "editor_model_offset": 5814,
+    "consumer_function": 4260080,
+    "warning": "Editor+0x1345 belongs to SpellSwipe; game+0x1345 belongs to Pick-Up Priority. These are different structures."
+  },
+  "evidence": [
+    {
+      "file": "phase17-creature-editor-convert-assembly.txt",
+      "first": "0x428d9b",
+      "last": "0x428da7",
+      "instructions": [
+        "00428d9b: MOV AL,byte ptr [EBX + 0xf55] ",
+        "00428da1: MOV dword ptr [EBP + 0x1e8],ESI ",
+        "00428da7: MOV byte ptr [EBP + 0x1355],AL "
+      ]
+    },
+    {
+      "file": "phase17-creature-editor-convert-assembly.txt",
+      "first": "0x429310",
+      "last": "0x42931e",
+      "instructions": [
+        "00429310: MOV AL,byte ptr [EBX + 0xf45] ",
+        "00429316: MOV dword ptr [EBP + 0x218],EDI ",
+        "0042931c: XOR ESI,ESI ",
+        "0042931e: MOV byte ptr [EBP + 0x1345],AL "
+      ]
+    },
+    {
+      "file": "game-creature-type-assembly.txt",
+      "first": "0x49261c",
+      "last": "0x49262a",
+      "instructions": [
+        "0049261c: CMP dword ptr [EBP + 0x1e8],EDI ",
+        "00492622: JZ 0x00492630 ",
+        "00492624: MOV DL,byte ptr [EBP + 0x1345] ",
+        "0049262a: MOV byte ptr [EBX + 0x6eb],DL "
+      ]
+    },
+    {
+      "file": "game-creature-type-assembly.txt",
+      "first": "0x4941e3",
+      "last": "0x4941e9",
+      "instructions": [
+        "004941e3: MOV DL,byte ptr [EBP + 0x1335] ",
+        "004941e9: MOV byte ptr [EBX + 0x684],DL "
+      ]
+    },
+    {
+      "file": "phase17-creature-writer-assembly.txt",
+      "first": "0x4a841e",
+      "last": "0x4a8424",
+      "instructions": [
+        "004a841e: MOV AL,byte ptr [EBX + 0x16ae] ",
+        "004a8424: MOV byte ptr [ESP + 0xfe9],AL "
+      ]
+    },
+    {
+      "file": "phase17-creature-writer-assembly.txt",
+      "first": "0x4a8a43",
+      "last": "0x4a8a4b",
+      "instructions": [
+        "004a8a43: MOV AL,byte ptr [EBX + 0x16b6] ",
+        "004a8a49: XOR ESI,ESI ",
+        "004a8a4b: MOV byte ptr [ESP + 0xfd9],AL "
+      ]
+    },
+    {
+      "file": "phase17-creature-writer-assembly.txt",
+      "first": "0x4a8b7d",
+      "last": "0x4a8b84",
+      "instructions": [
+        "004a8b7d: LEA EAX,[ESP + 0x94] ",
+        "004a8b84: PUSH 0x15a1 "
+      ]
+    },
+    {
+      "file": "game-creature-convert.txt",
+      "line": 553,
+      "excerpt": "cVar1 = param_2[0xf55];"
+    },
+    {
+      "file": "game-creature-convert.txt",
+      "line": 557,
+      "excerpt": "*(char *)((int)param_1 + 0x1345) = cVar1;"
+    },
+    {
+      "file": "phase17-creature-editor-model.txt",
+      "line": 550,
+      "excerpt": "*(undefined1 *)((int)this + 0x16ae) = *(undefined1 *)((int)piVar1 + 0x1355);"
+    },
+    {
+      "file": "phase17-creature-main-panel-fill.txt",
+      "line": 103,
+      "excerpt": "*(undefined1 *)((int)this + 0x17ee) = *(undefined1 *)(*(int *)((int)this + 0x134) + 0x16ae);"
+    },
+    {
+      "file": "phase17-creature-main-panel-commit.txt",
+      "line": 80,
+      "excerpt": "*(undefined1 *)(*(int *)(param_1 + 0x134) + 0x16ae) = *(undefined1 *)(param_1 + 0x17ee);"
+    },
+    {
+      "file": "phase17-creature-f55-panel-extract.txt",
+      "line": 207,
+      "excerpt": "*(double *)((int)param_1 + 0x60) = (double)*(byte *)((int)param_1 + 0x17ee);"
+    },
+    {
+      "file": "phase17-creature-f55-panel-update.txt",
+      "line": 195,
+      "excerpt": "*(char *)(param_1 + 0x17ee) = (char)lVar2;"
+    },
+    {
+      "file": "phase17-creature-swipe-game-consumer.txt",
+      "line": 145,
+      "excerpt": "iVar8 == 0)) || (cVar6 = *(char *)(iVar7 + 0x684), cVar6 == '\\0')) ||"
+    },
+    {
+      "file": "phase17-creature-swipe-game-consumer.txt",
+      "line": 149,
+      "excerpt": "FUN_005075a0(cVar6,uVar3);"
+    }
+  ],
+  "limitations": [
+    "Native label, storage and editor binding confirmed; gameplay ordering and comparison rule remain unresolved.",
+    "0..255 is the storage range, not an established native GUI validation range.",
+    "The inspected native writer emits5537 bytes; read-only views also support the existing5449-byte record variant."
+  ]
+}

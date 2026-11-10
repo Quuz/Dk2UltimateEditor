@@ -1,0 +1,3140 @@
+{
+  "family": "EffectElements",
+  "record_bytes": 182,
+  "executable_sha256": {
+    "Dungeon Keeper 2/DKII-DX.exe": "d7a8b854e4e4f02709eba271bead6fe2307dd6e332b5a96e70857e5b0e19fb8a",
+    "Dungeon Keeper 2/Data/editor/DK2 Editor pro.exe": "989c45df779bccfc9a9e509b2ad0224a9bd269629f74792adc0320fa4b99fb09"
+  },
+  "fields": [
+    {
+      "name": "Color byte0",
+      "raw_offset": 174,
+      "raw_bytes": 1,
+      "intermediate_offset": 282,
+      "runtime_offset": 74,
+      "status": "native color/fade consumer confirmed",
+      "evidence": [
+        {
+          "file": "game-effectelements-convert.txt",
+          "line": 167,
+          "excerpt": "cVar1 = param_2[0xae];"
+        },
+        {
+          "file": "game-effectelements-convert.txt",
+          "line": 171,
+          "excerpt": "*(char *)((int)param_1 + 0x11a) = cVar1;"
+        },
+        {
+          "file": "game-element-definition-load.txt",
+          "line": 179,
+          "excerpt": "*(undefined1 *)(param_1 + 0x4a) = *(undefined1 *)(param_2 + 0x11a);"
+        }
+      ]
+    },
+    {
+      "name": "Color byte1",
+      "raw_offset": 175,
+      "raw_bytes": 1,
+      "intermediate_offset": 283,
+      "runtime_offset": 75,
+      "status": "native color/fade consumer confirmed",
+      "evidence": [
+        {
+          "file": "game-effectelements-convert.txt",
+          "line": 173,
+          "excerpt": "cVar1 = param_2[0xaf];"
+        },
+        {
+          "file": "game-effectelements-convert.txt",
+          "line": 177,
+          "excerpt": "*(char *)((int)param_1 + 0x11b) = cVar1;"
+        },
+        {
+          "file": "game-element-definition-load.txt",
+          "line": 185,
+          "excerpt": "*(undefined1 *)(param_1 + 0x4b) = *(undefined1 *)(param_2 + 0x11b);"
+        }
+      ]
+    },
+    {
+      "name": "Color byte2",
+      "raw_offset": 176,
+      "raw_bytes": 1,
+      "intermediate_offset": 284,
+      "runtime_offset": 76,
+      "status": "native color/fade consumer confirmed",
+      "evidence": [
+        {
+          "file": "game-effectelements-convert.txt",
+          "line": 179,
+          "excerpt": "cVar1 = param_2[0xb0];"
+        },
+        {
+          "file": "game-effectelements-convert.txt",
+          "line": 183,
+          "excerpt": "*(char *)(param_1 + 0x47) = cVar1;"
+        },
+        {
+          "file": "game-element-definition-load.txt",
+          "line": 191,
+          "excerpt": "*(undefined1 *)(param_1 + 0x4c) = *(undefined1 *)(param_2 + 0x11c);"
+        }
+      ]
+    },
+    {
+      "name": "RandomColorIndex",
+      "raw_offset": 177,
+      "raw_bytes": 1,
+      "intermediate_offset": 285,
+      "runtime_offset": 77,
+      "status": "storage only; palette behavior unresolved",
+      "evidence": [
+        {
+          "file": "game-effectelements-convert.txt",
+          "line": 155,
+          "excerpt": "cVar1 = param_2[0xb1];"
+        },
+        {
+          "file": "game-effectelements-convert.txt",
+          "line": 159,
+          "excerpt": "*(char *)((int)param_1 + 0x11d) = cVar1;"
+        },
+        {
+          "file": "game-element-definition-load.txt",
+          "line": 197,
+          "excerpt": "*(undefined1 *)(param_1 + 0x4d) = *(undefined1 *)(param_2 + 0x11d);"
+        }
+      ]
+    },
+    {
+      "name": "TableColorIndex",
+      "raw_offset": 178,
+      "raw_bytes": 1,
+      "intermediate_offset": 286,
+      "runtime_offset": 78,
+      "status": "storage only; palette behavior unresolved",
+      "evidence": [
+        {
+          "file": "game-effectelements-convert.txt",
+          "line": 161,
+          "excerpt": "cVar1 = param_2[0xb2];"
+        },
+        {
+          "file": "game-effectelements-convert.txt",
+          "line": 165,
+          "excerpt": "*(char *)((int)param_1 + 0x11e) = cVar1;"
+        },
+        {
+          "file": "game-element-definition-load.txt",
+          "line": 203,
+          "excerpt": "*(undefined1 *)(param_1 + 0x4e) = *(undefined1 *)(param_2 + 0x11e);"
+        }
+      ]
+    },
+    {
+      "name": "FadePercentage",
+      "raw_offset": 179,
+      "raw_bytes": 1,
+      "intermediate_offset": 287,
+      "runtime_offset": 61,
+      "status": "native color/fade consumer confirmed",
+      "evidence": [
+        {
+          "file": "game-effectelements-convert.txt",
+          "line": 185,
+          "excerpt": "cVar1 = param_2[0xb3];"
+        },
+        {
+          "file": "game-effectelements-convert.txt",
+          "line": 189,
+          "excerpt": "*(char *)((int)param_1 + 0x11f) = cVar1;"
+        },
+        {
+          "file": "game-element-definition-load.txt",
+          "line": 173,
+          "excerpt": "*(undefined1 *)(param_1 + 0x3d) = *(undefined1 *)(param_2 + 0x11f);"
+        }
+      ]
+    }
+  ],
+  "functions": {
+    "raw_converter": 5682544,
+    "definition_loader": 4417184,
+    "initializer": 4415264,
+    "tick": 4416560
+  },
+  "instance_offsets": {
+    "definition_pointer": 259,
+    "packed_color": 110,
+    "lifetime": 265,
+    "alpha_threshold": 269,
+    "resource_pointer": 78,
+    "renderer_flags": 129
+  },
+  "resource": {
+    "raw_type_offset": 112,
+    "raw_flags_offset": 96,
+    "runtime_type_offset": 10,
+    "runtime_flags_offset": 11,
+    "player_coloured_mask": 2,
+    "element_fade_flag_raw_offset": 156,
+    "element_fade_mask": 8
+  },
+  "initial_color": {
+    "rule_order": [
+      "resource type1 -> all channels255",
+      "otherwise resource flag2 -> resolved player channels, each max(channel,48), alpha255",
+      "otherwise raw color bytes+AE/+AF/+B0, alpha255"
+    ],
+    "packed_order": "byte0 | byte1<<8 | byte2<<16 | alpha<<24; no implicit channel swap",
+    "player_provider": "CBridge(global6DA458).vC4 supplies local owner. Matching owner uses connected engine(global6DA45C).v298(0);otherwise engine.v290(owner,0). Projection takes externally resolved RGB. Correct interface provenance confirmed in phase81.",
+    "evidence": {
+      "file": "phase21-element-init-assembly.txt",
+      "first": "0x43630b",
+      "last": "0x4363b4",
+      "instructions": [
+        "0043630b: MOV EAX,dword ptr [ESI + 0x103] ",
+        "00436311: CMP byte ptr [EAX + 0xa],0x1 ",
+        "00436315: JNZ 0x00436332 ",
+        "00436317: MOV byte ptr [EBP + 0x18],0xff ",
+        "0043631b: MOV byte ptr [EBP + 0x19],0xff ",
+        "0043631f: MOV byte ptr [EBP + 0x1a],0xff ",
+        "00436323: MOV byte ptr [EBP + 0x1b],0xff ",
+        "00436327: MOV ECX,dword ptr [EBP + 0x18] ",
+        "0043632a: MOV dword ptr [ESI + 0x6e],ECX ",
+        "0043632d: JMP 0x004363b7 ",
+        "00436332: TEST byte ptr [EAX + 0xb],0x2 ",
+        "00436336: JZ 0x0043639b ",
+        "00436338: MOV ECX,dword ptr [0x006da458] ",
+        "0043633e: MOV EDX,dword ptr [ECX] ",
+        "00436340: CALL dword ptr [EDX + 0xc4] ",
+        "00436346: MOV EDX,dword ptr [EBP + 0xc] ",
+        "00436349: MOV ECX,dword ptr [0x006da45c] ",
+        "0043634f: CMP AX,DX ",
+        "00436352: PUSH 0x0 ",
+        "00436354: MOV EAX,dword ptr [ECX] ",
+        "00436356: JNZ 0x00436360 ",
+        "00436358: CALL dword ptr [EAX + 0x298] ",
+        "0043635e: JMP 0x00436367 ",
+        "00436360: PUSH EDX ",
+        "00436361: CALL dword ptr [EAX + 0x290] ",
+        "00436367: MOV CL,byte ptr [EAX] ",
+        "00436369: MOV DL,0x30 ",
+        "0043636b: CMP CL,DL ",
+        "0043636d: MOV byte ptr [EBP + 0x18],CL ",
+        "00436370: JA 0x00436375 ",
+        "00436372: MOV byte ptr [EBP + 0x18],DL ",
+        "00436375: MOV CL,byte ptr [EAX + 0x1] ",
+        "00436378: CMP CL,DL ",
+        "0043637a: MOV byte ptr [EBP + 0x19],CL ",
+        "0043637d: JA 0x00436382 ",
+        "0043637f: MOV byte ptr [EBP + 0x19],DL ",
+        "00436382: MOV AL,byte ptr [EAX + 0x2] ",
+        "00436385: CMP AL,DL ",
+        "00436387: MOV byte ptr [EBP + 0x1a],AL ",
+        "0043638a: JA 0x0043638f ",
+        "0043638c: MOV byte ptr [EBP + 0x1a],DL ",
+        "0043638f: MOV byte ptr [EBP + 0x1b],0xff ",
+        "00436393: MOV ECX,dword ptr [EBP + 0x18] ",
+        "00436396: MOV dword ptr [ESI + 0x6e],ECX ",
+        "00436399: JMP 0x004363b7 ",
+        "0043639b: MOV DL,byte ptr [EAX + 0x4a] ",
+        "0043639e: MOV CL,byte ptr [EAX + 0x4b] ",
+        "004363a1: MOV byte ptr [EBP + 0x18],DL ",
+        "004363a4: MOV DL,byte ptr [EAX + 0x4c] ",
+        "004363a7: MOV byte ptr [EBP + 0x19],CL ",
+        "004363aa: MOV byte ptr [EBP + 0x1a],DL ",
+        "004363ad: MOV byte ptr [EBP + 0x1b],0xff ",
+        "004363b1: MOV EAX,dword ptr [EBP + 0x18] ",
+        "004363b4: MOV dword ptr [ESI + 0x6e],EAX "
+      ]
+    }
+  },
+  "fade_threshold": {
+    "raw_offset": 179,
+    "initial_hp_source": "Selected u16 in inclusive MinHp..MaxHp interval; initial HP is supplied to the projection.",
+    "rule": "threshold_bits = low32(H_initial - trunc(H_initial * FadePercentage /100))",
+    "compare": "Threshold bits later compared as signed32, but used as unsigned32 divisor.",
+    "pct100": "threshold0; alpha update skipped in this path",
+    "evidence": {
+      "file": "phase21-element-init-assembly.txt",
+      "first": "0x4361cb",
+      "last": "0x4361fa",
+      "instructions": [
+        "004361cb: MOV EDI,dword ptr [ESI + 0x103] ",
+        "004361d1: XOR EAX,EAX ",
+        "004361d3: XOR EDX,EDX ",
+        "004361d5: MOV AX,word ptr [EDI + 0x23] ",
+        "004361d9: ADD ECX,EAX ",
+        "004361db: MOV EAX,0x51eb851f ",
+        "004361e0: MOV dword ptr [ESI + 0x109],ECX ",
+        "004361e6: MOV DL,byte ptr [EDI + 0x3d] ",
+        "004361e9: IMUL EDX,ECX ",
+        "004361ec: IMUL EDX ",
+        "004361ee: SAR EDX,0x5 ",
+        "004361f1: MOV EAX,EDX ",
+        "004361f3: SHR EAX,0x1f ",
+        "004361f6: ADD EDX,EAX ",
+        "004361f8: SUB ECX,EDX ",
+        "004361fa: MOV dword ptr [ESI + 0x10d],ECX "
+      ]
+    }
+  },
+  "fade_update": {
+    "order": "Subtract elapsed ticks once, then evaluate fade once per update call.",
+    "gate": "definition flags&8 and signed remaining lifetime!=0",
+    "rgb_gate": "remaining lifetime <= maximum of current three color bytes",
+    "rgb": "For each current channel: low8(trunc(s32(low32((H-1)*channel))/H)). Signed IDIV, not floating-point interpolation.",
+    "alpha_gate": "threshold_bits !=0 and s32(H)<s32(threshold_bits)",
+    "alpha": "low8(unsigned32(low32(H*255))/unsigned32(threshold_bits)); unsigned DIV",
+    "renderer": "Only when alpha is written: resource types2,3,5 set bit0 of instance renderer flags; others unchanged.",
+    "batching": "RGB can differ between one update(delta2) and two updates(delta1); this branch is not inside the physics substep loop.",
+    "negative_hp": "Gate tests!=0, not>0. Projection preserves signed overflow/narrowing and does not clamp negative remaining life.",
+    "evidence": [
+      {
+        "file": "phase21-element-tick-assembly.txt",
+        "first": "0x436430",
+        "last": "0x436445",
+        "instructions": [
+          "00436430: SUB ESP,0xc ",
+          "00436433: PUSH EBX ",
+          "00436434: PUSH EBP ",
+          "00436435: PUSH ESI ",
+          "00436436: MOV ESI,ECX ",
+          "00436438: PUSH EDI ",
+          "00436439: MOV EDI,dword ptr [ESP + 0x20] ",
+          "0043643d: MOV ECX,dword ptr [ESI + 0x109] ",
+          "00436443: SUB ECX,EDI ",
+          "00436445: MOV dword ptr [ESI + 0x109],ECX "
+        ]
+      },
+      {
+        "file": "phase21-element-tick-assembly.txt",
+        "first": "0x4364dd",
+        "last": "0x43659c",
+        "instructions": [
+          "004364dd: MOV EAX,dword ptr [ESI + 0x103] ",
+          "004364e3: TEST byte ptr [EAX + 0x1f],0x8 ",
+          "004364e7: JZ 0x004365a2 ",
+          "004364ed: MOV ECX,dword ptr [ESI + 0x109] ",
+          "004364f3: TEST ECX,ECX ",
+          "004364f5: JZ 0x004365a2 ",
+          "004364fb: MOV EDX,dword ptr [ESI + 0x6e] ",
+          "004364fe: MOV dword ptr [ESP + 0x14],EDX ",
+          "00436502: MOV EBP,dword ptr [ESP + 0x15] ",
+          "00436506: AND EDX,0xff ",
+          "0043650c: AND EBP,0xff ",
+          "00436512: MOV EAX,EDX ",
+          "00436514: CMP EBP,EAX ",
+          "00436516: JLE 0x0043651a ",
+          "00436518: MOV EAX,EBP ",
+          "0043651a: MOV EBX,dword ptr [ESP + 0x16] ",
+          "0043651e: AND EBX,0xff ",
+          "00436524: CMP EBX,EAX ",
+          "00436526: JLE 0x0043652a ",
+          "00436528: MOV EAX,EBX ",
+          "0043652a: CMP EAX,ECX ",
+          "0043652c: JL 0x00436566 ",
+          "0043652e: LEA EDI,[ECX + -0x1] ",
+          "00436531: MOV EAX,EDI ",
+          "00436533: IMUL EAX,EDX ",
+          "00436536: CDQ ",
+          "00436537: IDIV ECX ",
+          "00436539: MOV dword ptr [ESP + 0x10],EAX ",
+          "0043653d: MOV EAX,EDI ",
+          "0043653f: IMUL EAX,EBP ",
+          "00436542: CDQ ",
+          "00436543: IDIV ECX ",
+          "00436545: MOV dword ptr [ESP + 0x14],EAX ",
+          "00436549: MOV EAX,EDI ",
+          "0043654b: IMUL EAX,EBX ",
+          "0043654e: CDQ ",
+          "0043654f: IDIV ECX ",
+          "00436551: MOV DL,byte ptr [ESP + 0x10] ",
+          "00436555: MOV EDI,dword ptr [ESP + 0x20] ",
+          "00436559: MOV byte ptr [ESI + 0x6e],DL ",
+          "0043655c: MOV DL,byte ptr [ESP + 0x14] ",
+          "00436560: MOV byte ptr [ESI + 0x6f],DL ",
+          "00436563: MOV byte ptr [ESI + 0x70],AL ",
+          "00436566: MOV EBX,dword ptr [ESI + 0x10d] ",
+          "0043656c: TEST EBX,EBX ",
+          "0043656e: JZ 0x004365a2 ",
+          "00436570: CMP ECX,EBX ",
+          "00436572: JGE 0x004365a2 ",
+          "00436574: MOV EAX,ECX ",
+          "00436576: XOR EDX,EDX ",
+          "00436578: SHL EAX,0x8 ",
+          "0043657b: SUB EAX,ECX ",
+          "0043657d: DIV EBX ",
+          "0043657f: MOV byte ptr [ESI + 0x71],AL ",
+          "00436582: MOV EAX,dword ptr [ESI + 0x4e] ",
+          "00436585: MOV AL,byte ptr [EAX + 0xa] ",
+          "00436588: CMP AL,0x5 ",
+          "0043658a: JZ 0x00436594 ",
+          "0043658c: CMP AL,0x2 ",
+          "0043658e: JZ 0x00436594 ",
+          "00436590: CMP AL,0x3 ",
+          "00436592: JNZ 0x004365a2 ",
+          "00436594: MOV EAX,dword ptr [ESI + 0x81] ",
+          "0043659a: OR AL,0x1 ",
+          "0043659c: MOV dword ptr [ESI + 0x81],EAX "
+        ]
+      }
+    ]
+  },
+  "palette_indices": {
+    "raw_offsets": [
+      177,
+      178
+    ],
+    "runtime_offsets": [
+      77,
+      78
+    ],
+    "meaning": "unresolved",
+    "inspected_scope": "Neither index read in the inspected initializer color branch or tick fade branch.",
+    "warning": "This does not prove global non-use. Packed/adjusted-pointer consumers and other binaries remain possible."
+  },
+  "native_emulations": [
+    {
+      "file": "phase21-emulation-color-rgb-threshold-equal.json",
+      "sha256": "42fb251351d8f71c96807ef8e2209965a5ee62ae51a966c4648874916590d5c7",
+      "case": "rgb-threshold-equal"
+    },
+    {
+      "file": "phase21-emulation-color-rgb-threshold-above.json",
+      "sha256": "30b93b9687bd1359d497d199487e6307bcccbede68a17779f2f44af00d9e48ef",
+      "case": "rgb-threshold-above"
+    },
+    {
+      "file": "phase21-emulation-color-rgb-last-nonzero.json",
+      "sha256": "0c754a387ef29e70bb9388f2dda8e987c20a4a09b34f541d3fd43b9287f06304",
+      "case": "rgb-last-nonzero"
+    },
+    {
+      "file": "phase21-emulation-color-zero-hp-skip.json",
+      "sha256": "26e1cb2ad3165a3fc3dafffca1c42280c4a798492ede4c020002173364b56351",
+      "case": "zero-hp-skip"
+    },
+    {
+      "file": "phase21-emulation-color-no-fade-flag.json",
+      "sha256": "94ef13682c9dda27d492aabac790df4ea36ddb418fa956de8fe124891045c05a",
+      "case": "no-fade-flag"
+    },
+    {
+      "file": "phase21-emulation-color-alpha-strict-equal.json",
+      "sha256": "9d580a631345865d8cd6d1036ea6ad9ca2a7b55f37ee007477a8ed4a4b8db3d7",
+      "case": "alpha-strict-equal"
+    },
+    {
+      "file": "phase21-emulation-color-alpha-below.json",
+      "sha256": "d13d5908b67ad48b79fc1183c6393ec19cf7803d2fba3d49f0777ad0f5dbf84b",
+      "case": "alpha-below"
+    },
+    {
+      "file": "phase21-emulation-color-alpha-threshold-negative.json",
+      "sha256": "0a1ebbef09ffba84c612fd6ad9481c2dc4da9daf5ee5d4aff5faff286e65c9bd",
+      "case": "alpha-threshold-negative"
+    },
+    {
+      "file": "phase21-emulation-color-negative-lifetime.json",
+      "sha256": "7a5fc825d10be61899bea87e65a04ed49ff7c9439365ee344955e6c3704d57ee",
+      "case": "negative-lifetime"
+    },
+    {
+      "file": "phase21-emulation-color-alpha-sprite-no-render-bit.json",
+      "sha256": "c7b134f2daed848619c3186f757c9d6e7461f4ecf13adcf57c378de8891105b4",
+      "case": "alpha-sprite-no-render-bit"
+    },
+    {
+      "file": "phase21-emulation-color-alpha-mesh-render-bit.json",
+      "sha256": "63dd0540dd6340d3d1c800628439373964c49934f4835d577169a5ac796ef651",
+      "case": "alpha-mesh-render-bit"
+    },
+    {
+      "file": "phase21-emulation-color-alpha-type6-no-render-bit.json",
+      "sha256": "e8b637765fcf83cce65647a727b263ee3fd52d7e35fd3aa2da1752cd1a5d5282",
+      "case": "alpha-type6-no-render-bit"
+    },
+    {
+      "file": "phase21-emulation-color-raw-rgb.json",
+      "sha256": "eb8dd1525689ed5c4e5aa9fdf81cb80c95ffdf35f02dabce1a0e2ffa49aa2542",
+      "case": "raw-rgb"
+    },
+    {
+      "file": "phase21-emulation-color-raw-rgb-indices255.json",
+      "sha256": "e911a2928cc57c174ca8a7d018952b5b0abb9ee120f61983696393ec36bf2a32",
+      "case": "raw-rgb-indices255"
+    },
+    {
+      "file": "phase21-emulation-color-sprite-white.json",
+      "sha256": "e533db44590885c4a391c1cd1cd65b46e4df16eb0a4fccae38a8eacfa4009103",
+      "case": "sprite-white"
+    },
+    {
+      "file": "phase21-emulation-color-sprite-overrides-player.json",
+      "sha256": "2518a2874655b64e7e22c83313cb339eed41ca2792df2a29e15874e22a02ad73",
+      "case": "sprite-overrides-player"
+    },
+    {
+      "file": "phase21-emulation-color-player-local-clamp.json",
+      "sha256": "34d37ad0deb5492e9d3f60e3050ac1f7a40ffb0a3d448abd62f97333d6d1aa7b",
+      "case": "player-local-clamp"
+    },
+    {
+      "file": "phase21-emulation-color-player-other-clamp.json",
+      "sha256": "9c9c4785930a8a1cf3c28de4a19e497538f0b0988f118ec39b28be4ec660e82e",
+      "case": "player-other-clamp"
+    },
+    {
+      "file": "phase21-emulation-color-threshold-0-100.json",
+      "sha256": "755f74cc642d30553113f92a23573c48f4d802d04de3b8d6a49ad7645e023fdf",
+      "case": "threshold-0-100"
+    },
+    {
+      "file": "phase21-emulation-color-threshold-1-70.json",
+      "sha256": "4249b81e66b55cabf44ce3377dcb019c3c4cfc2013c90c033d844ad2013960db",
+      "case": "threshold-1-70"
+    },
+    {
+      "file": "phase21-emulation-color-threshold-128-70.json",
+      "sha256": "b2c0bfd86b6c46dd3095e774f8491ef42753d3202e25b33c3e81aec73f887979",
+      "case": "threshold-128-70"
+    },
+    {
+      "file": "phase21-emulation-color-threshold-600-0.json",
+      "sha256": "96157feb29edc2bbb5dbd954bf0694376eb39666a262b2fc263da78b4d455f91",
+      "case": "threshold-600-0"
+    },
+    {
+      "file": "phase21-emulation-color-threshold-600-25.json",
+      "sha256": "57d9ee766ce3d4c12d6ebbb348dc4a7e8b5fddf504a0db91dcd5a264410b094f",
+      "case": "threshold-600-25"
+    },
+    {
+      "file": "phase21-emulation-color-threshold-600-100.json",
+      "sha256": "664e7fa04b577286d972d0e2dc54d0c285af51e228dfcbd1e580475cd9c36d5f",
+      "case": "threshold-600-100"
+    },
+    {
+      "file": "phase21-emulation-color-threshold-600-101.json",
+      "sha256": "1903e3317f21d83b11481ede508d5f1061949ca808c4ce76cccd1e2eec1577fe",
+      "case": "threshold-600-101"
+    },
+    {
+      "file": "phase21-emulation-color-threshold-65535-255.json",
+      "sha256": "b8b2f033b8b8e64163933f3f39b6a5d82c39f0793c025c5f0ccb0115436604da",
+      "case": "threshold-65535-255"
+    }
+  ],
+  "emulation_scope": "26 runs execute original color/threshold/fade branch instructions. Surrounding setup and exit readout are adapters in EmulatorHelper memory. Player providers are explicit stub palettes. EXE and Ghidra program bytes are not patched.",
+  "limitations": [
+    "No framebuffer/rendering or modified-map gameplay validation.",
+    "Caller lifetime/deletion, resource loading and player-color lookup are outside the read-only projection.",
+    "Renderer resource type is an explicit input to the tick model; it need not be inferred from a raw record in every runtime situation.",
+    "Palette index semantics remain unresolved; nonzero index experiment only checks the isolated initializer color branch."
+  ],
+  "phase81_complete_initialization": {
+    "phase": 81,
+    "date": "2026-10-28",
+    "family": "EffectElements",
+    "record_bytes": 182,
+    "definition_bytes": 79,
+    "instance_bytes": 287,
+    "executable": "D:\\Games\\DK2\\Dungeon Keeper 2\\DKII-DX.exe",
+    "executable_sha256": "d7a8b854e4e4f02709eba271bead6fe2307dd6e332b5a96e70857e5b0e19fb8a",
+    "primary_program_bytes": [
+      {
+        "program": "DKII-DX.exe",
+        "exe": "D:\\Games\\DK2\\Dungeon Keeper 2\\DKII-DX.exe",
+        "address": 4412128,
+        "length": 311,
+        "assembly": "phase81-final-DX-4352e0-assembly.txt",
+        "memory": "phase81-final-DX-4352e0-memory.txt",
+        "executed": true,
+        "scope": "Complete function span; only fixture-selected paths executed.",
+        "memory_sha256": "a990b66115a914e532a1610394ada0d003c99048c917b0510837b39bda5d98e2",
+        "program_bytes_sha256": "9503c76186c668673476d112b547d59fcea73b8893e1e43a92f17bf490c672f8",
+        "assembly_sha256": "2b0cc84aeea28dd18ec9d1cbcb0cb4558d6d6573452f0e2eb9654e8dff27ff5c"
+      },
+      {
+        "program": "DKII-DX.exe",
+        "exe": "D:\\Games\\DK2\\Dungeon Keeper 2\\DKII-DX.exe",
+        "address": 5589808,
+        "length": 148,
+        "assembly": "phase81-final-DX-554b30-assembly.txt",
+        "memory": "phase81-final-DX-554b30-memory.txt",
+        "executed": true,
+        "scope": "Complete function span; only fixture-selected paths executed.",
+        "memory_sha256": "3552f4add1500bb319ee9391002f28adf148f00b8d75ab05b6b2068f6f50916d",
+        "program_bytes_sha256": "31cb1c704c06c656d9dadc57b9816400c4897efe61ade30e1cf5d0ec22d9918a",
+        "assembly_sha256": "55aaaaafaca29275846292a6097468082075c3ec1bd1405532d14bb85e99848d"
+      },
+      {
+        "program": "DKII-DX.exe",
+        "exe": "D:\\Games\\DK2\\Dungeon Keeper 2\\DKII-DX.exe",
+        "address": 4415088,
+        "length": 56,
+        "assembly": "phase81-final-DX-435e70-assembly.txt",
+        "memory": "phase81-final-DX-435e70-memory.txt",
+        "executed": true,
+        "scope": "Complete function span; only fixture-selected paths executed.",
+        "memory_sha256": "69c4da489bcc9ace33c71926fc6afbf5719013d1d33e728b2f57fcbd3193b233",
+        "program_bytes_sha256": "aa22e1e9b43835c682b4458c693f92f41820ccf249ff74455c04777ef52cdecf",
+        "assembly_sha256": "adeba31e3f43059ff683d1bbb9d2c2dd946bd15c6b40e7762dcc02cc75193363"
+      },
+      {
+        "program": "DKII-DX.exe",
+        "exe": "D:\\Games\\DK2\\Dungeon Keeper 2\\DKII-DX.exe",
+        "address": 4483296,
+        "length": 386,
+        "assembly": "phase81-final-DX-4468e0-assembly.txt",
+        "memory": "phase81-final-DX-4468e0-memory.txt",
+        "executed": true,
+        "scope": "Complete function span; only fixture-selected paths executed.",
+        "memory_sha256": "4c5fb7980e75844aef6b28d4a92cb1ad4dbfeb432f4a10e57f2d67ee20d3bcbe",
+        "program_bytes_sha256": "4225674b495144f975a7e8190c7f53d4a15d0b07db6b606bae07a16d8c666ed6",
+        "assembly_sha256": "59de94b4879bd3baf564bdd335ce0427a52f502e8de94e10dca1ba4c26225e59"
+      },
+      {
+        "program": "DKII-DX.exe",
+        "exe": "D:\\Games\\DK2\\Dungeon Keeper 2\\DKII-DX.exe",
+        "address": 4929040,
+        "length": 292,
+        "assembly": "phase81-final-DX-4b3610-assembly.txt",
+        "memory": "phase81-final-DX-4b3610-memory.txt",
+        "executed": true,
+        "scope": "Complete function span; only fixture-selected paths executed.",
+        "memory_sha256": "e24d8c7bb12246b99aa8f1b23f69073dad80fd44bb98e298e72b3f4bb5cc4768",
+        "program_bytes_sha256": "d9ec6bbc256af131e864b8c91a569ee0a810aa3fffe36a621300b8a89874d53e",
+        "assembly_sha256": "832925166502c4b6a8570a467a60788ddce534ed4ba696e982b0787d5e352fe5"
+      },
+      {
+        "program": "DKII-DX.exe",
+        "exe": "D:\\Games\\DK2\\Dungeon Keeper 2\\DKII-DX.exe",
+        "address": 4323584,
+        "length": 18,
+        "assembly": "phase81-final-DX-41f900-assembly.txt",
+        "memory": "phase81-final-DX-41f900-memory.txt",
+        "executed": true,
+        "scope": "Complete function span; only fixture-selected paths executed.",
+        "memory_sha256": "26265360dbe2cf0f81b14e047717c1a68769312b99e8dc16529764763009f04e",
+        "program_bytes_sha256": "f48ad2949b9d23eee2629317e52d1c64575bb599ae7fa6846110be9c9c28f561",
+        "assembly_sha256": "92862b909d60023650aae32536e6c9d3c3a6b753660659f0adef0301b94de842"
+      },
+      {
+        "program": "DKII-DX.exe",
+        "exe": "D:\\Games\\DK2\\Dungeon Keeper 2\\DKII-DX.exe",
+        "address": 4459120,
+        "length": 81,
+        "assembly": "phase81-final-DX-440a70-assembly.txt",
+        "memory": "phase81-final-DX-440a70-memory.txt",
+        "executed": true,
+        "scope": "Complete function span; only fixture-selected paths executed.",
+        "memory_sha256": "125824305765ba1198f3a80952b825db07b6d213aa6fe4b3a9f5b73d7a6c2200",
+        "program_bytes_sha256": "cb80d9d9f22ce055e968df54983b8ee2ccfc79c995701940ae24b473b6e4c76f",
+        "assembly_sha256": "1cae36fb672da67016e96118a8934de7ff2c2f43a183ad884dff93069afcccde"
+      },
+      {
+        "program": "DKII-DX.exe",
+        "exe": "D:\\Games\\DK2\\Dungeon Keeper 2\\DKII-DX.exe",
+        "address": 4458912,
+        "length": 91,
+        "assembly": "phase81-final-DX-4409a0-assembly.txt",
+        "memory": "phase81-final-DX-4409a0-memory.txt",
+        "executed": true,
+        "scope": "Complete function span; only fixture-selected paths executed.",
+        "memory_sha256": "36d56b5c27e04de72d66bb2a4344075bc02ead147ab754ed6fb9c3751e000ab5",
+        "program_bytes_sha256": "842dd06d9e282e2fda38446aa094a477ab7eed2336373b56ef476f646bae2723",
+        "assembly_sha256": "b43a90a2d6c52a085431278c2e6e25b41e25b15d185bc0ec179a3bc95925cc4a"
+      },
+      {
+        "program": "DKII-DX.exe",
+        "exe": "D:\\Games\\DK2\\Dungeon Keeper 2\\DKII-DX.exe",
+        "address": 4461248,
+        "length": 27,
+        "assembly": "phase81-final-DX-4412c0-assembly.txt",
+        "memory": "phase81-final-DX-4412c0-memory.txt",
+        "executed": true,
+        "scope": "Complete function span; only fixture-selected paths executed.",
+        "memory_sha256": "6eee25e7e440cb63dfe72c53e6939f0433bac0e17cea99392fa86642054e7bf7",
+        "program_bytes_sha256": "5738da3ba0dc2fe11717fcd39df1f08d00ffd8de9002bc9062c3283dc462d374",
+        "assembly_sha256": "74a42e6afc5b26b2418b05635797cf5114c844516e62a4c37c26d7539e84ac92"
+      },
+      {
+        "program": "DKII-DX.exe",
+        "exe": "D:\\Games\\DK2\\Dungeon Keeper 2\\DKII-DX.exe",
+        "address": 4460256,
+        "length": 59,
+        "assembly": "phase81-final-DX-440ee0-assembly.txt",
+        "memory": "phase81-final-DX-440ee0-memory.txt",
+        "executed": true,
+        "scope": "Complete function span; only fixture-selected paths executed.",
+        "memory_sha256": "5f0ddd395747a2ca190cbd2fb6754b2d9f12d9ebf7d5035ddc4dbaf9e7558b6d",
+        "program_bytes_sha256": "5eb4c56431edbf6c01e176f057ce81c0b952082e61ab8bea77aef530f64b9a85",
+        "assembly_sha256": "892807d172f5b769fccf42374da0a46a50c198c2d0679082e16248196c5e5b48"
+      },
+      {
+        "program": "DKII-DX.exe",
+        "exe": "D:\\Games\\DK2\\Dungeon Keeper 2\\DKII-DX.exe",
+        "address": 4415264,
+        "length": 1209,
+        "assembly": "phase81-final-DX-435f20-assembly.txt",
+        "memory": "phase81-final-DX-435f20-memory.txt",
+        "executed": true,
+        "scope": "Complete function span; only fixture-selected paths executed.",
+        "memory_sha256": "9ec6cfb4cb31cff1aa5740dff15347dcddd0b871fb924f5caa61caad9652108a",
+        "program_bytes_sha256": "73bab956360795b0e0ad0f3ddfa2156d98bc4168b5dccad588eb791b9690855a",
+        "assembly_sha256": "f9d649c00e436fea1cb7f937c815aaec85287874eb55ac016cd225ef0762db4e"
+      },
+      {
+        "program": "DKII-DX.exe",
+        "exe": "D:\\Games\\DK2\\Dungeon Keeper 2\\DKII-DX.exe",
+        "address": 4484208,
+        "length": 1620,
+        "assembly": "phase81-final-DX-446c70-assembly.txt",
+        "memory": "phase81-final-DX-446c70-memory.txt",
+        "executed": true,
+        "scope": "Complete function span; only fixture-selected paths executed.",
+        "memory_sha256": "229b175a651c53d827b394d92f3606fcdef93e08890fe664935ae4f553957da4",
+        "program_bytes_sha256": "e2febaf3c2154d6c2ea44a8c89a1ae043c205a0e9e28bef197ba5ccbd3049ae9",
+        "assembly_sha256": "1fbfe644a5832e0f66da80766a9cb830e2b50c57156f04f908d34a4e9a9e673c"
+      },
+      {
+        "program": "DKII-DX.exe",
+        "exe": "D:\\Games\\DK2\\Dungeon Keeper 2\\DKII-DX.exe",
+        "address": 4470240,
+        "length": 47,
+        "assembly": "phase81-final-DX-4435e0-assembly.txt",
+        "memory": "phase81-final-DX-4435e0-memory.txt",
+        "executed": true,
+        "scope": "Complete function span; only fixture-selected paths executed.",
+        "memory_sha256": "84bc72d28365ee4a748eb8929a475be6928fc763ee3200c68b477ae04df99b7f",
+        "program_bytes_sha256": "b4de833a471386116e406f1b468a03fc1daaca86be87efe78604001e9102f66b",
+        "assembly_sha256": "c2a6f39d589b6566b99eba909881f06cda2ff4bc1c0d4afc203dd0a55def26f2"
+      },
+      {
+        "program": "DKII-DX.exe",
+        "exe": "D:\\Games\\DK2\\Dungeon Keeper 2\\DKII-DX.exe",
+        "address": 5593296,
+        "length": 187,
+        "assembly": "phase81-final-DX-5558d0-assembly.txt",
+        "memory": "phase81-final-DX-5558d0-memory.txt",
+        "executed": true,
+        "scope": "Complete function span; only fixture-selected paths executed.",
+        "memory_sha256": "f526dc65ad5a666a9428fdfccb023683fc38077c7420804e7587f6cad2b8f691",
+        "program_bytes_sha256": "03626d40227ba5fba42affc16f6bbe42b790347294e58b52759d30b1a3b234f1",
+        "assembly_sha256": "3e5329e3e21adb87d0e69728b245cebb5884db7ae380b3bf4c06da9d47bbf5cb"
+      },
+      {
+        "program": "DKII-DX.exe",
+        "exe": "D:\\Games\\DK2\\Dungeon Keeper 2\\DKII-DX.exe",
+        "address": 4410960,
+        "length": 39,
+        "assembly": "phase81-final-DX-434e50-assembly.txt",
+        "memory": "phase81-final-DX-434e50-memory.txt",
+        "executed": true,
+        "scope": "Complete function span; only fixture-selected paths executed.",
+        "memory_sha256": "c506d28a4c6be135fc231cf736c8f7ea49716af6f58f97b7fae63d67fc11780a",
+        "program_bytes_sha256": "d4c8d4bd0b6605a84894dafddefe1f30d699caaa801bdea06cc0396fdfe3465c",
+        "assembly_sha256": "db22f7f33b3ab31f84e58fa62683589562b08dfb629ee9ba4398e72d47af5521"
+      },
+      {
+        "program": "DKII-DX.exe",
+        "exe": "D:\\Games\\DK2\\Dungeon Keeper 2\\DKII-DX.exe",
+        "address": 4247504,
+        "length": 11,
+        "assembly": "phase81-final-DX-40cfd0-assembly.txt",
+        "memory": "phase81-final-DX-40cfd0-memory.txt",
+        "executed": true,
+        "scope": "Complete function span; only fixture-selected paths executed.",
+        "memory_sha256": "24ef0ddf852553e7475082fc974cd06c84340a32b0f48e82246c287973e51598",
+        "program_bytes_sha256": "0d9d4797ad8c81da5b9f78b6e3eba5066720c9a41fbd098a5dac1e8581c3c29c",
+        "assembly_sha256": "eca5180cc412d44e55bedcbbaea96c73cdadf641c7ae10165d394eb23d591721"
+      },
+      {
+        "program": "DKII-DX.exe",
+        "exe": "D:\\Games\\DK2\\Dungeon Keeper 2\\DKII-DX.exe",
+        "address": 4416480,
+        "length": 7,
+        "assembly": "phase81-final-DX-4363e0-assembly.txt",
+        "memory": "phase81-final-DX-4363e0-memory.txt",
+        "executed": true,
+        "scope": "Complete function span; only fixture-selected paths executed.",
+        "memory_sha256": "de08ed8d238c0b311d0a4fe7eaf8e4d454478ccbea6bcddcc7a76d222cdfc541",
+        "program_bytes_sha256": "6c0e7f388082ca24d5209a043c5cba9e855655c9d173a49184205dc7c8f855d5",
+        "assembly_sha256": "99d048f5e45814b9fb1f5ee350c40e809b991a4b51a540ad8b8ef3ac86ce28c3"
+      },
+      {
+        "program": "DKII-DX.exe",
+        "exe": "D:\\Games\\DK2\\Dungeon Keeper 2\\DKII-DX.exe",
+        "address": 4249152,
+        "length": 3,
+        "assembly": "phase81-final-DX-40d640-assembly.txt",
+        "memory": "phase81-final-DX-40d640-memory.txt",
+        "executed": true,
+        "scope": "Complete function span; only fixture-selected paths executed.",
+        "memory_sha256": "5ac37bd97ee6d2631dc8d17ff7b5b1d9177f1828564ebdda44492aefa51f0f4e",
+        "program_bytes_sha256": "58367ffa2a0179375018fa0f5c26da24391e42ebe0ed8fdda35a21fc7bdc396f",
+        "assembly_sha256": "1e2b2b9f6d2ce273300371839eb5f612e385959cd0d3ca03ca3fc04d5bbb9f64"
+      },
+      {
+        "program": "DKII-DX.exe",
+        "exe": "D:\\Games\\DK2\\Dungeon Keeper 2\\DKII-DX.exe",
+        "address": 4929488,
+        "length": 719,
+        "assembly": "phase81-final-DX-4b37d0-assembly.txt",
+        "memory": "phase81-final-DX-4b37d0-memory.txt",
+        "executed": true,
+        "scope": "Complete function span; only fixture-selected paths executed.",
+        "memory_sha256": "dc3787ba0831f8204af616b95e26cf01ea32c662f3cb68cfb71fdb772c4f0284",
+        "program_bytes_sha256": "abbadf3de43e6e8708f13c46f710073bff6faa8d5feccc634276d7623f824549",
+        "assembly_sha256": "a9d9b9be789b8747f812beae3e06ca4791fd40380db2e3affc581f348e265de2"
+      },
+      {
+        "program": "DKII-DX.exe",
+        "exe": "D:\\Games\\DK2\\Dungeon Keeper 2\\DKII-DX.exe",
+        "address": 4932064,
+        "length": 586,
+        "assembly": "phase81-final-DX-4b41e0-assembly.txt",
+        "memory": "phase81-final-DX-4b41e0-memory.txt",
+        "executed": true,
+        "scope": "Complete function span; only fixture-selected paths executed.",
+        "memory_sha256": "c7e352bbbc7279192f61c92c46129b7f8bec00f87428aa6c7695dacd4da37ae4",
+        "program_bytes_sha256": "9110ea52540eff6c569064d849c58edfa1aeda0d4f3882d60ed59ca6e0048472",
+        "assembly_sha256": "ea3e8651f2ee31d030262ed18bcf3c9fbc318e549f0a9ee831bce80942cb166c"
+      },
+      {
+        "program": "DKII-DX.exe",
+        "exe": "D:\\Games\\DK2\\Dungeon Keeper 2\\DKII-DX.exe",
+        "address": 4434640,
+        "length": 536,
+        "assembly": "phase81-final-DX-43aad0-assembly.txt",
+        "memory": "phase81-final-DX-43aad0-memory.txt",
+        "executed": false,
+        "scope": "Static provenance/loader evidence only; not executed by phase81.",
+        "memory_sha256": "74d69a3a4110125288bd232d246809512efa5f7bcc7f9701e66b234090cbed29",
+        "program_bytes_sha256": "82c1697fcfff0149f0fd5227c08c35c47bca24c9b79ffe0a64cf0611d1bbfb5e",
+        "assembly_sha256": "c9ae241d9bf97c94df2f29867a28c3c7bda23930245c644e35ee41aab60a1931"
+      },
+      {
+        "program": "DKII-DX.exe",
+        "exe": "D:\\Games\\DK2\\Dungeon Keeper 2\\DKII-DX.exe",
+        "address": 4417184,
+        "length": 709,
+        "assembly": "phase81-final-DX-4366a0-assembly.txt",
+        "memory": "phase81-final-DX-4366a0-memory.txt",
+        "executed": false,
+        "scope": "Static provenance/loader evidence only; not executed by phase81.",
+        "memory_sha256": "cef1194fdd932ccf5af259358c633524497808ee57d0865887a2cfc256ada08f",
+        "program_bytes_sha256": "541cbedbcf247a6e83afd4f415b2be6ecc13bdf4ad5bd4e1ae2419b0a07899f7",
+        "assembly_sha256": "b6f9afbd5a205d5f2672aa72381a65dd5680b8901131a1cebd7ad8fa3ef3334f"
+      }
+    ],
+    "primary_vtable_data": [
+      {
+        "program": "DKII-DX.exe",
+        "exe": "D:\\Games\\DK2\\Dungeon Keeper 2\\DKII-DX.exe",
+        "address": 6737172,
+        "length": 4,
+        "memory": "phase81-final-data-66cd14.txt",
+        "label": "CBridge visibility forwarder",
+        "memory_sha256": "e3c9b2e5307dcfbf3d6e6544ee1e33e5cc86c778961e13582c14f0a6f74957cd",
+        "program_bytes_sha256": "9c6bfe603b1822ae3d3d04258f0aa38ddba92441f13a284a110458e48b947e04",
+        "hex": "c0124400"
+      },
+      {
+        "program": "DKII-DX.exe",
+        "exe": "D:\\Games\\DK2\\Dungeon Keeper 2\\DKII-DX.exe",
+        "address": 6737388,
+        "length": 8,
+        "memory": "phase81-final-data-66cdec.txt",
+        "label": "CBridge EffectElement exists/get",
+        "memory_sha256": "1b2940613a1c704845bf69b41c6d0047582ff533de1f697b7c17c281b26017e0",
+        "program_bytes_sha256": "ed0a62f6d2051219a63950c9650314ee375fb16a71b9f0c644889b122cc83956",
+        "hex": "700a4400a0094400"
+      },
+      {
+        "program": "DKII-DX.exe",
+        "exe": "D:\\Games\\DK2\\Dungeon Keeper 2\\DKII-DX.exe",
+        "address": 6736860,
+        "length": 32,
+        "memory": "phase81-final-data-66cbdc.txt",
+        "label": "Original EffectElement vtable prefix",
+        "memory_sha256": "a33b5170c4fd1a89791248d84090b0f5a90ffa24aa42740d108f73bcac65d130",
+        "program_bytes_sha256": "5524dc7117a54904cab5028e82b45cf8300709b63a5d5630797d9632d2138d4a",
+        "hex": "f05e4300c05e4300d05e4300e05e4300b05e430000080000000e000000020000"
+      }
+    ],
+    "native_replays": [
+      {
+        "file": "phase81-emulation-element-base-page0.json",
+        "sha256": "4040fa4fa5ec957b458b1717eb3ab48e9cea7ada722ebce76314de3f6cd1f93c",
+        "case": "base",
+        "page": 0
+      },
+      {
+        "file": "phase81-emulation-element-base-page1.json",
+        "sha256": "fa7866d4837387c0faa55378c8eadbe0f73c5f7bec97e464e464d9bacae83e61",
+        "case": "base",
+        "page": 1
+      },
+      {
+        "file": "phase81-emulation-element-base-page2.json",
+        "sha256": "db0aa4d297ae90486f87c75722cf06981723dabd010f62c1779b5bb5cd112a64",
+        "case": "base",
+        "page": 2
+      },
+      {
+        "file": "phase81-emulation-element-palette-random-page0.json",
+        "sha256": "0e8799a4b7168ca3b5ec68e9d9ed08e4731110f40002e5fc13c9237986a9d489",
+        "case": "palette-random",
+        "page": 0
+      },
+      {
+        "file": "phase81-emulation-element-palette-random-page1.json",
+        "sha256": "fc5b83487c5b8df65213c8343b55e64d7744399f0943f74874bcfb3c443cf288",
+        "case": "palette-random",
+        "page": 1
+      },
+      {
+        "file": "phase81-emulation-element-palette-random-page2.json",
+        "sha256": "9af5f5bb72e6fc9107170bc20d2aa895755d943a641428e3bc2dda72e55e4fc3",
+        "case": "palette-random",
+        "page": 2
+      },
+      {
+        "file": "phase81-emulation-element-palette-table-page0.json",
+        "sha256": "68fabdb48f59a381b23651997d2c1ae9439b0da61124e8c2af18755a9ca0be36",
+        "case": "palette-table",
+        "page": 0
+      },
+      {
+        "file": "phase81-emulation-element-palette-table-page1.json",
+        "sha256": "a125763b3ed7de0c4e1a1f25bcebe69a18c4b9078d2cdb8fac7564838bbd2c9d",
+        "case": "palette-table",
+        "page": 1
+      },
+      {
+        "file": "phase81-emulation-element-palette-table-page2.json",
+        "sha256": "d8cb5983ca952dcd0b0c7642558a93b0231b5eed8195b3169fc26d746014122c",
+        "case": "palette-table",
+        "page": 2
+      },
+      {
+        "file": "phase81-emulation-element-palette-both-page0.json",
+        "sha256": "a89e1a98717326c5f7df9edbe9963b2b5faa4fef350e66ad1fa9ba2f1136830b",
+        "case": "palette-both",
+        "page": 0
+      },
+      {
+        "file": "phase81-emulation-element-palette-both-page1.json",
+        "sha256": "f653dc76b2c7a30e33026e55454810d42e71ed064ae4048285f25ac34651052f",
+        "case": "palette-both",
+        "page": 1
+      },
+      {
+        "file": "phase81-emulation-element-palette-both-page2.json",
+        "sha256": "d54d78d9b41fbc9454cdf389b5fb4f74c7ab75d5d664d7aee12c30e3b919435b",
+        "case": "palette-both",
+        "page": 2
+      },
+      {
+        "file": "phase81-emulation-element-xy-negative-fixed-page0.json",
+        "sha256": "d184615343ce532ab511e0f3b50a3fc32f1b1d927aa0592875b588c1b34842b4",
+        "case": "xy-negative-fixed",
+        "page": 0
+      },
+      {
+        "file": "phase81-emulation-element-xy-negative-fixed-page1.json",
+        "sha256": "2b8e702ff1e95a07164d06d0080ccdb4c89e69f09fc9ec662808bebdabb022d7",
+        "case": "xy-negative-fixed",
+        "page": 1
+      },
+      {
+        "file": "phase81-emulation-element-xy-negative-fixed-page2.json",
+        "sha256": "06c0bb637408df529d0f8ab40c30740a40026d017510e289819b2c1b17402d17",
+        "case": "xy-negative-fixed",
+        "page": 2
+      },
+      {
+        "file": "phase81-emulation-element-z-negative-fixed-page0.json",
+        "sha256": "cc36df40beb926ee3948083ca1f4ee24bfd2a9ee7fda3297f8118e613dccfd6d",
+        "case": "z-negative-fixed",
+        "page": 0
+      },
+      {
+        "file": "phase81-emulation-element-z-negative-fixed-page1.json",
+        "sha256": "2749cd42d05902942b67e5999b41445c0f5be4b669e5d7eba01e15d5a519e44d",
+        "case": "z-negative-fixed",
+        "page": 1
+      },
+      {
+        "file": "phase81-emulation-element-z-negative-fixed-page2.json",
+        "sha256": "b56e64d64c018b9f450d717f6e336ae46c87cf951cfd071ae87f32cebcbaef85",
+        "case": "z-negative-fixed",
+        "page": 2
+      },
+      {
+        "file": "phase81-emulation-element-xy-signed-cross-page0.json",
+        "sha256": "14db77c52c350af858946f5869cf2a4512bd0cfe6256ac222228eb3726f1d5b9",
+        "case": "xy-signed-cross",
+        "page": 0
+      },
+      {
+        "file": "phase81-emulation-element-xy-signed-cross-page1.json",
+        "sha256": "602e58ff4bf7e00dae8bae889f71d7def07e817b0242d60ba1826e6340f0c446",
+        "case": "xy-signed-cross",
+        "page": 1
+      },
+      {
+        "file": "phase81-emulation-element-xy-signed-cross-page2.json",
+        "sha256": "74f10f4de508dd1ebe1261b6713adfadeecaf31eb1b2a60599405ee00ac71bb9",
+        "case": "xy-signed-cross",
+        "page": 2
+      },
+      {
+        "file": "phase81-emulation-element-xy-reversed-sign-page0.json",
+        "sha256": "86e8a37531363c1fe1d7a720e8d6ad27f74dd1cf4571dec7d0b6438955fbdbd5",
+        "case": "xy-reversed-sign",
+        "page": 0
+      },
+      {
+        "file": "phase81-emulation-element-xy-reversed-sign-page1.json",
+        "sha256": "ec463919eadcf91d397ad3582e79283bc804e4f2c47a78fe3de90bd625b780f1",
+        "case": "xy-reversed-sign",
+        "page": 1
+      },
+      {
+        "file": "phase81-emulation-element-xy-reversed-sign-page2.json",
+        "sha256": "4f3e123c630702e771ce8dcbef059c4892c8c0de1d601e2312ca5528e5bf411a",
+        "case": "xy-reversed-sign",
+        "page": 2
+      },
+      {
+        "file": "phase81-emulation-element-z-reversed-page0.json",
+        "sha256": "8c250df24bd61239f2c4416cada45d44c7a167a26643bdc8a154ddf58b91646e",
+        "case": "z-reversed",
+        "page": 0
+      },
+      {
+        "file": "phase81-emulation-element-z-reversed-page1.json",
+        "sha256": "ea03ac60025940092503ceda898750f95cf4181e96658df032663e8b340d802c",
+        "case": "z-reversed",
+        "page": 1
+      },
+      {
+        "file": "phase81-emulation-element-z-reversed-page2.json",
+        "sha256": "3968eb5ac72b117886b9c1a3a2882332af51e6b136a3f5f760b9550ba3f8d3e5",
+        "case": "z-reversed",
+        "page": 2
+      },
+      {
+        "file": "phase81-emulation-element-hp-variable-page0.json",
+        "sha256": "aefc1532069553bd3627bd463b4012d757dbf26287854c5e312ef80944be2520",
+        "case": "hp-variable",
+        "page": 0
+      },
+      {
+        "file": "phase81-emulation-element-hp-variable-page1.json",
+        "sha256": "6b5102b9761a98da74ecf3900378afe49dce2f31d0acd6958f4096d352d0f6e3",
+        "case": "hp-variable",
+        "page": 1
+      },
+      {
+        "file": "phase81-emulation-element-hp-variable-page2.json",
+        "sha256": "2a3316caf7899be563210d6135c053f43c33d0df63d89742c96c04f26af0192d",
+        "case": "hp-variable",
+        "page": 2
+      },
+      {
+        "file": "phase81-emulation-element-hp-maximum-page0.json",
+        "sha256": "0f7773268152fafe28f614673786d9b7a3230990bbd23b5ad9a1c5987ec3abfa",
+        "case": "hp-maximum",
+        "page": 0
+      },
+      {
+        "file": "phase81-emulation-element-hp-maximum-page1.json",
+        "sha256": "152dce55cbfee7902ef1b5918020c220268ef6052c1659014220000857c447c1",
+        "case": "hp-maximum",
+        "page": 1
+      },
+      {
+        "file": "phase81-emulation-element-hp-maximum-page2.json",
+        "sha256": "800e4a0041f9182d6408a8c1c29e2470010d03cf72ead047c9bee8744dff4b9b",
+        "case": "hp-maximum",
+        "page": 2
+      },
+      {
+        "file": "phase81-emulation-element-hp-reversed-page0.json",
+        "sha256": "8a651893b20278cc317243b620bee84d986ce7048a1c344a967591a56617f9a1",
+        "case": "hp-reversed",
+        "page": 0
+      },
+      {
+        "file": "phase81-emulation-element-hp-reversed-page1.json",
+        "sha256": "4bc84a229b978cf33b8baec3c6478e2f1f61e67ba8b4efc00acb6198b31e25ef",
+        "case": "hp-reversed",
+        "page": 1
+      },
+      {
+        "file": "phase81-emulation-element-hp-reversed-page2.json",
+        "sha256": "adee6da2971f9741c56bf26a591ee8bbea44e03acc0c877067dce8396ec97fd3",
+        "case": "hp-reversed",
+        "page": 2
+      },
+      {
+        "file": "phase81-emulation-element-scale-variable-page0.json",
+        "sha256": "1c9c2aeae888cd5188c399d310c7868a29eb74245deb67d26e49b1c22884d90b",
+        "case": "scale-variable",
+        "page": 0
+      },
+      {
+        "file": "phase81-emulation-element-scale-variable-page1.json",
+        "sha256": "d4111eedb9939f77988090e33e3b9a2074dcf2e5442e1ef74d9de60fe251b162",
+        "case": "scale-variable",
+        "page": 1
+      },
+      {
+        "file": "phase81-emulation-element-scale-variable-page2.json",
+        "sha256": "07809226a2f1a29d7e6e4f475fd3aafa796891957289db090516907d8eb2f073",
+        "case": "scale-variable",
+        "page": 2
+      },
+      {
+        "file": "phase81-emulation-element-scale-maximum-page0.json",
+        "sha256": "4ecb9a79dd94171d4c4448fe6f0965397a685007a7c2f1b7794b9491bd5f28b1",
+        "case": "scale-maximum",
+        "page": 0
+      },
+      {
+        "file": "phase81-emulation-element-scale-maximum-page1.json",
+        "sha256": "892e3275a343f047355278b709f70e3a1cf66daa745fb032e8aba1ecdec349c8",
+        "case": "scale-maximum",
+        "page": 1
+      },
+      {
+        "file": "phase81-emulation-element-scale-maximum-page2.json",
+        "sha256": "2cdd8cb50575d2614d28cf7de7bb7556881600e3c8850057ae35d79ce8417d83",
+        "case": "scale-maximum",
+        "page": 2
+      },
+      {
+        "file": "phase81-emulation-element-scale-reversed-page0.json",
+        "sha256": "f0676470e3b99015e6380e74dcca00cb130713e78ba2131a73379ad9634be3ca",
+        "case": "scale-reversed",
+        "page": 0
+      },
+      {
+        "file": "phase81-emulation-element-scale-reversed-page1.json",
+        "sha256": "27e3ff7e7e981040ac5fb8c04c11fc82480b9de0c141dc6b2d51a6444be0a50b",
+        "case": "scale-reversed",
+        "page": 1
+      },
+      {
+        "file": "phase81-emulation-element-scale-reversed-page2.json",
+        "sha256": "6a11d59077dc65f7f416c86cecd04778d99e74e742652c159094506a0ef27156",
+        "case": "scale-reversed",
+        "page": 2
+      },
+      {
+        "file": "phase81-emulation-element-fade100-page0.json",
+        "sha256": "ca87daeb29f2ac4d11d04b139a6d5de1c9e4444da39df88fc71198d4a5f446a5",
+        "case": "fade100",
+        "page": 0
+      },
+      {
+        "file": "phase81-emulation-element-fade100-page1.json",
+        "sha256": "73a85c74179a25b5a7e86f5fc4de778bb3655611ebcb4a143a48e74445361587",
+        "case": "fade100",
+        "page": 1
+      },
+      {
+        "file": "phase81-emulation-element-fade100-page2.json",
+        "sha256": "70ed1dfbafe1a409c1d4c4d14c50de5643e543df275345614e8efa632eb0d25b",
+        "case": "fade100",
+        "page": 2
+      },
+      {
+        "file": "phase81-emulation-element-render-disabled-page0.json",
+        "sha256": "8c18feef7bf88581c0ad3af87e5399808bcee80ec7b4cc4c70b377e39fd91625",
+        "case": "render-disabled",
+        "page": 0
+      },
+      {
+        "file": "phase81-emulation-element-render-disabled-page1.json",
+        "sha256": "78024909a37fbae3a45df3148096a553d897c039a126a84d84b8ba302b0e6cfd",
+        "case": "render-disabled",
+        "page": 1
+      },
+      {
+        "file": "phase81-emulation-element-render-disabled-page2.json",
+        "sha256": "53c2dc275b0f58b2593fbe4e37f989149f35e930d6cfd28c688618fa899b767f",
+        "case": "render-disabled",
+        "page": 2
+      },
+      {
+        "file": "phase81-emulation-element-sprite-white-priority-page0.json",
+        "sha256": "f006f7a9c3260f3c2db21a9b3910d18c24c84887d0ec6bf86733bf914291e667",
+        "case": "sprite-white-priority",
+        "page": 0
+      },
+      {
+        "file": "phase81-emulation-element-sprite-white-priority-page1.json",
+        "sha256": "c151a4792066757381b6ac3857b9322613704572586c5d086086ecb3e216b849",
+        "case": "sprite-white-priority",
+        "page": 1
+      },
+      {
+        "file": "phase81-emulation-element-sprite-white-priority-page2.json",
+        "sha256": "a51b179c97c6fd17e607a8566b4c04b346510bfd9c3780f5516cf903e5d97f23",
+        "case": "sprite-white-priority",
+        "page": 2
+      },
+      {
+        "file": "phase81-emulation-element-id-high-slot-bits-page0.json",
+        "sha256": "dfbf00b40f4633644ae103defec777344a878964193798b3c2ac198f67ac3d30",
+        "case": "id-high-slot-bits",
+        "page": 0
+      },
+      {
+        "file": "phase81-emulation-element-id-high-slot-bits-page1.json",
+        "sha256": "443d71e42d3bebcabf5adee31342eab0a95e5f75ea7cc24a32ae812e5d3ad9f2",
+        "case": "id-high-slot-bits",
+        "page": 1
+      },
+      {
+        "file": "phase81-emulation-element-id-high-slot-bits-page2.json",
+        "sha256": "66c3cb7348c66638fb58057b89c72c6ba5e4a12743a0bf013302687066c55e5b",
+        "case": "id-high-slot-bits",
+        "page": 2
+      },
+      {
+        "file": "phase81-emulation-element-id65535-page0.json",
+        "sha256": "5131b67e78cec15e304b8c51914fd766cb80be54869978c48110c8a28c3007ce",
+        "case": "id65535",
+        "page": 0
+      },
+      {
+        "file": "phase81-emulation-element-id65535-page1.json",
+        "sha256": "1692b072955c4bfaa815b7c3951001bad42a0efb03c3ba0c0073bf6bd49c1edd",
+        "case": "id65535",
+        "page": 1
+      },
+      {
+        "file": "phase81-emulation-element-id65535-page2.json",
+        "sha256": "c00ec77aea24769eb61b1c088554872544eac41ff9cde0cebe484ddf71d96893",
+        "case": "id65535",
+        "page": 2
+      },
+      {
+        "file": "phase81-emulation-element-pool-small-page0.json",
+        "sha256": "14f86004a5310150f5bb03bec6973d53c274d76d443c8278413e10271a5d69f8",
+        "case": "pool-small",
+        "page": 0
+      },
+      {
+        "file": "phase81-emulation-element-pool-small-page1.json",
+        "sha256": "956b17b9b0fca1ea67aff4a9314dd40b005455db8d44c9a7e4fb2951742e6dd8",
+        "case": "pool-small",
+        "page": 1
+      },
+      {
+        "file": "phase81-emulation-element-pool-small-page2.json",
+        "sha256": "633348353df8d8220b208d027597cb57fc0374cb736538fccee4daa6be9a1b05",
+        "case": "pool-small",
+        "page": 2
+      },
+      {
+        "file": "phase81-emulation-element-no-free-id-page0.json",
+        "sha256": "19c5c19593e8b170a9b56307a51e10fc70dd67100adc48c508d6c0e91517e5db",
+        "case": "no-free-id",
+        "page": 0
+      },
+      {
+        "file": "phase81-emulation-element-no-free-id-page1.json",
+        "sha256": "88af8b2d578fa65078256e7ac95686bd9171ffa8b50fdce4721f819173d47067",
+        "case": "no-free-id",
+        "page": 1
+      },
+      {
+        "file": "phase81-emulation-element-no-free-id-page2.json",
+        "sha256": "d442137d1af4615e1f1f2c9bee939c8c841872b2ed70418b41879eb7ee5413cd",
+        "case": "no-free-id",
+        "page": 2
+      },
+      {
+        "file": "phase81-emulation-element-outside-map-page0.json",
+        "sha256": "49241582eef4e1f2b5c96bb70ed56292d75fe75f180a59d751c2ca6e8aeaadc4",
+        "case": "outside-map",
+        "page": 0
+      },
+      {
+        "file": "phase81-emulation-element-outside-map-page1.json",
+        "sha256": "f55c20566a7dbfab34c6eb6131f3020f108eaaedeec75c55f8b24f546cdd97c3",
+        "case": "outside-map",
+        "page": 1
+      },
+      {
+        "file": "phase81-emulation-element-outside-map-page2.json",
+        "sha256": "51fd453812f75d1ca1fda45570962306bf10e3cc5cca5860dd0a8e9ae1401746",
+        "case": "outside-map",
+        "page": 2
+      },
+      {
+        "file": "phase81-emulation-element-no-cull-flag-page0.json",
+        "sha256": "2f20e2e170ca098ef4364e495badd71d38c07b2e42d4b6767872f411f3feea47",
+        "case": "no-cull-flag",
+        "page": 0
+      },
+      {
+        "file": "phase81-emulation-element-no-cull-flag-page1.json",
+        "sha256": "cb353c551d3675c798b6a88222f6b7619f23a3f004586136ebee2b35f0bc8e30",
+        "case": "no-cull-flag",
+        "page": 1
+      },
+      {
+        "file": "phase81-emulation-element-no-cull-flag-page2.json",
+        "sha256": "43ce099a40d810e2a75d46bcf175fe121f15c5fc91c03545e63078b3eb954352",
+        "case": "no-cull-flag",
+        "page": 2
+      },
+      {
+        "file": "phase81-emulation-element-hp-includes-upper-page0.json",
+        "sha256": "6e56a5b07474dccf80554fbaa14b408b2d591ae9661f18c6a630dcd1efaa46ca",
+        "case": "hp-includes-upper",
+        "page": 0
+      },
+      {
+        "file": "phase81-emulation-element-hp-includes-upper-page1.json",
+        "sha256": "f6a9860b040d964dbbd7ca2c383363273cce58890cb3c89e444fef2cc203766e",
+        "case": "hp-includes-upper",
+        "page": 1
+      },
+      {
+        "file": "phase81-emulation-element-hp-includes-upper-page2.json",
+        "sha256": "f2746c0dc19d38237d68c412060991e4506f4a3b4ee069ad45e5d6bedf4b170b",
+        "case": "hp-includes-upper",
+        "page": 2
+      },
+      {
+        "file": "phase81-emulation-element-scale-last-before-upper-page0.json",
+        "sha256": "593d1014a2800ca98d78bb6c05d0d5b4c9ec6fb2ba8d2b03361d50d86e7da2e5",
+        "case": "scale-last-before-upper",
+        "page": 0
+      },
+      {
+        "file": "phase81-emulation-element-scale-last-before-upper-page1.json",
+        "sha256": "0a0cc410b0b13b7c1818808b9a778156e4836ce50d323f44f41a39da5ebde6a1",
+        "case": "scale-last-before-upper",
+        "page": 1
+      },
+      {
+        "file": "phase81-emulation-element-scale-last-before-upper-page2.json",
+        "sha256": "3ded25451d98c532995ffe59b678f7fad6781dee167428eed78a117ed211f027",
+        "case": "scale-last-before-upper",
+        "page": 2
+      }
+    ],
+    "raw_snapshots": [
+      {
+        "case": "base",
+        "allocated": true,
+        "file": "ghidra/phase81-element-base.bin",
+        "bytes": 287,
+        "sha256": "834515a91e5544ce60e71718bf454cef2f0bde7b5162e77abc6eafa99f04288d",
+        "expected_plan": {
+          "seed": 3027450565,
+          "draws": [
+            {
+              "label": "constructor-angle0",
+              "bound": 2048,
+              "value": 1090
+            },
+            {
+              "label": "constructor-angle1",
+              "bound": 2048,
+              "value": 1092
+            },
+            {
+              "label": "constructor-angle2",
+              "bound": 2048,
+              "value": 176
+            },
+            {
+              "label": "initial-direction",
+              "bound": 2048,
+              "value": 921
+            }
+          ],
+          "constructor_angles": [
+            1090,
+            1092,
+            176
+          ],
+          "initial_direction": 921,
+          "velocity": [
+            10,
+            4294967286,
+            0
+          ],
+          "lifetime": 100,
+          "alpha_threshold": 30,
+          "scale": 4096
+        }
+      },
+      {
+        "case": "palette-random",
+        "allocated": true,
+        "file": "ghidra/phase81-element-palette-random.bin",
+        "bytes": 287,
+        "sha256": "834515a91e5544ce60e71718bf454cef2f0bde7b5162e77abc6eafa99f04288d",
+        "expected_plan": {
+          "seed": 3027450565,
+          "draws": [
+            {
+              "label": "constructor-angle0",
+              "bound": 2048,
+              "value": 1090
+            },
+            {
+              "label": "constructor-angle1",
+              "bound": 2048,
+              "value": 1092
+            },
+            {
+              "label": "constructor-angle2",
+              "bound": 2048,
+              "value": 176
+            },
+            {
+              "label": "initial-direction",
+              "bound": 2048,
+              "value": 921
+            }
+          ],
+          "constructor_angles": [
+            1090,
+            1092,
+            176
+          ],
+          "initial_direction": 921,
+          "velocity": [
+            10,
+            4294967286,
+            0
+          ],
+          "lifetime": 100,
+          "alpha_threshold": 30,
+          "scale": 4096
+        }
+      },
+      {
+        "case": "palette-table",
+        "allocated": true,
+        "file": "ghidra/phase81-element-palette-table.bin",
+        "bytes": 287,
+        "sha256": "834515a91e5544ce60e71718bf454cef2f0bde7b5162e77abc6eafa99f04288d",
+        "expected_plan": {
+          "seed": 3027450565,
+          "draws": [
+            {
+              "label": "constructor-angle0",
+              "bound": 2048,
+              "value": 1090
+            },
+            {
+              "label": "constructor-angle1",
+              "bound": 2048,
+              "value": 1092
+            },
+            {
+              "label": "constructor-angle2",
+              "bound": 2048,
+              "value": 176
+            },
+            {
+              "label": "initial-direction",
+              "bound": 2048,
+              "value": 921
+            }
+          ],
+          "constructor_angles": [
+            1090,
+            1092,
+            176
+          ],
+          "initial_direction": 921,
+          "velocity": [
+            10,
+            4294967286,
+            0
+          ],
+          "lifetime": 100,
+          "alpha_threshold": 30,
+          "scale": 4096
+        }
+      },
+      {
+        "case": "palette-both",
+        "allocated": true,
+        "file": "ghidra/phase81-element-palette-both.bin",
+        "bytes": 287,
+        "sha256": "834515a91e5544ce60e71718bf454cef2f0bde7b5162e77abc6eafa99f04288d",
+        "expected_plan": {
+          "seed": 3027450565,
+          "draws": [
+            {
+              "label": "constructor-angle0",
+              "bound": 2048,
+              "value": 1090
+            },
+            {
+              "label": "constructor-angle1",
+              "bound": 2048,
+              "value": 1092
+            },
+            {
+              "label": "constructor-angle2",
+              "bound": 2048,
+              "value": 176
+            },
+            {
+              "label": "initial-direction",
+              "bound": 2048,
+              "value": 921
+            }
+          ],
+          "constructor_angles": [
+            1090,
+            1092,
+            176
+          ],
+          "initial_direction": 921,
+          "velocity": [
+            10,
+            4294967286,
+            0
+          ],
+          "lifetime": 100,
+          "alpha_threshold": 30,
+          "scale": 4096
+        }
+      },
+      {
+        "case": "xy-negative-fixed",
+        "allocated": true,
+        "file": "ghidra/phase81-element-xy-negative-fixed.bin",
+        "bytes": 287,
+        "sha256": "8238fc74d92f6e6a848c3ed4c85e8540409c6d6c4b039efaee2ed79959adad0c",
+        "expected_plan": {
+          "seed": 3027450565,
+          "draws": [
+            {
+              "label": "constructor-angle0",
+              "bound": 2048,
+              "value": 1090
+            },
+            {
+              "label": "constructor-angle1",
+              "bound": 2048,
+              "value": 1092
+            },
+            {
+              "label": "constructor-angle2",
+              "bound": 2048,
+              "value": 176
+            },
+            {
+              "label": "initial-direction",
+              "bound": 2048,
+              "value": 921
+            }
+          ],
+          "constructor_angles": [
+            1090,
+            1092,
+            176
+          ],
+          "initial_direction": 921,
+          "velocity": [
+            4294967295,
+            1,
+            0
+          ],
+          "lifetime": 100,
+          "alpha_threshold": 30,
+          "scale": 4096
+        }
+      },
+      {
+        "case": "z-negative-fixed",
+        "allocated": true,
+        "file": "ghidra/phase81-element-z-negative-fixed.bin",
+        "bytes": 287,
+        "sha256": "ee5ef183eb66d3d6daa190b5c509d54d06834c06aa055b327272f924948f365d",
+        "expected_plan": {
+          "seed": 3027450565,
+          "draws": [
+            {
+              "label": "constructor-angle0",
+              "bound": 2048,
+              "value": 1090
+            },
+            {
+              "label": "constructor-angle1",
+              "bound": 2048,
+              "value": 1092
+            },
+            {
+              "label": "constructor-angle2",
+              "bound": 2048,
+              "value": 176
+            },
+            {
+              "label": "initial-direction",
+              "bound": 2048,
+              "value": 921
+            }
+          ],
+          "constructor_angles": [
+            1090,
+            1092,
+            176
+          ],
+          "initial_direction": 921,
+          "velocity": [
+            10,
+            4294967286,
+            4294934528
+          ],
+          "lifetime": 100,
+          "alpha_threshold": 30,
+          "scale": 4096
+        }
+      },
+      {
+        "case": "xy-signed-cross",
+        "allocated": true,
+        "file": "ghidra/phase81-element-xy-signed-cross.bin",
+        "bytes": 287,
+        "sha256": "599e5602997521df164406f23a53e9152f3d63be64e273a20ccef578735f0957",
+        "expected_plan": {
+          "seed": 217083232,
+          "draws": [
+            {
+              "label": "constructor-angle0",
+              "bound": 2048,
+              "value": 1090
+            },
+            {
+              "label": "constructor-angle1",
+              "bound": 2048,
+              "value": 1092
+            },
+            {
+              "label": "constructor-angle2",
+              "bound": 2048,
+              "value": 176
+            },
+            {
+              "label": "speedXY",
+              "bound": 5,
+              "value": 0
+            },
+            {
+              "label": "initial-direction",
+              "bound": 2048,
+              "value": 1923
+            }
+          ],
+          "constructor_angles": [
+            1090,
+            1092,
+            176
+          ],
+          "initial_direction": 1923,
+          "velocity": [
+            4294967294,
+            2,
+            0
+          ],
+          "lifetime": 100,
+          "alpha_threshold": 30,
+          "scale": 4096
+        }
+      },
+      {
+        "case": "xy-reversed-sign",
+        "allocated": true,
+        "file": "ghidra/phase81-element-xy-reversed-sign.bin",
+        "bytes": 287,
+        "sha256": "0c70bb5fae7e0c431e2e71f24a63b356060ecc7f945083a9f030b48740ebd5a2",
+        "expected_plan": {
+          "seed": 217083232,
+          "draws": [
+            {
+              "label": "constructor-angle0",
+              "bound": 2048,
+              "value": 1090
+            },
+            {
+              "label": "constructor-angle1",
+              "bound": 2048,
+              "value": 1092
+            },
+            {
+              "label": "constructor-angle2",
+              "bound": 2048,
+              "value": 176
+            },
+            {
+              "label": "speedXY",
+              "bound": 4294901762,
+              "value": 3593315225
+            },
+            {
+              "label": "initial-direction",
+              "bound": 2048,
+              "value": 1923
+            }
+          ],
+          "constructor_angles": [
+            1090,
+            1092,
+            176
+          ],
+          "initial_direction": 1923,
+          "velocity": [
+            3593347992,
+            701619304,
+            0
+          ],
+          "lifetime": 100,
+          "alpha_threshold": 30,
+          "scale": 4096
+        }
+      },
+      {
+        "case": "z-reversed",
+        "allocated": true,
+        "file": "ghidra/phase81-element-z-reversed.bin",
+        "bytes": 287,
+        "sha256": "1d706eb59c40dd872a35b903eba35fd54cfba31a4a9154aea157fafda2630658",
+        "expected_plan": {
+          "seed": 217083232,
+          "draws": [
+            {
+              "label": "constructor-angle0",
+              "bound": 2048,
+              "value": 1090
+            },
+            {
+              "label": "constructor-angle1",
+              "bound": 2048,
+              "value": 1092
+            },
+            {
+              "label": "constructor-angle2",
+              "bound": 2048,
+              "value": 176
+            },
+            {
+              "label": "speedZ",
+              "bound": 4294967294,
+              "value": 3593315225
+            },
+            {
+              "label": "initial-direction",
+              "bound": 2048,
+              "value": 1923
+            }
+          ],
+          "constructor_angles": [
+            1090,
+            1092,
+            176
+          ],
+          "initial_direction": 1923,
+          "velocity": [
+            10,
+            4294967286,
+            3593315230
+          ],
+          "lifetime": 100,
+          "alpha_threshold": 30,
+          "scale": 4096
+        }
+      },
+      {
+        "case": "hp-variable",
+        "allocated": true,
+        "file": "ghidra/phase81-element-hp-variable.bin",
+        "bytes": 287,
+        "sha256": "044f498c7ca2be903b08f5991d1cb6d05124ab00f52e269d8645a74e1225899c",
+        "expected_plan": {
+          "seed": 217083232,
+          "draws": [
+            {
+              "label": "constructor-angle0",
+              "bound": 2048,
+              "value": 1090
+            },
+            {
+              "label": "constructor-angle1",
+              "bound": 2048,
+              "value": 1092
+            },
+            {
+              "label": "constructor-angle2",
+              "bound": 2048,
+              "value": 176
+            },
+            {
+              "label": "initial-direction",
+              "bound": 2048,
+              "value": 921
+            },
+            {
+              "label": "lifetime",
+              "bound": 3,
+              "value": 2
+            }
+          ],
+          "constructor_angles": [
+            1090,
+            1092,
+            176
+          ],
+          "initial_direction": 921,
+          "velocity": [
+            10,
+            4294967286,
+            0
+          ],
+          "lifetime": 12,
+          "alpha_threshold": 4,
+          "scale": 4096
+        }
+      },
+      {
+        "case": "hp-maximum",
+        "allocated": true,
+        "file": "ghidra/phase81-element-hp-maximum.bin",
+        "bytes": 287,
+        "sha256": "721f1f99c0abe29aaf18af36f2ac7e6adde0a3a9430686dc233ce895fb133c1c",
+        "expected_plan": {
+          "seed": 3027450565,
+          "draws": [
+            {
+              "label": "constructor-angle0",
+              "bound": 2048,
+              "value": 1090
+            },
+            {
+              "label": "constructor-angle1",
+              "bound": 2048,
+              "value": 1092
+            },
+            {
+              "label": "constructor-angle2",
+              "bound": 2048,
+              "value": 176
+            },
+            {
+              "label": "initial-direction",
+              "bound": 2048,
+              "value": 921
+            }
+          ],
+          "constructor_angles": [
+            1090,
+            1092,
+            176
+          ],
+          "initial_direction": 921,
+          "velocity": [
+            10,
+            4294967286,
+            0
+          ],
+          "lifetime": 65535,
+          "alpha_threshold": 19661,
+          "scale": 4096
+        }
+      },
+      {
+        "case": "hp-reversed",
+        "allocated": true,
+        "file": "ghidra/phase81-element-hp-reversed.bin",
+        "bytes": 287,
+        "sha256": "6f595f2faee4e5c235652d2320e4acf7d05a280bdb2a73a5ec4d1cf8b126c3fe",
+        "expected_plan": {
+          "seed": 217083232,
+          "draws": [
+            {
+              "label": "constructor-angle0",
+              "bound": 2048,
+              "value": 1090
+            },
+            {
+              "label": "constructor-angle1",
+              "bound": 2048,
+              "value": 1092
+            },
+            {
+              "label": "constructor-angle2",
+              "bound": 2048,
+              "value": 176
+            },
+            {
+              "label": "initial-direction",
+              "bound": 2048,
+              "value": 921
+            },
+            {
+              "label": "lifetime",
+              "bound": 4294967295,
+              "value": 1795188611
+            }
+          ],
+          "constructor_angles": [
+            1090,
+            1092,
+            176
+          ],
+          "initial_direction": 921,
+          "velocity": [
+            10,
+            4294967286,
+            0
+          ],
+          "lifetime": 1795188623,
+          "alpha_threshold": 1784097103,
+          "scale": 4096
+        }
+      },
+      {
+        "case": "scale-variable",
+        "allocated": true,
+        "file": "ghidra/phase81-element-scale-variable.bin",
+        "bytes": 287,
+        "sha256": "c477dcf1b7dcd383bf28afd3301d651bb697181f9eee077039afbfaf5eca0629",
+        "expected_plan": {
+          "seed": 217083232,
+          "draws": [
+            {
+              "label": "constructor-angle0",
+              "bound": 2048,
+              "value": 1090
+            },
+            {
+              "label": "constructor-angle1",
+              "bound": 2048,
+              "value": 1092
+            },
+            {
+              "label": "constructor-angle2",
+              "bound": 2048,
+              "value": 176
+            },
+            {
+              "label": "initial-direction",
+              "bound": 2048,
+              "value": 921
+            },
+            {
+              "label": "scale",
+              "bound": 2,
+              "value": 1
+            }
+          ],
+          "constructor_angles": [
+            1090,
+            1092,
+            176
+          ],
+          "initial_direction": 921,
+          "velocity": [
+            10,
+            4294967286,
+            0
+          ],
+          "lifetime": 100,
+          "alpha_threshold": 30,
+          "scale": 11
+        }
+      },
+      {
+        "case": "scale-maximum",
+        "allocated": true,
+        "file": "ghidra/phase81-element-scale-maximum.bin",
+        "bytes": 287,
+        "sha256": "0aa98562d5b4a5937a6d5f319b599b665077d209c64eb637674ac5706297fcef",
+        "expected_plan": {
+          "seed": 3027450565,
+          "draws": [
+            {
+              "label": "constructor-angle0",
+              "bound": 2048,
+              "value": 1090
+            },
+            {
+              "label": "constructor-angle1",
+              "bound": 2048,
+              "value": 1092
+            },
+            {
+              "label": "constructor-angle2",
+              "bound": 2048,
+              "value": 176
+            },
+            {
+              "label": "initial-direction",
+              "bound": 2048,
+              "value": 921
+            }
+          ],
+          "constructor_angles": [
+            1090,
+            1092,
+            176
+          ],
+          "initial_direction": 921,
+          "velocity": [
+            10,
+            4294967286,
+            0
+          ],
+          "lifetime": 100,
+          "alpha_threshold": 30,
+          "scale": 65535
+        }
+      },
+      {
+        "case": "scale-reversed",
+        "allocated": true,
+        "file": "ghidra/phase81-element-scale-reversed.bin",
+        "bytes": 287,
+        "sha256": "590a717c690501203e0c137c205cb55e951be6fa41e4efb0f6156945c0e74df2",
+        "expected_plan": {
+          "seed": 217083232,
+          "draws": [
+            {
+              "label": "constructor-angle0",
+              "bound": 2048,
+              "value": 1090
+            },
+            {
+              "label": "constructor-angle1",
+              "bound": 2048,
+              "value": 1092
+            },
+            {
+              "label": "constructor-angle2",
+              "bound": 2048,
+              "value": 176
+            },
+            {
+              "label": "initial-direction",
+              "bound": 2048,
+              "value": 921
+            },
+            {
+              "label": "scale",
+              "bound": 4294967294,
+              "value": 1795188611
+            }
+          ],
+          "constructor_angles": [
+            1090,
+            1092,
+            176
+          ],
+          "initial_direction": 921,
+          "velocity": [
+            10,
+            4294967286,
+            0
+          ],
+          "lifetime": 100,
+          "alpha_threshold": 30,
+          "scale": 1795188623
+        }
+      },
+      {
+        "case": "fade100",
+        "allocated": true,
+        "file": "ghidra/phase81-element-fade100.bin",
+        "bytes": 287,
+        "sha256": "0a2c34ffb6b13843fd67d398e7ce6b7a000c1a44b19fce0324835858966b3fa6",
+        "expected_plan": {
+          "seed": 3027450565,
+          "draws": [
+            {
+              "label": "constructor-angle0",
+              "bound": 2048,
+              "value": 1090
+            },
+            {
+              "label": "constructor-angle1",
+              "bound": 2048,
+              "value": 1092
+            },
+            {
+              "label": "constructor-angle2",
+              "bound": 2048,
+              "value": 176
+            },
+            {
+              "label": "initial-direction",
+              "bound": 2048,
+              "value": 921
+            }
+          ],
+          "constructor_angles": [
+            1090,
+            1092,
+            176
+          ],
+          "initial_direction": 921,
+          "velocity": [
+            10,
+            4294967286,
+            0
+          ],
+          "lifetime": 100,
+          "alpha_threshold": 0,
+          "scale": 4096
+        }
+      },
+      {
+        "case": "render-disabled",
+        "allocated": true,
+        "file": "ghidra/phase81-element-render-disabled.bin",
+        "bytes": 287,
+        "sha256": "28a90b43cac2a7a9d1258f7ec06f5491a65c76d014281ed6affc1c1245cb2e59",
+        "expected_plan": {
+          "seed": 3027450565,
+          "draws": [
+            {
+              "label": "constructor-angle0",
+              "bound": 2048,
+              "value": 1090
+            },
+            {
+              "label": "constructor-angle1",
+              "bound": 2048,
+              "value": 1092
+            },
+            {
+              "label": "constructor-angle2",
+              "bound": 2048,
+              "value": 176
+            },
+            {
+              "label": "initial-direction",
+              "bound": 2048,
+              "value": 921
+            }
+          ],
+          "constructor_angles": [
+            1090,
+            1092,
+            176
+          ],
+          "initial_direction": 921,
+          "velocity": [
+            10,
+            4294967286,
+            0
+          ],
+          "lifetime": 100,
+          "alpha_threshold": 30,
+          "scale": null
+        }
+      },
+      {
+        "case": "sprite-white-priority",
+        "allocated": true,
+        "file": "ghidra/phase81-element-sprite-white-priority.bin",
+        "bytes": 287,
+        "sha256": "18a138203c01ecc1cd0234647a504aed9170238b12a211b695dcb3a8c08db12f",
+        "expected_plan": {
+          "seed": 3027450565,
+          "draws": [
+            {
+              "label": "constructor-angle0",
+              "bound": 2048,
+              "value": 1090
+            },
+            {
+              "label": "constructor-angle1",
+              "bound": 2048,
+              "value": 1092
+            },
+            {
+              "label": "constructor-angle2",
+              "bound": 2048,
+              "value": 176
+            },
+            {
+              "label": "initial-direction",
+              "bound": 2048,
+              "value": 921
+            }
+          ],
+          "constructor_angles": [
+            1090,
+            1092,
+            176
+          ],
+          "initial_direction": 921,
+          "velocity": [
+            10,
+            4294967286,
+            0
+          ],
+          "lifetime": 100,
+          "alpha_threshold": 30,
+          "scale": 4096
+        }
+      },
+      {
+        "case": "id-high-slot-bits",
+        "allocated": true,
+        "file": "ghidra/phase81-element-id-high-slot-bits.bin",
+        "bytes": 287,
+        "sha256": "834515a91e5544ce60e71718bf454cef2f0bde7b5162e77abc6eafa99f04288d",
+        "expected_plan": {
+          "seed": 3027450565,
+          "draws": [
+            {
+              "label": "constructor-angle0",
+              "bound": 2048,
+              "value": 1090
+            },
+            {
+              "label": "constructor-angle1",
+              "bound": 2048,
+              "value": 1092
+            },
+            {
+              "label": "constructor-angle2",
+              "bound": 2048,
+              "value": 176
+            },
+            {
+              "label": "initial-direction",
+              "bound": 2048,
+              "value": 921
+            }
+          ],
+          "constructor_angles": [
+            1090,
+            1092,
+            176
+          ],
+          "initial_direction": 921,
+          "velocity": [
+            10,
+            4294967286,
+            0
+          ],
+          "lifetime": 100,
+          "alpha_threshold": 30,
+          "scale": 4096
+        }
+      },
+      {
+        "case": "id65535",
+        "allocated": true,
+        "file": "ghidra/phase81-element-id65535.bin",
+        "bytes": 287,
+        "sha256": "62170bc39561af389d456a96eb4e383fea7381ef12158dc47ab4916970b80c11",
+        "expected_plan": {
+          "seed": 3027450565,
+          "draws": [
+            {
+              "label": "constructor-angle0",
+              "bound": 2048,
+              "value": 1090
+            },
+            {
+              "label": "constructor-angle1",
+              "bound": 2048,
+              "value": 1092
+            },
+            {
+              "label": "constructor-angle2",
+              "bound": 2048,
+              "value": 176
+            },
+            {
+              "label": "initial-direction",
+              "bound": 2048,
+              "value": 921
+            }
+          ],
+          "constructor_angles": [
+            1090,
+            1092,
+            176
+          ],
+          "initial_direction": 921,
+          "velocity": [
+            10,
+            4294967286,
+            0
+          ],
+          "lifetime": 100,
+          "alpha_threshold": 30,
+          "scale": 4096
+        }
+      },
+      {
+        "case": "pool-small",
+        "allocated": false,
+        "file": "ghidra/phase81-element-pool-small.bin",
+        "bytes": 287,
+        "sha256": "54418fa5ba40452f8904b7f7321ea0ae5a420be115b1b651928c1c9bce8eba0d",
+        "expected_plan": {
+          "seed": 1
+        }
+      },
+      {
+        "case": "no-free-id",
+        "allocated": false,
+        "file": "ghidra/phase81-element-no-free-id.bin",
+        "bytes": 287,
+        "sha256": "54418fa5ba40452f8904b7f7321ea0ae5a420be115b1b651928c1c9bce8eba0d",
+        "expected_plan": {
+          "seed": 1
+        }
+      },
+      {
+        "case": "outside-map",
+        "allocated": false,
+        "file": "ghidra/phase81-element-outside-map.bin",
+        "bytes": 287,
+        "sha256": "54418fa5ba40452f8904b7f7321ea0ae5a420be115b1b651928c1c9bce8eba0d",
+        "expected_plan": {
+          "seed": 1
+        }
+      },
+      {
+        "case": "no-cull-flag",
+        "allocated": true,
+        "file": "ghidra/phase81-element-no-cull-flag.bin",
+        "bytes": 287,
+        "sha256": "834515a91e5544ce60e71718bf454cef2f0bde7b5162e77abc6eafa99f04288d",
+        "expected_plan": {
+          "seed": 3027450565,
+          "draws": [
+            {
+              "label": "constructor-angle0",
+              "bound": 2048,
+              "value": 1090
+            },
+            {
+              "label": "constructor-angle1",
+              "bound": 2048,
+              "value": 1092
+            },
+            {
+              "label": "constructor-angle2",
+              "bound": 2048,
+              "value": 176
+            },
+            {
+              "label": "initial-direction",
+              "bound": 2048,
+              "value": 921
+            }
+          ],
+          "constructor_angles": [
+            1090,
+            1092,
+            176
+          ],
+          "initial_direction": 921,
+          "velocity": [
+            10,
+            4294967286,
+            0
+          ],
+          "lifetime": 100,
+          "alpha_threshold": 30,
+          "scale": 4096
+        }
+      },
+      {
+        "case": "hp-includes-upper",
+        "allocated": true,
+        "file": "ghidra/phase81-element-hp-includes-upper.bin",
+        "bytes": 287,
+        "sha256": "98a7959967b33d65d95d38f63622fb5864f172ce5d5cb1a54576c1eb6844fed2",
+        "expected_plan": {
+          "seed": 1649599747,
+          "draws": [
+            {
+              "label": "constructor-angle0",
+              "bound": 2048,
+              "value": 887
+            },
+            {
+              "label": "constructor-angle1",
+              "bound": 2048,
+              "value": 641
+            },
+            {
+              "label": "constructor-angle2",
+              "bound": 2048,
+              "value": 1639
+            },
+            {
+              "label": "initial-direction",
+              "bound": 2048,
+              "value": 1994
+            },
+            {
+              "label": "lifetime",
+              "bound": 3,
+              "value": 2
+            }
+          ],
+          "constructor_angles": [
+            887,
+            641,
+            1639
+          ],
+          "initial_direction": 1994,
+          "velocity": [
+            10,
+            4294967286,
+            0
+          ],
+          "lifetime": 12,
+          "alpha_threshold": 4,
+          "scale": 4096
+        }
+      },
+      {
+        "case": "scale-last-before-upper",
+        "allocated": true,
+        "file": "ghidra/phase81-element-scale-last-before-upper.bin",
+        "bytes": 287,
+        "sha256": "66dba6d1f03cda8bb4e820c22ca6a514d0e1074f8721a3753192218a3792c5e3",
+        "expected_plan": {
+          "seed": 1649599747,
+          "draws": [
+            {
+              "label": "constructor-angle0",
+              "bound": 2048,
+              "value": 887
+            },
+            {
+              "label": "constructor-angle1",
+              "bound": 2048,
+              "value": 641
+            },
+            {
+              "label": "constructor-angle2",
+              "bound": 2048,
+              "value": 1639
+            },
+            {
+              "label": "initial-direction",
+              "bound": 2048,
+              "value": 1994
+            },
+            {
+              "label": "scale",
+              "bound": 2,
+              "value": 1
+            }
+          ],
+          "constructor_angles": [
+            887,
+            641,
+            1639
+          ],
+          "initial_direction": 1994,
+          "velocity": [
+            10,
+            4294967286,
+            0
+          ],
+          "lifetime": 100,
+          "alpha_threshold": 30,
+          "scale": 11
+        }
+      }
+    ],
+    "corpus": {
+      "files": [
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\3DLevelGlobals.kld",
+          "sha256": "120d8c91e38ad5d939a42c34aea7c0c963dc547a53350ca7ed3755654231c951",
+          "records": 596
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\ANL - 3 FunGlobals.kld",
+          "sha256": "874bcadc18d8a77c5de499da90289bc5565785cacdc0e87d4a1461d9778777fc",
+          "records": 596
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Battle for the Sun Qz2Globals.kld",
+          "sha256": "514322930de7f8d2d20cada6be2619a982ec42024a166e0274c782ffa018a791",
+          "records": 572
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Battle for the Sun QzGlobals.kld",
+          "sha256": "aeab60f5ebebd74da0af4d24c96f1942d143816f4e80fce2aa29466af00f9001",
+          "records": 572
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\DK2 tutorial map2Globals.kld",
+          "sha256": "e0db2f285ada981166c56b3ce0cbaf51e88f0d723827991dd29ff1a44aefc45f",
+          "records": 596
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\DK2 tutorial mapGlobals.kld",
+          "sha256": "fcd646f297aec1d29a7bfa54030f19715bfdfa7ba9e993f265463788376bea7c",
+          "records": 596
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\DK2Preview_6a88240eaf814f78Globals.kld",
+          "sha256": "c65efb3538303f7bd6ea7748d6afb26766895b4db4a64a709f4039b6f13a88bf",
+          "records": 596
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\FrontEnd3DLevelGlobals.kld",
+          "sha256": "84762d33e56fcc1d115cac14b1e7cc8f228b236c0710a734c73eb6139608f550",
+          "records": 572
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\kop2Globals.kld",
+          "sha256": "e2e9d3c644683e51bcc8c6f59c37b493e3d6e55eca3bdc67626c1018a0688e08",
+          "records": 596
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\kop3Globals.kld",
+          "sha256": "a9ec89e6a64dd598f4133dc9a9a812b964a1da69cd1615a6a09be7370b8a5164",
+          "records": 596
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\kop4Globals.kld",
+          "sha256": "186e81c3c9d036e995a9d78bfa5b2a41a09db77cd04e7c2b21dec15473b3b6dd",
+          "records": 596
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 1- Kharak SystemGlobals.kld",
+          "sha256": "7398b0eab6168c3d6d0f79c83fec985c8bcb13dab300dd2796f0d68406f75357",
+          "records": 596
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 10- Super Nova StationGlobals.kld",
+          "sha256": "089f47860bb46c2c5ade2372111606e0444ddd5f3252abb0e547ac0221363ce7",
+          "records": 596
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 11- Tenhauser GateGlobals.kld",
+          "sha256": "03c605b09fa4df14bdabaeea448aef2c2757ae10d48a2c0b66f2353543a8a73f",
+          "records": 596
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 12- Galactic CoreGlobals.kld",
+          "sha256": "39d1c977feab14bc990aca28db0ce60e7e618e8a9e968edd79f4b21d1c0d5763",
+          "records": 596
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 13- Karos GraveyardGlobals.kld",
+          "sha256": "d31ed0f5bf1fb9cea0bbb4415d8c706b2dd80cea8df9c5457c11320be66e5b00",
+          "records": 596
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 14- Bridge of SighsGlobals.kld",
+          "sha256": "0486863a90a31f19404c8fc8057c9d3a26ea4830bdaed0facaeeff5c3f0a73ac",
+          "records": 596
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 15- Chapel PerilousGlobals.kld",
+          "sha256": "43cd67545e3e77fd8cb22d56490d09c5ec9f1fd70dce566ec92761df58a78921",
+          "records": 596
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 16- HiigaraGlobals.kld",
+          "sha256": "1399f369dc487244db7fee178b46aa290cbe4793669598672e42b5a5514a2a33",
+          "records": 596
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 2- Outer Kharak SystemGlobals.kld",
+          "sha256": "0592cbad205a9212b03a04a8f0a34b0d5a14235d16f8b4bdf1f6f8f7c6ad9fbc",
+          "records": 596
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 3- Return to KharakGlobals.kld",
+          "sha256": "4408e05c2487d8e73991f8f40b351150962efcdccd8f2e914be04daae6063a1d",
+          "records": 596
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 4- The Great WastelandGlobals.kld",
+          "sha256": "f4c9b22915ae24c4512f3adc3556d6d1fea701a58b0d9b401020c2d440b3b01d",
+          "records": 596
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 5- The Great WastelandGlobals.kld",
+          "sha256": "fd6ac330133a37e93901d3907ff617f2e6410569fb7fce20fcbd8df86c7f27f0",
+          "records": 596
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 6- Diamond ShoalsGlobals.kld",
+          "sha256": "c2ac3161528c2fd5051205b92db7c2e0f1ac00ecb688852b632db4ef5f5899ab",
+          "records": 596
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 7- The Gardens of KadeshGlobals.kld",
+          "sha256": "9501ec7aa6c7d40f690efc5faadb91c75ca317269b999432a0568c71b5c24de8",
+          "records": 596
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 8- The Cathedral of KadeshGlobals.kld",
+          "sha256": "d80c59e1228130e99e4eb1afcaed36e4d207cef82bbdf2808d3964bc0290c2f6",
+          "records": 596
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 9-The Sea of Lost SoulsGlobals.kld",
+          "sha256": "c585968a135c04fb671ee53049f11b962245734061b88d4f0b177ef5ba0f3896",
+          "records": 596
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level10Globals.kld",
+          "sha256": "9edbdaebd9d575001f6a45704789be183c55e5b2127c2169af5bcb4811e1a93b",
+          "records": 596
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\level11AGlobals.kld",
+          "sha256": "c8ae5cdc3f76f19df04f204b58ad40a9a48b19da76b4409018f2dd639197fac0",
+          "records": 596
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level11BGlobals.kld",
+          "sha256": "9ef9a7d52d8b03661876e667e433c40c126a708f7c4cf16ad5b0b0480f63abb9",
+          "records": 572
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\level11CGlobals.kld",
+          "sha256": "03f455a8e99269803523161a23caf646b41f05f8d99976d1c67b772e6ddbfdd3",
+          "records": 572
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\level12Globals.kld",
+          "sha256": "3090630f89b838b8ae7320f42d1dce7ef82d2cecac7b9f8ddff8b252614abb26",
+          "records": 572
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level13Globals.kld",
+          "sha256": "5dde8da4df42f42ebd0f36c8094b890737225d10995b184d4302416f3a382fb2",
+          "records": 572
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level14Globals.kld",
+          "sha256": "d14b1f3f17fe3a3cb0fba0c795e9ee123e1716ca561ef12c77dafea06dd99973",
+          "records": 572
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level15aGlobals.kld",
+          "sha256": "61c33d99115af4ee53e0dbb00a58c641ce89ec91843f346f81400401ecb3dd9f",
+          "records": 572
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\level15bGlobals.kld",
+          "sha256": "8c1d0722c4c764b19035ef11c3d4f52f5fef6ef39e738012a0a8cc84e70e91e7",
+          "records": 572
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level16Globals.kld",
+          "sha256": "16ce8ac0f75b8272c14c1f9e97562ebd021d1972669027c97fc0e0f121a6879e",
+          "records": 572
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level17Globals.kld",
+          "sha256": "6440f662e8e7058f4ce387df15a7e9862c0f9c8a39fd36920f5b2aa4d1c23646",
+          "records": 572
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\level18Globals.kld",
+          "sha256": "bfa1f62509083b3cfe62eff461d2c711149e78a50e16854b090f43bf59979cee",
+          "records": 572
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level19Globals.kld",
+          "sha256": "9f5f0add9416cd4e1c20539c4ec84fba9225fa09ce8c0ade3049188594ba6aee",
+          "records": 572
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\level1Globals.kld",
+          "sha256": "c65efb3538303f7bd6ea7748d6afb26766895b4db4a64a709f4039b6f13a88bf",
+          "records": 596
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level20Globals.kld",
+          "sha256": "2fb9f0831d478150a83f3b0dc7ecacd39376c37201255b0ef9d0681c5609a965",
+          "records": 572
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\level2Globals.kld",
+          "sha256": "858d53d1e9b726a26f50cee2206c615f45e904b597c4ae67dc6b6b4b21a00d97",
+          "records": 596
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\level3Globals.kld",
+          "sha256": "1be40393b04a5c604bf4cab605848fc66cd9088a161f42f3392caf1accfa7569",
+          "records": 596
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level4Globals.kld",
+          "sha256": "35a3fca33e47fb5acfbdb08d6c9604d73c54521abd1bab7cb9270340bfa3c8fd",
+          "records": 596
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\level5Globals.kld",
+          "sha256": "068c99350ca07015fe5aae6be743eaed66a5db89f012b1371f1bb0a1d94b2539",
+          "records": 596
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level6aGlobals.kld",
+          "sha256": "11f94af0cf11365b9daaf629f75009fb9754aec154da0e3ee21f663d69f9a04e",
+          "records": 596
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level6bGlobals.kld",
+          "sha256": "5e15604c18cb96349df3e765ffa321fe12b6e3c24a4ba3573535173009dfe027",
+          "records": 596
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level6bkanGlobals.kld",
+          "sha256": "4676bf880c7960dd211363814bdeb29a8a0b8775ba08af76c9f912dd82fba184",
+          "records": 596
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\level7Globals.kld",
+          "sha256": "5ea59d2ad2b212c376d05d90d059b71149d0cc17bf70a2eabf3687c0c821288d",
+          "records": 596
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\level8Globals.kld",
+          "sha256": "9bd4c87e117795eee204347cba492e8c8ddb29007f25e671d40353bb9447b6cc",
+          "records": 596
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level9Globals.kld",
+          "sha256": "2ce3b5488119cd62d0f43fced5a6021d0ce464b17b49fa776815d58cd76acf66",
+          "records": 596
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\mpd8Globals.kld",
+          "sha256": "5d7c0136a14ff42c962b30b07b22a5c0426f08fad731cca88f4346ea35569da1",
+          "records": 596
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\NeedsTest2Globals.kld",
+          "sha256": "303d3667f27a570784c6c0e577d26ffcd2932ad26dd83b78f9becccca9df5915",
+          "records": 596
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\NeedsTestGlobals.kld",
+          "sha256": "9dc47825c3d39b91c7126e539ef30bcc4cdb489aadb468a2290a5ba3f5746ead",
+          "records": 572
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Secret1Globals.kld",
+          "sha256": "aef868525fb6ae09ef64eb853dbc7cfbf50dae713e2126ad68243f05c9a2eb55",
+          "records": 596
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Secret2Globals.kld",
+          "sha256": "d5b75287746a15ce99850e3999da03107840d44bbc7828630af6dd69cb4cfa98",
+          "records": 572
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Secret3Globals.kld",
+          "sha256": "b439128c47f5fadc3acb45465ed9bf294367bd7b6759a4a0ee946ead02f852f6",
+          "records": 572
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Secret4Globals.kld",
+          "sha256": "f1008aa04a084eee2ec68f42dda75aa89a020f33a224a048313f383696148c79",
+          "records": 572
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\testAI2Globals.kld",
+          "sha256": "3915c9faced729584219068888e37ed8f82cb0d64f6cf4629d92d6d0972f45d0",
+          "records": 596
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\testAI3Globals.kld",
+          "sha256": "25256daeda9ebb4ee3a8b14e9518a74a2573362065197991e46560d27f04eb2b",
+          "records": 596
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\testAI4Globals.kld",
+          "sha256": "336f1a0195e3d2709513a1bc753273b8174389f9c230040d504e7399b50c6dbc",
+          "records": 596
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\testAIGlobals.kld",
+          "sha256": "ad3ea90f2840cdde11189f10052f78731f22eff64cbb3117f4f9f7dd5d8f8892",
+          "records": 596
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\TFO1-1Globals.kld",
+          "sha256": "b39947c0f82a054268a63b4df29523ef7908d7ba80a1a29cdff7dcfcb5a0aea7",
+          "records": 596
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\TFO1Globals.kld",
+          "sha256": "8312784af6b7dd4df3ea4901d40235a03627757d2940b60a73e13998ba3f0074",
+          "records": 596
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\TFO2Globals.kld",
+          "sha256": "4f2474b49b8ff4cd41917a2edf55b4e1bd2cfd6989b665c51d9869e0aaa3c467",
+          "records": 596
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\TFO3-2Globals.kld",
+          "sha256": "d9bf121f460bda7411cd84fe4d0fa0259419f463a72a98e30f2af6035a403590",
+          "records": 596
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\TFO3Globals.kld",
+          "sha256": "4a547d2644d1db662cc1d3345e318368cee0f0bfddbdae77654ebdd6d19c2f96",
+          "records": 596
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\TFO4-2Globals.kld",
+          "sha256": "c1821f266fb4226f82017e082330e22f887ecc4b90c4d565f726a29cf6fbeee1",
+          "records": 596
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\TFO4Globals.kld",
+          "sha256": "abc2357ea366136258a26934c7ce247f5145f1cd31d99402b9f4f93cce735e88",
+          "records": 596
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXlevel1-2Globals.kld",
+          "sha256": "42e9753de5f7c16b3c1540c67c25c630e474d52e4ef82cadca6e64414787ec3d",
+          "records": 596
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXlevel1-3Globals.kld",
+          "sha256": "75c49e43ab0f245a900092d45eddfc9c33f4b9247dde7dfc8978d422ce279781",
+          "records": 596
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXlevel1-4Globals.kld",
+          "sha256": "af64931d6c156176e15e1374b27cde4905edbd9dbe4d9e2ee85f0a3f7bc645d7",
+          "records": 596
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXLevel13Globals.kld",
+          "sha256": "cedd60b7d59d86fad84a6408421ff2047dc26c2d8ebccc2d822a8ae25c9c54bb",
+          "records": 596
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXLevel19Globals.kld",
+          "sha256": "47f9c21d94548dac142e7ef00d057b6d17ccb9d89c79337e9f648b3c0eac71a4",
+          "records": 596
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXlevel1Globals.kld",
+          "sha256": "96770b0f15f04084dee8d82d220e8284574b35e75af76fa0984d11959011d181",
+          "records": 596
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXLevel20Globals.kld",
+          "sha256": "ad47d6ba4099f49146ac182cde9dc46b806f1092c6fc7dc6df1da5be713eef0e",
+          "records": 596
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXlevel2Globals.kld",
+          "sha256": "404321b6bdb1ade74263bd0690b7b329ab6bfb24bcd2c65899301fec3679ab77",
+          "records": 596
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXlevel3Globals.kld",
+          "sha256": "e596b72c3276c3df569f44b375d4e60cd6161df1981496fd15afe6b8a7fad774",
+          "records": 596
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXlevel5Globals.kld",
+          "sha256": "3f3085e08805280bb106787d28526db04a6c17d91c06aea4273ae924e7819d5e",
+          "records": 596
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\EffectElements.kwd",
+          "sha256": "b8c64fdc1418f1154c3f4bd874be91b4138013d8baa1cb2397e53b1beb7d2ae6",
+          "records": 596
+        },
+        {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\AutoSaveGlobals.kld",
+          "sha256": "7c67217033699a2a7e36eed002b54134ebcb79ad817a910b1103b25a43eebe0c",
+          "records": 596
+        }
+      ],
+      "unique_source_files": 82,
+      "records": 48416,
+      "new_exact_container_patches": 2460,
+      "raw_dword_fields_with_nonzero_high16_counts": {
+        "0x80": 10401,
+        "0x84": 82,
+        "0x88": 7708,
+        "0x8c": 574,
+        "0x90": 0,
+        "0x94": 0
+      },
+      "records_with_nonzero_palette_indices": 0,
+      "scope": "Prior-hash-checked 80 map catalogues plus standalone EffectElements and AutoSaveGlobals. One selected ID294(or first) record per matching section,10 physical fields with0/signbit/max. Full-container equality outside selected raw span; original files never written. Counts describe file records,not unique definitions."
+    },
+    "fields": [
+      {
+        "name": "MinSpeedXY",
+        "raw_offset": 128,
+        "raw_bytes": 4,
+        "intermediate_offset": 236,
+        "definition_offset": 49,
+        "definition_bytes": 2,
+        "interpretation": "s16(low16(raw DWORD));inclusive upper selection",
+        "lineage_source": "scalar-storage-paths.json.families.EffectElements.joined_paths;existing raw converter and rechecked static4366A0. New full initialization starts with prepared79-byte definition,not raw loader."
+      },
+      {
+        "name": "MaxSpeedXY",
+        "raw_offset": 132,
+        "raw_bytes": 4,
+        "intermediate_offset": 240,
+        "definition_offset": 51,
+        "definition_bytes": 2,
+        "interpretation": "s16(low16(raw DWORD));inclusive upper selection",
+        "lineage_source": "scalar-storage-paths.json.families.EffectElements.joined_paths;existing raw converter and rechecked static4366A0. New full initialization starts with prepared79-byte definition,not raw loader."
+      },
+      {
+        "name": "MinSpeedZ",
+        "raw_offset": 136,
+        "raw_bytes": 4,
+        "intermediate_offset": 244,
+        "definition_offset": 53,
+        "definition_bytes": 2,
+        "interpretation": "s16(low16(raw DWORD));inclusive upper selection",
+        "lineage_source": "scalar-storage-paths.json.families.EffectElements.joined_paths;existing raw converter and rechecked static4366A0. New full initialization starts with prepared79-byte definition,not raw loader."
+      },
+      {
+        "name": "MaxSpeedZ",
+        "raw_offset": 140,
+        "raw_bytes": 4,
+        "intermediate_offset": 248,
+        "definition_offset": 55,
+        "definition_bytes": 2,
+        "interpretation": "s16(low16(raw DWORD));inclusive upper selection",
+        "lineage_source": "scalar-storage-paths.json.families.EffectElements.joined_paths;existing raw converter and rechecked static4366A0. New full initialization starts with prepared79-byte definition,not raw loader."
+      },
+      {
+        "name": "MinScale",
+        "raw_offset": 144,
+        "raw_bytes": 4,
+        "intermediate_offset": 252,
+        "definition_offset": 45,
+        "definition_bytes": 2,
+        "interpretation": "u16(low16(raw DWORD));exclusive upper selection",
+        "lineage_source": "scalar-storage-paths.json.families.EffectElements.joined_paths;existing raw converter and rechecked static4366A0. New full initialization starts with prepared79-byte definition,not raw loader."
+      },
+      {
+        "name": "MaxScale",
+        "raw_offset": 148,
+        "raw_bytes": 4,
+        "intermediate_offset": 256,
+        "definition_offset": 47,
+        "definition_bytes": 2,
+        "interpretation": "u16(low16(raw DWORD));exclusive upper selection",
+        "lineage_source": "scalar-storage-paths.json.families.EffectElements.joined_paths;existing raw converter and rechecked static4366A0. New full initialization starts with prepared79-byte definition,not raw loader."
+      },
+      {
+        "name": "MinHp",
+        "raw_offset": 162,
+        "raw_bytes": 2,
+        "intermediate_offset": 270,
+        "definition_offset": 35,
+        "definition_bytes": 2,
+        "interpretation": "u16 raw;inclusive upper selection into lifetimeDWORD109",
+        "lineage_source": "scalar-storage-paths.json.families.EffectElements.joined_paths;existing raw converter and rechecked static4366A0. New full initialization starts with prepared79-byte definition,not raw loader."
+      },
+      {
+        "name": "MaxHp",
+        "raw_offset": 164,
+        "raw_bytes": 2,
+        "intermediate_offset": 272,
+        "definition_offset": 37,
+        "definition_bytes": 2,
+        "interpretation": "u16 raw;inclusive upper selection into lifetimeDWORD109",
+        "lineage_source": "scalar-storage-paths.json.families.EffectElements.joined_paths;existing raw converter and rechecked static4366A0. New full initialization starts with prepared79-byte definition,not raw loader."
+      },
+      {
+        "name": "RandomColorIndex",
+        "raw_offset": 177,
+        "raw_bytes": 1,
+        "intermediate_offset": 285,
+        "definition_offset": 77,
+        "definition_bytes": 1,
+        "interpretation": "byte storage;global meaning unresolved",
+        "lineage_source": "scalar-storage-paths.json.families.EffectElements.joined_paths;existing raw converter and rechecked static4366A0. New full initialization starts with prepared79-byte definition,not raw loader."
+      },
+      {
+        "name": "TableColorIndex",
+        "raw_offset": 178,
+        "raw_bytes": 1,
+        "intermediate_offset": 286,
+        "definition_offset": 78,
+        "definition_bytes": 1,
+        "interpretation": "byte storage;global meaning unresolved",
+        "lineage_source": "scalar-storage-paths.json.families.EffectElements.joined_paths;existing raw converter and rechecked static4366A0. New full initialization starts with prepared79-byte definition,not raw loader."
+      }
+    ],
+    "counts": {
+      "logical_scenarios": 26,
+      "successful_allocation_scenarios": 23,
+      "failed_allocation_scenarios": 3,
+      "native_emulation_invocations": 78,
+      "successful_allocation_replays": 69,
+      "executed_path_function_spans": 20,
+      "static_only_function_spans": 2,
+      "file_backed_vtable_ranges": 3,
+      "original_code_or_vtable_replacements": 0
+    },
+    "entry": {
+      "spawn": "0x4352E0",
+      "constructor": "0x435E70",
+      "base_constructor": "0x4468E0",
+      "initializer": "0x435F20",
+      "native_pool": "0x554B30",
+      "path": "Actual CBridge exists/get and visibility forwarder,bounds,pool allocation,constructors,model-ID registration,client-map insertion,velocity/lifetime/resource/scale/color setup and parent-child insertion run to real return.",
+      "request_bytes": 287,
+      "aligned_payload": 288,
+      "header_bytes": 12,
+      "accounted_allocation": 300,
+      "success": "EAX1 and out pointer;parent childhead113 set;child113 copies parent155 without new meaning assigned.",
+      "failure": "Checked pool296,no free model IDs,outside map: EAX0,out pointer unchanged,pool/table/parent/map/node and PRNG unchanged. Visibility occurs before bounds;obstruction/tile-touch before allocation guards."
+    },
+    "class_provenance": {
+      "global6DA458": "CBridge,not CWorld. Native43AAD0 stores this pointer;original vtable66CC94.",
+      "global6DA45C": "Connected engine interface from *( *(CBridge+4)+14 ),assigned by native4468E0.",
+      "bridge_slots": {
+        "0x80": "4412C0 forwards to connected engine v80",
+        "0x158": "440A70 EffectElement exists",
+        "0x15C": "4409A0 EffectElement getter"
+      },
+      "engine_provider_slots": [
+        "0x80 visibility->1",
+        "0x20C obstruction->0",
+        "0x1D4 tile-touch->0",
+        "0x204 floor->0"
+      ],
+      "rejected_hypotheses": [
+        "446970 was mid-instruction,correct constructor4468E0.",
+        "CWorld.v15C50D9C0 is an unrelated Effects-exists method.",
+        "CBridge table reads at1D4/204/20C exceeded this interface;calls belong to connected engine."
+      ],
+      "warning": "Rejected type/address hypotheses are analysis corrections,not evidence of editor serialization defects."
+    },
+    "ranges": {
+      "speed": {
+        "definition_words": [
+          "31",
+          "33",
+          "35",
+          "37"
+        ],
+        "signed": true,
+        "formula": "If max==min:sample=min without draw;otherwise sample=u32(min+rand(u32(max-min+1))). Ordered valid ranges include both endpoints.",
+        "xy_destination": "Original signed64-bit coefficient multiplication then arithmetic shift16;fixture coefficients65536 give node8=sample,nodeC=-sample.",
+        "z_destination": "node10=sample;added by native434E50."
+      },
+      "lifetime": {
+        "definition_words": [
+          "23",
+          "25"
+        ],
+        "signed": false,
+        "formula": "If max==min:no draw;otherwise sample=u32(min+rand(u32(max-min+1))). Ordered valid ranges include both endpoints.",
+        "destination": "DWORD109;alpha threshold DWORD10D"
+      },
+      "scale": {
+        "definition_words": [
+          "2D",
+          "2F"
+        ],
+        "signed": false,
+        "formula": "If resource flags&1 and max!=min:sample=u32(min+rand(u32(max-min)));equal endpoints use min without draw. Ordered unequal ranges exclude max.",
+        "destination": "DWORD2A and2E",
+        "render_gate": "resourceflags&1==0 returns before scale/color and final parent renderer-flags copy."
+      },
+      "malformed": "Selected reversed intervals execute native unsigned-bound behavior and produce large values;there is no sorting/clamping on these paths. This does not establish safety for all malformed inputs or zero RNG bounds.",
+      "serialization": "Keep full raw DWORDs for speed/scale;definition narrowing does not permit truncating/replacing high bits in the file."
+    },
+    "randomness": {
+      "entry": "0x5558D0",
+      "state": "DWORD6D6450",
+      "formula": "state=u32(state*1664525+1013904223);result=ror32(state,13)%u32(bound)",
+      "sequence": "Three ctor angle draws bound2048,optionalXY,optionalZ,unconditional direction2048,optionalHP,then optionalScale when render enabled. Parent spread0 in fixtures;other branches can add draws.",
+      "verification": "Expected final native state compared in every replay;per-case draw trace stored with snapshot. This is deterministic runtime selection,not a file checksum."
+    },
+    "alpha_threshold": {
+      "raw_percentage": "BYTEB3 -> definition3D",
+      "formula": "u32(H - trunc_toward_zero(s32(low32(H*percentage))/100))",
+      "scope": "New reversed-HP fixture exercises low32 product wrap. For ordered u16 HP and byte percentage this agrees with prior small-value rule. Percentage100 yields0 for ordinary H100."
+    },
+    "palette": {
+      "raw_offsets": [
+        177,
+        178
+      ],
+      "definition_offsets": [
+        77,
+        78
+      ],
+      "tested_pairs": [
+        [
+          0,
+          0
+        ],
+        [
+          255,
+          0
+        ],
+        [
+          0,
+          255
+        ],
+        [
+          255,
+          255
+        ]
+      ],
+      "result": "All287 initialized object bytes and final RNG state equal across four pairs in the complete tested creation path. Definitions retained distinct bytes and were checked read-only. No new palette meaning assigned.",
+      "global_nonuse_proved": false,
+      "remaining": "No live renderer,texture/palette asset path,nonzero parent spread,player-color branch or other binary is covered by this equality."
+    },
+    "capture": {
+      "method": "Original code and original vtables remain intact. A synthetic post-return observer compares prepared memory and loads128bytes into XMM0..7.",
+      "snapshot": "287 bytes assembled from3 independent fresh identical-input replays,not an atomic live-process dump.",
+      "checks": "Pool,free/used sentinels,parent,map/model table,PRNG,model count,FS,inputs and provider counts compared each replay. Full new node retained;only explicit assertions assign meaning."
+    },
+    "limitations": [
+      "Prepared79-byte definition;raw converter and asset loader are lineage evidence,not newly executed end to end.",
+      "Visibility/obstruction/touch/floor are explicit connected-engine providers;uniform coefficient data isolates selection and does not verify real angle-table population or visual trajectories.",
+      "Parent spread0,empty childhead,one free model slot,empty runtime map,resource types0/1 and selected flags. No growth/shrink,player RGB lookup,late tick,deletion,collision,renderer or framebuffer.",
+      "Client-map registration uses2-byte spatial cells;this does not reinterpret the raw4-byte AutoSaveMap.kld format.",
+      "Some287-byte instance bytes remain opaque. Raw palette indices and other families unresolved;original full goal remains incomplete."
+    ]
+  }
+}

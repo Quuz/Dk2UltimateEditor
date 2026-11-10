@@ -1,0 +1,644 @@
+{
+  "program": "DKII-DX.exe",
+  "sha256": "d7a8b854e4e4f02709eba271bead6fe2307dd6e332b5a96e70857e5b0e19fb8a",
+  "file_offsets": {
+    "Data1": 152,
+    "Data2": 156,
+    "ProcessFlags": 160,
+    "DamageType": 197,
+    "ProcessType": 199
+  },
+  "instance_offsets": {
+    "Data1": 317,
+    "Data2": 321
+  },
+  "processes": [
+    {
+      "process_type": 0,
+      "name": "NONE",
+      "handler": null,
+      "data1": "No process callback; inspect DamageType",
+      "data2": "No process callback; inspect DamageType",
+      "note": "NONE does not disable ordinary projectile damage."
+    },
+    {
+      "process_type": 1,
+      "name": "CREATE_CREATURE",
+      "table_address": "0x69e860",
+      "handler": "0x004ad7a0",
+      "data1": "Creature ID (low u8)",
+      "data2": "Number to create (signed i32, positive loop bound)",
+      "note": "Special handling for creature ID 9; created in a ring.",
+      "evidence": "ghidra/game-shot-process-01.txt",
+      "direct_instance_reads": {
+        "data1": true,
+        "data2": true
+      }
+    },
+    {
+      "process_type": 2,
+      "name": "CREATE_OBJECT",
+      "table_address": "0x69e871",
+      "handler": "0x004ade10",
+      "data1": "Object ID (low u8)",
+      "data2": "Gold amount when created object ID is 1",
+      "note": "Special handling for object ID 10.",
+      "evidence": "ghidra/game-shot-process-02.txt",
+      "direct_instance_reads": {
+        "data1": true,
+        "data2": true
+      }
+    },
+    {
+      "process_type": 3,
+      "name": "MODIFY_HEALTH",
+      "table_address": "0x69e882",
+      "handler": "0x004adb30",
+      "data1": "Signed health delta (positive heals, capped to missing health)",
+      "data2": "No read in this process callback",
+      "note": "Shot ID 43 has a hard-coded 5%-health path; normal damage is a separate dispatcher.",
+      "evidence": "ghidra/game-shot-process-03.txt",
+      "direct_instance_reads": {
+        "data1": true,
+        "data2": false
+      }
+    },
+    {
+      "process_type": 4,
+      "name": "MODIFY_SPEED",
+      "table_address": "0x69e893",
+      "handler": "0x004ae000",
+      "data1": "Speed multiplier in percent (100 = same speed)",
+      "data2": "Duration seconds, low 16 bits then multiplied by TPS",
+      "note": "0x48CAD0 applies speed bounds and a 16-bit timer.",
+      "evidence": "ghidra/game-shot-process-04.txt",
+      "direct_instance_reads": {
+        "data1": true,
+        "data2": true
+      }
+    },
+    {
+      "process_type": 5,
+      "name": "MODIFY_ARMOUR",
+      "table_address": "0x69e8a4",
+      "handler": "0x004ae0d0",
+      "data1": "Armour timer raw ticks (low 16 bits)",
+      "data2": "No read in this process callback",
+      "note": "Writes creature+0x443 directly; this is not an armour percentage.",
+      "evidence": "ghidra/game-shot-process-05.txt",
+      "direct_instance_reads": {
+        "data1": true,
+        "data2": false
+      }
+    },
+    {
+      "process_type": 6,
+      "name": "MODIFY_MANA",
+      "table_address": "0x69e8b5",
+      "handler": "0x004ae3e0",
+      "data1": "Mana amount transferred between target owner and caster",
+      "data2": "Health delta for target creature",
+      "note": "Health restoration is capped to missing health.",
+      "evidence": "ghidra/game-shot-process-06.txt",
+      "direct_instance_reads": {
+        "data1": true,
+        "data2": true
+      }
+    },
+    {
+      "process_type": 7,
+      "name": "MODIFY_EXPERIENCE_LEVEL",
+      "table_address": "0x69e8c6",
+      "handler": "0x004ae630",
+      "data1": "Unsigned selector: >1 gains one level-worth of XP, 0/1 loses it",
+      "data2": "No read in this process callback",
+      "note": "Not an arbitrary signed number of levels.",
+      "evidence": "ghidra/game-shot-process-07.txt",
+      "direct_instance_reads": {
+        "data1": true,
+        "data2": false
+      }
+    },
+    {
+      "process_type": 8,
+      "name": "MODIFY_HUNGER",
+      "table_address": "0x69e8d7",
+      "handler": "0x004ae7c0",
+      "data1": "No read in this process callback",
+      "data2": "No read in this process callback",
+      "note": "Uses HungerFill from creature data/level tables, multiplied by 5.",
+      "evidence": "ghidra/game-shot-process-08.txt",
+      "direct_instance_reads": {
+        "data1": false,
+        "data2": false
+      }
+    },
+    {
+      "process_type": 9,
+      "name": "LIGHTNING",
+      "table_address": "0x69e8e8",
+      "handler": "0x004af1e0",
+      "data1": "Damage magnitude, abs(Data1), doubled on checked terrain flag",
+      "data2": "No read in this process callback",
+      "note": "Runtime extra flag 1 can prevent lightning damage.",
+      "evidence": "ghidra/game-shot-process-09.txt",
+      "direct_instance_reads": {
+        "data1": true,
+        "data2": false
+      }
+    },
+    {
+      "process_type": 10,
+      "name": "INVUNERABLE",
+      "table_address": "0x69e8f9",
+      "handler": "0x004ae180",
+      "data1": "Duration seconds; low 16 bits multiplied by TPS into invulnerability timer",
+      "data2": "No read in this process callback",
+      "note": "",
+      "evidence": "ghidra/game-shot-process-10.txt",
+      "direct_instance_reads": {
+        "data1": true,
+        "data2": false
+      }
+    },
+    {
+      "process_type": 11,
+      "name": "FREEZE",
+      "table_address": "0x69e90a",
+      "handler": "0x004ae1d0",
+      "data1": "Duration seconds multiplied by TPS; helper writes freeze timer",
+      "data2": "No read in this process callback",
+      "note": "",
+      "evidence": "ghidra/game-shot-process-11.txt",
+      "direct_instance_reads": {
+        "data1": true,
+        "data2": false
+      }
+    },
+    {
+      "process_type": 12,
+      "name": "ALARM",
+      "table_address": "0x69e91b",
+      "handler": "0x004ae120",
+      "data1": "No read in this process callback",
+      "data2": "No read in this process callback",
+      "note": "Signals alarm using current shot position and owner.",
+      "evidence": "ghidra/game-shot-process-12.txt",
+      "direct_instance_reads": {
+        "data1": false,
+        "data2": false
+      }
+    },
+    {
+      "process_type": 13,
+      "name": "TURNCOAT",
+      "table_address": "0x69e92c",
+      "handler": "0x004ae550",
+      "data1": "Duration seconds; low 16 bits multiplied by TPS into turncoat timer",
+      "data2": "No read in this process callback",
+      "note": "Also stores shot owner as the temporary allegiance player.",
+      "evidence": "ghidra/game-shot-process-13.txt",
+      "direct_instance_reads": {
+        "data1": true,
+        "data2": false
+      }
+    },
+    {
+      "process_type": 14,
+      "name": "CONCEAL",
+      "table_address": "0x69e93d",
+      "handler": "0x004ae250",
+      "data1": "Duration seconds; low 16 bits multiplied by TPS into conceal timer",
+      "data2": "No read in this process callback",
+      "note": "",
+      "evidence": "ghidra/game-shot-process-14.txt",
+      "direct_instance_reads": {
+        "data1": true,
+        "data2": false
+      }
+    },
+    {
+      "process_type": 15,
+      "name": "CHICKEN",
+      "table_address": "0x69e94e",
+      "handler": "0x004ae2a0",
+      "data1": "Duration seconds; low 16 bits multiplied by TPS into chicken timer",
+      "data2": "No read in this process callback",
+      "note": "Primary flag 0x20000 blocks this process.",
+      "evidence": "ghidra/game-shot-process-15.txt",
+      "direct_instance_reads": {
+        "data1": true,
+        "data2": false
+      }
+    },
+    {
+      "process_type": 16,
+      "name": "SCAPEGOAT",
+      "table_address": "0x69e95f",
+      "handler": "0x004ae330",
+      "data1": "Duration seconds; low 16 bits multiplied by TPS into scapegoat timer",
+      "data2": "No read in this process callback",
+      "note": "",
+      "evidence": "ghidra/game-shot-process-16.txt",
+      "direct_instance_reads": {
+        "data1": true,
+        "data2": false
+      }
+    },
+    {
+      "process_type": 17,
+      "name": "WIND",
+      "table_address": "0x69e970",
+      "handler": "0x004ae990",
+      "data1": "Integer radius in map cells",
+      "data2": "Percentage used in distance-dependent damage",
+      "note": "Radius converted to 4096 coordinate units inside handler.",
+      "evidence": "ghidra/game-shot-process-17.txt",
+      "direct_instance_reads": {
+        "data1": true,
+        "data2": true
+      }
+    },
+    {
+      "process_type": 18,
+      "name": "RAISE_DEAD",
+      "table_address": "0x69e981",
+      "handler": "0x004ae880",
+      "data1": "Creature ID (low u8) to create at dead-body positions",
+      "data2": "No read in this process callback",
+      "note": "Deletes processed dead bodies.",
+      "evidence": "ghidra/game-shot-process-18.txt",
+      "direct_instance_reads": {
+        "data1": true,
+        "data2": false
+      }
+    },
+    {
+      "process_type": 19,
+      "name": "OBEY",
+      "table_address": "0x69e992",
+      "handler": "0x004ae5e0",
+      "data1": "Duration seconds multiplied by TPS into obedient timer",
+      "data2": "No read in this process callback",
+      "note": "",
+      "evidence": "ghidra/game-shot-process-19.txt",
+      "direct_instance_reads": {
+        "data1": true,
+        "data2": false
+      }
+    },
+    {
+      "process_type": 20,
+      "name": "INVISIBLE",
+      "table_address": "0x69e9a3",
+      "handler": "0x004ae380",
+      "data1": "Duration seconds; low 16 bits multiplied by TPS into invisible timer",
+      "data2": "No read in this process callback",
+      "note": "",
+      "evidence": "ghidra/game-shot-process-20.txt",
+      "direct_instance_reads": {
+        "data1": true,
+        "data2": false
+      }
+    },
+    {
+      "process_type": 21,
+      "name": "FEAR",
+      "table_address": "0x69e9b4",
+      "handler": "0x00484940",
+      "data1": "No read in callback",
+      "data2": "No read in callback",
+      "note": "FEAR callback at 0x484940 is a no-op in this image; other damage logic may still run.",
+      "evidence": "ghidra/game-shot-process-21.txt",
+      "direct_instance_reads": {
+        "data1": false,
+        "data2": false
+      }
+    },
+    {
+      "process_type": 22,
+      "name": "BOULDER",
+      "table_address": "0x69e9c5",
+      "handler": "0x004aebd0",
+      "data1": "No read in this process callback",
+      "data2": "No read in this process callback",
+      "note": "Creates fixed object ID 0x4A; health/speed use global variables.",
+      "evidence": "ghidra/game-shot-process-22.txt",
+      "direct_instance_reads": {
+        "data1": false,
+        "data2": false
+      }
+    },
+    {
+      "process_type": 23,
+      "name": "ALERT",
+      "table_address": "0x69e9d6",
+      "handler": "0x004aedf0",
+      "data1": "Speed multiplier in percent",
+      "data2": "Duration seconds; low 16 bits multiplied by TPS",
+      "note": "Confirmed from assembly, including setter RET 4 and helper RET 8. Decompiled indirect-call stack cleanup was wrong.",
+      "evidence": "ghidra/game-shot-process-23.txt",
+      "direct_instance_reads": {
+        "data1": true,
+        "data2": true
+      }
+    },
+    {
+      "process_type": 24,
+      "name": "MESMERISE",
+      "table_address": "0x69e9e7",
+      "handler": "0x004aee50",
+      "data1": "No read in this process callback",
+      "data2": "No read in this process callback",
+      "note": "Changes target owner to shot owner under checked conditions.",
+      "evidence": "ghidra/game-shot-process-24.txt",
+      "direct_instance_reads": {
+        "data1": false,
+        "data2": false
+      }
+    },
+    {
+      "process_type": 25,
+      "name": "SIGHT_OF_EVIL",
+      "table_address": "0x69e9f8",
+      "handler": "0x004af0e0",
+      "data1": "Nonzero DWORD enables initial event; low u16 is cell-coordinate radius capped at7 by Bridge0D",
+      "data2": "No read in this process callback",
+      "note": "Phase77 executes process25→World→Session→Bridge0D→region setup. Data1=65536 enables radius0 event,unlike literal0. Final visible mask/renderer and KeeperC8 purpose remain unproved;see SIGHT_OF_EVIL_RU.md.",
+      "evidence": "ghidra/game-shot-process-25.txt",
+      "direct_instance_reads": {
+        "data1": true,
+        "data2": false
+      },
+      "native_event_consumer": {
+        "file": "sight-event-semantics.json",
+        "sha256": "04542870d89d4697ad91b4d4bc1bca1228e4180fa7ffb4689b97f16dcdc76caf"
+      }
+    },
+    {
+      "process_type": 26,
+      "name": "POSSESS_CREATURE",
+      "table_address": "0x69ea09",
+      "handler": "0x004aeea0",
+      "data1": "No read in this process callback",
+      "data2": "No read in this process callback",
+      "note": "Possession uses target and player state.",
+      "evidence": "ghidra/game-shot-process-26.txt",
+      "direct_instance_reads": {
+        "data1": false,
+        "data2": false
+      }
+    },
+    {
+      "process_type": 27,
+      "name": "TREMOR",
+      "table_address": "0x69ea1a",
+      "handler": "0x004af330",
+      "data1": "Low 16 bits multiplied by TPS for tremor duration",
+      "data2": "Low 16 bits shifted left 12, then cast to u16; helper caps at 0x5000",
+      "note": "This is not an unrestricted 32-bit magnitude.",
+      "evidence": "ghidra/game-shot-process-27.txt",
+      "direct_instance_reads": {
+        "data1": true,
+        "data2": true
+      }
+    },
+    {
+      "process_type": 28,
+      "name": "GUIDED",
+      "table_address": "0x69ea2b",
+      "handler": "0x004af3a0",
+      "data1": "No read in this process callback",
+      "data2": "No read in this process callback",
+      "note": "Guidance uses shot Speed, target position, angle and elapsed ticks.",
+      "evidence": "ghidra/game-shot-process-28.txt",
+      "direct_instance_reads": {
+        "data1": false,
+        "data2": false
+      }
+    },
+    {
+      "process_type": 29,
+      "name": "DECKEM",
+      "table_address": "0x69ea3c",
+      "handler": "0x004af610",
+      "data1": "No read in this process callback",
+      "data2": "No read in this process callback",
+      "note": "Uses fixed 0xFF argument to target state routine.",
+      "evidence": "ghidra/game-shot-process-29.txt",
+      "direct_instance_reads": {
+        "data1": false,
+        "data2": false
+      }
+    },
+    {
+      "process_type": 30,
+      "name": "INFERNO",
+      "table_address": "0x69ea4d",
+      "handler": "0x004af660",
+      "data1": "Damage, negated for health modification",
+      "data2": "Integer radius in map cells",
+      "note": "Damages targets within the checked radius, with special first-tick radius.",
+      "evidence": "ghidra/game-shot-process-30.txt",
+      "direct_instance_reads": {
+        "data1": true,
+        "data2": true
+      }
+    },
+    {
+      "process_type": 31,
+      "name": "GAS",
+      "table_address": "0x69ea5e",
+      "handler": "0x004af8e0",
+      "data1": "No read in this process callback",
+      "data2": "Integer area extent in cells",
+      "note": "Normal DamageType may independently read Data1; do not mark it globally unused.",
+      "evidence": "ghidra/game-shot-process-31.txt",
+      "direct_instance_reads": {
+        "data1": false,
+        "data2": true
+      }
+    },
+    {
+      "process_type": 32,
+      "name": "TRIGGER",
+      "table_address": "0x69ea6f",
+      "handler": "0x004afad0",
+      "data1": "No read in this process callback",
+      "data2": "No read in this process callback",
+      "note": "Signals using definition GeneralEffectId; exact triggered system name not inferred.",
+      "evidence": "ghidra/game-shot-process-32.txt",
+      "direct_instance_reads": {
+        "data1": false,
+        "data2": false
+      }
+    },
+    {
+      "process_type": 33,
+      "name": "SUMMON_REAPER",
+      "table_address": "0x69ea80",
+      "handler": "0x004afaf0",
+      "data1": "Optional reaper lifetime seconds; nonzero changes level selection path",
+      "data2": "No read in this process callback",
+      "note": "Creature type and alternate starting level obtained from world/global state.",
+      "evidence": "ghidra/game-shot-process-33.txt",
+      "direct_instance_reads": {
+        "data1": true,
+        "data2": false
+      }
+    },
+    {
+      "process_type": 34,
+      "name": "INSTANTANEOUS_HIT",
+      "table_address": "0x69ea91",
+      "handler": "0x004afcb0",
+      "data1": "No read in this process callback",
+      "data2": "No read in this process callback",
+      "note": "Moves shot to target position and forces collision.",
+      "evidence": "ghidra/game-shot-process-34.txt",
+      "direct_instance_reads": {
+        "data1": false,
+        "data2": false
+      }
+    },
+    {
+      "process_type": 35,
+      "name": "DRAIN",
+      "table_address": "0x69eaa2",
+      "handler": "0x004afd20",
+      "data1": "Percentage of caster maximum health to drain, capped to target current health",
+      "data2": "No read in this process callback",
+      "note": "Percentage basis is caster maximum health, not target maximum health.",
+      "evidence": "ghidra/game-shot-process-35.txt",
+      "direct_instance_reads": {
+        "data1": true,
+        "data2": false
+      }
+    },
+    {
+      "process_type": 36,
+      "name": "CREATE_SINGLE_CREATURE",
+      "table_address": "0x69eab3",
+      "handler": "0x004afe50",
+      "data1": "Creature ID (low u8)",
+      "data2": "Starting level: creates level 1 then repeats level-up while level < Data2",
+      "note": "Special handling for creature ID 9; low/negative values do not produce level zero.",
+      "evidence": "ghidra/game-shot-process-36.txt",
+      "direct_instance_reads": {
+        "data1": true,
+        "data2": true
+      }
+    },
+    {
+      "process_type": 37,
+      "name": "WEB_AREA_EFFECT",
+      "table_address": "0x69eac4",
+      "handler": "0x004b0050",
+      "data1": "Duration seconds, low 16 bits passed to speed modifier",
+      "data2": "Integer radius in map cells",
+      "note": "Fixed speed multiplier -90; helper multiplies duration by TPS and applies speed bounds.",
+      "evidence": "ghidra/game-shot-process-37.txt",
+      "direct_instance_reads": {
+        "data1": true,
+        "data2": true
+      }
+    },
+    {
+      "process_type": 38,
+      "name": "POISON_SPIT",
+      "table_address": "0x69ead5",
+      "handler": "0x004b0270",
+      "data1": "Poison severity (low u16)",
+      "data2": "Poison timer (low u16), stored without multiplication by TPS",
+      "note": "0x48CC50 stores target+0x45D=Data2 and +0x45F=Data1; timer names from Flame map.",
+      "evidence": "ghidra/game-shot-process-38.txt",
+      "direct_instance_reads": {
+        "data1": true,
+        "data2": true
+      }
+    },
+    {
+      "process_type": 39,
+      "name": "JACK_IN_THE_BOX",
+      "table_address": "0x69eae6",
+      "handler": "0x004b02e0",
+      "data1": "Damage, negated in checked branch",
+      "data2": "Entity tag ID (low u16), used to index live entities",
+      "note": "Confirmed in assembly: damages referenced entity, creates creature ID 0x2E (Jack) and records prior owner; decompiler lost local stack variables.",
+      "evidence": "ghidra/game-shot-process-39.txt",
+      "direct_instance_reads": {
+        "data1": true,
+        "data2": true
+      }
+    }
+  ],
+  "damage_types": {
+    "0": {
+      "name": "NONE",
+      "data1": "No normal damage dispatcher",
+      "data2": "No normal damage dispatcher",
+      "handler": null
+    },
+    "1": {
+      "name": "CONSTANT",
+      "data1": "Damage per call",
+      "data2": "Integer area extent in cells",
+      "handler": "0x4AC5A0",
+      "trigger": "Every tick"
+    },
+    "2": {
+      "name": "RANGE_FROM_ORIGIN",
+      "data1": "Damage modified by distance from origin",
+      "data2": "Integer radius in cells",
+      "handler": "0x4AC6D0",
+      "trigger": "Every tick"
+    },
+    "3": {
+      "name": "TIME",
+      "data1": "Damage * currentHealth / initialHealth",
+      "data2": "Definition Data2 >> 12, not instance Data2",
+      "handler": "0x4AC940",
+      "trigger": "Every tick"
+    },
+    "4": {
+      "name": "RING_CONSTANT",
+      "data1": "Damage per call",
+      "data2": "(initialHealth-currentHealth) * (instanceData2 >> 12) / initialHealth",
+      "handler": "0x4ACAF0",
+      "trigger": "Every tick"
+    },
+    "5": {
+      "name": "AT_START",
+      "data1": "Damage per call",
+      "data2": "Integer area extent in cells",
+      "handler": "0x4AC5A0",
+      "trigger": "Once on first tick (0x4AB180)"
+    },
+    "6": {
+      "name": "AT_END",
+      "data1": "Damage per call",
+      "data2": "Integer area extent in cells",
+      "handler": "0x4AC5A0",
+      "trigger": "End routine 0x4AAF70 under checked world condition"
+    },
+    "7": {
+      "name": "HIT_THING",
+      "data1": "Positive damage; nonpositive ignored; sniper doubles it",
+      "data2": "Not read in hit routine",
+      "handler": "0x4AC420",
+      "trigger": "Collision 0x4ABD60"
+    },
+    "8": {
+      "name": "CONSTANT_FOR_TREMOR",
+      "data1": "Damage applied to map terrain",
+      "data2": "Instance Data2 >> 12, area extent",
+      "handler": "0x4ACCA0",
+      "trigger": "Every tick"
+    }
+  },
+  "note": "Both dispatchers can read the same parameters. Callback-only non-use is not global non-use. Names/semantics tied to this game image; original editor presets are separate Shot IDs.",
+  "phase80_native_success_reference": {
+    "file": "native-shot-success-semantics.json",
+    "sha256": "f372df7404431bd3f217196b79a6e65c764ea1918104fd84074980c45b202985"
+  }
+}

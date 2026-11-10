@@ -1,0 +1,69 @@
+{
+  "program_sha256": "d7a8b854e4e4f02709eba271bead6fe2307dd6e332b5a96e70857e5b0e19fb8a",
+  "warning": "Instruction-level memory candidates, not proof of object identity or semantics.\n\nDecode only Flame-mapped spans within .text. Embedded data, overlapping mappings,\nunrelated vtables and reused displacements still require manual verification.\n",
+  "mapped_spans_scanned": 8729,
+  "functions": [
+    {
+      "function": "0x40fdf0",
+      "name": "sub_40FDF0",
+      "size": 443,
+      "matching_virtual_calls": [],
+      "field_candidates": [
+        {
+          "address": "0x40fe3e",
+          "text": "mov eax, dword ptr [ebp + 0x79b]",
+          "displacement": "0x79b",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x491dc0",
+      "name": "constructor",
+      "size": 1135,
+      "matching_virtual_calls": [],
+      "field_candidates": [
+        {
+          "address": "0x4921dc",
+          "text": "mov dword ptr [esi + 0x79b], ebx",
+          "displacement": "0x79b",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x492320",
+      "name": "loadCreatureType",
+      "size": 8252,
+      "matching_virtual_calls": [],
+      "field_candidates": [
+        {
+          "address": "0x493c1b",
+          "text": "mov dword ptr [ebx + 0x79b], eax",
+          "displacement": "0x79b",
+          "memory_bytes": 4
+        }
+      ]
+    },
+    {
+      "function": "0x51f3b0",
+      "name": "copy",
+      "size": 2292,
+      "matching_virtual_calls": [],
+      "field_candidates": [
+        {
+          "address": "0x51fbe8",
+          "text": "mov ecx, dword ptr [edx + 0x79b]",
+          "displacement": "0x79b",
+          "memory_bytes": 4
+        },
+        {
+          "address": "0x51fbee",
+          "text": "mov dword ptr [eax + 0x79b], ecx",
+          "displacement": "0x79b",
+          "memory_bytes": 4
+        }
+      ]
+    }
+  ]
+}

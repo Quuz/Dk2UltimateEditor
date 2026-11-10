@@ -1,0 +1,81 @@
+{
+  "phase": 175,
+  "date": "2026-11-03",
+  "goal_status": "active",
+  "block": "ProcessType/DamageType",
+  "block_complete": false,
+  "previous_goal_turn": {
+    "classification": "progress",
+    "reason": "Final phase174 audit passed; consolidated inventory exposed unexecuted unchanged Freeze/Poison and Crystal children; executed and independently crosschecked."
+  },
+  "counts": {
+    "native_scenes": 15,
+    "complete_Shot_ticks": 38,
+    "whole_Shot_factories": 27,
+    "whole_targeted_firing": 15,
+    "Freeze_callbacks": 10,
+    "Poison_callbacks": 5,
+    "unique_source_records": 7,
+    "unchanged_source_record_inputs": 35,
+    "independent_Ghidra_controls": 6,
+    "Ghidra_compared_regions": 630,
+    "Ghidra_compared_bytes": 1641126,
+    "additional_function_extents": 0,
+    "inherited_function_extents": 231,
+    "unique_executed_original_PCs": 17475,
+    "original_vtables": 5,
+    "exact_container_edits": 246,
+    "Shot_files": 82,
+    "Shot_records": 5551,
+    "preserved_prior_components": 152,
+    "preserved_source_files": 420,
+    "preserved_EXE_paths": 7,
+    "source_writes": 0,
+    "new_opaque_field_names": 0
+  },
+  "coverage_counts": {
+    "Shot_files": 82,
+    "Shot_records": 5551,
+    "observed_pairs": 49,
+    "mixed_pairs": 14,
+    "mixed_pairs_with_selected_composition_evidence": 14,
+    "mixed_source_variants": 43,
+    "native_scenes_current_block": 188,
+    "independent_Ghidra_controls_current_block": 56
+  },
+  "remaining": [
+    {
+      "priority": 1,
+      "topic": "P29/D7 source mask0x10C event8 and child graph",
+      "reason": "Selected P29/D7 collision is proven, but source Chainfire variants include event8; its zero return can skip later decay. Must compose the actual source graph and source flags."
+    },
+    {
+      "priority": 2,
+      "topic": "Other source masks/variants and parent parameter overrides",
+      "reason": "14/14 means selected pairs, not every source variant, every target class, or all event interleavings."
+    },
+    {
+      "priority": 3,
+      "topic": "World scheduling/terminal cleanup and version transfer",
+      "reason": "No full scheduler, real-time DPS, pool-free, all target deaths, or automatic RC3/old EXE/patch-DLL transfer."
+    }
+  ],
+  "evidence": [
+    {
+      "file": "shot-source-status-semantics.json",
+      "sha256": "9c6b6764fd15373a10a35b898632b0d136fd01e1ecb3b5f63b3417d8ec9d2a8a"
+    },
+    {
+      "file": "shot-combination-coverage.json",
+      "sha256": "31684467383adf3f5981d88b0b8d997b3fc36a021e0cb223003f4c2f4b44e5f7"
+    },
+    {
+      "file": "SHOT_SOURCE_STATUS_RU.md",
+      "sha256": "3b30a98406d21240226733ec0ac8a13bbbc113db0ddf2aba89b1a21f5dfcdf1c"
+    },
+    {
+      "file": "SHOT_COMBINATION_COVERAGE_RU.md",
+      "sha256": "e5fb0176ba0ee95d46f48ed806f203c2a79278d03d026cf862ccf6a5871b00ed"
+    }
+  ]
+}

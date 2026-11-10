@@ -1,0 +1,96 @@
+"""Ghidra CPU controls against complete prepared outputs of original native paths.
+
+Whole opaque buffers are measured Unicorn outputs, not independently decoded
+geometry. The second CPU backend verifies those bytes. No original code patch.
+"""
+from pathlib import Path
+import asyncio, hashlib, json, os, struct, sys
+from mcp import ClientSession, StdioServerParameters
+from mcp.client.stdio import stdio_client
+import emulate_cursor_procedure as native
+import emulate_terrain_deform_samples as samples
+from emulate_resistance import post_context
+from emulate_hero_parties import compare_code
+from emulate_element_colors import region, pack32
+
+ROOT=Path(__file__).resolve().parent
+DRIVER, SHADOW=0x19000000,0x1A000000
+CONTROLS=['integer-frame','integer-frame-allowed','samples-deform-Terrain-source','samples-deform-Lean-high']
+DIAGNOSTICS=['full-frame','integer-deform-source']
+
+
+def build(name):
+    module=samples if name.startswith('samples-') else native
+    case=next(c for c in module.cases() if c['name']==name.removeprefix('samples-'))
+    args,checks,source=module.build(case)
+    saved=json.loads(module.path_for(args).read_text(encoding='utf8'))
+    assert saved['input']==args
+    module.verify(case,args,checks,source,saved['result'])
+    wanted=post_context(checks,saved['result'])
+    memory=json.loads(args['memory'])['regions']
+    stack=next(r for r in memory if int(r['address'],16)==0x7FFEC000)
+    data=bytearray.fromhex(stack['hex']);struct.pack_into('<I',data,0x4000,DRIVER);stack['hex']=data.hex()
+    first=args['before_calls'][0]
+    assert not first['stack_args']
+    driver=bytearray()
+    calls=args['before_calls'][1:]+[dict(address=args['address'],registers=json.loads(args['registers']),stack_args=[])]
+    for call in calls:
+        # Same explicit zero caller register inputs; preserve actual native callees.
+        driver+=b'\xbc'+pack32(0x7FFF0004+4*len(call['stack_args']))+b'\xbd'+pack32(0x7FFF0000)
+        driver+=bytes.fromhex('31c031db31c931d231f631ff')
+        for value in reversed(call['stack_args']):driver+=b'\x68'+pack32(value)
+        driver+=b'\xb9'+pack32(int(call['registers'].get('ECX','0'),0))+b'\xb8'+pack32(int(call['address'],0))+bytes.fromhex('ffd0')
+    driver+=bytes.fromhex('bd01000000bb00000000')
+    shadow=SHADOW
+    for index,(address,blob) in enumerate(wanted.items()):
+        memory.append(region(shadow,blob))
+        driver+=compare_code(address,shadow,len(blob))+bytes.fromhex('85c07505bb')+pack32(index+1)+bytes.fromhex('21c5')
+        shadow+=(len(blob)+255)//256*256
+    driver+=bytes.fromhex('68efbeaddec3')
+    memory.append(region(DRIVER,driver))
+    params=dict(program='DKII-DX.exe',address=first['address'],registers=json.dumps(dict(first['registers'],DF='0',FPUControlWord='0x37f',FPUStatusWord='0')),
+        memory=json.dumps(dict(regions=memory)),max_steps=6000000,return_registers='EAX,EBP,EBX,ECX,EIP,ESP')
+    return params,len(wanted),sum(map(len,wanted.values()))
+
+
+async def main():
+    selected=[n for n in CONTROLS+DIAGNOSTICS if len(sys.argv)==1 or n in sys.argv[1:]]
+    server=StdioServerParameters(command=str(ROOT.parent/'ghidra-mcp-runtime/venv/Scripts/python.exe'),
+        args=[str(ROOT.parent/'ghidra-mcp/bridge_mcp_ghidra.py'),'--transport','stdio'],
+        env={**os.environ,'GHIDRA_MCP_URL':'http://127.0.0.1:8089'})
+    rows=[];diagnostics=[]
+    async with stdio_client(server) as (rd,wr):
+        async with ClientSession(rd,wr) as session:
+            await session.initialize()
+            for name in selected:
+                args,count,size=build(name)
+                tag=native.sha(json.dumps(args,sort_keys=True).encode())[:12]
+                path=ROOT/'ghidra'/f'phase132-cursor-Ghidra-{name}-{tag}.json'
+                print('Checking',name,count,size,flush=True)
+                if path.exists():
+                    saved=json.loads(path.read_text(encoding='utf8'));assert saved['input']==args
+                else:
+                    result=await session.call_tool('emulate_function',args)
+                    parsed=json.loads('\n'.join(c.text for c in result.content if c.type=='text'))
+                    saved=dict(input=args,result=parsed.get('data',parsed),tool_is_error=result.isError)
+                    path.write_text(json.dumps(saved,indent=2),encoding='utf8')
+                r=saved['result']
+                if name in DIAGNOSTICS:
+                    if name=='full-frame':
+                        assert not saved['tool_is_error'] and r['success'] and r['hit_return']
+                        assert int(r['registers']['EBP'],16)==0 and int(r['registers']['EBX'],16)==10
+                        reason='Whole heap comparison differs: native floor versus Ghidra FRNDINT round on fractional coordinates. Retained mismatch; not a passing control.'
+                    else:
+                        assert not r['success'] and r['final_pc']=='0059e5e3' and 'Unimplemented CALLOTHER pcodeop (fsin)' in r['emulation_error']
+                        reason='Original FSIN unsupported by this Ghidra CPU. Full deformed frame not a passing control; no instruction replacement.'
+                    diagnostics.append(dict(case=name,file=str(path.relative_to(ROOT)),sha256=native.sha(path.read_bytes()),reason=reason))
+                    print(name,'retained diagnostic',flush=True);continue
+                assert not saved['tool_is_error'] and r['success'] and r['hit_return'],(name,{k:v for k,v in r.items() if k!='memory'})
+                assert all(int(r['registers'][k],16)==v for k,v in dict(EAX=1,EBP=1,EBX=0,ECX=0).items()),(name,r)
+                rows.append(dict(case=name,file=str(path.relative_to(ROOT)),sha256=native.sha(path.read_bytes()),checked_regions=count,checked_bytes=size))
+                print(name,'Ghidra passed',flush=True)
+    if len(selected)==len(CONTROLS+DIAGNOSTICS):
+        (ROOT/'phase132-cursor-crosschecks.json').write_text(json.dumps(dict(scope=__doc__,replays=rows,diagnostics=diagnostics),indent=2),encoding='utf8')
+
+
+if __name__=='__main__':asyncio.run(main())

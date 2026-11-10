@@ -1,0 +1,39 @@
+{
+  "phase": 91,
+  "date": "2026-10-28",
+  "status": "Portal spawn, animation gate and actual XYZ consumer published",
+  "previous_goal_turn_classification": "progress",
+  "findings": [
+    "Native spawn point from room anchor+1.5 cells; raw E94/E98 affect post-animation exit, not initial spawn",
+    "Units4096/cell; signed/fractional XY shifts and actual map-list movement confirmed; finalZ overwritten by floor",
+    "Native animation/action initializers, waiting gate, actual animation tick/null-GFX branch and AI dispatcher tested",
+    "14cases84replays14complete1343byte images;117 native spans/6PE blocks; API738 exact container patches82files3734views8refusals",
+    "Package70, allprevious69 components unchanged;4sourceEXEs unchanged;0game function/vtable patches"
+  ],
+  "evidence": [
+    {
+      "file": "portal-exit-semantics.json",
+      "sha256": "be54f1b187a8082e5d0d2340d9379bfb3a219e02158b5defbb76aee704fc1916"
+    },
+    {
+      "file": "phase91-validation.json",
+      "sha256": "648393b9c3f8e5cc911b046d9aa6f96993a76d744a980a46fd5737bb69fd1000"
+    },
+    {
+      "file": "phase91-primary-manifest.json",
+      "sha256": "c9ad3753512fd26f76f63b24706e8528fd9f64b5a90cfbbd47853ac4e57f837d"
+    },
+    {
+      "file": "phase91-portal-emulations.json",
+      "sha256": "ec6bd998e29216612884473bb4729b466522954faaf8efde42928c37b89ed3df"
+    },
+    {
+      "file": "native_portal_offsets.py",
+      "sha256": "80854e7f5dc606e196ce759ac78aaf9b8b0d2a74a1411a55cd287e2703c50f64"
+    }
+  ],
+  "next_action": "Trace actual consumers of loaded Variables types113/114. Review phase92-possession-copy-leads.json for immediate aggregate pointers and overlapping/indexed reads; then follow possession/stat/health paths and compare actual native outcomes under controlled variable changes. Do not infer bonus meaning from OpenKeeper names or direct-xref absence.",
+  "goal_achieved": false,
+  "significant_unknowns_remain": true,
+  "preserved_scope": "All15 requested file families; possession bonus semantics,Objects34C,Traps204,Doors236,Terrain198/224,Creature Priority/Jump and remaining consumers stay open."
+}

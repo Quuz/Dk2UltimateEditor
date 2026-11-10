@@ -1,0 +1,29 @@
+{
+  "phase": 78,
+  "date": "2026-10-28",
+  "native_compositions": 56,
+  "complete_executed_functions": 11,
+  "additional_static_functions": 5,
+  "primary_data_ranges": 3,
+  "actual_initialized_AI_rows": 281,
+  "AI_table_bytes_compared_per_case": 7025,
+  "predicate_table_bytes_compared_per_case": 102,
+  "category22_states_tested": 9,
+  "corpus_files_hashchecked": 82,
+  "creature_spell_records": 3535,
+  "exact_container_patch_cases": 2248,
+  "API_rule_values": 256,
+  "API_invalid_input_checks": 11,
+  "source_executables_unchanged": 4,
+  "package_components": 67,
+  "AlternativeShotRoom_gameplay_meaning_assigned": false,
+  "whole_AI_or_gameplay_run": false,
+  "source_binary_or_game_data_writes": 0,
+  "significant_unknowns_remain": true,
+  "limitations": [
+    "Only exact hashed DX executable dynamically checked here; no new claims for old/RC3/Flame-patched code.",
+    "World, creature/definition buffers and level coefficient table are explicit data fixtures. Native code bytes are never replaced. Both initializers, real World getter and all five predicates execute.",
+    "Diagnostic helper478050 is additionally called by observer after native predicate EAX is saved. Final EAX/ECX/EBP are comparison results; saved OUT0 is the actual predicate return.",
+    "AlternativeE8/E9 gameplay replacement remains unresolved. Food/Hatchery reference and static hunger path are search clues only. No real game, renderer, GUI or original file writes."
+  ]
+}

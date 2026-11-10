@@ -1,0 +1,38 @@
+{
+  "phase": 81,
+  "date": "2026-10-28",
+  "status": "Native EffectElement creation published;remaining format semantics unresolved",
+  "previous_goal_turn_classification": "Progress: complete native spawn,allocation,constructors,ID/map/parent registration and initialization;not just isolated color fragments.",
+  "schema": "element-initialization-semantics.json",
+  "supplement": "element-color-semantics.json.phase81_complete_initialization",
+  "validation": "phase81-validation.json",
+  "findings": [
+    "Speed signed16 vs HP/scale unsigned16;upper bounds inclusive for speed/HP,exclusive for scale.",
+    "Original CBridge exists/get and engine-interface separation confirmed. Earlier wrong addresses/types are rejected analysis hypotheses,not editor bugs.",
+    "26 logical cases/78 replays;23 successful complete287-byte object states,3 allocation/bounds failures.",
+    "Palette pairs00,FF00,00FF,FFFF preserve all287 object bytes and RNG under explicit fixtures;global meaning remains unknown.",
+    "2460 exact container patches;82 prior-hash inputs/48416 records,4EXEs unchanged,67 package components."
+  ],
+  "evidence": [
+    {
+      "file": "phase81-element-initialization-emulations.json",
+      "sha256": "0afc0f930b4e5275c56f75836878691568421cad62ed36efab6a30cfd9b5fce3"
+    },
+    {
+      "file": "phase81-primary-manifest.json",
+      "sha256": "a5ab64b5e352258ed7a9abd076d9b15a5fd28ef7ce59f376d58e0b857da53a5b"
+    },
+    {
+      "file": "phase81-validation.json",
+      "sha256": "f6179bb8fb7de0860aad54e8afd35589a3b898e1848cfd53ef3a2f2e26569ba0"
+    },
+    {
+      "file": "element-initialization-semantics.json",
+      "sha256": "f59a42630615f2008b85d3b42f4922403bbfe54cdda321000e9891bef7e76acd"
+    }
+  ],
+  "scope": "Prepared definitions,explicit engine callbacks,uniform motion coefficients,parent spread0,empty map/child list. No raw loader execution,renderer,late ticks,deletion,collision or player-color branch.",
+  "significant_unknowns_remain": true,
+  "goal_achieved": false,
+  "next_action": "Do not repeat26cases/78replays or2460patches. To advance B1/B2 inspect actual nonzero-index resource/renderer consumers with proven object lineage,or choose another unresolved family field. Avoid global conclusions from same-offset hits. KeeperC8,AP04/08,AbilityJump/Priority,Terrain198/224,Traps204,Objects34C,Doors236 and spellE8/E9 global meaning remain open. Existing lightning immunity mask is already confirmed and must not be rediscovered."
+}

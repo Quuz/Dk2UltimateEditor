@@ -1,0 +1,1805 @@
+{
+  "scope": "Phase171: Lightning/Deckem/Guided composed with ordinary damage.\n\nOriginal complete collision and selected complete Shot ticks, valid native\nAI tables and prepared Creature/World/map context. The scene is bounded;\nit is not a natural combat scheduler or a complete child-Shot simulation.\n",
+  "replays": [
+    {
+      "case": {
+        "process": 9,
+        "mode": 7,
+        "data1": 80,
+        "data2": 2,
+        "mask": 4,
+        "root": "collision",
+        "HP": 1000,
+        "name": "lightning-hit"
+      },
+      "file": "ghidra\\phase171-target-lightning-hit-72a22d4ebe18.json",
+      "sha256": "657fd5b1bedc7a45f4ce769a9cba252413be5e68afe8885d6880dae61f82fd7a",
+      "outcome": {
+        "HP": [
+          760
+        ],
+        "state": [
+          255
+        ],
+        "reaction": 20,
+        "requests": [
+          {
+            "target": 271581184,
+            "delta": -80,
+            "before": 1000,
+            "caller": "0x4af2d6"
+          },
+          {
+            "target": 271581184,
+            "delta": -80,
+            "before": 920,
+            "caller": "0x4ac58e"
+          }
+        ],
+        "callback_calls": 1,
+        "Data1": 80,
+        "Data2": 2,
+        "events": [
+          {
+            "caller_return": 4898758,
+            "event_mask": 4,
+            "instance": 268525708,
+            "tick": 0,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 0
+          }
+        ],
+        "ShotHP": 0,
+        "ShotTarget": 101,
+        "full_regions": 67,
+        "full_bytes": 141194,
+        "native_steps": 27198
+      }
+    },
+    {
+      "case": {
+        "process": 9,
+        "mode": 0,
+        "data1": 80,
+        "data2": 2,
+        "mask": 4,
+        "root": "collision",
+        "HP": 1000,
+        "name": "lightning-process-only"
+      },
+      "file": "ghidra\\phase171-target-lightning-process-only-7f73c050c446.json",
+      "sha256": "2d4d70ec05de1bad38f823953790f76a6aa7b9a0c741dcebf2e530858761a016",
+      "outcome": {
+        "HP": [
+          920
+        ],
+        "state": [
+          255
+        ],
+        "reaction": 20,
+        "requests": [
+          {
+            "target": 271581184,
+            "delta": -80,
+            "before": 1000,
+            "caller": "0x4af2d6"
+          }
+        ],
+        "callback_calls": 1,
+        "Data1": 80,
+        "Data2": 2,
+        "events": [
+          {
+            "caller_return": 4898758,
+            "event_mask": 4,
+            "instance": 268525708,
+            "tick": 0,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 0
+          }
+        ],
+        "ShotHP": 0,
+        "ShotTarget": 101,
+        "full_regions": 67,
+        "full_bytes": 141194,
+        "native_steps": 26897
+      }
+    },
+    {
+      "case": {
+        "process": 9,
+        "mode": 7,
+        "data1": 80,
+        "data2": 2,
+        "mask": 2,
+        "root": "collision",
+        "HP": 1000,
+        "name": "lightning-mask-miss"
+      },
+      "file": "ghidra\\phase171-target-lightning-mask-miss-e66af69fb1a9.json",
+      "sha256": "5af0d1c924641d309771817354c0ed36117bfc0c7f342e05ca373eda46315a1f",
+      "outcome": {
+        "HP": [
+          920
+        ],
+        "state": [
+          1
+        ],
+        "reaction": 0,
+        "requests": [
+          {
+            "target": 271581184,
+            "delta": -80,
+            "before": 1000,
+            "caller": "0x4ac58e"
+          }
+        ],
+        "callback_calls": 0,
+        "Data1": 80,
+        "Data2": 2,
+        "events": [
+          {
+            "caller_return": 4898758,
+            "event_mask": 4,
+            "instance": 268525708,
+            "tick": 0,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 1
+          }
+        ],
+        "ShotHP": 0,
+        "ShotTarget": 101,
+        "full_regions": 67,
+        "full_bytes": 141194,
+        "native_steps": 26347
+      }
+    },
+    {
+      "case": {
+        "process": 9,
+        "mode": 7,
+        "data1": 80,
+        "data2": 2,
+        "mask": 4,
+        "root": "collision",
+        "HP": 1000,
+        "extra_flags": 1,
+        "name": "lightning-immune-extra1"
+      },
+      "file": "ghidra\\phase171-target-lightning-immune-extra1-e15adbdc99d4.json",
+      "sha256": "df75f148d75b09d7a13d48d442adf61d5527497c60cc7e541b74969bb2a1ef77",
+      "outcome": {
+        "HP": [
+          920
+        ],
+        "state": [
+          1
+        ],
+        "reaction": 0,
+        "requests": [
+          {
+            "target": 271581184,
+            "delta": -80,
+            "before": 1000,
+            "caller": "0x4ac58e"
+          }
+        ],
+        "callback_calls": 1,
+        "Data1": 80,
+        "Data2": 2,
+        "events": [
+          {
+            "caller_return": 4898758,
+            "event_mask": 4,
+            "instance": 268525708,
+            "tick": 0,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 0
+          }
+        ],
+        "ShotHP": 0,
+        "ShotTarget": 101,
+        "full_regions": 67,
+        "full_bytes": 141194,
+        "native_steps": 26443
+      }
+    },
+    {
+      "case": {
+        "process": 9,
+        "mode": 7,
+        "data1": 80,
+        "data2": 2,
+        "mask": 4,
+        "root": "collision",
+        "HP": 1000,
+        "invulnerable": 1,
+        "name": "lightning-invulnerable445"
+      },
+      "file": "ghidra\\phase171-target-lightning-invulnerable445-d55e275c017d.json",
+      "sha256": "e6e55125d0d6b8fb9c51483417171483fb694d96a8fe07818805c5e3ca179c13",
+      "outcome": {
+        "HP": [
+          920
+        ],
+        "state": [
+          255
+        ],
+        "reaction": 20,
+        "requests": [
+          {
+            "target": 271581184,
+            "delta": -80,
+            "before": 1000,
+            "caller": "0x4af2d6"
+          }
+        ],
+        "callback_calls": 1,
+        "Data1": 80,
+        "Data2": 2,
+        "events": [
+          {
+            "caller_return": 4898758,
+            "event_mask": 4,
+            "instance": 268525708,
+            "tick": 0,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 0
+          }
+        ],
+        "ShotHP": 0,
+        "ShotTarget": 101,
+        "full_regions": 67,
+        "full_bytes": 141194,
+        "native_steps": 26932
+      }
+    },
+    {
+      "case": {
+        "process": 9,
+        "mode": 7,
+        "data1": 80,
+        "data2": 2,
+        "mask": 4,
+        "root": "collision",
+        "HP": 1000,
+        "conductive": true,
+        "name": "lightning-conductive"
+      },
+      "file": "ghidra\\phase171-target-lightning-conductive-84e72665f78b.json",
+      "sha256": "dd9bc29431fec2a390053cac41548b0e8db2e98cbeebc881c9d7d71319333834",
+      "outcome": {
+        "HP": [
+          680
+        ],
+        "state": [
+          255
+        ],
+        "reaction": 20,
+        "requests": [
+          {
+            "target": 271581184,
+            "delta": -160,
+            "before": 1000,
+            "caller": "0x4af2d6"
+          },
+          {
+            "target": 271581184,
+            "delta": -80,
+            "before": 840,
+            "caller": "0x4ac58e"
+          }
+        ],
+        "callback_calls": 1,
+        "Data1": 80,
+        "Data2": 2,
+        "events": [
+          {
+            "caller_return": 4898758,
+            "event_mask": 4,
+            "instance": 268525708,
+            "tick": 0,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 0
+          }
+        ],
+        "ShotHP": 0,
+        "ShotTarget": 101,
+        "full_regions": 67,
+        "full_bytes": 141194,
+        "native_steps": 27318
+      }
+    },
+    {
+      "case": {
+        "process": 9,
+        "mode": 7,
+        "data1": 80,
+        "data2": 2,
+        "mask": 4,
+        "root": "collision",
+        "HP": 1000,
+        "conductive": true,
+        "extra_flags": 1,
+        "name": "lightning-conductive-immune"
+      },
+      "file": "ghidra\\phase171-target-lightning-conductive-immune-39f594d1fb9f.json",
+      "sha256": "559765e637da826e7ef077d31b20e18e950210be46bc33baaf28a0870721a4dc",
+      "outcome": {
+        "HP": [
+          920
+        ],
+        "state": [
+          1
+        ],
+        "reaction": 0,
+        "requests": [
+          {
+            "target": 271581184,
+            "delta": -80,
+            "before": 1000,
+            "caller": "0x4ac58e"
+          }
+        ],
+        "callback_calls": 1,
+        "Data1": 80,
+        "Data2": 2,
+        "events": [
+          {
+            "caller_return": 4898758,
+            "event_mask": 4,
+            "instance": 268525708,
+            "tick": 0,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 0
+          }
+        ],
+        "ShotHP": 0,
+        "ShotTarget": 101,
+        "full_regions": 67,
+        "full_bytes": 141194,
+        "native_steps": 26561
+      }
+    },
+    {
+      "case": {
+        "process": 9,
+        "mode": 7,
+        "data1": 80,
+        "data2": 2,
+        "mask": 4,
+        "root": "collision",
+        "HP": 1000,
+        "armour": 2,
+        "name": "lightning-armoured"
+      },
+      "file": "ghidra\\phase171-target-lightning-armoured-fea5b4f0d1f3.json",
+      "sha256": "1ff10c8d39de79b371480a9882fd5a6c3e748cdf34af34172203352cd56023e6",
+      "outcome": {
+        "HP": [
+          840
+        ],
+        "state": [
+          255
+        ],
+        "reaction": 20,
+        "requests": [
+          {
+            "target": 271581184,
+            "delta": -80,
+            "before": 1000,
+            "caller": "0x4af2d6"
+          },
+          {
+            "target": 271581184,
+            "delta": -80,
+            "before": 960,
+            "caller": "0x4ac58e"
+          }
+        ],
+        "callback_calls": 1,
+        "Data1": 80,
+        "Data2": 2,
+        "events": [
+          {
+            "caller_return": 4898758,
+            "event_mask": 4,
+            "instance": 268525708,
+            "tick": 0,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 0
+          }
+        ],
+        "ShotHP": 0,
+        "ShotTarget": 101,
+        "full_regions": 67,
+        "full_bytes": 141194,
+        "native_steps": 27196
+      }
+    },
+    {
+      "case": {
+        "process": 9,
+        "mode": 7,
+        "data1": 80,
+        "data2": 2,
+        "mask": 4,
+        "root": "collision",
+        "HP": 1000,
+        "ai_tables": false,
+        "name": "lightning-no-AI-tables"
+      },
+      "file": "ghidra\\phase171-target-lightning-no-AI-tables-d940bc03a73e.json",
+      "sha256": "917046c6c82159fac3b137e61a29c46352e29784e04dfd8ae2c118b4b0d0edc5",
+      "outcome": {
+        "HP": [
+          840
+        ],
+        "state": [
+          1
+        ],
+        "reaction": 20,
+        "requests": [
+          {
+            "target": 271581184,
+            "delta": -80,
+            "before": 1000,
+            "caller": "0x4af2d6"
+          },
+          {
+            "target": 271581184,
+            "delta": -80,
+            "before": 920,
+            "caller": "0x4ac58e"
+          }
+        ],
+        "callback_calls": 1,
+        "Data1": 80,
+        "Data2": 2,
+        "events": [
+          {
+            "caller_return": 4898758,
+            "event_mask": 4,
+            "instance": 268525708,
+            "tick": 0,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 0
+          }
+        ],
+        "ShotHP": 0,
+        "ShotTarget": 101,
+        "full_regions": 64,
+        "full_bytes": 129772,
+        "native_steps": 21989
+      }
+    },
+    {
+      "case": {
+        "process": 9,
+        "mode": 7,
+        "data1": 0,
+        "data2": 2,
+        "mask": 4,
+        "root": "collision",
+        "HP": 1000,
+        "name": "lightning-zero"
+      },
+      "file": "ghidra\\phase171-target-lightning-zero-de978048a38f.json",
+      "sha256": "66474241e282a662bffc8709080cce892ce536e48ff2768707e8e251ae8baf60",
+      "outcome": {
+        "HP": [
+          1000
+        ],
+        "state": [
+          255
+        ],
+        "reaction": 20,
+        "requests": [
+          {
+            "target": 271581184,
+            "delta": 0,
+            "before": 1000,
+            "caller": "0x4af2d6"
+          }
+        ],
+        "callback_calls": 1,
+        "Data1": 0,
+        "Data2": 2,
+        "events": [
+          {
+            "caller_return": 4898758,
+            "event_mask": 4,
+            "instance": 268525708,
+            "tick": 0,
+            "Data1": 0,
+            "Data2": 2,
+            "return_EAX": 0
+          }
+        ],
+        "ShotHP": 0,
+        "ShotTarget": 101,
+        "full_regions": 67,
+        "full_bytes": 141194,
+        "native_steps": 26810
+      }
+    },
+    {
+      "case": {
+        "process": 9,
+        "mode": 7,
+        "data1": 4294967216,
+        "data2": 2,
+        "mask": 4,
+        "root": "collision",
+        "HP": 1000,
+        "name": "lightning-negative"
+      },
+      "file": "ghidra\\phase171-target-lightning-negative-3c5e9829d2b4.json",
+      "sha256": "6c4e002a7ef05abbdb547dba60af69ebdc1fa3dfb98d8d9a36a222881cc7048f",
+      "outcome": {
+        "HP": [
+          920
+        ],
+        "state": [
+          255
+        ],
+        "reaction": 20,
+        "requests": [
+          {
+            "target": 271581184,
+            "delta": -80,
+            "before": 1000,
+            "caller": "0x4af2d6"
+          }
+        ],
+        "callback_calls": 1,
+        "Data1": 4294967216,
+        "Data2": 2,
+        "events": [
+          {
+            "caller_return": 4898758,
+            "event_mask": 4,
+            "instance": 268525708,
+            "tick": 0,
+            "Data1": 4294967216,
+            "Data2": 2,
+            "return_EAX": 0
+          }
+        ],
+        "ShotHP": 0,
+        "ShotTarget": 101,
+        "full_regions": 67,
+        "full_bytes": 141194,
+        "native_steps": 26919
+      }
+    },
+    {
+      "case": {
+        "process": 9,
+        "mode": 7,
+        "data1": 80,
+        "data2": 2,
+        "mask": 4,
+        "root": "collision",
+        "HP": 1000,
+        "extra_flags": 1,
+        "invulnerable": 1,
+        "name": "lightning-immune-and445"
+      },
+      "file": "ghidra\\phase171-target-lightning-immune-and445-b1a03ff7f08a.json",
+      "sha256": "2492459eca2ba7bba1bcbc91b5a65f3a4480a86ba881fb34a033ee94a4d5a5a9",
+      "outcome": {
+        "HP": [
+          1000
+        ],
+        "state": [
+          1
+        ],
+        "reaction": 0,
+        "requests": [],
+        "callback_calls": 1,
+        "Data1": 80,
+        "Data2": 2,
+        "events": [
+          {
+            "caller_return": 4898758,
+            "event_mask": 4,
+            "instance": 268525708,
+            "tick": 0,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 0
+          }
+        ],
+        "ShotHP": 0,
+        "ShotTarget": 101,
+        "full_regions": 67,
+        "full_bytes": 141194,
+        "native_steps": 26299
+      }
+    },
+    {
+      "case": {
+        "process": 9,
+        "mode": 7,
+        "data1": 80,
+        "data2": 2,
+        "mask": 4,
+        "root": "collision",
+        "HP": 1000,
+        "creature_flags": 16384,
+        "name": "lightning-primary4000"
+      },
+      "file": "ghidra\\phase171-target-lightning-primary4000-5219243c11c8.json",
+      "sha256": "4ff6f8583ba990712a0d0c507c99432024bfb98d53ed917bc14fb6c00991bbe7",
+      "outcome": {
+        "HP": [
+          1000
+        ],
+        "state": [
+          1
+        ],
+        "reaction": 20,
+        "requests": [
+          {
+            "target": 271581184,
+            "delta": -80,
+            "before": 1000,
+            "caller": "0x4af2d6"
+          },
+          {
+            "target": 271581184,
+            "delta": -80,
+            "before": 1000,
+            "caller": "0x4ac58e"
+          }
+        ],
+        "callback_calls": 1,
+        "Data1": 80,
+        "Data2": 2,
+        "events": [
+          {
+            "caller_return": 4898758,
+            "event_mask": 4,
+            "instance": 268525708,
+            "tick": 0,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 0
+          }
+        ],
+        "ShotHP": 0,
+        "ShotTarget": 101,
+        "full_regions": 67,
+        "full_bytes": 141194,
+        "native_steps": 26412
+      }
+    },
+    {
+      "case": {
+        "process": 29,
+        "mode": 7,
+        "data1": 80,
+        "data2": 2,
+        "mask": 4,
+        "root": "collision",
+        "HP": 1000,
+        "name": "deckem-hit"
+      },
+      "file": "ghidra\\phase171-target-deckem-hit-c23da6d015f9.json",
+      "sha256": "e6c3b99f13bd904aa9ac4e01cc8b1d415f00f47f867c8918b68e36933423d2fd",
+      "outcome": {
+        "HP": [
+          840
+        ],
+        "state": [
+          255
+        ],
+        "reaction": 0,
+        "requests": [
+          {
+            "target": 271581184,
+            "delta": -80,
+            "before": 1000,
+            "caller": "0x4ac58e"
+          }
+        ],
+        "callback_calls": 1,
+        "Data1": 80,
+        "Data2": 2,
+        "events": [
+          {
+            "caller_return": 4898758,
+            "event_mask": 4,
+            "instance": 268525708,
+            "tick": 0,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 0
+          }
+        ],
+        "ShotHP": 0,
+        "ShotTarget": 101,
+        "full_regions": 67,
+        "full_bytes": 141194,
+        "native_steps": 26967
+      }
+    },
+    {
+      "case": {
+        "process": 29,
+        "mode": 0,
+        "data1": 80,
+        "data2": 2,
+        "mask": 4,
+        "root": "collision",
+        "HP": 1000,
+        "name": "deckem-process-only"
+      },
+      "file": "ghidra\\phase171-target-deckem-process-only-52b281b457e1.json",
+      "sha256": "467b35cb13b0bcb86d72671f1e7553ccda11337739ef74fd06b205c6a4bf8056",
+      "outcome": {
+        "HP": [
+          1000
+        ],
+        "state": [
+          255
+        ],
+        "reaction": 0,
+        "requests": [],
+        "callback_calls": 1,
+        "Data1": 80,
+        "Data2": 2,
+        "events": [
+          {
+            "caller_return": 4898758,
+            "event_mask": 4,
+            "instance": 268525708,
+            "tick": 0,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 0
+          }
+        ],
+        "ShotHP": 0,
+        "ShotTarget": 101,
+        "full_regions": 67,
+        "full_bytes": 141194,
+        "native_steps": 26666
+      }
+    },
+    {
+      "case": {
+        "process": 29,
+        "mode": 7,
+        "data1": 80,
+        "data2": 2,
+        "mask": 2,
+        "root": "collision",
+        "HP": 1000,
+        "name": "deckem-mask-miss"
+      },
+      "file": "ghidra\\phase171-target-deckem-mask-miss-dcc44ae10191.json",
+      "sha256": "aab397c4a6d3f13a309262f84a6b877c1f41f4edaecff07d16d09e83c2b4663f",
+      "outcome": {
+        "HP": [
+          920
+        ],
+        "state": [
+          1
+        ],
+        "reaction": 0,
+        "requests": [
+          {
+            "target": 271581184,
+            "delta": -80,
+            "before": 1000,
+            "caller": "0x4ac58e"
+          }
+        ],
+        "callback_calls": 0,
+        "Data1": 80,
+        "Data2": 2,
+        "events": [
+          {
+            "caller_return": 4898758,
+            "event_mask": 4,
+            "instance": 268525708,
+            "tick": 0,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 1
+          }
+        ],
+        "ShotHP": 0,
+        "ShotTarget": 101,
+        "full_regions": 67,
+        "full_bytes": 141194,
+        "native_steps": 26347
+      }
+    },
+    {
+      "case": {
+        "process": 29,
+        "mode": 7,
+        "data1": 80,
+        "data2": 2,
+        "mask": 4,
+        "root": "collision",
+        "HP": 1000,
+        "invulnerable": 1,
+        "name": "deckem-invulnerable445"
+      },
+      "file": "ghidra\\phase171-target-deckem-invulnerable445-eb0eae9a2ae5.json",
+      "sha256": "4f5eda74e1ac673d61ff0a7f9ccec5e77903f175b5110a8eceda023ca768bc80",
+      "outcome": {
+        "HP": [
+          1000
+        ],
+        "state": [
+          255
+        ],
+        "reaction": 0,
+        "requests": [],
+        "callback_calls": 1,
+        "Data1": 80,
+        "Data2": 2,
+        "events": [
+          {
+            "caller_return": 4898758,
+            "event_mask": 4,
+            "instance": 268525708,
+            "tick": 0,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 0
+          }
+        ],
+        "ShotHP": 0,
+        "ShotTarget": 101,
+        "full_regions": 67,
+        "full_bytes": 141194,
+        "native_steps": 26701
+      }
+    },
+    {
+      "case": {
+        "process": 29,
+        "mode": 7,
+        "data1": 80,
+        "data2": 2,
+        "mask": 4,
+        "root": "collision",
+        "HP": 1000,
+        "ai_tables": false,
+        "name": "deckem-no-AI-tables"
+      },
+      "file": "ghidra\\phase171-target-deckem-no-AI-tables-f679d072eb6c.json",
+      "sha256": "f554f88334b88d482ed389e71cc930d2482f59b322f277b3e3fd29c53efcc93b",
+      "outcome": {
+        "HP": [
+          920
+        ],
+        "state": [
+          1
+        ],
+        "reaction": 0,
+        "requests": [
+          {
+            "target": 271581184,
+            "delta": -80,
+            "before": 1000,
+            "caller": "0x4ac58e"
+          }
+        ],
+        "callback_calls": 1,
+        "Data1": 80,
+        "Data2": 2,
+        "events": [
+          {
+            "caller_return": 4898758,
+            "event_mask": 4,
+            "instance": 268525708,
+            "tick": 0,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 0
+          }
+        ],
+        "ShotHP": 0,
+        "ShotTarget": 101,
+        "full_regions": 64,
+        "full_bytes": 129772,
+        "native_steps": 21758
+      }
+    },
+    {
+      "case": {
+        "process": 29,
+        "mode": 7,
+        "data1": 80,
+        "data2": 2,
+        "mask": 4,
+        "root": "collision",
+        "HP": 1000,
+        "creature_flags": 16384,
+        "name": "deckem-primary4000"
+      },
+      "file": "ghidra\\phase171-target-deckem-primary4000-2159d1ee56d6.json",
+      "sha256": "07c0086159ceb70e56dc3696e54a60efa6daccc4edc7fd16b6b8f4a8b7edd3a0",
+      "outcome": {
+        "HP": [
+          1000
+        ],
+        "state": [
+          1
+        ],
+        "reaction": 0,
+        "requests": [
+          {
+            "target": 271581184,
+            "delta": -80,
+            "before": 1000,
+            "caller": "0x4ac58e"
+          }
+        ],
+        "callback_calls": 1,
+        "Data1": 80,
+        "Data2": 2,
+        "events": [
+          {
+            "caller_return": 4898758,
+            "event_mask": 4,
+            "instance": 268525708,
+            "tick": 0,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 0
+          }
+        ],
+        "ShotHP": 0,
+        "ShotTarget": 101,
+        "full_regions": 67,
+        "full_bytes": 141194,
+        "native_steps": 26280
+      }
+    },
+    {
+      "case": {
+        "process": 29,
+        "mode": 7,
+        "data1": 0,
+        "data2": 2,
+        "mask": 4,
+        "root": "collision",
+        "HP": 1000,
+        "name": "deckem-zero"
+      },
+      "file": "ghidra\\phase171-target-deckem-zero-92dfab61c0ff.json",
+      "sha256": "8c4c16baceb9f3fad325e4dffc5bc010d7bc6544916bede7d8a711b5a2843c88",
+      "outcome": {
+        "HP": [
+          1000
+        ],
+        "state": [
+          255
+        ],
+        "reaction": 0,
+        "requests": [],
+        "callback_calls": 1,
+        "Data1": 0,
+        "Data2": 2,
+        "events": [
+          {
+            "caller_return": 4898758,
+            "event_mask": 4,
+            "instance": 268525708,
+            "tick": 0,
+            "Data1": 0,
+            "Data2": 2,
+            "return_EAX": 0
+          }
+        ],
+        "ShotHP": 0,
+        "ShotTarget": 101,
+        "full_regions": 67,
+        "full_bytes": 141194,
+        "native_steps": 26688
+      }
+    },
+    {
+      "case": {
+        "process": 29,
+        "mode": 1,
+        "data1": 80,
+        "data2": 2,
+        "mask": 4,
+        "root": "tick",
+        "HP": 1000,
+        "extra_target": true,
+        "name": "deckem-area-collision"
+      },
+      "file": "ghidra\\phase171-target-deckem-area-collision-13e9bd010e4e.json",
+      "sha256": "d6e9c853540dfd92523f02f90f573d22720d22cdd5332fa4070ecdb5e4e5f6f2",
+      "outcome": {
+        "HP": [
+          840,
+          920
+        ],
+        "state": [
+          255,
+          1
+        ],
+        "reaction": 0,
+        "requests": [
+          {
+            "target": 271581184,
+            "delta": -80,
+            "before": 1000,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 486539264,
+            "delta": -80,
+            "before": 1000,
+            "caller": "0x4ac666"
+          }
+        ],
+        "callback_calls": 1,
+        "Data1": 80,
+        "Data2": 2,
+        "events": [
+          {
+            "caller_return": 4895366,
+            "event_mask": 64,
+            "instance": 268525708,
+            "tick": 1,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 268525708,
+            "tick": 1,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4898758,
+            "event_mask": 4,
+            "instance": 268525708,
+            "tick": 1,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 0
+          },
+          {
+            "caller_return": 4896359,
+            "event_mask": 128,
+            "instance": 268525708,
+            "tick": 1,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 1
+          }
+        ],
+        "ShotHP": 0,
+        "ShotTarget": 101,
+        "full_regions": 68,
+        "full_bytes": 142793,
+        "native_steps": 28974
+      }
+    },
+    {
+      "case": {
+        "process": 29,
+        "mode": 1,
+        "data1": 80,
+        "data2": 2,
+        "mask": 64,
+        "root": "tick",
+        "HP": 1000,
+        "extra_target": true,
+        "name": "deckem-area-start"
+      },
+      "file": "ghidra\\phase171-target-deckem-area-start-28dec9bd24a5.json",
+      "sha256": "af6e6ee260febdf7dd92518f75adb7baa6602fe356368166ac6d3f0b17ebf3e8",
+      "outcome": {
+        "HP": [
+          920,
+          920
+        ],
+        "state": [
+          1,
+          1
+        ],
+        "reaction": 0,
+        "requests": [
+          {
+            "target": 271581184,
+            "delta": -80,
+            "before": 1000,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 486539264,
+            "delta": -80,
+            "before": 1000,
+            "caller": "0x4ac666"
+          }
+        ],
+        "callback_calls": 1,
+        "Data1": 80,
+        "Data2": 2,
+        "events": [
+          {
+            "caller_return": 4895366,
+            "event_mask": 64,
+            "instance": 268525708,
+            "tick": 1,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 0
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 268525708,
+            "tick": 1,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4898758,
+            "event_mask": 4,
+            "instance": 268525708,
+            "tick": 1,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4896359,
+            "event_mask": 128,
+            "instance": 268525708,
+            "tick": 1,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 1
+          }
+        ],
+        "ShotHP": 0,
+        "ShotTarget": 101,
+        "full_regions": 68,
+        "full_bytes": 142793,
+        "native_steps": 28374
+      }
+    },
+    {
+      "case": {
+        "process": 29,
+        "mode": 1,
+        "data1": 80,
+        "data2": 2,
+        "mask": 2,
+        "root": "tick",
+        "HP": 1000,
+        "extra_target": true,
+        "name": "deckem-area-tick-abort"
+      },
+      "file": "ghidra\\phase171-target-deckem-area-tick-abort-6d414156f011.json",
+      "sha256": "1f01a360a3993859e77ccc4d73b8f80e55174fee7d09936421b661c2585cf695",
+      "outcome": {
+        "HP": [
+          1000,
+          1000
+        ],
+        "state": [
+          1,
+          1
+        ],
+        "reaction": 0,
+        "requests": [],
+        "callback_calls": 1,
+        "Data1": 80,
+        "Data2": 2,
+        "events": [
+          {
+            "caller_return": 4895366,
+            "event_mask": 64,
+            "instance": 268525708,
+            "tick": 1,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 268525708,
+            "tick": 1,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 0
+          }
+        ],
+        "ShotHP": 20,
+        "ShotTarget": 0,
+        "full_regions": 68,
+        "full_bytes": 142793,
+        "native_steps": 25645
+      }
+    },
+    {
+      "case": {
+        "process": 29,
+        "mode": 1,
+        "data1": 80,
+        "data2": 2,
+        "mask": 0,
+        "root": "tick",
+        "HP": 1000,
+        "extra_target": true,
+        "name": "deckem-area-no-process"
+      },
+      "file": "ghidra\\phase171-target-deckem-area-no-process-5b8032b81671.json",
+      "sha256": "592c485dba0677073fb96eb37cacb0b542313c00c538d4546ae3d4a2c1610b16",
+      "outcome": {
+        "HP": [
+          920,
+          920
+        ],
+        "state": [
+          1,
+          1
+        ],
+        "reaction": 0,
+        "requests": [
+          {
+            "target": 271581184,
+            "delta": -80,
+            "before": 1000,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 486539264,
+            "delta": -80,
+            "before": 1000,
+            "caller": "0x4ac666"
+          }
+        ],
+        "callback_calls": 0,
+        "Data1": 80,
+        "Data2": 2,
+        "events": [
+          {
+            "caller_return": 4895366,
+            "event_mask": 64,
+            "instance": 268525708,
+            "tick": 1,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 268525708,
+            "tick": 1,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4898758,
+            "event_mask": 4,
+            "instance": 268525708,
+            "tick": 1,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4896359,
+            "event_mask": 128,
+            "instance": 268525708,
+            "tick": 1,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 1
+          }
+        ],
+        "ShotHP": 0,
+        "ShotTarget": 101,
+        "full_regions": 68,
+        "full_bytes": 142793,
+        "native_steps": 28354
+      }
+    },
+    {
+      "case": {
+        "process": 29,
+        "mode": 1,
+        "data1": 80,
+        "data2": 2,
+        "mask": 4,
+        "root": "tick",
+        "HP": 1000,
+        "extra_target": true,
+        "invulnerable": 1,
+        "name": "deckem-area-invulnerable"
+      },
+      "file": "ghidra\\phase171-target-deckem-area-invulnerable-ae84752aa3e0.json",
+      "sha256": "00d445d45e0081ff2711393049f5c21972674b4fae32ae777884fa3e259b7cff",
+      "outcome": {
+        "HP": [
+          1000,
+          1000
+        ],
+        "state": [
+          255,
+          1
+        ],
+        "reaction": 0,
+        "requests": [],
+        "callback_calls": 1,
+        "Data1": 80,
+        "Data2": 2,
+        "events": [
+          {
+            "caller_return": 4895366,
+            "event_mask": 64,
+            "instance": 268525708,
+            "tick": 1,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 268525708,
+            "tick": 1,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4898758,
+            "event_mask": 4,
+            "instance": 268525708,
+            "tick": 1,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 0
+          },
+          {
+            "caller_return": 4896359,
+            "event_mask": 128,
+            "instance": 268525708,
+            "tick": 1,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 1
+          }
+        ],
+        "ShotHP": 0,
+        "ShotTarget": 101,
+        "full_regions": 68,
+        "full_bytes": 142793,
+        "native_steps": 28584
+      }
+    },
+    {
+      "case": {
+        "process": 29,
+        "mode": 1,
+        "data1": 80,
+        "data2": 2,
+        "mask": 4,
+        "root": "tick",
+        "HP": 1000,
+        "extra_target": true,
+        "armour": 2,
+        "name": "deckem-area-armoured"
+      },
+      "file": "ghidra\\phase171-target-deckem-area-armoured-71c0dfbd5557.json",
+      "sha256": "be930cc0d0b5fba5d10b7a81b2a736d41ae08eb382dd03f4d6d7a6f21f735e81",
+      "outcome": {
+        "HP": [
+          880,
+          960
+        ],
+        "state": [
+          255,
+          1
+        ],
+        "reaction": 0,
+        "requests": [
+          {
+            "target": 271581184,
+            "delta": -80,
+            "before": 1000,
+            "caller": "0x4ac666"
+          },
+          {
+            "target": 486539264,
+            "delta": -80,
+            "before": 1000,
+            "caller": "0x4ac666"
+          }
+        ],
+        "callback_calls": 1,
+        "Data1": 80,
+        "Data2": 2,
+        "events": [
+          {
+            "caller_return": 4895366,
+            "event_mask": 64,
+            "instance": 268525708,
+            "tick": 1,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4895508,
+            "event_mask": 2,
+            "instance": 268525708,
+            "tick": 1,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 1
+          },
+          {
+            "caller_return": 4898758,
+            "event_mask": 4,
+            "instance": 268525708,
+            "tick": 1,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 0
+          },
+          {
+            "caller_return": 4896359,
+            "event_mask": 128,
+            "instance": 268525708,
+            "tick": 1,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 1
+          }
+        ],
+        "ShotHP": 0,
+        "ShotTarget": 101,
+        "full_regions": 68,
+        "full_bytes": 142793,
+        "native_steps": 28972
+      }
+    },
+    {
+      "case": {
+        "process": 28,
+        "mode": 7,
+        "data1": 80,
+        "data2": 2,
+        "mask": 4,
+        "root": "collision",
+        "HP": 1000,
+        "name": "guided-hit"
+      },
+      "file": "ghidra\\phase171-target-guided-hit-0657051d28d1.json",
+      "sha256": "6ad74d11c6f34cc63eca7a43d15aea26b8f002bce98e7b4237ad928f11995ff0",
+      "outcome": {
+        "HP": [
+          920
+        ],
+        "state": [
+          1
+        ],
+        "reaction": 0,
+        "requests": [
+          {
+            "target": 271581184,
+            "delta": -80,
+            "before": 1000,
+            "caller": "0x4ac58e"
+          }
+        ],
+        "callback_calls": 1,
+        "Data1": 80,
+        "Data2": 2,
+        "events": [
+          {
+            "caller_return": 4898758,
+            "event_mask": 4,
+            "instance": 268525708,
+            "tick": 0,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 1
+          }
+        ],
+        "ShotHP": 0,
+        "ShotTarget": 101,
+        "full_regions": 67,
+        "full_bytes": 141194,
+        "native_steps": 26554
+      }
+    },
+    {
+      "case": {
+        "process": 28,
+        "mode": 7,
+        "data1": 80,
+        "data2": 2,
+        "mask": 2,
+        "root": "collision",
+        "HP": 1000,
+        "name": "guided-mask-miss"
+      },
+      "file": "ghidra\\phase171-target-guided-mask-miss-a2f57866c28c.json",
+      "sha256": "3d58e5dee321ad43ea7331dfde501fe1efda63ae8a6c424d8cc7c98a6b06d5a2",
+      "outcome": {
+        "HP": [
+          920
+        ],
+        "state": [
+          1
+        ],
+        "reaction": 0,
+        "requests": [
+          {
+            "target": 271581184,
+            "delta": -80,
+            "before": 1000,
+            "caller": "0x4ac58e"
+          }
+        ],
+        "callback_calls": 0,
+        "Data1": 80,
+        "Data2": 2,
+        "events": [
+          {
+            "caller_return": 4898758,
+            "event_mask": 4,
+            "instance": 268525708,
+            "tick": 0,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 1
+          }
+        ],
+        "ShotHP": 0,
+        "ShotTarget": 101,
+        "full_regions": 67,
+        "full_bytes": 141194,
+        "native_steps": 26347
+      }
+    },
+    {
+      "case": {
+        "process": 28,
+        "mode": 0,
+        "data1": 80,
+        "data2": 2,
+        "mask": 4,
+        "root": "collision",
+        "HP": 1000,
+        "name": "guided-process-only"
+      },
+      "file": "ghidra\\phase171-target-guided-process-only-2abcbdb4e835.json",
+      "sha256": "d929f1eca216af0419599544f2df62cf0461122b6eac53e2b1bb18696a757ea7",
+      "outcome": {
+        "HP": [
+          1000
+        ],
+        "state": [
+          1
+        ],
+        "reaction": 0,
+        "requests": [],
+        "callback_calls": 1,
+        "Data1": 80,
+        "Data2": 2,
+        "events": [
+          {
+            "caller_return": 4898758,
+            "event_mask": 4,
+            "instance": 268525708,
+            "tick": 0,
+            "Data1": 80,
+            "Data2": 2,
+            "return_EAX": 1
+          }
+        ],
+        "ShotHP": 0,
+        "ShotTarget": 101,
+        "full_regions": 67,
+        "full_bytes": 141194,
+        "native_steps": 26375
+      }
+    },
+    {
+      "case": {
+        "process": 9,
+        "mode": 7,
+        "data1": 80,
+        "data2": 2,
+        "mask": 4,
+        "root": "collision",
+        "HP": 1000,
+        "name": "source-stun97",
+        "source_record": {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Battle for the Sun Qz2Globals.kld",
+          "record_index": 96
+        }
+      },
+      "file": "ghidra\\phase171-target-source-stun97-c4c6ddb3c00c.json",
+      "sha256": "3c916dc447f4984150e40d57b0a7f36a41bf3af269e1efe35c11d89cafe8361c",
+      "outcome": {
+        "HP": [
+          850
+        ],
+        "state": [
+          255
+        ],
+        "reaction": 20,
+        "requests": [
+          {
+            "target": 271581184,
+            "delta": -50,
+            "before": 1000,
+            "caller": "0x4af2d6"
+          },
+          {
+            "target": 271581184,
+            "delta": -50,
+            "before": 950,
+            "caller": "0x4ac58e"
+          }
+        ],
+        "callback_calls": 1,
+        "Data1": 50,
+        "Data2": 0,
+        "events": [
+          {
+            "caller_return": 4898758,
+            "event_mask": 4,
+            "instance": 268525708,
+            "tick": 0,
+            "Data1": 50,
+            "Data2": 0,
+            "return_EAX": 0
+          }
+        ],
+        "ShotHP": 6,
+        "ShotTarget": 101,
+        "full_regions": 67,
+        "full_bytes": 141194,
+        "native_steps": 27032
+      }
+    },
+    {
+      "case": {
+        "process": 28,
+        "mode": 7,
+        "data1": 80,
+        "data2": 2,
+        "mask": 4,
+        "root": "collision",
+        "HP": 1000,
+        "name": "source-guided35",
+        "source_record": {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\Shots.kwd",
+          "record_index": 34
+        }
+      },
+      "file": "ghidra\\phase171-target-source-guided35-569050714378.json",
+      "sha256": "bae25464b3a0150d61af00a7bc639783d9273210e727b20c752ed692abaf39cb",
+      "outcome": {
+        "HP": [
+          900
+        ],
+        "state": [
+          1
+        ],
+        "reaction": 0,
+        "requests": [
+          {
+            "target": 271581184,
+            "delta": -100,
+            "before": 1000,
+            "caller": "0x4ac58e"
+          }
+        ],
+        "callback_calls": 1,
+        "Data1": 100,
+        "Data2": 0,
+        "events": [
+          {
+            "caller_return": 4898758,
+            "event_mask": 4,
+            "instance": 268525708,
+            "tick": 0,
+            "Data1": 100,
+            "Data2": 0,
+            "return_EAX": 1
+          }
+        ],
+        "ShotHP": 0,
+        "ShotTarget": 101,
+        "full_regions": 67,
+        "full_bytes": 141194,
+        "native_steps": 26553
+      }
+    },
+    {
+      "case": {
+        "process": 29,
+        "mode": 7,
+        "data1": 80,
+        "data2": 2,
+        "mask": 4,
+        "root": "collision",
+        "HP": 1000,
+        "name": "source-reaper52",
+        "source_record": {
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\Shots.kwd",
+          "record_index": 51
+        }
+      },
+      "file": "ghidra\\phase171-target-source-reaper52-2bbefe94ccba.json",
+      "sha256": "157c123f4d69b183fa7bc13021f243f012abb96a33d2b381b1d137edd64a739d",
+      "outcome": {
+        "HP": [
+          900
+        ],
+        "state": [
+          255
+        ],
+        "reaction": 0,
+        "requests": [
+          {
+            "target": 271581184,
+            "delta": -50,
+            "before": 1000,
+            "caller": "0x4ac58e"
+          }
+        ],
+        "callback_calls": 1,
+        "Data1": 50,
+        "Data2": 0,
+        "events": [
+          {
+            "caller_return": 4898758,
+            "event_mask": 4,
+            "instance": 268525708,
+            "tick": 0,
+            "Data1": 50,
+            "Data2": 0,
+            "return_EAX": 0
+          }
+        ],
+        "ShotHP": 0,
+        "ShotTarget": 101,
+        "full_regions": 67,
+        "full_bytes": 141194,
+        "native_steps": 26896
+      }
+    }
+  ]
+}

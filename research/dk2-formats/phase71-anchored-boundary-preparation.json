@@ -1,0 +1,116 @@
+[
+  {
+    "anchor": 4381210,
+    "canonical_guess": 4381209,
+    "canonical_bytes": "668b8604010000",
+    "canonical_text": "mov ax, word ptr [esi + 0x104]",
+    "context": [
+      "0042d9e5: mov ecx, dword ptr [eax + 4]",
+      "0042d9e8: mov dword ptr [edx + 4], ecx",
+      "0042d9eb: mov eax, dword ptr [eax + 8]",
+      "0042d9ee: mov dword ptr [esi + 0x144], 1",
+      "0042d9f8: mov dword ptr [edx + 8], eax",
+      "0042d9fb: mov dword ptr [esi + 0x154], ebx",
+      "0042da01: mov dword ptr [esi + 0x148], ebx",
+      "0042da07: mov dword ptr [esi + 0x14c], ebx",
+      "0042da0d: mov dword ptr [esi + 0x150], ebx",
+      "0042da13: mov ecx, dword ptr [0x6cd158]"
+    ],
+    "function_hint": 4381088
+  },
+  {
+    "anchor": 4793493,
+    "canonical_guess": 4793492,
+    "canonical_bytes": "668b8804010000",
+    "canonical_text": "mov cx, word ptr [eax + 0x104]",
+    "context": [
+      "00492471: mov eax, dword ptr [ebp + 8]",
+      "00492474: mov dword ptr [esi + 0x58], ebx",
+      "00492477: and eax, 0x7ff",
+      "0049247c: mov dword ptr [esi + 0x5c], ebx",
+      "0049247f: add eax, 0x1000",
+      "00492484: mov dword ptr [esi + 0x48], eax",
+      "00492487: mov dword ptr [esi + 0x4c], eax",
+      "0049248a: mov eax, dword ptr [esi + 0x12c]",
+      "00492490: xor ecx, ecx",
+      "00492492: mov edx, dword ptr [esi]"
+    ],
+    "function_hint": 4793200
+  },
+  {
+    "anchor": 4815970,
+    "canonical_guess": 4815969,
+    "canonical_bytes": "668b9804010000",
+    "canonical_text": "mov bx, word ptr [eax + 0x104]",
+    "context": [
+      "00497c37: add edx, ecx",
+      "00497c39: mov ecx, eax",
+      "00497c3b: imul ecx, eax",
+      "00497c3e: shr ecx, 0xc",
+      "00497c41: cmp edx, ecx",
+      "00497c43: jae 0x497e24",
+      "00497c49: mov eax, dword ptr [esi + 0x12c]",
+      "00497c4f: test dword ptr [eax + 0xf4], 0x20000",
+      "00497c59: je 0x497e24",
+      "00497c5f: xor ebx, ebx"
+    ],
+    "function_hint": 4815280
+  },
+  {
+    "anchor": 4817003,
+    "canonical_guess": 4817002,
+    "canonical_bytes": "668b8904010000",
+    "canonical_text": "mov cx, word ptr [ecx + 0x104]",
+    "context": [
+      "0049804a: mov edx, dword ptr [ecx]",
+      "0049804c: push 0x149",
+      "00498051: mov eax, dword ptr [eax + 0x10e]",
+      "00498057: push eax",
+      "00498058: push 0",
+      "0049805a: call dword ptr [edx + 0x20]",
+      "0049805d: mov edx, dword ptr [esi + 0x40]",
+      "00498060: test edx, edx",
+      "00498062: je 0x49809a",
+      "00498064: mov ecx, dword ptr [esi + 0x12c]"
+    ],
+    "function_hint": 4816496
+  },
+  {
+    "anchor": 4886532,
+    "canonical_guess": 4886531,
+    "canonical_bytes": "eb26",
+    "canonical_text": "jmp 0x4a902b",
+    "context": [
+      "004a8fea: neg eax",
+      "004a8fec: mov dword ptr [ecx], eax",
+      "004a8fee: mov eax, dword ptr [esp + 0x44]",
+      "004a8ff2: cdq ",
+      "004a8ff3: sub eax, edx",
+      "004a8ff5: sar eax, 1",
+      "004a8ff7: mov esi, eax",
+      "004a8ff9: mov eax, dword ptr [esp + 0x48]",
+      "004a8ffd: neg esi",
+      "004a8fff: mov dword ptr [esp + 0x44], esi"
+    ],
+    "function_hint": 4885504
+  },
+  {
+    "anchor": 5653171,
+    "canonical_guess": 5653166,
+    "canonical_bytes": "c70100000000",
+    "canonical_text": "mov dword ptr [ecx], 0",
+    "context": [
+      "00564272: lea ecx, [edx + 0xc4]",
+      "00564278: mov dword ptr [eax], 0",
+      "0056427e: lea eax, [edx + 0xc8]",
+      "00564284: mov dword ptr [ecx], 0",
+      "0056428a: lea ecx, [edx + 0xcc]",
+      "00564290: mov dword ptr [eax], 0",
+      "00564296: lea eax, [edx + 0xc0]",
+      "0056429c: mov dword ptr [ecx], 0",
+      "005642a2: lea ecx, [edx + 0xd0]",
+      "005642a8: mov dword ptr [eax], 0"
+    ],
+    "function_hint": 5652800
+  }
+]

@@ -1,0 +1,3872 @@
+{
+  "family": "Things EffectGenerator",
+  "tag": 203,
+  "payload_bytes": 36,
+  "envelope_bytes": 8,
+  "fields": [
+    {
+      "offset": 0,
+      "bytes": 4,
+      "name": "TileX",
+      "meaning": "Unsigned DWORD bits; game position=(raw<<12)+2048 modulo2^32."
+    },
+    {
+      "offset": 4,
+      "bytes": 4,
+      "name": "TileY",
+      "meaning": "Same as TileX."
+    },
+    {
+      "offset": 8,
+      "bytes": 4,
+      "name": "OpaqueZ",
+      "meaning": "Copied into checksum intermediate; placed game Z=0; editor save writes0."
+    },
+    {
+      "offset": 12,
+      "bytes": 4,
+      "name": "OpaqueFlags",
+      "meaning": "ORed into intermediate; inspected game callback does not apply it; editor setter is RET4, getter returns0; preserve raw."
+    },
+    {
+      "offset": 16,
+      "bytes": 2,
+      "name": "Width",
+      "meaning": "Unsigned width in cells; tick adds random(width*4096) to centered X."
+    },
+    {
+      "offset": 18,
+      "bytes": 2,
+      "name": "Height",
+      "meaning": "Unsigned height in cells; positive Y extent."
+    },
+    {
+      "offset": 20,
+      "bytes": 8,
+      "name": "EffectIds",
+      "meaning": "Four unsigned WORD slots. Uniform random slot0..3; a zero slot aborts this attempt without advancing deadline."
+    },
+    {
+      "offset": 28,
+      "bytes": 1,
+      "name": "Frequency",
+      "meaning": "BYTE multiplied by ticks-per-second global6F2590 after the create call; next attempt requires unsigned now>deadline."
+    },
+    {
+      "offset": 29,
+      "bytes": 1,
+      "name": "Id",
+      "meaning": "BYTE stored in runtime44; constructor fixture covers255. No meaning of global ID uniqueness inferred."
+    },
+    {
+      "offset": 30,
+      "bytes": 6,
+      "name": "OpaqueTail",
+      "meaning": "Not copied by either converter; inspected editor writer does not assign these six bytes. Keep raw; not guaranteed zero padding."
+    }
+  ],
+  "executable_sha256": {
+    "Dungeon Keeper 2/DKII-DX.exe": "d7a8b854e4e4f02709eba271bead6fe2307dd6e332b5a96e70857e5b0e19fb8a",
+    "Dungeon Keeper 2/Data/editor/DK2 Editor pro.exe": "989c45df779bccfc9a9e509b2ad0224a9bd269629f74792adc0320fa4b99fb09"
+  },
+  "primary_program_bytes": [
+    {
+      "label": "generator-parser",
+      "program": "DKII-DX.exe",
+      "exe": "D:\\Games\\DK2\\Dungeon Keeper 2\\DKII-DX.exe",
+      "address": 5703216,
+      "length": 394,
+      "before": "phase37-generator-parser-disassemble_function.txt",
+      "after": "phase37-after-generator-parser.txt",
+      "memory": "phase37-after-generator-parser-memory.txt",
+      "before_sha256": "7b3550d86a372bf4f012ccd32e6ef97f6a758d91a1cbd03d6c32b5af45178b54",
+      "memory_sha256": "4cd4dcaa346a4fe41c9bc70b469034311a81936659ad5d5973bba9dfee250e53",
+      "program_bytes_sha256": "9c793aa608654f423c28b4d517f50d699c5bb07f5438e4c8c67ab1975ca66089"
+    },
+    {
+      "label": "generator-loader",
+      "program": "DKII-DX.exe",
+      "exe": "D:\\Games\\DK2\\Dungeon Keeper 2\\DKII-DX.exe",
+      "address": 5378944,
+      "length": 155,
+      "before": "phase37-generator-loader-disassemble_function.txt",
+      "after": "phase37-after-generator-loader.txt",
+      "memory": "phase37-after-generator-loader-memory.txt",
+      "before_sha256": "e264092276f06ea6a25680c0fb31c658b656aa2934ef79bb4f1800c1ec5538b4",
+      "memory_sha256": "7fcaf8680dff6e32ab5a41e2fe2d8c4f0dfd59da1ffc557a189937b39a8bb3c7",
+      "program_bytes_sha256": "9ef48fc5e6820c4782e6ffde0ecdc5be828f08df8cdb01547718d2d70ee86b7a"
+    },
+    {
+      "label": "generator-create",
+      "program": "DKII-DX.exe",
+      "exe": "D:\\Games\\DK2\\Dungeon Keeper 2\\DKII-DX.exe",
+      "address": 4948448,
+      "length": 99,
+      "before": "phase37-generator-create-disassemble_function.txt",
+      "after": "phase37-after-generator-create.txt",
+      "memory": "phase37-after-generator-create-memory.txt",
+      "before_sha256": "f12dd673888967693cbe91c9a9ab517e4a070720d2012dc81c457abd212a9e77",
+      "memory_sha256": "4d205020e798feae97c26d2a8f0dd31c580d1cfaefee05e24dc6cd60f9cdfbea",
+      "program_bytes_sha256": "c5628e5be798e0bae944651cbf446151c1c89c0a70d12f2a90f59eb989369bf8"
+    },
+    {
+      "label": "generator-construct",
+      "program": "DKII-DX.exe",
+      "exe": "D:\\Games\\DK2\\Dungeon Keeper 2\\DKII-DX.exe",
+      "address": 4945248,
+      "length": 53,
+      "before": "phase37-generator-construct-disassemble_function.txt",
+      "after": "phase37-after-generator-construct.txt",
+      "memory": "phase37-after-generator-construct-memory.txt",
+      "before_sha256": "9ef9303076810f2ae68bf26dd97bad19da1ad54d92e6b5869bf1fcace86e5889",
+      "memory_sha256": "0a2139cfdc8a74149b1489ca9da8c499fd4cabf1c336427e035aece1ead069da",
+      "program_bytes_sha256": "7a89589028998433695ef3a9ce3152da0247a8026716c6fb2d6c10292f46cdc7"
+    },
+    {
+      "label": "generator-init",
+      "program": "DKII-DX.exe",
+      "exe": "D:\\Games\\DK2\\Dungeon Keeper 2\\DKII-DX.exe",
+      "address": 4921760,
+      "length": 70,
+      "before": "phase37-generator-init-disassemble_function.txt",
+      "after": "phase37-after-generator-init.txt",
+      "memory": "phase37-after-generator-init-memory.txt",
+      "before_sha256": "800509bb7bf7f91e4f8a9157b91043660c7c5f335370582658ef14d066ab02c8",
+      "memory_sha256": "afc230d6bcaa5a75fda553fa523c5ea3fb549b140a2ce441378e6baf2f15006d",
+      "program_bytes_sha256": "9c37ddc7d2180c3889bb7e179003ccbb18cb0eb6cfc4a05a8b122168de475891"
+    },
+    {
+      "label": "generator-tick",
+      "program": "DKII-DX.exe",
+      "exe": "D:\\Games\\DK2\\Dungeon Keeper 2\\DKII-DX.exe",
+      "address": 4922208,
+      "length": 368,
+      "before": "phase37-generator-tick-disassemble_function.txt",
+      "after": "phase37-after-generator-tick.txt",
+      "memory": "phase37-after-generator-tick-memory.txt",
+      "before_sha256": "59acb1dc8c0b372dc488aa3daa97ade5f63abfc2c61528a9bc1b0a2765223fb0",
+      "memory_sha256": "4a2917f967d1b9b9ef8fb08f1208ea0d345ea84ff0e5119d984025918f0acf70",
+      "program_bytes_sha256": "680234f5961756f8f0f894a033853fab04a962b4c32c7350f941cea35fb6055b"
+    },
+    {
+      "label": "generator-width",
+      "program": "DKII-DX.exe",
+      "exe": "D:\\Games\\DK2\\Dungeon Keeper 2\\DKII-DX.exe",
+      "address": 4945312,
+      "length": 7,
+      "before": "phase37-generator-width-disassemble_function.txt",
+      "after": "phase37-after-generator-width.txt",
+      "memory": "phase37-after-generator-width-memory.txt",
+      "before_sha256": "c8d28ee65d4f27197031cacacb99e4a6fbec1fc8ae022c099713d7e92ca1140c",
+      "memory_sha256": "d6f64199599ad6530fad721fe6a3cb86ae9cb0b64a424eb921a3472b5fb0bfb4",
+      "program_bytes_sha256": "851258de524844d8c36728be581b51ca947e88989cdb90aac601e3c7b2bc3777"
+    },
+    {
+      "label": "generator-height",
+      "program": "DKII-DX.exe",
+      "exe": "D:\\Games\\DK2\\Dungeon Keeper 2\\DKII-DX.exe",
+      "address": 4945328,
+      "length": 7,
+      "before": "phase37-generator-height-disassemble_function.txt",
+      "after": "phase37-after-generator-height.txt",
+      "memory": "phase37-after-generator-height-memory.txt",
+      "before_sha256": "a6745dda18f7eff8bb376876668a94a49d851ae7dcd885a9122fa327a4caeeb7",
+      "memory_sha256": "d403db0a2a66b4b35724c0f975c61d2b12cfcdbc1ccb23100b2ab74887df36ca",
+      "program_bytes_sha256": "b1c59a62371ed1f7f34c2fd8e6144b74ee5017d218f2a5f3d826cd86c14e76a4"
+    },
+    {
+      "label": "rng",
+      "program": "DKII-DX.exe",
+      "exe": "D:\\Games\\DK2\\Dungeon Keeper 2\\DKII-DX.exe",
+      "address": 5593296,
+      "length": 187,
+      "before": "phase37-rng-disassemble_function.txt",
+      "after": "phase37-after-rng.txt",
+      "memory": "phase37-after-rng-memory.txt",
+      "before_sha256": "3e5329e3e21adb87d0e69728b245cebb5884db7ae380b3bf4c06da9d47bbf5cb",
+      "memory_sha256": "f526dc65ad5a666a9428fdfccb023683fc38077c7420804e7587f6cad2b8f691",
+      "program_bytes_sha256": "03626d40227ba5fba42affc16f6bbe42b790347294e58b52759d30b1a3b234f1"
+    },
+    {
+      "label": "generator-dump",
+      "program": "DKII-DX.exe",
+      "exe": "D:\\Games\\DK2\\Dungeon Keeper 2\\DKII-DX.exe",
+      "address": 4922608,
+      "length": 252,
+      "before": "phase37-generator-dump-disassemble_function.txt",
+      "after": "phase37-after-generator-dump.txt",
+      "memory": "phase37-after-generator-dump-memory.txt",
+      "before_sha256": "71ffa53a374f3595430cd25d348d124fd636942c532b35ba500b0c4d1281aaac",
+      "memory_sha256": "3d6e96bbaeaa41f7291b45beeaaa68df5b1de9e622020a5d156ede3cd1597d07",
+      "program_bytes_sha256": "61fa7adbe04b457b8b75eee4f80a58a3a4e9e71ce4690e21b518d9741218f617"
+    },
+    {
+      "label": "editor-reader",
+      "program": "DK2 Editor pro.exe",
+      "exe": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\DK2 Editor pro.exe",
+      "address": 4394416,
+      "length": 226,
+      "before": "phase37-editor-reader-disassemble_function.txt",
+      "after": "phase37-after-editor-reader.txt",
+      "memory": "phase37-after-editor-reader-memory.txt",
+      "before_sha256": "c1b4e314c62c2ce1955a2601755207727d6ec3b200de29f513c0d418499f05d6",
+      "memory_sha256": "428abfb194015a3398a405d6c3a0aa67899fff483a23af07bdd83fefce7c7012",
+      "program_bytes_sha256": "607044f0a4b0f8c1e84bdf7bdd17bc175e059022383ad66fa392b72395a354fa"
+    },
+    {
+      "label": "mid-init",
+      "program": "DK2 Editor pro.exe",
+      "exe": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\DK2 Editor pro.exe",
+      "address": 4389616,
+      "length": 86,
+      "before": "phase37-mid-init-disassemble_function.txt",
+      "after": "phase37-after-mid-init.txt",
+      "memory": "phase37-after-mid-init-memory.txt",
+      "before_sha256": "7c458272ba15c31f5d52be7a699c00245c03f8bed14bf5b0c3780f9c4fa78656",
+      "memory_sha256": "6385d2b09a71a5b74fe4b4e6373660582e49fd2b81ae36859f424eb75ef00624",
+      "program_bytes_sha256": "e1ee27cd328e9028ded179b67e8eb568dc7a63fe961183ba9b414dd0e482b275"
+    },
+    {
+      "label": "intermediate-converter",
+      "program": "DK2 Editor pro.exe",
+      "exe": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\DK2 Editor pro.exe",
+      "address": 4389712,
+      "length": 125,
+      "before": "phase37-intermediate-converter-disassemble_function.txt",
+      "after": "phase37-after-intermediate-converter.txt",
+      "memory": "phase37-after-intermediate-converter-memory.txt",
+      "before_sha256": "c2952497bb4d2fd4122237eece695d03fc23bc729c2c9301286ca44747de4787",
+      "memory_sha256": "8f971d184557cf3677520f1baf408cb00dcf303c42d9fab5f4dca2845d4f4e3b",
+      "program_bytes_sha256": "93746b1d14de4e9f9faef7cc329492ba8bb77f686786a26941e88f5eeac43798"
+    },
+    {
+      "label": "callback-next",
+      "program": "DK2 Editor pro.exe",
+      "exe": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\DK2 Editor pro.exe",
+      "address": 4792096,
+      "length": 270,
+      "before": "phase37-callback-next-disassemble_function.txt",
+      "after": "phase37-after-callback-next.txt",
+      "memory": "phase37-after-callback-next-memory.txt",
+      "before_sha256": "8b78ed849ebdd110dc1aa0b39b92ca1f6ef5a11ff28477488da344a221f8d0c7",
+      "memory_sha256": "18d379fa584ec8b42a528769825c96fd8ed43e579d2baf5e206459d613b6cc8e",
+      "program_bytes_sha256": "e7dc702edf297e5bbce3aec1d967d54abc089cd61369be403dcab3a695fa95fd"
+    },
+    {
+      "label": "model-constructor",
+      "program": "DK2 Editor pro.exe",
+      "exe": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\DK2 Editor pro.exe",
+      "address": 4323344,
+      "length": 137,
+      "before": "phase37-model-constructor-disassemble_function.txt",
+      "after": "phase37-after-model-constructor.txt",
+      "memory": "phase37-after-model-constructor-memory.txt",
+      "before_sha256": "3fb1f98d3e442ec5399acb0451a834bc63cb2ec0d0e4e1e44ba7473f81d82db2",
+      "memory_sha256": "edbc2b008b0dd5c4a64205a533166a25cbd94a94d144d5d32eaa8fd68635ddad",
+      "program_bytes_sha256": "368f66784ff8a3f13de474064764b136b40e17d081d51bc68da705ed4a1d8f5f"
+    },
+    {
+      "label": "width-set",
+      "program": "DK2 Editor pro.exe",
+      "exe": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\DK2 Editor pro.exe",
+      "address": 4323728,
+      "length": 77,
+      "before": "phase37-width-set-disassemble_function.txt",
+      "after": "phase37-after-width-set.txt",
+      "memory": "phase37-after-width-set-memory.txt",
+      "before_sha256": "bc5c09b2acdd4a1340662c9165e2709ed4f6b2494d2b64cfc5860731e9b1ac3d",
+      "memory_sha256": "5148a6b4833ea0c1f9562453f827359297570422c0e897390c6ce7f72e1129cb",
+      "program_bytes_sha256": "bdd1a489cb4ad93c9aaa6b8e38da8f2499d548a4f5fc279a41d788b406c7b785"
+    },
+    {
+      "label": "height-set",
+      "program": "DK2 Editor pro.exe",
+      "exe": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\DK2 Editor pro.exe",
+      "address": 4323808,
+      "length": 77,
+      "before": "phase37-height-set-disassemble_function.txt",
+      "after": "phase37-after-height-set.txt",
+      "memory": "phase37-after-height-set-memory.txt",
+      "before_sha256": "04488d52f4a79c0d8f1c75b7b2b41dbcc02bc46635289879c0e977cf306d9a77",
+      "memory_sha256": "81d2474d624c91f3baee4e8c62216b7a6a207b8c8a957a2b8c706a3c8e15482f",
+      "program_bytes_sha256": "a08df58fd332c7cef800df942decb87712f728780b8aabb93da107763c0b6916"
+    },
+    {
+      "label": "generator-effect-get",
+      "program": "DK2 Editor pro.exe",
+      "exe": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\DK2 Editor pro.exe",
+      "address": 4323888,
+      "length": 23,
+      "before": "phase37-generator-effect-get-disassemble_function.txt",
+      "after": "phase37-after-generator-effect-get.txt",
+      "memory": "phase37-after-generator-effect-get-memory.txt",
+      "before_sha256": "54b677330b019e2c14997f30d9c0592aade21414082bee15cc9be1766ee86a0d",
+      "memory_sha256": "998255ee0e19f9d3c31d3c84287819d646fedec486c05d13f4a48156a6c4c03b",
+      "program_bytes_sha256": "61b283e197f5c455373a2a69e39416e00db2626645fd79f7629159334a5b6117"
+    },
+    {
+      "label": "editor-model-flags-set",
+      "program": "DK2 Editor pro.exe",
+      "exe": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\DK2 Editor pro.exe",
+      "address": 4323920,
+      "length": 22,
+      "before": "phase37-editor-model-flags-set-disassemble_function.txt",
+      "after": "phase37-after-editor-model-flags-set.txt",
+      "memory": "phase37-after-editor-model-flags-set-memory.txt",
+      "before_sha256": "7e2a9bb4dd2286191e3ec0bb372ac5df5f8de4453b7c89b96b1d3de5ad418b89",
+      "memory_sha256": "4b4ffdcaed6b131f37a5c3ce435647ea985c70708282eb8c5e1dcc25245a33bd",
+      "program_bytes_sha256": "f965fa740cd429ad4864a531af633d42130bb69dff1e9a7dcbf296bdccebb86d"
+    },
+    {
+      "label": "generator-flags",
+      "program": "DK2 Editor pro.exe",
+      "exe": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\DK2 Editor pro.exe",
+      "address": 4323952,
+      "length": 3,
+      "before": "phase37-generator-flags-disassemble_function.txt",
+      "after": "phase37-after-generator-flags.txt",
+      "memory": "phase37-after-generator-flags-memory.txt",
+      "before_sha256": "e13ae45773dd439864412efe05c13f555d9943ac0527cce1378f91d1ab386912",
+      "memory_sha256": "721ca3c5ab915b37c6c64ed687e3dbef440aeb105378b8677ca151f26fb3cf73",
+      "program_bytes_sha256": "4bc724f3b1d0caf4fe369c18cba3102e6c4ea057f63fe1587e3973134a7f755e"
+    },
+    {
+      "label": "flags-set-actual",
+      "program": "DK2 Editor pro.exe",
+      "exe": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\DK2 Editor pro.exe",
+      "address": 4201040,
+      "length": 3,
+      "before": "phase37-flags-set-actual-disassemble_function.txt",
+      "after": "phase37-after-flags-set-actual.txt",
+      "memory": "phase37-after-flags-set-actual-memory.txt",
+      "before_sha256": "99e86a14d09562862df7dc6d9c964ababfbdd7b390c49820ca0b44d41bd7ff0d",
+      "memory_sha256": "b2f47909c47f919f7865180e22f75e2b2ac22669dbfde45e757a553d34ec28a6",
+      "program_bytes_sha256": "e598d0c3ba86d917b177d7adde0556aa99bc355543c57aee0a3e50b684dd7e99"
+    },
+    {
+      "label": "generator-array-get",
+      "program": "DK2 Editor pro.exe",
+      "exe": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\DK2 Editor pro.exe",
+      "address": 4762880,
+      "length": 31,
+      "before": "phase37-generator-array-get-disassemble_function.txt",
+      "after": "phase37-after-generator-array-get.txt",
+      "memory": "phase37-after-generator-array-get-memory.txt",
+      "before_sha256": "cfc811fbada79b1024f1b3792ccbff2d6478d5726010ef02fbc31e9aa894bb15",
+      "memory_sha256": "78bc23781af65c697242d8979dfe8dff3d466a4fae771e71f7e2cd847b0255bc",
+      "program_bytes_sha256": "a4ee738d65a211ae818bb184038976197635b1949bc4a14198a75d8cd767f8b5"
+    },
+    {
+      "label": "things-writer",
+      "program": "DK2 Editor pro.exe",
+      "exe": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\DK2 Editor pro.exe",
+      "address": 4802496,
+      "length": 2862,
+      "before": "phase30-things-writer-before.txt",
+      "after": "phase37-after-things-writer.txt",
+      "memory": "phase37-after-things-writer-memory.txt",
+      "before_sha256": "44fe8f6c732011d81b11295444397457b4f165b92877e045ddc09cffe5f068c7",
+      "memory_sha256": "d1eb22fdb15bd241ae7a895f0a54a24688a269837ca0d40d0eda800e0d0c8e7c",
+      "program_bytes_sha256": "e99cf46f950d2c1f738c4fc34ba1f71bbbccf7d69992b8b9139209153cba181f"
+    }
+  ],
+  "native_data": {
+    "labels": [
+      {
+        "address": "0x69ec8c",
+        "text": "    TickLastEffectGenerated %d\n",
+        "hex": "202020205469636b4c61737445666665637447656e6572617465642025640a",
+        "sha256": "7b2670a286e1ab1cbf6f713d49375e2aa9b84a979f66acf133a5acea3f895971"
+      },
+      {
+        "address": "0x69ec78",
+        "text": "    Frequency %d\n",
+        "hex": "202020204672657175656e63792025640a",
+        "sha256": "f8cc6a1fca66fcdfb99ddff8de82c11e89679e7aac515b157b4d857157dc98b8"
+      },
+      {
+        "address": "0x69ec68",
+        "text": "    Active %d\n",
+        "hex": "202020204163746976652025640a",
+        "sha256": "f4eff0d92fe9ba648cd009c4e6a0728daa064dd23ddaf075444d294539122167"
+      },
+      {
+        "address": "0x69cc1c",
+        "text": "    Flags %d\n",
+        "hex": "20202020466c6167732025640a",
+        "sha256": "6d804c7687cb08fe75c776c74ec36e9882eef594136d7f9c1511edfd9704e7d8"
+      },
+      {
+        "address": "0x69ec58",
+        "text": "    Width %d\n",
+        "hex": "2020202057696474682025640a",
+        "sha256": "72ae86d2b4d7526d02e85d0efa53c03d7bed7635a629f3b9adf2b5a0532e1adc"
+      },
+      {
+        "address": "0x69ec48",
+        "text": "    Height %d\n",
+        "hex": "202020204865696768742025640a",
+        "sha256": "b550b5b8e415261e833fed7ff2a585a815f7cae81abffa66e0d6ca415471d890"
+      },
+      {
+        "address": "0x69eb6c",
+        "text": "    Id %d\n",
+        "hex": "2020202049642025640a",
+        "sha256": "e7686f86b5a99ad94f9a83ced826e4c2ef02d3552fa03fb2b88de04efc5c8e21"
+      },
+      {
+        "address": "0x69ec38",
+        "text": "    Effect: ",
+        "hex": "202020204566666563743a20",
+        "sha256": "bb007b8e40015f7883ab900b7ec9ac5ae9895c0210cfc3e9aeca056b4f1be373"
+      }
+    ],
+    "vtable": {
+      "address": "0x66d850",
+      "bytes": "a0754b00b0754b00",
+      "width_getter": "0x4B75A0",
+      "height_getter": "0x4B75B0"
+    }
+  },
+  "evidence": [
+    {
+      "file": "phase37-generator-parser-disassemble_function.txt",
+      "first": "0x570630",
+      "last": "0x5707b9",
+      "instructions": [
+        "00570630: SUB ESP,0x78 ",
+        "00570633: PUSH EBX ",
+        "00570634: PUSH EBP ",
+        "00570635: MOV EBP,dword ptr [ESP + 0x8c] ",
+        "0057063c: PUSH ESI ",
+        "0057063d: XOR ESI,ESI ",
+        "0057063f: PUSH EDI ",
+        "00570640: CMP dword ptr [EBP + 0x9c],ESI ",
+        "00570646: JZ 0x0057076e ",
+        "0057064c: MOV EDX,dword ptr [ESP + 0x90] ",
+        "00570653: LEA EAX,[ESP + 0x10] ",
+        "00570657: PUSH EAX ",
+        "00570658: LEA ECX,[ESP + 0x1c] ",
+        "0057065c: MOV EAX,dword ptr [EDX] ",
+        "0057065e: PUSH 0x24 ",
+        "00570660: PUSH ECX ",
+        "00570661: LEA ECX,[ESP + 0x20] ",
+        "00570665: PUSH EAX ",
+        "00570666: PUSH ECX ",
+        "00570667: CALL 0x005b3eb0 ",
+        "0057066c: MOV ECX,dword ptr [EAX] ",
+        "0057066e: ADD ESP,0x14 ",
+        "00570671: XOR EDX,EDX ",
+        "00570673: CMP ECX,ESI ",
+        "00570675: SETGE DL ",
+        "00570678: MOV EBX,0x1 ",
+        "0057067d: XOR EDX,EBX ",
+        "0057067f: JZ 0x0057068b ",
+        "00570681: XOR EAX,EAX ",
+        "00570683: POP EDI ",
+        "00570684: POP ESI ",
+        "00570685: POP EBP ",
+        "00570686: POP EBX ",
+        "00570687: ADD ESP,0x78 ",
+        "0057068a: RET ",
+        "0057068b: XOR EAX,EAX ",
+        "0057068d: MOV EDX,dword ptr [ESP + 0x1c] ",
+        "00570691: MOV dword ptr [ESP + 0x50],EAX ",
+        "00570695: MOV ECX,0x9 ",
+        "0057069a: MOV dword ptr [ESP + 0x54],EAX ",
+        "0057069e: LEA EDI,[ESP + 0x64] ",
+        "005706a2: MOV dword ptr [ESP + 0x58],EAX ",
+        "005706a6: MOV dword ptr [ESP + 0x3c],ESI ",
+        "005706aa: MOV dword ptr [ESP + 0x40],ESI ",
+        "005706ae: MOV dword ptr [ESP + 0x44],ESI ",
+        "005706b2: MOV dword ptr [ESP + 0x48],ESI ",
+        "005706b6: MOV dword ptr [ESP + 0x4c],ESI ",
+        "005706ba: MOV dword ptr [ESP + 0x5c],EAX ",
+        "005706be: MOV dword ptr [ESP + 0x60],ESI ",
+        "005706c2: STOSD.REP ES:EDI ",
+        "005706c4: MOV EAX,dword ptr [ESP + 0x20] ",
+        "005706c8: MOV ECX,dword ptr [ESP + 0x18] ",
+        "005706cc: MOV dword ptr [ESP + 0x68],EDX ",
+        "005706d0: MOV DL,byte ptr [ESP + 0x34] ",
+        "005706d4: MOV dword ptr [ESP + 0x6c],EAX ",
+        "005706d8: MOV AX,word ptr [ESP + 0x28] ",
+        "005706dd: MOV dword ptr [ESP + 0x64],ECX ",
+        "005706e1: MOV CL,byte ptr [ESP + 0x35] ",
+        "005706e5: MOV byte ptr [ESP + 0x80],DL ",
+        "005706ec: MOV EDX,dword ptr [ESP + 0x24] ",
+        "005706f0: MOV word ptr [ESP + 0x74],AX ",
+        "005706f5: MOV EAX,dword ptr [ESP + 0x70] ",
+        "005706f9: MOV byte ptr [ESP + 0x81],CL ",
+        "00570700: MOV CX,word ptr [ESP + 0x2a] ",
+        "00570705: OR EAX,EDX ",
+        "00570707: MOV word ptr [ESP + 0x76],CX ",
+        "0057070c: MOV dword ptr [ESP + 0x70],EAX ",
+        "00570710: MOV dword ptr [ESP + 0x3c],EBX ",
+        "00570714: MOV dword ptr [ESP + 0x40],EBX ",
+        "00570718: MOV dword ptr [ESP + 0x44],EBX ",
+        "0057071c: MOV dword ptr [ESP + 0x48],EBX ",
+        "00570720: MOV dword ptr [ESP + 0x4c],EBX ",
+        "00570724: MOV dword ptr [ESP + 0x60],EBX ",
+        "00570728: LEA EDX,[ESP + 0x2c] ",
+        "0057072c: LEA ECX,[ESP + 0x78] ",
+        "00570730: LEA EAX,[ESP + 0x50] ",
+        "00570734: MOV ESI,0x4 ",
+        "00570739: MOV DI,word ptr [EDX] ",
+        "0057073c: MOV dword ptr [EAX],EBX ",
+        "0057073e: MOV word ptr [ECX],DI ",
+        "00570741: ADD EAX,0x4 ",
+        "00570744: ADD ECX,0x2 ",
+        "00570747: ADD EDX,0x2 ",
+        "0057074a: DEC ESI ",
+        "0057074b: JNZ 0x00570739 ",
+        "0057074d: MOV EAX,dword ptr [EBP + 0xac] ",
+        "00570753: LEA ECX,[ESP + 0x3c] ",
+        "00570757: PUSH EAX ",
+        "00570758: PUSH ECX ",
+        "00570759: CALL dword ptr [EBP + 0x9c] ",
+        "0057075f: ADD ESP,0x8 ",
+        "00570762: TEST EAX,EAX ",
+        "00570764: JNZ 0x005707b0 ",
+        "00570766: POP EDI ",
+        "00570767: POP ESI ",
+        "00570768: POP EBP ",
+        "00570769: POP EBX ",
+        "0057076a: ADD ESP,0x78 ",
+        "0057076d: RET ",
+        "0057076e: MOV EBP,dword ptr [ESP + 0x90] ",
+        "00570775: MOV EDX,dword ptr [ESP + 0x8c] ",
+        "0057077c: MOV EAX,dword ptr [EBP] ",
+        "0057077f: MOV EDI,dword ptr [EDX + 0x4] ",
+        "00570782: PUSH EAX ",
+        "00570783: CALL 0x005b3a80 ",
+        "00570788: MOV ECX,dword ptr [EBP] ",
+        "0057078b: ADD ESP,0x4 ",
+        "0057078e: MOV EBX,0x1 ",
+        "00570793: MOV ESI,EAX ",
+        "00570795: PUSH EBX ",
+        "00570796: PUSH EDI ",
+        "00570797: PUSH ECX ",
+        "00570798: ADD ESI,EDI ",
+        "0057079a: CALL 0x005b3a90 ",
+        "0057079f: ADD ESP,0xc ",
+        "005707a2: CMP EAX,ESI ",
+        "005707a4: JZ 0x005707b0 ",
+        "005707a6: XOR EAX,EAX ",
+        "005707a8: POP EDI ",
+        "005707a9: POP ESI ",
+        "005707aa: POP EBP ",
+        "005707ab: POP EBX ",
+        "005707ac: ADD ESP,0x78 ",
+        "005707af: RET ",
+        "005707b0: POP EDI ",
+        "005707b1: POP ESI ",
+        "005707b2: MOV EAX,EBX ",
+        "005707b4: POP EBP ",
+        "005707b5: POP EBX ",
+        "005707b6: ADD ESP,0x78 ",
+        "005707b9: RET "
+      ]
+    },
+    {
+      "file": "phase37-generator-loader-disassemble_function.txt",
+      "first": "0x521380",
+      "last": "0x52141a",
+      "instructions": [
+        "00521380: SUB ESP,0xc ",
+        "00521383: PUSH ESI ",
+        "00521384: MOV ESI,dword ptr [ESP + 0x14] ",
+        "00521388: PUSH EDI ",
+        "00521389: MOV EDI,dword ptr [ESP + 0x1c] ",
+        "0052138d: PUSH 0x4c ",
+        "0052138f: PUSH ESI ",
+        "00521390: MOV ECX,EDI ",
+        "00521392: CALL 0x005108c0 ",
+        "00521397: MOV EAX,dword ptr [ESI + 0x28] ",
+        "0052139a: MOV ECX,dword ptr [ESI + 0x2c] ",
+        "0052139d: SHL EAX,0xc ",
+        "005213a0: SHL ECX,0xc ",
+        "005213a3: ADD EAX,0x800 ",
+        "005213a8: ADD ECX,0x800 ",
+        "005213ae: MOV dword ptr [ESP + 0x8],EAX ",
+        "005213b2: MOV AX,word ptr [ESI + 0x3a] ",
+        "005213b6: LEA EDX,[ESP + 0x18] ",
+        "005213ba: MOV dword ptr [ESP + 0xc],ECX ",
+        "005213be: MOV CX,word ptr [ESI + 0x38] ",
+        "005213c2: PUSH EDX ",
+        "005213c3: PUSH EAX ",
+        "005213c4: MOV AL,byte ptr [ESI + 0x45] ",
+        "005213c7: LEA EDX,[ESP + 0x10] ",
+        "005213cb: PUSH ECX ",
+        "005213cc: PUSH EDX ",
+        "005213cd: PUSH EAX ",
+        "005213ce: LEA ECX,[EDI + 0x8] ",
+        "005213d1: MOV dword ptr [ESP + 0x24],0x0 ",
+        "005213d9: CALL 0x004b81e0 ",
+        "005213de: TEST EAX,EAX ",
+        "005213e0: JNZ 0x005213e8 ",
+        "005213e2: POP EDI ",
+        "005213e3: POP ESI ",
+        "005213e4: ADD ESP,0xc ",
+        "005213e7: RET ",
+        "005213e8: MOV EDX,dword ptr [ESP + 0x18] ",
+        "005213ec: MOV CL,byte ptr [ESI + 0x44] ",
+        "005213ef: MOV EAX,0x32 ",
+        "005213f4: MOV byte ptr [EDX + 0x3a],CL ",
+        "005213f7: LEA ECX,[ESI + 0x3c] ",
+        "005213fa: MOV ESI,dword ptr [ESP + 0x18] ",
+        "005213fe: MOV DX,word ptr [ECX] ",
+        "00521401: ADD ECX,0x2 ",
+        "00521404: MOV word ptr [ESI + EAX*0x1],DX ",
+        "00521408: ADD EAX,0x2 ",
+        "0052140b: CMP EAX,0x3a ",
+        "0052140e: JC 0x005213fa ",
+        "00521410: POP EDI ",
+        "00521411: MOV EAX,0x1 ",
+        "00521416: POP ESI ",
+        "00521417: ADD ESP,0xc ",
+        "0052141a: RET "
+      ]
+    },
+    {
+      "file": "phase37-generator-create-disassemble_function.txt",
+      "first": "0x4b81e0",
+      "last": "0x4b8240",
+      "instructions": [
+        "004b81e0: MOV EAX,[0x006a4818] ",
+        "004b81e5: PUSH ESI ",
+        "004b81e6: PUSH EDI ",
+        "004b81e7: MOV EDI,ECX ",
+        "004b81e9: TEST EAX,EAX ",
+        "004b81eb: JZ 0x004b823c ",
+        "004b81ed: PUSH 0x45 ",
+        "004b81ef: LEA ECX,[EDI + 0x3e] ",
+        "004b81f2: CALL 0x00554b30 ",
+        "004b81f7: TEST EAX,EAX ",
+        "004b81f9: JZ 0x004b823c ",
+        "004b81fb: MOV ECX,EAX ",
+        "004b81fd: CALL 0x004b7560 ",
+        "004b8202: MOV ESI,EAX ",
+        "004b8204: TEST ESI,ESI ",
+        "004b8206: JZ 0x004b823c ",
+        "004b8208: MOV AL,byte ptr [ESP + 0xc] ",
+        "004b820c: MOV ECX,dword ptr [ESP + 0x18] ",
+        "004b8210: MOV EDX,dword ptr [ESP + 0x14] ",
+        "004b8214: MOV byte ptr [ESI + 0x44],AL ",
+        "004b8217: MOV EAX,dword ptr [ESP + 0x10] ",
+        "004b821b: PUSH ECX ",
+        "004b821c: PUSH EDX ",
+        "004b821d: PUSH EAX ",
+        "004b821e: MOV ECX,ESI ",
+        "004b8220: CALL 0x004b19a0 ",
+        "004b8225: MOV EAX,dword ptr [EDI + 0x3a] ",
+        "004b8228: MOV ECX,dword ptr [ESP + 0x1c] ",
+        "004b822c: INC EAX ",
+        "004b822d: MOV dword ptr [EDI + 0x3a],EAX ",
+        "004b8230: MOV dword ptr [ECX],ESI ",
+        "004b8232: MOV EAX,0x1 ",
+        "004b8237: POP EDI ",
+        "004b8238: POP ESI ",
+        "004b8239: RET 0x14 ",
+        "004b823c: POP EDI ",
+        "004b823d: XOR EAX,EAX ",
+        "004b823f: POP ESI ",
+        "004b8240: RET 0x14 "
+      ]
+    },
+    {
+      "file": "phase37-generator-construct-disassemble_function.txt",
+      "first": "0x4b7560",
+      "last": "0x4b7594",
+      "instructions": [
+        "004b7560: PUSH ESI ",
+        "004b7561: MOV ESI,ECX ",
+        "004b7563: CALL 0x00507850 ",
+        "004b7568: XOR EAX,EAX ",
+        "004b756a: MOV word ptr [ESI + 0x6],AX ",
+        "004b756e: MOV word ptr [ESI + 0x8],AX ",
+        "004b7572: MOV word ptr [ESI + 0xa],AX ",
+        "004b7576: MOV word ptr [ESI + 0xc],AX ",
+        "004b757a: MOV word ptr [ESI + 0xe],AX ",
+        "004b757e: MOV word ptr [ESI + 0x10],AX ",
+        "004b7582: MOV dword ptr [ESI + 0x1a],EAX ",
+        "004b7585: MOV dword ptr [ESI + 0x1e],EAX ",
+        "004b7588: MOV dword ptr [ESI + 0x22],EAX ",
+        "004b758b: MOV dword ptr [ESI],0x66d814 ",
+        "004b7591: MOV EAX,ESI ",
+        "004b7593: POP ESI ",
+        "004b7594: RET "
+      ]
+    },
+    {
+      "file": "phase37-generator-init-disassemble_function.txt",
+      "first": "0x4b19a0",
+      "last": "0x4b19e3",
+      "instructions": [
+        "004b19a0: PUSH ESI ",
+        "004b19a1: MOV ESI,ECX ",
+        "004b19a3: PUSH 0x7 ",
+        "004b19a5: CALL 0x004b4a10 ",
+        "004b19aa: MOV EAX,dword ptr [ESP + 0x8] ",
+        "004b19ae: MOV ECX,ESI ",
+        "004b19b0: PUSH EAX ",
+        "004b19b1: CALL 0x004b5560 ",
+        "004b19b6: MOV CX,word ptr [ESP + 0xc] ",
+        "004b19bb: MOV DX,word ptr [ESP + 0x10] ",
+        "004b19c0: XOR EAX,EAX ",
+        "004b19c2: MOV word ptr [ESI + 0x40],CX ",
+        "004b19c6: XOR ECX,ECX ",
+        "004b19c8: MOV dword ptr [ESI + 0x3c],0x1 ",
+        "004b19cf: MOV dword ptr [ESI + 0x2e],EAX ",
+        "004b19d2: MOV word ptr [ESI + 0x42],DX ",
+        "004b19d6: MOV byte ptr [ESI + 0x3a],AL ",
+        "004b19d9: MOV dword ptr [ESI + 0x32],ECX ",
+        "004b19dc: MOV dword ptr [ESI + 0x36],ECX ",
+        "004b19df: MOV byte ptr [ESI + 0x3b],AL ",
+        "004b19e2: POP ESI ",
+        "004b19e3: RET 0xc "
+      ]
+    },
+    {
+      "file": "phase37-generator-tick-disassemble_function.txt",
+      "first": "0x4b1b60",
+      "last": "0x4b1ccf",
+      "instructions": [
+        "004b1b60: SUB ESP,0x14 ",
+        "004b1b63: PUSH ESI ",
+        "004b1b64: MOV ESI,ECX ",
+        "004b1b66: MOV EAX,dword ptr [ESI + 0x3c] ",
+        "004b1b69: TEST EAX,EAX ",
+        "004b1b6b: JNZ 0x004b1b77 ",
+        "004b1b6d: MOV EAX,0x1 ",
+        "004b1b72: POP ESI ",
+        "004b1b73: ADD ESP,0x14 ",
+        "004b1b76: RET ",
+        "004b1b77: MOV ECX,dword ptr [0x006e5050] ",
+        "004b1b7d: PUSH EDI ",
+        "004b1b7e: PUSH EBX ",
+        "004b1b7f: CALL 0x00517490 ",
+        "004b1b84: CMP EAX,dword ptr [ESI + 0x2e] ",
+        "004b1b87: JBE 0x004b1cc4 ",
+        "004b1b8d: MOV EAX,[0x006e5050] ",
+        "004b1b92: PUSH 0xad ",
+        "004b1b97: ADD EAX,0x15a0 ",
+        "004b1b9c: PUSH 0x69ec04 ",
+        "004b1ba1: PUSH EAX ",
+        "004b1ba2: PUSH 0x4 ",
+        "004b1ba4: CALL 0x005558d0 ",
+        "004b1ba9: MOV EBX,EAX ",
+        "004b1bab: ADD ESP,0x10 ",
+        "004b1bae: CMP word ptr [ESI + EBX*0x2 + 0x32],0x0 ",
+        "004b1bb4: JZ 0x004b1cc4 ",
+        "004b1bba: LEA ECX,[ESI + 0x1a] ",
+        "004b1bbd: PUSH 0xb3 ",
+        "004b1bc2: PUSH 0x69ec04 ",
+        "004b1bc7: MOV EDX,dword ptr [ECX] ",
+        "004b1bc9: MOV dword ptr [ESP + 0x1c],EDX ",
+        "004b1bcd: MOV EDX,dword ptr [0x006e5050] ",
+        "004b1bd3: MOV EAX,dword ptr [ECX + 0x4] ",
+        "004b1bd6: ADD EDX,0x15a0 ",
+        "004b1bdc: MOV dword ptr [ESP + 0x20],EAX ",
+        "004b1be0: MOV EAX,dword ptr [ESI] ",
+        "004b1be2: MOV ECX,dword ptr [ECX + 0x8] ",
+        "004b1be5: PUSH EDX ",
+        "004b1be6: MOV dword ptr [ESP + 0x28],ECX ",
+        "004b1bea: MOV ECX,ESI ",
+        "004b1bec: CALL dword ptr [EAX + 0x3c] ",
+        "004b1bef: SHL EAX,0xc ",
+        "004b1bf2: PUSH EAX ",
+        "004b1bf3: CALL 0x005558d0 ",
+        "004b1bf8: MOV ECX,dword ptr [0x006e5050] ",
+        "004b1bfe: MOV EDX,dword ptr [ESI] ",
+        "004b1c00: ADD ESP,0x10 ",
+        "004b1c03: ADD ECX,0x15a0 ",
+        "004b1c09: MOV EDI,EAX ",
+        "004b1c0b: PUSH 0xb4 ",
+        "004b1c10: PUSH 0x69ec04 ",
+        "004b1c15: PUSH ECX ",
+        "004b1c16: MOV ECX,ESI ",
+        "004b1c18: CALL dword ptr [EDX + 0x40] ",
+        "004b1c1b: SHL EAX,0xc ",
+        "004b1c1e: PUSH EAX ",
+        "004b1c1f: CALL 0x005558d0 ",
+        "004b1c24: MOV ECX,dword ptr [ESP + 0x28] ",
+        "004b1c28: MOV EDX,dword ptr [ESP + 0x24] ",
+        "004b1c2c: ADD ECX,EAX ",
+        "004b1c2e: ADD EDX,EDI ",
+        "004b1c30: MOV dword ptr [ESP + 0x28],ECX ",
+        "004b1c34: MOV ECX,dword ptr [0x006e5050] ",
+        "004b1c3a: ADD ESP,0x10 ",
+        "004b1c3d: MOV dword ptr [ESP + 0x14],EDX ",
+        "004b1c41: MOV EAX,dword ptr [ECX] ",
+        "004b1c43: LEA EDX,[ESP + 0x14] ",
+        "004b1c47: PUSH EDX ",
+        "004b1c48: CALL dword ptr [EAX + 0x20c] ",
+        "004b1c4e: TEST EAX,EAX ",
+        "004b1c50: JNZ 0x004b1cc4 ",
+        "004b1c52: MOV EAX,[0x006e5050] ",
+        "004b1c57: PUSH 0xbc ",
+        "004b1c5c: ADD EAX,0x15a0 ",
+        "004b1c61: PUSH 0x69ec04 ",
+        "004b1c66: PUSH EAX ",
+        "004b1c67: PUSH 0x800 ",
+        "004b1c6c: CALL 0x005558d0 ",
+        "004b1c71: AND EAX,0x7ff ",
+        "004b1c76: ADD ESP,0x10 ",
+        "004b1c79: MOV word ptr [ESP + 0xe],AX ",
+        "004b1c7e: LEA EAX,[ESP + 0x10] ",
+        "004b1c82: MOV ECX,dword ptr [0x006e5050] ",
+        "004b1c88: PUSH EAX ",
+        "004b1c89: LEA EAX,[ESP + 0x12] ",
+        "004b1c8d: MOV EDX,dword ptr [ECX] ",
+        "004b1c8f: PUSH EAX ",
+        "004b1c90: LEA EAX,[ESP + 0x1c] ",
+        "004b1c94: PUSH EAX ",
+        "004b1c95: MOV AX,[0x006f2548] ",
+        "004b1c9b: PUSH EAX ",
+        "004b1c9c: MOV AX,word ptr [ESI + EBX*0x2 + 0x32] ",
+        "004b1ca1: PUSH EAX ",
+        "004b1ca2: CALL dword ptr [EDX + 0x38c] ",
+        "004b1ca8: MOV ECX,dword ptr [0x006e5050] ",
+        "004b1cae: CALL 0x00517490 ",
+        "004b1cb3: XOR ECX,ECX ",
+        "004b1cb5: MOV CL,byte ptr [ESI + 0x3a] ",
+        "004b1cb8: IMUL ECX,dword ptr [0x006f2590] ",
+        "004b1cbf: ADD EAX,ECX ",
+        "004b1cc1: MOV dword ptr [ESI + 0x2e],EAX ",
+        "004b1cc4: POP EBX ",
+        "004b1cc5: POP EDI ",
+        "004b1cc6: MOV EAX,0x1 ",
+        "004b1ccb: POP ESI ",
+        "004b1ccc: ADD ESP,0x14 ",
+        "004b1ccf: RET "
+      ]
+    },
+    {
+      "file": "phase37-generator-width-disassemble_function.txt",
+      "first": "0x4b75a0",
+      "last": "0x4b75a6",
+      "instructions": [
+        "004b75a0: XOR EAX,EAX ",
+        "004b75a2: MOV AX,word ptr [ECX + 0x40] ",
+        "004b75a6: RET "
+      ]
+    },
+    {
+      "file": "phase37-generator-height-disassemble_function.txt",
+      "first": "0x4b75b0",
+      "last": "0x4b75b6",
+      "instructions": [
+        "004b75b0: XOR EAX,EAX ",
+        "004b75b2: MOV AX,word ptr [ECX + 0x42] ",
+        "004b75b6: RET "
+      ]
+    },
+    {
+      "file": "phase37-rng-disassemble_function.txt",
+      "first": "0x5558d0",
+      "last": "0x55598a",
+      "instructions": [
+        "005558d0: PUSH EBP ",
+        "005558d1: MOV EBP,ESP ",
+        "005558d3: PUSH EBX ",
+        "005558d4: MOV EBX,dword ptr [EBP + 0x8] ",
+        "005558d7: TEST EBX,EBX ",
+        "005558d9: JNZ 0x005558fa ",
+        "005558db: MOV EAX,dword ptr [EBP + 0x14] ",
+        "005558de: MOV ECX,dword ptr [EBP + 0x10] ",
+        "005558e1: PUSH EAX ",
+        "005558e2: PUSH ECX ",
+        "005558e3: PUSH 0x6bc408 ",
+        "005558e8: PUSH 0x740c20 ",
+        "005558ed: CALL 0x00634db0 ",
+        "005558f2: ADD ESP,0x10 ",
+        "005558f5: XOR EAX,EAX ",
+        "005558f7: POP EBX ",
+        "005558f8: POP EBP ",
+        "005558f9: RET ",
+        "005558fa: MOV EAX,[0x0075b2f4] ",
+        "005558ff: PUSH EDI ",
+        "00555900: MOV EDI,dword ptr [EBP + 0xc] ",
+        "00555903: PUSH ESI ",
+        "00555904: TEST EAX,EAX ",
+        "00555906: JZ 0x00555967 ",
+        "00555908: CMP EDI,0x6f3fa8 ",
+        "0055590e: JNZ 0x00555967 ",
+        "00555910: MOV ECX,0x6f2a08 ",
+        "00555915: CALL 0x00517490 ",
+        "0055591a: MOV ECX,dword ptr [0x0075b300] ",
+        "00555920: MOV EDX,dword ptr [0x0075b304] ",
+        "00555926: TEST ECX,ECX ",
+        "00555928: JNZ 0x0055592e ",
+        "0055592a: TEST EDX,EDX ",
+        "0055592c: JZ 0x00555936 ",
+        "0055592e: CMP EAX,ECX ",
+        "00555930: JC 0x00555967 ",
+        "00555932: CMP EAX,EDX ",
+        "00555934: JA 0x00555967 ",
+        "00555936: MOV ESI,dword ptr [EBP + 0x10] ",
+        "00555939: PUSH 0x5c ",
+        "0055593b: PUSH ESI ",
+        "0055593c: CALL 0x006367c0 ",
+        "00555941: ADD ESP,0x8 ",
+        "00555944: TEST EAX,EAX ",
+        "00555946: JZ 0x0055594b ",
+        "00555948: INC EAX ",
+        "00555949: JMP 0x0055594d ",
+        "0055594b: MOV EAX,ESI ",
+        "0055594d: MOV EDX,dword ptr [EDI] ",
+        "0055594f: MOV ECX,dword ptr [EBP + 0x14] ",
+        "00555952: PUSH EDX ",
+        "00555953: PUSH ECX ",
+        "00555954: PUSH EAX ",
+        "00555955: PUSH 0x6bc3f8 ",
+        "0055595a: PUSH 0x756ee8 ",
+        "0055595f: CALL 0x005595c0 ",
+        "00555964: ADD ESP,0x14 ",
+        "00555967: MOV EAX,dword ptr [EDI] ",
+        "00555969: IMUL EAX,EAX,0x19660d ",
+        "0055596f: ADD EAX,0x3c6ef35f ",
+        "00555974: MOV dword ptr [EBP + 0x10],EAX ",
+        "00555977: MOV dword ptr [EDI],EAX ",
+        "00555979: ROR dword ptr [EBP + 0x10],0xd ",
+        "0055597d: MOV EAX,dword ptr [EBP + 0x10] ",
+        "00555980: XOR EDX,EDX ",
+        "00555982: DIV EBX ",
+        "00555984: POP ESI ",
+        "00555985: POP EDI ",
+        "00555986: POP EBX ",
+        "00555987: MOV EAX,EDX ",
+        "00555989: POP EBP ",
+        "0055598a: RET "
+      ]
+    },
+    {
+      "file": "phase37-generator-dump-disassemble_function.txt",
+      "first": "0x4b1cf0",
+      "last": "0x4b1deb",
+      "instructions": [
+        "004b1cf0: PUSH ESI ",
+        "004b1cf1: PUSH EDI ",
+        "004b1cf2: MOV ESI,ECX ",
+        "004b1cf4: CALL 0x004b5700 ",
+        "004b1cf9: MOV EAX,dword ptr [ESI + 0x2e] ",
+        "004b1cfc: PUSH EAX ",
+        "004b1cfd: PUSH 0x69ec8c ",
+        "004b1d02: PUSH 0x756ee8 ",
+        "004b1d07: CALL 0x005595c0 ",
+        "004b1d0c: XOR ECX,ECX ",
+        "004b1d0e: ADD ESP,0xc ",
+        "004b1d11: MOV CL,byte ptr [ESI + 0x3a] ",
+        "004b1d14: PUSH ECX ",
+        "004b1d15: PUSH 0x69ec78 ",
+        "004b1d1a: PUSH 0x756ee8 ",
+        "004b1d1f: CALL 0x005595c0 ",
+        "004b1d24: MOV EDX,dword ptr [ESI + 0x3c] ",
+        "004b1d27: ADD ESP,0xc ",
+        "004b1d2a: PUSH EDX ",
+        "004b1d2b: PUSH 0x69ec68 ",
+        "004b1d30: PUSH 0x756ee8 ",
+        "004b1d35: CALL 0x005595c0 ",
+        "004b1d3a: XOR EAX,EAX ",
+        "004b1d3c: ADD ESP,0xc ",
+        "004b1d3f: MOV AL,byte ptr [ESI + 0x3b] ",
+        "004b1d42: PUSH EAX ",
+        "004b1d43: PUSH 0x69cc1c ",
+        "004b1d48: PUSH 0x756ee8 ",
+        "004b1d4d: CALL 0x005595c0 ",
+        "004b1d52: XOR ECX,ECX ",
+        "004b1d54: ADD ESP,0xc ",
+        "004b1d57: MOV CX,word ptr [ESI + 0x40] ",
+        "004b1d5b: PUSH ECX ",
+        "004b1d5c: PUSH 0x69ec58 ",
+        "004b1d61: PUSH 0x756ee8 ",
+        "004b1d66: CALL 0x005595c0 ",
+        "004b1d6b: XOR EDX,EDX ",
+        "004b1d6d: ADD ESP,0xc ",
+        "004b1d70: MOV DX,word ptr [ESI + 0x42] ",
+        "004b1d74: PUSH EDX ",
+        "004b1d75: PUSH 0x69ec48 ",
+        "004b1d7a: PUSH 0x756ee8 ",
+        "004b1d7f: CALL 0x005595c0 ",
+        "004b1d84: XOR EAX,EAX ",
+        "004b1d86: ADD ESP,0xc ",
+        "004b1d89: MOV AL,byte ptr [ESI + 0x44] ",
+        "004b1d8c: PUSH EAX ",
+        "004b1d8d: PUSH 0x69eb6c ",
+        "004b1d92: PUSH 0x756ee8 ",
+        "004b1d97: CALL 0x005595c0 ",
+        "004b1d9c: ADD ESP,0xc ",
+        "004b1d9f: PUSH 0x69ec38 ",
+        "004b1da4: PUSH 0x756ee8 ",
+        "004b1da9: CALL 0x005595c0 ",
+        "004b1dae: ADD ESP,0x8 ",
+        "004b1db1: ADD ESI,0x32 ",
+        "004b1db4: MOV EDI,0x4 ",
+        "004b1db9: XOR ECX,ECX ",
+        "004b1dbb: MOV CX,word ptr [ESI] ",
+        "004b1dbe: PUSH ECX ",
+        "004b1dbf: PUSH 0x69a0c4 ",
+        "004b1dc4: PUSH 0x756ee8 ",
+        "004b1dc9: CALL 0x005595c0 ",
+        "004b1dce: ADD ESP,0xc ",
+        "004b1dd1: ADD ESI,0x2 ",
+        "004b1dd4: DEC EDI ",
+        "004b1dd5: JNZ 0x004b1db9 ",
+        "004b1dd7: PUSH 0x69a0c0 ",
+        "004b1ddc: PUSH 0x756ee8 ",
+        "004b1de1: CALL 0x005595c0 ",
+        "004b1de6: ADD ESP,0x8 ",
+        "004b1de9: POP EDI ",
+        "004b1dea: POP ESI ",
+        "004b1deb: RET "
+      ]
+    },
+    {
+      "file": "phase37-editor-reader-disassemble_function.txt",
+      "first": "0x430db0",
+      "last": "0x430e91",
+      "instructions": [
+        "00430db0: SUB ESP,0x78 ",
+        "00430db3: PUSH ESI ",
+        "00430db4: MOV ESI,dword ptr [ESP + 0x88] ",
+        "00430dbb: MOV EAX,dword ptr [ESI + 0x9c] ",
+        "00430dc1: TEST EAX,EAX ",
+        "00430dc3: JZ 0x00430e40 ",
+        "00430dc5: MOV EDX,dword ptr [ESP + 0x84] ",
+        "00430dcc: LEA EAX,[ESP + 0x4] ",
+        "00430dd0: PUSH EAX ",
+        "00430dd1: LEA ECX,[ESP + 0x10] ",
+        "00430dd5: MOV EAX,dword ptr [EDX] ",
+        "00430dd7: PUSH 0x24 ",
+        "00430dd9: PUSH ECX ",
+        "00430dda: LEA ECX,[ESP + 0x14] ",
+        "00430dde: PUSH EAX ",
+        "00430ddf: PUSH ECX ",
+        "00430de0: CALL 0x004b7f10 ",
+        "00430de5: MOV ECX,dword ptr [EAX] ",
+        "00430de7: ADD ESP,0x14 ",
+        "00430dea: XOR EDX,EDX ",
+        "00430dec: TEST ECX,ECX ",
+        "00430dee: SETGE DL ",
+        "00430df1: XOR EDX,0x1 ",
+        "00430df4: JZ 0x00430e0b ",
+        "00430df6: PUSH 0x0 ",
+        "00430df8: PUSH 0x0 ",
+        "00430dfa: PUSH 0x532604 ",
+        "00430dff: CALL 0x004e4d4a ",
+        "00430e04: XOR EAX,EAX ",
+        "00430e06: POP ESI ",
+        "00430e07: ADD ESP,0x78 ",
+        "00430e0a: RET ",
+        "00430e0b: LEA ECX,[ESP + 0x30] ",
+        "00430e0f: CALL 0x0042faf0 ",
+        "00430e14: LEA EAX,[ESP + 0xc] ",
+        "00430e18: LEA ECX,[ESP + 0x30] ",
+        "00430e1c: PUSH EAX ",
+        "00430e1d: CALL 0x0042fb50 ",
+        "00430e22: MOV ECX,dword ptr [ESI + 0xb0] ",
+        "00430e28: LEA EDX,[ESP + 0x30] ",
+        "00430e2c: PUSH ECX ",
+        "00430e2d: PUSH EDX ",
+        "00430e2e: CALL dword ptr [ESI + 0x9c] ",
+        "00430e34: ADD ESP,0x8 ",
+        "00430e37: TEST EAX,EAX ",
+        "00430e39: JNZ 0x00430e88 ",
+        "00430e3b: POP ESI ",
+        "00430e3c: ADD ESP,0x78 ",
+        "00430e3f: RET ",
+        "00430e40: MOV EAX,dword ptr [ESP + 0x80] ",
+        "00430e47: PUSH EBX ",
+        "00430e48: MOV EBX,dword ptr [ESP + 0x88] ",
+        "00430e4f: PUSH EDI ",
+        "00430e50: MOV EDI,dword ptr [EAX + 0x4] ",
+        "00430e53: MOV ECX,dword ptr [EBX] ",
+        "00430e55: PUSH ECX ",
+        "00430e56: CALL 0x004b7e70 ",
+        "00430e5b: MOV EDX,dword ptr [EBX] ",
+        "00430e5d: PUSH 0x1 ",
+        "00430e5f: MOV ESI,EAX ",
+        "00430e61: PUSH EDI ",
+        "00430e62: PUSH EDX ",
+        "00430e63: ADD ESI,EDI ",
+        "00430e65: CALL 0x004b7e80 ",
+        "00430e6a: ADD ESP,0x10 ",
+        "00430e6d: CMP EAX,ESI ",
+        "00430e6f: POP EDI ",
+        "00430e70: POP EBX ",
+        "00430e71: JZ 0x00430e88 ",
+        "00430e73: PUSH 0x0 ",
+        "00430e75: PUSH 0x0 ",
+        "00430e77: PUSH 0x5325d4 ",
+        "00430e7c: CALL 0x004e4d4a ",
+        "00430e81: XOR EAX,EAX ",
+        "00430e83: POP ESI ",
+        "00430e84: ADD ESP,0x78 ",
+        "00430e87: RET ",
+        "00430e88: MOV EAX,0x1 ",
+        "00430e8d: POP ESI ",
+        "00430e8e: ADD ESP,0x78 ",
+        "00430e91: RET "
+      ]
+    },
+    {
+      "file": "phase37-mid-init-disassemble_function.txt",
+      "first": "0x42faf0",
+      "last": "0x42fb45",
+      "instructions": [
+        "0042faf0: MOV EDX,ECX ",
+        "0042faf2: PUSH EDI ",
+        "0042faf3: LEA EAX,[EDX + 0x4] ",
+        "0042faf6: LEA ECX,[EDX + 0x8] ",
+        "0042faf9: MOV dword ptr [EDX],0x0 ",
+        "0042faff: LEA EDI,[EDX + 0x28] ",
+        "0042fb02: MOV dword ptr [EAX],0x0 ",
+        "0042fb08: MOV dword ptr [ECX],0x0 ",
+        "0042fb0e: LEA EAX,[EDX + 0xc] ",
+        "0042fb11: LEA ECX,[EDX + 0x10] ",
+        "0042fb14: MOV dword ptr [EAX],0x0 ",
+        "0042fb1a: MOV dword ptr [ECX],0x0 ",
+        "0042fb20: LEA ECX,[EDX + 0x14] ",
+        "0042fb23: XOR EAX,EAX ",
+        "0042fb25: MOV dword ptr [ECX],EAX ",
+        "0042fb27: MOV dword ptr [ECX + 0x4],EAX ",
+        "0042fb2a: MOV dword ptr [ECX + 0x8],EAX ",
+        "0042fb2d: MOV dword ptr [ECX + 0xc],EAX ",
+        "0042fb30: LEA EAX,[EDX + 0x24] ",
+        "0042fb33: MOV ECX,0x9 ",
+        "0042fb38: MOV dword ptr [EAX],0x0 ",
+        "0042fb3e: XOR EAX,EAX ",
+        "0042fb40: STOSD.REP ES:EDI ",
+        "0042fb42: MOV EAX,EDX ",
+        "0042fb44: POP EDI ",
+        "0042fb45: RET "
+      ]
+    },
+    {
+      "file": "phase37-intermediate-converter-disassemble_function.txt",
+      "first": "0x42fb50",
+      "last": "0x42fbca",
+      "instructions": [
+        "0042fb50: MOV EAX,dword ptr [ESP + 0x4] ",
+        "0042fb54: PUSH EBX ",
+        "0042fb55: PUSH ESI ",
+        "0042fb56: PUSH EDI ",
+        "0042fb57: MOV EDX,dword ptr [EAX + 0x8] ",
+        "0042fb5a: MOV EDI,dword ptr [EAX + 0x4] ",
+        "0042fb5d: MOV EBX,dword ptr [EAX] ",
+        "0042fb5f: MOV ESI,0x1 ",
+        "0042fb64: MOV dword ptr [ECX],ESI ",
+        "0042fb66: MOV dword ptr [ECX + 0x28],EBX ",
+        "0042fb69: MOV dword ptr [ECX + 0x2c],EDI ",
+        "0042fb6c: MOV dword ptr [ECX + 0x30],EDX ",
+        "0042fb6f: MOV DL,byte ptr [EAX + 0x1d] ",
+        "0042fb72: MOV dword ptr [ECX + 0x4],ESI ",
+        "0042fb75: MOV byte ptr [ECX + 0x45],DL ",
+        "0042fb78: MOV DL,byte ptr [EAX + 0x1c] ",
+        "0042fb7b: MOV EDI,dword ptr [ECX + 0x34] ",
+        "0042fb7e: MOV dword ptr [ECX + 0x8],ESI ",
+        "0042fb81: MOV byte ptr [ECX + 0x44],DL ",
+        "0042fb84: MOV DX,word ptr [EAX + 0x10] ",
+        "0042fb88: MOV dword ptr [ECX + 0xc],ESI ",
+        "0042fb8b: MOV word ptr [ECX + 0x38],DX ",
+        "0042fb8f: MOV DX,word ptr [EAX + 0x12] ",
+        "0042fb93: MOV dword ptr [ECX + 0x10],ESI ",
+        "0042fb96: MOV word ptr [ECX + 0x3a],DX ",
+        "0042fb9a: MOV EDX,dword ptr [EAX + 0xc] ",
+        "0042fb9d: OR EDI,EDX ",
+        "0042fb9f: MOV dword ptr [ECX + 0x24],ESI ",
+        "0042fba2: MOV dword ptr [ECX + 0x34],EDI ",
+        "0042fba5: LEA EDX,[ECX + 0x3c] ",
+        "0042fba8: ADD ECX,0x14 ",
+        "0042fbab: ADD EAX,0x14 ",
+        "0042fbae: MOV EBX,0x4 ",
+        "0042fbb3: MOV DI,word ptr [EAX] ",
+        "0042fbb6: MOV dword ptr [ECX],ESI ",
+        "0042fbb8: MOV word ptr [EDX],DI ",
+        "0042fbbb: ADD ECX,0x4 ",
+        "0042fbbe: ADD EAX,0x2 ",
+        "0042fbc1: ADD EDX,0x2 ",
+        "0042fbc4: DEC EBX ",
+        "0042fbc5: JNZ 0x0042fbb3 ",
+        "0042fbc7: POP EDI ",
+        "0042fbc8: POP ESI ",
+        "0042fbc9: POP EBX ",
+        "0042fbca: RET 0x4 "
+      ]
+    },
+    {
+      "file": "phase37-callback-next-disassemble_function.txt",
+      "first": "0x491f20",
+      "last": "0x49202d",
+      "instructions": [
+        "00491f20: MOV EAX,FS:[0x0] ",
+        "00491f26: PUSH -0x1 ",
+        "00491f28: PUSH 0x50168b ",
+        "00491f2d: PUSH EAX ",
+        "00491f2e: MOV dword ptr FS:[0x0],ESP ",
+        "00491f35: PUSH EBX ",
+        "00491f36: PUSH EBP ",
+        "00491f37: PUSH ESI ",
+        "00491f38: PUSH EDI ",
+        "00491f39: MOV EDI,dword ptr [ESP + 0x20] ",
+        "00491f3d: PUSH 0x30 ",
+        "00491f3f: MOV ESI,dword ptr [EDI + 0x2c] ",
+        "00491f42: MOV EBX,dword ptr [EDI + 0x28] ",
+        "00491f45: CALL 0x004d8a63 ",
+        "00491f4a: ADD ESP,0x4 ",
+        "00491f4d: MOV dword ptr [ESP + 0x20],EAX ",
+        "00491f51: XOR EBP,EBP ",
+        "00491f53: CMP EAX,EBP ",
+        "00491f55: MOV dword ptr [ESP + 0x18],EBP ",
+        "00491f59: JZ 0x00491f65 ",
+        "00491f5b: PUSH EBP ",
+        "00491f5c: MOV ECX,EAX ",
+        "00491f5e: CALL 0x0041f810 ",
+        "00491f63: MOV EBP,EAX ",
+        "00491f65: MOV EAX,dword ptr [EDI] ",
+        "00491f67: MOV dword ptr [ESP + 0x18],0xffffffff ",
+        "00491f6f: TEST EAX,EAX ",
+        "00491f71: JZ 0x00491f85 ",
+        "00491f73: MOV EAX,dword ptr [EBP] ",
+        "00491f76: PUSH EBX ",
+        "00491f77: MOV ECX,EBP ",
+        "00491f79: CALL dword ptr [EAX + 0x20] ",
+        "00491f7c: MOV EDX,dword ptr [EBP] ",
+        "00491f7f: PUSH ESI ",
+        "00491f80: MOV ECX,EBP ",
+        "00491f82: CALL dword ptr [EDX + 0x24] ",
+        "00491f85: MOV EAX,dword ptr [EDI + 0x4] ",
+        "00491f88: TEST EAX,EAX ",
+        "00491f8a: JZ 0x00491f92 ",
+        "00491f8c: MOV AL,byte ptr [EDI + 0x45] ",
+        "00491f8f: MOV byte ptr [EBP + 0x18],AL ",
+        "00491f92: MOV EAX,dword ptr [EDI + 0xc] ",
+        "00491f95: TEST EAX,EAX ",
+        "00491f97: JZ 0x00491fa5 ",
+        "00491f99: MOV CX,word ptr [EDI + 0x38] ",
+        "00491f9d: PUSH ECX ",
+        "00491f9e: MOV ECX,EBP ",
+        "00491fa0: CALL 0x0041f990 ",
+        "00491fa5: MOV EAX,dword ptr [EDI + 0x10] ",
+        "00491fa8: TEST EAX,EAX ",
+        "00491faa: JZ 0x00491fb8 ",
+        "00491fac: MOV DX,word ptr [EDI + 0x3a] ",
+        "00491fb0: MOV ECX,EBP ",
+        "00491fb2: PUSH EDX ",
+        "00491fb3: CALL 0x0041f9e0 ",
+        "00491fb8: MOV EAX,dword ptr [EDI + 0x8] ",
+        "00491fbb: TEST EAX,EAX ",
+        "00491fbd: JZ 0x00491fc5 ",
+        "00491fbf: MOV AL,byte ptr [EDI + 0x44] ",
+        "00491fc2: MOV byte ptr [EBP + 0x20],AL ",
+        "00491fc5: LEA ECX,[EDI + 0x14] ",
+        "00491fc8: XOR ESI,ESI ",
+        "00491fca: LEA EBX,[EDI + 0x3c] ",
+        "00491fcd: MOV dword ptr [ESP + 0x20],ECX ",
+        "00491fd1: MOV EDX,dword ptr [ESP + 0x20] ",
+        "00491fd5: CMP dword ptr [EDX],0x0 ",
+        "00491fd8: JZ 0x00491fe6 ",
+        "00491fda: MOV AX,word ptr [EBX] ",
+        "00491fdd: MOV ECX,EBP ",
+        "00491fdf: PUSH EAX ",
+        "00491fe0: PUSH ESI ",
+        "00491fe1: CALL 0x0041fa50 ",
+        "00491fe6: MOV EDX,dword ptr [ESP + 0x20] ",
+        "00491fea: INC ESI ",
+        "00491feb: ADD EDX,0x4 ",
+        "00491fee: ADD EBX,0x2 ",
+        "00491ff1: CMP ESI,0x4 ",
+        "00491ff4: MOV dword ptr [ESP + 0x20],EDX ",
+        "00491ff8: JC 0x00491fd1 ",
+        "00491ffa: MOV EAX,dword ptr [EDI + 0x24] ",
+        "00491ffd: TEST EAX,EAX ",
+        "00491fff: JZ 0x0049200c ",
+        "00492001: MOV ECX,dword ptr [EDI + 0x34] ",
+        "00492004: PUSH ECX ",
+        "00492005: MOV ECX,EBP ",
+        "00492007: CALL 0x00401a50 ",
+        "0049200c: MOV ECX,dword ptr [ESP + 0x24] ",
+        "00492010: PUSH EBP ",
+        "00492011: CALL 0x0048ad20 ",
+        "00492016: MOV ECX,dword ptr [ESP + 0x10] ",
+        "0049201a: POP EDI ",
+        "0049201b: POP ESI ",
+        "0049201c: POP EBP ",
+        "0049201d: MOV EAX,0x1 ",
+        "00492022: MOV dword ptr FS:[0x0],ECX ",
+        "00492029: POP EBX ",
+        "0049202a: ADD ESP,0xc ",
+        "0049202d: RET "
+      ]
+    },
+    {
+      "file": "phase37-model-constructor-disassemble_function.txt",
+      "first": "0x41f810",
+      "last": "0x41f896",
+      "instructions": [
+        "0041f810: PUSH -0x1 ",
+        "0041f812: PUSH 0x4f9788 ",
+        "0041f817: MOV EAX,FS:[0x0] ",
+        "0041f81d: PUSH EAX ",
+        "0041f81e: MOV dword ptr FS:[0x0],ESP ",
+        "0041f825: PUSH ECX ",
+        "0041f826: PUSH ESI ",
+        "0041f827: PUSH EDI ",
+        "0041f828: MOV EDI,dword ptr [ESP + 0x1c] ",
+        "0041f82c: MOV ESI,ECX ",
+        "0041f82e: PUSH EDI ",
+        "0041f82f: MOV dword ptr [ESP + 0xc],ESI ",
+        "0041f833: CALL 0x0041c5a0 ",
+        "0041f838: XOR EAX,EAX ",
+        "0041f83a: MOV dword ptr [ESI],0x50aeb8 ",
+        "0041f840: CMP EDI,EAX ",
+        "0041f842: MOV dword ptr [ESP + 0x14],EAX ",
+        "0041f846: MOV byte ptr [ESI + 0x13],AL ",
+        "0041f849: JZ 0x0041f868 ",
+        "0041f84b: PUSH EDI ",
+        "0041f84c: MOV ECX,ESI ",
+        "0041f84e: CALL 0x0041f8c0 ",
+        "0041f853: MOV EAX,ESI ",
+        "0041f855: POP EDI ",
+        "0041f856: POP ESI ",
+        "0041f857: MOV ECX,dword ptr [ESP + 0x4] ",
+        "0041f85b: MOV dword ptr FS:[0x0],ECX ",
+        "0041f862: ADD ESP,0x10 ",
+        "0041f865: RET 0x4 ",
+        "0041f868: MOV byte ptr [ESI + 0x18],AL ",
+        "0041f86b: MOV dword ptr [ESI + 0x1c],EAX ",
+        "0041f86e: MOV word ptr [ESI + 0x22],AX ",
+        "0041f872: MOV word ptr [ESI + 0x24],AX ",
+        "0041f876: LEA ECX,[ESI + 0x26] ",
+        "0041f879: XOR EAX,EAX ",
+        "0041f87b: MOV byte ptr [ESI + 0x20],0x1 ",
+        "0041f87f: POP EDI ",
+        "0041f880: MOV dword ptr [ECX],EAX ",
+        "0041f882: MOV dword ptr [ECX + 0x4],EAX ",
+        "0041f885: MOV ECX,dword ptr [ESP + 0x8] ",
+        "0041f889: MOV EAX,ESI ",
+        "0041f88b: POP ESI ",
+        "0041f88c: MOV dword ptr FS:[0x0],ECX ",
+        "0041f893: ADD ESP,0x10 ",
+        "0041f896: RET 0x4 "
+      ]
+    },
+    {
+      "file": "phase37-width-set-disassemble_function.txt",
+      "first": "0x41f990",
+      "last": "0x41f9da",
+      "instructions": [
+        "0041f990: PUSH ESI ",
+        "0041f991: PUSH EDI ",
+        "0041f992: MOV ESI,ECX ",
+        "0041f994: CALL 0x0041c670 ",
+        "0041f999: MOV ECX,dword ptr [ESP + 0xc] ",
+        "0041f99d: MOV EAX,dword ptr [EAX + 0x990] ",
+        "0041f9a3: MOV EDI,dword ptr [ESI + 0x4] ",
+        "0041f9a6: MOV EDX,ECX ",
+        "0041f9a8: AND EDX,0xffff ",
+        "0041f9ae: AND EAX,0xffff ",
+        "0041f9b3: ADD EDX,EDI ",
+        "0041f9b5: CMP EDX,EAX ",
+        "0041f9b7: JL 0x0041f9d4 ",
+        "0041f9b9: MOV ECX,ESI ",
+        "0041f9bb: CALL 0x0041c670 ",
+        "0041f9c0: MOV EAX,dword ptr [EAX + 0x990] ",
+        "0041f9c6: POP EDI ",
+        "0041f9c7: SUB AX,word ptr [ESI + 0x4] ",
+        "0041f9cb: DEC EAX ",
+        "0041f9cc: MOV word ptr [ESI + 0x22],AX ",
+        "0041f9d0: POP ESI ",
+        "0041f9d1: RET 0x4 ",
+        "0041f9d4: MOV word ptr [ESI + 0x22],CX ",
+        "0041f9d8: POP EDI ",
+        "0041f9d9: POP ESI ",
+        "0041f9da: RET 0x4 "
+      ]
+    },
+    {
+      "file": "phase37-height-set-disassemble_function.txt",
+      "first": "0x41f9e0",
+      "last": "0x41fa2a",
+      "instructions": [
+        "0041f9e0: PUSH ESI ",
+        "0041f9e1: PUSH EDI ",
+        "0041f9e2: MOV ESI,ECX ",
+        "0041f9e4: CALL 0x0041c670 ",
+        "0041f9e9: MOV ECX,dword ptr [ESP + 0xc] ",
+        "0041f9ed: MOV EAX,dword ptr [EAX + 0x994] ",
+        "0041f9f3: MOV EDI,dword ptr [ESI + 0x8] ",
+        "0041f9f6: MOV EDX,ECX ",
+        "0041f9f8: AND EDX,0xffff ",
+        "0041f9fe: AND EAX,0xffff ",
+        "0041fa03: ADD EDX,EDI ",
+        "0041fa05: CMP EDX,EAX ",
+        "0041fa07: JL 0x0041fa24 ",
+        "0041fa09: MOV ECX,ESI ",
+        "0041fa0b: CALL 0x0041c670 ",
+        "0041fa10: MOV EAX,dword ptr [EAX + 0x994] ",
+        "0041fa16: POP EDI ",
+        "0041fa17: SUB AX,word ptr [ESI + 0x8] ",
+        "0041fa1b: DEC EAX ",
+        "0041fa1c: MOV word ptr [ESI + 0x24],AX ",
+        "0041fa20: POP ESI ",
+        "0041fa21: RET 0x4 ",
+        "0041fa24: MOV word ptr [ESI + 0x24],CX ",
+        "0041fa28: POP EDI ",
+        "0041fa29: POP ESI ",
+        "0041fa2a: RET 0x4 "
+      ]
+    },
+    {
+      "file": "phase37-generator-effect-get-disassemble_function.txt",
+      "first": "0x41fa30",
+      "last": "0x41fa44",
+      "instructions": [
+        "0041fa30: MOV EAX,dword ptr [ESP + 0x4] ",
+        "0041fa34: CMP EAX,0x4 ",
+        "0041fa37: JNC 0x0041fa41 ",
+        "0041fa39: MOV AX,word ptr [ECX + EAX*0x2 + 0x26] ",
+        "0041fa3e: RET 0x4 ",
+        "0041fa41: XOR AX,AX ",
+        "0041fa44: RET 0x4 "
+      ]
+    },
+    {
+      "file": "phase37-editor-model-flags-set-disassemble_function.txt",
+      "first": "0x41fa50",
+      "last": "0x41fa63",
+      "instructions": [
+        "0041fa50: MOV EAX,dword ptr [ESP + 0x4] ",
+        "0041fa54: CMP EAX,0x4 ",
+        "0041fa57: JNC 0x0041fa63 ",
+        "0041fa59: MOV DX,word ptr [ESP + 0x8] ",
+        "0041fa5e: MOV word ptr [ECX + EAX*0x2 + 0x26],DX ",
+        "0041fa63: RET 0x8 "
+      ]
+    },
+    {
+      "file": "phase37-generator-flags-disassemble_function.txt",
+      "first": "0x41fa70",
+      "last": "0x41fa72",
+      "instructions": [
+        "0041fa70: XOR EAX,EAX ",
+        "0041fa72: RET "
+      ]
+    },
+    {
+      "file": "phase37-flags-set-actual-disassemble_function.txt",
+      "first": "0x401a50",
+      "last": "0x401a50",
+      "instructions": [
+        "00401a50: RET 0x4 "
+      ]
+    },
+    {
+      "file": "phase37-generator-array-get-disassemble_function.txt",
+      "first": "0x48ad00",
+      "last": "0x48ad1c",
+      "instructions": [
+        "0048ad00: MOV EAX,dword ptr [ESP + 0x4] ",
+        "0048ad04: MOV EDX,dword ptr [ECX + 0xbb4] ",
+        "0048ad0a: CMP EAX,EDX ",
+        "0048ad0c: JC 0x0048ad13 ",
+        "0048ad0e: XOR EAX,EAX ",
+        "0048ad10: RET 0x4 ",
+        "0048ad13: MOV ECX,dword ptr [ECX + 0xbb0] ",
+        "0048ad19: MOV EAX,dword ptr [ECX + EAX*0x4] ",
+        "0048ad1c: RET 0x4 "
+      ]
+    },
+    {
+      "file": "phase30-things-writer-before.txt",
+      "first": "0x4947c0",
+      "last": "0x4952eb",
+      "instructions": [
+        "004947c0: SUB ESP,0x398 ",
+        "004947c6: PUSH EBX ",
+        "004947c7: PUSH EBP ",
+        "004947c8: PUSH ESI ",
+        "004947c9: PUSH EDI ",
+        "004947ca: MOV ESI,ECX ",
+        "004947cc: CALL 0x004022c0 ",
+        "004947d1: MOV EAX,dword ptr [ESI + 0xb3c] ",
+        "004947d7: MOV ECX,dword ptr [ESI + 0xb50] ",
+        "004947dd: MOV EDX,dword ptr [ESI + 0xba0] ",
+        "004947e3: MOV EDI,dword ptr [ESI + 0xb64] ",
+        "004947e9: MOV EBX,dword ptr [ESI + 0xbb4] ",
+        "004947ef: MOV dword ptr [ESP + 0x1c],EAX ",
+        "004947f3: MOV EAX,dword ptr [ESI + 0xa68] ",
+        "004947f9: MOV dword ptr [ESP + 0x24],ECX ",
+        "004947fd: MOV ECX,ESI ",
+        "004947ff: MOV dword ptr [ESP + 0x20],EDX ",
+        "00494803: MOV dword ptr [ESP + 0x10],EAX ",
+        "00494807: CALL 0x0048b490 ",
+        "0049480c: MOV ECX,ESI ",
+        "0049480e: MOV EBP,EAX ",
+        "00494810: CALL 0x0048b340 ",
+        "00494815: MOV ECX,dword ptr [ESP + 0x10] ",
+        "00494819: MOV EDX,dword ptr [ESP + 0x1c] ",
+        "0049481d: ADD ECX,EBP ",
+        "0049481f: PUSH 0x1 ",
+        "00494821: ADD EAX,ECX ",
+        "00494823: MOV ECX,ESI ",
+        "00494825: ADD EAX,EDX ",
+        "00494827: LEA EBP,[EAX*0x8 + 0x0] ",
+        "0049482e: SUB EBP,EAX ",
+        "00494830: CALL 0x00488bf0 ",
+        "00494835: MOV ECX,dword ptr [ESP + 0x20] ",
+        "00494839: ADD EDI,EAX ",
+        "0049483b: LEA EDX,[EDI + ECX*0x2] ",
+        "0049483e: MOV ECX,ESI ",
+        "00494840: SHL EDX,0x5 ",
+        "00494843: LEA EDI,[EDX + EBP*0x4] ",
+        "00494846: CALL 0x00488c60 ",
+        "0049484b: MOV EBP,dword ptr [ESP + 0x24] ",
+        "0049484f: PUSH 0x1 ",
+        "00494851: ADD EAX,EBP ",
+        "00494853: MOV ECX,ESI ",
+        "00494855: LEA EAX,[EAX + EAX*0x2] ",
+        "00494858: LEA EDI,[EDI + EAX*0x8] ",
+        "0049485b: CALL 0x00488b80 ",
+        "00494860: ADD EAX,0x6666665 ",
+        "00494865: PUSH 0x1 ",
+        "00494867: LEA ECX,[EAX + EAX*0x4] ",
+        "0049486a: LEA EDI,[EDI + ECX*0x8] ",
+        "0049486d: MOV ECX,ESI ",
+        "0049486f: CALL 0x00488cc0 ",
+        "00494874: LEA EDX,[EAX + EAX*0x8] ",
+        "00494877: MOV ECX,ESI ",
+        "00494879: LEA EDI,[EDI + EDX*0x4] ",
+        "0049487c: CALL 0x0048dde0 ",
+        "00494881: LEA ECX,[EAX*0x8 + 0x0] ",
+        "00494888: PUSH 0xc ",
+        "0049488a: SUB ECX,EAX ",
+        "0049488c: MOV dword ptr [ESP + 0xc0],0xbe ",
+        "00494897: MOV dword ptr [ESP + 0xc4],0x4 ",
+        "004948a2: LEA ECX,[ECX + ECX*0x4] ",
+        "004948a5: LEA EDX,[EAX + ECX*0x8] ",
+        "004948a8: LEA ECX,[EBX + EBX*0x4] ",
+        "004948ab: LEA EAX,[EAX + EDX*0x2] ",
+        "004948ae: LEA EDX,[EBX + ECX*0x2] ",
+        "004948b1: ADD EDI,EAX ",
+        "004948b3: LEA ECX,[ESP + 0xc0] ",
+        "004948ba: PUSH ECX ",
+        "004948bb: LEA EAX,[EDI + EDX*0x4] ",
+        "004948be: MOV EDI,dword ptr [ESP + 0x3b4] ",
+        "004948c5: MOV dword ptr [ESP + 0x34],EAX ",
+        "004948c9: ADD EAX,0x38 ",
+        "004948cc: MOV dword ptr [ESP + 0xcc],EAX ",
+        "004948d3: MOV EAX,dword ptr [EDI] ",
+        "004948d5: MOV ECX,EDI ",
+        "004948d7: CALL dword ptr [EAX + 0x38] ",
+        "004948da: MOV EDX,dword ptr [ESI + 0xb50] ",
+        "004948e0: MOV EBX,dword ptr [ESI + 0xb3c] ",
+        "004948e6: MOV EAX,dword ptr [ESI + 0xb64] ",
+        "004948ec: MOV dword ptr [ESP + 0xec],0xbf ",
+        "004948f7: MOV dword ptr [ESP + 0x48],EDX ",
+        "004948fb: MOV ECX,dword ptr [ESI + 0xba0] ",
+        "00494901: MOV EDX,dword ptr [ESI + 0xbb4] ",
+        "00494907: MOV dword ptr [ESP + 0x28],EAX ",
+        "0049490b: MOV EAX,dword ptr [ESI + 0xa68] ",
+        "00494911: MOV dword ptr [ESP + 0x1c],ECX ",
+        "00494915: PUSH 0x1 ",
+        "00494917: MOV ECX,ESI ",
+        "00494919: MOV dword ptr [ESP + 0x14],EDX ",
+        "0049491d: MOV dword ptr [ESP + 0x24],EAX ",
+        "00494921: CALL 0x00488b30 ",
+        "00494926: MOV ECX,ESI ",
+        "00494928: MOV EBP,EAX ",
+        "0049492a: CALL 0x0048dde0 ",
+        "0049492f: MOV ECX,ESI ",
+        "00494931: ADD EBP,EAX ",
+        "00494933: CALL 0x0048b490 ",
+        "00494938: MOV dword ptr [ESP + 0x24],EBP ",
+        "0049493c: MOV EBP,EAX ",
+        "0049493e: MOV ECX,ESI ",
+        "00494940: ADD EBP,EBX ",
+        "00494942: CALL 0x0048b340 ",
+        "00494947: MOV ECX,dword ptr [ESP + 0x24] ",
+        "0049494b: MOV EDX,dword ptr [ESP + 0x20] ",
+        "0049494f: MOV EBX,dword ptr [ESP + 0x28] ",
+        "00494953: ADD EBP,ECX ",
+        "00494955: MOV ECX,dword ptr [ESP + 0x10] ",
+        "00494959: ADD EAX,EBP ",
+        "0049495b: ADD EDX,ECX ",
+        "0049495d: MOV ECX,dword ptr [ESP + 0x1c] ",
+        "00494961: ADD EDX,ECX ",
+        "00494963: MOV ECX,dword ptr [ESP + 0x48] ",
+        "00494967: ADD EDX,EBX ",
+        "00494969: MOV dword ptr [ESP + 0xf8],0x1 ",
+        "00494974: ADD EDX,ECX ",
+        "00494976: MOV ECX,0x54f550 ",
+        "0049497b: LEA EDX,[EDX + EAX*0x1 + -0x2] ",
+        "0049497f: LEA EAX,[ESP + 0xfc] ",
+        "00494986: PUSH EAX ",
+        "00494987: MOV dword ptr [ESP + 0xf8],EDX ",
+        "0049498e: CALL 0x004ab320 ",
+        "00494993: LEA ECX,[ESP + 0x106] ",
+        "0049499a: PUSH ECX ",
+        "0049499b: MOV ECX,0x54f550 ",
+        "004949a0: CALL 0x004ab320 ",
+        "004949a5: MOV EDX,dword ptr [EDI] ",
+        "004949a7: LEA EAX,[ESP + 0xec] ",
+        "004949ae: PUSH 0x24 ",
+        "004949b0: PUSH EAX ",
+        "004949b1: MOV ECX,EDI ",
+        "004949b3: MOV dword ptr [ESP + 0xf8],0x1c ",
+        "004949be: CALL dword ptr [EDX + 0x38] ",
+        "004949c1: MOV ECX,dword ptr [ESP + 0x2c] ",
+        "004949c5: MOV EDX,dword ptr [EDI] ",
+        "004949c7: LEA EAX,[ESP + 0x9c] ",
+        "004949ce: MOV dword ptr [ESP + 0xa0],ECX ",
+        "004949d5: PUSH 0x8 ",
+        "004949d7: PUSH EAX ",
+        "004949d8: MOV ECX,EDI ",
+        "004949da: MOV dword ptr [ESP + 0xa4],0xc0 ",
+        "004949e5: CALL dword ptr [EDX + 0x38] ",
+        "004949e8: XOR EBX,EBX ",
+        "004949ea: MOV ECX,ESI ",
+        "004949ec: PUSH EBX ",
+        "004949ed: CALL 0x00488b30 ",
+        "004949f2: TEST EAX,EAX ",
+        "004949f4: JBE 0x00494c25 ",
+        "004949fa: PUSH EBX ",
+        "004949fb: MOV ECX,ESI ",
+        "004949fd: CALL 0x00488d30 ",
+        "00494a02: MOV EBP,EAX ",
+        "00494a04: MOV AL,byte ptr [EBP + 0x58] ",
+        "00494a07: TEST AL,AL ",
+        "00494a09: JNZ 0x00494c13 ",
+        "00494a0f: MOV EDX,dword ptr [EBP] ",
+        "00494a12: MOV ECX,EBP ",
+        "00494a14: CALL dword ptr [EDX + 0x34] ",
+        "00494a17: TEST AL,AL ",
+        "00494a19: JZ 0x00494c13 ",
+        "00494a1f: MOV EAX,dword ptr [EBP] ",
+        "00494a22: MOV ECX,EBP ",
+        "00494a24: CALL dword ptr [EAX + 0x4] ",
+        "00494a27: CMP byte ptr [EAX + 0x1c],0x1 ",
+        "00494a2b: JNZ 0x00494a71 ",
+        "00494a2d: MOV EDX,dword ptr [EDI] ",
+        "00494a2f: LEA EAX,[ESP + 0x14] ",
+        "00494a33: PUSH 0x8 ",
+        "00494a35: PUSH EAX ",
+        "00494a36: MOV ECX,EDI ",
+        "00494a38: MOV dword ptr [ESP + 0x1c],0xc7 ",
+        "00494a40: MOV dword ptr [ESP + 0x20],0x20 ",
+        "00494a48: CALL dword ptr [EDX + 0x38] ",
+        "00494a4b: LEA ECX,[ESP + 0x15c] ",
+        "00494a52: PUSH ECX ",
+        "00494a53: PUSH EBP ",
+        "00494a54: MOV ECX,ESI ",
+        "00494a56: CALL 0x004952f0 ",
+        "00494a5b: MOV EDX,dword ptr [EDI] ",
+        "00494a5d: LEA EAX,[ESP + 0x15c] ",
+        "00494a64: PUSH 0x20 ",
+        "00494a66: PUSH EAX ",
+        "00494a67: MOV ECX,EDI ",
+        "00494a69: CALL dword ptr [EDX + 0x38] ",
+        "00494a6c: JMP 0x00494c13 ",
+        "00494a71: MOV EDX,dword ptr [EBP] ",
+        "00494a74: MOV ECX,EBP ",
+        "00494a76: CALL dword ptr [EDX + 0x4] ",
+        "00494a79: CMP byte ptr [EAX + 0x1c],0x2 ",
+        "00494a7d: JNZ 0x00494b43 ",
+        "00494a83: MOV EAX,dword ptr [EDI] ",
+        "00494a85: LEA ECX,[ESP + 0x14] ",
+        "00494a89: PUSH 0x8 ",
+        "00494a8b: PUSH ECX ",
+        "00494a8c: MOV ECX,EDI ",
+        "00494a8e: MOV dword ptr [ESP + 0x1c],0xc6 ",
+        "00494a96: MOV dword ptr [ESP + 0x20],0x18 ",
+        "00494a9e: CALL dword ptr [EAX + 0x38] ",
+        "00494aa1: MOV ECX,EBP ",
+        "00494aa3: CALL 0x0041ce20 ",
+        "00494aa8: MOV DL,byte ptr [EAX + 0x168] ",
+        "00494aae: MOV byte ptr [ESP + 0x46],DL ",
+        "00494ab2: MOV AL,byte ptr [EBP + 0x5a] ",
+        "00494ab5: TEST AL,AL ",
+        "00494ab7: JZ 0x00494add ",
+        "00494ab9: MOV ECX,EBP ",
+        "00494abb: CALL 0x0041ce20 ",
+        "00494ac0: MOV ECX,EAX ",
+        "00494ac2: CALL 0x0041de60 ",
+        "00494ac7: TEST AL,AL ",
+        "00494ac9: JZ 0x00494add ",
+        "00494acb: MOV ECX,EBP ",
+        "00494acd: CALL 0x0041ce20 ",
+        "00494ad2: MOV ECX,EAX ",
+        "00494ad4: CALL 0x0041de60 ",
+        "00494ad9: MOV byte ptr [ESP + 0x46],AL ",
+        "00494add: MOV EAX,dword ptr [EBP] ",
+        "00494ae0: MOV ECX,EBP ",
+        "00494ae2: CALL dword ptr [EAX + 0x14] ",
+        "00494ae5: MOV dword ptr [ESP + 0x30],EAX ",
+        "00494ae9: MOV EDX,dword ptr [EBP] ",
+        "00494aec: MOV ECX,EBP ",
+        "00494aee: CALL dword ptr [EDX + 0x18] ",
+        "00494af1: MOV dword ptr [ESP + 0x34],EAX ",
+        "00494af5: MOV dword ptr [ESP + 0x38],0x0 ",
+        "00494afd: MOV AL,byte ptr [EBP + 0x19] ",
+        "00494b00: XOR EDX,EDX ",
+        "00494b02: MOV byte ptr [ESP + 0x3e],AL ",
+        "00494b06: MOVZX CX,byte ptr [EBP + 0x1b] ",
+        "00494b0b: MOV word ptr [ESP + 0x3c],CX ",
+        "00494b10: MOV DL,byte ptr [EBP + 0x1a] ",
+        "00494b13: MOV dword ptr [ESP + 0x40],EDX ",
+        "00494b17: MOV AL,byte ptr [EBP + 0x20] ",
+        "00494b1a: MOV byte ptr [ESP + 0x47],AL ",
+        "00494b1e: MOV EDX,dword ptr [EBP] ",
+        "00494b21: MOV ECX,EBP ",
+        "00494b23: CALL dword ptr [EDX + 0x28] ",
+        "00494b26: MOV ECX,EBP ",
+        "00494b28: MOV word ptr [ESP + 0x44],AX ",
+        "00494b2d: CALL 0x0041d170 ",
+        "00494b32: MOV byte ptr [ESP + 0x3f],AL ",
+        "00494b36: MOV EAX,dword ptr [EDI] ",
+        "00494b38: PUSH 0x18 ",
+        "00494b3a: LEA ECX,[ESP + 0x34] ",
+        "00494b3e: JMP 0x00494c0d ",
+        "00494b43: MOV EDX,dword ptr [EDI] ",
+        "00494b45: LEA EAX,[ESP + 0x14] ",
+        "00494b49: PUSH 0x8 ",
+        "00494b4b: PUSH EAX ",
+        "00494b4c: MOV ECX,EDI ",
+        "00494b4e: MOV dword ptr [ESP + 0x1c],0xc8 ",
+        "00494b56: MOV dword ptr [ESP + 0x20],0x1c ",
+        "00494b5e: CALL dword ptr [EDX + 0x38] ",
+        "00494b61: MOV ECX,EBP ",
+        "00494b63: CALL 0x0041ce20 ",
+        "00494b68: MOV CL,byte ptr [EAX + 0x168] ",
+        "00494b6e: MOV byte ptr [ESP + 0x66],CL ",
+        "00494b72: MOV AL,byte ptr [EBP + 0x5a] ",
+        "00494b75: TEST AL,AL ",
+        "00494b77: JZ 0x00494b9d ",
+        "00494b79: MOV ECX,EBP ",
+        "00494b7b: CALL 0x0041ce20 ",
+        "00494b80: MOV ECX,EAX ",
+        "00494b82: CALL 0x0041de60 ",
+        "00494b87: TEST AL,AL ",
+        "00494b89: JZ 0x00494b9d ",
+        "00494b8b: MOV ECX,EBP ",
+        "00494b8d: CALL 0x0041ce20 ",
+        "00494b92: MOV ECX,EAX ",
+        "00494b94: CALL 0x0041de60 ",
+        "00494b99: MOV byte ptr [ESP + 0x66],AL ",
+        "00494b9d: MOV EDX,dword ptr [EBP] ",
+        "00494ba0: MOV ECX,EBP ",
+        "00494ba2: CALL dword ptr [EDX + 0x4] ",
+        "00494ba5: MOV AL,byte ptr [EAX + 0x1c] ",
+        "00494ba8: MOV ECX,EBP ",
+        "00494baa: MOV byte ptr [ESP + 0x67],AL ",
+        "00494bae: MOV EDX,dword ptr [EBP] ",
+        "00494bb1: CALL dword ptr [EDX + 0x14] ",
+        "00494bb4: MOV dword ptr [ESP + 0x4c],EAX ",
+        "00494bb8: MOV EAX,dword ptr [EBP] ",
+        "00494bbb: MOV ECX,EBP ",
+        "00494bbd: CALL dword ptr [EAX + 0x18] ",
+        "00494bc0: MOV dword ptr [ESP + 0x50],EAX ",
+        "00494bc4: MOV dword ptr [ESP + 0x54],0x0 ",
+        "00494bcc: MOV CL,byte ptr [EBP + 0x19] ",
+        "00494bcf: XOR EAX,EAX ",
+        "00494bd1: MOV byte ptr [ESP + 0x5a],CL ",
+        "00494bd5: MOVZX DX,byte ptr [EBP + 0x1b] ",
+        "00494bda: MOV word ptr [ESP + 0x58],DX ",
+        "00494bdf: MOV AL,byte ptr [EBP + 0x1a] ",
+        "00494be2: MOV dword ptr [ESP + 0x5c],EAX ",
+        "00494be6: MOV ECX,dword ptr [EBP + 0x1c] ",
+        "00494be9: MOV dword ptr [ESP + 0x60],ECX ",
+        "00494bed: MOV EDX,dword ptr [EBP] ",
+        "00494bf0: MOV ECX,EBP ",
+        "00494bf2: CALL dword ptr [EDX + 0x28] ",
+        "00494bf5: MOV ECX,EBP ",
+        "00494bf7: MOV word ptr [ESP + 0x64],AX ",
+        "00494bfc: CALL 0x0041d170 ",
+        "00494c01: MOV byte ptr [ESP + 0x5b],AL ",
+        "00494c05: MOV EAX,dword ptr [EDI] ",
+        "00494c07: PUSH 0x1c ",
+        "00494c09: LEA ECX,[ESP + 0x50] ",
+        "00494c0d: PUSH ECX ",
+        "00494c0e: MOV ECX,EDI ",
+        "00494c10: CALL dword ptr [EAX + 0x38] ",
+        "00494c13: PUSH 0x0 ",
+        "00494c15: MOV ECX,ESI ",
+        "00494c17: INC EBX ",
+        "00494c18: CALL 0x00488b30 ",
+        "00494c1d: CMP EBX,EAX ",
+        "00494c1f: JC 0x004949fa ",
+        "00494c25: MOV EAX,dword ptr [ESI + 0xb3c] ",
+        "00494c2b: XOR EBX,EBX ",
+        "00494c2d: TEST EAX,EAX ",
+        "00494c2f: MOV dword ptr [ESP + 0x14],0xc4 ",
+        "00494c37: MOV dword ptr [ESP + 0x18],0x14 ",
+        "00494c3f: JBE 0x00494cfa ",
+        "00494c45: PUSH EBX ",
+        "00494c46: MOV ECX,ESI ",
+        "00494c48: CALL 0x00489220 ",
+        "00494c4d: MOV EBP,EAX ",
+        "00494c4f: MOV ECX,EBP ",
+        "00494c51: MOV EDX,dword ptr [EBP] ",
+        "00494c54: CALL dword ptr [EDX + 0x34] ",
+        "00494c57: TEST AL,AL ",
+        "00494c59: JZ 0x00494ceb ",
+        "00494c5f: MOV EAX,dword ptr [EDI] ",
+        "00494c61: LEA ECX,[ESP + 0x14] ",
+        "00494c65: PUSH 0x8 ",
+        "00494c67: PUSH ECX ",
+        "00494c68: MOV ECX,EDI ",
+        "00494c6a: CALL dword ptr [EAX + 0x38] ",
+        "00494c6d: MOV ECX,EBP ",
+        "00494c6f: CALL 0x0041ecd0 ",
+        "00494c74: MOV DL,byte ptr [EAX + 0x168] ",
+        "00494c7a: MOV ECX,EBP ",
+        "00494c7c: MOV byte ptr [ESP + 0x96],DL ",
+        "00494c83: MOV EAX,dword ptr [EBP] ",
+        "00494c86: CALL dword ptr [EAX + 0x4] ",
+        "00494c89: MOV CL,byte ptr [EAX + 0x1c] ",
+        "00494c8c: MOV byte ptr [ESP + 0x97],CL ",
+        "00494c93: MOV EDX,dword ptr [EBP] ",
+        "00494c96: MOV ECX,EBP ",
+        "00494c98: CALL dword ptr [EDX + 0x14] ",
+        "00494c9b: MOV dword ptr [ESP + 0x88],EAX ",
+        "00494ca2: MOV EAX,dword ptr [EBP] ",
+        "00494ca5: MOV ECX,EBP ",
+        "00494ca7: CALL dword ptr [EAX + 0x18] ",
+        "00494caa: MOV dword ptr [ESP + 0x8c],EAX ",
+        "00494cb1: MOV dword ptr [ESP + 0x90],0x0 ",
+        "00494cbc: MOV EDX,dword ptr [EBP] ",
+        "00494cbf: MOV ECX,EBP ",
+        "00494cc1: CALL dword ptr [EDX + 0x28] ",
+        "00494cc4: MOV ECX,EBP ",
+        "00494cc6: MOV word ptr [ESP + 0x94],AX ",
+        "00494cce: CALL 0x0041ed10 ",
+        "00494cd3: LEA ECX,[ESP + 0x88] ",
+        "00494cda: MOV byte ptr [ESP + 0x98],AL ",
+        "00494ce1: MOV EAX,dword ptr [EDI] ",
+        "00494ce3: PUSH 0x14 ",
+        "00494ce5: PUSH ECX ",
+        "00494ce6: MOV ECX,EDI ",
+        "00494ce8: CALL dword ptr [EAX + 0x38] ",
+        "00494ceb: MOV EAX,dword ptr [ESI + 0xb3c] ",
+        "00494cf1: INC EBX ",
+        "00494cf2: CMP EBX,EAX ",
+        "00494cf4: JC 0x00494c45 ",
+        "00494cfa: MOV EAX,dword ptr [ESI + 0xb50] ",
+        "00494d00: XOR EBX,EBX ",
+        "00494d02: TEST EAX,EAX ",
+        "00494d04: MOV dword ptr [ESP + 0x14],0xc3 ",
+        "00494d0c: MOV dword ptr [ESP + 0x18],0x10 ",
+        "00494d14: JBE 0x00494da2 ",
+        "00494d1a: PUSH EBX ",
+        "00494d1b: MOV ECX,ESI ",
+        "00494d1d: CALL 0x00489610 ",
+        "00494d22: MOV EBP,EAX ",
+        "00494d24: MOV ECX,EBP ",
+        "00494d26: MOV EDX,dword ptr [EBP] ",
+        "00494d29: CALL dword ptr [EDX + 0x34] ",
+        "00494d2c: TEST AL,AL ",
+        "00494d2e: JZ 0x00494d93 ",
+        "00494d30: MOV EAX,dword ptr [EDI] ",
+        "00494d32: LEA ECX,[ESP + 0x14] ",
+        "00494d36: PUSH 0x8 ",
+        "00494d38: PUSH ECX ",
+        "00494d39: MOV ECX,EDI ",
+        "00494d3b: CALL dword ptr [EAX + 0x38] ",
+        "00494d3e: MOV ECX,EBP ",
+        "00494d40: CALL 0x004258d0 ",
+        "00494d45: MOV DL,byte ptr [EAX + 0x168] ",
+        "00494d4b: MOV ECX,EBP ",
+        "00494d4d: MOV byte ptr [ESP + 0x75],DL ",
+        "00494d51: MOV EAX,dword ptr [EBP] ",
+        "00494d54: CALL dword ptr [EAX + 0x4] ",
+        "00494d57: MOV CL,byte ptr [EAX + 0x1c] ",
+        "00494d5a: MOV byte ptr [ESP + 0x76],CL ",
+        "00494d5e: MOV EDX,dword ptr [EBP] ",
+        "00494d61: MOV ECX,EBP ",
+        "00494d63: CALL dword ptr [EDX + 0x14] ",
+        "00494d66: MOV dword ptr [ESP + 0x68],EAX ",
+        "00494d6a: MOV EAX,dword ptr [EBP] ",
+        "00494d6d: MOV ECX,EBP ",
+        "00494d6f: CALL dword ptr [EAX + 0x18] ",
+        "00494d72: MOV EDX,dword ptr [EDI] ",
+        "00494d74: MOV dword ptr [ESP + 0x6c],EAX ",
+        "00494d78: MOV dword ptr [ESP + 0x70],0x0 ",
+        "00494d80: MOV CL,byte ptr [EBP + 0x19] ",
+        "00494d83: LEA EAX,[ESP + 0x68] ",
+        "00494d87: MOV byte ptr [ESP + 0x74],CL ",
+        "00494d8b: PUSH 0x10 ",
+        "00494d8d: PUSH EAX ",
+        "00494d8e: MOV ECX,EDI ",
+        "00494d90: CALL dword ptr [EDX + 0x38] ",
+        "00494d93: MOV EAX,dword ptr [ESI + 0xb50] ",
+        "00494d99: INC EBX ",
+        "00494d9a: CMP EBX,EAX ",
+        "00494d9c: JC 0x00494d1a ",
+        "00494da2: MOV EAX,dword ptr [ESI + 0xb64] ",
+        "00494da8: XOR EBX,EBX ",
+        "00494daa: TEST EAX,EAX ",
+        "00494dac: MOV dword ptr [ESP + 0x14],0xc2 ",
+        "00494db4: MOV dword ptr [ESP + 0x18],0x18 ",
+        "00494dbc: JBE 0x00494e85 ",
+        "00494dc2: PUSH EBX ",
+        "00494dc3: MOV ECX,ESI ",
+        "00494dc5: CALL 0x00489a00 ",
+        "00494dca: MOV EBP,EAX ",
+        "00494dcc: MOV ECX,EBP ",
+        "00494dce: MOV EDX,dword ptr [EBP] ",
+        "00494dd1: CALL dword ptr [EDX + 0x34] ",
+        "00494dd4: TEST AL,AL ",
+        "00494dd6: JZ 0x00494e76 ",
+        "00494ddc: MOV EAX,dword ptr [EDI] ",
+        "00494dde: LEA ECX,[ESP + 0x14] ",
+        "00494de2: PUSH 0x8 ",
+        "00494de4: PUSH ECX ",
+        "00494de5: MOV ECX,EDI ",
+        "00494de7: CALL dword ptr [EAX + 0x38] ",
+        "00494dea: MOV ECX,EBP ",
+        "00494dec: CALL 0x004205d0 ",
+        "00494df1: MOV DL,byte ptr [EAX + 0x168] ",
+        "00494df7: MOV ECX,EBP ",
+        "00494df9: MOV byte ptr [ESP + 0xba],DL ",
+        "00494e00: MOV EAX,dword ptr [EBP] ",
+        "00494e03: CALL dword ptr [EAX + 0x4] ",
+        "00494e06: MOV CL,byte ptr [EAX + 0x1c] ",
+        "00494e09: MOV byte ptr [ESP + 0xbb],CL ",
+        "00494e10: MOV EDX,dword ptr [EBP] ",
+        "00494e13: MOV ECX,EBP ",
+        "00494e15: CALL dword ptr [EDX + 0x14] ",
+        "00494e18: MOV dword ptr [ESP + 0xa4],EAX ",
+        "00494e1f: MOV EAX,dword ptr [EBP] ",
+        "00494e22: MOV ECX,EBP ",
+        "00494e24: CALL dword ptr [EAX + 0x18] ",
+        "00494e27: MOV dword ptr [ESP + 0xa8],EAX ",
+        "00494e2e: MOV dword ptr [ESP + 0xac],0x0 ",
+        "00494e39: MOV EDX,dword ptr [EBP] ",
+        "00494e3c: MOV ECX,EBP ",
+        "00494e3e: CALL dword ptr [EDX + 0x28] ",
+        "00494e41: MOV ECX,EBP ",
+        "00494e43: MOV word ptr [ESP + 0xb8],AX ",
+        "00494e4b: CALL 0x00420670 ",
+        "00494e50: MOV ECX,EBP ",
+        "00494e52: MOV dword ptr [ESP + 0xb0],EAX ",
+        "00494e59: CALL 0x004206f0 ",
+        "00494e5e: LEA ECX,[ESP + 0xa4] ",
+        "00494e65: MOV dword ptr [ESP + 0xb4],EAX ",
+        "00494e6c: MOV EAX,dword ptr [EDI] ",
+        "00494e6e: PUSH 0x18 ",
+        "00494e70: PUSH ECX ",
+        "00494e71: MOV ECX,EDI ",
+        "00494e73: CALL dword ptr [EAX + 0x38] ",
+        "00494e76: MOV EAX,dword ptr [ESI + 0xb64] ",
+        "00494e7c: INC EBX ",
+        "00494e7d: CMP EBX,EAX ",
+        "00494e7f: JC 0x00494dc2 ",
+        "00494e85: MOV ECX,dword ptr [ESI + 0xba0] ",
+        "00494e8b: XOR EAX,EAX ",
+        "00494e8d: TEST ECX,ECX ",
+        "00494e8f: MOV dword ptr [ESP + 0x14],0xc5 ",
+        "00494e97: MOV dword ptr [ESP + 0x18],0x38 ",
+        "00494e9f: MOV dword ptr [ESP + 0x1c],EAX ",
+        "00494ea3: JBE 0x00494f76 ",
+        "00494ea9: PUSH EAX ",
+        "00494eaa: MOV ECX,ESI ",
+        "00494eac: CALL 0x0048a910 ",
+        "00494eb1: MOV EDX,dword ptr [EDI] ",
+        "00494eb3: MOV EBP,EAX ",
+        "00494eb5: LEA EAX,[ESP + 0x14] ",
+        "00494eb9: PUSH 0x8 ",
+        "00494ebb: PUSH EAX ",
+        "00494ebc: MOV ECX,EDI ",
+        "00494ebe: CALL dword ptr [EDX + 0x38] ",
+        "00494ec1: MOV CL,byte ptr [EBP + 0x1c] ",
+        "00494ec4: MOV byte ptr [ESP + 0x126],CL ",
+        "00494ecb: MOV EDX,dword ptr [EBP + 0x24] ",
+        "00494ece: MOV dword ptr [ESP + 0x110],EDX ",
+        "00494ed5: MOV EAX,dword ptr [EBP + 0x28] ",
+        "00494ed8: MOV dword ptr [ESP + 0x114],EAX ",
+        "00494edf: MOV ECX,dword ptr [EBP + 0x2c] ",
+        "00494ee2: MOV dword ptr [ESP + 0x118],ECX ",
+        "00494ee9: MOV EDX,dword ptr [EBP + 0x30] ",
+        "00494eec: MOV dword ptr [ESP + 0x11c],EDX ",
+        "00494ef3: MOV EAX,dword ptr [EBP] ",
+        "00494ef6: MOV ECX,EBP ",
+        "00494ef8: CALL dword ptr [EAX + 0x28] ",
+        "00494efb: MOV word ptr [ESP + 0x124],AX ",
+        "00494f03: MOV CL,byte ptr [EBP + 0x34] ",
+        "00494f06: MOV byte ptr [ESP + 0x127],CL ",
+        "00494f0d: MOV AL,byte ptr [EBP + 0x34] ",
+        "00494f10: TEST AL,AL ",
+        "00494f12: JNZ 0x00494f3c ",
+        "00494f14: MOV EAX,dword ptr [ESI + 0xba0] ",
+        "00494f1a: XOR EBX,EBX ",
+        "00494f1c: TEST EAX,EAX ",
+        "00494f1e: JBE 0x00494f40 ",
+        "00494f20: PUSH EBX ",
+        "00494f21: MOV ECX,ESI ",
+        "00494f23: CALL 0x0048a910 ",
+        "00494f28: MOV CL,byte ptr [EAX + 0x34] ",
+        "00494f2b: TEST CL,CL ",
+        "00494f2d: JNZ 0x00494f3c ",
+        "00494f2f: MOV EAX,dword ptr [ESI + 0xba0] ",
+        "00494f35: INC EBX ",
+        "00494f36: CMP EBX,EAX ",
+        "00494f38: JC 0x00494f20 ",
+        "00494f3a: JMP 0x00494f40 ",
+        "00494f3c: OR byte ptr [EBP + 0x38],0x4 ",
+        "00494f40: MOV ECX,EBP ",
+        "00494f42: CALL 0x0041b9b0 ",
+        "00494f47: MOV EDX,dword ptr [EDI] ",
+        "00494f49: MOV dword ptr [ESP + 0x120],EAX ",
+        "00494f50: LEA EAX,[ESP + 0x110] ",
+        "00494f57: PUSH 0x38 ",
+        "00494f59: PUSH EAX ",
+        "00494f5a: MOV ECX,EDI ",
+        "00494f5c: CALL dword ptr [EDX + 0x38] ",
+        "00494f5f: MOV EAX,dword ptr [ESP + 0x1c] ",
+        "00494f63: MOV ECX,dword ptr [ESI + 0xba0] ",
+        "00494f69: INC EAX ",
+        "00494f6a: CMP EAX,ECX ",
+        "00494f6c: MOV dword ptr [ESP + 0x1c],EAX ",
+        "00494f70: JC 0x00494ea9 ",
+        "00494f76: XOR EBP,EBP ",
+        "00494f78: MOV dword ptr [ESP + 0x14],0xc9 ",
+        "00494f80: MOV dword ptr [ESP + 0x18],0x22b ",
+        "00494f88: MOV dword ptr [ESP + 0x1c],EBP ",
+        "00494f8c: PUSH EBP ",
+        "00494f8d: MOV ECX,ESI ",
+        "00494f8f: CALL 0x0048de00 ",
+        "00494f94: MOV EBX,EAX ",
+        "00494f96: TEST EBX,EBX ",
+        "00494f98: JZ 0x0049500c ",
+        "00494f9a: MOV EDX,dword ptr [EDI] ",
+        "00494f9c: LEA EAX,[ESP + 0x14] ",
+        "00494fa0: PUSH 0x8 ",
+        "00494fa2: PUSH EAX ",
+        "00494fa3: MOV ECX,EDI ",
+        "00494fa5: CALL dword ptr [EDX + 0x38] ",
+        "00494fa8: MOV CL,byte ptr [EBX + 0x1c] ",
+        "00494fab: MOV byte ptr [ESP + 0x19e],CL ",
+        "00494fb2: MOV EDX,dword ptr [EBX] ",
+        "00494fb4: MOV ECX,EBX ",
+        "00494fb6: CALL dword ptr [EDX + 0x28] ",
+        "00494fb9: MOV word ptr [ESP + 0x19c],AX ",
+        "00494fc1: LEA EAX,[ESP + 0x1a7] ",
+        "00494fc8: XOR EBP,EBP ",
+        "00494fca: MOV dword ptr [ESP + 0x10],EAX ",
+        "00494fce: MOV ECX,dword ptr [ESP + 0x10] ",
+        "00494fd2: PUSH ECX ",
+        "00494fd3: PUSH EBP ",
+        "00494fd4: MOV ECX,EBX ",
+        "00494fd6: CALL 0x00421190 ",
+        "00494fdb: PUSH EAX ",
+        "00494fdc: MOV ECX,ESI ",
+        "00494fde: CALL 0x004952f0 ",
+        "00494fe3: MOV ECX,dword ptr [ESP + 0x10] ",
+        "00494fe7: INC EBP ",
+        "00494fe8: ADD ECX,0x20 ",
+        "00494feb: CMP EBP,0x10 ",
+        "00494fee: MOV dword ptr [ESP + 0x10],ECX ",
+        "00494ff2: JC 0x00494fce ",
+        "00494ff4: MOV EDX,dword ptr [EDI] ",
+        "00494ff6: LEA EAX,[ESP + 0x17c] ",
+        "00494ffd: PUSH 0x22b ",
+        "00495002: PUSH EAX ",
+        "00495003: MOV ECX,EDI ",
+        "00495005: CALL dword ptr [EDX + 0x38] ",
+        "00495008: MOV EBP,dword ptr [ESP + 0x1c] ",
+        "0049500c: INC EBP ",
+        "0049500d: CMP EBP,0x18 ",
+        "00495010: MOV dword ptr [ESP + 0x1c],EBP ",
+        "00495014: JC 0x00494f8c ",
+        "0049501a: XOR EBX,EBX ",
+        "0049501c: MOV ECX,ESI ",
+        "0049501e: PUSH EBX ",
+        "0049501f: MOV dword ptr [ESP + 0x18],0xca ",
+        "00495027: MOV dword ptr [ESP + 0x1c],0x10 ",
+        "0049502f: CALL 0x00488b30 ",
+        "00495034: TEST EAX,EAX ",
+        "00495036: JBE 0x004950c9 ",
+        "0049503c: PUSH EBX ",
+        "0049503d: MOV ECX,ESI ",
+        "0049503f: CALL 0x00488d30 ",
+        "00495044: MOV EBP,EAX ",
+        "00495046: MOV AL,byte ptr [EBP + 0x58] ",
+        "00495049: TEST AL,AL ",
+        "0049504b: JZ 0x004950b7 ",
+        "0049504d: MOV EDX,dword ptr [EDI] ",
+        "0049504f: LEA EAX,[ESP + 0x14] ",
+        "00495053: PUSH 0x8 ",
+        "00495055: PUSH EAX ",
+        "00495056: MOV ECX,EDI ",
+        "00495058: CALL dword ptr [EDX + 0x38] ",
+        "0049505b: MOV ECX,EBP ",
+        "0049505d: CALL 0x0041ce20 ",
+        "00495062: MOV CL,byte ptr [EAX + 0x168] ",
+        "00495068: MOV byte ptr [ESP + 0x86],CL ",
+        "0049506f: MOV EDX,dword ptr [EBP] ",
+        "00495072: MOV ECX,EBP ",
+        "00495074: CALL dword ptr [EDX + 0x14] ",
+        "00495077: MOV dword ptr [ESP + 0x78],EAX ",
+        "0049507b: MOV EAX,dword ptr [EBP] ",
+        "0049507e: MOV ECX,EBP ",
+        "00495080: CALL dword ptr [EAX + 0x18] ",
+        "00495083: MOV dword ptr [ESP + 0x7c],EAX ",
+        "00495087: MOV EAX,dword ptr [EDI] ",
+        "00495089: MOV dword ptr [ESP + 0x80],0x0 ",
+        "00495094: MOV CL,byte ptr [EBP + 0x19] ",
+        "00495097: MOV byte ptr [ESP + 0x87],CL ",
+        "0049509e: LEA ECX,[ESP + 0x78] ",
+        "004950a2: MOVZX DX,byte ptr [EBP + 0x1a] ",
+        "004950a7: PUSH 0x10 ",
+        "004950a9: PUSH ECX ",
+        "004950aa: MOV ECX,EDI ",
+        "004950ac: MOV word ptr [ESP + 0x8c],DX ",
+        "004950b4: CALL dword ptr [EAX + 0x38] ",
+        "004950b7: PUSH 0x0 ",
+        "004950b9: MOV ECX,ESI ",
+        "004950bb: INC EBX ",
+        "004950bc: CALL 0x00488b30 ",
+        "004950c1: CMP EBX,EAX ",
+        "004950c3: JC 0x0049503c ",
+        "004950c9: MOV EAX,dword ptr [ESI + 0xbb4] ",
+        "004950cf: MOV dword ptr [ESP + 0x14],0xcb ",
+        "004950d7: TEST EAX,EAX ",
+        "004950d9: MOV dword ptr [ESP + 0x18],0x24 ",
+        "004950e1: MOV dword ptr [ESP + 0x1c],0x0 ",
+        "004950e9: JBE 0x004951bb ",
+        "004950ef: MOV EDX,dword ptr [ESP + 0x1c] ",
+        "004950f3: MOV ECX,ESI ",
+        "004950f5: PUSH EDX ",
+        "004950f6: CALL 0x0048ad00 ",
+        "004950fb: LEA ECX,[ESP + 0x14] ",
+        "004950ff: MOV EBP,EAX ",
+        "00495101: MOV EAX,dword ptr [EDI] ",
+        "00495103: PUSH 0x8 ",
+        "00495105: PUSH ECX ",
+        "00495106: MOV ECX,EDI ",
+        "00495108: CALL dword ptr [EAX + 0x38] ",
+        "0049510b: MOV DL,byte ptr [EBP + 0x18] ",
+        "0049510e: MOV ECX,EBP ",
+        "00495110: MOV byte ptr [ESP + 0xe5],DL ",
+        "00495117: MOV EAX,dword ptr [EBP] ",
+        "0049511a: CALL dword ptr [EAX + 0x14] ",
+        "0049511d: MOV dword ptr [ESP + 0xc8],EAX ",
+        "00495124: MOV EDX,dword ptr [EBP] ",
+        "00495127: MOV ECX,EBP ",
+        "00495129: CALL dword ptr [EDX + 0x18] ",
+        "0049512c: XOR EBX,EBX ",
+        "0049512e: MOV dword ptr [ESP + 0xcc],EAX ",
+        "00495135: MOV dword ptr [ESP + 0xd0],EBX ",
+        "0049513c: MOV AX,word ptr [EBP + 0x22] ",
+        "00495140: MOV word ptr [ESP + 0xd8],AX ",
+        "00495148: MOV CX,word ptr [EBP + 0x24] ",
+        "0049514c: MOV word ptr [ESP + 0xda],CX ",
+        "00495154: MOV DL,byte ptr [EBP + 0x20] ",
+        "00495157: LEA EAX,[ESP + 0xdc] ",
+        "0049515e: MOV byte ptr [ESP + 0xe4],DL ",
+        "00495165: MOV dword ptr [ESP + 0x10],EAX ",
+        "00495169: PUSH EBX ",
+        "0049516a: MOV ECX,EBP ",
+        "0049516c: CALL 0x0041fa30 ",
+        "00495171: MOV ECX,dword ptr [ESP + 0x10] ",
+        "00495175: INC EBX ",
+        "00495176: MOV word ptr [ECX],AX ",
+        "00495179: ADD ECX,0x2 ",
+        "0049517c: CMP EBX,0x4 ",
+        "0049517f: MOV dword ptr [ESP + 0x10],ECX ",
+        "00495183: JC 0x00495169 ",
+        "00495185: MOV ECX,EBP ",
+        "00495187: CALL 0x0041fa70 ",
+        "0049518c: MOV EDX,dword ptr [EDI] ",
+        "0049518e: MOV dword ptr [ESP + 0xd4],EAX ",
+        "00495195: LEA EAX,[ESP + 0xc8] ",
+        "0049519c: PUSH 0x24 ",
+        "0049519e: PUSH EAX ",
+        "0049519f: MOV ECX,EDI ",
+        "004951a1: CALL dword ptr [EDX + 0x38] ",
+        "004951a4: MOV EAX,dword ptr [ESP + 0x1c] ",
+        "004951a8: MOV ECX,dword ptr [ESI + 0xbb4] ",
+        "004951ae: INC EAX ",
+        "004951af: CMP EAX,ECX ",
+        "004951b1: MOV dword ptr [ESP + 0x1c],EAX ",
+        "004951b5: JC 0x004950ef ",
+        "004951bb: MOV ECX,dword ptr [ESI + 0xa68] ",
+        "004951c1: XOR EAX,EAX ",
+        "004951c3: TEST ECX,ECX ",
+        "004951c5: MOV dword ptr [ESP + 0x14],0xcc ",
+        "004951cd: MOV dword ptr [ESP + 0x18],0x14 ",
+        "004951d5: MOV dword ptr [ESP + 0x1c],EAX ",
+        "004951d9: JBE 0x004952df ",
+        "004951df: PUSH EAX ",
+        "004951e0: MOV ECX,ESI ",
+        "004951e2: CALL 0x00488830 ",
+        "004951e7: MOV EBX,EAX ",
+        "004951e9: CMP byte ptr [EBX + 0x1c],0x3 ",
+        "004951ed: JC 0x0049521d ",
+        "004951ef: MOV EDX,dword ptr [EDI] ",
+        "004951f1: LEA EAX,[ESP + 0x14] ",
+        "004951f5: PUSH 0x8 ",
+        "004951f7: PUSH EAX ",
+        "004951f8: MOV ECX,EDI ",
+        "004951fa: CALL dword ptr [EDX + 0x38] ",
+        "004951fd: LEA ECX,[ESP + 0x148] ",
+        "00495204: PUSH ECX ",
+        "00495205: MOV ECX,EBX ",
+        "00495207: CALL 0x004225a0 ",
+        "0049520c: MOV EDX,dword ptr [EDI] ",
+        "0049520e: LEA EAX,[ESP + 0x148] ",
+        "00495215: PUSH 0x14 ",
+        "00495217: PUSH EAX ",
+        "00495218: MOV ECX,EDI ",
+        "0049521a: CALL dword ptr [EDX + 0x38] ",
+        "0049521d: MOV EAX,dword ptr [EBX + 0xcc] ",
+        "00495223: MOV dword ptr [ESP + 0x10],0x0 ",
+        "0049522b: TEST EAX,EAX ",
+        "0049522d: JBE 0x00495279 ",
+        "0049522f: MOV ECX,dword ptr [ESP + 0x10] ",
+        "00495233: PUSH ECX ",
+        "00495234: MOV ECX,EBX ",
+        "00495236: CALL 0x00422b60 ",
+        "0049523b: MOV EBP,EAX ",
+        "0049523d: TEST EBP,EBP ",
+        "0049523f: JZ 0x00495266 ",
+        "00495241: CMP word ptr [EBP + 0x10],0x0 ",
+        "00495246: JNZ 0x0049524e ",
+        "00495248: MOV word ptr [EBP + 0x10],0x64 ",
+        "0049524e: MOV EDX,dword ptr [EDI] ",
+        "00495250: LEA EAX,[ESP + 0x14] ",
+        "00495254: PUSH 0x8 ",
+        "00495256: PUSH EAX ",
+        "00495257: MOV ECX,EDI ",
+        "00495259: CALL dword ptr [EDX + 0x38] ",
+        "0049525c: MOV EDX,dword ptr [EDI] ",
+        "0049525e: PUSH 0x14 ",
+        "00495260: PUSH EBP ",
+        "00495261: MOV ECX,EDI ",
+        "00495263: CALL dword ptr [EDX + 0x38] ",
+        "00495266: MOV EAX,dword ptr [ESP + 0x10] ",
+        "0049526a: MOV ECX,dword ptr [EBX + 0xcc] ",
+        "00495270: INC EAX ",
+        "00495271: CMP EAX,ECX ",
+        "00495273: MOV dword ptr [ESP + 0x10],EAX ",
+        "00495277: JC 0x0049522f ",
+        "00495279: MOV EAX,dword ptr [EBX + 0xe0] ",
+        "0049527f: MOV dword ptr [ESP + 0x10],0x0 ",
+        "00495287: TEST EAX,EAX ",
+        "00495289: JBE 0x004952c8 ",
+        "0049528b: MOV EAX,dword ptr [ESP + 0x10] ",
+        "0049528f: MOV ECX,EBX ",
+        "00495291: PUSH EAX ",
+        "00495292: CALL 0x00423170 ",
+        "00495297: MOV EBP,EAX ",
+        "00495299: TEST EBP,EBP ",
+        "0049529b: JZ 0x004952b5 ",
+        "0049529d: MOV EDX,dword ptr [EDI] ",
+        "0049529f: LEA EAX,[ESP + 0x14] ",
+        "004952a3: PUSH 0x8 ",
+        "004952a5: PUSH EAX ",
+        "004952a6: MOV ECX,EDI ",
+        "004952a8: CALL dword ptr [EDX + 0x38] ",
+        "004952ab: MOV EDX,dword ptr [EDI] ",
+        "004952ad: PUSH 0x14 ",
+        "004952af: PUSH EBP ",
+        "004952b0: MOV ECX,EDI ",
+        "004952b2: CALL dword ptr [EDX + 0x38] ",
+        "004952b5: MOV EAX,dword ptr [ESP + 0x10] ",
+        "004952b9: MOV ECX,dword ptr [EBX + 0xe0] ",
+        "004952bf: INC EAX ",
+        "004952c0: CMP EAX,ECX ",
+        "004952c2: MOV dword ptr [ESP + 0x10],EAX ",
+        "004952c6: JC 0x0049528b ",
+        "004952c8: MOV EAX,dword ptr [ESP + 0x1c] ",
+        "004952cc: MOV ECX,dword ptr [ESI + 0xa68] ",
+        "004952d2: INC EAX ",
+        "004952d3: CMP EAX,ECX ",
+        "004952d5: MOV dword ptr [ESP + 0x1c],EAX ",
+        "004952d9: JC 0x004951df ",
+        "004952df: POP EDI ",
+        "004952e0: POP ESI ",
+        "004952e1: POP EBP ",
+        "004952e2: MOV AL,0x1 ",
+        "004952e4: POP EBX ",
+        "004952e5: ADD ESP,0x398 ",
+        "004952eb: RET 0x4 "
+      ]
+    }
+  ],
+  "native_emulations": [
+    {
+      "file": "phase37-emulation-generator-parser-game-36-False.json",
+      "sha256": "d1ce1f780252e4d0e48d9190e7b59db6331f3ee0e881e76c7caa6d7ad05d1523",
+      "case": "parser-game-36-False"
+    },
+    {
+      "file": "phase37-emulation-generator-parser-game-35-False.json",
+      "sha256": "415ffac9b6abcbf045fb4c78a1b4f3c3c09095bec63c3bfcce05e239d9853b1d",
+      "case": "parser-game-35-False"
+    },
+    {
+      "file": "phase37-emulation-generator-parser-game-37-False.json",
+      "sha256": "dc3951ae068c84c13803115dda6ddfcdca6aa075a5ef8f9446b7d76ff06feef7",
+      "case": "parser-game-37-False"
+    },
+    {
+      "file": "phase37-emulation-generator-parser-game-36-True.json",
+      "sha256": "5a849ecadaba267950f9f9da7a3033d96146f5d0dcdf3fe1506e0b2884c661e6",
+      "case": "parser-game-36-True"
+    },
+    {
+      "file": "phase37-emulation-generator-parser-editor-36-False.json",
+      "sha256": "ff0dd161d902d27dd4b0a2641e98b01bb07bae847fca8e5cfa968fc920cef026",
+      "case": "parser-editor-36-False"
+    },
+    {
+      "file": "phase37-emulation-generator-parser-editor-35-False.json",
+      "sha256": "75c4f0466d18f75b98fed8a94846ead1b79062e2dfdccece165830897efa52dc",
+      "case": "parser-editor-35-False"
+    },
+    {
+      "file": "phase37-emulation-generator-parser-editor-37-False.json",
+      "sha256": "fd7dc3d95756cadd70d5434e005276eb29f23629c75263d6292f1a5a04181ed3",
+      "case": "parser-editor-37-False"
+    },
+    {
+      "file": "phase37-emulation-generator-parser-editor-36-True.json",
+      "sha256": "8b7baece9a6e45eeb8f5d4de13ecab0e8b4d468aab5f263b15ea15608cd3d6c4",
+      "case": "parser-editor-36-True"
+    },
+    {
+      "file": "phase37-emulation-generator-converter-0.json",
+      "sha256": "7e41e97ceea8bf13bbd0c5bbf6f1257c809c8f79c0168902298a9060ce868cd6",
+      "case": "converter-0"
+    },
+    {
+      "file": "phase37-emulation-generator-converter-165.json",
+      "sha256": "2f4a7dee85b25555135ac9a34c5055478fed90f17eaaca7f2a34302132098ece",
+      "case": "converter-165"
+    },
+    {
+      "file": "phase37-emulation-generator-converter-255.json",
+      "sha256": "fd26a5c5600ce52cdf03b3d320380c38b84511848f7046455bf609ab340568c6",
+      "case": "converter-255"
+    },
+    {
+      "file": "phase37-emulation-generator-loader-0.json",
+      "sha256": "3a146684bc2d5148ffb189870630797c3a7fcd8a3bf63f3ccf475489e37c2fb4",
+      "case": "loader-0"
+    },
+    {
+      "file": "phase37-emulation-generator-loader-165.json",
+      "sha256": "6f1f21d97ff783643c2f001b5284e2f17332dd3b6f6e187d16462f8d9dbe1bd8",
+      "case": "loader-165"
+    },
+    {
+      "file": "phase37-emulation-generator-loader-255.json",
+      "sha256": "afb823275f31baedf20fe413c43938355afbf336a71dd44bfee9a110e7488dd9",
+      "case": "loader-255"
+    },
+    {
+      "file": "phase37-emulation-generator-loader-disabled.json",
+      "sha256": "5d554ac8645285998f4f011ba27e969796aa3b3a3c2fe6007ee4ac81bada502f",
+      "case": "loader-disabled"
+    },
+    {
+      "file": "phase37-emulation-generator-editor-load-0-3.json",
+      "sha256": "4d98e555b56fcab0c53ac0d969b2cea88a7e7780398f30caeb898e79b6e32e0a",
+      "case": "editor-load-0-3"
+    },
+    {
+      "file": "phase37-emulation-generator-editor-load-0-9.json",
+      "sha256": "59e3af595c2986ff7371bb199f6f19460c820e1e0cd8c53845391d9558461221",
+      "case": "editor-load-0-9"
+    },
+    {
+      "file": "phase37-emulation-generator-editor-load-0-10.json",
+      "sha256": "4cfde4e52e8ec4e05475c63f799f75f1f46021499d7682fb33a01bf482dfd3d8",
+      "case": "editor-load-0-10"
+    },
+    {
+      "file": "phase37-emulation-generator-editor-load-165-3.json",
+      "sha256": "546505cadf82932f10a8ba9722c24b1be30e9a00c5df7a4b07a66afb343396f1",
+      "case": "editor-load-165-3"
+    },
+    {
+      "file": "phase37-emulation-generator-editor-load-165-9.json",
+      "sha256": "5f26d9c02a02df62f8d322090d130ce2d22a0be0800b3caf95d0531d364c3eaa",
+      "case": "editor-load-165-9"
+    },
+    {
+      "file": "phase37-emulation-generator-editor-load-165-10.json",
+      "sha256": "201c016db0a419634c954291ac5232773351998d16d42104a1fb771d8b894647",
+      "case": "editor-load-165-10"
+    },
+    {
+      "file": "phase37-emulation-generator-tick-inactive.json",
+      "sha256": "5e85ad78ee2b501ab6c9a0349dee5779cd1e3d8889a21e7451e2d3d50a8a3a1d",
+      "case": "tick-inactive"
+    },
+    {
+      "file": "phase37-emulation-generator-tick-early.json",
+      "sha256": "339d5e624bdaba4c5661528127647586a742ec7d5eb9f6ccc8a9c4aaa1b5052f",
+      "case": "tick-early"
+    },
+    {
+      "file": "phase37-emulation-generator-tick-equal.json",
+      "sha256": "12b8b7df023e5620810a7eb1d2305fcccf2ada437c5c3748b6f55ce1c40cd2e4",
+      "case": "tick-equal"
+    },
+    {
+      "file": "phase37-emulation-generator-tick-empty.json",
+      "sha256": "585e9514672af43f9c8108cbef995ae52ef48027e5c508714726cc7d7f41f06f",
+      "case": "tick-empty"
+    },
+    {
+      "file": "phase37-emulation-generator-tick-rejected.json",
+      "sha256": "ba509e2148f6c532bd51a93e4e499565fa046f1a1e637d7bc39e49abc388a3c7",
+      "case": "tick-rejected"
+    },
+    {
+      "file": "phase37-emulation-generator-tick-normal.json",
+      "sha256": "715c2f27df5de5cfa2c6e6d4e97cf8f716ac5f620ec37a1959aa3f4f1171abe5",
+      "case": "tick-normal"
+    },
+    {
+      "file": "phase37-emulation-generator-tick-create-failed.json",
+      "sha256": "7a57edb81ca70050f351eeca0b3d4d644f78db4b4a1c431b6ad6ca734cd7a658",
+      "case": "tick-create-failed"
+    },
+    {
+      "file": "phase37-emulation-generator-tick-slot2.json",
+      "sha256": "7ef27136f2fa7a67283c0b408f6a05e566309f07b5093cc871fbae5659238cfe",
+      "case": "tick-slot2"
+    },
+    {
+      "file": "phase37-emulation-generator-tick-slot3.json",
+      "sha256": "94c2664cabe84c56a509d75d1cf0f0c88544d6b2ff9933f1bda0a3964cccba07",
+      "case": "tick-slot3"
+    },
+    {
+      "file": "phase37-emulation-generator-tick-zero-frequency.json",
+      "sha256": "1caca420e62e5bc9fd62ed3977ad9142b4023e118fcdd9337f4ad7c4cb2c423b",
+      "case": "tick-zero-frequency"
+    },
+    {
+      "file": "phase37-emulation-generator-tick-frequency255.json",
+      "sha256": "338d9292f1e575b18e0748a8a34648cedac6c4461607ceac0782778b78459ad5",
+      "case": "tick-frequency255"
+    },
+    {
+      "file": "phase37-emulation-generator-tick-overflow.json",
+      "sha256": "a207fee48a376249faa5b694d3219f26836d15269255b1a76d761b07aa89a2d0",
+      "case": "tick-overflow"
+    },
+    {
+      "file": "phase37-emulation-generator-tick-zero-extents.json",
+      "sha256": "c0e23615afd2200e12c6e4df75795b018689dcea8f34af96213c2f09bc55bbed",
+      "case": "tick-zero-extents"
+    },
+    {
+      "file": "phase37-emulation-generator-tick-max-extents.json",
+      "sha256": "83ccc4605a4f2b1c6b67f46dbdc7aa0afab681700eea06a63b024c38f0269c6e",
+      "case": "tick-max-extents"
+    },
+    {
+      "file": "phase37-emulation-generator-extent-width-3-10-6.json",
+      "sha256": "276b4cd63698efdf087437a0c9b5b8a80a35db0314f6ef0a99d8d34c25cf27d3",
+      "case": "extent-width-3-10-6"
+    },
+    {
+      "file": "phase37-emulation-generator-extent-width-3-10-7.json",
+      "sha256": "6c1f49b54433fecb0eb55b34de60baf28123c4163740c29a7ac36ce9f62fb334",
+      "case": "extent-width-3-10-7"
+    },
+    {
+      "file": "phase37-emulation-generator-extent-width-3-10-65535.json",
+      "sha256": "212b7a176abd1af871879194dacf824349f356c6176d09f504401674e0051dae",
+      "case": "extent-width-3-10-65535"
+    },
+    {
+      "file": "phase37-emulation-generator-extent-width-9-10-1.json",
+      "sha256": "54e881d42e450513b8bc5de5f28f15f60a268fed7950bd7920dc0e0e500dc28c",
+      "case": "extent-width-9-10-1"
+    },
+    {
+      "file": "phase37-emulation-generator-extent-width-10-10-1.json",
+      "sha256": "4075a4b5a4288dce4ca43c8af5853e6c2d445b1362ab2ef32abd313ce0015b3a",
+      "case": "extent-width-10-10-1"
+    },
+    {
+      "file": "phase37-emulation-generator-extent-width-4294967295-10-1.json",
+      "sha256": "7a4ddb945071762379e56d5d697d13ff7ca074cb1a2fec6bc74575f53ea8c733",
+      "case": "extent-width-4294967295-10-1"
+    },
+    {
+      "file": "phase37-emulation-generator-extent-width-2147483648-10-65535.json",
+      "sha256": "9da10e10c8d54c77abc5978e42eb82f93fffee29102233b51e1a502e58c9e13b",
+      "case": "extent-width-2147483648-10-65535"
+    },
+    {
+      "file": "phase37-emulation-generator-extent-width-0-65536-1.json",
+      "sha256": "a887095631c33d80ebce203b69ba3aac08fc383c8778f8a662f55b84f6a31876",
+      "case": "extent-width-0-65536-1"
+    },
+    {
+      "file": "phase37-emulation-generator-extent-height-3-10-6.json",
+      "sha256": "0552e026c138d8a0a2a8aca94620d86e3d9d25a8823c4a0680845fcf705e52ae",
+      "case": "extent-height-3-10-6"
+    },
+    {
+      "file": "phase37-emulation-generator-extent-height-3-10-7.json",
+      "sha256": "e6fac6049a83c35817de4dd689583fcaeef129d2a99bac86633d4a38d0d26478",
+      "case": "extent-height-3-10-7"
+    },
+    {
+      "file": "phase37-emulation-generator-extent-height-3-10-65535.json",
+      "sha256": "d009c20edaf6d1e0389afef22c32d0036c1056629cbaa7406a2282168e45aade",
+      "case": "extent-height-3-10-65535"
+    },
+    {
+      "file": "phase37-emulation-generator-extent-height-9-10-1.json",
+      "sha256": "e890da099fddb67c6fd0dbc5a15745c7565bf7b464a87dd9919f8e4a73958946",
+      "case": "extent-height-9-10-1"
+    },
+    {
+      "file": "phase37-emulation-generator-extent-height-10-10-1.json",
+      "sha256": "5496721ec75717e04612d0efe907d1d2edd44caab5488cc4c5f890db1a34d9d2",
+      "case": "extent-height-10-10-1"
+    },
+    {
+      "file": "phase37-emulation-generator-extent-height-4294967295-10-1.json",
+      "sha256": "2068f31801979166cc3af0672becf547cdbc6fe8371fca49261ab9cc81397b07",
+      "case": "extent-height-4294967295-10-1"
+    },
+    {
+      "file": "phase37-emulation-generator-extent-height-2147483648-10-65535.json",
+      "sha256": "09da8beddb1168a8e12cf1a7be011a235ab1b3c0c8e7d230d3e69e75fb659cb3",
+      "case": "extent-height-2147483648-10-65535"
+    },
+    {
+      "file": "phase37-emulation-generator-extent-height-0-65536-1.json",
+      "sha256": "494e5664adfe1628b03c7f8d5d81995b1bfc570366d1bb5aabffe29c9c082583",
+      "case": "extent-height-0-65536-1"
+    },
+    {
+      "file": "phase37-emulation-generator-rng-0-123.json",
+      "sha256": "5ee974b839f8ff10cdf3960e3034851e20b77a2f9fc9f7fcb891d1f9df609d01",
+      "case": "rng-0-123"
+    },
+    {
+      "file": "phase37-emulation-generator-rng-1-0.json",
+      "sha256": "9f95f37afb567b2695ba7059728f4c7f4d7085272e57e0f659d667afef52c866",
+      "case": "rng-1-0"
+    },
+    {
+      "file": "phase37-emulation-generator-rng-4-0.json",
+      "sha256": "bf9485e9b94a2e1045c83f46b5810fcf0004a220d3878482a3a071c34637cba8",
+      "case": "rng-4-0"
+    },
+    {
+      "file": "phase37-emulation-generator-rng-8192-4294967295.json",
+      "sha256": "24ee30d7b3cd2a687fd70f222477c324a66b95f9b54f8a66f733baae90c34928",
+      "case": "rng-8192-4294967295"
+    },
+    {
+      "file": "phase37-emulation-generator-rng-2048-12345.json",
+      "sha256": "542e7e73526dcd6760a68b4581885836e5db833cc9f9b70df524732f8011fa49",
+      "case": "rng-2048-12345"
+    },
+    {
+      "file": "phase37-emulation-generator-writer-0-0.json",
+      "sha256": "58701b9efe5ddaf839b97f0bbb68e986c20589f2cc273ee66052be2c02e7f5a9",
+      "case": "writer-0-0"
+    },
+    {
+      "file": "phase37-emulation-generator-writer-0-255.json",
+      "sha256": "daef50cc27df00fd178b17687ac95cc8d698b3368c43c42ea01e3074e8e4f7a8",
+      "case": "writer-0-255"
+    },
+    {
+      "file": "phase37-emulation-generator-writer-165-0.json",
+      "sha256": "70c93f4767a94f98e56995ce7abd24c98556ced99875d76c62e3eb2cf1a02983",
+      "case": "writer-165-0"
+    },
+    {
+      "file": "phase37-emulation-generator-writer-165-255.json",
+      "sha256": "ad7a94c0c0aaa6fbb8e9129de0dbe569788d5338da763d20d04487bc4685b68b",
+      "case": "writer-165-255"
+    },
+    {
+      "file": "phase37-emulation-generator-writer-255-0.json",
+      "sha256": "71319f3adbdeb66146f4942f8581cd07549ee66290d5fe49132701637edde7af",
+      "case": "writer-255-0"
+    },
+    {
+      "file": "phase37-emulation-generator-writer-255-255.json",
+      "sha256": "43e7e244e95b83b7f7f42434f864bdca575a4aeb3e6e9286e07738dd08f143b2",
+      "case": "writer-255-255"
+    }
+  ],
+  "corpus": {
+    "thing_files": 110,
+    "generators": 80,
+    "payload_sizes": {
+      "36": 80
+    },
+    "raw_flags": {
+      "0": 80
+    },
+    "raw_z_bits": {
+      "0": 80
+    },
+    "widths": {
+      "0": 32,
+      "2": 20,
+      "3": 6,
+      "4": 12,
+      "6": 4,
+      "7": 2,
+      "8": 4
+    },
+    "heights": {
+      "0": 32,
+      "1": 6,
+      "2": 10,
+      "3": 8,
+      "4": 10,
+      "5": 4,
+      "6": 2,
+      "7": 2,
+      "8": 4,
+      "9": 2
+    },
+    "frequencies": {
+      "1": 65,
+      "7": 2,
+      "10": 4,
+      "15": 9
+    },
+    "ids": {
+      "1": 14,
+      "2": 9,
+      "3": 7,
+      "4": 4,
+      "5": 4,
+      "6": 4,
+      "7": 4,
+      "8": 3,
+      "9": 4,
+      "10": 3,
+      "11": 2,
+      "12": 2,
+      "13": 2,
+      "14": 2,
+      "15": 2,
+      "16": 2,
+      "17": 2,
+      "18": 2,
+      "19": 2,
+      "20": 2,
+      "21": 2,
+      "22": 2
+    },
+    "effect_slots": {
+      "0": 232,
+      "3": 22,
+      "14": 3,
+      "43": 2,
+      "53": 10,
+      "72": 26,
+      "76": 1,
+      "90": 6,
+      "203": 2,
+      "331": 10,
+      "361": 3,
+      "363": 3
+    },
+    "distinct_opaque_tails": 5,
+    "opaque_tail_counts": {
+      "000000000000": 66,
+      "120000000000": 11,
+      "3a0000000000": 1,
+      "00006f000000": 1,
+      "7b0000000000": 1
+    },
+    "generators_with_empty_and_nonempty_slots": 78,
+    "editor_extent_projection_changes": [],
+    "files": [
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\3DLevelThings.kld",
+        "sha256": "7dee113ec14ae0f009c579b0c4a46309b9a48cdb42000be69db75eccaa7085ac",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\3DLevelMap.kld",
+        "map_dimensions": [
+          32,
+          32
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\ANL - 3 FunThings.kld",
+        "sha256": "1e1635f903228dec2dedb96e5661c1679999e3b8b01c156215a45f61931792ca",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\ANL - 3 FunMap.kld",
+        "map_dimensions": [
+          100,
+          50
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Battle for the Sun Qz2Things.kld",
+        "sha256": "d0d483ad852300e42ebdd325611124c0c1669dd26e9dc29c0b74f2c02f95a2d8",
+        "generators": 22,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Battle for the Sun Qz2Map.kld",
+        "map_dimensions": [
+          118,
+          122
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Battle for the Sun QzThings.kld",
+        "sha256": "7dccc6e33044eaa5c14dfe586aa9f8dd1ac407792c52e86ecb6899a5a2b794f7",
+        "generators": 22,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Battle for the Sun QzMap.kld",
+        "map_dimensions": [
+          118,
+          122
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\BattlesThings.kld",
+        "sha256": "2a1330aa4c61b3255ea2b784c334f473dfc7966334492bc830acc2ecf19132b5",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\BattlesMap.kld",
+        "map_dimensions": [
+          100,
+          100
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\DK2 tutorial map2Things.kld",
+        "sha256": "6f30c37c02ecfc981243ea590a5d5841d3c34ece390f82f6c0f7d0b16c26611b",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\DK2 tutorial map2Map.kld",
+        "map_dimensions": [
+          50,
+          80
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\DK2 tutorial mapThings.kld",
+        "sha256": "8b8f104d5a7a6f7445432af6e3450b9d2b4fa1cabe830370e2d18328b06640df",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\DK2 tutorial mapMap.kld",
+        "map_dimensions": [
+          50,
+          80
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\DK2Preview_6a88240eaf814f78Things.kld",
+        "sha256": "bcdeb56f15748f68ed525ce8dcc2ffe31921c09ccb2f30e9657aa2bfdcf17d81",
+        "generators": 2,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\DK2Preview_6a88240eaf814f78Map.kld",
+        "map_dimensions": [
+          30,
+          60
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\FrontEnd3DLevelThings.kld",
+        "sha256": "3bee4c9026d746fed2e036dc098404444436720fbe7b4784d28883b0cc2f4a6a",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\FrontEnd3DLevelMap.kld",
+        "map_dimensions": [
+          7,
+          14
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\kop2Things.kld",
+        "sha256": "90ad33bfbac82b9558418e1f75b2caf810e0a9a3a91640c07d4e7de3b58ce4d6",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\kop2Map.kld",
+        "map_dimensions": [
+          64,
+          64
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\kop3Things.kld",
+        "sha256": "686df8b82b923dfe1d180b25efc48cb90e3a6ba071a425b43f8002aadc22e9eb",
+        "generators": 3,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\kop3Map.kld",
+        "map_dimensions": [
+          64,
+          64
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\kop4Things.kld",
+        "sha256": "d15ef0868d9ca6265f8bc7b4edd8a3beac4fccf3d96caaef524a2dc563d31863",
+        "generators": 3,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\kop4Map.kld",
+        "map_dimensions": [
+          64,
+          64
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 1- Kharak SystemThings.kld",
+        "sha256": "1bff86a2b221bbad6f0a3049d7f6bf38350cd24394de82fcd91abe462fe0736f",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 1- Kharak SystemMap.kld",
+        "map_dimensions": [
+          35,
+          50
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 10- Super Nova StationThings.kld",
+        "sha256": "e3b0adf03cac1e1020136f85923261db08953f0a7564d08317b867ef15a719b0",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 10- Super Nova StationMap.kld",
+        "map_dimensions": [
+          46,
+          70
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 11- Tenhauser GateThings.kld",
+        "sha256": "14b107ee0a26584949821ed2f0a4f28457ee8cabe686b1984313fead05f034c9",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 11- Tenhauser GateMap.kld",
+        "map_dimensions": [
+          45,
+          35
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 12- Galactic CoreThings.kld",
+        "sha256": "f9a8b0b27187a74f0e175587d02941986fca207f2f0202202c0083095627621e",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 12- Galactic CoreMap.kld",
+        "map_dimensions": [
+          75,
+          75
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 13- Karos GraveyardThings.kld",
+        "sha256": "e774d2f1ede6cd44f6d95194badf9046858a93a13c8787da3d38319a80dc8e89",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 13- Karos GraveyardMap.kld",
+        "map_dimensions": [
+          30,
+          55
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 14- Bridge of SighsThings.kld",
+        "sha256": "f1b8f559d279e62c0e8d2871fc90b2cf7afda9011b35a2fabfa6e8e0bbe49d58",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 14- Bridge of SighsMap.kld",
+        "map_dimensions": [
+          38,
+          59
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 15- Chapel PerilousThings.kld",
+        "sha256": "bf72702db0bf013c9e12e14ae526b51a067c52d98d2a7a4d1f579dfddc295abe",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 15- Chapel PerilousMap.kld",
+        "map_dimensions": [
+          37,
+          50
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 16- HiigaraThings.kld",
+        "sha256": "bdf1a4a43e49f38fde3d8a32e392ec2a9e74fe1feeb86c9aff81ca54c31446e6",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 16- HiigaraMap.kld",
+        "map_dimensions": [
+          59,
+          120
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 2- Outer Kharak SystemThings.kld",
+        "sha256": "30e2d4f0613f639c54b5d12a692e9d20224c1f6a27665d7f64bec897547e8786",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 2- Outer Kharak SystemMap.kld",
+        "map_dimensions": [
+          40,
+          40
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 3- Return to KharakThings.kld",
+        "sha256": "0a54d36e8482776d4d6b6244b9af0703fc441e30e78bf8350534f77f5670e77b",
+        "generators": 1,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 3- Return to KharakMap.kld",
+        "map_dimensions": [
+          35,
+          50
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 4- The Great WastelandThings.kld",
+        "sha256": "cb1eeae0a8fed01030b2078b5929bf2971ff8be729e9c449f0ee87fc810cba9b",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 4- The Great WastelandMap.kld",
+        "map_dimensions": [
+          25,
+          40
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 5- The Great WastelandThings.kld",
+        "sha256": "f18f1c646daf7f5dc9b9fc6c937ba8aa78b549426c652256a8956a995a41f457",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 5- The Great WastelandMap.kld",
+        "map_dimensions": [
+          40,
+          55
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 6- Diamond ShoalsThings.kld",
+        "sha256": "4f820dce387b87693bfa770a19b8d61678d1c1153114995ea9a57e33c6dbb060",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 6- Diamond ShoalsMap.kld",
+        "map_dimensions": [
+          19,
+          40
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 7- The Gardens of KadeshThings.kld",
+        "sha256": "99f84e32e80f9f04c5f5cefb602722d95df0e68d8a24f569446840a72b7da829",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 7- The Gardens of KadeshMap.kld",
+        "map_dimensions": [
+          34,
+          50
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 8- The Cathedral of KadeshThings.kld",
+        "sha256": "f13829df88bfa85cb465dde86c5302d831d2fb86ad7b10c279f2a5ccc31421ab",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 8- The Cathedral of KadeshMap.kld",
+        "map_dimensions": [
+          50,
+          100
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 9-The Sea of Lost SoulsThings.kld",
+        "sha256": "d195842428945ccb38e9bd4cfb1d3bab071d8fad2bd0042f57909de4bd4f8b48",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level 9-The Sea of Lost SoulsMap.kld",
+        "map_dimensions": [
+          30,
+          40
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level10Things.kld",
+        "sha256": "75e4f4e90eea11d1564d728ad1a1189be54e0df65b346bb9f5680b9eacf0e849",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level10Map.kld",
+        "map_dimensions": [
+          100,
+          50
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\level11AThings.kld",
+        "sha256": "821805404632e2a7f4ab3d403e4e41851ffe167e6caffb80affd44a8c1906e83",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\level11AMap.kld",
+        "map_dimensions": [
+          110,
+          60
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\level11BThings.kld",
+        "sha256": "af44bcc2f9c4a3ab5bf6f3224741a4d473a24a39da805fde979d67c43fde4972",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\level11BMap.kld",
+        "map_dimensions": [
+          90,
+          60
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\level11CThings.kld",
+        "sha256": "b5f10b7fd4559e7b97f34c8bc304b487a16a1f6bbda332d47da787c8341dd449",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\level11CMap.kld",
+        "map_dimensions": [
+          90,
+          60
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\level12Things.kld",
+        "sha256": "f2dca1d46a5e31b0ba18d9791d09188d7740523a2a5b9554dd76befb0cbec321",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\level12Map.kld",
+        "map_dimensions": [
+          61,
+          66
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level13Things.kld",
+        "sha256": "333c535f08d175a6895c303dbf57c5d36881d0fc2e2e91d517a3546deec2d775",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level13Map.kld",
+        "map_dimensions": [
+          110,
+          50
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level14Things.kld",
+        "sha256": "0151b7def44868094faf5ba0cf774135ca9e886713b6036d22b64edae6b5a598",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level14Map.kld",
+        "map_dimensions": [
+          60,
+          60
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level15aThings.kld",
+        "sha256": "8a6fc06af8581aa143732f3f99125a76d753df136335eea77c4525c9ae42d8f9",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level15aMap.kld",
+        "map_dimensions": [
+          120,
+          103
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\level15bThings.kld",
+        "sha256": "1e6139d606982a361393634b515ada90191850c3a11936975d443cb2f266f65f",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\level15bMap.kld",
+        "map_dimensions": [
+          120,
+          103
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level16Things.kld",
+        "sha256": "731142f12f92bc9551bd6cfa2ad87b429091baa0376cc5fe9f930d249e47aeda",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level16Map.kld",
+        "map_dimensions": [
+          81,
+          81
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level17Things.kld",
+        "sha256": "f23ab72fcd4469ebb78d51c850e881cfa7cc46b87fe6f28667c03b0b35128983",
+        "generators": 1,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level17Map.kld",
+        "map_dimensions": [
+          80,
+          80
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\level18Things.kld",
+        "sha256": "1a4b40ad83d895ee86874b2e60644a672afc4a7461ec277103f245adc6a72f36",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\level18Map.kld",
+        "map_dimensions": [
+          100,
+          80
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level19Things.kld",
+        "sha256": "1b89944d5bbf7ea17e04317d26674fd172a5fd98c49607d48165c339024d22f1",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level19Map.kld",
+        "map_dimensions": [
+          80,
+          80
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\level1Things.kld",
+        "sha256": "0a0a83397167dbe184eaf7a15949652675a267b0ed45e670399ecf2555f3cc8f",
+        "generators": 2,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\level1Map.kld",
+        "map_dimensions": [
+          30,
+          60
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level20Things.kld",
+        "sha256": "ff8637fe16bee981b7221bad12cff92db5879782bce6f86fd52eb9ec60a7ab5f",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level20Map.kld",
+        "map_dimensions": [
+          99,
+          99
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\level2Things.kld",
+        "sha256": "db6d0d53610c8f528e7426c654dd19dbf10420a0a40530dc67eb582258537056",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\level2Map.kld",
+        "map_dimensions": [
+          40,
+          50
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\level3Things.kld",
+        "sha256": "7add6face0e0c3caa088d05bf9af0a9d520f9ac22c5e209667e7ed5a2ebff9c0",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\level3Map.kld",
+        "map_dimensions": [
+          50,
+          50
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\level4Things.kld",
+        "sha256": "09db058c23264931d330ecd23ac47306ae63b226bd5b368d164e41ca67feaeb4",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\level4Map.kld",
+        "map_dimensions": [
+          50,
+          90
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\level5Things.kld",
+        "sha256": "4ce3854896e298fb763ed81c54308fe1364a050ddaa24f46b6dc8dff6adc895d",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\level5Map.kld",
+        "map_dimensions": [
+          60,
+          55
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level6aThings.kld",
+        "sha256": "f0f6947186c58e272f290b48f315c96213b7951a31b7052d06c85c2d4c274f5c",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level6aMap.kld",
+        "map_dimensions": [
+          70,
+          70
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level6bkanThings.kld",
+        "sha256": "b6b228332963089de7ce95a4b27a4e490f4de63971bf733305fa3aac985ae1b6",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level6bkanMap.kld",
+        "map_dimensions": [
+          70,
+          85
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level6bThings.kld",
+        "sha256": "410bd03cd5a20008a5c12e9feb3dc6a0ae5cedb944fa7df39729b672355cfa74",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level6bMap.kld",
+        "map_dimensions": [
+          70,
+          85
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\level7Things.kld",
+        "sha256": "6b029022ec6cc0048093737a0447ca80108e733df479c9213e432d07a967d805",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\level7Map.kld",
+        "map_dimensions": [
+          73,
+          49
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\level8Things.kld",
+        "sha256": "04d6307817cd82eb3b19c742386a519e4f21b66bc81444af6b593164ebd0549e",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\level8Map.kld",
+        "map_dimensions": [
+          80,
+          50
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level9Things.kld",
+        "sha256": "511e7575050de0ec3235a1748c2b8169b3b5886746e0ddcb2a074b0876805558",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Level9Map.kld",
+        "map_dimensions": [
+          121,
+          66
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\LinchpinThings.kld",
+        "sha256": "521d810e9aee0fbe2237e3d4ae9353c1b53a8987c2b7ff5f2d6912b76185dbbe",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\LinchpinMap.kld",
+        "map_dimensions": [
+          61,
+          61
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\mpd1Things.kld",
+        "sha256": "2c7c9d54ca0c75796e815fc802caf87c91d82861524b6f483311e8099a411e8c",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\mpd1Map.kld",
+        "map_dimensions": [
+          61,
+          61
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\mpd2Things.kld",
+        "sha256": "20559ff75ee0e21e77dbc34ef6d504032ebc190a990c703c02c0f60a6d5d7767",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\mpd2Map.kld",
+        "map_dimensions": [
+          75,
+          75
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\mpd3Things.kld",
+        "sha256": "14e7b804238c0d9e7e4bc683943e846436bec58d1726f134c57e6ad54538105b",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\mpd3Map.kld",
+        "map_dimensions": [
+          61,
+          61
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\mpd4Things.kld",
+        "sha256": "c6613114115da6254632defa017ef9ca1bf8c9d37aa8c37f7cdde586862b350e",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\mpd4Map.kld",
+        "map_dimensions": [
+          69,
+          69
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\mpd5Things.kld",
+        "sha256": "7f803aa0ced28d00098779916c4157598ebfb98c5a481014a12cd79c4feb4ec8",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\mpd5Map.kld",
+        "map_dimensions": [
+          100,
+          40
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\MPD6Things.kld",
+        "sha256": "442ceba3c79f19b2df3d1a72b6f78213d06f0a9dcb61e41e8880e57f7dc0ce4d",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\MPD6Map.kld",
+        "map_dimensions": [
+          80,
+          80
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\mpd7Things.kld",
+        "sha256": "39a0f2ff080a519aa02916891504d858e96ba6bc710d25ed810dc61e57718c89",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\mpd7Map.kld",
+        "map_dimensions": [
+          91,
+          100
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\mpd8Things.kld",
+        "sha256": "2465a7acd7696a584d3d91ae86d5d9d064f098f963a22f010d1e2b81c4250882",
+        "generators": 10,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\mpd8Map.kld",
+        "map_dimensions": [
+          72,
+          82
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\NeedsTest2Things.kld",
+        "sha256": "e375cb34c56c2a3a71355fa1878dec35017ed046844fef704eb2104b0529aa44",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\NeedsTest2Map.kld",
+        "map_dimensions": [
+          128,
+          128
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\NeedsTestThings.kld",
+        "sha256": "dd724b65bb372fac7abf7d4eaf494572d52bceec9e3db3180910ac4a8a3d80a4",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\NeedsTestMap.kld",
+        "map_dimensions": [
+          128,
+          128
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\SampleHeroPMapThings.kld",
+        "sha256": "30d38b96ab13a55f56a0a852cc2f5220e88f7c614c97480ab787c5d367fffb53",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\SampleHeroPMapMap.kld",
+        "map_dimensions": [
+          80,
+          100
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\SampleThings.kld",
+        "sha256": "3251bc73d6ff837cbb826884aee443260b2145ada4ce84b6b94030cd9d562ad9",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\SampleMap.kld",
+        "map_dimensions": [
+          25,
+          25
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Secret1Things.kld",
+        "sha256": "0265cb001f972e98a852009333ba3844b45c07c5a57bac3264f994f9be35a4a2",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Secret1Map.kld",
+        "map_dimensions": [
+          80,
+          120
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Secret2Things.kld",
+        "sha256": "aaf56acad643f85ee00d2280f90075b6918044282338aed991c8a1dc78669da0",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Secret2Map.kld",
+        "map_dimensions": [
+          49,
+          73
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Secret3Things.kld",
+        "sha256": "c5b3915ae7d7dcd4e6e04042029aac0d93c0b9e9c2e445b82c64d8e8e96fc22f",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Secret3Map.kld",
+        "map_dimensions": [
+          100,
+          58
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Secret4Things.kld",
+        "sha256": "96ccc3197c293648bbcccdb8a6504645fffc74c66f4471bb61c24f8beebfbbf9",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Secret4Map.kld",
+        "map_dimensions": [
+          50,
+          110
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Secret5Things.kld",
+        "sha256": "fcef84a0165a3c6ae8a256920e2843d0b53ecd9803804100b93238dccb66d7cc",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\Secret5Map.kld",
+        "map_dimensions": [
+          41,
+          41
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\testAI2Things.kld",
+        "sha256": "3cd601e31943ace8f832ffb75d607dfcf74a58a99248ddf37342bedee60e16fe",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\testAI2Map.kld",
+        "map_dimensions": [
+          100,
+          100
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\testAI3Things.kld",
+        "sha256": "741a7b95e2b312a92ff01f8ecf48c5716511b475dbee7616a8a969fd7c5cbf16",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\testAI3Map.kld",
+        "map_dimensions": [
+          100,
+          100
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\testAI4Things.kld",
+        "sha256": "4be93283e49f9556c60393d973d75b69b7dd02dcce697f45d346e7f3023d62cf",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\testAI4Map.kld",
+        "map_dimensions": [
+          100,
+          100
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\testAIThings.kld",
+        "sha256": "e139bdb565ffbff708f30e12de06e3389a84e17960fdcf5e5b472520f2396064",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\testAIMap.kld",
+        "map_dimensions": [
+          100,
+          100
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\TFO1-1Things.kld",
+        "sha256": "f3997cea4a3bbf3e5b51b1655893a90bbb305d03362cb39a4cf2058896b11ee5",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\TFO1-1Map.kld",
+        "map_dimensions": [
+          48,
+          80
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\TFO1Things.kld",
+        "sha256": "a1c135cefa891a3269ef313484e02eeebef137603574af43eb5b5be51748ea4f",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\TFO1Map.kld",
+        "map_dimensions": [
+          48,
+          80
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\TFO2Things.kld",
+        "sha256": "32e89064667e4bd70d9c84ddc7672b61436e2c0af6d131c51aaff5535abb37d8",
+        "generators": 8,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\TFO2Map.kld",
+        "map_dimensions": [
+          80,
+          100
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\TFO3-2Things.kld",
+        "sha256": "1c3f0f7738f99603760bef4e546acef09631cbfcce09bf442d3584c821a78c4c",
+        "generators": 1,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\TFO3-2Map.kld",
+        "map_dimensions": [
+          95,
+          38
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\TFO3Things.kld",
+        "sha256": "b1b55badd9461722e4cff738ec7e280ae170596949075387f923bb1d1b98b52b",
+        "generators": 1,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\TFO3Map.kld",
+        "map_dimensions": [
+          95,
+          38
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\TFO4-2Things.kld",
+        "sha256": "92988cbfdf5c5aa91ca6ad309a265f40cbefe652f0e40b9122de8c4b3df21fb5",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\TFO4-2Map.kld",
+        "map_dimensions": [
+          90,
+          90
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\TFO4Things.kld",
+        "sha256": "d0e014d4a3fd557741de6c1bb7095fb357801ccdfd97d569e196bf576c7f0766",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\TFO4Map.kld",
+        "map_dimensions": [
+          90,
+          90
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXlevel1-2Things.kld",
+        "sha256": "d38617cc0bad5675a33fa11a5db894f3dc5fec668686ebcbb6b294ce04d8bd91",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXlevel1-2Map.kld",
+        "map_dimensions": [
+          30,
+          38
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXlevel1-3Things.kld",
+        "sha256": "f79c4e785f03787d8b8711f6e9233618dd2ac147e69144ab0cd35f75436838b9",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXlevel1-3Map.kld",
+        "map_dimensions": [
+          30,
+          38
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXlevel1-4Things.kld",
+        "sha256": "837043686ff0044fc0960c1d219c0e55becc13b2ef9fff0127028b9efe9045ed",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXlevel1-4Map.kld",
+        "map_dimensions": [
+          30,
+          38
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXLevel10Things.kld",
+        "sha256": "9a01c25428e0a17c660c6b45574de415f93a1bd913b5d6ac8c20402147b1f147",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXLevel10Map.kld",
+        "map_dimensions": [
+          58,
+          100
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXlevel11AThings.kld",
+        "sha256": "611688b6e57420e49c210973252f94f3b991318137660c0bea0f80f1f6d6213b",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXlevel11AMap.kld",
+        "map_dimensions": [
+          90,
+          60
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXlevel11BThings.kld",
+        "sha256": "245f1395aeeab11c4df536cc36dc9d4eb4c9e04badccde09c5630fca89aeb38a",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXlevel11BMap.kld",
+        "map_dimensions": [
+          90,
+          60
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXlevel11CThings.kld",
+        "sha256": "264484aee0ad8d01da3f7e9fcc3f271bfa95dc8ef43e5f9c51ef45d514b84e4c",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXlevel11CMap.kld",
+        "map_dimensions": [
+          90,
+          60
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXlevel12Things.kld",
+        "sha256": "85faa69659c195bb3bae18362d2b88fafca8b472df4dd4ddc14bdfec5d1ae294",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXlevel12Map.kld",
+        "map_dimensions": [
+          61,
+          66
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXLevel13Things.kld",
+        "sha256": "9eb686adce2bb3c09448d50ad7cb9fa1470d4b5f574daa3bdc65a00e4bcb61b1",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXLevel13Map.kld",
+        "map_dimensions": [
+          110,
+          50
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXLevel14Things.kld",
+        "sha256": "b361c0668887e45d97c4600e2f1968086ac97e0fe11ef346445a7a2fb45375a0",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXLevel14Map.kld",
+        "map_dimensions": [
+          60,
+          60
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXLevel15aThings.kld",
+        "sha256": "abbdd687d8b8a9a51b92dfd2019bfae78592b3689af10764603756cc1f3f3f65",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXLevel15aMap.kld",
+        "map_dimensions": [
+          120,
+          103
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXlevel15bThings.kld",
+        "sha256": "4347662b35472091061a4d08650cdc68efbc7c1318c9e7d8e17ebb98a81bbbea",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXlevel15bMap.kld",
+        "map_dimensions": [
+          120,
+          103
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXLevel16Things.kld",
+        "sha256": "d80585d64f0211c1a494000d083861645b995542c8cc8d8bbcd388483158ce5a",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXLevel16Map.kld",
+        "map_dimensions": [
+          81,
+          81
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXLevel17Things.kld",
+        "sha256": "a262d4a3e1fcda213efe225f23600ebf8a4b439e5361d3606c1c38d3ff075406",
+        "generators": 1,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXLevel17Map.kld",
+        "map_dimensions": [
+          80,
+          80
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXlevel18Things.kld",
+        "sha256": "0b9c657667dffaaa98e1bed0477871bf9d52c9587967f3c08c587206e0ebbb3b",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXlevel18Map.kld",
+        "map_dimensions": [
+          100,
+          80
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXLevel19Things.kld",
+        "sha256": "5e2e14b909d8b5fdd36aa944f59342d8c0e6d5d7be530fd2ded5bf29b9880f6a",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXLevel19Map.kld",
+        "map_dimensions": [
+          80,
+          80
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXlevel1Things.kld",
+        "sha256": "8bd4c39cf8022bba66cec3aa9ec1d16bfb9ab5f3dc2f72067aa3f6a7bafec12e",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXlevel1Map.kld",
+        "map_dimensions": [
+          30,
+          38
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXLevel20Things.kld",
+        "sha256": "f3a145aad7b76113f25aa14d1f9c5dfc64265a23040fecb41043f1311b36bac9",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXLevel20Map.kld",
+        "map_dimensions": [
+          99,
+          99
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXlevel2Things.kld",
+        "sha256": "d0dcbab3fb4d9aa028921b1a452c0a3c96e2121ef32844404b19c9e8e3a99526",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXlevel2Map.kld",
+        "map_dimensions": [
+          40,
+          50
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXlevel3Things.kld",
+        "sha256": "797079ef5eee5e3ba55172606e53b348991e0eb5672257a0c93561fc4508b842",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXlevel3Map.kld",
+        "map_dimensions": [
+          50,
+          50
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXlevel4Things.kld",
+        "sha256": "7cf63a56e58c170586d54394fe36d363cb3e81dd3099efe178bf7153631741fb",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXlevel4Map.kld",
+        "map_dimensions": [
+          50,
+          64
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXlevel5Things.kld",
+        "sha256": "00eee5062c721e168bbc31dc11c665697c497b4a55960cf926aca614195efb16",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXlevel5Map.kld",
+        "map_dimensions": [
+          51,
+          55
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXLevel6aThings.kld",
+        "sha256": "16e635026209d78cb65b752552edc8d88c496e6e2b5b5fe68d6eab4eeb4cb81c",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXLevel6aMap.kld",
+        "map_dimensions": [
+          70,
+          70
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXLevel6bThings.kld",
+        "sha256": "9fdb703766cbe345b65c4898a00fcd373bb1233fb144b8d05be463084fb6ce9e",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXLevel6bMap.kld",
+        "map_dimensions": [
+          70,
+          85
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXlevel7Things.kld",
+        "sha256": "a55716d2e21c64d6c4e58205bca9759858e40d74d4ba19145edd6f8d2cbb1e99",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXlevel7Map.kld",
+        "map_dimensions": [
+          73,
+          49
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXlevel8Things.kld",
+        "sha256": "ddd133e9e59be9e1b35ad49896bcab592158958922578a2b554526fbd85d3a99",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXlevel8Map.kld",
+        "map_dimensions": [
+          84,
+          50
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXLevel9Things.kld",
+        "sha256": "1062c18a0a6d38fc768794d14b2ed3c3ff63aa717084fec7b29143678f5f9b7d",
+        "generators": 0,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\maps\\XXLevel9Map.kld",
+        "map_dimensions": [
+          121,
+          66
+        ]
+      },
+      {
+        "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\AutoSaveThings.kld",
+        "sha256": "497baba367fc50e18d2ad535ee6969d506ce4934b8ac2524cd728a0ba050cd67",
+        "generators": 3,
+        "map_file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\AutoSaveMap.kld",
+        "map_dimensions": [
+          64,
+          64
+        ]
+      }
+    ]
+  },
+  "parser": {
+    "game": "0x570630",
+    "editor": "0x430DB0",
+    "read_bytes": 36,
+    "rule": "When callback exists both readers request36 bytes regardless of declared payload length. Tests declaring35/37 provide36 backing bytes; no out-of-bounds or truncated real read is executed. Negative I/O status returns0.",
+    "intermediate_bytes": 76,
+    "presence_dwords": 10,
+    "intermediate_offsets": {
+      "position": 40,
+      "flags": 52,
+      "width": 56,
+      "height": 58,
+      "effects": 60,
+      "frequency": 68,
+      "id": 69,
+      "opaque_tail": 70
+    },
+    "converter": "42FB50 ORs raw flags with existing mid34 and leaves last6 intermediate bytes unchanged; actual parsers initialize the76-byte intermediate to zero before conversion."
+  },
+  "runtime": {
+    "callback": "0x521380",
+    "creator": "0x4B81E0",
+    "constructor": "0x4B7560",
+    "initializer": "0x4B19A0",
+    "tick": "0x4B1B60",
+    "allocation_bytes": 69,
+    "offsets": {
+      "position": 26,
+      "deadline": 46,
+      "effects": 50,
+      "frequency": 58,
+      "flags": 59,
+      "active": 60,
+      "width": 64,
+      "height": 66,
+      "id": 68
+    },
+    "initial": "Checksum callback first; centered Q12 X/Y,Z0, raw width/height retained; activeDWORD=1,deadlineDWORD=0,runtime flagsBYTE=0; four effect slots and frequency assigned after successful creation.",
+    "attempt": "Inactive returns1 without clock. Require unsigned now>deadline, choose slot0..3. If selected WORD==0 return1 unchanged. Add random(width<<12) and random(height<<12) to base X/Y modulo2^32. World virtual20C rejects on nonzero; rejection returns1 without updating deadline. Otherwise random angle0..2047; virtual38C receives effectWORD, ownerWORD6F2548, XYZ and angle. Regardless of creation return value, set deadline=now+frequencyBYTE*globalTPS modulo2^32.",
+    "random": "5558D0 bound0 logs through634DB0, returns0 without advancing state. Normal branch advances LCG(seed*1664525+1013904223), rotates right13 and returns unsigned remainder by bound; debug logging branch excluded from nonzero fixtures.",
+    "interpretation": "Width/height are extents starting at the centered placement point, not a symmetric radius. Four slots including zero are sampled, not compacted. Frequency0 still waits for a strictly later tick. First tick0 equals initial deadline0, so does not emit."
+  },
+  "editor": {
+    "callback": "0x491F20",
+    "constructor": "0x41F810",
+    "model_bytes": 48,
+    "offsets": {
+      "x": 4,
+      "y": 8,
+      "id": 24,
+      "opaque_flags": 28,
+      "frequency": 32,
+      "width": 34,
+      "height": 36,
+      "effects": 38
+    },
+    "width_setter": "0x41F990",
+    "height_setter": "0x41F9E0",
+    "bounds": "Compare signed32(originDWORD+requestedWORD) against zero-extended low16(mapDimensionDWORD). If less, keep requested; otherwise store low16(mapDimension-low16(origin)-1). Ordinary coordinates yield dimension-origin-1; invalid positions can wrap, not clamp0.",
+    "flags_setter": "0x401A50 RET4",
+    "flags_getter": "0x41FA70 returns0",
+    "writer": "0x4947C0 at4950C9..4951BB",
+    "save": "Writes TileX,TileY,Z0,flags0,width/height,effects,frequency,id. Last6 bytes not assigned in CB loop;6 full writer fixtures with other family counts0 preserve stack seed00/A5/FF in all6 tail bytes. No universal inter-record initialization guarantee inferred."
+  },
+  "limitations": [
+    "World registration, base entity initialization, allocation, checksum helper and actual visual effect creation are explicit fixtures. The complete real game/rendering is not run.",
+    "Tick clock/random/rejection/create callbacks are controlled; real5558D0 is separately tested in5 cases with debug switch0. Position rejection virtual20C meaning is not given a guessed terrain label.",
+    "Editor full callback uses actual generator constructor, bounds/effect setters and no-op flags setter. Base constructor, coordinate virtual setters, parent provider and map insertion are fixtures. No GUI panel ranges/control bindings are claimed.",
+    "Full native Things writer fixtures validate the CB payload; unrelated count/date/file helpers are substituted. Header counts are not claimed correct in these isolated fixtures. The36-byte header is captured before the final36-byte CB payload.",
+    "RawZ,rawFlags and six tail bytes retain unknown original purpose even where an inspected path ignores/discards them. Runtime flagsBYTE is not assumed to be rawFlags lowbyte.",
+    "Assembly/live memory and original PE bytes compared after all emulation. Superseded fixture snapshots retained outside final manifest: RNG log store initially addressed EBP-relative rather than absolute; writer capture initially expected1 len36 call instead of header+payload2.",
+    "Independent codec preserves every raw field and opaque bit; editor projections require explicit compatibility intent. All patch/roundtrip checks operate in memory, not on game inputs."
+  ]
+}

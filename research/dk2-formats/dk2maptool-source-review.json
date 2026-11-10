@@ -1,0 +1,886 @@
+{
+  "date": "2026-11-01",
+  "repository": "https://github.com/Quuz/Dk2maptool",
+  "commit": "d38fd0dc333d70ef4edc5412d7ffc98179fee6a4",
+  "provenance": "source-references/dk2maptool-d38fd0dc333d/provenance.json",
+  "validation": {
+    "passed": true,
+    "verified_text_files": 9,
+    "catalogue_and_other_stub_handlers": 14,
+    "descriptor_regions": 38,
+    "modern_payload_bytes": 25683,
+    "new_gameplay_field_assignments": 0,
+    "new_native_executions": 0
+  },
+  "stub_handlers": {
+    "Creatures": {
+      "function": "dk2m_read_creatureschunk",
+      "line": 1097,
+      "body_sha256": "7c8c1370608e4e8790985a3f9436f0d0a778a1667d0987f76bd9b7ab2ff22dbb",
+      "decodes_record_fields": false
+    },
+    "Rooms": {
+      "function": "dk2m_read_roomschunk",
+      "line": 1116,
+      "body_sha256": "40fcdf8fde3dee78bfd743d61307d544683f98625424b062e635de00592d7578",
+      "decodes_record_fields": false
+    },
+    "Traps": {
+      "function": "dk2m_read_trapschunk",
+      "line": 1078,
+      "body_sha256": "9d33bd6d50eec819fcb2f289facc6ca51cfc51f39b1e3725e24928fcede2b452",
+      "decodes_record_fields": false
+    },
+    "Doors": {
+      "function": "dk2m_read_doorschunk",
+      "line": 1059,
+      "body_sha256": "332d18143ef1dc3d1218445ead8e5e86f0c7c0bc6af8eaca6a2a3bb4d55ce69f",
+      "decodes_record_fields": false
+    },
+    "Shots": {
+      "function": "dk2m_read_shotschunk",
+      "line": 1194,
+      "body_sha256": "39fd98b6318ff26640f2aab8ee4637ba6bfef305b52feb9670799e4a99d6730a",
+      "decodes_record_fields": false
+    },
+    "Objects": {
+      "function": "dk2m_read_objectschunk",
+      "line": 1213,
+      "body_sha256": "1b850e3d3d0b4476f6295666bd9670dcaa78ad59b85afac5e88b62ce1675b584",
+      "decodes_record_fields": false
+    },
+    "CreatureSpells": {
+      "function": "dk2m_read_ctspellschunk",
+      "line": 1232,
+      "body_sha256": "6a458d584a6985c03b031df923046ae8f5ce84af0cdf2f4103ec1a09a6277483",
+      "decodes_record_fields": false
+    },
+    "KeeperSpells": {
+      "function": "dk2m_read_kpspellschunk",
+      "line": 1251,
+      "body_sha256": "0639fdc99567e5db1de81ed26eebfd811a2c72d36011985a2cf77baedc0bcfcf",
+      "decodes_record_fields": false
+    },
+    "Terrain": {
+      "function": "dk2m_read_terrainchunk",
+      "line": 1293,
+      "body_sha256": "eaf88eab2196ae6f622f198d56b2aa07d308ef009ced3e2306315fa6772c46dd",
+      "decodes_record_fields": false
+    },
+    "Variables": {
+      "function": "dk2m_read_variableschunk",
+      "line": 1154,
+      "body_sha256": "1182702d87d87f58f43b1c10b55d33563e3e438e7b372f9b5124da5b3d57ff7a",
+      "decodes_record_fields": false
+    },
+    "Globals": {
+      "function": "dk2m_read_globalschunk",
+      "line": 1270,
+      "body_sha256": "6cdb006aaa6037f68f7edc10f54fc923840a9c3321a6bce7c2754038ce9211bf",
+      "decodes_record_fields": false
+    },
+    "Things": {
+      "function": "dk2m_read_thingschunk",
+      "line": 1040,
+      "body_sha256": "c643b43d32033843ccbc53a0cdbf6b4700a4b53d501907aca03ff78eef8c615f",
+      "decodes_record_fields": false
+    },
+    "Players": {
+      "function": "dk2m_read_playerschunk",
+      "line": 1135,
+      "body_sha256": "225f388ec44d3b9b73bd3ef2071bca7dd1d472679a4642fa1e0fdc2edb66616f",
+      "decodes_record_fields": false
+    },
+    "Triggers": {
+      "function": "dk2m_read_triggerschunk",
+      "line": 1175,
+      "body_sha256": "a65092ca143f97dd868a462196f749d82bbb39ddad2eb9db14ca7bae7ac456bf",
+      "decodes_record_fields": false
+    }
+  },
+  "level_descriptor_comparison": [
+    {
+      "source_name": "name",
+      "offset": 0,
+      "offset_hex": "0x0",
+      "bytes": 128,
+      "source_line": 807,
+      "current_fields": [
+        {
+          "name": "Name",
+          "offset": 0,
+          "size": 128
+        }
+      ]
+    },
+    {
+      "source_name": "desc",
+      "offset": 128,
+      "offset_hex": "0x80",
+      "bytes": 2048,
+      "source_line": 811,
+      "current_fields": [
+        {
+          "name": "Description",
+          "offset": 128,
+          "size": 2048
+        }
+      ]
+    },
+    {
+      "source_name": "author",
+      "offset": 2176,
+      "offset_hex": "0x880",
+      "bytes": 128,
+      "source_line": 815,
+      "current_fields": [
+        {
+          "name": "Author",
+          "offset": 2176,
+          "size": 128
+        }
+      ]
+    },
+    {
+      "source_name": "email",
+      "offset": 2304,
+      "offset_hex": "0x900",
+      "bytes": 128,
+      "source_line": 819,
+      "current_fields": [
+        {
+          "name": "Email",
+          "offset": 2304,
+          "size": 128
+        }
+      ]
+    },
+    {
+      "source_name": "info",
+      "offset": 2432,
+      "offset_hex": "0x980",
+      "bytes": 2048,
+      "source_line": 823,
+      "current_fields": [
+        {
+          "name": "Information",
+          "offset": 2432,
+          "size": 2048
+        }
+      ]
+    },
+    {
+      "source_name": "u3",
+      "offset": 4480,
+      "offset_hex": "0x1180",
+      "bytes": 2,
+      "source_line": 827,
+      "current_fields": [
+        {
+          "name": "TriggerId",
+          "offset": 4480,
+          "size": 2
+        }
+      ]
+    },
+    {
+      "source_name": "ticks_per_sec",
+      "offset": 4482,
+      "offset_hex": "0x1182",
+      "bytes": 2,
+      "source_line": 829,
+      "current_fields": [
+        {
+          "name": "TicksPerSecond",
+          "offset": 4482,
+          "size": 2
+        }
+      ]
+    },
+    {
+      "source_name": "randblock",
+      "offset": 4484,
+      "offset_hex": "0x1184",
+      "bytes": 520,
+      "source_line": 832,
+      "current_fields": [
+        {
+          "name": "UnknownHistory",
+          "offset": 4484,
+          "size": 520
+        }
+      ]
+    },
+    {
+      "source_name": "msgs[20]",
+      "offset": 5004,
+      "offset_hex": "0x138c",
+      "bytes": 20480,
+      "source_line": 834,
+      "current_fields": [
+        {
+          "name": "Messages[0]",
+          "offset": 5004,
+          "size": 1024
+        },
+        {
+          "name": "Messages[1]",
+          "offset": 6028,
+          "size": 1024
+        },
+        {
+          "name": "Messages[2]",
+          "offset": 7052,
+          "size": 1024
+        },
+        {
+          "name": "Messages[3]",
+          "offset": 8076,
+          "size": 1024
+        },
+        {
+          "name": "Messages[4]",
+          "offset": 9100,
+          "size": 1024
+        },
+        {
+          "name": "Messages[5]",
+          "offset": 10124,
+          "size": 1024
+        },
+        {
+          "name": "Messages[6]",
+          "offset": 11148,
+          "size": 1024
+        },
+        {
+          "name": "Messages[7]",
+          "offset": 12172,
+          "size": 1024
+        },
+        {
+          "name": "Messages[8]",
+          "offset": 13196,
+          "size": 1024
+        },
+        {
+          "name": "Messages[9]",
+          "offset": 14220,
+          "size": 1024
+        },
+        {
+          "name": "Messages[10]",
+          "offset": 15244,
+          "size": 1024
+        },
+        {
+          "name": "Messages[11]",
+          "offset": 16268,
+          "size": 1024
+        },
+        {
+          "name": "Messages[12]",
+          "offset": 17292,
+          "size": 1024
+        },
+        {
+          "name": "Messages[13]",
+          "offset": 18316,
+          "size": 1024
+        },
+        {
+          "name": "Messages[14]",
+          "offset": 19340,
+          "size": 1024
+        },
+        {
+          "name": "Messages[15]",
+          "offset": 20364,
+          "size": 1024
+        },
+        {
+          "name": "Messages[16]",
+          "offset": 21388,
+          "size": 1024
+        },
+        {
+          "name": "Messages[17]",
+          "offset": 22412,
+          "size": 1024
+        },
+        {
+          "name": "Messages[18]",
+          "offset": 23436,
+          "size": 1024
+        },
+        {
+          "name": "Messages[19]",
+          "offset": 24460,
+          "size": 1024
+        }
+      ]
+    },
+    {
+      "source_name": "lvflags",
+      "offset": 25484,
+      "offset_hex": "0x638c",
+      "bytes": 2,
+      "source_line": 840,
+      "current_fields": [
+        {
+          "name": "Flags",
+          "offset": 25484,
+          "size": 2
+        }
+      ]
+    },
+    {
+      "source_name": "speechstr",
+      "offset": 25486,
+      "offset_hex": "0x638e",
+      "bytes": 32,
+      "source_line": 842,
+      "current_fields": [
+        {
+          "name": "SoundCategory",
+          "offset": 25486,
+          "size": 32
+        }
+      ]
+    },
+    {
+      "source_name": "talisman_pieces",
+      "offset": 25518,
+      "offset_hex": "0x63ae",
+      "bytes": 1,
+      "source_line": 846,
+      "current_fields": [
+        {
+          "name": "TalismanPieces",
+          "offset": 25518,
+          "size": 1
+        }
+      ]
+    },
+    {
+      "source_name": "reward_prev[0..3]",
+      "offset": 25519,
+      "offset_hex": "0x63af",
+      "bytes": 4,
+      "source_line": 848,
+      "current_fields": [
+        {
+          "name": "RewardPrevious[0]",
+          "offset": 25519,
+          "size": 1
+        },
+        {
+          "name": "RewardPrevious[1]",
+          "offset": 25520,
+          "size": 1
+        },
+        {
+          "name": "RewardPrevious[2]",
+          "offset": 25521,
+          "size": 1
+        },
+        {
+          "name": "RewardPrevious[3]",
+          "offset": 25522,
+          "size": 1
+        }
+      ]
+    },
+    {
+      "source_name": "reward_next[0..3]",
+      "offset": 25523,
+      "offset_hex": "0x63b3",
+      "bytes": 4,
+      "source_line": 851,
+      "current_fields": [
+        {
+          "name": "RewardNext[0]",
+          "offset": 25523,
+          "size": 1
+        },
+        {
+          "name": "RewardNext[1]",
+          "offset": 25524,
+          "size": 1
+        },
+        {
+          "name": "RewardNext[2]",
+          "offset": 25525,
+          "size": 1
+        },
+        {
+          "name": "RewardNext[3]",
+          "offset": 25526,
+          "size": 1
+        }
+      ]
+    },
+    {
+      "source_name": "sound_track",
+      "offset": 25527,
+      "offset_hex": "0x63b7",
+      "bytes": 1,
+      "source_line": 854,
+      "current_fields": [
+        {
+          "name": "SoundTrack",
+          "offset": 25527,
+          "size": 1
+        }
+      ]
+    },
+    {
+      "source_name": "text_table_id",
+      "offset": 25528,
+      "offset_hex": "0x63b8",
+      "bytes": 1,
+      "source_line": 856,
+      "current_fields": [
+        {
+          "name": "TextTableId",
+          "offset": 25528,
+          "size": 1
+        }
+      ]
+    },
+    {
+      "source_name": "text_title_id",
+      "offset": 25529,
+      "offset_hex": "0x63b9",
+      "bytes": 2,
+      "source_line": 858,
+      "current_fields": [
+        {
+          "name": "TextTitleId",
+          "offset": 25529,
+          "size": 2
+        }
+      ]
+    },
+    {
+      "source_name": "text_plot_id",
+      "offset": 25531,
+      "offset_hex": "0x63bb",
+      "bytes": 2,
+      "source_line": 860,
+      "current_fields": [
+        {
+          "name": "TextPlotId",
+          "offset": 25531,
+          "size": 2
+        }
+      ]
+    },
+    {
+      "source_name": "text_debrief_id",
+      "offset": 25533,
+      "offset_hex": "0x63bd",
+      "bytes": 2,
+      "source_line": 862,
+      "current_fields": [
+        {
+          "name": "TextDebriefId",
+          "offset": 25533,
+          "size": 2
+        }
+      ]
+    },
+    {
+      "source_name": "text_objectv_id",
+      "offset": 25535,
+      "offset_hex": "0x63bf",
+      "bytes": 2,
+      "source_line": 864,
+      "current_fields": [
+        {
+          "name": "TextObjectiveId",
+          "offset": 25535,
+          "size": 2
+        }
+      ]
+    },
+    {
+      "source_name": "u10",
+      "offset": 25537,
+      "offset_hex": "0x63c1",
+      "bytes": 2,
+      "source_line": 866,
+      "current_fields": [
+        {
+          "name": "Unknown63C1",
+          "offset": 25537,
+          "size": 2
+        }
+      ]
+    },
+    {
+      "source_name": "text_subobjctv_id[3]",
+      "offset": 25539,
+      "offset_hex": "0x63c3",
+      "bytes": 6,
+      "source_line": 868,
+      "current_fields": [
+        {
+          "name": "TextSubObjectiveId1",
+          "offset": 25539,
+          "size": 2
+        },
+        {
+          "name": "TextSubObjectiveId2",
+          "offset": 25541,
+          "size": 2
+        },
+        {
+          "name": "TextSubObjectiveId3",
+          "offset": 25543,
+          "size": 2
+        }
+      ]
+    },
+    {
+      "source_name": "speclvl_idx",
+      "offset": 25545,
+      "offset_hex": "0x63c9",
+      "bytes": 1,
+      "source_line": 871,
+      "current_fields": [
+        {
+          "name": "SpecialLevelNumber",
+          "offset": 25545,
+          "size": 1
+        }
+      ]
+    },
+    {
+      "source_name": "u11",
+      "offset": 25546,
+      "offset_hex": "0x63ca",
+      "bytes": 1,
+      "source_line": 873,
+      "current_fields": [
+        {
+          "name": "UniqueCreatureTypeId",
+          "offset": 25546,
+          "size": 1
+        }
+      ]
+    },
+    {
+      "source_name": "text_intrdc_overrd_obj[8]",
+      "offset": 25547,
+      "offset_hex": "0x63cb",
+      "bytes": 8,
+      "source_line": 875,
+      "current_fields": [
+        {
+          "name": "IntroductionCreatureId[0]",
+          "offset": 25547,
+          "size": 1
+        },
+        {
+          "name": "IntroductionCreatureId[1]",
+          "offset": 25548,
+          "size": 1
+        },
+        {
+          "name": "IntroductionCreatureId[2]",
+          "offset": 25549,
+          "size": 1
+        },
+        {
+          "name": "IntroductionCreatureId[3]",
+          "offset": 25550,
+          "size": 1
+        },
+        {
+          "name": "IntroductionCreatureId[4]",
+          "offset": 25551,
+          "size": 1
+        },
+        {
+          "name": "IntroductionCreatureId[5]",
+          "offset": 25552,
+          "size": 1
+        },
+        {
+          "name": "IntroductionCreatureId[6]",
+          "offset": 25553,
+          "size": 1
+        },
+        {
+          "name": "IntroductionCreatureId[7]",
+          "offset": 25554,
+          "size": 1
+        }
+      ]
+    },
+    {
+      "source_name": "text_intrdc_overrd_id[8]",
+      "offset": 25555,
+      "offset_hex": "0x63d3",
+      "bytes": 16,
+      "source_line": 878,
+      "current_fields": [
+        {
+          "name": "IntroductionTextId[0]",
+          "offset": 25555,
+          "size": 2
+        },
+        {
+          "name": "IntroductionTextId[1]",
+          "offset": 25557,
+          "size": 2
+        },
+        {
+          "name": "IntroductionTextId[2]",
+          "offset": 25559,
+          "size": 2
+        },
+        {
+          "name": "IntroductionTextId[3]",
+          "offset": 25561,
+          "size": 2
+        },
+        {
+          "name": "IntroductionTextId[4]",
+          "offset": 25563,
+          "size": 2
+        },
+        {
+          "name": "IntroductionTextId[5]",
+          "offset": 25565,
+          "size": 2
+        },
+        {
+          "name": "IntroductionTextId[6]",
+          "offset": 25567,
+          "size": 2
+        },
+        {
+          "name": "IntroductionTextId[7]",
+          "offset": 25569,
+          "size": 2
+        }
+      ]
+    },
+    {
+      "source_name": "terrain_path",
+      "offset": 25571,
+      "offset_hex": "0x63e3",
+      "bytes": 32,
+      "source_line": 881,
+      "current_fields": [
+        {
+          "name": "TerrainPath",
+          "offset": 25571,
+          "size": 32
+        }
+      ]
+    },
+    {
+      "source_name": "one_shot_horny_lev",
+      "offset": 25603,
+      "offset_hex": "0x6403",
+      "bytes": 1,
+      "source_line": 885,
+      "current_fields": [
+        {
+          "name": "OneShotHornyLevel",
+          "offset": 25603,
+          "size": 1
+        }
+      ]
+    },
+    {
+      "source_name": "u20",
+      "offset": 25604,
+      "offset_hex": "0x6404",
+      "bytes": 1,
+      "source_line": 887,
+      "current_fields": [
+        {
+          "name": "PlayerCount",
+          "offset": 25604,
+          "size": 1
+        }
+      ]
+    },
+    {
+      "source_name": "reward_prev[4]",
+      "offset": 25605,
+      "offset_hex": "0x6405",
+      "bytes": 1,
+      "source_line": 889,
+      "current_fields": [
+        {
+          "name": "RewardPreviousExtra",
+          "offset": 25605,
+          "size": 1
+        }
+      ]
+    },
+    {
+      "source_name": "reward_next[4]",
+      "offset": 25606,
+      "offset_hex": "0x6406",
+      "bytes": 1,
+      "source_line": 891,
+      "current_fields": [
+        {
+          "name": "RewardNextExtra",
+          "offset": 25606,
+          "size": 1
+        }
+      ]
+    },
+    {
+      "source_name": "speech_horny_id",
+      "offset": 25607,
+      "offset_hex": "0x6407",
+      "bytes": 2,
+      "source_line": 893,
+      "current_fields": [
+        {
+          "name": "SpeechHornyId",
+          "offset": 25607,
+          "size": 2
+        }
+      ]
+    },
+    {
+      "source_name": "speech_prelvl_id",
+      "offset": 25609,
+      "offset_hex": "0x6409",
+      "bytes": 2,
+      "source_line": 895,
+      "current_fields": [
+        {
+          "name": "SpeechPrelevelId",
+          "offset": 25609,
+          "size": 2
+        }
+      ]
+    },
+    {
+      "source_name": "speech_postlvl_win",
+      "offset": 25611,
+      "offset_hex": "0x640b",
+      "bytes": 2,
+      "source_line": 897,
+      "current_fields": [
+        {
+          "name": "SpeechPostlevelWinId",
+          "offset": 25611,
+          "size": 2
+        }
+      ]
+    },
+    {
+      "source_name": "speech_postlvl_lost",
+      "offset": 25613,
+      "offset_hex": "0x640d",
+      "bytes": 2,
+      "source_line": 899,
+      "current_fields": [
+        {
+          "name": "SpeechPostlevelLostId",
+          "offset": 25613,
+          "size": 2
+        }
+      ]
+    },
+    {
+      "source_name": "speech_postlvl_news",
+      "offset": 25615,
+      "offset_hex": "0x640f",
+      "bytes": 2,
+      "source_line": 901,
+      "current_fields": [
+        {
+          "name": "SpeechPostlevelNewsId",
+          "offset": 25615,
+          "size": 2
+        }
+      ]
+    },
+    {
+      "source_name": "speech_prelvl_genr",
+      "offset": 25617,
+      "offset_hex": "0x6411",
+      "bytes": 2,
+      "source_line": 903,
+      "current_fields": [
+        {
+          "name": "SpeechPrelevelGeneralId",
+          "offset": 25617,
+          "size": 2
+        }
+      ]
+    },
+    {
+      "source_name": "hero_name",
+      "offset": 25619,
+      "offset_hex": "0x6413",
+      "bytes": 64,
+      "source_line": 905,
+      "current_fields": [
+        {
+          "name": "HeroName",
+          "offset": 25619,
+          "size": 64
+        }
+      ]
+    }
+  ],
+  "map_cell": {
+    "source_lines": [
+      1012,
+      1013,
+      1014,
+      1015
+    ],
+    "fields": [
+      "slab",
+      "owner",
+      "wlb",
+      "u1"
+    ],
+    "fourth_byte_semantics": "Still u1; no new interpretation."
+  },
+  "open_blocks": {
+    "temple": "No recipe or gameplay decoder",
+    "crypt": "No bonus implementation",
+    "resistances": "No resistance decoder or consumer",
+    "level_opaque_520": "randblock comment; TODO remains, no independent runtime proof",
+    "level_opaque_2": "u10 with speculative comment; not semantically decoded",
+    "level_unique_byte": "u11 remains unnamed"
+  },
+  "source_limitations": [
+    {
+      "line": 1395,
+      "issue": "read_chunk return value is ignored; top-level success does not prove fields decoded."
+    },
+    {
+      "line": 1429,
+      "issue": "sizeof(fname) is pointer width, not allocated buffer capacity."
+    },
+    {
+      "line": 794,
+      "issue": "Reads32bits at16bit stride intoWORD array; last element can overread nominal chunk."
+    },
+    {
+      "line": 910,
+      "issue": "Descriptor reader requires exactly25683; does not support old25603 here."
+    }
+  ],
+  "package_preserved": {
+    "sha256": "2ba52db06ed226130eb8493a343b884d72a4615471449a25b5935d56d20864c2",
+    "components": 143
+  },
+  "scope": "Source review and comparison only. No game, original EXE, tool binary, or parallel editor executed or modified."
+}

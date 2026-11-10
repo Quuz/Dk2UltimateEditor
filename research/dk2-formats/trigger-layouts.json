@@ -1,0 +1,3634 @@
+{
+  "0xD5": {
+    "39": {
+      "name": "AP_CONGREGATE_IN",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "comparison",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 1,
+          "kind": "enum8",
+          "enum": "TriggerGeneric.ComparisonType"
+        },
+        {
+          "name": "playerId",
+          "offset": 1,
+          "offset_hex": "0x1",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "targetId",
+          "offset": 2,
+          "offset_hex": "0x2",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "targetType",
+          "offset": 3,
+          "offset_hex": "0x3",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "value",
+          "offset": 4,
+          "offset_hex": "0x4",
+          "size": 4,
+          "kind": "u32"
+        }
+      ],
+      "source_line": 2389,
+      "confidence": "native_DX_AP_condition_dispatch_and_parameter_routing;baseline_names_retained",
+      "baseline_fields": [
+        {
+          "name": "comparison",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 1,
+          "kind": "enum8",
+          "enum": "TriggerGeneric.ComparisonType"
+        },
+        {
+          "name": "playerId",
+          "offset": 1,
+          "offset_hex": "0x1",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "targetId",
+          "offset": 2,
+          "offset_hex": "0x2",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "targetType",
+          "offset": 3,
+          "offset_hex": "0x3",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "value",
+          "offset": 4,
+          "offset_hex": "0x4",
+          "size": 4,
+          "kind": "u32"
+        }
+      ],
+      "native_evidence": "action-point-condition-semantics.json;DX4B0D70",
+      "native_note": "TargetType6 selects objectkind2;all other values select creaturekind0. Player/target zero disable respective filter. Count low16 then signedDWORDcomparison."
+    },
+    "70": {
+      "name": "AP_POSESSED_CREATURE_ENTERS",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "comparison",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 1,
+          "kind": "enum8",
+          "enum": "TriggerGeneric.ComparisonType"
+        },
+        {
+          "name": "playerId",
+          "offset": 1,
+          "offset_hex": "0x1",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "targetId",
+          "offset": 2,
+          "offset_hex": "0x2",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "targetType",
+          "offset": 3,
+          "offset_hex": "0x3",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "value",
+          "offset": 4,
+          "offset_hex": "0x4",
+          "size": 4,
+          "kind": "u32"
+        }
+      ],
+      "source_line": 2389,
+      "confidence": "native_DX_AP_condition_dispatch_and_parameter_routing;baseline_names_retained",
+      "baseline_fields": [
+        {
+          "name": "comparison",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 1,
+          "kind": "enum8",
+          "enum": "TriggerGeneric.ComparisonType"
+        },
+        {
+          "name": "playerId",
+          "offset": 1,
+          "offset_hex": "0x1",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "targetId",
+          "offset": 2,
+          "offset_hex": "0x2",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "targetType",
+          "offset": 3,
+          "offset_hex": "0x3",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "value",
+          "offset": 4,
+          "offset_hex": "0x4",
+          "size": 4,
+          "kind": "u32"
+        }
+      ],
+      "native_evidence": "action-point-condition-semantics.json;DX4B0D70",
+      "native_note": "Returns existence of matched possessed creaturekind0 bit3E6/80 or objectkind2 bit146/8;ignores comparison/value."
+    },
+    "42": {
+      "name": "AP_SLAB_TYPES",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "comparison",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 1,
+          "kind": "enum8",
+          "enum": "TriggerGeneric.ComparisonType"
+        },
+        {
+          "name": "playerId",
+          "offset": 1,
+          "offset_hex": "0x1",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "terrainId",
+          "offset": 2,
+          "offset_hex": "0x2",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "reserved_3",
+          "offset": 3,
+          "offset_hex": "0x3",
+          "size": 1,
+          "kind": "bytes"
+        },
+        {
+          "name": "value",
+          "offset": 4,
+          "offset_hex": "0x4",
+          "size": 4,
+          "kind": "u32"
+        }
+      ],
+      "source_line": 2397,
+      "confidence": "native_DX_AP_condition_dispatch_and_parameter_routing;baseline_names_retained",
+      "baseline_fields": [
+        {
+          "name": "comparison",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 1,
+          "kind": "enum8",
+          "enum": "TriggerGeneric.ComparisonType"
+        },
+        {
+          "name": "playerId",
+          "offset": 1,
+          "offset_hex": "0x1",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "terrainId",
+          "offset": 2,
+          "offset_hex": "0x2",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "reserved_3",
+          "offset": 3,
+          "offset_hex": "0x3",
+          "size": 1,
+          "kind": "bytes"
+        },
+        {
+          "name": "value",
+          "offset": 4,
+          "offset_hex": "0x4",
+          "size": 4,
+          "kind": "u32"
+        }
+      ],
+      "native_evidence": "action-point-condition-semantics.json;DX4B0D70",
+      "native_note": "Same native count helper/branch as type40;supports TerrainId at byte2."
+    },
+    "62": {
+      "name": "AP_TAG_PART_OF",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "comparison",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 1,
+          "kind": "enum8",
+          "enum": "TriggerGeneric.ComparisonType"
+        },
+        {
+          "name": "playerId",
+          "offset": 1,
+          "offset_hex": "0x1",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "reserved_2",
+          "offset": 2,
+          "offset_hex": "0x2",
+          "size": 2,
+          "kind": "bytes"
+        },
+        {
+          "name": "value",
+          "offset": 4,
+          "offset_hex": "0x4",
+          "size": 4,
+          "kind": "u32"
+        }
+      ],
+      "source_line": 2408,
+      "confidence": "native_DX_AP_condition_dispatch_and_parameter_routing;baseline_names_retained",
+      "baseline_fields": [
+        {
+          "name": "comparison",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 1,
+          "kind": "enum8",
+          "enum": "TriggerGeneric.ComparisonType"
+        },
+        {
+          "name": "playerId",
+          "offset": 1,
+          "offset_hex": "0x1",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "reserved_2",
+          "offset": 2,
+          "offset_hex": "0x2",
+          "size": 2,
+          "kind": "bytes"
+        },
+        {
+          "name": "value",
+          "offset": 4,
+          "offset_hex": "0x4",
+          "size": 4,
+          "kind": "u32"
+        }
+      ],
+      "native_evidence": "action-point-condition-semantics.json;DX4B0D70",
+      "native_note": "Count player marker-list types1or2,not arbitrary visible tiles;low16 then signedDWORDcomparison."
+    },
+    "69": {
+      "name": "AP_TAG_ALL_OF",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "comparison",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 1,
+          "kind": "enum8",
+          "enum": "TriggerGeneric.ComparisonType"
+        },
+        {
+          "name": "playerId",
+          "offset": 1,
+          "offset_hex": "0x1",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "reserved_2",
+          "offset": 2,
+          "offset_hex": "0x2",
+          "size": 2,
+          "kind": "bytes"
+        },
+        {
+          "name": "value",
+          "offset": 4,
+          "offset_hex": "0x4",
+          "size": 4,
+          "kind": "u32"
+        }
+      ],
+      "source_line": 2408,
+      "confidence": "native_DX_AP_condition_dispatch_and_parameter_routing;baseline_names_retained",
+      "baseline_fields": [
+        {
+          "name": "comparison",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 1,
+          "kind": "enum8",
+          "enum": "TriggerGeneric.ComparisonType"
+        },
+        {
+          "name": "playerId",
+          "offset": 1,
+          "offset_hex": "0x1",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "reserved_2",
+          "offset": 2,
+          "offset_hex": "0x2",
+          "size": 2,
+          "kind": "bytes"
+        },
+        {
+          "name": "value",
+          "offset": 4,
+          "offset_hex": "0x4",
+          "size": 4,
+          "kind": "u32"
+        }
+      ],
+      "native_evidence": "action-point-condition-semantics.json;DX4B0D70",
+      "native_note": "Forces comparison5 >=;threshold is low16 number of TerrainBYTE17B&8 cells. Ignores rawcomparison/value. Empty eligible set passes with count0."
+    },
+    "40": {
+      "name": "AP_CLAIM_PART_OF",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "comparison",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 1,
+          "kind": "enum8",
+          "enum": "TriggerGeneric.ComparisonType"
+        },
+        {
+          "name": "playerId",
+          "offset": 1,
+          "offset_hex": "0x1",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "terrainId",
+          "offset": 2,
+          "offset_hex": "0x2",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "reserved_3",
+          "offset": 3,
+          "offset_hex": "0x3",
+          "size": 1,
+          "kind": "bytes"
+        },
+        {
+          "name": "value",
+          "offset": 4,
+          "offset_hex": "0x4",
+          "size": 4,
+          "kind": "u32"
+        }
+      ],
+      "source_line": 2408,
+      "confidence": "native_DX_AP_condition_dispatch_and_parameter_routing;baseline_names_retained",
+      "baseline_fields": [
+        {
+          "name": "comparison",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 1,
+          "kind": "enum8",
+          "enum": "TriggerGeneric.ComparisonType"
+        },
+        {
+          "name": "playerId",
+          "offset": 1,
+          "offset_hex": "0x1",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "reserved_2",
+          "offset": 2,
+          "offset_hex": "0x2",
+          "size": 2,
+          "kind": "bytes"
+        },
+        {
+          "name": "value",
+          "offset": 4,
+          "offset_hex": "0x4",
+          "size": 4,
+          "kind": "u32"
+        }
+      ],
+      "native_evidence": "action-point-condition-semantics.json;DX4B0D70",
+      "native_note": "Byte2 is live TerrainId filter;it was incorrectly classed as reserved. Player0/terrain0 returns low16(area),otherwise native tile filters apply."
+    },
+    "41": {
+      "name": "AP_CLAIM_ALL_OF",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "comparison",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 1,
+          "kind": "enum8",
+          "enum": "TriggerGeneric.ComparisonType"
+        },
+        {
+          "name": "playerId",
+          "offset": 1,
+          "offset_hex": "0x1",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "terrainId",
+          "offset": 2,
+          "offset_hex": "0x2",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "reserved_3",
+          "offset": 3,
+          "offset_hex": "0x3",
+          "size": 1,
+          "kind": "bytes"
+        },
+        {
+          "name": "value",
+          "offset": 4,
+          "offset_hex": "0x4",
+          "size": 4,
+          "kind": "u32"
+        }
+      ],
+      "source_line": 2408,
+      "confidence": "native_DX_AP_condition_dispatch_and_parameter_routing;baseline_names_retained",
+      "baseline_fields": [
+        {
+          "name": "comparison",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 1,
+          "kind": "enum8",
+          "enum": "TriggerGeneric.ComparisonType"
+        },
+        {
+          "name": "playerId",
+          "offset": 1,
+          "offset_hex": "0x1",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "reserved_2",
+          "offset": 2,
+          "offset_hex": "0x2",
+          "size": 2,
+          "kind": "bytes"
+        },
+        {
+          "name": "value",
+          "offset": 4,
+          "offset_hex": "0x4",
+          "size": 4,
+          "kind": "u32"
+        }
+      ],
+      "native_evidence": "action-point-condition-semantics.json;DX4B0D70",
+      "native_note": "Byte2 is live TerrainId filter. Forces comparison3 equality against full32-bit inclusivearea;ignores rawcomparison/value. Count narrowed to16bits."
+    },
+    "56": {
+      "name": "PLAYER_DUNGEON_BREACHED",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "playerId",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "reserved_1",
+          "offset": 1,
+          "offset_hex": "0x1",
+          "size": 7,
+          "kind": "bytes"
+        }
+      ],
+      "source_line": 2418,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "57": {
+      "name": "PLAYER_ENEMY_BREACHED",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "playerId",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "reserved_1",
+          "offset": 1,
+          "offset_hex": "0x1",
+          "size": 7,
+          "kind": "bytes"
+        }
+      ],
+      "source_line": 2418,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "47": {
+      "name": "PLAYER_KILLED",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "playerId",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "reserved_1",
+          "offset": 1,
+          "offset_hex": "0x1",
+          "size": 3,
+          "kind": "bytes"
+        },
+        {
+          "name": "value",
+          "offset": 4,
+          "offset_hex": "0x4",
+          "size": 4,
+          "kind": "u32"
+        }
+      ],
+      "source_line": 2423,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "58": {
+      "name": "PLAYER_CREATURE_PICKED_UP",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "creatureId",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "reserved_1",
+          "offset": 1,
+          "offset_hex": "0x1",
+          "size": 7,
+          "kind": "bytes"
+        }
+      ],
+      "source_line": 2431,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "60": {
+      "name": "PLAYER_CREATURE_SLAPPED",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "creatureId",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "reserved_1",
+          "offset": 1,
+          "offset_hex": "0x1",
+          "size": 7,
+          "kind": "bytes"
+        }
+      ],
+      "source_line": 2431,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "61": {
+      "name": "PLAYER_CREATURE_SACKED",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "creatureId",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "reserved_1",
+          "offset": 1,
+          "offset_hex": "0x1",
+          "size": 7,
+          "kind": "bytes"
+        }
+      ],
+      "source_line": 2431,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "59": {
+      "name": "PLAYER_CREATURE_DROPPED",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "creatureId",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "roomId",
+          "offset": 1,
+          "offset_hex": "0x1",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "reserved_2",
+          "offset": 2,
+          "offset_hex": "0x2",
+          "size": 6,
+          "kind": "bytes"
+        }
+      ],
+      "source_line": 2436,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "19": {
+      "name": "PLAYER_CREATURES",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "comparison",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 1,
+          "kind": "enum8",
+          "enum": "TriggerGeneric.ComparisonType"
+        },
+        {
+          "name": "creatureId",
+          "offset": 1,
+          "offset_hex": "0x1",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "flag",
+          "offset": 2,
+          "offset_hex": "0x2",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "playerId",
+          "offset": 3,
+          "offset_hex": "0x3",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "value",
+          "offset": 4,
+          "offset_hex": "0x4",
+          "size": 4,
+          "kind": "u32"
+        }
+      ],
+      "source_line": 2444,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "20": {
+      "name": "PLAYER_HAPPY_CREATURES",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "comparison",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 1,
+          "kind": "enum8",
+          "enum": "TriggerGeneric.ComparisonType"
+        },
+        {
+          "name": "creatureId",
+          "offset": 1,
+          "offset_hex": "0x1",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "flag",
+          "offset": 2,
+          "offset_hex": "0x2",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "playerId",
+          "offset": 3,
+          "offset_hex": "0x3",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "value",
+          "offset": 4,
+          "offset_hex": "0x4",
+          "size": 4,
+          "kind": "u32"
+        }
+      ],
+      "source_line": 2444,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "21": {
+      "name": "PLAYER_ANGRY_CREATURES",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "comparison",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 1,
+          "kind": "enum8",
+          "enum": "TriggerGeneric.ComparisonType"
+        },
+        {
+          "name": "creatureId",
+          "offset": 1,
+          "offset_hex": "0x1",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "flag",
+          "offset": 2,
+          "offset_hex": "0x2",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "playerId",
+          "offset": 3,
+          "offset_hex": "0x3",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "value",
+          "offset": 4,
+          "offset_hex": "0x4",
+          "size": 4,
+          "kind": "u32"
+        }
+      ],
+      "source_line": 2444,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "22": {
+      "name": "PLAYER_CREATURES_KILLED",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "comparison",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 1,
+          "kind": "enum8",
+          "enum": "TriggerGeneric.ComparisonType"
+        },
+        {
+          "name": "targetId",
+          "offset": 1,
+          "offset_hex": "0x1",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "flag",
+          "offset": 2,
+          "offset_hex": "0x2",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "playerId",
+          "offset": 3,
+          "offset_hex": "0x3",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "value",
+          "offset": 4,
+          "offset_hex": "0x4",
+          "size": 4,
+          "kind": "u32"
+        }
+      ],
+      "source_line": 2453,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "23": {
+      "name": "PLAYER_KILLS_CREATURES",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "comparison",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 1,
+          "kind": "enum8",
+          "enum": "TriggerGeneric.ComparisonType"
+        },
+        {
+          "name": "targetId",
+          "offset": 1,
+          "offset_hex": "0x1",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "flag",
+          "offset": 2,
+          "offset_hex": "0x2",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "playerId",
+          "offset": 3,
+          "offset_hex": "0x3",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "value",
+          "offset": 4,
+          "offset_hex": "0x4",
+          "size": 4,
+          "kind": "u32"
+        }
+      ],
+      "source_line": 2453,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "25": {
+      "name": "PLAYER_ROOMS",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "comparison",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 1,
+          "kind": "enum8",
+          "enum": "TriggerGeneric.ComparisonType"
+        },
+        {
+          "name": "roomId",
+          "offset": 1,
+          "offset_hex": "0x1",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "flag",
+          "offset": 2,
+          "offset_hex": "0x2",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "playerId",
+          "offset": 3,
+          "offset_hex": "0x3",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "value",
+          "offset": 4,
+          "offset_hex": "0x4",
+          "size": 4,
+          "kind": "u32"
+        }
+      ],
+      "source_line": 2464,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "24": {
+      "name": "PLAYER_ROOM_SLABS",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "comparison",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 1,
+          "kind": "enum8",
+          "enum": "TriggerGeneric.ComparisonType"
+        },
+        {
+          "name": "roomId",
+          "offset": 1,
+          "offset_hex": "0x1",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "flag",
+          "offset": 2,
+          "offset_hex": "0x2",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "playerId",
+          "offset": 3,
+          "offset_hex": "0x3",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "value",
+          "offset": 4,
+          "offset_hex": "0x4",
+          "size": 4,
+          "kind": "u32"
+        }
+      ],
+      "source_line": 2464,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "26": {
+      "name": "PLAYER_ROOM_SIZE",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "comparison",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 1,
+          "kind": "enum8",
+          "enum": "TriggerGeneric.ComparisonType"
+        },
+        {
+          "name": "roomId",
+          "offset": 1,
+          "offset_hex": "0x1",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "flag",
+          "offset": 2,
+          "offset_hex": "0x2",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "playerId",
+          "offset": 3,
+          "offset_hex": "0x3",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "value",
+          "offset": 4,
+          "offset_hex": "0x4",
+          "size": 4,
+          "kind": "u32"
+        }
+      ],
+      "source_line": 2464,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "68": {
+      "name": "PLAYER_ROOM_FURNITURE",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "comparison",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 1,
+          "kind": "enum8",
+          "enum": "TriggerGeneric.ComparisonType"
+        },
+        {
+          "name": "roomId",
+          "offset": 1,
+          "offset_hex": "0x1",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "flag",
+          "offset": 2,
+          "offset_hex": "0x2",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "playerId",
+          "offset": 3,
+          "offset_hex": "0x3",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "value",
+          "offset": 4,
+          "offset_hex": "0x4",
+          "size": 4,
+          "kind": "u32"
+        }
+      ],
+      "source_line": 2464,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "27": {
+      "name": "PLAYER_DOORS",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "comparison",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 1,
+          "kind": "enum8",
+          "enum": "TriggerGeneric.ComparisonType"
+        },
+        {
+          "name": "targetId",
+          "offset": 1,
+          "offset_hex": "0x1",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "flag",
+          "offset": 2,
+          "offset_hex": "0x2",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "playerId",
+          "offset": 3,
+          "offset_hex": "0x3",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "value",
+          "offset": 4,
+          "offset_hex": "0x4",
+          "size": 4,
+          "kind": "u32"
+        }
+      ],
+      "source_line": 2475,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "28": {
+      "name": "PLAYER_TRAPS",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "comparison",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 1,
+          "kind": "enum8",
+          "enum": "TriggerGeneric.ComparisonType"
+        },
+        {
+          "name": "targetId",
+          "offset": 1,
+          "offset_hex": "0x1",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "flag",
+          "offset": 2,
+          "offset_hex": "0x2",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "playerId",
+          "offset": 3,
+          "offset_hex": "0x3",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "value",
+          "offset": 4,
+          "offset_hex": "0x4",
+          "size": 4,
+          "kind": "u32"
+        }
+      ],
+      "source_line": 2475,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "29": {
+      "name": "PLAYER_KEEPER_SPELL",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "comparison",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 1,
+          "kind": "enum8",
+          "enum": "TriggerGeneric.ComparisonType"
+        },
+        {
+          "name": "targetId",
+          "offset": 1,
+          "offset_hex": "0x1",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "flag",
+          "offset": 2,
+          "offset_hex": "0x2",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "playerId",
+          "offset": 3,
+          "offset_hex": "0x3",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "value",
+          "offset": 4,
+          "offset_hex": "0x4",
+          "size": 4,
+          "kind": "u32"
+        }
+      ],
+      "source_line": 2475,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "33": {
+      "name": "PLAYER_DESTROYS",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "comparison",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 1,
+          "kind": "enum8",
+          "enum": "TriggerGeneric.ComparisonType"
+        },
+        {
+          "name": "targetId",
+          "offset": 1,
+          "offset_hex": "0x1",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "flag",
+          "offset": 2,
+          "offset_hex": "0x2",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "playerId",
+          "offset": 3,
+          "offset_hex": "0x3",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "value",
+          "offset": 4,
+          "offset_hex": "0x4",
+          "size": 4,
+          "kind": "u32"
+        }
+      ],
+      "source_line": 2475,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "71": {
+      "name": "PLAYER_SLAPS",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "comparison",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 1,
+          "kind": "enum8",
+          "enum": "TriggerGeneric.ComparisonType"
+        },
+        {
+          "name": "reserved_1",
+          "offset": 1,
+          "offset_hex": "0x1",
+          "size": 1,
+          "kind": "bytes"
+        },
+        {
+          "name": "flag",
+          "offset": 2,
+          "offset_hex": "0x2",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "playerId",
+          "offset": 3,
+          "offset_hex": "0x3",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "value",
+          "offset": 4,
+          "offset_hex": "0x4",
+          "size": 4,
+          "kind": "u32"
+        }
+      ],
+      "source_line": 2488,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "30": {
+      "name": "PLAYER_GOLD",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "comparison",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 1,
+          "kind": "enum8",
+          "enum": "TriggerGeneric.ComparisonType"
+        },
+        {
+          "name": "reserved_1",
+          "offset": 1,
+          "offset_hex": "0x1",
+          "size": 1,
+          "kind": "bytes"
+        },
+        {
+          "name": "flag",
+          "offset": 2,
+          "offset_hex": "0x2",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "playerId",
+          "offset": 3,
+          "offset_hex": "0x3",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "value",
+          "offset": 4,
+          "offset_hex": "0x4",
+          "size": 4,
+          "kind": "u32"
+        }
+      ],
+      "source_line": 2488,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "31": {
+      "name": "PLAYER_GOLD_MINED",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "comparison",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 1,
+          "kind": "enum8",
+          "enum": "TriggerGeneric.ComparisonType"
+        },
+        {
+          "name": "reserved_1",
+          "offset": 1,
+          "offset_hex": "0x1",
+          "size": 1,
+          "kind": "bytes"
+        },
+        {
+          "name": "flag",
+          "offset": 2,
+          "offset_hex": "0x2",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "playerId",
+          "offset": 3,
+          "offset_hex": "0x3",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "value",
+          "offset": 4,
+          "offset_hex": "0x4",
+          "size": 4,
+          "kind": "u32"
+        }
+      ],
+      "source_line": 2488,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "32": {
+      "name": "PLAYER_MANA",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "comparison",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 1,
+          "kind": "enum8",
+          "enum": "TriggerGeneric.ComparisonType"
+        },
+        {
+          "name": "reserved_1",
+          "offset": 1,
+          "offset_hex": "0x1",
+          "size": 1,
+          "kind": "bytes"
+        },
+        {
+          "name": "flag",
+          "offset": 2,
+          "offset_hex": "0x2",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "playerId",
+          "offset": 3,
+          "offset_hex": "0x3",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "value",
+          "offset": 4,
+          "offset_hex": "0x4",
+          "size": 4,
+          "kind": "u32"
+        }
+      ],
+      "source_line": 2488,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "73": {
+      "name": "PLAYER_CREATURES_GROUPED",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "comparison",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 1,
+          "kind": "enum8",
+          "enum": "TriggerGeneric.ComparisonType"
+        },
+        {
+          "name": "reserved_1",
+          "offset": 1,
+          "offset_hex": "0x1",
+          "size": 1,
+          "kind": "bytes"
+        },
+        {
+          "name": "flag",
+          "offset": 2,
+          "offset_hex": "0x2",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "playerId",
+          "offset": 3,
+          "offset_hex": "0x3",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "value",
+          "offset": 4,
+          "offset_hex": "0x4",
+          "size": 4,
+          "kind": "u32"
+        }
+      ],
+      "source_line": 2488,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "74": {
+      "name": "PLAYER_CREATURES_DYING",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "comparison",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 1,
+          "kind": "enum8",
+          "enum": "TriggerGeneric.ComparisonType"
+        },
+        {
+          "name": "reserved_1",
+          "offset": 1,
+          "offset_hex": "0x1",
+          "size": 1,
+          "kind": "bytes"
+        },
+        {
+          "name": "flag",
+          "offset": 2,
+          "offset_hex": "0x2",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "playerId",
+          "offset": 3,
+          "offset_hex": "0x3",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "value",
+          "offset": 4,
+          "offset_hex": "0x4",
+          "size": 4,
+          "kind": "u32"
+        }
+      ],
+      "source_line": 2488,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "52": {
+      "name": "PLAYER_CREATURES_AT_LEVEL",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "comparison",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 1,
+          "kind": "enum8",
+          "enum": "TriggerGeneric.ComparisonType"
+        },
+        {
+          "name": "targetId",
+          "offset": 1,
+          "offset_hex": "0x1",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "flag",
+          "offset": 2,
+          "offset_hex": "0x2",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "playerId",
+          "offset": 3,
+          "offset_hex": "0x3",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "value",
+          "offset": 4,
+          "offset_hex": "0x4",
+          "size": 4,
+          "kind": "u32"
+        }
+      ],
+      "source_line": 2497,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "46": {
+      "name": "LEVEL_PAY_DAY",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "reserved_0",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 8,
+          "kind": "bytes"
+        }
+      ],
+      "source_line": 2525,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "4": {
+      "name": "CREATURE_KILLED",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "reserved_0",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 8,
+          "kind": "bytes"
+        }
+      ],
+      "source_line": 2525,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "5": {
+      "name": "CREATURE_SLAPPED",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "reserved_0",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 8,
+          "kind": "bytes"
+        }
+      ],
+      "source_line": 2525,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "6": {
+      "name": "CREATURE_ATTACKED",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "reserved_0",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 8,
+          "kind": "bytes"
+        }
+      ],
+      "source_line": 2525,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "7": {
+      "name": "CREATURE_IMPRISONED",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "reserved_0",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 8,
+          "kind": "bytes"
+        }
+      ],
+      "source_line": 2525,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "8": {
+      "name": "CREATURE_TORTURED",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "reserved_0",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 8,
+          "kind": "bytes"
+        }
+      ],
+      "source_line": 2525,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "9": {
+      "name": "CREATURE_CONVERTED",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "reserved_0",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 8,
+          "kind": "bytes"
+        }
+      ],
+      "source_line": 2525,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "10": {
+      "name": "CREATURE_CLAIMED",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "reserved_0",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 8,
+          "kind": "bytes"
+        }
+      ],
+      "source_line": 2525,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "11": {
+      "name": "CREATURE_ANGRY",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "reserved_0",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 8,
+          "kind": "bytes"
+        }
+      ],
+      "source_line": 2525,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "12": {
+      "name": "CREATURE_AFRAID",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "reserved_0",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 8,
+          "kind": "bytes"
+        }
+      ],
+      "source_line": 2525,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "13": {
+      "name": "CREATURE_STEALS",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "reserved_0",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 8,
+          "kind": "bytes"
+        }
+      ],
+      "source_line": 2525,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "14": {
+      "name": "CREATURE_LEAVES",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "reserved_0",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 8,
+          "kind": "bytes"
+        }
+      ],
+      "source_line": 2525,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "15": {
+      "name": "CREATURE_STUNNED",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "reserved_0",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 8,
+          "kind": "bytes"
+        }
+      ],
+      "source_line": 2525,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "16": {
+      "name": "CREATURE_DYING",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "reserved_0",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 8,
+          "kind": "bytes"
+        }
+      ],
+      "source_line": 2525,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "72": {
+      "name": "GUI_TRANSITION_ENDS",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "reserved_0",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 8,
+          "kind": "bytes"
+        }
+      ],
+      "source_line": 2525,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "65": {
+      "name": "CREATURE_PICKED_UP",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "reserved_0",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 8,
+          "kind": "bytes"
+        }
+      ],
+      "source_line": 2525,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "63": {
+      "name": "CREATURE_SACKED",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "reserved_0",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 8,
+          "kind": "bytes"
+        }
+      ],
+      "source_line": 2525,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "55": {
+      "name": "CREATURE_PICKS_UP_PORTAL_GEM",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "reserved_0",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 8,
+          "kind": "bytes"
+        }
+      ],
+      "source_line": 2525,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "54": {
+      "name": "CREATURE_HUNGER_SATED",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "reserved_0",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 8,
+          "kind": "bytes"
+        }
+      ],
+      "source_line": 2525,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "43": {
+      "name": "PARTY_CREATED",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "reserved_0",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 8,
+          "kind": "bytes"
+        }
+      ],
+      "source_line": 2525,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "3": {
+      "name": "CREATURE_CREATED",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "reserved_0",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 4,
+          "kind": "bytes"
+        },
+        {
+          "name": "value",
+          "offset": 4,
+          "offset_hex": "0x4",
+          "size": 4,
+          "kind": "u32"
+        }
+      ],
+      "source_line": 2529,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "67": {
+      "name": "LEVEL_PLAYED",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "comparison",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 1,
+          "kind": "enum8",
+          "enum": "TriggerGeneric.ComparisonType"
+        },
+        {
+          "name": "reserved_1",
+          "offset": 1,
+          "offset_hex": "0x1",
+          "size": 3,
+          "kind": "bytes"
+        },
+        {
+          "name": "value",
+          "offset": 4,
+          "offset_hex": "0x4",
+          "size": 4,
+          "kind": "u32"
+        }
+      ],
+      "source_line": 2540,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "45": {
+      "name": "PARTY_MEMBERS_CAPTURED",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "comparison",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 1,
+          "kind": "enum8",
+          "enum": "TriggerGeneric.ComparisonType"
+        },
+        {
+          "name": "reserved_1",
+          "offset": 1,
+          "offset_hex": "0x1",
+          "size": 3,
+          "kind": "bytes"
+        },
+        {
+          "name": "value",
+          "offset": 4,
+          "offset_hex": "0x4",
+          "size": 4,
+          "kind": "u32"
+        }
+      ],
+      "source_line": 2540,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "49": {
+      "name": "CREATURE_EXPERIENCE_LEVEL",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "comparison",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 1,
+          "kind": "enum8",
+          "enum": "TriggerGeneric.ComparisonType"
+        },
+        {
+          "name": "reserved_1",
+          "offset": 1,
+          "offset_hex": "0x1",
+          "size": 3,
+          "kind": "bytes"
+        },
+        {
+          "name": "value",
+          "offset": 4,
+          "offset_hex": "0x4",
+          "size": 4,
+          "kind": "u32"
+        }
+      ],
+      "source_line": 2540,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "37": {
+      "name": "CREATURE_GOLD_HELD",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "comparison",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 1,
+          "kind": "enum8",
+          "enum": "TriggerGeneric.ComparisonType"
+        },
+        {
+          "name": "reserved_1",
+          "offset": 1,
+          "offset_hex": "0x1",
+          "size": 3,
+          "kind": "bytes"
+        },
+        {
+          "name": "value",
+          "offset": 4,
+          "offset_hex": "0x4",
+          "size": 4,
+          "kind": "u32"
+        }
+      ],
+      "source_line": 2540,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "36": {
+      "name": "CREATURE_HEALTH",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "comparison",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 1,
+          "kind": "enum8",
+          "enum": "TriggerGeneric.ComparisonType"
+        },
+        {
+          "name": "reserved_1",
+          "offset": 1,
+          "offset_hex": "0x1",
+          "size": 3,
+          "kind": "bytes"
+        },
+        {
+          "name": "value",
+          "offset": 4,
+          "offset_hex": "0x4",
+          "size": 4,
+          "kind": "u32"
+        }
+      ],
+      "source_line": 2540,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "34": {
+      "name": "LEVEL_TIME",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "comparison",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 1,
+          "kind": "enum8",
+          "enum": "TriggerGeneric.ComparisonType"
+        },
+        {
+          "name": "reserved_1",
+          "offset": 1,
+          "offset_hex": "0x1",
+          "size": 3,
+          "kind": "bytes"
+        },
+        {
+          "name": "value",
+          "offset": 4,
+          "offset_hex": "0x4",
+          "size": 4,
+          "kind": "u32"
+        }
+      ],
+      "source_line": 2540,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "35": {
+      "name": "LEVEL_CREATURES",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "comparison",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 1,
+          "kind": "enum8",
+          "enum": "TriggerGeneric.ComparisonType"
+        },
+        {
+          "name": "reserved_1",
+          "offset": 1,
+          "offset_hex": "0x1",
+          "size": 3,
+          "kind": "bytes"
+        },
+        {
+          "name": "value",
+          "offset": 4,
+          "offset_hex": "0x4",
+          "size": 4,
+          "kind": "u32"
+        }
+      ],
+      "source_line": 2540,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "44": {
+      "name": "PARTY_MEMBERS_KILLED",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "comparison",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 1,
+          "kind": "enum8",
+          "enum": "TriggerGeneric.ComparisonType"
+        },
+        {
+          "name": "unknown",
+          "offset": 1,
+          "offset_hex": "0x1",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "reserved_2",
+          "offset": 2,
+          "offset_hex": "0x2",
+          "size": 2,
+          "kind": "bytes"
+        },
+        {
+          "name": "value",
+          "offset": 4,
+          "offset_hex": "0x4",
+          "size": 4,
+          "kind": "u32"
+        }
+      ],
+      "source_line": 2547,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "64": {
+      "name": "PARTY_MEMBERS_INCAPACITATED",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "comparison",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 1,
+          "kind": "enum8",
+          "enum": "TriggerGeneric.ComparisonType"
+        },
+        {
+          "name": "unknown",
+          "offset": 1,
+          "offset_hex": "0x1",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "reserved_2",
+          "offset": 2,
+          "offset_hex": "0x2",
+          "size": 2,
+          "kind": "bytes"
+        },
+        {
+          "name": "value",
+          "offset": 4,
+          "offset_hex": "0x4",
+          "size": 4,
+          "kind": "u32"
+        }
+      ],
+      "source_line": 2547,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "53": {
+      "name": "GUI_BUTTON_PRESSED",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "targetType",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "targetId",
+          "offset": 1,
+          "offset_hex": "0x1",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "reserved_2",
+          "offset": 2,
+          "offset_hex": "0x2",
+          "size": 2,
+          "kind": "bytes"
+        },
+        {
+          "name": "value",
+          "offset": 4,
+          "offset_hex": "0x4",
+          "size": 4,
+          "kind": "u32"
+        }
+      ],
+      "source_line": 2555,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "1": {
+      "name": "FLAG",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "comparison",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 1,
+          "kind": "enum8",
+          "enum": "TriggerGeneric.ComparisonType"
+        },
+        {
+          "name": "targetId",
+          "offset": 1,
+          "offset_hex": "0x1",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "flag",
+          "offset": 2,
+          "offset_hex": "0x2",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "flagId",
+          "offset": 3,
+          "offset_hex": "0x3",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "value",
+          "offset": 4,
+          "offset_hex": "0x4",
+          "size": 4,
+          "kind": "u32"
+        }
+      ],
+      "source_line": 2562,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "2": {
+      "name": "TIMER",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "comparison",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 1,
+          "kind": "enum8",
+          "enum": "TriggerGeneric.ComparisonType"
+        },
+        {
+          "name": "targetId",
+          "offset": 1,
+          "offset_hex": "0x1",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "flag",
+          "offset": 2,
+          "offset_hex": "0x2",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "timerId",
+          "offset": 3,
+          "offset_hex": "0x3",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "value",
+          "offset": 4,
+          "offset_hex": "0x4",
+          "size": 4,
+          "kind": "u32"
+        }
+      ],
+      "source_line": 2570,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    }
+  },
+  "0xD6": {
+    "22": {
+      "name": "ALTER_TERRAIN_TYPE",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "terrainId",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "playerId",
+          "offset": 1,
+          "offset_hex": "0x1",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "reserved_2",
+          "offset": 2,
+          "offset_hex": "0x2",
+          "size": 2,
+          "kind": "bytes"
+        },
+        {
+          "name": "posX",
+          "offset": 4,
+          "offset_hex": "0x4",
+          "size": 2,
+          "kind": "u16"
+        },
+        {
+          "name": "posY",
+          "offset": 6,
+          "offset_hex": "0x6",
+          "size": 2,
+          "kind": "u16"
+        }
+      ],
+      "source_line": 2604,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "32": {
+      "name": "COLLAPSE_HERO_GATE",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "reserved_0",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 4,
+          "kind": "bytes"
+        },
+        {
+          "name": "posX",
+          "offset": 4,
+          "offset_hex": "0x4",
+          "size": 2,
+          "kind": "u16"
+        },
+        {
+          "name": "posY",
+          "offset": 6,
+          "offset_hex": "0x6",
+          "size": 2,
+          "kind": "u16"
+        }
+      ],
+      "source_line": 2612,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "49": {
+      "name": "CHANGE_ROOM_OWNER",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "reserved_0",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 1,
+          "kind": "bytes"
+        },
+        {
+          "name": "playerId",
+          "offset": 1,
+          "offset_hex": "0x1",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "reserved_2",
+          "offset": 2,
+          "offset_hex": "0x2",
+          "size": 2,
+          "kind": "bytes"
+        },
+        {
+          "name": "posX",
+          "offset": 4,
+          "offset_hex": "0x4",
+          "size": 2,
+          "kind": "u16"
+        },
+        {
+          "name": "posY",
+          "offset": 6,
+          "offset_hex": "0x6",
+          "size": 2,
+          "kind": "u16"
+        }
+      ],
+      "source_line": 2618,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "18": {
+      "name": "SET_ALLIANCE",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "playerOneId",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "playerTwoId",
+          "offset": 1,
+          "offset_hex": "0x1",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "available",
+          "offset": 2,
+          "offset_hex": "0x2",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "reserved_3",
+          "offset": 3,
+          "offset_hex": "0x3",
+          "size": 5,
+          "kind": "bytes"
+        }
+      ],
+      "source_line": 2626,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "44": {
+      "name": "SET_CREATURE_MOODS",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "available",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "reserved_1",
+          "offset": 1,
+          "offset_hex": "0x1",
+          "size": 7,
+          "kind": "bytes"
+        }
+      ],
+      "source_line": 2639,
+      "confidence": "native_DX_SET_CREATURE_MOODS_gate_verified",
+      "baseline_fields": [
+        {
+          "name": "available",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "reserved_1",
+          "offset": 1,
+          "offset_hex": "0x1",
+          "size": 7,
+          "kind": "bytes"
+        }
+      ],
+      "native_evidence": "creature-anger-semantics.json;DX518AD0\u2192519704",
+      "native_note": "AvailableBYTE0==1 setsCWorldBYTE72A1bit01;all othervalues clearit,preservingother7bits. This gates anger-channel writes,not unconditional state recomputation. Seven reserved bytes preserved."
+    },
+    "45": {
+      "name": "SET_SYSTEM_MESSAGES",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "available",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "reserved_1",
+          "offset": 1,
+          "offset_hex": "0x1",
+          "size": 7,
+          "kind": "bytes"
+        }
+      ],
+      "source_line": 2639,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "51": {
+      "name": "SET_TIMER_SPEECH",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "available",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "reserved_1",
+          "offset": 1,
+          "offset_hex": "0x1",
+          "size": 7,
+          "kind": "bytes"
+        }
+      ],
+      "source_line": 2639,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "38": {
+      "name": "SET_WIDESCREEN_MODE",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "available",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "reserved_1",
+          "offset": 1,
+          "offset_hex": "0x1",
+          "size": 7,
+          "kind": "bytes"
+        }
+      ],
+      "source_line": 2639,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "33": {
+      "name": "ALTER_SPEED",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "available",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "reserved_1",
+          "offset": 1,
+          "offset_hex": "0x1",
+          "size": 7,
+          "kind": "bytes"
+        }
+      ],
+      "source_line": 2639,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "36": {
+      "name": "SET_FIGHT_FLAG",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "available",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "reserved_1",
+          "offset": 1,
+          "offset_hex": "0x1",
+          "size": 7,
+          "kind": "bytes"
+        }
+      ],
+      "source_line": 2639,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "37": {
+      "name": "SET_PORTAL_STATUS",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "available",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "reserved_1",
+          "offset": 1,
+          "offset_hex": "0x1",
+          "size": 7,
+          "kind": "bytes"
+        }
+      ],
+      "source_line": 2639,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "50": {
+      "name": "SET_SLAPS_LIMIT",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "reserved_0",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 4,
+          "kind": "bytes"
+        },
+        {
+          "name": "value",
+          "offset": 4,
+          "offset_hex": "0x4",
+          "size": 4,
+          "kind": "u32"
+        }
+      ],
+      "source_line": 2644,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "8": {
+      "name": "INITIALIZE_TIMER",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "timerId",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "reserved_1",
+          "offset": 1,
+          "offset_hex": "0x1",
+          "size": 3,
+          "kind": "bytes"
+        },
+        {
+          "name": "value",
+          "offset": 4,
+          "offset_hex": "0x4",
+          "size": 4,
+          "kind": "u32"
+        }
+      ],
+      "source_line": 2649,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "7": {
+      "name": "FLAG",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "flagId",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "flag",
+          "offset": 1,
+          "offset_hex": "0x1",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "reserved_2",
+          "offset": 2,
+          "offset_hex": "0x2",
+          "size": 2,
+          "kind": "bytes"
+        },
+        {
+          "name": "value",
+          "offset": 4,
+          "offset_hex": "0x4",
+          "size": 4,
+          "kind": "u32"
+        }
+      ],
+      "source_line": 2655,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "6": {
+      "name": "MAKE",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "playerId",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "type",
+          "offset": 1,
+          "offset_hex": "0x1",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "targetId",
+          "offset": 2,
+          "offset_hex": "0x2",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "available",
+          "offset": 3,
+          "offset_hex": "0x3",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "reserved_4",
+          "offset": 4,
+          "offset_hex": "0x4",
+          "size": 4,
+          "kind": "bytes"
+        }
+      ],
+      "source_line": 2662,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "46": {
+      "name": "DISPLAY_SLAB_OWNER",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "available",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "reserved_1",
+          "offset": 1,
+          "offset_hex": "0x1",
+          "size": 7,
+          "kind": "bytes"
+        }
+      ],
+      "source_line": 2671,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "47": {
+      "name": "DISPLAY_NEXT_ROOM_TYPE",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "targetId",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "reserved_1",
+          "offset": 1,
+          "offset_hex": "0x1",
+          "size": 7,
+          "kind": "bytes"
+        }
+      ],
+      "source_line": 2680,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "42": {
+      "name": "MAKE_OBJECTIVE",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "targetId",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "reserved_1",
+          "offset": 1,
+          "offset_hex": "0x1",
+          "size": 7,
+          "kind": "bytes"
+        }
+      ],
+      "source_line": 2680,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "26": {
+      "name": "ZOOM_TO_ACTION_POINT",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "targetId",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "reserved_1",
+          "offset": 1,
+          "offset_hex": "0x1",
+          "size": 7,
+          "kind": "bytes"
+        }
+      ],
+      "source_line": 2680,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "4": {
+      "name": "DISPLAY_OBJECTIVE",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "objectiveId",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 4,
+          "kind": "u32"
+        },
+        {
+          "name": "actionPointId",
+          "offset": 4,
+          "offset_hex": "0x4",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "reserved_5",
+          "offset": 5,
+          "offset_hex": "0x5",
+          "size": 3,
+          "kind": "bytes"
+        }
+      ],
+      "source_line": 2685,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "24": {
+      "name": "PLAY_SPEECH",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "speechId",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 4,
+          "kind": "u32"
+        },
+        {
+          "name": "text",
+          "offset": 4,
+          "offset_hex": "0x4",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "introduction",
+          "offset": 5,
+          "offset_hex": "0x5",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "pathId",
+          "offset": 6,
+          "offset_hex": "0x6",
+          "size": 2,
+          "kind": "u16"
+        }
+      ],
+      "source_line": 2691,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "25": {
+      "name": "DISPLAY_TEXT_STRING",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "textId",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 4,
+          "kind": "u32"
+        },
+        {
+          "name": "reserved_4",
+          "offset": 4,
+          "offset_hex": "0x4",
+          "size": 4,
+          "kind": "bytes"
+        }
+      ],
+      "source_line": 2698,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "20": {
+      "name": "ATTACH_PORTAL_GEM",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "reserved_0",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 8,
+          "kind": "bytes"
+        }
+      ],
+      "source_line": 2712,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "29": {
+      "name": "MAKE_HUNGRY",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "reserved_0",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 8,
+          "kind": "bytes"
+        }
+      ],
+      "source_line": 2712,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "35": {
+      "name": "REMOVE_FROM_MAP",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "reserved_0",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 8,
+          "kind": "bytes"
+        }
+      ],
+      "source_line": 2712,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "43": {
+      "name": "ZOOM_TO",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "reserved_0",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 8,
+          "kind": "bytes"
+        }
+      ],
+      "source_line": 2712,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "10": {
+      "name": "WIN_GAME",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "reserved_0",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 8,
+          "kind": "bytes"
+        }
+      ],
+      "source_line": 2712,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "11": {
+      "name": "LOSE_GAME",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "reserved_0",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 8,
+          "kind": "bytes"
+        }
+      ],
+      "source_line": 2712,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "21": {
+      "name": "FORCE_FIRST_PERSON",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "reserved_0",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 8,
+          "kind": "bytes"
+        }
+      ],
+      "source_line": 2712,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "13": {
+      "name": "LOSE_SUBOBJECTIVE",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "reserved_0",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 8,
+          "kind": "bytes"
+        }
+      ],
+      "source_line": 2712,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "12": {
+      "name": "WIN_SUBOBJECTIVE",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "reserved_0",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 8,
+          "kind": "bytes"
+        }
+      ],
+      "source_line": 2712,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "34": {
+      "name": "SET_MUSIC_LEVEL",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "value",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 4,
+          "kind": "u32"
+        },
+        {
+          "name": "reserved_4",
+          "offset": 4,
+          "offset_hex": "0x4",
+          "size": 4,
+          "kind": "bytes"
+        }
+      ],
+      "source_line": 2717,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "30": {
+      "name": "SHOW_HEALTH_FLOWER",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "value",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 4,
+          "kind": "u32"
+        },
+        {
+          "name": "reserved_4",
+          "offset": 4,
+          "offset_hex": "0x4",
+          "size": 4,
+          "kind": "bytes"
+        }
+      ],
+      "source_line": 2717,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "23": {
+      "name": "SET_TIME_LIMIT",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "timerId",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "reserved_1",
+          "offset": 1,
+          "offset_hex": "0x1",
+          "size": 3,
+          "kind": "bytes"
+        },
+        {
+          "name": "value",
+          "offset": 4,
+          "offset_hex": "0x4",
+          "size": 4,
+          "kind": "u32"
+        }
+      ],
+      "source_line": 2722,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "31": {
+      "name": "FOLLOW_CAMERA_PATH",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "pathId",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "actionPointId",
+          "offset": 1,
+          "offset_hex": "0x1",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "available",
+          "offset": 2,
+          "offset_hex": "0x2",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "reserved_3",
+          "offset": 3,
+          "offset_hex": "0x3",
+          "size": 5,
+          "kind": "bytes"
+        }
+      ],
+      "source_line": 2728,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "9": {
+      "name": "FLASH_BUTTON",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "type",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "targetId",
+          "offset": 1,
+          "offset_hex": "0x1",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "available",
+          "offset": 2,
+          "offset_hex": "0x2",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "reserved_3",
+          "offset": 3,
+          "offset_hex": "0x3",
+          "size": 1,
+          "kind": "bytes"
+        },
+        {
+          "name": "value",
+          "offset": 4,
+          "offset_hex": "0x4",
+          "size": 4,
+          "kind": "u32"
+        }
+      ],
+      "source_line": 2735,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "16": {
+      "name": "FLASH_ACTION_POINT",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "actionPointId",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "available",
+          "offset": 1,
+          "offset_hex": "0x1",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "reserved_2",
+          "offset": 2,
+          "offset_hex": "0x2",
+          "size": 2,
+          "kind": "bytes"
+        },
+        {
+          "name": "value",
+          "offset": 4,
+          "offset_hex": "0x4",
+          "size": 4,
+          "kind": "u32"
+        }
+      ],
+      "source_line": 2743,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "17": {
+      "name": "REVEAL_ACTION_POINT",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "actionPointId",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "available",
+          "offset": 1,
+          "offset_hex": "0x1",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "reserved_2",
+          "offset": 2,
+          "offset_hex": "0x2",
+          "size": 6,
+          "kind": "bytes"
+        }
+      ],
+      "source_line": 2750,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "27": {
+      "name": "ROTATE_AROUND_ACTION_POINT",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "actionPointId",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "available",
+          "offset": 1,
+          "offset_hex": "0x1",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "angle",
+          "offset": 2,
+          "offset_hex": "0x2",
+          "size": 2,
+          "kind": "u16"
+        },
+        {
+          "name": "time",
+          "offset": 4,
+          "offset_hex": "0x4",
+          "size": 4,
+          "kind": "u32"
+        }
+      ],
+      "source_line": 2756,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "1": {
+      "name": "CREATE_CREATURE",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "creatureId",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "playerId",
+          "offset": 1,
+          "offset_hex": "0x1",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "level",
+          "offset": 2,
+          "offset_hex": "0x2",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "flag",
+          "offset": 3,
+          "offset_hex": "0x3",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "posX",
+          "offset": 4,
+          "offset_hex": "0x4",
+          "size": 2,
+          "kind": "u16"
+        },
+        {
+          "name": "posY",
+          "offset": 6,
+          "offset_hex": "0x6",
+          "size": 2,
+          "kind": "u16"
+        }
+      ],
+      "source_line": 2763,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "15": {
+      "name": "SET_OBJECTIVE",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "playerId",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "type",
+          "offset": 1,
+          "offset_hex": "0x1",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "reserved_2",
+          "offset": 2,
+          "offset_hex": "0x2",
+          "size": 2,
+          "kind": "bytes"
+        },
+        {
+          "name": "actionPointId",
+          "offset": 4,
+          "offset_hex": "0x4",
+          "size": 4,
+          "kind": "u32"
+        }
+      ],
+      "source_line": 2772,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "14": {
+      "name": "CREATE_HERO_PARTY",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "partyId",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "type",
+          "offset": 1,
+          "offset_hex": "0x1",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "reserved_2",
+          "offset": 2,
+          "offset_hex": "0x2",
+          "size": 2,
+          "kind": "bytes"
+        },
+        {
+          "name": "actionPointId",
+          "offset": 4,
+          "offset_hex": "0x4",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "reserved_5",
+          "offset": 5,
+          "offset_hex": "0x5",
+          "size": 3,
+          "kind": "bytes"
+        }
+      ],
+      "source_line": 2779,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "48": {
+      "name": "TOGGLE_EFFECT_GENERATOR",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "generatorId",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "available",
+          "offset": 1,
+          "offset_hex": "0x1",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "reserved_2",
+          "offset": 2,
+          "offset_hex": "0x2",
+          "size": 6,
+          "kind": "bytes"
+        }
+      ],
+      "source_line": 2787,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "28": {
+      "name": "GENERATE_CREATURE",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "creatureId",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "level",
+          "offset": 1,
+          "offset_hex": "0x1",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "reserved_2",
+          "offset": 2,
+          "offset_hex": "0x2",
+          "size": 6,
+          "kind": "bytes"
+        }
+      ],
+      "source_line": 2793,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "5": {
+      "name": "INFORMATION",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "informationId",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 4,
+          "kind": "u32"
+        },
+        {
+          "name": "actionPointId",
+          "offset": 4,
+          "offset_hex": "0x4",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "reserved_5",
+          "offset": 5,
+          "offset_hex": "0x5",
+          "size": 3,
+          "kind": "bytes"
+        }
+      ],
+      "source_line": 2799,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "3": {
+      "name": "SEND_TO_AP",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "reserved_0",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 4,
+          "kind": "bytes"
+        },
+        {
+          "name": "actionPointId",
+          "offset": 4,
+          "offset_hex": "0x4",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "reserved_5",
+          "offset": 5,
+          "offset_hex": "0x5",
+          "size": 3,
+          "kind": "bytes"
+        }
+      ],
+      "source_line": 2805,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    },
+    "2": {
+      "name": "CREATE_PORTAL_GEM",
+      "parameter_bytes": 8,
+      "fields": [
+        {
+          "name": "objectId",
+          "offset": 0,
+          "offset_hex": "0x0",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "playerId",
+          "offset": 1,
+          "offset_hex": "0x1",
+          "size": 1,
+          "kind": "u8"
+        },
+        {
+          "name": "reserved_2",
+          "offset": 2,
+          "offset_hex": "0x2",
+          "size": 2,
+          "kind": "bytes"
+        },
+        {
+          "name": "posX",
+          "offset": 4,
+          "offset_hex": "0x4",
+          "size": 2,
+          "kind": "u16"
+        },
+        {
+          "name": "posY",
+          "offset": 6,
+          "offset_hex": "0x6",
+          "size": 2,
+          "kind": "u16"
+        }
+      ],
+      "source_line": 2811,
+      "confidence": "pinned_source_layout_not_individual_gameplay_verification"
+    }
+  }
+}

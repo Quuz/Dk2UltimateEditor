@@ -1,0 +1,85 @@
+[
+  {
+    "id": "phase31-neutral-editor-load-create",
+    "tool": "create_function",
+    "args": {
+      "program": "DK2 Editor pro.exe",
+      "address": "0x491120",
+      "disassemble_first": true
+    },
+    "print_limit": 0
+  },
+  {
+    "id": "phase31-neutral-editor-load",
+    "tool": "force_decompile",
+    "args": {
+      "program": "DK2 Editor pro.exe",
+      "address": "0x491120"
+    },
+    "print_limit": 500
+  },
+  {
+    "id": "phase31-neutral-editor-load-assembly",
+    "tool": "disassemble_function",
+    "args": {
+      "program": "DK2 Editor pro.exe",
+      "address": "0x491120"
+    },
+    "print_limit": 500
+  },
+  {
+    "id": "phase31-keeper-editor-load-create",
+    "tool": "create_function",
+    "args": {
+      "program": "DK2 Editor pro.exe",
+      "address": "0x491340",
+      "disassemble_first": true
+    },
+    "print_limit": 0
+  },
+  {
+    "id": "phase31-keeper-editor-load",
+    "tool": "force_decompile",
+    "args": {
+      "program": "DK2 Editor pro.exe",
+      "address": "0x491340"
+    },
+    "print_limit": 500
+  },
+  {
+    "id": "phase31-keeper-editor-load-assembly",
+    "tool": "disassemble_function",
+    "args": {
+      "program": "DK2 Editor pro.exe",
+      "address": "0x491340"
+    },
+    "print_limit": 500
+  },
+  {
+    "id": "phase31-creature-definition-lookup-assembly",
+    "tool": "disassemble_function",
+    "args": {
+      "program": "DK2 Editor pro.exe",
+      "address": "0x41ce20"
+    },
+    "print_limit": 600
+  },
+  {
+    "id": "phase31-creature-clone-id-assembly",
+    "tool": "disassemble_function",
+    "args": {
+      "program": "DK2 Editor pro.exe",
+      "address": "0x41de60"
+    },
+    "print_limit": 600
+  },
+  {
+    "id": "phase31-AP-setter-assembly",
+    "tool": "disassemble_function",
+    "args": {
+      "program": "DK2 Editor pro.exe",
+      "address": "0x41cf40"
+    },
+    "print_limit": 600
+  }
+]
