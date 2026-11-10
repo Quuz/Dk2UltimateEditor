@@ -5,6 +5,7 @@ ROOT=Path(__file__).resolve().parents[2]
 sys.path.insert(0,str(ROOT/'research/dk2-formats'))
 import dk2_formats as fmt
 import native_gold_margin as margin
+import native_tick_rate as tick_rate
 
 
 class PreservationTests(unittest.TestCase):
@@ -20,10 +21,12 @@ class PreservationTests(unittest.TestCase):
         self.assertEqual(changed,raw[:0x204]+b'\x5a\xa5'+raw[0x206:])
 
     def test_variable_scalar_keeps_opaque_extra_words(self):
-        raw=(74).to_bytes(4,'little')+(340).to_bytes(4,'little')+bytes.fromhex('1122334455667788')
-        changed=margin.patch_bits(raw,0xFFFFFFFF)
-        self.assertEqual(changed,raw[:4]+b'\xff'*4+raw[8:])
-        self.assertEqual(margin.patch_bits(changed,340),raw)
+        for kind,api in [(74,margin),(19,tick_rate)]:
+            with self.subTest(variable_type=kind):
+                raw=kind.to_bytes(4,'little')+(340).to_bytes(4,'little')+bytes.fromhex('1122334455667788')
+                changed=api.patch_bits(raw,0xFFFFFFFF)
+                self.assertEqual(changed,raw[:4]+b'\xff'*4+raw[8:])
+                self.assertEqual(api.patch_bits(changed,340),raw)
 
     def test_gold_margin_unsigned_underflow_is_not_clamped(self):
         result=margin.project(100,1,100,100,340,1)
