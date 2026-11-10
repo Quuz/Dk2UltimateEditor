@@ -1,0 +1,50 @@
+# Source scope: general map properties and target version
+
+Read-only source/worktree audit, 2026-10-07. This is the next metadata integration scope after [speech/text](MAP_SPEECH_TEXT.md), not an implemented general-properties panel or a narrower completion definition. Original source, binaries and installed maps remain untouched.
+
+## Actual original controls
+
+`Properties_Map_Global.c:1468–1714`, resource dialog 6800 and `Datas_Map.c` identify the general controls: map display **Name**, Width/Height with reset-to-current-size, nine-way resize anchor, target **Version**, and declared keeper **Players**. The dialog also opens seven player settings and the already-audited alliances, creature rules, speech, texts, variables and level options. `Properties_MapOptions` copies MAPPROPERTIES and all seven MAPOPTIONS records into a parent draft; child acceptance changes that draft, and outer Cancel discards it. Outer acceptance copies properties/players and performs anchored resizing under the parent history operation. Separate modern atomic child panels therefore do not by themselves prove original parent Cancel/composition behavior.
+
+Name is char[64] with a UI limit of 63 characters and a guarded overflow request; no empty-name rejection is present in this general-properties handler. Do not accidentally substitute the stricter new-map filename rules for an existing map's display name. Modern project encoding is the existing strict CP1252 decision; native GAMEINFO display names are UTF-16. Unchanged nonterminated imports/padding must survive unrelated changes, and changed text must reject overflow rather than silently truncating or replacing characters. Export filenames/reference paths remain separate from the display name.
+
+Keeper choices are **1–5**, not the seven owner IDs: Heroes and Neutral remain separate player records. Changing the declaration does not reset existing player settings, add/remove hearts, renumber physical owners or remove scenario bindings. Compiler/player/heart consistency diagnostics must stay separate from lossless saving and explicit changes. Width/Height inputs are bounded by the original dialog to 0–300, accepted values are raised to at least 7, and resizing above 120×120 cells asks for confirmation. The modern 7–1024 guarded resize route is an existing explicit extension, not an undiscovered original limitation. All nine anchor translations and object/scenario consequences are already covered by resize tests; general-panel integration must reuse that mechanism, not write metadata dimensions independently of tiles.
+
+Description[1024], Author[64], Email[64], Information[1024] and LevelNumber are real metadata carried by Map.h / Files_Game / Compiler_Generate. The active original C source search locates their reader/compiler assignments but **no corresponding editing controls** in the audited general dialog or other active C handlers. They remain accessible through the modern typed property grid. Do not invent an original author/description wizard and then count its absence as a missing original function. More convenient named controls would be an enhancement unless additional source evidence is found.
+
+## Target game version is not file-format version
+
+`Datas_Map.c:7–10` explicitly lists **13 / Original**, **16 / 1.61**, **17 / 1.70**. `Properties_MapInit` matches these byte IDs; `Properties_MapReset` stores them from the selected row. This is a gameplay compatibility target, distinct from section/header versions.
+
+Current MAPPROPERTIES and historical MAPPROPERTIESV6 contain a real BYTE Version. Project metadata versions 1–5 do **not** contain that field; their readers explicitly supply 17 and existing guarded upgrade does the same. V6/V7 retain the actual stored byte. A named selector must not alias old padding, force an unrequested section upgrade or coerce an imported unknown byte on unrelated Apply. The present generic project property grid already exposes real Version bytes; a missing named selector is not a missing binary writer.
+
+`Files_Game.c:218` sets the working target version to **17 on native load**. GAMEINFO has **no corresponding target-version storage field**. `Compiler_Generate.c:67` always writes `dwMainFileVersion = 4` for all target versions. Modern `ValueCatalogues.GameVersion` likewise returns 17 for native documents. Never encode 13/16/17 into the KWD container version or an unknown byte. Reproducing a changed native working target requires explicit document/session metadata and undo/lifetime integration; original native reload resets it to 17. Persistent editor-only target metadata would require a separately justified design, not invented game fields. The existing `.dk2names` companion proves only alias persistence and does not already solve this target-version requirement.
+
+## Original compatibility diagnostics
+
+`Compiler_TaskTest` runs `Compiler_TaskTestVersion` before map/player/thing/area/gate/scenario checks. The version analysis aggregates distinct placed-thing, condition and action categories and reports 1.61 or 1.70 requirements when the working target is older. It is not a claim that every map remains playable when a number is changed.
+
+The exact source analysis reads:
+
+- Placed creatures IDs 0x20–0x2C require 1.61; creature 0x2D and placed trap 0x10 require 1.70.
+- Conditions CREAENTERAREA (0x27), HAPPYCREATURES (0x14), LOSTCREATURES (0x16), CREATURESLEVEL (0x34) and GROUPINPOSSESS (0x49) examine param2 for 0x20–0x2C / 0x2D. CREATURES (0x13) examines only 0x2D; its source comment explicitly says elite creatures do not work with that trigger.
+- Condition TRAPS (0x1C) with param2 0x10 sets the **1.61 condition flag in the source**, unlike the placed-trap 1.70 flag. Retain this distinction as source evidence; do not silently reinterpret it as a uniform type requirement.
+- ADDCREATURE actions (0x01) examine param1 for 0x20–0x2C / 0x2D.
+
+The six aggregate report IDs are REPORT_THING61/70, REPORT_TRIGGER61/70 and REPORT_ACTION61/70. `Compiler_Report.c` maps their descriptions; `Texts_Report.c:59–64` prefixes all six with **?**. `Windows_Compiler.c` routes WM_REPORTERROR through Compiler_QueueError and displays ? as its compatibility/question icon; neither that queue nor the version-analysis branch sets Task.Failed or increments Task.Warnings. Generation stops only when Task.Failed is actually set. These six notices therefore must **not become invented hard compilation errors**. Other real validation failures stay independent. `Compiler_TaskTestThings:938–956` additionally reports each placed ordinary object 0x8A/0x8B/0x8D/0x8E/0x8F/0x90 when the target is below 17, using coordinates and the same REPORT_THING70, also without setting failure.
+
+Native/project event argument positions must be mapped independently rather than assuming native Param2 is always the same physical offset as project param2. The current NativeMapValidator checks schema/coordinates/scripts/terrain but has no equivalent target-version analysis. This is a real validation gap, not evidence that the existing binary readers are incomprehensible. The named Test/Compile presentation/consent route still needs integration tests; lossless saving and otherwise-valid compilation must remain available despite these source compatibility notices.
+
+## Next implementation and acceptance requirements
+
+1. Named EN/RU general settings with source keeper/version IDs, display-name encoding and imported-value retention; use only verified historical fields. Native working-target state must be distinct from immutable container/header versions.
+2. Guarded complete drafts, stale/raw/edit+Undo/closed-owner rejection, explicit Apply/Discard, same-value no-op and exact Undo/Redo; preserve all seven players, hearts, unrelated metadata/opaque bytes, map selection and copy buffers. Address parent-draft/outer-Cancel composition instead of claiming it is already covered by separate child panels.
+3. Integrate dimensions/anchor/reset and large/crop decisions through existing guarded resize/history, with pending ordinary fields and reentrant consent invalidation. Do not derive new mutations from diagnostic warnings.
+4. Independently verify each source version-analysis branch, six aggregate notices and six per-object 1.70 IDs, non-failing report policy and actual native/project operand mapping, with named Test/Compile routes and bilingual diagnostics. Lossless save and otherwise-valid compilation remain available despite compatibility notices.
+5. Historical V1–V7/future fixtures, unknown native target/session lifetime, CP1252/UTF-16/overflow/no-op padding, all keeper/version/anchor choices, real map save/reopen/compile and full synthetic/WPF/corpus regression gates. Visible original-GUI/native-dialog/hardware/DPI and actual in-game acceptance remain separate full-goal requirements.
+
+The broader scenario semantics, global-definition variants/catalogues, malformed reference behavior and gameplay requirements in FEATURE_PARITY remain in scope. This audit does not mark any implementation or the full parity goal complete.
+
+## Follow-up implementation
+
+The [Core/session/compatibility prerequisite](MAP_GENERAL_SETTINGS_CORE.md) now implements guarded general metadata, native transaction-only working target, selected-target retention for newly created/compiled documents, corrected old-project catalogue defaults and source non-failing version notices in actual EN/RU Test/Compile. The preceding statements about missing target state/analysis describe the audit baseline. Native LOSTCREATURES/CREATURESLEVEL omit param2 in both Compiler_Generate and Files_Game; their reserved bytes are not inferred as species. The [named parent window](MAP_GENERAL_SETTINGS_UI.md) now implements child-draft composition/outer Cancel and anchored resize integration, with all five post-change gates accepted: Core 85 groups, UI 256 cases per configuration, corpus 1734 passes / identical ordered 94 failures, actual Ancients.map 86 passes. This follow-up does not close the full parity goal.

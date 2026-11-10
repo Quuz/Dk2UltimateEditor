@@ -1,0 +1,98 @@
+{
+  "InputHashes": {
+    "Source/Sources/Triggers/Triggers_Triggers.c": "b94b509ab4d625925bffa65c83f3bc77c8cba776cb2085d1494c855e6e4cb05a",
+    "Source/Sources/Triggers/Triggers_Actions.c": "6cb909e922dd1116d1d02c7cde63721b07c0ed4b57b7cc4ff4af8cd8fcf33d37"
+  },
+  "Pages": [
+    {
+      "Type": "TRIGGER_BANDCREATED",
+      "Required": [
+        "Band"
+      ],
+      "OriginalCheck": "\n\t\t\tif (!Context->TriggerCtx.Initialized[TRIGGER_BANDCREATED]) goto Error_0;\n\t\t\tif (!MapHerosBands.next) goto Error_1;\n\t\t\tbreak;\n"
+    },
+    {
+      "Type": "TRIGGER_DEATHSINBAND",
+      "Required": [
+        "Band"
+      ],
+      "OriginalCheck": "\n\t\t\tif (!Context->TriggerCtx.Initialized[TRIGGER_DEATHSINBAND]) goto Error_0;\n\t\t\tif (!MapHerosBands.next) goto Error_1;\n\t\t\tCheckRadioButton(hDlg,200,205,199+Context->TriggerCtx.TempTrigger.param1);\n\t\t\tSetDlgItemInt(hDlg,210,Context->TriggerCtx.TempTrigger.param5,FALSE);\n\t\t\tSendDlgItemMessage(hDlg,210,EM_LIMITTEXT,(WPARAM)4,(LPARAM)0);\n\t\t\tbreak;\n"
+    },
+    {
+      "Type": "TRIGGER_JAILEDINBAND",
+      "Required": [
+        "Band"
+      ],
+      "OriginalCheck": "\n\t\t\tif (!Context->TriggerCtx.Initialized[TRIGGER_JAILEDINBAND]) goto Error_0;\n\t\t\tif (!MapHerosBands.next) goto Error_1;\n\t\t\tCheckRadioButton(hDlg,200,205,199+Context->TriggerCtx.TempTrigger.param1);\n\t\t\tSetDlgItemInt(hDlg,210,Context->TriggerCtx.TempTrigger.param5,FALSE);\n\t\t\tSendDlgItemMessage(hDlg,210,EM_LIMITTEXT,(WPARAM)4,(LPARAM)0);\n\t\t\tbreak;\n"
+    },
+    {
+      "Type": "TRIGGER_STUNNEDINBAND",
+      "Required": [
+        "Band"
+      ],
+      "OriginalCheck": "\n\t\t\tif (!Context->TriggerCtx.Initialized[TRIGGER_STUNNEDINBAND]) goto Error_0;\n\t\t\tif (!MapHerosBands.next) goto Error_1;\n\t\t\tCheckRadioButton(hDlg,200,205,199+Context->TriggerCtx.TempTrigger.param1);\n\t\t\tSetDlgItemInt(hDlg,210,Context->TriggerCtx.TempTrigger.param5,FALSE);\n\t\t\tSendDlgItemMessage(hDlg,210,EM_LIMITTEXT,(WPARAM)4,(LPARAM)0);\n\t\t\tbreak;\n"
+    },
+    {
+      "Type": "ACTION_RELEASEBAND",
+      "Required": [
+        "Band",
+        "Area"
+      ],
+      "OriginalCheck": "\n\t\t\tif (!Context->ActionCtx.Initialized[ACTION_RELEASEBAND]) goto Error_0;\n\t\t\tif (!MapHerosBands.next) goto Error_1;\n\t\t\tif (!MapAreas.next) goto Error_2;\n\t\t\tMisc_SetArea(hDlg,311,Context->ActionCtx.TempAction.param5);\n\t\t\tswitch(Context->ActionCtx.TempAction.param2)\n\t\t\t\t{\n\t\t\t\tcase 0:\tCheckDlgButton(hDlg,500,BST_UNCHECKED);\n\t\t\t\t\tCheckDlgButton(hDlg,501,BST_UNCHECKED);\n\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,501),FALSE);\n\t\t\t\t\tbreak;\n\t\t\t\tcase 1:\tCheckDlgButton(hDlg,500,BST_CHECKED);\n\t\t\t\t\tCheckDlgButton(hDlg,501,BST_UNCHECKED);\n\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,501),TRUE);\n\t\t\t\t\tbreak;\n\t\t\t\tcase 2:\tCheckDlgButton(hDlg,500,BST_CHECKED);\n\t\t\t\t\tCheckDlgButton(hDlg,501,BST_CHECKED);\n\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,501),TRUE);\n\t\t\t\t\tbreak;\n\t\t\t\t}\n\t\t\tbreak;\n"
+    },
+    {
+      "Type": "ACTION_SHOWAREA",
+      "Required": [
+        "Area"
+      ],
+      "OriginalCheck": "\n\t\t\tif (!Context->ActionCtx.Initialized[ACTION_SHOWAREA]) goto Error_0;\n\t\t\tif (!MapAreas.next) goto Error_2;\n\t\t\tMisc_SetArea(hDlg,311,Context->ActionCtx.TempAction.param1);\n\t\t\tCheckRadioButton(hDlg,200,201,(Context->ActionCtx.TempAction.param2)?201:200);\n\t\t\tbreak;\n"
+    },
+    {
+      "Type": "ACTION_ENABLEFOG",
+      "Required": [
+        "Area"
+      ],
+      "OriginalCheck": "\n\t\t\tif (!Context->ActionCtx.Initialized[ACTION_ENABLEFOG]) goto Error_0;\n\t\t\tif (!MapAreas.next) goto Error_2;\n\t\t\tMisc_SetArea(hDlg,311,Context->ActionCtx.TempAction.param1);\n\t\t\tCheckRadioButton(hDlg,200,201,(Context->ActionCtx.TempAction.param2)?201:200);\n\t\t\tbreak;\n"
+    },
+    {
+      "Type": "ACTION_MOVECAMERA",
+      "Required": [
+        "Area"
+      ],
+      "OriginalCheck": "\n\t\t\tif (!Context->ActionCtx.Initialized[ACTION_MOVECAMERA]) goto Error_0;\n\t\t\tif (!MapAreas.next) goto Error_2;\n\t\t\tMisc_SetArea(hDlg,311,Context->ActionCtx.TempAction.param1);\n\t\t\tbreak;\n"
+    },
+    {
+      "Type": "ACTION_ROTATECAMERA",
+      "Required": [
+        "Area"
+      ],
+      "OriginalCheck": "\n\t\t\tif (!Context->ActionCtx.Initialized[ACTION_ROTATECAMERA]) goto Error_0;\n\t\t\tif (!MapAreas.next) goto Error_2;\n\t\t\tMisc_SetArea(hDlg,311,Context->ActionCtx.TempAction.param1);\n\t\t\tSetDlgItemInt(hDlg,307,Context->ActionCtx.TempAction.param3,FALSE);\n\t\t\tSetDlgItemInt(hDlg,309,Context->ActionCtx.TempAction.param5,FALSE);\n\t\t\tSendDlgItemMessage(hDlg,307,EM_LIMITTEXT,(WPARAM)3,(LPARAM)0);\n\t\t\tSendDlgItemMessage(hDlg,309,EM_LIMITTEXT,(WPARAM)4,(LPARAM)0);\n\t\t\tbreak;\n"
+    },
+    {
+      "Type": "ACTION_DESTROYGATE",
+      "Required": [
+        "Gate"
+      ],
+      "OriginalCheck": "\n\t\t\tif (!Context->ActionCtx.Initialized[ACTION_DESTROYGATE]) goto Error_0;\n\t\t\tif (!MapGates.next) goto Error_3;\n\t\t\tTriggers_ActionDlgParamsSetGate(hDlg,311,Context->ActionCtx.TempAction.param5);\n\t\t\tbreak;\n"
+    },
+    {
+      "Type": "ACTION_CAMERAPATH",
+      "Required": [
+        "Area"
+      ],
+      "OriginalCheck": "\n\t\t\tif (!Context->ActionCtx.Initialized[ACTION_CAMERAPATH]) goto Error_0;\n\t\t\tif (!MapAreas.next) goto Error_2;\n\t\t\tSetDlgItemInt(hDlg,307,Context->ActionCtx.TempAction.param1,FALSE);\n\t\t\tSendDlgItemMessage(hDlg,307,EM_LIMITTEXT,(WPARAM)4,(LPARAM)0);\n\t\t\tMisc_SetArea(hDlg,311,Context->ActionCtx.TempAction.param2);\n\t\t\tCheckRadioButton(hDlg,200,201,(Context->ActionCtx.TempAction.param3)?201:200);\n\t\t\tbreak;\n"
+    },
+    {
+      "Type": "ACTION_TOGGLEEFFECT",
+      "Required": [
+        "Effect"
+      ],
+      "OriginalCheck": "\n\t\t\tif (!Context->ActionCtx.Initialized[ACTION_TOGGLEEFFECT]) goto Error_0;\n\t\t\tif (!MapEffects.next) goto Error_4;\n\t\t\tMisc_SetEffect(hDlg,311,Context->ActionCtx.TempAction.param1);\n\t\t\tCheckRadioButton(hDlg,200,201,(Context->ActionCtx.TempAction.param2)?200:201);\n\t\t\tbreak;"
+    }
+  ],
+  "SourceCaseCounts": {
+    "Trigger": 37,
+    "Action": 33
+  },
+  "UIExecuted": false
+}

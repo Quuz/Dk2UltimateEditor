@@ -1,0 +1,3102 @@
+{
+  "SourcePage": {
+    "Type": "ACTION_ADDCREATURE",
+    "PageID": 7203,
+    "AliasPage": false,
+    "DirectStoreParameters": [
+      1,
+      2,
+      3,
+      5,
+      7
+    ],
+    "CallbackOnlyParameters": [
+      4
+    ],
+    "NumericInputs": [
+      {
+        "Parameter": 5,
+        "ControlID": 307,
+        "Signed": false,
+        "DecimalDigits": 3,
+        "StoredOffset": 0,
+        "SourceDisplayMaximum": 999
+      },
+      {
+        "Parameter": 7,
+        "ControlID": 309,
+        "Signed": false,
+        "DecimalDigits": 3,
+        "StoredOffset": 0,
+        "SourceDisplayMaximum": 999
+      }
+    ],
+    "NamedCalls": [
+      {
+        "Type": "ACTION_ADDCREATURE",
+        "PageID": 7203,
+        "Helper": "Triggers_DisplayCreateCreaturesList",
+        "Arguments": [
+          "hDlg",
+          "400",
+          "&Context->ActionCtx.CreaturesList",
+          "Context->ActionCtx.TempAction.param1",
+          "FALSE",
+          "TRUE"
+        ],
+        "DirectParameterReferences": [
+          1
+        ],
+        "RequiresCallbackBinding": false,
+        "NativeDirectParameters": [
+          1
+        ],
+        "Choices": [
+          {
+            "StoredValue": 1,
+            "ItemData": 1,
+            "NameSymbol": "szBadCreatureImp",
+            "Table": "BadCreatures",
+            "Category": null
+          },
+          {
+            "StoredValue": 7,
+            "ItemData": 7,
+            "NameSymbol": "szBadCreatureGoblin",
+            "Table": "BadCreatures",
+            "Category": null
+          },
+          {
+            "StoredValue": 5,
+            "ItemData": 5,
+            "NameSymbol": "szBadCreatureWarLock",
+            "Table": "BadCreatures",
+            "Category": null
+          },
+          {
+            "StoredValue": 12,
+            "ItemData": 12,
+            "NameSymbol": "szBadCreatureFireFly",
+            "Table": "BadCreatures",
+            "Category": null
+          },
+          {
+            "StoredValue": 10,
+            "ItemData": 10,
+            "NameSymbol": "szBadCreatureTroll",
+            "Table": "BadCreatures",
+            "Category": null
+          },
+          {
+            "StoredValue": 6,
+            "ItemData": 6,
+            "NameSymbol": "szBadCreatureDarkElf",
+            "Table": "BadCreatures",
+            "Category": null
+          },
+          {
+            "StoredValue": 9,
+            "ItemData": 9,
+            "NameSymbol": "szBadCreatureSkeleton",
+            "Table": "BadCreatures",
+            "Category": null
+          },
+          {
+            "StoredValue": 4,
+            "ItemData": 4,
+            "NameSymbol": "szBadCreatureDarkMistress",
+            "Table": "BadCreatures",
+            "Category": null
+          },
+          {
+            "StoredValue": 11,
+            "ItemData": 11,
+            "NameSymbol": "szBadCreatureSalamander",
+            "Table": "BadCreatures",
+            "Category": null
+          },
+          {
+            "StoredValue": 24,
+            "ItemData": 24,
+            "NameSymbol": "szBadCreatureRogue",
+            "Table": "BadCreatures",
+            "Category": null
+          },
+          {
+            "StoredValue": 3,
+            "ItemData": 3,
+            "NameSymbol": "szBadCreatureBileDemon",
+            "Table": "BadCreatures",
+            "Category": null
+          },
+          {
+            "StoredValue": 8,
+            "ItemData": 8,
+            "NameSymbol": "szBadCreatureVampire",
+            "Table": "BadCreatures",
+            "Category": null
+          },
+          {
+            "StoredValue": 22,
+            "ItemData": 22,
+            "NameSymbol": "szBadCreatureDarkKnight",
+            "Table": "BadCreatures",
+            "Category": null
+          },
+          {
+            "StoredValue": 23,
+            "ItemData": 23,
+            "NameSymbol": "szBadCreatureDarkAngel",
+            "Table": "BadCreatures",
+            "Category": null
+          },
+          {
+            "StoredValue": 45,
+            "ItemData": 45,
+            "NameSymbol": "szBadCreatureMaiden",
+            "Table": "BadCreatures",
+            "Category": null
+          },
+          {
+            "StoredValue": 27,
+            "ItemData": 27,
+            "NameSymbol": "szBadCreatureHorny",
+            "Table": "BadCreatures",
+            "Category": null
+          },
+          {
+            "StoredValue": 33,
+            "ItemData": 33,
+            "NameSymbol": "szBadCreatureGoblinElite",
+            "Table": "BadElites",
+            "Category": null
+          },
+          {
+            "StoredValue": 34,
+            "ItemData": 34,
+            "NameSymbol": "szBadCreatureWarLockElite",
+            "Table": "BadElites",
+            "Category": null
+          },
+          {
+            "StoredValue": 32,
+            "ItemData": 32,
+            "NameSymbol": "szBadCreatureFireFlyElite",
+            "Table": "BadElites",
+            "Category": null
+          },
+          {
+            "StoredValue": 35,
+            "ItemData": 35,
+            "NameSymbol": "szBadCreatureTrollElite",
+            "Table": "BadElites",
+            "Category": null
+          },
+          {
+            "StoredValue": 36,
+            "ItemData": 36,
+            "NameSymbol": "szBadCreatureDarkElfElite",
+            "Table": "BadElites",
+            "Category": null
+          },
+          {
+            "StoredValue": 37,
+            "ItemData": 37,
+            "NameSymbol": "szBadCreatureSkeletonElite",
+            "Table": "BadElites",
+            "Category": null
+          },
+          {
+            "StoredValue": 38,
+            "ItemData": 38,
+            "NameSymbol": "szBadCreatureDarkMistressElite",
+            "Table": "BadElites",
+            "Category": null
+          },
+          {
+            "StoredValue": 39,
+            "ItemData": 39,
+            "NameSymbol": "szBadCreatureSalamanderElite",
+            "Table": "BadElites",
+            "Category": null
+          },
+          {
+            "StoredValue": 40,
+            "ItemData": 40,
+            "NameSymbol": "szBadCreatureRogueElite",
+            "Table": "BadElites",
+            "Category": null
+          },
+          {
+            "StoredValue": 41,
+            "ItemData": 41,
+            "NameSymbol": "szBadCreatureBileDemonElite",
+            "Table": "BadElites",
+            "Category": null
+          },
+          {
+            "StoredValue": 42,
+            "ItemData": 42,
+            "NameSymbol": "szBadCreatureVampireElite",
+            "Table": "BadElites",
+            "Category": null
+          },
+          {
+            "StoredValue": 43,
+            "ItemData": 43,
+            "NameSymbol": "szBadCreatureDarkKnightElite",
+            "Table": "BadElites",
+            "Category": null
+          },
+          {
+            "StoredValue": 44,
+            "ItemData": 44,
+            "NameSymbol": "szBadCreatureDarkAngelElite",
+            "Table": "BadElites",
+            "Category": null
+          },
+          {
+            "StoredValue": 14,
+            "ItemData": 14,
+            "NameSymbol": "szGoodCreatureDwarf",
+            "Table": "Heros",
+            "Category": null
+          },
+          {
+            "StoredValue": 13,
+            "ItemData": 13,
+            "NameSymbol": "szGoodCreatureKnight",
+            "Table": "Heros",
+            "Category": null
+          },
+          {
+            "StoredValue": 18,
+            "ItemData": 18,
+            "NameSymbol": "szGoodCreatureThief",
+            "Table": "Heros",
+            "Category": null
+          },
+          {
+            "StoredValue": 25,
+            "ItemData": 25,
+            "NameSymbol": "szGoodCreatureGuard",
+            "Table": "Heros",
+            "Category": null
+          },
+          {
+            "StoredValue": 16,
+            "ItemData": 16,
+            "NameSymbol": "szGoodCreatureWizard",
+            "Table": "Heros",
+            "Category": null
+          },
+          {
+            "StoredValue": 15,
+            "ItemData": 15,
+            "NameSymbol": "szGoodCreatureGiant",
+            "Table": "Heros",
+            "Category": null
+          },
+          {
+            "StoredValue": 17,
+            "ItemData": 17,
+            "NameSymbol": "szGoodCreatureElvenArcher",
+            "Table": "Heros",
+            "Category": null
+          },
+          {
+            "StoredValue": 19,
+            "ItemData": 19,
+            "NameSymbol": "szGoodCreatureMonk",
+            "Table": "Heros",
+            "Category": null
+          },
+          {
+            "StoredValue": 20,
+            "ItemData": 20,
+            "NameSymbol": "szGoodCreatureFairy",
+            "Table": "Heros",
+            "Category": null
+          },
+          {
+            "StoredValue": 30,
+            "ItemData": 30,
+            "NameSymbol": "szGoodCreatureRoyalGuard",
+            "Table": "Heros",
+            "Category": null
+          },
+          {
+            "StoredValue": 28,
+            "ItemData": 28,
+            "NameSymbol": "szGoodCreatureStoneGiant",
+            "Table": "Heros",
+            "Category": null
+          },
+          {
+            "StoredValue": 29,
+            "ItemData": 29,
+            "NameSymbol": "szGoodCreatureLordOfTheLand",
+            "Table": "Heros",
+            "Category": null
+          },
+          {
+            "StoredValue": 21,
+            "ItemData": 21,
+            "NameSymbol": "szGoodCreatureKingReginald",
+            "Table": "Heros",
+            "Category": null
+          },
+          {
+            "StoredValue": 26,
+            "ItemData": 26,
+            "NameSymbol": "szGoodCreaturePrinceFelix",
+            "Table": "Heros",
+            "Category": null
+          },
+          {
+            "StoredValue": 31,
+            "ItemData": 31,
+            "NameSymbol": "szGoodCreaturePrinceBalder",
+            "Table": "Heros",
+            "Category": null
+          },
+          {
+            "StoredValue": 2,
+            "ItemData": 2,
+            "NameSymbol": "szGoodCreaturePrinceTristan",
+            "Table": "Heros",
+            "Category": null
+          }
+        ],
+        "DynamicList": false,
+        "SourceCheck": "if (!Context->ActionCtx.Initialized[ACTION_ADDCREATURE]) goto Error_0;\r\n\t\t\tSendDlgItemMessage(hDlg,303,CB_SETCURSEL,(WPARAM)Context->ActionCtx.TempAction.param2-1,(LPARAM)0);\r\n\t\t\tSendDlgItemMessage(hDlg,301,CB_SETCURSEL,(WPARAM)Context->ActionCtx.TempAction.param3-1,(LPARAM)0);\r\n\t\t\tSetDlgItemInt(hDlg,307,Context->ActionCtx.TempAction.param5,FALSE);\r\n\t\t\tSetDlgItemInt(hDlg,309,Context->ActionCtx.TempAction.param7,FALSE);\r\n\t\t\tSendDlgItemMessage(hDlg,307,EM_LIMITTEXT,(WPARAM)3,(LPARAM)0);\r\n\t\t\tSendDlgItemMessage(hDlg,309,EM_LIMITTEXT,(WPARAM)3,(LPARAM)0);\r\n\t\t\tSendDlgItemMessage(hDlg,311,CB_SETCURSEL,(WPARAM)0,(LPARAM)0);\r\n\t\t\tbreak;",
+        "SourceStore": "Context->ActionCtx.TempAction.param1 = Triggers_TriggerDlgGetSelectedEntryParam(Context->ActionCtx.CreaturesList);\r\n\t\t\tif (Context->ActionCtx.TempAction.param1 == 0) goto NoCreatureSelected;\r\n\t\t\tContext->ActionCtx.TempAction.param2 = SendDlgItemMessage(hDlg,303,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)+1;\r\n\t\t\tContext->ActionCtx.TempAction.param3 = SendDlgItemMessage(hDlg,301,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)+1;\r\n\t\t\tContext->ActionCtx.TempAction.param5 = GetDlgItemInt(hDlg,307,NULL,FALSE);\r\n\t\t\tContext->ActionCtx.TempAction.param7 = GetDlgItemInt(hDlg,309,NULL,FALSE);\r\n\t\t\tResult = 1;\r\n\t\t\tbreak;"
+      },
+      {
+        "Type": "ACTION_ADDCREATURE",
+        "PageID": 7203,
+        "Helper": "Misc_CreateAreaComboBoxList",
+        "Arguments": [
+          "hDlg",
+          "311",
+          "TRUE"
+        ],
+        "DirectParameterReferences": [],
+        "RequiresCallbackBinding": true,
+        "NativeDirectParameters": [],
+        "Choices": [],
+        "DynamicList": true,
+        "SourceCheck": "if (!Context->ActionCtx.Initialized[ACTION_ADDCREATURE]) goto Error_0;\r\n\t\t\tSendDlgItemMessage(hDlg,303,CB_SETCURSEL,(WPARAM)Context->ActionCtx.TempAction.param2-1,(LPARAM)0);\r\n\t\t\tSendDlgItemMessage(hDlg,301,CB_SETCURSEL,(WPARAM)Context->ActionCtx.TempAction.param3-1,(LPARAM)0);\r\n\t\t\tSetDlgItemInt(hDlg,307,Context->ActionCtx.TempAction.param5,FALSE);\r\n\t\t\tSetDlgItemInt(hDlg,309,Context->ActionCtx.TempAction.param7,FALSE);\r\n\t\t\tSendDlgItemMessage(hDlg,307,EM_LIMITTEXT,(WPARAM)3,(LPARAM)0);\r\n\t\t\tSendDlgItemMessage(hDlg,309,EM_LIMITTEXT,(WPARAM)3,(LPARAM)0);\r\n\t\t\tSendDlgItemMessage(hDlg,311,CB_SETCURSEL,(WPARAM)0,(LPARAM)0);\r\n\t\t\tbreak;",
+        "SourceStore": "Context->ActionCtx.TempAction.param1 = Triggers_TriggerDlgGetSelectedEntryParam(Context->ActionCtx.CreaturesList);\r\n\t\t\tif (Context->ActionCtx.TempAction.param1 == 0) goto NoCreatureSelected;\r\n\t\t\tContext->ActionCtx.TempAction.param2 = SendDlgItemMessage(hDlg,303,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)+1;\r\n\t\t\tContext->ActionCtx.TempAction.param3 = SendDlgItemMessage(hDlg,301,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)+1;\r\n\t\t\tContext->ActionCtx.TempAction.param5 = GetDlgItemInt(hDlg,307,NULL,FALSE);\r\n\t\t\tContext->ActionCtx.TempAction.param7 = GetDlgItemInt(hDlg,309,NULL,FALSE);\r\n\t\t\tResult = 1;\r\n\t\t\tbreak;"
+      },
+      {
+        "Type": "ACTION_ADDCREATURE",
+        "PageID": 7203,
+        "Helper": "Misc_CreatePlayerComboBoxList",
+        "Arguments": [
+          "hDlg",
+          "303",
+          "1",
+          "FALSE"
+        ],
+        "DirectParameterReferences": [
+          2
+        ],
+        "RequiresCallbackBinding": false,
+        "NativeDirectParameters": [
+          2
+        ],
+        "Choices": [
+          {
+            "StoredValue": 1,
+            "ItemData": 1,
+            "NameSymbol": "Players[0].Name",
+            "Table": null,
+            "Category": null,
+            "SelectionIndex": 0
+          },
+          {
+            "StoredValue": 2,
+            "ItemData": 2,
+            "NameSymbol": "Players[1].Name",
+            "Table": null,
+            "Category": null,
+            "SelectionIndex": 1
+          },
+          {
+            "StoredValue": 3,
+            "ItemData": 3,
+            "NameSymbol": "Players[2].Name",
+            "Table": null,
+            "Category": null,
+            "SelectionIndex": 2
+          },
+          {
+            "StoredValue": 4,
+            "ItemData": 4,
+            "NameSymbol": "Players[3].Name",
+            "Table": null,
+            "Category": null,
+            "SelectionIndex": 3
+          },
+          {
+            "StoredValue": 5,
+            "ItemData": 5,
+            "NameSymbol": "Players[4].Name",
+            "Table": null,
+            "Category": null,
+            "SelectionIndex": 4
+          },
+          {
+            "StoredValue": 6,
+            "ItemData": 6,
+            "NameSymbol": "Players[5].Name",
+            "Table": null,
+            "Category": null,
+            "SelectionIndex": 5
+          },
+          {
+            "StoredValue": 7,
+            "ItemData": 7,
+            "NameSymbol": "Players[6].Name",
+            "Table": null,
+            "Category": null,
+            "SelectionIndex": 6
+          }
+        ],
+        "DynamicList": false,
+        "SourceCheck": "if (!Context->ActionCtx.Initialized[ACTION_ADDCREATURE]) goto Error_0;\r\n\t\t\tSendDlgItemMessage(hDlg,303,CB_SETCURSEL,(WPARAM)Context->ActionCtx.TempAction.param2-1,(LPARAM)0);\r\n\t\t\tSendDlgItemMessage(hDlg,301,CB_SETCURSEL,(WPARAM)Context->ActionCtx.TempAction.param3-1,(LPARAM)0);\r\n\t\t\tSetDlgItemInt(hDlg,307,Context->ActionCtx.TempAction.param5,FALSE);\r\n\t\t\tSetDlgItemInt(hDlg,309,Context->ActionCtx.TempAction.param7,FALSE);\r\n\t\t\tSendDlgItemMessage(hDlg,307,EM_LIMITTEXT,(WPARAM)3,(LPARAM)0);\r\n\t\t\tSendDlgItemMessage(hDlg,309,EM_LIMITTEXT,(WPARAM)3,(LPARAM)0);\r\n\t\t\tSendDlgItemMessage(hDlg,311,CB_SETCURSEL,(WPARAM)0,(LPARAM)0);\r\n\t\t\tbreak;",
+        "SourceStore": "Context->ActionCtx.TempAction.param1 = Triggers_TriggerDlgGetSelectedEntryParam(Context->ActionCtx.CreaturesList);\r\n\t\t\tif (Context->ActionCtx.TempAction.param1 == 0) goto NoCreatureSelected;\r\n\t\t\tContext->ActionCtx.TempAction.param2 = SendDlgItemMessage(hDlg,303,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)+1;\r\n\t\t\tContext->ActionCtx.TempAction.param3 = SendDlgItemMessage(hDlg,301,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)+1;\r\n\t\t\tContext->ActionCtx.TempAction.param5 = GetDlgItemInt(hDlg,307,NULL,FALSE);\r\n\t\t\tContext->ActionCtx.TempAction.param7 = GetDlgItemInt(hDlg,309,NULL,FALSE);\r\n\t\t\tResult = 1;\r\n\t\t\tbreak;"
+      },
+      {
+        "Type": "ACTION_ADDCREATURE",
+        "PageID": 7203,
+        "Helper": "Misc_CreateLevelComboBoxList",
+        "Arguments": [
+          "hDlg",
+          "301",
+          "Context->ActionCtx.TempAction.param3"
+        ],
+        "DirectParameterReferences": [
+          3
+        ],
+        "RequiresCallbackBinding": false,
+        "NativeDirectParameters": [
+          3
+        ],
+        "Choices": [
+          {
+            "StoredValue": 1,
+            "NameSymbol": "szNumber",
+            "Table": null,
+            "Category": null,
+            "SelectionIndex": 0,
+            "DisplayLiteral": "1"
+          },
+          {
+            "StoredValue": 2,
+            "NameSymbol": "szNumber",
+            "Table": null,
+            "Category": null,
+            "SelectionIndex": 1,
+            "DisplayLiteral": "2"
+          },
+          {
+            "StoredValue": 3,
+            "NameSymbol": "szNumber",
+            "Table": null,
+            "Category": null,
+            "SelectionIndex": 2,
+            "DisplayLiteral": "3"
+          },
+          {
+            "StoredValue": 4,
+            "NameSymbol": "szNumber",
+            "Table": null,
+            "Category": null,
+            "SelectionIndex": 3,
+            "DisplayLiteral": "4"
+          },
+          {
+            "StoredValue": 5,
+            "NameSymbol": "szNumber",
+            "Table": null,
+            "Category": null,
+            "SelectionIndex": 4,
+            "DisplayLiteral": "5"
+          },
+          {
+            "StoredValue": 6,
+            "NameSymbol": "szNumber",
+            "Table": null,
+            "Category": null,
+            "SelectionIndex": 5,
+            "DisplayLiteral": "6"
+          },
+          {
+            "StoredValue": 7,
+            "NameSymbol": "szNumber",
+            "Table": null,
+            "Category": null,
+            "SelectionIndex": 6,
+            "DisplayLiteral": "7"
+          },
+          {
+            "StoredValue": 8,
+            "NameSymbol": "szNumber",
+            "Table": null,
+            "Category": null,
+            "SelectionIndex": 7,
+            "DisplayLiteral": "8"
+          },
+          {
+            "StoredValue": 9,
+            "NameSymbol": "szNumber",
+            "Table": null,
+            "Category": null,
+            "SelectionIndex": 8,
+            "DisplayLiteral": "9"
+          },
+          {
+            "StoredValue": 10,
+            "NameSymbol": "szNumber",
+            "Table": null,
+            "Category": null,
+            "SelectionIndex": 9,
+            "DisplayLiteral": "10"
+          }
+        ],
+        "DynamicList": false,
+        "SourceCheck": "if (!Context->ActionCtx.Initialized[ACTION_ADDCREATURE]) goto Error_0;\r\n\t\t\tSendDlgItemMessage(hDlg,303,CB_SETCURSEL,(WPARAM)Context->ActionCtx.TempAction.param2-1,(LPARAM)0);\r\n\t\t\tSendDlgItemMessage(hDlg,301,CB_SETCURSEL,(WPARAM)Context->ActionCtx.TempAction.param3-1,(LPARAM)0);\r\n\t\t\tSetDlgItemInt(hDlg,307,Context->ActionCtx.TempAction.param5,FALSE);\r\n\t\t\tSetDlgItemInt(hDlg,309,Context->ActionCtx.TempAction.param7,FALSE);\r\n\t\t\tSendDlgItemMessage(hDlg,307,EM_LIMITTEXT,(WPARAM)3,(LPARAM)0);\r\n\t\t\tSendDlgItemMessage(hDlg,309,EM_LIMITTEXT,(WPARAM)3,(LPARAM)0);\r\n\t\t\tSendDlgItemMessage(hDlg,311,CB_SETCURSEL,(WPARAM)0,(LPARAM)0);\r\n\t\t\tbreak;",
+        "SourceStore": "Context->ActionCtx.TempAction.param1 = Triggers_TriggerDlgGetSelectedEntryParam(Context->ActionCtx.CreaturesList);\r\n\t\t\tif (Context->ActionCtx.TempAction.param1 == 0) goto NoCreatureSelected;\r\n\t\t\tContext->ActionCtx.TempAction.param2 = SendDlgItemMessage(hDlg,303,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)+1;\r\n\t\t\tContext->ActionCtx.TempAction.param3 = SendDlgItemMessage(hDlg,301,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)+1;\r\n\t\t\tContext->ActionCtx.TempAction.param5 = GetDlgItemInt(hDlg,307,NULL,FALSE);\r\n\t\t\tContext->ActionCtx.TempAction.param7 = GetDlgItemInt(hDlg,309,NULL,FALSE);\r\n\t\t\tResult = 1;\r\n\t\t\tbreak;"
+      }
+    ],
+    "RadioGroups": [],
+    "SourceControlCaptions": [
+      {
+        "Kind": "GROUPBOX",
+        "ControlID": 400,
+        "CaptionSymbol": "DIALOG_ACTIONSCREATURETYPE",
+        "SourceCaption": "Créature à ajouter",
+        "DisabledInResource": false
+      },
+      {
+        "Kind": "LTEXT",
+        "ControlID": 300,
+        "CaptionSymbol": "DIALOG_ACTIONSCREATURELEVEL",
+        "SourceCaption": "Niveau",
+        "DisabledInResource": false
+      },
+      {
+        "Kind": "LTEXT",
+        "ControlID": 302,
+        "CaptionSymbol": "DIALOG_ACTIONSCREATUREOWNER",
+        "SourceCaption": "Joueur qui reçoit la créature",
+        "DisabledInResource": false
+      },
+      {
+        "Kind": "PUSHBUTTON",
+        "ControlID": 313,
+        "CaptionSymbol": "DIALOG_ACTIONSCREATUREOPTIONS",
+        "SourceCaption": "Options de la créature",
+        "DisabledInResource": false
+      },
+      {
+        "Kind": "LTEXT",
+        "ControlID": 306,
+        "CaptionSymbol": "DIALOG_ACTIONSCREATUREX",
+        "SourceCaption": "X:",
+        "DisabledInResource": false
+      },
+      {
+        "Kind": "LTEXT",
+        "ControlID": 308,
+        "CaptionSymbol": "DIALOG_ACTIONSCREATUREY",
+        "SourceCaption": "Y:",
+        "DisabledInResource": false
+      },
+      {
+        "Kind": "LTEXT",
+        "ControlID": 310,
+        "CaptionSymbol": "DIALOG_ACTIONSCREATUREAREA",
+        "SourceCaption": "Utiliser les positions de départ de la zone...",
+        "DisabledInResource": false
+      },
+      {
+        "Kind": "PUSHBUTTON",
+        "ControlID": 312,
+        "CaptionSymbol": "DIALOG_NULL",
+        "SourceCaption": "",
+        "DisabledInResource": false
+      }
+    ],
+    "RequiredChildWorkflows": [
+      "NestedCreatureOptions",
+      "PointSelection",
+      "AreaTopLeft"
+    ],
+    "NativeLayout": [
+      {
+        "Name": "Param1",
+        "Offset": 8,
+        "Size": 1,
+        "Kind": "BYTE"
+      },
+      {
+        "Name": "Param2",
+        "Offset": 9,
+        "Size": 1,
+        "Kind": "BYTE"
+      },
+      {
+        "Name": "Param3",
+        "Offset": 10,
+        "Size": 1,
+        "Kind": "BYTE"
+      },
+      {
+        "Name": "Param4",
+        "Offset": 11,
+        "Size": 1,
+        "Kind": "BYTE"
+      },
+      {
+        "Name": "Param5",
+        "Offset": 12,
+        "Size": 2,
+        "Kind": "WORD"
+      },
+      {
+        "Name": "Param7",
+        "Offset": 14,
+        "Size": 2,
+        "Kind": "WORD"
+      }
+    ],
+    "Resource": {
+      "Line": 4025,
+      "Header": "7203 DIALOG 8, 8, 400, 232\r\nSTYLE DS_MODALFRAME|WS_BORDER|WS_VISIBLE|WS_CAPTION|WS_SYSMENU\r\nCLASS DIALOG_CLASS\r\nCAPTION DIALOG_ACTIONSTITLE\r\nFONT 8, \"MS Sans Serif\"",
+      "Declarations": "CONTROL\t\tDIALOG_ACTIONSCREATURETITLE,\t100, \"STATIC\", WS_CHILD|SS_OWNERDRAW, 0, 0, 400, 10\r\n\r\n\tGROUPBOX\tDIALOG_ACTIONSCREATURETYPE,\t400,   6,  16, 220, 210\r\n\tLTEXT\t\tDIALOG_ACTIONSCREATURELEVEL,\t300, 232,  36, 158,  10\r\n\tCOMBOBOX\t\t\t\t\t301, 232,  46,  60, 100, WS_VSCROLL|CBS_DROPDOWNLIST\r\n\tLTEXT\t\tDIALOG_ACTIONSCREATUREOWNER,\t302, 232,  66, 158,  10\r\n\tCOMBOBOX\t\t\t\t\t303, 232,  76, 100, 100, WS_VSCROLL|CBS_DROPDOWNLIST|CBS_OWNERDRAWFIXED\r\n\r\n\tPUSHBUTTON\tDIALOG_ACTIONSCREATUREOPTIONS,\t313, 232, 104, 158,  14\r\n\r\n\tLTEXT\t\tDIALOG_ACTIONSCREATUREX,\t306, 232, 130,  40,  10\r\n\tEDITTEXT\t\t\t\t\t307, 232, 140,  20,  12, ES_NUMBER\r\n\tLTEXT\t\tDIALOG_ACTIONSCREATUREY,\t308, 232, 154,  40,  10\r\n\tEDITTEXT\t\t\t\t\t309, 232, 164,  20,  12, ES_NUMBER\r\n\tLTEXT\t\tDIALOG_ACTIONSCREATUREAREA,\t310, 232, 182, 158,  10\r\n\tCOMBOBOX\t\t\t\t\t311, 232, 192, 158, 100, WS_VSCROLL|CBS_DROPDOWNLIST\r\n\tPUSHBUTTON\tDIALOG_NULL,\t\t\t312, 264, 153,  20,  12, BS_OWNERDRAW"
+    },
+    "Sections": {
+      "SetDefault": {
+        "HasExplicitCase": true,
+        "Function": "Triggers_ActionDlgSetDefault",
+        "FunctionLine": 360,
+        "SharedCases": [
+          "ACTION_ADDCREATURE"
+        ],
+        "Body": "if (Context->ActionCtx.TempAction.ctrl != NewCtrl)\r\n\t\t\t\t{\r\n\t\t\t\tContext->ActionCtx.TempAction.param1 = 4;\r\n\t\t\t\tContext->ActionCtx.TempAction.param2 = 3;\r\n\t\t\t\tContext->ActionCtx.TempAction.param3 = 1;\r\n\t\t\t\tContext->ActionCtx.TempAction.param4 = 0x29;\r\n\t\t\t\tContext->ActionCtx.TempAction.param5 = 1;\r\n\t\t\t\tContext->ActionCtx.TempAction.param6 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param7 = 1;\r\n\t\t\t\tContext->ActionCtx.TempAction.param8 = 0;\r\n\t\t\t\t}\r\n\t\t\tbreak;",
+        "LineInFunctionBody": 4,
+        "Parameters": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "Assignments": [
+          "Context->ActionCtx.TempAction.param1 = 4;",
+          "Context->ActionCtx.TempAction.param2 = 3;",
+          "Context->ActionCtx.TempAction.param3 = 1;",
+          "Context->ActionCtx.TempAction.param4 = 0x29;",
+          "Context->ActionCtx.TempAction.param5 = 1;",
+          "Context->ActionCtx.TempAction.param6 = 0;",
+          "Context->ActionCtx.TempAction.param7 = 1;",
+          "Context->ActionCtx.TempAction.param8 = 0;"
+        ],
+        "Calls": [],
+        "DirectDialogCalls": []
+      },
+      "ParamsInit": {
+        "HasExplicitCase": true,
+        "Function": "Triggers_ActionDlgParamsInit",
+        "FunctionLine": 998,
+        "SharedCases": [
+          "ACTION_ADDCREATURE"
+        ],
+        "Body": "if (!Triggers_DisplayCreateCreaturesList(hDlg,400,&Context->ActionCtx.CreaturesList,Context->ActionCtx.TempAction.param1,FALSE,TRUE)) return;\r\n\t\t\tif (!Misc_CreateAreaComboBoxList(hDlg,311,TRUE)) return;\r\n\t\t\tif (!Misc_CreatePlayerComboBoxList(hDlg,303,1,FALSE)) return;\r\n\t\t\tif (!Misc_CreateLevelComboBoxList(hDlg,301,Context->ActionCtx.TempAction.param3)) return;\r\n\t\t\tContext->ActionCtx.Initialized[ACTION_ADDCREATURE] = TRUE;\r\n\t\t\tbreak;",
+        "LineInFunctionBody": 9,
+        "Parameters": [
+          1,
+          3
+        ],
+        "Assignments": [],
+        "Calls": [
+          {
+            "Name": "Triggers_DisplayCreateCreaturesList",
+            "Arguments": [
+              "hDlg",
+              "400",
+              "&Context->ActionCtx.CreaturesList",
+              "Context->ActionCtx.TempAction.param1",
+              "FALSE",
+              "TRUE"
+            ]
+          },
+          {
+            "Name": "Misc_CreateAreaComboBoxList",
+            "Arguments": [
+              "hDlg",
+              "311",
+              "TRUE"
+            ]
+          },
+          {
+            "Name": "Misc_CreatePlayerComboBoxList",
+            "Arguments": [
+              "hDlg",
+              "303",
+              "1",
+              "FALSE"
+            ]
+          },
+          {
+            "Name": "Misc_CreateLevelComboBoxList",
+            "Arguments": [
+              "hDlg",
+              "301",
+              "Context->ActionCtx.TempAction.param3"
+            ]
+          }
+        ],
+        "DirectDialogCalls": [
+          {
+            "Name": "Triggers_DisplayCreateCreaturesList",
+            "Arguments": [
+              "hDlg",
+              "400",
+              "&Context->ActionCtx.CreaturesList",
+              "Context->ActionCtx.TempAction.param1",
+              "FALSE",
+              "TRUE"
+            ]
+          },
+          {
+            "Name": "Misc_CreateAreaComboBoxList",
+            "Arguments": [
+              "hDlg",
+              "311",
+              "TRUE"
+            ]
+          },
+          {
+            "Name": "Misc_CreatePlayerComboBoxList",
+            "Arguments": [
+              "hDlg",
+              "303",
+              "1",
+              "FALSE"
+            ]
+          },
+          {
+            "Name": "Misc_CreateLevelComboBoxList",
+            "Arguments": [
+              "hDlg",
+              "301",
+              "Context->ActionCtx.TempAction.param3"
+            ]
+          }
+        ]
+      },
+      "ParamsCheck": {
+        "HasExplicitCase": true,
+        "Function": "Triggers_ActionDlgParamsCheck",
+        "FunctionLine": 1221,
+        "SharedCases": [
+          "ACTION_ADDCREATURE"
+        ],
+        "Body": "if (!Context->ActionCtx.Initialized[ACTION_ADDCREATURE]) goto Error_0;\r\n\t\t\tSendDlgItemMessage(hDlg,303,CB_SETCURSEL,(WPARAM)Context->ActionCtx.TempAction.param2-1,(LPARAM)0);\r\n\t\t\tSendDlgItemMessage(hDlg,301,CB_SETCURSEL,(WPARAM)Context->ActionCtx.TempAction.param3-1,(LPARAM)0);\r\n\t\t\tSetDlgItemInt(hDlg,307,Context->ActionCtx.TempAction.param5,FALSE);\r\n\t\t\tSetDlgItemInt(hDlg,309,Context->ActionCtx.TempAction.param7,FALSE);\r\n\t\t\tSendDlgItemMessage(hDlg,307,EM_LIMITTEXT,(WPARAM)3,(LPARAM)0);\r\n\t\t\tSendDlgItemMessage(hDlg,309,EM_LIMITTEXT,(WPARAM)3,(LPARAM)0);\r\n\t\t\tSendDlgItemMessage(hDlg,311,CB_SETCURSEL,(WPARAM)0,(LPARAM)0);\r\n\t\t\tbreak;",
+        "LineInFunctionBody": 4,
+        "Parameters": [
+          2,
+          3,
+          5,
+          7
+        ],
+        "Assignments": [],
+        "Calls": [
+          {
+            "Name": "SendDlgItemMessage",
+            "Arguments": [
+              "hDlg",
+              "303",
+              "CB_SETCURSEL",
+              "(WPARAM)Context->ActionCtx.TempAction.param2-1",
+              "(LPARAM)0"
+            ]
+          },
+          {
+            "Name": "SendDlgItemMessage",
+            "Arguments": [
+              "hDlg",
+              "301",
+              "CB_SETCURSEL",
+              "(WPARAM)Context->ActionCtx.TempAction.param3-1",
+              "(LPARAM)0"
+            ]
+          },
+          {
+            "Name": "SetDlgItemInt",
+            "Arguments": [
+              "hDlg",
+              "307",
+              "Context->ActionCtx.TempAction.param5",
+              "FALSE"
+            ]
+          },
+          {
+            "Name": "SetDlgItemInt",
+            "Arguments": [
+              "hDlg",
+              "309",
+              "Context->ActionCtx.TempAction.param7",
+              "FALSE"
+            ]
+          },
+          {
+            "Name": "SendDlgItemMessage",
+            "Arguments": [
+              "hDlg",
+              "307",
+              "EM_LIMITTEXT",
+              "(WPARAM)3",
+              "(LPARAM)0"
+            ]
+          },
+          {
+            "Name": "SendDlgItemMessage",
+            "Arguments": [
+              "hDlg",
+              "309",
+              "EM_LIMITTEXT",
+              "(WPARAM)3",
+              "(LPARAM)0"
+            ]
+          },
+          {
+            "Name": "SendDlgItemMessage",
+            "Arguments": [
+              "hDlg",
+              "311",
+              "CB_SETCURSEL",
+              "(WPARAM)0",
+              "(LPARAM)0"
+            ]
+          }
+        ],
+        "DirectDialogCalls": [
+          {
+            "Name": "SendDlgItemMessage",
+            "Arguments": [
+              "hDlg",
+              "303",
+              "CB_SETCURSEL",
+              "(WPARAM)Context->ActionCtx.TempAction.param2-1",
+              "(LPARAM)0"
+            ]
+          },
+          {
+            "Name": "SendDlgItemMessage",
+            "Arguments": [
+              "hDlg",
+              "301",
+              "CB_SETCURSEL",
+              "(WPARAM)Context->ActionCtx.TempAction.param3-1",
+              "(LPARAM)0"
+            ]
+          },
+          {
+            "Name": "SetDlgItemInt",
+            "Arguments": [
+              "hDlg",
+              "307",
+              "Context->ActionCtx.TempAction.param5",
+              "FALSE"
+            ]
+          },
+          {
+            "Name": "SetDlgItemInt",
+            "Arguments": [
+              "hDlg",
+              "309",
+              "Context->ActionCtx.TempAction.param7",
+              "FALSE"
+            ]
+          },
+          {
+            "Name": "SendDlgItemMessage",
+            "Arguments": [
+              "hDlg",
+              "307",
+              "EM_LIMITTEXT",
+              "(WPARAM)3",
+              "(LPARAM)0"
+            ]
+          },
+          {
+            "Name": "SendDlgItemMessage",
+            "Arguments": [
+              "hDlg",
+              "309",
+              "EM_LIMITTEXT",
+              "(WPARAM)3",
+              "(LPARAM)0"
+            ]
+          },
+          {
+            "Name": "SendDlgItemMessage",
+            "Arguments": [
+              "hDlg",
+              "311",
+              "CB_SETCURSEL",
+              "(WPARAM)0",
+              "(LPARAM)0"
+            ]
+          }
+        ]
+      },
+      "ParamsStore": {
+        "HasExplicitCase": true,
+        "Function": "Triggers_ActionDlgParamsStore",
+        "FunctionLine": 1627,
+        "SharedCases": [
+          "ACTION_ADDCREATURE"
+        ],
+        "Body": "Context->ActionCtx.TempAction.param1 = Triggers_TriggerDlgGetSelectedEntryParam(Context->ActionCtx.CreaturesList);\r\n\t\t\tif (Context->ActionCtx.TempAction.param1 == 0) goto NoCreatureSelected;\r\n\t\t\tContext->ActionCtx.TempAction.param2 = SendDlgItemMessage(hDlg,303,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)+1;\r\n\t\t\tContext->ActionCtx.TempAction.param3 = SendDlgItemMessage(hDlg,301,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)+1;\r\n\t\t\tContext->ActionCtx.TempAction.param5 = GetDlgItemInt(hDlg,307,NULL,FALSE);\r\n\t\t\tContext->ActionCtx.TempAction.param7 = GetDlgItemInt(hDlg,309,NULL,FALSE);\r\n\t\t\tResult = 1;\r\n\t\t\tbreak;",
+        "LineInFunctionBody": 6,
+        "Parameters": [
+          1,
+          2,
+          3,
+          5,
+          7
+        ],
+        "Assignments": [
+          "Context->ActionCtx.TempAction.param1 = Triggers_TriggerDlgGetSelectedEntryParam(Context->ActionCtx.CreaturesList);",
+          "Context->ActionCtx.TempAction.param2 = SendDlgItemMessage(hDlg,303,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)+1;",
+          "Context->ActionCtx.TempAction.param3 = SendDlgItemMessage(hDlg,301,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)+1;",
+          "Context->ActionCtx.TempAction.param5 = GetDlgItemInt(hDlg,307,NULL,FALSE);",
+          "Context->ActionCtx.TempAction.param7 = GetDlgItemInt(hDlg,309,NULL,FALSE);"
+        ],
+        "Calls": [
+          {
+            "Name": "Triggers_TriggerDlgGetSelectedEntryParam",
+            "Arguments": [
+              "Context->ActionCtx.CreaturesList"
+            ]
+          },
+          {
+            "Name": "SendDlgItemMessage",
+            "Arguments": [
+              "hDlg",
+              "303",
+              "CB_GETCURSEL",
+              "(WPARAM)0",
+              "(LPARAM)0"
+            ]
+          },
+          {
+            "Name": "SendDlgItemMessage",
+            "Arguments": [
+              "hDlg",
+              "301",
+              "CB_GETCURSEL",
+              "(WPARAM)0",
+              "(LPARAM)0"
+            ]
+          },
+          {
+            "Name": "GetDlgItemInt",
+            "Arguments": [
+              "hDlg",
+              "307",
+              "NULL",
+              "FALSE"
+            ]
+          },
+          {
+            "Name": "GetDlgItemInt",
+            "Arguments": [
+              "hDlg",
+              "309",
+              "NULL",
+              "FALSE"
+            ]
+          }
+        ],
+        "DirectDialogCalls": [
+          {
+            "Name": "SendDlgItemMessage",
+            "Arguments": [
+              "hDlg",
+              "303",
+              "CB_GETCURSEL",
+              "(WPARAM)0",
+              "(LPARAM)0"
+            ]
+          },
+          {
+            "Name": "SendDlgItemMessage",
+            "Arguments": [
+              "hDlg",
+              "301",
+              "CB_GETCURSEL",
+              "(WPARAM)0",
+              "(LPARAM)0"
+            ]
+          },
+          {
+            "Name": "GetDlgItemInt",
+            "Arguments": [
+              "hDlg",
+              "307",
+              "NULL",
+              "FALSE"
+            ]
+          },
+          {
+            "Name": "GetDlgItemInt",
+            "Arguments": [
+              "hDlg",
+              "309",
+              "NULL",
+              "FALSE"
+            ]
+          }
+        ]
+      },
+      "ParamsSave": {
+        "HasExplicitCase": false,
+        "Function": "Triggers_ActionDlgParamsSave",
+        "FunctionLine": 1915,
+        "DefaultBranch": null
+      }
+    }
+  },
+  "CreatureOptions": {
+    "Type": "ACTION_ADDCREATURE",
+    "Parameter": 4,
+    "ParentButtonID": 313,
+    "Mode": 3,
+    "ResourceID": 6111,
+    "Controls": [
+      {
+        "ControlID": 201,
+        "Bit": 1,
+        "CaptionSymbol": "DIALOG_OPTIONSCREATURE01",
+        "SourceCaption": "La créature peut attaquer",
+        "Enabled": true
+      },
+      {
+        "ControlID": 202,
+        "Bit": 8,
+        "CaptionSymbol": "DIALOG_OPTIONSCREATURE08",
+        "SourceCaption": "La créature peut être attaquée",
+        "Enabled": true
+      },
+      {
+        "ControlID": 203,
+        "Bit": 16,
+        "CaptionSymbol": "DIALOG_OPTIONSCREATURE10",
+        "SourceCaption": "La créature peut rejoindre l'antre des héros",
+        "Enabled": true
+      },
+      {
+        "ControlID": 204,
+        "Bit": 32,
+        "CaptionSymbol": "DIALOG_OPTIONSCREATURE20",
+        "SourceCaption": "La créature peut libérer ses alliés en prison",
+        "Enabled": true
+      },
+      {
+        "ControlID": 205,
+        "Bit": 64,
+        "CaptionSymbol": "DIALOG_OPTIONSCREATURE40",
+        "SourceCaption": "La créature est déposée à l'endroit indiqué",
+        "Enabled": false
+      },
+      {
+        "ControlID": 206,
+        "Bit": 128,
+        "CaptionSymbol": "DIALOG_OPTIONSCREATURE80",
+        "SourceCaption": "La créature apparaît assommée",
+        "Enabled": true
+      },
+      {
+        "ControlID": 207,
+        "Bit": 4,
+        "CaptionSymbol": "DIALOG_OPTIONSCREATURE04B",
+        "SourceCaption": "La créature meurt instantanément",
+        "Enabled": true
+      }
+    ],
+    "KnownMask": 253,
+    "EditableMask": 189,
+    "DisabledMask": 64,
+    "UnknownMask32": 4294967042,
+    "Resource": "6111 DIALOG 8, 8, 166, 82\nSTYLE DS_MODALFRAME|WS_BORDER|WS_VISIBLE|WS_CAPTION|WS_SYSMENU\nCLASS DIALOG_CLASS\nCAPTION DIALOG_CREATUREOPTIONS\nFONT 8, \"MS Sans Serif\"\n{\n\tAUTOCHECKBOX\tDIALOG_OPTIONSCREATURE01,\t201,   8,   6, 150, 10\n\tAUTOCHECKBOX\tDIALOG_OPTIONSCREATURE08,\t202,   8,  16, 150, 10\n\tAUTOCHECKBOX\tDIALOG_OPTIONSCREATURE10,\t203,   8,  26, 150, 10\n\tAUTOCHECKBOX\tDIALOG_OPTIONSCREATURE20,\t204,   8,  36, 150, 10\n\tAUTOCHECKBOX\tDIALOG_OPTIONSCREATURE40,\t205,   8,  46, 150, 10, WS_DISABLED\n\tAUTOCHECKBOX\tDIALOG_OPTIONSCREATURE80,\t206,   8,  56, 150, 10\n\tAUTOCHECKBOX\tDIALOG_OPTIONSCREATURE04B,\t207,   8,  66, 150, 10\n}",
+    "SourceSelect": {
+      "File": "Source/Sources/Things/Things_Selection.c",
+      "Line": 737,
+      "Body": "\r\n\tMAPTHINGOPTIONSCTX\tContext;\r\n\tint\t\t\tResID;\r\n\tint\t\t\tResult;\r\n\r\n\tswitch(Mode)\r\n\t\t{\r\n\t\tcase THING_OPTIONSCREATURES:\r\n\t\t\tResID = 6110;\r\n\t\t\tbreak;\r\n\t\tcase THING_OPTIONSHEROS:\r\n\t\t\tResID = 6120;\r\n\t\t\tbreak;\r\n\t\tcase THING_OPTIONSBANDS:\r\n\t\t\tResID = 6130;\r\n\t\t\tbreak;\r\n\t\tcase THING_OPTIONSADD:\r\n\t\t\tResID = 6111;\r\n\t\t\tbreak;\r\n\t\t}\r\n\r\n\tContext.CreatureOptions = CreatureOptions;\r\n\tContext.HerosOptions = HerosOptions;\r\n\tContext.Mode = Mode;\r\n\r\n\tResult = DialogBoxParam(hInstance,MAKEINTRESOURCE(ResID),hDlg,Things_SelectOptionsProc,(LPARAM)&Context);\r\n\tif (Result == -1) Misc_PrintError(hDlg,szDialogErr,NULL,MB_ICONHAND);\r\n\r\n\treturn;\r\n",
+      "Calls": [
+        {
+          "Name": "DialogBoxParam",
+          "Arguments": [
+            "hInstance",
+            "MAKEINTRESOURCE(ResID)",
+            "hDlg",
+            "Things_SelectOptionsProc",
+            "(LPARAM)&Context"
+          ]
+        },
+        {
+          "Name": "MAKEINTRESOURCE",
+          "Arguments": [
+            "ResID"
+          ]
+        },
+        {
+          "Name": "Misc_PrintError",
+          "Arguments": [
+            "hDlg",
+            "szDialogErr",
+            "NULL",
+            "MB_ICONHAND"
+          ]
+        }
+      ]
+    },
+    "SourceProc": {
+      "File": "Source/Sources/Things/Things_Selection.c",
+      "Line": 772,
+      "Body": "\r\n\tMAPTHINGOPTIONSCTX\t*Context;\r\n\r\n\tif (uMsgId == WM_INITDIALOG)\r\n\t\t{\r\n\t\tLONG\tX,Y;\r\n\r\n\t\tContext = (MAPTHINGOPTIONSCTX *)lParam;\r\n\t\tWindow_UnderCursor(hDlg,&X,&Y);\r\n\t\tSetWindowPos(hDlg,NULL,X,Y,0,0,SWP_NOZORDER|SWP_NOSIZE);\r\n\t\tSetWindowLong(hDlg,DWL_USER,(LONG)lParam);\r\n\r\n\t\tif ((Context->Mode == THING_OPTIONSCREATURES)||(Context->Mode == THING_OPTIONSBANDS)||(Context->Mode == THING_OPTIONSADD))\r\n\t\t\t{\r\n\t\t\tif (Context->Mode == THING_OPTIONSBANDS)\r\n\t\t\t\t{\r\n\t\t\t\tif      (*Context->CreatureOptions&0x02) CheckDlgButton(hDlg,200,BST_CHECKED);\r\n\t\t\t\telse if (*Context->CreatureOptions&0x04) CheckDlgButton(hDlg,207,BST_CHECKED);\r\n\t\t\t\telse\t\t\t\t\t CheckDlgButton(hDlg,208,BST_CHECKED);\r\n\t\t\t\t}\r\n\t\t\tif (Context->Mode == THING_OPTIONSADD)\r\n\t\t\t\t{\r\n\t\t\t\tif\t(*Context->CreatureOptions&0x04) CheckDlgButton(hDlg,207,BST_CHECKED);\r\n\t\t\t\t}\r\n\t\t\tif (*Context->CreatureOptions&0x01) CheckDlgButton(hDlg,201,BST_CHECKED);\r\n\t\t\tif (*Context->CreatureOptions&0x08) CheckDlgButton(hDlg,202,BST_CHECKED);\r\n\t\t\tif (*Context->CreatureOptions&0x10) CheckDlgButton(hDlg,203,BST_CHECKED);\r\n\t\t\tif (*Context->CreatureOptions&0x20) CheckDlgButton(hDlg,204,BST_CHECKED);\r\n\t\t\tif ((Context->Mode == THING_OPTIONSCREATURES)||(Context->Mode == THING_OPTIONSADD))\r\n\t\t\t\t{\r\n\t\t\t\tif (*Context->CreatureOptions&0x40) CheckDlgButton(hDlg,205,BST_CHECKED);\r\n\t\t\t\tif (*Context->CreatureOptions&0x80) CheckDlgButton(hDlg,206,BST_CHECKED);\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\tif ((Context->Mode == THING_OPTIONSHEROS)||(Context->Mode == THING_OPTIONSBANDS))\r\n\t\t\t{\r\n\t\t\tif (*Context->HerosOptions&0x01) CheckDlgButton(hDlg,300,BST_CHECKED);\r\n\t\t\tif (*Context->HerosOptions&0x04) CheckDlgButton(hDlg,301,BST_CHECKED);\r\n\t\t\tif (*Context->HerosOptions&0x02) CheckDlgButton(hDlg,302,BST_CHECKED);\r\n\t\t\tif (*Context->HerosOptions&0x08) CheckDlgButton(hDlg,303,BST_CHECKED);\r\n\t\t\t}\r\n\r\n\t\treturn(TRUE);\r\n\t\t}\r\n\r\n\tContext = (MAPTHINGOPTIONSCTX *)GetWindowLong(hDlg,DWL_USER);\r\n\tif (!Context) return(FALSE);\r\n\r\n\tswitch(uMsgId)\r\n\t\t{\r\n\t\tcase WM_COMMAND:\r\n\t\t\tswitch(HIWORD(wParam))\r\n\t\t\t\t{\r\n\t\t\t\tcase BN_CLICKED:\r\n\t\t\t\t\tswitch(LOWORD(wParam))\r\n\t\t\t\t\t\t{\r\n\t\t\t\t\t\tcase IDOK:\r\n\t\t\t\t\t\tcase IDCANCEL:\r\n\t\t\t\t\t\t\tif ((Context->Mode == THING_OPTIONSCREATURES)||(Context->Mode == THING_OPTIONSBANDS)||(Context->Mode == THING_OPTIONSADD))\r\n\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t*Context->CreatureOptions = 0x00;\r\n\t\t\t\t\t\t\t\tif (Context->Mode == THING_OPTIONSBANDS)\r\n\t\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\tif      (IsDlgButtonChecked(hDlg,200) == BST_CHECKED) *Context->CreatureOptions |= 0x02;\r\n\t\t\t\t\t\t\t\t\telse if (IsDlgButtonChecked(hDlg,207) == BST_CHECKED) *Context->CreatureOptions |= 0x04;\r\n\t\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\t\tif (Context->Mode == THING_OPTIONSADD)\r\n\t\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\tif\t(IsDlgButtonChecked(hDlg,207) == BST_CHECKED) *Context->CreatureOptions |= 0x04;\r\n\t\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\t\tif (IsDlgButtonChecked(hDlg,201) == BST_CHECKED) *Context->CreatureOptions |= 0x01;\r\n\t\t\t\t\t\t\t\tif (IsDlgButtonChecked(hDlg,202) == BST_CHECKED) *Context->CreatureOptions |= 0x08;\r\n\t\t\t\t\t\t\t\tif (IsDlgButtonChecked(hDlg,203) == BST_CHECKED) *Context->CreatureOptions |= 0x10;\r\n\t\t\t\t\t\t\t\tif (IsDlgButtonChecked(hDlg,204) == BST_CHECKED) *Context->CreatureOptions |= 0x20;\r\n\t\t\t\t\t\t\t\tif ((Context->Mode == THING_OPTIONSCREATURES)||(Context->Mode == THING_OPTIONSADD))\r\n\t\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\tif (IsDlgButtonChecked(hDlg,205) == BST_CHECKED) *Context->CreatureOptions |= 0x40;\r\n\t\t\t\t\t\t\t\t\tif (IsDlgButtonChecked(hDlg,206) == BST_CHECKED) *Context->CreatureOptions |= 0x80;\r\n\t\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\tif ((Context->Mode == THING_OPTIONSHEROS)||(Context->Mode == THING_OPTIONSBANDS))\r\n\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t*Context->HerosOptions = 0x00;\r\n\t\t\t\t\t\t\t\tif (IsDlgButtonChecked(hDlg,300) == BST_CHECKED) *Context->HerosOptions |= 0x01;\r\n\t\t\t\t\t\t\t\tif (IsDlgButtonChecked(hDlg,301) == BST_CHECKED) *Context->HerosOptions |= 0x04;\r\n\t\t\t\t\t\t\t\tif (IsDlgButtonChecked(hDlg,302) == BST_CHECKED) *Context->HerosOptions |= 0x02;\r\n\t\t\t\t\t\t\t\tif (IsDlgButtonChecked(hDlg,303) == BST_CHECKED) *Context->HerosOptions |= 0x08;\r\n\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\tEndDialog(hDlg,1);\r\n\t\t\t\t\t\t\tbreak;\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\treturn(TRUE);\r\n\t\t\t\t}\r\n\t\t\tbreak;\r\n\t\t}\r\n\r\n\treturn(FALSE);\r\n",
+      "Calls": [
+        {
+          "Name": "Window_UnderCursor",
+          "Arguments": [
+            "hDlg",
+            "&X",
+            "&Y"
+          ]
+        },
+        {
+          "Name": "SetWindowPos",
+          "Arguments": [
+            "hDlg",
+            "NULL",
+            "X",
+            "Y",
+            "0",
+            "0",
+            "SWP_NOZORDER|SWP_NOSIZE"
+          ]
+        },
+        {
+          "Name": "SetWindowLong",
+          "Arguments": [
+            "hDlg",
+            "DWL_USER",
+            "(LONG)lParam"
+          ]
+        },
+        {
+          "Name": "CheckDlgButton",
+          "Arguments": [
+            "hDlg",
+            "200",
+            "BST_CHECKED"
+          ]
+        },
+        {
+          "Name": "CheckDlgButton",
+          "Arguments": [
+            "hDlg",
+            "207",
+            "BST_CHECKED"
+          ]
+        },
+        {
+          "Name": "CheckDlgButton",
+          "Arguments": [
+            "hDlg",
+            "208",
+            "BST_CHECKED"
+          ]
+        },
+        {
+          "Name": "CheckDlgButton",
+          "Arguments": [
+            "hDlg",
+            "207",
+            "BST_CHECKED"
+          ]
+        },
+        {
+          "Name": "CheckDlgButton",
+          "Arguments": [
+            "hDlg",
+            "201",
+            "BST_CHECKED"
+          ]
+        },
+        {
+          "Name": "CheckDlgButton",
+          "Arguments": [
+            "hDlg",
+            "202",
+            "BST_CHECKED"
+          ]
+        },
+        {
+          "Name": "CheckDlgButton",
+          "Arguments": [
+            "hDlg",
+            "203",
+            "BST_CHECKED"
+          ]
+        },
+        {
+          "Name": "CheckDlgButton",
+          "Arguments": [
+            "hDlg",
+            "204",
+            "BST_CHECKED"
+          ]
+        },
+        {
+          "Name": "CheckDlgButton",
+          "Arguments": [
+            "hDlg",
+            "205",
+            "BST_CHECKED"
+          ]
+        },
+        {
+          "Name": "CheckDlgButton",
+          "Arguments": [
+            "hDlg",
+            "206",
+            "BST_CHECKED"
+          ]
+        },
+        {
+          "Name": "CheckDlgButton",
+          "Arguments": [
+            "hDlg",
+            "300",
+            "BST_CHECKED"
+          ]
+        },
+        {
+          "Name": "CheckDlgButton",
+          "Arguments": [
+            "hDlg",
+            "301",
+            "BST_CHECKED"
+          ]
+        },
+        {
+          "Name": "CheckDlgButton",
+          "Arguments": [
+            "hDlg",
+            "302",
+            "BST_CHECKED"
+          ]
+        },
+        {
+          "Name": "CheckDlgButton",
+          "Arguments": [
+            "hDlg",
+            "303",
+            "BST_CHECKED"
+          ]
+        },
+        {
+          "Name": "return",
+          "Arguments": [
+            "TRUE"
+          ]
+        },
+        {
+          "Name": "GetWindowLong",
+          "Arguments": [
+            "hDlg",
+            "DWL_USER"
+          ]
+        },
+        {
+          "Name": "return",
+          "Arguments": [
+            "FALSE"
+          ]
+        },
+        {
+          "Name": "HIWORD",
+          "Arguments": [
+            "wParam"
+          ]
+        },
+        {
+          "Name": "LOWORD",
+          "Arguments": [
+            "wParam"
+          ]
+        },
+        {
+          "Name": "IsDlgButtonChecked",
+          "Arguments": [
+            "hDlg",
+            "200"
+          ]
+        },
+        {
+          "Name": "IsDlgButtonChecked",
+          "Arguments": [
+            "hDlg",
+            "207"
+          ]
+        },
+        {
+          "Name": "IsDlgButtonChecked",
+          "Arguments": [
+            "hDlg",
+            "207"
+          ]
+        },
+        {
+          "Name": "IsDlgButtonChecked",
+          "Arguments": [
+            "hDlg",
+            "201"
+          ]
+        },
+        {
+          "Name": "IsDlgButtonChecked",
+          "Arguments": [
+            "hDlg",
+            "202"
+          ]
+        },
+        {
+          "Name": "IsDlgButtonChecked",
+          "Arguments": [
+            "hDlg",
+            "203"
+          ]
+        },
+        {
+          "Name": "IsDlgButtonChecked",
+          "Arguments": [
+            "hDlg",
+            "204"
+          ]
+        },
+        {
+          "Name": "IsDlgButtonChecked",
+          "Arguments": [
+            "hDlg",
+            "205"
+          ]
+        },
+        {
+          "Name": "IsDlgButtonChecked",
+          "Arguments": [
+            "hDlg",
+            "206"
+          ]
+        },
+        {
+          "Name": "IsDlgButtonChecked",
+          "Arguments": [
+            "hDlg",
+            "300"
+          ]
+        },
+        {
+          "Name": "IsDlgButtonChecked",
+          "Arguments": [
+            "hDlg",
+            "301"
+          ]
+        },
+        {
+          "Name": "IsDlgButtonChecked",
+          "Arguments": [
+            "hDlg",
+            "302"
+          ]
+        },
+        {
+          "Name": "IsDlgButtonChecked",
+          "Arguments": [
+            "hDlg",
+            "303"
+          ]
+        },
+        {
+          "Name": "EndDialog",
+          "Arguments": [
+            "hDlg",
+            "1"
+          ]
+        },
+        {
+          "Name": "return",
+          "Arguments": [
+            "TRUE"
+          ]
+        },
+        {
+          "Name": "return",
+          "Arguments": [
+            "FALSE"
+          ]
+        }
+      ]
+    },
+    "OriginalCancelCommitsAndClearsUnknownBits": true,
+    "RequiredModernBehavior": "Child Apply updates only parent private draft; child/outer Cancel discard; explicit flags replace editable bits only, preserving disabled/unknown bits"
+  },
+  "CompoundSourceOracle": {
+    "Scope": "Original nested ADD flags, three coordinate page encodings and creation-only rectangle expansion; implementation acceptance pending",
+    "CreatureOptions": {
+      "Type": "ACTION_ADDCREATURE",
+      "Parameter": 4,
+      "ParentButtonID": 313,
+      "Mode": 3,
+      "ResourceID": 6111,
+      "Controls": [
+        {
+          "ControlID": 201,
+          "Bit": 1,
+          "CaptionSymbol": "DIALOG_OPTIONSCREATURE01",
+          "SourceCaption": "La créature peut attaquer",
+          "Enabled": true
+        },
+        {
+          "ControlID": 202,
+          "Bit": 8,
+          "CaptionSymbol": "DIALOG_OPTIONSCREATURE08",
+          "SourceCaption": "La créature peut être attaquée",
+          "Enabled": true
+        },
+        {
+          "ControlID": 203,
+          "Bit": 16,
+          "CaptionSymbol": "DIALOG_OPTIONSCREATURE10",
+          "SourceCaption": "La créature peut rejoindre l'antre des héros",
+          "Enabled": true
+        },
+        {
+          "ControlID": 204,
+          "Bit": 32,
+          "CaptionSymbol": "DIALOG_OPTIONSCREATURE20",
+          "SourceCaption": "La créature peut libérer ses alliés en prison",
+          "Enabled": true
+        },
+        {
+          "ControlID": 205,
+          "Bit": 64,
+          "CaptionSymbol": "DIALOG_OPTIONSCREATURE40",
+          "SourceCaption": "La créature est déposée à l'endroit indiqué",
+          "Enabled": false
+        },
+        {
+          "ControlID": 206,
+          "Bit": 128,
+          "CaptionSymbol": "DIALOG_OPTIONSCREATURE80",
+          "SourceCaption": "La créature apparaît assommée",
+          "Enabled": true
+        },
+        {
+          "ControlID": 207,
+          "Bit": 4,
+          "CaptionSymbol": "DIALOG_OPTIONSCREATURE04B",
+          "SourceCaption": "La créature meurt instantanément",
+          "Enabled": true
+        }
+      ],
+      "KnownMask": 253,
+      "EditableMask": 189,
+      "DisabledMask": 64,
+      "UnknownMask32": 4294967042,
+      "Resource": "6111 DIALOG 8, 8, 166, 82\nSTYLE DS_MODALFRAME|WS_BORDER|WS_VISIBLE|WS_CAPTION|WS_SYSMENU\nCLASS DIALOG_CLASS\nCAPTION DIALOG_CREATUREOPTIONS\nFONT 8, \"MS Sans Serif\"\n{\n\tAUTOCHECKBOX\tDIALOG_OPTIONSCREATURE01,\t201,   8,   6, 150, 10\n\tAUTOCHECKBOX\tDIALOG_OPTIONSCREATURE08,\t202,   8,  16, 150, 10\n\tAUTOCHECKBOX\tDIALOG_OPTIONSCREATURE10,\t203,   8,  26, 150, 10\n\tAUTOCHECKBOX\tDIALOG_OPTIONSCREATURE20,\t204,   8,  36, 150, 10\n\tAUTOCHECKBOX\tDIALOG_OPTIONSCREATURE40,\t205,   8,  46, 150, 10, WS_DISABLED\n\tAUTOCHECKBOX\tDIALOG_OPTIONSCREATURE80,\t206,   8,  56, 150, 10\n\tAUTOCHECKBOX\tDIALOG_OPTIONSCREATURE04B,\t207,   8,  66, 150, 10\n}",
+      "SourceSelect": {
+        "File": "Source/Sources/Things/Things_Selection.c",
+        "Line": 737,
+        "Body": "\r\n\tMAPTHINGOPTIONSCTX\tContext;\r\n\tint\t\t\tResID;\r\n\tint\t\t\tResult;\r\n\r\n\tswitch(Mode)\r\n\t\t{\r\n\t\tcase THING_OPTIONSCREATURES:\r\n\t\t\tResID = 6110;\r\n\t\t\tbreak;\r\n\t\tcase THING_OPTIONSHEROS:\r\n\t\t\tResID = 6120;\r\n\t\t\tbreak;\r\n\t\tcase THING_OPTIONSBANDS:\r\n\t\t\tResID = 6130;\r\n\t\t\tbreak;\r\n\t\tcase THING_OPTIONSADD:\r\n\t\t\tResID = 6111;\r\n\t\t\tbreak;\r\n\t\t}\r\n\r\n\tContext.CreatureOptions = CreatureOptions;\r\n\tContext.HerosOptions = HerosOptions;\r\n\tContext.Mode = Mode;\r\n\r\n\tResult = DialogBoxParam(hInstance,MAKEINTRESOURCE(ResID),hDlg,Things_SelectOptionsProc,(LPARAM)&Context);\r\n\tif (Result == -1) Misc_PrintError(hDlg,szDialogErr,NULL,MB_ICONHAND);\r\n\r\n\treturn;\r\n",
+        "Calls": [
+          {
+            "Name": "DialogBoxParam",
+            "Arguments": [
+              "hInstance",
+              "MAKEINTRESOURCE(ResID)",
+              "hDlg",
+              "Things_SelectOptionsProc",
+              "(LPARAM)&Context"
+            ]
+          },
+          {
+            "Name": "MAKEINTRESOURCE",
+            "Arguments": [
+              "ResID"
+            ]
+          },
+          {
+            "Name": "Misc_PrintError",
+            "Arguments": [
+              "hDlg",
+              "szDialogErr",
+              "NULL",
+              "MB_ICONHAND"
+            ]
+          }
+        ]
+      },
+      "SourceProc": {
+        "File": "Source/Sources/Things/Things_Selection.c",
+        "Line": 772,
+        "Body": "\r\n\tMAPTHINGOPTIONSCTX\t*Context;\r\n\r\n\tif (uMsgId == WM_INITDIALOG)\r\n\t\t{\r\n\t\tLONG\tX,Y;\r\n\r\n\t\tContext = (MAPTHINGOPTIONSCTX *)lParam;\r\n\t\tWindow_UnderCursor(hDlg,&X,&Y);\r\n\t\tSetWindowPos(hDlg,NULL,X,Y,0,0,SWP_NOZORDER|SWP_NOSIZE);\r\n\t\tSetWindowLong(hDlg,DWL_USER,(LONG)lParam);\r\n\r\n\t\tif ((Context->Mode == THING_OPTIONSCREATURES)||(Context->Mode == THING_OPTIONSBANDS)||(Context->Mode == THING_OPTIONSADD))\r\n\t\t\t{\r\n\t\t\tif (Context->Mode == THING_OPTIONSBANDS)\r\n\t\t\t\t{\r\n\t\t\t\tif      (*Context->CreatureOptions&0x02) CheckDlgButton(hDlg,200,BST_CHECKED);\r\n\t\t\t\telse if (*Context->CreatureOptions&0x04) CheckDlgButton(hDlg,207,BST_CHECKED);\r\n\t\t\t\telse\t\t\t\t\t CheckDlgButton(hDlg,208,BST_CHECKED);\r\n\t\t\t\t}\r\n\t\t\tif (Context->Mode == THING_OPTIONSADD)\r\n\t\t\t\t{\r\n\t\t\t\tif\t(*Context->CreatureOptions&0x04) CheckDlgButton(hDlg,207,BST_CHECKED);\r\n\t\t\t\t}\r\n\t\t\tif (*Context->CreatureOptions&0x01) CheckDlgButton(hDlg,201,BST_CHECKED);\r\n\t\t\tif (*Context->CreatureOptions&0x08) CheckDlgButton(hDlg,202,BST_CHECKED);\r\n\t\t\tif (*Context->CreatureOptions&0x10) CheckDlgButton(hDlg,203,BST_CHECKED);\r\n\t\t\tif (*Context->CreatureOptions&0x20) CheckDlgButton(hDlg,204,BST_CHECKED);\r\n\t\t\tif ((Context->Mode == THING_OPTIONSCREATURES)||(Context->Mode == THING_OPTIONSADD))\r\n\t\t\t\t{\r\n\t\t\t\tif (*Context->CreatureOptions&0x40) CheckDlgButton(hDlg,205,BST_CHECKED);\r\n\t\t\t\tif (*Context->CreatureOptions&0x80) CheckDlgButton(hDlg,206,BST_CHECKED);\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\tif ((Context->Mode == THING_OPTIONSHEROS)||(Context->Mode == THING_OPTIONSBANDS))\r\n\t\t\t{\r\n\t\t\tif (*Context->HerosOptions&0x01) CheckDlgButton(hDlg,300,BST_CHECKED);\r\n\t\t\tif (*Context->HerosOptions&0x04) CheckDlgButton(hDlg,301,BST_CHECKED);\r\n\t\t\tif (*Context->HerosOptions&0x02) CheckDlgButton(hDlg,302,BST_CHECKED);\r\n\t\t\tif (*Context->HerosOptions&0x08) CheckDlgButton(hDlg,303,BST_CHECKED);\r\n\t\t\t}\r\n\r\n\t\treturn(TRUE);\r\n\t\t}\r\n\r\n\tContext = (MAPTHINGOPTIONSCTX *)GetWindowLong(hDlg,DWL_USER);\r\n\tif (!Context) return(FALSE);\r\n\r\n\tswitch(uMsgId)\r\n\t\t{\r\n\t\tcase WM_COMMAND:\r\n\t\t\tswitch(HIWORD(wParam))\r\n\t\t\t\t{\r\n\t\t\t\tcase BN_CLICKED:\r\n\t\t\t\t\tswitch(LOWORD(wParam))\r\n\t\t\t\t\t\t{\r\n\t\t\t\t\t\tcase IDOK:\r\n\t\t\t\t\t\tcase IDCANCEL:\r\n\t\t\t\t\t\t\tif ((Context->Mode == THING_OPTIONSCREATURES)||(Context->Mode == THING_OPTIONSBANDS)||(Context->Mode == THING_OPTIONSADD))\r\n\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t*Context->CreatureOptions = 0x00;\r\n\t\t\t\t\t\t\t\tif (Context->Mode == THING_OPTIONSBANDS)\r\n\t\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\tif      (IsDlgButtonChecked(hDlg,200) == BST_CHECKED) *Context->CreatureOptions |= 0x02;\r\n\t\t\t\t\t\t\t\t\telse if (IsDlgButtonChecked(hDlg,207) == BST_CHECKED) *Context->CreatureOptions |= 0x04;\r\n\t\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\t\tif (Context->Mode == THING_OPTIONSADD)\r\n\t\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\tif\t(IsDlgButtonChecked(hDlg,207) == BST_CHECKED) *Context->CreatureOptions |= 0x04;\r\n\t\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\t\tif (IsDlgButtonChecked(hDlg,201) == BST_CHECKED) *Context->CreatureOptions |= 0x01;\r\n\t\t\t\t\t\t\t\tif (IsDlgButtonChecked(hDlg,202) == BST_CHECKED) *Context->CreatureOptions |= 0x08;\r\n\t\t\t\t\t\t\t\tif (IsDlgButtonChecked(hDlg,203) == BST_CHECKED) *Context->CreatureOptions |= 0x10;\r\n\t\t\t\t\t\t\t\tif (IsDlgButtonChecked(hDlg,204) == BST_CHECKED) *Context->CreatureOptions |= 0x20;\r\n\t\t\t\t\t\t\t\tif ((Context->Mode == THING_OPTIONSCREATURES)||(Context->Mode == THING_OPTIONSADD))\r\n\t\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\tif (IsDlgButtonChecked(hDlg,205) == BST_CHECKED) *Context->CreatureOptions |= 0x40;\r\n\t\t\t\t\t\t\t\t\tif (IsDlgButtonChecked(hDlg,206) == BST_CHECKED) *Context->CreatureOptions |= 0x80;\r\n\t\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\tif ((Context->Mode == THING_OPTIONSHEROS)||(Context->Mode == THING_OPTIONSBANDS))\r\n\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t*Context->HerosOptions = 0x00;\r\n\t\t\t\t\t\t\t\tif (IsDlgButtonChecked(hDlg,300) == BST_CHECKED) *Context->HerosOptions |= 0x01;\r\n\t\t\t\t\t\t\t\tif (IsDlgButtonChecked(hDlg,301) == BST_CHECKED) *Context->HerosOptions |= 0x04;\r\n\t\t\t\t\t\t\t\tif (IsDlgButtonChecked(hDlg,302) == BST_CHECKED) *Context->HerosOptions |= 0x02;\r\n\t\t\t\t\t\t\t\tif (IsDlgButtonChecked(hDlg,303) == BST_CHECKED) *Context->HerosOptions |= 0x08;\r\n\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\tEndDialog(hDlg,1);\r\n\t\t\t\t\t\t\tbreak;\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\treturn(TRUE);\r\n\t\t\t\t}\r\n\t\t\tbreak;\r\n\t\t}\r\n\r\n\treturn(FALSE);\r\n",
+        "Calls": [
+          {
+            "Name": "Window_UnderCursor",
+            "Arguments": [
+              "hDlg",
+              "&X",
+              "&Y"
+            ]
+          },
+          {
+            "Name": "SetWindowPos",
+            "Arguments": [
+              "hDlg",
+              "NULL",
+              "X",
+              "Y",
+              "0",
+              "0",
+              "SWP_NOZORDER|SWP_NOSIZE"
+            ]
+          },
+          {
+            "Name": "SetWindowLong",
+            "Arguments": [
+              "hDlg",
+              "DWL_USER",
+              "(LONG)lParam"
+            ]
+          },
+          {
+            "Name": "CheckDlgButton",
+            "Arguments": [
+              "hDlg",
+              "200",
+              "BST_CHECKED"
+            ]
+          },
+          {
+            "Name": "CheckDlgButton",
+            "Arguments": [
+              "hDlg",
+              "207",
+              "BST_CHECKED"
+            ]
+          },
+          {
+            "Name": "CheckDlgButton",
+            "Arguments": [
+              "hDlg",
+              "208",
+              "BST_CHECKED"
+            ]
+          },
+          {
+            "Name": "CheckDlgButton",
+            "Arguments": [
+              "hDlg",
+              "207",
+              "BST_CHECKED"
+            ]
+          },
+          {
+            "Name": "CheckDlgButton",
+            "Arguments": [
+              "hDlg",
+              "201",
+              "BST_CHECKED"
+            ]
+          },
+          {
+            "Name": "CheckDlgButton",
+            "Arguments": [
+              "hDlg",
+              "202",
+              "BST_CHECKED"
+            ]
+          },
+          {
+            "Name": "CheckDlgButton",
+            "Arguments": [
+              "hDlg",
+              "203",
+              "BST_CHECKED"
+            ]
+          },
+          {
+            "Name": "CheckDlgButton",
+            "Arguments": [
+              "hDlg",
+              "204",
+              "BST_CHECKED"
+            ]
+          },
+          {
+            "Name": "CheckDlgButton",
+            "Arguments": [
+              "hDlg",
+              "205",
+              "BST_CHECKED"
+            ]
+          },
+          {
+            "Name": "CheckDlgButton",
+            "Arguments": [
+              "hDlg",
+              "206",
+              "BST_CHECKED"
+            ]
+          },
+          {
+            "Name": "CheckDlgButton",
+            "Arguments": [
+              "hDlg",
+              "300",
+              "BST_CHECKED"
+            ]
+          },
+          {
+            "Name": "CheckDlgButton",
+            "Arguments": [
+              "hDlg",
+              "301",
+              "BST_CHECKED"
+            ]
+          },
+          {
+            "Name": "CheckDlgButton",
+            "Arguments": [
+              "hDlg",
+              "302",
+              "BST_CHECKED"
+            ]
+          },
+          {
+            "Name": "CheckDlgButton",
+            "Arguments": [
+              "hDlg",
+              "303",
+              "BST_CHECKED"
+            ]
+          },
+          {
+            "Name": "return",
+            "Arguments": [
+              "TRUE"
+            ]
+          },
+          {
+            "Name": "GetWindowLong",
+            "Arguments": [
+              "hDlg",
+              "DWL_USER"
+            ]
+          },
+          {
+            "Name": "return",
+            "Arguments": [
+              "FALSE"
+            ]
+          },
+          {
+            "Name": "HIWORD",
+            "Arguments": [
+              "wParam"
+            ]
+          },
+          {
+            "Name": "LOWORD",
+            "Arguments": [
+              "wParam"
+            ]
+          },
+          {
+            "Name": "IsDlgButtonChecked",
+            "Arguments": [
+              "hDlg",
+              "200"
+            ]
+          },
+          {
+            "Name": "IsDlgButtonChecked",
+            "Arguments": [
+              "hDlg",
+              "207"
+            ]
+          },
+          {
+            "Name": "IsDlgButtonChecked",
+            "Arguments": [
+              "hDlg",
+              "207"
+            ]
+          },
+          {
+            "Name": "IsDlgButtonChecked",
+            "Arguments": [
+              "hDlg",
+              "201"
+            ]
+          },
+          {
+            "Name": "IsDlgButtonChecked",
+            "Arguments": [
+              "hDlg",
+              "202"
+            ]
+          },
+          {
+            "Name": "IsDlgButtonChecked",
+            "Arguments": [
+              "hDlg",
+              "203"
+            ]
+          },
+          {
+            "Name": "IsDlgButtonChecked",
+            "Arguments": [
+              "hDlg",
+              "204"
+            ]
+          },
+          {
+            "Name": "IsDlgButtonChecked",
+            "Arguments": [
+              "hDlg",
+              "205"
+            ]
+          },
+          {
+            "Name": "IsDlgButtonChecked",
+            "Arguments": [
+              "hDlg",
+              "206"
+            ]
+          },
+          {
+            "Name": "IsDlgButtonChecked",
+            "Arguments": [
+              "hDlg",
+              "300"
+            ]
+          },
+          {
+            "Name": "IsDlgButtonChecked",
+            "Arguments": [
+              "hDlg",
+              "301"
+            ]
+          },
+          {
+            "Name": "IsDlgButtonChecked",
+            "Arguments": [
+              "hDlg",
+              "302"
+            ]
+          },
+          {
+            "Name": "IsDlgButtonChecked",
+            "Arguments": [
+              "hDlg",
+              "303"
+            ]
+          },
+          {
+            "Name": "EndDialog",
+            "Arguments": [
+              "hDlg",
+              "1"
+            ]
+          },
+          {
+            "Name": "return",
+            "Arguments": [
+              "TRUE"
+            ]
+          },
+          {
+            "Name": "return",
+            "Arguments": [
+              "FALSE"
+            ]
+          }
+        ]
+      },
+      "OriginalCancelCommitsAndClearsUnknownBits": true,
+      "RequiredModernBehavior": "Child Apply updates only parent private draft; child/outer Cancel discard; explicit flags replace editable bits only, preserving disabled/unknown bits"
+    },
+    "CoordinatePages": [
+      {
+        "Type": "ACTION_ADDCREATURE",
+        "PageID": 7203,
+        "DisplayToStoredOffset": 0,
+        "X": {
+          "ControlID": 307,
+          "Parameter": 5,
+          "DisplayMaximum": 999
+        },
+        "Y": {
+          "ControlID": 309,
+          "Parameter": 7,
+          "DisplayMaximum": 999
+        },
+        "AreaControlID": 311,
+        "AreaStoresID": false,
+        "AreaPoint": "Normalized top-left",
+        "RectangleExpansionWhenCreating": false,
+        "Sections": {
+          "SetDefault": {
+            "HasExplicitCase": true,
+            "Function": "Triggers_ActionDlgSetDefault",
+            "FunctionLine": 360,
+            "SharedCases": [
+              "ACTION_ADDCREATURE"
+            ],
+            "Body": "if (Context->ActionCtx.TempAction.ctrl != NewCtrl)\r\n\t\t\t\t{\r\n\t\t\t\tContext->ActionCtx.TempAction.param1 = 4;\r\n\t\t\t\tContext->ActionCtx.TempAction.param2 = 3;\r\n\t\t\t\tContext->ActionCtx.TempAction.param3 = 1;\r\n\t\t\t\tContext->ActionCtx.TempAction.param4 = 0x29;\r\n\t\t\t\tContext->ActionCtx.TempAction.param5 = 1;\r\n\t\t\t\tContext->ActionCtx.TempAction.param6 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param7 = 1;\r\n\t\t\t\tContext->ActionCtx.TempAction.param8 = 0;\r\n\t\t\t\t}\r\n\t\t\tbreak;",
+            "LineInFunctionBody": 4,
+            "Parameters": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8
+            ],
+            "Assignments": [
+              "Context->ActionCtx.TempAction.param1 = 4;",
+              "Context->ActionCtx.TempAction.param2 = 3;",
+              "Context->ActionCtx.TempAction.param3 = 1;",
+              "Context->ActionCtx.TempAction.param4 = 0x29;",
+              "Context->ActionCtx.TempAction.param5 = 1;",
+              "Context->ActionCtx.TempAction.param6 = 0;",
+              "Context->ActionCtx.TempAction.param7 = 1;",
+              "Context->ActionCtx.TempAction.param8 = 0;"
+            ],
+            "Calls": [],
+            "DirectDialogCalls": []
+          },
+          "ParamsInit": {
+            "HasExplicitCase": true,
+            "Function": "Triggers_ActionDlgParamsInit",
+            "FunctionLine": 998,
+            "SharedCases": [
+              "ACTION_ADDCREATURE"
+            ],
+            "Body": "if (!Triggers_DisplayCreateCreaturesList(hDlg,400,&Context->ActionCtx.CreaturesList,Context->ActionCtx.TempAction.param1,FALSE,TRUE)) return;\r\n\t\t\tif (!Misc_CreateAreaComboBoxList(hDlg,311,TRUE)) return;\r\n\t\t\tif (!Misc_CreatePlayerComboBoxList(hDlg,303,1,FALSE)) return;\r\n\t\t\tif (!Misc_CreateLevelComboBoxList(hDlg,301,Context->ActionCtx.TempAction.param3)) return;\r\n\t\t\tContext->ActionCtx.Initialized[ACTION_ADDCREATURE] = TRUE;\r\n\t\t\tbreak;",
+            "LineInFunctionBody": 9,
+            "Parameters": [
+              1,
+              3
+            ],
+            "Assignments": [],
+            "Calls": [
+              {
+                "Name": "Triggers_DisplayCreateCreaturesList",
+                "Arguments": [
+                  "hDlg",
+                  "400",
+                  "&Context->ActionCtx.CreaturesList",
+                  "Context->ActionCtx.TempAction.param1",
+                  "FALSE",
+                  "TRUE"
+                ]
+              },
+              {
+                "Name": "Misc_CreateAreaComboBoxList",
+                "Arguments": [
+                  "hDlg",
+                  "311",
+                  "TRUE"
+                ]
+              },
+              {
+                "Name": "Misc_CreatePlayerComboBoxList",
+                "Arguments": [
+                  "hDlg",
+                  "303",
+                  "1",
+                  "FALSE"
+                ]
+              },
+              {
+                "Name": "Misc_CreateLevelComboBoxList",
+                "Arguments": [
+                  "hDlg",
+                  "301",
+                  "Context->ActionCtx.TempAction.param3"
+                ]
+              }
+            ],
+            "DirectDialogCalls": [
+              {
+                "Name": "Triggers_DisplayCreateCreaturesList",
+                "Arguments": [
+                  "hDlg",
+                  "400",
+                  "&Context->ActionCtx.CreaturesList",
+                  "Context->ActionCtx.TempAction.param1",
+                  "FALSE",
+                  "TRUE"
+                ]
+              },
+              {
+                "Name": "Misc_CreateAreaComboBoxList",
+                "Arguments": [
+                  "hDlg",
+                  "311",
+                  "TRUE"
+                ]
+              },
+              {
+                "Name": "Misc_CreatePlayerComboBoxList",
+                "Arguments": [
+                  "hDlg",
+                  "303",
+                  "1",
+                  "FALSE"
+                ]
+              },
+              {
+                "Name": "Misc_CreateLevelComboBoxList",
+                "Arguments": [
+                  "hDlg",
+                  "301",
+                  "Context->ActionCtx.TempAction.param3"
+                ]
+              }
+            ]
+          },
+          "ParamsCheck": {
+            "HasExplicitCase": true,
+            "Function": "Triggers_ActionDlgParamsCheck",
+            "FunctionLine": 1221,
+            "SharedCases": [
+              "ACTION_ADDCREATURE"
+            ],
+            "Body": "if (!Context->ActionCtx.Initialized[ACTION_ADDCREATURE]) goto Error_0;\r\n\t\t\tSendDlgItemMessage(hDlg,303,CB_SETCURSEL,(WPARAM)Context->ActionCtx.TempAction.param2-1,(LPARAM)0);\r\n\t\t\tSendDlgItemMessage(hDlg,301,CB_SETCURSEL,(WPARAM)Context->ActionCtx.TempAction.param3-1,(LPARAM)0);\r\n\t\t\tSetDlgItemInt(hDlg,307,Context->ActionCtx.TempAction.param5,FALSE);\r\n\t\t\tSetDlgItemInt(hDlg,309,Context->ActionCtx.TempAction.param7,FALSE);\r\n\t\t\tSendDlgItemMessage(hDlg,307,EM_LIMITTEXT,(WPARAM)3,(LPARAM)0);\r\n\t\t\tSendDlgItemMessage(hDlg,309,EM_LIMITTEXT,(WPARAM)3,(LPARAM)0);\r\n\t\t\tSendDlgItemMessage(hDlg,311,CB_SETCURSEL,(WPARAM)0,(LPARAM)0);\r\n\t\t\tbreak;",
+            "LineInFunctionBody": 4,
+            "Parameters": [
+              2,
+              3,
+              5,
+              7
+            ],
+            "Assignments": [],
+            "Calls": [
+              {
+                "Name": "SendDlgItemMessage",
+                "Arguments": [
+                  "hDlg",
+                  "303",
+                  "CB_SETCURSEL",
+                  "(WPARAM)Context->ActionCtx.TempAction.param2-1",
+                  "(LPARAM)0"
+                ]
+              },
+              {
+                "Name": "SendDlgItemMessage",
+                "Arguments": [
+                  "hDlg",
+                  "301",
+                  "CB_SETCURSEL",
+                  "(WPARAM)Context->ActionCtx.TempAction.param3-1",
+                  "(LPARAM)0"
+                ]
+              },
+              {
+                "Name": "SetDlgItemInt",
+                "Arguments": [
+                  "hDlg",
+                  "307",
+                  "Context->ActionCtx.TempAction.param5",
+                  "FALSE"
+                ]
+              },
+              {
+                "Name": "SetDlgItemInt",
+                "Arguments": [
+                  "hDlg",
+                  "309",
+                  "Context->ActionCtx.TempAction.param7",
+                  "FALSE"
+                ]
+              },
+              {
+                "Name": "SendDlgItemMessage",
+                "Arguments": [
+                  "hDlg",
+                  "307",
+                  "EM_LIMITTEXT",
+                  "(WPARAM)3",
+                  "(LPARAM)0"
+                ]
+              },
+              {
+                "Name": "SendDlgItemMessage",
+                "Arguments": [
+                  "hDlg",
+                  "309",
+                  "EM_LIMITTEXT",
+                  "(WPARAM)3",
+                  "(LPARAM)0"
+                ]
+              },
+              {
+                "Name": "SendDlgItemMessage",
+                "Arguments": [
+                  "hDlg",
+                  "311",
+                  "CB_SETCURSEL",
+                  "(WPARAM)0",
+                  "(LPARAM)0"
+                ]
+              }
+            ],
+            "DirectDialogCalls": [
+              {
+                "Name": "SendDlgItemMessage",
+                "Arguments": [
+                  "hDlg",
+                  "303",
+                  "CB_SETCURSEL",
+                  "(WPARAM)Context->ActionCtx.TempAction.param2-1",
+                  "(LPARAM)0"
+                ]
+              },
+              {
+                "Name": "SendDlgItemMessage",
+                "Arguments": [
+                  "hDlg",
+                  "301",
+                  "CB_SETCURSEL",
+                  "(WPARAM)Context->ActionCtx.TempAction.param3-1",
+                  "(LPARAM)0"
+                ]
+              },
+              {
+                "Name": "SetDlgItemInt",
+                "Arguments": [
+                  "hDlg",
+                  "307",
+                  "Context->ActionCtx.TempAction.param5",
+                  "FALSE"
+                ]
+              },
+              {
+                "Name": "SetDlgItemInt",
+                "Arguments": [
+                  "hDlg",
+                  "309",
+                  "Context->ActionCtx.TempAction.param7",
+                  "FALSE"
+                ]
+              },
+              {
+                "Name": "SendDlgItemMessage",
+                "Arguments": [
+                  "hDlg",
+                  "307",
+                  "EM_LIMITTEXT",
+                  "(WPARAM)3",
+                  "(LPARAM)0"
+                ]
+              },
+              {
+                "Name": "SendDlgItemMessage",
+                "Arguments": [
+                  "hDlg",
+                  "309",
+                  "EM_LIMITTEXT",
+                  "(WPARAM)3",
+                  "(LPARAM)0"
+                ]
+              },
+              {
+                "Name": "SendDlgItemMessage",
+                "Arguments": [
+                  "hDlg",
+                  "311",
+                  "CB_SETCURSEL",
+                  "(WPARAM)0",
+                  "(LPARAM)0"
+                ]
+              }
+            ]
+          },
+          "ParamsStore": {
+            "HasExplicitCase": true,
+            "Function": "Triggers_ActionDlgParamsStore",
+            "FunctionLine": 1627,
+            "SharedCases": [
+              "ACTION_ADDCREATURE"
+            ],
+            "Body": "Context->ActionCtx.TempAction.param1 = Triggers_TriggerDlgGetSelectedEntryParam(Context->ActionCtx.CreaturesList);\r\n\t\t\tif (Context->ActionCtx.TempAction.param1 == 0) goto NoCreatureSelected;\r\n\t\t\tContext->ActionCtx.TempAction.param2 = SendDlgItemMessage(hDlg,303,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)+1;\r\n\t\t\tContext->ActionCtx.TempAction.param3 = SendDlgItemMessage(hDlg,301,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)+1;\r\n\t\t\tContext->ActionCtx.TempAction.param5 = GetDlgItemInt(hDlg,307,NULL,FALSE);\r\n\t\t\tContext->ActionCtx.TempAction.param7 = GetDlgItemInt(hDlg,309,NULL,FALSE);\r\n\t\t\tResult = 1;\r\n\t\t\tbreak;",
+            "LineInFunctionBody": 6,
+            "Parameters": [
+              1,
+              2,
+              3,
+              5,
+              7
+            ],
+            "Assignments": [
+              "Context->ActionCtx.TempAction.param1 = Triggers_TriggerDlgGetSelectedEntryParam(Context->ActionCtx.CreaturesList);",
+              "Context->ActionCtx.TempAction.param2 = SendDlgItemMessage(hDlg,303,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)+1;",
+              "Context->ActionCtx.TempAction.param3 = SendDlgItemMessage(hDlg,301,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)+1;",
+              "Context->ActionCtx.TempAction.param5 = GetDlgItemInt(hDlg,307,NULL,FALSE);",
+              "Context->ActionCtx.TempAction.param7 = GetDlgItemInt(hDlg,309,NULL,FALSE);"
+            ],
+            "Calls": [
+              {
+                "Name": "Triggers_TriggerDlgGetSelectedEntryParam",
+                "Arguments": [
+                  "Context->ActionCtx.CreaturesList"
+                ]
+              },
+              {
+                "Name": "SendDlgItemMessage",
+                "Arguments": [
+                  "hDlg",
+                  "303",
+                  "CB_GETCURSEL",
+                  "(WPARAM)0",
+                  "(LPARAM)0"
+                ]
+              },
+              {
+                "Name": "SendDlgItemMessage",
+                "Arguments": [
+                  "hDlg",
+                  "301",
+                  "CB_GETCURSEL",
+                  "(WPARAM)0",
+                  "(LPARAM)0"
+                ]
+              },
+              {
+                "Name": "GetDlgItemInt",
+                "Arguments": [
+                  "hDlg",
+                  "307",
+                  "NULL",
+                  "FALSE"
+                ]
+              },
+              {
+                "Name": "GetDlgItemInt",
+                "Arguments": [
+                  "hDlg",
+                  "309",
+                  "NULL",
+                  "FALSE"
+                ]
+              }
+            ],
+            "DirectDialogCalls": [
+              {
+                "Name": "SendDlgItemMessage",
+                "Arguments": [
+                  "hDlg",
+                  "303",
+                  "CB_GETCURSEL",
+                  "(WPARAM)0",
+                  "(LPARAM)0"
+                ]
+              },
+              {
+                "Name": "SendDlgItemMessage",
+                "Arguments": [
+                  "hDlg",
+                  "301",
+                  "CB_GETCURSEL",
+                  "(WPARAM)0",
+                  "(LPARAM)0"
+                ]
+              },
+              {
+                "Name": "GetDlgItemInt",
+                "Arguments": [
+                  "hDlg",
+                  "307",
+                  "NULL",
+                  "FALSE"
+                ]
+              },
+              {
+                "Name": "GetDlgItemInt",
+                "Arguments": [
+                  "hDlg",
+                  "309",
+                  "NULL",
+                  "FALSE"
+                ]
+              }
+            ]
+          },
+          "ParamsSave": {
+            "HasExplicitCase": false,
+            "Function": "Triggers_ActionDlgParamsSave",
+            "FunctionLine": 1915,
+            "DefaultBranch": null
+          }
+        },
+        "Resource": {
+          "Line": 4025,
+          "Header": "7203 DIALOG 8, 8, 400, 232\r\nSTYLE DS_MODALFRAME|WS_BORDER|WS_VISIBLE|WS_CAPTION|WS_SYSMENU\r\nCLASS DIALOG_CLASS\r\nCAPTION DIALOG_ACTIONSTITLE\r\nFONT 8, \"MS Sans Serif\"",
+          "Declarations": "CONTROL\t\tDIALOG_ACTIONSCREATURETITLE,\t100, \"STATIC\", WS_CHILD|SS_OWNERDRAW, 0, 0, 400, 10\r\n\r\n\tGROUPBOX\tDIALOG_ACTIONSCREATURETYPE,\t400,   6,  16, 220, 210\r\n\tLTEXT\t\tDIALOG_ACTIONSCREATURELEVEL,\t300, 232,  36, 158,  10\r\n\tCOMBOBOX\t\t\t\t\t301, 232,  46,  60, 100, WS_VSCROLL|CBS_DROPDOWNLIST\r\n\tLTEXT\t\tDIALOG_ACTIONSCREATUREOWNER,\t302, 232,  66, 158,  10\r\n\tCOMBOBOX\t\t\t\t\t303, 232,  76, 100, 100, WS_VSCROLL|CBS_DROPDOWNLIST|CBS_OWNERDRAWFIXED\r\n\r\n\tPUSHBUTTON\tDIALOG_ACTIONSCREATUREOPTIONS,\t313, 232, 104, 158,  14\r\n\r\n\tLTEXT\t\tDIALOG_ACTIONSCREATUREX,\t306, 232, 130,  40,  10\r\n\tEDITTEXT\t\t\t\t\t307, 232, 140,  20,  12, ES_NUMBER\r\n\tLTEXT\t\tDIALOG_ACTIONSCREATUREY,\t308, 232, 154,  40,  10\r\n\tEDITTEXT\t\t\t\t\t309, 232, 164,  20,  12, ES_NUMBER\r\n\tLTEXT\t\tDIALOG_ACTIONSCREATUREAREA,\t310, 232, 182, 158,  10\r\n\tCOMBOBOX\t\t\t\t\t311, 232, 192, 158, 100, WS_VSCROLL|CBS_DROPDOWNLIST\r\n\tPUSHBUTTON\tDIALOG_NULL,\t\t\t312, 264, 153,  20,  12, BS_OWNERDRAW"
+        },
+        "NativeLayout": [
+          {
+            "Name": "Param1",
+            "Offset": 8,
+            "Size": 1,
+            "Kind": "BYTE"
+          },
+          {
+            "Name": "Param2",
+            "Offset": 9,
+            "Size": 1,
+            "Kind": "BYTE"
+          },
+          {
+            "Name": "Param3",
+            "Offset": 10,
+            "Size": 1,
+            "Kind": "BYTE"
+          },
+          {
+            "Name": "Param4",
+            "Offset": 11,
+            "Size": 1,
+            "Kind": "BYTE"
+          },
+          {
+            "Name": "Param5",
+            "Offset": 12,
+            "Size": 2,
+            "Kind": "WORD"
+          },
+          {
+            "Name": "Param7",
+            "Offset": 14,
+            "Size": 2,
+            "Kind": "WORD"
+          }
+        ]
+      },
+      {
+        "Type": "ACTION_CHANGESQUARE",
+        "PageID": 7209,
+        "DisplayToStoredOffset": 1,
+        "X": {
+          "ControlID": 307,
+          "Parameter": 5,
+          "DisplayMaximum": 999
+        },
+        "Y": {
+          "ControlID": 309,
+          "Parameter": 7,
+          "DisplayMaximum": 999
+        },
+        "AreaControlID": 311,
+        "AreaStoresID": false,
+        "AreaPoint": "Normalized top-left",
+        "RectangleExpansionWhenCreating": true,
+        "Sections": {
+          "SetDefault": {
+            "HasExplicitCase": true,
+            "Function": "Triggers_ActionDlgSetDefault",
+            "FunctionLine": 360,
+            "SharedCases": [
+              "ACTION_CHANGESQUARE"
+            ],
+            "Body": "if (Context->ActionCtx.TempAction.ctrl != NewCtrl)\r\n\t\t\t\t{\r\n\t\t\t\tContext->ActionCtx.TempAction.param1 = 6;\r\n\t\t\t\tContext->ActionCtx.TempAction.param2 = 2;\r\n\t\t\t\tContext->ActionCtx.TempAction.param3 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param4 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param5 = 2;\r\n\t\t\t\tContext->ActionCtx.TempAction.param6 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param7 = 2;\r\n\t\t\t\tContext->ActionCtx.TempAction.param8 = 0;\r\n\t\t\t\t}\r\n\t\t\tbreak;",
+            "LineInFunctionBody": 149,
+            "Parameters": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8
+            ],
+            "Assignments": [
+              "Context->ActionCtx.TempAction.param1 = 6;",
+              "Context->ActionCtx.TempAction.param2 = 2;",
+              "Context->ActionCtx.TempAction.param3 = 0;",
+              "Context->ActionCtx.TempAction.param4 = 0;",
+              "Context->ActionCtx.TempAction.param5 = 2;",
+              "Context->ActionCtx.TempAction.param6 = 0;",
+              "Context->ActionCtx.TempAction.param7 = 2;",
+              "Context->ActionCtx.TempAction.param8 = 0;"
+            ],
+            "Calls": [],
+            "DirectDialogCalls": []
+          },
+          "ParamsInit": {
+            "HasExplicitCase": true,
+            "Function": "Triggers_ActionDlgParamsInit",
+            "FunctionLine": 998,
+            "SharedCases": [
+              "ACTION_CHANGESQUARE"
+            ],
+            "Body": "if (!Triggers_DisplayCreateTerrainList(hDlg,400,&Context->ActionCtx.TerrainList,Context->ActionCtx.TempAction.param1,TRUE,FALSE)) return;\r\n\t\t\tif (!Misc_CreateAreaComboBoxList(hDlg,311,TRUE)) return;\r\n\t\t\tif (!Misc_CreatePlayerComboBoxList(hDlg,303,1,FALSE)) return;\r\n\t\t\tContext->ActionCtx.Initialized[ACTION_CHANGESQUARE] = TRUE;\r\n\t\t\tbreak;",
+            "LineInFunctionBody": 96,
+            "Parameters": [
+              1
+            ],
+            "Assignments": [],
+            "Calls": [
+              {
+                "Name": "Triggers_DisplayCreateTerrainList",
+                "Arguments": [
+                  "hDlg",
+                  "400",
+                  "&Context->ActionCtx.TerrainList",
+                  "Context->ActionCtx.TempAction.param1",
+                  "TRUE",
+                  "FALSE"
+                ]
+              },
+              {
+                "Name": "Misc_CreateAreaComboBoxList",
+                "Arguments": [
+                  "hDlg",
+                  "311",
+                  "TRUE"
+                ]
+              },
+              {
+                "Name": "Misc_CreatePlayerComboBoxList",
+                "Arguments": [
+                  "hDlg",
+                  "303",
+                  "1",
+                  "FALSE"
+                ]
+              }
+            ],
+            "DirectDialogCalls": [
+              {
+                "Name": "Triggers_DisplayCreateTerrainList",
+                "Arguments": [
+                  "hDlg",
+                  "400",
+                  "&Context->ActionCtx.TerrainList",
+                  "Context->ActionCtx.TempAction.param1",
+                  "TRUE",
+                  "FALSE"
+                ]
+              },
+              {
+                "Name": "Misc_CreateAreaComboBoxList",
+                "Arguments": [
+                  "hDlg",
+                  "311",
+                  "TRUE"
+                ]
+              },
+              {
+                "Name": "Misc_CreatePlayerComboBoxList",
+                "Arguments": [
+                  "hDlg",
+                  "303",
+                  "1",
+                  "FALSE"
+                ]
+              }
+            ]
+          },
+          "ParamsCheck": {
+            "HasExplicitCase": true,
+            "Function": "Triggers_ActionDlgParamsCheck",
+            "FunctionLine": 1221,
+            "SharedCases": [
+              "ACTION_CHANGESQUARE"
+            ],
+            "Body": "if (!Context->ActionCtx.Initialized[ACTION_CHANGESQUARE]) goto Error_0;\r\n\t\t\tif (Context->Modify) EnableWindow(GetDlgItem(hDlg,315),FALSE);\r\n\t\t\tSendDlgItemMessage(hDlg,303,CB_SETCURSEL,(WPARAM)Context->ActionCtx.TempAction.param2-1,(LPARAM)0);\r\n\t\t\tSetDlgItemInt(hDlg,307,Context->ActionCtx.TempAction.param5-1,FALSE);\r\n\t\t\tSetDlgItemInt(hDlg,309,Context->ActionCtx.TempAction.param7-1,FALSE);\r\n\t\t\tSendDlgItemMessage(hDlg,307,EM_LIMITTEXT,(WPARAM)3,(LPARAM)0);\r\n\t\t\tSendDlgItemMessage(hDlg,309,EM_LIMITTEXT,(WPARAM)3,(LPARAM)0);\r\n\t\t\tSendDlgItemMessage(hDlg,311,CB_SETCURSEL,(WPARAM)0,(LPARAM)0);\r\n\t\t\tbreak;",
+            "LineInFunctionBody": 169,
+            "Parameters": [
+              2,
+              5,
+              7
+            ],
+            "Assignments": [],
+            "Calls": [
+              {
+                "Name": "EnableWindow",
+                "Arguments": [
+                  "GetDlgItem(hDlg,315)",
+                  "FALSE"
+                ]
+              },
+              {
+                "Name": "GetDlgItem",
+                "Arguments": [
+                  "hDlg",
+                  "315"
+                ]
+              },
+              {
+                "Name": "SendDlgItemMessage",
+                "Arguments": [
+                  "hDlg",
+                  "303",
+                  "CB_SETCURSEL",
+                  "(WPARAM)Context->ActionCtx.TempAction.param2-1",
+                  "(LPARAM)0"
+                ]
+              },
+              {
+                "Name": "SetDlgItemInt",
+                "Arguments": [
+                  "hDlg",
+                  "307",
+                  "Context->ActionCtx.TempAction.param5-1",
+                  "FALSE"
+                ]
+              },
+              {
+                "Name": "SetDlgItemInt",
+                "Arguments": [
+                  "hDlg",
+                  "309",
+                  "Context->ActionCtx.TempAction.param7-1",
+                  "FALSE"
+                ]
+              },
+              {
+                "Name": "SendDlgItemMessage",
+                "Arguments": [
+                  "hDlg",
+                  "307",
+                  "EM_LIMITTEXT",
+                  "(WPARAM)3",
+                  "(LPARAM)0"
+                ]
+              },
+              {
+                "Name": "SendDlgItemMessage",
+                "Arguments": [
+                  "hDlg",
+                  "309",
+                  "EM_LIMITTEXT",
+                  "(WPARAM)3",
+                  "(LPARAM)0"
+                ]
+              },
+              {
+                "Name": "SendDlgItemMessage",
+                "Arguments": [
+                  "hDlg",
+                  "311",
+                  "CB_SETCURSEL",
+                  "(WPARAM)0",
+                  "(LPARAM)0"
+                ]
+              }
+            ],
+            "DirectDialogCalls": [
+              {
+                "Name": "GetDlgItem",
+                "Arguments": [
+                  "hDlg",
+                  "315"
+                ]
+              },
+              {
+                "Name": "SendDlgItemMessage",
+                "Arguments": [
+                  "hDlg",
+                  "303",
+                  "CB_SETCURSEL",
+                  "(WPARAM)Context->ActionCtx.TempAction.param2-1",
+                  "(LPARAM)0"
+                ]
+              },
+              {
+                "Name": "SetDlgItemInt",
+                "Arguments": [
+                  "hDlg",
+                  "307",
+                  "Context->ActionCtx.TempAction.param5-1",
+                  "FALSE"
+                ]
+              },
+              {
+                "Name": "SetDlgItemInt",
+                "Arguments": [
+                  "hDlg",
+                  "309",
+                  "Context->ActionCtx.TempAction.param7-1",
+                  "FALSE"
+                ]
+              },
+              {
+                "Name": "SendDlgItemMessage",
+                "Arguments": [
+                  "hDlg",
+                  "307",
+                  "EM_LIMITTEXT",
+                  "(WPARAM)3",
+                  "(LPARAM)0"
+                ]
+              },
+              {
+                "Name": "SendDlgItemMessage",
+                "Arguments": [
+                  "hDlg",
+                  "309",
+                  "EM_LIMITTEXT",
+                  "(WPARAM)3",
+                  "(LPARAM)0"
+                ]
+              },
+              {
+                "Name": "SendDlgItemMessage",
+                "Arguments": [
+                  "hDlg",
+                  "311",
+                  "CB_SETCURSEL",
+                  "(WPARAM)0",
+                  "(LPARAM)0"
+                ]
+              }
+            ]
+          },
+          "ParamsStore": {
+            "HasExplicitCase": true,
+            "Function": "Triggers_ActionDlgParamsStore",
+            "FunctionLine": 1627,
+            "SharedCases": [
+              "ACTION_CHANGESQUARE"
+            ],
+            "Body": "Context->ActionCtx.TempAction.param1 = Triggers_TriggerDlgGetSelectedEntryParam(Context->ActionCtx.TerrainList);\r\n\t\t\tContext->ActionCtx.TempAction.param2 = SendDlgItemMessage(hDlg,303,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)+1;\r\n\t\t\tContext->ActionCtx.TempAction.param5 = GetDlgItemInt(hDlg,307,NULL,FALSE)+1;\r\n\t\t\tContext->ActionCtx.TempAction.param7 = GetDlgItemInt(hDlg,309,NULL,FALSE)+1;\r\n\t\t\tResult = 1;\r\n\t\t\tbreak;",
+            "LineInFunctionBody": 122,
+            "Parameters": [
+              1,
+              2,
+              5,
+              7
+            ],
+            "Assignments": [
+              "Context->ActionCtx.TempAction.param1 = Triggers_TriggerDlgGetSelectedEntryParam(Context->ActionCtx.TerrainList);",
+              "Context->ActionCtx.TempAction.param2 = SendDlgItemMessage(hDlg,303,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)+1;",
+              "Context->ActionCtx.TempAction.param5 = GetDlgItemInt(hDlg,307,NULL,FALSE)+1;",
+              "Context->ActionCtx.TempAction.param7 = GetDlgItemInt(hDlg,309,NULL,FALSE)+1;"
+            ],
+            "Calls": [
+              {
+                "Name": "Triggers_TriggerDlgGetSelectedEntryParam",
+                "Arguments": [
+                  "Context->ActionCtx.TerrainList"
+                ]
+              },
+              {
+                "Name": "SendDlgItemMessage",
+                "Arguments": [
+                  "hDlg",
+                  "303",
+                  "CB_GETCURSEL",
+                  "(WPARAM)0",
+                  "(LPARAM)0"
+                ]
+              },
+              {
+                "Name": "GetDlgItemInt",
+                "Arguments": [
+                  "hDlg",
+                  "307",
+                  "NULL",
+                  "FALSE"
+                ]
+              },
+              {
+                "Name": "GetDlgItemInt",
+                "Arguments": [
+                  "hDlg",
+                  "309",
+                  "NULL",
+                  "FALSE"
+                ]
+              }
+            ],
+            "DirectDialogCalls": [
+              {
+                "Name": "SendDlgItemMessage",
+                "Arguments": [
+                  "hDlg",
+                  "303",
+                  "CB_GETCURSEL",
+                  "(WPARAM)0",
+                  "(LPARAM)0"
+                ]
+              },
+              {
+                "Name": "GetDlgItemInt",
+                "Arguments": [
+                  "hDlg",
+                  "307",
+                  "NULL",
+                  "FALSE"
+                ]
+              },
+              {
+                "Name": "GetDlgItemInt",
+                "Arguments": [
+                  "hDlg",
+                  "309",
+                  "NULL",
+                  "FALSE"
+                ]
+              }
+            ]
+          },
+          "ParamsSave": {
+            "HasExplicitCase": false,
+            "Function": "Triggers_ActionDlgParamsSave",
+            "FunctionLine": 1915,
+            "DefaultBranch": null
+          }
+        },
+        "Resource": {
+          "Line": 4134,
+          "Header": "7209 DIALOG 8, 8, 400, 232\r\nSTYLE DS_MODALFRAME|WS_BORDER|WS_VISIBLE|WS_CAPTION|WS_SYSMENU\r\nCLASS DIALOG_CLASS\r\nCAPTION DIALOG_ACTIONSTITLE\r\nFONT 8, \"MS Sans Serif\"",
+          "Declarations": "CONTROL\t\tDIALOG_ACTIONSSQUARE,\t\t100, \"STATIC\", WS_CHILD|SS_OWNERDRAW, 0, 0, 400, 10\r\n\r\n\tGROUPBOX\tDIALOG_ACTIONSSQUARESOFT,\t400,   6,  16, 220, 210\r\n\tLTEXT\t\tDIALOG_ACTIONSSQUAREOWNER,\t302, 232,  60, 158,  10\r\n\tCOMBOBOX\t\t\t\t\t303, 232,  70, 100, 100, WS_VSCROLL|CBS_DROPDOWNLIST|CBS_OWNERDRAWFIXED\r\n\tLTEXT\t\tDIALOG_ACTIONSCREATUREX,\t306, 232,  90,  40,  10\r\n\tEDITTEXT\t\t\t\t\t307, 232, 100,  20,  12, ES_NUMBER\r\n\tLTEXT\t\tDIALOG_ACTIONSCREATUREY,\t308, 232, 114,  40,  10\r\n\tEDITTEXT\t\t\t\t\t309, 232, 124,  20,  12, ES_NUMBER\r\n\tLTEXT\t\tDIALOG_ACTIONSCREATUREAREA,\t310, 232, 142, 158,  10\r\n\tCOMBOBOX\t\t\t\t\t311, 232, 152, 158, 100, WS_VSCROLL|CBS_DROPDOWNLIST\r\n\tPUSHBUTTON\tDIALOG_NULL,\t\t\t312, 264, 113,  20,  12, BS_OWNERDRAW\r\n\tPUSHBUTTON\tDIALOG_NULL,\t\t\t314, 288, 113,  20,  12, BS_OWNERDRAW|WS_DISABLED\r\n\r\n\tAUTOCHECKBOX\tDIALOG_ACTIONSSQUARERECT,\t315, 232, 172, 158,  10\r\n\r\n\tCONTROL\t\tDIALOG_ACTIONSSQUAREBRIDGES,\t101, \"STATIC\", WS_CHILD|WS_DISABLED|SS_RIGHT, 226, 222, 166, 10"
+        },
+        "NativeLayout": [
+          {
+            "Name": "Param1",
+            "Offset": 8,
+            "Size": 1,
+            "Kind": "BYTE"
+          },
+          {
+            "Name": "Param2",
+            "Offset": 9,
+            "Size": 1,
+            "Kind": "BYTE"
+          },
+          {
+            "Name": "Param5",
+            "Offset": 12,
+            "Size": 2,
+            "Kind": "WORD"
+          },
+          {
+            "Name": "Param7",
+            "Offset": 14,
+            "Size": 2,
+            "Kind": "WORD"
+          }
+        ]
+      },
+      {
+        "Type": "ACTION_CHANGEOWNER",
+        "PageID": 7221,
+        "DisplayToStoredOffset": 1,
+        "X": {
+          "ControlID": 307,
+          "Parameter": 5,
+          "DisplayMaximum": 999
+        },
+        "Y": {
+          "ControlID": 309,
+          "Parameter": 7,
+          "DisplayMaximum": 999
+        },
+        "AreaControlID": 311,
+        "AreaStoresID": false,
+        "AreaPoint": "Normalized top-left",
+        "RectangleExpansionWhenCreating": false,
+        "Sections": {
+          "SetDefault": {
+            "HasExplicitCase": true,
+            "Function": "Triggers_ActionDlgSetDefault",
+            "FunctionLine": 360,
+            "SharedCases": [
+              "ACTION_CHANGEOWNER"
+            ],
+            "Body": "if (Context->ActionCtx.TempAction.ctrl != NewCtrl)\r\n\t\t\t\t{\r\n\t\t\t\tContext->ActionCtx.TempAction.param1 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param2 = 3;\r\n\t\t\t\tContext->ActionCtx.TempAction.param3 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param4 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param5 = 2;\r\n\t\t\t\tContext->ActionCtx.TempAction.param6 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param7 = 2;\r\n\t\t\t\tContext->ActionCtx.TempAction.param8 = 0;\r\n\t\t\t\t}\r\n\t\t\tbreak;",
+            "LineInFunctionBody": 226,
+            "Parameters": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8
+            ],
+            "Assignments": [
+              "Context->ActionCtx.TempAction.param1 = 0;",
+              "Context->ActionCtx.TempAction.param2 = 3;",
+              "Context->ActionCtx.TempAction.param3 = 0;",
+              "Context->ActionCtx.TempAction.param4 = 0;",
+              "Context->ActionCtx.TempAction.param5 = 2;",
+              "Context->ActionCtx.TempAction.param6 = 0;",
+              "Context->ActionCtx.TempAction.param7 = 2;",
+              "Context->ActionCtx.TempAction.param8 = 0;"
+            ],
+            "Calls": [],
+            "DirectDialogCalls": []
+          },
+          "ParamsInit": {
+            "HasExplicitCase": true,
+            "Function": "Triggers_ActionDlgParamsInit",
+            "FunctionLine": 998,
+            "SharedCases": [
+              "ACTION_CHANGEOWNER"
+            ],
+            "Body": "if (!Triggers_DisplayCreatePlayersList(hDlg,400,&Context->ActionCtx.OwnersList,Context->ActionCtx.TempAction.param2,FALSE)) return;\r\n\t\t\tif (!Misc_CreateAreaComboBoxList(hDlg,311,TRUE)) return;\r\n\t\t\tContext->ActionCtx.Initialized[ACTION_CHANGEOWNER] = TRUE;\r\n\t\t\tbreak;",
+            "LineInFunctionBody": 160,
+            "Parameters": [
+              2
+            ],
+            "Assignments": [],
+            "Calls": [
+              {
+                "Name": "Triggers_DisplayCreatePlayersList",
+                "Arguments": [
+                  "hDlg",
+                  "400",
+                  "&Context->ActionCtx.OwnersList",
+                  "Context->ActionCtx.TempAction.param2",
+                  "FALSE"
+                ]
+              },
+              {
+                "Name": "Misc_CreateAreaComboBoxList",
+                "Arguments": [
+                  "hDlg",
+                  "311",
+                  "TRUE"
+                ]
+              }
+            ],
+            "DirectDialogCalls": [
+              {
+                "Name": "Triggers_DisplayCreatePlayersList",
+                "Arguments": [
+                  "hDlg",
+                  "400",
+                  "&Context->ActionCtx.OwnersList",
+                  "Context->ActionCtx.TempAction.param2",
+                  "FALSE"
+                ]
+              },
+              {
+                "Name": "Misc_CreateAreaComboBoxList",
+                "Arguments": [
+                  "hDlg",
+                  "311",
+                  "TRUE"
+                ]
+              }
+            ]
+          },
+          "ParamsCheck": {
+            "HasExplicitCase": true,
+            "Function": "Triggers_ActionDlgParamsCheck",
+            "FunctionLine": 1221,
+            "SharedCases": [
+              "ACTION_CHANGEOWNER"
+            ],
+            "Body": "if (!Context->ActionCtx.Initialized[ACTION_CHANGEOWNER]) goto Error_0;\r\n\t\t\tSetDlgItemInt(hDlg,307,Context->ActionCtx.TempAction.param5-1,FALSE);\r\n\t\t\tSetDlgItemInt(hDlg,309,Context->ActionCtx.TempAction.param7-1,FALSE);\r\n\t\t\tSendDlgItemMessage(hDlg,307,EM_LIMITTEXT,(WPARAM)3,(LPARAM)0);\r\n\t\t\tSendDlgItemMessage(hDlg,309,EM_LIMITTEXT,(WPARAM)3,(LPARAM)0);\r\n\t\t\tSendDlgItemMessage(hDlg,311,CB_SETCURSEL,(WPARAM)0,(LPARAM)0);\r\n\t\t\tbreak;",
+            "LineInFunctionBody": 252,
+            "Parameters": [
+              5,
+              7
+            ],
+            "Assignments": [],
+            "Calls": [
+              {
+                "Name": "SetDlgItemInt",
+                "Arguments": [
+                  "hDlg",
+                  "307",
+                  "Context->ActionCtx.TempAction.param5-1",
+                  "FALSE"
+                ]
+              },
+              {
+                "Name": "SetDlgItemInt",
+                "Arguments": [
+                  "hDlg",
+                  "309",
+                  "Context->ActionCtx.TempAction.param7-1",
+                  "FALSE"
+                ]
+              },
+              {
+                "Name": "SendDlgItemMessage",
+                "Arguments": [
+                  "hDlg",
+                  "307",
+                  "EM_LIMITTEXT",
+                  "(WPARAM)3",
+                  "(LPARAM)0"
+                ]
+              },
+              {
+                "Name": "SendDlgItemMessage",
+                "Arguments": [
+                  "hDlg",
+                  "309",
+                  "EM_LIMITTEXT",
+                  "(WPARAM)3",
+                  "(LPARAM)0"
+                ]
+              },
+              {
+                "Name": "SendDlgItemMessage",
+                "Arguments": [
+                  "hDlg",
+                  "311",
+                  "CB_SETCURSEL",
+                  "(WPARAM)0",
+                  "(LPARAM)0"
+                ]
+              }
+            ],
+            "DirectDialogCalls": [
+              {
+                "Name": "SetDlgItemInt",
+                "Arguments": [
+                  "hDlg",
+                  "307",
+                  "Context->ActionCtx.TempAction.param5-1",
+                  "FALSE"
+                ]
+              },
+              {
+                "Name": "SetDlgItemInt",
+                "Arguments": [
+                  "hDlg",
+                  "309",
+                  "Context->ActionCtx.TempAction.param7-1",
+                  "FALSE"
+                ]
+              },
+              {
+                "Name": "SendDlgItemMessage",
+                "Arguments": [
+                  "hDlg",
+                  "307",
+                  "EM_LIMITTEXT",
+                  "(WPARAM)3",
+                  "(LPARAM)0"
+                ]
+              },
+              {
+                "Name": "SendDlgItemMessage",
+                "Arguments": [
+                  "hDlg",
+                  "309",
+                  "EM_LIMITTEXT",
+                  "(WPARAM)3",
+                  "(LPARAM)0"
+                ]
+              },
+              {
+                "Name": "SendDlgItemMessage",
+                "Arguments": [
+                  "hDlg",
+                  "311",
+                  "CB_SETCURSEL",
+                  "(WPARAM)0",
+                  "(LPARAM)0"
+                ]
+              }
+            ]
+          },
+          "ParamsStore": {
+            "HasExplicitCase": true,
+            "Function": "Triggers_ActionDlgParamsStore",
+            "FunctionLine": 1627,
+            "SharedCases": [
+              "ACTION_CHANGEOWNER"
+            ],
+            "Body": "Context->ActionCtx.TempAction.param2 = Triggers_TriggerDlgGetSelectedEntryParam(Context->ActionCtx.OwnersList);\r\n\t\t\tif (!Context->ActionCtx.TempAction.param2) goto NoPlayerSelected;\r\n\t\t\tContext->ActionCtx.TempAction.param5 = GetDlgItemInt(hDlg,307,NULL,FALSE)+1;\r\n\t\t\tContext->ActionCtx.TempAction.param7 = GetDlgItemInt(hDlg,309,NULL,FALSE)+1;\r\n\t\t\tResult = 1;\r\n\t\t\tbreak;",
+            "LineInFunctionBody": 186,
+            "Parameters": [
+              2,
+              5,
+              7
+            ],
+            "Assignments": [
+              "Context->ActionCtx.TempAction.param2 = Triggers_TriggerDlgGetSelectedEntryParam(Context->ActionCtx.OwnersList);",
+              "Context->ActionCtx.TempAction.param5 = GetDlgItemInt(hDlg,307,NULL,FALSE)+1;",
+              "Context->ActionCtx.TempAction.param7 = GetDlgItemInt(hDlg,309,NULL,FALSE)+1;"
+            ],
+            "Calls": [
+              {
+                "Name": "Triggers_TriggerDlgGetSelectedEntryParam",
+                "Arguments": [
+                  "Context->ActionCtx.OwnersList"
+                ]
+              },
+              {
+                "Name": "GetDlgItemInt",
+                "Arguments": [
+                  "hDlg",
+                  "307",
+                  "NULL",
+                  "FALSE"
+                ]
+              },
+              {
+                "Name": "GetDlgItemInt",
+                "Arguments": [
+                  "hDlg",
+                  "309",
+                  "NULL",
+                  "FALSE"
+                ]
+              }
+            ],
+            "DirectDialogCalls": [
+              {
+                "Name": "GetDlgItemInt",
+                "Arguments": [
+                  "hDlg",
+                  "307",
+                  "NULL",
+                  "FALSE"
+                ]
+              },
+              {
+                "Name": "GetDlgItemInt",
+                "Arguments": [
+                  "hDlg",
+                  "309",
+                  "NULL",
+                  "FALSE"
+                ]
+              }
+            ]
+          },
+          "ParamsSave": {
+            "HasExplicitCase": false,
+            "Function": "Triggers_ActionDlgParamsSave",
+            "FunctionLine": 1915,
+            "DefaultBranch": null
+          }
+        },
+        "Resource": {
+          "Line": 4348,
+          "Header": "7221 DIALOG 8, 8, 400, 232\r\nSTYLE DS_MODALFRAME|WS_BORDER|WS_VISIBLE|WS_CAPTION|WS_SYSMENU\r\nCLASS DIALOG_CLASS\r\nCAPTION DIALOG_ACTIONSTITLE\r\nFONT 8, \"MS Sans Serif\"",
+          "Declarations": "CONTROL\t\tDIALOG_ACTIONSOWNER,\t\t100, \"STATIC\", WS_CHILD|SS_OWNERDRAW, 0, 0, 400, 10\r\n\r\n\tGROUPBOX\tDIALOG_ACTIONSOWNERLIST,\t400,   6,  16, 220, 210\r\n\tLTEXT\t\tDIALOG_ACTIONSCREATUREX,\t306, 232,  70,  40,  10\r\n\tEDITTEXT\t\t\t\t\t307, 232,  80,  20,  12, ES_NUMBER\r\n\tLTEXT\t\tDIALOG_ACTIONSCREATUREY,\t308, 232,  94,  40,  10\r\n\tEDITTEXT\t\t\t\t\t309, 232, 104,  20,  12, ES_NUMBER\r\n\tLTEXT\t\tDIALOG_ACTIONSCREATUREAREA,\t310, 232, 124, 158,  10\r\n\tCOMBOBOX\t\t\t\t\t311, 232, 134, 158, 100, WS_VSCROLL|CBS_DROPDOWNLIST\r\n\tPUSHBUTTON\tDIALOG_NULL,\t\t\t312, 264,  93,  20,  12, BS_OWNERDRAW"
+        },
+        "NativeLayout": [
+          {
+            "Name": "Param2",
+            "Offset": 9,
+            "Size": 1,
+            "Kind": "BYTE"
+          },
+          {
+            "Name": "Param5",
+            "Offset": 12,
+            "Size": 2,
+            "Kind": "WORD"
+          },
+          {
+            "Name": "Param7",
+            "Offset": 14,
+            "Size": 2,
+            "Kind": "WORD"
+          }
+        ]
+      }
+    ],
+    "MapCorrectRect": {
+      "Line": 194,
+      "Body": "void Map_CorrectRect(MAPRECT *MapRect, MAPCLIENT *MapClient)\n{\n\tif (MapRect->x1 > MapRect->x2)\n\t\t{\n\t\tMapClient->X = MapRect->x2;\n\t\tMapClient->Width = MapRect->x1-MapRect->x2+1;\n\t\t}\n\telse\n\t\t{\n\t\tMapClient->X = MapRect->x1;\n\t\tMapClient->Width = MapRect->x2-MapRect->x1+1;\n\t\t}\n\n\tif (MapRect->y1 > MapRect->y2)\n\t\t{\n\t\tMapClient->Y = MapRect->y2;\n\t\tMapClient->Height = MapRect->y1-MapRect->y2+1;\n\t\t}\n\telse\n\t\t{\n\t\tMapClient->Y = MapRect->y1;\n\t\tMapClient->Height = MapRect->y2-MapRect->y1+1;\n\t\t}\n\n\treturn;\n}"
+    },
+    "ActionCallbacks": {
+      "Name": "Triggers_ActionDlgParams",
+      "Line": 682,
+      "Body": "\r\n\tTRIGGERSCTX\t*Context;\r\n\tLONG\t\t lData;\r\n\r\n\tif (uMsgId == WM_INITDIALOG)\r\n\t\t{\r\n\t\tContext = (TRIGGERSCTX *)(((PROPSHEETPAGE *)lParam)->lParam);\r\n\t\tTriggers_ActionDlgParamsInit(hDlg,Context);\r\n\t\treturn(TRUE);\r\n\t\t}\r\n\r\n\tContext = (TRIGGERSCTX *)GetWindowLong(hDlg,DWL_USER);\r\n\tif (!Context) return(FALSE);\r\n\r\n\tswitch(uMsgId)\r\n\t\t{\r\n\t\tcase WM_MEASUREITEM:\r\n\t\t\tif (((MEASUREITEMSTRUCT *)lParam)->CtlType == ODT_COMBOBOX)\r\n\t\t\t\t{\r\n\t\t\t\tMisc_MeasurePlayerComboBoxList(303,(MEASUREITEMSTRUCT *)lParam);\r\n\t\t\t\treturn(TRUE);\r\n\t\t\t\t}\r\n\t\t\tif (((MEASUREITEMSTRUCT *)lParam)->CtlType == ODT_LISTVIEW)\r\n\t\t\t\t{\r\n\t\t\t\tMisc_MeasureListViewItem((MEASUREITEMSTRUCT *)lParam,32);\r\n\t\t\t\treturn(TRUE);\r\n\t\t\t\t}\r\n\t\t\tbreak;\r\n\r\n\t\tcase WM_DRAWITEM:\r\n\t\t\tif (((DRAWITEMSTRUCT *)lParam)->CtlType == ODT_COMBOBOX)\r\n\t\t\t\t{\r\n\t\t\t\tMisc_DisplayPlayerComboBoxList(303,(DRAWITEMSTRUCT *)lParam);\r\n\t\t\t\treturn(TRUE);\r\n\t\t\t\t}\r\n\t\t\tif (((DRAWITEMSTRUCT *)lParam)->CtlType == ODT_LISTVIEW)\r\n\t\t\t\t{\r\n\t\t\t\tTriggers_DisplayDrawList((DRAWITEMSTRUCT *)lParam,Context);\r\n\t\t\t\treturn(TRUE);\r\n\t\t\t\t}\r\n\t\t\tif (((DRAWITEMSTRUCT *)lParam)->CtlType == ODT_BUTTON)\r\n\t\t\t\t{\r\n\t\t\t\tswitch(((DRAWITEMSTRUCT *)lParam)->CtlID)\r\n\t\t\t\t\t{\r\n\t\t\t\t\tcase 312:\r\n\t\t\t\t\t\tMisc_DrawButtonIcon((DRAWITEMSTRUCT *)lParam,Context->PointIcon);\r\n\t\t\t\t\t\tbreak;\r\n\t\t\t\t\tcase 314:\r\n\t\t\t\t\t\tMisc_DrawButtonIcon((DRAWITEMSTRUCT *)lParam,Context->RectIcon);\r\n\t\t\t\t\t\tbreak;\r\n\t\t\t\t\tcase 315:\r\n\t\t\t\t\t\tMisc_DrawButtonIcon((DRAWITEMSTRUCT *)lParam,Context->CameraIcon);\r\n\t\t\t\t\t\tbreak;\r\n\t\t\t\t\t}\r\n\t\t\t\treturn(TRUE);\r\n\t\t\t\t}\r\n\t\t\tif (((DRAWITEMSTRUCT *)lParam)->CtlType == ODT_STATIC)\r\n\t\t\t\t{\r\n\t\t\t\tMisc_DrawGroup((DRAWITEMSTRUCT *)lParam);\r\n\t\t\t\treturn(TRUE);\r\n\t\t\t\t}\r\n\t\t\tbreak;\r\n\r\n\t\tcase WM_COMMAND:\r\n\t\t\tswitch(HIWORD(wParam))\r\n\t\t\t\t{\r\n\t\t\t\tcase EN_CHANGE:\r\n\t\t\t\t\tswitch(LOWORD(wParam))\r\n\t\t\t\t\t\t{\r\n\t\t\t\t\t\tcase 700:\r\n\t\t\t\t\t\tcase 701:\r\n\t\t\t\t\t\tcase 702:\r\n\t\t\t\t\t\t\tif (Context->ActionCtx.TempAction.ctrl == ACTION_DISPLAYTIMER)\r\n\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\tlong\tHours;\r\n\t\t\t\t\t\t\t\tlong\tMinutes;\r\n\t\t\t\t\t\t\t\tlong\tSeconds;\r\n\r\n\t\t\t\t\t\t\t\tHours = GetDlgItemInt(hDlg,700,NULL,FALSE);\r\n\t\t\t\t\t\t\t\tMinutes = GetDlgItemInt(hDlg,701,NULL,FALSE);\r\n\t\t\t\t\t\t\t\tSeconds = GetDlgItemInt(hDlg,702,NULL,FALSE);\r\n\t\t\t\t\t\t\t\tif (Hours > 23)\r\n\t\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\tSetDlgItemInt(hDlg,700,23,FALSE);\r\n\t\t\t\t\t\t\t\t\tbreak;\r\n\t\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\t\tif (Minutes > 59)\r\n\t\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\tSetDlgItemInt(hDlg,701,59,FALSE);\r\n\t\t\t\t\t\t\t\t\tbreak;\r\n\t\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\t\tif (Seconds > 59)\r\n\t\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\tSetDlgItemInt(hDlg,702,59,FALSE);\r\n\t\t\t\t\t\t\t\t\tbreak;\r\n\t\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\t\tSetDlgItemInt(hDlg,307,Hours*60*60+Minutes*60+Seconds,FALSE);\r\n\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\tbreak;\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\treturn(TRUE);\r\n\r\n\t\t\t\tcase BN_CLICKED:\r\n\t\t\t\t\tswitch(LOWORD(wParam))\r\n\t\t\t\t\t\t{\r\n\t\t\t\t\t\tcase 200:\r\n\t\t\t\t\t\tcase 201:\r\n\t\t\t\t\t\tcase 202:\r\n\t\t\t\t\t\t\tif (Context->ActionCtx.TempAction.ctrl == ACTION_SETVARIABLE)\r\n\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,210),TRUE);\r\n\t\t\t\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,213),FALSE);\r\n\t\t\t\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,214),FALSE);\r\n\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\tbreak;\r\n\t\t\t\t\t\tcase 203:\r\n\t\t\t\t\t\tcase 204:\r\n\t\t\t\t\t\tcase 205:\r\n\t\t\t\t\t\t\tif (Context->ActionCtx.TempAction.ctrl == ACTION_SETVARIABLE)\r\n\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,210),FALSE);\r\n\t\t\t\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,213),TRUE);\r\n\t\t\t\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,214),TRUE);\r\n\t\t\t\t\t\t\t\tContext->ActionCtx.TempAction.param5 = SendDlgItemMessage(hDlg,214,CB_GETCURSEL,(WPARAM)0,(LPARAM)0);\r\n\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\tbreak;\r\n\r\n\t\t\t\t\t\tcase 313:\r\n\t\t\t\t\t\t\tif (Context->ActionCtx.TempAction.ctrl == ACTION_ADDCREATURE)\r\n\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\tThings_SelectOptions(hDlg,(DWORD *)&Context->ActionCtx.TempAction.param4,NULL,THING_OPTIONSADD);\r\n\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\tbreak;\r\n\r\n\t\t\t\t\t\tcase 312:\r\n\t\t\t\t\t\t\tTriggers_ActionDlgChoosePoint(hDlg);\r\n\t\t\t\t\t\t\tbreak;\r\n\t\t\t\t\t\tcase 314:\r\n\t\t\t\t\t\t\tMap_ChoosePointEx(hDlg,&Context->ActionCtx.FullRect,MAP_CHOICELMBRECT,szTriggersChoiceRect);\r\n\t\t\t\t\t\t\tSetDlgItemInt(hDlg,307,Context->ActionCtx.FullRect.x1,FALSE);\r\n\t\t\t\t\t\t\tSetDlgItemInt(hDlg,309,Context->ActionCtx.FullRect.y1,FALSE);\r\n\t\t\t\t\t\t\tbreak;\r\n\t\t\t\t\t\tcase 315:\r\n\t\t\t\t\t\t\tif (Context->ActionCtx.TempAction.ctrl == ACTION_CAMERAPATH)\r\n\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\tCAMERAPATH\tCameraPath;\r\n\r\n\t\t\t\t\t\t\t\tZeroMemory(&CameraPath,sizeof(CAMERAPATH));\r\n\t\t\t\t\t\t\t\tCameraPath.PathId = GetDlgItemInt(hDlg,307,NULL,FALSE);\r\n\t\t\t\t\t\t\t\tif (Library_Call(hDlg,LIBRARY_CAMERAPATH,&CameraPath))\r\n\t\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\tSetDlgItemInt(hDlg,307,CameraPath.PathId,FALSE);\r\n\t\t\t\t\t\t\t\t\tCheckRadioButton(hDlg,200,201,(CameraPath.ShowCell)?200:201);\r\n\t\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\telse\r\n\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\tif (IsDlgButtonChecked(hDlg,315) == BST_CHECKED)\r\n\t\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,306),FALSE);\r\n\t\t\t\t\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,307),FALSE);\r\n\t\t\t\t\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,308),FALSE);\r\n\t\t\t\t\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,309),FALSE);\r\n\t\t\t\t\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,310),FALSE);\r\n\t\t\t\t\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,311),FALSE);\r\n\t\t\t\t\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,312),FALSE);\r\n\t\t\t\t\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,314),TRUE);\r\n\t\t\t\t\t\t\t\t\tContext->ActionCtx.ChangeRect = TRUE;\r\n\t\t\t\t\t\t\t\t\tContext->ActionCtx.FullRect.x1 = GetDlgItemInt(hDlg,307,NULL,FALSE);\r\n\t\t\t\t\t\t\t\t\tContext->ActionCtx.FullRect.y1 = GetDlgItemInt(hDlg,309,NULL,FALSE);\r\n\t\t\t\t\t\t\t\t\tContext->ActionCtx.FullRect.x2 = Context->ActionCtx.FullRect.x1;\r\n\t\t\t\t\t\t\t\t\tContext->ActionCtx.FullRect.y2 = Context->ActionCtx.FullRect.y1;\r\n\t\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\t\telse\r\n\t\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,306),TRUE);\r\n\t\t\t\t\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,307),TRUE);\r\n\t\t\t\t\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,308),TRUE);\r\n\t\t\t\t\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,309),TRUE);\r\n\t\t\t\t\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,310),TRUE);\r\n\t\t\t\t\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,311),TRUE);\r\n\t\t\t\t\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,312),TRUE);\r\n\t\t\t\t\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,314),FALSE);\r\n\t\t\t\t\t\t\t\t\tContext->ActionCtx.ChangeRect = FALSE;\r\n\t\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\t\tbreak;\r\n\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\tbreak;\r\n\t\t\t\t\t\tcase 500:\r\n\t\t\t\t\t\t\tif (IsDlgButtonChecked(hDlg,500) == BST_CHECKED)\r\n\t\t\t\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,501),TRUE);\r\n\t\t\t\t\t\t\telse\r\n\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\tCheckDlgButton(hDlg,501,BST_UNCHECKED);\r\n\t\t\t\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,501),FALSE);\r\n\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\tbreak;\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\treturn(TRUE);\r\n\r\n\t\t\t\tcase LBN_DBLCLK:\r\n\t\t\t\t\tswitch(LOWORD(wParam))\r\n\t\t\t\t\t\t{\r\n\t\t\t\t\t\tcase 401:\r\n\t\t\t\t\t\t\tif (Context->ActionCtx.TempAction.ctrl == ACTION_SAY)\r\n\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\tProperties_MapVoicesGetSoundList(hDlg,(char *)Map.Properties.SpeechFile,SendDlgItemMessage(hDlg,401,LB_GETCURSEL,(WPARAM)0,(LPARAM)0)+1,NULL);\r\n\t\t\t\t\t\t\t\treturn(TRUE);\r\n\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\tbreak;\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\tbreak;\r\n\r\n\t\t\t\tcase CBN_SELCHANGE:\r\n\t\t\t\t\tswitch(LOWORD(wParam))\r\n\t\t\t\t\t\t{\r\n\t\t\t\t\t\tcase 401:\r\n\t\t\t\t\t\t\tif (Context->ActionCtx.TempAction.ctrl == ACTION_SAY)\r\n\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\tSetDlgItemInt(hDlg,307,SendDlgItemMessage(hDlg,401,LB_GETCURSEL,(WPARAM)0,(LPARAM)0)+1,FALSE);\r\n\t\t\t\t\t\t\t\tProperties_MapTextsSetText(hDlg,402,(char *)Map.Properties.SpeechFile,SendDlgItemMessage(hDlg,401,LB_GETCURSEL,(WPARAM)0,(LPARAM)0)+1);\r\n\t\t\t\t\t\t\t\treturn(TRUE);\r\n\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\tbreak;\r\n\r\n\t\t\t\t\t\tcase 311:\r\n\t\t\t\t\t\t\tswitch(Context->ActionCtx.TempAction.ctrl)\r\n\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\tcase ACTION_ADDCREATURE:\r\n\t\t\t\t\t\t\t\tcase ACTION_CHANGESQUARE:\r\n\t\t\t\t\t\t\t\tcase ACTION_CHANGEOWNER: {\r\n\t\t\t\t\t\t\t\t\tMAPRECTEX\t*Area;\r\n\t\t\t\t\t\t\t\t\tMAPCLIENT\t Client;\r\n\r\n\t\t\t\t\t\t\t\t\tlData = Misc_GetArea(hDlg,311,TRUE);\r\n\t\t\t\t\t\t\t\t\tif (!lData) break;\r\n\t\t\t\t\t\t\t\t\tArea = RectEx_FindById(lData,&MapAreas);\r\n\t\t\t\t\t\t\t\t\tif (!Area) break;\r\n\t\t\t\t\t\t\t\t\tMap_CorrectRect(&Area->rect,&Client);\r\n\t\t\t\t\t\t\t\t\tSetDlgItemInt(hDlg,307,Client.X,FALSE);\r\n\t\t\t\t\t\t\t\t\tSetDlgItemInt(hDlg,309,Client.Y,FALSE);\r\n\t\t\t\t\t\t\t\t\t} return(TRUE);\r\n\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\tbreak;\r\n\r\n\t\t\t\t\t\tcase 212:\r\n\t\t\t\t\t\t\tlData = SendDlgItemMessage(hDlg,212,CB_GETCURSEL,(WPARAM)0,(LPARAM)0);\r\n\t\t\t\t\t\t\tif (lData < 0) break;\r\n\t\t\t\t\t\t\tContext->ActionCtx.TempAction.param1 = lData;\r\n\t\t\t\t\t\t\tbreak;\r\n\t\t\t\t\t\tcase 214:\r\n\t\t\t\t\t\t\tlData = SendDlgItemMessage(hDlg,214,CB_GETCURSEL,(WPARAM)0,(LPARAM)0);\r\n\t\t\t\t\t\t\tif (lData < 0) break;\r\n\t\t\t\t\t\t\tContext->ActionCtx.TempAction.param5 = lData;\r\n\t\t\t\t\t\t\tbreak;\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\treturn(TRUE);\r\n\t\t\t\t}\r\n\t\t\tbreak;\r\n\r\n\t\tcase WM_NOTIFY:\r\n\t\t\tswitch( ((NMHDR *)lParam)->code )\r\n\t\t\t\t{\r\n\t\t\t\tcase LVN_ITEMCHANGED:\r\n\t\t\t\t\tif (!IsWindow(Context->ActionCtx.TerrainList)) break;\r\n\t\t\t\t\tif (((NMHDR *)lParam)->hwndFrom == Context->ActionCtx.TerrainList)\r\n\t\t\t\t\t\t{\r\n\t\t\t\t\t\tif (!(((NM_LISTVIEW *)lParam)->uNewState&LVIS_SELECTED))\r\n\t\t\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,303),FALSE);\r\n\t\t\t\t\t\telse\r\n\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\tlData = Triggers_TriggerDlgGetSelectedEntryParam(Context->ActionCtx.TerrainList);\r\n\t\t\t\t\t\t\tif ((lData <= 0x07)||(lData == 0x1F))\r\n\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\tSendDlgItemMessage(hDlg,303,CB_SETCURSEL,(WPARAM)1,(LPARAM)0);\r\n\t\t\t\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,303),FALSE);\r\n\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\telse if (lData == 0x23)\r\n\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\tSendDlgItemMessage(hDlg,303,CB_SETCURSEL,(WPARAM)0,(LPARAM)0);\r\n\t\t\t\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,303),FALSE);\r\n\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\telse\r\n\t\t\t\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,303),TRUE);\r\n\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\treturn(TRUE);\r\n\r\n                                case PSN_SETACTIVE:\r\n\t\t\t\t\tTriggers_ActionDlgParamsCheck(hDlg,Context);\r\n\t\t\t\t\treturn(TRUE);\r\n\r\n\t\t\t\tcase PSN_WIZBACK:\r\n\t\t\t\t\tTriggers_ActionDlgParamsStore(hDlg,Context);\r\n\t\t\t\t\tSetWindowLong(hDlg,DWL_MSGRESULT,7200);\r\n\t\t\t\t\treturn(TRUE);\r\n\r\n\t\t\t\tcase PSN_WIZFINISH:\r\n\t\t\t\t\tif (!Triggers_ActionDlgParamsStore(hDlg,Context))\r\n\t\t\t\t\t\t{\r\n\t\t\t\t\t\tSetWindowLong(hDlg,DWL_MSGRESULT,-1);\r\n\t\t\t\t\t\treturn(TRUE);\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\tTriggers_ActionDlgParamsSave(hDlg,Context);\r\n\t\t\t\t\treturn(TRUE);\r\n\t\t\t\t}\r\n\t\t\tbreak;\r\n\t\t}\r\n\r\n\treturn(FALSE);\r\n"
+    },
+    "PointPicker": {
+      "Name": "Triggers_ActionDlgChoosePoint",
+      "Line": 1572,
+      "Body": "\r\n\tMAPRECT\tMapRect;\r\n\r\n\tMapRect.x1 = GetDlgItemInt(hDlg,307,NULL,FALSE);\r\n\tMapRect.y1 = GetDlgItemInt(hDlg,309,NULL,FALSE);\r\n\tMap_ChoosePointEx(hDlg,&MapRect,MAP_CHOICELMBPOINT,szTriggersChoice);\r\n\tSetDlgItemInt(hDlg,307,MapRect.x1,FALSE);\r\n\tSetDlgItemInt(hDlg,309,MapRect.y1,FALSE);\r\n\treturn;\r\n"
+    },
+    "ActionSave": {
+      "Name": "Triggers_ActionDlgParamsSave",
+      "Line": 1915,
+      "Body": "\r\n\tTV_INSERTSTRUCT\t Parent;\r\n\tACTION\t\t*NewAction;\r\n\tchar\t\t*TextBuffer;\r\n\tlong\t\t X = 1;\r\n\tlong\t\t Y = 0;\r\n\r\n\tswitch(Context->ActionCtx.TempAction.ctrl)\r\n\t\t{\r\n\t\tcase ACTION_VICTORY:\r\n\t\tcase ACTION_DEFEAT:\r\n\t\tcase ACTION_HASCRYSTAL:\r\n\t\tcase ACTION_POSSESSCREATURE:\r\n\t\tcase ACTION_REMOVE:\r\n\t\tcase ACTION_SHOW:\r\n\t\t\tContext->ActionCtx.TempAction.param1 = 0;\r\n\t\t\tContext->ActionCtx.TempAction.param2 = 0;\r\n\t\t\tContext->ActionCtx.TempAction.param3 = 0;\r\n\t\t\tContext->ActionCtx.TempAction.param4 = 0;\r\n\t\t\tContext->ActionCtx.TempAction.param5 = 0;\r\n\t\t\tContext->ActionCtx.TempAction.param6 = 0;\r\n\t\t\tContext->ActionCtx.TempAction.param7 = 0;\r\n\t\t\tContext->ActionCtx.TempAction.param8 = 0;\r\n\t\t\tbreak;\r\n\t\t}\r\n\r\nLoop:\tTextBuffer = GlobalAlloc(GPTR,4096);\r\n\tif (!TextBuffer) goto Error_0;\r\n\tNewAction = GlobalAlloc(GPTR,sizeof(ACTION));\r\n\tif (!NewAction) goto Error_1;\r\n\r\n\tParent.DUMMYUNIONNAME.item.mask = TVIF_PARAM;\r\n\tParent.DUMMYUNIONNAME.item.lParam = 0;\r\n\tParent.DUMMYUNIONNAME.item.hItem = (HTREEITEM)SendMessage(Context->List,TVM_GETNEXTITEM,(WPARAM)TVGN_CARET,(LPARAM)TVI_ROOT);\r\n\tif (Parent.DUMMYUNIONNAME.item.hItem) SendMessage(Context->List,TVM_GETITEM,(WPARAM)0,(LPARAM)&Parent.DUMMYUNIONNAME.item);\r\n\r\n\t                                \r\n\r\n\tif (Context->Modify)\r\n\t\t{\r\n\t\tGlobalFree(NewAction);\r\n\t\tCopyMemory(Context->ActionCtx.SrceAction,&Context->ActionCtx.TempAction,sizeof(ACTION));\r\n\t\tParent.DUMMYUNIONNAME.item.mask = TVIF_TEXT;\r\n\t\tParent.DUMMYUNIONNAME.item.pszText = Triggers_FmtActionText(Context->ActionCtx.SrceAction,TextBuffer,TextBuffer+2048);\r\n\t\tif (Parent.DUMMYUNIONNAME.item.lParam) SendMessage(Context->List,TVM_SETITEM,(WPARAM)0,(LPARAM)&Parent.DUMMYUNIONNAME.item);\r\n\t\tgoto Done;\r\n\t\t}\r\n\r\n\t                                         \r\n\r\n\tif ((Context->Insert)&&(Parent.DUMMYUNIONNAME.item.lParam))\r\n\t\t{\r\n\t\tCopyMemory(NewAction,&Context->ActionCtx.TempAction,sizeof(ACTION));\r\n\t\tNewAction->id = Triggers_GetActionFreeId();\r\n\t\tParent.hParent = (HTREEITEM)SendMessage(Context->List,TVM_GETNEXTITEM,(WPARAM)TVGN_PARENT,(LPARAM)Parent.DUMMYUNIONNAME.item.hItem);\r\n\t\tParent.hInsertAfter = (HTREEITEM)SendMessage(Context->List,TVM_GETNEXTITEM,(WPARAM)TVGN_PREVIOUS,(LPARAM)Parent.DUMMYUNIONNAME.item.hItem);\r\n\t\tif (!Parent.hInsertAfter) Parent.hInsertAfter = TVI_FIRST;\r\n\t\tParent.DUMMYUNIONNAME.item.hItem = NULL;\r\n\t\tParent.DUMMYUNIONNAME.item.mask = TVIF_PARAM|TVIF_CHILDREN|TVIF_IMAGE|TVIF_SELECTEDIMAGE|TVIF_TEXT;\r\n\t\tParent.DUMMYUNIONNAME.item.pszText = Triggers_FmtActionText(NewAction,TextBuffer,TextBuffer+2048);\r\n\t\tParent.DUMMYUNIONNAME.item.iImage = 1;\r\n\t\tParent.DUMMYUNIONNAME.item.iSelectedImage = 1;\r\n\t\tParent.DUMMYUNIONNAME.item.cChildren = 0;\r\n\t\tParent.DUMMYUNIONNAME.item.lParam = (LPARAM)NewAction;\r\n\t\tParent.DUMMYUNIONNAME.item.hItem = (HTREEITEM)SendMessage(Context->List,TVM_INSERTITEM,(WPARAM)0,(LPARAM)&Parent);\r\n\t\tif (!Parent.DUMMYUNIONNAME.item.hItem) goto Error_2;\r\n\t\t}\r\n\telse\r\n\t\t{\r\n\t\tCopyMemory(NewAction,&Context->ActionCtx.TempAction,sizeof(ACTION));\r\n\t\tNewAction->id = Triggers_GetActionFreeId();\r\n\t\tif (Parent.DUMMYUNIONNAME.item.lParam)\r\n\t\t\t{\r\n\t\t\tif (((NODE *)Parent.DUMMYUNIONNAME.item.lParam)->type == TYPE_TRIGGER)\r\n\t\t\t\tParent.hParent = Parent.DUMMYUNIONNAME.item.hItem;\r\n\t\t\telse\r\n\t\t\t\tParent.hParent = (HTREEITEM)SendMessage(Context->List,TVM_GETNEXTITEM,(WPARAM)TVGN_PARENT,(LPARAM)Parent.DUMMYUNIONNAME.item.hItem);\t\t\tParent.hInsertAfter = TVI_LAST;\r\n\t\t\t}\r\n\t\telse\r\n\t\t\t{\r\n\t\t\tParent.hParent = TVI_ROOT;\r\n\t\t\tParent.hInsertAfter = TVI_LAST;\r\n\t\t\t}\r\n\t\tParent.DUMMYUNIONNAME.item.hItem = NULL;\r\n\t\tParent.DUMMYUNIONNAME.item.mask = TVIF_PARAM|TVIF_CHILDREN|TVIF_IMAGE|TVIF_SELECTEDIMAGE|TVIF_TEXT;\r\n\t\tParent.DUMMYUNIONNAME.item.pszText = Triggers_FmtActionText(NewAction,TextBuffer,TextBuffer+2048);\r\n\t\tParent.DUMMYUNIONNAME.item.iImage = 1;\r\n\t\tParent.DUMMYUNIONNAME.item.iSelectedImage = 1;\r\n\t\tParent.DUMMYUNIONNAME.item.cChildren = 0;\r\n\t\tParent.DUMMYUNIONNAME.item.lParam = (LPARAM)NewAction;\r\n\t\tParent.DUMMYUNIONNAME.item.hItem = (HTREEITEM)SendMessage(Context->List,TVM_INSERTITEM,(WPARAM)0,(LPARAM)&Parent);\r\n\t\tif (!Parent.DUMMYUNIONNAME.item.hItem) goto Error_2;\r\n\t\t}\r\n\r\n\t                                                   \r\n\r\n\tList_AddEntry((NODE *)NewAction,&MapActions);\r\n\tif (!Triggers_SelectLink(NewAction,Context->ActionCtx.ParentPoint,Parent.DUMMYUNIONNAME.item.hItem,Context)) goto Error_3;\r\n\r\n\t#if (DEBUG_EVENTS)\r\n\tParent.DUMMYUNIONNAME.item.mask = TVIF_TEXT;\r\n\tParent.DUMMYUNIONNAME.item.pszText = Triggers_FmtActionText(NewAction,TextBuffer,TextBuffer+2048);\r\n\tSendMessage(Context->List,TVM_SETITEM,(WPARAM)0,(LPARAM)&Parent.DUMMYUNIONNAME.item);\r\n\t#endif\r\n\r\n                     \r\n\r\nDone:\tSendMessage(Context->List,TVM_SELECTITEM,(WPARAM)TVGN_CARET,(LPARAM)Parent.DUMMYUNIONNAME.item.hItem);\r\n\tGlobalFree(TextBuffer);\r\n\tMapChanges++;\r\n\r\n\tif ((Context->ActionCtx.ChangeRect)&&(Context->ActionCtx.TempAction.ctrl == ACTION_CHANGESQUARE))\r\n\t\t{\r\n\t\tif (Context->ActionCtx.FullRect.x1+X == Context->ActionCtx.FullRect.x2+1)\r\n\t\t\t{\r\n\t\t\tX = 0;\r\n\t\t\tY++;\r\n\t\t\t}\r\n\t\tif (Context->ActionCtx.FullRect.y1+Y != Context->ActionCtx.FullRect.y2+1)\r\n\t\t\t{\r\n\t\t\tContext->ActionCtx.TempAction.param5 = Context->ActionCtx.FullRect.x1+X+1;\r\n\t\t\tContext->ActionCtx.TempAction.param7 = Context->ActionCtx.FullRect.y1+Y+1;\r\n\t\t\tX++;\r\n\t\t\tgoto Loop;\r\n\t\t\t}\r\n\r\n\t\tContext->ActionCtx.TempAction.param5 = Context->ActionCtx.FullRect.x1+1;\r\n\t\tContext->ActionCtx.TempAction.param7 = Context->ActionCtx.FullRect.y1+1;\r\n\t\tContext->ActionCtx.ChangeRect = FALSE;\r\n\t\t}\r\n\r\n\treturn(1);\r\n\r\n                 \r\n\r\nError_3:List_RemEntry((NODE *)NewAction);\r\n\tSendMessage(Context->List,TVM_DELETEITEM,(WPARAM)0,(LPARAM)Parent.DUMMYUNIONNAME.item.hItem);\r\nError_2:GlobalFree(NewAction);\r\nError_1:GlobalFree(TextBuffer);\r\nError_0:Misc_MessageBoxExt(hDlg,szTriggersNewActionErr,NULL,szMessageBoxExtOk,MB_ICONHAND);\r\n\treturn(0);\r\n"
+    },
+    "RectangleCreation": {
+      "Inclusive": true,
+      "Order": "Y rows then X columns",
+      "FreshIDPerAction": true,
+      "ExistingActionCheckboxDisabled": true,
+      "RequiredModernBehavior": "Preflight all identities/links/coordinates, then one atomic history operation; no partial expansion"
+    },
+    "InputHashes": {
+      "Source/Sources/Triggers/Triggers_Triggers.c": "b94b509ab4d625925bffa65c83f3bc77c8cba776cb2085d1494c855e6e4cb05a",
+      "Source/Sources/Triggers/Triggers_Actions.c": "6cb909e922dd1116d1d02c7cde63721b07c0ed4b57b7cc4ff4af8cd8fcf33d37",
+      "Source/Sources/Datas/Datas_Triggers.c": "b4ba371380ca3c5faf192fa761fb69df1f6713dc806e225bc3aa404ed4caa365",
+      "Source/Resources/Editor.rc": "eb07ed2217a81348a03c75e302d09fdcb5e34b6099d1bd60229ba5fa9bd8920d",
+      "Source/Includes/Triggers.h": "6ec1dc07f510f7b9e21fe3bd46f08e5fc9a3e272d5444373f045775b91ec20a1",
+      "Source/Sources/Triggers/Triggers_Display.c": "a9ebbaa98de2d0c27d5e9dc5373f67ee64ed0b1d5c181bd196df07950c4859cd",
+      "Source/Sources/Misc/Misc_Display.c": "b3fdf608d551981e0e9a593ba4ae20b34a52c8336ae6f7c65431ac23d8502769",
+      "Source/Sources/Things/Things_Selection.c": "df135c89d08c4d533a395b09d0e2e0c38908bd722611ed17865f5532834f7060",
+      "Source/Sources/Map/Map_Areas.c": "65baaa4bbbd9ddb14faaff9b6b0b345e8a3f7802be1ceae35683bc268c77251b",
+      "Source/Includes/Things.h": "74a5ed43882864225fc431bce57ca796e0bd7aaeb8e4da9363e3a714da0cc5a0",
+      "Source/Includes/Strings.h": "deee57184bd2a4256c3e0e1e050ae5616932b86e2b7265f6f8b3659abee9cecb"
+    },
+    "OriginalSourceUnchanged": true
+  },
+  "InputHashes": {
+    "Source/Sources/Triggers/Triggers_Triggers.c": "b94b509ab4d625925bffa65c83f3bc77c8cba776cb2085d1494c855e6e4cb05a",
+    "Source/Sources/Triggers/Triggers_Actions.c": "6cb909e922dd1116d1d02c7cde63721b07c0ed4b57b7cc4ff4af8cd8fcf33d37",
+    "Source/Sources/Datas/Datas_Triggers.c": "b4ba371380ca3c5faf192fa761fb69df1f6713dc806e225bc3aa404ed4caa365",
+    "Source/Resources/Editor.rc": "eb07ed2217a81348a03c75e302d09fdcb5e34b6099d1bd60229ba5fa9bd8920d",
+    "Source/Includes/Triggers.h": "6ec1dc07f510f7b9e21fe3bd46f08e5fc9a3e272d5444373f045775b91ec20a1",
+    "Source/Sources/Triggers/Triggers_Display.c": "a9ebbaa98de2d0c27d5e9dc5373f67ee64ed0b1d5c181bd196df07950c4859cd",
+    "Source/Sources/Misc/Misc_Display.c": "b3fdf608d551981e0e9a593ba4ae20b34a52c8336ae6f7c65431ac23d8502769",
+    "Source/Sources/Things/Things_Selection.c": "df135c89d08c4d533a395b09d0e2e0c38908bd722611ed17865f5532834f7060",
+    "Source/Sources/Datas/Datas_Things.c": "2e5f874c7820415da8dc47412e57c501fbced920b67c122e386a8ca8be86cbf0",
+    "Source/Sources/Datas/Datas_Game.c": "d6d40de66125e770fe62b448abef03a7a7d608424006ff15d57cd6c1a0ffcf2e",
+    "Source/Includes/Strings.h": "deee57184bd2a4256c3e0e1e050ae5616932b86e2b7265f6f8b3659abee9cecb",
+    "Source/Sources/Triggers/Triggers_Texts.c": "c667d92cca91f0b04d73dab6288fa3a43b7bfe2dcc75fb2fe4710f37c7b67e4d",
+    "Source/Sources/Properties/Map/Properties_Map_Voices.c": "33fd82c81865f404ace09b38d6c5606b0582c3d58d77aaf5fbedc4eb68efcf48",
+    "Source/Sources/Properties/Map/Properties_Map_Texts.c": "ff9c29ef8192ad721de09811f80622aabb60a7e7cc8cfb3db2f108520059d639",
+    "Source/Sources/Datas/Texts_Map.c": "866eb14e1a237bb9a4055c86f8254b356ce0816478df62216a673624e12643c7",
+    "Source/Sources/Datas/Datas_CameraPaths.c": "1d8450dd6a59b110e806266d60af85ef107683d1c73dc81d6d6ff43f4e916821",
+    "Source/Sources/Compiler/Compiler_Generate.c": "4a2952b0b687149302b2f0374d08e5e2316c28875d98036059af4f8c6d84ac3b"
+  }
+}

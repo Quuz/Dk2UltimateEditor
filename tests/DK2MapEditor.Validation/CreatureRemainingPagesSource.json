@@ -1,0 +1,3271 @@
+{
+  "ParentScopeSHA256": "3ba864a1db3ae423d258b0efa6f9ed63bcd9dfa05b8a5640875f1449bdeb55e0",
+  "InputHashes": {
+    "Source/Sources/Properties/GlobalVariables/Properties_Global_Creatures.c": "c9efa12cab7cf2a6ee1f349ce847ec05203a2c400b47294ba93804160144fab2",
+    "Source/Sources/Properties/GlobalVariables/Properties_Global_Functions.c": "5783f781840b41e4db98b269930e211bd0bfe10666deb0c25ae8cfd15df69a94",
+    "Source/Includes/GlobalVariables.h": "d027d5a861f611de5347d807fc23aa3f871553b34a920b2973b2c1136784d129",
+    "Source/Sources/Datas/Datas_GlobalVariables.c": "c6d78d87522ec55963cc983e016356786f548b2a70cbede2ab70237ad049d456",
+    "Source/Sources/Compiler/Compiler_Generate.c": "4a2952b0b687149302b2f0374d08e5e2316c28875d98036059af4f8c6d84ac3b",
+    "Source/Resources/Editor.rc": "eb07ed2217a81348a03c75e302d09fdcb5e34b6099d1bd60229ba5fa9bd8920d",
+    "Source/Sources/Datas/Texts_Things.c": "cd8b3b9917ef8f8ed064ea5deace8cb43335059cfc14cf7bc46c1f1f5af36fb8",
+    "Source/Sources/Datas/Datas_Effects.c": "2c8789547568796cd19455410fce7210363b2c51150655e47bd10365ec24b28d"
+  },
+  "Pages": [
+    {
+      "Page": 0,
+      "Resource": 6860,
+      "Section": "Attributes",
+      "Family": "Creatures",
+      "ResetMask": "MGRF_CRATTRS",
+      "ResetCurrentControl": 998,
+      "ResetAllControl": 999,
+      "Fields": [
+        "ExpPtsForNextLevel",
+        "ExpPts",
+        "ExpPtsTraining",
+        "ResearchPts",
+        "ManufacturePts",
+        "Height",
+        "EyeHeight",
+        "DistanceCanSee",
+        "DistanceCanHear",
+        "Health",
+        "HealthFromChicken",
+        "SlapDamage",
+        "Fear",
+        "Threat",
+        "PrayerMana",
+        "Pay",
+        "InitialGoldHeld",
+        "MaxGoldHeld",
+        "Speed",
+        "RunSpeed",
+        "AngerNoLair",
+        "AngerNoFood",
+        "AngerNoPay",
+        "AngerNoWork",
+        "AngerSlap",
+        "AngerInHand",
+        "TimeAwake",
+        "SleepDuration",
+        "StunDuration",
+        "GuardDuration",
+        "IdleDuration",
+        "SlapDuration",
+        "PossessionManaCost",
+        "OwnLandHealthInc",
+        "TortureHealthCng",
+        "TortureMoodCng",
+        "HungerRate",
+        "DecomposeValue"
+      ],
+      "FieldCount": 38
+    },
+    {
+      "Page": 1,
+      "Resource": 6861,
+      "Section": "Parameters",
+      "Family": "Creatures",
+      "ResetMask": "MGRF_CRPARAMS",
+      "ResetCurrentControl": 998,
+      "ResetAllControl": 999,
+      "Fields": [
+        "ArmourType",
+        "FightStyle",
+        "JobClass",
+        "LairObject",
+        "SlapEffect",
+        "HealthEffect",
+        "EntranceEffect",
+        "DeathEffect",
+        "Attract1Type",
+        "Attract1ID",
+        "Attract2Type",
+        "Attract2ID",
+        "Attract2Data"
+      ],
+      "FieldCount": 13
+    },
+    {
+      "Page": 2,
+      "Resource": 6862,
+      "Section": "Flags",
+      "Family": "Creatures",
+      "ResetMask": "MGRF_CRFLAGS",
+      "ResetCurrentControl": 998,
+      "ResetAllControl": 999,
+      "Fields": [
+        "CanBeHypnotized",
+        "DoNotTrain",
+        "CanBePicked",
+        "CanBeSlapped",
+        "CanWalkWater",
+        "CanWalkLava",
+        "ImmuneTurncoat",
+        "DeadBody",
+        "ImmuneChicken",
+        "Fearless",
+        "NoEnemies",
+        "FreeFriends",
+        "RevealTraps",
+        "RandomInvader"
+      ],
+      "FieldCount": 14
+    },
+    {
+      "Page": 7,
+      "Resource": 6867,
+      "Section": "Light",
+      "Family": "Creatures",
+      "ResetMask": "MGRF_CRLIGHT",
+      "ResetCurrentControl": 998,
+      "ResetAllControl": 999,
+      "Fields": [
+        "LightX",
+        "LightY",
+        "LightZ",
+        "LightRadius",
+        "LightR",
+        "LightG",
+        "LightB",
+        "LightFlicker",
+        "LightPulse",
+        "LightPlayer"
+      ],
+      "FieldCount": 10
+    }
+  ],
+  "Attributes": [
+    {
+      "Field": "ExpPtsForNextLevel",
+      "DefaultOffset": 3840,
+      "Fractional": false,
+      "Signed": false,
+      "Symbol": "szGlobalVar01"
+    },
+    {
+      "Field": "ExpPts",
+      "DefaultOffset": 3844,
+      "Fractional": false,
+      "Signed": false,
+      "Symbol": "szGlobalVar02"
+    },
+    {
+      "Field": "ExpPtsTraining",
+      "DefaultOffset": 3846,
+      "Fractional": false,
+      "Signed": false,
+      "Symbol": "szGlobalVar03"
+    },
+    {
+      "Field": "ResearchPts",
+      "DefaultOffset": 3848,
+      "Fractional": false,
+      "Signed": false,
+      "Symbol": "szGlobalVar04"
+    },
+    {
+      "Field": "ManufacturePts",
+      "DefaultOffset": 3850,
+      "Fractional": false,
+      "Signed": false,
+      "Symbol": "szGlobalVar05"
+    },
+    {
+      "Field": "Height",
+      "DefaultOffset": 3748,
+      "Fractional": true,
+      "Signed": false,
+      "Symbol": "szGlobalVar06"
+    },
+    {
+      "Field": "EyeHeight",
+      "DefaultOffset": 3760,
+      "Fractional": true,
+      "Signed": false,
+      "Symbol": "szGlobalVar07"
+    },
+    {
+      "Field": "DistanceCanSee",
+      "DefaultOffset": 3784,
+      "Fractional": true,
+      "Signed": false,
+      "Symbol": "szGlobalVar08"
+    },
+    {
+      "Field": "DistanceCanHear",
+      "DefaultOffset": 3788,
+      "Fractional": true,
+      "Signed": false,
+      "Symbol": "szGlobalVar09"
+    },
+    {
+      "Field": "Speed",
+      "DefaultOffset": 3764,
+      "Fractional": true,
+      "Signed": false,
+      "Symbol": "szGlobalVar13"
+    },
+    {
+      "Field": "RunSpeed",
+      "DefaultOffset": 3768,
+      "Fractional": true,
+      "Signed": false,
+      "Symbol": "szGlobalVar14"
+    },
+    {
+      "Field": "Fear",
+      "DefaultOffset": 3856,
+      "Fractional": false,
+      "Signed": false,
+      "Symbol": "szGlobalVar0D"
+    },
+    {
+      "Field": "Threat",
+      "DefaultOffset": 3858,
+      "Fractional": false,
+      "Signed": false,
+      "Symbol": "szGlobalVar0E"
+    },
+    {
+      "Field": "HungerRate",
+      "DefaultOffset": 3772,
+      "Fractional": true,
+      "Signed": false,
+      "Symbol": "szGlobalVar26"
+    },
+    {
+      "Field": "DecomposeValue",
+      "DefaultOffset": 3874,
+      "Fractional": false,
+      "Signed": false,
+      "Symbol": "szGlobalVar27"
+    },
+    {
+      "Field": "Health",
+      "DefaultOffset": 3852,
+      "Fractional": false,
+      "Signed": false,
+      "Symbol": "szGlobalVar0A"
+    },
+    {
+      "Field": "HealthFromChicken",
+      "DefaultOffset": 3854,
+      "Fractional": false,
+      "Signed": true,
+      "Symbol": "szGlobalVar0B"
+    },
+    {
+      "Field": "SlapDamage",
+      "DefaultOffset": 3862,
+      "Fractional": false,
+      "Signed": true,
+      "Symbol": "szGlobalVar0C"
+    },
+    {
+      "Field": "TortureHealthCng",
+      "DefaultOffset": 4223,
+      "Fractional": false,
+      "Signed": true,
+      "Symbol": "szGlobalVar24"
+    },
+    {
+      "Field": "OwnLandHealthInc",
+      "DefaultOffset": 3818,
+      "Fractional": false,
+      "Signed": true,
+      "Symbol": "szGlobalVar23"
+    },
+    {
+      "Field": "PrayerMana",
+      "DefaultOffset": 3864,
+      "Fractional": false,
+      "Signed": true,
+      "Symbol": "szGlobalVar0F"
+    },
+    {
+      "Field": "PossessionManaCost",
+      "DefaultOffset": 3816,
+      "Fractional": false,
+      "Signed": true,
+      "Symbol": "szGlobalVar22"
+    },
+    {
+      "Field": "Pay",
+      "DefaultOffset": 3868,
+      "Fractional": false,
+      "Signed": false,
+      "Symbol": "szGlobalVar10"
+    },
+    {
+      "Field": "InitialGoldHeld",
+      "DefaultOffset": 3892,
+      "Fractional": false,
+      "Signed": false,
+      "Symbol": "szGlobalVar11"
+    },
+    {
+      "Field": "MaxGoldHeld",
+      "DefaultOffset": 3870,
+      "Fractional": false,
+      "Signed": false,
+      "Symbol": "szGlobalVar12"
+    },
+    {
+      "Field": "AngerNoLair",
+      "DefaultOffset": 3880,
+      "Fractional": false,
+      "Signed": true,
+      "Symbol": "szGlobalVar16"
+    },
+    {
+      "Field": "AngerNoFood",
+      "DefaultOffset": 3882,
+      "Fractional": false,
+      "Signed": true,
+      "Symbol": "szGlobalVar17"
+    },
+    {
+      "Field": "AngerNoPay",
+      "DefaultOffset": 3884,
+      "Fractional": false,
+      "Signed": true,
+      "Symbol": "szGlobalVar18"
+    },
+    {
+      "Field": "AngerNoWork",
+      "DefaultOffset": 3886,
+      "Fractional": false,
+      "Signed": true,
+      "Symbol": "szGlobalVar19"
+    },
+    {
+      "Field": "AngerSlap",
+      "DefaultOffset": 3888,
+      "Fractional": false,
+      "Signed": true,
+      "Symbol": "szGlobalVar1A"
+    },
+    {
+      "Field": "AngerInHand",
+      "DefaultOffset": 3890,
+      "Fractional": false,
+      "Signed": true,
+      "Symbol": "szGlobalVar1B"
+    },
+    {
+      "Field": "TortureMoodCng",
+      "DefaultOffset": 4225,
+      "Fractional": false,
+      "Signed": true,
+      "Symbol": "szGlobalVar25"
+    },
+    {
+      "Field": "TimeAwake",
+      "DefaultOffset": 3776,
+      "Fractional": false,
+      "Signed": false,
+      "Symbol": "szGlobalVar1C"
+    },
+    {
+      "Field": "SleepDuration",
+      "DefaultOffset": 3780,
+      "Fractional": false,
+      "Signed": false,
+      "Symbol": "szGlobalVar1D"
+    },
+    {
+      "Field": "StunDuration",
+      "DefaultOffset": 3792,
+      "Fractional": true,
+      "Signed": false,
+      "Symbol": "szGlobalVar1E"
+    },
+    {
+      "Field": "GuardDuration",
+      "DefaultOffset": 3796,
+      "Fractional": true,
+      "Signed": false,
+      "Symbol": "szGlobalVar1F"
+    },
+    {
+      "Field": "IdleDuration",
+      "DefaultOffset": 3800,
+      "Fractional": true,
+      "Signed": false,
+      "Symbol": "szGlobalVar20"
+    },
+    {
+      "Field": "SlapDuration",
+      "DefaultOffset": 3804,
+      "Fractional": true,
+      "Signed": false,
+      "Symbol": "szGlobalVar21"
+    }
+  ],
+  "NativeStorage": {
+    "ExpPtsForNextLevel": {
+      "Offset": 3840,
+      "Kind": "WORD",
+      "Size": 2,
+      "Cast": "LONG"
+    },
+    "ExpPts": {
+      "Offset": 3844,
+      "Kind": "WORD",
+      "Size": 2,
+      "Cast": "LONG"
+    },
+    "ExpPtsTraining": {
+      "Offset": 3846,
+      "Kind": "WORD",
+      "Size": 2,
+      "Cast": "LONG"
+    },
+    "ResearchPts": {
+      "Offset": 3848,
+      "Kind": "WORD",
+      "Size": 2,
+      "Cast": "LONG"
+    },
+    "ManufacturePts": {
+      "Offset": 3850,
+      "Kind": "WORD",
+      "Size": 2,
+      "Cast": "LONG"
+    },
+    "Height": {
+      "Offset": 3748,
+      "Kind": "WORD",
+      "Size": 2,
+      "Cast": "LONG"
+    },
+    "EyeHeight": {
+      "Offset": 3760,
+      "Kind": "WORD",
+      "Size": 2,
+      "Cast": "LONG"
+    },
+    "DistanceCanSee": {
+      "Offset": 3784,
+      "Kind": "WORD",
+      "Size": 2,
+      "Cast": "LONG"
+    },
+    "DistanceCanHear": {
+      "Offset": 3788,
+      "Kind": "WORD",
+      "Size": 2,
+      "Cast": "LONG"
+    },
+    "Health": {
+      "Offset": 3852,
+      "Kind": "WORD",
+      "Size": 2,
+      "Cast": "LONG"
+    },
+    "HealthFromChicken": {
+      "Offset": 3854,
+      "Kind": "WORD",
+      "Size": 2,
+      "Cast": "LONG"
+    },
+    "SlapDamage": {
+      "Offset": 3862,
+      "Kind": "WORD",
+      "Size": 2,
+      "Cast": "LONG"
+    },
+    "Fear": {
+      "Offset": 3856,
+      "Kind": "WORD",
+      "Size": 2,
+      "Cast": "LONG"
+    },
+    "Threat": {
+      "Offset": 3858,
+      "Kind": "WORD",
+      "Size": 2,
+      "Cast": "LONG"
+    },
+    "PrayerMana": {
+      "Offset": 3864,
+      "Kind": "WORD",
+      "Size": 2,
+      "Cast": "LONG"
+    },
+    "Pay": {
+      "Offset": 3868,
+      "Kind": "WORD",
+      "Size": 2,
+      "Cast": "LONG"
+    },
+    "InitialGoldHeld": {
+      "Offset": 3892,
+      "Kind": "WORD",
+      "Size": 2,
+      "Cast": "LONG"
+    },
+    "MaxGoldHeld": {
+      "Offset": 3870,
+      "Kind": "WORD",
+      "Size": 2,
+      "Cast": "LONG"
+    },
+    "Speed": {
+      "Offset": 3764,
+      "Kind": "WORD",
+      "Size": 2,
+      "Cast": "LONG"
+    },
+    "RunSpeed": {
+      "Offset": 3768,
+      "Kind": "WORD",
+      "Size": 2,
+      "Cast": "LONG"
+    },
+    "AngerNoLair": {
+      "Offset": 3880,
+      "Kind": "WORD",
+      "Size": 2,
+      "Cast": "LONG"
+    },
+    "AngerNoFood": {
+      "Offset": 3882,
+      "Kind": "WORD",
+      "Size": 2,
+      "Cast": "LONG"
+    },
+    "AngerNoPay": {
+      "Offset": 3884,
+      "Kind": "WORD",
+      "Size": 2,
+      "Cast": "LONG"
+    },
+    "AngerNoWork": {
+      "Offset": 3886,
+      "Kind": "WORD",
+      "Size": 2,
+      "Cast": "LONG"
+    },
+    "AngerSlap": {
+      "Offset": 3888,
+      "Kind": "WORD",
+      "Size": 2,
+      "Cast": "LONG"
+    },
+    "AngerInHand": {
+      "Offset": 3890,
+      "Kind": "WORD",
+      "Size": 2,
+      "Cast": "LONG"
+    },
+    "TimeAwake": {
+      "Offset": 3776,
+      "Kind": "WORD",
+      "Size": 2,
+      "Cast": "LONG"
+    },
+    "SleepDuration": {
+      "Offset": 3780,
+      "Kind": "WORD",
+      "Size": 2,
+      "Cast": "LONG"
+    },
+    "StunDuration": {
+      "Offset": 3792,
+      "Kind": "WORD",
+      "Size": 2,
+      "Cast": "LONG"
+    },
+    "GuardDuration": {
+      "Offset": 3796,
+      "Kind": "WORD",
+      "Size": 2,
+      "Cast": "LONG"
+    },
+    "IdleDuration": {
+      "Offset": 3800,
+      "Kind": "WORD",
+      "Size": 2,
+      "Cast": "LONG"
+    },
+    "SlapDuration": {
+      "Offset": 3804,
+      "Kind": "WORD",
+      "Size": 2,
+      "Cast": "LONG"
+    },
+    "PossessionManaCost": {
+      "Offset": 3816,
+      "Kind": "WORD",
+      "Size": 2,
+      "Cast": "LONG"
+    },
+    "OwnLandHealthInc": {
+      "Offset": 3818,
+      "Kind": "WORD",
+      "Size": 2,
+      "Cast": "LONG"
+    },
+    "TortureHealthCng": {
+      "Offset": 4223,
+      "Kind": "WORD",
+      "Size": 2,
+      "Cast": "LONG"
+    },
+    "TortureMoodCng": {
+      "Offset": 4225,
+      "Kind": "WORD",
+      "Size": 2,
+      "Cast": "LONG"
+    },
+    "HungerRate": {
+      "Offset": 3772,
+      "Kind": "LONG",
+      "Size": 4,
+      "Cast": "LONG"
+    },
+    "DecomposeValue": {
+      "Offset": 3874,
+      "Kind": "WORD",
+      "Size": 2,
+      "Cast": "LONG"
+    },
+    "ArmourType": {
+      "Offset": 3958,
+      "Kind": "BYTE",
+      "Size": 1,
+      "Cast": "UINT"
+    },
+    "FightStyle": {
+      "Offset": 3843,
+      "Kind": "BYTE",
+      "Size": 1,
+      "Cast": "UINT"
+    },
+    "JobClass": {
+      "Offset": 3842,
+      "Kind": "BYTE",
+      "Size": 1,
+      "Cast": "UINT"
+    },
+    "LairObject": {
+      "Offset": 3922,
+      "Kind": "BYTE",
+      "Size": 1,
+      "Cast": "UINT"
+    },
+    "SlapEffect": {
+      "Offset": 3902,
+      "Kind": "WORD",
+      "Size": 2,
+      "Cast": "UINT"
+    },
+    "HealthEffect": {
+      "Offset": 3325,
+      "Kind": "WORD",
+      "Size": 2,
+      "Cast": "UINT"
+    },
+    "EntranceEffect": {
+      "Offset": 3894,
+      "Kind": "WORD",
+      "Size": 2,
+      "Cast": "UINT"
+    },
+    "DeathEffect": {
+      "Offset": 3904,
+      "Kind": "WORD",
+      "Size": 2,
+      "Cast": "UINT"
+    },
+    "Attract1Type": {
+      "Offset": 3500,
+      "Kind": "WORD",
+      "Size": 2,
+      "Cast": "UINT"
+    },
+    "Attract1ID": {
+      "Offset": 3504,
+      "Kind": "WORD",
+      "Size": 2,
+      "Cast": "UINT"
+    },
+    "Attract2Type": {
+      "Offset": 3508,
+      "Kind": "WORD",
+      "Size": 2,
+      "Cast": "UINT"
+    },
+    "Attract2ID": {
+      "Offset": 3512,
+      "Kind": "WORD",
+      "Size": 2,
+      "Cast": "UINT"
+    },
+    "Attract2Data": {
+      "Offset": 3514,
+      "Kind": "WORD",
+      "Size": 2,
+      "Cast": "LONG"
+    },
+    "CanBeHypnotized": {
+      "Offset": 3838,
+      "Kind": "BYTE",
+      "Size": 1,
+      "Cast": "BOOL",
+      "Mask": 1
+    },
+    "DoNotTrain": {
+      "Offset": 3838,
+      "Kind": "BYTE",
+      "Size": 1,
+      "Cast": "BOOL",
+      "Mask": 32
+    },
+    "CanBePicked": {
+      "Offset": 3836,
+      "Kind": "BYTE",
+      "Size": 1,
+      "Cast": "BOOL",
+      "Mask": 2
+    },
+    "CanBeSlapped": {
+      "Offset": 3836,
+      "Kind": "BYTE",
+      "Size": 1,
+      "Cast": "BOOL",
+      "Mask": 4
+    },
+    "CanWalkWater": {
+      "Offset": 3836,
+      "Kind": "BYTE",
+      "Size": 1,
+      "Cast": "BOOL",
+      "Mask": 16
+    },
+    "CanWalkLava": {
+      "Offset": 3836,
+      "Kind": "BYTE",
+      "Size": 1,
+      "Cast": "BOOL",
+      "Mask": 32
+    },
+    "ImmuneTurncoat": {
+      "Offset": 3837,
+      "Kind": "BYTE",
+      "Size": 1,
+      "Cast": "BOOL",
+      "Mask": 2
+    },
+    "DeadBody": {
+      "Offset": 3837,
+      "Kind": "BYTE",
+      "Size": 1,
+      "Cast": "BOOL",
+      "Mask": 128
+    },
+    "ImmuneChicken": {
+      "Offset": 3838,
+      "Kind": "BYTE",
+      "Size": 1,
+      "Cast": "BOOL",
+      "Mask": 2
+    },
+    "Fearless": {
+      "Offset": 3838,
+      "Kind": "BYTE",
+      "Size": 1,
+      "Cast": "BOOL",
+      "Mask": 4
+    },
+    "NoEnemies": {
+      "Offset": 3839,
+      "Kind": "BYTE",
+      "Size": 1,
+      "Cast": "BOOL",
+      "Mask": 1
+    },
+    "FreeFriends": {
+      "Offset": 3839,
+      "Kind": "BYTE",
+      "Size": 1,
+      "Cast": "BOOL",
+      "Mask": 2
+    },
+    "RevealTraps": {
+      "Offset": 3839,
+      "Kind": "BYTE",
+      "Size": 1,
+      "Cast": "BOOL",
+      "Mask": 4
+    },
+    "RandomInvader": {
+      "Offset": 3839,
+      "Kind": "BYTE",
+      "Size": 1,
+      "Cast": "BOOL",
+      "Mask": 64
+    },
+    "Shot1ID": {
+      "Offset": 3546,
+      "Kind": "BYTE",
+      "Size": 1,
+      "Cast": "UINT"
+    },
+    "Shot1Delay": {
+      "Offset": 3540,
+      "Kind": "LONG",
+      "Size": 4,
+      "Cast": "LONG"
+    },
+    "Shot1Level": {
+      "Offset": 3547,
+      "Kind": "BYTE",
+      "Size": 1,
+      "Cast": "LONG"
+    },
+    "Shot1X": {
+      "Offset": 3524,
+      "Kind": "LONG",
+      "Size": 4,
+      "Cast": "LONG"
+    },
+    "Shot1Y": {
+      "Offset": 3528,
+      "Kind": "LONG",
+      "Size": 4,
+      "Cast": "LONG"
+    },
+    "Shot1Z": {
+      "Offset": 3532,
+      "Kind": "LONG",
+      "Size": 4,
+      "Cast": "LONG"
+    },
+    "Shot2ID": {
+      "Offset": 3570,
+      "Kind": "BYTE",
+      "Size": 1,
+      "Cast": "UINT"
+    },
+    "Shot2Delay": {
+      "Offset": 3564,
+      "Kind": "LONG",
+      "Size": 4,
+      "Cast": "LONG"
+    },
+    "Shot2Level": {
+      "Offset": 3571,
+      "Kind": "BYTE",
+      "Size": 1,
+      "Cast": "LONG"
+    },
+    "Shot2X": {
+      "Offset": 3548,
+      "Kind": "LONG",
+      "Size": 4,
+      "Cast": "LONG"
+    },
+    "Shot2Y": {
+      "Offset": 3552,
+      "Kind": "LONG",
+      "Size": 4,
+      "Cast": "LONG"
+    },
+    "Shot2Z": {
+      "Offset": 3556,
+      "Kind": "LONG",
+      "Size": 4,
+      "Cast": "LONG"
+    },
+    "Shot3ID": {
+      "Offset": 3594,
+      "Kind": "BYTE",
+      "Size": 1,
+      "Cast": "UINT"
+    },
+    "Shot3Delay": {
+      "Offset": 3588,
+      "Kind": "LONG",
+      "Size": 4,
+      "Cast": "LONG"
+    },
+    "Shot3Level": {
+      "Offset": 3595,
+      "Kind": "BYTE",
+      "Size": 1,
+      "Cast": "LONG"
+    },
+    "Shot3X": {
+      "Offset": 3572,
+      "Kind": "LONG",
+      "Size": 4,
+      "Cast": "LONG"
+    },
+    "Shot3Y": {
+      "Offset": 3576,
+      "Kind": "LONG",
+      "Size": 4,
+      "Cast": "LONG"
+    },
+    "Shot3Z": {
+      "Offset": 3580,
+      "Kind": "LONG",
+      "Size": 4,
+      "Cast": "LONG"
+    },
+    "MeleeID": {
+      "Offset": 3920,
+      "Kind": "BYTE",
+      "Size": 1,
+      "Cast": "UINT"
+    },
+    "RechargeTime": {
+      "Offset": 3832,
+      "Kind": "LONG",
+      "Size": 4,
+      "Cast": "LONG"
+    },
+    "Range": {
+      "Offset": 3820,
+      "Kind": "LONG",
+      "Size": 4,
+      "Cast": "LONG"
+    },
+    "Dammage": {
+      "Offset": 3860,
+      "Kind": "WORD",
+      "Size": 2,
+      "Cast": "LONG"
+    },
+    "Delay": {
+      "Offset": 3321,
+      "Kind": "LONG",
+      "Size": 4,
+      "Cast": "LONG"
+    },
+    "Res1": {
+      "Offset": 3596,
+      "Kind": "BYTE",
+      "Size": 1,
+      "Cast": "UINT"
+    },
+    "Res1Rate": {
+      "Offset": 3597,
+      "Kind": "BYTE",
+      "Size": 1,
+      "Cast": "LONG"
+    },
+    "Res2": {
+      "Offset": 3598,
+      "Kind": "BYTE",
+      "Size": 1,
+      "Cast": "UINT"
+    },
+    "Res2Rate": {
+      "Offset": 3599,
+      "Kind": "BYTE",
+      "Size": 1,
+      "Cast": "LONG"
+    },
+    "Res3": {
+      "Offset": 3600,
+      "Kind": "BYTE",
+      "Size": 1,
+      "Cast": "UINT"
+    },
+    "Res3Rate": {
+      "Offset": 3601,
+      "Kind": "BYTE",
+      "Size": 1,
+      "Cast": "LONG"
+    },
+    "Res4": {
+      "Offset": 3602,
+      "Kind": "BYTE",
+      "Size": 1,
+      "Cast": "UINT"
+    },
+    "Res4Rate": {
+      "Offset": 3603,
+      "Kind": "BYTE",
+      "Size": 1,
+      "Cast": "LONG"
+    },
+    "SpecialAb1": {
+      "Offset": 3910,
+      "Kind": "BYTE",
+      "Size": 1,
+      "Cast": "UINT"
+    },
+    "SpecialAb1Data": {
+      "Offset": 5353,
+      "Kind": "WORD",
+      "Size": 2,
+      "Cast": "LONG"
+    },
+    "SpecialAb2": {
+      "Offset": 3911,
+      "Kind": "BYTE",
+      "Size": 1,
+      "Cast": "UINT"
+    },
+    "SpecialAb2Data": {
+      "Offset": 5357,
+      "Kind": "WORD",
+      "Size": 2,
+      "Cast": "LONG"
+    },
+    "Melee1": {
+      "Offset": 3906,
+      "Kind": "BYTE",
+      "Size": 1,
+      "Cast": "UINT"
+    },
+    "Melee2": {
+      "Offset": 3907,
+      "Kind": "BYTE",
+      "Size": 1,
+      "Cast": "UINT"
+    },
+    "Special1": {
+      "Offset": 4133,
+      "Kind": "BYTE",
+      "Size": 1,
+      "Cast": "UINT"
+    },
+    "Special2": {
+      "Offset": 4134,
+      "Kind": "BYTE",
+      "Size": 1,
+      "Cast": "UINT"
+    },
+    "Spell": {
+      "Offset": 3909,
+      "Kind": "BYTE",
+      "Size": 1,
+      "Cast": "UINT"
+    },
+    "GammaEffect": {
+      "Offset": 3388,
+      "Kind": "BYTE",
+      "Size": 1,
+      "Cast": "UINT"
+    },
+    "WaddleScale": {
+      "Offset": 3516,
+      "Kind": "WORD",
+      "Size": 2,
+      "Cast": "LONG"
+    },
+    "OscillateScale": {
+      "Offset": 3520,
+      "Kind": "WORD",
+      "Size": 2,
+      "Cast": "LONG"
+    },
+    "WalkScale": {
+      "Offset": 3389,
+      "Kind": "BYTE",
+      "Size": 1,
+      "Cast": "LONG"
+    },
+    "CameraRolls": {
+      "Offset": 3839,
+      "Kind": "BYTE",
+      "Size": 1,
+      "Cast": "BOOL",
+      "Mask": 16
+    },
+    "HJobs[0]": {
+      "Offset": 3604,
+      "Kind": "LONG",
+      "Size": 4,
+      "Cast": "UINT"
+    },
+    "HJobsMood[0]": {
+      "Offset": 3608,
+      "Kind": "WORD",
+      "Size": 2,
+      "Cast": "LONG"
+    },
+    "HJobsMana[0]": {
+      "Offset": 3610,
+      "Kind": "WORD",
+      "Size": 2,
+      "Cast": "LONG"
+    },
+    "HJobsChance[0]": {
+      "Offset": 3612,
+      "Kind": "BYTE",
+      "Size": 1,
+      "Cast": "LONG"
+    },
+    "HJobs[1]": {
+      "Offset": 3616,
+      "Kind": "LONG",
+      "Size": 4,
+      "Cast": "UINT"
+    },
+    "HJobsMood[1]": {
+      "Offset": 3620,
+      "Kind": "WORD",
+      "Size": 2,
+      "Cast": "LONG"
+    },
+    "HJobsMana[1]": {
+      "Offset": 3622,
+      "Kind": "WORD",
+      "Size": 2,
+      "Cast": "LONG"
+    },
+    "HJobsChance[1]": {
+      "Offset": 3624,
+      "Kind": "BYTE",
+      "Size": 1,
+      "Cast": "LONG"
+    },
+    "HJobs[2]": {
+      "Offset": 3628,
+      "Kind": "LONG",
+      "Size": 4,
+      "Cast": "UINT"
+    },
+    "HJobsMood[2]": {
+      "Offset": 3632,
+      "Kind": "WORD",
+      "Size": 2,
+      "Cast": "LONG"
+    },
+    "HJobsMana[2]": {
+      "Offset": 3634,
+      "Kind": "WORD",
+      "Size": 2,
+      "Cast": "LONG"
+    },
+    "HJobsChance[2]": {
+      "Offset": 3636,
+      "Kind": "BYTE",
+      "Size": 1,
+      "Cast": "LONG"
+    },
+    "UJobs[0]": {
+      "Offset": 3640,
+      "Kind": "LONG",
+      "Size": 4,
+      "Cast": "UINT"
+    },
+    "UJobsMood[0]": {
+      "Offset": 3644,
+      "Kind": "WORD",
+      "Size": 2,
+      "Cast": "LONG"
+    },
+    "UJobsMana[0]": {
+      "Offset": 3646,
+      "Kind": "WORD",
+      "Size": 2,
+      "Cast": "LONG"
+    },
+    "UJobsChance[0]": {
+      "Offset": 3648,
+      "Kind": "BYTE",
+      "Size": 1,
+      "Cast": "LONG"
+    },
+    "UJobs[1]": {
+      "Offset": 3652,
+      "Kind": "LONG",
+      "Size": 4,
+      "Cast": "UINT"
+    },
+    "UJobsMood[1]": {
+      "Offset": 3656,
+      "Kind": "WORD",
+      "Size": 2,
+      "Cast": "LONG"
+    },
+    "UJobsMana[1]": {
+      "Offset": 3658,
+      "Kind": "WORD",
+      "Size": 2,
+      "Cast": "LONG"
+    },
+    "UJobsChance[1]": {
+      "Offset": 3660,
+      "Kind": "BYTE",
+      "Size": 1,
+      "Cast": "LONG"
+    },
+    "AJobs[0]": {
+      "Offset": 3664,
+      "Kind": "LONG",
+      "Size": 4,
+      "Cast": "UINT"
+    },
+    "AJobsMood[0]": {
+      "Offset": 3668,
+      "Kind": "WORD",
+      "Size": 2,
+      "Cast": "LONG"
+    },
+    "AJobsMana[0]": {
+      "Offset": 3670,
+      "Kind": "WORD",
+      "Size": 2,
+      "Cast": "LONG"
+    },
+    "AJobsChance[0]": {
+      "Offset": 3672,
+      "Kind": "BYTE",
+      "Size": 1,
+      "Cast": "LONG"
+    },
+    "AJobs[1]": {
+      "Offset": 3676,
+      "Kind": "LONG",
+      "Size": 4,
+      "Cast": "UINT"
+    },
+    "AJobsMood[1]": {
+      "Offset": 3680,
+      "Kind": "WORD",
+      "Size": 2,
+      "Cast": "LONG"
+    },
+    "AJobsMana[1]": {
+      "Offset": 3682,
+      "Kind": "WORD",
+      "Size": 2,
+      "Cast": "LONG"
+    },
+    "AJobsChance[1]": {
+      "Offset": 3684,
+      "Kind": "BYTE",
+      "Size": 1,
+      "Cast": "LONG"
+    },
+    "AJobs[2]": {
+      "Offset": 3688,
+      "Kind": "LONG",
+      "Size": 4,
+      "Cast": "UINT"
+    },
+    "AJobsMood[2]": {
+      "Offset": 3692,
+      "Kind": "WORD",
+      "Size": 2,
+      "Cast": "LONG"
+    },
+    "AJobsMana[2]": {
+      "Offset": 3694,
+      "Kind": "WORD",
+      "Size": 2,
+      "Cast": "LONG"
+    },
+    "AJobsChance[2]": {
+      "Offset": 3696,
+      "Kind": "BYTE",
+      "Size": 1,
+      "Cast": "LONG"
+    },
+    "NJobs[0]": {
+      "Offset": 3700,
+      "Kind": "LONG",
+      "Size": 4,
+      "Cast": "UINT"
+    },
+    "NJobs[1]": {
+      "Offset": 3704,
+      "Kind": "LONG",
+      "Size": 4,
+      "Cast": "UINT"
+    },
+    "NJobs[2]": {
+      "Offset": 3708,
+      "Kind": "LONG",
+      "Size": 4,
+      "Cast": "UINT"
+    },
+    "NJobs[3]": {
+      "Offset": 3712,
+      "Kind": "LONG",
+      "Size": 4,
+      "Cast": "UINT"
+    },
+    "LightX": {
+      "Offset": 3476,
+      "Kind": "LONG",
+      "Size": 4,
+      "Cast": "LONG"
+    },
+    "LightY": {
+      "Offset": 3480,
+      "Kind": "LONG",
+      "Size": 4,
+      "Cast": "LONG"
+    },
+    "LightZ": {
+      "Offset": 3484,
+      "Kind": "LONG",
+      "Size": 4,
+      "Cast": "LONG"
+    },
+    "LightRadius": {
+      "Offset": 3488,
+      "Kind": "WORD",
+      "Size": 2,
+      "Cast": "LONG"
+    },
+    "LightR": {
+      "Offset": 3496,
+      "Kind": "BYTE",
+      "Size": 1,
+      "Cast": "BYTE"
+    },
+    "LightG": {
+      "Offset": 3497,
+      "Kind": "BYTE",
+      "Size": 1,
+      "Cast": "BYTE"
+    },
+    "LightB": {
+      "Offset": 3498,
+      "Kind": "BYTE",
+      "Size": 1,
+      "Cast": "BYTE"
+    },
+    "LightFlicker": {
+      "Offset": 3492,
+      "Kind": "BYTE",
+      "Size": 1,
+      "Cast": "BOOL",
+      "Mask": 2
+    },
+    "LightPulse": {
+      "Offset": 3492,
+      "Kind": "BYTE",
+      "Size": 1,
+      "Cast": "BOOL",
+      "Mask": 4
+    },
+    "LightPlayer": {
+      "Offset": 3492,
+      "Kind": "BYTE",
+      "Size": 1,
+      "Cast": "BOOL",
+      "Mask": 128
+    }
+  },
+  "Catalogues": {
+    "GFightStyle": [
+      {
+        "ID": 0,
+        "Symbol": "szFightStyle0"
+      },
+      {
+        "ID": 1,
+        "Symbol": "szFightStyle1"
+      },
+      {
+        "ID": 2,
+        "Symbol": "szFightStyle2"
+      },
+      {
+        "ID": 3,
+        "Symbol": "szFightStyle3"
+      },
+      {
+        "ID": 4,
+        "Symbol": "szFightStyle4"
+      }
+    ],
+    "GJobClass": [
+      {
+        "ID": 0,
+        "Symbol": "szJobClass0"
+      },
+      {
+        "ID": 1,
+        "Symbol": "szJobClass1"
+      },
+      {
+        "ID": 2,
+        "Symbol": "szJobClass2"
+      },
+      {
+        "ID": 3,
+        "Symbol": "szJobClass3"
+      }
+    ],
+    "GBeds": [
+      {
+        "ID": 0,
+        "Symbol": "szEffect000"
+      },
+      {
+        "ID": 6,
+        "Symbol": "szMapWorldObject06"
+      },
+      {
+        "ID": 18,
+        "Symbol": "szMapWorldObject12"
+      },
+      {
+        "ID": 19,
+        "Symbol": "szMapWorldObject13"
+      },
+      {
+        "ID": 20,
+        "Symbol": "szMapWorldObject14"
+      },
+      {
+        "ID": 21,
+        "Symbol": "szMapWorldObject15"
+      },
+      {
+        "ID": 22,
+        "Symbol": "szMapWorldObject16"
+      },
+      {
+        "ID": 23,
+        "Symbol": "szMapWorldObject17"
+      },
+      {
+        "ID": 24,
+        "Symbol": "szMapWorldObject18"
+      },
+      {
+        "ID": 25,
+        "Symbol": "szMapWorldObject19"
+      },
+      {
+        "ID": 26,
+        "Symbol": "szMapWorldObject1A"
+      },
+      {
+        "ID": 27,
+        "Symbol": "szMapWorldObject1B"
+      },
+      {
+        "ID": 145,
+        "Symbol": "szMapWorldObject91"
+      }
+    ],
+    "GARooms": [
+      {
+        "ID": 2,
+        "Symbol": "szMapWorldLair"
+      },
+      {
+        "ID": 6,
+        "Symbol": "szMapWorldLibrary"
+      },
+      {
+        "ID": 1,
+        "Symbol": "szMapWorldTreasury"
+      },
+      {
+        "ID": 15,
+        "Symbol": "szMapWorldCasino"
+      },
+      {
+        "ID": 8,
+        "Symbol": "szMapWorldWoodenBridge"
+      },
+      {
+        "ID": 12,
+        "Symbol": "szMapWorldTorture"
+      },
+      {
+        "ID": 14,
+        "Symbol": "szMapWorldGraveYard"
+      },
+      {
+        "ID": 13,
+        "Symbol": "szMapWorldTemple"
+      },
+      {
+        "ID": 4,
+        "Symbol": "szMapWorldHatchery"
+      },
+      {
+        "ID": 7,
+        "Symbol": "szMapWorldTraining"
+      },
+      {
+        "ID": 10,
+        "Symbol": "szMapWorldWorkShop"
+      },
+      {
+        "ID": 9,
+        "Symbol": "szMapWorldGuard"
+      },
+      {
+        "ID": 11,
+        "Symbol": "szMapWorldPrison"
+      },
+      {
+        "ID": 17,
+        "Symbol": "szMapWorldStoneBridge"
+      },
+      {
+        "ID": 16,
+        "Symbol": "szMapWorldPit"
+      }
+    ],
+    "GDoorsMats": [
+      {
+        "ID": 0,
+        "Symbol": "szEffect000"
+      },
+      {
+        "ID": 1,
+        "Symbol": "szMapWorldMaterial1"
+      },
+      {
+        "ID": 2,
+        "Symbol": "szMapWorldMaterial2"
+      },
+      {
+        "ID": 3,
+        "Symbol": "szMapWorldMaterial3"
+      },
+      {
+        "ID": 4,
+        "Symbol": "szMapWorldMaterial4"
+      },
+      {
+        "ID": 5,
+        "Symbol": "szMapWorldMaterial5"
+      },
+      {
+        "ID": 6,
+        "Symbol": "szMapWorldMaterial6"
+      },
+      {
+        "ID": 7,
+        "Symbol": "szMapWorldMaterial7"
+      }
+    ],
+    "GCreatures": [
+      {
+        "ID": 1,
+        "Symbol": "szBadCreatureImp"
+      },
+      {
+        "ID": 7,
+        "Symbol": "szBadCreatureGoblin"
+      },
+      {
+        "ID": 5,
+        "Symbol": "szBadCreatureWarLock"
+      },
+      {
+        "ID": 12,
+        "Symbol": "szBadCreatureFireFly"
+      },
+      {
+        "ID": 10,
+        "Symbol": "szBadCreatureTroll"
+      },
+      {
+        "ID": 6,
+        "Symbol": "szBadCreatureDarkElf"
+      },
+      {
+        "ID": 9,
+        "Symbol": "szBadCreatureSkeleton"
+      },
+      {
+        "ID": 4,
+        "Symbol": "szBadCreatureDarkMistress"
+      },
+      {
+        "ID": 11,
+        "Symbol": "szBadCreatureSalamander"
+      },
+      {
+        "ID": 24,
+        "Symbol": "szBadCreatureRogue"
+      },
+      {
+        "ID": 3,
+        "Symbol": "szBadCreatureBileDemon"
+      },
+      {
+        "ID": 8,
+        "Symbol": "szBadCreatureVampire"
+      },
+      {
+        "ID": 22,
+        "Symbol": "szBadCreatureDarkKnight"
+      },
+      {
+        "ID": 23,
+        "Symbol": "szBadCreatureDarkAngel"
+      },
+      {
+        "ID": 45,
+        "Symbol": "szBadCreatureMaiden"
+      },
+      {
+        "ID": 27,
+        "Symbol": "szBadCreatureHorny"
+      },
+      {
+        "ID": 33,
+        "Symbol": "szBadCreatureGoblinElite"
+      },
+      {
+        "ID": 34,
+        "Symbol": "szBadCreatureWarLockElite"
+      },
+      {
+        "ID": 32,
+        "Symbol": "szBadCreatureFireFlyElite"
+      },
+      {
+        "ID": 35,
+        "Symbol": "szBadCreatureTrollElite"
+      },
+      {
+        "ID": 36,
+        "Symbol": "szBadCreatureDarkElfElite"
+      },
+      {
+        "ID": 37,
+        "Symbol": "szBadCreatureSkeletonElite"
+      },
+      {
+        "ID": 38,
+        "Symbol": "szBadCreatureDarkMistressElite"
+      },
+      {
+        "ID": 39,
+        "Symbol": "szBadCreatureSalamanderElite"
+      },
+      {
+        "ID": 40,
+        "Symbol": "szBadCreatureRogueElite"
+      },
+      {
+        "ID": 41,
+        "Symbol": "szBadCreatureBileDemonElite"
+      },
+      {
+        "ID": 42,
+        "Symbol": "szBadCreatureVampireElite"
+      },
+      {
+        "ID": 43,
+        "Symbol": "szBadCreatureDarkKnightElite"
+      },
+      {
+        "ID": 44,
+        "Symbol": "szBadCreatureDarkAngelElite"
+      },
+      {
+        "ID": 14,
+        "Symbol": "szGoodCreatureDwarf"
+      },
+      {
+        "ID": 13,
+        "Symbol": "szGoodCreatureKnight"
+      },
+      {
+        "ID": 18,
+        "Symbol": "szGoodCreatureThief"
+      },
+      {
+        "ID": 25,
+        "Symbol": "szGoodCreatureGuard"
+      },
+      {
+        "ID": 16,
+        "Symbol": "szGoodCreatureWizard"
+      },
+      {
+        "ID": 15,
+        "Symbol": "szGoodCreatureGiant"
+      },
+      {
+        "ID": 17,
+        "Symbol": "szGoodCreatureElvenArcher"
+      },
+      {
+        "ID": 19,
+        "Symbol": "szGoodCreatureMonk"
+      },
+      {
+        "ID": 20,
+        "Symbol": "szGoodCreatureFairy"
+      },
+      {
+        "ID": 30,
+        "Symbol": "szGoodCreatureRoyalGuard"
+      },
+      {
+        "ID": 28,
+        "Symbol": "szGoodCreatureStoneGiant"
+      },
+      {
+        "ID": 29,
+        "Symbol": "szGoodCreatureLordOfTheLand"
+      },
+      {
+        "ID": 21,
+        "Symbol": "szGoodCreatureKingReginald"
+      },
+      {
+        "ID": 26,
+        "Symbol": "szGoodCreaturePrinceFelix"
+      },
+      {
+        "ID": 31,
+        "Symbol": "szGoodCreaturePrinceBalder"
+      },
+      {
+        "ID": 2,
+        "Symbol": "szGoodCreaturePrinceTristan"
+      }
+    ],
+    "Effects": [
+      {
+        "ID": 0,
+        "Symbol": "szEffect000"
+      },
+      {
+        "ID": 1,
+        "Symbol": "szEffect001"
+      },
+      {
+        "ID": 2,
+        "Symbol": "szEffect002"
+      },
+      {
+        "ID": 3,
+        "Symbol": "szEffect003"
+      },
+      {
+        "ID": 4,
+        "Symbol": "szEffect004"
+      },
+      {
+        "ID": 5,
+        "Symbol": "szEffect005"
+      },
+      {
+        "ID": 6,
+        "Symbol": "szEffect006"
+      },
+      {
+        "ID": 7,
+        "Symbol": "szEffect007"
+      },
+      {
+        "ID": 8,
+        "Symbol": "szEffect008"
+      },
+      {
+        "ID": 9,
+        "Symbol": "szEffect009"
+      },
+      {
+        "ID": 10,
+        "Symbol": "szEffect00A"
+      },
+      {
+        "ID": 11,
+        "Symbol": "szEffect00B"
+      },
+      {
+        "ID": 12,
+        "Symbol": "szEffect00C"
+      },
+      {
+        "ID": 13,
+        "Symbol": "szEffect00D"
+      },
+      {
+        "ID": 14,
+        "Symbol": "szEffect00E"
+      },
+      {
+        "ID": 15,
+        "Symbol": "szEffect00F"
+      },
+      {
+        "ID": 16,
+        "Symbol": "szEffect010"
+      },
+      {
+        "ID": 17,
+        "Symbol": "szEffect011"
+      },
+      {
+        "ID": 18,
+        "Symbol": "szEffect012"
+      },
+      {
+        "ID": 19,
+        "Symbol": "szEffect013"
+      },
+      {
+        "ID": 20,
+        "Symbol": "szEffect014"
+      },
+      {
+        "ID": 21,
+        "Symbol": "szEffect015"
+      },
+      {
+        "ID": 22,
+        "Symbol": "szEffect016"
+      },
+      {
+        "ID": 23,
+        "Symbol": "szEffect017"
+      },
+      {
+        "ID": 24,
+        "Symbol": "szEffect018"
+      },
+      {
+        "ID": 25,
+        "Symbol": "szEffect019"
+      },
+      {
+        "ID": 26,
+        "Symbol": "szEffect01A"
+      },
+      {
+        "ID": 27,
+        "Symbol": "szEffect01B"
+      },
+      {
+        "ID": 28,
+        "Symbol": "szEffect01C"
+      },
+      {
+        "ID": 29,
+        "Symbol": "szEffect01D"
+      },
+      {
+        "ID": 30,
+        "Symbol": "szEffect01E"
+      },
+      {
+        "ID": 31,
+        "Symbol": "szEffect01F"
+      },
+      {
+        "ID": 32,
+        "Symbol": "szEffect020"
+      },
+      {
+        "ID": 33,
+        "Symbol": "szEffect021"
+      },
+      {
+        "ID": 34,
+        "Symbol": "szEffect022"
+      },
+      {
+        "ID": 35,
+        "Symbol": "szEffect023"
+      },
+      {
+        "ID": 36,
+        "Symbol": "szEffect024"
+      },
+      {
+        "ID": 37,
+        "Symbol": "szEffect025"
+      },
+      {
+        "ID": 38,
+        "Symbol": "szEffect026"
+      },
+      {
+        "ID": 39,
+        "Symbol": "szEffect027"
+      },
+      {
+        "ID": 40,
+        "Symbol": "szEffect028"
+      },
+      {
+        "ID": 41,
+        "Symbol": "szEffect029"
+      },
+      {
+        "ID": 42,
+        "Symbol": "szEffect02A"
+      },
+      {
+        "ID": 43,
+        "Symbol": "szEffect02B"
+      },
+      {
+        "ID": 44,
+        "Symbol": "szEffect02C"
+      },
+      {
+        "ID": 45,
+        "Symbol": "szEffect02D"
+      },
+      {
+        "ID": 46,
+        "Symbol": "szEffect02E"
+      },
+      {
+        "ID": 47,
+        "Symbol": "szEffect02F"
+      },
+      {
+        "ID": 48,
+        "Symbol": "szEffect030"
+      },
+      {
+        "ID": 49,
+        "Symbol": "szEffect031"
+      },
+      {
+        "ID": 50,
+        "Symbol": "szEffect032"
+      },
+      {
+        "ID": 51,
+        "Symbol": "szEffect033"
+      },
+      {
+        "ID": 52,
+        "Symbol": "szEffect034"
+      },
+      {
+        "ID": 53,
+        "Symbol": "szEffect035"
+      },
+      {
+        "ID": 54,
+        "Symbol": "szEffect036"
+      },
+      {
+        "ID": 55,
+        "Symbol": "szEffect037"
+      },
+      {
+        "ID": 56,
+        "Symbol": "szEffect038"
+      },
+      {
+        "ID": 57,
+        "Symbol": "szEffect039"
+      },
+      {
+        "ID": 58,
+        "Symbol": "szEffect03A"
+      },
+      {
+        "ID": 59,
+        "Symbol": "szEffect03B"
+      },
+      {
+        "ID": 60,
+        "Symbol": "szEffect03C"
+      },
+      {
+        "ID": 61,
+        "Symbol": "szEffect03D"
+      },
+      {
+        "ID": 62,
+        "Symbol": "szEffect03E"
+      },
+      {
+        "ID": 63,
+        "Symbol": "szEffect03F"
+      },
+      {
+        "ID": 64,
+        "Symbol": "szEffect040"
+      },
+      {
+        "ID": 65,
+        "Symbol": "szEffect041"
+      },
+      {
+        "ID": 66,
+        "Symbol": "szEffect042"
+      },
+      {
+        "ID": 67,
+        "Symbol": "szEffect043"
+      },
+      {
+        "ID": 68,
+        "Symbol": "szEffect044"
+      },
+      {
+        "ID": 69,
+        "Symbol": "szEffect045"
+      },
+      {
+        "ID": 70,
+        "Symbol": "szEffect046"
+      },
+      {
+        "ID": 71,
+        "Symbol": "szEffect047"
+      },
+      {
+        "ID": 72,
+        "Symbol": "szEffect048"
+      },
+      {
+        "ID": 73,
+        "Symbol": "szEffect049"
+      },
+      {
+        "ID": 74,
+        "Symbol": "szEffect04A"
+      },
+      {
+        "ID": 75,
+        "Symbol": "szEffect04B"
+      },
+      {
+        "ID": 76,
+        "Symbol": "szEffect04C"
+      },
+      {
+        "ID": 77,
+        "Symbol": "szEffect04D"
+      },
+      {
+        "ID": 78,
+        "Symbol": "szEffect04E"
+      },
+      {
+        "ID": 79,
+        "Symbol": "szEffect04F"
+      },
+      {
+        "ID": 80,
+        "Symbol": "szEffect050"
+      },
+      {
+        "ID": 81,
+        "Symbol": "szEffect051"
+      },
+      {
+        "ID": 82,
+        "Symbol": "szEffect052"
+      },
+      {
+        "ID": 83,
+        "Symbol": "szEffect053"
+      },
+      {
+        "ID": 84,
+        "Symbol": "szEffect054"
+      },
+      {
+        "ID": 85,
+        "Symbol": "szEffect055"
+      },
+      {
+        "ID": 86,
+        "Symbol": "szEffect056"
+      },
+      {
+        "ID": 87,
+        "Symbol": "szEffect057"
+      },
+      {
+        "ID": 88,
+        "Symbol": "szEffect058"
+      },
+      {
+        "ID": 89,
+        "Symbol": "szEffect059"
+      },
+      {
+        "ID": 90,
+        "Symbol": "szEffect05A"
+      },
+      {
+        "ID": 91,
+        "Symbol": "szEffect05B"
+      },
+      {
+        "ID": 92,
+        "Symbol": "szEffect05C"
+      },
+      {
+        "ID": 93,
+        "Symbol": "szEffect05D"
+      },
+      {
+        "ID": 94,
+        "Symbol": "szEffect05E"
+      },
+      {
+        "ID": 95,
+        "Symbol": "szEffect05F"
+      },
+      {
+        "ID": 96,
+        "Symbol": "szEffect060"
+      },
+      {
+        "ID": 97,
+        "Symbol": "szEffect061"
+      },
+      {
+        "ID": 98,
+        "Symbol": "szEffect062"
+      },
+      {
+        "ID": 99,
+        "Symbol": "szEffect063"
+      },
+      {
+        "ID": 100,
+        "Symbol": "szEffect064"
+      },
+      {
+        "ID": 101,
+        "Symbol": "szEffect065"
+      },
+      {
+        "ID": 102,
+        "Symbol": "szEffect066"
+      },
+      {
+        "ID": 103,
+        "Symbol": "szEffect067"
+      },
+      {
+        "ID": 104,
+        "Symbol": "szEffect068"
+      },
+      {
+        "ID": 105,
+        "Symbol": "szEffect069"
+      },
+      {
+        "ID": 106,
+        "Symbol": "szEffect06A"
+      },
+      {
+        "ID": 107,
+        "Symbol": "szEffect06B"
+      },
+      {
+        "ID": 108,
+        "Symbol": "szEffect06C"
+      },
+      {
+        "ID": 109,
+        "Symbol": "szEffect06D"
+      },
+      {
+        "ID": 110,
+        "Symbol": "szEffect06E"
+      },
+      {
+        "ID": 111,
+        "Symbol": "szEffect06F"
+      },
+      {
+        "ID": 112,
+        "Symbol": "szEffect070"
+      },
+      {
+        "ID": 113,
+        "Symbol": "szEffect071"
+      },
+      {
+        "ID": 114,
+        "Symbol": "szEffect072"
+      },
+      {
+        "ID": 115,
+        "Symbol": "szEffect073"
+      },
+      {
+        "ID": 116,
+        "Symbol": "szEffect074"
+      },
+      {
+        "ID": 117,
+        "Symbol": "szEffect075"
+      },
+      {
+        "ID": 118,
+        "Symbol": "szEffect076"
+      },
+      {
+        "ID": 119,
+        "Symbol": "szEffect077"
+      },
+      {
+        "ID": 120,
+        "Symbol": "szEffect078"
+      },
+      {
+        "ID": 121,
+        "Symbol": "szEffect079"
+      },
+      {
+        "ID": 122,
+        "Symbol": "szEffect07A"
+      },
+      {
+        "ID": 123,
+        "Symbol": "szEffect07B"
+      },
+      {
+        "ID": 124,
+        "Symbol": "szEffect07C"
+      },
+      {
+        "ID": 125,
+        "Symbol": "szEffect07D"
+      },
+      {
+        "ID": 126,
+        "Symbol": "szEffect07E"
+      },
+      {
+        "ID": 127,
+        "Symbol": "szEffect07F"
+      },
+      {
+        "ID": 128,
+        "Symbol": "szEffect080"
+      },
+      {
+        "ID": 129,
+        "Symbol": "szEffect081"
+      },
+      {
+        "ID": 130,
+        "Symbol": "szEffect082"
+      },
+      {
+        "ID": 131,
+        "Symbol": "szEffect083"
+      },
+      {
+        "ID": 132,
+        "Symbol": "szEffect084"
+      },
+      {
+        "ID": 133,
+        "Symbol": "szEffect085"
+      },
+      {
+        "ID": 134,
+        "Symbol": "szEffect086"
+      },
+      {
+        "ID": 135,
+        "Symbol": "szEffect087"
+      },
+      {
+        "ID": 136,
+        "Symbol": "szEffect088"
+      },
+      {
+        "ID": 137,
+        "Symbol": "szEffect089"
+      },
+      {
+        "ID": 138,
+        "Symbol": "szEffect08A"
+      },
+      {
+        "ID": 139,
+        "Symbol": "szEffect08B"
+      },
+      {
+        "ID": 140,
+        "Symbol": "szEffect08C"
+      },
+      {
+        "ID": 141,
+        "Symbol": "szEffect08D"
+      },
+      {
+        "ID": 142,
+        "Symbol": "szEffect08E"
+      },
+      {
+        "ID": 143,
+        "Symbol": "szEffect08F"
+      },
+      {
+        "ID": 144,
+        "Symbol": "szEffect090"
+      },
+      {
+        "ID": 145,
+        "Symbol": "szEffect091"
+      },
+      {
+        "ID": 146,
+        "Symbol": "szEffect092"
+      },
+      {
+        "ID": 147,
+        "Symbol": "szEffect093"
+      },
+      {
+        "ID": 148,
+        "Symbol": "szEffect094"
+      },
+      {
+        "ID": 149,
+        "Symbol": "szEffect095"
+      },
+      {
+        "ID": 150,
+        "Symbol": "szEffect096"
+      },
+      {
+        "ID": 151,
+        "Symbol": "szEffect097"
+      },
+      {
+        "ID": 152,
+        "Symbol": "szEffect098"
+      },
+      {
+        "ID": 153,
+        "Symbol": "szEffect099"
+      },
+      {
+        "ID": 154,
+        "Symbol": "szEffect09A"
+      },
+      {
+        "ID": 155,
+        "Symbol": "szEffect09B"
+      },
+      {
+        "ID": 156,
+        "Symbol": "szEffect09C"
+      },
+      {
+        "ID": 157,
+        "Symbol": "szEffect09D"
+      },
+      {
+        "ID": 158,
+        "Symbol": "szEffect09E"
+      },
+      {
+        "ID": 159,
+        "Symbol": "szEffect09F"
+      },
+      {
+        "ID": 160,
+        "Symbol": "szEffect0A0"
+      },
+      {
+        "ID": 161,
+        "Symbol": "szEffect0A1"
+      },
+      {
+        "ID": 162,
+        "Symbol": "szEffect0A2"
+      },
+      {
+        "ID": 163,
+        "Symbol": "szEffect0A3"
+      },
+      {
+        "ID": 164,
+        "Symbol": "szEffect0A4"
+      },
+      {
+        "ID": 165,
+        "Symbol": "szEffect0A5"
+      },
+      {
+        "ID": 166,
+        "Symbol": "szEffect0A6"
+      },
+      {
+        "ID": 167,
+        "Symbol": "szEffect0A7"
+      },
+      {
+        "ID": 168,
+        "Symbol": "szEffect0A8"
+      },
+      {
+        "ID": 169,
+        "Symbol": "szEffect0A9"
+      },
+      {
+        "ID": 170,
+        "Symbol": "szEffect0AA"
+      },
+      {
+        "ID": 171,
+        "Symbol": "szEffect0AB"
+      },
+      {
+        "ID": 172,
+        "Symbol": "szEffect0AC"
+      },
+      {
+        "ID": 173,
+        "Symbol": "szEffect0AD"
+      },
+      {
+        "ID": 174,
+        "Symbol": "szEffect0AE"
+      },
+      {
+        "ID": 175,
+        "Symbol": "szEffect0AF"
+      },
+      {
+        "ID": 176,
+        "Symbol": "szEffect0B0"
+      },
+      {
+        "ID": 177,
+        "Symbol": "szEffect0B1"
+      },
+      {
+        "ID": 178,
+        "Symbol": "szEffect0B2"
+      },
+      {
+        "ID": 179,
+        "Symbol": "szEffect0B3"
+      },
+      {
+        "ID": 180,
+        "Symbol": "szEffect0B4"
+      },
+      {
+        "ID": 181,
+        "Symbol": "szEffect0B5"
+      },
+      {
+        "ID": 182,
+        "Symbol": "szEffect0B6"
+      },
+      {
+        "ID": 183,
+        "Symbol": "szEffect0B7"
+      },
+      {
+        "ID": 184,
+        "Symbol": "szEffect0B8"
+      },
+      {
+        "ID": 185,
+        "Symbol": "szEffect0B9"
+      },
+      {
+        "ID": 186,
+        "Symbol": "szEffect0BA"
+      },
+      {
+        "ID": 187,
+        "Symbol": "szEffect0BB"
+      },
+      {
+        "ID": 188,
+        "Symbol": "szEffect0BC"
+      },
+      {
+        "ID": 189,
+        "Symbol": "szEffect0BD"
+      },
+      {
+        "ID": 190,
+        "Symbol": "szEffect0BE"
+      },
+      {
+        "ID": 191,
+        "Symbol": "szEffect0BF"
+      },
+      {
+        "ID": 192,
+        "Symbol": "szEffect0C0"
+      },
+      {
+        "ID": 193,
+        "Symbol": "szEffect0C1"
+      },
+      {
+        "ID": 194,
+        "Symbol": "szEffect0C2"
+      },
+      {
+        "ID": 195,
+        "Symbol": "szEffect0C3"
+      },
+      {
+        "ID": 196,
+        "Symbol": "szEffect0C4"
+      },
+      {
+        "ID": 197,
+        "Symbol": "szEffect0C5"
+      },
+      {
+        "ID": 198,
+        "Symbol": "szEffect0C6"
+      },
+      {
+        "ID": 199,
+        "Symbol": "szEffect0C7"
+      },
+      {
+        "ID": 200,
+        "Symbol": "szEffect0C8"
+      },
+      {
+        "ID": 201,
+        "Symbol": "szEffect0C9"
+      },
+      {
+        "ID": 202,
+        "Symbol": "szEffect0CA"
+      },
+      {
+        "ID": 203,
+        "Symbol": "szEffect0CB"
+      },
+      {
+        "ID": 204,
+        "Symbol": "szEffect0CC"
+      },
+      {
+        "ID": 205,
+        "Symbol": "szEffect0CD"
+      },
+      {
+        "ID": 206,
+        "Symbol": "szEffect0CE"
+      },
+      {
+        "ID": 207,
+        "Symbol": "szEffect0CF"
+      },
+      {
+        "ID": 208,
+        "Symbol": "szEffect0D0"
+      },
+      {
+        "ID": 209,
+        "Symbol": "szEffect0D1"
+      },
+      {
+        "ID": 210,
+        "Symbol": "szEffect0D2"
+      },
+      {
+        "ID": 211,
+        "Symbol": "szEffect0D3"
+      },
+      {
+        "ID": 212,
+        "Symbol": "szEffect0D4"
+      },
+      {
+        "ID": 213,
+        "Symbol": "szEffect0D5"
+      },
+      {
+        "ID": 214,
+        "Symbol": "szEffect0D6"
+      },
+      {
+        "ID": 215,
+        "Symbol": "szEffect0D7"
+      },
+      {
+        "ID": 216,
+        "Symbol": "szEffect0D8"
+      },
+      {
+        "ID": 217,
+        "Symbol": "szEffect0D9"
+      },
+      {
+        "ID": 218,
+        "Symbol": "szEffect0DA"
+      },
+      {
+        "ID": 219,
+        "Symbol": "szEffect0DB"
+      },
+      {
+        "ID": 220,
+        "Symbol": "szEffect0DC"
+      },
+      {
+        "ID": 221,
+        "Symbol": "szEffect0DD"
+      },
+      {
+        "ID": 222,
+        "Symbol": "szEffect0DE"
+      },
+      {
+        "ID": 223,
+        "Symbol": "szEffect0DF"
+      },
+      {
+        "ID": 224,
+        "Symbol": "szEffect0E0"
+      },
+      {
+        "ID": 225,
+        "Symbol": "szEffect0E1"
+      },
+      {
+        "ID": 226,
+        "Symbol": "szEffect0E2"
+      },
+      {
+        "ID": 227,
+        "Symbol": "szEffect0E3"
+      },
+      {
+        "ID": 228,
+        "Symbol": "szEffect0E4"
+      },
+      {
+        "ID": 229,
+        "Symbol": "szEffect0E5"
+      },
+      {
+        "ID": 230,
+        "Symbol": "szEffect0E6"
+      },
+      {
+        "ID": 231,
+        "Symbol": "szEffect0E7"
+      },
+      {
+        "ID": 232,
+        "Symbol": "szEffect0E8"
+      },
+      {
+        "ID": 233,
+        "Symbol": "szEffect0E9"
+      },
+      {
+        "ID": 234,
+        "Symbol": "szEffect0EA"
+      },
+      {
+        "ID": 235,
+        "Symbol": "szEffect0EB"
+      },
+      {
+        "ID": 236,
+        "Symbol": "szEffect0EC"
+      },
+      {
+        "ID": 237,
+        "Symbol": "szEffect0ED"
+      },
+      {
+        "ID": 238,
+        "Symbol": "szEffect0EE"
+      },
+      {
+        "ID": 239,
+        "Symbol": "szEffect0EF"
+      },
+      {
+        "ID": 240,
+        "Symbol": "szEffect0F0"
+      },
+      {
+        "ID": 241,
+        "Symbol": "szEffect0F1"
+      },
+      {
+        "ID": 242,
+        "Symbol": "szEffect0F2"
+      },
+      {
+        "ID": 243,
+        "Symbol": "szEffect0F3"
+      },
+      {
+        "ID": 244,
+        "Symbol": "szEffect0F4"
+      },
+      {
+        "ID": 245,
+        "Symbol": "szEffect0F5"
+      },
+      {
+        "ID": 246,
+        "Symbol": "szEffect0F6"
+      },
+      {
+        "ID": 247,
+        "Symbol": "szEffect0F7"
+      },
+      {
+        "ID": 248,
+        "Symbol": "szEffect0F8"
+      },
+      {
+        "ID": 249,
+        "Symbol": "szEffect0F9"
+      },
+      {
+        "ID": 250,
+        "Symbol": "szEffect0FA"
+      },
+      {
+        "ID": 251,
+        "Symbol": "szEffect0FB"
+      },
+      {
+        "ID": 252,
+        "Symbol": "szEffect0FC"
+      },
+      {
+        "ID": 253,
+        "Symbol": "szEffect0FD"
+      },
+      {
+        "ID": 254,
+        "Symbol": "szEffect0FE"
+      },
+      {
+        "ID": 255,
+        "Symbol": "szEffect0FF"
+      },
+      {
+        "ID": 256,
+        "Symbol": "szEffect100"
+      },
+      {
+        "ID": 257,
+        "Symbol": "szEffect101"
+      },
+      {
+        "ID": 258,
+        "Symbol": "szEffect102"
+      },
+      {
+        "ID": 259,
+        "Symbol": "szEffect103"
+      },
+      {
+        "ID": 260,
+        "Symbol": "szEffect104"
+      },
+      {
+        "ID": 261,
+        "Symbol": "szEffect105"
+      },
+      {
+        "ID": 262,
+        "Symbol": "szEffect106"
+      },
+      {
+        "ID": 263,
+        "Symbol": "szEffect107"
+      },
+      {
+        "ID": 264,
+        "Symbol": "szEffect108"
+      },
+      {
+        "ID": 265,
+        "Symbol": "szEffect109"
+      },
+      {
+        "ID": 266,
+        "Symbol": "szEffect10A"
+      },
+      {
+        "ID": 267,
+        "Symbol": "szEffect10B"
+      },
+      {
+        "ID": 268,
+        "Symbol": "szEffect10C"
+      },
+      {
+        "ID": 269,
+        "Symbol": "szEffect10D"
+      },
+      {
+        "ID": 270,
+        "Symbol": "szEffect10E"
+      },
+      {
+        "ID": 271,
+        "Symbol": "szEffect10F"
+      },
+      {
+        "ID": 272,
+        "Symbol": "szEffect110"
+      },
+      {
+        "ID": 273,
+        "Symbol": "szEffect111"
+      },
+      {
+        "ID": 274,
+        "Symbol": "szEffect112"
+      },
+      {
+        "ID": 275,
+        "Symbol": "szEffect113"
+      },
+      {
+        "ID": 276,
+        "Symbol": "szEffect114"
+      },
+      {
+        "ID": 277,
+        "Symbol": "szEffect115"
+      },
+      {
+        "ID": 278,
+        "Symbol": "szEffect116"
+      },
+      {
+        "ID": 279,
+        "Symbol": "szEffect117"
+      },
+      {
+        "ID": 280,
+        "Symbol": "szEffect118"
+      },
+      {
+        "ID": 281,
+        "Symbol": "szEffect119"
+      },
+      {
+        "ID": 282,
+        "Symbol": "szEffect11A"
+      },
+      {
+        "ID": 283,
+        "Symbol": "szEffect11B"
+      },
+      {
+        "ID": 284,
+        "Symbol": "szEffect11C"
+      },
+      {
+        "ID": 285,
+        "Symbol": "szEffect11D"
+      },
+      {
+        "ID": 286,
+        "Symbol": "szEffect11E"
+      },
+      {
+        "ID": 287,
+        "Symbol": "szEffect11F"
+      },
+      {
+        "ID": 288,
+        "Symbol": "szEffect120"
+      },
+      {
+        "ID": 289,
+        "Symbol": "szEffect121"
+      },
+      {
+        "ID": 290,
+        "Symbol": "szEffect122"
+      },
+      {
+        "ID": 291,
+        "Symbol": "szEffect123"
+      },
+      {
+        "ID": 292,
+        "Symbol": "szEffect124"
+      },
+      {
+        "ID": 293,
+        "Symbol": "szEffect125"
+      },
+      {
+        "ID": 294,
+        "Symbol": "szEffect126"
+      },
+      {
+        "ID": 295,
+        "Symbol": "szEffect127"
+      },
+      {
+        "ID": 296,
+        "Symbol": "szEffect128"
+      },
+      {
+        "ID": 297,
+        "Symbol": "szEffect129"
+      },
+      {
+        "ID": 298,
+        "Symbol": "szEffect12A"
+      },
+      {
+        "ID": 299,
+        "Symbol": "szEffect12B"
+      },
+      {
+        "ID": 300,
+        "Symbol": "szEffect12C"
+      },
+      {
+        "ID": 301,
+        "Symbol": "szEffect12D"
+      },
+      {
+        "ID": 302,
+        "Symbol": "szEffect12E"
+      },
+      {
+        "ID": 303,
+        "Symbol": "szEffect12F"
+      },
+      {
+        "ID": 304,
+        "Symbol": "szEffect130"
+      },
+      {
+        "ID": 305,
+        "Symbol": "szEffect131"
+      },
+      {
+        "ID": 306,
+        "Symbol": "szEffect132"
+      },
+      {
+        "ID": 307,
+        "Symbol": "szEffect133"
+      },
+      {
+        "ID": 308,
+        "Symbol": "szEffect134"
+      },
+      {
+        "ID": 309,
+        "Symbol": "szEffect135"
+      },
+      {
+        "ID": 310,
+        "Symbol": "szEffect136"
+      },
+      {
+        "ID": 311,
+        "Symbol": "szEffect137"
+      },
+      {
+        "ID": 312,
+        "Symbol": "szEffect138"
+      },
+      {
+        "ID": 313,
+        "Symbol": "szEffect139"
+      },
+      {
+        "ID": 314,
+        "Symbol": "szEffect13A"
+      },
+      {
+        "ID": 315,
+        "Symbol": "szEffect13B"
+      },
+      {
+        "ID": 316,
+        "Symbol": "szEffect13C"
+      },
+      {
+        "ID": 317,
+        "Symbol": "szEffect13D"
+      },
+      {
+        "ID": 318,
+        "Symbol": "szEffect13E"
+      },
+      {
+        "ID": 319,
+        "Symbol": "szEffect13F"
+      },
+      {
+        "ID": 320,
+        "Symbol": "szEffect140"
+      },
+      {
+        "ID": 321,
+        "Symbol": "szEffect141"
+      },
+      {
+        "ID": 322,
+        "Symbol": "szEffect142"
+      },
+      {
+        "ID": 323,
+        "Symbol": "szEffect143"
+      },
+      {
+        "ID": 324,
+        "Symbol": "szEffect144"
+      },
+      {
+        "ID": 325,
+        "Symbol": "szEffect145"
+      },
+      {
+        "ID": 326,
+        "Symbol": "szEffect146"
+      },
+      {
+        "ID": 327,
+        "Symbol": "szEffect147"
+      },
+      {
+        "ID": 328,
+        "Symbol": "szEffect148"
+      },
+      {
+        "ID": 329,
+        "Symbol": "szEffect149"
+      },
+      {
+        "ID": 330,
+        "Symbol": "szEffect14A"
+      },
+      {
+        "ID": 331,
+        "Symbol": "szEffect14B"
+      },
+      {
+        "ID": 332,
+        "Symbol": "szEffect14C"
+      },
+      {
+        "ID": 333,
+        "Symbol": "szEffect14D"
+      },
+      {
+        "ID": 334,
+        "Symbol": "szEffect14E"
+      },
+      {
+        "ID": 335,
+        "Symbol": "szEffect14F"
+      },
+      {
+        "ID": 336,
+        "Symbol": "szEffect150"
+      },
+      {
+        "ID": 337,
+        "Symbol": "szEffect151"
+      },
+      {
+        "ID": 338,
+        "Symbol": "szEffect152"
+      },
+      {
+        "ID": 339,
+        "Symbol": "szEffect153"
+      },
+      {
+        "ID": 340,
+        "Symbol": "szEffect154"
+      },
+      {
+        "ID": 341,
+        "Symbol": "szEffect155"
+      },
+      {
+        "ID": 342,
+        "Symbol": "szEffect156"
+      },
+      {
+        "ID": 343,
+        "Symbol": "szEffect157"
+      },
+      {
+        "ID": 344,
+        "Symbol": "szEffect158"
+      },
+      {
+        "ID": 345,
+        "Symbol": "szEffect159"
+      },
+      {
+        "ID": 346,
+        "Symbol": "szEffect15A"
+      },
+      {
+        "ID": 347,
+        "Symbol": "szEffect15B"
+      },
+      {
+        "ID": 348,
+        "Symbol": "szEffect15C"
+      },
+      {
+        "ID": 349,
+        "Symbol": "szEffect15D"
+      },
+      {
+        "ID": 350,
+        "Symbol": "szEffect15E"
+      },
+      {
+        "ID": 351,
+        "Symbol": "szEffect15F"
+      },
+      {
+        "ID": 352,
+        "Symbol": "szEffect160"
+      },
+      {
+        "ID": 353,
+        "Symbol": "szEffect161"
+      },
+      {
+        "ID": 354,
+        "Symbol": "szEffect162"
+      },
+      {
+        "ID": 355,
+        "Symbol": "szEffect163"
+      },
+      {
+        "ID": 356,
+        "Symbol": "szEffect164"
+      },
+      {
+        "ID": 357,
+        "Symbol": "szEffect165"
+      },
+      {
+        "ID": 358,
+        "Symbol": "szEffect166"
+      },
+      {
+        "ID": 359,
+        "Symbol": "szEffect167"
+      },
+      {
+        "ID": 360,
+        "Symbol": "szEffect168"
+      },
+      {
+        "ID": 361,
+        "Symbol": "szEffect169"
+      },
+      {
+        "ID": 362,
+        "Symbol": "szEffect16A"
+      },
+      {
+        "ID": 363,
+        "Symbol": "szEffect16B"
+      },
+      {
+        "ID": 364,
+        "Symbol": "szEffect16C"
+      },
+      {
+        "ID": 365,
+        "Symbol": "szEffect16D"
+      },
+      {
+        "ID": 366,
+        "Symbol": "szEffect16E"
+      },
+      {
+        "ID": 367,
+        "Symbol": "szEffect16F"
+      },
+      {
+        "ID": 368,
+        "Symbol": "szEffect170"
+      },
+      {
+        "ID": 369,
+        "Symbol": "szEffect171"
+      },
+      {
+        "ID": 370,
+        "Symbol": "szEffect172"
+      }
+    ]
+  },
+  "OriginalFrenchNames": {
+    "szFightStyle0": "Ne combat pas",
+    "szFightStyle1": "Bourrin",
+    "szFightStyle2": "Pilier",
+    "szFightStyle3": "Pivot",
+    "szFightStyle4": "Soutien",
+    "szJobClass0": "Artistant",
+    "szJobClass1": "Cérébral",
+    "szJobClass2": "Combattant",
+    "szJobClass3": "Eclaireur",
+    "szAttractionType0": "<Rien>",
+    "szAttractionType1": "Une salle",
+    "szAttractionType2": "De l'or",
+    "szAttractionType3": "Du mana",
+    "szAttractionType4": "Une ou plusieurs créatures"
+  },
+  "Attract1Types": [
+    0,
+    1
+  ],
+  "Attract2Types": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "Attract2DataMinimum": 0,
+  "Attract2DataMaximum": 16000,
+  "TrainableCheckboxInvertsDoNotTrain": true,
+  "HiddenPreservedFlags": [
+    "Emotionless",
+    "ImmuneLightning"
+  ],
+  "ParameterSaveCleanup": {
+    "Attract1Type0": [
+      "Attract1ID"
+    ],
+    "Attract2Type0": [
+      "Attract2ID",
+      "Attract2Data"
+    ],
+    "Attract2Type2Or3": [
+      "Attract2ID"
+    ]
+  },
+  "LightColourOrder": "COLORREF R|(G<<8)|(B<<16)",
+  "SourceAuditOnly": true,
+  "WholeGoalComplete": false
+}

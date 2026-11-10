@@ -1,0 +1,64 @@
+using System.IO;
+using System.Runtime.InteropServices;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Input;
+using System.Windows.Interop;
+using System.Windows.Media.Imaging;
+using DK2MapEditor.Core.Editing;
+using DK2MapEditor.App.Localization;
+
+namespace DK2MapEditor.App.Editing;
+
+public sealed class HistoryMemoryNoticeWindow : Window,IDisposable
+{
+    private readonly EditorHistoryMemoryNotice notice;
+    private readonly CheckBox remember=new(){Margin=new(4,12,4,8)};
+    private readonly TextBlock status=new(){TextWrapping=TextWrapping.Wrap,Margin=new(4)};
+    private bool closed;
+    public EditorHistoryMemoryNotice Notice=>notice;
+    public HistoryMemoryNoticeWindow(EditorHistoryMemoryNotice notice)
+    {
+        this.notice=notice??throw new ArgumentNullException(nameof(notice));NameScope.SetNameScope(this,new NameScope());
+        SetResourceReference(TitleProperty,"HistoryMemory.Title");SetResourceReference(BackgroundProperty,"Brush.Background");SetResourceReference(ForegroundProperty,"Brush.Text");
+        Width=550;MinWidth=430;SizeToContent=SizeToContent.Height;ResizeMode=ResizeMode.NoResize;WindowStartupLocation=WindowStartupLocation.CenterOwner;
+        var panel=new StackPanel{Margin=new(16)};Content=panel;var message=new DockPanel();panel.Children.Add(message);
+        using(var stream=typeof(HistoryMemoryNoticeWindow).Assembly.GetManifestResourceStream("Legacy.Request.Error")??throw new InvalidDataException("Original error icon is missing."))
+        {
+            var icon=BitmapFrame.Create(stream,BitmapCreateOptions.PreservePixelFormat,BitmapCacheOption.OnLoad);icon.Freeze();
+            message.Children.Add(new Image{Source=icon,Width=32,Height=32,Margin=new(4,4,14,4),VerticalAlignment=VerticalAlignment.Top});
+        }
+        var text=new TextBlock{TextWrapping=TextWrapping.Wrap,Margin=new(4)};text.SetResourceReference(TextBlock.TextProperty,"HistoryMemory.Message");message.Children.Add(text);RegisterName("HistoryMemoryMessage",text);
+        var label=new TextBlock{TextWrapping=TextWrapping.Wrap};label.SetResourceReference(TextBlock.TextProperty,"HistoryMemory.Remember");remember.Content=label;panel.Children.Add(remember);RegisterName("HistoryMemoryRemember",remember);
+        panel.Children.Add(status);var ok=new Button{IsDefault=true,HorizontalAlignment=HorizontalAlignment.Right};ok.SetResourceReference(ContentControl.ContentProperty,"Editor.PatrolWarningOK");ok.Click+=(_,_)=>Acknowledge();panel.Children.Add(ok);RegisterName("HistoryMemoryOK",ok);
+        PreviewKeyDown+=(_,args)=>{if(args.Key==Key.Escape){args.Handled=true;Close();}};
+        Loaded+=(_,_)=>{PlaceAtMouse();Refresh();ok.Focus();};LocalizationService.LanguageChanged+=LanguageChanged;
+        Closed+=(_,_)=>{closed=true;notice.Dispose();LocalizationService.LanguageChanged-=LanguageChanged;};Refresh();
+    }
+    private void LanguageChanged(object? sender,EventArgs args)=>Refresh();
+    private void Refresh()
+    {
+        if(closed)return;remember.IsEnabled=notice.IsCurrent;
+        if(!notice.IsCurrent)status.SetResourceReference(TextBlock.TextProperty,"HistoryMemory.Stale");else status.Text="";
+    }
+    public void Acknowledge()
+    {if(closed)return;try{notice.Acknowledge(remember.IsChecked==true);}finally{Close();}}
+    public void Dispose(){notice.Dispose();if(!closed)Close();}
+    private void PlaceAtMouse()
+    {
+        var handle=new WindowInteropHelper(this).Handle;
+        if(handle==IntPtr.Zero||!GetCursorPos(out var point)||!GetWindowRect(handle,out var bounds))return;
+        var info=new MonitorInfo{Size=Marshal.SizeOf<MonitorInfo>()};if(!GetMonitorInfo(MonitorFromPoint(point,2),ref info))return;
+        var position=EditorPatrolWarningPolicy.PlaceAtCursor(point.X,point.Y,bounds.Right-bounds.Left,bounds.Bottom-bounds.Top,
+            info.Work.Left,info.Work.Top,info.Work.Right-info.Work.Left,info.Work.Bottom-info.Work.Top);
+        SetWindowPos(handle,IntPtr.Zero,position.X,position.Y,0,0,0x0001|0x0004|0x0010);
+    }
+    [StructLayout(LayoutKind.Sequential)]private struct NativePoint{public int X,Y;}
+    [StructLayout(LayoutKind.Sequential)]private struct NativeRect{public int Left,Top,Right,Bottom;}
+    [StructLayout(LayoutKind.Sequential)]private struct MonitorInfo{public int Size;public NativeRect Monitor,Work;public uint Flags;}
+    [DllImport("user32.dll")][return:MarshalAs(UnmanagedType.Bool)]private static extern bool GetCursorPos(out NativePoint point);
+    [DllImport("user32.dll")][return:MarshalAs(UnmanagedType.Bool)]private static extern bool GetWindowRect(IntPtr window,out NativeRect bounds);
+    [DllImport("user32.dll")]private static extern IntPtr MonitorFromPoint(NativePoint point,uint flags);
+    [DllImport("user32.dll",CharSet=CharSet.Auto)][return:MarshalAs(UnmanagedType.Bool)]private static extern bool GetMonitorInfo(IntPtr monitor,ref MonitorInfo info);
+    [DllImport("user32.dll")][return:MarshalAs(UnmanagedType.Bool)]private static extern bool SetWindowPos(IntPtr window,IntPtr after,int x,int y,int width,int height,uint flags);
+}

@@ -1,0 +1,36 @@
+# Editor terrain policy: protected border, owners and cut backgrounds
+
+25 октября: [I07 закрыт по коду](I07_CODE_CLOSURE.md); [компоненты заливки](EDITOR_FLOOD_COMPONENTS.md) теперь сравниваются по source identity. Датированные остатки ниже уточнены: кодовое размещение закрыто; transform/copy/cut/paste scope и ручная приёмка остаются в управляющем [списке](OPEN_FUNCTIONS_RU.md).
+## Original representation
+
+`Source/Sources/Map/Map_Setup.c`, `Map_CreateLimitWall`, replaces the outermost row/column with the locked World catalogue entry. Both loaders call it (`Files_Editor.c`, `Editor_Load`; `Files_Game.c`, `Game_Load`). Locked terrain is identified by World table entry 0xFE and the original in-memory fourth byte 0 (World catalogue). That fourth byte is **not** the reserved fourth byte of a native game tile. `Compiler_Conversions.c` maps the transient locked entry to native boundary ID 0x1E on export. Native/DKM round trips therefore cannot recover arbitrary transient locks by inspecting reserved bytes.
+
+`Map_Select.c`, `Select_Copy`, skips cloning things on locked cells. `Select_Copy` with Cut also leaves their tiles and things unchanged. `Select_Paste` skips an entire locked destination cell, including deletion/insertion of things. Otherwise it deletes destination things and turns a masked source tile into neutral solid terrain without inserting its things. `Select_Rotate` and `Select_Symmetry` apply the same tile preservation/fallback, but move **all** selected physical things before testing tile locks. A thing can therefore move to/from a protected edge during an in-place transform; rejecting or dropping it would not reproduce the original ordering.
+
+`Map_Functions.c`, `Map_TranslateWorldItem`, and `Compiler_Conversions.c` derive fixed World/Gates owners and variants from `Datas_Map.c`. Ground/world tiles generally belong to Neutral; hero rest terrain and hero gates belong to Heroes. Rooms and owned paths/walls retain the selected player. The new policy uses those catalogues rather than guessing from numerical ranges.
+
+## Implemented layer
+
+`PaintEditor` / `FloodFillEditor` protect the map's outermost cells by position, without changing their original bytes on load. The canvas routes all shape strokes and flood through this layer, preserving selected clipping. Native reserved bytes are retained, not interpreted as locks. World/hero-gate painting normalizes fixed owner/variant; rooms and owned paths preserve their selected owner. The cursor status identifies the protected border in EN/RU.
+
+UI copy and explicit rotated-copy exclude protected-edge physical things and owned graphs. Cut uses the same filtering and leaves border tiles/objects/scopes unchanged. Bounds are checked before deleting things. If selected terrain is a heart, portal, mercenary portal or hero gate (IDs 14, 12, 40, 28, 33, 34, 37), cut uses the full verified NewMap background preset. Project metadata supplies FillID; native maps use the original loader's default 0x02020101 because native files have no editor FillID preference. Unknown project presets reject the cut before mutation. Normal cut fill uses the selected normalized terrain. Each successful edit is one transaction; failed/no-op edits preserve history and redo.
+
+Selection snapshots carry an independent row-major protection mask. UI copy/rotated-copy records the source's positional edge locks; crop/rotation/reflection transform that mask with the tiles. UI paste preserves protected destination tiles/things/scopes, writes neutral solid `(1,2,1)` for source-mask cells, and retains only accepted source things, their exact owner links and reachable graphs. In-place transforms preserve all physical identities and move all selected things, including edge things, following the original ordering; only tile writes are masked. Each operation remains atomic and byte-exact under undo/redo.
+
+DKCP v3 stores the mask independently of raw tiles. Its historical KMAP projection uses canonical boundary `(30,2,1)` for masked cells; the extension retains the original four bytes of each masked tile. V1/V2 and extension-free DKZ remain readable with no inferred mask: native terrain 30, reserved bytes and source bounds cannot prove a transient lock. Historical readers do not retain the enhanced mask on re-export. Direct selection export remains a raw snapshot including edge things, distinct from the filtered UI copy buffer; historical direct-export equivalence still needs acceptance.
+
+Raw `Paint`, `FloodFill`, `CopySelection`, `CutSelection`, `PasteSelection` and `TransformSelection` retain their lossless data defaults for fixtures/conversion. The UI explicitly selects original-editor policy.
+
+## Source bug deliberately not reproduced
+
+`Map_Select.c:1054` casts the full `Map.Properties.FillID` to BYTE when looking up the cut background. `Map_Setup.c` stores full catalogue IDs in this property and extracts the terrain from its high byte when creating a map; the low byte of every NewMap preset is 1. The cut branch therefore discards its actual terrain/owner/variant. It also compares a value shifted by 24 bits with the unshifted constant 0x23. The modern cut decodes the full source-catalogue preset, preserving hero-rest and owned-path/wall owners rather than reproducing these bugs. Original source files are unchanged.
+
+## Evidence and outstanding work
+
+Native/project core fixtures verify all World/Gates fixed owners/variants, every NewMap preset, all seven special cut selections, owned rooms/paths, exact border/reserved bytes, protected physical objects/scopes, selected flood, failing-stroke rollback, no-op history/redo, unsupported preset rejection, undo/redo, save/reopen, compilation and unchanged original project files. Four WPF native/project × EN/RU cases use the actual palette/canvas methods and copy/cut commands without visible windows or saved settings.
+
+Additional native/project fixtures verify mask crop/all four transforms (including nonsquare buffers), canonical historical projection plus exact raw-byte recovery, v1/v2 and original DKZ compatibility without guessed locks, malformed/truncated mask rejection, source fallback, destination edge owners, clipped graph filtering, raw API distinction, no-op redo retention, save/reopen and compilation. Four more WPF EN/RU × native/project cases exercise the actual copy, DKZ reload, paste, all four masked transforms, rotated-copy and document-close commands. They assert all original object movement and unrelated bytes, not just terrain appearance.
+
+Source-catalogue cursor footprints and constrained heart/portal/gate gestures are now implemented separately; see [placement evidence](EDITOR_TERRAIN_PLACEMENT.md). Raw per-tile painting/cut/paste/transform are not silently coerced into footprints.
+
+Read-only compiler-derived shape, duplicate-heart and keeper-sequence checks are implemented; see [terrain diagnostics](TERRAIN_LAYOUT_DIAGNOSTICS.md). Source-default new-map settings and an optional heart starter are implemented; see [new-map scope](NEW_MAP_CREATION.md). Still required: new-map game acceptance, gate-region interactions, palette UX for fixed owners/variants, historical direct-selection-export comparison, original GUI and gameplay acceptance. These are explicitly open in [the parity ledger](FEATURE_PARITY.md).

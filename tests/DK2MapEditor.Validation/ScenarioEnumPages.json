@@ -1,0 +1,424 @@
+[
+  {
+    "Type": "TRIGGER_DOORS",
+    "PageID": 7110,
+    "Parameter": 3,
+    "Values": [
+      1,
+      9,
+      17
+    ],
+    "SourceAssignments": [
+      "Context->TriggerCtx.TempTrigger.param1 = 1;",
+      "Context->TriggerCtx.TempTrigger.param1 = 2;",
+      "Context->TriggerCtx.TempTrigger.param1 = 3;",
+      "Context->TriggerCtx.TempTrigger.param1 = 4;",
+      "Context->TriggerCtx.TempTrigger.param1 = 5;",
+      "Context->TriggerCtx.TempTrigger.param1 = 6;",
+      "Context->TriggerCtx.TempTrigger.param2 = Triggers_TriggerDlgGetSelectedEntryParam(Context->TriggerCtx.DoorsList);",
+      "Context->TriggerCtx.TempTrigger.param2 = 0;",
+      "Context->TriggerCtx.TempTrigger.param3 = 0x09;",
+      "Context->TriggerCtx.TempTrigger.param3 = 0x11;",
+      "Context->TriggerCtx.TempTrigger.param3 = 0x01;",
+      "Context->TriggerCtx.TempTrigger.param5 = GetDlgItemInt(hDlg,210,NULL,FALSE);"
+    ],
+    "SourceResource": {
+      "Line": 3491,
+      "Header": "7110 DIALOG 8, 8, 400, 232\r\nSTYLE DS_MODALFRAME|WS_BORDER|WS_VISIBLE|WS_CAPTION|WS_SYSMENU\r\nCLASS DIALOG_CLASS\r\nCAPTION DIALOG_TRIGGERSTITLE\r\nFONT 8, \"MS Sans Serif\"",
+      "Declarations": "CONTROL\t\tDIALOG_TRIGGERSDOORS,\t\t100, \"STATIC\", WS_CHILD|SS_OWNERDRAW, 0, 0, 400, 10\r\n\r\n\tGROUPBOX\tDIALOG_TRIGGERSDOORSTYPE,\t400,   6,  16, 220, 210\r\n\tLTEXT\t\tDIALOG_TRIGGERSCREATURESCOUNT,\t401, 232,  66, 158,  10\r\n\tAUTORADIOBUTTON\tDIALOG_TRIGGERSCREATURESLO,\t200, 240,  76,  90,  10\r\n\tAUTORADIOBUTTON\tDIALOG_TRIGGERSCREATURESLS,\t201, 240,  86,  90,  10\r\n\tAUTORADIOBUTTON\tDIALOG_TRIGGERSCREATURESEQ,\t202, 240,  96,  90,  10\r\n\tAUTORADIOBUTTON\tDIALOG_TRIGGERSCREATURESHI,\t203, 240, 106,  90,  10\r\n\tAUTORADIOBUTTON\tDIALOG_TRIGGERSCREATURESHS,\t204, 240, 116,  90,  10\r\n\tAUTORADIOBUTTON\tDIALOG_TRIGGERSCREATURESNE,\t205, 240, 126,  90,  10\r\n\tEDITTEXT\t\t\t\t\t210, 330,  94,  20,  12, ES_NUMBER\r\n\r\n\tLTEXT\t\tDIALOG_TRIGGERSRTTYPE,\t\t211, 232, 140, 158,  10\r\n\tAUTORADIOBUTTON\tDIALOG_TRIGGERSRTBLUEPRINTS,\t206, 240, 150,  90,  10\r\n\tAUTORADIOBUTTON\tDIALOG_TRIGGERSRTBUILDS,\t207, 240, 160,  90,  10\r\n\tAUTORADIOBUTTON\tDIALOG_TRIGGERSRTALL,\t\t208, 240, 170,  90,  10"
+    }
+  },
+  {
+    "Type": "TRIGGER_TRAPS",
+    "PageID": 7111,
+    "Parameter": 3,
+    "Values": [
+      1,
+      9,
+      17
+    ],
+    "SourceAssignments": [
+      "Context->TriggerCtx.TempTrigger.param1 = 1;",
+      "Context->TriggerCtx.TempTrigger.param1 = 2;",
+      "Context->TriggerCtx.TempTrigger.param1 = 3;",
+      "Context->TriggerCtx.TempTrigger.param1 = 4;",
+      "Context->TriggerCtx.TempTrigger.param1 = 5;",
+      "Context->TriggerCtx.TempTrigger.param1 = 6;",
+      "Context->TriggerCtx.TempTrigger.param2 = Triggers_TriggerDlgGetSelectedEntryParam(Context->TriggerCtx.TrapsList);",
+      "Context->TriggerCtx.TempTrigger.param2 = 0;",
+      "Context->TriggerCtx.TempTrigger.param3 = 0x09;",
+      "Context->TriggerCtx.TempTrigger.param3 = 0x11;",
+      "Context->TriggerCtx.TempTrigger.param3 = 0x01;",
+      "Context->TriggerCtx.TempTrigger.param5 = GetDlgItemInt(hDlg,210,NULL,FALSE);"
+    ],
+    "SourceResource": {
+      "Line": 3517,
+      "Header": "7111 DIALOG 8, 8, 400, 232\r\nSTYLE DS_MODALFRAME|WS_BORDER|WS_VISIBLE|WS_CAPTION|WS_SYSMENU\r\nCLASS DIALOG_CLASS\r\nCAPTION DIALOG_TRIGGERSTITLE\r\nFONT 8, \"MS Sans Serif\"",
+      "Declarations": "CONTROL\t\tDIALOG_TRIGGERSTRAPS,\t\t100, \"STATIC\", WS_CHILD|SS_OWNERDRAW, 0, 0, 400, 10\r\n\r\n\tGROUPBOX\tDIALOG_TRIGGERSTRAPSTYPE,\t400,   6,  16, 220, 210\r\n\tLTEXT\t\tDIALOG_TRIGGERSCREATURESCOUNT,\t401, 232,  66, 158,  10\r\n\tAUTORADIOBUTTON\tDIALOG_TRIGGERSCREATURESLO,\t200, 240,  76,  90,  10\r\n\tAUTORADIOBUTTON\tDIALOG_TRIGGERSCREATURESLS,\t201, 240,  86,  90,  10\r\n\tAUTORADIOBUTTON\tDIALOG_TRIGGERSCREATURESEQ,\t202, 240,  96,  90,  10\r\n\tAUTORADIOBUTTON\tDIALOG_TRIGGERSCREATURESHI,\t203, 240, 106,  90,  10\r\n\tAUTORADIOBUTTON\tDIALOG_TRIGGERSCREATURESHS,\t204, 240, 116,  90,  10\r\n\tAUTORADIOBUTTON\tDIALOG_TRIGGERSCREATURESNE,\t205, 240, 126,  90,  10\r\n\tEDITTEXT\t\t\t\t\t210, 330,  94,  20,  12, ES_NUMBER\r\n\r\n\tLTEXT\t\tDIALOG_TRIGGERSRTTYPE,\t\t211, 232, 140, 158,  10\r\n\tAUTORADIOBUTTON\tDIALOG_TRIGGERSRTBLUEPRINTS,\t206, 240, 150,  90,  10\r\n\tAUTORADIOBUTTON\tDIALOG_TRIGGERSRTBUILDS,\t207, 240, 160,  90,  10\r\n\tAUTORADIOBUTTON\tDIALOG_TRIGGERSRTALL,\t\t208, 240, 170,  90,  10"
+    }
+  },
+  {
+    "Type": "ACTION_ADDELEMENT",
+    "PageID": 7204,
+    "Parameter": 4,
+    "Values": [
+      0,
+      1
+    ],
+    "SourceAssignments": [
+      "Context->ActionCtx.TempAction.param1 = SendDlgItemMessage(hDlg,303,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)+1;",
+      "Context->ActionCtx.TempAction.param2 = Result>>16;",
+      "Context->ActionCtx.TempAction.param3 = Result&0x0000FFFF;",
+      "Context->ActionCtx.TempAction.param4 = 1;",
+      "Context->ActionCtx.TempAction.param4 = 0;"
+    ],
+    "SourceResource": {
+      "Line": 4052,
+      "Header": "7204 DIALOG 8, 8, 400, 232\r\nSTYLE DS_MODALFRAME|WS_BORDER|WS_VISIBLE|WS_CAPTION|WS_SYSMENU\r\nCLASS DIALOG_CLASS\r\nCAPTION DIALOG_ACTIONSTITLE\r\nFONT 8, \"MS Sans Serif\"",
+      "Declarations": "CONTROL\t\tDIALOG_ACTIONSELEM,\t\t100, \"STATIC\", WS_CHILD|SS_OWNERDRAW, 0, 0, 400, 10\r\n\r\n\tGROUPBOX\tDIALOG_ACTIONSELEMLIST,\t\t400,   6,  16, 220, 210\r\n\tLTEXT\t\tDIALOG_ACTIONSELEMPLAYER,\t302, 232,  86, 158,  10\r\n\tCOMBOBOX\t\t\t\t\t303, 232,  96, 158, 100, WS_VSCROLL|CBS_DROPDOWNLIST|CBS_OWNERDRAWFIXED\r\n\tAUTORADIOBUTTON\tDIALOG_ACTIONSELEMADD,\t\t200, 232, 116, 120,  10\r\n\tAUTORADIOBUTTON\tDIALOG_ACTIONSELEMSUB,\t\t201, 232, 126, 120,  10"
+    }
+  },
+  {
+    "Type": "ACTION_SHOWAREA",
+    "PageID": 7205,
+    "Parameter": 2,
+    "Values": [
+      0,
+      1
+    ],
+    "SourceAssignments": [
+      "Context->ActionCtx.TempAction.param1 = Misc_GetArea(hDlg,311,FALSE);",
+      "Context->ActionCtx.TempAction.param2 = 0;",
+      "Context->ActionCtx.TempAction.param2 = 1;"
+    ],
+    "SourceResource": {
+      "Line": 4069,
+      "Header": "7205 DIALOG 8, 8, 400, 232\r\nSTYLE DS_MODALFRAME|WS_BORDER|WS_VISIBLE|WS_CAPTION|WS_SYSMENU\r\nCLASS DIALOG_CLASS\r\nCAPTION DIALOG_ACTIONSTITLE\r\nFONT 8, \"MS Sans Serif\"",
+      "Declarations": "CONTROL\t\tDIALOG_ACTIONSSHOW,\t\t100, \"STATIC\", WS_CHILD|SS_OWNERDRAW, 0, 0, 400, 10\r\n\r\n\tLTEXT\t\tDIALOG_ACTIONSSHOWAREA,\t\t310, 101,  86, 198,  10\r\n\tCOMBOBOX\t\t\t\t\t311, 101,  96, 198, 100, WS_VSCROLL|CBS_DROPDOWNLIST\r\n\r\n\tAUTORADIOBUTTON\tDIALOG_ACTIONSSHOWDEACTIVATE,\t200, 101, 120, 198,  10\r\n\tAUTORADIOBUTTON\tDIALOG_ACTIONSSHOWACTIVATE,\t201, 101, 130, 198,  10"
+    }
+  },
+  {
+    "Type": "ACTION_ENABLEFOG",
+    "PageID": 7206,
+    "Parameter": 2,
+    "Values": [
+      0,
+      1
+    ],
+    "SourceAssignments": [
+      "Context->ActionCtx.TempAction.param1 = Misc_GetArea(hDlg,311,FALSE);",
+      "Context->ActionCtx.TempAction.param2 = 0;",
+      "Context->ActionCtx.TempAction.param2 = 1;"
+    ],
+    "SourceResource": {
+      "Line": 4086,
+      "Header": "7206 DIALOG 8, 8, 400, 232\r\nSTYLE DS_MODALFRAME|WS_BORDER|WS_VISIBLE|WS_CAPTION|WS_SYSMENU\r\nCLASS DIALOG_CLASS\r\nCAPTION DIALOG_ACTIONSTITLE\r\nFONT 8, \"MS Sans Serif\"",
+      "Declarations": "CONTROL\t\tDIALOG_ACTIONSVISIBLE,\t\t100, \"STATIC\", WS_CHILD|SS_OWNERDRAW, 0, 0, 400, 10\r\n\r\n\tLTEXT\t\tDIALOG_ACTIONSVISIBLEAREA,\t310, 101,  86, 198,  10\r\n\tCOMBOBOX\t\t\t\t\t311, 101,  96, 198, 100, WS_VSCROLL|CBS_DROPDOWNLIST\r\n\r\n\tAUTORADIOBUTTON\tDIALOG_ACTIONSVISIBLESHOW,\t200, 101, 120, 198,  10\r\n\tAUTORADIOBUTTON\tDIALOG_ACTIONSVISIBLEHIDE,\t201, 101, 130, 198,  10"
+    }
+  },
+  {
+    "Type": "ACTION_ALLIES",
+    "PageID": 7222,
+    "Parameter": 3,
+    "Values": [
+      0,
+      1
+    ],
+    "SourceAssignments": [
+      "Context->ActionCtx.TempAction.param3 = 0;",
+      "Context->ActionCtx.TempAction.param3 = 1;",
+      "Context->ActionCtx.TempAction.param1 = Triggers_TriggerDlgGetSelectedEntryParam(Context->ActionCtx.FirstAlliePlayersList);",
+      "Context->ActionCtx.TempAction.param2 = Triggers_TriggerDlgGetSelectedEntryParam(Context->ActionCtx.SecondAlliePlayersList);"
+    ],
+    "SourceResource": {
+      "Line": 4368,
+      "Header": "7222 DIALOG 8, 8, 400, 232\r\nSTYLE DS_MODALFRAME|WS_BORDER|WS_VISIBLE|WS_CAPTION|WS_SYSMENU\r\nCLASS DIALOG_CLASS\r\nCAPTION DIALOG_ACTIONSTITLE\r\nFONT 8, \"MS Sans Serif\"",
+      "Declarations": "CONTROL\t\tDIALOG_ACTIONSALLIES,\t\t100, \"STATIC\", WS_CHILD|SS_OWNERDRAW, 0, 0, 400, 10\r\n\r\n\tGROUPBOX\tDIALOG_ACTIONSFIRSTALLIE,\t400,   8,  16, 190, 170\r\n\tGROUPBOX\tDIALOG_ACTIONSSECONDALLIE,\t401, 202,  16, 190, 170\r\n\tAUTORADIOBUTTON\tDIALOG_ACTIONSSETALLIANCE,\t200, 101, 202, 158,  10\r\n\tAUTORADIOBUTTON\tDIALOG_ACTIONSCLEARALLIANCE,\t201, 101, 212, 158,  10"
+    }
+  },
+  {
+    "Type": "ACTION_RELEASEBAND",
+    "PageID": 7207,
+    "Parameter": 2,
+    "Values": [
+      0,
+      1,
+      2
+    ],
+    "SourceAssignments": [
+      "Context->ActionCtx.TempAction.param1 = Triggers_TriggerDlgGetSelectedEntryParam(Context->ActionCtx.HerosList);",
+      "Context->ActionCtx.TempAction.param5 = Misc_GetArea(hDlg,311,FALSE);",
+      "Context->ActionCtx.TempAction.param2 = 1;",
+      "Context->ActionCtx.TempAction.param2 = 2;",
+      "Context->ActionCtx.TempAction.param2 = 0;"
+    ],
+    "SourceResource": {
+      "Line": 4103,
+      "Header": "7207 DIALOG 8, 8, 400, 232\r\nSTYLE DS_MODALFRAME|WS_BORDER|WS_VISIBLE|WS_CAPTION|WS_SYSMENU\r\nCLASS DIALOG_CLASS\r\nCAPTION DIALOG_ACTIONSTITLE\r\nFONT 8, \"MS Sans Serif\"",
+      "Declarations": "CONTROL\t\tDIALOG_ACTIONSBAND,\t\t100, \"STATIC\", WS_CHILD|SS_OWNERDRAW, 0, 0, 400, 10\r\n\r\n\tGROUPBOX\tDIALOG_ACTIONSHEROSLIST,\t400,   6,  16, 220, 210\r\n\tLTEXT\t\tDIALOG_ACTIONSBANDAREA,\t\t310, 232,  96, 158,  10\r\n\tCOMBOBOX\t\t\t\t\t311, 232, 106, 158, 100, WS_VSCROLL|CBS_DROPDOWNLIST\r\n\tAUTOCHECKBOX\tDIALOG_ACTIONSBANDINVASION,\t500, 232, 126, 158,  10\r\n\tAUTOCHECKBOX\tDIALOG_ACTIONSBANDRANDOM,\t501, 232, 136, 158,  10"
+    }
+  },
+  {
+    "Type": "ACTION_TOGGLEEFFECT",
+    "PageID": 7232,
+    "Parameter": 2,
+    "Values": [
+      0,
+      1
+    ],
+    "SourceAssignments": [
+      "Context->ActionCtx.TempAction.param1 = Misc_GetEffect(hDlg,311,FALSE);",
+      "Context->ActionCtx.TempAction.param2 = 1;",
+      "Context->ActionCtx.TempAction.param2 = 0;"
+    ],
+    "SourceResource": {
+      "Line": 4518,
+      "Header": "7232 DIALOG 8, 8, 400, 232\r\nSTYLE DS_MODALFRAME|WS_BORDER|WS_VISIBLE|WS_CAPTION|WS_SYSMENU\r\nCLASS DIALOG_CLASS\r\nCAPTION DIALOG_ACTIONSTITLE\r\nFONT 8, \"MS Sans Serif\"",
+      "Declarations": "CONTROL\t\tDIALOG_ACTIONSFXTITLE,\t\t100, \"STATIC\", WS_CHILD|SS_OWNERDRAW, 0, 0, 400, 10\r\n\r\n\tLTEXT\t\tDIALOG_ACTIONSFXTOGGLE,\t\t310, 101,  86, 198,  10\r\n\tCOMBOBOX\t\t\t\t\t311, 101,  96, 198, 100, WS_VSCROLL|CBS_DROPDOWNLIST\r\n\r\n\tAUTORADIOBUTTON\tDIALOG_ACTIONSFXENABLE,\t\t200, 101, 120, 198,  10\r\n\tAUTORADIOBUTTON\tDIALOG_ACTIONSFXDISABLE,\t201, 101, 130, 198,  10"
+    }
+  },
+  {
+    "Type": "ACTION_SYSTEMMESSAGES",
+    "PageID": 7229,
+    "Parameter": 1,
+    "Values": [
+      0,
+      1
+    ],
+    "SourceAssignments": [
+      "Context->ActionCtx.TempAction.param1 = 1;",
+      "Context->ActionCtx.TempAction.param1 = 0;"
+    ],
+    "SourceResource": {
+      "Line": 4476,
+      "Header": "7229 DIALOG 8, 8, 400, 232\r\nSTYLE DS_MODALFRAME|WS_BORDER|WS_VISIBLE|WS_CAPTION|WS_SYSMENU\r\nCLASS DIALOG_CLASS\r\nCAPTION DIALOG_ACTIONSTITLE\r\nFONT 8, \"MS Sans Serif\"",
+      "Declarations": "CONTROL\t\tDIALOG_ACTIONSSYSMSGS,\t\t100, \"STATIC\", WS_CHILD|SS_OWNERDRAW, 0, 0, 400, 10\r\n\r\n\tAUTORADIOBUTTON\tDIALOG_ACTIONSSYSMSGSON,\t200, 101, 106, 158,  10\r\n\tAUTORADIOBUTTON\tDIALOG_ACTIONSSYSMSGSOFF,\t201, 101, 116, 158,  10"
+    }
+  },
+  {
+    "Type": "ACTION_MOODS",
+    "PageID": 7228,
+    "Parameter": 1,
+    "Values": [
+      0,
+      1
+    ],
+    "SourceAssignments": [
+      "Context->ActionCtx.TempAction.param1 = 1;",
+      "Context->ActionCtx.TempAction.param1 = 0;"
+    ],
+    "SourceResource": {
+      "Line": 4462,
+      "Header": "7228 DIALOG 8, 8, 400, 232\r\nSTYLE DS_MODALFRAME|WS_BORDER|WS_VISIBLE|WS_CAPTION|WS_SYSMENU\r\nCLASS DIALOG_CLASS\r\nCAPTION DIALOG_ACTIONSTITLE\r\nFONT 8, \"MS Sans Serif\"",
+      "Declarations": "CONTROL\t\tDIALOG_ACTIONSMOODS,\t\t100, \"STATIC\", WS_CHILD|SS_OWNERDRAW, 0, 0, 400, 10\r\n\r\n\tAUTORADIOBUTTON\tDIALOG_ACTIONSMOODSON,\t\t200, 101, 106, 158,  10\r\n\tAUTORADIOBUTTON\tDIALOG_ACTIONSMOODSOFF,\t\t201, 101, 116, 158,  10"
+    }
+  },
+  {
+    "Type": "ACTION_TIMERSPEECH",
+    "PageID": 7230,
+    "Parameter": 1,
+    "Values": [
+      0,
+      1
+    ],
+    "SourceAssignments": [
+      "Context->ActionCtx.TempAction.param1 = 1;",
+      "Context->ActionCtx.TempAction.param1 = 0;"
+    ],
+    "SourceResource": {
+      "Line": 4490,
+      "Header": "7230 DIALOG 8, 8, 400, 232\r\nSTYLE DS_MODALFRAME|WS_BORDER|WS_VISIBLE|WS_CAPTION|WS_SYSMENU\r\nCLASS DIALOG_CLASS\r\nCAPTION DIALOG_ACTIONSTITLE\r\nFONT 8, \"MS Sans Serif\"",
+      "Declarations": "CONTROL\t\tDIALOG_ACTIONSTIMERSPEECH,\t100, \"STATIC\", WS_CHILD|SS_OWNERDRAW, 0, 0, 400, 10\r\n\r\n\tAUTORADIOBUTTON\tDIALOG_ACTIONSTIMERSPEECHON,\t200, 101, 106, 158,  10\r\n\tAUTORADIOBUTTON\tDIALOG_ACTIONSTIMERSPEECHOFF,\t201, 101, 116, 158,  10"
+    }
+  },
+  {
+    "Type": "ACTION_SHOWELEMENT",
+    "PageID": 7210,
+    "Parameter": 3,
+    "Values": [
+      0,
+      1
+    ],
+    "SourceAssignments": [
+      "Context->ActionCtx.TempAction.param1 = Result>>16;",
+      "Context->ActionCtx.TempAction.param2 = Result&0x0000FFFF;",
+      "Context->ActionCtx.TempAction.param3 = 1;",
+      "Context->ActionCtx.TempAction.param3 = 0;",
+      "Context->ActionCtx.TempAction.param5 = GetDlgItemInt(hDlg,307,NULL,FALSE);"
+    ],
+    "SourceResource": {
+      "Line": 4161,
+      "Header": "7210 DIALOG 8, 8, 400, 232\r\nSTYLE DS_MODALFRAME|WS_BORDER|WS_VISIBLE|WS_CAPTION|WS_SYSMENU\r\nCLASS DIALOG_CLASS\r\nCAPTION DIALOG_ACTIONSTITLE\r\nFONT 8, \"MS Sans Serif\"",
+      "Declarations": "CONTROL\t\tDIALOG_ACTIONSLIGHT,\t\t100, \"STATIC\", WS_CHILD|SS_OWNERDRAW, 0, 0, 400, 10\r\n\r\n\tGROUPBOX\tDIALOG_ACTIONSLIGHTLIST,\t400,   6,  16, 220, 210\r\n\tAUTORADIOBUTTON\tDIALOG_ACTIONSLIGHTSET,\t\t200, 232,  86, 158,  10\r\n\tAUTORADIOBUTTON\tDIALOG_ACTIONSLIGHTCLEAR,\t201, 232,  96, 158,  10\r\n\tLTEXT\t\tDIALOG_ACTIONSLIGHTTIME,\t306, 232, 116, 158,  10\r\n\tEDITTEXT\t\t\t\t\t307, 232, 126, 158,  12, ES_NUMBER"
+    }
+  },
+  {
+    "Type": "ACTION_SAY",
+    "PageID": 7211,
+    "Parameter": 5,
+    "Values": [
+      0,
+      1
+    ],
+    "SourceAssignments": [
+      "Context->ActionCtx.TempAction.param1 = GetDlgItemInt(hDlg,307,NULL,FALSE);",
+      "Context->ActionCtx.TempAction.param5 = (IsDlgButtonChecked(hDlg,308) == BST_CHECKED)?1:0;"
+    ],
+    "SourceResource": {
+      "Line": 4178,
+      "Header": "7211 DIALOG 8, 8, 400, 232\r\nSTYLE DS_MODALFRAME|WS_BORDER|WS_VISIBLE|WS_CAPTION|WS_SYSMENU\r\nCLASS DIALOG_CLASS\r\nCAPTION DIALOG_ACTIONSTITLE\r\nFONT 8, \"MS Sans Serif\"",
+      "Declarations": "CONTROL\t\tDIALOG_ACTIONSSAY,\t\t100, \"STATIC\", WS_CHILD|SS_OWNERDRAW, 0, 0, 400, 10\r\n\r\n\tGROUPBOX\tDIALOG_MAPVOICELIST,\t\t400,   6,  16, 220, 210\r\n\tLISTBOX\t\t\t\t\t\t401,  10,  26, 212, 156, WS_VSCROLL|LBS_SORT|LBS_NOTIFY|LBS_NOINTEGRALHEIGHT\r\n\tEDITTEXT\t\t\t\t\t402,  10, 182, 212,  40, WS_VSCROLL|ES_READONLY|ES_MULTILINE\r\n\r\n\tLTEXT\t\tDIALOG_ACTIONSSAYNAME,\t\t306, 232, 116, 158,  10\r\n\tEDITTEXT\t\t\t\t\t307, 232, 126, 158,  12, ES_NUMBER\r\n\r\n\tAUTOCHECKBOX\tDIALOG_ACTIONSSAYNOTEXT,\t308, 232, 146, 158,  10"
+    }
+  },
+  {
+    "Type": "ACTION_CHANGEVIEW",
+    "PageID": 7212,
+    "Parameter": 1,
+    "Values": [
+      0,
+      1
+    ],
+    "SourceAssignments": [
+      "Context->ActionCtx.TempAction.param1 = 1;",
+      "Context->ActionCtx.TempAction.param1 = 0;"
+    ],
+    "SourceResource": {
+      "Line": 4198,
+      "Header": "7212 DIALOG 8, 8, 400, 232\r\nSTYLE DS_MODALFRAME|WS_BORDER|WS_VISIBLE|WS_CAPTION|WS_SYSMENU\r\nCLASS DIALOG_CLASS\r\nCAPTION DIALOG_ACTIONSTITLE\r\nFONT 8, \"MS Sans Serif\"",
+      "Declarations": "CONTROL\t\tDIALOG_ACTIONSVIEW,\t\t100, \"STATIC\", WS_CHILD|SS_OWNERDRAW, 0, 0, 400, 10\r\n\r\n\tAUTORADIOBUTTON\tDIALOG_ACTIONSVIEWSET,\t\t200, 101, 106, 158,  10\r\n\tAUTORADIOBUTTON\tDIALOG_ACTIONSVIEWCLEAR,\t201, 101, 116, 158,  10"
+    }
+  },
+  {
+    "Type": "ACTION_CAMERAPATH",
+    "PageID": 7224,
+    "Parameter": 3,
+    "Values": [
+      0,
+      1
+    ],
+    "SourceAssignments": [
+      "Context->ActionCtx.TempAction.param1 = GetDlgItemInt(hDlg,307,NULL,FALSE);",
+      "Context->ActionCtx.TempAction.param2 = Misc_GetArea(hDlg,311,FALSE);",
+      "Context->ActionCtx.TempAction.param3 = 0;",
+      "Context->ActionCtx.TempAction.param3 = 1;"
+    ],
+    "SourceResource": {
+      "Line": 4399,
+      "Header": "7224 DIALOG 8, 8, 400, 232\r\nSTYLE DS_MODALFRAME|WS_BORDER|WS_VISIBLE|WS_CAPTION|WS_SYSMENU\r\nCLASS DIALOG_CLASS\r\nCAPTION DIALOG_ACTIONSTITLE\r\nFONT 8, \"MS Sans Serif\"",
+      "Declarations": "CONTROL\t\tDIALOG_ACTIONSCAMERAPATH,\t100, \"STATIC\", WS_CHILD|SS_OWNERDRAW, 0, 0, 400, 10\r\n\r\n\tRTEXT\t\tDIALOG_ACTIONSCAMERAPATHID,\t306, 101,  93, 100,  10\r\n\tEDITTEXT\t\t\t\t\t307, 205,  92,  20,  12, ES_NUMBER\r\n\tPUSHBUTTON\tDIALOG_NULL,\t\t\t315, 229,  92,  20,  12, BS_OWNERDRAW\r\n\r\n\tLTEXT\t\tDIALOG_ACTIONSCAMERAPATHAREA,\t310, 101, 112, 198,  10\r\n\tCOMBOBOX\t\t\t\t\t311, 101, 122, 198, 100, WS_VSCROLL|CBS_DROPDOWNLIST\r\n\tAUTORADIOBUTTON\tDIALOG_ACTIONSCAMERAPATHCEON,\t200, 101, 140, 158,  10\r\n\tAUTORADIOBUTTON\tDIALOG_ACTIONSCAMERAPATHCEOFF,\t201, 101, 150, 158,  10"
+    }
+  },
+  {
+    "Type": "ACTION_PORTALS",
+    "PageID": 7227,
+    "Parameter": 1,
+    "Values": [
+      0,
+      1
+    ],
+    "SourceAssignments": [
+      "Context->ActionCtx.TempAction.param1 = 1;",
+      "Context->ActionCtx.TempAction.param1 = 0;"
+    ],
+    "SourceResource": {
+      "Line": 4448,
+      "Header": "7227 DIALOG 8, 8, 400, 232\r\nSTYLE DS_MODALFRAME|WS_BORDER|WS_VISIBLE|WS_CAPTION|WS_SYSMENU\r\nCLASS DIALOG_CLASS\r\nCAPTION DIALOG_ACTIONSTITLE\r\nFONT 8, \"MS Sans Serif\"",
+      "Declarations": "CONTROL\t\tDIALOG_ACTIONSPORTALS,\t\t100, \"STATIC\", WS_CHILD|SS_OWNERDRAW, 0, 0, 400, 10\r\n\r\n\tAUTORADIOBUTTON\tDIALOG_ACTIONSPORTALSOPENED,\t200, 101, 106, 158,  10\r\n\tAUTORADIOBUTTON\tDIALOG_ACTIONSPORTALSCLOSED,\t201, 101, 116, 158,  10"
+    }
+  },
+  {
+    "Type": "ACTION_PRIMARYTARGET",
+    "PageID": 7218,
+    "Parameter": 1,
+    "Values": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "SourceAssignments": [
+      "Context->ActionCtx.TempAction.param1 = 1;",
+      "Context->ActionCtx.TempAction.param1 = 2;",
+      "Context->ActionCtx.TempAction.param1 = 3;",
+      "Context->ActionCtx.TempAction.param1 = 0;"
+    ],
+    "SourceResource": {
+      "Line": 4293,
+      "Header": "7218 DIALOG 8, 8, 400, 232\r\nSTYLE DS_MODALFRAME|WS_BORDER|WS_VISIBLE|WS_CAPTION|WS_SYSMENU\r\nCLASS DIALOG_CLASS\r\nCAPTION DIALOG_ACTIONSTITLE\r\nFONT 8, \"MS Sans Serif\"",
+      "Declarations": "CONTROL\t\tDIALOG_ACTIONSTARGET,\t\t100, \"STATIC\", WS_CHILD|SS_OWNERDRAW, 0, 0, 400, 10\r\n\r\n\tAUTORADIOBUTTON\tDIALOG_ACTIONSTARGETCLEAR,\t200, 101,  96, 158,  10\r\n\tAUTORADIOBUTTON\tDIALOG_ACTIONSTARGETFIGHT,\t201, 101, 106, 158,  10\r\n\tAUTORADIOBUTTON\tDIALOG_ACTIONSTARGETJAIL,\t202, 101, 116, 158,  10\r\n\tAUTORADIOBUTTON\tDIALOG_ACTIONSTARGETTORTURE,\t203, 101, 126, 158,  10"
+    }
+  },
+  {
+    "Type": "ACTION_CHANGEPARAMS",
+    "PageID": 7219,
+    "Parameter": 2,
+    "Values": [
+      11,
+      12,
+      13,
+      14,
+      17,
+      18,
+      19,
+      22,
+      23,
+      27
+    ],
+    "SourceAssignments": [
+      "Context->ActionCtx.TempAction.param1 = Triggers_TriggerDlgGetSelectedEntryParam(Context->ActionCtx.PlayersList);",
+      "Context->ActionCtx.TempAction.param1 = 0;",
+      "Context->ActionCtx.TempAction.param2 = 0x0B;",
+      "Context->ActionCtx.TempAction.param2 = 0x0C;",
+      "Context->ActionCtx.TempAction.param2 = 0x0D;",
+      "Context->ActionCtx.TempAction.param2 = 0x0E;",
+      "Context->ActionCtx.TempAction.param2 = 0x11;",
+      "Context->ActionCtx.TempAction.param2 = 0x12;",
+      "Context->ActionCtx.TempAction.param2 = 0x13;",
+      "Context->ActionCtx.TempAction.param2 = 0x16;",
+      "Context->ActionCtx.TempAction.param2 = 0x17;",
+      "Context->ActionCtx.TempAction.param2 = 0x1B;",
+      "Context->ActionCtx.TempAction.param5 = Misc_GetArea(hDlg,311,FALSE);"
+    ],
+    "SourceResource": {
+      "Line": 4309,
+      "Header": "7219 DIALOG 8, 8, 400, 232\r\nSTYLE DS_MODALFRAME|WS_BORDER|WS_VISIBLE|WS_CAPTION|WS_SYSMENU\r\nCLASS DIALOG_CLASS\r\nCAPTION DIALOG_ACTIONSTITLE\r\nFONT 8, \"MS Sans Serif\"",
+      "Declarations": "CONTROL\t\tDIALOG_ACTIONSPARAMS,\t\t100, \"STATIC\", WS_CHILD|SS_OWNERDRAW, 0, 0, 400, 10\r\n\r\n\tGROUPBOX\tDIALOG_ACTIONSPARAMSPLLIST,\t400,   6,  16, 220, 210\r\n\tLTEXT\t\tDIALOG_ACTIONSPARAMSAREA,\t310, 232,  46, 158,  10\r\n\tCOMBOBOX\t\t\t\t\t311, 232,  56, 158, 100, WS_VSCROLL|CBS_DROPDOWNLIST\r\n\tAUTORADIOBUTTON\tDIALOG_ACTIONSPARAMSROOMS,\t200, 232,  76, 120,  10\r\n\tAUTORADIOBUTTON\tDIALOG_ACTIONSPARAMSWALLS,\t201, 232,  86, 120,  10\r\n\tAUTORADIOBUTTON\tDIALOG_ACTIONSPARAMSGOLD,\t202, 232,  96, 120,  10\r\n\tAUTORADIOBUTTON\tDIALOG_ACTIONSPARAMSSPELLS,\t203, 232, 106, 120,  10\r\n\tAUTORADIOBUTTON\tDIALOG_ACTIONSPARAMSCRATES,\t204, 232, 116, 120,  10\r\n\tAUTORADIOBUTTON\tDIALOG_ACTIONSPARAMSKILL,\t205, 232, 126, 120,  10\r\n\tAUTORADIOBUTTON\tDIALOG_ACTIONSPARAMSATTACK,\t206, 232, 136, 120,  10\r\n\tAUTORADIOBUTTON\tDIALOG_ACTIONSPARAMSSTAY,\t207, 232, 146, 120,  10\r\n\tAUTORADIOBUTTON\tDIALOG_ACTIONSPARAMSGO,\t\t208, 232, 156, 120,  10\r\n\tAUTORADIOBUTTON\tDIALOG_ACTIONSPARAMSJAIL,\t209, 232, 166, 120,  10"
+    }
+  },
+  {
+    "Type": "ACTION_RUN",
+    "PageID": 7220,
+    "Parameter": 1,
+    "Values": [
+      0,
+      1
+    ],
+    "SourceAssignments": [
+      "Context->ActionCtx.TempAction.param1 = 1;",
+      "Context->ActionCtx.TempAction.param1 = 0;"
+    ],
+    "SourceResource": {
+      "Line": 4334,
+      "Header": "7220 DIALOG 8, 8, 400, 232\r\nSTYLE DS_MODALFRAME|WS_BORDER|WS_VISIBLE|WS_CAPTION|WS_SYSMENU\r\nCLASS DIALOG_CLASS\r\nCAPTION DIALOG_ACTIONSTITLE\r\nFONT 8, \"MS Sans Serif\"",
+      "Declarations": "CONTROL\t\tDIALOG_ACTIONSRUN,\t\t100, \"STATIC\", WS_CHILD|SS_OWNERDRAW, 0, 0, 400, 10\r\n\r\n\tAUTORADIOBUTTON\tDIALOG_ACTIONSRUNSET,\t\t200, 101, 106, 158,  10\r\n\tAUTORADIOBUTTON\tDIALOG_ACTIONSRUNCLEAR,\t\t201, 101, 116, 158,  10"
+    }
+  },
+  {
+    "Type": "ACTION_ATTACK",
+    "PageID": 7226,
+    "Parameter": 1,
+    "Values": [
+      0,
+      1
+    ],
+    "SourceAssignments": [
+      "Context->ActionCtx.TempAction.param1 = 1;",
+      "Context->ActionCtx.TempAction.param1 = 0;"
+    ],
+    "SourceResource": {
+      "Line": 4434,
+      "Header": "7226 DIALOG 8, 8, 400, 232\r\nSTYLE DS_MODALFRAME|WS_BORDER|WS_VISIBLE|WS_CAPTION|WS_SYSMENU\r\nCLASS DIALOG_CLASS\r\nCAPTION DIALOG_ACTIONSTITLE\r\nFONT 8, \"MS Sans Serif\"",
+      "Declarations": "CONTROL\t\tDIALOG_ACTIONSATTACK,\t\t100, \"STATIC\", WS_CHILD|SS_OWNERDRAW, 0, 0, 400, 10\r\n\r\n\tAUTORADIOBUTTON\tDIALOG_ACTIONSATTACKON,\t\t200, 101, 106, 158,  10\r\n\tAUTORADIOBUTTON\tDIALOG_ACTIONSATTACKOFF,\t201, 101, 116, 158,  10"
+    }
+  }
+]

@@ -1,0 +1,141 @@
+{
+  "InputHashes": {
+    "Source/Resources/Editor.rc": "eb07ed2217a81348a03c75e302d09fdcb5e34b6099d1bd60229ba5fa9bd8920d",
+    "Source/Includes/Strings.h": "deee57184bd2a4256c3e0e1e050ae5616932b86e2b7265f6f8b3659abee9cecb",
+    "Source/Includes/RectEx.h": "eb74b2ff2e123da4a433eec18d4748827cd294dfffd5ddeb4a4e8f1065bf1a8b",
+    "Source/Includes/Game.h": "4a9a19adc7bbb8d44a2b29e3194300e8993836b6094a3da3f3f8dfbdcca6de9f",
+    "Source/Sources/Things/Things_RectEx.c": "717e72aa50493ea4266a2f6f894f25510bf999917b68a5f6e7db7122eac1c5f8",
+    "Source/Sources/Things/Things_Paths.c": "b17ec63f9c26f3a4f40c7a404066925c33263ba6eea52ebc44ae29f124074d70"
+  },
+  "Dialogs": [
+    {
+      "ID": 6700,
+      "RC": "6700 DIALOG 8, 8, 406, 236\nSTYLE DS_MODALFRAME|WS_BORDER|WS_VISIBLE|WS_CAPTION|WS_SYSMENU\nCLASS DIALOG_CLASS\nCAPTION DIALOG_NULL\nFONT 8, \"MS Sans Serif\"\n{\n\tGROUPBOX\tDIALOG_AREARECT,\t\t100,   8,   6, 190, 200\n\tRTEXT\t\tDIALOG_AREASTART,\t\t -1,  12,  19,  70,  12\n\tEDITTEXT\t\t\t\t\t101,  90,  18,  30,  12, ES_NUMBER\n\tCTEXT\t\tDIALOG_AREASEPARATOR,\t\t -1, 122,  19,  10,  12\n\tEDITTEXT\t\t\t\t\t102, 132,  18,  30,  12, ES_NUMBER\n\tRTEXT\t\tDIALOG_AREAEND,\t\t\t -1,  12,  33,  70,  12\n\tEDITTEXT\t\t\t\t\t103,  90,  32,  30,  12, ES_NUMBER\n\tCTEXT\t\tDIALOG_AREASEPARATOR,\t\t -1, 122,  33,  10,  12\n\tEDITTEXT\t\t\t\t\t104, 132,  32,  30,  12, ES_NUMBER\n\tPUSHBUTTON\tDIALOG_NULL,\t\t\t109, 168,  25,  20,  12, BS_OWNERDRAW\n\n\tRTEXT\t\tDIALOG_AREARECTCOLOR,\t\t -1,  12,  51,  70,  12\n\tPUSHBUTTON\tDIALOG_NULL,\t\t\t105,  90,  50,  20,  12, WS_DISABLED|BS_OWNERDRAW\n\tPUSHBUTTON\tDIALOG_AREAMODIFY,\t\t106, 114,  50,  50,  12\n\tRTEXT\t\tDIALOG_AREATEXTCOLOR,\t\t -1,  12,  65,  70,  12\n\tPUSHBUTTON\tDIALOG_NULL,\t\t\t107,  90,  64,  20,  12, WS_DISABLED|BS_OWNERDRAW\n\tPUSHBUTTON\tDIALOG_AREAMODIFY,\t\t108, 114,  64,  50,  12\n\n\tLTEXT\t\tDIALOG_AREANAME,\t\t -1,  20,  80, 100,  10, WS_DISABLED\n\tEDITTEXT\t\t\t\t\t110,  20,  90, 166,  28, ES_MULTILINE|ES_WANTRETURN\n\tLTEXT\t\tDIALOG_AREAINFO,\t\t -1,  20, 120, 100,  10, WS_DISABLED\n\tEDITTEXT\t\t\t\t\t111,  20, 130, 166,  48, ES_MULTILINE|ES_WANTRETURN\n\n\tPUSHBUTTON\tDIALOG_AREAOPTIONS,\t\t112,  48, 184,  50,  14\n\tPUSHBUTTON\tDIALOG_AREAADD,\t\t\t113, 108, 184,  50,  14\n\n\t// ID 114 to 117 are reserved for UPDOWN controls\n\n\tGROUPBOX\tDIALOG_AREALIST,\t\t120, 206,   6, 192, 200\n\n\tPUSHBUTTON\tDIALOG_AREAKILL,\t\t121, 214, 188,  50,  12, WS_DISABLED\n\tPUSHBUTTON\tDIALOG_AREAMODIFY,\t\t122, 340, 188,  50,  12, WS_DISABLED\n\tPUSHBUTTON\tDIALOG_AREACLOSE,\t       IDOK, 340, 214,  50,  14\n}",
+      "Captions": {
+        "DIALOG_NULL": "",
+        "DIALOG_AREARECT": "Rectangle de sélection",
+        "DIALOG_AREASTART": "Positions de départ",
+        "DIALOG_AREASEPARATOR": "/",
+        "DIALOG_AREAEND": "Positions d'arrivée",
+        "DIALOG_AREARECTCOLOR": "Couleur du rectangle",
+        "DIALOG_AREAMODIFY": "Modifier",
+        "DIALOG_AREATEXTCOLOR": "Couleur du texte",
+        "DIALOG_AREANAME": "Nom",
+        "DIALOG_AREAINFO": "Description",
+        "DIALOG_AREAOPTIONS": "Options",
+        "DIALOG_AREAADD": "Ajouter >>",
+        "DIALOG_AREALIST": "Liste",
+        "DIALOG_AREAKILL": "Supprimer",
+        "DIALOG_AREACLOSE": "Fermer"
+      }
+    },
+    {
+      "ID": 6701,
+      "RC": "6701 DIALOG 8, 8, 230, 236\nSTYLE DS_MODALFRAME|WS_BORDER|WS_VISIBLE|WS_CAPTION|WS_SYSMENU\nCLASS DIALOG_CLASS\nCAPTION DIALOG_NULL\nFONT 8, \"MS Sans Serif\"\n{\n\tGROUPBOX\tDIALOG_AREAMODIFYRECT,\t\t100,   8,   6, 214, 200\n\tRTEXT\t\tDIALOG_AREASTART,\t\t -1,  12,  19,  70,  12\n\tEDITTEXT\t\t\t\t\t101,  90,  18,  30,  12, ES_NUMBER\n\tCTEXT\t\tDIALOG_AREASEPARATOR,\t\t -1, 122,  19,  10,  12\n\tEDITTEXT\t\t\t\t\t102, 132,  18,  30,  12, ES_NUMBER\n\tPUSHBUTTON\tDIALOG_AREAGETRECT,\t\t130, 168,  25,  20,  12\n\tPUSHBUTTON\tDIALOG_NULL,\t\t\t109, 190,  25,  20,  12, BS_OWNERDRAW\n\tRTEXT\t\tDIALOG_AREAEND,\t\t\t -1,  12,  33,  70,  12\n\tEDITTEXT\t\t\t\t\t103,  90,  32,  30,  12, ES_NUMBER\n\tCTEXT\t\tDIALOG_AREASEPARATOR,\t\t -1, 122,  33,  10,  12\n\tEDITTEXT\t\t\t\t\t104, 132,  32,  30,  12, ES_NUMBER\n\n\tRTEXT\t\tDIALOG_AREARECTCOLOR,\t\t -1,  12,  51,  70,  12\n\tPUSHBUTTON\tDIALOG_NULL,\t\t\t105,  90,  50,  20,  12, WS_DISABLED|BS_OWNERDRAW\n\tPUSHBUTTON\tDIALOG_AREAMODIFY,\t\t106, 114,  50,  50,  12\n\tRTEXT\t\tDIALOG_AREATEXTCOLOR,\t\t -1,  12,  65,  70,  12\n\tPUSHBUTTON\tDIALOG_NULL,\t\t\t107,  90,  64,  20,  12, WS_DISABLED|BS_OWNERDRAW\n\tPUSHBUTTON\tDIALOG_AREAMODIFY,\t\t108, 114,  64,  50,  12\n\n\tLTEXT\t\tDIALOG_AREANAME,\t\t -1,  20,  80, 100,  10, WS_DISABLED\n\tEDITTEXT\t\t\t\t\t110,  20,  90, 190,  28, ES_MULTILINE|ES_WANTRETURN\n\tLTEXT\t\tDIALOG_AREAINFO,\t\t -1,  20, 120, 100,  10, WS_DISABLED\n\tEDITTEXT\t\t\t\t\t111,  20, 130, 190,  48, ES_MULTILINE|ES_WANTRETURN\n\n\tPUSHBUTTON\tDIALOG_AREAOPTIONS,\t\t112,  93, 184,  50,  14\n\n\t// ID 114 to 117 are reserved for UPDOWN controls\n\n\tPUSHBUTTON\tDIALOG_OK,\t\t       IDOK, 110, 214,  50,  14\n\tPUSHBUTTON\tDIALOG_ABORT,\t\t   IDCANCEL, 162, 214,  50,  14\n}",
+      "Captions": {
+        "DIALOG_NULL": "",
+        "DIALOG_AREAMODIFYRECT": "Rectangle à modifier",
+        "DIALOG_AREASTART": "Positions de départ",
+        "DIALOG_AREASEPARATOR": "/",
+        "DIALOG_AREAGETRECT": "<<",
+        "DIALOG_AREAEND": "Positions d'arrivée",
+        "DIALOG_AREARECTCOLOR": "Couleur du rectangle",
+        "DIALOG_AREAMODIFY": "Modifier",
+        "DIALOG_AREATEXTCOLOR": "Couleur du texte",
+        "DIALOG_AREANAME": "Nom",
+        "DIALOG_AREAINFO": "Description",
+        "DIALOG_AREAOPTIONS": "Options",
+        "DIALOG_OK": "Ok",
+        "DIALOG_ABORT": "Abandon"
+      }
+    },
+    {
+      "ID": 6702,
+      "RC": "6702 DIALOG 8, 8, 186, 68\nSTYLE DS_MODALFRAME|WS_BORDER|WS_VISIBLE|WS_CAPTION|WS_SYSMENU\nCLASS DIALOG_CLASS\nCAPTION DIALOG_AREAOPTTITLE\nFONT 8, \"MS Sans Serif\"\n{\n\tAUTOCHECKBOX\tDIALOG_AREAOPTHEROLAIR,\t\t100,   8,   6, 170,  12\n\tAUTOCHECKBOX\tDIALOG_AREAOPTIGNORESOLID,\t101,   8,  20, 170,  12\n\tAUTOCHECKBOX\tDIALOG_AREAOPTVISIBLE,\t\t102,   8,  34, 170,  12\n\tAUTOCHECKBOX\tDIALOG_AREAOPTTOOLS,\t\t103,   8,  48, 170,  12\n}",
+      "Captions": {
+        "DIALOG_AREAOPTTITLE": "Options de la zone",
+        "DIALOG_AREAOPTHEROLAIR": "Antre des héros",
+        "DIALOG_AREAOPTIGNORESOLID": "Ignorer les parties solides",
+        "DIALOG_AREAOPTVISIBLE": "Visible à travers le brouillard de guerre",
+        "DIALOG_AREAOPTTOOLS": "Boîte à héros (p'tit donjon)"
+      }
+    },
+    {
+      "ID": 6703,
+      "RC": "6703 DIALOG 8, 8, 330, 112\nSTYLE DS_MODALFRAME|WS_BORDER|WS_VISIBLE|WS_CAPTION|WS_SYSMENU\nCLASS DIALOG_CLASS\nCAPTION DIALOG_EFFECTOPTTITLE\nFONT 8, \"MS Sans Serif\"\n{\n\tRTEXT\t\tDIALOG_EFFECTOPTFREQ,\t\t100,   8,   6,  70,  10\n\tCONTROL\t\tDIALOG_NULL,\t\t\t101, \"msctls_trackbar32\", WS_CHILD|TBS_HORZ|TBS_AUTOTICKS, 80, 6, 210, 10\n\tEDITTEXT\t\t\t\t\t102, 292,   6,  30,  12, ES_NUMBER|ES_READONLY\n\tLTEXT\t\tDIALOG_EFFECTOPTOFTEN,\t\t111,  80,  16,  40,  10\n\tRTEXT\t\tDIALOG_EFFECTOPTRARELY,\t\t112, 210,  16,  80,  10\n\t// ID 113 is reserved for UPDOWN control\n\n\tRTEXT\t\tDIALOG_EFFECTOPTEFFECT1,\t103,   8,  32,  70,  10\n\tCOMBOBOX\t\t\t\t\t104,  84,  30, 230, 220, CBS_DROPDOWNLIST|WS_VSCROLL\n\tRTEXT\t\tDIALOG_EFFECTOPTEFFECT2,\t105,   8,  52,  70,  10\n\tCOMBOBOX\t\t\t\t\t106,  84,  50, 230, 220, CBS_DROPDOWNLIST|WS_VSCROLL\n\tRTEXT\t\tDIALOG_EFFECTOPTEFFECT3,\t107,   8,  72,  70,  10\n\tCOMBOBOX\t\t\t\t\t108,  84,  70, 230, 220, CBS_DROPDOWNLIST|WS_VSCROLL\n\tRTEXT\t\tDIALOG_EFFECTOPTEFFECT4,\t109,   8,  92,  70,  10\n\tCOMBOBOX\t\t\t\t\t110,  84,  90, 230, 220, CBS_DROPDOWNLIST|WS_VSCROLL\n}",
+      "Captions": {
+        "DIALOG_EFFECTOPTTITLE": "Paramètres des effets",
+        "DIALOG_EFFECTOPTFREQ": "Fréquence des effets",
+        "DIALOG_NULL": "",
+        "DIALOG_EFFECTOPTOFTEN": "Souvent",
+        "DIALOG_EFFECTOPTRARELY": "Très rarement",
+        "DIALOG_EFFECTOPTEFFECT1": "Premier effet",
+        "DIALOG_EFFECTOPTEFFECT2": "Deuxième effet",
+        "DIALOG_EFFECTOPTEFFECT3": "Troisième effet",
+        "DIALOG_EFFECTOPTEFFECT4": "Quatrième effet"
+      }
+    },
+    {
+      "ID": 6710,
+      "RC": "6710 DIALOG 8, 8, 344, 236\nSTYLE DS_MODALFRAME|WS_BORDER|WS_VISIBLE|WS_CAPTION|WS_SYSMENU\nCLASS DIALOG_CLASS\nCAPTION DIALOG_AREAPATHTITLE\nFONT 8, \"MS Sans Serif\"\n{\n\tGROUPBOX\tDIALOG_AREAPATHLIST,\t\t100,   8,   6, 328, 200\n\tPUSHBUTTON\tDIALOG_AREAPATHNEW,\t\t101,   8, 212,  50,  14, WS_DISABLED\n\tPUSHBUTTON\tDIALOG_AREAPATHADD,\t\t102,  66, 212,  50,  14, WS_DISABLED\n\tPUSHBUTTON\tDIALOG_AREAPATHINS,\t\t103, 120, 212,  50,  14, WS_DISABLED\n\tPUSHBUTTON\tDIALOG_AREAPATHSUB,\t\t104, 174, 212,  50,  14, WS_DISABLED\n\tPUSHBUTTON\tDIALOG_AREAPATHMOD,\t\t105, 228, 212,  50,  14, WS_DISABLED\n\tPUSHBUTTON\tDIALOG_AREAPATHCLOSE,\t       IDOK, 286, 212,  50,  14\n}",
+      "Captions": {
+        "DIALOG_AREAPATHTITLE": "Edition des chemins de ronde",
+        "DIALOG_AREAPATHLIST": "Liste des chemins de ronde",
+        "DIALOG_AREAPATHNEW": "Nouveau",
+        "DIALOG_AREAPATHADD": "Ajouter",
+        "DIALOG_AREAPATHINS": "Insérer",
+        "DIALOG_AREAPATHSUB": "Supprimer",
+        "DIALOG_AREAPATHMOD": "Pause",
+        "DIALOG_AREAPATHCLOSE": "Fermer"
+      }
+    },
+    {
+      "ID": 6711,
+      "RC": "6711 DIALOG 8, 8, 324, 266\nSTYLE DS_MODALFRAME|WS_BORDER|WS_VISIBLE|WS_CAPTION|WS_SYSMENU\nCLASS DIALOG_CLASS\nCAPTION DIALOG_AREAPATHPTTITLE\nFONT 8, \"MS Sans Serif\"\n{\n\tGROUPBOX\tDIALOG_AREAPATHPTLIST,\t\t100,   8,   6, 308, 200\n\tLTEXT\t\tDIALOG_AREAPATHPTDELAY,\t\t101,   8, 212, 308,  10\n\tCONTROL\t\tDIALOG_NULL,\t\t\t102, \"msctls_trackbar32\", WS_CHILD|TBS_HORZ|TBS_AUTOTICKS, 8, 222, 250, 10\n\tEDITTEXT\t\t\t\t\t103, 262, 222,  30,  12, ES_NUMBER\n\t// ID 104 is reserved for up-down control\n\n\tPUSHBUTTON\tDIALOG_OK,\t\t       IDOK, 212, 244,  50,  14, WS_DISABLED\n\tPUSHBUTTON\tDIALOG_ABORT,\t\t   IDCANCEL, 266, 244,  50,  14\n}",
+      "Captions": {
+        "DIALOG_AREAPATHPTTITLE": "Sélection d'une zone",
+        "DIALOG_AREAPATHPTLIST": "Liste des zones",
+        "DIALOG_AREAPATHPTDELAY": "Nombre de secondes d'attente avant de rejoindre la prochaine zone",
+        "DIALOG_NULL": "",
+        "DIALOG_OK": "Ok",
+        "DIALOG_ABORT": "Abandon"
+      }
+    }
+  ],
+  "AreaFlags": [
+    {
+      "Mask": 1,
+      "Symbol": "GAME_AREAFLAGHEROLAIR"
+    },
+    {
+      "Mask": 16,
+      "Symbol": "GAME_AREAFLAGVISIBLE"
+    },
+    {
+      "Mask": 32,
+      "Symbol": "GAME_AREAFLAGTOOLBOX"
+    },
+    {
+      "Mask": 64,
+      "Symbol": "GAME_AREAFLAGIGNSOLID"
+    }
+  ],
+  "Frequency": {
+    "Minimum": 1,
+    "Maximum": 255,
+    "Left": "Souvent",
+    "Right": "Très rarement",
+    "Unit": null
+  },
+  "PatrolPauseUnit": "seconds",
+  "ClosedCaptionGroups": [
+    "region geometry/labels/area options",
+    "effect slots/frequency direction",
+    "patrol route/area selection/pause labels"
+  ],
+  "RemainingCaptionGroups": [
+    "map metadata/options/speech/player UI captions not in recorded AI/rule audits",
+    "editor settings and miscellaneous request/report captions",
+    "final source-caller coverage across existing I13 inventories"
+  ]
+}

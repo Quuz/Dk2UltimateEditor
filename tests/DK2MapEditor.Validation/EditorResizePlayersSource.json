@@ -1,0 +1,21 @@
+{
+  "InputHashes": {
+    "Source/Sources/Properties/Map/Properties_Map_Global.c": "22c3b31631fb4eb88c5c219f4830c258d04c8da14d23acd80e736d016a56d16a",
+    "Source/Sources/Compiler/Compiler_Compile.c": "298562ff7de8a2f5a049372eefa10feff391047ffc66e05f7db573a42255c8f0",
+    "Source/Sources/Compiler/Compiler_Generate.c": "4a2952b0b687149302b2f0374d08e5e2316c28875d98036059af4f8c6d84ac3b",
+    "Source/Sources/Files/Files_Game.c": "931c0c5e06482a0539214fdd89c8a23a0e4dca1a8c387f54194b7d649854b840",
+    "Source/Sources/Files/Files_Editor.c": "52410ac93a8387b6444fa1943106a97affe3c2ec9d3b7d58b70280b734705043",
+    "Source/Includes/Map.h": "b646829ec4e52505c464dd9dfcf09dc7f09d2a74d7a013c38d01d4e6b4c778f0",
+    "Source/Includes/Compatibility.h": "e457a2832b474657a5bb61d4d468e071a97d17a4728dfba7bfd95aa2da62395c"
+  },
+  "FirstKeeperID": 3,
+  "LastKeeperID": 7,
+  "SourceCounterIncrements": 0,
+  "NativeFFFFIsNotProjectSentinel": true,
+  "IgnoredHistoricalCameras": [
+    1,
+    2
+  ],
+  "SourceFunction": "void Properties_UpdateProperties(LONG DX, LONG DY)\n{\n\tUINT\tKeeper;\n\n\tfor (Keeper = 3-1; Keeper != MAP_MAXPLAYERS; Keeper++)\n\t\t{\n\t\tif (!MapOptions[Keeper].PlayerComputer) continue;\n\t\tif (MapOptions[Keeper].PlayerCPUAreaX1 != -1)\n\t\t\t{\n\t\t\tMapOptions[Keeper].PlayerCPUAreaX1 += DX;\n\t\t\tMapOptions[Keeper].PlayerCPUAreaY1 += DY;\n\t\t\tMapOptions[Keeper].PlayerCPUAreaX2 += DX;\n\t\t\tMapOptions[Keeper].PlayerCPUAreaY2 += DY;\n\t\t\t}\n\t\tif (MapOptions[Keeper].PlayerCameraX != -1)\n\t\t\t{\n\t\t\tMapOptions[Keeper].PlayerCameraX += DX;\n\t\t\tMapOptions[Keeper].PlayerCameraY += DY;\n\t\t\t}\n\t\t}\n\n\treturn;\n}",
+  "CompilerWarnings": "void Compiler_TaskTestPlayers(COMPILERTASK *Task)\n{\n\tint\ti;\n\n\tif (Task->Failed) return;\n\tSendMessage(Task->hWnd,WM_PRINTTEXT,(WPARAM)0,(LPARAM)szCompilerAnalyzePlayers);\n\n\tfor (i = 3-1; i != MAP_MAXPLAYERS; i++)\n\t\t{\n\t\tif (((MapOptions[i].PlayerCameraX != -1)&&(MapOptions[i].PlayerCameraX >= Map.Properties.Width))||((MapOptions[i].PlayerCameraY != -1)&&(MapOptions[i].PlayerCameraY >= Map.Properties.Height)))\n\t\t\t{\n\t\t\tSendMessage(Task->hWnd,WM_REPORTERROR,(WPARAM)REPORT_CAMERA,(LPARAM)i-1);\n\t\t\tTask->Warnings++;\n\t\t\t}\n\t\tif (MapOptions[i].PlayerComputer)\n\t\t\t{\n\t\t\tif ((MapOptions[i].PlayerCPUAreaX1 >= Map.Properties.Width)||(MapOptions[i].PlayerCPUAreaX2 >= Map.Properties.Width)||(MapOptions[i].PlayerCPUAreaY1 >= Map.Properties.Height)||(MapOptions[i].PlayerCPUAreaY2 >= Map.Properties.Height))\n\t\t\t\t{\n\t\t\t\tSendMessage(Task->hWnd,WM_REPORTERROR,(WPARAM)REPORT_CPUAREA,(LPARAM)i-1);\n\t\t\t\tTask->Warnings++;\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\n\tSendMessage(Task->hWnd,WM_PRINTTEXT,(WPARAM)0,(LPARAM)szCompilerOk);\n\tSendMessage(Task->hWnd,WM_UPDATEPROGRESS,(WPARAM)0,(LPARAM)COMPILER_PBMANLPLAYERS);\n\treturn;\n}"
+}

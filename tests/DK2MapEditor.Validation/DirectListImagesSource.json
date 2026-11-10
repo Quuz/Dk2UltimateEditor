@@ -1,0 +1,429 @@
+{
+  "InputHashes": {
+    "Source/Sources/Windows/Windows_Compiler.c": "1016cf6f88bffffe7b339b09c53a844a353359d046b10648add643ef164bcc02",
+    "Source/Sources/Things/Things_RectEx.c": "717e72aa50493ea4266a2f6f894f25510bf999917b68a5f6e7db7122eac1c5f8",
+    "Source/Sources/Triggers/Triggers_Variables.c": "821efc2c30d14e962c59c4203f283cf25dda27760ef3876e8606b77c6e0e77e2",
+    "Source/Resources/Editor.rc": "eb07ed2217a81348a03c75e302d09fdcb5e34b6099d1bd60229ba5fa9bd8920d"
+  },
+  "Images": [
+    {
+      "Resource": 54,
+      "SourceICO": "Source/Icons/Triggers/Variable.ico",
+      "SHA256": "053f98f18d2df88a0660217ebc367edfb4ef2b7d88ae9a528fef9289e4ddb23f",
+      "LogicalName": "Legacy.ControlIcon.54"
+    },
+    {
+      "Resource": 55,
+      "SourceICO": "Source/Icons/Triggers/Timer.ico",
+      "SHA256": "c50b3ecb8c8921a169152f8c95a3cc2e02094cfe1b58a8470b3dc27fd277ab81",
+      "LogicalName": "Legacy.ControlIcon.55"
+    },
+    {
+      "Resource": 87,
+      "SourceICO": "Source/Icons/Request/Warning16.ico",
+      "SHA256": "533bc9c51f8cb9a7eab60a18caeb44470404880f858a367ec90b4c682c418bbf",
+      "LogicalName": "Legacy.Report.87"
+    },
+    {
+      "Resource": 88,
+      "SourceICO": "Source/Icons/Request/Error16.ico",
+      "SHA256": "87ea8c0d1d98245fc9decf0437b38bb6c1599826f31539d0fb0981ada01792f3",
+      "LogicalName": "Legacy.Report.88"
+    },
+    {
+      "Resource": 89,
+      "SourceICO": "Source/Icons/Request/Information16.ico",
+      "SHA256": "cf58dc4a6794ff397daa9b709d7a919c7e69c83f60afece96edaf15b9a281b78",
+      "LogicalName": "Legacy.Report.89"
+    }
+  ],
+  "VariableResource": 54,
+  "TimerResource": 55,
+  "Size": 16,
+  "GateSourceRules": {
+    "InformationDefault": 89,
+    "HeroType": 3,
+    "DoorTypes": [
+      6,
+      7
+    ],
+    "ProtectedHeroSkipsMissingCheck": true,
+    "MissingGateAreaOrEvents": 87,
+    "MissingDoorGate": 88
+  },
+  "DirectResourceCalls": [
+    {
+      "Source": "Source/Sources/Compiler/Compiler_Report.c",
+      "Line": 150,
+      "API": "ImageList_Create",
+      "Call": "Context->himagelist = ImageList_Create(16,16,ILC_COLORDDB|ILC_MASK,1,1);",
+      "Group": "list images connected (report/compiler/generation/names)"
+    },
+    {
+      "Source": "Source/Sources/Compiler/Compiler_Report.c",
+      "Line": 154,
+      "API": "LoadImage",
+      "Call": "HICON hIcon = LoadImage(hInstance,MAKEINTRESOURCE(X),IMAGE_ICON,16,16,LR_DEFAULTCOLOR);",
+      "Group": "list images connected (report/compiler/generation/names)"
+    },
+    {
+      "Source": "Source/Sources/Libraries/Libraries_CameraPaths.c",
+      "Line": 87,
+      "API": "LoadImage",
+      "Call": "wndClass.hIcon = LoadImage(hInstance,MAKEINTRESOURCE(1),IMAGE_ICON,16,16,0);",
+      "Group": "window-class/title icon;platform appearance acceptance"
+    },
+    {
+      "Source": "Source/Sources/Libraries/Libraries_CameraPaths.c",
+      "Line": 230,
+      "API": "LoadImage",
+      "Call": "hBitmap = LoadImage(hInstance,MAKEINTRESOURCE(Description[i].Bitmap),IMAGE_BITMAP,256,192,LR_DEFAULTCOLOR);",
+      "Group": "existing camera data images;verify against prior camera evidence"
+    },
+    {
+      "Source": "Source/Sources/Main/Main_Startup.c",
+      "Line": 163,
+      "API": "LoadImage",
+      "Call": "wndClass.hIcon = LoadImage(hInstance,MAKEINTRESOURCE(1),IMAGE_ICON,16,16,0);",
+      "Group": "window-class/title icon;platform appearance acceptance"
+    },
+    {
+      "Source": "Source/Sources/Main/Main_Startup.c",
+      "Line": 181,
+      "API": "LoadImage",
+      "Call": "wndClass.hIcon = LoadImage(hInstance,MAKEINTRESOURCE(1),IMAGE_ICON,16,16,0);",
+      "Group": "window-class/title icon;platform appearance acceptance"
+    },
+    {
+      "Source": "Source/Sources/Main/Main_Startup.c",
+      "Line": 199,
+      "API": "LoadImage",
+      "Call": "wndClass.hIcon = LoadImage(hInstance,MAKEINTRESOURCE(1),IMAGE_ICON,16,16,0);",
+      "Group": "window-class/title icon;platform appearance acceptance"
+    },
+    {
+      "Source": "Source/Sources/Main/Main_Startup.c",
+      "Line": 217,
+      "API": "LoadImage",
+      "Call": "wndClass.hIcon = LoadImage(hInstance,MAKEINTRESOURCE(1),IMAGE_ICON,16,16,0);",
+      "Group": "window-class/title icon;platform appearance acceptance"
+    },
+    {
+      "Source": "Source/Sources/Map/Map_Cameras.c",
+      "Line": 45,
+      "API": "LoadImage",
+      "Call": "hMapCameras[i] = LoadImage(hInstance,MAKEINTRESOURCE(20+i),IMAGE_ICON,16,16,LR_DEFAULTCOLOR);",
+      "Group": "existing camera data images;verify against prior camera evidence"
+    },
+    {
+      "Source": "Source/Sources/Map/Map_Choice.c",
+      "Line": 238,
+      "API": "LoadImage",
+      "Call": "Context->hIcon = LoadImage(hInstance,MAKEINTRESOURCE(19),IMAGE_ICON,16,16,LR_DEFAULTCOLOR);",
+      "Group": "window-class/title icon;platform appearance acceptance"
+    },
+    {
+      "Source": "Source/Sources/Map/Map_Props.c",
+      "Line": 49,
+      "API": "LoadImage",
+      "Call": "hMapZoomIcon = LoadImage(hInstance,MAKEINTRESOURCE(10),IMAGE_ICON,16,16,LR_DEFAULTCOLOR);",
+      "Group": "window-class/title icon;platform appearance acceptance"
+    },
+    {
+      "Source": "Source/Sources/Misc/Misc_Images.c",
+      "Line": 39,
+      "API": "ImageList_Create",
+      "Call": "*hImageList = ImageList_Create(SizeX,SizeY,ILC_COLORDDB,1,1);",
+      "Group": "shared bitmap helper;81caller matrix is separate"
+    },
+    {
+      "Source": "Source/Sources/Misc/Misc_Images.c",
+      "Line": 45,
+      "API": "LoadImage",
+      "Call": "hBitmap = LoadImage(hInstance,MAKEINTRESOURCE(Array[i].Icon),IMAGE_BITMAP,SizeX,SizeY,LR_DEFAULTCOLOR);",
+      "Group": "shared bitmap helper;81caller matrix is separate"
+    },
+    {
+      "Source": "Source/Sources/Misc/Misc_Images.c",
+      "Line": 71,
+      "API": "ImageList_Create",
+      "Call": "*hImageList = ImageList_Create(SizeX,SizeY,ILC_COLORDDB,1,1);",
+      "Group": "shared bitmap helper;81caller matrix is separate"
+    },
+    {
+      "Source": "Source/Sources/Misc/Misc_Images.c",
+      "Line": 73,
+      "API": "LoadImage",
+      "Call": "hSquare = LoadImage(hInstance,MAKEINTRESOURCE(Player+931),IMAGE_BITMAP,SizeX,SizeY,LR_DEFAULTCOLOR);",
+      "Group": "shared bitmap helper;81caller matrix is separate"
+    },
+    {
+      "Source": "Source/Sources/Misc/Misc_Images.c",
+      "Line": 84,
+      "API": "LoadImage",
+      "Call": "hBitmap = LoadImage(hInstance,MAKEINTRESOURCE(Array[i].Icon),IMAGE_BITMAP,SizeX,SizeY,LR_DEFAULTCOLOR);",
+      "Group": "shared bitmap helper;81caller matrix is separate"
+    },
+    {
+      "Source": "Source/Sources/Misc/Misc_Images.c",
+      "Line": 128,
+      "API": "LoadImage",
+      "Call": "*hBitmap = LoadImage(hInstance,MAKEINTRESOURCE(ResID),IMAGE_BITMAP,Width,Height,LR_DEFAULTCOLOR);",
+      "Group": "shared bitmap helper;81caller matrix is separate"
+    },
+    {
+      "Source": "Source/Sources/Misc/Misc_Menus.c",
+      "Line": 46,
+      "API": "LoadImage",
+      "Call": "CustomItems->ciIcon = LoadImage(hInstance,MAKEINTRESOURCE(CustomItems->ciIconId),IMAGE_ICON,Width,Height,LR_DEFAULTCOLOR);",
+      "Group": "menu/system checkmark decoration;platform appearance acceptance"
+    },
+    {
+      "Source": "Source/Sources/Misc/Misc_Menus.c",
+      "Line": 48,
+      "API": "LoadImage",
+      "Call": "CustomItems->ciImage = LoadImage(NULL,MAKEINTRESOURCE(OBM_CHECK),IMAGE_BITMAP,Width,Height,LR_DEFAULTCOLOR);",
+      "Group": "menu/system checkmark decoration;platform appearance acceptance"
+    },
+    {
+      "Source": "Source/Sources/Misc/Misc_Requests.c",
+      "Line": 80,
+      "API": "LoadImage",
+      "Call": "MessageBox.windowicon = LoadImage(hInstance,MAKEINTRESOURCE(75),IMAGE_ICON,32,32,LR_DEFAULTCOLOR);",
+      "Group": "existing request icons/file-dialog scope;final route verification"
+    },
+    {
+      "Source": "Source/Sources/Misc/Misc_Requests.c",
+      "Line": 810,
+      "API": "LoadImage",
+      "Call": "MsgStruct->windowicon = LoadImage(hInstance,MAKEINTRESOURCE(ResourceIdentifier),IMAGE_ICON,32,32,LR_DEFAULTCOLOR);",
+      "Group": "existing request icons/file-dialog scope;final route verification"
+    },
+    {
+      "Source": "Source/Sources/Misc/Misc_Requests.c",
+      "Line": 1247,
+      "API": "LoadImage",
+      "Call": "FileHeader->bitmap = LoadImage(NULL,FileName,IMAGE_BITMAP,0,0,LR_DEFAULTCOLOR|LR_LOADFROMFILE);",
+      "Group": "existing request icons/file-dialog scope;final route verification"
+    },
+    {
+      "Source": "Source/Sources/Properties/Map/Properties_Map_Computer.c",
+      "Line": 69,
+      "API": "LoadImage",
+      "Call": "MapProps->UpIcon = LoadImage(hInstance,MAKEINTRESOURCE(50),IMAGE_ICON,16,16,LR_DEFAULTCOLOR);",
+      "Group": "remaining direction/anchor button icons"
+    },
+    {
+      "Source": "Source/Sources/Properties/Map/Properties_Map_Computer.c",
+      "Line": 70,
+      "API": "LoadImage",
+      "Call": "MapProps->DownIcon = LoadImage(hInstance,MAKEINTRESOURCE(51),IMAGE_ICON,16,16,LR_DEFAULTCOLOR);",
+      "Group": "remaining direction/anchor button icons"
+    },
+    {
+      "Source": "Source/Sources/Properties/Map/Properties_Map_Global.c",
+      "Line": 1622,
+      "API": "ImageList_Create",
+      "Call": "MapProps->hArrows = ImageList_Create(16,16,ILC_COLORDDB|ILC_MASK,1,1);",
+      "Group": "remaining direction/anchor button icons"
+    },
+    {
+      "Source": "Source/Sources/Properties/Map/Properties_Map_Global.c",
+      "Line": 1626,
+      "API": "LoadImage",
+      "Call": "hIcon = LoadImage(hInstance,MAKEINTRESOURCE(X),IMAGE_ICON,16,16,LR_DEFAULTCOLOR);",
+      "Group": "remaining direction/anchor button icons"
+    },
+    {
+      "Source": "Source/Sources/Properties/Map/Properties_Map_Options.c",
+      "Line": 356,
+      "API": "LoadImage",
+      "Call": "hBitmap = LoadImage(hInstance,MAKEINTRESOURCE(997),IMAGE_BITMAP,ItemStruct->rcItem.right-ItemStruct->rcItem.left,ItemStruct->rcItem.bottom-ItemStruct->rcItem.top,LR_DEFAULTCOLOR);",
+      "Group": "static decorative bitmap, separate from edited numeric/data choice"
+    },
+    {
+      "Source": "Source/Sources/Things/Things_Manager.c",
+      "Line": 345,
+      "API": "LoadImage",
+      "Call": "Manager->icon = LoadImage(hInstance,MAKEINTRESOURCE(19),IMAGE_ICON,16,16,LR_DEFAULTCOLOR);",
+      "Group": "window-class/title icon;platform appearance acceptance"
+    },
+    {
+      "Source": "Source/Sources/Things/Things_RectEx.c",
+      "Line": 52,
+      "API": "LoadImage",
+      "Call": "Context.hicon = LoadImage(hInstance,MAKEINTRESOURCE(19),IMAGE_ICON,16,16,LR_DEFAULTCOLOR);",
+      "Group": "window-class/title icon;platform appearance acceptance"
+    },
+    {
+      "Source": "Source/Sources/Things/Things_RectEx.c",
+      "Line": 2044,
+      "API": "ImageList_Create",
+      "Call": "Context->icons = ImageList_Create(16,16,ILC_COLORDDB|ILC_MASK,1,1);",
+      "Group": "list images connected (report/compiler/generation/names)"
+    },
+    {
+      "Source": "Source/Sources/Things/Things_RectEx.c",
+      "Line": 2048,
+      "API": "LoadImage",
+      "Call": "hIcon = LoadImage(hInstance,MAKEINTRESOURCE(X),IMAGE_ICON,16,16,LR_DEFAULTCOLOR);",
+      "Group": "list images connected (report/compiler/generation/names)"
+    },
+    {
+      "Source": "Source/Sources/Things/Things_Selection.c",
+      "Line": 301,
+      "API": "LoadImage",
+      "Call": "Context->hicon = LoadImage(hInstance,MAKEINTRESOURCE(19),IMAGE_ICON,16,16,LR_DEFAULTCOLOR);",
+      "Group": "window-class/title icon;platform appearance acceptance"
+    },
+    {
+      "Source": "Source/Sources/Triggers/Triggers_Actions.c",
+      "Line": 121,
+      "API": "LoadImage",
+      "Call": "Context->PointIcon = LoadImage(hInstance,MAKEINTRESOURCE(19),IMAGE_ICON,16,16,LR_DEFAULTCOLOR);",
+      "Group": "remaining spatial picker button icons"
+    },
+    {
+      "Source": "Source/Sources/Triggers/Triggers_Actions.c",
+      "Line": 123,
+      "API": "LoadImage",
+      "Call": "Context->RectIcon = LoadImage(hInstance,MAKEINTRESOURCE(25),IMAGE_ICON,16,16,LR_DEFAULTCOLOR);",
+      "Group": "remaining spatial picker button icons"
+    },
+    {
+      "Source": "Source/Sources/Triggers/Triggers_Actions.c",
+      "Line": 125,
+      "API": "LoadImage",
+      "Call": "Context->CameraIcon = LoadImage(hInstance,MAKEINTRESOURCE(26),IMAGE_ICON,16,16,LR_DEFAULTCOLOR);",
+      "Group": "remaining spatial picker button icons"
+    },
+    {
+      "Source": "Source/Sources/Triggers/Triggers_Select.c",
+      "Line": 314,
+      "API": "LoadImage",
+      "Call": "Context->UpIcon = LoadImage(hInstance,MAKEINTRESOURCE(50),IMAGE_ICON,16,16,LR_DEFAULTCOLOR);",
+      "Group": "remaining direction/anchor button icons"
+    },
+    {
+      "Source": "Source/Sources/Triggers/Triggers_Select.c",
+      "Line": 315,
+      "API": "LoadImage",
+      "Call": "Context->DownIcon = LoadImage(hInstance,MAKEINTRESOURCE(51),IMAGE_ICON,16,16,LR_DEFAULTCOLOR);",
+      "Group": "remaining direction/anchor button icons"
+    },
+    {
+      "Source": "Source/Sources/Triggers/Triggers_Select.c",
+      "Line": 316,
+      "API": "LoadImage",
+      "Call": "Context->LeftIcon = LoadImage(hInstance,MAKEINTRESOURCE(52),IMAGE_ICON,16,16,LR_DEFAULTCOLOR);",
+      "Group": "remaining direction/anchor button icons"
+    },
+    {
+      "Source": "Source/Sources/Triggers/Triggers_Select.c",
+      "Line": 317,
+      "API": "LoadImage",
+      "Call": "Context->RightIcon = LoadImage(hInstance,MAKEINTRESOURCE(53),IMAGE_ICON,16,16,LR_DEFAULTCOLOR);",
+      "Group": "remaining direction/anchor button icons"
+    },
+    {
+      "Source": "Source/Sources/Triggers/Triggers_Variables.c",
+      "Line": 148,
+      "API": "ImageList_Create",
+      "Call": "Context->IconList = ImageList_Create(16,16,ILC_COLORDDB|ILC_MASK,1,1);",
+      "Group": "list images connected (report/compiler/generation/names)"
+    },
+    {
+      "Source": "Source/Sources/Triggers/Triggers_Variables.c",
+      "Line": 150,
+      "API": "LoadImage",
+      "Call": "Icon = LoadImage(hInstance,MAKEINTRESOURCE(54),IMAGE_ICON,16,16,LR_DEFAULTCOLOR);",
+      "Group": "list images connected (report/compiler/generation/names)"
+    },
+    {
+      "Source": "Source/Sources/Triggers/Triggers_Variables.c",
+      "Line": 155,
+      "API": "LoadImage",
+      "Call": "Icon = LoadImage(hInstance,MAKEINTRESOURCE(55),IMAGE_ICON,16,16,LR_DEFAULTCOLOR);",
+      "Group": "list images connected (report/compiler/generation/names)"
+    },
+    {
+      "Source": "Source/Sources/Windows/Windows_Compiler.c",
+      "Line": 270,
+      "API": "ImageList_Create",
+      "Call": "CompilerTask->hImageList = ImageList_Create(16,16,ILC_COLORDDB|ILC_MASK,1,1);",
+      "Group": "list images connected (report/compiler/generation/names)"
+    },
+    {
+      "Source": "Source/Sources/Windows/Windows_Compiler.c",
+      "Line": 275,
+      "API": "LoadImage",
+      "Call": "HICON hIcon = LoadImage(hInstance,MAKEINTRESOURCE(X),IMAGE_ICON,16,16,LR_DEFAULTCOLOR);",
+      "Group": "list images connected (report/compiler/generation/names)"
+    },
+    {
+      "Source": "Source/Sources/Windows/Windows_Fullmap.c",
+      "Line": 577,
+      "API": "LoadImage",
+      "Call": "hFullRoomIcon = LoadImage(hInstance,MAKEINTRESOURCE(Res),IMAGE_BITMAP,32,32,LR_DEFAULTCOLOR);",
+      "Group": "remaining status/legend data image consumers"
+    },
+    {
+      "Source": "Source/Sources/Windows/Windows_Info.c",
+      "Line": 66,
+      "API": "LoadImage",
+      "Call": "hInfoRectIcon = LoadImage(hInstance,MAKEINTRESOURCE(30),IMAGE_ICON,32,32,LR_DEFAULTCOLOR);",
+      "Group": "remaining status/legend data image consumers"
+    },
+    {
+      "Source": "Source/Sources/Windows/Windows_Info.c",
+      "Line": 67,
+      "API": "LoadImage",
+      "Call": "hInfoCopyIcon = LoadImage(hInstance,MAKEINTRESOURCE(31),IMAGE_ICON,32,32,LR_DEFAULTCOLOR);",
+      "Group": "remaining status/legend data image consumers"
+    },
+    {
+      "Source": "Source/Sources/Windows/Windows_Info.c",
+      "Line": 68,
+      "API": "LoadImage",
+      "Call": "hInfoGoldIcon = LoadImage(hInstance,MAKEINTRESOURCE(32),IMAGE_ICON,32,32,LR_DEFAULTCOLOR);",
+      "Group": "remaining status/legend data image consumers"
+    },
+    {
+      "Source": "Source/Sources/Windows/Windows_Splash.c",
+      "Line": 111,
+      "API": "LoadImage",
+      "Call": "hSplashBitmap = LoadImage(hInstance,MAKEINTRESOURCE(998),IMAGE_BITMAP,327,123,LR_DEFAULTCOLOR);",
+      "Group": "source splash compiled out;no active editing consumer"
+    },
+    {
+      "Source": "Source/Sources/Windows/Windows_Thumbnail.c",
+      "Line": 237,
+      "API": "LoadImage",
+      "Call": "hThumbBck = LoadImage(hInstance,MAKEINTRESOURCE(996),IMAGE_BITMAP,144,144,LR_DEFAULTCOLOR);",
+      "Group": "static decorative bitmap, separate from edited numeric/data choice"
+    },
+    {
+      "Source": "Source/Sources/Windows/Windows_Toolbar.c",
+      "Line": 55,
+      "API": "LoadImage",
+      "Call": "hBitmap = LoadImage(hInstance,MAKEINTRESOURCE(999),IMAGE_BITMAP,115,74,LR_DEFAULTCOLOR);",
+      "Group": "static decorative bitmap, separate from edited numeric/data choice"
+    }
+  ],
+  "DirectResourceCallCount": 51,
+  "DirectResourceFileCount": 24,
+  "GroupCounts": {
+    "existing camera data images;verify against prior camera evidence": 2,
+    "existing request icons/file-dialog scope;final route verification": 3,
+    "list images connected (report/compiler/generation/names)": 9,
+    "menu/system checkmark decoration;platform appearance acceptance": 2,
+    "remaining direction/anchor button icons": 8,
+    "remaining spatial picker button icons": 3,
+    "remaining status/legend data image consumers": 4,
+    "shared bitmap helper;81caller matrix is separate": 6,
+    "source splash compiled out;no active editing consumer": 1,
+    "static decorative bitmap, separate from edited numeric/data choice": 3,
+    "window-class/title icon;platform appearance acceptance": 10
+  },
+  "RemainingI13": "resolve frozen remaining data/button/request/camera routes and document-name/reference caller coverage; no claim of full I13 closure"
+}

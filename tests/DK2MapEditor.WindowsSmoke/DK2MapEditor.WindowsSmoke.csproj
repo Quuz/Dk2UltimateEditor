@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="../../src/DK2MapEditor.App/DK2MapEditor.App.csproj" />
+    <Compile Include="../DK2MapEditor.Validation/OriginalGdiReference.cs" Link="OriginalGdiReference.cs" />
+    <EmbeddedResource Include="../DK2MapEditor.Validation/ScenarioCatalogueImagesSource.json" LogicalName="ScenarioCatalogueImagesSource" />
+    <EmbeddedResource Include="../DK2MapEditor.Validation/ScenarioComparisonPages.json" LogicalName="DK2MapEditor.WindowsSmoke.ScenarioComparisonPages.json" />
+    <EmbeddedResource Include="../DK2MapEditor.Validation/ScenarioEnumPages.json" LogicalName="DK2MapEditor.WindowsSmoke.ScenarioEnumPages.json" />
+    <EmbeddedResource Include="../DK2MapEditor.Validation/ScenarioParameterPages.json" LogicalName="DK2MapEditor.WindowsSmoke.ScenarioParameterPages.json" />
+    <EmbeddedResource Include="../DK2MapEditor.Validation/ScenarioScalarPages.json" LogicalName="DK2MapEditor.WindowsSmoke.ScenarioScalarPages.json" />
+    <EmbeddedResource Include="../DK2MapEditor.Validation/ScenarioNamedPages.json" LogicalName="DK2MapEditor.WindowsSmoke.ScenarioNamedPages.json" />
+    <EmbeddedResource Include="../DK2MapEditor.Validation/ScenarioSemanticOptions.json" LogicalName="DK2MapEditor.WindowsSmoke.ScenarioSemanticOptions.json" />
+    <EmbeddedResource Include="../DK2MapEditor.Validation/ScenarioActionPages.json" LogicalName="DK2MapEditor.WindowsSmoke.ScenarioActionPages.json" />
+    <EmbeddedResource Include="../DK2MapEditor.Validation/ScenarioCreationDefaults.json" LogicalName="DK2MapEditor.WindowsSmoke.ScenarioCreationDefaults.json" />
+  </ItemGroup>
+</Project>

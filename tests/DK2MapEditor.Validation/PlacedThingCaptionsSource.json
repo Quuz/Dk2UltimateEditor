@@ -1,0 +1,122 @@
+{
+  "InputHashes": {
+    "Source/Includes/Things.h": "74a5ed43882864225fc431bce57ca796e0bd7aaeb8e4da9363e3a714da0cc5a0",
+    "Source/Includes/Compatibility.h": "e457a2832b474657a5bb61d4d468e071a97d17a4728dfba7bfd95aa2da62395c",
+    "Source/Includes/Game.h": "4a9a19adc7bbb8d44a2b29e3194300e8993836b6094a3da3f3f8dfbdcca6de9f",
+    "Source/Sources/Things/Things_Selection.c": "df135c89d08c4d533a395b09d0e2e0c38908bd722611ed17865f5532834f7060",
+    "Source/Sources/Compiler/Compiler_Generate.c": "4a2952b0b687149302b2f0374d08e5e2316c28875d98036059af4f8c6d84ac3b"
+  },
+  "Kinds": {
+    "CREATURE": 0,
+    "DOOR": 1,
+    "TRAP": 2,
+    "OBJECT": 3,
+    "MAGICALOBJECT": 4
+  },
+  "Native": [
+    {
+      "Structure": "GAMEOBJECT",
+      "Header": 194,
+      "PayloadBytes": 24,
+      "SizeField": "dwObjectVersion",
+      "PlayerKey": "Field.Owner"
+    },
+    {
+      "Structure": "GAMETRAP",
+      "Header": 195,
+      "PayloadBytes": 16,
+      "SizeField": "dwTrapVersion",
+      "PlayerKey": "Field.Owner"
+    },
+    {
+      "Structure": "GAMEDOOR",
+      "Header": 196,
+      "PayloadBytes": 20,
+      "SizeField": "dwDoorVersion",
+      "PlayerKey": "Field.Owner"
+    },
+    {
+      "Structure": "GAMENEUTRAL",
+      "Header": 198,
+      "PayloadBytes": 24,
+      "SizeField": "dwNeutralVersion",
+      "PlayerKey": "Field.Owner"
+    },
+    {
+      "Structure": "GAMEHERO",
+      "Header": 199,
+      "PayloadBytes": 32,
+      "SizeField": "dwHeroVersion",
+      "PlayerKey": "Field.Enemy"
+    },
+    {
+      "Structure": "GAMEKEEPER",
+      "Header": 200,
+      "PayloadBytes": 28,
+      "SizeField": "dwKeeperVersion",
+      "PlayerKey": "Field.Owner"
+    }
+  ],
+  "ProjectVersions": [
+    {
+      "Version": 1,
+      "Structure": "MAPTHINGV1",
+      "HasShots": false,
+      "HasStatus": false,
+      "HasBooleanLock": true
+    },
+    {
+      "Version": 2,
+      "Structure": "MAPTHINGV2",
+      "HasShots": false,
+      "HasStatus": false,
+      "HasBooleanLock": true
+    },
+    {
+      "Version": 3,
+      "Structure": "MAPTHINGV2",
+      "HasShots": false,
+      "HasStatus": false,
+      "HasBooleanLock": true
+    },
+    {
+      "Version": 4,
+      "Structure": "MAPTHINGV4",
+      "HasShots": false,
+      "HasStatus": false,
+      "HasBooleanLock": true
+    },
+    {
+      "Version": 5,
+      "Structure": "MAPTHINGV5",
+      "HasShots": true,
+      "HasStatus": true,
+      "HasBooleanLock": false
+    },
+    {
+      "Version": 6,
+      "Structure": "MAPTHING",
+      "HasShots": true,
+      "HasStatus": true,
+      "HasBooleanLock": false
+    }
+  ],
+  "DoorStates": [
+    0,
+    1,
+    2
+  ],
+  "TrapEditorStates": [
+    0,
+    4
+  ],
+  "GoldObjectIDs": [
+    1,
+    2,
+    3
+  ],
+  "SpellbookObjectID": 4,
+  "BandHeroPlayerKey": "Field.Enemy",
+  "UnknownUnionKey": "Field.DataAll",
+  "Notes": "The native *Version member stores payload bytes, not a format version. Old project union has BOOL locked and no shots; label actual storage without converting it."
+}

@@ -1,0 +1,37 @@
+{
+  "InputHashes": {
+    "Source/Sources/Compiler/Compiler_Generate.c": "4a2952b0b687149302b2f0374d08e5e2316c28875d98036059af4f8c6d84ac3b",
+    "Source/Sources/Files/Files_Game.c": "931c0c5e06482a0539214fdd89c8a23a0e4dca1a8c387f54194b7d649854b840",
+    "Source/Sources/Things/Things_Functions.c": "918f2c3fdfd890932519e2ffefa630098ab69dbfe3615d611208646fcd0ba6dc",
+    "Source/Sources/Things/Things_RectEx.c": "717e72aa50493ea4266a2f6f894f25510bf999917b68a5f6e7db7122eac1c5f8",
+    "Source/Sources/Misc/Misc_Lists.c": "fda61a58bd71f8e680fbbf5371529c96afc88a01b259bf7bfd78cee00ad0ff21",
+    "Source/Sources/Properties/Map/Properties_Map_Global.c": "22c3b31631fb4eb88c5c219f4830c258d04c8da14d23acd80e736d016a56d16a",
+    "Source/Includes/Game.h": "4a9a19adc7bbb8d44a2b29e3194300e8993836b6094a3da3f3f8dfbdcca6de9f"
+  },
+  "Functions": {
+    "Things_GetThingPos": "long Things_GetThingPos(NODE *List, DWORD ID, LONG Type)\n{\n\tMAPTHING\t*Thing;\n\n\tfor (Thing = (MAPTHING *)List->next; Thing != 0; Thing = (MAPTHING *)Thing->node.next)\n\t\t{\n\t\tif (Thing->id == ID)\n\t\t\t{\n\t\t\tswitch(Type)\n\t\t\t\t{\n\t\t\t\tcase 0:\treturn(Thing->x);\n\t\t\t\tcase 1:\treturn(Thing->y);\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\n\treturn(-1);\n}",
+    "RectEx_GetRectLocation": "WORD RectEx_GetRectLocation(NODE *RectList, UINT RectID, UINT What)\n{\n\tNODE\t*List;\n\tLONG\t X,Y;\n\n\tfor (List = RectList->next; List != 0; List = List->next)\n\t\t{\n\t\tif (((MAPRECTEX *)List)->id == RectID)\n\t\t\t{\n\t\t\tX = ((MAPRECTEX *)List)->rect.x1;\n\t\t\tY = ((MAPRECTEX *)List)->rect.y1;\n\t\t\tif (!What) return((WORD)X);\n\t\t\telse return((WORD)Y);\n\t\t\t}\n\t\t}\n\n\treturn(0);\n}",
+    "RectEx_GetGateAtMapPos": "int RectEx_GetGateAtMapPos(LONG X, LONG Y)\n{\n\tMAPRECTEX\t*Gate;\n\n\tfor (Gate = (MAPRECTEX *)MapGates.next; Gate != 0; Gate = (MAPRECTEX *)Gate->node.next)\n\t\t{\n\t\tif (Gate->rect.x1 != X) continue;\n\t\tif (Gate->rect.y1 != Y) continue;\n\t\treturn(Gate->id);\n\t\t}\n\n\treturn(0);\n}",
+    "List_AddEntry": "void List_AddEntry(NODE *NewEntry, NODE *EntryList)\n{\n\tNODE *List;\n\n\tfor (List = EntryList; List->next != 0; List = List->next);\n\n\tList->next = NewEntry;\n\tNewEntry->prev = List;\n\tNewEntry->next = NULL;\n\treturn;\n}"
+  },
+  "CompilerCases": {
+    "ACTION_SHOWCRYSTAL": "\n\t\t\t\t*((BYTE *)ActionPtr)++ = 0x1C;\n\t\t\t\t*((BYTE *)ActionPtr)++ = 0x01;\n\t\t\t\t*((WORD *)ActionPtr)++ = 0x0000000;\n\t\t\t\t*((WORD *)ActionPtr)++ = (WORD)Things_GetThingPos(&MapObjects,0x1C,0);\n\t\t\t\t*((WORD *)ActionPtr)++ = (WORD)Things_GetThingPos(&MapObjects,0x1C,1);\n\t\t\t\t",
+    "ACTION_DESTROYGATE": "\n\t\t\t\t*((LONG *)ActionPtr)++ = 0x00000000;\n\t\t\t\t*((WORD *)ActionPtr)++ = (WORD)(RectEx_GetRectLocation(&MapGates,Action->param5,0)+1);\n\t\t\t\t*((WORD *)ActionPtr)++ = (WORD)(RectEx_GetRectLocation(&MapGates,Action->param5,1)+1);\n\t\t\t\t"
+  },
+  "ActionTypes": [
+    2,
+    32
+  ],
+  "FirstCrystalID": 28,
+  "MissingCrystalWords": [
+    65535,
+    65535
+  ],
+  "MissingGateWords": [
+    1,
+    1
+  ],
+  "GateLookup": "exact old X-1,Y-1; ignore hearts; bGateID is not identity",
+  "ListOrder": "append preserves physical source order",
+  "ExtraSourceCounterIncrements": 0
+}

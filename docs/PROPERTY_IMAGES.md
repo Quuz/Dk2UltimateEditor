@@ -1,0 +1,29 @@
+# Image-backed property, template and band choices
+
+The properties tab now uses the preserved original object images in its Add template's named choices, selected type/ID field choices, band Add creature choices and band member-slot list. Each applicable list has a grouped/searchable image chooser. Owner, level, reference and other numeric fields are not assigned creature pictures merely because their numbers coincide with a type ID.
+
+## Source contexts
+
+`Source/Sources/Things/Things_Heros.c`, `Heros_ModifyInit` (around line 622), builds the Add-member tree with `LIST_BADS|LIST_HEROES|LIST_LPARAMPTR`, omitting elites. `Heros_ModifyHero` calls `Things_Select` with `THING_FLAGFROMBAND|THING_FLAGLOCKOWNER`; `Things_SelectInit` in `Things_Selection.c` likewise chooses `LIST_BADS|LIST_HEROES` for this context and includes `LIST_ELITES` only for ordinary placed creatures. Thus the band suggestion list has 16 ordinary creatures + 16 heroes = **32**, while the ordinary creature list remains **45**. The former modern Core assertion requiring 45 band entries was an incorrect fixture; it is corrected from this explicit source evidence, not weakened to hide a failure.
+
+`ValueCatalogues.BandCreatures` exposes the source-ordered 32-entry list. Native `BandHero` type fields and every historical/current project `heros[n].id` use that list. Other creature catalogues, creature pools and generic raw field editing remain unchanged. Already imported elite/unknown band IDs are retained as custom numeric values with an appropriate known/fallback image; inspection does not normalize them or silently select another type. Member names use the full name catalogue even when an ID is not offered as a new source member.
+
+Native `GAMEOBJECT.bObjectID` combines ordinary objects and special items. Its chooser contains both source groups (116 + 13 = **129**) and sizes each image correctly: objects 64 pixels, specials 32. Project Object and MagicalObject remain separate lists. Document game version still selects the special-item names; the Add template choice reaches the existing special-item painting session rather than being mislabeled as an ordinary object.
+
+Image field resolution is explicit: native creature/object/door/trap type fields and project physical type ID or nested band creature ID. Stable object/band identities, owners, levels and scenario references are not image IDs. Images in dropdowns/slot summaries are 32 pixels; nonimage choices collapse the image element rather than keeping a blank image-width gap.
+
+## Transactions and drafts
+
+The standalone chooser changes only the caller's selected suggestion. Named fields still require **Apply choice**; band Add still requires **Add member**; placement still uses its existing preview/confirmation/transaction. The caller's captured document, physical record, selected field or template context is checked before returning a choice. Document changes/replacement and workspace unloading close the chooser. A context changed behind the modal window cannot apply a stale choice. Map selection, copy buffers and scenario ownership are untouched by choice browsing.
+
+Language refresh rebinds the property table and transiently clears its selected row. A same-document/same-field suggestion and search draft is restored only if the stored underlying value is unchanged. External edits or another field/document cannot inherit that draft. The source chooser's selected leaf is brought into view when loaded.
+
+Actual EN/RU rendering exposed extremely narrow star-sized columns in the property table. Explicit minimum field/value/meaning/offset widths restore readable rows while keeping numeric editing and horizontal scrolling. The corrected renders are `Test/property-images-final-ui-20261007/properties-{en,ru}-{False,True}.png` and have been visually inspected for both native and project formats.
+
+## Verification state
+
+Four focused actual WPF cases pass in Debug and Release, with zero-warning/error builds. `PropertyImagesSmoke.cs` covers band source contexts, no-elite suggestions, imported/custom retention, actual specific-member Apply and Add with exact undo, all five placed categories, native combined choices/image sizes, unrelated numeric fields, language-retained drafts, template-to-special painting handoff, stale/closed context rejection and unchanged map/history/copy buffers. Core catalogue fixtures independently compare the band sequence with source `BadCreatures` + `Heros` and verify native/project imported elite IDs are not rewritten. Existing full UI fixtures additionally assert the source image catalogue for native and every historical project band version 1–5 in both languages.
+
+All four final processes are terminal. Complete Debug Core passes **73 groups / zero failures**, exit 0 (`Test/property-images-debug-20261007.json`). Both complete loaded WPF configurations pass **212 cases each**, exit 0 (`Test/property-images-ui-{debug,release}-20261007.log`), including four new property-image cases and four loaded-map cases per configuration. The 578-map Release corpus exits 1 with **1722 passes / 94 failed checks** (`Test/expanded-corpus-property-images-20261007.json`): 73 synthetic / 560 native / 530 supported-text / 559 original-policy passes. Its complete ordered failure array exactly equals the original-image object-manager checkpoint; existing refusals are not suppressed or accepted as successful maps. Test temporary roots remain process-local on D:.
+
+The later [main-map object display](MAP_OBJECT_DISPLAY.md) restores source geometric glyphs and creature counts; the earlier shorthand "canvas sprites" was not an implemented source workflow. Original terrain/region/camera displays, other catalogue/definition/reference displays, remaining named semantics and original-GUI/hardware/game acceptance remain separate open requirements. This is not complete editing parity.

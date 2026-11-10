@@ -1,0 +1,39 @@
+{
+  "InputHashes": {
+    "Source/Sources/Triggers/Triggers_Triggers.c": "b94b509ab4d625925bffa65c83f3bc77c8cba776cb2085d1494c855e6e4cb05a",
+    "Source/Sources/Triggers/Triggers_Actions.c": "6cb909e922dd1116d1d02c7cde63721b07c0ed4b57b7cc4ff4af8cd8fcf33d37",
+    "Source/Sources/Triggers/Triggers_Display.c": "a9ebbaa98de2d0c27d5e9dc5373f67ee64ed0b1d5c181bd196df07950c4859cd",
+    "Source/Sources/Things/Things_Heros.c": "31b46820c4a0808b9f98bf333f558363ef9c19d6d756edabb4e3f5a16ab3103e",
+    "Source/Sources/Files/Files_Game.c": "931c0c5e06482a0539214fdd89c8a23a0e4dca1a8c387f54194b7d649854b840",
+    "Source/Includes/Bands.h": "00bd84dc5cb67fdde5de0c8667d7185d1e9e81a0b482bbfac5a3998102af3885",
+    "Source/Includes/Game.h": "4a9a19adc7bbb8d44a2b29e3194300e8993836b6094a3da3f3f8dfbdcca6de9f"
+  },
+  "BandTypes": [
+    "TRIGGER_DEATHSINBAND",
+    "TRIGGER_JAILEDINBAND",
+    "TRIGGER_STUNNEDINBAND"
+  ],
+  "OriginalSelectionNotification": "\n\t\t\t\t\tswitch(Context->TriggerCtx.TempTrigger.ctrl)\n\t\t\t\t\t\t{\n\t\t\t\t\t\tcase TRIGGER_DEATHSINBAND:\n\t\t\t\t\t\t\tlData = Triggers_TriggerDlgGetSelectedEntryParam(Context->TriggerCtx.DeadHerosList);\n\t\t\t\t\t\t\tif (!lData)\n\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\tSetDlgItemText(hDlg,102,NULL);\n\t\t\t\t\t\t\t\tbreak;\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\tlData = Heros_GetHerosCount(Heros_FindHerosById(lData-1));\n\t\t\t\t\t\t\twsprintf(Context->TriggerCtx.TempNumber,szTriggersHeroesCount,lData);\n\t\t\t\t\t\t\tSetDlgItemText(hDlg,102,Context->TriggerCtx.TempNumber);\n\t\t\t\t\t\t\tbreak;\n\t\t\t\t\t\tcase TRIGGER_JAILEDINBAND:\n\t\t\t\t\t\t\tlData = Triggers_TriggerDlgGetSelectedEntryParam(Context->TriggerCtx.JailHerosList);\n\t\t\t\t\t\t\tif (!lData)\n\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\tSetDlgItemText(hDlg,102,NULL);\n\t\t\t\t\t\t\t\tbreak;\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\tlData = Heros_GetHerosCount(Heros_FindHerosById(lData-1));\n\t\t\t\t\t\t\twsprintf(Context->TriggerCtx.TempNumber,szTriggersHeroesCount,lData);\n\t\t\t\t\t\t\tSetDlgItemText(hDlg,102,Context->TriggerCtx.TempNumber);\n\t\t\t\t\t\t\tbreak;\n\t\t\t\t\t\tcase TRIGGER_STUNNEDINBAND:\n\t\t\t\t\t\t\tlData = Triggers_TriggerDlgGetSelectedEntryParam(Context->TriggerCtx.StunHerosList);\n\t\t\t\t\t\t\tif (!lData)\n\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\tSetDlgItemText(hDlg,102,NULL);\n\t\t\t\t\t\t\t\tbreak;\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\tlData = Heros_GetHerosCount(Heros_FindHerosById(lData-1));\n\t\t\t\t\t\t\twsprintf(Context->TriggerCtx.TempNumber,szTriggersHeroesCount,lData);\n\t\t\t\t\t\t\tSetDlgItemText(hDlg,102,Context->TriggerCtx.TempNumber);\n\t\t\t\t\t\t\tbreak;\n\t\t\t\t\t\t}\n\n\t\t\t\t\t",
+  "OriginalCount": "long Heros_GetHerosCount(MTHBAND *Band)\n{\n\tif (Band)\n\t\t{\n\t\tlong\tResult = 0;\n\n\t\twhile(1)\n\t\t\t{\n\t\t\tif (!Band->heros[Result].isvalid) return(Result);\n\t\t\tResult++;\n\t\t\t}\n\t\t}\n\n\treturn(0);\n}",
+  "StoredBandIDsAreZeroBased": true,
+  "NativeActivePrefixRequiresCreatureAndBehavior": true,
+  "NativeHeroStart": 51,
+  "NativeHeroStride": 32,
+  "NativeCreatureOffset": 28,
+  "NativeBehaviorOffset": 15,
+  "BandSlotLimit": 16,
+  "AliasNumericInputLengths": {
+    "TRIGGER_VARIABLE": {
+      "210": 4
+    },
+    "ACTION_SETVARIABLE": {
+      "210": 4
+    },
+    "TRIGGER_TIMER": {
+      "300": 2,
+      "301": 2,
+      "302": 2
+    }
+  },
+  "UIExecuted": false
+}

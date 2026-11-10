@@ -1,0 +1,35 @@
+# General map settings and game-version compatibility prerequisite
+
+Implementation, 2026-10-07. This supplies the guarded Core state and actual Test/Compile diagnostics needed by the [general-properties source scope](MAP_GENERAL_SOURCE_SCOPE.md). It is **not** a completed general parent window, anchored-resize integration or full-editor/game acceptance.
+
+## Metadata and working target
+
+`MapGeneralSettings` exposes the original Name, keeper counts 1–5 and target IDs 13/16/17. Complete immutable drafts require the original owner, monotonic revision, current file/session fingerprint, baseline and verified field layout. An unrelated raw edit, foreign owner or edit+Undo cannot revive authority. Changed values are fully preflighted; Apply is one atomic history/notification, no-op leaves redo untouched, mixed failures restore all game and session bytes, and zero history disables tracking rather than editing.
+
+Existing-map display names may be blank, unlike new-map filenames. Project names use strict CP1252 char[64]; native names use strict UTF-16 wchar[64]. Overflow, embedded NUL and invalid/unrepresentable changed text are rejected. Unchanged full-width imports and padding after NUL survive other edits. Imported unknown keeper/target values remain unchanged unless explicitly replaced. Changing the declared keeper count does not rewrite seven player records, hearts, physical owners or scenario bindings.
+
+Verified project metadata V6/V7 has the real Version byte; V1–V5 supplies the original-reader default 17 but offers only Name/Players, without aliasing padding or silently upgrading. Explicit upgrades retain V6 values and introduce 17 for older versions. Unknown layouts have no inferred editable target.
+
+Native GAMEINFO has no target byte. A private four-byte transaction-only session buffer participates in dirty state, undo/redo and draft/planning fingerprints. It is not a Files entry, linked KWD field, alias companion or export artifact. Version-only edits therefore leave every game byte unchanged and cost eight before/after history bytes. Native reload defaults to 17, exactly as the original reader; native New and newly compiled working documents retain the selected target until reloading. Every generated KWD container header remains version 4. Catalogue choices now use that working target; older verified projects no longer incorrectly fall back to 13.
+
+Target lookup reads only verified metadata, not every object/definition for each catalogue or graph label. A deterministic malformed-unrelated-collection fixture proves this separation while ordinary Records still rejects that malformed collection.
+
+## Source compatibility notices
+
+`GameVersionCompatibility` integrates into `NativeMapValidator`, automatic read-only validation and actual human Test/Compile. It retains the original ordered six aggregate thing/condition/action notices and per-object 1.70 notices with coordinates and duplicate occurrences. All are Information, not hard errors or warning-counter increments. Actual unrelated warnings/errors retain their existing behavior. Explicit no-scenario validation omits script requirements but keeps placed-thing/object requirements.
+
+The source TRAPS condition quirk is retained: type 0x10 sets the condition's 1.61 flag, unlike a placed trap's 1.70 flag. CREATURES checks only 0x2D. Bands/shared definitions/unrelated event types are not counted as placed creatures or ADDCREATURE actions. Unsupported thing/event layouts are not decoded as verified operands.
+
+Native LOSTCREATURES and CREATURESLEVEL do not serialize param2: the source writer emits reserved bytes and Files_Game skips them, leaving the zero-initialized project parameter at zero. Their reserved byte 9 is never read as a species, even when nonzero. Other audited native species operands use byte 9; native ADDCREATURE uses byte 8. Project parameters use original 32-bit NODE/record offsets, independently pinned in tests.
+
+Seven diagnostic labels and both general/session history labels are translated in EN/RU. Four actual-shell cases exercise localized read-only results, live language refresh, explicit Test eligibility, non-failing Compile, ordinary warning approval containing no version notices, session history and native reload. Shell compilation retains chosen-target notices in its working-output report, even though saved native reloading defaults to 17.
+
+## Verification and remaining scope
+
+Focused Core in Debug/Release and four EN/RU native/project WPF cases pass; Debug/Release solution builds have zero warnings/errors. Final terminal Debug has **83 Core groups / zero failures**, both complete loaded WPF configurations have **250 passing cases each**, exit 0. Terminal Release corpus has **1732 passes / 94 failed checks**, exit 1; its entire ordered failure array is exactly identical to the speech/text checkpoint: 83 synthetic / 560 native / 530 supported-text / 559 original-policy passes across 578 KWD inputs. Native/project general and compatibility projections are compared through save/reopen and metadata Undo, without editing installed maps. Reports are `general-core-final-debug-20261007.json`, `general-core-final-ui-{debug,release}-20261007.log` and `expanded-corpus-general-core-final-20261007.json` under Test. Earlier interrupted `general-core-ui-*` / `expanded-corpus-general-core-*` runs are diagnostic only, not completed gates; they were stopped before removing an unnecessary all-record target lookup.
+
+Independent byte fixtures cover all three targets/five keeper counts/both formats, Name/Players/Version offsets, complete/no-op/rejected drafts, imported strings/unknown values, atomic Undo/Redo/rollback, other draft invalidation, valid painting-plan invalidation, eight-byte session history, no invented exports, compile/New target retention, V1–V8 metadata and explicit upgrades. Compatibility fixtures cover each condition/action/placed-thing branch and range boundary, all three creature-owner forms, aggregate ordering, duplicates/coordinates, bands/doors, no-scenario filtering, unknown layouts, reserved bytes and otherwise-valid old-target compilation.
+
+Supplemental terminal Release `general-core-final-real-text-20261007.json` has **84 passes / zero failures**, exit 0: all 83 synthetic groups plus actual Ancients.map import, DKM save/reopen, general/compatibility projections and native compilation, retaining its 434 objects, eight bands, fourteen conditions and twenty-four actions. This text input is not added to the 578-KWD count. All run handles are terminal; original Source/Binaries remain unchanged.
+
+Next required work remains the named general panel, complete parent-draft/outer-Cancel composition with its child settings, dimensions/anchor/reset and large/crop decisions through existing guarded resize, pending-field and reentrant/lifetime guards, and corresponding UI/visual acceptance. Real original GUI/native dialogs, hardware/DPI, external audio/locked-file handling, historical binary variants and in-game acceptance remain open. Other scenario/global-definition/catalogue requirements in FEATURE_PARITY are unchanged.

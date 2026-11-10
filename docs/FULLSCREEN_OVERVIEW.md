@@ -1,0 +1,33 @@
+# Original fullscreen overview workflow
+
+The Map tab now has an EN/RU Fullscreen overview command. Right-clicking the minimap opens the same window, matching `Windows_Minimap.c` / `Windows_Fullmap.c`. It is a separate borderless, non-resizable window on the owner's monitor, above its owner while active; deactivation releases topmost state. Left-click centres the ordinary map viewport on the chosen tile and closes the overview. Right-click and Esc close without moving. Letterbox clicks clamp to the nearest tile, as in the original fullscreen conversion; ordinary minimap letterbox clicks remain ignored.
+
+## Source display behavior
+
+`Windows_Fullmap.c` uses `Thumbnail_Generate` for the background and then paints neutral tiles, traps, doors and creatures in that order. `FullMapOverview` captures source-derived read-only display data, using the same World/Rooms/Gates/Walls lookup and native owner/variant fallback as the minimap. Native reserved bytes are not editor catalogue discriminators. Unknown tiles display the ordinary fallback; invalid/unsupported things are not drawn or repaired.
+
+- Neutral room tiles, closed mana and neutral claimed paths cycle through the original seven wall colours. Neutral reinforced walls and ordinary world/gate tiles do not cycle.
+- Traps are unfilled ellipses with a two-pixel outline and a two-pixel inset when the cell permits it. Non-neutral traps alternate wall/path colours every tick.
+- Doors are filled inset rectangles, not oriented lines. Although oriented rectangles were initially suspected, the preserved `Fullmap_PaintDoors` draws the same inset rectangle for each door. Their non-neutral colours alternate with the source's inverted door offset.
+- Creatures are centred fixed 3 × 3 pixel rectangles. Heroes/Neutral have implied native owners 1/2; keeper creatures use their stored player. Band member slots, objects, areas, gates and generators are not independent placed creature overlays.
+- Neutral entity colours advance every second tick. A 100 ms timer follows the original state machine; initial room offset is 2, all other offsets zero, and colours wrap at seven. Each modern view starts from this verified initial phase, rather than retaining the historical global phase between windows.
+
+Hovering over any of 23 room/bridge entries, six hero-gate variants or closed mana shows its original bitmap at pointer +16, clamped inside the view. Thirty preserved BMP assets are embedded by their numeric `Editor.rc` resource identities. Original files are unchanged; 64-pixel source assets are displayed/cached at the original explicitly requested 32 × 32 size. Changing bridge variants selects their actual icon rather than reproducing the old high-byte-only icon cache bug. Ordinary terrain/wall/unknown cells and black margins clear the hover icon.
+
+The modern view uses one consistent aspect-fit rectangle for raster, overlays and coordinate conversion, instead of reproducing integer GDI/stretch rounding artefacts. Fixed marker sizes use WPF device-independent pixels. Monitor placement uses the owner's physical monitor rectangle, including its taskbar area; secondary/negative-coordinate monitors and mixed DPI require native acceptance. Raster caching avoids regenerating unchanged terrain on each tick. Animated/hover rendering neither edits nor normalizes files.
+
+## Lifetime and guards
+
+Animation starts only on Loaded, never when an offscreen window is constructed. Close stops the timer, unsubscribes from the source and clears document/raster/overlay authority. Replacing/closing the workspace document or unloading the workspace closes its active fullscreen view. Editing the source also closes the view to avoid navigation against a stale map. The navigation callback checks that its source is still the workspace's current document. Nonfinite pointer coordinates fail; a closed view cannot navigate. Selection, clipboard, pending geometry selection and document history are not overview commands.
+
+## Verification
+
+`FullMapOverviewChecks` independently reads the preserved fullscreen timing/shape statements, initial offsets, tile catalogues and colour aliases. It compares 113 successive phases against a separately executed original state machine, all three marker kinds/all owners and invalid-owner fallbacks, and every terrain byte × every owner byte × five representative variants against a separate catalogue oracle. Thirty icon identities and neutral exclusions are covered. Native/project fixtures include every owner/kind, implied Heroes/Neutral owners, ignored objects, invalid coordinates, exact marker order, read-only files/events/dirty/undo/redo and save/reopen.
+
+Four `FullMapSmoke` EN/RU × native/project cases use the actual workspace/window/view without showing native windows or writing user settings. They verify command/closed-map guards, aspect-fit bounds, live translation, all thirty cached bitmaps and their raw embedded bytes against original RC file paths, animation/raster caching, actual rendered neutral colours and trap/door/creature shapes, hover clearing, shared pointer navigation/dismissal reaching the actual ScrollViewer, letterbox clamping, Loaded/Closed timer cleanup, source edits/document close and exact file/history/selection/clipboard preservation. They do not simulate hardware pointer capture, activation or monitor placement.
+
+Optional `DK2_FULLMAP_UI_ARTIFACTS` renders actual-control PNGs; `Test/FullMap-20261007-d` contains the four focused renders. English-project and Russian-native images were visually inspected. The broad corpus's existing native checks now compare fullscreen display data after save/reopen and metadata undo, without changing original game inputs.
+
+Focused core and all four WPF cases pass. Full Debug synthetic regression has 63 passing groups and no failures (`Test/fullmap-debug-20261007.json`). The completed Debug/Release solution builds have zero warnings/errors. Both full WPF gates are terminal with 164 passing cases in each configuration, including loaded Alcatraz/Ancients.
+
+The terminal Release `Test/expanded-corpus-fullmap-20261007.json` contains 63 synthetic, 560 native, 530 supported-text and 559 original-policy text passes (1712 total). All 94 failed checks match the prior original-text report exactly: nine inspector errors, eighteen native refusals, forty-eight supported-text refusals and nineteen original-policy refusals. Fullscreen capture/save/reopen/undo introduced no new corpus failure; whole-corpus acceptance still fails (exit 1). Historical-GUI/hardware/DPI/game acceptance, additional obsolete project fixtures, sprites, thumbnail export and persisted view preferences remain open; whole-editor parity is not complete.

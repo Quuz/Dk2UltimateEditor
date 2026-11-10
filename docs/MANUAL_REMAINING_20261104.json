@@ -1,0 +1,1661 @@
+{
+  "asOf": "2026-11-04",
+  "functionalCases": [
+    {
+      "id": "M01-01",
+      "group": "M01",
+      "scenario": "KWD с общими определениями без локальных замен",
+      "acceptance": "Открыть отдельную копию, прочитать известные записи; пути и значения взяты из общих файлов.",
+      "status": "passed",
+      "evidence": "DEFINITION_SOURCES_20261104.md",
+      "progress": {
+        "RU125_live": "passed common Sample16 buffers/local8 buffers; original-source offsets; Goblin ExpPts200 common versus201 local; diagnostics paths/inspector; exact restore"
+      }
+    },
+    {
+      "id": "M01-02",
+      "group": "M01",
+      "scenario": "KWD с локальными и общими определениями",
+      "acceptance": "Сверить происхождение выбранных полей и пути сообщений; инспектор не скрывает неподдержанные данные.",
+      "status": "passed",
+      "evidence": "DEFINITION_SOURCES_20261104.md",
+      "progress": {
+        "RU125_live": "passed common Sample16 buffers/local8 buffers; original-source offsets; Goblin ExpPts200 common versus201 local; diagnostics paths/inspector; exact restore"
+      }
+    },
+    {
+      "id": "M02-01",
+      "group": "M02",
+      "scenario": "Версии правил 1.6 и 1.7",
+      "acceptance": "Создать копию для каждой версии; выбранная версия сохраняется после reopen/compile, исходная карта не меняется при Cancel.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M02-02",
+      "group": "M02",
+      "scenario": "Все23 фона New",
+      "acceptance": "Для каждого ID из NewMapOptions выбрать фон, сверить packed terrain/owner/variant на внутренних клетках; край защищён. Прежний принятый фон переиспользовать по evidence.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M02-03",
+      "group": "M02",
+      "scenario": "Минимальный размер и связь ширина/высота",
+      "acceptance": "Размер7×7, независимые размеры и square-lock дают выбранные размеры; отказ/Cancel сохраняют прежний документ.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M02-04",
+      "group": "M02",
+      "scenario": "Native-путь создания и начальные параметры",
+      "acceptance": "Выбранные keeper count, hearts/no-hearts и defaults доступны в настоящем окне, Save/reopen/официальный редактор согласованы.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M03-01",
+      "group": "M03",
+      "scenario": "Игровой параметр изменённого объекта",
+      "acceptance": "Новый уровень с изменённым типом/уровнем/параметром объекта: фактический объект и значение видны в игре.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M03-02",
+      "group": "M03",
+      "scenario": "Игровые эффекты правил и сценария",
+      "acceptance": "Не повторять terrain-крест; принимать отдельные эффекты по M15–M19 и связанному сценарию M18/M22.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M03-03",
+      "group": "M03",
+      "scenario": "Read-only носитель и полный диск",
+      "acceptance": "На изолированном тестовом носителе ошибки не меняют прежнюю пару и live dirty/history/target; без такого носителя статус unavailable, не PASS.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M04-01",
+      "group": "M04",
+      "scenario": "Второй режим MAP",
+      "acceptance": "Открыть настоящий MAP в исходном режиме без сценариев; прочитать отчёт, Save/reopen и поддержанная совместимость с официальным редактором.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M04-02",
+      "group": "M04",
+      "scenario": "Обмен DKZ/AREA выделением",
+      "acceptance": "Export/import клеток и связанных объектов/сценария; Cancel не меняет документ/буфер; результат снова открывается.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M04-03",
+      "group": "M04",
+      "scenario": "Подлинные старые DKM/DKZ/AREA и upgrade",
+      "acceptance": "Нужен реальный исторический вход; проверить Cancel и принятый upgrade на копии. Синтетический файл не заменяет этот критерий.",
+      "status": "unavailable",
+      "evidence": "MANUAL_ACCEPTANCE_RU.md"
+    },
+    {
+      "id": "M05-01",
+      "group": "M05",
+      "scenario": "Палитра материалов и комнат",
+      "acceptance": "Земля, стена, комната, путь, мост и ворота: подписи/preview, разрешённые owner/variant, защищённый край и отказ неподходящей геометрии.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M05-02",
+      "group": "M05",
+      "scenario": "Игровой вид материалов/моста/ворот",
+      "acceptance": "Скомпилированные материалы, принадлежность и ориентация соответствуют видимому игровому результату; Undo возвращает исходные клетки.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M06-01",
+      "group": "M06",
+      "scenario": "Разные размеры кисти",
+      "acceptance": "Реальный мазок каждым доступным размером; footprint ожидаем, один жест — один полный Undo/Redo.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M06-02",
+      "group": "M06",
+      "scenario": "Настоящая заливка",
+      "acceptance": "Связная область заполняется без выхода за границы/выделение; отдельные regions/scripts не меняются; один Undo/Redo.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M06-03",
+      "group": "M06",
+      "scenario": "Потеря захвата мыши",
+      "acceptance": "Во время мазка переключиться в другое окно и вернуться; после отпускания кнопки рисование не продолжается.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M06-04",
+      "group": "M06",
+      "scenario": "Сравнение фигур с официальным редактором",
+      "acceptance": "Для одинаковых концов сравнить линию, прямоугольники и эллипсы, контур/заливку; исходный успешный Undo не повторять.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M07-01",
+      "group": "M07",
+      "scenario": "Буфер со сценарными связями",
+      "acceptance": "Copy/Paste/Cut пространственных записей со скриптами сохраняет правильные UID/owner/links; глобальные отряды не копируются как пространственные.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M07-02",
+      "group": "M07",
+      "scenario": "Запоминание и сброс замены буфера",
+      "acceptance": "Yes/No/remember/reset/Cancel: отказ не вырезает и не меняет буфер; после сброса вопрос снова показывается.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M07-03",
+      "group": "M07",
+      "scenario": "Меню и клавиши copy/cut/paste",
+      "acceptance": "Сравнить фактические команды меню и клавиш на том же буфере; сохранение буфера при отмене родительской операции.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M08-01",
+      "group": "M08",
+      "scenario": "Преобразование ворот и сценарных целей",
+      "acceptance": "Оба вращения и отражения: согласованные stored orientation/coordinates, прежние отдельные region anchors, полный Undo/Redo.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M08-02",
+      "group": "M08",
+      "scenario": "Защищённый край при преобразовании",
+      "acceptance": "На краю отказ либо разрешённый перенос не повреждает boundary; последующие Undo/Redo точны.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M08-03",
+      "group": "M08",
+      "scenario": "Игровая геометрия преобразованных ворот",
+      "acceptance": "Наблюдаемая ориентация и физическое положение ворот соответствуют выбранному преобразованию.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M09-01",
+      "group": "M09",
+      "scenario": "Resize/crop прохода и генератора эффекта",
+      "acceptance": "Привязки переносят координаты, crop удаляет только попавшие записи; Cancel и Undo/Redo возвращают весь прежний набор.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M09-02",
+      "group": "M09",
+      "scenario": "Другие координатные типы сценария и ссылки",
+      "acceptance": "Проверить оставшиеся типы по EDITOR_RESIZE_SCRIPT_TARGETS; цели и link-диагностика соответствуют смещению/обрезке.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M09-03",
+      "group": "M09",
+      "scenario": "Официальный редактор и игра после resize",
+      "acceptance": "Новый размер, сохранённые края и объекты видны в официальном редакторе и игре; девять уже принятых базовых anchors не повторять.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M10-01",
+      "group": "M10",
+      "scenario": "Сброс notice и Undo/Redo в безопасном стенде",
+      "acceptance": "Только M10_MANUAL_NOTICE: Reset снова показывает запрос; команды истории меняют стенд ожидаемо, без настоящего OOM.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M11-01",
+      "group": "M11",
+      "scenario": "Свойства существ в GUI",
+      "acceptance": "Открыть/Cancel без правки не создают Undo; вид/уровень/health/gold применяются только к выбранной записи и откатываются полностью.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M11-02",
+      "group": "M11",
+      "scenario": "Двери и ловушки в GUI",
+      "acceptance": "Выбор среди соседних записей, корректные тип/owner/параметры, пустой Apply без лишнего Undo, Cancel и удаление/Undo.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M11-03",
+      "group": "M11",
+      "scenario": "Предметы и специальные предметы в GUI",
+      "acceptance": "То же для обоих семейств; дубликаты различимы, удаление восстанавливает прежний порядок и цель.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M11-04",
+      "group": "M11",
+      "scenario": "Удаление под курсором и из списка",
+      "acceptance": "Отказ запроса не меняет состояние; принятие удаляет выбранную запись, Undo восстанавливает место/сценарные ссылки.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M11-05",
+      "group": "M11",
+      "scenario": "Игровой вид и параметры размещённых семейств",
+      "acceptance": "Существо, дверь, ловушка, предмет и special item появляются в нужной клетке/owner с изменённым параметром.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M12-01",
+      "group": "M12",
+      "scenario": "Выбор точки/прямоугольника и возврат фокуса",
+      "acceptance": "Оставшиеся режимы области/прохода/эффекта: Apply/Cancel/Escape, скрытие/возврат окна, повторные щелчки не меняют чужой draft.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M12-02",
+      "group": "M12",
+      "scenario": "Пауза патруля: ошибочный ввод и физический slider",
+      "acceptance": "Границы0–250, недопустимый текст, slider и клавиши; после отказа прежнее значение/фокус, Apply одной операцией.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M12-03",
+      "group": "M12",
+      "scenario": "Принятое удаление патруля/вхождения/связи",
+      "acceptance": "Проверить Yes после уже принятого No; выбор и связанные области обновляются, полный Undo возвращает порядок и links.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M12-04",
+      "group": "M12",
+      "scenario": "Patrol remember/reset и запрос используемой области",
+      "acceptance": "Запоминание действует только для своего запроса, сброс восстанавливает показ, Escape/X не запоминают согласие.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M12-05",
+      "group": "M12",
+      "scenario": "Генератор: capacity, flags, площадки, reset",
+      "acceptance": "Каждый оставшийся вариант и граница из GATE_GENERATION_REQUESTS: preview/частный draft/Cancel родителя/общий Apply.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M12-06",
+      "group": "M12",
+      "scenario": "Системный цвет прохода и шаблон",
+      "acceptance": "Реальный выбор/Cancel цвета и доступные шаблоны, сохранение и повторное открытие без случайной правки данных.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M12-07",
+      "group": "M12",
+      "scenario": "Видимый патруль/проходы/эффекты в игре",
+      "acceptance": "Записанные точки/паузы, генерация и частота эффекта проявляются в игре.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M13-01",
+      "group": "M13",
+      "scenario": "Удаление/компактизация участника со сценарием",
+      "acceptance": "Delete/Cancel/Undo возвращают16слотов, прежний порядок, UID/root и сценарные ссылки; чужие события не переназначаются.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M13-02",
+      "group": "M13",
+      "scenario": "Прочие флаги/цели/противник и числовые границы",
+      "acceptance": "Оставшиеся поля по HERO_BAND_ACCEPTANCE; известные/импортированные неизвестные сохраняются без молчаливой нормализации.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M13-03",
+      "group": "M13",
+      "scenario": "Предел24 отряда",
+      "acceptance": "Add на границе24 и отказ25-го, Delete/Undo с правильным выбором и непрерывным составом.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M13-04",
+      "group": "M13",
+      "scenario": "Действия появления/освобождения",
+      "acceptance": "Мастер записывает нужный отряд/область; официальный редактор видит те же параметры и16активных слотов.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M13-05",
+      "group": "M13",
+      "scenario": "Фактическое появление/освобождение в игре",
+      "acceptance": "Срабатывает выбранное действие; состав, лидер/помощники, уровни и ссылки относятся к нужным героям.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M14-01",
+      "group": "M14",
+      "scenario": "Имя64 и переполнение Copy/Keep/Cancel",
+      "acceptance": "Все три решения длинного имени, EN/RU-подписи; Cancel не принимает родителя, Copy/Keep сохраняют обещанное значение и источник.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M14-02",
+      "group": "M14",
+      "scenario": "Оставшиеся options/rewards и вложенная отмена",
+      "acceptance": "Изменить ещё не принятые флаги/награды; child Apply+parent Cancel не протекает, parent Apply одним полным Undo.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M14-03",
+      "group": "M14",
+      "scenario": "Текстовый банк и соответствие речи",
+      "acceptance": "Выбрать банк/запись, видимый текст соответствует ID и сохраняется после reopen.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M14-04",
+      "group": "M14",
+      "scenario": "Слышимые речь/музыка и остановка",
+      "acceptance": "Предпросмотр воспроизводит выбранную запись, Stop/закрытие прекращает звук, повторное воспроизведение доступно.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M14-05",
+      "group": "M14",
+      "scenario": "Удерживаемый временный аудиофайл",
+      "acceptance": "Если внешний проигрыватель держит файл: повтор/очистка понятны и не теряют карту; иначе отметить unavailable.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M15-01",
+      "group": "M15",
+      "scenario": "Игрок: ресурсы/health/управление/камера/AI-область",
+      "acceptance": "Собственные окна игрока применяют поля нужному owner, ручные значения и AI preset; сохранение/reopen.",
+      "status": "open",
+      "evidence": "NATIVE_PLAYER_SETTINGS_20261104.md",
+      "progress": {
+        "DKM_RU125": "partial: gold4321/health83/profile1;7players exact",
+        "remaining": "name/control/customAI/other profiles/remaining geometry variants",
+        "native_RU125": "partial: gold5432/health61/profile2/camera15,17;7players exact;export7/reopen"
+      }
+    },
+    {
+      "id": "M15-02",
+      "group": "M15",
+      "scenario": "Дочерний AI Apply и Cancel родителя",
+      "acceptance": "Все поля выбранного профиля остаются только в draft; общий Apply создаёт один Undo с точным откатом.",
+      "status": "passed",
+      "evidence": "NATIVE_PLAYER_SETTINGS_20261104.md",
+      "progress": {
+        "DKM_RU125": "passed Cancel/Apply/UndoRedo/Save/reopen/compile7 and exact source-based fields",
+        "native_GUI": "passed RU125 Cancel/Apply/profile2/camera15,17/one exact UndoRedo/export7/reopen; full Players/Things source-based verification"
+      }
+    },
+    {
+      "id": "M15-03",
+      "group": "M15",
+      "scenario": "Смена/перестановка игрока при редактировании",
+      "acceptance": "Приватный выбор относится к прежней записи или явно отклонён; не применяется к другой записи по индексу.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M15-04",
+      "group": "M15",
+      "scenario": "Золото выше вместимости",
+      "acceptance": "Запрос/Cancel/принятие и запоминание по PLAYER_GOLD_NOTICE; отказ ничего не меняет.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M15-05",
+      "group": "M15",
+      "scenario": "Начальные ресурсы/AI/камера в игре",
+      "acceptance": "Для сохранённых изменённых значений проверить фактического игрока, gold/health, стартовый вид и выбранный AI.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M16-01",
+      "group": "M16",
+      "scenario": "Доступность дверей/ловушек/заклинаний",
+      "acceptance": "Индивидуальный и смешанный групповой выбор каждого семейства; Apply затрагивает только выбранные строки/owners.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M16-02",
+      "group": "M16",
+      "scenario": "DKM-ветка доступности/pool/alliance/modifier",
+      "acceptance": "Настоящие окна проекта, сохранение/reopen; использовать уже принятые native-параметры как образец, а не повторять их native-цикл.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M16-03",
+      "group": "M16",
+      "scenario": "Сброс/очистка/подтверждения правил",
+      "acceptance": "Проверить предусмотренные source-команды и Cancel/remember/reset; неизвестные/отрицательные/граничные значения не переписываются молча.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M16-04",
+      "group": "M16",
+      "scenario": "Прочие модификаторы и imported elites",
+      "acceptance": "Средние/исключения и ненулевые импортированные элитные строки по MAP_CREATURE_MODIFIERS; без случайного изменения исключённых полей.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M16-05",
+      "group": "M16",
+      "scenario": "Официальный GUI и игровые эффекты правил",
+      "acceptance": "Доступность, pool, alliance и modifier сохраняются и каждый даёт наблюдаемый эффект в игре.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M17-01",
+      "group": "M17",
+      "scenario": "DKM-ветка и остальные единицы переменных",
+      "acceptance": "Настоящее окно: подпись/единицы/default соответствуют выбранной переменной, Save/reopen сохраняет значение.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M17-02",
+      "group": "M17",
+      "scenario": "Смешанный выбор и предусмотренные сбросы",
+      "acceptance": "Изменяются только выбранные записи, Cancel/подтверждение/сброс не затрагивают другие значения.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M17-03",
+      "group": "M17",
+      "scenario": "Официальный GUI и игровой эффект переменной",
+      "acceptance": "Официальный редактор видит выбранное значение; наглядный параметр проявляется в игре.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M18-01",
+      "group": "M18",
+      "scenario": "Вложенные/соседние условия и links",
+      "acceptance": "AND/OR/Next, перенос событий, раскрытие/сворачивание: правильные подписи целей, UID/owner и общий граф после Undo/Redo.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M18-02",
+      "group": "M18",
+      "scenario": "Оставшиеся страницы параметров/мастера",
+      "acceptance": "Конечная матрица103типов из I10_CALLBACK_MATRIX: пройти недоказанные GUI-страницы/общие шаблоны, Back/Next/Cancel и зависимые списки.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M18-03",
+      "group": "M18",
+      "scenario": "Удаление точки/условия/действия",
+      "acceptance": "Cancel запроса, принятое удаление, полный Undo прежних мест и входящих ссылок; проверка по SCENARIO_DELETION_REQUESTS.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M18-04",
+      "group": "M18",
+      "scenario": "Перевод открытого сценарного черновика",
+      "acceptance": "RU→EN→RU сохраняет уже введённые параметры, выбор списков и цепочку мастера.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M18-05",
+      "group": "M18",
+      "scenario": "Игровое срабатывание прочих действий",
+      "acceptance": "После принятого camera-path проверить оставшиеся наглядные действия из M13/M15–M19 с явно заданным условием и ожидаемым эффектом.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M19-01",
+      "group": "M19",
+      "scenario": "Сброс выбранного/всех типов globals",
+      "acceptance": "Все14 source reset sections: локальный сброс/Cancel/общий Apply с независимыми вложенными drafts; неизвестные байты не уничтожаются.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M19-02",
+      "group": "M19",
+      "scenario": "Jobs: оставшиеся группы/ячейки/границы",
+      "acceptance": "Физические Escape/X/закрытие владельца не запоминают Continue; keyboard/звук, reset показа, сумма и запись проверены раздельно.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M19-03",
+      "group": "M19",
+      "scenario": "Уровневые модификаторы существ",
+      "acceptance": "Частный draft/default/reset, child Apply+parent Cancel, общий Apply и один Undo; экспорт каталога в отдельный файл.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M19-04",
+      "group": "M19",
+      "scenario": "Настоящая DKM-ветка globals",
+      "acceptance": "Поддержанные определения/страницы открываются и сохраняют принятые поля; установленный общий каталог игры не заменяется.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M19-05",
+      "group": "M19",
+      "scenario": "Официальный GUI и игровой эффект globals",
+      "acceptance": "Сохранённый параметр виден официальному редактору и даёт наблюдаемый игровой эффект.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M20-01",
+      "group": "M20",
+      "scenario": "Менеджеры остальных семейств",
+      "acceptance": "Сортировка/фильтр/несколько выбранных/внутри области; одинаковые координаты не смешивают записи.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M20-02",
+      "group": "M20",
+      "scenario": "Add/Modify/Delete/локальный Undo менеджера",
+      "acceptance": "После каждого действия правильный выбор и актуальный список, без дублей; pending ввод коммитится или удерживает фокус с ошибкой.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M20-03",
+      "group": "M20",
+      "scenario": "Приватный выбор точки менеджера",
+      "acceptance": "Apply/Cancel, повторные щелчки, Escape/Enter/right-click и возврат; смена/закрытие документа отклоняют устаревший выбор.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M20-04",
+      "group": "M20",
+      "scenario": "Время/сохранения и прочая статистика",
+      "acceptance": "Счётчики игроков/отрядов, elapsed/save после правки/сохранения/смены документа согласованы с наблюдаемыми действиями.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M20-05",
+      "group": "M20",
+      "scenario": "Настройки/Cancel/default/reset/меню/клавиши",
+      "acceptance": "Все исходные42Config поля и70команд/30chords из I17 имеют UI-покрытие либо прежнее доказательство; Ctrl+N New/Ctrl+Y Redo сохранены.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M20-06",
+      "group": "M20",
+      "scenario": "Настоящая DKM-ветка менеджера",
+      "acceptance": "Те же действия адресуют правильную project-запись; не выдавать native-список за это доказательство.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M21-01",
+      "group": "M21",
+      "scenario": "Миникарта: click/drag/видимость/размеры",
+      "acceptance": "Вид перемещается согласно клетке/пропорциям, карта и история не меняются.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M21-02",
+      "group": "M21",
+      "scenario": "Оставшиеся масштабы и свой масштаб",
+      "acceptance": "Все11 preset и custom minimum/maximum/invalid: читаемый вид, правильные координаты, без правки документа.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M21-03",
+      "group": "M21",
+      "scenario": "Полноэкранный обзор",
+      "acceptance": "Hover комнаты/портала, left-click перемещает и закрывает, right-click/Escape закрывают без перемещения.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M21-04",
+      "group": "M21",
+      "scenario": "Миниатюра37 опций и BMP",
+      "acceptance": "Каждая source-опция влияет на preview как обещано; Cancel не пишет настройки; экспортированный BMP открыт внешним просмотрщиком.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M21-05",
+      "group": "M21",
+      "scenario": "Системные Open/Save/цвет и возврат фокуса",
+      "acceptance": "Оставшиеся варианты выбора/Cancel/preview; окно остаётся доступным, поля и данные документа не меняются случайно.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M22-01",
+      "group": "M22",
+      "scenario": "Физическая клавиатура библиотеки",
+      "acceptance": "Набор поиска, Tab/ShiftTab, Enter/Escape и возврат фокуса в опубликованном GUI; MCP-ввод этого не заменяет.",
+      "status": "open",
+      "evidence": "NATIVE_PLAYER_SETTINGS_20261104.md",
+      "progress": {
+        "physical_keyboard": "open: Computer Use returns owner only; no typed text observed; cancelled and all state/files exact"
+      }
+    },
+    {
+      "id": "M22-02",
+      "group": "M22",
+      "scenario": "Вложенный Apply и устаревший контекст",
+      "acceptance": "Apply child→Apply parent меняет нужное действие; смена/закрытие контекста отвергает stale Apply без чужой правки.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M22-03",
+      "group": "M22",
+      "scenario": "Другие схемы и режимы потолка",
+      "acceptance": "Оставшиеся выбранные представители52путей и оба source ShowCell режима: схема/описание/числовой ID согласованы; без требования создавать траектории.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M22-04",
+      "group": "M22",
+      "scenario": "Официальный GUI для действия камеры",
+      "acceptance": "Открыть текущий seven-file результат официальным редактором, сверить path50/area1/ceiling0 и связь player3→elapsed45→camera.",
+      "status": "passed",
+      "evidence": "OFFICIAL_CAMERA_AND_PLAYER_SETTINGS_20261104.md",
+      "coverage": "Official DK2 Editor.exe read-only camera50/AP1/ShowCeiling and keeper1 elapsed45 link"
+    },
+    {
+      "id": "M23-01",
+      "group": "M23",
+      "scenario": "Физическая клавиатура и смена языка с drafts",
+      "acceptance": "Для каждого оставшегося dialog family по оконной матрице: Tab/ShiftTab/Enter/Escape/default/focus и сохранение черновика при EN↔RU.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M23-02",
+      "group": "M23",
+      "scenario": "Разные мониторы и окно у края",
+      "acceptance": "На реально доступных мониторах/100,125,150% DPI проверить placement/доступность кнопок; недоступный монитор не становится PASS.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M19-06",
+      "group": "M19",
+      "scenario": "Страница globals: Terrains",
+      "acceptance": "Настоящее окно: выбрать запись/поддержанное поле, проверить preview/числовой ввод/локальный Cancel и Apply. Вложенные страницы — независимые drafts; общий Cancel/Apply и сохранённые поля. Прежний Jobs/Attributes-проход переиспользовать для уже доказанных действий, не повторять их.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M19-07",
+      "group": "M19",
+      "scenario": "Страница globals: Rooms",
+      "acceptance": "Настоящее окно: выбрать запись/поддержанное поле, проверить preview/числовой ввод/локальный Cancel и Apply. Вложенные страницы — независимые drafts; общий Cancel/Apply и сохранённые поля. Прежний Jobs/Attributes-проход переиспользовать для уже доказанных действий, не повторять их.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M19-08",
+      "group": "M19",
+      "scenario": "Страница globals: Doors",
+      "acceptance": "Настоящее окно: выбрать запись/поддержанное поле, проверить preview/числовой ввод/локальный Cancel и Apply. Вложенные страницы — независимые drafts; общий Cancel/Apply и сохранённые поля. Прежний Jobs/Attributes-проход переиспользовать для уже доказанных действий, не повторять их.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M19-09",
+      "group": "M19",
+      "scenario": "Страница globals: Traps",
+      "acceptance": "Настоящее окно: выбрать запись/поддержанное поле, проверить preview/числовой ввод/локальный Cancel и Apply. Вложенные страницы — независимые drafts; общий Cancel/Apply и сохранённые поля. Прежний Jobs/Attributes-проход переиспользовать для уже доказанных действий, не повторять их.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M19-10",
+      "group": "M19",
+      "scenario": "Страница globals: Spells",
+      "acceptance": "Настоящее окно: выбрать запись/поддержанное поле, проверить preview/числовой ввод/локальный Cancel и Apply. Вложенные страницы — независимые drafts; общий Cancel/Apply и сохранённые поля. Прежний Jobs/Attributes-проход переиспользовать для уже доказанных действий, не повторять их.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M19-11",
+      "group": "M19",
+      "scenario": "Страница globals: Attributes",
+      "acceptance": "Настоящее окно: выбрать запись/поддержанное поле, проверить preview/числовой ввод/локальный Cancel и Apply. Вложенные страницы — независимые drafts; общий Cancel/Apply и сохранённые поля. Прежний Jobs/Attributes-проход переиспользовать для уже доказанных действий, не повторять их.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M19-12",
+      "group": "M19",
+      "scenario": "Страница globals: Parameters",
+      "acceptance": "Настоящее окно: выбрать запись/поддержанное поле, проверить preview/числовой ввод/локальный Cancel и Apply. Вложенные страницы — независимые drafts; общий Cancel/Apply и сохранённые поля. Прежний Jobs/Attributes-проход переиспользовать для уже доказанных действий, не повторять их.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M19-13",
+      "group": "M19",
+      "scenario": "Страница globals: Flags",
+      "acceptance": "Настоящее окно: выбрать запись/поддержанное поле, проверить preview/числовой ввод/локальный Cancel и Apply. Вложенные страницы — независимые drafts; общий Cancel/Apply и сохранённые поля. Прежний Jobs/Attributes-проход переиспользовать для уже доказанных действий, не повторять их.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M19-14",
+      "group": "M19",
+      "scenario": "Страница globals: Attacks",
+      "acceptance": "Настоящее окно: выбрать запись/поддержанное поле, проверить preview/числовой ввод/локальный Cancel и Apply. Вложенные страницы — независимые drafts; общий Cancel/Apply и сохранённые поля. Прежний Jobs/Attributes-проход переиспользовать для уже доказанных действий, не повторять их.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M19-15",
+      "group": "M19",
+      "scenario": "Страница globals: Resistances",
+      "acceptance": "Настоящее окно: выбрать запись/поддержанное поле, проверить preview/числовой ввод/локальный Cancel и Apply. Вложенные страницы — независимые drafts; общий Cancel/Apply и сохранённые поля. Прежний Jobs/Attributes-проход переиспользовать для уже доказанных действий, не повторять их.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M19-16",
+      "group": "M19",
+      "scenario": "Страница globals: Possession",
+      "acceptance": "Настоящее окно: выбрать запись/поддержанное поле, проверить preview/числовой ввод/локальный Cancel и Apply. Вложенные страницы — независимые drafts; общий Cancel/Apply и сохранённые поля. Прежний Jobs/Attributes-проход переиспользовать для уже доказанных действий, не повторять их.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M19-17",
+      "group": "M19",
+      "scenario": "Страница globals: Light",
+      "acceptance": "Настоящее окно: выбрать запись/поддержанное поле, проверить preview/числовой ввод/локальный Cancel и Apply. Вложенные страницы — независимые drafts; общий Cancel/Apply и сохранённые поля. Прежний Jobs/Attributes-проход переиспользовать для уже доказанных действий, не повторять их.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M19-18",
+      "group": "M19",
+      "scenario": "Страница globals: CrSpells",
+      "acceptance": "Настоящее окно: выбрать запись/поддержанное поле, проверить preview/числовой ввод/локальный Cancel и Apply. Вложенные страницы — независимые drafts; общий Cancel/Apply и сохранённые поля. Прежний Jobs/Attributes-проход переиспользовать для уже доказанных действий, не повторять их.",
+      "status": "open",
+      "evidence": null
+    },
+    {
+      "id": "M03-04",
+      "group": "M03",
+      "scenario": "Cancel предупреждения преобразования native→DKM",
+      "acceptance": "После настоящего SaveAs→предупреждение→Cancel полный fingerprint, dirty/revision, Undo и target прежние; DKM/ZIP/staging отсутствуют.",
+      "status": "passed",
+      "evidence": "SAVE_CONSENT_AND_GAME_CAMERA_20261104.md"
+    },
+    {
+      "id": "M22-05",
+      "group": "M22",
+      "scenario": "Исполнение связанного пути050 в игре",
+      "acceptance": "Player3→elapsed>=45s→camera65529(path50,area1,ceiling0); без ввода увидеть cinematic и возврат HUD.",
+      "status": "passed",
+      "evidence": "SAVE_CONSENT_AND_GAME_CAMERA_20261104.md"
+    }
+  ],
+  "windowMatrix": [
+    {
+      "name": "CameraPathWindow",
+      "source": "src/DK2MapEditor.App/Editing/CameraPathWindow.xaml.cs",
+      "variants": {
+        "RU125": "passed:CAMERA_PATHS_LIVE_20261103.md",
+        "RU150": "evidence_review",
+        "RU200": "evidence_review",
+        "EN125": "passed:CAMERA_SEARCH_LIVE_20261103.md",
+        "EN150": "evidence_review",
+        "EN200": "evidence_review"
+      }
+    },
+    {
+      "name": "CompilerTaskWindow",
+      "source": "src/DK2MapEditor.App/Editing/CompilerTaskWindow.cs",
+      "variants": {
+        "RU125": "evidence_review",
+        "RU150": "evidence_review",
+        "RU200": "evidence_review",
+        "EN125": "evidence_review",
+        "EN150": "evidence_review",
+        "EN200": "evidence_review"
+      }
+    },
+    {
+      "name": "CopyBufferConfirmationWindow",
+      "source": "src/DK2MapEditor.App/Editing/CopyBufferConfirmationWindow.cs",
+      "variants": {
+        "RU125": "evidence_review",
+        "RU150": "evidence_review",
+        "RU200": "evidence_review",
+        "EN125": "evidence_review",
+        "EN150": "evidence_review",
+        "EN200": "evidence_review"
+      }
+    },
+    {
+      "name": "CreatureBrushQuickWindow",
+      "source": "src/DK2MapEditor.App/Editing/CreatureBrushQuickWindow.cs",
+      "variants": {
+        "RU125": "evidence_review",
+        "RU150": "evidence_review",
+        "RU200": "evidence_review",
+        "EN125": "evidence_review",
+        "EN150": "evidence_review",
+        "EN200": "evidence_review"
+      }
+    },
+    {
+      "name": "CreatureGlobalsWindow",
+      "source": "src/DK2MapEditor.App/Editing/CreatureGlobalsWindow.cs",
+      "variants": {
+        "RU125": "evidence_review",
+        "RU150": "evidence_review",
+        "RU200": "evidence_review",
+        "EN125": "evidence_review",
+        "EN150": "evidence_review",
+        "EN200": "evidence_review"
+      }
+    },
+    {
+      "name": "CreatureJobsWarningWindow",
+      "source": "src/DK2MapEditor.App/Editing/CreatureJobsWarningWindow.cs",
+      "variants": {
+        "RU125": "evidence_review",
+        "RU150": "evidence_review",
+        "RU200": "evidence_review",
+        "EN125": "evidence_review",
+        "EN150": "evidence_review",
+        "EN200": "evidence_review"
+      }
+    },
+    {
+      "name": "CreatureLevelModifierWindow",
+      "source": "src/DK2MapEditor.App/Editing/CreatureLevelModifierWindow.cs",
+      "variants": {
+        "RU125": "evidence_review",
+        "RU150": "evidence_review",
+        "RU200": "evidence_review",
+        "EN125": "evidence_review",
+        "EN150": "evidence_review",
+        "EN200": "evidence_review"
+      }
+    },
+    {
+      "name": "CreaturePageWindow",
+      "source": "src/DK2MapEditor.App/Editing/CreaturePageWindow.cs",
+      "variants": {
+        "RU125": "evidence_review",
+        "RU150": "evidence_review",
+        "RU200": "evidence_review",
+        "EN125": "evidence_review",
+        "EN150": "evidence_review",
+        "EN200": "evidence_review"
+      }
+    },
+    {
+      "name": "CreatureSpellOptionsWindow",
+      "source": "src/DK2MapEditor.App/Editing/CreatureSpellOptionsWindow.cs",
+      "variants": {
+        "RU125": "evidence_review",
+        "RU150": "evidence_review",
+        "RU200": "evidence_review",
+        "EN125": "evidence_review",
+        "EN150": "evidence_review",
+        "EN200": "evidence_review"
+      }
+    },
+    {
+      "name": "CreatureSpellWindow",
+      "source": "src/DK2MapEditor.App/Editing/CreatureSpellWindow.cs",
+      "variants": {
+        "RU125": "evidence_review",
+        "RU150": "evidence_review",
+        "RU200": "evidence_review",
+        "EN125": "evidence_review",
+        "EN150": "evidence_review",
+        "EN200": "evidence_review"
+      }
+    },
+    {
+      "name": "CreatureWorkspacePageWindow",
+      "source": "src/DK2MapEditor.App/Editing/CreatureWorkspacePageWindow.cs",
+      "variants": {
+        "RU125": "evidence_review",
+        "RU150": "evidence_review",
+        "RU200": "evidence_review",
+        "EN125": "evidence_review",
+        "EN150": "evidence_review",
+        "EN200": "evidence_review"
+      }
+    },
+    {
+      "name": "DiskProgressWindow",
+      "source": "src/DK2MapEditor.App/Editing/DiskProgressWindow.cs",
+      "variants": {
+        "RU125": "evidence_review",
+        "RU150": "evidence_review",
+        "RU200": "evidence_review",
+        "EN125": "evidence_review",
+        "EN150": "evidence_review",
+        "EN200": "evidence_review"
+      }
+    },
+    {
+      "name": "DocumentReportWindow",
+      "source": "src/DK2MapEditor.App/Editing/DocumentReportWindow.cs",
+      "variants": {
+        "RU125": "evidence_review",
+        "RU150": "evidence_review",
+        "RU200": "evidence_review",
+        "EN125": "evidence_review",
+        "EN150": "evidence_review",
+        "EN200": "evidence_review"
+      }
+    },
+    {
+      "name": "EditorGuideWindow",
+      "source": "src/DK2MapEditor.App/Editing/EditorGuideWindow.cs",
+      "variants": {
+        "RU125": "evidence_review",
+        "RU150": "evidence_review",
+        "RU200": "evidence_review",
+        "EN125": "evidence_review",
+        "EN150": "evidence_review",
+        "EN200": "evidence_review"
+      }
+    },
+    {
+      "name": "FullMapWindow",
+      "source": "src/DK2MapEditor.App/Editing/FullMapWindow.cs",
+      "variants": {
+        "RU125": "evidence_review",
+        "RU150": "evidence_review",
+        "RU200": "evidence_review",
+        "EN125": "evidence_review",
+        "EN150": "evidence_review",
+        "EN200": "evidence_review"
+      }
+    },
+    {
+      "name": "GateGenerationRequestWindow",
+      "source": "src/DK2MapEditor.App/Editing/GateGenerationRequestWindow.cs",
+      "variants": {
+        "RU125": "evidence_review",
+        "RU150": "evidence_review",
+        "RU200": "evidence_review",
+        "EN125": "evidence_review",
+        "EN150": "evidence_review",
+        "EN200": "evidence_review"
+      }
+    },
+    {
+      "name": "GlobalDoorWindow",
+      "source": "src/DK2MapEditor.App/Editing/GlobalDoorWindow.cs",
+      "variants": {
+        "RU125": "evidence_review",
+        "RU150": "evidence_review",
+        "RU200": "evidence_review",
+        "EN125": "evidence_review",
+        "EN150": "evidence_review",
+        "EN200": "evidence_review"
+      }
+    },
+    {
+      "name": "GlobalRoomWindow",
+      "source": "src/DK2MapEditor.App/Editing/GlobalRoomWindow.cs",
+      "variants": {
+        "RU125": "evidence_review",
+        "RU150": "evidence_review",
+        "RU200": "evidence_review",
+        "EN125": "evidence_review",
+        "EN150": "evidence_review",
+        "EN200": "evidence_review"
+      }
+    },
+    {
+      "name": "GlobalSpellOptionsWindow",
+      "source": "src/DK2MapEditor.App/Editing/GlobalSpellOptionsWindow.cs",
+      "variants": {
+        "RU125": "evidence_review",
+        "RU150": "evidence_review",
+        "RU200": "evidence_review",
+        "EN125": "evidence_review",
+        "EN150": "evidence_review",
+        "EN200": "evidence_review"
+      }
+    },
+    {
+      "name": "GlobalSpellWindow",
+      "source": "src/DK2MapEditor.App/Editing/GlobalSpellWindow.cs",
+      "variants": {
+        "RU125": "evidence_review",
+        "RU150": "evidence_review",
+        "RU200": "evidence_review",
+        "EN125": "evidence_review",
+        "EN150": "evidence_review",
+        "EN200": "evidence_review"
+      }
+    },
+    {
+      "name": "GlobalTerrainWindow",
+      "source": "src/DK2MapEditor.App/Editing/GlobalTerrainWindow.cs",
+      "variants": {
+        "RU125": "evidence_review",
+        "RU150": "evidence_review",
+        "RU200": "evidence_review",
+        "EN125": "evidence_review",
+        "EN150": "evidence_review",
+        "EN200": "evidence_review"
+      }
+    },
+    {
+      "name": "GlobalTrapOptionsWindow",
+      "source": "src/DK2MapEditor.App/Editing/GlobalTrapOptionsWindow.cs",
+      "variants": {
+        "RU125": "evidence_review",
+        "RU150": "evidence_review",
+        "RU200": "evidence_review",
+        "EN125": "evidence_review",
+        "EN150": "evidence_review",
+        "EN200": "evidence_review"
+      }
+    },
+    {
+      "name": "GlobalTrapWindow",
+      "source": "src/DK2MapEditor.App/Editing/GlobalTrapWindow.cs",
+      "variants": {
+        "RU125": "evidence_review",
+        "RU150": "evidence_review",
+        "RU200": "evidence_review",
+        "EN125": "evidence_review",
+        "EN150": "evidence_review",
+        "EN200": "evidence_review"
+      }
+    },
+    {
+      "name": "GlobalVariablesWindow",
+      "source": "src/DK2MapEditor.App/Editing/GlobalVariablesWindow.cs",
+      "variants": {
+        "RU125": "evidence_review",
+        "RU150": "evidence_review",
+        "RU200": "evidence_review",
+        "EN125": "evidence_review",
+        "EN150": "evidence_review",
+        "EN200": "evidence_review"
+      }
+    },
+    {
+      "name": "HeroBandMemberWindow",
+      "source": "src/DK2MapEditor.App/Editing/HeroBandMemberWindow.cs",
+      "variants": {
+        "RU125": "evidence_review",
+        "RU150": "evidence_review",
+        "RU200": "evidence_review",
+        "EN125": "evidence_review",
+        "EN150": "evidence_review",
+        "EN200": "evidence_review"
+      }
+    },
+    {
+      "name": "HeroBandWindow",
+      "source": "src/DK2MapEditor.App/Editing/HeroBandWindow.cs",
+      "variants": {
+        "RU125": "evidence_review",
+        "RU150": "evidence_review",
+        "RU200": "evidence_review",
+        "EN125": "evidence_review",
+        "EN150": "evidence_review",
+        "EN200": "evidence_review"
+      }
+    },
+    {
+      "name": "HistoryMemoryNoticeWindow",
+      "source": "src/DK2MapEditor.App/Editing/HistoryMemoryNoticeWindow.cs",
+      "variants": {
+        "RU125": "evidence_review",
+        "RU150": "evidence_review",
+        "RU200": "evidence_review",
+        "EN125": "evidence_review",
+        "EN150": "evidence_review",
+        "EN200": "evidence_review"
+      }
+    },
+    {
+      "name": "HistorySettingsWindow",
+      "source": "src/DK2MapEditor.App/Editing/HistorySettingsWindow.xaml.cs",
+      "variants": {
+        "RU125": "evidence_review",
+        "RU150": "evidence_review",
+        "RU200": "evidence_review",
+        "EN125": "evidence_review",
+        "EN150": "evidence_review",
+        "EN200": "evidence_review"
+      }
+    },
+    {
+      "name": "HistoryWindow",
+      "source": "src/DK2MapEditor.App/Editing/HistoryWindow.xaml.cs",
+      "variants": {
+        "RU125": "evidence_review",
+        "RU150": "evidence_review",
+        "RU200": "evidence_review",
+        "EN125": "evidence_review",
+        "EN150": "evidence_review",
+        "EN200": "evidence_review"
+      }
+    },
+    {
+      "name": "LargeMapWarningWindow",
+      "source": "src/DK2MapEditor.App/Editing/LargeMapWarningWindow.cs",
+      "variants": {
+        "RU125": "evidence_review",
+        "RU150": "evidence_review",
+        "RU200": "evidence_review",
+        "EN125": "evidence_review",
+        "EN150": "evidence_review",
+        "EN200": "evidence_review"
+      }
+    },
+    {
+      "name": "MapCreatureModifiersWindow",
+      "source": "src/DK2MapEditor.App/Editing/MapCreatureModifiersWindow.cs",
+      "variants": {
+        "RU125": "evidence_review",
+        "RU150": "evidence_review",
+        "RU200": "evidence_review",
+        "EN125": "evidence_review",
+        "EN150": "evidence_review",
+        "EN200": "evidence_review"
+      }
+    },
+    {
+      "name": "MapLevelOptionsWindow",
+      "source": "src/DK2MapEditor.App/Editing/MapLevelOptionsWindow.cs",
+      "variants": {
+        "RU125": "evidence_review",
+        "RU150": "evidence_review",
+        "RU200": "evidence_review",
+        "EN125": "evidence_review",
+        "EN150": "evidence_review",
+        "EN200": "evidence_review"
+      }
+    },
+    {
+      "name": "MapNameWarningWindow",
+      "source": "src/DK2MapEditor.App/Editing/MapNameWarningWindow.cs",
+      "variants": {
+        "RU125": "evidence_review",
+        "RU150": "evidence_review",
+        "RU200": "evidence_review",
+        "EN125": "evidence_review",
+        "EN150": "evidence_review",
+        "EN200": "evidence_review"
+      }
+    },
+    {
+      "name": "MapPropertiesWindow",
+      "source": "src/DK2MapEditor.App/Editing/MapPropertiesWindow.cs",
+      "variants": {
+        "RU125": "evidence_review",
+        "RU150": "evidence_review",
+        "RU200": "evidence_review",
+        "EN125": "evidence_review",
+        "EN150": "evidence_review",
+        "EN200": "evidence_review"
+      }
+    },
+    {
+      "name": "MapSpeechTextWindow",
+      "source": "src/DK2MapEditor.App/Editing/MapSpeechTextWindow.cs",
+      "variants": {
+        "RU125": "evidence_review",
+        "RU150": "evidence_review",
+        "RU200": "evidence_review",
+        "EN125": "evidence_review",
+        "EN150": "evidence_review",
+        "EN200": "evidence_review"
+      }
+    },
+    {
+      "name": "MapZoomWindow",
+      "source": "src/DK2MapEditor.App/Editing/MapZoomWindow.cs",
+      "variants": {
+        "RU125": "evidence_review",
+        "RU150": "evidence_review",
+        "RU200": "evidence_review",
+        "EN125": "evidence_review",
+        "EN150": "evidence_review",
+        "EN200": "evidence_review"
+      }
+    },
+    {
+      "name": "NewMapDialog",
+      "source": "src/DK2MapEditor.App/Editing/NewMapDialog.cs",
+      "variants": {
+        "RU125": "evidence_review",
+        "RU150": "evidence_review",
+        "RU200": "evidence_review",
+        "EN125": "evidence_review",
+        "EN150": "evidence_review",
+        "EN200": "evidence_review"
+      }
+    },
+    {
+      "name": "ObjectBatchWindow",
+      "source": "src/DK2MapEditor.App/Editing/ObjectBatchWindow.cs",
+      "variants": {
+        "RU125": "evidence_review",
+        "RU150": "evidence_review",
+        "RU200": "evidence_review",
+        "EN125": "evidence_review",
+        "EN150": "evidence_review",
+        "EN200": "evidence_review"
+      }
+    },
+    {
+      "name": "ObjectImagePickerWindow",
+      "source": "src/DK2MapEditor.App/Editing/ObjectImagePickerWindow.cs",
+      "variants": {
+        "RU125": "evidence_review",
+        "RU150": "evidence_review",
+        "RU200": "evidence_review",
+        "EN125": "evidence_review",
+        "EN150": "evidence_review",
+        "EN200": "evidence_review"
+      }
+    },
+    {
+      "name": "ObjectManagerMapWindow",
+      "source": "src/DK2MapEditor.App/Editing/ObjectManagerMapWindow.cs",
+      "variants": {
+        "RU125": "evidence_review",
+        "RU150": "evidence_review",
+        "RU200": "evidence_review",
+        "EN125": "evidence_review",
+        "EN150": "evidence_review",
+        "EN200": "evidence_review"
+      }
+    },
+    {
+      "name": "ObjectManagerOptionsWindow",
+      "source": "src/DK2MapEditor.App/Editing/ObjectManagerOptionsWindow.cs",
+      "variants": {
+        "RU125": "evidence_review",
+        "RU150": "evidence_review",
+        "RU200": "evidence_review",
+        "EN125": "evidence_review",
+        "EN150": "evidence_review",
+        "EN200": "evidence_review"
+      }
+    },
+    {
+      "name": "ObjectManagerWindow",
+      "source": "src/DK2MapEditor.App/Editing/ObjectManagerWindow.cs",
+      "variants": {
+        "RU125": "evidence_review",
+        "RU150": "evidence_review",
+        "RU200": "evidence_review",
+        "EN125": "evidence_review",
+        "EN150": "evidence_review",
+        "EN200": "evidence_review"
+      }
+    },
+    {
+      "name": "RequestWindow",
+      "source": "src/DK2MapEditor.App/Editing/OriginalMessageBox.cs",
+      "variants": {
+        "RU125": "evidence_review",
+        "RU150": "evidence_review",
+        "RU200": "evidence_review",
+        "EN125": "evidence_review",
+        "EN150": "evidence_review",
+        "EN200": "evidence_review"
+      }
+    },
+    {
+      "name": "PatrolAreaSelectionWindow",
+      "source": "src/DK2MapEditor.App/Editing/PatrolAreaSelectionWindow.cs",
+      "variants": {
+        "RU125": "evidence_review",
+        "RU150": "evidence_review",
+        "RU200": "evidence_review",
+        "EN125": "evidence_review",
+        "EN150": "evidence_review",
+        "EN200": "evidence_review"
+      }
+    },
+    {
+      "name": "PatrolPauseWindow",
+      "source": "src/DK2MapEditor.App/Editing/PatrolPauseWindow.cs",
+      "variants": {
+        "RU125": "evidence_review",
+        "RU150": "evidence_review",
+        "RU200": "evidence_review",
+        "EN125": "evidence_review",
+        "EN150": "evidence_review",
+        "EN200": "evidence_review"
+      }
+    },
+    {
+      "name": "PatrolRemovalWindow",
+      "source": "src/DK2MapEditor.App/Editing/PatrolRemovalWindow.cs",
+      "variants": {
+        "RU125": "evidence_review",
+        "RU150": "evidence_review",
+        "RU200": "evidence_review",
+        "EN125": "evidence_review",
+        "EN150": "evidence_review",
+        "EN200": "evidence_review"
+      }
+    },
+    {
+      "name": "PatrolWarningWindow",
+      "source": "src/DK2MapEditor.App/Editing/PatrolWarningWindow.cs",
+      "variants": {
+        "RU125": "evidence_review",
+        "RU150": "evidence_review",
+        "RU200": "evidence_review",
+        "EN125": "evidence_review",
+        "EN150": "evidence_review",
+        "EN200": "evidence_review"
+      }
+    },
+    {
+      "name": "PlayerGoldNoticeWindow",
+      "source": "src/DK2MapEditor.App/Editing/PlayerGoldNoticeWindow.cs",
+      "variants": {
+        "RU125": "evidence_review",
+        "RU150": "evidence_review",
+        "RU200": "evidence_review",
+        "EN125": "evidence_review",
+        "EN150": "evidence_review",
+        "EN200": "evidence_review"
+      }
+    },
+    {
+      "name": "RegionGateGenerationWindow",
+      "source": "src/DK2MapEditor.App/Editing/RegionGateGenerationWindow.cs",
+      "variants": {
+        "RU125": "evidence_review",
+        "RU150": "evidence_review",
+        "RU200": "evidence_review",
+        "EN125": "evidence_review",
+        "EN150": "evidence_review",
+        "EN200": "evidence_review"
+      }
+    },
+    {
+      "name": "RegionPropertiesWindow",
+      "source": "src/DK2MapEditor.App/Editing/RegionPropertiesWindow.cs",
+      "variants": {
+        "RU125": "evidence_review",
+        "RU150": "evidence_review",
+        "RU200": "evidence_review",
+        "EN125": "evidence_review",
+        "EN150": "evidence_review",
+        "EN200": "evidence_review"
+      }
+    },
+    {
+      "name": "RegionRemovalWindow",
+      "source": "src/DK2MapEditor.App/Editing/RegionRemovalWindow.cs",
+      "variants": {
+        "RU125": "evidence_review",
+        "RU150": "evidence_review",
+        "RU200": "evidence_review",
+        "EN125": "evidence_review",
+        "EN150": "evidence_review",
+        "EN200": "evidence_review"
+      }
+    },
+    {
+      "name": "SaveConfirmationWindow",
+      "source": "src/DK2MapEditor.App/Editing/SaveConfirmationWindow.cs",
+      "variants": {
+        "RU125": "passed:SAVE_CONSENT_AND_GAME_CAMERA_20261104.md",
+        "RU150": "evidence_review",
+        "RU200": "evidence_review",
+        "EN125": "evidence_review",
+        "EN150": "evidence_review",
+        "EN200": "evidence_review"
+      }
+    },
+    {
+      "name": "AutoSaveSettingsWindow",
+      "source": "src/DK2MapEditor.App/Editing/SaveConfirmationWindow.cs",
+      "variants": {
+        "RU125": "evidence_review",
+        "RU150": "evidence_review",
+        "RU200": "evidence_review",
+        "EN125": "evidence_review",
+        "EN150": "evidence_review",
+        "EN200": "evidence_review"
+      }
+    },
+    {
+      "name": "RecoverySelectionWindow",
+      "source": "src/DK2MapEditor.App/Editing/SaveConfirmationWindow.cs",
+      "variants": {
+        "RU125": "evidence_review",
+        "RU150": "evidence_review",
+        "RU200": "evidence_review",
+        "EN125": "evidence_review",
+        "EN150": "evidence_review",
+        "EN200": "evidence_review"
+      }
+    },
+    {
+      "name": "ScenarioAliasEventWindow",
+      "source": "src/DK2MapEditor.App/Editing/ScenarioAliasEventWindow.cs",
+      "variants": {
+        "RU125": "evidence_review",
+        "RU150": "evidence_review",
+        "RU200": "evidence_review",
+        "EN125": "evidence_review",
+        "EN150": "evidence_review",
+        "EN200": "evidence_review"
+      }
+    },
+    {
+      "name": "ScenarioCreationWindow",
+      "source": "src/DK2MapEditor.App/Editing/ScenarioCreationWindow.cs",
+      "variants": {
+        "RU125": "evidence_review",
+        "RU150": "evidence_review",
+        "RU200": "evidence_review",
+        "EN125": "evidence_review",
+        "EN150": "evidence_review",
+        "EN200": "evidence_review"
+      }
+    },
+    {
+      "name": "ScenarioNamesWindow",
+      "source": "src/DK2MapEditor.App/Editing/ScenarioNamesWindow.cs",
+      "variants": {
+        "RU125": "evidence_review",
+        "RU150": "evidence_review",
+        "RU200": "evidence_review",
+        "EN125": "evidence_review",
+        "EN150": "evidence_review",
+        "EN200": "evidence_review"
+      }
+    },
+    {
+      "name": "ScenarioParameterWindow",
+      "source": "src/DK2MapEditor.App/Editing/ScenarioParameterWindow.cs",
+      "variants": {
+        "RU125": "evidence_review",
+        "RU150": "evidence_review",
+        "RU200": "evidence_review",
+        "EN125": "evidence_review",
+        "EN150": "evidence_review",
+        "EN200": "evidence_review"
+      }
+    },
+    {
+      "name": "ScenarioPointWindow",
+      "source": "src/DK2MapEditor.App/Editing/ScenarioPointWindow.cs",
+      "variants": {
+        "RU125": "evidence_review",
+        "RU150": "evidence_review",
+        "RU200": "evidence_review",
+        "EN125": "evidence_review",
+        "EN150": "evidence_review",
+        "EN200": "evidence_review"
+      }
+    },
+    {
+      "name": "ScenarioSpawnFlagsWindow",
+      "source": "src/DK2MapEditor.App/Editing/ScenarioSpawnFlagsWindow.cs",
+      "variants": {
+        "RU125": "evidence_review",
+        "RU150": "evidence_review",
+        "RU200": "evidence_review",
+        "EN125": "evidence_review",
+        "EN150": "evidence_review",
+        "EN200": "evidence_review"
+      }
+    },
+    {
+      "name": "SectionVersionsWindow",
+      "source": "src/DK2MapEditor.App/Editing/SectionVersionsWindow.cs",
+      "variants": {
+        "RU125": "evidence_review",
+        "RU150": "evidence_review",
+        "RU200": "evidence_review",
+        "EN125": "evidence_review",
+        "EN150": "evidence_review",
+        "EN200": "evidence_review"
+      }
+    },
+    {
+      "name": "SelectionBoundsDialog",
+      "source": "src/DK2MapEditor.App/Editing/SelectionBoundsDialog.cs",
+      "variants": {
+        "RU125": "evidence_review",
+        "RU150": "evidence_review",
+        "RU200": "evidence_review",
+        "EN125": "evidence_review",
+        "EN150": "evidence_review",
+        "EN200": "evidence_review"
+      }
+    },
+    {
+      "name": "SelectionRecoveryConfirmationWindow",
+      "source": "src/DK2MapEditor.App/Editing/SelectionRecoveryConfirmationWindow.cs",
+      "variants": {
+        "RU125": "evidence_review",
+        "RU150": "evidence_review",
+        "RU200": "evidence_review",
+        "EN125": "evidence_review",
+        "EN150": "evidence_review",
+        "EN200": "evidence_review"
+      }
+    },
+    {
+      "name": "ThumbnailWindow",
+      "source": "src/DK2MapEditor.App/Editing/ThumbnailWindow.xaml.cs",
+      "variants": {
+        "RU125": "evidence_review",
+        "RU150": "evidence_review",
+        "RU200": "evidence_review",
+        "EN125": "evidence_review",
+        "EN150": "evidence_review",
+        "EN200": "evidence_review"
+      }
+    },
+    {
+      "name": "UnusedScriptConfirmationWindow",
+      "source": "src/DK2MapEditor.App/Editing/UnusedScriptConfirmationWindow.cs",
+      "variants": {
+        "RU125": "evidence_review",
+        "RU150": "evidence_review",
+        "RU200": "evidence_review",
+        "EN125": "evidence_review",
+        "EN150": "evidence_review",
+        "EN200": "evidence_review"
+      }
+    },
+    {
+      "name": "MainWindow",
+      "source": "src/DK2MapEditor.App/MainWindow.xaml.cs",
+      "variants": {
+        "RU125": "passed:MANUAL_MCP_ACCEPTANCE_20261101.md",
+        "RU150": "evidence_review",
+        "RU200": "evidence_review",
+        "EN125": "passed:MANUAL_MCP_ACCEPTANCE_20261101.md",
+        "EN150": "evidence_review",
+        "EN200": "evidence_review"
+      }
+    }
+  ],
+  "groupCount": 23,
+  "goalComplete": false,
+  "kwdMigrationStarted": false
+}

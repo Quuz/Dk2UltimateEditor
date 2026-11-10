@@ -1,0 +1,92 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <Product>Dungeon Keeper 2 Ultimate Editor</Product>
+    <AssemblyTitle>DK2 Ultimate Editor</AssemblyTitle>
+    <Description>A modern Dungeon Keeper 2 map and scenario editor with English and Russian interfaces.</Description>
+    <ApplicationIcon />
+  </PropertyGroup>
+
+  <Import Project="ObjectImages.props" />
+  <Import Project="TerrainImages.props" />
+  <Import Project="DefinitionImages.props" />
+  <Import Project="ScenarioImages.props" />
+  <Import Project="EditorListImages.props" />
+  <Import Project="PaletteImages.props" />
+
+  <ItemGroup>
+    <EmbeddedResource Include="../../Source/Icons/Infos/Rect.ico" LogicalName="Legacy.MapInfoIcon.30" />
+    <EmbeddedResource Include="../../Source/Icons/Infos/Copy.ico" LogicalName="Legacy.MapInfoIcon.31" />
+    <EmbeddedResource Include="../../Source/Icons/Infos/Gold.ico" LogicalName="Legacy.MapInfoIcon.32" />
+    <EmbeddedResource Include="../../Source/Icons/Select.ico" LogicalName="Legacy.ControlIcon.19" />
+    <EmbeddedResource Include="../../Source/Icons/Rect.ico" LogicalName="Legacy.ControlIcon.25" />
+    <EmbeddedResource Include="../../Source/Icons/Camera.ico" LogicalName="Legacy.ControlIcon.26" />
+    <EmbeddedResource Include="../../Source/Icons/Properties/Flèche - Vers Bas.ico" LogicalName="Legacy.ControlIcon.40" />
+    <EmbeddedResource Include="../../Source/Icons/Properties/Flèche - Vers Bas-Droite.ico" LogicalName="Legacy.ControlIcon.41" />
+    <EmbeddedResource Include="../../Source/Icons/Properties/Flèche - Vers Bas-Gauche.ico" LogicalName="Legacy.ControlIcon.42" />
+    <EmbeddedResource Include="../../Source/Icons/Properties/Flèche - Vers Droite.ico" LogicalName="Legacy.ControlIcon.43" />
+    <EmbeddedResource Include="../../Source/Icons/Properties/Flèche - Vers Gauche.ico" LogicalName="Legacy.ControlIcon.44" />
+    <EmbeddedResource Include="../../Source/Icons/Properties/Flèche - Vers Haut.ico" LogicalName="Legacy.ControlIcon.45" />
+    <EmbeddedResource Include="../../Source/Icons/Properties/Flèche - Vers Haut-Droite.ico" LogicalName="Legacy.ControlIcon.46" />
+    <EmbeddedResource Include="../../Source/Icons/Properties/Flèche - Vers Haut-Gauche.ico" LogicalName="Legacy.ControlIcon.47" />
+    <EmbeddedResource Include="../../Source/Icons/Triggers/Up.ico" LogicalName="Legacy.ControlIcon.50" />
+    <EmbeddedResource Include="../../Source/Icons/Triggers/Down.ico" LogicalName="Legacy.ControlIcon.51" />
+    <EmbeddedResource Include="../../Source/Icons/Triggers/Left.ico" LogicalName="Legacy.ControlIcon.52" />
+    <EmbeddedResource Include="../../Source/Icons/Triggers/Right.ico" LogicalName="Legacy.ControlIcon.53" />
+    <EmbeddedResource Include="../../Source/Icons/Triggers/Variable.ico" LogicalName="Legacy.ControlIcon.54" />
+    <EmbeddedResource Include="../../Source/Icons/Triggers/Timer.ico" LogicalName="Legacy.ControlIcon.55" />
+    <EmbeddedResource Include="../../Source/Icons/Request/Warning16.ico" LogicalName="Legacy.Report.87" />
+    <EmbeddedResource Include="../../Source/Icons/Request/Error16.ico" LogicalName="Legacy.Report.88" />
+    <EmbeddedResource Include="../../Source/Icons/Request/Information16.ico" LogicalName="Legacy.Report.89" />
+    <Content Include="../../Binaries/Sounds/*.wav" Link="Sounds/%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+    <EmbeddedResource Include="../../Source/Icons/New.ico" LogicalName="Legacy.MessageBox.75" />
+    <EmbeddedResource Include="../../Source/Icons/Request/Question32.ico" LogicalName="Legacy.Request.Question" />
+    <EmbeddedResource Include="../../Source/Icons/Request/Warning32.ico" LogicalName="Legacy.Request.Warning" />
+    <EmbeddedResource Include="../../Source/Icons/Request/Information32.ico" LogicalName="Legacy.Request.Information" />
+    <EmbeddedResource Include="../../Source/Icons/Request/Error32.ico" LogicalName="Legacy.Request.Error" />
+    <EmbeddedResource Include="../../Source/Icons/Players/Keeper1camera.ico" LogicalName="Legacy.CameraIcon.20" />
+    <EmbeddedResource Include="../../Source/Icons/Players/Keeper2camera.ICO" LogicalName="Legacy.CameraIcon.21" />
+    <EmbeddedResource Include="../../Source/Icons/Players/Keeper3camera.ICO" LogicalName="Legacy.CameraIcon.22" />
+    <EmbeddedResource Include="../../Source/Icons/Players/Keeper4camera.ICO" LogicalName="Legacy.CameraIcon.23" />
+    <EmbeddedResource Include="../../Source/Icons/Players/Keeper5camera.ICO" LogicalName="Legacy.CameraIcon.24" />
+    <EmbeddedResource Include="../../Source/Bitmaps/Chemins de caméra/*.bmp">
+      <LogicalName>Legacy.CameraPath.%(Filename)</LogicalName>
+    </EmbeddedResource>
+    <!-- Preserved original fullscreen hover bitmaps, with numeric RC identities. -->
+    <EmbeddedResource Include="../../Source/Bitmaps/Monde/Source de Mana.bmp" LogicalName="Legacy.OverviewIcon.309" />
+    <EmbeddedResource Include="../../Source/Bitmaps/Salles/Icône - Coeur du donjon.BMP" LogicalName="Legacy.OverviewIcon.400" />
+    <EmbeddedResource Include="../../Source/Bitmaps/Salles/Icône - Hantre.BMP" LogicalName="Legacy.OverviewIcon.401" />
+    <EmbeddedResource Include="../../Source/Bitmaps/Salles/Icône - Bibliothèque occulte.BMP" LogicalName="Legacy.OverviewIcon.402" />
+    <EmbeddedResource Include="../../Source/Bitmaps/Salles/Icône - Salle du trésor.BMP" LogicalName="Legacy.OverviewIcon.403" />
+    <EmbeddedResource Include="../../Source/Bitmaps/Salles/Icône - Casino.BMP" LogicalName="Legacy.OverviewIcon.404" />
+    <EmbeddedResource Include="../../Source/Bitmaps/Salles/Icône - Pont de bois - Eau.bmp" LogicalName="Legacy.OverviewIcon.405" />
+    <EmbeddedResource Include="../../Source/Bitmaps/Salles/Icône - Pont de bois - Lave.bmp" LogicalName="Legacy.OverviewIcon.406" />
+    <EmbeddedResource Include="../../Source/Bitmaps/Salles/Icône - Salle des tortures.BMP" LogicalName="Legacy.OverviewIcon.407" />
+    <EmbeddedResource Include="../../Source/Bitmaps/Salles/Icône - Cimetière.BMP" LogicalName="Legacy.OverviewIcon.408" />
+    <EmbeddedResource Include="../../Source/Bitmaps/Salles/Icône - Temple.BMP" LogicalName="Legacy.OverviewIcon.409" />
+    <EmbeddedResource Include="../../Source/Bitmaps/Salles/Icône - Portail - Mercenaires.BMP" LogicalName="Legacy.OverviewIcon.410" />
+    <EmbeddedResource Include="../../Source/Bitmaps/Salles/Icône - Portail.BMP" LogicalName="Legacy.OverviewIcon.411" />
+    <EmbeddedResource Include="../../Source/Bitmaps/Salles/Icône - Couvoir.BMP" LogicalName="Legacy.OverviewIcon.412" />
+    <EmbeddedResource Include="../../Source/Bitmaps/Salles/Icône - Salle d'entraînement.BMP" LogicalName="Legacy.OverviewIcon.413" />
+    <EmbeddedResource Include="../../Source/Bitmaps/Salles/Icône - Atelier.BMP" LogicalName="Legacy.OverviewIcon.414" />
+    <EmbeddedResource Include="../../Source/Bitmaps/Salles/Icône - Salle de garde.BMP" LogicalName="Legacy.OverviewIcon.415" />
+    <EmbeddedResource Include="../../Source/Bitmaps/Salles/Icône - Prison.BMP" LogicalName="Legacy.OverviewIcon.416" />
+    <EmbeddedResource Include="../../Source/Bitmaps/Salles/Icône - Pont de pierre - Eau.bmp" LogicalName="Legacy.OverviewIcon.417" />
+    <EmbeddedResource Include="../../Source/Bitmaps/Salles/Icône - Pont de pierre - Lave.bmp" LogicalName="Legacy.OverviewIcon.418" />
+    <EmbeddedResource Include="../../Source/Bitmaps/Salles/Icône - Arène.BMP" LogicalName="Legacy.OverviewIcon.419" />
+    <EmbeddedResource Include="../../Source/Bitmaps/Salles/Icône - Source de Mana.bmp" LogicalName="Legacy.OverviewIcon.420" />
+    <EmbeddedResource Include="../../Source/Bitmaps/Salles/Icône - Pont de pierre des héros - Eau.bmp" LogicalName="Legacy.OverviewIcon.421" />
+    <EmbeddedResource Include="../../Source/Bitmaps/Salles/Icône - Pont de pierre des héros - Lave.bmp" LogicalName="Legacy.OverviewIcon.422" />
+    <EmbeddedResource Include="../../Source/Bitmaps/Monde/Portail des héros 1.BMP" LogicalName="Legacy.OverviewIcon.500" />
+    <EmbeddedResource Include="../../Source/Bitmaps/Monde/Portail des héros 2.bmp" LogicalName="Legacy.OverviewIcon.501" />
+    <EmbeddedResource Include="../../Source/Bitmaps/Monde/Portail des héros 3.bmp" LogicalName="Legacy.OverviewIcon.502" />
+    <EmbeddedResource Include="../../Source/Bitmaps/Monde/Portail des héros 4.bmp" LogicalName="Legacy.OverviewIcon.503" />
+    <EmbeddedResource Include="../../Source/Bitmaps/Monde/Portail des héros 6.bmp" LogicalName="Legacy.OverviewIcon.505" />
+    <EmbeddedResource Include="../../Source/Bitmaps/Monde/Portail des héros 7.bmp" LogicalName="Legacy.OverviewIcon.506" />
+    <ProjectReference Include="..\DK2MapEditor.Core\DK2MapEditor.Core.csproj" />
+  </ItemGroup>
+
+</Project>

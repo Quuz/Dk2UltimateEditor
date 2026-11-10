@@ -1,0 +1,538 @@
+{
+  "Pages": [
+    {
+      "Type": "TRIGGER_TIMEELAPSED",
+      "PageID": 7103,
+      "Controls": [
+        {
+          "Parameter": 1,
+          "Kind": "Choice",
+          "Maximum": 6,
+          "Values": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ]
+        },
+        {
+          "Parameter": 5,
+          "Kind": "Duration",
+          "Maximum": 86399,
+          "Values": []
+        }
+      ],
+      "SourceCheck": "if (!Context->TriggerCtx.Initialized[TRIGGER_TIMEELAPSED]) goto Error_0;\r\n\t\t\tCheckRadioButton(hDlg,200,205,199+Context->TriggerCtx.TempTrigger.param1);\r\n\t\t\tSetDlgItemInt(hDlg,210,Context->TriggerCtx.TempTrigger.param5,FALSE);\r\n\t\t\tSetDlgItemInt(hDlg,700,Context->TriggerCtx.TempTrigger.param5/60/60,FALSE);\r\n\t\t\tSetDlgItemInt(hDlg,701,Context->TriggerCtx.TempTrigger.param5/60%60,FALSE);\r\n\t\t\tSetDlgItemInt(hDlg,702,Context->TriggerCtx.TempTrigger.param5%60,FALSE);\r\n\t\t\tSendDlgItemMessage(hDlg,210,EM_LIMITTEXT,(WPARAM)9,(LPARAM)0);\r\n\t\t\tSendDlgItemMessage(hDlg,700,EM_LIMITTEXT,(WPARAM)2,(LPARAM)0);\r\n\t\t\tSendDlgItemMessage(hDlg,701,EM_LIMITTEXT,(WPARAM)2,(LPARAM)0);\r\n\t\t\tSendDlgItemMessage(hDlg,702,EM_LIMITTEXT,(WPARAM)2,(LPARAM)0);\r\n\t\t\tbreak;",
+      "SourceStore": "if (IsDlgButtonChecked(hDlg,200) == BST_CHECKED) Context->TriggerCtx.TempTrigger.param1 = 1;\r\n\t\t\telse if (IsDlgButtonChecked(hDlg,201) == BST_CHECKED) Context->TriggerCtx.TempTrigger.param1 = 2;\r\n\t\t\telse if (IsDlgButtonChecked(hDlg,202) == BST_CHECKED) Context->TriggerCtx.TempTrigger.param1 = 3;\r\n\t\t\telse if (IsDlgButtonChecked(hDlg,203) == BST_CHECKED) Context->TriggerCtx.TempTrigger.param1 = 4;\r\n\t\t\telse if (IsDlgButtonChecked(hDlg,204) == BST_CHECKED) Context->TriggerCtx.TempTrigger.param1 = 5;\r\n\t\t\telse if (IsDlgButtonChecked(hDlg,205) == BST_CHECKED) Context->TriggerCtx.TempTrigger.param1 = 6;\r\n\t\t\tContext->TriggerCtx.TempTrigger.param5 = GetDlgItemInt(hDlg,210,NULL,FALSE);\r\n\t\t\tResult = 1;\r\n\t\t\tbreak;",
+      "Resource": {
+        "Line": 3244,
+        "Header": "7103 DIALOG 8, 8, 400, 232\r\nSTYLE DS_MODALFRAME|WS_BORDER|WS_VISIBLE|WS_CAPTION|WS_SYSMENU\r\nCLASS DIALOG_CLASS\r\nCAPTION DIALOG_TRIGGERSTITLE\r\nFONT 8, \"MS Sans Serif\"",
+        "Declarations": "CONTROL\t\tDIALOG_TRIGGERSELAPSEDTITLE,\t100, \"STATIC\", WS_CHILD|SS_OWNERDRAW, 0, 0, 400, 10\r\n\r\n\tAUTORADIOBUTTON\tDIALOG_TRIGGERSTIMERLO,\t\t200, 131,  51,  90,  10\r\n\tAUTORADIOBUTTON\tDIALOG_TRIGGERSTIMERLS,\t\t201, 131,  61,  90,  10\r\n\tAUTORADIOBUTTON\tDIALOG_TRIGGERSTIMEREQ,\t\t202, 131,  71,  90,  10\r\n\tAUTORADIOBUTTON\tDIALOG_TRIGGERSTIMERHI,\t\t203, 131,  81,  90,  10\r\n\tAUTORADIOBUTTON\tDIALOG_TRIGGERSTIMERHS,\t\t204, 131,  91,  90,  10\r\n\tAUTORADIOBUTTON\tDIALOG_TRIGGERSTIMERNE,\t\t205, 131, 101,  90,  10\r\n\tEDITTEXT\t\t\t\t\t210, 101, 131, 198,  12, ES_NUMBER|WS_DISABLED\r\n\tLTEXT\t\tDIALOG_TRIGGERSELAPSEDTEXT,\t211, 101, 121, 198,  10\r\n\r\n\tLTEXT\t\tDIALOG_TRIGGERSTIMETEXT,\t699, 101, 151, 198,  10\r\n\tEDITTEXT\t\t\t\t\t700, 101, 161,  20,  12, ES_NUMBER\r\n\tEDITTEXT\t\t\t\t\t701, 131, 161,  20,  12, ES_NUMBER\r\n\tEDITTEXT\t\t\t\t\t702, 161, 161,  20,  12, ES_NUMBER"
+      }
+    },
+    {
+      "Type": "TRIGGER_HURTED",
+      "PageID": 7129,
+      "Controls": [
+        {
+          "Parameter": 1,
+          "Kind": "Choice",
+          "Maximum": 6,
+          "Values": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ]
+        },
+        {
+          "Parameter": 5,
+          "Kind": "Number",
+          "Maximum": 999,
+          "Values": [],
+          "Unsigned": true
+        }
+      ],
+      "SourceCheck": "if (!Context->TriggerCtx.Initialized[TRIGGER_HURTED]) goto Error_0;\r\n\t\t\tCheckRadioButton(hDlg,200,205,199+Context->TriggerCtx.TempTrigger.param1);\r\n\t\t\tSetDlgItemInt(hDlg,210,Context->TriggerCtx.TempTrigger.param5,FALSE);\r\n\t\t\tSendDlgItemMessage(hDlg,210,EM_LIMITTEXT,(WPARAM)3,(LPARAM)0);\r\n\t\t\tbreak;",
+      "SourceStore": "if (IsDlgButtonChecked(hDlg,200) == BST_CHECKED) Context->TriggerCtx.TempTrigger.param1 = 1;\r\n\t\t\telse if (IsDlgButtonChecked(hDlg,201) == BST_CHECKED) Context->TriggerCtx.TempTrigger.param1 = 2;\r\n\t\t\telse if (IsDlgButtonChecked(hDlg,202) == BST_CHECKED) Context->TriggerCtx.TempTrigger.param1 = 3;\r\n\t\t\telse if (IsDlgButtonChecked(hDlg,203) == BST_CHECKED) Context->TriggerCtx.TempTrigger.param1 = 4;\r\n\t\t\telse if (IsDlgButtonChecked(hDlg,204) == BST_CHECKED) Context->TriggerCtx.TempTrigger.param1 = 5;\r\n\t\t\telse if (IsDlgButtonChecked(hDlg,205) == BST_CHECKED) Context->TriggerCtx.TempTrigger.param1 = 6;\r\n\t\t\tContext->TriggerCtx.TempTrigger.param5 = GetDlgItemInt(hDlg,210,NULL,FALSE);\r\n\t\t\tResult = 1;\r\n\t\t\tbreak;",
+      "Resource": {
+        "Line": 3918,
+        "Header": "7129 DIALOG 8, 8, 400, 232\r\nSTYLE DS_MODALFRAME|WS_BORDER|WS_VISIBLE|WS_CAPTION|WS_SYSMENU\r\nCLASS DIALOG_CLASS\r\nCAPTION DIALOG_TRIGGERSTITLE\r\nFONT 8, \"MS Sans Serif\"",
+        "Declarations": "CONTROL\t\tDIALOG_TRIGGERSHURTED,\t\t100, \"STATIC\", WS_CHILD|SS_OWNERDRAW, 0, 0, 400, 10\r\n\tAUTORADIOBUTTON\tDIALOG_TRIGGERSVARLO,\t\t200, 131,  81,  90,  10\r\n\tAUTORADIOBUTTON\tDIALOG_TRIGGERSVARLS,\t\t201, 131,  91,  90,  10\r\n\tAUTORADIOBUTTON\tDIALOG_TRIGGERSVAREQ,\t\t202, 131, 101,  90,  10\r\n\tAUTORADIOBUTTON\tDIALOG_TRIGGERSVARHI,\t\t203, 131, 111,  90,  10\r\n\tAUTORADIOBUTTON\tDIALOG_TRIGGERSVARHS,\t\t204, 131, 121,  90,  10\r\n\tAUTORADIOBUTTON\tDIALOG_TRIGGERSVARNE,\t\t205, 131, 131,  90,  10\r\n\tEDITTEXT\t\t\t\t\t210, 221, 101,  20,  12, ES_NUMBER\r\n\tLTEXT\t\tDIALOG_TRIGGERSVITALITY,\t211, 101,  71, 198,  10\r\n\tLTEXT\t\tDIALOG_TRIGGERSPERCENT,\t\t213, 243, 102,  40,  10"
+      }
+    },
+    {
+      "Type": "TRIGGER_GOLDMINED",
+      "PageID": 7113,
+      "Controls": [
+        {
+          "Parameter": 1,
+          "Kind": "Choice",
+          "Maximum": 6,
+          "Values": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ]
+        },
+        {
+          "Parameter": 5,
+          "Kind": "Number",
+          "Maximum": 999999999,
+          "Values": [],
+          "Unsigned": true
+        }
+      ],
+      "SourceCheck": "if (!Context->TriggerCtx.Initialized[TRIGGER_GOLDMINED]) goto Error_0;\r\n\t\t\tCheckRadioButton(hDlg,200,205,199+Context->TriggerCtx.TempTrigger.param1);\r\n\t\t\tSetDlgItemInt(hDlg,210,Context->TriggerCtx.TempTrigger.param5,FALSE);\r\n\t\t\tSendDlgItemMessage(hDlg,210,EM_LIMITTEXT,(WPARAM)9,(LPARAM)0);\r\n\t\t\tbreak;",
+      "SourceStore": "if (IsDlgButtonChecked(hDlg,200) == BST_CHECKED) Context->TriggerCtx.TempTrigger.param1 = 1;\r\n\t\t\telse if (IsDlgButtonChecked(hDlg,201) == BST_CHECKED) Context->TriggerCtx.TempTrigger.param1 = 2;\r\n\t\t\telse if (IsDlgButtonChecked(hDlg,202) == BST_CHECKED) Context->TriggerCtx.TempTrigger.param1 = 3;\r\n\t\t\telse if (IsDlgButtonChecked(hDlg,203) == BST_CHECKED) Context->TriggerCtx.TempTrigger.param1 = 4;\r\n\t\t\telse if (IsDlgButtonChecked(hDlg,204) == BST_CHECKED) Context->TriggerCtx.TempTrigger.param1 = 5;\r\n\t\t\telse if (IsDlgButtonChecked(hDlg,205) == BST_CHECKED) Context->TriggerCtx.TempTrigger.param1 = 6;\r\n\t\t\tContext->TriggerCtx.TempTrigger.param5 = GetDlgItemInt(hDlg,210,NULL,FALSE);\r\n\t\t\tResult = 1;\r\n\t\t\tbreak;",
+      "Resource": {
+        "Line": 3577,
+        "Header": "7113 DIALOG 8, 8, 400, 232\r\nSTYLE DS_MODALFRAME|WS_BORDER|WS_VISIBLE|WS_CAPTION|WS_SYSMENU\r\nCLASS DIALOG_CLASS\r\nCAPTION DIALOG_TRIGGERSTITLE\r\nFONT 8, \"MS Sans Serif\"",
+        "Declarations": "CONTROL\t\tDIALOG_TRIGGERSGOLDMINED,\t100, \"STATIC\", WS_CHILD|SS_OWNERDRAW, 0, 0, 400, 10\r\n\r\n\tAUTORADIOBUTTON\tDIALOG_TRIGGERSTIMERLO,\t\t200, 131,  71,  90,  10\r\n\tAUTORADIOBUTTON\tDIALOG_TRIGGERSTIMERLS,\t\t201, 131,  81,  90,  10\r\n\tAUTORADIOBUTTON\tDIALOG_TRIGGERSTIMEREQ,\t\t202, 131,  91,  90,  10\r\n\tAUTORADIOBUTTON\tDIALOG_TRIGGERSTIMERHI,\t\t203, 131, 101,  90,  10\r\n\tAUTORADIOBUTTON\tDIALOG_TRIGGERSTIMERHS,\t\t204, 131, 111,  90,  10\r\n\tAUTORADIOBUTTON\tDIALOG_TRIGGERSTIMERNE,\t\t205, 131, 121,  90,  10\r\n\tEDITTEXT\t\t\t\t\t210, 101, 151, 198,  12, ES_NUMBER\r\n\tLTEXT\t\tDIALOG_TRIGGERSGOLDTEXT,\t211, 101, 141, 198,  10"
+      }
+    },
+    {
+      "Type": "TRIGGER_GOLDAMOUNT",
+      "PageID": 7114,
+      "Controls": [
+        {
+          "Parameter": 1,
+          "Kind": "Choice",
+          "Maximum": 6,
+          "Values": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ]
+        },
+        {
+          "Parameter": 5,
+          "Kind": "Number",
+          "Maximum": 9999999,
+          "Values": [],
+          "Unsigned": true
+        }
+      ],
+      "SourceCheck": "if (!Context->TriggerCtx.Initialized[TRIGGER_GOLDAMOUNT]) goto Error_0;\r\n\t\t\tCheckRadioButton(hDlg,200,205,199+Context->TriggerCtx.TempTrigger.param1);\r\n\t\t\tSetDlgItemInt(hDlg,210,Context->TriggerCtx.TempTrigger.param5,FALSE);\r\n\t\t\tSendDlgItemMessage(hDlg,210,EM_LIMITTEXT,(WPARAM)7,(LPARAM)0);\r\n\t\t\tbreak;",
+      "SourceStore": "if (IsDlgButtonChecked(hDlg,200) == BST_CHECKED) Context->TriggerCtx.TempTrigger.param1 = 1;\r\n\t\t\telse if (IsDlgButtonChecked(hDlg,201) == BST_CHECKED) Context->TriggerCtx.TempTrigger.param1 = 2;\r\n\t\t\telse if (IsDlgButtonChecked(hDlg,202) == BST_CHECKED) Context->TriggerCtx.TempTrigger.param1 = 3;\r\n\t\t\telse if (IsDlgButtonChecked(hDlg,203) == BST_CHECKED) Context->TriggerCtx.TempTrigger.param1 = 4;\r\n\t\t\telse if (IsDlgButtonChecked(hDlg,204) == BST_CHECKED) Context->TriggerCtx.TempTrigger.param1 = 5;\r\n\t\t\telse if (IsDlgButtonChecked(hDlg,205) == BST_CHECKED) Context->TriggerCtx.TempTrigger.param1 = 6;\r\n\t\t\tContext->TriggerCtx.TempTrigger.param5 = GetDlgItemInt(hDlg,210,NULL,FALSE);\r\n\t\t\tResult = 1;\r\n\t\t\tbreak;",
+      "Resource": {
+        "Line": 3597,
+        "Header": "7114 DIALOG 8, 8, 400, 232\r\nSTYLE DS_MODALFRAME|WS_BORDER|WS_VISIBLE|WS_CAPTION|WS_SYSMENU\r\nCLASS DIALOG_CLASS\r\nCAPTION DIALOG_TRIGGERSTITLE\r\nFONT 8, \"MS Sans Serif\"",
+        "Declarations": "CONTROL\t\tDIALOG_TRIGGERSGOLDAMOUNT,\t100, \"STATIC\", WS_CHILD|SS_OWNERDRAW, 0, 0, 400, 10\r\n\r\n\tAUTORADIOBUTTON\tDIALOG_TRIGGERSTIMERLO,\t\t200, 131,  71,  90,  10\r\n\tAUTORADIOBUTTON\tDIALOG_TRIGGERSTIMERLS,\t\t201, 131,  81,  90,  10\r\n\tAUTORADIOBUTTON\tDIALOG_TRIGGERSTIMEREQ,\t\t202, 131,  91,  90,  10\r\n\tAUTORADIOBUTTON\tDIALOG_TRIGGERSTIMERHI,\t\t203, 131, 101,  90,  10\r\n\tAUTORADIOBUTTON\tDIALOG_TRIGGERSTIMERHS,\t\t204, 131, 111,  90,  10\r\n\tAUTORADIOBUTTON\tDIALOG_TRIGGERSTIMERNE,\t\t205, 131, 121,  90,  10\r\n\tEDITTEXT\t\t\t\t\t210, 101, 151, 198,  12, ES_NUMBER\r\n\tLTEXT\t\tDIALOG_TRIGGERSGOLDTEXT,\t211, 101, 141, 198,  10"
+      }
+    },
+    {
+      "Type": "TRIGGER_MANAAMOUNT",
+      "PageID": 7130,
+      "Controls": [
+        {
+          "Parameter": 1,
+          "Kind": "Choice",
+          "Maximum": 6,
+          "Values": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ]
+        },
+        {
+          "Parameter": 5,
+          "Kind": "Number",
+          "Maximum": 999999,
+          "Values": [],
+          "Unsigned": true
+        }
+      ],
+      "SourceCheck": "if (!Context->TriggerCtx.Initialized[TRIGGER_MANAAMOUNT]) goto Error_0;\r\n\t\t\tCheckRadioButton(hDlg,200,205,199+Context->TriggerCtx.TempTrigger.param1);\r\n\t\t\tSetDlgItemInt(hDlg,210,Context->TriggerCtx.TempTrigger.param5,FALSE);\r\n\t\t\tSendDlgItemMessage(hDlg,210,EM_LIMITTEXT,(WPARAM)6,(LPARAM)0);\r\n\t\t\tbreak;",
+      "SourceStore": "if (IsDlgButtonChecked(hDlg,200) == BST_CHECKED) Context->TriggerCtx.TempTrigger.param1 = 1;\r\n\t\t\telse if (IsDlgButtonChecked(hDlg,201) == BST_CHECKED) Context->TriggerCtx.TempTrigger.param1 = 2;\r\n\t\t\telse if (IsDlgButtonChecked(hDlg,202) == BST_CHECKED) Context->TriggerCtx.TempTrigger.param1 = 3;\r\n\t\t\telse if (IsDlgButtonChecked(hDlg,203) == BST_CHECKED) Context->TriggerCtx.TempTrigger.param1 = 4;\r\n\t\t\telse if (IsDlgButtonChecked(hDlg,204) == BST_CHECKED) Context->TriggerCtx.TempTrigger.param1 = 5;\r\n\t\t\telse if (IsDlgButtonChecked(hDlg,205) == BST_CHECKED) Context->TriggerCtx.TempTrigger.param1 = 6;\r\n\t\t\tContext->TriggerCtx.TempTrigger.param5 = GetDlgItemInt(hDlg,210,NULL,FALSE);\r\n\t\t\tResult = 1;\r\n\t\t\tbreak;",
+      "Resource": {
+        "Line": 3617,
+        "Header": "7130 DIALOG 8, 8, 400, 232\r\nSTYLE DS_MODALFRAME|WS_BORDER|WS_VISIBLE|WS_CAPTION|WS_SYSMENU\r\nCLASS DIALOG_CLASS\r\nCAPTION DIALOG_TRIGGERSTITLE\r\nFONT 8, \"MS Sans Serif\"",
+        "Declarations": "CONTROL\t\tDIALOG_TRIGGERSMANAAMOUNT,\t100, \"STATIC\", WS_CHILD|SS_OWNERDRAW, 0, 0, 400, 10\r\n\r\n\tAUTORADIOBUTTON\tDIALOG_TRIGGERSTIMERLO,\t\t200, 131,  71,  90,  10\r\n\tAUTORADIOBUTTON\tDIALOG_TRIGGERSTIMERLS,\t\t201, 131,  81,  90,  10\r\n\tAUTORADIOBUTTON\tDIALOG_TRIGGERSTIMEREQ,\t\t202, 131,  91,  90,  10\r\n\tAUTORADIOBUTTON\tDIALOG_TRIGGERSTIMERHI,\t\t203, 131, 101,  90,  10\r\n\tAUTORADIOBUTTON\tDIALOG_TRIGGERSTIMERHS,\t\t204, 131, 111,  90,  10\r\n\tAUTORADIOBUTTON\tDIALOG_TRIGGERSTIMERNE,\t\t205, 131, 121,  90,  10\r\n\tEDITTEXT\t\t\t\t\t210, 101, 151, 198,  12, ES_NUMBER\r\n\tLTEXT\t\tDIALOG_TRIGGERSMANATEXT,\t211, 101, 141, 198,  10"
+      }
+    },
+    {
+      "Type": "TRIGGER_SLAPCOUNT",
+      "PageID": 7116,
+      "Controls": [
+        {
+          "Parameter": 1,
+          "Kind": "Choice",
+          "Maximum": 6,
+          "Values": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ]
+        },
+        {
+          "Parameter": 5,
+          "Kind": "Number",
+          "Maximum": 9999,
+          "Values": [],
+          "Unsigned": true
+        }
+      ],
+      "SourceCheck": "if (!Context->TriggerCtx.Initialized[TRIGGER_SLAPCOUNT]) goto Error_0;\r\n\t\t\tCheckRadioButton(hDlg,200,205,199+Context->TriggerCtx.TempTrigger.param1);\r\n\t\t\tSetDlgItemInt(hDlg,210,Context->TriggerCtx.TempTrigger.param5,FALSE);\r\n\t\t\tSendDlgItemMessage(hDlg,210,EM_LIMITTEXT,(WPARAM)4,(LPARAM)0);\r\n\t\t\tbreak;",
+      "SourceStore": "if (IsDlgButtonChecked(hDlg,200) == BST_CHECKED) Context->TriggerCtx.TempTrigger.param1 = 1;\r\n\t\t\telse if (IsDlgButtonChecked(hDlg,201) == BST_CHECKED) Context->TriggerCtx.TempTrigger.param1 = 2;\r\n\t\t\telse if (IsDlgButtonChecked(hDlg,202) == BST_CHECKED) Context->TriggerCtx.TempTrigger.param1 = 3;\r\n\t\t\telse if (IsDlgButtonChecked(hDlg,203) == BST_CHECKED) Context->TriggerCtx.TempTrigger.param1 = 4;\r\n\t\t\telse if (IsDlgButtonChecked(hDlg,204) == BST_CHECKED) Context->TriggerCtx.TempTrigger.param1 = 5;\r\n\t\t\telse if (IsDlgButtonChecked(hDlg,205) == BST_CHECKED) Context->TriggerCtx.TempTrigger.param1 = 6;\r\n\t\t\tContext->TriggerCtx.TempTrigger.param5 = GetDlgItemInt(hDlg,210,NULL,FALSE);\r\n\t\t\tResult = 1;\r\n\t\t\tbreak;",
+      "Resource": {
+        "Line": 3637,
+        "Header": "7116 DIALOG 8, 8, 400, 232\r\nSTYLE DS_MODALFRAME|WS_BORDER|WS_VISIBLE|WS_CAPTION|WS_SYSMENU\r\nCLASS DIALOG_CLASS\r\nCAPTION DIALOG_TRIGGERSTITLE\r\nFONT 8, \"MS Sans Serif\"",
+        "Declarations": "CONTROL\t\tDIALOG_TRIGGERSSLAP,\t\t100, \"STATIC\", WS_CHILD|SS_OWNERDRAW, 0, 0, 400, 10\r\n\r\n\tLTEXT\t\tDIALOG_TRIGGERSSLAPCOUNT,\t401, 101,  70, 158,  10\r\n\tAUTORADIOBUTTON\tDIALOG_TRIGGERSCREATURESLO,\t200, 131,  80,  90,  10\r\n\tAUTORADIOBUTTON\tDIALOG_TRIGGERSCREATURESLS,\t201, 131,  90,  90,  10\r\n\tAUTORADIOBUTTON\tDIALOG_TRIGGERSCREATURESEQ,\t202, 131, 100,  90,  10\r\n\tAUTORADIOBUTTON\tDIALOG_TRIGGERSCREATURESHI,\t203, 131, 110,  90,  10\r\n\tAUTORADIOBUTTON\tDIALOG_TRIGGERSCREATURESHS,\t204, 131, 120,  90,  10\r\n\tAUTORADIOBUTTON\tDIALOG_TRIGGERSCREATURESNE,\t205, 131, 130,  90,  10\r\n\tEDITTEXT\t\t\t\t\t210, 221,  98,  20,  12, ES_NUMBER"
+      }
+    },
+    {
+      "Type": "TRIGGER_GROUPINPOSSESS",
+      "PageID": 7118,
+      "Controls": [
+        {
+          "Parameter": 1,
+          "Kind": "Choice",
+          "Maximum": 6,
+          "Values": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ]
+        },
+        {
+          "Parameter": 5,
+          "Kind": "Number",
+          "Maximum": 9999,
+          "Values": [],
+          "Unsigned": true
+        }
+      ],
+      "SourceCheck": "if (!Context->TriggerCtx.Initialized[TRIGGER_GROUPINPOSSESS]) goto Error_0;\r\n\t\t\tCheckRadioButton(hDlg,200,205,199+Context->TriggerCtx.TempTrigger.param1);\r\n\t\t\tSetDlgItemInt(hDlg,210,Context->TriggerCtx.TempTrigger.param5,FALSE);\r\n\t\t\tSendDlgItemMessage(hDlg,210,EM_LIMITTEXT,(WPARAM)4,(LPARAM)0);\r\n\t\t\tbreak;",
+      "SourceStore": "if (IsDlgButtonChecked(hDlg,200) == BST_CHECKED) Context->TriggerCtx.TempTrigger.param1 = 1;\r\n\t\t\telse if (IsDlgButtonChecked(hDlg,201) == BST_CHECKED) Context->TriggerCtx.TempTrigger.param1 = 2;\r\n\t\t\telse if (IsDlgButtonChecked(hDlg,202) == BST_CHECKED) Context->TriggerCtx.TempTrigger.param1 = 3;\r\n\t\t\telse if (IsDlgButtonChecked(hDlg,203) == BST_CHECKED) Context->TriggerCtx.TempTrigger.param1 = 4;\r\n\t\t\telse if (IsDlgButtonChecked(hDlg,204) == BST_CHECKED) Context->TriggerCtx.TempTrigger.param1 = 5;\r\n\t\t\telse if (IsDlgButtonChecked(hDlg,205) == BST_CHECKED) Context->TriggerCtx.TempTrigger.param1 = 6;\r\n\t\t\tContext->TriggerCtx.TempTrigger.param5 = GetDlgItemInt(hDlg,210,NULL,FALSE);\r\n\t\t\tResult = 1;\r\n\t\t\tbreak;",
+      "Resource": {
+        "Line": 3670,
+        "Header": "7118 DIALOG 8, 8, 400, 232\r\nSTYLE DS_MODALFRAME|WS_BORDER|WS_VISIBLE|WS_CAPTION|WS_SYSMENU\r\nCLASS DIALOG_CLASS\r\nCAPTION DIALOG_TRIGGERSTITLE\r\nFONT 8, \"MS Sans Serif\"",
+        "Declarations": "CONTROL\t\tDIALOG_TRIGGERSPOSSESS,\t\t100, \"STATIC\", WS_CHILD|SS_OWNERDRAW, 0, 0, 400, 10\r\n\r\n\tLTEXT\t\tDIALOG_TRIGGERSPOSSESSCOUNT,\t401, 101,  70, 158,  10\r\n\tAUTORADIOBUTTON\tDIALOG_TRIGGERSCREATURESLO,\t200, 131,  80,  90,  10\r\n\tAUTORADIOBUTTON\tDIALOG_TRIGGERSCREATURESLS,\t201, 131,  90,  90,  10\r\n\tAUTORADIOBUTTON\tDIALOG_TRIGGERSCREATURESEQ,\t202, 131, 100,  90,  10\r\n\tAUTORADIOBUTTON\tDIALOG_TRIGGERSCREATURESHI,\t203, 131, 110,  90,  10\r\n\tAUTORADIOBUTTON\tDIALOG_TRIGGERSCREATURESHS,\t204, 131, 120,  90,  10\r\n\tAUTORADIOBUTTON\tDIALOG_TRIGGERSCREATURESNE,\t205, 131, 130,  90,  10\r\n\tEDITTEXT\t\t\t\t\t210, 221,  98,  20,  12, ES_NUMBER"
+      }
+    },
+    {
+      "Type": "ACTION_SYSTEMMESSAGES",
+      "PageID": 7229,
+      "Controls": [
+        {
+          "Parameter": 1,
+          "Kind": "Choice",
+          "Maximum": 1,
+          "Values": [
+            0,
+            1
+          ]
+        }
+      ],
+      "SourceCheck": "if (!Context->ActionCtx.Initialized[ACTION_SYSTEMMESSAGES]) goto Error_0;\r\n\t\t\tCheckRadioButton(hDlg,200,201,(Context->ActionCtx.TempAction.param1)?200:201);\r\n\t\t\tbreak;",
+      "SourceStore": "if (IsDlgButtonChecked(hDlg,200) == BST_CHECKED) Context->ActionCtx.TempAction.param1 = 1;\r\n\t\t\telse Context->ActionCtx.TempAction.param1 = 0;\r\n\t\t\tResult = 1;\r\n\t\t\tbreak;",
+      "Resource": {
+        "Line": 4476,
+        "Header": "7229 DIALOG 8, 8, 400, 232\r\nSTYLE DS_MODALFRAME|WS_BORDER|WS_VISIBLE|WS_CAPTION|WS_SYSMENU\r\nCLASS DIALOG_CLASS\r\nCAPTION DIALOG_ACTIONSTITLE\r\nFONT 8, \"MS Sans Serif\"",
+        "Declarations": "CONTROL\t\tDIALOG_ACTIONSSYSMSGS,\t\t100, \"STATIC\", WS_CHILD|SS_OWNERDRAW, 0, 0, 400, 10\r\n\r\n\tAUTORADIOBUTTON\tDIALOG_ACTIONSSYSMSGSON,\t200, 101, 106, 158,  10\r\n\tAUTORADIOBUTTON\tDIALOG_ACTIONSSYSMSGSOFF,\t201, 101, 116, 158,  10"
+      }
+    },
+    {
+      "Type": "ACTION_MOODS",
+      "PageID": 7228,
+      "Controls": [
+        {
+          "Parameter": 1,
+          "Kind": "Choice",
+          "Maximum": 1,
+          "Values": [
+            0,
+            1
+          ]
+        }
+      ],
+      "SourceCheck": "if (!Context->ActionCtx.Initialized[ACTION_MOODS]) goto Error_0;\r\n\t\t\tCheckRadioButton(hDlg,200,201,(Context->ActionCtx.TempAction.param1)?200:201);\r\n\t\t\tbreak;",
+      "SourceStore": "if (IsDlgButtonChecked(hDlg,200) == BST_CHECKED) Context->ActionCtx.TempAction.param1 = 1;\r\n\t\t\telse Context->ActionCtx.TempAction.param1 = 0;\r\n\t\t\tResult = 1;\r\n\t\t\tbreak;",
+      "Resource": {
+        "Line": 4462,
+        "Header": "7228 DIALOG 8, 8, 400, 232\r\nSTYLE DS_MODALFRAME|WS_BORDER|WS_VISIBLE|WS_CAPTION|WS_SYSMENU\r\nCLASS DIALOG_CLASS\r\nCAPTION DIALOG_ACTIONSTITLE\r\nFONT 8, \"MS Sans Serif\"",
+        "Declarations": "CONTROL\t\tDIALOG_ACTIONSMOODS,\t\t100, \"STATIC\", WS_CHILD|SS_OWNERDRAW, 0, 0, 400, 10\r\n\r\n\tAUTORADIOBUTTON\tDIALOG_ACTIONSMOODSON,\t\t200, 101, 106, 158,  10\r\n\tAUTORADIOBUTTON\tDIALOG_ACTIONSMOODSOFF,\t\t201, 101, 116, 158,  10"
+      }
+    },
+    {
+      "Type": "ACTION_TIMERSPEECH",
+      "PageID": 7230,
+      "Controls": [
+        {
+          "Parameter": 1,
+          "Kind": "Choice",
+          "Maximum": 1,
+          "Values": [
+            0,
+            1
+          ]
+        }
+      ],
+      "SourceCheck": "if (!Context->ActionCtx.Initialized[ACTION_TIMERSPEECH]) goto Error_0;\r\n\t\t\tCheckRadioButton(hDlg,200,201,(Context->ActionCtx.TempAction.param1)?200:201);\r\n\t\t\tbreak;",
+      "SourceStore": "if (IsDlgButtonChecked(hDlg,200) == BST_CHECKED) Context->ActionCtx.TempAction.param1 = 1;\r\n\t\t\telse Context->ActionCtx.TempAction.param1 = 0;\r\n\t\t\tResult = 1;\r\n\t\t\tbreak;",
+      "Resource": {
+        "Line": 4490,
+        "Header": "7230 DIALOG 8, 8, 400, 232\r\nSTYLE DS_MODALFRAME|WS_BORDER|WS_VISIBLE|WS_CAPTION|WS_SYSMENU\r\nCLASS DIALOG_CLASS\r\nCAPTION DIALOG_ACTIONSTITLE\r\nFONT 8, \"MS Sans Serif\"",
+        "Declarations": "CONTROL\t\tDIALOG_ACTIONSTIMERSPEECH,\t100, \"STATIC\", WS_CHILD|SS_OWNERDRAW, 0, 0, 400, 10\r\n\r\n\tAUTORADIOBUTTON\tDIALOG_ACTIONSTIMERSPEECHON,\t200, 101, 106, 158,  10\r\n\tAUTORADIOBUTTON\tDIALOG_ACTIONSTIMERSPEECHOFF,\t201, 101, 116, 158,  10"
+      }
+    },
+    {
+      "Type": "ACTION_PORTALS",
+      "PageID": 7227,
+      "Controls": [
+        {
+          "Parameter": 1,
+          "Kind": "Choice",
+          "Maximum": 1,
+          "Values": [
+            0,
+            1
+          ]
+        }
+      ],
+      "SourceCheck": "if (!Context->ActionCtx.Initialized[ACTION_PORTALS]) goto Error_0;\r\n\t\t\tCheckRadioButton(hDlg,200,201,(Context->ActionCtx.TempAction.param1)?200:201);\r\n\t\t\tbreak;",
+      "SourceStore": "if (IsDlgButtonChecked(hDlg,200) == BST_CHECKED) Context->ActionCtx.TempAction.param1 = 1;\r\n\t\t\telse Context->ActionCtx.TempAction.param1 = 0;\r\n\t\t\tResult = 1;\r\n\t\t\tbreak;",
+      "Resource": {
+        "Line": 4448,
+        "Header": "7227 DIALOG 8, 8, 400, 232\r\nSTYLE DS_MODALFRAME|WS_BORDER|WS_VISIBLE|WS_CAPTION|WS_SYSMENU\r\nCLASS DIALOG_CLASS\r\nCAPTION DIALOG_ACTIONSTITLE\r\nFONT 8, \"MS Sans Serif\"",
+        "Declarations": "CONTROL\t\tDIALOG_ACTIONSPORTALS,\t\t100, \"STATIC\", WS_CHILD|SS_OWNERDRAW, 0, 0, 400, 10\r\n\r\n\tAUTORADIOBUTTON\tDIALOG_ACTIONSPORTALSOPENED,\t200, 101, 106, 158,  10\r\n\tAUTORADIOBUTTON\tDIALOG_ACTIONSPORTALSCLOSED,\t201, 101, 116, 158,  10"
+      }
+    },
+    {
+      "Type": "ACTION_CHANGEVIEW",
+      "PageID": 7212,
+      "Controls": [
+        {
+          "Parameter": 1,
+          "Kind": "Choice",
+          "Maximum": 1,
+          "Values": [
+            0,
+            1
+          ]
+        }
+      ],
+      "SourceCheck": "if (!Context->ActionCtx.Initialized[ACTION_CHANGEVIEW]) goto Error_0;\r\n\t\t\tCheckRadioButton(hDlg,200,201,(Context->ActionCtx.TempAction.param1)?200:201);\r\n\t\t\tbreak;",
+      "SourceStore": "if (IsDlgButtonChecked(hDlg,200) == BST_CHECKED) Context->ActionCtx.TempAction.param1 = 1;\r\n\t\t\telse Context->ActionCtx.TempAction.param1 = 0;\r\n\t\t\tResult = 1;\r\n\t\t\tbreak;",
+      "Resource": {
+        "Line": 4198,
+        "Header": "7212 DIALOG 8, 8, 400, 232\r\nSTYLE DS_MODALFRAME|WS_BORDER|WS_VISIBLE|WS_CAPTION|WS_SYSMENU\r\nCLASS DIALOG_CLASS\r\nCAPTION DIALOG_ACTIONSTITLE\r\nFONT 8, \"MS Sans Serif\"",
+        "Declarations": "CONTROL\t\tDIALOG_ACTIONSVIEW,\t\t100, \"STATIC\", WS_CHILD|SS_OWNERDRAW, 0, 0, 400, 10\r\n\r\n\tAUTORADIOBUTTON\tDIALOG_ACTIONSVIEWSET,\t\t200, 101, 106, 158,  10\r\n\tAUTORADIOBUTTON\tDIALOG_ACTIONSVIEWCLEAR,\t201, 101, 116, 158,  10"
+      }
+    },
+    {
+      "Type": "ACTION_RUN",
+      "PageID": 7220,
+      "Controls": [
+        {
+          "Parameter": 1,
+          "Kind": "Choice",
+          "Maximum": 1,
+          "Values": [
+            0,
+            1
+          ]
+        }
+      ],
+      "SourceCheck": "if (!Context->ActionCtx.Initialized[ACTION_RUN]) goto Error_0;\r\n\t\t\tCheckRadioButton(hDlg,200,201,(Context->ActionCtx.TempAction.param1)?200:201);\r\n\t\t\tbreak;",
+      "SourceStore": "if (IsDlgButtonChecked(hDlg,200) == BST_CHECKED) Context->ActionCtx.TempAction.param1 = 1;\r\n\t\t\telse Context->ActionCtx.TempAction.param1 = 0;\r\n\t\t\tResult = 1;\r\n\t\t\tbreak;",
+      "Resource": {
+        "Line": 4334,
+        "Header": "7220 DIALOG 8, 8, 400, 232\r\nSTYLE DS_MODALFRAME|WS_BORDER|WS_VISIBLE|WS_CAPTION|WS_SYSMENU\r\nCLASS DIALOG_CLASS\r\nCAPTION DIALOG_ACTIONSTITLE\r\nFONT 8, \"MS Sans Serif\"",
+        "Declarations": "CONTROL\t\tDIALOG_ACTIONSRUN,\t\t100, \"STATIC\", WS_CHILD|SS_OWNERDRAW, 0, 0, 400, 10\r\n\r\n\tAUTORADIOBUTTON\tDIALOG_ACTIONSRUNSET,\t\t200, 101, 106, 158,  10\r\n\tAUTORADIOBUTTON\tDIALOG_ACTIONSRUNCLEAR,\t\t201, 101, 116, 158,  10"
+      }
+    },
+    {
+      "Type": "ACTION_ATTACK",
+      "PageID": 7226,
+      "Controls": [
+        {
+          "Parameter": 1,
+          "Kind": "Choice",
+          "Maximum": 1,
+          "Values": [
+            0,
+            1
+          ]
+        }
+      ],
+      "SourceCheck": "if (!Context->ActionCtx.Initialized[ACTION_ATTACK]) goto Error_0;\r\n\t\t\tCheckRadioButton(hDlg,200,201,(Context->ActionCtx.TempAction.param1)?200:201);\r\n\t\t\tbreak;",
+      "SourceStore": "if (IsDlgButtonChecked(hDlg,200) == BST_CHECKED) Context->ActionCtx.TempAction.param1 = 1;\r\n\t\t\telse Context->ActionCtx.TempAction.param1 = 0;\r\n\t\t\tResult = 1;\r\n\t\t\tbreak;",
+      "Resource": {
+        "Line": 4434,
+        "Header": "7226 DIALOG 8, 8, 400, 232\r\nSTYLE DS_MODALFRAME|WS_BORDER|WS_VISIBLE|WS_CAPTION|WS_SYSMENU\r\nCLASS DIALOG_CLASS\r\nCAPTION DIALOG_ACTIONSTITLE\r\nFONT 8, \"MS Sans Serif\"",
+        "Declarations": "CONTROL\t\tDIALOG_ACTIONSATTACK,\t\t100, \"STATIC\", WS_CHILD|SS_OWNERDRAW, 0, 0, 400, 10\r\n\r\n\tAUTORADIOBUTTON\tDIALOG_ACTIONSATTACKON,\t\t200, 101, 106, 158,  10\r\n\tAUTORADIOBUTTON\tDIALOG_ACTIONSATTACKOFF,\t201, 101, 116, 158,  10"
+      }
+    },
+    {
+      "Type": "ACTION_PRIMARYTARGET",
+      "PageID": 7218,
+      "Controls": [
+        {
+          "Parameter": 1,
+          "Kind": "Choice",
+          "Maximum": 3,
+          "Values": [
+            0,
+            1,
+            2,
+            3
+          ]
+        }
+      ],
+      "SourceCheck": "if (!Context->ActionCtx.Initialized[ACTION_PRIMARYTARGET]) goto Error_0;\r\n\t\t\tswitch(Context->ActionCtx.TempAction.param1)\r\n\t\t\t\t{\r\n\t\t\t\tcase 0: CheckRadioButton(hDlg,200,203,200);\r\n\t\t\t\t\tbreak;\r\n\t\t\t\tcase 2: CheckRadioButton(hDlg,200,203,202);\r\n\t\t\t\t\tbreak;\r\n\t\t\t\tcase 3: CheckRadioButton(hDlg,200,203,203);\r\n\t\t\t\t\tbreak;\r\n\t\t\t\tdefault:CheckRadioButton(hDlg,200,203,201);\r\n\t\t\t\t\tbreak;\r\n\t\t\t\t}\r\n\t\t\tbreak;",
+      "SourceStore": "if (IsDlgButtonChecked(hDlg,201) == BST_CHECKED) Context->ActionCtx.TempAction.param1 = 1;\r\n\t\t\telse if (IsDlgButtonChecked(hDlg,202) == BST_CHECKED) Context->ActionCtx.TempAction.param1 = 2;\r\n\t\t\telse if (IsDlgButtonChecked(hDlg,203) == BST_CHECKED) Context->ActionCtx.TempAction.param1 = 3;\r\n\t\t\telse Context->ActionCtx.TempAction.param1 = 0;\r\n\t\t\tResult = 1;\r\n\t\t\tbreak;",
+      "Resource": {
+        "Line": 4293,
+        "Header": "7218 DIALOG 8, 8, 400, 232\r\nSTYLE DS_MODALFRAME|WS_BORDER|WS_VISIBLE|WS_CAPTION|WS_SYSMENU\r\nCLASS DIALOG_CLASS\r\nCAPTION DIALOG_ACTIONSTITLE\r\nFONT 8, \"MS Sans Serif\"",
+        "Declarations": "CONTROL\t\tDIALOG_ACTIONSTARGET,\t\t100, \"STATIC\", WS_CHILD|SS_OWNERDRAW, 0, 0, 400, 10\r\n\r\n\tAUTORADIOBUTTON\tDIALOG_ACTIONSTARGETCLEAR,\t200, 101,  96, 158,  10\r\n\tAUTORADIOBUTTON\tDIALOG_ACTIONSTARGETFIGHT,\t201, 101, 106, 158,  10\r\n\tAUTORADIOBUTTON\tDIALOG_ACTIONSTARGETJAIL,\t202, 101, 116, 158,  10\r\n\tAUTORADIOBUTTON\tDIALOG_ACTIONSTARGETTORTURE,\t203, 101, 126, 158,  10"
+      }
+    },
+    {
+      "Type": "ACTION_SHOWHEALTH",
+      "PageID": 7231,
+      "Controls": [
+        {
+          "Parameter": 1,
+          "Kind": "Number",
+          "Maximum": 9999,
+          "Values": [],
+          "Unsigned": true
+        }
+      ],
+      "SourceCheck": "if (!Context->ActionCtx.Initialized[ACTION_SHOWHEALTH]) goto Error_0;\r\n\t\t\tSetDlgItemInt(hDlg,307,Context->ActionCtx.TempAction.param1,FALSE);\r\n\t\t\tSendDlgItemMessage(hDlg,307,EM_LIMITTEXT,(WPARAM)4,(LPARAM)0);\r\n\t\t\tbreak;",
+      "SourceStore": "Context->ActionCtx.TempAction.param1 = GetDlgItemInt(hDlg,307,NULL,FALSE);\r\n\t\t\tResult = 1;\r\n\t\t\tbreak;",
+      "Resource": {
+        "Line": 4504,
+        "Header": "7231 DIALOG 8, 8, 400, 232\r\nSTYLE DS_MODALFRAME|WS_BORDER|WS_VISIBLE|WS_CAPTION|WS_SYSMENU\r\nCLASS DIALOG_CLASS\r\nCAPTION DIALOG_ACTIONSTITLE\r\nFONT 8, \"MS Sans Serif\"",
+        "Declarations": "CONTROL\t\tDIALOG_ACTIONSSHOWHEALTH,\t100, \"STATIC\", WS_CHILD|SS_OWNERDRAW, 0, 0, 400, 10\r\n\r\n\tLTEXT\t\tDIALOG_ACTIONSSHOWHEALTHTIME,\t306, 101,  96, 198,  10\r\n\tEDITTEXT\t\t\t\t\t307, 101, 106, 198,  12, ES_NUMBER"
+      }
+    },
+    {
+      "Type": "ACTION_SLAPSREMAINING",
+      "PageID": 7216,
+      "Controls": [
+        {
+          "Parameter": 5,
+          "Kind": "Number",
+          "Maximum": 9999,
+          "Values": [],
+          "Unsigned": true
+        }
+      ],
+      "SourceCheck": "if (!Context->ActionCtx.Initialized[ACTION_SLAPSREMAINING]) goto Error_0;\r\n\t\t\tSetDlgItemInt(hDlg,307,Context->ActionCtx.TempAction.param5,FALSE);\r\n\t\t\tSendDlgItemMessage(hDlg,307,EM_LIMITTEXT,(WPARAM)4,(LPARAM)0);\r\n\t\t\tbreak;",
+      "SourceStore": "Context->ActionCtx.TempAction.param5 = GetDlgItemInt(hDlg,307,NULL,FALSE);\r\n\t\t\tResult = 1;\r\n\t\t\tbreak;",
+      "Resource": {
+        "Line": 4256,
+        "Header": "7216 DIALOG 8, 8, 400, 232\r\nSTYLE DS_MODALFRAME|WS_BORDER|WS_VISIBLE|WS_CAPTION|WS_SYSMENU\r\nCLASS DIALOG_CLASS\r\nCAPTION DIALOG_ACTIONSTITLE\r\nFONT 8, \"MS Sans Serif\"",
+        "Declarations": "CONTROL\t\tDIALOG_ACTIONSSLAPS,\t\t100, \"STATIC\", WS_CHILD|SS_OWNERDRAW, 0, 0, 400, 10\r\n\r\n\tLTEXT\t\tDIALOG_ACTIONSSLAPSTEXT,\t306, 101,  96, 198,  10\r\n\tEDITTEXT\t\t\t\t\t307, 101, 106, 198,  12, ES_NUMBER"
+      }
+    },
+    {
+      "Type": "ACTION_MUSICLEVEL",
+      "PageID": 7225,
+      "Controls": [
+        {
+          "Parameter": 1,
+          "Kind": "Percentage",
+          "Maximum": 100,
+          "Values": []
+        }
+      ],
+      "SourceCheck": "if (!Context->ActionCtx.Initialized[ACTION_MUSICLEVEL]) goto Error_0;\r\n\t\t\tSendDlgItemMessage(hDlg,500,TBM_SETPOS,(WPARAM)TRUE,(LPARAM)Context->ActionCtx.TempAction.param1);\r\n\t\t\tbreak;",
+      "SourceStore": "Context->ActionCtx.TempAction.param1 = SendDlgItemMessage(hDlg,500,TBM_GETPOS,(WPARAM)0,(LPARAM)0);\r\n\t\t\tResult = 1;\r\n\t\t\tbreak;",
+      "Resource": {
+        "Line": 4419,
+        "Header": "7225 DIALOG 8, 8, 400, 232\r\nSTYLE DS_MODALFRAME|WS_BORDER|WS_VISIBLE|WS_CAPTION|WS_SYSMENU\r\nCLASS DIALOG_CLASS\r\nCAPTION DIALOG_ACTIONSTITLE\r\nFONT 8, \"MS Sans Serif\"",
+        "Declarations": "CONTROL\t\tDIALOG_ACTIONSMUSIC,\t\t100, \"STATIC\", WS_CHILD|SS_OWNERDRAW, 0, 0, 400, 10\r\n\r\n\tCONTROL\t\tDIALOG_NULL,\t\t\t500, \"msctls_trackbar32\", WS_CHILD|TBS_HORZ|TBS_AUTOTICKS, 101, 122, 198, 10\r\n\tLTEXT\t\tDIALOG_ACTIONSMUSICSILENCE,\t501, 101, 132, 20, 10\r\n\tRTEXT\t\tDIALOG_ACTIONSMUSICFULLVOLUME,\t502, 279, 132, 20, 10"
+      }
+    },
+    {
+      "Type": "ACTION_DISPLAYTIMER",
+      "PageID": 7217,
+      "Controls": [
+        {
+          "Parameter": 5,
+          "Kind": "Duration",
+          "Maximum": 86399,
+          "Values": []
+        }
+      ],
+      "SourceCheck": "if (!Context->ActionCtx.Initialized[ACTION_DISPLAYTIMER]) goto Error_0;\r\n\t\t\tSendDlgItemMessage(hDlg,212,CB_SETCURSEL,(WPARAM)Context->ActionCtx.TempAction.param1,(LPARAM)0);\r\n\t\t\tSendDlgItemMessage(hDlg,212,CB_LIMITTEXT,(WPARAM)TRIGGERS_MAXTIMLEN-1,(LPARAM)0);\r\n\t\t\tSetDlgItemInt(hDlg,307,Context->ActionCtx.TempAction.param5,FALSE);\r\n\t\t\tSetDlgItemInt(hDlg,700,Context->ActionCtx.TempAction.param5/60/60,FALSE);\r\n\t\t\tSetDlgItemInt(hDlg,701,Context->ActionCtx.TempAction.param5/60%60,FALSE);\r\n\t\t\tSetDlgItemInt(hDlg,702,Context->ActionCtx.TempAction.param5%60,FALSE);\r\n\t\t\tSendDlgItemMessage(hDlg,307,EM_LIMITTEXT,(WPARAM)6,(LPARAM)0);\r\n\t\t\tSendDlgItemMessage(hDlg,700,EM_LIMITTEXT,(WPARAM)2,(LPARAM)0);\r\n\t\t\tSendDlgItemMessage(hDlg,701,EM_LIMITTEXT,(WPARAM)2,(LPARAM)0);\r\n\t\t\tSendDlgItemMessage(hDlg,702,EM_LIMITTEXT,(WPARAM)2,(LPARAM)0);\r\n\t\t\tbreak;",
+      "SourceStore": "if (SendDlgItemMessage(hDlg,212,WM_GETTEXTLENGTH,(WPARAM)0,(LPARAM)0)) SendDlgItemMessage(hDlg,212,WM_GETTEXT,(WPARAM)TRIGGERS_MAXTIMLEN,(LPARAM)&TriggersTimers[Context->ActionCtx.TempAction.param1][0]);\r\n\t\t\tContext->ActionCtx.TempAction.param5 = GetDlgItemInt(hDlg,307,NULL,FALSE);\r\n\t\t\tResult = 1;\r\n\t\t\tbreak;",
+      "Resource": {
+        "Line": 4270,
+        "Header": "7217 DIALOG 8, 8, 400, 232\r\nSTYLE DS_MODALFRAME|WS_BORDER|WS_VISIBLE|WS_CAPTION|WS_SYSMENU\r\nCLASS DIALOG_CLASS\r\nCAPTION DIALOG_ACTIONSTITLE\r\nFONT 8, \"MS Sans Serif\"",
+        "Declarations": "CONTROL\t\tDIALOG_ACTIONSTIMER,\t\t100, \"STATIC\", WS_CHILD|SS_OWNERDRAW, 0, 0, 400, 10\r\n\r\n\tLTEXT\t\tDIALOG_TIMER,\t\t\t211, 101,  76, 198,  10, WS_DISABLED\r\n\tCOMBOBOX\t\t\t\t\t212, 101,  86, 198, 100, WS_VSCROLL|CBS_DROPDOWN|WS_DISABLED\r\n\tLTEXT\t\tDIALOG_ACTIONSTIMERTEXT,\t306, 101, 106, 198,  10\r\n\tEDITTEXT\t\t\t\t\t307, 101, 116, 198,  12, ES_NUMBER|WS_DISABLED\r\n\r\n\tLTEXT\t\tDIALOG_TRIGGERSTIMETEXT,\t699, 101, 136, 198,  10\r\n\tEDITTEXT\t\t\t\t\t700, 101, 146,  20,  12, ES_NUMBER|WS_DISABLED\r\n\tEDITTEXT\t\t\t\t\t701, 131, 146,  20,  12, ES_NUMBER\r\n\tEDITTEXT\t\t\t\t\t702, 161, 146,  20,  12, ES_NUMBER\r\n\r\n\tLTEXT\t\tDIALOG_ACTIONSTIMERDISABLE,\t703, 101, 166, 198,  10"
+      }
+    }
+  ],
+  "RepeatOnlyTypes": [
+    "TRIGGER_DOORDESTROYED",
+    "TRIGGER_OBJECTCLAIMED",
+    "TRIGGER_APPEAR",
+    "TRIGGER_DEATH",
+    "TRIGGER_SLAPPED",
+    "TRIGGER_SEE",
+    "TRIGGER_JAILED",
+    "TRIGGER_TORTURED",
+    "TRIGGER_CONVERTED",
+    "TRIGGER_TURNCOAT",
+    "TRIGGER_HUNGRY",
+    "TRIGGER_AFRAID",
+    "TRIGGER_STEAL",
+    "TRIGGER_GOAWAY",
+    "TRIGGER_STUNNED",
+    "TRIGGER_NOTHUNGRY",
+    "TRIGGER_FIRED",
+    "TRIGGER_TAKE",
+    "TRIGGER_TRANSITIONENDS",
+    "TRIGGER_TAKECREATURE",
+    "TRIGGER_FREECREATURE",
+    "TRIGGER_HURTCREATURE",
+    "TRIGGER_FIRECREATURE",
+    "TRIGGER_BREACHED",
+    "TRIGGER_ENNEMYBREACHED",
+    "TRIGGER_GOLDDAY"
+  ],
+  "RepeatResource": 7199,
+  "RepeatSource": {
+    "Line": 2060,
+    "Body": "\r\n\tTRIGGERSCTX\t*Context;\r\n\tTRIGGERINFO\t*Info;\r\n\tLONG\t\t lData;\r\n\r\n\tif (uMsgId == WM_INITDIALOG)\r\n\t\t{\r\n\t\tContext = (TRIGGERSCTX *)(((PROPSHEETPAGE *)lParam)->lParam);\r\n\t\tSetWindowLong(hDlg,DWL_USER,(LONG)Context);\r\n\t\tSendDlgItemMessage(hDlg,803,EM_LIMITTEXT,(WPARAM)4,(LPARAM)0);\r\n\t\treturn(TRUE);\r\n\t\t}\r\n\r\n\tContext = (TRIGGERSCTX *)GetWindowLong(hDlg,DWL_USER);\r\n\tif (!Context) return(FALSE);\r\n\r\n\tswitch(uMsgId)\r\n\t\t{\r\n\t\tcase WM_DRAWITEM:\r\n\t\t\tif (((DRAWITEMSTRUCT *)lParam)->CtlType == ODT_STATIC)\r\n\t\t\t\t{\r\n\t\t\t\tMisc_DrawGroup((DRAWITEMSTRUCT *)lParam);\r\n\t\t\t\treturn(TRUE);\r\n\t\t\t\t}\r\n\t\t\tbreak;\r\n\r\n\t\tcase WM_COMMAND:\r\n\t\t\tswitch(HIWORD(wParam))\r\n\t\t\t\t{\r\n\t\t\t\tcase BN_CLICKED:\r\n\t\t\t\t\tswitch(LOWORD(wParam))\r\n\t\t\t\t\t\t{\r\n\t\t\t\t\t\tcase 800:\r\n\t\t\t\t\t\tcase 802:\r\n\t\t\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,803),FALSE);\r\n\t\t\t\t\t\t\tbreak;\r\n\t\t\t\t\t\tcase 801:\r\n\t\t\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,803),TRUE);\r\n\t\t\t\t\t\t\tbreak;\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\treturn(TRUE);\r\n\t\t\t\tcase EN_CHANGE:\r\n\t\t\t\t\tswitch(LOWORD(wParam))\r\n\t\t\t\t\t\t{\r\n\t\t\t\t\t\tcase 803:\r\n\t\t\t\t\t\t\tlData = GetDlgItemInt(hDlg,803,NULL,FALSE);\r\n\t\t\t\t\t\t\tif (lData > 254) SetDlgItemInt(hDlg,803,254,FALSE);\r\n\t\t\t\t\t\t\tif (lData < 0) SetDlgItemInt(hDlg,803,0,FALSE);\r\n\t\t\t\t\t\t\tbreak;\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\treturn(TRUE);\r\n\t\t\t\t}\r\n\t\t\tbreak;\r\n\r\n\t\tcase WM_NOTIFY:\r\n\t\t\tswitch( ((NMHDR *)lParam)->code )\r\n\t\t\t\t{\r\n                                case PSN_SETACTIVE:\r\n\t\t\t\t\tif (Context->TriggerCtx.TempTrigger.repeat == 0x01)\r\n\t\t\t\t\t\t{\r\n\t\t\t\t\t\tCheckDlgButton(hDlg,800,BST_CHECKED);\r\n\t\t\t\t\t\tSetDlgItemInt(hDlg,803,2,FALSE);\r\n\t\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,803),FALSE);\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\telse if (Context->TriggerCtx.TempTrigger.repeat == 0xFF)\r\n\t\t\t\t\t\t{\r\n\t\t\t\t\t\tCheckDlgButton(hDlg,802,BST_CHECKED);\r\n\t\t\t\t\t\tSetDlgItemInt(hDlg,803,2,FALSE);\r\n\t\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,803),FALSE);\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\telse\t\r\n\t\t\t\t\t\t{\r\n\t\t\t\t\t\tCheckDlgButton(hDlg,801,BST_CHECKED);\r\n\t\t\t\t\t\tSetDlgItemInt(hDlg,803,Context->TriggerCtx.TempTrigger.repeat,FALSE);\r\n\t\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,803),TRUE);\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\tPostMessage(GetParent(hDlg),PSM_SETWIZBUTTONS,(WPARAM)0,(LPARAM)PSWIZB_BACK|PSWIZB_FINISH);\r\n\t\t\t\t\tSetWindowLong(hDlg,DWL_MSGRESULT,0);\r\n\t\t\t\t\treturn(TRUE);\r\n\r\n\t\t\t\tcase PSN_WIZBACK:\r\n\t\t\t\t\tif (IsDlgButtonChecked(hDlg,800) == BST_CHECKED) Context->TriggerCtx.TempTrigger.repeat = 0x01;\r\n\t\t\t\t\telse if (IsDlgButtonChecked(hDlg,801) == BST_CHECKED) Context->TriggerCtx.TempTrigger.repeat = (BYTE)GetDlgItemInt(hDlg,803,NULL,FALSE);\r\n\t\t\t\t\telse Context->TriggerCtx.TempTrigger.repeat = 0xFF;\r\n\t\t\t\t\tInfo = Triggers_TriggerDlgGetParam(Context);\r\n\t\t\t\t\tif ((!Info)||(Info->dialog == -1)) lData = 7100;\r\n\t\t\t\t\telse lData = Info->dialog;\r\n\t\t\t\t\tSetWindowLong(hDlg,DWL_MSGRESULT,lData);\r\n\t\t\t\t\treturn(TRUE);\r\n\r\n\t\t\t\tcase PSN_WIZFINISH:\r\n\t\t\t\t\tif (IsDlgButtonChecked(hDlg,800) == BST_CHECKED) Context->TriggerCtx.TempTrigger.repeat = 0x01;\r\n\t\t\t\t\telse if (IsDlgButtonChecked(hDlg,801) == BST_CHECKED) Context->TriggerCtx.TempTrigger.repeat = (BYTE)GetDlgItemInt(hDlg,803,NULL,FALSE);\r\n\t\t\t\t\telse Context->TriggerCtx.TempTrigger.repeat = 0xFF;\r\n\t\t\t\t\tTriggers_TriggerDlgParamsSave(hDlg,Context);\r\n\t\t\t\t\treturn(TRUE);\r\n\t\t\t\t}\r\n\t\t\tbreak;\r\n\t\t}\r\n\r\n\treturn(FALSE);\r\n",
+    "Resource": {
+      "Line": 3959,
+      "Header": "7199 DIALOG 8, 8, 400, 232\r\nSTYLE DS_MODALFRAME|WS_BORDER|WS_VISIBLE|WS_CAPTION|WS_SYSMENU\r\nCLASS DIALOG_CLASS\r\nCAPTION DIALOG_TRIGGERSTITLE\r\nFONT 8, \"MS Sans Serif\"",
+      "Declarations": "CONTROL\t\tDIALOG_TRIGGERSREPEATTITLE,\t100, \"STATIC\", WS_CHILD|SS_OWNERDRAW, 0, 0, 400, 10\r\n\r\n\tAUTORADIOBUTTON\tDIALOG_TRIGGERSREPEATONETEXT,\t800, 124, 100, 120, 10\r\n\tAUTORADIOBUTTON\tDIALOG_NULL,\t\t\t801, 124, 113,  10, 10\r\n\tAUTORADIOBUTTON\tDIALOG_TRIGGERSREPEATINFTEXT,\t802, 124, 126, 120, 10\r\n\tEDITTEXT\t\t\t\t\t803, 134, 111,  20, 12, WS_DISABLED\r\n\tLTEXT\t\tDIALOG_TRIGGERSREPEATMORETEXT,\t804, 156, 113, 100, 10"
+    }
+  },
+  "InputHashes": {
+    "Source/Sources/Triggers/Triggers_Triggers.c": "b94b509ab4d625925bffa65c83f3bc77c8cba776cb2085d1494c855e6e4cb05a",
+    "Source/Sources/Triggers/Triggers_Actions.c": "6cb909e922dd1116d1d02c7cde63721b07c0ed4b57b7cc4ff4af8cd8fcf33d37",
+    "Source/Sources/Datas/Datas_Triggers.c": "b4ba371380ca3c5faf192fa761fb69df1f6713dc806e225bc3aa404ed4caa365",
+    "Source/Resources/Editor.rc": "eb07ed2217a81348a03c75e302d09fdcb5e34b6099d1bd60229ba5fa9bd8920d",
+    "Source/Includes/Triggers.h": "6ec1dc07f510f7b9e21fe3bd46f08e5fc9a3e272d5444373f045775b91ec20a1",
+    "Source/Sources/Triggers/Triggers_Display.c": "a9ebbaa98de2d0c27d5e9dc5373f67ee64ed0b1d5c181bd196df07950c4859cd",
+    "Source/Sources/Misc/Misc_Display.c": "b3fdf608d551981e0e9a593ba4ae20b34a52c8336ae6f7c65431ac23d8502769",
+    "Source/Sources/Things/Things_Selection.c": "df135c89d08c4d533a395b09d0e2e0c38908bd722611ed17865f5532834f7060"
+  }
+}

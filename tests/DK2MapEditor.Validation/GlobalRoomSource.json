@@ -1,0 +1,550 @@
+{
+  "ImplementedCompleteRoomPage": false,
+  "Scope": "Complete original global room definition page6821",
+  "InputHashes": {
+    "Source/Sources/Properties/GlobalVariables/Properties_Global_Elements.c": "c7095841095c4ec90193efdf3d24a32ac641ed9e5d8bed5b0fcf69d74b3d1614",
+    "Source/Sources/Datas/Datas_GlobalVariables.c": "c6d78d87522ec55963cc983e016356786f548b2a70cbede2ab70237ad049d456",
+    "Source/Sources/Properties/GlobalVariables/Properties_Global_Functions.c": "5783f781840b41e4db98b269930e211bd0bfe10666deb0c25ae8cfd15df69a94",
+    "Source/Sources/Compiler/Compiler_Generate.c": "4a2952b0b687149302b2f0374d08e5e2316c28875d98036059af4f8c6d84ac3b",
+    "Source/Includes/GlobalVariables.h": "d027d5a861f611de5347d807fc23aa3f871553b34a920b2973b2c1136784d129",
+    "Source/Resources/Editor.rc": "eb07ed2217a81348a03c75e302d09fdcb5e34b6099d1bd60229ba5fa9bd8920d",
+    "Source/Sources/Things/Things_RectEx.c": "717e72aa50493ea4266a2f6f894f25510bf999917b68a5f6e7db7122eac1c5f8"
+  },
+  "Functions": {
+    "Properties_GlobalVariables": "Properties_GlobalVariables(HWND hWnd)\n{\n\tstatic DLGPROC\t pfn[]={Properties_GlobalTerrainProc,\n\t\t\t\tProperties_GlobalRoomProc,\n\t\t\t\tProperties_GlobalDoorProc,\n\t\t\t\tProperties_GlobalTrapProc,\n\t\t\t\tProperties_GlobalSpellsProc};\n\tPROPSHEETHEADER\t*psh;\n\tPROPSHEETPAGE\t*psp;\n\tGLOBALCTX\t*Context;\n\tint\t\t Result;\n\n\tpsh = GlobalAlloc(GPTR,sizeof(PROPSHEETHEADER));\n\tif (!psh) goto Error_0;\n\tpsp = GlobalAlloc(GPTR,sizeof(PROPSHEETPAGE)*5);\n\tif (!psp) goto Error_1;\n\tContext = GlobalAlloc(GPTR,sizeof(GLOBALCTX));\n\tif (!Context) goto Error_2;\n\n\tfor (Result = 0; Result != 5; Result++)\n\t\t{\n\t\tpsp[Result].dwSize = sizeof(PROPSHEETPAGE);\n\t\tpsp[Result].hInstance = hInstance;\n\t\tpsp[Result].DUMMYUNIONNAME.pszTemplate = MAKEINTRESOURCE(6820+Result);\n\t\tpsp[Result].pfnDlgProc = pfn[Result];\n\t\tpsp[Result].lParam = (LPARAM)Context;\n\t\t}\n\n\tpsh->dwSize = sizeof(PROPSHEETHEADER);\n\tpsh->dwFlags = PSH_PROPSHEETPAGE|PSH_USEICONID;\n\tpsh->hwndParent = hWnd;\n\tpsh->hInstance = hInstance;\n\tpsh->DUMMYUNIONNAME.pszIcon = MAKEINTRESOURCE(1);\n\tpsh->pszCaption = szGlobalVariables;\n\tpsh->nPages = 5;\n\tpsh->DUMMYUNIONNAME3.ppsp = psp;\n\n\tif (!Misc_CreateImageList(GTerrains,&Context->TerrainsImages,32,32,FALSE))\n\t\tgoto Error_4;\n\tif (!Misc_CreateImageList(GRooms,&Context->RoomsImages,32,32,FALSE))\n\t\tgoto Error_4;\n\tif (!Misc_CreateImageList(GDoors,&Context->DoorsImages,32,32,FALSE))\n\t\tgoto Error_4;\n\tif (!Misc_CreateImageList(GTraps,&Context->TrapsImages,32,32,FALSE))\n\t\tgoto Error_4;\n\tif (!Misc_CreateImageList(GSpells,&Context->SpellsImages,32,32,FALSE))\n\t\tgoto Error_4;\n\n\tCopyMemory(&Context->Variables,&MapGlobalVariables,sizeof(GLOBALVARS));\n\tResult = PropertySheet(psh);\n\tif (Result == -1) goto Error_4;\n\n\tInfo_Update();\n\tMisc_DestroyImageList(&Context->SpellsImages);\n\tMisc_DestroyImageList(&Context->TrapsImages);\n\tMisc_DestroyImageList(&Context->DoorsImages);\n\tMisc_DestroyImageList(&Context->RoomsImages);\n\tMisc_DestroyImageList(&Context->TerrainsImages);\n\tGlobalFree(Context);\n\tGlobalFree(psp);\n\tGlobalFree(psh);\n\tFiles_SaveUpdate();\n\treturn;\n\n//--- Erreurs survenues lors de l'initialisation ---\n\nError_4:Misc_DestroyImageList(&Context->SpellsImages);\n\tMisc_DestroyImageList(&Context->TrapsImages);\n\tMisc_DestroyImageList(&Context->DoorsImages);\n\tMisc_DestroyImageList(&Context->RoomsImages);\n\tMisc_DestroyImageList(&Context->TerrainsImages);\nError_3:GlobalFree(Context);\nError_2:GlobalFree(psp);\nError_1:GlobalFree(psh);\nError_0:Misc_MessageBoxExt(hWnd,szDialogErr,NULL,szMessageBoxExtOk,MB_ICONHAND);\n\treturn;\n}",
+    "Properties_GlobalRoomProc": "Properties_GlobalRoomProc(HWND hDlg, UINT uMsgId, WPARAM wParam, LPARAM lParam)\n{\n\tGLOBALCTX\t*Context;\n\tLONG\t\t lData;\n\n\tif (uMsgId == WM_INITDIALOG)\n\t\t{\n\t\tProperties_GlobalInit(hDlg,1,(PROPSHEETPAGE *)lParam);\n\t\treturn(TRUE);\n\t\t}\n\n\tContext = (GLOBALCTX *)GetWindowLong(hDlg,DWL_USER);\n\tif (!Context) return(FALSE);\n\n\tswitch(uMsgId)\n\t\t{\n\t\tcase WM_MEASUREITEM:\n\t\t\tif ( ((MEASUREITEMSTRUCT *)lParam)->CtlType == ODT_LISTBOX )\n\t\t\t\t{\n\t\t\t\tProperties_GlobalSetList((MEASUREITEMSTRUCT *)lParam);\n\t\t\t\treturn(TRUE);\n\t\t\t\t}\n\t\t\tbreak;\n\n\t\tcase WM_DRAWITEM:\n\t\t\tif ( ((DRAWITEMSTRUCT *)lParam)->CtlType == ODT_BUTTON )\n\t\t\t\t{\n\t\t\t\tswitch( ((DRAWITEMSTRUCT *)lParam)->CtlID )\n\t\t\t\t\t{\n\t\t\t\t\tcase 146:\n\t\t\t\t\t\tRectEx_DrawColoredButton((DRAWITEMSTRUCT *)lParam,Context->TorchColor);\n\t\t\t\t\t\tbreak;\n\t\t\t\t\t}\n\t\t\t\treturn(TRUE);\n\t\t\t\t}\n\t\t\tif ( ((DRAWITEMSTRUCT *)lParam)->CtlType == ODT_LISTBOX )\n\t\t\t\t{\n\t\t\t\tProperties_GlobalDrawList((DRAWITEMSTRUCT *)lParam,GRooms,Context->RoomsImages);\n\t\t\t\treturn(TRUE);\n\t\t\t\t}\n\t\t\tif (((DRAWITEMSTRUCT *)lParam)->CtlType == ODT_STATIC)\n\t\t\t\t{\n\t\t\t\tMisc_DrawGroup((DRAWITEMSTRUCT *)lParam);\n\t\t\t\treturn(TRUE);\n\t\t\t\t}\n\t\t\tbreak;\n\n\t\tcase WM_COMMAND:\n\t\t\tswitch(HIWORD(wParam))\n\t\t\t\t{\n\t\t\t\tcase LBN_SELCHANGE:\n\t\t\t\t\tProperties_GlobalSaveChanges(hDlg,1,Context);\n\t\t\t\t\tProperties_GlobalGetParams(hDlg,1,Context);\n\t\t\t\t\treturn(TRUE);\n\n\t\t\t\tcase EN_CHANGE:\n\t\t\t\t\tswitch(LOWORD(wParam))\n\t\t\t\t\t\t{\n\t\t\t\t\t\tcase 143:\n\t\t\t\t\t\t\tlData = GetDlgItemInt(hDlg,143,NULL,FALSE);\n\t\t\t\t\t\t\tif (lData < 0) SetDlgItemInt(hDlg,143,0,FALSE);\n\t\t\t\t\t\t\tif (lData > 65535) SetDlgItemInt(hDlg,143,65535,FALSE);\n\t\t\t\t\t\t\tbreak;\n\t\t\t\t\t\tcase 148:\n\t\t\t\t\t\t\tlData = GetDlgItemInt(hDlg,148,NULL,FALSE);\n\t\t\t\t\t\t\tif (lData < 0) SetDlgItemInt(hDlg,148,0,FALSE);\n\t\t\t\t\t\t\tif (lData > 255) SetDlgItemInt(hDlg,148,255,FALSE);\n\t\t\t\t\t\t\tbreak;\n\t\t\t\t\t\tcase 150:\n\t\t\t\t\t\t\tlData = GetDlgItemInt(hDlg,150,NULL,FALSE);\n\t\t\t\t\t\t\tif (lData < 0) SetDlgItemInt(hDlg,150,0,FALSE);\n\t\t\t\t\t\t\tif (lData > 8) SetDlgItemInt(hDlg,150,8,FALSE);\n\t\t\t\t\t\t\tbreak;\n\t\t\t\t\t\tcase 152:\n\t\t\t\t\t\t\tlData = GetDlgItemInt(hDlg,152,NULL,FALSE);\n\t\t\t\t\t\t\tif (lData < 0) SetDlgItemInt(hDlg,152,0,FALSE);\n\t\t\t\t\t\t\tif (lData > 3) SetDlgItemInt(hDlg,152,3,FALSE);\n\t\t\t\t\t\t\tbreak;\n\t\t\t\t\t\t}\n\t\t\t\t\treturn(TRUE);\n\n\t\t\t\tcase BN_CLICKED:\n\t\t\t\t\tswitch(LOWORD(wParam))\n\t\t\t\t\t\t{\n\t\t\t\t\t\tcase 147:\n\t\t\t\t\t\t\tRectEx_ChooseColor(hDlg,146,&Context->TorchColor,Context->TorchColor);\n\t\t\t\t\t\t\tbreak;\n\n\t\t\t\t\t\tcase 998:\n\t\t\t\t\t\t\tProperties_GlobalReset(&Context->Variables,Context->CurrentRoom,MGRF_ROOMS);\n\t\t\t\t\t\t\tProperties_GlobalGetParams(hDlg,1,Context);\n\t\t\t\t\t\t\tbreak;\n\t\t\t\t\t\tcase 999:\n\t\t\t\t\t\t\tProperties_GlobalReset(&Context->Variables,-1,MGRF_ROOMS);\n\t\t\t\t\t\t\tProperties_GlobalGetParams(hDlg,1,Context);\n\t\t\t\t\t\t\tbreak;\n\t\t\t\t\t\t}\n\t\t\t\t\treturn(TRUE);\n\t\t\t\t}\n\t\t\tbreak;\n\n\t\tcase WM_NOTIFY:\n\t\t\tswitch( ((NMHDR *)lParam)->code )\n\t\t\t\t{\n\t\t\t\tcase UDN_DELTAPOS:\n\t\t\t\t\tswitch(((NMHDR *)lParam)->idFrom)\n\t\t\t\t\t\t{\n\t\t\t\t\t\tcase 243:\n\t\t\t\t\t\t\tMisc_SetUpDownInt(hDlg,143,(NM_UPDOWN *)lParam);\n\t\t\t\t\t\t\tbreak;\n\t\t\t\t\t\tcase 248:\n\t\t\t\t\t\t\tMisc_SetUpDownInt(hDlg,148,(NM_UPDOWN *)lParam);\n\t\t\t\t\t\t\tbreak;\n\t\t\t\t\t\tcase 250:\n\t\t\t\t\t\t\tMisc_SetUpDownInt(hDlg,150,(NM_UPDOWN *)lParam);\n\t\t\t\t\t\t\tbreak;\n\t\t\t\t\t\tcase 252:\n\t\t\t\t\t\t\tMisc_SetUpDownInt(hDlg,152,(NM_UPDOWN *)lParam);\n\t\t\t\t\t\t\tbreak;\n\t\t\t\t\t\t}\n\t\t\t\t\treturn(TRUE);\n\n\t\t\t\tcase PSN_KILLACTIVE:\n\t\t\t\t\tProperties_GlobalSaveChanges(hDlg,1,Context);\n\t\t\t\t\tSetWindowLong(hDlg,DWL_MSGRESULT,0);\n\t\t\t\t\treturn(TRUE);\n\n\t\t\t\tcase PSN_APPLY:\n\t\t\t\t\tif (memcmp(&MapGlobalVariables,&Context->Variables,sizeof(GLOBALVARS)))\n\t\t\t\t\t\t{\n\t\t\t\t\t\tUndo_CreateGlobalVariables(&MapGlobalVariables);\n\t\t\t\t\t\tCopyMemory(&MapGlobalVariables,&Context->Variables,sizeof(GLOBALVARS));\n\t\t\t\t\t\tMapChanges++;\n\t\t\t\t\t\t}\n\t\t\t\t\tSetWindowLong(hDlg,DWL_MSGRESULT,0);\n\t\t\t\t\treturn(TRUE);\n\n                                case PSN_SETACTIVE:\n\t\t\t\t\tSetWindowLong(hDlg,DWL_MSGRESULT,(Properties_GlobalSetValues(hDlg,1,Context))?0:-1);\n\t\t\t\t\treturn(TRUE);\n\t\t\t\t}\n\t\t\tbreak;\n\t\t}\n\n\treturn(FALSE);\n}",
+    "Properties_GlobalInit": "Properties_GlobalInit(HWND hDlg, UINT Page, PROPSHEETPAGE *PageStruct)\n{\n\tGLOBALCTX\t*Context;\n\tint\t\t i;\n\n\tContext = (GLOBALCTX *)(PageStruct->lParam);\n\tSetWindowLong(hDlg,DWL_USER,(LONG)Context);\n\n\tswitch(Page)\n\t\t{\n\t\t//\n\t\t// Propriétés des terrains\n\t\t//\n\t\tcase 0:\n\t\t\tfor (i = 0; GTerrains[i].Id != 0; i++)\n\t\t\t\t{\n\t\t\t\tif (SendDlgItemMessage(hDlg,101,LB_ADDSTRING,(WPARAM)0,(LPARAM)GTerrains[i].Id) < 0)\n\t\t\t\t\tgoto Error_0;\n\t\t\t\tif (SendDlgItemMessage(hDlg,104,CB_ADDSTRING,(WPARAM)0,(LPARAM)GTerrains[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\t\t\t\tif (SendDlgItemMessage(hDlg,114,CB_ADDSTRING,(WPARAM)0,(LPARAM)GTerrains[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\t\t\t\t}\n\t\t\tSendDlgItemMessage(hDlg,101,LB_SETCURSEL,(WPARAM)0,(LPARAM)0);\n\n\t\t\tfor (i = 0; Effects[i].Id != 0xFFFFFFFF; i++)\n\t\t\t\t{\n\t\t\t\tif (SendDlgItemMessage(hDlg,106,CB_ADDSTRING,(WPARAM)0,(LPARAM)Effects[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\t\t\t\tif (SendDlgItemMessage(hDlg,116,CB_ADDSTRING,(WPARAM)0,(LPARAM)Effects[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\t\t\t\t}\n\n\t\t\tMisc_CreateUpDownButton(hDlg,124,224);\n\t\t\tMisc_CreateUpDownButton(hDlg,126,226);\n\t\t\tMisc_CreateUpDownButton(hDlg,128,228);\n\t\t\tMisc_CreateUpDownButton(hDlg,130,230);\n\t\t\tMisc_CreateUpDownButton(hDlg,132,232);\n\t\t\tMisc_CreateUpDownButton(hDlg,134,234);\n\t\t\tMisc_CreateUpDownButton(hDlg,136,236);\n\t\t\tMisc_CreateUpDownButton(hDlg,138,238);\n\t\t\tMisc_CreateUpDownButton(hDlg,150,250);\n\t\t\tSendDlgItemMessage(hDlg,124,EM_LIMITTEXT,(WPARAM)6,(LPARAM)0);\n\t\t\tSendDlgItemMessage(hDlg,126,EM_LIMITTEXT,(WPARAM)5,(LPARAM)0);\n\t\t\tSendDlgItemMessage(hDlg,128,EM_LIMITTEXT,(WPARAM)5,(LPARAM)0);\n\t\t\tSendDlgItemMessage(hDlg,130,EM_LIMITTEXT,(WPARAM)5,(LPARAM)0);\n\t\t\tSendDlgItemMessage(hDlg,132,EM_LIMITTEXT,(WPARAM)5,(LPARAM)0);\n\t\t\tSendDlgItemMessage(hDlg,134,EM_LIMITTEXT,(WPARAM)5,(LPARAM)0);\n\t\t\tSendDlgItemMessage(hDlg,136,EM_LIMITTEXT,(WPARAM)3,(LPARAM)0);\n\t\t\tSendDlgItemMessage(hDlg,138,EM_LIMITTEXT,(WPARAM)3,(LPARAM)0);\n\t\t\tSendDlgItemMessage(hDlg,150,EM_LIMITTEXT,(WPARAM)16,(LPARAM)0);\n\n\t\t\tContext->PageInitialized[0] = TRUE;\n\t\t\tbreak;\n\n\t\t//\n\t\t// Propriétés des salles\n\t\t//\n\t\tcase 1:\n\t\t\tfor (i = 0; GRooms[i].Id != 0; i++)\n\t\t\t\t{\n\t\t\t\tif (SendDlgItemMessage(hDlg,101,LB_ADDSTRING,(WPARAM)0,(LPARAM)GRooms[i].Id) < 0)\n\t\t\t\t\tgoto Error_0;\n\t\t\t\t}\n\t\t\tSendDlgItemMessage(hDlg,101,LB_SETCURSEL,(WPARAM)0,(LPARAM)0);\n\n\t\t\tfor (i = 0; Effects[i].Id != 0xFFFFFFFF; i++)\n\t\t\t\t{\n\t\t\t\tif (SendDlgItemMessage(hDlg,104,CB_ADDSTRING,(WPARAM)0,(LPARAM)Effects[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\t\t\t\tif (SendDlgItemMessage(hDlg,106,CB_ADDSTRING,(WPARAM)0,(LPARAM)Effects[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\t\t\t\tif (SendDlgItemMessage(hDlg,108,CB_ADDSTRING,(WPARAM)0,(LPARAM)Effects[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\t\t\t\tif (SendDlgItemMessage(hDlg,110,CB_ADDSTRING,(WPARAM)0,(LPARAM)Effects[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\t\t\t\tif (SendDlgItemMessage(hDlg,112,CB_ADDSTRING,(WPARAM)0,(LPARAM)Effects[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\t\t\t\tif (SendDlgItemMessage(hDlg,114,CB_ADDSTRING,(WPARAM)0,(LPARAM)Effects[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\t\t\t\tif (SendDlgItemMessage(hDlg,116,CB_ADDSTRING,(WPARAM)0,(LPARAM)Effects[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\t\t\t\t}\n\n\t\t\tfor (i = 124; i != 134+2; i += 2)\n\t\t\t\tif (SendDlgItemMessage(hDlg,i,CB_ADDSTRING,(WPARAM)0,(LPARAM)Effects[0].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\t\t\tfor (i = 0; Objects[i].Id != 0; i++)\n\t\t\t\t{\n\t\t\t\tif (SendDlgItemMessage(hDlg,124,CB_ADDSTRING,(WPARAM)0,(LPARAM)Objects[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\t\t\t\tif (SendDlgItemMessage(hDlg,126,CB_ADDSTRING,(WPARAM)0,(LPARAM)Objects[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\t\t\t\tif (SendDlgItemMessage(hDlg,128,CB_ADDSTRING,(WPARAM)0,(LPARAM)Objects[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\t\t\t\tif (SendDlgItemMessage(hDlg,130,CB_ADDSTRING,(WPARAM)0,(LPARAM)Objects[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\t\t\t\tif (SendDlgItemMessage(hDlg,132,CB_ADDSTRING,(WPARAM)0,(LPARAM)Objects[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\t\t\t\tif (SendDlgItemMessage(hDlg,134,CB_ADDSTRING,(WPARAM)0,(LPARAM)Objects[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\t\t\t\t}\n\n\t\t\tMisc_CreateUpDownButton(hDlg,143,243);\n\t\t\tMisc_CreateUpDownButton(hDlg,148,248);\n\t\t\tMisc_CreateUpDownButton(hDlg,150,250);\n\t\t\tMisc_CreateUpDownButton(hDlg,152,252);\n\t\t\tSendDlgItemMessage(hDlg,143,EM_LIMITTEXT,(WPARAM)5,(LPARAM)0);\n\t\t\tSendDlgItemMessage(hDlg,148,EM_LIMITTEXT,(WPARAM)3,(LPARAM)0);\n\t\t\tSendDlgItemMessage(hDlg,150,EM_LIMITTEXT,(WPARAM)16,(LPARAM)0);\n\t\t\tSendDlgItemMessage(hDlg,152,EM_LIMITTEXT,(WPARAM)16,(LPARAM)0);\n\n\t\t\tContext->PageInitialized[1] = TRUE;\n\t\t\tbreak;\n\n\t\t//\n\t\t// Propriétés des portes\n\t\t//\n\t\tcase 2:\n\t\t\tfor (i = 0; GDoors[i].Id != 0; i++)\n\t\t\t\t{\n\t\t\t\tif (SendDlgItemMessage(hDlg,101,LB_ADDSTRING,(WPARAM)0,(LPARAM)GDoors[i].Id) < 0)\n\t\t\t\t\tgoto Error_0;\n\t\t\t\t}\n\t\t\tSendDlgItemMessage(hDlg,101,LB_SETCURSEL,(WPARAM)0,(LPARAM)0);\n\n\t\t\tfor (i = 0; GDoorsMats[i].Id != 0xFFFFFFFF; i++)\n\t\t\t\tif (SendDlgItemMessage(hDlg,104,CB_ADDSTRING,(WPARAM)0,(LPARAM)GDoorsMats[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\n\t\t\tfor (i = 0; Effects[i].Id != 0xFFFFFFFF; i++)\n\t\t\t\tif (SendDlgItemMessage(hDlg,106,CB_ADDSTRING,(WPARAM)0,(LPARAM)Effects[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\n\t\t\tfor (i = 0; GDoorsCrates[i].Id != 0xFFFFFFFF; i++)\n\t\t\t\tif (SendDlgItemMessage(hDlg,108,CB_ADDSTRING,(WPARAM)0,(LPARAM)GDoorsCrates[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\n\t\t\tfor (i = 0; GDoorsKeys[i].Id != 0xFFFFFFFF; i++)\n\t\t\t\tif (SendDlgItemMessage(hDlg,110,CB_ADDSTRING,(WPARAM)0,(LPARAM)GDoorsKeys[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\n\t\t\tMisc_CreateUpDownButton(hDlg,114,214);\n\t\t\tMisc_CreateUpDownButton(hDlg,116,216);\n\t\t\tMisc_CreateUpDownButton(hDlg,118,218);\n\t\t\tMisc_CreateUpDownButton(hDlg,120,220);\n\t\t\tMisc_CreateUpDownButton(hDlg,122,222);\n\t\t\tSendDlgItemMessage(hDlg,114,EM_LIMITTEXT,(WPARAM)5,(LPARAM)0);\n\t\t\tSendDlgItemMessage(hDlg,116,EM_LIMITTEXT,(WPARAM)5,(LPARAM)0);\n\t\t\tSendDlgItemMessage(hDlg,118,EM_LIMITTEXT,(WPARAM)5,(LPARAM)0);\n\t\t\tSendDlgItemMessage(hDlg,120,EM_LIMITTEXT,(WPARAM)5,(LPARAM)0);\n\t\t\tSendDlgItemMessage(hDlg,122,EM_LIMITTEXT,(WPARAM)5,(LPARAM)0);\n\n\t\t\tContext->PageInitialized[2] = TRUE;\n\t\t\tbreak;\n\n\t\t//\n\t\t// Propriétés des pièges\n\t\t//\n\t\tcase 3:\n\t\t\tfor (i = 0; GTraps[i].Id != 0; i++)\n\t\t\t\t{\n\t\t\t\tif (SendDlgItemMessage(hDlg,101,LB_ADDSTRING,(WPARAM)0,(LPARAM)GTraps[i].Id) < 0)\n\t\t\t\t\tgoto Error_0;\n\t\t\t\t}\n\t\t\tSendDlgItemMessage(hDlg,101,LB_SETCURSEL,(WPARAM)0,(LPARAM)0);\n\n\t\t\tfor (i = 0; GDoorsMats[i].Id != 0xFFFFFFFF; i++)\n\t\t\t\tif (SendDlgItemMessage(hDlg,104,CB_ADDSTRING,(WPARAM)0,(LPARAM)GDoorsMats[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\n\t\t\tfor (i = 0; GTrapsCrates[i].Id != 0xFFFFFFFF; i++)\n\t\t\t\tif (SendDlgItemMessage(hDlg,106,CB_ADDSTRING,(WPARAM)0,(LPARAM)GTrapsCrates[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\n\t\t\tfor (i = 0; Effects[i].Id != 0xFFFFFFFF; i++)\n\t\t\t\t{\n\t\t\t\tif (SendDlgItemMessage(hDlg,114,CB_ADDSTRING,(WPARAM)0,(LPARAM)Effects[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\t\t\t\tif (SendDlgItemMessage(hDlg,116,CB_ADDSTRING,(WPARAM)0,(LPARAM)Effects[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\t\t\t\tif (SendDlgItemMessage(hDlg,118,CB_ADDSTRING,(WPARAM)0,(LPARAM)Effects[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\t\t\t\t}\n\n\t\t\tfor (i = 0; GTrapsTypes[i].Id != 0; i++)\n\t\t\t\tif (SendDlgItemMessage(hDlg,150,CB_ADDSTRING,(WPARAM)0,(LPARAM)GTrapsTypes[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\n\t\t\tfor (i = 0; GShots[i].Id != 0xFFFFFFFF; i++)\n\t\t\t\tif (SendDlgItemMessage(hDlg,154,CB_ADDSTRING,(WPARAM)0,(LPARAM)GShots[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\n\t\t\tMisc_CreateUpDownButton(hDlg,158,258);\n\t\t\tMisc_CreateUpDownButton(hDlg,160,260);\n\t\t\tMisc_CreateUpDownButton(hDlg,120,220);\n\t\t\tMisc_CreateUpDownButton(hDlg,134,234);\n\t\t\tMisc_CreateUpDownButton(hDlg,136,236);\n\t\t\tMisc_CreateUpDownButton(hDlg,138,238);\n\t\t\tMisc_CreateUpDownButton(hDlg,140,240);\n\t\t\tMisc_CreateUpDownButton(hDlg,142,242);\n\t\t\tMisc_CreateUpDownButton(hDlg,144,244);\n\t\t\tMisc_CreateUpDownButton(hDlg,146,246);\n\t\t\tMisc_CreateUpDownButton(hDlg,148,248);\n\t\t\tSendDlgItemMessage(hDlg,158,EM_LIMITTEXT,(WPARAM)5,(LPARAM)0);\n\t\t\tSendDlgItemMessage(hDlg,160,EM_LIMITTEXT,(WPARAM)5,(LPARAM)0);\n\t\t\tSendDlgItemMessage(hDlg,120,EM_LIMITTEXT,(WPARAM)16,(LPARAM)0);\n\t\t\tSendDlgItemMessage(hDlg,134,EM_LIMITTEXT,(WPARAM)5,(LPARAM)0);\n\t\t\tSendDlgItemMessage(hDlg,136,EM_LIMITTEXT,(WPARAM)5,(LPARAM)0);\n\t\t\tSendDlgItemMessage(hDlg,138,EM_LIMITTEXT,(WPARAM)16,(LPARAM)0);\n\t\t\tSendDlgItemMessage(hDlg,140,EM_LIMITTEXT,(WPARAM)16,(LPARAM)0);\n\t\t\tSendDlgItemMessage(hDlg,142,EM_LIMITTEXT,(WPARAM)5,(LPARAM)0);\n\t\t\tSendDlgItemMessage(hDlg,144,EM_LIMITTEXT,(WPARAM)5,(LPARAM)0);\n\t\t\tSendDlgItemMessage(hDlg,146,EM_LIMITTEXT,(WPARAM)5,(LPARAM)0);\n\t\t\tSendDlgItemMessage(hDlg,148,EM_LIMITTEXT,(WPARAM)16,(LPARAM)0);\n\n\t\t\tContext->PageInitialized[3] = TRUE;\n\t\t\tbreak;\n\n\t\t//\n\t\t// Propriétés des sorts\n\t\t//\n\t\tcase 4:\n\t\t\tfor (i = 0; GSpells[i].Id != 0; i++)\n\t\t\t\t{\n\t\t\t\tif (SendDlgItemMessage(hDlg,101,LB_ADDSTRING,(WPARAM)0,(LPARAM)GSpells[i].Id) < 0)\n\t\t\t\t\tgoto Error_0;\n\t\t\t\t}\n\t\t\tSendDlgItemMessage(hDlg,101,LB_SETCURSEL,(WPARAM)0,(LPARAM)0);\n\n\t\t\tfor (i = 0; GSpellsHand[i].Id != 0xFFFFFFFF; i++)\n\t\t\t\t{\n\t\t\t\tif (SendDlgItemMessage(hDlg,104,CB_ADDSTRING,(WPARAM)0,(LPARAM)GSpellsHand[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\t\t\t\tif (SendDlgItemMessage(hDlg,106,CB_ADDSTRING,(WPARAM)0,(LPARAM)GSpellsHand[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\t\t\t\t}\n\n\t\t\tfor (i = 0; GSpellsCast[i].Id != 0; i++)\n\t\t\t\tif (SendDlgItemMessage(hDlg,114,CB_ADDSTRING,(WPARAM)0,(LPARAM)GSpellsCast[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\n\t\t\tfor (i = 0; GSpellsTrget[i].Id != 0; i++)\n\t\t\t\tif (SendDlgItemMessage(hDlg,116,CB_ADDSTRING,(WPARAM)0,(LPARAM)GSpellsTrget[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\n\t\t\tfor (i = 0; GShots[i].Id != 0xFFFFFFFF; i++)\n\t\t\t\t{\n\t\t\t\tif (SendDlgItemMessage(hDlg,144,CB_ADDSTRING,(WPARAM)0,(LPARAM)GShots[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\t\t\t\tif (SendDlgItemMessage(hDlg,147,CB_ADDSTRING,(WPARAM)0,(LPARAM)GShots[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\t\t\t\t}\n\n\t\t\tMisc_CreateUpDownButton(hDlg,124,224);\n\t\t\tMisc_CreateUpDownButton(hDlg,126,226);\n\t\t\tMisc_CreateUpDownButton(hDlg,128,228);\n\t\t\tMisc_CreateUpDownButton(hDlg,130,230);\n\t\t\tSendDlgItemMessage(hDlg,124,EM_LIMITTEXT,(WPARAM)6,(LPARAM)0);\n\t\t\tSendDlgItemMessage(hDlg,126,EM_LIMITTEXT,(WPARAM)5,(LPARAM)0);\n\t\t\tSendDlgItemMessage(hDlg,128,EM_LIMITTEXT,(WPARAM)16,(LPARAM)0);\n\t\t\tSendDlgItemMessage(hDlg,130,EM_LIMITTEXT,(WPARAM)5,(LPARAM)0);\n\n\t\t\tContext->PageInitialized[4] = TRUE;\n\t\t\tbreak;\n\t\t}\n\n\treturn;\n\n//--- Erreurs d'initialisation ---\n\nError_0:Misc_PrintError(hDlg,szDialogErr,NULL,MB_ICONEXCLAMATION);\n\treturn;\n}",
+    "Properties_GlobalSetValues": "Properties_GlobalSetValues(HWND hDlg, UINT Page, GLOBALCTX *Context)\n{\n\tswitch(Page)\n\t\t{\n\t\t//\n\t\t// Propriétés des terrains\n\t\t//\n\t\tcase 0:\tif (!Context->PageInitialized[0]) return(0);\n\t\t\tProperties_GlobalGetParams(hDlg,0,Context);\n\t\t\treturn(1);\n\n\t\t//\n\t\t// Propiétés des salles\n\t\t//\n\t\tcase 1:\tif (!Context->PageInitialized[1]) return(0);\n\t\t\tProperties_GlobalGetParams(hDlg,1,Context);\n\t\t\treturn(1);\n\n\t\t//\n\t\t// Propriétés des portes\n\t\t//\n\t\tcase 2:\tif (!Context->PageInitialized[2]) return(0);\n\t\t\tProperties_GlobalGetParams(hDlg,2,Context);\n\t\t\treturn(1);\n\n\t\t//\n\t\t// Propriétés des pièges\n\t\t//\n\t\tcase 3:\tif (!Context->PageInitialized[3]) return(0);\n\t\t\tProperties_GlobalGetParams(hDlg,3,Context);\n\t\t\treturn(1);\n\n\t\t//\n\t\t// Propriétés des sorts\n\t\t//\n\t\tcase 4:\tif (!Context->PageInitialized[4]) return(0);\n\t\t\tProperties_GlobalGetParams(hDlg,4,Context);\n\t\t\treturn(1);\n\n\t\t}\n\n\treturn(0);\n}",
+    "Properties_GlobalSaveChanges": "Properties_GlobalSaveChanges(HWND hDlg, UINT Page, GLOBALCTX *Context)\n{\n\tint\ti;\n\n\tswitch(Page)\n\t\t{\n\t\t//\n\t\t// Propriétés des terrains\n\t\t//\n\t\tcase 0:\tContext->Variables.Terrains[Context->CurrentTerrain].MaxHealthType\t= GTerrains[SendDlgItemMessage(hDlg,104,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)].Id;\n\t\t\tContext->Variables.Terrains[Context->CurrentTerrain].DestroyedType\t= GTerrains[SendDlgItemMessage(hDlg,114,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)].Id;\n\t\t\tContext->Variables.Terrains[Context->CurrentTerrain].MaxHealthEffect\t= Effects[SendDlgItemMessage(hDlg,106,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)].Id;\n\t\t\tContext->Variables.Terrains[Context->CurrentTerrain].DestroyedEffect\t= Effects[SendDlgItemMessage(hDlg,116,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)].Id;\n\t\t\tContext->Variables.Terrains[Context->CurrentTerrain].Damage\t\t= GetDlgItemInt(hDlg,124,NULL,TRUE);\n\t\t\tContext->Variables.Terrains[Context->CurrentTerrain].GoldValue\t\t= GetDlgItemInt(hDlg,126,NULL,FALSE);\n\t\t\tContext->Variables.Terrains[Context->CurrentTerrain].StartingHealth\t= GetDlgItemInt(hDlg,128,NULL,FALSE);\n\t\t\tContext->Variables.Terrains[Context->CurrentTerrain].MaxHealth\t\t= GetDlgItemInt(hDlg,130,NULL,FALSE);\n\t\t\tContext->Variables.Terrains[Context->CurrentTerrain].ManaGain\t\t= GetDlgItemInt(hDlg,132,NULL,FALSE);\n\t\t\tContext->Variables.Terrains[Context->CurrentTerrain].MaxManaGain\t= GetDlgItemInt(hDlg,134,NULL,FALSE);\n\t\t\tContext->Variables.Terrains[Context->CurrentTerrain].WibbleH\t\t= GetDlgItemInt(hDlg,136,NULL,FALSE);\n\t\t\tContext->Variables.Terrains[Context->CurrentTerrain].WibbleV\t\t= GetDlgItemInt(hDlg,138,NULL,FALSE);\n\t\t\tContext->Variables.Terrains[Context->CurrentTerrain].Visible\t\t= (IsDlgButtonChecked(hDlg,139) == BST_CHECKED);\n\t\t\tContext->Variables.Terrains[Context->CurrentTerrain].TerrainLight\t= (IsDlgButtonChecked(hDlg,143) == BST_CHECKED);\n\t\t\tContext->Variables.Terrains[Context->CurrentTerrain].AmbientLight\t= (IsDlgButtonChecked(hDlg,144) == BST_CHECKED);\n\t\t\tContext->Variables.Terrains[Context->CurrentTerrain].TerrainLightB\t= (BYTE)((Context->TerrainColor&0x00FF0000)>>16);\n\t\t\tContext->Variables.Terrains[Context->CurrentTerrain].TerrainLightG\t= (BYTE)((Context->TerrainColor&0x0000FF00)>>8);\n\t\t\tContext->Variables.Terrains[Context->CurrentTerrain].TerrainLightR\t= (BYTE)((Context->TerrainColor&0x000000FF));\n\t\t\tContext->Variables.Terrains[Context->CurrentTerrain].AmbientLightB\t= (BYTE)((Context->AmbientColor&0x00FF0000)>>16);\n\t\t\tContext->Variables.Terrains[Context->CurrentTerrain].AmbientLightG\t= (BYTE)((Context->AmbientColor&0x0000FF00)>>8);\n\t\t\tContext->Variables.Terrains[Context->CurrentTerrain].AmbientLightR\t= (BYTE)((Context->AmbientColor&0x000000FF));\n\t\t\tif (!Context->Variables.Terrains[Context->CurrentTerrain].TerrainLight)\n\t\t\t\t{\n\t\t\t\tContext->Variables.Terrains[Context->CurrentTerrain].TerrainLightB = 0;\n\t\t\t\tContext->Variables.Terrains[Context->CurrentTerrain].TerrainLightG = 0;\n\t\t\t\tContext->Variables.Terrains[Context->CurrentTerrain].TerrainLightR = 0;\n\t\t\t\t}\n\t\t\tif (!Context->Variables.Terrains[Context->CurrentTerrain].AmbientLight)\n\t\t\t\t{\n\t\t\t\tContext->Variables.Terrains[Context->CurrentTerrain].AmbientLightB = 0;\n\t\t\t\tContext->Variables.Terrains[Context->CurrentTerrain].AmbientLightG = 0;\n\t\t\t\tContext->Variables.Terrains[Context->CurrentTerrain].AmbientLightR = 0;\n\t\t\t\t}\n\n\t\t\tContext->Variables.Terrains[Context->CurrentTerrain].TerrainLightH = Misc_GetDlgItemFloat(hDlg,150);\n\t\t\tbreak;\n\n\t\t//\n\t\t// Propriétés des salles\n\t\t//\n\n\t\tcase 1:\tContext->Variables.Rooms[Context->CurrentRoom].Cost\t\t\t= GetDlgItemInt(hDlg,143,NULL,FALSE);\n\t\t\tContext->Variables.Rooms[Context->CurrentRoom].BattleEffect\t\t= Effects[SendDlgItemMessage(hDlg,104,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)].Id;\n\t\t\tContext->Variables.Rooms[Context->CurrentRoom].Effects[0]\t\t= Effects[SendDlgItemMessage(hDlg,106,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)].Id;\n\t\t\tContext->Variables.Rooms[Context->CurrentRoom].Effects[1]\t\t= Effects[SendDlgItemMessage(hDlg,108,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)].Id;\n\t\t\tContext->Variables.Rooms[Context->CurrentRoom].Effects[2]\t\t= Effects[SendDlgItemMessage(hDlg,110,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)].Id;\n\t\t\tContext->Variables.Rooms[Context->CurrentRoom].Effects[3]\t\t= Effects[SendDlgItemMessage(hDlg,112,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)].Id;\n\t\t\tContext->Variables.Rooms[Context->CurrentRoom].Effects[4]\t\t= Effects[SendDlgItemMessage(hDlg,114,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)].Id;\n\t\t\tContext->Variables.Rooms[Context->CurrentRoom].Effects[5]\t\t= Effects[SendDlgItemMessage(hDlg,116,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)].Id;\n\t\t\ti = SendDlgItemMessage(hDlg,124,CB_GETCURSEL,(WPARAM)0,(LPARAM)0);\n\t\t\tif (i) Context->Variables.Rooms[Context->CurrentRoom].Objects[0]\t= Objects[i-1].Id;\n\t\t\telse   Context->Variables.Rooms[Context->CurrentRoom].Objects[0]\t= 0;\n\t\t\ti = SendDlgItemMessage(hDlg,126,CB_GETCURSEL,(WPARAM)0,(LPARAM)0);\n\t\t\tif (i) Context->Variables.Rooms[Context->CurrentRoom].Objects[1]\t= Objects[i-1].Id;\n\t\t\telse   Context->Variables.Rooms[Context->CurrentRoom].Objects[1]\t= 0;\n\t\t\ti = SendDlgItemMessage(hDlg,128,CB_GETCURSEL,(WPARAM)0,(LPARAM)0);\n\t\t\tif (i) Context->Variables.Rooms[Context->CurrentRoom].Objects[2]\t= Objects[i-1].Id;\n\t\t\telse   Context->Variables.Rooms[Context->CurrentRoom].Objects[2]\t= 0;\n\t\t\ti = SendDlgItemMessage(hDlg,130,CB_GETCURSEL,(WPARAM)0,(LPARAM)0);\n\t\t\tif (i) Context->Variables.Rooms[Context->CurrentRoom].Objects[3]\t= Objects[i-1].Id;\n\t\t\telse   Context->Variables.Rooms[Context->CurrentRoom].Objects[3]\t= 0;\n\t\t\ti = SendDlgItemMessage(hDlg,132,CB_GETCURSEL,(WPARAM)0,(LPARAM)0);\n\t\t\tif (i) Context->Variables.Rooms[Context->CurrentRoom].Objects[4]\t= Objects[i-1].Id;\n\t\t\telse   Context->Variables.Rooms[Context->CurrentRoom].Objects[4]\t= 0;\n\t\t\ti = SendDlgItemMessage(hDlg,134,CB_GETCURSEL,(WPARAM)0,(LPARAM)0);\n\t\t\tif (i) Context->Variables.Rooms[Context->CurrentRoom].Objects[5]\t= Objects[i-1].Id;\n\t\t\telse   Context->Variables.Rooms[Context->CurrentRoom].Objects[5]\t= 0;\n\t\t\tContext->Variables.Rooms[Context->CurrentRoom].TorchLightB\t\t= (BYTE)((Context->TorchColor&0x00FF0000)>>16);\n\t\t\tContext->Variables.Rooms[Context->CurrentRoom].TorchLightG\t\t= (BYTE)((Context->TorchColor&0x0000FF00)>>8);\n\t\t\tContext->Variables.Rooms[Context->CurrentRoom].TorchLightR\t\t= (BYTE)((Context->TorchColor&0x000000FF));\n\t\t\tContext->Variables.Rooms[Context->CurrentRoom].TorchIntensity\t\t= GetDlgItemInt(hDlg,148,NULL,FALSE);\n\t\t\tContext->Variables.Rooms[Context->CurrentRoom].TorchLightH\t\t= Misc_GetDlgItemFloat(hDlg,150);\n\t\t\tContext->Variables.Rooms[Context->CurrentRoom].TorchLightRad\t\t= Misc_GetDlgItemFloat(hDlg,152);\n\t\t\tbreak;\n\n\t\t//\n\t\t// Propriétés des portes\n\t\t//\n\n\t\tcase 2:\tContext->Variables.Doors[Context->CurrentDoor].Cost\t\t\t= GetDlgItemInt(hDlg,114,NULL,FALSE);\n\t\t\tContext->Variables.Doors[Context->CurrentDoor].BuildPoints\t\t= GetDlgItemInt(hDlg,116,NULL,FALSE);\n\t\t\tContext->Variables.Doors[Context->CurrentDoor].Health\t\t\t= GetDlgItemInt(hDlg,118,NULL,FALSE);\n\t\t\tContext->Variables.Doors[Context->CurrentDoor].HealthGain\t\t= GetDlgItemInt(hDlg,120,NULL,FALSE);\n\t\t\tContext->Variables.Doors[Context->CurrentDoor].ManaCost\t\t\t= GetDlgItemInt(hDlg,122,NULL,FALSE);\n\t\t\tContext->Variables.Doors[Context->CurrentDoor].Material\t\t\t= GDoorsMats[SendDlgItemMessage(hDlg,104,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)].Id;\n\t\t\tContext->Variables.Doors[Context->CurrentDoor].DeathEffect\t\t= Effects[SendDlgItemMessage(hDlg,106,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)].Id;\n\t\t\tContext->Variables.Doors[Context->CurrentDoor].Crate\t\t\t= GDoorsCrates[SendDlgItemMessage(hDlg,108,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)].Id;\n\t\t\tContext->Variables.Doors[Context->CurrentDoor].Key\t\t\t= GDoorsKeys[SendDlgItemMessage(hDlg,110,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)].Id;\n\t\t\tbreak;\n\n\t\t//\n\t\t// Propriétés des pièges\n\t\t//\n\n\t\tcase 3:\tContext->Variables.Traps[Context->CurrentTrap].Material\t\t\t= GDoorsMats[SendDlgItemMessage(hDlg,104,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)].Id;\n\t\t\tContext->Variables.Traps[Context->CurrentTrap].Crate\t\t\t= GTrapsCrates[SendDlgItemMessage(hDlg,106,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)].Id;\n\t\t\tContext->Variables.Traps[Context->CurrentTrap].DeathEffect\t\t= Effects[SendDlgItemMessage(hDlg,114,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)].Id;\n\t\t\tContext->Variables.Traps[Context->CurrentTrap].PowerlessEffect\t\t= Effects[SendDlgItemMessage(hDlg,116,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)].Id;\n\t\t\tContext->Variables.Traps[Context->CurrentTrap].IdleEffect\t\t= Effects[SendDlgItemMessage(hDlg,118,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)].Id;\n\t\t\tContext->Variables.Traps[Context->CurrentTrap].TriggerType\t\t= GTrapsTypes[SendDlgItemMessage(hDlg,150,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)].Id;\n\t\t\tContext->Variables.Traps[Context->CurrentTrap].ShotType\t\t\t= GShots[SendDlgItemMessage(hDlg,154,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)].Id;\n\t\t\tContext->Variables.Traps[Context->CurrentTrap].GoldCost\t\t\t= GetDlgItemInt(hDlg,158,NULL,FALSE);\n\t\t\tContext->Variables.Traps[Context->CurrentTrap].BuildPoints\t\t= GetDlgItemInt(hDlg,160,NULL,FALSE);\n\t\t\tContext->Variables.Traps[Context->CurrentTrap].IdleEffectDelay\t\t= Misc_GetDlgItemFloat(hDlg,120);\n\t\t\tContext->Variables.Traps[Context->CurrentTrap].Health\t\t\t= GetDlgItemInt(hDlg,134,NULL,FALSE);\n\t\t\tContext->Variables.Traps[Context->CurrentTrap].HealthGain\t\t= GetDlgItemInt(hDlg,136,NULL,FALSE);\n\t\t\tContext->Variables.Traps[Context->CurrentTrap].ChargeTime\t\t= Misc_GetDlgItemFloat(hDlg,138);\n\t\t\tContext->Variables.Traps[Context->CurrentTrap].RechargeTime\t\t= Misc_GetDlgItemFloat(hDlg,140);\n\t\t\tContext->Variables.Traps[Context->CurrentTrap].ManaUsage\t\t= GetDlgItemInt(hDlg,142,NULL,FALSE);\n\t\t\tContext->Variables.Traps[Context->CurrentTrap].ManaCostToFire\t\t= GetDlgItemInt(hDlg,144,NULL,FALSE);\n\t\t\tContext->Variables.Traps[Context->CurrentTrap].Threat\t\t\t= GetDlgItemInt(hDlg,146,NULL,FALSE);\n\t\t\tContext->Variables.Traps[Context->CurrentTrap].ThreatDuration\t\t= Misc_GetDlgItemFloat(hDlg,148);\n\t\t\tContext->Variables.Traps[Context->CurrentTrap].Invisible\t\t= (IsDlgButtonChecked(hDlg,123))?TRUE:FALSE;\n\t\t\tContext->Variables.Traps[Context->CurrentTrap].Disarmable\t\t= (IsDlgButtonChecked(hDlg,124))?TRUE:FALSE;\n\t\t\tContext->Variables.Traps[Context->CurrentTrap].RevealedWhenFired\t= (IsDlgButtonChecked(hDlg,125))?TRUE:FALSE;\n\t\t\tContext->Variables.Traps[Context->CurrentTrap].RequiresMana\t\t= (IsDlgButtonChecked(hDlg,126))?TRUE:FALSE;\n\t\t\tContext->Variables.Traps[Context->CurrentTrap].SolidObstacle\t\t= (IsDlgButtonChecked(hDlg,127))?TRUE:FALSE;\n\t\t\tContext->Variables.Traps[Context->CurrentTrap].FPObstacle\t\t= (IsDlgButtonChecked(hDlg,128))?TRUE:FALSE;\n\t\t\tbreak;\n\n\t\t//\n\t\t// Propriétés des sorts\n\t\t//\n\n\t\tcase 4:\tContext->Variables.Spells[Context->CurrentSpell].ManaCost\t\t= GetDlgItemInt(hDlg,124,NULL,FALSE);\n\t\t\tContext->Variables.Spells[Context->CurrentSpell].ManaDrain\t\t= GetDlgItemInt(hDlg,126,NULL,FALSE);\n\t\t\tContext->Variables.Spells[Context->CurrentSpell].RechargeTime\t\t= Misc_GetDlgItemFloat(hDlg,128);\n\t\t\tContext->Variables.Spells[Context->CurrentSpell].Attacking\t\t= (IsDlgButtonChecked(hDlg,131))?TRUE:FALSE;\n\t\t\tContext->Variables.Spells[Context->CurrentSpell].Defensive\t\t= (IsDlgButtonChecked(hDlg,132))?TRUE:FALSE;\n\t\t\tContext->Variables.Spells[Context->CurrentSpell].HandAnim\t\t= GSpellsHand[SendDlgItemMessage(hDlg,104,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)].Id;\n\t\t\tContext->Variables.Spells[Context->CurrentSpell].NoGoHandAnim\t\t= GSpellsHand[SendDlgItemMessage(hDlg,106,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)].Id;\n\t\t\tContext->Variables.Spells[Context->CurrentSpell].CastRule\t\t= GSpellsCast[SendDlgItemMessage(hDlg,114,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)].Id;\n\t\t\tContext->Variables.Spells[Context->CurrentSpell].TargetRule\t\t= GSpellsTrget[SendDlgItemMessage(hDlg,116,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)].Id;\n\t\t\tContext->Variables.Spells[Context->CurrentSpell].ShotType\t\t= GShots[SendDlgItemMessage(hDlg,144,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)].Id;\n\t\t\tContext->Variables.Spells[Context->CurrentSpell].UpgShotType\t\t= GShots[SendDlgItemMessage(hDlg,147,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)].Id;\n\t\t\tContext->Variables.Spells[Context->CurrentSpell].UpgRechargeTime\t= GetDlgItemInt(hDlg,130,NULL,FALSE);\n\t\t\tbreak;\n\n\t\t}\n\n\treturn;\n}",
+    "Properties_GlobalGetParams": "Properties_GlobalGetParams(HWND hDlg, UINT Page, GLOBALCTX *Context)\n{\n\tint\tCurrent;\n\tint\tActivate;\n\tint\ti;\n\n\tCurrent = SendDlgItemMessage(hDlg,101,LB_GETCURSEL,(WPARAM)0,(LPARAM)0);\n\n\tswitch(Page)\n\t\t{\n\t\t//\n\t\t// Propriétés des terrains\n\t\t//\n\t\tcase 0:\tContext->CurrentTerrain = Current;\n\t\t\tContext->TerrainColor = RGB(Context->Variables.Terrains[Current].TerrainLightR,Context->Variables.Terrains[Current].TerrainLightG,Context->Variables.Terrains[Current].TerrainLightB);\n\t\t\tContext->AmbientColor = RGB(Context->Variables.Terrains[Current].AmbientLightR,Context->Variables.Terrains[Current].AmbientLightG,Context->Variables.Terrains[Current].AmbientLightB);\n\n\t\t\tActivate = (GTerrains[Current].MinWidth)?1:0;\n\t\t\tEnableWindow(GetDlgItem(hDlg,103),Activate);\n\t\t\tEnableWindow(GetDlgItem(hDlg,104),Activate);\n\t\t\tEnableWindow(GetDlgItem(hDlg,113),Activate);\n\t\t\tEnableWindow(GetDlgItem(hDlg,114),Activate);\n\t\t\tEnableWindow(GetDlgItem(hDlg,105),Activate);\n\t\t\tEnableWindow(GetDlgItem(hDlg,106),Activate);\n\t\t\tEnableWindow(GetDlgItem(hDlg,115),Activate);\n\t\t\tEnableWindow(GetDlgItem(hDlg,116),Activate);\n\t\t\tEnableWindow(GetDlgItem(hDlg,139),(GTerrains[Current].MaxWidth)?FALSE:TRUE);\n\n\t\t\tSendDlgItemMessage(hDlg,104,CB_RESETCONTENT,(WPARAM)0,(LPARAM)0);\n\t\t\tSendDlgItemMessage(hDlg,114,CB_RESETCONTENT,(WPARAM)0,(LPARAM)0);\n\t\t\tfor (i = 0; GTerrains[i].Id != 0; i++)\n\t\t\t\t{\n\t\t\t\tif ((Activate)&&(GTerrains[i].MinHeight)) break;\n\t\t\t\tSendDlgItemMessage(hDlg,104,CB_ADDSTRING,(WPARAM)0,(LPARAM)GTerrains[i].Name);\n\t\t\t\tSendDlgItemMessage(hDlg,114,CB_ADDSTRING,(WPARAM)0,(LPARAM)GTerrains[i].Name);\n\t\t\t\t}\n\n\t\t\tfor (i = 0; GTerrains[i].Id != 0; i++)\n\t\t\t\t{\n\t\t\t\tif (Context->Variables.Terrains[Current].MaxHealthType == GTerrains[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,104,CB_SETCURSEL,(WPARAM)i,(LPARAM)0);\n\t\t\t\tif (Context->Variables.Terrains[Current].DestroyedType == GTerrains[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,114,CB_SETCURSEL,(WPARAM)i,(LPARAM)0);\n\t\t\t\t}\n\n\t\t\tfor (i = 0; Effects[i].Id != 0xFFFFFFFF; i++)\n\t\t\t\t{\n\t\t\t\tif (Context->Variables.Terrains[Current].MaxHealthEffect == Effects[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,106,CB_SETCURSEL,(WPARAM)i,(LPARAM)0);\n\t\t\t\tif (Context->Variables.Terrains[Current].DestroyedEffect == Effects[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,116,CB_SETCURSEL,(WPARAM)i,(LPARAM)0);\n\t\t\t\t}\n\n\t\t\tMisc_SetDlgItemFloat(hDlg,150,Context->Variables.Terrains[Current].TerrainLightH);\n\t\t\tSetDlgItemInt(hDlg,124,Context->Variables.Terrains[Current].Damage,TRUE);\n\t\t\tSetDlgItemInt(hDlg,126,Context->Variables.Terrains[Current].GoldValue,FALSE);\n\t\t\tSetDlgItemInt(hDlg,128,Context->Variables.Terrains[Current].StartingHealth,FALSE);\n\t\t\tSetDlgItemInt(hDlg,130,Context->Variables.Terrains[Current].MaxHealth,FALSE);\n\t\t\tSetDlgItemInt(hDlg,132,Context->Variables.Terrains[Current].ManaGain,FALSE);\n\t\t\tSetDlgItemInt(hDlg,134,Context->Variables.Terrains[Current].MaxManaGain,FALSE);\n\t\t\tSetDlgItemInt(hDlg,136,Context->Variables.Terrains[Current].WibbleH,FALSE);\n\t\t\tSetDlgItemInt(hDlg,138,Context->Variables.Terrains[Current].WibbleV,FALSE);\n\t\t\tCheckDlgButton(hDlg,139,(Context->Variables.Terrains[Current].Visible)?BST_CHECKED:BST_UNCHECKED);\n\t\t\tCheckDlgButton(hDlg,143,(Context->Variables.Terrains[Current].TerrainLight)?BST_CHECKED:BST_UNCHECKED);\n\t\t\tCheckDlgButton(hDlg,144,(Context->Variables.Terrains[Current].AmbientLight)?BST_CHECKED:BST_UNCHECKED);\n\t\t\tInvalidateRect(GetDlgItem(hDlg,145),NULL,FALSE);\n\t\t\tInvalidateRect(GetDlgItem(hDlg,146),NULL,FALSE);\n\t\t\tbreak;\n\n\t\t//\n\t\t// Propriétés des salles\n\t\t//\n\t\tcase 1:\tContext->CurrentRoom = Current;\n\t\t\tContext->TorchColor = RGB(Context->Variables.Rooms[Current].TorchLightR,Context->Variables.Rooms[Current].TorchLightG,Context->Variables.Rooms[Current].TorchLightB);\n\n\t\t\tfor (i = 0; Effects[i].Id != 0xFFFFFFFF; i++)\n\t\t\t\t{\n\t\t\t\tif (Context->Variables.Rooms[Current].BattleEffect == Effects[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,104,CB_SETCURSEL,(WPARAM)i,(LPARAM)0);\n\t\t\t\tif (Context->Variables.Rooms[Current].Effects[0] == Effects[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,106,CB_SETCURSEL,(WPARAM)i,(LPARAM)0);\n\t\t\t\tif (Context->Variables.Rooms[Current].Effects[1] == Effects[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,108,CB_SETCURSEL,(WPARAM)i,(LPARAM)0);\n\t\t\t\tif (Context->Variables.Rooms[Current].Effects[2] == Effects[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,110,CB_SETCURSEL,(WPARAM)i,(LPARAM)0);\n\t\t\t\tif (Context->Variables.Rooms[Current].Effects[3] == Effects[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,112,CB_SETCURSEL,(WPARAM)i,(LPARAM)0);\n\t\t\t\tif (Context->Variables.Rooms[Current].Effects[4] == Effects[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,114,CB_SETCURSEL,(WPARAM)i,(LPARAM)0);\n\t\t\t\tif (Context->Variables.Rooms[Current].Effects[5] == Effects[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,116,CB_SETCURSEL,(WPARAM)i,(LPARAM)0);\n\t\t\t\t}\n\n\t\t\tfor (i = 0; i != 6; i++)\n\t\t\t\tif (!Context->Variables.Rooms[Current].Objects[i])\n\t\t\t\t\tSendDlgItemMessage(hDlg,124+i*2,CB_SETCURSEL,(WPARAM)0,(LPARAM)0);\n\n\t\t\tfor (i = 0; Objects[i].Id != 0; i++)\n\t\t\t\t{\n\t\t\t\tif (Context->Variables.Rooms[Current].Objects[0] == Objects[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,124,CB_SETCURSEL,(WPARAM)i+1,(LPARAM)0);\n\t\t\t\tif (Context->Variables.Rooms[Current].Objects[1] == Objects[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,126,CB_SETCURSEL,(WPARAM)i+1,(LPARAM)0);\n\t\t\t\tif (Context->Variables.Rooms[Current].Objects[2] == Objects[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,128,CB_SETCURSEL,(WPARAM)i+1,(LPARAM)0);\n\t\t\t\tif (Context->Variables.Rooms[Current].Objects[3] == Objects[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,130,CB_SETCURSEL,(WPARAM)i+1,(LPARAM)0);\n\t\t\t\tif (Context->Variables.Rooms[Current].Objects[4] == Objects[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,132,CB_SETCURSEL,(WPARAM)i+1,(LPARAM)0);\n\t\t\t\tif (Context->Variables.Rooms[Current].Objects[5] == Objects[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,134,CB_SETCURSEL,(WPARAM)i+1,(LPARAM)0);\n\t\t\t\t}\n\n\t\t\tif (!(((DWORD)GRooms[Current].ASCIIName)&MGEF_EFFECT0))\n\t\t\t\t{\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,105),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,106),FALSE);\n\t\t\t\t}\n\t\t\telse\n\t\t\t\t{\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,105),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,106),TRUE);\n\t\t\t\t}\n\t\t\tif (!(((DWORD)GRooms[Current].ASCIIName)&MGEF_EFFECT1))\n\t\t\t\t{\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,107),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,108),FALSE);\n\t\t\t\t}\n\t\t\telse\n\t\t\t\t{\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,107),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,108),TRUE);\n\t\t\t\t}\n\t\t\tif (!(((DWORD)GRooms[Current].ASCIIName)&MGEF_EFFECT2))\n\t\t\t\t{\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,109),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,110),FALSE);\n\t\t\t\t}\n\t\t\telse\n\t\t\t\t{\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,109),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,110),TRUE);\n\t\t\t\t}\n\t\t\tif (!(((DWORD)GRooms[Current].ASCIIName)&MGEF_EFFECT3))\n\t\t\t\t{\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,111),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,112),FALSE);\n\t\t\t\t}\n\t\t\telse\n\t\t\t\t{\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,111),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,112),TRUE);\n\t\t\t\t}\n\t\t\tif (!(((DWORD)GRooms[Current].ASCIIName)&MGEF_EFFECT4))\n\t\t\t\t{\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,113),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,114),FALSE);\n\t\t\t\t}\n\t\t\telse\n\t\t\t\t{\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,113),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,114),TRUE);\n\t\t\t\t}\n\t\t\tif (!(((DWORD)GRooms[Current].ASCIIName)&MGEF_EFFECT5))\n\t\t\t\t{\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,115),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,116),FALSE);\n\t\t\t\t}\n\t\t\telse\n\t\t\t\t{\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,115),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,116),TRUE);\n\t\t\t\t}\n\n\t\t\tif (!(((DWORD)GRooms[Current].ASCIIName)&MGEF_OBJECT0))\n\t\t\t\t{\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,123),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,124),FALSE);\n\t\t\t\t}\n\t\t\telse\n\t\t\t\t{\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,123),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,124),TRUE);\n\t\t\t\t}\n\t\t\tif (!(((DWORD)GRooms[Current].ASCIIName)&MGEF_OBJECT1))\n\t\t\t\t{\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,125),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,126),FALSE);\n\t\t\t\t}\n\t\t\telse\n\t\t\t\t{\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,125),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,126),TRUE);\n\t\t\t\t}\n\t\t\tif (!(((DWORD)GRooms[Current].ASCIIName)&MGEF_OBJECT2))\n\t\t\t\t{\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,127),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,128),FALSE);\n\t\t\t\t}\n\t\t\telse\n\t\t\t\t{\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,127),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,128),TRUE);\n\t\t\t\t}\n\t\t\tif (!(((DWORD)GRooms[Current].ASCIIName)&MGEF_OBJECT3))\n\t\t\t\t{\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,129),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,130),FALSE);\n\t\t\t\t}\n\t\t\telse\n\t\t\t\t{\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,129),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,130),TRUE);\n\t\t\t\t}\n\t\t\tif (!(((DWORD)GRooms[Current].ASCIIName)&MGEF_OBJECT4))\n\t\t\t\t{\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,131),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,132),FALSE);\n\t\t\t\t}\n\t\t\telse\n\t\t\t\t{\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,131),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,132),TRUE);\n\t\t\t\t}\n\t\t\tif (!(((DWORD)GRooms[Current].ASCIIName)&MGEF_OBJECT5))\n\t\t\t\t{\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,133),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,134),FALSE);\n\t\t\t\t}\n\t\t\telse\n\t\t\t\t{\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,133),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,134),TRUE);\n\t\t\t\t}\n\n\t\t\tif (((DWORD)GRooms[Current].ASCIIName)&MGEF_CANTBUILD)\n\t\t\t\t{\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,143),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,144),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,243),FALSE);\n\t\t\t\t}\n\t\t\telse\n\t\t\t\t{\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,143),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,144),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,243),TRUE);\n\t\t\t\t}\n\n\t\t\tMisc_SetDlgItemFloat(hDlg,150,Context->Variables.Rooms[Current].TorchLightH);\n\t\t\tMisc_SetDlgItemFloat(hDlg,152,Context->Variables.Rooms[Current].TorchLightRad);\n\t\t\tSetDlgItemInt(hDlg,143,Context->Variables.Rooms[Current].Cost,FALSE);\n\t\t\tSetDlgItemInt(hDlg,148,Context->Variables.Rooms[Current].TorchIntensity,FALSE);\n\t\t\tInvalidateRect(GetDlgItem(hDlg,146),NULL,FALSE);\n\t\t\tbreak;\n\n\t\t//\n\t\t// Propriétés des portes\n\t\t//\n\n\t\tcase 2:\tContext->CurrentDoor = Current;\n\n\t\t\tfor (i = 0; GDoorsMats[i].Id != 0xFFFFFFFF; i++)\n\t\t\t\tif (Context->Variables.Doors[Context->CurrentDoor].Material == GDoorsMats[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,104,CB_SETCURSEL,(WPARAM)i,(LPARAM)0);\n\n\t\t\tfor (i = 0; Effects[i].Id != 0xFFFFFFFF; i++)\n\t\t\t\tif (Context->Variables.Doors[Context->CurrentDoor].DeathEffect == Effects[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,106,CB_SETCURSEL,(WPARAM)i,(LPARAM)0);\n\n\t\t\tfor (i = 0; GDoorsCrates[i].Id != 0xFFFFFFFF; i++)\n\t\t\t\tif (Context->Variables.Doors[Context->CurrentDoor].Crate == GDoorsCrates[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,108,CB_SETCURSEL,(WPARAM)i,(LPARAM)0);\n\n\t\t\tfor (i = 0; GDoorsKeys[i].Id != 0xFFFFFFFF; i++)\n\t\t\t\tif (Context->Variables.Doors[Context->CurrentDoor].Key == GDoorsKeys[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,110,CB_SETCURSEL,(WPARAM)i,(LPARAM)0);\n\n\t\t\tSetDlgItemInt(hDlg,114,Context->Variables.Doors[Context->CurrentDoor].Cost,FALSE);\n\t\t\tSetDlgItemInt(hDlg,116,Context->Variables.Doors[Context->CurrentDoor].BuildPoints,FALSE);\n\t\t\tSetDlgItemInt(hDlg,118,Context->Variables.Doors[Context->CurrentDoor].Health,FALSE);\n\t\t\tSetDlgItemInt(hDlg,120,Context->Variables.Doors[Context->CurrentDoor].HealthGain,FALSE);\n\t\t\tSetDlgItemInt(hDlg,122,Context->Variables.Doors[Context->CurrentDoor].ManaCost,FALSE);\n\t\t\tbreak;\n\n\t\t//\n\t\t// Propriétés des pièges\n\t\t//\n\n\t\tcase 3:\tContext->CurrentTrap = Current;\n\n\t\t\tfor (i = 0; GDoorsMats[i].Id != 0xFFFFFFFF; i++)\n\t\t\t\tif (Context->Variables.Traps[Context->CurrentTrap].Material == GDoorsMats[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,104,CB_SETCURSEL,(WPARAM)i,(LPARAM)0);\n\n\t\t\tfor (i = 0; GTrapsCrates[i].Id != 0xFFFFFFFF; i++)\n\t\t\t\tif (Context->Variables.Traps[Context->CurrentTrap].Crate == GTrapsCrates[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,106,CB_SETCURSEL,(WPARAM)i,(LPARAM)0);\n\n\t\t\tfor (i = 0; Effects[i].Id != 0xFFFFFFFF; i++)\n\t\t\t\t{\n\t\t\t\tif (Context->Variables.Traps[Context->CurrentTrap].DeathEffect == Effects[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,114,CB_SETCURSEL,(WPARAM)i,(LPARAM)0);\n\t\t\t\tif (Context->Variables.Traps[Context->CurrentTrap].PowerlessEffect == Effects[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,116,CB_SETCURSEL,(WPARAM)i,(LPARAM)0);\n\t\t\t\tif (Context->Variables.Traps[Context->CurrentTrap].IdleEffect == Effects[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,118,CB_SETCURSEL,(WPARAM)i,(LPARAM)0);\n\t\t\t\t}\n\n\t\t\tfor (i = 0; GTrapsTypes[i].Id != 0; i++)\n\t\t\t\tif (Context->Variables.Traps[Context->CurrentTrap].TriggerType == GTrapsTypes[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,150,CB_SETCURSEL,(WPARAM)i,(LPARAM)0);\n\n\t\t\tfor (i = 0; GShots[i].Id != 0xFFFFFFFF; i++)\n\t\t\t\tif (Context->Variables.Traps[Context->CurrentTrap].ShotType == GShots[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,154,CB_SETCURSEL,(WPARAM)i,(LPARAM)0);\n\n\t\t\t// MagicDoor inactive parameters\n\t\t\tif (GTraps[Context->CurrentTrap].Id == 0x0000000C)\n\t\t\t\t{\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,103),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,104),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,105),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,106),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,113),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,114),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,123),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,124),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,125),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,126),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,127),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,128),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,157),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,158),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,258),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,159),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,160),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,260),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,133),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,134),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,234),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,135),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,136),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,236),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,141),FALSE);\t// Mana usage\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,142),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,242),FALSE);\n\t\t\t\t}\n\t\t\telse\n\t\t\t\t{\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,103),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,104),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,105),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,106),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,113),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,114),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,123),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,124),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,125),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,126),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,127),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,128),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,157),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,158),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,258),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,159),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,160),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,260),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,133),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,134),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,234),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,135),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,136),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,236),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,141),TRUE);\t// Mana usage\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,142),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,242),TRUE);\n\t\t\t\t}\n\n\t\t\tSetDlgItemInt(hDlg,158,Context->Variables.Traps[Context->CurrentTrap].GoldCost,FALSE);\n\t\t\tSetDlgItemInt(hDlg,160,Context->Variables.Traps[Context->CurrentTrap].BuildPoints,FALSE);\n\t\t\tMisc_SetDlgItemFloat(hDlg,120,Context->Variables.Traps[Context->CurrentTrap].IdleEffectDelay);\n\t\t\tSetDlgItemInt(hDlg,134,Context->Variables.Traps[Context->CurrentTrap].Health,FALSE);\n\t\t\tSetDlgItemInt(hDlg,136,Context->Variables.Traps[Context->CurrentTrap].HealthGain,FALSE);\n\t\t\tMisc_SetDlgItemFloat(hDlg,138,Context->Variables.Traps[Context->CurrentTrap].ChargeTime);\n\t\t\tMisc_SetDlgItemFloat(hDlg,140,Context->Variables.Traps[Context->CurrentTrap].RechargeTime);\n\t\t\tSetDlgItemInt(hDlg,142,Context->Variables.Traps[Context->CurrentTrap].ManaUsage,FALSE);\n\t\t\tSetDlgItemInt(hDlg,144,Context->Variables.Traps[Context->CurrentTrap].ManaCostToFire,FALSE);\n\t\t\tSetDlgItemInt(hDlg,146,Context->Variables.Traps[Context->CurrentTrap].Threat,FALSE);\n\t\t\tMisc_SetDlgItemFloat(hDlg,148,Context->Variables.Traps[Context->CurrentTrap].ThreatDuration);\n\n\t\t\tCheckDlgButton(hDlg,123,(Context->Variables.Traps[Context->CurrentTrap].Invisible)?BST_CHECKED:BST_UNCHECKED);\n\t\t\tCheckDlgButton(hDlg,124,(Context->Variables.Traps[Context->CurrentTrap].Disarmable)?BST_CHECKED:BST_UNCHECKED);\n\t\t\tCheckDlgButton(hDlg,125,(Context->Variables.Traps[Context->CurrentTrap].RevealedWhenFired)?BST_CHECKED:BST_UNCHECKED);\n\t\t\tCheckDlgButton(hDlg,126,(Context->Variables.Traps[Context->CurrentTrap].RequiresMana)?BST_CHECKED:BST_UNCHECKED);\n\t\t\tCheckDlgButton(hDlg,127,(Context->Variables.Traps[Context->CurrentTrap].SolidObstacle)?BST_CHECKED:BST_UNCHECKED);\n\t\t\tCheckDlgButton(hDlg,128,(Context->Variables.Traps[Context->CurrentTrap].FPObstacle)?BST_CHECKED:BST_UNCHECKED);\n\t\t\tbreak;\n\n\t\t//\n\t\t// Propriétés des sorts\n\t\t//\n\n\t\tcase 4:\tContext->CurrentSpell = Current;\n\n\t\t\tfor (i = 0; GSpellsHand[i].Id != 0xFFFFFFFF; i++)\n\t\t\t\t{\n\t\t\t\tif (Context->Variables.Spells[Context->CurrentSpell].HandAnim == GSpellsHand[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,104,CB_SETCURSEL,(WPARAM)i,(LPARAM)0);\n\t\t\t\tif (Context->Variables.Spells[Context->CurrentSpell].NoGoHandAnim == GSpellsHand[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,106,CB_SETCURSEL,(WPARAM)i,(LPARAM)0);\n\t\t\t\t}\n\n\t\t\tfor (i = 0; GSpellsCast[i].Id != 0; i++)\n\t\t\t\tif (Context->Variables.Spells[Context->CurrentSpell].CastRule == GSpellsCast[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,114,CB_SETCURSEL,(WPARAM)i,(LPARAM)0);\n\n\t\t\tfor (i = 0; GSpellsTrget[i].Id != 0; i++)\n\t\t\t\tif (Context->Variables.Spells[Context->CurrentSpell].TargetRule == GSpellsTrget[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,116,CB_SETCURSEL,(WPARAM)i,(LPARAM)0);\n\n\t\t\tfor (i = 0; GShots[i].Id != 0xFFFFFFFF; i++)\n\t\t\t\t{\n\t\t\t\tif (Context->Variables.Spells[Context->CurrentSpell].ShotType == GShots[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,144,CB_SETCURSEL,(WPARAM)i,(LPARAM)0);\n\t\t\t\tif (Context->Variables.Spells[Context->CurrentSpell].UpgShotType == GShots[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,147,CB_SETCURSEL,(WPARAM)i,(LPARAM)0);\n\t\t\t\t}\n\n\t\t\tSetDlgItemInt(hDlg,124,Context->Variables.Spells[Context->CurrentSpell].ManaCost,FALSE);\n\t\t\tSetDlgItemInt(hDlg,126,Context->Variables.Spells[Context->CurrentSpell].ManaDrain,FALSE);\n\t\t\tMisc_SetDlgItemFloat(hDlg,128,Context->Variables.Spells[Context->CurrentSpell].RechargeTime);\n\t\t\tSetDlgItemInt(hDlg,130,Context->Variables.Spells[Context->CurrentSpell].UpgRechargeTime,FALSE);\n\t\t\tCheckDlgButton(hDlg,131,(Context->Variables.Spells[Context->CurrentSpell].Attacking)?BST_CHECKED:BST_UNCHECKED);\n\t\t\tCheckDlgButton(hDlg,132,(Context->Variables.Spells[Context->CurrentSpell].Defensive)?BST_CHECKED:BST_UNCHECKED);\n\n\t\t\tbreak;\n\n\n\t\t}\n\n\treturn;\n}",
+    "RectEx_ChooseColor": "RectEx_ChooseColor(HWND hDlg, UINT CtrlId, COLORREF *ColorPtr, COLORREF DefaultColor)\n{\n\tCHOOSECOLOR\tColorSelector;\n\tstatic COLORREF\tCustomColors[16];\n\n\tColorSelector.lStructSize = sizeof(CHOOSECOLOR);\n\tColorSelector.hwndOwner = hDlg;\n\tColorSelector.rgbResult = *ColorPtr;\n\tColorSelector.lpCustColors = CustomColors;\n\tColorSelector.Flags = CC_FULLOPEN|CC_RGBINIT;\n\tColorSelector.lpfnHook = NULL;\n\tCustomColors[0] = *ColorPtr;\n\tCustomColors[1] = DefaultColor;\n\tif (ChooseColor(&ColorSelector))\n\t\t{\n\t\t*ColorPtr = ColorSelector.rgbResult;\n\t\tInvalidateRect(GetDlgItem(hDlg,CtrlId),NULL,FALSE);\n\t\tUpdateWindow(GetDlgItem(hDlg,CtrlId));\n\t\t}\n\treturn;\n}"
+  },
+  "ResourcePages": {
+    "6821": "6821 DIALOG 8, 8, 450, 310\nSTYLE DS_MODALFRAME|WS_BORDER|WS_VISIBLE|WS_CAPTION|WS_SYSMENU\nCLASS DIALOG_CLASS\nCAPTION DIALOG_MAPGBLROOMS\nFONT 8, \"MS Sans Serif\"\n{\n\tGROUPBOX\tDIALOG_MAPGBLRNAMES,\t\t100,   6,   6, 130, 282\n\tLISTBOX\t\t\t\t\t\t101,  10,  16, 122, 266, WS_VSCROLL|LBS_OWNERDRAWVARIABLE|LBS_NOINTEGRALHEIGHT\n\tPUSHBUTTON\tDIALOG_MAPGBLDEFAULT,\t\t998,  10, 292,  60,  12\n\tPUSHBUTTON\tDIALOG_MAPGBLDEFAULTALL,\t999,  70, 292,  60,  12\n\n\tCONTROL\t\tDIALOG_MAPGBLREFFECTS,\t\t102, \"STATIC\", WS_CHILD|SS_OWNERDRAW, 138, 14, 310, 10\n\tRTEXT\t\tDIALOG_MAPGBLRFIGHTEFFECT,\t103, 150,  30,  46,  10, WS_DISABLED\n\tCOMBOBOX\t\t\t\t\t104, 200,  28, 220, 100, WS_VSCROLL|CBS_DROPDOWNLIST|WS_DISABLED\n\tRTEXT\t\tDIALOG_MAPGBLR0,\t\t105, 150,  44,  46,  10\n\tCOMBOBOX\t\t\t\t\t106, 200,  42, 220, 100, WS_VSCROLL|CBS_DROPDOWNLIST\n\tRTEXT\t\tDIALOG_MAPGBLR1,\t\t107, 150,  58,  46,  10\n\tCOMBOBOX\t\t\t\t\t108, 200,  56, 220, 100, WS_VSCROLL|CBS_DROPDOWNLIST\n\tRTEXT\t\tDIALOG_MAPGBLR2,\t\t109, 150,  72,  46,  10\n\tCOMBOBOX\t\t\t\t\t110, 200,  70, 220, 100, WS_VSCROLL|CBS_DROPDOWNLIST\n\tRTEXT\t\tDIALOG_MAPGBLR3,\t\t111, 150,  86,  46,  10\n\tCOMBOBOX\t\t\t\t\t112, 200,  84, 220, 100, WS_VSCROLL|CBS_DROPDOWNLIST\n\tRTEXT\t\tDIALOG_MAPGBLR4,\t\t113, 150, 100,  46,  10\n\tCOMBOBOX\t\t\t\t\t114, 200,  98, 220, 100, WS_VSCROLL|CBS_DROPDOWNLIST\n\tRTEXT\t\tDIALOG_MAPGBLR5,\t\t115, 150, 114,  46,  10\n\tCOMBOBOX\t\t\t\t\t116, 200, 112, 220, 100, WS_VSCROLL|CBS_DROPDOWNLIST\n\n\tCONTROL\t\tDIALOG_MAPGBLROBJECTS,\t\t122, \"STATIC\", WS_CHILD|SS_OWNERDRAW, 138, 132, 310, 10\n\tRTEXT\t\tDIALOG_MAPGBLR0,\t\t123, 150, 148,  46,  10\n\tCOMBOBOX\t\t\t\t\t124, 200, 146, 220, 100, WS_VSCROLL|CBS_DROPDOWNLIST\n\tRTEXT\t\tDIALOG_MAPGBLR1,\t\t125, 150, 162,  46,  10\n\tCOMBOBOX\t\t\t\t\t126, 200, 160, 220, 100, WS_VSCROLL|CBS_DROPDOWNLIST\n\tRTEXT\t\tDIALOG_MAPGBLR2,\t\t127, 150, 176,  46,  10\n\tCOMBOBOX\t\t\t\t\t128, 200, 174, 220, 100, WS_VSCROLL|CBS_DROPDOWNLIST\n\tRTEXT\t\tDIALOG_MAPGBLR3,\t\t129, 150, 190,  46,  10\n\tCOMBOBOX\t\t\t\t\t130, 200, 188, 220, 100, WS_VSCROLL|CBS_DROPDOWNLIST\n\tRTEXT\t\tDIALOG_MAPGBLR4,\t\t131, 150, 204,  46,  10\n\tCOMBOBOX\t\t\t\t\t132, 200, 202, 220, 100, WS_VSCROLL|CBS_DROPDOWNLIST\n\tRTEXT\t\tDIALOG_MAPGBLR5,\t\t133, 150, 218,  46,  10\n\tCOMBOBOX\t\t\t\t\t134, 200, 216, 220, 100, WS_VSCROLL|CBS_DROPDOWNLIST\n\n\tCONTROL\t\tDIALOG_MAPGBLRPARAMS,\t\t142, \"STATIC\", WS_CHILD|SS_OWNERDRAW, 138, 236, 310, 10\n\tEDITTEXT\t\t\t\t\t143, 304, 249,  40,  12, ES_NUMBER\n\tRTEXT\t\tDIALOG_MAPGBLRCOST,\t\t144, 150, 250, 150,  10\n\n\tRTEXT\t\tDIALOG_MAPGBLRLIGHT,\t\t145, 150, 270, 128,  10\n\tPUSHBUTTON\tDIALOG_NULL,\t\t\t146, 282, 269,  20,  12, BS_OWNERDRAW\n\tPUSHBUTTON\tDIALOG_AREAMODIFY,\t\t147, 306, 269,  50,  12\n\tEDITTEXT\t\t\t\t\t148, 194, 283,  30,  12, ES_NUMBER\n\tRTEXT\t\tDIALOG_MAPGBLRINTENSITY,\t149, 150, 284,  40,  10\n\tEDITTEXT\t\t\t\t\t150, 282, 283,  40,  12, ES_AUTOHSCROLL\n\tRTEXT\t\tDIALOG_MAPGBLRHEIGHT,\t\t151, 238, 284,  40,  10\n\tEDITTEXT\t\t\t\t\t152, 370, 283,  40,  12, ES_AUTOHSCROLL\n\tRTEXT\t\tDIALOG_MAPGBLRRADIUS,\t\t153, 326, 284,  40,  10\n\n\t// IDs 243, 248, 250 & 252 are reserved for UPDOWN control\n}"
+  },
+  "Fields": [
+    "Cost",
+    "BattleEffect",
+    "Effects[0]",
+    "Effects[1]",
+    "Effects[2]",
+    "Effects[3]",
+    "Effects[4]",
+    "Effects[5]",
+    "Objects[0]",
+    "Objects[1]",
+    "Objects[2]",
+    "Objects[3]",
+    "Objects[4]",
+    "Objects[5]",
+    "TorchLightB",
+    "TorchLightG",
+    "TorchLightR",
+    "TorchIntensity",
+    "TorchLightH",
+    "TorchLightRad"
+  ],
+  "NativeStorage": {
+    "Cost": {
+      "Offset": 888,
+      "Kind": "WORD",
+      "Size": 2
+    },
+    "Objects[0]": {
+      "Offset": 922,
+      "Kind": "BYTE",
+      "Size": 1
+    },
+    "Objects[1]": {
+      "Offset": 923,
+      "Kind": "BYTE",
+      "Size": 1
+    },
+    "Objects[2]": {
+      "Offset": 924,
+      "Kind": "BYTE",
+      "Size": 1
+    },
+    "Objects[3]": {
+      "Offset": 925,
+      "Kind": "BYTE",
+      "Size": 1
+    },
+    "Objects[4]": {
+      "Offset": 926,
+      "Kind": "BYTE",
+      "Size": 1
+    },
+    "Objects[5]": {
+      "Offset": 927,
+      "Kind": "BYTE",
+      "Size": 1
+    },
+    "BattleEffect": {
+      "Offset": 890,
+      "Kind": "WORD",
+      "Size": 2
+    },
+    "Effects[0]": {
+      "Offset": 898,
+      "Kind": "WORD",
+      "Size": 2
+    },
+    "Effects[1]": {
+      "Offset": 900,
+      "Kind": "WORD",
+      "Size": 2
+    },
+    "Effects[2]": {
+      "Offset": 902,
+      "Kind": "WORD",
+      "Size": 2
+    },
+    "Effects[3]": {
+      "Offset": 904,
+      "Kind": "WORD",
+      "Size": 2
+    },
+    "Effects[4]": {
+      "Offset": 906,
+      "Kind": "WORD",
+      "Size": 2
+    },
+    "Effects[5]": {
+      "Offset": 908,
+      "Kind": "WORD",
+      "Size": 2
+    },
+    "TorchIntensity": {
+      "Offset": 878,
+      "Kind": "BYTE",
+      "Size": 1
+    },
+    "TorchLightRad": {
+      "Offset": 963,
+      "Kind": "WORD",
+      "Size": 2
+    },
+    "TorchLightH": {
+      "Offset": 896,
+      "Kind": "WORD",
+      "Size": 2
+    },
+    "TorchLightR": {
+      "Offset": 919,
+      "Kind": "BYTE",
+      "Size": 1
+    },
+    "TorchLightG": {
+      "Offset": 920,
+      "Kind": "BYTE",
+      "Size": 1
+    },
+    "TorchLightB": {
+      "Offset": 921,
+      "Kind": "BYTE",
+      "Size": 1
+    }
+  },
+  "Rooms": [
+    {
+      "ID": 14,
+      "Index": 0,
+      "Icon": 400,
+      "Name": "szMapWorldHeart",
+      "Mask": 2147483651,
+      "CostEditable": false,
+      "EnabledEffectSlots": [
+        0,
+        1
+      ],
+      "EnabledObjectSlots": []
+    },
+    {
+      "ID": 11,
+      "Index": 1,
+      "Icon": 401,
+      "Name": "szMapWorldLair",
+      "Mask": 7,
+      "CostEditable": true,
+      "EnabledEffectSlots": [
+        0,
+        1,
+        2
+      ],
+      "EnabledObjectSlots": []
+    },
+    {
+      "ID": 15,
+      "Index": 2,
+      "Icon": 402,
+      "Name": "szMapWorldLibrary",
+      "Mask": 2319,
+      "CostEditable": true,
+      "EnabledEffectSlots": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "EnabledObjectSlots": [
+        0,
+        3
+      ]
+    },
+    {
+      "ID": 10,
+      "Index": 3,
+      "Icon": 403,
+      "Name": "szMapWorldTreasury",
+      "Mask": 7,
+      "CostEditable": true,
+      "EnabledEffectSlots": [
+        0,
+        1,
+        2
+      ],
+      "EnabledObjectSlots": []
+    },
+    {
+      "ID": 24,
+      "Index": 4,
+      "Icon": 404,
+      "Name": "szMapWorldCasino",
+      "Mask": 3843,
+      "CostEditable": true,
+      "EnabledEffectSlots": [
+        0,
+        1
+      ],
+      "EnabledObjectSlots": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "ID": 17,
+      "Index": 5,
+      "Icon": 480,
+      "Name": "szMapWorldWoodenBridge",
+      "Mask": 1,
+      "CostEditable": true,
+      "EnabledEffectSlots": [
+        0
+      ],
+      "EnabledObjectSlots": []
+    },
+    {
+      "ID": 21,
+      "Index": 6,
+      "Icon": 407,
+      "Name": "szMapWorldTorture",
+      "Mask": 16131,
+      "CostEditable": true,
+      "EnabledEffectSlots": [
+        0,
+        1
+      ],
+      "EnabledObjectSlots": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "ID": 23,
+      "Index": 7,
+      "Icon": 408,
+      "Name": "szMapWorldGraveYard",
+      "Mask": 3841,
+      "CostEditable": true,
+      "EnabledEffectSlots": [
+        0
+      ],
+      "EnabledObjectSlots": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "ID": 22,
+      "Index": 8,
+      "Icon": 409,
+      "Name": "szMapWorldTemple",
+      "Mask": 31,
+      "CostEditable": true,
+      "EnabledEffectSlots": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "EnabledObjectSlots": []
+    },
+    {
+      "ID": 13,
+      "Index": 9,
+      "Icon": 412,
+      "Name": "szMapWorldHatchery",
+      "Mask": 257,
+      "CostEditable": true,
+      "EnabledEffectSlots": [
+        0
+      ],
+      "EnabledObjectSlots": [
+        0
+      ]
+    },
+    {
+      "ID": 16,
+      "Index": 10,
+      "Icon": 413,
+      "Name": "szMapWorldTraining",
+      "Mask": 2304,
+      "CostEditable": true,
+      "EnabledEffectSlots": [],
+      "EnabledObjectSlots": [
+        0,
+        3
+      ]
+    },
+    {
+      "ID": 19,
+      "Index": 11,
+      "Icon": 414,
+      "Name": "szMapWorldWorkShop",
+      "Mask": 7967,
+      "CostEditable": true,
+      "EnabledEffectSlots": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "EnabledObjectSlots": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "ID": 18,
+      "Index": 12,
+      "Icon": 415,
+      "Name": "szMapWorldGuard",
+      "Mask": 768,
+      "CostEditable": true,
+      "EnabledEffectSlots": [],
+      "EnabledObjectSlots": [
+        0,
+        1
+      ]
+    },
+    {
+      "ID": 20,
+      "Index": 13,
+      "Icon": 416,
+      "Name": "szMapWorldPrison",
+      "Mask": 1795,
+      "CostEditable": true,
+      "EnabledEffectSlots": [
+        0,
+        1
+      ],
+      "EnabledObjectSlots": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "ID": 26,
+      "Index": 14,
+      "Icon": 481,
+      "Name": "szMapWorldStoneBridge",
+      "Mask": 0,
+      "CostEditable": true,
+      "EnabledEffectSlots": [],
+      "EnabledObjectSlots": []
+    },
+    {
+      "ID": 25,
+      "Index": 15,
+      "Icon": 419,
+      "Name": "szMapWorldPit",
+      "Mask": 771,
+      "CostEditable": true,
+      "EnabledEffectSlots": [
+        0,
+        1
+      ],
+      "EnabledObjectSlots": [
+        0,
+        1
+      ]
+    },
+    {
+      "ID": 12,
+      "Index": 16,
+      "Icon": 411,
+      "Name": "szMapWorldPortal",
+      "Mask": 2147483655,
+      "CostEditable": false,
+      "EnabledEffectSlots": [
+        0,
+        1,
+        2
+      ],
+      "EnabledObjectSlots": []
+    },
+    {
+      "ID": 36,
+      "Index": 17,
+      "Icon": 482,
+      "Name": "szMapWorldHerosBridge",
+      "Mask": 2147483648,
+      "CostEditable": false,
+      "EnabledEffectSlots": [],
+      "EnabledObjectSlots": []
+    },
+    {
+      "ID": 40,
+      "Index": 18,
+      "Icon": 410,
+      "Name": "szMapWorldMercenariesPortal",
+      "Mask": 2147483650,
+      "CostEditable": false,
+      "EnabledEffectSlots": [
+        1
+      ],
+      "EnabledObjectSlots": []
+    },
+    {
+      "ID": 28,
+      "Index": 19,
+      "Icon": 500,
+      "Name": "szMapWorldHerosGate1",
+      "Mask": 2147483648,
+      "CostEditable": false,
+      "EnabledEffectSlots": [],
+      "EnabledObjectSlots": []
+    },
+    {
+      "ID": 29,
+      "Index": 20,
+      "Icon": 501,
+      "Name": "szMapWorldHerosGate2",
+      "Mask": 2147483648,
+      "CostEditable": false,
+      "EnabledEffectSlots": [],
+      "EnabledObjectSlots": []
+    },
+    {
+      "ID": 33,
+      "Index": 21,
+      "Icon": 502,
+      "Name": "szMapWorldHerosGate3",
+      "Mask": 2147483648,
+      "CostEditable": false,
+      "EnabledEffectSlots": [],
+      "EnabledObjectSlots": []
+    },
+    {
+      "ID": 34,
+      "Index": 22,
+      "Icon": 504,
+      "Name": "szMapWorldHerosGate4",
+      "Mask": 2147483648,
+      "CostEditable": false,
+      "EnabledEffectSlots": [],
+      "EnabledObjectSlots": []
+    },
+    {
+      "ID": 37,
+      "Index": 23,
+      "Icon": 505,
+      "Name": "szMapWorldHerosGate6",
+      "Mask": 2147483648,
+      "CostEditable": false,
+      "EnabledEffectSlots": [],
+      "EnabledObjectSlots": []
+    }
+  ],
+  "MaskDefines": {
+    "MGEF_EFFECT0": 1,
+    "MGEF_EFFECT1": 2,
+    "MGEF_EFFECT2": 4,
+    "MGEF_EFFECT3": 8,
+    "MGEF_EFFECT4": 16,
+    "MGEF_EFFECT5": 32,
+    "MGEF_OBJECT0": 256,
+    "MGEF_OBJECT1": 512,
+    "MGEF_OBJECT2": 1024,
+    "MGEF_OBJECT3": 2048,
+    "MGEF_OBJECT4": 4096,
+    "MGEF_OBJECT5": 8192,
+    "MGEF_CANTBUILD": 2147483648
+  },
+  "BattleEffectAlwaysDisabledInOriginalUI": true,
+  "InactiveSlotsPreserveSelectedValuesOnExplicitSave": true,
+  "NumericControls": {
+    "Cost": {
+      "Control": 143,
+      "Minimum": 0,
+      "Maximum": 65535
+    },
+    "TorchIntensity": {
+      "Control": 148,
+      "Minimum": 0,
+      "Maximum": 255
+    }
+  },
+  "FixedControls": {
+    "TorchLightH": {
+      "Control": 150,
+      "Minimum": 0,
+      "MaximumWholePart": 8,
+      "Denominator": 4096
+    },
+    "TorchLightRad": {
+      "Control": 152,
+      "Minimum": 0,
+      "MaximumWholePart": 3,
+      "Denominator": 4096
+    }
+  },
+  "ColourDialog": {
+    "Button": 147,
+    "Preview": 146,
+    "Fields": [
+      "TorchLightR",
+      "TorchLightG",
+      "TorchLightB"
+    ],
+    "API": "RectEx_ChooseColor",
+    "Encoding": "R|G<<8|B<<16"
+  },
+  "ModernExistingScope": [
+    "Separate named 13-field room decorations draft with slot masks",
+    "Two generic fixed-point formats",
+    "Raw generic fields/reset"
+  ],
+  "RemainingImplementation": [
+    "Whole20-field private room page and one atomic Apply/Cancel",
+    "Original Cost/CantBuild/Intensity limits and permanently inactive BattleEffect",
+    "Private torch RGB/native chooser and exact height/radius",
+    "EN/RU, imports, stale/pending/lifetime, Undo/compiler/render and full delivery acceptance"
+  ],
+  "WholeGoalComplete": false
+}

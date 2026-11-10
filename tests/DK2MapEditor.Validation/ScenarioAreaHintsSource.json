@@ -1,0 +1,22 @@
+{
+  "InputHashes": {
+    "Source/Sources/Triggers/Triggers_Triggers.c": "b94b509ab4d625925bffa65c83f3bc77c8cba776cb2085d1494c855e6e4cb05a",
+    "Source/Sources/Map/Map_Areas.c": "65baaa4bbbd9ddb14faaff9b6b0b345e8a3f7802be1ceae35683bc268c77251b"
+  },
+  "Types": [
+    "TRIGGER_CLAIMAREA",
+    "TRIGGER_AREACONTENT",
+    "TRIGGER_SELECTAREA"
+  ],
+  "OriginalPages": {
+    "TRIGGER_CLAIMAREA": "\n\t\t\tTempText = GlobalAlloc(GPTR,128);\n\t\t\tif (!TempText) return;\n\t\t\tArea = RectEx_FindById(Context->TriggerCtx.ParentPoint->area,&MapAreas);\n\t\t\tMap_CorrectRect(&Area->rect,&Client);\n\t\t\twsprintf(TempText,szTriggersAreaTotalSquares,Client.Width*Client.Height);\n\t\t\tSetDlgItemText(hDlg,101,TempText);\n\t\t\twsprintf(TempText,szTriggersAreaPerimeterSquares,(Client.Width > 1)?((Client.Width-2)*2+Client.Height*2):1);\n\t\t\tSetDlgItemText(hDlg,102,TempText);\n\t\t\tGlobalFree(TempText);\n\t\t\tif (!Triggers_DisplayCreatePlayersList(hDlg,400,&Context->TriggerCtx.AreaClaimPlayersList,Context->TriggerCtx.TempTrigger.param2,TRUE)) return;\n\t\t\tContext->TriggerCtx.Initialized[TRIGGER_CLAIMAREA] = TRUE;\n\t\t\tbreak;\n",
+    "TRIGGER_AREACONTENT": "\n\t\t\tTempText = GlobalAlloc(GPTR,128);\n\t\t\tif (!TempText) return;\n\t\t\tArea = RectEx_FindById(Context->TriggerCtx.ParentPoint->area,&MapAreas);\n\t\t\tMap_CorrectRect(&Area->rect,&Client);\n\t\t\twsprintf(TempText,szTriggersAreaTotalSquares,Client.Width*Client.Height);\n\t\t\tSetDlgItemText(hDlg,101,TempText);\n\t\t\tGlobalFree(TempText);\n\t\t\tif (!Triggers_DisplayCreateTerrainList(hDlg,400,&Context->TriggerCtx.AreaContentList,Context->TriggerCtx.TempTrigger.param3,TRUE,TRUE)) return;\n\t\t\tif (!Misc_CreatePlayerComboBoxList(hDlg,501,1,FALSE)) return;\n\t\t\tContext->TriggerCtx.Initialized[TRIGGER_AREACONTENT] = TRUE;\n\t\t\tbreak;\n",
+    "TRIGGER_SELECTAREA": "\n\t\t\tTempText = GlobalAlloc(GPTR,128);\n\t\t\tif (!TempText) return;\n\t\t\tArea = RectEx_FindById(Context->TriggerCtx.ParentPoint->area,&MapAreas);\n\t\t\tMap_CorrectRect(&Area->rect,&Client);\n\t\t\twsprintf(TempText,szTriggersAreaTotalSquares,Client.Width*Client.Height);\n\t\t\tSetDlgItemText(hDlg,101,TempText);\n\t\t\tGlobalFree(TempText);\n\t\t\tif (!Triggers_DisplayCreatePlayersList(hDlg,400,&Context->TriggerCtx.AreaSelectPlayersList,Context->TriggerCtx.TempTrigger.param2,TRUE)) return;\n\t\t\tContext->TriggerCtx.Initialized[TRIGGER_SELECTAREA] = TRUE;\n\t\t\tbreak;\n"
+  },
+  "OriginalNormalization": "void Map_CorrectRect(MAPRECT *MapRect, MAPCLIENT *MapClient)\n{\n\tif (MapRect->x1 > MapRect->x2)\n\t\t{\n\t\tMapClient->X = MapRect->x2;\n\t\tMapClient->Width = MapRect->x1-MapRect->x2+1;\n\t\t}\n\telse\n\t\t{\n\t\tMapClient->X = MapRect->x1;\n\t\tMapClient->Width = MapRect->x2-MapRect->x1+1;\n\t\t}\n\n\tif (MapRect->y1 > MapRect->y2)\n\t\t{\n\t\tMapClient->Y = MapRect->y2;\n\t\tMapClient->Height = MapRect->y1-MapRect->y2+1;\n\t\t}\n\telse\n\t\t{\n\t\tMapClient->Y = MapRect->y1;\n\t\tMapClient->Height = MapRect->y2-MapRect->y1+1;\n\t\t}\n\n\treturn;\n}",
+  "ParentIsPhysicalAreaContext": true,
+  "InclusiveEndpoints": true,
+  "MapExtentClipping": false,
+  "SingleColumnPerimeter": 1,
+  "UIExecuted": false
+}

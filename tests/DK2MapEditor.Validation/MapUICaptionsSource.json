@@ -1,0 +1,509 @@
+{
+  "InputHashes": {
+    "Source/Resources/Editor.rc": "eb07ed2217a81348a03c75e302d09fdcb5e34b6099d1bd60229ba5fa9bd8920d",
+    "Source/Includes/Strings.h": "deee57184bd2a4256c3e0e1e050ae5616932b86e2b7265f6f8b3659abee9cecb",
+    "Source/Includes/Map.h": "b646829ec4e52505c464dd9dfcf09dc7f09d2a74d7a013c38d01d4e6b4c778f0",
+    "Source/Includes/Compatibility.h": "e457a2832b474657a5bb61d4d468e071a97d17a4728dfba7bfd95aa2da62395c",
+    "Source/Sources/Properties/Map/Properties_Map_Global.c": "22c3b31631fb4eb88c5c219f4830c258d04c8da14d23acd80e736d016a56d16a",
+    "Source/Sources/Properties/Map/Properties_Map_Players.c": "3962a22de157ebd181a29a8aa0816bd5fbd62a78859deba0e67f5ea23dbe0894",
+    "Source/Sources/Properties/Map/Properties_Map_Options.c": "df09b17087f74d6d5af93de6e3e493f6ecbd1a2e03a0b7cab071d0c7aa064b30",
+    "Source/Sources/Properties/Map/Properties_Map_Texts.c": "ff9c29ef8192ad721de09811f80622aabb60a7e7cc8cfb3db2f108520059d639",
+    "Source/Sources/Properties/Map/Properties_Map_Voices.c": "33fd82c81865f404ace09b38d6c5606b0582c3d58d77aaf5fbedc4eb68efcf48",
+    "Source/Sources/Datas/Datas_Map.c": "30b8dcb91a6084bb65b8cab4fa85f47693c4390ef72e9c7aa7e5c941b214246d",
+    "Source/Sources/Compiler/Compiler_Generate.c": "4a2952b0b687149302b2f0374d08e5e2316c28875d98036059af4f8c6d84ac3b"
+  },
+  "Dialogs": [
+    {
+      "ID": 6800,
+      "RC": "6800 DIALOG 8, 8, 186+58, 290\nSTYLE DS_MODALFRAME|WS_BORDER|WS_VISIBLE|WS_CAPTION|WS_SYSMENU\nCLASS DIALOG_CLASS\nCAPTION DIALOG_MAPPROPSTITLE\nFONT 8, \"MS Sans Serif\"\n{\n\tGROUPBOX\tDIALOG_MAPPROPSINFO,\t\t -1,   8,   6, 170,  74\n\tLTEXT\t\tDIALOG_MAPPROPSNAME,\t\t100,  24,  18, 100,  10\n\tEDITTEXT\t\t\t\t\t101,  24,  28, 134,  12, ES_AUTOHSCROLL\n\n\tRTEXT\t\tDIALOG_NEWVERSION,\t\t140,  36,  46,  28,  10\n\tCOMBOBOX\t\t\t\t\t141,  66,  44,  90, 100, WS_VSCROLL|CBS_DROPDOWNLIST\n\tRTEXT\t\tDIALOG_NEWPLAYERS,\t\t142,  36,  62,  28,  10\n\tCOMBOBOX\t\t\t\t\t143,  66,  60,  40, 100, WS_VSCROLL|CBS_DROPDOWNLIST\n\n\tGROUPBOX\tDIALOG_MAPPROPSDIM,\t\t -1,   8,  86, 170, 116\n\tRTEXT\t\tDIALOG_MAPPROPSWIDTH,\t\t104,  78,  99,  46,  12\n\tEDITTEXT\t\t\t\t\t105, 128,  98,  30,  12, ES_NUMBER\n\tRTEXT\t\tDIALOG_MAPPROPSHEIGHT,\t\t106,  78, 113,  46,  12\n\tEDITTEXT\t\t\t\t\t107, 128, 112,  30,  12, ES_NUMBER\n\tPUSHBUTTON\tDIALOG_MAPPROPSRESET,\t\t108,  24, 104,  50,  12\n\tLTEXT\t\tDIALOG_MAPPROPSSIZE,\t\t109,  24, 128, 140,  12, WS_DISABLED\n\tPUSHBUTTON\tDIALOG_NULL,\t\t\t110,  68, 144,  48,  48, BS_OWNERDRAW\n\t// IDs 115 & 117 are reserved for UPDOWN controls\n\n\tGROUPBOX\tDIALOG_MAPPROPSKEEPERS,\t\t -1,   8, 208, 170,  74\n\tPUSHBUTTON\tDIALOG_MAPPROPSHEROS,\t\t120,  36, 226,  54,  12, BS_OWNERDRAW\n\tPUSHBUTTON\tDIALOG_MAPPROPSNEUTRAL,\t\t121,  36, 240,  54,  12, BS_OWNERDRAW\n\tPUSHBUTTON\tDIALOG_MAPPROPSKEEPER1,\t\t122,  36, 254,  54,  12, BS_OWNERDRAW\n\tPUSHBUTTON\tDIALOG_MAPPROPSKEEPER2,\t\t123,  94, 220,  54,  12, BS_OWNERDRAW\n\tPUSHBUTTON\tDIALOG_MAPPROPSKEEPER3,\t\t124,  94, 234,  54,  12, BS_OWNERDRAW\n\tPUSHBUTTON\tDIALOG_MAPPROPSKEEPER4,\t\t125,  94, 248,  54,  12, BS_OWNERDRAW\n\tPUSHBUTTON\tDIALOG_MAPPROPSKEEPER5,\t\t126,  94, 262,  54,  12, BS_OWNERDRAW\n\n\tPUSHBUTTON\tDIALOG_OK,\t\t       IDOK, 186,  20,  50,  14\n\tPUSHBUTTON\tDIALOG_ABORT,\t\t   IDCANCEL, 186,  38,  50,  14\n\n\tPUSHBUTTON\tDIALOG_MAPPROPSALLIES,\t\t127, 186,  60,  50,  14\n\tPUSHBUTTON\tDIALOG_MAPPROPSCREATURES,\t128, 186,  78,  50,  14\n\tPUSHBUTTON\tDIALOG_MAPPROPSVOICES,\t\t129, 186,  96,  50,  14\n\tPUSHBUTTON\tDIALOG_MAPPROPSTEXTS,\t\t130, 186, 114,  50,  14\n\tPUSHBUTTON\tDIALOG_MAPPROPSVARIABLES,\t131, 186, 132,  50,  14\n\tPUSHBUTTON\tDIALOG_MAPPROPSOPTIONS,\t\t132, 186, 150,  50,  14\n\n\tPUSHBUTTON\tDIALOG_MAPPROPSINFOTEXTS,\t133, 186, 174,  50,  14, WS_DISABLED\n\n}",
+      "Captions": {
+        "DIALOG_MAPPROPSTITLE": "Propriétés de la carte",
+        "DIALOG_MAPPROPSINFO": "Informations de la carte",
+        "DIALOG_MAPPROPSNAME": "Nom de la carte",
+        "DIALOG_NEWVERSION": "Version",
+        "DIALOG_NEWPLAYERS": "Joueurs",
+        "DIALOG_MAPPROPSDIM": "Dimensions de la carte",
+        "DIALOG_MAPPROPSWIDTH": "Largeur:",
+        "DIALOG_MAPPROPSHEIGHT": "Hauteur:",
+        "DIALOG_MAPPROPSRESET": "Réinitialiser",
+        "DIALOG_MAPPROPSSIZE": "Emplacement de la carte",
+        "DIALOG_NULL": "",
+        "DIALOG_MAPPROPSKEEPERS": "Propriétés des joueurs",
+        "DIALOG_MAPPROPSHEROS": "Héros",
+        "DIALOG_MAPPROPSNEUTRAL": "Neutre",
+        "DIALOG_MAPPROPSKEEPER1": "Gardien 1",
+        "DIALOG_MAPPROPSKEEPER2": "Gardien 2",
+        "DIALOG_MAPPROPSKEEPER3": "Gardien 3",
+        "DIALOG_MAPPROPSKEEPER4": "Gardien 4",
+        "DIALOG_MAPPROPSKEEPER5": "Gardien 5",
+        "DIALOG_OK": "Ok",
+        "DIALOG_ABORT": "Abandon",
+        "DIALOG_MAPPROPSALLIES": "Alliances",
+        "DIALOG_MAPPROPSCREATURES": "Créatures",
+        "DIALOG_MAPPROPSVOICES": "Voix",
+        "DIALOG_MAPPROPSTEXTS": "Textes",
+        "DIALOG_MAPPROPSVARIABLES": "Variables",
+        "DIALOG_MAPPROPSOPTIONS": "Options",
+        "DIALOG_MAPPROPSINFOTEXTS": "Descriptions"
+      }
+    },
+    {
+      "ID": 6801,
+      "RC": "6801 DIALOG 8, 8, 450, 302\nSTYLE DS_MODALFRAME|WS_BORDER|WS_VISIBLE|WS_CAPTION|WS_SYSMENU\nCLASS DIALOG_CLASS\nCAPTION DIALOG_MAPPLAYERTITLE\nFONT 8, \"MS Sans Serif\"\n{\n\tGROUPBOX\tDIALOG_MAPPLAYERINFO,\t\t -1,   8,   6, 284, 106\n\tICON\t\t74,\t\t\t\t -1,  16,  20,   0,   0\n\tRTEXT\t\tDIALOG_MAPPLAYERNAME,\t\t100,  38,  21,  30,  12\n\tEDITTEXT\t\t\t\t\t101,  74,  20, 100,  12\n\tRTEXT\t\tDIALOG_VITALITY,\t\t130, 176,  21,  30,  12\n\tEDITTEXT\t\t\t\t\t131, 210,  20,  30,  12, ES_NUMBER\n\t// ID 132 is reserved for UPDOWN control\n\n\tAUTOCHECKBOX\tDIALOG_MAPPLAYERCPU,\t\t102, 160,  36,  50,  12\n\tPUSHBUTTON\tDIALOG_MAPPLAYERCPUOPTS,\t103, 210,  36,  70,  12, WS_DISABLED\n\n\tRTEXT\t\tDIALOG_MAPPLAYERGOLD,\t\t104,  14,  55, 140,  12, WS_DISABLED\n\tEDITTEXT\t\t\t\t\t105, 160,  54,  50,  12, ES_NUMBER\n\tCTEXT\t\tDIALOG_AREASEPARATOR,\t\t106, 214,  55,  12,  12, WS_DISABLED\n\tEDITTEXT\t\t\t\t\t107, 230,  54,  50,  12, ES_NUMBER|ES_READONLY\n\tRTEXT\t\tDIALOG_MAPPLAYERTREASURY,\t108,  14,  69, 140,  12, WS_DISABLED\n\tEDITTEXT\t\t\t\t\t109, 160,  68,  50,  12, ES_NUMBER|ES_READONLY\n\t// ID 115 is reserved for UPDOWN control\n\n\tAUTOCHECKBOX\tDIALOG_MAPPLAYERCAMERA,\t\t110,  14,  88, 140,  12, BS_RIGHT|BS_RIGHTBUTTON\n\tPUSHBUTTON\tDIALOG_MAPPLAYERCAMERASELECT,\t111, 160,  87, 100,  12, WS_DISABLED\n\n\tGROUPBOX\tDIALOG_MAPPLAYERELEMENTS,\t116,   8, 116, 160, 178\n\tGROUPBOX\tDIALOG_MAPPLAYEROPTIONS,\t117, 174, 116, 118,  74\n\tRADIOBUTTON\tDIALOG_MAPPLAYERNONE,\t\t118, 184, 126,  98,  12, WS_DISABLED\n\tRADIOBUTTON\tDIALOG_MAPPLAYERNA,\t\t119, 184, 138,  98,  12, WS_DISABLED\n\tRADIOBUTTON\tDIALOG_MAPPLAYERRESEARCH,\t120, 184, 150,  98,  12, WS_DISABLED\n\tRADIOBUTTON\tDIALOG_MAPPLAYEROK,\t\t121, 184, 162,  98,  12, WS_DISABLED\n\tRADIOBUTTON\tDIALOG_MAPPLAYERLOCKED,\t\t122, 184, 174,  98,  12, WS_DISABLED\n\n\tGROUPBOX\tDIALOG_MAPPLAYERCRLIST,\t\t123, 300,   6, 142, 240\n\tGROUPBOX\tDIALOG_MAPPLAYERCRSELECT,\t124, 300, 250, 142,  44\n\tRTEXT\t\tDIALOG_MAPPLAYERCRMAX,\t\t125, 320, 263,  76,  12, WS_DISABLED\n\tEDITTEXT\t\t\t\t\t126, 401, 262,  30,  12, ES_NUMBER\n\tSTATE3\t\tDIALOG_MAPPLAYERCRCANT,\t\t127, 308, 276, 120,  12, WS_DISABLED\n\t// ID 136 is reserved for UPDOWN control\n\n\tGROUPBOX\tDIALOG_NULL,\t\t\t128, 174, 194, 118, 100\n\tPUSHBUTTON\tDIALOG_OK,\t\t       IDOK, 208, 218,  50,  14\n\tPUSHBUTTON\tDIALOG_ABORT,\t\t   IDCANCEL, 208, 234,  50,  14\n\tPUSHBUTTON\tDIALOG_MAPPLAYERDEFAULT,\t129, 208, 254,  50,  14\n}",
+      "Captions": {
+        "DIALOG_MAPPLAYERTITLE": "Propriétés du joueur",
+        "DIALOG_MAPPLAYERINFO": "Informations sur le joueur",
+        "DIALOG_MAPPLAYERNAME": "Nom",
+        "DIALOG_VITALITY": "Santé",
+        "DIALOG_MAPPLAYERCPU": "Ordinateur",
+        "DIALOG_MAPPLAYERCPUOPTS": "Paramètres",
+        "DIALOG_MAPPLAYERGOLD": "Or au démarrage / Dans tout le niveau",
+        "DIALOG_AREASEPARATOR": "/",
+        "DIALOG_MAPPLAYERTREASURY": "Capacité des salles du trésor",
+        "DIALOG_MAPPLAYERCAMERA": "Position de démarrage de la caméra",
+        "DIALOG_MAPPLAYERCAMERASELECT": "Sélectionner la position",
+        "DIALOG_MAPPLAYERELEMENTS": "Liste des éléments",
+        "DIALOG_MAPPLAYEROPTIONS": "Options des élém. sélectionnés",
+        "DIALOG_MAPPLAYERNONE": "Ne rien spécifier",
+        "DIALOG_MAPPLAYERNA": "Indisponible",
+        "DIALOG_MAPPLAYERRESEARCH": "A rechercher",
+        "DIALOG_MAPPLAYEROK": "Acquis dès le départ",
+        "DIALOG_MAPPLAYERLOCKED": "Bloqué",
+        "DIALOG_MAPPLAYERCRLIST": "Liste des créatures",
+        "DIALOG_MAPPLAYERCRSELECT": "Créatures sélectionnées",
+        "DIALOG_MAPPLAYERCRMAX": "Nombre maximum",
+        "DIALOG_MAPPLAYERCRCANT": "Ne rien spécifier",
+        "DIALOG_NULL": "",
+        "DIALOG_OK": "Ok",
+        "DIALOG_ABORT": "Abandon",
+        "DIALOG_MAPPLAYERDEFAULT": "Par défaut"
+      }
+    },
+    {
+      "ID": 6802,
+      "RC": "6802 DIALOG 8, 8, 292, 212\nSTYLE DS_MODALFRAME|WS_BORDER|WS_VISIBLE|WS_CAPTION|WS_SYSMENU\nCLASS DIALOG_CLASS\nCAPTION DIALOG_MAPALLIESTITLE\nFONT 8, \"MS Sans Serif\"\n{\n\tGROUPBOX\tDIALOG_MAPALLIES,\t\t -1,   8,   6, 218, 180\n\tPUSHBUTTON\tDIALOG_NULL,\t\t\t100,  16,  18, 200, 160, BS_OWNERDRAW\n\tCOMBOBOX\t\t\t\t\t101,  16, 192, 200, 100, WS_VSCROLL|WS_HSCROLL|CBS_DROPDOWNLIST\n\n\tPUSHBUTTON\tDIALOG_OK,\t\t       IDOK, 234, 28,  50,  14\n\tPUSHBUTTON\tDIALOG_ABORT,\t\t   IDCANCEL, 234, 44,  50,  14\n\tPUSHBUTTON\tDIALOG_MAPPLAYERDEFAULT,\t102, 234, 64,  50,  14\n}",
+      "Captions": {
+        "DIALOG_MAPALLIESTITLE": "Modification des alliances",
+        "DIALOG_MAPALLIES": "Alliances",
+        "DIALOG_NULL": "",
+        "DIALOG_OK": "Ok",
+        "DIALOG_ABORT": "Abandon",
+        "DIALOG_MAPPLAYERDEFAULT": "Par défaut"
+      }
+    },
+    {
+      "ID": 6803,
+      "RC": "6803 DIALOG 8, 8, 310, 280\nSTYLE DS_MODALFRAME|WS_BORDER|WS_VISIBLE|WS_CAPTION|WS_SYSMENU\nCLASS DIALOG_CLASS\nCAPTION DIALOG_MAPCREATURESTITLE\nFONT 8, \"MS Sans Serif\"\n{\n\tGROUPBOX\tDIALOG_MAPCREATURES,\t\t100,   8,   6, 294, 186\n\n\tGROUPBOX\tDIALOG_MAPCREATURESPARAMS,\t101,   8, 196, 294,  50\n\tRTEXT\t\tDIALOG_MAPCREATURESRES,\t\t102,  34, 211,  40,  12\n\tEDITTEXT\t\t\t\t\t103,  76, 210,  40,  12, ES_NUMBER\n\tRTEXT\t\tDIALOG_MAPCREATURESCOR,\t\t104, 114, 211,  40,  12\n\tEDITTEXT\t\t\t\t\t105, 156, 210,  40,  12, ES_NUMBER\n\tRTEXT\t\tDIALOG_MAPCREATURESCHA,\t\t106, 194, 211,  40,  12\n\tEDITTEXT\t\t\t\t\t107, 236, 210,  40,  12, ES_NUMBER\n\tRTEXT\t\tDIALOG_MAPCREATURESSTR,\t\t108,  34, 225,  40,  12\n\tEDITTEXT\t\t\t\t\t109,  76, 224,  40,  12, ES_NUMBER\n\t// IDs equals to EDITTEXT controls IDs+10 are reserved for UPDOWN controls\n\n\tPUSHBUTTON\tDIALOG_OK,\t\t       IDOK,  12, 256,  50,  14\n\tPUSHBUTTON\tDIALOG_ABORT,\t\t   IDCANCEL, 248, 256,  50,  14\n}",
+      "Captions": {
+        "DIALOG_MAPCREATURESTITLE": "Modification des paramètres des créatures",
+        "DIALOG_MAPCREATURES": "Liste des créatures",
+        "DIALOG_MAPCREATURESPARAMS": "Paramètres des créatures sélectionnées",
+        "DIALOG_MAPCREATURESRES": "Résistance",
+        "DIALOG_MAPCREATURESCOR": "Courage",
+        "DIALOG_MAPCREATURESCHA": "Charisme",
+        "DIALOG_MAPCREATURESSTR": "Force",
+        "DIALOG_OK": "Ok",
+        "DIALOG_ABORT": "Abandon"
+      }
+    },
+    {
+      "ID": 6804,
+      "RC": "6804 DIALOG 8, 8, 310, 276\nSTYLE DS_MODALFRAME|WS_BORDER|WS_VISIBLE|WS_CAPTION|WS_SYSMENU\nCLASS DIALOG_CLASS\nCAPTION DIALOG_MAPVOICETITLE\nFONT 8, \"MS Sans Serif\"\n{\n\tCOMBOBOX\t\t\t\t\t100, 100,   8, 160, 100, WS_VSCROLL|WS_HSCROLL|CBS_DROPDOWNLIST|CBS_SORT\n\tRTEXT\t\tDIALOG_MAPVOICEFILE,\t\t101,  16,  10,  80,  10\n\n\tGROUPBOX\tDIALOG_MAPVOICEIDENTIFIERS,\t102,   8,  24, 294,  60\n\tRTEXT\t\tDIALOG_MAPVOICEINTROLEVEL,\t103,  26,  38,  80,  10\n\tEDITTEXT\t\t\t\t\t104, 110,  36,  30,  12\n\tRTEXT\t\tDIALOG_MAPVOICEVICTORY,\t\t105,  26,  52,  80,  10\n\tEDITTEXT\t\t\t\t\t106, 110,  50,  30,  12\n\tRTEXT\t\tDIALOG_MAPVOICEDEFEAT,\t\t107,  26,  66,  80,  10\n\tEDITTEXT\t\t\t\t\t108, 110,  64,  30,  12\n\tRTEXT\t\tDIALOG_MAPVOICEENDLEVEL,\t109, 140,  45,  80,  10\n\tEDITTEXT\t\t\t\t\t110, 224,  43,  30,  12\n\tRTEXT\t\tDIALOG_MAPVOICEGENERIC,\t\t111, 140,  59,  80,  10\n\tEDITTEXT\t\t\t\t\t112, 224,  57,  30,  12\n\t// ID from 124 to 132 are reserved for UPDOWN controls\n\n\tGROUPBOX\tDIALOG_MAPVOICELIST,\t\t200,   8,  88, 294, 160\n\tLISTBOX\t\t\t\t\t\t201,  12,  98, 286, 106, WS_VSCROLL|LBS_SORT|LBS_NOTIFY|LBS_NOINTEGRALHEIGHT\n\tEDITTEXT\t\t\t\t\t202,  12, 204, 286,  40, WS_VSCROLL|ES_READONLY|ES_MULTILINE\n\n\tPUSHBUTTON\tDIALOG_OK,\t\t       IDOK,  12, 254,  50,  14\n\tPUSHBUTTON\tDIALOG_ABORT,\t\t   IDCANCEL, 248, 254,  50,  14\n}",
+      "Captions": {
+        "DIALOG_MAPVOICETITLE": "Voix du jeu",
+        "DIALOG_MAPVOICEFILE": "Fichier son",
+        "DIALOG_MAPVOICEIDENTIFIERS": "Identificateurs (SPEECH_MENTOR)",
+        "DIALOG_MAPVOICEINTROLEVEL": "Introduction du niveau",
+        "DIALOG_MAPVOICEVICTORY": "Victoire",
+        "DIALOG_MAPVOICEDEFEAT": "Défaite",
+        "DIALOG_MAPVOICEENDLEVEL": "Fin de niveau",
+        "DIALOG_MAPVOICEGENERIC": "Introduction générique",
+        "DIALOG_MAPVOICELIST": "Sons présents dans le fichier son sélectionné",
+        "DIALOG_OK": "Ok",
+        "DIALOG_ABORT": "Abandon"
+      }
+    },
+    {
+      "ID": 6805,
+      "RC": "6805 DIALOG 8, 8, 404, 326\nSTYLE DS_MODALFRAME|WS_BORDER|WS_VISIBLE|WS_CAPTION|WS_SYSMENU\nCLASS DIALOG_CLASS\nCAPTION DIALOG_MAPTXTTITLE\nFONT 8, \"MS Sans Serif\"\n{\n\tCOMBOBOX\t\t\t\t\t100, 100,   8, 200, 100, WS_VSCROLL|WS_HSCROLL|CBS_DROPDOWNLIST\n\tRTEXT\t\tDIALOG_MAPTXTFILE,\t\t101,  16,  10,  80,  10\n\n\tGROUPBOX\tDIALOG_MAPTXTINTRO,\t\t102,   8,  24, 334,  78\n\tRTEXT\t\tDIALOG_MAPTXTINTROTITLE,\t103,  16,  45,  80,  10\n\tEDITTEXT\t\t\t\t\t104, 100,  43,  30,  12\n\tRTEXT\t\tDIALOG_MAPTXTINTROSPOT,\t\t105,  16,  59,  80,  10\n\tEDITTEXT\t\t\t\t\t106, 100,  57,  30,  12\n\tRTEXT\t\tDIALOG_MAPTXTDEBRIEFING,\t107,  16,  73,  80,  10\n\tEDITTEXT\t\t\t\t\t108, 100,  71,  30,  12\n\tRTEXT\t\tDIALOG_MAPTXTMAINOBJECTIVE,\t109, 150,  38, 100,  10\n\tEDITTEXT\t\t\t\t\t110, 254,  36,  30,  12\n\tRTEXT\t\tDIALOG_MAPTXTSUBOBJECTIVE1,\t111, 150,  56, 100,  10\n\tEDITTEXT\t\t\t\t\t112, 254,  54,  30,  12\n\tRTEXT\t\tDIALOG_MAPTXTSUBOBJECTIVE2,\t113, 150,  70, 100,  10\n\tEDITTEXT\t\t\t\t\t114, 254,  68,  30,  12\n\tRTEXT\t\tDIALOG_MAPTXTSUBOBJECTIVE3,\t115, 150,  84, 100,  10\n\tEDITTEXT\t\t\t\t\t116, 254,  82,  30,  12\n\t// IDs match EDITTEXT ids + 100 are reserved for UPDOWN controls\n\n\tGROUPBOX\tDIALOG_MAPTXTOVERRIDE,\t\t120,   8, 108, 334,  88\n\tRTEXT\t\tDIALOG_MAPTXTOVERRIDE1,\t\t121,  16, 124,  10,  10\n\tCOMBOBOX\t\t\t\t\t122,  30, 122, 100, 100, WS_VSCROLL|CBS_DROPDOWNLIST\n\tEDITTEXT\t\t\t\t\t123, 134, 122,  30,  12\n\tRTEXT\t\tDIALOG_MAPTXTOVERRIDE2,\t\t125,  16, 142,  10,  10\n\tCOMBOBOX\t\t\t\t\t126,  30, 140, 100, 100, WS_VSCROLL|CBS_DROPDOWNLIST\n\tEDITTEXT\t\t\t\t\t127, 134, 140,  30,  12\n\tRTEXT\t\tDIALOG_MAPTXTOVERRIDE3,\t\t129,  16, 160,  10,  10\n\tCOMBOBOX\t\t\t\t\t130,  30, 158, 100, 100, WS_VSCROLL|CBS_DROPDOWNLIST\n\tEDITTEXT\t\t\t\t\t131, 134, 158,  30,  12\n\tRTEXT\t\tDIALOG_MAPTXTOVERRIDE4,\t\t133,  16, 178,  10,  10\n\tCOMBOBOX\t\t\t\t\t134,  30, 176, 100, 100, WS_VSCROLL|CBS_DROPDOWNLIST\n\tEDITTEXT\t\t\t\t\t135, 134, 176,  30,  12\n\tRTEXT\t\tDIALOG_MAPTXTOVERRIDE5,\t\t137, 176, 124,  10,  10\n\tCOMBOBOX\t\t\t\t\t138, 190, 122, 100, 100, WS_VSCROLL|CBS_DROPDOWNLIST\n\tEDITTEXT\t\t\t\t\t139, 294, 122,  30,  12\n\tRTEXT\t\tDIALOG_MAPTXTOVERRIDE6,\t\t141, 176, 142,  10,  10\n\tCOMBOBOX\t\t\t\t\t142, 190, 140, 100, 100, WS_VSCROLL|CBS_DROPDOWNLIST\n\tEDITTEXT\t\t\t\t\t143, 294, 140,  30,  12\n\tRTEXT\t\tDIALOG_MAPTXTOVERRIDE7,\t\t145, 176, 160,  10,  10\n\tCOMBOBOX\t\t\t\t\t146, 190, 158, 100, 100, WS_VSCROLL|CBS_DROPDOWNLIST\n\tEDITTEXT\t\t\t\t\t147, 294, 158,  30,  12\n\tRTEXT\t\tDIALOG_MAPTXTOVERRIDE8,\t\t149, 176, 178,  10,  10\n\tCOMBOBOX\t\t\t\t\t150, 190, 176, 100, 100, WS_VSCROLL|CBS_DROPDOWNLIST\n\tEDITTEXT\t\t\t\t\t151, 294, 176,  30,  12\n\t// IDs that immediately follow EDITTEXT controls IDs are reserved for UPDOWN controls\n\n\tGROUPBOX\tDIALOG_MAPTXTLIST,\t\t159,   8, 202, 334, 116\n\tCOMBOBOX\t\t\t\t\t161,  12, 212, 326, 100, WS_VSCROLL|CBS_DROPDOWNLIST\n\tLISTBOX\t\t\t\t\t\t160,  12, 228, 326,  84, WS_VSCROLL|LBS_NOTIFY|LBS_NOINTEGRALHEIGHT\n\n\tPUSHBUTTON\tDIALOG_OK,\t\t       IDOK, 348, 36,  50,  14\n\tPUSHBUTTON\tDIALOG_ABORT,\t\t   IDCANCEL, 348, 52,  50,  14\n}",
+      "Captions": {
+        "DIALOG_MAPTXTTITLE": "Textes du jeu",
+        "DIALOG_MAPTXTFILE": "Fichier texte",
+        "DIALOG_MAPTXTINTRO": "Introduction && objectifs (Phases intermédiaires)",
+        "DIALOG_MAPTXTINTROTITLE": "Titre",
+        "DIALOG_MAPTXTINTROSPOT": "Intrigue",
+        "DIALOG_MAPTXTDEBRIEFING": "Debriefing",
+        "DIALOG_MAPTXTMAINOBJECTIVE": "Objectif principal",
+        "DIALOG_MAPTXTSUBOBJECTIVE1": "Premier objectif secondaire",
+        "DIALOG_MAPTXTSUBOBJECTIVE2": "Deuxième objectif secondaire",
+        "DIALOG_MAPTXTSUBOBJECTIVE3": "Troisième objectif secondaire",
+        "DIALOG_MAPTXTOVERRIDE": "Textes de remplacement lors de l'apparition des créatures",
+        "DIALOG_MAPTXTOVERRIDE1": "1:",
+        "DIALOG_MAPTXTOVERRIDE2": "2:",
+        "DIALOG_MAPTXTOVERRIDE3": "3:",
+        "DIALOG_MAPTXTOVERRIDE4": "4:",
+        "DIALOG_MAPTXTOVERRIDE5": "5:",
+        "DIALOG_MAPTXTOVERRIDE6": "6:",
+        "DIALOG_MAPTXTOVERRIDE7": "7:",
+        "DIALOG_MAPTXTOVERRIDE8": "8:",
+        "DIALOG_MAPTXTLIST": "Liste des textes",
+        "DIALOG_OK": "Ok",
+        "DIALOG_ABORT": "Abandon"
+      }
+    },
+    {
+      "ID": 6806,
+      "RC": "6806 DIALOG 8, 8, 310, 256\nSTYLE DS_MODALFRAME|WS_BORDER|WS_VISIBLE|WS_CAPTION|WS_SYSMENU\nCLASS DIALOG_CLASS\nCAPTION DIALOG_MAPVARSTITLE\nFONT 8, \"MS Sans Serif\"\n{\n\tGROUPBOX\tDIALOG_MAPVARSLIST,\t\t100,   8,   6, 294, 216\n\n\tPUSHBUTTON\tDIALOG_MAPVARSMODIFY,\t\t101,  12, 232,  50,  14, WS_DISABLED\n\n\tPUSHBUTTON\tDIALOG_MAPVARSDEFAULT,\t\t102, 140, 232,  50,  14\n\tPUSHBUTTON\tDIALOG_OK,\t\t       IDOK, 194, 232,  50,  14\n\tPUSHBUTTON\tDIALOG_ABORT,\t\t   IDCANCEL, 248, 232,  50,  14\n}",
+      "Captions": {
+        "DIALOG_MAPVARSTITLE": "Modification des variables du jeu",
+        "DIALOG_MAPVARSLIST": "Variables",
+        "DIALOG_MAPVARSMODIFY": "Modifier",
+        "DIALOG_MAPVARSDEFAULT": "Par défaut",
+        "DIALOG_OK": "Ok",
+        "DIALOG_ABORT": "Abandon"
+      }
+    },
+    {
+      "ID": 6807,
+      "RC": "6807 DIALOG 8, 8, 350, 336\nSTYLE DS_MODALFRAME|WS_BORDER|WS_VISIBLE|WS_CAPTION|WS_SYSMENU\nCLASS DIALOG_CLASS\nCAPTION DIALOG_MAPOPTIONSTITLE\nFONT 8, \"MS Sans Serif\"\n{\n\tCONTROL\t\tDIALOG_MAPOPTIONSGAME,\t\t100, \"STATIC\", WS_CHILD|SS_OWNERDRAW, 0, 0, 350, 10\n\n\tCONTROL\t\tDIALOG_NULL,\t\t\t101, \"STATIC\", WS_CHILD|SS_OWNERDRAW, 6, 14, 32, 32\n\tLTEXT\t\tDIALOG_MAPOPTIONSHORNY,\t\t102,  42,  16, 180,  10\n\tCONTROL\t\tDIALOG_NULL,\t\t\t103, \"msctls_trackbar32\", WS_CHILD|TBS_HORZ|TBS_AUTOTICKS, 42, 30, 170, 10\n\tCONTROL\t\tDIALOG_NULL,\t\t\t104, \"STATIC\", WS_CHILD|WS_BORDER, 216, 29, 20, 12\n\tRTEXT\t\tDIALOG_MAPOPTIONSSPEED,\t\t105,  10,  52,  50,  10\n\tEDITTEXT\t\t\t\t\t106,  64,  51,  24,  12, ES_NUMBER|ES_READONLY\n\tRTEXT\t\tDIALOG_MAPOPTIONSTRACK,\t\t107,  10,  66,  50,  10\n\tCONTROL\t\tDIALOG_NULL,\t\t\t108, \"msctls_trackbar32\", WS_CHILD|TBS_HORZ|TBS_AUTOTICKS, 64, 66, 100, 10\n\n\t// ID 200 is reserved for up-down control\n\n\tCONTROL\t\tDIALOG_MAPOPTIONSTYPE,\t\t109, \"STATIC\", WS_CHILD|SS_OWNERDRAW, 0, 84, 350, 10\n\tAUTOCHECKBOX\tDIALOG_MAPOPTIONSSECRET,\t110,  10,  98,  80, 10\n\tCONTROL\t\tDIALOG_NULL,\t\t\t111, \"msctls_trackbar32\", WS_CHILD|TBS_HORZ|TBS_AUTOTICKS, 94, 103, 170, 10\n\tCONTROL\t\tDIALOG_NULL,\t\t\t112, \"STATIC\", WS_CHILD|WS_BORDER, 268, 102, 20, 12\n\tAUTOCHECKBOX\tDIALOG_MAPOPTIONSSPECIAL,\t113,  10, 110,  80, 10\n\tAUTOCHECKBOX\tDIALOG_MAPOPTIONSMULTI,\t\t114,  10, 122, 180, 10\n\tAUTOCHECKBOX\tDIALOG_MAPOPTIONSSINGLE,\t115,  10, 134, 180, 10\n\tAUTOCHECKBOX\tDIALOG_MAPOPTIONSPETDONJON,\t116,  10, 146, 180, 10\n\n\tCONTROL\t\tDIALOG_MAPOPTIONSPARAMS,\t117, \"STATIC\", WS_CHILD|SS_OWNERDRAW, 0, 162, 350, 10\n\tAUTOCHECKBOX\tDIALOG_MAPOPTIONSJAIL,\t\t118,  10, 176, 170, 10\n\tAUTOCHECKBOX\tDIALOG_MAPOPTIONSCRYSTAL,\t119,  10, 188, 170, 10\n\tAUTOCHECKBOX\tDIALOG_MAPOPTIONSHORNYONE,\t120,  10, 200, 170, 10\n\tAUTOCHECKBOX\tDIALOG_MAPOPTIONSOBJECTIVES,\t121, 190, 176, 170, 10\n\tAUTOCHECKBOX\tDIALOG_MAPOPTIONSLOCKOPTIONS,\t122, 190, 188, 170, 10\n\tAUTOCHECKBOX\tDIALOG_MAPOPTIONSLOCKPOSSESS,\t123, 190, 200, 170, 10\n\tAUTOCHECKBOX\tDIALOG_MAPOPTIONSKILLEDHEROES,\t124,  10, 212, 170, 10\n\n\tCONTROL\t\tDIALOG_MAPOPTIONSREWARDS,\t124, \"STATIC\", WS_CHILD|SS_OWNERDRAW, 0, 228, 350, 10\n\tCOMBOBOX\t\t\t\t\t125,  64, 242, 100, 100, WS_VSCROLL|CBS_DROPDOWNLIST|CBS_OWNERDRAWFIXED\n\tCOMBOBOX\t\t\t\t\t126,  64, 262, 100, 100, WS_VSCROLL|CBS_DROPDOWNLIST|CBS_OWNERDRAWFIXED\n\tCOMBOBOX\t\t\t\t\t127,  64, 282, 100, 100, WS_VSCROLL|CBS_DROPDOWNLIST|CBS_OWNERDRAWFIXED\n\tCOMBOBOX\t\t\t\t\t128, 232, 242, 100, 100, WS_VSCROLL|CBS_DROPDOWNLIST|CBS_OWNERDRAWFIXED\n\tCOMBOBOX\t\t\t\t\t129, 232, 262, 100, 100, WS_VSCROLL|CBS_DROPDOWNLIST|CBS_OWNERDRAWFIXED\n\tCOMBOBOX\t\t\t\t\t130, 232, 282, 100, 100, WS_VSCROLL|CBS_DROPDOWNLIST|CBS_OWNERDRAWFIXED\n\n\tCONTROL\t\tDIALOG_NULL,\t\t\t131, \"STATIC\", WS_CHILD|SS_OWNERDRAW, 0, 302, 350, 10\n\tPUSHBUTTON\tDIALOG_OK,\t\t       IDOK, 230, 314, 50, 14\n\tPUSHBUTTON\tDIALOG_ABORT,\t\t   IDCANCEL, 284, 314, 50, 14\n}",
+      "Captions": {
+        "DIALOG_MAPOPTIONSTITLE": "Options du niveau",
+        "DIALOG_MAPOPTIONSGAME": "Divers",
+        "DIALOG_NULL": "",
+        "DIALOG_MAPOPTIONSHORNY": "Nombre de pièces acquises du talisman d'Horny",
+        "DIALOG_MAPOPTIONSSPEED": "Vitesse du jeu",
+        "DIALOG_MAPOPTIONSTRACK": "Piste audio",
+        "DIALOG_MAPOPTIONSTYPE": "Type de niveau",
+        "DIALOG_MAPOPTIONSSECRET": "Niveau secret",
+        "DIALOG_MAPOPTIONSSPECIAL": "Niveau spécial",
+        "DIALOG_MAPOPTIONSMULTI": "Niveau jouable en multi-joueurs",
+        "DIALOG_MAPOPTIONSSINGLE": "Niveau jouable en mode escarmouche",
+        "DIALOG_MAPOPTIONSPETDONJON": "P'tit donjon",
+        "DIALOG_MAPOPTIONSPARAMS": "Paramètres",
+        "DIALOG_MAPOPTIONSJAIL": "Toujours emprisonner les ennemis",
+        "DIALOG_MAPOPTIONSCRYSTAL": "Le dernier donjon détruit génère un cristal",
+        "DIALOG_MAPOPTIONSHORNYONE": "N'autoriser qu'une seule utilisation du grand cornu",
+        "DIALOG_MAPOPTIONSOBJECTIVES": "Afficher les objectifs au démarrage",
+        "DIALOG_MAPOPTIONSLOCKOPTIONS": "Bloquer les options du jeu",
+        "DIALOG_MAPOPTIONSLOCKPOSSESS": "Empêcher l'arrêt de la possession",
+        "DIALOG_MAPOPTIONSKILLEDHEROES": "Afficher le nombre de héros tués",
+        "DIALOG_MAPOPTIONSREWARDS": "Récompenses",
+        "DIALOG_OK": "Ok",
+        "DIALOG_ABORT": "Abandon"
+      }
+    }
+  ],
+  "SemanticCaptions": [
+    {
+      "Field": "Name",
+      "Key": "MapProperties.Name",
+      "Ordinal": null
+    },
+    {
+      "Field": "Players",
+      "Key": "MapProperties.Players",
+      "Ordinal": null
+    },
+    {
+      "Field": "Version",
+      "Key": "MapProperties.Version",
+      "Ordinal": null
+    },
+    {
+      "Field": "HornyTalismanPieces",
+      "Key": "LevelOptions.Field.HornyTalismanPieces",
+      "Ordinal": null
+    },
+    {
+      "Field": "GameTicks",
+      "Key": "LevelOptions.Field.GameTicks",
+      "Ordinal": null
+    },
+    {
+      "Field": "Soundtrack",
+      "Key": "LevelOptions.Field.Soundtrack",
+      "Ordinal": null
+    },
+    {
+      "Field": "SpecialLevelNumber",
+      "Key": "LevelOptions.Field.SpecialLevelNumber",
+      "Ordinal": null
+    },
+    {
+      "Field": "RewardPrev1",
+      "Key": "LevelOptions.Field.RewardPrev1",
+      "Ordinal": null
+    },
+    {
+      "Field": "RewardPrev2",
+      "Key": "LevelOptions.Field.RewardPrev2",
+      "Ordinal": null
+    },
+    {
+      "Field": "RewardPrev3",
+      "Key": "LevelOptions.Field.RewardPrev3",
+      "Ordinal": null
+    },
+    {
+      "Field": "RewardNext1",
+      "Key": "LevelOptions.Field.RewardNext1",
+      "Ordinal": null
+    },
+    {
+      "Field": "RewardNext2",
+      "Key": "LevelOptions.Field.RewardNext2",
+      "Ordinal": null
+    },
+    {
+      "Field": "RewardNext3",
+      "Key": "LevelOptions.Field.RewardNext3",
+      "Ordinal": null
+    },
+    {
+      "Field": "SpeechFile",
+      "Key": "SpeechText.Field.SpeechFile",
+      "Ordinal": null
+    },
+    {
+      "Field": "TextTableID",
+      "Key": "SpeechText.Field.TextTableID",
+      "Ordinal": null
+    },
+    {
+      "Field": "SpeechPreLevelID",
+      "Key": "SpeechText.Field.SpeechPreLevelID",
+      "Ordinal": null
+    },
+    {
+      "Field": "SpeechWinID",
+      "Key": "SpeechText.Field.SpeechWinID",
+      "Ordinal": null
+    },
+    {
+      "Field": "SpeechLooseID",
+      "Key": "SpeechText.Field.SpeechLooseID",
+      "Ordinal": null
+    },
+    {
+      "Field": "SpeechNewsID",
+      "Key": "SpeechText.Field.SpeechNewsID",
+      "Ordinal": null
+    },
+    {
+      "Field": "SpeechGenericPreLevelID",
+      "Key": "SpeechText.Field.SpeechGenericPreLevelID",
+      "Ordinal": null
+    },
+    {
+      "Field": "TextTitleID",
+      "Key": "SpeechText.Field.TextTitleID",
+      "Ordinal": null
+    },
+    {
+      "Field": "TextPlotID",
+      "Key": "SpeechText.Field.TextPlotID",
+      "Ordinal": null
+    },
+    {
+      "Field": "TextDebriefingID",
+      "Key": "SpeechText.Field.TextDebriefingID",
+      "Ordinal": null
+    },
+    {
+      "Field": "TextObjectiveID",
+      "Key": "SpeechText.Field.TextObjectiveID",
+      "Ordinal": null
+    },
+    {
+      "Field": "TextSubObjective1ID",
+      "Key": "SpeechText.Field.TextSubObjective1ID",
+      "Ordinal": null
+    },
+    {
+      "Field": "TextSubObjective2ID",
+      "Key": "SpeechText.Field.TextSubObjective2ID",
+      "Ordinal": null
+    },
+    {
+      "Field": "TextSubObjective3ID",
+      "Key": "SpeechText.Field.TextSubObjective3ID",
+      "Ordinal": null
+    },
+    {
+      "Field": "TextIntroCreatureID0",
+      "Key": "SpeechText.IntroCreature",
+      "Ordinal": 1
+    },
+    {
+      "Field": "TextIntroCreatureID1",
+      "Key": "SpeechText.IntroCreature",
+      "Ordinal": 2
+    },
+    {
+      "Field": "TextIntroCreatureID2",
+      "Key": "SpeechText.IntroCreature",
+      "Ordinal": 3
+    },
+    {
+      "Field": "TextIntroCreatureID3",
+      "Key": "SpeechText.IntroCreature",
+      "Ordinal": 4
+    },
+    {
+      "Field": "TextIntroCreatureID4",
+      "Key": "SpeechText.IntroCreature",
+      "Ordinal": 5
+    },
+    {
+      "Field": "TextIntroCreatureID5",
+      "Key": "SpeechText.IntroCreature",
+      "Ordinal": 6
+    },
+    {
+      "Field": "TextIntroCreatureID6",
+      "Key": "SpeechText.IntroCreature",
+      "Ordinal": 7
+    },
+    {
+      "Field": "TextIntroCreatureID7",
+      "Key": "SpeechText.IntroCreature",
+      "Ordinal": 8
+    },
+    {
+      "Field": "TextIntroTextID0",
+      "Key": "SpeechText.IntroText",
+      "Ordinal": 1
+    },
+    {
+      "Field": "TextIntroTextID1",
+      "Key": "SpeechText.IntroText",
+      "Ordinal": 2
+    },
+    {
+      "Field": "TextIntroTextID2",
+      "Key": "SpeechText.IntroText",
+      "Ordinal": 3
+    },
+    {
+      "Field": "TextIntroTextID3",
+      "Key": "SpeechText.IntroText",
+      "Ordinal": 4
+    },
+    {
+      "Field": "TextIntroTextID4",
+      "Key": "SpeechText.IntroText",
+      "Ordinal": 5
+    },
+    {
+      "Field": "TextIntroTextID5",
+      "Key": "SpeechText.IntroText",
+      "Ordinal": 6
+    },
+    {
+      "Field": "TextIntroTextID6",
+      "Key": "SpeechText.IntroText",
+      "Ordinal": 7
+    },
+    {
+      "Field": "TextIntroTextID7",
+      "Key": "SpeechText.IntroText",
+      "Ordinal": 8
+    }
+  ],
+  "LevelFlags": [
+    {
+      "Control": 110,
+      "Field": "Options",
+      "Mask": 32,
+      "Inverted": false
+    },
+    {
+      "Control": 113,
+      "Field": "Options",
+      "Mask": 64,
+      "Inverted": false
+    },
+    {
+      "Control": 114,
+      "Field": "Options2",
+      "Mask": 4,
+      "Inverted": false
+    },
+    {
+      "Control": 115,
+      "Field": "Options2",
+      "Mask": 8,
+      "Inverted": false
+    },
+    {
+      "Control": 116,
+      "Field": "Options2",
+      "Mask": 32,
+      "Inverted": false
+    },
+    {
+      "Control": 118,
+      "Field": "Options",
+      "Mask": 8,
+      "Inverted": false
+    },
+    {
+      "Control": 119,
+      "Field": "Options2",
+      "Mask": 2,
+      "Inverted": false
+    },
+    {
+      "Control": 120,
+      "Field": "Options",
+      "Mask": 16,
+      "Inverted": false
+    },
+    {
+      "Control": 121,
+      "Field": "Options2",
+      "Mask": 1,
+      "Inverted": false
+    },
+    {
+      "Control": 122,
+      "Field": "Options2",
+      "Mask": 16,
+      "Inverted": false
+    },
+    {
+      "Control": 123,
+      "Field": "Options",
+      "Mask": 4,
+      "Inverted": true
+    },
+    {
+      "Control": 124,
+      "Field": "Options",
+      "Mask": 128,
+      "Inverted": false
+    }
+  ],
+  "CreatureAppearanceOverridePairs": 8,
+  "TargetVersions": [
+    13,
+    16,
+    17
+  ],
+  "NativeTargetVersionIsNotStored": true,
+  "ReusedEvidence": [
+    "MAP_GENERAL_SOURCE_SCOPE.md",
+    "MAP_LEVEL_OPTIONS_SOURCE_SCOPE.md",
+    "MAP_SPEECH_TEXT_SOURCE_SCOPE.md",
+    "BRUSH_PLAYER_GATE_CAPTION_AUDIT.md",
+    "PLAYER_AI_FIELD_CAPTIONS.md",
+    "MAP_RULE_FILL_IMAGES.md",
+    "CREATURE_LEVEL_MODIFIER_WINDOW.md"
+  ],
+  "UIReadOnlyPlayerGoldTreasuryInfoScope": "Existing statistics/diagnostics I09; no new editable field inferred from read-only source captions.",
+  "CaptionGroupClosed": "map metadata/options/speech/player UI outside recorded AI/rule audits",
+  "RemainingCaptionGroups": [
+    "editor settings and miscellaneous request/report captions",
+    "final source-caller coverage across existing I13 inventories"
+  ]
+}

@@ -1,0 +1,112 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\..\src\DK2MapEditor.App\Editing\ObjectManagerSession.cs" Link="AppSource\ObjectManagerSession.cs" />
+    <Compile Include="../../src/DK2MapEditor.App/Editing/ScenarioBandPreviewRows.cs" Link="AppSource/ScenarioBandPreviewRows.cs" />
+    <Compile Include="..\..\src\DK2MapEditor.App\Editing\ObjectBatchSession.cs" Link="AppSource\ObjectBatchSession.cs" />
+    <Compile Include="..\..\src\DK2MapEditor.App\Editing\RegionCoordinateRules.cs" Link="AppSource\RegionCoordinateRules.cs" />
+    <Compile Include="..\..\src\DK2MapEditor.App\Editing\EditorSpecialKeyboard.cs" Link="AppSource\EditorSpecialKeyboard.cs" />
+    <Compile Include="..\..\src\DK2MapEditor.App\Editing\EditorKeyboardRoutes.cs" Link="AppSource\EditorKeyboardRoutes.cs" />
+    <Compile Include="..\..\src\DK2MapEditor.App\Editing\EditorHelpRules.cs" Link="AppSource\EditorHelpRules.cs" />
+    <Compile Include="..\..\src\DK2MapEditor.App\Editing\EditorSectionVersions.cs" Link="AppSource\EditorSectionVersions.cs" />
+    <Compile Include="..\..\src\DK2MapEditor.App\Editing\ObjectManagerListRules.cs" Link="AppSource\ObjectManagerListRules.cs" />
+    <Compile Include="..\..\src\DK2MapEditor.App\Editing\DiskProgressStream.cs" Link="AppSource\DiskProgressStream.cs" />
+    <Compile Include="..\..\src\DK2MapEditor.App\Editing\EditorFileDialogSession.cs" Link="AppSource\EditorFileDialogSession.cs" />
+    <Compile Include="..\..\src\DK2MapEditor.App\Editing\ThumbnailFileOutput.cs" Link="AppSource\ThumbnailFileOutput.cs" />
+    <Compile Include="..\..\src\DK2MapEditor.App\Editing\CreatureCatalogueFileOutput.cs" Link="AppSource\CreatureCatalogueFileOutput.cs" />
+    <Compile Include="..\..\src\DK2MapEditor.App\Editing\EditorReportRules.cs" Link="AppSource\EditorReportRules.cs" />
+    <Compile Include="..\..\src\DK2MapEditor.App\Editing\EditorWindowCaption.cs" Link="AppSource\EditorWindowCaption.cs" />
+    <Compile Include="..\..\src\DK2MapEditor.App\Editing\EditorSoundRules.cs" Link="AppSource\EditorSoundRules.cs" />
+    <Compile Include="..\..\src\DK2MapEditor.App\Editing\ObjectManagerFlowRules.cs" Link="AppSource\ObjectManagerFlowRules.cs" />
+    <ProjectReference Include="..\..\src\DK2MapEditor.Core\DK2MapEditor.Core.csproj" />
+    <EmbeddedResource Include="ScenarioDescriptionOperands.json" />
+    <EmbeddedResource Include="ScenarioParameterPages.json" />
+    <EmbeddedResource Include="GlobalDefinitionImagesSource.json" />
+    <EmbeddedResource Include="ScenarioCatalogueImagesSource.json" />
+    <EmbeddedResource Include="ScenarioComparisonPages.json" />
+    <EmbeddedResource Include="ScenarioEnumPages.json" />
+    <EmbeddedResource Include="ScenarioScalarPages.json" />
+    <EmbeddedResource Include="ScenarioNamedPages.json" />
+    <EmbeddedResource Include="ScenarioSemanticOptions.json" />
+    <EmbeddedResource Include="ScenarioActionPages.json" />
+    <EmbeddedResource Include="ScenarioCameraPage.json" />
+    <EmbeddedResource Include="ScenarioAddCreaturePage.json" />
+    <EmbeddedResource Include="ScenarioCreationDefaults.json" />
+    <EmbeddedResource Include="ScenarioSpatialSource.json" />
+    <EmbeddedResource Include="ScenarioTerrainOwnersSource.json" />
+    <EmbeddedResource Include="ScenarioPageHintsSource.json" />
+    <EmbeddedResource Include="ScenarioAreaHintsSource.json" />
+    <EmbeddedResource Include="ScenarioPrerequisitesSource.json" />
+    <EmbeddedResource Include="DirectSelectionExportSource.json" />
+    <EmbeddedResource Include="EditorSelectionCallersSource.json" />
+    <EmbeddedResource Include="EditorTransformCallersSource.json" />
+    <EmbeddedResource Include="ProjectileEditorSource.json" />
+    <EmbeddedResource Include="MapCreatureModifiersSource.json" />
+    <EmbeddedResource Include="EditorResizeScriptsSource.json" />
+    <EmbeddedResource Include="EditorResizePlayersSource.json" />
+    <EmbeddedResource Include="NativeResizeDerivedSource.json" />
+    <EmbeddedResource Include="NativeGateMutationSource.json" />
+    <EmbeddedResource Include="ScenarioSpeechSource.json" />
+    <EmbeddedResource Include="ScenarioExistingWizardSource.json" />
+    <EmbeddedResource Include="GlobalTerrainSource.json" />
+    <EmbeddedResource Include="GlobalRoomSource.json" />
+    <EmbeddedResource Include="GlobalDoorSource.json" />
+    <EmbeddedResource Include="GlobalTrapSource.json" />
+    <EmbeddedResource Include="GlobalSpellSource.json" />
+    <EmbeddedResource Include="GlobalVariablesSessionSource.json" />
+    <EmbeddedResource Include="CreatureGlobalsSessionSource.json" />
+    <EmbeddedResource Include="CreatureRemainingPagesSource.json" />
+  </ItemGroup>
+
+  <ItemGroup><EmbeddedResource Include="EditorListImagesSource.json" /></ItemGroup>
+  <ItemGroup><EmbeddedResource Include="MapRuleFillImagesSource.json" /></ItemGroup>
+  <ItemGroup><EmbeddedResource Include="ScenarioPointOwnerImagesSource.json" /></ItemGroup>
+  <ItemGroup><EmbeddedResource Include="MapPaletteImagesSource.json" /></ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="RewardDestinationImagesSource.json" />
+    <Compile Include="../../src/DK2MapEditor.App/Editing/RewardImageSizing.cs" Link="AppSource/RewardImageSizing.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="HeroBandDisplaySource.json" />
+    <Compile Include="../../src/DK2MapEditor.App/Editing/HeroBandDisplayRows.cs" Link="AppSource/HeroBandDisplayRows.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DefinitionCaptionRoutesSource.json" />
+    <Compile Include="../../src/DK2MapEditor.App/Editing/DefinitionCaptionRules.cs" Link="AppSource/DefinitionCaptionRules.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="PlacedThingCaptionsSource.json" />
+    <Compile Include="../../src/DK2MapEditor.App/Editing/PlacedThingCaptionRules.cs" Link="AppSource/PlacedThingCaptionRules.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="SpatialCustomCaptionsSource.json" />
+    <Compile Include="../../src/DK2MapEditor.App/Editing/SpatialCaptionRules.cs" Link="AppSource/SpatialCaptionRules.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="MapUICaptionsSource.json" />
+    <Compile Include="../../src/DK2MapEditor.App/Editing/MapMetadataCaptions.cs" Link="AppSource/MapMetadataCaptions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ReportImagesSource.json" />
+    <Compile Include="../../src/DK2MapEditor.App/Editing/ReportImageResources.cs" Link="AppSource/ReportImageResources.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DirectListImagesSource.json" />
+    <Compile Include="../../src/DK2MapEditor.App/Editing/ControlImageResources.cs" Link="AppSource/ControlImageResources.cs" />
+    <Compile Include="../../src/DK2MapEditor.App/Editing/ResizeAnchorImageLayout.cs" Link="AppSource/ResizeAnchorImageLayout.cs" />
+    <EmbeddedResource Include="DirectionalControlImagesSource.json" />
+    <EmbeddedResource Include="MapInfoImagesSource.json" />
+    <EmbeddedResource Include="RequestCameraImagesSource.json" />
+    <Compile Include="../../src/DK2MapEditor.App/Editing/OriginalMessagePolicy.cs" Link="AppSource/OriginalMessagePolicy.cs" />
+    <Compile Include="../../src/DK2MapEditor.App/Editing/FilePreviewDialogPlan.cs" Link="AppSource/FilePreviewDialogPlan.cs" />
+    <Compile Include="../../src/DK2MapEditor.App/Editing/NativePreviewDialogInterop.cs" Link="AppSource/NativePreviewDialogInterop.cs" />
+    <EmbeddedResource Include="FileChooserPreviewSource.json" />
+    <EmbeddedResource Include="DocumentReferencePresentationSource.json" />
+    <Compile Include="../../src/DK2MapEditor.App/Editing/EditorDocumentPresentation.cs" Link="AppSource/EditorDocumentPresentation.cs" />
+  </ItemGroup>
+</Project>

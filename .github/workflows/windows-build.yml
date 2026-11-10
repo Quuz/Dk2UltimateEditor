@@ -1,0 +1,28 @@
+name: Windows build
+
+on:
+  push:
+    branches: [master, main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          global-json-file: global.json
+      - name: Build and publish editor and MCP
+        shell: pwsh
+        run: ./build.ps1
+      - name: Upload development build
+        uses: actions/upload-artifact@v4
+        with:
+          name: UltimateEditor-windows
+          path: artifacts/PreFinal/
+          if-no-files-found: error

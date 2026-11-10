@@ -1,0 +1,410 @@
+{
+  "SourcePage": {
+    "Type": "ACTION_CAMERAPATH",
+    "PageID": 7224,
+    "AliasPage": false,
+    "DirectStoreParameters": [
+      1,
+      2,
+      3
+    ],
+    "CallbackOnlyParameters": [],
+    "NumericInputs": [
+      {
+        "Parameter": 1,
+        "ControlID": 307,
+        "Signed": false,
+        "DecimalDigits": 4,
+        "StoredOffset": 0,
+        "SourceDisplayMaximum": 9999
+      }
+    ],
+    "NamedCalls": [
+      {
+        "Type": "ACTION_CAMERAPATH",
+        "PageID": 7224,
+        "Helper": "Misc_CreateAreaComboBoxList",
+        "Arguments": [
+          "hDlg",
+          "311",
+          "FALSE"
+        ],
+        "DirectParameterReferences": [
+          2
+        ],
+        "RequiresCallbackBinding": false,
+        "NativeDirectParameters": [
+          2
+        ],
+        "Choices": [],
+        "DynamicList": true,
+        "SourceCheck": "if (!Context->ActionCtx.Initialized[ACTION_CAMERAPATH]) goto Error_0;\r\n\t\t\tif (!MapAreas.next) goto Error_2;\r\n\t\t\tSetDlgItemInt(hDlg,307,Context->ActionCtx.TempAction.param1,FALSE);\r\n\t\t\tSendDlgItemMessage(hDlg,307,EM_LIMITTEXT,(WPARAM)4,(LPARAM)0);\r\n\t\t\tMisc_SetArea(hDlg,311,Context->ActionCtx.TempAction.param2);\r\n\t\t\tCheckRadioButton(hDlg,200,201,(Context->ActionCtx.TempAction.param3)?201:200);\r\n\t\t\tbreak;",
+        "SourceStore": "Context->ActionCtx.TempAction.param1 = GetDlgItemInt(hDlg,307,NULL,FALSE);\r\n\t\t\tContext->ActionCtx.TempAction.param2 = Misc_GetArea(hDlg,311,FALSE);\r\n\t\t\tif (IsDlgButtonChecked(hDlg,200) == BST_CHECKED) Context->ActionCtx.TempAction.param3 = 0;\r\n\t\t\telse Context->ActionCtx.TempAction.param3 = 1;\r\n\t\t\tResult = 1;\r\n\t\t\tbreak;"
+      }
+    ],
+    "RadioGroups": [
+      {
+        "Type": "ACTION_CAMERAPATH",
+        "PageID": 7224,
+        "Parameter": 3,
+        "Values": [
+          0,
+          1
+        ],
+        "SourceAssignments": [
+          "Context->ActionCtx.TempAction.param1 = GetDlgItemInt(hDlg,307,NULL,FALSE);",
+          "Context->ActionCtx.TempAction.param2 = Misc_GetArea(hDlg,311,FALSE);",
+          "Context->ActionCtx.TempAction.param3 = 0;",
+          "Context->ActionCtx.TempAction.param3 = 1;"
+        ],
+        "SourceResource": {
+          "Line": 4399,
+          "Header": "7224 DIALOG 8, 8, 400, 232\r\nSTYLE DS_MODALFRAME|WS_BORDER|WS_VISIBLE|WS_CAPTION|WS_SYSMENU\r\nCLASS DIALOG_CLASS\r\nCAPTION DIALOG_ACTIONSTITLE\r\nFONT 8, \"MS Sans Serif\"",
+          "Declarations": "CONTROL\t\tDIALOG_ACTIONSCAMERAPATH,\t100, \"STATIC\", WS_CHILD|SS_OWNERDRAW, 0, 0, 400, 10\r\n\r\n\tRTEXT\t\tDIALOG_ACTIONSCAMERAPATHID,\t306, 101,  93, 100,  10\r\n\tEDITTEXT\t\t\t\t\t307, 205,  92,  20,  12, ES_NUMBER\r\n\tPUSHBUTTON\tDIALOG_NULL,\t\t\t315, 229,  92,  20,  12, BS_OWNERDRAW\r\n\r\n\tLTEXT\t\tDIALOG_ACTIONSCAMERAPATHAREA,\t310, 101, 112, 198,  10\r\n\tCOMBOBOX\t\t\t\t\t311, 101, 122, 198, 100, WS_VSCROLL|CBS_DROPDOWNLIST\r\n\tAUTORADIOBUTTON\tDIALOG_ACTIONSCAMERAPATHCEON,\t200, 101, 140, 158,  10\r\n\tAUTORADIOBUTTON\tDIALOG_ACTIONSCAMERAPATHCEOFF,\t201, 101, 150, 158,  10"
+        }
+      }
+    ],
+    "SourceControlCaptions": [
+      {
+        "Kind": "RTEXT",
+        "ControlID": 306,
+        "CaptionSymbol": "DIALOG_ACTIONSCAMERAPATHID",
+        "SourceCaption": "Identificateur du mouvement",
+        "DisabledInResource": false
+      },
+      {
+        "Kind": "PUSHBUTTON",
+        "ControlID": 315,
+        "CaptionSymbol": "DIALOG_NULL",
+        "SourceCaption": "",
+        "DisabledInResource": false
+      },
+      {
+        "Kind": "LTEXT",
+        "ControlID": 310,
+        "CaptionSymbol": "DIALOG_ACTIONSCAMERAPATHAREA",
+        "SourceCaption": "Zone à partir de laquelle le mouvement se déclenche",
+        "DisabledInResource": false
+      },
+      {
+        "Kind": "AUTORADIOBUTTON",
+        "ControlID": 200,
+        "CaptionSymbol": "DIALOG_ACTIONSCAMERAPATHCEON",
+        "SourceCaption": "Afficher le plafond",
+        "DisabledInResource": false
+      },
+      {
+        "Kind": "AUTORADIOBUTTON",
+        "ControlID": 201,
+        "CaptionSymbol": "DIALOG_ACTIONSCAMERAPATHCEOFF",
+        "SourceCaption": "Cacher le plafond",
+        "DisabledInResource": false
+      }
+    ],
+    "RequiredChildWorkflows": [
+      "CameraLibrarySelection"
+    ],
+    "NativeLayout": [
+      {
+        "Name": "Param1",
+        "Offset": 8,
+        "Size": 1,
+        "Kind": "BYTE"
+      },
+      {
+        "Name": "Param2",
+        "Offset": 9,
+        "Size": 1,
+        "Kind": "BYTE"
+      },
+      {
+        "Name": "Param3",
+        "Offset": 10,
+        "Size": 1,
+        "Kind": "BYTE"
+      }
+    ],
+    "Resource": {
+      "Line": 4399,
+      "Header": "7224 DIALOG 8, 8, 400, 232\r\nSTYLE DS_MODALFRAME|WS_BORDER|WS_VISIBLE|WS_CAPTION|WS_SYSMENU\r\nCLASS DIALOG_CLASS\r\nCAPTION DIALOG_ACTIONSTITLE\r\nFONT 8, \"MS Sans Serif\"",
+      "Declarations": "CONTROL\t\tDIALOG_ACTIONSCAMERAPATH,\t100, \"STATIC\", WS_CHILD|SS_OWNERDRAW, 0, 0, 400, 10\r\n\r\n\tRTEXT\t\tDIALOG_ACTIONSCAMERAPATHID,\t306, 101,  93, 100,  10\r\n\tEDITTEXT\t\t\t\t\t307, 205,  92,  20,  12, ES_NUMBER\r\n\tPUSHBUTTON\tDIALOG_NULL,\t\t\t315, 229,  92,  20,  12, BS_OWNERDRAW\r\n\r\n\tLTEXT\t\tDIALOG_ACTIONSCAMERAPATHAREA,\t310, 101, 112, 198,  10\r\n\tCOMBOBOX\t\t\t\t\t311, 101, 122, 198, 100, WS_VSCROLL|CBS_DROPDOWNLIST\r\n\tAUTORADIOBUTTON\tDIALOG_ACTIONSCAMERAPATHCEON,\t200, 101, 140, 158,  10\r\n\tAUTORADIOBUTTON\tDIALOG_ACTIONSCAMERAPATHCEOFF,\t201, 101, 150, 158,  10"
+    },
+    "Sections": {
+      "SetDefault": {
+        "HasExplicitCase": true,
+        "Function": "Triggers_ActionDlgSetDefault",
+        "FunctionLine": 360,
+        "SharedCases": [
+          "ACTION_CAMERAPATH"
+        ],
+        "Body": "if (Context->ActionCtx.TempAction.ctrl != NewCtrl)\r\n\t\t\t\t{\r\n\t\t\t\tContext->ActionCtx.TempAction.param1 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param2 = 1;\r\n\t\t\t\tContext->ActionCtx.TempAction.param3 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param4 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param5 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param6 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param7 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param8 = 0;\r\n\t\t\t\t}\r\n\t\t\tbreak;",
+        "LineInFunctionBody": 268,
+        "Parameters": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "Assignments": [
+          "Context->ActionCtx.TempAction.param1 = 0;",
+          "Context->ActionCtx.TempAction.param2 = 1;",
+          "Context->ActionCtx.TempAction.param3 = 0;",
+          "Context->ActionCtx.TempAction.param4 = 0;",
+          "Context->ActionCtx.TempAction.param5 = 0;",
+          "Context->ActionCtx.TempAction.param6 = 0;",
+          "Context->ActionCtx.TempAction.param7 = 0;",
+          "Context->ActionCtx.TempAction.param8 = 0;"
+        ],
+        "Calls": [],
+        "DirectDialogCalls": []
+      },
+      "ParamsInit": {
+        "HasExplicitCase": true,
+        "Function": "Triggers_ActionDlgParamsInit",
+        "FunctionLine": 998,
+        "SharedCases": [
+          "ACTION_CAMERAPATH"
+        ],
+        "Body": "if (!Misc_CreateAreaComboBoxList(hDlg,311,FALSE)) return;\r\n\t\t\tContext->ActionCtx.Initialized[ACTION_CAMERAPATH] = TRUE;\r\n\t\t\tbreak;",
+        "LineInFunctionBody": 188,
+        "Parameters": [],
+        "Assignments": [],
+        "Calls": [
+          {
+            "Name": "Misc_CreateAreaComboBoxList",
+            "Arguments": [
+              "hDlg",
+              "311",
+              "FALSE"
+            ]
+          }
+        ],
+        "DirectDialogCalls": [
+          {
+            "Name": "Misc_CreateAreaComboBoxList",
+            "Arguments": [
+              "hDlg",
+              "311",
+              "FALSE"
+            ]
+          }
+        ]
+      },
+      "ParamsCheck": {
+        "HasExplicitCase": true,
+        "Function": "Triggers_ActionDlgParamsCheck",
+        "FunctionLine": 1221,
+        "SharedCases": [
+          "ACTION_CAMERAPATH"
+        ],
+        "Body": "if (!Context->ActionCtx.Initialized[ACTION_CAMERAPATH]) goto Error_0;\r\n\t\t\tif (!MapAreas.next) goto Error_2;\r\n\t\t\tSetDlgItemInt(hDlg,307,Context->ActionCtx.TempAction.param1,FALSE);\r\n\t\t\tSendDlgItemMessage(hDlg,307,EM_LIMITTEXT,(WPARAM)4,(LPARAM)0);\r\n\t\t\tMisc_SetArea(hDlg,311,Context->ActionCtx.TempAction.param2);\r\n\t\t\tCheckRadioButton(hDlg,200,201,(Context->ActionCtx.TempAction.param3)?201:200);\r\n\t\t\tbreak;",
+        "LineInFunctionBody": 287,
+        "Parameters": [
+          1,
+          2,
+          3
+        ],
+        "Assignments": [],
+        "Calls": [
+          {
+            "Name": "SetDlgItemInt",
+            "Arguments": [
+              "hDlg",
+              "307",
+              "Context->ActionCtx.TempAction.param1",
+              "FALSE"
+            ]
+          },
+          {
+            "Name": "SendDlgItemMessage",
+            "Arguments": [
+              "hDlg",
+              "307",
+              "EM_LIMITTEXT",
+              "(WPARAM)4",
+              "(LPARAM)0"
+            ]
+          },
+          {
+            "Name": "Misc_SetArea",
+            "Arguments": [
+              "hDlg",
+              "311",
+              "Context->ActionCtx.TempAction.param2"
+            ]
+          },
+          {
+            "Name": "CheckRadioButton",
+            "Arguments": [
+              "hDlg",
+              "200",
+              "201",
+              "(Context->ActionCtx.TempAction.param3)?201:200"
+            ]
+          }
+        ],
+        "DirectDialogCalls": [
+          {
+            "Name": "SetDlgItemInt",
+            "Arguments": [
+              "hDlg",
+              "307",
+              "Context->ActionCtx.TempAction.param1",
+              "FALSE"
+            ]
+          },
+          {
+            "Name": "SendDlgItemMessage",
+            "Arguments": [
+              "hDlg",
+              "307",
+              "EM_LIMITTEXT",
+              "(WPARAM)4",
+              "(LPARAM)0"
+            ]
+          },
+          {
+            "Name": "Misc_SetArea",
+            "Arguments": [
+              "hDlg",
+              "311",
+              "Context->ActionCtx.TempAction.param2"
+            ]
+          },
+          {
+            "Name": "CheckRadioButton",
+            "Arguments": [
+              "hDlg",
+              "200",
+              "201",
+              "(Context->ActionCtx.TempAction.param3)?201:200"
+            ]
+          }
+        ]
+      },
+      "ParamsStore": {
+        "HasExplicitCase": true,
+        "Function": "Triggers_ActionDlgParamsStore",
+        "FunctionLine": 1627,
+        "SharedCases": [
+          "ACTION_CAMERAPATH"
+        ],
+        "Body": "Context->ActionCtx.TempAction.param1 = GetDlgItemInt(hDlg,307,NULL,FALSE);\r\n\t\t\tContext->ActionCtx.TempAction.param2 = Misc_GetArea(hDlg,311,FALSE);\r\n\t\t\tif (IsDlgButtonChecked(hDlg,200) == BST_CHECKED) Context->ActionCtx.TempAction.param3 = 0;\r\n\t\t\telse Context->ActionCtx.TempAction.param3 = 1;\r\n\t\t\tResult = 1;\r\n\t\t\tbreak;",
+        "LineInFunctionBody": 224,
+        "Parameters": [
+          1,
+          2,
+          3
+        ],
+        "Assignments": [
+          "Context->ActionCtx.TempAction.param1 = GetDlgItemInt(hDlg,307,NULL,FALSE);",
+          "Context->ActionCtx.TempAction.param2 = Misc_GetArea(hDlg,311,FALSE);",
+          "Context->ActionCtx.TempAction.param3 = 0;",
+          "Context->ActionCtx.TempAction.param3 = 1;"
+        ],
+        "Calls": [
+          {
+            "Name": "GetDlgItemInt",
+            "Arguments": [
+              "hDlg",
+              "307",
+              "NULL",
+              "FALSE"
+            ]
+          },
+          {
+            "Name": "Misc_GetArea",
+            "Arguments": [
+              "hDlg",
+              "311",
+              "FALSE"
+            ]
+          },
+          {
+            "Name": "IsDlgButtonChecked",
+            "Arguments": [
+              "hDlg",
+              "200"
+            ]
+          }
+        ],
+        "DirectDialogCalls": [
+          {
+            "Name": "GetDlgItemInt",
+            "Arguments": [
+              "hDlg",
+              "307",
+              "NULL",
+              "FALSE"
+            ]
+          },
+          {
+            "Name": "Misc_GetArea",
+            "Arguments": [
+              "hDlg",
+              "311",
+              "FALSE"
+            ]
+          },
+          {
+            "Name": "IsDlgButtonChecked",
+            "Arguments": [
+              "hDlg",
+              "200"
+            ]
+          }
+        ]
+      },
+      "ParamsSave": {
+        "HasExplicitCase": false,
+        "Function": "Triggers_ActionDlgParamsSave",
+        "FunctionLine": 1915,
+        "DefaultBranch": null
+      }
+    }
+  },
+  "Controls": [
+    {
+      "Parameter": 1,
+      "Kind": "Number",
+      "Maximum": 9999,
+      "Unsigned": true
+    },
+    {
+      "Parameter": 2,
+      "Kind": "NamedChoice",
+      "Maximum": 0,
+      "Unsigned": false
+    },
+    {
+      "Parameter": 3,
+      "Kind": "Choice",
+      "Maximum": 1,
+      "Unsigned": false
+    }
+  ],
+  "RequiresArea": true,
+  "InputHashes": {
+    "Source/Sources/Triggers/Triggers_Triggers.c": "b94b509ab4d625925bffa65c83f3bc77c8cba776cb2085d1494c855e6e4cb05a",
+    "Source/Sources/Triggers/Triggers_Actions.c": "6cb909e922dd1116d1d02c7cde63721b07c0ed4b57b7cc4ff4af8cd8fcf33d37",
+    "Source/Sources/Datas/Datas_Triggers.c": "b4ba371380ca3c5faf192fa761fb69df1f6713dc806e225bc3aa404ed4caa365",
+    "Source/Resources/Editor.rc": "eb07ed2217a81348a03c75e302d09fdcb5e34b6099d1bd60229ba5fa9bd8920d",
+    "Source/Includes/Triggers.h": "6ec1dc07f510f7b9e21fe3bd46f08e5fc9a3e272d5444373f045775b91ec20a1",
+    "Source/Sources/Triggers/Triggers_Display.c": "a9ebbaa98de2d0c27d5e9dc5373f67ee64ed0b1d5c181bd196df07950c4859cd",
+    "Source/Sources/Misc/Misc_Display.c": "b3fdf608d551981e0e9a593ba4ae20b34a52c8336ae6f7c65431ac23d8502769",
+    "Source/Sources/Things/Things_Selection.c": "df135c89d08c4d533a395b09d0e2e0c38908bd722611ed17865f5532834f7060",
+    "Source/Sources/Datas/Datas_Things.c": "2e5f874c7820415da8dc47412e57c501fbced920b67c122e386a8ca8be86cbf0",
+    "Source/Sources/Datas/Datas_Game.c": "d6d40de66125e770fe62b448abef03a7a7d608424006ff15d57cd6c1a0ffcf2e",
+    "Source/Includes/Strings.h": "deee57184bd2a4256c3e0e1e050ae5616932b86e2b7265f6f8b3659abee9cecb",
+    "Source/Sources/Triggers/Triggers_Texts.c": "c667d92cca91f0b04d73dab6288fa3a43b7bfe2dcc75fb2fe4710f37c7b67e4d",
+    "Source/Sources/Properties/Map/Properties_Map_Voices.c": "33fd82c81865f404ace09b38d6c5606b0582c3d58d77aaf5fbedc4eb68efcf48",
+    "Source/Sources/Properties/Map/Properties_Map_Texts.c": "ff9c29ef8192ad721de09811f80622aabb60a7e7cc8cfb3db2f108520059d639",
+    "Source/Sources/Datas/Texts_Map.c": "866eb14e1a237bb9a4055c86f8254b356ce0816478df62216a673624e12643c7",
+    "Source/Sources/Datas/Datas_CameraPaths.c": "1d8450dd6a59b110e806266d60af85ef107683d1c73dc81d6d6ff43f4e916821",
+    "Source/Sources/Compiler/Compiler_Generate.c": "4a2952b0b687149302b2f0374d08e5e2316c28875d98036059af4f8c6d84ac3b"
+  }
+}

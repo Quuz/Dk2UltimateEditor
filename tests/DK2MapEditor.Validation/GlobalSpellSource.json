@@ -1,0 +1,2795 @@
+{
+  "Scope": "Complete keeper-spell page6824, private primary/upgrade child6840..6844 and all storage",
+  "InputHashes": {
+    "Source/Sources/Properties/GlobalVariables/Properties_Global_Elements.c": "c7095841095c4ec90193efdf3d24a32ac641ed9e5d8bed5b0fcf69d74b3d1614",
+    "Source/Sources/Datas/Datas_GlobalVariables.c": "c6d78d87522ec55963cc983e016356786f548b2a70cbede2ab70237ad049d456",
+    "Source/Sources/Datas/Datas_Things.c": "2e5f874c7820415da8dc47412e57c501fbced920b67c122e386a8ca8be86cbf0",
+    "Source/Sources/Properties/GlobalVariables/Properties_Global_Functions.c": "5783f781840b41e4db98b269930e211bd0bfe10666deb0c25ae8cfd15df69a94",
+    "Source/Sources/Compiler/Compiler_Generate.c": "4a2952b0b687149302b2f0374d08e5e2316c28875d98036059af4f8c6d84ac3b",
+    "Source/Includes/GlobalVariables.h": "d027d5a861f611de5347d807fc23aa3f871553b34a920b2973b2c1136784d129",
+    "Source/Resources/Editor.rc": "eb07ed2217a81348a03c75e302d09fdcb5e34b6099d1bd60229ba5fa9bd8920d",
+    "Source/Sources/Misc/Misc_Display.c": "b3fdf608d551981e0e9a593ba4ae20b34a52c8336ae6f7c65431ac23d8502769",
+    "Source/Sources/Misc/Misc_Maths.c": "499b707895f248a93d3a009e45330a4ddbb59766bf39705e411a192f441b4b08"
+  },
+  "Functions": {
+    "Properties_GlobalVariables": "Properties_GlobalVariables(HWND hWnd)\n{\n\tstatic DLGPROC\t pfn[]={Properties_GlobalTerrainProc,\n\t\t\t\tProperties_GlobalRoomProc,\n\t\t\t\tProperties_GlobalDoorProc,\n\t\t\t\tProperties_GlobalTrapProc,\n\t\t\t\tProperties_GlobalSpellsProc};\n\tPROPSHEETHEADER\t*psh;\n\tPROPSHEETPAGE\t*psp;\n\tGLOBALCTX\t*Context;\n\tint\t\t Result;\n\n\tpsh = GlobalAlloc(GPTR,sizeof(PROPSHEETHEADER));\n\tif (!psh) goto Error_0;\n\tpsp = GlobalAlloc(GPTR,sizeof(PROPSHEETPAGE)*5);\n\tif (!psp) goto Error_1;\n\tContext = GlobalAlloc(GPTR,sizeof(GLOBALCTX));\n\tif (!Context) goto Error_2;\n\n\tfor (Result = 0; Result != 5; Result++)\n\t\t{\n\t\tpsp[Result].dwSize = sizeof(PROPSHEETPAGE);\n\t\tpsp[Result].hInstance = hInstance;\n\t\tpsp[Result].DUMMYUNIONNAME.pszTemplate = MAKEINTRESOURCE(6820+Result);\n\t\tpsp[Result].pfnDlgProc = pfn[Result];\n\t\tpsp[Result].lParam = (LPARAM)Context;\n\t\t}\n\n\tpsh->dwSize = sizeof(PROPSHEETHEADER);\n\tpsh->dwFlags = PSH_PROPSHEETPAGE|PSH_USEICONID;\n\tpsh->hwndParent = hWnd;\n\tpsh->hInstance = hInstance;\n\tpsh->DUMMYUNIONNAME.pszIcon = MAKEINTRESOURCE(1);\n\tpsh->pszCaption = szGlobalVariables;\n\tpsh->nPages = 5;\n\tpsh->DUMMYUNIONNAME3.ppsp = psp;\n\n\tif (!Misc_CreateImageList(GTerrains,&Context->TerrainsImages,32,32,FALSE))\n\t\tgoto Error_4;\n\tif (!Misc_CreateImageList(GRooms,&Context->RoomsImages,32,32,FALSE))\n\t\tgoto Error_4;\n\tif (!Misc_CreateImageList(GDoors,&Context->DoorsImages,32,32,FALSE))\n\t\tgoto Error_4;\n\tif (!Misc_CreateImageList(GTraps,&Context->TrapsImages,32,32,FALSE))\n\t\tgoto Error_4;\n\tif (!Misc_CreateImageList(GSpells,&Context->SpellsImages,32,32,FALSE))\n\t\tgoto Error_4;\n\n\tCopyMemory(&Context->Variables,&MapGlobalVariables,sizeof(GLOBALVARS));\n\tResult = PropertySheet(psh);\n\tif (Result == -1) goto Error_4;\n\n\tInfo_Update();\n\tMisc_DestroyImageList(&Context->SpellsImages);\n\tMisc_DestroyImageList(&Context->TrapsImages);\n\tMisc_DestroyImageList(&Context->DoorsImages);\n\tMisc_DestroyImageList(&Context->RoomsImages);\n\tMisc_DestroyImageList(&Context->TerrainsImages);\n\tGlobalFree(Context);\n\tGlobalFree(psp);\n\tGlobalFree(psh);\n\tFiles_SaveUpdate();\n\treturn;\n\n//--- Erreurs survenues lors de l'initialisation ---\n\nError_4:Misc_DestroyImageList(&Context->SpellsImages);\n\tMisc_DestroyImageList(&Context->TrapsImages);\n\tMisc_DestroyImageList(&Context->DoorsImages);\n\tMisc_DestroyImageList(&Context->RoomsImages);\n\tMisc_DestroyImageList(&Context->TerrainsImages);\nError_3:GlobalFree(Context);\nError_2:GlobalFree(psp);\nError_1:GlobalFree(psh);\nError_0:Misc_MessageBoxExt(hWnd,szDialogErr,NULL,szMessageBoxExtOk,MB_ICONHAND);\n\treturn;\n}",
+    "Properties_GlobalSpellsProc": "Properties_GlobalSpellsProc(HWND hDlg, UINT uMsgId, WPARAM wParam, LPARAM lParam)\n{\n\tGLOBALCTX\t*Context;\n\tLONG\t\t lData;\n\n\tif (uMsgId == WM_INITDIALOG)\n\t\t{\n\t\tProperties_GlobalInit(hDlg,4,(PROPSHEETPAGE *)lParam);\n\t\treturn(TRUE);\n\t\t}\n\n\tContext = (GLOBALCTX *)GetWindowLong(hDlg,DWL_USER);\n\tif (!Context) return(FALSE);\n\n\tswitch(uMsgId)\n\t\t{\n\t\tcase WM_MEASUREITEM:\n\t\t\tif ( ((MEASUREITEMSTRUCT *)lParam)->CtlType == ODT_LISTBOX )\n\t\t\t\t{\n\t\t\t\tProperties_GlobalSetList((MEASUREITEMSTRUCT *)lParam);\n\t\t\t\treturn(TRUE);\n\t\t\t\t}\n\t\t\tbreak;\n\n\t\tcase WM_DRAWITEM:\n\t\t\tif ( ((DRAWITEMSTRUCT *)lParam)->CtlType == ODT_LISTBOX )\n\t\t\t\t{\n\t\t\t\tProperties_GlobalDrawList((DRAWITEMSTRUCT *)lParam,GSpells,Context->SpellsImages);\n\t\t\t\treturn(TRUE);\n\t\t\t\t}\n\t\t\tif (((DRAWITEMSTRUCT *)lParam)->CtlType == ODT_STATIC)\n\t\t\t\t{\n\t\t\t\tMisc_DrawGroup((DRAWITEMSTRUCT *)lParam);\n\t\t\t\treturn(TRUE);\n\t\t\t\t}\n\t\t\tbreak;\n\n\t\tcase WM_COMMAND:\n\t\t\tswitch(HIWORD(wParam))\n\t\t\t\t{\n\t\t\t\tcase LBN_SELCHANGE:\n\t\t\t\t\tProperties_GlobalSaveChanges(hDlg,4,Context);\n\t\t\t\t\tProperties_GlobalGetParams(hDlg,4,Context);\n\t\t\t\t\treturn(TRUE);\n\n\t\t\t\tcase EN_CHANGE:\n\t\t\t\t\tswitch(LOWORD(wParam))\n\t\t\t\t\t\t{\n\t\t\t\t\t\tcase 124:\n\t\t\t\t\t\t\tlData = GetDlgItemInt(hDlg,124,NULL,FALSE);\n\t\t\t\t\t\t\tif (lData < 0) SetDlgItemInt(hDlg,124,0,FALSE);\n\t\t\t\t\t\t\tif (lData > 999999) SetDlgItemInt(hDlg,124,999999,FALSE);\n\t\t\t\t\t\t\tbreak;\n\t\t\t\t\t\tcase 126:\n\t\t\t\t\t\tcase 128:\n\t\t\t\t\t\tcase 130:\n\t\t\t\t\t\t\tlData = GetDlgItemInt(hDlg,LOWORD(wParam),NULL,FALSE);\n\t\t\t\t\t\t\tif (lData < 0) SetDlgItemInt(hDlg,LOWORD(wParam),0,FALSE);\n\t\t\t\t\t\t\tif (lData > 32767) SetDlgItemInt(hDlg,LOWORD(wParam),32767,FALSE);\n\t\t\t\t\t\t\tbreak;\n\t\t\t\t\t\t}\n\t\t\t\t\treturn(TRUE);\n\n\t\t\t\tcase BN_CLICKED:\n\t\t\t\t\tswitch(LOWORD(wParam))\n\t\t\t\t\t\t{\n\t\t\t\t\t\tcase 145:\n\t\t\t\t\t\t\tContext->BonusShot = FALSE;\n\t\t\t\t\t\t\tProperties_GlobalSetShotOptions(hDlg,4,Context);\n\t\t\t\t\t\t\tbreak;\n\t\t\t\t\t\tcase 148:\n\t\t\t\t\t\t\tContext->BonusShot = TRUE;\n\t\t\t\t\t\t\tProperties_GlobalSetShotOptions(hDlg,4,Context);\n\t\t\t\t\t\t\tbreak;\n\t\t\t\t\t\tcase 998:\n\t\t\t\t\t\t\tProperties_GlobalReset(&Context->Variables,Context->CurrentSpell,MGRF_SPELLS);\n\t\t\t\t\t\t\tProperties_GlobalGetParams(hDlg,4,Context);\n\t\t\t\t\t\t\tbreak;\n\t\t\t\t\t\tcase 999:\n\t\t\t\t\t\t\tProperties_GlobalReset(&Context->Variables,-1,MGRF_SPELLS);\n\t\t\t\t\t\t\tProperties_GlobalGetParams(hDlg,4,Context);\n\t\t\t\t\t\t\tbreak;\n\t\t\t\t\t\t}\n\t\t\t\t\treturn(TRUE);\n\t\t\t\t}\n\t\t\tbreak;\n\n\t\tcase WM_NOTIFY:\n\t\t\tswitch( ((NMHDR *)lParam)->code )\n\t\t\t\t{\n\t\t\t\tcase UDN_DELTAPOS:\n\t\t\t\t\tMisc_SetUpDownInt(hDlg,((NMHDR *)lParam)->idFrom-100,(NM_UPDOWN *)lParam);\n\t\t\t\t\treturn(TRUE);\n\n\t\t\t\tcase PSN_KILLACTIVE:\n\t\t\t\t\tProperties_GlobalSaveChanges(hDlg,4,Context);\n\t\t\t\t\tSetWindowLong(hDlg,DWL_MSGRESULT,0);\n\t\t\t\t\treturn(TRUE);\n\n\t\t\t\tcase PSN_APPLY:\n\t\t\t\t\tif (memcmp(&MapGlobalVariables,&Context->Variables,sizeof(GLOBALVARS)))\n\t\t\t\t\t\t{\n\t\t\t\t\t\tUndo_CreateGlobalVariables(&MapGlobalVariables);\n\t\t\t\t\t\tCopyMemory(&MapGlobalVariables,&Context->Variables,sizeof(GLOBALVARS));\n\t\t\t\t\t\tMapChanges++;\n\t\t\t\t\t\t}\n\t\t\t\t\tSetWindowLong(hDlg,DWL_MSGRESULT,0);\n\t\t\t\t\treturn(TRUE);\n\n                                case PSN_SETACTIVE:\n\t\t\t\t\tSetWindowLong(hDlg,DWL_MSGRESULT,(Properties_GlobalSetValues(hDlg,4,Context))?0:-1);\n\t\t\t\t\treturn(TRUE);\n\t\t\t\t}\n\t\t\tbreak;\n\t\t}\n\n\treturn(FALSE);\n}",
+    "Properties_GlobalInit": "Properties_GlobalInit(HWND hDlg, UINT Page, PROPSHEETPAGE *PageStruct)\n{\n\tGLOBALCTX\t*Context;\n\tint\t\t i;\n\n\tContext = (GLOBALCTX *)(PageStruct->lParam);\n\tSetWindowLong(hDlg,DWL_USER,(LONG)Context);\n\n\tswitch(Page)\n\t\t{\n\t\t//\n\t\t// Propriétés des terrains\n\t\t//\n\t\tcase 0:\n\t\t\tfor (i = 0; GTerrains[i].Id != 0; i++)\n\t\t\t\t{\n\t\t\t\tif (SendDlgItemMessage(hDlg,101,LB_ADDSTRING,(WPARAM)0,(LPARAM)GTerrains[i].Id) < 0)\n\t\t\t\t\tgoto Error_0;\n\t\t\t\tif (SendDlgItemMessage(hDlg,104,CB_ADDSTRING,(WPARAM)0,(LPARAM)GTerrains[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\t\t\t\tif (SendDlgItemMessage(hDlg,114,CB_ADDSTRING,(WPARAM)0,(LPARAM)GTerrains[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\t\t\t\t}\n\t\t\tSendDlgItemMessage(hDlg,101,LB_SETCURSEL,(WPARAM)0,(LPARAM)0);\n\n\t\t\tfor (i = 0; Effects[i].Id != 0xFFFFFFFF; i++)\n\t\t\t\t{\n\t\t\t\tif (SendDlgItemMessage(hDlg,106,CB_ADDSTRING,(WPARAM)0,(LPARAM)Effects[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\t\t\t\tif (SendDlgItemMessage(hDlg,116,CB_ADDSTRING,(WPARAM)0,(LPARAM)Effects[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\t\t\t\t}\n\n\t\t\tMisc_CreateUpDownButton(hDlg,124,224);\n\t\t\tMisc_CreateUpDownButton(hDlg,126,226);\n\t\t\tMisc_CreateUpDownButton(hDlg,128,228);\n\t\t\tMisc_CreateUpDownButton(hDlg,130,230);\n\t\t\tMisc_CreateUpDownButton(hDlg,132,232);\n\t\t\tMisc_CreateUpDownButton(hDlg,134,234);\n\t\t\tMisc_CreateUpDownButton(hDlg,136,236);\n\t\t\tMisc_CreateUpDownButton(hDlg,138,238);\n\t\t\tMisc_CreateUpDownButton(hDlg,150,250);\n\t\t\tSendDlgItemMessage(hDlg,124,EM_LIMITTEXT,(WPARAM)6,(LPARAM)0);\n\t\t\tSendDlgItemMessage(hDlg,126,EM_LIMITTEXT,(WPARAM)5,(LPARAM)0);\n\t\t\tSendDlgItemMessage(hDlg,128,EM_LIMITTEXT,(WPARAM)5,(LPARAM)0);\n\t\t\tSendDlgItemMessage(hDlg,130,EM_LIMITTEXT,(WPARAM)5,(LPARAM)0);\n\t\t\tSendDlgItemMessage(hDlg,132,EM_LIMITTEXT,(WPARAM)5,(LPARAM)0);\n\t\t\tSendDlgItemMessage(hDlg,134,EM_LIMITTEXT,(WPARAM)5,(LPARAM)0);\n\t\t\tSendDlgItemMessage(hDlg,136,EM_LIMITTEXT,(WPARAM)3,(LPARAM)0);\n\t\t\tSendDlgItemMessage(hDlg,138,EM_LIMITTEXT,(WPARAM)3,(LPARAM)0);\n\t\t\tSendDlgItemMessage(hDlg,150,EM_LIMITTEXT,(WPARAM)16,(LPARAM)0);\n\n\t\t\tContext->PageInitialized[0] = TRUE;\n\t\t\tbreak;\n\n\t\t//\n\t\t// Propriétés des salles\n\t\t//\n\t\tcase 1:\n\t\t\tfor (i = 0; GRooms[i].Id != 0; i++)\n\t\t\t\t{\n\t\t\t\tif (SendDlgItemMessage(hDlg,101,LB_ADDSTRING,(WPARAM)0,(LPARAM)GRooms[i].Id) < 0)\n\t\t\t\t\tgoto Error_0;\n\t\t\t\t}\n\t\t\tSendDlgItemMessage(hDlg,101,LB_SETCURSEL,(WPARAM)0,(LPARAM)0);\n\n\t\t\tfor (i = 0; Effects[i].Id != 0xFFFFFFFF; i++)\n\t\t\t\t{\n\t\t\t\tif (SendDlgItemMessage(hDlg,104,CB_ADDSTRING,(WPARAM)0,(LPARAM)Effects[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\t\t\t\tif (SendDlgItemMessage(hDlg,106,CB_ADDSTRING,(WPARAM)0,(LPARAM)Effects[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\t\t\t\tif (SendDlgItemMessage(hDlg,108,CB_ADDSTRING,(WPARAM)0,(LPARAM)Effects[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\t\t\t\tif (SendDlgItemMessage(hDlg,110,CB_ADDSTRING,(WPARAM)0,(LPARAM)Effects[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\t\t\t\tif (SendDlgItemMessage(hDlg,112,CB_ADDSTRING,(WPARAM)0,(LPARAM)Effects[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\t\t\t\tif (SendDlgItemMessage(hDlg,114,CB_ADDSTRING,(WPARAM)0,(LPARAM)Effects[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\t\t\t\tif (SendDlgItemMessage(hDlg,116,CB_ADDSTRING,(WPARAM)0,(LPARAM)Effects[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\t\t\t\t}\n\n\t\t\tfor (i = 124; i != 134+2; i += 2)\n\t\t\t\tif (SendDlgItemMessage(hDlg,i,CB_ADDSTRING,(WPARAM)0,(LPARAM)Effects[0].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\t\t\tfor (i = 0; Objects[i].Id != 0; i++)\n\t\t\t\t{\n\t\t\t\tif (SendDlgItemMessage(hDlg,124,CB_ADDSTRING,(WPARAM)0,(LPARAM)Objects[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\t\t\t\tif (SendDlgItemMessage(hDlg,126,CB_ADDSTRING,(WPARAM)0,(LPARAM)Objects[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\t\t\t\tif (SendDlgItemMessage(hDlg,128,CB_ADDSTRING,(WPARAM)0,(LPARAM)Objects[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\t\t\t\tif (SendDlgItemMessage(hDlg,130,CB_ADDSTRING,(WPARAM)0,(LPARAM)Objects[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\t\t\t\tif (SendDlgItemMessage(hDlg,132,CB_ADDSTRING,(WPARAM)0,(LPARAM)Objects[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\t\t\t\tif (SendDlgItemMessage(hDlg,134,CB_ADDSTRING,(WPARAM)0,(LPARAM)Objects[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\t\t\t\t}\n\n\t\t\tMisc_CreateUpDownButton(hDlg,143,243);\n\t\t\tMisc_CreateUpDownButton(hDlg,148,248);\n\t\t\tMisc_CreateUpDownButton(hDlg,150,250);\n\t\t\tMisc_CreateUpDownButton(hDlg,152,252);\n\t\t\tSendDlgItemMessage(hDlg,143,EM_LIMITTEXT,(WPARAM)5,(LPARAM)0);\n\t\t\tSendDlgItemMessage(hDlg,148,EM_LIMITTEXT,(WPARAM)3,(LPARAM)0);\n\t\t\tSendDlgItemMessage(hDlg,150,EM_LIMITTEXT,(WPARAM)16,(LPARAM)0);\n\t\t\tSendDlgItemMessage(hDlg,152,EM_LIMITTEXT,(WPARAM)16,(LPARAM)0);\n\n\t\t\tContext->PageInitialized[1] = TRUE;\n\t\t\tbreak;\n\n\t\t//\n\t\t// Propriétés des portes\n\t\t//\n\t\tcase 2:\n\t\t\tfor (i = 0; GDoors[i].Id != 0; i++)\n\t\t\t\t{\n\t\t\t\tif (SendDlgItemMessage(hDlg,101,LB_ADDSTRING,(WPARAM)0,(LPARAM)GDoors[i].Id) < 0)\n\t\t\t\t\tgoto Error_0;\n\t\t\t\t}\n\t\t\tSendDlgItemMessage(hDlg,101,LB_SETCURSEL,(WPARAM)0,(LPARAM)0);\n\n\t\t\tfor (i = 0; GDoorsMats[i].Id != 0xFFFFFFFF; i++)\n\t\t\t\tif (SendDlgItemMessage(hDlg,104,CB_ADDSTRING,(WPARAM)0,(LPARAM)GDoorsMats[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\n\t\t\tfor (i = 0; Effects[i].Id != 0xFFFFFFFF; i++)\n\t\t\t\tif (SendDlgItemMessage(hDlg,106,CB_ADDSTRING,(WPARAM)0,(LPARAM)Effects[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\n\t\t\tfor (i = 0; GDoorsCrates[i].Id != 0xFFFFFFFF; i++)\n\t\t\t\tif (SendDlgItemMessage(hDlg,108,CB_ADDSTRING,(WPARAM)0,(LPARAM)GDoorsCrates[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\n\t\t\tfor (i = 0; GDoorsKeys[i].Id != 0xFFFFFFFF; i++)\n\t\t\t\tif (SendDlgItemMessage(hDlg,110,CB_ADDSTRING,(WPARAM)0,(LPARAM)GDoorsKeys[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\n\t\t\tMisc_CreateUpDownButton(hDlg,114,214);\n\t\t\tMisc_CreateUpDownButton(hDlg,116,216);\n\t\t\tMisc_CreateUpDownButton(hDlg,118,218);\n\t\t\tMisc_CreateUpDownButton(hDlg,120,220);\n\t\t\tMisc_CreateUpDownButton(hDlg,122,222);\n\t\t\tSendDlgItemMessage(hDlg,114,EM_LIMITTEXT,(WPARAM)5,(LPARAM)0);\n\t\t\tSendDlgItemMessage(hDlg,116,EM_LIMITTEXT,(WPARAM)5,(LPARAM)0);\n\t\t\tSendDlgItemMessage(hDlg,118,EM_LIMITTEXT,(WPARAM)5,(LPARAM)0);\n\t\t\tSendDlgItemMessage(hDlg,120,EM_LIMITTEXT,(WPARAM)5,(LPARAM)0);\n\t\t\tSendDlgItemMessage(hDlg,122,EM_LIMITTEXT,(WPARAM)5,(LPARAM)0);\n\n\t\t\tContext->PageInitialized[2] = TRUE;\n\t\t\tbreak;\n\n\t\t//\n\t\t// Propriétés des pièges\n\t\t//\n\t\tcase 3:\n\t\t\tfor (i = 0; GTraps[i].Id != 0; i++)\n\t\t\t\t{\n\t\t\t\tif (SendDlgItemMessage(hDlg,101,LB_ADDSTRING,(WPARAM)0,(LPARAM)GTraps[i].Id) < 0)\n\t\t\t\t\tgoto Error_0;\n\t\t\t\t}\n\t\t\tSendDlgItemMessage(hDlg,101,LB_SETCURSEL,(WPARAM)0,(LPARAM)0);\n\n\t\t\tfor (i = 0; GDoorsMats[i].Id != 0xFFFFFFFF; i++)\n\t\t\t\tif (SendDlgItemMessage(hDlg,104,CB_ADDSTRING,(WPARAM)0,(LPARAM)GDoorsMats[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\n\t\t\tfor (i = 0; GTrapsCrates[i].Id != 0xFFFFFFFF; i++)\n\t\t\t\tif (SendDlgItemMessage(hDlg,106,CB_ADDSTRING,(WPARAM)0,(LPARAM)GTrapsCrates[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\n\t\t\tfor (i = 0; Effects[i].Id != 0xFFFFFFFF; i++)\n\t\t\t\t{\n\t\t\t\tif (SendDlgItemMessage(hDlg,114,CB_ADDSTRING,(WPARAM)0,(LPARAM)Effects[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\t\t\t\tif (SendDlgItemMessage(hDlg,116,CB_ADDSTRING,(WPARAM)0,(LPARAM)Effects[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\t\t\t\tif (SendDlgItemMessage(hDlg,118,CB_ADDSTRING,(WPARAM)0,(LPARAM)Effects[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\t\t\t\t}\n\n\t\t\tfor (i = 0; GTrapsTypes[i].Id != 0; i++)\n\t\t\t\tif (SendDlgItemMessage(hDlg,150,CB_ADDSTRING,(WPARAM)0,(LPARAM)GTrapsTypes[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\n\t\t\tfor (i = 0; GShots[i].Id != 0xFFFFFFFF; i++)\n\t\t\t\tif (SendDlgItemMessage(hDlg,154,CB_ADDSTRING,(WPARAM)0,(LPARAM)GShots[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\n\t\t\tMisc_CreateUpDownButton(hDlg,158,258);\n\t\t\tMisc_CreateUpDownButton(hDlg,160,260);\n\t\t\tMisc_CreateUpDownButton(hDlg,120,220);\n\t\t\tMisc_CreateUpDownButton(hDlg,134,234);\n\t\t\tMisc_CreateUpDownButton(hDlg,136,236);\n\t\t\tMisc_CreateUpDownButton(hDlg,138,238);\n\t\t\tMisc_CreateUpDownButton(hDlg,140,240);\n\t\t\tMisc_CreateUpDownButton(hDlg,142,242);\n\t\t\tMisc_CreateUpDownButton(hDlg,144,244);\n\t\t\tMisc_CreateUpDownButton(hDlg,146,246);\n\t\t\tMisc_CreateUpDownButton(hDlg,148,248);\n\t\t\tSendDlgItemMessage(hDlg,158,EM_LIMITTEXT,(WPARAM)5,(LPARAM)0);\n\t\t\tSendDlgItemMessage(hDlg,160,EM_LIMITTEXT,(WPARAM)5,(LPARAM)0);\n\t\t\tSendDlgItemMessage(hDlg,120,EM_LIMITTEXT,(WPARAM)16,(LPARAM)0);\n\t\t\tSendDlgItemMessage(hDlg,134,EM_LIMITTEXT,(WPARAM)5,(LPARAM)0);\n\t\t\tSendDlgItemMessage(hDlg,136,EM_LIMITTEXT,(WPARAM)5,(LPARAM)0);\n\t\t\tSendDlgItemMessage(hDlg,138,EM_LIMITTEXT,(WPARAM)16,(LPARAM)0);\n\t\t\tSendDlgItemMessage(hDlg,140,EM_LIMITTEXT,(WPARAM)16,(LPARAM)0);\n\t\t\tSendDlgItemMessage(hDlg,142,EM_LIMITTEXT,(WPARAM)5,(LPARAM)0);\n\t\t\tSendDlgItemMessage(hDlg,144,EM_LIMITTEXT,(WPARAM)5,(LPARAM)0);\n\t\t\tSendDlgItemMessage(hDlg,146,EM_LIMITTEXT,(WPARAM)5,(LPARAM)0);\n\t\t\tSendDlgItemMessage(hDlg,148,EM_LIMITTEXT,(WPARAM)16,(LPARAM)0);\n\n\t\t\tContext->PageInitialized[3] = TRUE;\n\t\t\tbreak;\n\n\t\t//\n\t\t// Propriétés des sorts\n\t\t//\n\t\tcase 4:\n\t\t\tfor (i = 0; GSpells[i].Id != 0; i++)\n\t\t\t\t{\n\t\t\t\tif (SendDlgItemMessage(hDlg,101,LB_ADDSTRING,(WPARAM)0,(LPARAM)GSpells[i].Id) < 0)\n\t\t\t\t\tgoto Error_0;\n\t\t\t\t}\n\t\t\tSendDlgItemMessage(hDlg,101,LB_SETCURSEL,(WPARAM)0,(LPARAM)0);\n\n\t\t\tfor (i = 0; GSpellsHand[i].Id != 0xFFFFFFFF; i++)\n\t\t\t\t{\n\t\t\t\tif (SendDlgItemMessage(hDlg,104,CB_ADDSTRING,(WPARAM)0,(LPARAM)GSpellsHand[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\t\t\t\tif (SendDlgItemMessage(hDlg,106,CB_ADDSTRING,(WPARAM)0,(LPARAM)GSpellsHand[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\t\t\t\t}\n\n\t\t\tfor (i = 0; GSpellsCast[i].Id != 0; i++)\n\t\t\t\tif (SendDlgItemMessage(hDlg,114,CB_ADDSTRING,(WPARAM)0,(LPARAM)GSpellsCast[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\n\t\t\tfor (i = 0; GSpellsTrget[i].Id != 0; i++)\n\t\t\t\tif (SendDlgItemMessage(hDlg,116,CB_ADDSTRING,(WPARAM)0,(LPARAM)GSpellsTrget[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\n\t\t\tfor (i = 0; GShots[i].Id != 0xFFFFFFFF; i++)\n\t\t\t\t{\n\t\t\t\tif (SendDlgItemMessage(hDlg,144,CB_ADDSTRING,(WPARAM)0,(LPARAM)GShots[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\t\t\t\tif (SendDlgItemMessage(hDlg,147,CB_ADDSTRING,(WPARAM)0,(LPARAM)GShots[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\t\t\t\t}\n\n\t\t\tMisc_CreateUpDownButton(hDlg,124,224);\n\t\t\tMisc_CreateUpDownButton(hDlg,126,226);\n\t\t\tMisc_CreateUpDownButton(hDlg,128,228);\n\t\t\tMisc_CreateUpDownButton(hDlg,130,230);\n\t\t\tSendDlgItemMessage(hDlg,124,EM_LIMITTEXT,(WPARAM)6,(LPARAM)0);\n\t\t\tSendDlgItemMessage(hDlg,126,EM_LIMITTEXT,(WPARAM)5,(LPARAM)0);\n\t\t\tSendDlgItemMessage(hDlg,128,EM_LIMITTEXT,(WPARAM)16,(LPARAM)0);\n\t\t\tSendDlgItemMessage(hDlg,130,EM_LIMITTEXT,(WPARAM)5,(LPARAM)0);\n\n\t\t\tContext->PageInitialized[4] = TRUE;\n\t\t\tbreak;\n\t\t}\n\n\treturn;\n\n//--- Erreurs d'initialisation ---\n\nError_0:Misc_PrintError(hDlg,szDialogErr,NULL,MB_ICONEXCLAMATION);\n\treturn;\n}",
+    "Properties_GlobalSetValues": "Properties_GlobalSetValues(HWND hDlg, UINT Page, GLOBALCTX *Context)\n{\n\tswitch(Page)\n\t\t{\n\t\t//\n\t\t// Propriétés des terrains\n\t\t//\n\t\tcase 0:\tif (!Context->PageInitialized[0]) return(0);\n\t\t\tProperties_GlobalGetParams(hDlg,0,Context);\n\t\t\treturn(1);\n\n\t\t//\n\t\t// Propiétés des salles\n\t\t//\n\t\tcase 1:\tif (!Context->PageInitialized[1]) return(0);\n\t\t\tProperties_GlobalGetParams(hDlg,1,Context);\n\t\t\treturn(1);\n\n\t\t//\n\t\t// Propriétés des portes\n\t\t//\n\t\tcase 2:\tif (!Context->PageInitialized[2]) return(0);\n\t\t\tProperties_GlobalGetParams(hDlg,2,Context);\n\t\t\treturn(1);\n\n\t\t//\n\t\t// Propriétés des pièges\n\t\t//\n\t\tcase 3:\tif (!Context->PageInitialized[3]) return(0);\n\t\t\tProperties_GlobalGetParams(hDlg,3,Context);\n\t\t\treturn(1);\n\n\t\t//\n\t\t// Propriétés des sorts\n\t\t//\n\t\tcase 4:\tif (!Context->PageInitialized[4]) return(0);\n\t\t\tProperties_GlobalGetParams(hDlg,4,Context);\n\t\t\treturn(1);\n\n\t\t}\n\n\treturn(0);\n}",
+    "Properties_GlobalSaveChanges": "Properties_GlobalSaveChanges(HWND hDlg, UINT Page, GLOBALCTX *Context)\n{\n\tint\ti;\n\n\tswitch(Page)\n\t\t{\n\t\t//\n\t\t// Propriétés des terrains\n\t\t//\n\t\tcase 0:\tContext->Variables.Terrains[Context->CurrentTerrain].MaxHealthType\t= GTerrains[SendDlgItemMessage(hDlg,104,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)].Id;\n\t\t\tContext->Variables.Terrains[Context->CurrentTerrain].DestroyedType\t= GTerrains[SendDlgItemMessage(hDlg,114,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)].Id;\n\t\t\tContext->Variables.Terrains[Context->CurrentTerrain].MaxHealthEffect\t= Effects[SendDlgItemMessage(hDlg,106,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)].Id;\n\t\t\tContext->Variables.Terrains[Context->CurrentTerrain].DestroyedEffect\t= Effects[SendDlgItemMessage(hDlg,116,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)].Id;\n\t\t\tContext->Variables.Terrains[Context->CurrentTerrain].Damage\t\t= GetDlgItemInt(hDlg,124,NULL,TRUE);\n\t\t\tContext->Variables.Terrains[Context->CurrentTerrain].GoldValue\t\t= GetDlgItemInt(hDlg,126,NULL,FALSE);\n\t\t\tContext->Variables.Terrains[Context->CurrentTerrain].StartingHealth\t= GetDlgItemInt(hDlg,128,NULL,FALSE);\n\t\t\tContext->Variables.Terrains[Context->CurrentTerrain].MaxHealth\t\t= GetDlgItemInt(hDlg,130,NULL,FALSE);\n\t\t\tContext->Variables.Terrains[Context->CurrentTerrain].ManaGain\t\t= GetDlgItemInt(hDlg,132,NULL,FALSE);\n\t\t\tContext->Variables.Terrains[Context->CurrentTerrain].MaxManaGain\t= GetDlgItemInt(hDlg,134,NULL,FALSE);\n\t\t\tContext->Variables.Terrains[Context->CurrentTerrain].WibbleH\t\t= GetDlgItemInt(hDlg,136,NULL,FALSE);\n\t\t\tContext->Variables.Terrains[Context->CurrentTerrain].WibbleV\t\t= GetDlgItemInt(hDlg,138,NULL,FALSE);\n\t\t\tContext->Variables.Terrains[Context->CurrentTerrain].Visible\t\t= (IsDlgButtonChecked(hDlg,139) == BST_CHECKED);\n\t\t\tContext->Variables.Terrains[Context->CurrentTerrain].TerrainLight\t= (IsDlgButtonChecked(hDlg,143) == BST_CHECKED);\n\t\t\tContext->Variables.Terrains[Context->CurrentTerrain].AmbientLight\t= (IsDlgButtonChecked(hDlg,144) == BST_CHECKED);\n\t\t\tContext->Variables.Terrains[Context->CurrentTerrain].TerrainLightB\t= (BYTE)((Context->TerrainColor&0x00FF0000)>>16);\n\t\t\tContext->Variables.Terrains[Context->CurrentTerrain].TerrainLightG\t= (BYTE)((Context->TerrainColor&0x0000FF00)>>8);\n\t\t\tContext->Variables.Terrains[Context->CurrentTerrain].TerrainLightR\t= (BYTE)((Context->TerrainColor&0x000000FF));\n\t\t\tContext->Variables.Terrains[Context->CurrentTerrain].AmbientLightB\t= (BYTE)((Context->AmbientColor&0x00FF0000)>>16);\n\t\t\tContext->Variables.Terrains[Context->CurrentTerrain].AmbientLightG\t= (BYTE)((Context->AmbientColor&0x0000FF00)>>8);\n\t\t\tContext->Variables.Terrains[Context->CurrentTerrain].AmbientLightR\t= (BYTE)((Context->AmbientColor&0x000000FF));\n\t\t\tif (!Context->Variables.Terrains[Context->CurrentTerrain].TerrainLight)\n\t\t\t\t{\n\t\t\t\tContext->Variables.Terrains[Context->CurrentTerrain].TerrainLightB = 0;\n\t\t\t\tContext->Variables.Terrains[Context->CurrentTerrain].TerrainLightG = 0;\n\t\t\t\tContext->Variables.Terrains[Context->CurrentTerrain].TerrainLightR = 0;\n\t\t\t\t}\n\t\t\tif (!Context->Variables.Terrains[Context->CurrentTerrain].AmbientLight)\n\t\t\t\t{\n\t\t\t\tContext->Variables.Terrains[Context->CurrentTerrain].AmbientLightB = 0;\n\t\t\t\tContext->Variables.Terrains[Context->CurrentTerrain].AmbientLightG = 0;\n\t\t\t\tContext->Variables.Terrains[Context->CurrentTerrain].AmbientLightR = 0;\n\t\t\t\t}\n\n\t\t\tContext->Variables.Terrains[Context->CurrentTerrain].TerrainLightH = Misc_GetDlgItemFloat(hDlg,150);\n\t\t\tbreak;\n\n\t\t//\n\t\t// Propriétés des salles\n\t\t//\n\n\t\tcase 1:\tContext->Variables.Rooms[Context->CurrentRoom].Cost\t\t\t= GetDlgItemInt(hDlg,143,NULL,FALSE);\n\t\t\tContext->Variables.Rooms[Context->CurrentRoom].BattleEffect\t\t= Effects[SendDlgItemMessage(hDlg,104,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)].Id;\n\t\t\tContext->Variables.Rooms[Context->CurrentRoom].Effects[0]\t\t= Effects[SendDlgItemMessage(hDlg,106,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)].Id;\n\t\t\tContext->Variables.Rooms[Context->CurrentRoom].Effects[1]\t\t= Effects[SendDlgItemMessage(hDlg,108,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)].Id;\n\t\t\tContext->Variables.Rooms[Context->CurrentRoom].Effects[2]\t\t= Effects[SendDlgItemMessage(hDlg,110,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)].Id;\n\t\t\tContext->Variables.Rooms[Context->CurrentRoom].Effects[3]\t\t= Effects[SendDlgItemMessage(hDlg,112,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)].Id;\n\t\t\tContext->Variables.Rooms[Context->CurrentRoom].Effects[4]\t\t= Effects[SendDlgItemMessage(hDlg,114,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)].Id;\n\t\t\tContext->Variables.Rooms[Context->CurrentRoom].Effects[5]\t\t= Effects[SendDlgItemMessage(hDlg,116,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)].Id;\n\t\t\ti = SendDlgItemMessage(hDlg,124,CB_GETCURSEL,(WPARAM)0,(LPARAM)0);\n\t\t\tif (i) Context->Variables.Rooms[Context->CurrentRoom].Objects[0]\t= Objects[i-1].Id;\n\t\t\telse   Context->Variables.Rooms[Context->CurrentRoom].Objects[0]\t= 0;\n\t\t\ti = SendDlgItemMessage(hDlg,126,CB_GETCURSEL,(WPARAM)0,(LPARAM)0);\n\t\t\tif (i) Context->Variables.Rooms[Context->CurrentRoom].Objects[1]\t= Objects[i-1].Id;\n\t\t\telse   Context->Variables.Rooms[Context->CurrentRoom].Objects[1]\t= 0;\n\t\t\ti = SendDlgItemMessage(hDlg,128,CB_GETCURSEL,(WPARAM)0,(LPARAM)0);\n\t\t\tif (i) Context->Variables.Rooms[Context->CurrentRoom].Objects[2]\t= Objects[i-1].Id;\n\t\t\telse   Context->Variables.Rooms[Context->CurrentRoom].Objects[2]\t= 0;\n\t\t\ti = SendDlgItemMessage(hDlg,130,CB_GETCURSEL,(WPARAM)0,(LPARAM)0);\n\t\t\tif (i) Context->Variables.Rooms[Context->CurrentRoom].Objects[3]\t= Objects[i-1].Id;\n\t\t\telse   Context->Variables.Rooms[Context->CurrentRoom].Objects[3]\t= 0;\n\t\t\ti = SendDlgItemMessage(hDlg,132,CB_GETCURSEL,(WPARAM)0,(LPARAM)0);\n\t\t\tif (i) Context->Variables.Rooms[Context->CurrentRoom].Objects[4]\t= Objects[i-1].Id;\n\t\t\telse   Context->Variables.Rooms[Context->CurrentRoom].Objects[4]\t= 0;\n\t\t\ti = SendDlgItemMessage(hDlg,134,CB_GETCURSEL,(WPARAM)0,(LPARAM)0);\n\t\t\tif (i) Context->Variables.Rooms[Context->CurrentRoom].Objects[5]\t= Objects[i-1].Id;\n\t\t\telse   Context->Variables.Rooms[Context->CurrentRoom].Objects[5]\t= 0;\n\t\t\tContext->Variables.Rooms[Context->CurrentRoom].TorchLightB\t\t= (BYTE)((Context->TorchColor&0x00FF0000)>>16);\n\t\t\tContext->Variables.Rooms[Context->CurrentRoom].TorchLightG\t\t= (BYTE)((Context->TorchColor&0x0000FF00)>>8);\n\t\t\tContext->Variables.Rooms[Context->CurrentRoom].TorchLightR\t\t= (BYTE)((Context->TorchColor&0x000000FF));\n\t\t\tContext->Variables.Rooms[Context->CurrentRoom].TorchIntensity\t\t= GetDlgItemInt(hDlg,148,NULL,FALSE);\n\t\t\tContext->Variables.Rooms[Context->CurrentRoom].TorchLightH\t\t= Misc_GetDlgItemFloat(hDlg,150);\n\t\t\tContext->Variables.Rooms[Context->CurrentRoom].TorchLightRad\t\t= Misc_GetDlgItemFloat(hDlg,152);\n\t\t\tbreak;\n\n\t\t//\n\t\t// Propriétés des portes\n\t\t//\n\n\t\tcase 2:\tContext->Variables.Doors[Context->CurrentDoor].Cost\t\t\t= GetDlgItemInt(hDlg,114,NULL,FALSE);\n\t\t\tContext->Variables.Doors[Context->CurrentDoor].BuildPoints\t\t= GetDlgItemInt(hDlg,116,NULL,FALSE);\n\t\t\tContext->Variables.Doors[Context->CurrentDoor].Health\t\t\t= GetDlgItemInt(hDlg,118,NULL,FALSE);\n\t\t\tContext->Variables.Doors[Context->CurrentDoor].HealthGain\t\t= GetDlgItemInt(hDlg,120,NULL,FALSE);\n\t\t\tContext->Variables.Doors[Context->CurrentDoor].ManaCost\t\t\t= GetDlgItemInt(hDlg,122,NULL,FALSE);\n\t\t\tContext->Variables.Doors[Context->CurrentDoor].Material\t\t\t= GDoorsMats[SendDlgItemMessage(hDlg,104,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)].Id;\n\t\t\tContext->Variables.Doors[Context->CurrentDoor].DeathEffect\t\t= Effects[SendDlgItemMessage(hDlg,106,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)].Id;\n\t\t\tContext->Variables.Doors[Context->CurrentDoor].Crate\t\t\t= GDoorsCrates[SendDlgItemMessage(hDlg,108,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)].Id;\n\t\t\tContext->Variables.Doors[Context->CurrentDoor].Key\t\t\t= GDoorsKeys[SendDlgItemMessage(hDlg,110,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)].Id;\n\t\t\tbreak;\n\n\t\t//\n\t\t// Propriétés des pièges\n\t\t//\n\n\t\tcase 3:\tContext->Variables.Traps[Context->CurrentTrap].Material\t\t\t= GDoorsMats[SendDlgItemMessage(hDlg,104,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)].Id;\n\t\t\tContext->Variables.Traps[Context->CurrentTrap].Crate\t\t\t= GTrapsCrates[SendDlgItemMessage(hDlg,106,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)].Id;\n\t\t\tContext->Variables.Traps[Context->CurrentTrap].DeathEffect\t\t= Effects[SendDlgItemMessage(hDlg,114,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)].Id;\n\t\t\tContext->Variables.Traps[Context->CurrentTrap].PowerlessEffect\t\t= Effects[SendDlgItemMessage(hDlg,116,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)].Id;\n\t\t\tContext->Variables.Traps[Context->CurrentTrap].IdleEffect\t\t= Effects[SendDlgItemMessage(hDlg,118,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)].Id;\n\t\t\tContext->Variables.Traps[Context->CurrentTrap].TriggerType\t\t= GTrapsTypes[SendDlgItemMessage(hDlg,150,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)].Id;\n\t\t\tContext->Variables.Traps[Context->CurrentTrap].ShotType\t\t\t= GShots[SendDlgItemMessage(hDlg,154,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)].Id;\n\t\t\tContext->Variables.Traps[Context->CurrentTrap].GoldCost\t\t\t= GetDlgItemInt(hDlg,158,NULL,FALSE);\n\t\t\tContext->Variables.Traps[Context->CurrentTrap].BuildPoints\t\t= GetDlgItemInt(hDlg,160,NULL,FALSE);\n\t\t\tContext->Variables.Traps[Context->CurrentTrap].IdleEffectDelay\t\t= Misc_GetDlgItemFloat(hDlg,120);\n\t\t\tContext->Variables.Traps[Context->CurrentTrap].Health\t\t\t= GetDlgItemInt(hDlg,134,NULL,FALSE);\n\t\t\tContext->Variables.Traps[Context->CurrentTrap].HealthGain\t\t= GetDlgItemInt(hDlg,136,NULL,FALSE);\n\t\t\tContext->Variables.Traps[Context->CurrentTrap].ChargeTime\t\t= Misc_GetDlgItemFloat(hDlg,138);\n\t\t\tContext->Variables.Traps[Context->CurrentTrap].RechargeTime\t\t= Misc_GetDlgItemFloat(hDlg,140);\n\t\t\tContext->Variables.Traps[Context->CurrentTrap].ManaUsage\t\t= GetDlgItemInt(hDlg,142,NULL,FALSE);\n\t\t\tContext->Variables.Traps[Context->CurrentTrap].ManaCostToFire\t\t= GetDlgItemInt(hDlg,144,NULL,FALSE);\n\t\t\tContext->Variables.Traps[Context->CurrentTrap].Threat\t\t\t= GetDlgItemInt(hDlg,146,NULL,FALSE);\n\t\t\tContext->Variables.Traps[Context->CurrentTrap].ThreatDuration\t\t= Misc_GetDlgItemFloat(hDlg,148);\n\t\t\tContext->Variables.Traps[Context->CurrentTrap].Invisible\t\t= (IsDlgButtonChecked(hDlg,123))?TRUE:FALSE;\n\t\t\tContext->Variables.Traps[Context->CurrentTrap].Disarmable\t\t= (IsDlgButtonChecked(hDlg,124))?TRUE:FALSE;\n\t\t\tContext->Variables.Traps[Context->CurrentTrap].RevealedWhenFired\t= (IsDlgButtonChecked(hDlg,125))?TRUE:FALSE;\n\t\t\tContext->Variables.Traps[Context->CurrentTrap].RequiresMana\t\t= (IsDlgButtonChecked(hDlg,126))?TRUE:FALSE;\n\t\t\tContext->Variables.Traps[Context->CurrentTrap].SolidObstacle\t\t= (IsDlgButtonChecked(hDlg,127))?TRUE:FALSE;\n\t\t\tContext->Variables.Traps[Context->CurrentTrap].FPObstacle\t\t= (IsDlgButtonChecked(hDlg,128))?TRUE:FALSE;\n\t\t\tbreak;\n\n\t\t//\n\t\t// Propriétés des sorts\n\t\t//\n\n\t\tcase 4:\tContext->Variables.Spells[Context->CurrentSpell].ManaCost\t\t= GetDlgItemInt(hDlg,124,NULL,FALSE);\n\t\t\tContext->Variables.Spells[Context->CurrentSpell].ManaDrain\t\t= GetDlgItemInt(hDlg,126,NULL,FALSE);\n\t\t\tContext->Variables.Spells[Context->CurrentSpell].RechargeTime\t\t= Misc_GetDlgItemFloat(hDlg,128);\n\t\t\tContext->Variables.Spells[Context->CurrentSpell].Attacking\t\t= (IsDlgButtonChecked(hDlg,131))?TRUE:FALSE;\n\t\t\tContext->Variables.Spells[Context->CurrentSpell].Defensive\t\t= (IsDlgButtonChecked(hDlg,132))?TRUE:FALSE;\n\t\t\tContext->Variables.Spells[Context->CurrentSpell].HandAnim\t\t= GSpellsHand[SendDlgItemMessage(hDlg,104,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)].Id;\n\t\t\tContext->Variables.Spells[Context->CurrentSpell].NoGoHandAnim\t\t= GSpellsHand[SendDlgItemMessage(hDlg,106,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)].Id;\n\t\t\tContext->Variables.Spells[Context->CurrentSpell].CastRule\t\t= GSpellsCast[SendDlgItemMessage(hDlg,114,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)].Id;\n\t\t\tContext->Variables.Spells[Context->CurrentSpell].TargetRule\t\t= GSpellsTrget[SendDlgItemMessage(hDlg,116,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)].Id;\n\t\t\tContext->Variables.Spells[Context->CurrentSpell].ShotType\t\t= GShots[SendDlgItemMessage(hDlg,144,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)].Id;\n\t\t\tContext->Variables.Spells[Context->CurrentSpell].UpgShotType\t\t= GShots[SendDlgItemMessage(hDlg,147,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)].Id;\n\t\t\tContext->Variables.Spells[Context->CurrentSpell].UpgRechargeTime\t= GetDlgItemInt(hDlg,130,NULL,FALSE);\n\t\t\tbreak;\n\n\t\t}\n\n\treturn;\n}",
+    "Properties_GlobalGetParams": "Properties_GlobalGetParams(HWND hDlg, UINT Page, GLOBALCTX *Context)\n{\n\tint\tCurrent;\n\tint\tActivate;\n\tint\ti;\n\n\tCurrent = SendDlgItemMessage(hDlg,101,LB_GETCURSEL,(WPARAM)0,(LPARAM)0);\n\n\tswitch(Page)\n\t\t{\n\t\t//\n\t\t// Propriétés des terrains\n\t\t//\n\t\tcase 0:\tContext->CurrentTerrain = Current;\n\t\t\tContext->TerrainColor = RGB(Context->Variables.Terrains[Current].TerrainLightR,Context->Variables.Terrains[Current].TerrainLightG,Context->Variables.Terrains[Current].TerrainLightB);\n\t\t\tContext->AmbientColor = RGB(Context->Variables.Terrains[Current].AmbientLightR,Context->Variables.Terrains[Current].AmbientLightG,Context->Variables.Terrains[Current].AmbientLightB);\n\n\t\t\tActivate = (GTerrains[Current].MinWidth)?1:0;\n\t\t\tEnableWindow(GetDlgItem(hDlg,103),Activate);\n\t\t\tEnableWindow(GetDlgItem(hDlg,104),Activate);\n\t\t\tEnableWindow(GetDlgItem(hDlg,113),Activate);\n\t\t\tEnableWindow(GetDlgItem(hDlg,114),Activate);\n\t\t\tEnableWindow(GetDlgItem(hDlg,105),Activate);\n\t\t\tEnableWindow(GetDlgItem(hDlg,106),Activate);\n\t\t\tEnableWindow(GetDlgItem(hDlg,115),Activate);\n\t\t\tEnableWindow(GetDlgItem(hDlg,116),Activate);\n\t\t\tEnableWindow(GetDlgItem(hDlg,139),(GTerrains[Current].MaxWidth)?FALSE:TRUE);\n\n\t\t\tSendDlgItemMessage(hDlg,104,CB_RESETCONTENT,(WPARAM)0,(LPARAM)0);\n\t\t\tSendDlgItemMessage(hDlg,114,CB_RESETCONTENT,(WPARAM)0,(LPARAM)0);\n\t\t\tfor (i = 0; GTerrains[i].Id != 0; i++)\n\t\t\t\t{\n\t\t\t\tif ((Activate)&&(GTerrains[i].MinHeight)) break;\n\t\t\t\tSendDlgItemMessage(hDlg,104,CB_ADDSTRING,(WPARAM)0,(LPARAM)GTerrains[i].Name);\n\t\t\t\tSendDlgItemMessage(hDlg,114,CB_ADDSTRING,(WPARAM)0,(LPARAM)GTerrains[i].Name);\n\t\t\t\t}\n\n\t\t\tfor (i = 0; GTerrains[i].Id != 0; i++)\n\t\t\t\t{\n\t\t\t\tif (Context->Variables.Terrains[Current].MaxHealthType == GTerrains[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,104,CB_SETCURSEL,(WPARAM)i,(LPARAM)0);\n\t\t\t\tif (Context->Variables.Terrains[Current].DestroyedType == GTerrains[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,114,CB_SETCURSEL,(WPARAM)i,(LPARAM)0);\n\t\t\t\t}\n\n\t\t\tfor (i = 0; Effects[i].Id != 0xFFFFFFFF; i++)\n\t\t\t\t{\n\t\t\t\tif (Context->Variables.Terrains[Current].MaxHealthEffect == Effects[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,106,CB_SETCURSEL,(WPARAM)i,(LPARAM)0);\n\t\t\t\tif (Context->Variables.Terrains[Current].DestroyedEffect == Effects[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,116,CB_SETCURSEL,(WPARAM)i,(LPARAM)0);\n\t\t\t\t}\n\n\t\t\tMisc_SetDlgItemFloat(hDlg,150,Context->Variables.Terrains[Current].TerrainLightH);\n\t\t\tSetDlgItemInt(hDlg,124,Context->Variables.Terrains[Current].Damage,TRUE);\n\t\t\tSetDlgItemInt(hDlg,126,Context->Variables.Terrains[Current].GoldValue,FALSE);\n\t\t\tSetDlgItemInt(hDlg,128,Context->Variables.Terrains[Current].StartingHealth,FALSE);\n\t\t\tSetDlgItemInt(hDlg,130,Context->Variables.Terrains[Current].MaxHealth,FALSE);\n\t\t\tSetDlgItemInt(hDlg,132,Context->Variables.Terrains[Current].ManaGain,FALSE);\n\t\t\tSetDlgItemInt(hDlg,134,Context->Variables.Terrains[Current].MaxManaGain,FALSE);\n\t\t\tSetDlgItemInt(hDlg,136,Context->Variables.Terrains[Current].WibbleH,FALSE);\n\t\t\tSetDlgItemInt(hDlg,138,Context->Variables.Terrains[Current].WibbleV,FALSE);\n\t\t\tCheckDlgButton(hDlg,139,(Context->Variables.Terrains[Current].Visible)?BST_CHECKED:BST_UNCHECKED);\n\t\t\tCheckDlgButton(hDlg,143,(Context->Variables.Terrains[Current].TerrainLight)?BST_CHECKED:BST_UNCHECKED);\n\t\t\tCheckDlgButton(hDlg,144,(Context->Variables.Terrains[Current].AmbientLight)?BST_CHECKED:BST_UNCHECKED);\n\t\t\tInvalidateRect(GetDlgItem(hDlg,145),NULL,FALSE);\n\t\t\tInvalidateRect(GetDlgItem(hDlg,146),NULL,FALSE);\n\t\t\tbreak;\n\n\t\t//\n\t\t// Propriétés des salles\n\t\t//\n\t\tcase 1:\tContext->CurrentRoom = Current;\n\t\t\tContext->TorchColor = RGB(Context->Variables.Rooms[Current].TorchLightR,Context->Variables.Rooms[Current].TorchLightG,Context->Variables.Rooms[Current].TorchLightB);\n\n\t\t\tfor (i = 0; Effects[i].Id != 0xFFFFFFFF; i++)\n\t\t\t\t{\n\t\t\t\tif (Context->Variables.Rooms[Current].BattleEffect == Effects[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,104,CB_SETCURSEL,(WPARAM)i,(LPARAM)0);\n\t\t\t\tif (Context->Variables.Rooms[Current].Effects[0] == Effects[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,106,CB_SETCURSEL,(WPARAM)i,(LPARAM)0);\n\t\t\t\tif (Context->Variables.Rooms[Current].Effects[1] == Effects[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,108,CB_SETCURSEL,(WPARAM)i,(LPARAM)0);\n\t\t\t\tif (Context->Variables.Rooms[Current].Effects[2] == Effects[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,110,CB_SETCURSEL,(WPARAM)i,(LPARAM)0);\n\t\t\t\tif (Context->Variables.Rooms[Current].Effects[3] == Effects[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,112,CB_SETCURSEL,(WPARAM)i,(LPARAM)0);\n\t\t\t\tif (Context->Variables.Rooms[Current].Effects[4] == Effects[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,114,CB_SETCURSEL,(WPARAM)i,(LPARAM)0);\n\t\t\t\tif (Context->Variables.Rooms[Current].Effects[5] == Effects[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,116,CB_SETCURSEL,(WPARAM)i,(LPARAM)0);\n\t\t\t\t}\n\n\t\t\tfor (i = 0; i != 6; i++)\n\t\t\t\tif (!Context->Variables.Rooms[Current].Objects[i])\n\t\t\t\t\tSendDlgItemMessage(hDlg,124+i*2,CB_SETCURSEL,(WPARAM)0,(LPARAM)0);\n\n\t\t\tfor (i = 0; Objects[i].Id != 0; i++)\n\t\t\t\t{\n\t\t\t\tif (Context->Variables.Rooms[Current].Objects[0] == Objects[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,124,CB_SETCURSEL,(WPARAM)i+1,(LPARAM)0);\n\t\t\t\tif (Context->Variables.Rooms[Current].Objects[1] == Objects[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,126,CB_SETCURSEL,(WPARAM)i+1,(LPARAM)0);\n\t\t\t\tif (Context->Variables.Rooms[Current].Objects[2] == Objects[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,128,CB_SETCURSEL,(WPARAM)i+1,(LPARAM)0);\n\t\t\t\tif (Context->Variables.Rooms[Current].Objects[3] == Objects[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,130,CB_SETCURSEL,(WPARAM)i+1,(LPARAM)0);\n\t\t\t\tif (Context->Variables.Rooms[Current].Objects[4] == Objects[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,132,CB_SETCURSEL,(WPARAM)i+1,(LPARAM)0);\n\t\t\t\tif (Context->Variables.Rooms[Current].Objects[5] == Objects[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,134,CB_SETCURSEL,(WPARAM)i+1,(LPARAM)0);\n\t\t\t\t}\n\n\t\t\tif (!(((DWORD)GRooms[Current].ASCIIName)&MGEF_EFFECT0))\n\t\t\t\t{\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,105),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,106),FALSE);\n\t\t\t\t}\n\t\t\telse\n\t\t\t\t{\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,105),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,106),TRUE);\n\t\t\t\t}\n\t\t\tif (!(((DWORD)GRooms[Current].ASCIIName)&MGEF_EFFECT1))\n\t\t\t\t{\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,107),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,108),FALSE);\n\t\t\t\t}\n\t\t\telse\n\t\t\t\t{\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,107),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,108),TRUE);\n\t\t\t\t}\n\t\t\tif (!(((DWORD)GRooms[Current].ASCIIName)&MGEF_EFFECT2))\n\t\t\t\t{\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,109),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,110),FALSE);\n\t\t\t\t}\n\t\t\telse\n\t\t\t\t{\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,109),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,110),TRUE);\n\t\t\t\t}\n\t\t\tif (!(((DWORD)GRooms[Current].ASCIIName)&MGEF_EFFECT3))\n\t\t\t\t{\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,111),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,112),FALSE);\n\t\t\t\t}\n\t\t\telse\n\t\t\t\t{\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,111),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,112),TRUE);\n\t\t\t\t}\n\t\t\tif (!(((DWORD)GRooms[Current].ASCIIName)&MGEF_EFFECT4))\n\t\t\t\t{\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,113),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,114),FALSE);\n\t\t\t\t}\n\t\t\telse\n\t\t\t\t{\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,113),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,114),TRUE);\n\t\t\t\t}\n\t\t\tif (!(((DWORD)GRooms[Current].ASCIIName)&MGEF_EFFECT5))\n\t\t\t\t{\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,115),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,116),FALSE);\n\t\t\t\t}\n\t\t\telse\n\t\t\t\t{\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,115),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,116),TRUE);\n\t\t\t\t}\n\n\t\t\tif (!(((DWORD)GRooms[Current].ASCIIName)&MGEF_OBJECT0))\n\t\t\t\t{\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,123),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,124),FALSE);\n\t\t\t\t}\n\t\t\telse\n\t\t\t\t{\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,123),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,124),TRUE);\n\t\t\t\t}\n\t\t\tif (!(((DWORD)GRooms[Current].ASCIIName)&MGEF_OBJECT1))\n\t\t\t\t{\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,125),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,126),FALSE);\n\t\t\t\t}\n\t\t\telse\n\t\t\t\t{\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,125),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,126),TRUE);\n\t\t\t\t}\n\t\t\tif (!(((DWORD)GRooms[Current].ASCIIName)&MGEF_OBJECT2))\n\t\t\t\t{\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,127),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,128),FALSE);\n\t\t\t\t}\n\t\t\telse\n\t\t\t\t{\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,127),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,128),TRUE);\n\t\t\t\t}\n\t\t\tif (!(((DWORD)GRooms[Current].ASCIIName)&MGEF_OBJECT3))\n\t\t\t\t{\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,129),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,130),FALSE);\n\t\t\t\t}\n\t\t\telse\n\t\t\t\t{\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,129),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,130),TRUE);\n\t\t\t\t}\n\t\t\tif (!(((DWORD)GRooms[Current].ASCIIName)&MGEF_OBJECT4))\n\t\t\t\t{\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,131),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,132),FALSE);\n\t\t\t\t}\n\t\t\telse\n\t\t\t\t{\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,131),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,132),TRUE);\n\t\t\t\t}\n\t\t\tif (!(((DWORD)GRooms[Current].ASCIIName)&MGEF_OBJECT5))\n\t\t\t\t{\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,133),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,134),FALSE);\n\t\t\t\t}\n\t\t\telse\n\t\t\t\t{\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,133),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,134),TRUE);\n\t\t\t\t}\n\n\t\t\tif (((DWORD)GRooms[Current].ASCIIName)&MGEF_CANTBUILD)\n\t\t\t\t{\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,143),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,144),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,243),FALSE);\n\t\t\t\t}\n\t\t\telse\n\t\t\t\t{\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,143),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,144),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,243),TRUE);\n\t\t\t\t}\n\n\t\t\tMisc_SetDlgItemFloat(hDlg,150,Context->Variables.Rooms[Current].TorchLightH);\n\t\t\tMisc_SetDlgItemFloat(hDlg,152,Context->Variables.Rooms[Current].TorchLightRad);\n\t\t\tSetDlgItemInt(hDlg,143,Context->Variables.Rooms[Current].Cost,FALSE);\n\t\t\tSetDlgItemInt(hDlg,148,Context->Variables.Rooms[Current].TorchIntensity,FALSE);\n\t\t\tInvalidateRect(GetDlgItem(hDlg,146),NULL,FALSE);\n\t\t\tbreak;\n\n\t\t//\n\t\t// Propriétés des portes\n\t\t//\n\n\t\tcase 2:\tContext->CurrentDoor = Current;\n\n\t\t\tfor (i = 0; GDoorsMats[i].Id != 0xFFFFFFFF; i++)\n\t\t\t\tif (Context->Variables.Doors[Context->CurrentDoor].Material == GDoorsMats[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,104,CB_SETCURSEL,(WPARAM)i,(LPARAM)0);\n\n\t\t\tfor (i = 0; Effects[i].Id != 0xFFFFFFFF; i++)\n\t\t\t\tif (Context->Variables.Doors[Context->CurrentDoor].DeathEffect == Effects[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,106,CB_SETCURSEL,(WPARAM)i,(LPARAM)0);\n\n\t\t\tfor (i = 0; GDoorsCrates[i].Id != 0xFFFFFFFF; i++)\n\t\t\t\tif (Context->Variables.Doors[Context->CurrentDoor].Crate == GDoorsCrates[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,108,CB_SETCURSEL,(WPARAM)i,(LPARAM)0);\n\n\t\t\tfor (i = 0; GDoorsKeys[i].Id != 0xFFFFFFFF; i++)\n\t\t\t\tif (Context->Variables.Doors[Context->CurrentDoor].Key == GDoorsKeys[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,110,CB_SETCURSEL,(WPARAM)i,(LPARAM)0);\n\n\t\t\tSetDlgItemInt(hDlg,114,Context->Variables.Doors[Context->CurrentDoor].Cost,FALSE);\n\t\t\tSetDlgItemInt(hDlg,116,Context->Variables.Doors[Context->CurrentDoor].BuildPoints,FALSE);\n\t\t\tSetDlgItemInt(hDlg,118,Context->Variables.Doors[Context->CurrentDoor].Health,FALSE);\n\t\t\tSetDlgItemInt(hDlg,120,Context->Variables.Doors[Context->CurrentDoor].HealthGain,FALSE);\n\t\t\tSetDlgItemInt(hDlg,122,Context->Variables.Doors[Context->CurrentDoor].ManaCost,FALSE);\n\t\t\tbreak;\n\n\t\t//\n\t\t// Propriétés des pièges\n\t\t//\n\n\t\tcase 3:\tContext->CurrentTrap = Current;\n\n\t\t\tfor (i = 0; GDoorsMats[i].Id != 0xFFFFFFFF; i++)\n\t\t\t\tif (Context->Variables.Traps[Context->CurrentTrap].Material == GDoorsMats[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,104,CB_SETCURSEL,(WPARAM)i,(LPARAM)0);\n\n\t\t\tfor (i = 0; GTrapsCrates[i].Id != 0xFFFFFFFF; i++)\n\t\t\t\tif (Context->Variables.Traps[Context->CurrentTrap].Crate == GTrapsCrates[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,106,CB_SETCURSEL,(WPARAM)i,(LPARAM)0);\n\n\t\t\tfor (i = 0; Effects[i].Id != 0xFFFFFFFF; i++)\n\t\t\t\t{\n\t\t\t\tif (Context->Variables.Traps[Context->CurrentTrap].DeathEffect == Effects[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,114,CB_SETCURSEL,(WPARAM)i,(LPARAM)0);\n\t\t\t\tif (Context->Variables.Traps[Context->CurrentTrap].PowerlessEffect == Effects[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,116,CB_SETCURSEL,(WPARAM)i,(LPARAM)0);\n\t\t\t\tif (Context->Variables.Traps[Context->CurrentTrap].IdleEffect == Effects[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,118,CB_SETCURSEL,(WPARAM)i,(LPARAM)0);\n\t\t\t\t}\n\n\t\t\tfor (i = 0; GTrapsTypes[i].Id != 0; i++)\n\t\t\t\tif (Context->Variables.Traps[Context->CurrentTrap].TriggerType == GTrapsTypes[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,150,CB_SETCURSEL,(WPARAM)i,(LPARAM)0);\n\n\t\t\tfor (i = 0; GShots[i].Id != 0xFFFFFFFF; i++)\n\t\t\t\tif (Context->Variables.Traps[Context->CurrentTrap].ShotType == GShots[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,154,CB_SETCURSEL,(WPARAM)i,(LPARAM)0);\n\n\t\t\t// MagicDoor inactive parameters\n\t\t\tif (GTraps[Context->CurrentTrap].Id == 0x0000000C)\n\t\t\t\t{\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,103),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,104),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,105),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,106),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,113),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,114),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,123),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,124),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,125),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,126),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,127),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,128),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,157),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,158),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,258),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,159),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,160),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,260),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,133),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,134),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,234),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,135),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,136),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,236),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,141),FALSE);\t// Mana usage\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,142),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,242),FALSE);\n\t\t\t\t}\n\t\t\telse\n\t\t\t\t{\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,103),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,104),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,105),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,106),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,113),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,114),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,123),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,124),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,125),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,126),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,127),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,128),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,157),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,158),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,258),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,159),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,160),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,260),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,133),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,134),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,234),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,135),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,136),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,236),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,141),TRUE);\t// Mana usage\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,142),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,242),TRUE);\n\t\t\t\t}\n\n\t\t\tSetDlgItemInt(hDlg,158,Context->Variables.Traps[Context->CurrentTrap].GoldCost,FALSE);\n\t\t\tSetDlgItemInt(hDlg,160,Context->Variables.Traps[Context->CurrentTrap].BuildPoints,FALSE);\n\t\t\tMisc_SetDlgItemFloat(hDlg,120,Context->Variables.Traps[Context->CurrentTrap].IdleEffectDelay);\n\t\t\tSetDlgItemInt(hDlg,134,Context->Variables.Traps[Context->CurrentTrap].Health,FALSE);\n\t\t\tSetDlgItemInt(hDlg,136,Context->Variables.Traps[Context->CurrentTrap].HealthGain,FALSE);\n\t\t\tMisc_SetDlgItemFloat(hDlg,138,Context->Variables.Traps[Context->CurrentTrap].ChargeTime);\n\t\t\tMisc_SetDlgItemFloat(hDlg,140,Context->Variables.Traps[Context->CurrentTrap].RechargeTime);\n\t\t\tSetDlgItemInt(hDlg,142,Context->Variables.Traps[Context->CurrentTrap].ManaUsage,FALSE);\n\t\t\tSetDlgItemInt(hDlg,144,Context->Variables.Traps[Context->CurrentTrap].ManaCostToFire,FALSE);\n\t\t\tSetDlgItemInt(hDlg,146,Context->Variables.Traps[Context->CurrentTrap].Threat,FALSE);\n\t\t\tMisc_SetDlgItemFloat(hDlg,148,Context->Variables.Traps[Context->CurrentTrap].ThreatDuration);\n\n\t\t\tCheckDlgButton(hDlg,123,(Context->Variables.Traps[Context->CurrentTrap].Invisible)?BST_CHECKED:BST_UNCHECKED);\n\t\t\tCheckDlgButton(hDlg,124,(Context->Variables.Traps[Context->CurrentTrap].Disarmable)?BST_CHECKED:BST_UNCHECKED);\n\t\t\tCheckDlgButton(hDlg,125,(Context->Variables.Traps[Context->CurrentTrap].RevealedWhenFired)?BST_CHECKED:BST_UNCHECKED);\n\t\t\tCheckDlgButton(hDlg,126,(Context->Variables.Traps[Context->CurrentTrap].RequiresMana)?BST_CHECKED:BST_UNCHECKED);\n\t\t\tCheckDlgButton(hDlg,127,(Context->Variables.Traps[Context->CurrentTrap].SolidObstacle)?BST_CHECKED:BST_UNCHECKED);\n\t\t\tCheckDlgButton(hDlg,128,(Context->Variables.Traps[Context->CurrentTrap].FPObstacle)?BST_CHECKED:BST_UNCHECKED);\n\t\t\tbreak;\n\n\t\t//\n\t\t// Propriétés des sorts\n\t\t//\n\n\t\tcase 4:\tContext->CurrentSpell = Current;\n\n\t\t\tfor (i = 0; GSpellsHand[i].Id != 0xFFFFFFFF; i++)\n\t\t\t\t{\n\t\t\t\tif (Context->Variables.Spells[Context->CurrentSpell].HandAnim == GSpellsHand[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,104,CB_SETCURSEL,(WPARAM)i,(LPARAM)0);\n\t\t\t\tif (Context->Variables.Spells[Context->CurrentSpell].NoGoHandAnim == GSpellsHand[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,106,CB_SETCURSEL,(WPARAM)i,(LPARAM)0);\n\t\t\t\t}\n\n\t\t\tfor (i = 0; GSpellsCast[i].Id != 0; i++)\n\t\t\t\tif (Context->Variables.Spells[Context->CurrentSpell].CastRule == GSpellsCast[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,114,CB_SETCURSEL,(WPARAM)i,(LPARAM)0);\n\n\t\t\tfor (i = 0; GSpellsTrget[i].Id != 0; i++)\n\t\t\t\tif (Context->Variables.Spells[Context->CurrentSpell].TargetRule == GSpellsTrget[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,116,CB_SETCURSEL,(WPARAM)i,(LPARAM)0);\n\n\t\t\tfor (i = 0; GShots[i].Id != 0xFFFFFFFF; i++)\n\t\t\t\t{\n\t\t\t\tif (Context->Variables.Spells[Context->CurrentSpell].ShotType == GShots[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,144,CB_SETCURSEL,(WPARAM)i,(LPARAM)0);\n\t\t\t\tif (Context->Variables.Spells[Context->CurrentSpell].UpgShotType == GShots[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,147,CB_SETCURSEL,(WPARAM)i,(LPARAM)0);\n\t\t\t\t}\n\n\t\t\tSetDlgItemInt(hDlg,124,Context->Variables.Spells[Context->CurrentSpell].ManaCost,FALSE);\n\t\t\tSetDlgItemInt(hDlg,126,Context->Variables.Spells[Context->CurrentSpell].ManaDrain,FALSE);\n\t\t\tMisc_SetDlgItemFloat(hDlg,128,Context->Variables.Spells[Context->CurrentSpell].RechargeTime);\n\t\t\tSetDlgItemInt(hDlg,130,Context->Variables.Spells[Context->CurrentSpell].UpgRechargeTime,FALSE);\n\t\t\tCheckDlgButton(hDlg,131,(Context->Variables.Spells[Context->CurrentSpell].Attacking)?BST_CHECKED:BST_UNCHECKED);\n\t\t\tCheckDlgButton(hDlg,132,(Context->Variables.Spells[Context->CurrentSpell].Defensive)?BST_CHECKED:BST_UNCHECKED);\n\n\t\t\tbreak;\n\n\n\t\t}\n\n\treturn;\n}",
+    "Properties_GlobalSetShotOptions": "Properties_GlobalSetShotOptions(HWND hDlg, UINT Page, GLOBALCTX *Context)\n{\n\tProperties_GlobalSaveChanges(hDlg,Page,Context);\n\n\tswitch(Page)\n\t\t{\n\t\tcase 3:\tContext->ShotCtx.ShotType = Context->Variables.Traps[Context->CurrentTrap].ShotType;\n\t\t\tContext->ShotCtx.ShotData1 = Context->Variables.Traps[Context->CurrentTrap].ShotData1;\n\t\t\tContext->ShotCtx.ShotData2 = Context->Variables.Traps[Context->CurrentTrap].ShotData2;\n\t\t\tbreak;\n\n\t\tcase 4:\tif (!Context->BonusShot)\n\t\t\t\tContext->ShotCtx.ShotType = Context->Variables.Spells[Context->CurrentSpell].ShotType;\n\t\t\telse\n\t\t\t\tContext->ShotCtx.ShotType = Context->Variables.Spells[Context->CurrentSpell].UpgShotType;\n\n\t\t\tif (!Context->BonusShot)\n\t\t\t\t{\n\t\t\t\tContext->ShotCtx.ShotData1 = Context->Variables.Spells[Context->CurrentSpell].ShotData1;\n\t\t\t\tContext->ShotCtx.ShotData2 = Context->Variables.Spells[Context->CurrentSpell].ShotData2;\n\t\t\t\t}\n\t\t\telse\n\t\t\t\t{\n\t\t\t\tContext->ShotCtx.ShotData1 = Context->Variables.Spells[Context->CurrentSpell].UpgShotData1;\n\t\t\t\tContext->ShotCtx.ShotData2 = Context->Variables.Spells[Context->CurrentSpell].UpgShotData2;\n\t\t\t\t}\n\t\t\tbreak;\n\n\t\tdefault:return;\n\t\t}\n\n\tif (!Properties_GlobalShotOptions(hDlg,&Context->ShotCtx)) return;\n\n\tswitch(Page)\n\t\t{\n\t\tcase 3:\tContext->Variables.Traps[Context->CurrentTrap].ShotData1 = Context->ShotCtx.ShotData1;\n\t\t\tContext->Variables.Traps[Context->CurrentTrap].ShotData2 = Context->ShotCtx.ShotData2;\n\t\t\tbreak;\n\t\tcase 4:\tif (!Context->BonusShot)\n\t\t\t\t{\n\t\t\t\tContext->Variables.Spells[Context->CurrentSpell].ShotData1 = Context->ShotCtx.ShotData1;\n\t\t\t\tContext->Variables.Spells[Context->CurrentSpell].ShotData2 = Context->ShotCtx.ShotData2;\n\t\t\t\t}\n\t\t\telse\n\t\t\t\t{\n\t\t\t\tContext->Variables.Spells[Context->CurrentSpell].UpgShotData1 = Context->ShotCtx.ShotData1;\n\t\t\t\tContext->Variables.Spells[Context->CurrentSpell].UpgShotData2 = Context->ShotCtx.ShotData2;\n\t\t\t\t}\n\t\t\tbreak;\n\t\t}\n\n\treturn;\n}",
+    "Properties_GlobalShotOptions": "Properties_GlobalShotOptions(HWND hDlg, GLOBALSHOT *Context)\n{\n\tint\tResult;\n\n\tfor (Result = 0; GShots[Result].Id != 0xFFFFFFFF; Result++)\n\t\t{\n\t\tif (Context->ShotType == GShots[Result].Id)\n\t\t\t{\n\t\t\tContext->DialogID\t= GShots[Result].Variable;\n\t\t\tContext->Text1ID\t= GShots[Result].MinWidth;\n\t\t\tContext->Text2ID\t= GShots[Result].MinHeight;\n\t\t\tContext->Ctrl1Signed\t= GShots[Result].MaxWidth;\n\t\t\tContext->Ctrl2Signed\t= GShots[Result].MaxHeight;\n\t\t\tbreak;\n\t\t\t}\n\t\t}\n\tif (Context->DialogID == 0xFF)\n\t\t{\n\t\tMisc_MessageBoxExt(hDlg,szGlobalNoParam,(char *)-1,szMessageBoxExtOk,MB_ICONINFORMATION);\n\t\treturn(0);\n\t\t}\n\n\tswitch(Context->DialogID)\n\t\t{\n\t\tcase 2:\n\t\tcase 3:\tMisc_CreateImageList(GCreatures,&Context->OptionsImages,32,32,FALSE);\n\t\t\tif (!Context->OptionsImages) return(0);\n\t\t\tbreak;\n\t\tcase 4:\tMisc_CreateImageList(Objects,&Context->OptionsImages,32,32,FALSE);\n\t\t\tif (!Context->OptionsImages) return(0);\n\t\t\tbreak;\n\t\t}\n\n\tResult = DialogBoxParam(hInstance,MAKEINTRESOURCE(6840+Context->DialogID),hDlg,Properties_GlobalShotProc,(LPARAM)Context);\n\tif ((Result == -1)||(Result == 0))\n\t\t{\n\t\tif (Result == -1) Misc_PrintError(hDlg,szDialogErr,NULL,MB_ICONHAND);\n\t\tMisc_DestroyImageList(&Context->OptionsImages);\n\t\treturn(0);\n\t\t}\n\n\tMisc_DestroyImageList(&Context->OptionsImages);\n\treturn(1);\n}",
+    "Properties_GlobalShotProc": "Properties_GlobalShotProc(HWND hDlg, UINT uMsgId, WPARAM wParam, LPARAM lParam)\n{\n\tGLOBALSHOT\t*Context;\n\tLONG\t\t lData;\n\n\tif (uMsgId == WM_INITDIALOG)\n\t\t{\n\t\tProperties_GlobalShotInit(hDlg,(GLOBALSHOT *)lParam);\n\t\treturn(TRUE);\n\t\t}\n\n\tContext = (GLOBALSHOT *)GetWindowLong(hDlg,DWL_USER);\n\tif (!Context) return(FALSE);\n\n\tswitch(uMsgId)\n\t\t{\n\t\tcase WM_MEASUREITEM:\n\t\t\tif ( ((MEASUREITEMSTRUCT *)lParam)->CtlType == ODT_LISTBOX )\n\t\t\t\t{\n\t\t\t\tProperties_GlobalSetList((MEASUREITEMSTRUCT *)lParam);\n\t\t\t\treturn(TRUE);\n\t\t\t\t}\n\t\t\tbreak;\n\n\t\tcase WM_DRAWITEM:\n\t\t\tif ( ((DRAWITEMSTRUCT *)lParam)->CtlType == ODT_LISTBOX )\n\t\t\t\t{\n\t\t\t\tELEMENT\t*Table;\n\n\t\t\t\tswitch(Context->DialogID)\n\t\t\t\t\t{\n\t\t\t\t\tcase 2:\n\t\t\t\t\tcase 3:\tTable = GCreatures;\n\t\t\t\t\t\tbreak;\n\t\t\t\t\tcase 4:\tTable = Objects;\n\t\t\t\t\t\tbreak;\n\t\t\t\t\tdefault:return(FALSE);\n\t\t\t\t\t}\n\n\t\t\t\tProperties_GlobalDrawList((DRAWITEMSTRUCT *)lParam,Table,Context->OptionsImages);\n\t\t\t\treturn(TRUE);\n\t\t\t\t}\n\n\t\tcase WM_NOTIFY:\n\t\t\tswitch( ((NMHDR *)lParam)->code )\n\t\t\t\t{\n\t\t\t\tcase UDN_DELTAPOS:\n\t\t\t\t\tswitch( ((NMHDR *)lParam)->idFrom )\n\t\t\t\t\t\t{\n\t\t\t\t\t\tcase 206:\n\t\t\t\t\t\t\tMisc_SetUpDownInt(hDlg,205,(NM_UPDOWN *)lParam);\n\t\t\t\t\t\t\tbreak;\n\n\t\t\t\t\t\tcase 204:\n\t\t\t\t\t\t\tMisc_SetUpDownInt(hDlg,203,(NM_UPDOWN *)lParam);\n\t\t\t\t\t\t\tbreak;\n\n\t\t\t\t\t\tcase 104:\n\t\t\t\t\t\t\tif (Context->Ctrl1Signed)\n\t\t\t\t\t\t\t\tMisc_SetUpDownIntSigned(hDlg,101,(NM_UPDOWN *)lParam);\n\t\t\t\t\t\t\telse\n\t\t\t\t\t\t\t\tMisc_SetUpDownInt(hDlg,101,(NM_UPDOWN *)lParam);\n\t\t\t\t\t\t\tbreak;\n\t\t\t\t\t\tcase 105:\n\t\t\t\t\t\t\tif (Context->Ctrl2Signed)\n\t\t\t\t\t\t\t\tMisc_SetUpDownIntSigned(hDlg,101,(NM_UPDOWN *)lParam);\n\t\t\t\t\t\t\telse\n\t\t\t\t\t\t\t\tMisc_SetUpDownInt(hDlg,101,(NM_UPDOWN *)lParam);\n\t\t\t\t\t\t\tbreak;\n\t\t\t\t\t\t}\t\n\t\t\t\t\treturn(TRUE);\n\t\t\t\t}\n\t\t\tbreak;\n\n\t\tcase WM_COMMAND:\n\t\t\tswitch(HIWORD(wParam))\n\t\t\t\t{\n\t\t\t\tcase LBN_SELCHANGE:\n\t\t\t\t\tswitch(LOWORD(wParam))\n\t\t\t\t\t\t{\n\t\t\t\t\t\tcase 201:\n\t\t\t\t\t\t\tif (Context->DialogID != 4) break;\n\t\t\t\t\t\t\tif (Objects[SendDlgItemMessage(hDlg,201,LB_GETCURSEL,(WPARAM)0,(LPARAM)0)].Id != 1)\n\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,202),FALSE);\n\t\t\t\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,205),FALSE);\n\t\t\t\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,206),FALSE);\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\telse\n\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,202),TRUE);\n\t\t\t\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,205),TRUE);\n\t\t\t\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,206),TRUE);\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\treturn(TRUE);\n\t\t\t\t\t\t}\n\t\t\t\t\tbreak;\n\n\t\t\t\tcase EN_CHANGE:\n\t\t\t\t\tswitch(LOWORD(wParam))\n\t\t\t\t\t\t{\n\t\t\t\t\t\tcase 205:\n\t\t\t\t\t\t\tlData = GetDlgItemInt(hDlg,205,NULL,FALSE);\n\t\t\t\t\t\t\tif (lData < 0) SetDlgItemInt(hDlg,205,0,FALSE);\n\t\t\t\t\t\t\tif (lData > 80000) SetDlgItemInt(hDlg,205,80000,FALSE);\n\t\t\t\t\t\t\tbreak;\n\n\t\t\t\t\t\tcase 203:\n\t\t\t\t\t\t\tlData = GetDlgItemInt(hDlg,203,NULL,FALSE);\n\t\t\t\t\t\t\tif (lData < 0) SetDlgItemInt(hDlg,203,0,FALSE);\n\t\t\t\t\t\t\tif (lData > 100) SetDlgItemInt(hDlg,203,100,FALSE);\n\t\t\t\t\t\t\tbreak;\n\n\t\t\t\t\t\tcase 101:\n\t\t\t\t\t\t\tif (Context->Ctrl1Signed)\n\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\tlData = GetDlgItemInt(hDlg,101,NULL,TRUE);\n\t\t\t\t\t\t\t\tif (lData < -32768) SetDlgItemInt(hDlg,101,-32768,FALSE);\n\t\t\t\t\t\t\t\tif (lData > 32767) SetDlgItemInt(hDlg,101,32767,FALSE);\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\telse\n\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\tlData = GetDlgItemInt(hDlg,101,NULL,FALSE);\n\t\t\t\t\t\t\t\tif (lData < 0) SetDlgItemInt(hDlg,101,0,FALSE);\n\t\t\t\t\t\t\t\tif (lData > 32767) SetDlgItemInt(hDlg,101,32767,FALSE);\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\tbreak;\n\t\t\t\t\t\tcase 103:\n\t\t\t\t\t\t\tif (Context->Ctrl2Signed)\n\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\tlData = GetDlgItemInt(hDlg,103,NULL,TRUE);\n\t\t\t\t\t\t\t\tif (lData < -32768) SetDlgItemInt(hDlg,103,-32768,FALSE);\n\t\t\t\t\t\t\t\tif (lData > 32767) SetDlgItemInt(hDlg,103,32767,FALSE);\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\telse\n\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\tlData = GetDlgItemInt(hDlg,103,NULL,FALSE);\n\t\t\t\t\t\t\t\tif (lData < 0) SetDlgItemInt(hDlg,103,0,FALSE);\n\t\t\t\t\t\t\t\tif (lData > 32767) SetDlgItemInt(hDlg,103,32767,FALSE);\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\tbreak;\n\t\t\t\t\t\t}\n\t\t\t\t\treturn(TRUE);\n\n\t\t\t\tcase BN_CLICKED:\n\t\t\t\t\tswitch(LOWORD(wParam))\n\t\t\t\t\t\t{\n\t\t\t\t\t\tcase IDOK:\n\t\t\t\t\t\t\tProperties_GlobalShotSave(hDlg,Context);\n\t\t\t\t\t\t\tEndDialog(hDlg,1);\n\t\t\t\t\t\t\treturn(TRUE);\n\n\t\t\t\t\t\tcase IDCANCEL:\n\t\t\t\t\t\t\tEndDialog(hDlg,0);\n\t\t\t\t\t\t\treturn(TRUE);\n\t\t\t\t\t\t}\n\t\t\t\t\tbreak;\n\t\t\t\t}\n\t\t\tbreak;\n\t\t}\n\n\treturn(FALSE);\n}",
+    "Properties_GlobalShotInit": "Properties_GlobalShotInit(HWND hDlg, GLOBALSHOT *Context)\n{\n\tLONG\t X,Y;\n\n\tWindow_UnderCursor(hDlg,&X,&Y);\n\tSetWindowPos(hDlg,NULL,X,Y,0,0,SWP_NOZORDER|SWP_NOSIZE);\n\tSetWindowLong(hDlg,DWL_USER,(LPARAM)Context);\n\n\t//\n\t// Initialise les données propres à chaque boîte de dialogue\n\t//\n\n\tswitch(Context->DialogID)\n\t\t{\n\t\tcase 0:\tMisc_CreateUpDownButton(hDlg,101,104);\n\t\t\tMisc_CreateUpDownButton(hDlg,103,105);\n\t\t\tSetDlgItemInt(hDlg,101,Context->ShotData1,(Context->Ctrl1Signed)?TRUE:FALSE);\n\t\t\tSetDlgItemInt(hDlg,103,Context->ShotData2,(Context->Ctrl2Signed)?TRUE:FALSE);\n\t\t\tSendDlgItemMessage(hDlg,101,EM_LIMITTEXT,(WPARAM)6,(LPARAM)0);\n\t\t\tSendDlgItemMessage(hDlg,103,EM_LIMITTEXT,(WPARAM)6,(LPARAM)0);\n\t\t\tbreak;\n\n\t\tcase 1:\tMisc_CreateUpDownButton(hDlg,101,104);\n\t\t\tSetDlgItemInt(hDlg,101,Context->ShotData1,(Context->Ctrl1Signed)?TRUE:FALSE);\n\t\t\tSendDlgItemMessage(hDlg,101,EM_LIMITTEXT,(WPARAM)6,(LPARAM)0);\n\t\t\tbreak;\n\n\t\tcase 2:\n\t\tcase 3:\tif (Context->DialogID == 2)\n\t\t\t\t{\n\t\t\t\tMisc_CreateUpDownButton(hDlg,203,204);\n\t\t\t\tSetDlgItemInt(hDlg,203,Context->ShotData2,FALSE);\n\t\t\t\tSendDlgItemMessage(hDlg,203,EM_LIMITTEXT,(WPARAM)3,(LPARAM)0);\n\t\t\t\t}\n\t\t\telse\n\t\t\t\t{\n\t\t\t\tchar\tTempText[4];\n\n\t\t\t\tfor (X = 1; X != 10+1; X++)\n\t\t\t\t\t{\n\t\t\t\t\twsprintf(TempText,szNumber,X);\n\t\t\t\t\tif (SendDlgItemMessage(hDlg,203,CB_ADDSTRING,(WPARAM)0,(LPARAM)TempText) < 0)\n\t\t\t\t\t\t{\n\t\t\t\t\t\tEndDialog(hDlg,-1);\n\t\t\t\t\t\treturn;\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\tif ((Context->ShotData2 >= 1)&&(Context->ShotData2 <= 10))\n\t\t\t\t\tSendDlgItemMessage(hDlg,203,CB_SETCURSEL,(WPARAM)Context->ShotData2-1,(LPARAM)0);\n\t\t\t\telse\n\t\t\t\t\tSendDlgItemMessage(hDlg,203,CB_SETCURSEL,(WPARAM)0,(LPARAM)0);\n\t\t\t\t}\n\n\t\t\tfor (X = 0; GCreatures[X].Id != 0; X++)\n\t\t\t\tif (SendDlgItemMessage(hDlg,201,LB_ADDSTRING,(WPARAM)0,(LPARAM)GCreatures[X].Id) < 0)\n\t\t\t\t\t{\n\t\t\t\t\tEndDialog(hDlg,-1);\n\t\t\t\t\treturn;\n\t\t\t\t\t}\n\t\t\tfor (X = 0; GCreatures[X].Id != 0; X++)\n\t\t\t\tif (Context->ShotData1 == GCreatures[X].Id)\n\t\t\t\t\t{\n\t\t\t\t\tSendDlgItemMessage(hDlg,201,LB_SETCURSEL,(WPARAM)X,(LPARAM)0);\n\t\t\t\t\tgoto Next;\n\t\t\t\t\t}\n\t\t\tSendDlgItemMessage(hDlg,201,LB_SETCURSEL,(WPARAM)0,(LPARAM)0);\n\t\t\tbreak;\n\n\t\tcase 4:\tMisc_CreateUpDownButton(hDlg,205,206);\n\t\t\tSetDlgItemInt(hDlg,205,Context->ShotData2,FALSE);\n\t\t\tSendDlgItemMessage(hDlg,205,EM_LIMITTEXT,(WPARAM)5,(LPARAM)0);\n\n\t\t\tif (Context->ShotData1 != 1)\n\t\t\t\t{\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,202),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,205),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,206),FALSE);\n\t\t\t\t}\n\n\t\t\tfor (X = 0; Objects[X].Id != 0; X++)\n\t\t\t\tif (SendDlgItemMessage(hDlg,201,LB_ADDSTRING,(WPARAM)0,(LPARAM)Objects[X].Id) < 0)\n\t\t\t\t\t{\n\t\t\t\t\tEndDialog(hDlg,-1);\n\t\t\t\t\treturn;\n\t\t\t\t\t}\n\t\t\tfor (X = 0; Objects[X].Id != 0; X++)\n\t\t\t\tif (Context->ShotData1 == Objects[X].Id)\n\t\t\t\t\t{\n\t\t\t\t\tSendDlgItemMessage(hDlg,201,LB_SETCURSEL,(WPARAM)X,(LPARAM)0);\n\t\t\t\t\tgoto Next;\n\t\t\t\t\t}\n\n\t\t\tEnableWindow(GetDlgItem(hDlg,202),TRUE);\n\t\t\tEnableWindow(GetDlgItem(hDlg,205),TRUE);\n\t\t\tEnableWindow(GetDlgItem(hDlg,206),TRUE);\n\t\t\tSendDlgItemMessage(hDlg,201,LB_SETCURSEL,(WPARAM)0,(LPARAM)0);\n\t\t\tbreak;\n\t\t}\n\n\t//\n\t// Place les textes des zones d'édition\n\t//\n\nNext:\tswitch(Context->Text1ID)\n\t\t{\n\t\tcase 1:\tSetDlgItemText(hDlg,100,szGlobalPower);\n\t\t\tbreak;\n\t\tcase 2:\tSetDlgItemText(hDlg,100,szGlobalModify);\n\t\t\tbreak;\n\t\tcase 3:\tSetDlgItemText(hDlg,100,szGlobalIncrease);\n\t\t\tbreak;\n\t\tcase 4:\tSetDlgItemText(hDlg,100,szGlobalTime);\n\t\t\tbreak;\n\t\tcase 5:\tSetDlgItemText(hDlg,100,szGlobalDecrease);\n\t\t\tbreak;\n\t\tcase 6:\tSetDlgItemText(hDlg,100,szGlobalRadius);\n\t\t\tbreak;\n\t\tdefault:break;\n\t\t}\n\n\tswitch(Context->Text2ID)\n\t\t{\n\t\tcase 1:\tSetDlgItemText(hDlg,102,szGlobalRadius);\n\t\t\tbreak;\n\t\tcase 2:\tSetDlgItemText(hDlg,102,szGlobalTime);\n\t\t\tbreak;\n\t\tdefault:break;\n\t\t}\n\n\t//\n\t// Modifie les zones d'éditions pour qu'elles acceptent les signes\n\t//\n\n\tif (Context->Ctrl1Signed)\n\t\t{\n\t\tX = GetWindowLong(GetDlgItem(hDlg,101),GWL_STYLE);\n\t\tX &= ~ES_NUMBER;\n\t\tSetWindowLong(GetDlgItem(hDlg,101),GWL_STYLE,X);\n\t\t}\n\n\tif (Context->Ctrl2Signed)\n\t\t{\n\t\tX = GetWindowLong(GetDlgItem(hDlg,103),GWL_STYLE);\n\t\tX &= ~ES_NUMBER;\n\t\tSetWindowLong(GetDlgItem(hDlg,103),GWL_STYLE,X);\n\t\t}\n\n\treturn;\n}",
+    "Properties_GlobalShotSave": "Properties_GlobalShotSave(HWND hDlg, GLOBALSHOT *Context)\n{\n\tswitch(Context->DialogID)\n\t\t{\n\t\tcase 0:\tContext->ShotData1 = GetDlgItemInt(hDlg,101,NULL,(Context->Ctrl1Signed)?TRUE:FALSE);\n\t\t\tContext->ShotData2 = GetDlgItemInt(hDlg,103,NULL,(Context->Ctrl2Signed)?TRUE:FALSE);\n\t\t\tbreak;\n\t\tcase 1:\tContext->ShotData1 = GetDlgItemInt(hDlg,101,NULL,(Context->Ctrl1Signed)?TRUE:FALSE);\n\t\t\tbreak;\n\t\tcase 2:\tContext->ShotData1 = GCreatures[SendDlgItemMessage(hDlg,201,LB_GETCURSEL,(WPARAM)0,(LPARAM)0)].Id;\n\t\t\tContext->ShotData2 = GetDlgItemInt(hDlg,203,NULL,FALSE);\n\t\t\tbreak;\n\t\tcase 3:\tContext->ShotData1 = GCreatures[SendDlgItemMessage(hDlg,201,LB_GETCURSEL,(WPARAM)0,(LPARAM)0)].Id;\n\t\t\tContext->ShotData2 = SendDlgItemMessage(hDlg,203,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)+1;\n\t\t\tbreak;\n\t\tcase 4:\tContext->ShotData1 = Objects[SendDlgItemMessage(hDlg,201,LB_GETCURSEL,(WPARAM)0,(LPARAM)0)].Id;\n\t\t\tContext->ShotData2 = GetDlgItemInt(hDlg,205,NULL,FALSE);\n\t\t\tif (Context->ShotData1 != 1) Context->ShotData2 = 0;\n\t\t\tbreak;\n\t\t}\n\n\treturn;\n}",
+    "Properties_GlobalReset": "Properties_GlobalReset(GLOBALVARS *Variables, LONG UseOffset, DWORD Flags)\n{\n\tBYTE\t*Default;\n\tlong\t Offset;\n\tint\t i;\n\n\tif (Flags&MGRF_TERRAINS)\n\t\t{\n\t\tfor (i = 0; GTOrder[i] != (DWORD *)-1; i += 2)\n\t\t\t{\n\t\t\tif (GTOrder[i] == (DWORD *)-2) continue;\n\t\t\tOffset = (DWORD)GTOrder[i];\n\t\t\tDefault = (BYTE *)GTOrder[i+1];\n\t\t\tif ((UseOffset != -1)&&(UseOffset != Offset)) continue;\n\n\t\t\tVariables->Terrains[Offset].MaxHealthType\t= (UINT)(*((BYTE *)(Default+0x1D9)));\n\t\t\tVariables->Terrains[Offset].MaxHealthEffect\t= (UINT)(*((WORD *)(Default+0x1A4)));\n\t\t\tVariables->Terrains[Offset].DestroyedType\t= (UINT)(*((BYTE *)(Default+0x1DA)));\n\t\t\tVariables->Terrains[Offset].DestroyedEffect\t= (UINT)(*((WORD *)(Default+0x1A6)));\n\t\t\tVariables->Terrains[Offset].Damage\t\t= (LONG)(*((short *)(Default+0x194)));\n\t\t\tVariables->Terrains[Offset].GoldValue\t\t= (LONG)(*((WORD *)(Default+0x19A)));\n\t\t\tVariables->Terrains[Offset].MaxHealth\t\t= (LONG)(*((WORD *)(Default+0x1FF)));\n\t\t\tVariables->Terrains[Offset].StartingHealth\t= (LONG)(*((WORD *)(Default+0x1D7)));\n\t\t\tVariables->Terrains[Offset].ManaGain\t\t= (LONG)(*((WORD *)(Default+0x19C)));\n\t\t\tVariables->Terrains[Offset].MaxManaGain\t\t= (LONG)(*((WORD *)(Default+0x19E)));\n\t\t\tVariables->Terrains[Offset].WibbleH\t\t= (LONG)(*((BYTE *)(Default+0x1CE)));\n\t\t\tVariables->Terrains[Offset].WibbleV\t\t= (LONG)(*((BYTE *)(Default+0x1D2)));\n\t\t\tVariables->Terrains[Offset].Visible\t\t= (BOOL)(((*(Default+0x193))&0x01)?TRUE:FALSE);\n\t\t\tVariables->Terrains[Offset].TerrainLight\t= (BOOL)(((*(Default+0x193))&0x10)?TRUE:FALSE);\n\t\t\tVariables->Terrains[Offset].AmbientLight\t= (BOOL)(((*(Default+0x193))&0x20)?TRUE:FALSE);\n\t\t\tVariables->Terrains[Offset].TerrainLightR\t= (BYTE)(*((BYTE *)(Default+0x01DB)));\n\t\t\tVariables->Terrains[Offset].TerrainLightG\t= (BYTE)(*((BYTE *)(Default+0x01DC)));\n\t\t\tVariables->Terrains[Offset].TerrainLightB\t= (BYTE)(*((BYTE *)(Default+0x01DD)));\n\t\t\tVariables->Terrains[Offset].AmbientLightR\t= (BYTE)(*((BYTE *)(Default+0x0201)));\n\t\t\tVariables->Terrains[Offset].AmbientLightG\t= (BYTE)(*((BYTE *)(Default+0x0202)));\n\t\t\tVariables->Terrains[Offset].AmbientLightB\t= (BYTE)(*((BYTE *)(Default+0x0203)));\n\t\t\tVariables->Terrains[Offset].TerrainLightH\t= (LONG)(*((LONG *)(Default+0x018C)));\n\t\t\t}\n\t\t}\n\n\tif (Flags&MGRF_ROOMS)\n\t\t{\n\t\tfor (i = 0; GROrder[i] != (DWORD *)-1; i += 2)\n\t\t\t{\n\t\t\tif (GROrder[i] == (DWORD *)-2) continue;\n\t\t\tOffset = (DWORD)GROrder[i];\n\t\t\tDefault = (BYTE *)GROrder[i+1];\n\t\t\tif ((UseOffset != -1)&&(UseOffset != Offset)) continue;\n\n\t\t\tVariables->Rooms[Offset].Cost\t\t\t= (LONG)(*((WORD *)(Default+0x378)));\n\t\t\tVariables->Rooms[Offset].Objects[0]\t\t= (UINT)(*((BYTE *)(Default+0x39A)));\n\t\t\tVariables->Rooms[Offset].Objects[1]\t\t= (UINT)(*((BYTE *)(Default+0x39B)));\n\t\t\tVariables->Rooms[Offset].Objects[2]\t\t= (UINT)(*((BYTE *)(Default+0x39C)));\n\t\t\tVariables->Rooms[Offset].Objects[3]\t\t= (UINT)(*((BYTE *)(Default+0x39D)));\n\t\t\tVariables->Rooms[Offset].Objects[4]\t\t= (UINT)(*((BYTE *)(Default+0x39E)));\n\t\t\tVariables->Rooms[Offset].Objects[5]\t\t= (UINT)(*((BYTE *)(Default+0x39F)));\n\t\t\tVariables->Rooms[Offset].BattleEffect\t\t= (UINT)(*((WORD *)(Default+0x37A)));\n\t\t\tVariables->Rooms[Offset].Effects[0]\t\t= (UINT)(*((WORD *)(Default+0x382)));\n\t\t\tVariables->Rooms[Offset].Effects[1]\t\t= (UINT)(*((WORD *)(Default+0x384)));\n\t\t\tVariables->Rooms[Offset].Effects[2]\t\t= (UINT)(*((WORD *)(Default+0x386)));\n\t\t\tVariables->Rooms[Offset].Effects[3]\t\t= (UINT)(*((WORD *)(Default+0x388)));\n\t\t\tVariables->Rooms[Offset].Effects[4]\t\t= (UINT)(*((WORD *)(Default+0x38A)));\n\t\t\tVariables->Rooms[Offset].Effects[5]\t\t= (UINT)(*((WORD *)(Default+0x38C)));\n\t\t\tVariables->Rooms[Offset].TorchIntensity\t\t= (LONG)(*((BYTE *)(Default+0x36E)));\n\t\t\tVariables->Rooms[Offset].TorchLightRad\t\t= (LONG)(*((WORD *)(Default+0x3C3)));\n\t\t\tVariables->Rooms[Offset].TorchLightH\t\t= (LONG)(*((WORD *)(Default+0x380)));\n\t\t\tVariables->Rooms[Offset].TorchLightR\t\t= (BYTE)(*((BYTE *)(Default+0x397)));\n\t\t\tVariables->Rooms[Offset].TorchLightG\t\t= (BYTE)(*((BYTE *)(Default+0x398)));\n\t\t\tVariables->Rooms[Offset].TorchLightB\t\t= (BYTE)(*((BYTE *)(Default+0x399)));\n\t\t\t}\n\t\t}\n\n\tif (Flags&MGRF_DOORS)\n\t\t{\n\t\tfor (i = 0; GDOrder[i] != (DWORD *)-1; i += 2)\n\t\t\t{\n\t\t\tif (GDOrder[i] == (DWORD *)-2) continue;\n\t\t\tOffset = (DWORD)GDOrder[i];\n\t\t\tDefault = (BYTE *)GDOrder[i+1];\n\t\t\tif ((UseOffset != -1)&&(UseOffset != Offset)) continue;\n\n\t\t\tVariables->Doors[Offset].Cost\t\t\t= (LONG)(*((WORD *)(Default+0x22E)));\n\t\t\tVariables->Doors[Offset].BuildPoints\t\t= (LONG)(*((WORD *)(Default+0x234)));\n\t\t\tVariables->Doors[Offset].Health\t\t\t= (LONG)(*((WORD *)(Default+0x22C)));\n\t\t\tVariables->Doors[Offset].HealthGain\t\t= (LONG)(*((WORD *)(Default+0x21C)));\n\t\t\tVariables->Doors[Offset].ManaCost\t\t= (LONG)(*((WORD *)(Default+0x238)));\n\t\t\tVariables->Doors[Offset].Material\t\t= (UINT)(*((BYTE *)(Default+0x226)));\n\t\t\tVariables->Doors[Offset].DeathEffect\t\t= (UINT)(*((WORD *)(Default+0x232)));\n\t\t\tVariables->Doors[Offset].Crate\t\t\t= (UINT)(*((BYTE *)(Default+0x246)));\n\t\t\tVariables->Doors[Offset].Key\t\t\t= (UINT)(*((BYTE *)(Default+0x247)));\n\t\t\t}\n\t\t}\n\n\tif (Flags&MGRF_TRAPS)\n\t\t{\n\t\tfor (i = 0; GAOrder[i] != (DWORD *)-1; i+= 2)\n\t\t\t{\n\t\t\tif (GAOrder[i] == (DWORD *)-2) continue;\n\t\t\tOffset = (DWORD)GAOrder[i];\n\t\t\tDefault = (BYTE *)GAOrder[i+1];\n\t\t\tif ((UseOffset != -1)&&(UseOffset != Offset)) continue;\n\n\t\t\tVariables->Traps[Offset].Health\t\t\t= (LONG)(*((WORD *)(Default+0x1F0)));\n\t\t\tVariables->Traps[Offset].HealthGain\t\t= (LONG)(*((WORD *)(Default+0x241)));\n\t\t\tVariables->Traps[Offset].ChargeTime\t\t= (LONG)(*((LONG *)(Default+0x1CC)));\n\t\t\tVariables->Traps[Offset].RechargeTime\t\t= (LONG)(*((LONG *)(Default+0x1C8)));\n\t\t\tVariables->Traps[Offset].GoldCost\t\t= (LONG)(*((WORD *)(Default+0x1F2)));\n\t\t\tVariables->Traps[Offset].ManaCostToFire\t\t= (LONG)(*((WORD *)(Default+0x1D4)));\n\t\t\tVariables->Traps[Offset].ManaUsage\t\t= (LONG)(*((WORD *)(Default+0x202)));\n\t\t\tVariables->Traps[Offset].Threat\t\t\t= (LONG)(*((WORD *)(Default+0x1EA)));\n\t\t\tVariables->Traps[Offset].ThreatDuration\t\t= (LONG)(*((LONG *)(Default+0x1D0)));\n\t\t\tVariables->Traps[Offset].IdleEffectDelay\t= (LONG)(*((LONG *)(Default+0x1D8)));\n\t\t\tVariables->Traps[Offset].ShotDelay\t\t= (LONG)(*((LONG *)(Default+0x23D)));\n\t\t\tVariables->Traps[Offset].BuildPoints\t\t= (LONG)(*((WORD *)(Default+0x1FA)));\n\t\t\tVariables->Traps[Offset].Invisible\t\t= (BOOL)(((*((BYTE *)(Default+0x1EC)))&0x20)?TRUE:FALSE);\n\t\t\tVariables->Traps[Offset].RevealedWhenFired\t= (BOOL)(((*((BYTE *)(Default+0x1EC)))&0x02)?TRUE:FALSE);\n\t\t\tVariables->Traps[Offset].RequiresMana\t\t= (BOOL)(((*((BYTE *)(Default+0x1ED)))&0x01)?TRUE:FALSE);\n\t\t\tVariables->Traps[Offset].Disarmable\t\t= (BOOL)(((*((BYTE *)(Default+0x1EC)))&0x10)?TRUE:FALSE);\n\t\t\tVariables->Traps[Offset].SolidObstacle\t\t= (BOOL)(((*((BYTE *)(Default+0x1EE)))&0x02)?TRUE:FALSE);\n\t\t\tVariables->Traps[Offset].FPObstacle\t\t= (BOOL)(((*((BYTE *)(Default+0x1EE)))&0x01)?TRUE:FALSE);\n\t\t\tVariables->Traps[Offset].Material\t\t= (UINT)(*((BYTE *)(Default+0x22F)));\n\t\t\tVariables->Traps[Offset].PowerlessEffect\t= (UINT)(*((WORD *)(Default+0x1F4)));\n\t\t\tVariables->Traps[Offset].IdleEffect\t\t= (UINT)(*((WORD *)(Default+0x1F6)));\n\t\t\tVariables->Traps[Offset].DeathEffect\t\t= (UINT)(*((WORD *)(Default+0x1F8)));\n\t\t\tVariables->Traps[Offset].Crate\t\t\t= (UINT)(*((BYTE *)(Default+0x20E)));\n\t\t\tVariables->Traps[Offset].ShotType\t\t= (UINT)(*((BYTE *)(Default+0x20D)));\n\t\t\tVariables->Traps[Offset].ShotData1\t\t= (LONG)(*((WORD *)(Default+0x1E0)));\n\t\t\tVariables->Traps[Offset].ShotData2\t\t= (LONG)(*((WORD *)(Default+0x1E4)));\n\t\t\tVariables->Traps[Offset].TriggerType\t\t= (UINT)(*((BYTE *)(Default+0x20B)));\n\t\t\tVariables->Traps[Offset].TriggerData\t\t= (LONG)(*((WORD *)(Default+0x1DC)));\n\t\t\t}\n\t\t}\n\n\tif (Flags&MGRF_SPELLS)\n\t\t{\n\t\tfor (i = 0; GSOrder[i] != (DWORD *)-1; i+= 2)\n\t\t\t{\n\t\t\tif (GSOrder[i] == (DWORD *)-2) continue;\n\t\t\tOffset = (DWORD)GSOrder[i];\n\t\t\tDefault = (BYTE *)GSOrder[i+1];\n\t\t\tif ((UseOffset != -1)&&(UseOffset != Offset)) continue;\n\n\t\t\tVariables->Spells[Offset].ManaCost\t\t= (LONG)(*((LONG *)(Default+0x11C)));\n\t\t\tVariables->Spells[Offset].ManaDrain\t\t= (LONG)(*((WORD *)(Default+0x0E2)));\n\t\t\tVariables->Spells[Offset].RechargeTime\t\t= (LONG)(*((LONG *)(Default+0x0CC)));\n\t\t\tVariables->Spells[Offset].HandAnim\t\t= (UINT)(*((BYTE *)(Default+0x194)));\n\t\t\tVariables->Spells[Offset].NoGoHandAnim\t\t= (UINT)(*((BYTE *)(Default+0x195)));\n\t\t\tVariables->Spells[Offset].CastRule\t\t= (UINT)(*((BYTE *)(Default+0x0EF)));\n\t\t\tVariables->Spells[Offset].TargetRule\t\t= (UINT)(*((BYTE *)(Default+0x0DA)));\n\t\t\tVariables->Spells[Offset].ShotType\t\t= (UINT)(*((BYTE *)(Default+0x0F0)));\n\t\t\tVariables->Spells[Offset].ShotData1\t\t= (LONG)(*((WORD *)(Default+0x0D0)));\n\t\t\tVariables->Spells[Offset].ShotData2\t\t= (LONG)(*((WORD *)(Default+0x0D4)));\n\t\t\tVariables->Spells[Offset].UpgShotType\t\t= (UINT)(*((BYTE *)(Default+0x113)));\n\t\t\tVariables->Spells[Offset].UpgShotData1\t\t= (LONG)(*((WORD *)(Default+0x114)));\n\t\t\tVariables->Spells[Offset].UpgShotData2\t\t= (LONG)(*((WORD *)(Default+0x118)));\n\t\t\tVariables->Spells[Offset].UpgRechargeTime\t= (LONG)(*((WORD *)(Default+0x111)));\n\t\t\tVariables->Spells[Offset].Attacking\t\t= (BOOL)(((*((BYTE *)(Default+0x0DC)))&0x04)?TRUE:FALSE);\n\t\t\tVariables->Spells[Offset].Defensive\t\t= (BOOL)(((*((BYTE *)(Default+0x0DC)))&0x08)?TRUE:FALSE);\n\t\t\t}\n\t\t}\n\n\tif (Flags&MGRF_CRATTRS)\n\t\t{\n\t\tfor (i = 0; GCOrder[i] != (DWORD *)-1; i+= 2)\n\t\t\t{\n\t\t\tif (GCOrder[i] == (DWORD *)-2) continue;\n\t\t\tOffset = (DWORD)GCOrder[i];\n\t\t\tDefault = (BYTE *)GCOrder[i+1];\n\t\t\tif ((UseOffset != -1)&&(UseOffset != Offset)) continue;\n\n\t\t\tVariables->Creatures[Offset].ExpPtsForNextLevel\t= (LONG)(*((WORD *)(Default+0x0F00)));\n\t\t\tVariables->Creatures[Offset].ExpPts\t\t= (LONG)(*((WORD *)(Default+0x0F04)));\n\t\t\tVariables->Creatures[Offset].ExpPtsTraining\t= (LONG)(*((WORD *)(Default+0x0F06)));\n\t\t\tVariables->Creatures[Offset].ResearchPts\t= (LONG)(*((WORD *)(Default+0x0F08)));\n\t\t\tVariables->Creatures[Offset].ManufacturePts\t= (LONG)(*((WORD *)(Default+0x0F0A)));\n\t\t\tVariables->Creatures[Offset].Height\t\t= (LONG)(*((WORD *)(Default+0x0EA4)));\n\t\t\tVariables->Creatures[Offset].EyeHeight\t\t= (LONG)(*((WORD *)(Default+0x0EB0)));\n\t\t\tVariables->Creatures[Offset].DistanceCanSee\t= (LONG)(*((WORD *)(Default+0x0EC8)));\n\t\t\tVariables->Creatures[Offset].DistanceCanHear\t= (LONG)(*((WORD *)(Default+0x0ECC)));\n\t\t\tVariables->Creatures[Offset].Health\t\t= (LONG)(*((WORD *)(Default+0x0F0C)));\n\t\t\tVariables->Creatures[Offset].HealthFromChicken\t= (LONG)(*((WORD *)(Default+0x0F0E)));\n\t\t\tVariables->Creatures[Offset].SlapDamage\t\t= (LONG)(*((WORD *)(Default+0x0F16)));\n\t\t\tVariables->Creatures[Offset].Fear\t\t= (LONG)(*((WORD *)(Default+0x0F10)));\n\t\t\tVariables->Creatures[Offset].Threat\t\t= (LONG)(*((WORD *)(Default+0x0F12)));\n\t\t\tVariables->Creatures[Offset].PrayerMana\t\t= (LONG)(*((WORD *)(Default+0x0F18)));\n\t\t\tVariables->Creatures[Offset].Pay\t\t= (LONG)(*((WORD *)(Default+0x0F1C)));\n\t\t\tVariables->Creatures[Offset].InitialGoldHeld\t= (LONG)(*((WORD *)(Default+0x0F34)));\n\t\t\tVariables->Creatures[Offset].MaxGoldHeld\t= (LONG)(*((WORD *)(Default+0x0F1E)));\n\t\t\tVariables->Creatures[Offset].Speed\t\t= (LONG)(*((WORD *)(Default+0x0EB4)));\n\t\t\tVariables->Creatures[Offset].RunSpeed\t\t= (LONG)(*((WORD *)(Default+0x0EB8)));\n\t\t\tVariables->Creatures[Offset].AngerNoLair\t= (LONG)(*((WORD *)(Default+0x0F28)));\n\t\t\tVariables->Creatures[Offset].AngerNoFood\t= (LONG)(*((WORD *)(Default+0x0F2A)));\n\t\t\tVariables->Creatures[Offset].AngerNoPay\t\t= (LONG)(*((WORD *)(Default+0x0F2C)));\n\t\t\tVariables->Creatures[Offset].AngerNoWork\t= (LONG)(*((WORD *)(Default+0x0F2E)));\n\t\t\tVariables->Creatures[Offset].AngerSlap\t\t= (LONG)(*((WORD *)(Default+0x0F30)));\n\t\t\tVariables->Creatures[Offset].AngerInHand\t= (LONG)(*((WORD *)(Default+0x0F32)));\n\t\t\tVariables->Creatures[Offset].TimeAwake\t\t= (LONG)(*((WORD *)(Default+0x0EC0)));\n\t\t\tVariables->Creatures[Offset].SleepDuration\t= (LONG)(*((WORD *)(Default+0x0EC4)));\n\t\t\tVariables->Creatures[Offset].StunDuration\t= (LONG)(*((WORD *)(Default+0x0ED0)));\n\t\t\tVariables->Creatures[Offset].GuardDuration\t= (LONG)(*((WORD *)(Default+0x0ED4)));\n\t\t\tVariables->Creatures[Offset].IdleDuration\t= (LONG)(*((WORD *)(Default+0x0ED8)));\n\t\t\tVariables->Creatures[Offset].SlapDuration\t= (LONG)(*((WORD *)(Default+0x0EDC)));\n\t\t\tVariables->Creatures[Offset].PossessionManaCost\t= (LONG)(*((WORD *)(Default+0x0EE8)));\n\t\t\tVariables->Creatures[Offset].OwnLandHealthInc\t= (LONG)(*((WORD *)(Default+0x0EEA)));\n\t\t\tVariables->Creatures[Offset].TortureHealthCng\t= (LONG)(*((WORD *)(Default+0x107F)));\n\t\t\tVariables->Creatures[Offset].TortureMoodCng\t= (LONG)(*((WORD *)(Default+0x1081)));\n\t\t\tVariables->Creatures[Offset].HungerRate\t\t= (LONG)(*((LONG *)(Default+0x0EBC)));\n\t\t\tVariables->Creatures[Offset].DecomposeValue\t= (LONG)(*((WORD *)(Default+0x0F22)));\n\t\t\t}\n\t\t}\n\n\tif (Flags&MGRF_CRPARAMS)\n\t\t{\n\t\tfor (i = 0; GCOrder[i] != (DWORD *)-1; i+= 2)\n\t\t\t{\n\t\t\tif (GCOrder[i] == (DWORD *)-2) continue;\n\t\t\tOffset = (DWORD)GCOrder[i];\n\t\t\tDefault = (BYTE *)GCOrder[i+1];\n\t\t\tif ((UseOffset != -1)&&(UseOffset != Offset)) continue;\n\n\t\t\tVariables->Creatures[Offset].ArmourType\t\t= (UINT)(*((BYTE *)(Default+0x0F76)));\n\t\t\tVariables->Creatures[Offset].FightStyle\t\t= (UINT)(*((BYTE *)(Default+0x0F03)));\n\t\t\tVariables->Creatures[Offset].JobClass\t\t= (UINT)(*((BYTE *)(Default+0x0F02)));\n\t\t\tVariables->Creatures[Offset].LairObject\t\t= (UINT)(*((BYTE *)(Default+0x0F52)));\n\t\t\tVariables->Creatures[Offset].SlapEffect\t\t= (UINT)(*((WORD *)(Default+0x0F3E)));\n\t\t\tVariables->Creatures[Offset].HealthEffect\t= (UINT)(*((WORD *)(Default+0x0CFD)));\n\t\t\tVariables->Creatures[Offset].EntranceEffect\t= (UINT)(*((WORD *)(Default+0x0F36)));\n\t\t\tVariables->Creatures[Offset].DeathEffect\t= (UINT)(*((WORD *)(Default+0x0F40)));\n\t\t\tVariables->Creatures[Offset].Attract1Type\t= (UINT)(*((WORD *)(Default+0x0DAC)));\n\t\t\tVariables->Creatures[Offset].Attract1ID\t\t= (UINT)(*((WORD *)(Default+0x0DB0)));\n\t\t\tVariables->Creatures[Offset].Attract2Type\t= (UINT)(*((WORD *)(Default+0x0DB4)));\n\t\t\tVariables->Creatures[Offset].Attract2ID\t\t= (UINT)(*((WORD *)(Default+0x0DB8)));\n\t\t\tVariables->Creatures[Offset].Attract2Data\t= (LONG)(*((WORD *)(Default+0x0DBA)));\n\t\t\t}\n\t\t}\n\n\tif (Flags&MGRF_CRFLAGS)\n\t\t{\n\t\tfor (i = 0; GCOrder[i] != (DWORD *)-1; i+= 2)\n\t\t\t{\n\t\t\tif (GCOrder[i] == (DWORD *)-2) continue;\n\t\t\tOffset = (DWORD)GCOrder[i];\n\t\t\tDefault = (BYTE *)GCOrder[i+1];\n\t\t\tif ((UseOffset != -1)&&(UseOffset != Offset)) continue;\n\n\t\t\tVariables->Creatures[Offset].CanBeHypnotized\t= (BOOL)(((*((BYTE *)(Default+0x0EFE)))&0x01)?TRUE:FALSE);\n\t\t\tVariables->Creatures[Offset].DoNotTrain\t\t= (BOOL)(((*((BYTE *)(Default+0x0EFE)))&0x20)?TRUE:FALSE);\n\t\t\tVariables->Creatures[Offset].CanBePicked\t= (BOOL)(((*((BYTE *)(Default+0x0EFC)))&0x02)?TRUE:FALSE);\n\t\t\tVariables->Creatures[Offset].CanBeSlapped\t= (BOOL)(((*((BYTE *)(Default+0x0EFC)))&0x04)?TRUE:FALSE);\n\t\t\tVariables->Creatures[Offset].CanWalkWater\t= (BOOL)(((*((BYTE *)(Default+0x0EFC)))&0x10)?TRUE:FALSE);\n\t\t\tVariables->Creatures[Offset].CanWalkLava\t= (BOOL)(((*((BYTE *)(Default+0x0EFC)))&0x20)?TRUE:FALSE);\n\t\t\tVariables->Creatures[Offset].ImmuneTurncoat\t= (BOOL)(((*((BYTE *)(Default+0x0EFD)))&0x02)?TRUE:FALSE);\n\t\t\tVariables->Creatures[Offset].DeadBody\t\t= (BOOL)(((*((BYTE *)(Default+0x0EFD)))&0x80)?TRUE:FALSE);\n\t\t\tVariables->Creatures[Offset].ImmuneChicken\t= (BOOL)(((*((BYTE *)(Default+0x0EFE)))&0x02)?TRUE:FALSE);\n\t\t\tVariables->Creatures[Offset].Fearless\t\t= (BOOL)(((*((BYTE *)(Default+0x0EFE)))&0x04)?TRUE:FALSE);\n\t\t\tVariables->Creatures[Offset].NoEnemies\t\t= (BOOL)(((*((BYTE *)(Default+0x0EFF)))&0x01)?TRUE:FALSE);\n\t\t\tVariables->Creatures[Offset].FreeFriends\t= (BOOL)(((*((BYTE *)(Default+0x0EFF)))&0x02)?TRUE:FALSE);\n\t\t\tVariables->Creatures[Offset].RevealTraps\t= (BOOL)(((*((BYTE *)(Default+0x0EFF)))&0x04)?TRUE:FALSE);\n\t\t\tVariables->Creatures[Offset].RandomInvader\t= (BOOL)(((*((BYTE *)(Default+0x0EFF)))&0x40)?TRUE:FALSE);\n\t\t\t}\n\t\t}\n\n\tif (Flags&MGRF_CRATTACKS)\n\t\t{\n\t\tfor (i = 0; GCOrder[i] != (DWORD *)-1; i+= 2)\n\t\t\t{\n\t\t\tif (GCOrder[i] == (DWORD *)-2) continue;\n\t\t\tOffset = (DWORD)GCOrder[i];\n\t\t\tDefault = (BYTE *)GCOrder[i+1];\n\t\t\tif ((UseOffset != -1)&&(UseOffset != Offset)) continue;\n\n\t\t\tVariables->Creatures[Offset].Shot1ID\t\t= (UINT)(*((BYTE *)(Default+0x0DDA)));\n\t\t\tVariables->Creatures[Offset].Shot1Delay\t\t= (LONG)(*((LONG *)(Default+0x0DD4)));\n\t\t\tVariables->Creatures[Offset].Shot1Level\t\t= (LONG)(*((BYTE *)(Default+0x0DDB)));\n\t\t\tVariables->Creatures[Offset].Shot1X\t\t= (LONG)(*((LONG *)(Default+0x0DC4)));\n\t\t\tVariables->Creatures[Offset].Shot1Y\t\t= (LONG)(*((LONG *)(Default+0x0DC8)));\n\t\t\tVariables->Creatures[Offset].Shot1Z\t\t= (LONG)(*((LONG *)(Default+0x0DCC)));\n\t\t\tVariables->Creatures[Offset].Shot2ID\t\t= (UINT)(*((BYTE *)(Default+0x0DF2)));\n\t\t\tVariables->Creatures[Offset].Shot2Delay\t\t= (LONG)(*((LONG *)(Default+0x0DEC)));\n\t\t\tVariables->Creatures[Offset].Shot2Level\t\t= (LONG)(*((BYTE *)(Default+0x0DF3)));\n\t\t\tVariables->Creatures[Offset].Shot2X\t\t= (LONG)(*((LONG *)(Default+0x0DDC)));\n\t\t\tVariables->Creatures[Offset].Shot2Y\t\t= (LONG)(*((LONG *)(Default+0x0DE0)));\n\t\t\tVariables->Creatures[Offset].Shot2Z\t\t= (LONG)(*((LONG *)(Default+0x0DE4)));\n\t\t\tVariables->Creatures[Offset].Shot3ID\t\t= (UINT)(*((BYTE *)(Default+0x0E0A)));\n\t\t\tVariables->Creatures[Offset].Shot3Delay\t\t= (LONG)(*((LONG *)(Default+0x0E04)));\n\t\t\tVariables->Creatures[Offset].Shot3Level\t\t= (LONG)(*((BYTE *)(Default+0x0E0B)));\n\t\t\tVariables->Creatures[Offset].Shot3X\t\t= (LONG)(*((LONG *)(Default+0x0DF4)));\n\t\t\tVariables->Creatures[Offset].Shot3Y\t\t= (LONG)(*((LONG *)(Default+0x0DF8)));\n\t\t\tVariables->Creatures[Offset].Shot3Z\t\t= (LONG)(*((LONG *)(Default+0x0DFC)));\n\t\t\tVariables->Creatures[Offset].MeleeID\t\t= (UINT)(*((BYTE *)(Default+0x0F50)));\n\t\t\tVariables->Creatures[Offset].RechargeTime\t= (LONG)(*((LONG *)(Default+0x0EF8)));\n\t\t\tVariables->Creatures[Offset].Range\t\t= (LONG)(*((LONG *)(Default+0x0EEC)));\n\t\t\tVariables->Creatures[Offset].Dammage\t\t= (LONG)(*((WORD *)(Default+0x0F14)));\n\t\t\tVariables->Creatures[Offset].Delay\t\t= (LONG)(*((LONG *)(Default+0x0CF9)));\n\t\t\t}\n\t\t}\n\n\tif (Flags&MGRF_CRRESISTANCES)\n\t\t{\n\t\tfor (i = 0; GCOrder[i] != (DWORD *)-1; i+= 2)\n\t\t\t{\n\t\t\tif (GCOrder[i] == (DWORD *)-2) continue;\n\t\t\tOffset = (DWORD)GCOrder[i];\n\t\t\tDefault = (BYTE *)GCOrder[i+1];\n\t\t\tif ((UseOffset != -1)&&(UseOffset != Offset)) continue;\n\n\t\t\tVariables->Creatures[Offset].Res1\t\t= (UINT)(*((BYTE *)(Default+0x0E0C)));\n\t\t\tVariables->Creatures[Offset].Res1Rate\t\t= (LONG)(*((BYTE *)(Default+0x0E0D)));\n\t\t\tVariables->Creatures[Offset].Res2\t\t= (UINT)(*((BYTE *)(Default+0x0E0E)));\n\t\t\tVariables->Creatures[Offset].Res2Rate\t\t= (LONG)(*((BYTE *)(Default+0x0E0F)));\n\t\t\tVariables->Creatures[Offset].Res3\t\t= (UINT)(*((BYTE *)(Default+0x0E10)));\n\t\t\tVariables->Creatures[Offset].Res3Rate\t\t= (LONG)(*((BYTE *)(Default+0x0E11)));\n\t\t\tVariables->Creatures[Offset].Res4\t\t= (UINT)(*((BYTE *)(Default+0x0E12)));\n\t\t\tVariables->Creatures[Offset].Res4Rate\t\t= (LONG)(*((BYTE *)(Default+0x0E13)));\n\t\t\t}\n\t\t}\n\n\tif (Flags&MGRF_CRPOSSESSION)\n\t\t{\n\t\tfor (i = 0; GCOrder[i] != (DWORD *)-1; i+= 2)\n\t\t\t{\n\t\t\tif (GCOrder[i] == (DWORD *)-2) continue;\n\t\t\tOffset = (DWORD)GCOrder[i];\n\t\t\tDefault = (BYTE *)GCOrder[i+1];\n\t\t\tif ((UseOffset != -1)&&(UseOffset != Offset)) continue;\n\n\t\t\tVariables->Creatures[Offset].SpecialAb1\t\t= (UINT)(*((BYTE *)(Default+0x0F46)));\n\t\t\tVariables->Creatures[Offset].SpecialAb1Data\t= (LONG)(*((WORD *)(Default+0x14E9)));\n\t\t\tVariables->Creatures[Offset].SpecialAb2\t\t= (UINT)(*((BYTE *)(Default+0x0F47)));\n\t\t\tVariables->Creatures[Offset].SpecialAb2Data\t= (LONG)(*((WORD *)(Default+0x14ED)));\n\t\t\tVariables->Creatures[Offset].Melee1\t\t= (UINT)(*((BYTE *)(Default+0x0F42)));\n\t\t\tVariables->Creatures[Offset].Melee2\t\t= (UINT)(*((BYTE *)(Default+0x0F43)));\n\t\t\tVariables->Creatures[Offset].Special1\t\t= (UINT)(*((BYTE *)(Default+0x1025)));\n\t\t\tVariables->Creatures[Offset].Special2\t\t= (UINT)(*((BYTE *)(Default+0x1026)));\n\t\t\tVariables->Creatures[Offset].Spell\t\t= (UINT)(*((BYTE *)(Default+0x0F45)));\n\t\t\tVariables->Creatures[Offset].GammaEffect\t= (UINT)(*((BYTE *)(Default+0x0D3C)));\n\t\t\tVariables->Creatures[Offset].WaddleScale\t= (LONG)(*((WORD *)(Default+0x0DBC)));\n\t\t\tVariables->Creatures[Offset].OscillateScale\t= (LONG)(*((WORD *)(Default+0x0DC0)));\n\t\t\tVariables->Creatures[Offset].WalkScale\t\t= (LONG)(*((BYTE *)(Default+0x0D3D)));\n\t\t\tVariables->Creatures[Offset].CameraRolls\t= (BOOL)(((*((BYTE *)(Default+0x0EFF)))&0x10)?TRUE:FALSE);\n\t\t\t}\n\t\t}\n\n\tif (Flags&MGRF_CRJOBS)\n\t\t{\n\t\tfor (i = 0; GCOrder[i] != (DWORD *)-1; i+= 2)\n\t\t\t{\n\t\t\tif (GCOrder[i] == (DWORD *)-2) continue;\n\t\t\tOffset = (DWORD)GCOrder[i];\n\t\t\tDefault = (BYTE *)GCOrder[i+1];\n\t\t\tif ((UseOffset != -1)&&(UseOffset != Offset)) continue;\n\n\t\t\tVariables->Creatures[Offset].HJobs[0]\t\t= (UINT)(*((LONG *)(Default+0x0E14)));\n\t\t\tVariables->Creatures[Offset].HJobsMood[0]\t= (LONG)(*((WORD *)(Default+0x0E18)));\n\t\t\tVariables->Creatures[Offset].HJobsMana[0]\t= (LONG)(*((WORD *)(Default+0x0E1A)));\n\t\t\tVariables->Creatures[Offset].HJobsChance[0]\t= (LONG)(*((BYTE *)(Default+0x0E1C)));\n\t\t\tVariables->Creatures[Offset].HJobs[1]\t\t= (UINT)(*((LONG *)(Default+0x0E20)));\n\t\t\tVariables->Creatures[Offset].HJobsMood[1]\t= (LONG)(*((WORD *)(Default+0x0E24)));\n\t\t\tVariables->Creatures[Offset].HJobsMana[1]\t= (LONG)(*((WORD *)(Default+0x0E26)));\n\t\t\tVariables->Creatures[Offset].HJobsChance[1]\t= (LONG)(*((BYTE *)(Default+0x0E28)));\n\t\t\tVariables->Creatures[Offset].HJobs[2]\t\t= (UINT)(*((LONG *)(Default+0x0E2C)));\n\t\t\tVariables->Creatures[Offset].HJobsMood[2]\t= (LONG)(*((WORD *)(Default+0x0E30)));\n\t\t\tVariables->Creatures[Offset].HJobsMana[2]\t= (LONG)(*((WORD *)(Default+0x0E32)));\n\t\t\tVariables->Creatures[Offset].HJobsChance[2]\t= (LONG)(*((BYTE *)(Default+0x0E34)));\n\t\t\tVariables->Creatures[Offset].UJobs[0]\t\t= (UINT)(*((LONG *)(Default+0x0E38)));\n\t\t\tVariables->Creatures[Offset].UJobsMood[0]\t= (LONG)(*((WORD *)(Default+0x0E3C)));\n\t\t\tVariables->Creatures[Offset].UJobsMana[0]\t= (LONG)(*((WORD *)(Default+0x0E3E)));\n\t\t\tVariables->Creatures[Offset].UJobsChance[0]\t= (LONG)(*((BYTE *)(Default+0x0E40)));\n\t\t\tVariables->Creatures[Offset].UJobs[1]\t\t= (UINT)(*((LONG *)(Default+0x0E44)));\n\t\t\tVariables->Creatures[Offset].UJobsMood[1]\t= (LONG)(*((WORD *)(Default+0x0E48)));\n\t\t\tVariables->Creatures[Offset].UJobsMana[1]\t= (LONG)(*((WORD *)(Default+0x0E4A)));\n\t\t\tVariables->Creatures[Offset].UJobsChance[1]\t= (LONG)(*((BYTE *)(Default+0x0E4C)));\n\t\t\tVariables->Creatures[Offset].AJobs[0]\t\t= (UINT)(*((LONG *)(Default+0x0E50)));\n\t\t\tVariables->Creatures[Offset].AJobsMood[0]\t= (LONG)(*((WORD *)(Default+0x0E54)));\n\t\t\tVariables->Creatures[Offset].AJobsMana[0]\t= (LONG)(*((WORD *)(Default+0x0E56)));\n\t\t\tVariables->Creatures[Offset].AJobsChance[0]\t= (LONG)(*((BYTE *)(Default+0x0E58)));\n\t\t\tVariables->Creatures[Offset].AJobs[1]\t\t= (UINT)(*((LONG *)(Default+0x0E5C)));\n\t\t\tVariables->Creatures[Offset].AJobsMood[1]\t= (LONG)(*((WORD *)(Default+0x0E60)));\n\t\t\tVariables->Creatures[Offset].AJobsMana[1]\t= (LONG)(*((WORD *)(Default+0x0E62)));\n\t\t\tVariables->Creatures[Offset].AJobsChance[1]\t= (LONG)(*((BYTE *)(Default+0x0E64)));\n\t\t\tVariables->Creatures[Offset].AJobs[2]\t\t= (UINT)(*((LONG *)(Default+0x0E68)));\n\t\t\tVariables->Creatures[Offset].AJobsMood[2]\t= (LONG)(*((WORD *)(Default+0x0E6C)));\n\t\t\tVariables->Creatures[Offset].AJobsMana[2]\t= (LONG)(*((WORD *)(Default+0x0E6E)));\n\t\t\tVariables->Creatures[Offset].AJobsChance[2]\t= (LONG)(*((BYTE *)(Default+0x0E70)));\n\t\t\tVariables->Creatures[Offset].NJobs[0]\t\t= (UINT)(*((LONG *)(Default+0x0E74)));\n\t\t\tVariables->Creatures[Offset].NJobs[1]\t\t= (UINT)(*((LONG *)(Default+0x0E78)));\n\t\t\tVariables->Creatures[Offset].NJobs[2]\t\t= (UINT)(*((LONG *)(Default+0x0E7C)));\n\t\t\tVariables->Creatures[Offset].NJobs[3]\t\t= (UINT)(*((LONG *)(Default+0x0E80)));\n\t\t\t}\n\t\t}\n\n\tif (Flags&MGRF_CRLIGHT)\n\t\t{\n\t\tfor (i = 0; GCOrder[i] != (DWORD *)-1; i+= 2)\n\t\t\t{\n\t\t\tif (GCOrder[i] == (DWORD *)-2) continue;\n\t\t\tOffset = (DWORD)GCOrder[i];\n\t\t\tDefault = (BYTE *)GCOrder[i+1];\n\t\t\tif ((UseOffset != -1)&&(UseOffset != Offset)) continue;\n\n\t\t\tVariables->Creatures[Offset].LightX\t\t= (LONG)(*((LONG *)(Default+0x0D94)));\n\t\t\tVariables->Creatures[Offset].LightY\t\t= (LONG)(*((LONG *)(Default+0x0D98)));\n\t\t\tVariables->Creatures[Offset].LightZ\t\t= (LONG)(*((LONG *)(Default+0x0D9C)));\n\t\t\tVariables->Creatures[Offset].LightRadius\t= (LONG)(*((WORD *)(Default+0x0DA0)));\n\t\t\tVariables->Creatures[Offset].LightR\t\t= (BYTE)(*((BYTE *)(Default+0x0DA8)));\n\t\t\tVariables->Creatures[Offset].LightG\t\t= (BYTE)(*((BYTE *)(Default+0x0DA9)));\n\t\t\tVariables->Creatures[Offset].LightB\t\t= (BYTE)(*((BYTE *)(Default+0x0DAA)));\n\t\t\tVariables->Creatures[Offset].LightFlicker\t= (BOOL)(((*((BYTE *)(Default+0x0DA4)))&0x02)?TRUE:FALSE);\n\t\t\tVariables->Creatures[Offset].LightPulse\t\t= (BOOL)(((*((BYTE *)(Default+0x0DA4)))&0x04)?TRUE:FALSE);\n\t\t\tVariables->Creatures[Offset].LightPlayer\t= (BOOL)(((*((BYTE *)(Default+0x0DA4)))&0x80)?TRUE:FALSE);\n\t\t\t}\n\t\t}\n\n\tif (Flags&MGRF_CREATURESPELLS)\n\t\t{\n\t\tfor (i = 0; GOOrder[i] != (DWORD *)-1; i+= 2)\n\t\t\t{\n\t\t\tif (GOOrder[i] == (DWORD *)-2) continue;\n\t\t\tOffset = (DWORD)GOOrder[i];\n\t\t\tDefault = (BYTE *)GOOrder[i+1];\n\t\t\tif ((UseOffset != -1)&&(UseOffset != Offset)) continue;\n\n\t\t\tVariables->CrSpells[Offset].RechargeTime\t= (LONG)(*((WORD *)(Default+0x00EA)));\n\t\t\tVariables->CrSpells[Offset].Range\t\t= (LONG)(*((WORD *)(Default+0x00D0)));\n\t\t\tVariables->CrSpells[Offset].Shot\t\t= (UINT)(*((BYTE *)(Default+0x00E7)));\n\t\t\tVariables->CrSpells[Offset].ShotData1\t\t= (LONG)(*((WORD *)(Default+0x00C8)));\n\t\t\tVariables->CrSpells[Offset].ShotData2\t\t= (LONG)(*((WORD *)(Default+0x00CC)));\n\t\t\tVariables->CrSpells[Offset].Attacking\t\t= (BOOL)(((*((BYTE *)(Default+0x00D4)))&0x01)?TRUE:FALSE);\n\t\t\tVariables->CrSpells[Offset].Creature\t\t= (BOOL)(((*((BYTE *)(Default+0x00D4)))&0x02)?TRUE:FALSE);\n\t\t\tVariables->CrSpells[Offset].Defensive\t\t= (BOOL)(((*((BYTE *)(Default+0x00D4)))&0x04)?TRUE:FALSE);\n\t\t\tVariables->CrSpells[Offset].CastSelf\t\t= (BOOL)(((*((BYTE *)(Default+0x00D4)))&0x80)?TRUE:FALSE);\n\t\t\tVariables->CrSpells[Offset].CastOthers\t\t= (BOOL)(((*((BYTE *)(Default+0x00D5)))&0x01)?TRUE:FALSE);\n\t\t\tVariables->CrSpells[Offset].CastCreatures\t= (BOOL)(((*((BYTE *)(Default+0x00D4)))&0x08)?TRUE:FALSE);\n\t\t\t}\n\t\t}\n\n\treturn;\n}",
+    "Compiler_GenerateSpellsFile": "Compiler_GenerateSpellsFile(char *FileName)\n{\n\tGAMESPELLS\t*Spells;\n\tHANDLE\t\t FileHandle;\n\tDWORD\t\t Written;\n\tDWORD\t\t Offset;\n\tBYTE\t\t*Spell;\n\tchar\t\t*WorkName;\n\tchar\t\t*Extension;\n\tint\t\t i;\n\n\tWorkName = GlobalAlloc(GPTR,MAX_PATH);\n\tif (!WorkName)\n\t\t{\n\t\tCompiler_SetLastError(COMPILERR_WINDOWS);\n\t\tgoto Error_0;\n\t\t}\n\n\tstrcpy(WorkName,FileName);\n\tExtension = strrchr(WorkName,'.');\n\tif (Extension) *Extension = 0;\n\tstrcat(WorkName,szGameKeeperSpellsExt);\n\n\t//--- Ecriture du contenu du fichier ---\n\n\tSpells = GlobalAlloc(GPTR,sizeof(GAMESPELLS));\n\tif (!Spells)\n\t\t{\n\t\tCompiler_SetLastError(COMPILERR_WINDOWS);\n\t\tgoto Error_1;\n\t\t}\n\n\tSpell = GlobalAlloc(GPTR,406);\n\tif (!Spell)\n\t\t{\n\t\tCompiler_SetLastError(COMPILERR_WINDOWS);\n\t\tgoto Error_2;\n\t\t}\n\n\tSpells->dwSpellsFileHeader\t= 0x00000096;\n\tSpells->dwSpellsFileVersion\t= 0x00000004;\n\tSpells->dwSpellsFileSize\t= 5334; // sizeof(GAMESPELLS)+13*406;\n\tSpells->dwSpellsInfoHeader\t= 0x00000097;\n\tSpells->dwSpellsInfoVersion\t= 0x0000001C;\n\tSpells->dwSpellsCount\t\t= 13;\n\tSpells->dwGlobalDateHeader\t= 0x00000001;\n\tCompiler_SetDate(&Spells->dateSpellsDate);\n\tSpells->dwSpellsDefinesHeader\t= 0x00000098;\n\tSpells->dwSpellsDefinesSize\t= 13*406;\n\n\t//--- Ecriture du fichier ---\n\n\tFileHandle = CreateFile(WorkName,GENERIC_WRITE,0,NULL,CREATE_ALWAYS,FILE_ATTRIBUTE_NORMAL,NULL);\n\tif (FileHandle == INVALID_HANDLE_VALUE)\n\t\t{\n\t\tCompiler_SetLastError(COMPILERR_WINDOWS);\n\t\tgoto Error_3;\n\t\t}\n\tWriteFile(FileHandle,Spells,sizeof(GAMESPELLS),&Written,NULL);\n\tif (Written != sizeof(GAMESPELLS)) goto Error_3;\n\n\tfor (i = 0; GSOrder[i] != (DWORD *)-1; i += 2)\n\t\t{\n\t\tCopyMemory(Spell,GSOrder[i+1],406);\n\t\tif (GSOrder[i] != (DWORD *)-2)\n\t\t\t{\n\t\t\tOffset = (DWORD)GSOrder[i];\n\n\t\t\t*((LONG *)(Spell+0x11C)) = (LONG)MapGlobalVariables.Spells[Offset].ManaCost;\n\t\t\t*((WORD *)(Spell+0x0E2)) = (WORD)MapGlobalVariables.Spells[Offset].ManaDrain;\n\t\t\t*((LONG *)(Spell+0x0CC)) = (LONG)MapGlobalVariables.Spells[Offset].RechargeTime;\n\t\t\t*((BYTE *)(Spell+0x194)) = (BYTE)MapGlobalVariables.Spells[Offset].HandAnim;\n\t\t\t*((BYTE *)(Spell+0x195)) = (BYTE)MapGlobalVariables.Spells[Offset].NoGoHandAnim;\n\t\t\t*((BYTE *)(Spell+0x0EF)) = (BYTE)MapGlobalVariables.Spells[Offset].CastRule;\n\t\t\t*((BYTE *)(Spell+0x0DA)) = (BYTE)MapGlobalVariables.Spells[Offset].TargetRule;\n\t\t\t*((BYTE *)(Spell+0x0F0)) = (BYTE)MapGlobalVariables.Spells[Offset].ShotType;\n\t\t\t*((WORD *)(Spell+0x0D0)) = (WORD)MapGlobalVariables.Spells[Offset].ShotData1;\n\t\t\t*((WORD *)(Spell+0x0D4)) = (WORD)MapGlobalVariables.Spells[Offset].ShotData2;\n\t\t\t*((BYTE *)(Spell+0x113)) = (BYTE)MapGlobalVariables.Spells[Offset].UpgShotType;\n\t\t\t*((WORD *)(Spell+0x114)) = (WORD)MapGlobalVariables.Spells[Offset].UpgShotData1;\n\t\t\t*((WORD *)(Spell+0x118)) = (WORD)MapGlobalVariables.Spells[Offset].UpgShotData2;\n\t\t\t*((WORD *)(Spell+0x111)) = (WORD)MapGlobalVariables.Spells[Offset].UpgRechargeTime;\n\n\t\t\tif (GShots[MapGlobalVariables.Spells[Offset].ShotType].Variable == 0x01)\n\t\t\t\t*((WORD *)(Spell+0x0D4)) = 0;\n\t\t\tif (GShots[MapGlobalVariables.Spells[Offset].UpgShotType].Variable == 0x01)\n\t\t\t\t*((WORD *)(Spell+0x118)) = 0;\n\t\t\tif (GShots[MapGlobalVariables.Spells[Offset].ShotType].Variable == 0xFF)\n\t\t\t\t*((WORD *)(Spell+0x0D4)) = 0;\n\t\t\tif (GShots[MapGlobalVariables.Spells[Offset].UpgShotType].Variable == 0xFF)\n\t\t\t\t*((WORD *)(Spell+0x118)) = 0;\n\n\t\t\t*((BYTE *)(Spell+0x0DC)) &= ~(0x04|0x08);\n\t\t\tif (MapGlobalVariables.Spells[Offset].Attacking) *((BYTE *)(Spell+0x0DC)) |= (BYTE)0x04;\n\t\t\tif (MapGlobalVariables.Spells[Offset].Defensive) *((BYTE *)(Spell+0x0DC)) |= (BYTE)0x08;\n\n\t\t\t}\n\t\tWriteFile(FileHandle,Spell,406,&Written,NULL);\n\t\tif (Written != 406) goto Error_4;\n\t\t}\n\n\tCloseHandle(FileHandle);\n\tGlobalFree(Spell);\n\tGlobalFree(Spells);\n\tGlobalFree(WorkName);\n\treturn(1);\n\n//--- Erreurs ---\n\nError_4:Compiler_SetLastError(COMPILERR_WINDOWS);\n\tCloseHandle(FileHandle);\n\tDeleteFile(WorkName);\nError_3:GlobalFree(Spell);\nError_2:GlobalFree(Spells);\nError_1:GlobalFree(WorkName);\nError_0:return(0);\n}",
+    "Misc_CreateUpDownButton": "Misc_CreateUpDownButton(HWND hDlg, UINT CtlID, UINT UpDownID)\n{\n\tRECT\tWindowRect;\n\tHWND\thCtrl;\n\tHWND\thWnd;\n\n\thCtrl = GetDlgItem(hDlg,CtlID);\n\tGetWindowRect(hCtrl,&WindowRect);\n\tMapWindowPoints(NULL,hDlg,(POINT *)&WindowRect,2);\n\n\thWnd = CreateUpDownControl(WS_CHILD|WS_VISIBLE|UDS_ALIGNRIGHT,0,0,WindowRect.bottom-WindowRect.top,WindowRect.bottom-WindowRect.top,hDlg,UpDownID,hInstance,hCtrl,0,1,0);\n\treturn((hWnd)?1:0);\n}",
+    "Misc_SetUpDownInt": "Misc_SetUpDownInt(HWND hDlg, UINT CtlID, NM_UPDOWN *UpDown)\n{\n\tint\tNumber;\n\n\tNumber = GetDlgItemInt(hDlg,CtlID,NULL,FALSE);\n\tif (UpDown->iDelta > 0)\n\t\tNumber--;\n\telse\n\t\tNumber++;\n\tSetDlgItemInt(hDlg,CtlID,Number,FALSE);\n\treturn;\n}",
+    "Misc_SetUpDownIntSigned": "Misc_SetUpDownIntSigned(HWND hDlg, UINT CtlID, NM_UPDOWN *UpDown)\n{\n\tint\tNumber;\n\n\tNumber = GetDlgItemInt(hDlg,CtlID,NULL,TRUE);\n\tif (UpDown->iDelta > 0)\n\t\tNumber--;\n\telse\n\t\tNumber++;\n\tSetDlgItemInt(hDlg,CtlID,Number,TRUE);\n\treturn;\n}",
+    "Misc_GetDlgItemFloat": "Misc_GetDlgItemFloat(HWND hDlg, UINT NumberCtrl)\n{\n\tDWORD\t TempNumber;\n\tfloat\t TempDec;\n\tchar\t*TempTextPtr;\n\tchar\t TempText[64];\n\n\tGetDlgItemText(hDlg,NumberCtrl,TempText,63);\n\tTempTextPtr = strrchr(TempText,'.');\n\tif (TempTextPtr) TempDec = atof(TempTextPtr)*1000.0f/0.24414063f;\n\telse TempDec = 0;\n\tTempNumber = atol(TempText);\n\n\treturn( (TempNumber<<12)|(DWORD)TempDec );\n}",
+    "Misc_SetDlgItemFloat": "Misc_SetDlgItemFloat(HWND hDlg, UINT NumberCtrl, DWORD GameFloat)\n{\n\tDWORD\t Number;\n\tfloat\t Temp;\n\tint\t Dec,Sign;\n\tchar\t*FloatText;\n\tchar\t TempText[64];\n\n\tTemp = (float)(GameFloat&0x00000FFF)*0.24414063f/1000.0f;\n\tNumber = (GameFloat&0xFFFFF000)>>12;\n\n\tFloatText = fcvt(Temp,FLOAT_PRECISION,&Dec,&Sign);\n\twsprintf(TempText,szNumber,Number);\n\tstrcat(TempText,szPoint);\n\tif (Dec < 0)\n\t\t{\n\t\twhile(Dec++) strcat(TempText,szZero);\n\t\tstrcat(TempText,FloatText);\n\t\t}\n\telse\n\t\tstrcat(TempText,FloatText+Dec);\n\n\tfor (Number = strlen(TempText)-1; TempText[Number-1] != '.'; Number--)\n\t\t{\n\t\tif (TempText[Number] != '0') break;\n\t\tTempText[Number] = 0;\n\t\t}\n\n\tSetDlgItemText(hDlg,NumberCtrl,TempText);\n\treturn;\n}"
+  },
+  "ResourcePages": {
+    "6824": "6824 DIALOG 8, 8, 450, 310\nSTYLE DS_MODALFRAME|WS_BORDER|WS_VISIBLE|WS_CAPTION|WS_SYSMENU\nCLASS DIALOG_CLASS\nCAPTION DIALOG_MAPGBLSPELLS\nFONT 8, \"MS Sans Serif\"\n{\n\tGROUPBOX\tDIALOG_MAPGBLSNAMES,\t\t100,   6,   6, 130, 282\n\tLISTBOX\t\t\t\t\t\t101,  10,  16, 122, 266, WS_VSCROLL|LBS_OWNERDRAWVARIABLE|LBS_NOINTEGRALHEIGHT\n\tPUSHBUTTON\tDIALOG_MAPGBLDEFAULT,\t\t998,  10, 292,  60,  12\n\tPUSHBUTTON\tDIALOG_MAPGBLDEFAULTALL,\t999,  70, 292,  60,  12\n\n\tCONTROL\t\tDIALOG_MAPGBLSCURSOR,\t\t102, \"STATIC\", WS_CHILD|SS_OWNERDRAW, 138, 14, 310, 10\n\tRTEXT\t\tDIALOG_MAPGBLSOK,\t\t103, 150,  30,  96,  10\n\tCOMBOBOX\t\t\t\t\t104, 250,  28, 170, 100, WS_VSCROLL|CBS_DROPDOWNLIST\n\tRTEXT\t\tDIALOG_MAPGBLSNOGO,\t\t105, 150,  46,  96,  10\n\tCOMBOBOX\t\t\t\t\t106, 250,  44, 170, 100, WS_VSCROLL|CBS_DROPDOWNLIST\n\n\tCONTROL\t\tDIALOG_MAPGBLSRULES,\t\t112, \"STATIC\", WS_CHILD|SS_OWNERDRAW, 138, 64, 310, 10\n\tRTEXT\t\tDIALOG_MAPGBLSCAST,\t\t113, 150,  80,  96,  10\n\tCOMBOBOX\t\t\t\t\t114, 250,  78, 170, 100, WS_VSCROLL|CBS_DROPDOWNLIST\n\tRTEXT\t\tDIALOG_MAPGBLSTARGET,\t\t115, 150,  94,  96,  10\n\tCOMBOBOX\t\t\t\t\t116, 250,  92, 170, 100, WS_VSCROLL|CBS_DROPDOWNLIST\n\n\tCONTROL\t\tDIALOG_MAPGBLSPARAMS,\t\t122, \"STATIC\", WS_CHILD|SS_OWNERDRAW, 138, 112, 310, 10\n\tRTEXT\t\tDIALOG_MAPGBLSMANACOST,\t\t123, 150, 128, 150,  10\n\tEDITTEXT\t\t\t\t\t124, 304, 127,  50,  12, ES_NUMBER\n\tRTEXT\t\tDIALOG_MAPGBLSMANADRAIN,\t125, 150, 142, 150,  10\n\tEDITTEXT\t\t\t\t\t126, 304, 141,  40,  12, ES_NUMBER\n\tRTEXT\t\tDIALOG_MAPGBLSRECHARGETIME,\t127, 150, 156, 150,  10\n\tEDITTEXT\t\t\t\t\t128, 304, 155,  40,  12, ES_AUTOHSCROLL\n\tRTEXT\t\tDIALOG_MAPGBLSBONUSTIME,\t129, 150, 170, 150,  10\n\tEDITTEXT\t\t\t\t\t130, 304, 169,  40,  12, ES_NUMBER\n\tAUTOCHECKBOX\tDIALOG_MAPGBLSATTACKING,\t131, 160, 184, 150,  10, BS_RIGHTBUTTON|BS_RIGHT\n\tAUTOCHECKBOX\tDIALOG_MAPGBLSDEFENSIVE,\t132, 160, 198, 150,  10, BS_RIGHTBUTTON|BS_RIGHT\n\n\tCONTROL\t\tDIALOG_MAPGBLSSHOTS,\t\t142, \"STATIC\", WS_CHILD|SS_OWNERDRAW, 138, 218, 310, 10\n\tRTEXT\t\tDIALOG_MAPGBLSTYPE,\t\t143, 150, 234,  96,  10\n\tCOMBOBOX\t\t\t\t\t144, 250, 232, 170, 100, WS_VSCROLL|CBS_DROPDOWNLIST\n\tPUSHBUTTON\tDIALOG_MAPGBLAOPT,\t\t145, 424, 232,  20,  12\n\tRTEXT\t\tDIALOG_MAPGBLSUPGRADE,\t\t146, 150, 248,  96,  10\n\tCOMBOBOX\t\t\t\t\t147, 250, 246, 170, 100, WS_VSCROLL|CBS_DROPDOWNLIST\n\tPUSHBUTTON\tDIALOG_MAPGBLAOPT,\t\t148, 424, 246,  20,  12\n}",
+    "6840": "6840 DIALOG 8, 8, 156, 54\nSTYLE DS_MODALFRAME|WS_BORDER|WS_VISIBLE|WS_CAPTION|WS_SYSMENU\nCLASS DIALOG_CLASS\nCAPTION DIALOG_MAPGBLOPTIONSSHOTS\nFONT 8, \"MS Sans Serif\"\n{\n\tRTEXT\t\tDIALOG_MAPGBLOPTIONS1,\t\t100,   6,   6, 100,  10\n\tEDITTEXT\t\t\t\t\t101, 110,   5,  40,  12, ES_NUMBER\n\tRTEXT\t\tDIALOG_MAPGBLOPTIONS2,\t\t102,   6,  20, 100,  10\n\tEDITTEXT\t\t\t\t\t103, 110,  19,  40,  12, ES_NUMBER\n\tPUSHBUTTON\tDIALOG_OK,\t\t       IDOK,   6,  34,  50,  14\n\tPUSHBUTTON\tDIALOG_ABORT,\t\t   IDCANCEL, 100,  34,  50,  14\n}",
+    "6841": "6841 DIALOG 8, 8, 156, 40\nSTYLE DS_MODALFRAME|WS_BORDER|WS_VISIBLE|WS_CAPTION|WS_SYSMENU\nCLASS DIALOG_CLASS\nCAPTION DIALOG_MAPGBLOPTIONSSHOTS\nFONT 8, \"MS Sans Serif\"\n{\n\tRTEXT\t\tDIALOG_MAPGBLOPTIONS1,\t\t100,   6,   6, 100,  10\n\tEDITTEXT\t\t\t\t\t101, 110,   5,  40,  12, ES_NUMBER\n\tPUSHBUTTON\tDIALOG_OK,\t\t       IDOK,   6,  20,  50,  14\n\tPUSHBUTTON\tDIALOG_ABORT,\t\t   IDCANCEL, 100,  20,  50,  14\n}",
+    "6842": "6842 DIALOG 8, 8, 206, 246\nSTYLE DS_MODALFRAME|WS_BORDER|WS_VISIBLE|WS_CAPTION|WS_SYSMENU\nCLASS DIALOG_CLASS\nCAPTION DIALOG_MAPGBLOPTIONSSHOTS\nFONT 8, \"MS Sans Serif\"\n{\n\tGROUPBOX\tDIALOG_MAPGBLOPTIONSCR,\t\t200,   6,   4, 194, 202\n\tLISTBOX\t\t\t\t\t\t201,  10,  14, 186, 188, WS_VSCROLL|LBS_OWNERDRAWVARIABLE|LBS_NOINTEGRALHEIGHT\n\n\tRTEXT\t\tDIALOG_MAPGBLOPTIONSCOUNT,\t202,  16, 210, 100,  10\n\tEDITTEXT\t\t\t\t\t203, 120, 209,  30,  12, ES_NUMBER\n\n\tPUSHBUTTON\tDIALOG_OK,\t\t       IDOK,   6, 226,  50,  14\n\tPUSHBUTTON\tDIALOG_ABORT,\t\t   IDCANCEL, 150, 226,  50,  14\n}",
+    "6843": "6843 DIALOG 8, 8, 206, 246\nSTYLE DS_MODALFRAME|WS_BORDER|WS_VISIBLE|WS_CAPTION|WS_SYSMENU\nCLASS DIALOG_CLASS\nCAPTION DIALOG_MAPGBLOPTIONSSHOTS\nFONT 8, \"MS Sans Serif\"\n{\n\tGROUPBOX\tDIALOG_MAPGBLOPTIONSCR,\t\t200,   6,   4, 194, 202\n\tLISTBOX\t\t\t\t\t\t201,  10,  14, 186, 188, WS_VSCROLL|LBS_OWNERDRAWVARIABLE|LBS_NOINTEGRALHEIGHT\n\n\tRTEXT\t\tDIALOG_MAPGBLOPTIONSLEVEL,\t202,  16, 210, 100,  10\n\tCOMBOBOX\t\t\t\t\t203, 120, 209,  30, 100, WS_VSCROLL|CBS_DROPDOWNLIST\n\n\tPUSHBUTTON\tDIALOG_OK,\t\t       IDOK,   6, 226,  50,  14\n\tPUSHBUTTON\tDIALOG_ABORT,\t\t   IDCANCEL, 150, 226,  50,  14\n}",
+    "6844": "6844 DIALOG 8, 8, 206, 246\nSTYLE DS_MODALFRAME|WS_BORDER|WS_VISIBLE|WS_CAPTION|WS_SYSMENU\nCLASS DIALOG_CLASS\nCAPTION DIALOG_MAPGBLOPTIONSSHOTS\nFONT 8, \"MS Sans Serif\"\n{\n\tGROUPBOX\tDIALOG_MAPGBLOPTIONSOB,\t\t200,   6,   4, 194, 202\n\tLISTBOX\t\t\t\t\t\t201,  10,  14, 186, 188, WS_VSCROLL|LBS_OWNERDRAWVARIABLE|LBS_NOINTEGRALHEIGHT\n\n\tRTEXT\t\tDIALOG_MAPGBLOPTIONSGOLD,\t202,   6, 210, 100,  10\n\tEDITTEXT\t\t\t\t\t205, 110, 209,  40,  12, ES_NUMBER\n\n\tPUSHBUTTON\tDIALOG_OK,\t\t       IDOK,   6, 226,  50,  14\n\tPUSHBUTTON\tDIALOG_ABORT,\t\t   IDCANCEL, 150, 226,  50,  14\n}"
+  },
+  "Fields": [
+    "ManaCost",
+    "ManaDrain",
+    "RechargeTime",
+    "Attacking",
+    "Defensive",
+    "HandAnim",
+    "NoGoHandAnim",
+    "CastRule",
+    "TargetRule",
+    "ShotType",
+    "ShotData1",
+    "ShotData2",
+    "UpgShotType",
+    "UpgShotData1",
+    "UpgShotData2",
+    "UpgRechargeTime"
+  ],
+  "PageFields": [
+    "ManaCost",
+    "ManaDrain",
+    "RechargeTime",
+    "Attacking",
+    "Defensive",
+    "HandAnim",
+    "NoGoHandAnim",
+    "CastRule",
+    "TargetRule",
+    "ShotType",
+    "UpgShotType",
+    "UpgRechargeTime"
+  ],
+  "NestedFields": [
+    "ShotData1",
+    "ShotData2",
+    "UpgShotData1",
+    "UpgShotData2"
+  ],
+  "HiddenPreservedFields": [],
+  "NativeStorage": {
+    "ManaCost": {
+      "Offset": 284,
+      "Kind": "LONG",
+      "Size": 4
+    },
+    "ManaDrain": {
+      "Offset": 226,
+      "Kind": "WORD",
+      "Size": 2
+    },
+    "RechargeTime": {
+      "Offset": 204,
+      "Kind": "LONG",
+      "Size": 4
+    },
+    "HandAnim": {
+      "Offset": 404,
+      "Kind": "BYTE",
+      "Size": 1
+    },
+    "NoGoHandAnim": {
+      "Offset": 405,
+      "Kind": "BYTE",
+      "Size": 1
+    },
+    "CastRule": {
+      "Offset": 239,
+      "Kind": "BYTE",
+      "Size": 1
+    },
+    "TargetRule": {
+      "Offset": 218,
+      "Kind": "BYTE",
+      "Size": 1
+    },
+    "ShotType": {
+      "Offset": 240,
+      "Kind": "BYTE",
+      "Size": 1
+    },
+    "ShotData1": {
+      "Offset": 208,
+      "Kind": "WORD",
+      "Size": 2
+    },
+    "ShotData2": {
+      "Offset": 212,
+      "Kind": "WORD",
+      "Size": 2
+    },
+    "UpgShotType": {
+      "Offset": 275,
+      "Kind": "BYTE",
+      "Size": 1
+    },
+    "UpgShotData1": {
+      "Offset": 276,
+      "Kind": "WORD",
+      "Size": 2
+    },
+    "UpgShotData2": {
+      "Offset": 280,
+      "Kind": "WORD",
+      "Size": 2
+    },
+    "UpgRechargeTime": {
+      "Offset": 273,
+      "Kind": "WORD",
+      "Size": 2
+    },
+    "Attacking": {
+      "Offset": 220,
+      "Kind": "BOOL",
+      "Size": 1,
+      "Mask": 4
+    },
+    "Defensive": {
+      "Offset": 220,
+      "Kind": "BOOL",
+      "Size": 1,
+      "Mask": 8
+    }
+  },
+  "Spells": [
+    {
+      "ID": 4,
+      "Icon": 1600,
+      "Text1ID": 0,
+      "Text2ID": 0,
+      "Signed1": 0,
+      "Signed2": 0,
+      "Name": "szSpellCreateImp",
+      "Index": 0
+    },
+    {
+      "ID": 2,
+      "Icon": 1601,
+      "Text1ID": 0,
+      "Text2ID": 0,
+      "Signed1": 0,
+      "Signed2": 0,
+      "Name": "szSpellPossess",
+      "Index": 1
+    },
+    {
+      "ID": 1,
+      "Icon": 1602,
+      "Text1ID": 0,
+      "Text2ID": 0,
+      "Signed1": 0,
+      "Signed2": 0,
+      "Name": "szSpellSightOfEvil",
+      "Index": 2
+    },
+    {
+      "ID": 6,
+      "Icon": 1603,
+      "Text1ID": 0,
+      "Text2ID": 0,
+      "Signed1": 0,
+      "Signed2": 0,
+      "Name": "szSpellLightning",
+      "Index": 3
+    },
+    {
+      "ID": 10,
+      "Icon": 1604,
+      "Text1ID": 0,
+      "Text2ID": 0,
+      "Signed1": 0,
+      "Signed2": 0,
+      "Name": "szSpellHeal",
+      "Index": 4
+    },
+    {
+      "ID": 3,
+      "Icon": 1605,
+      "Text1ID": 0,
+      "Text2ID": 0,
+      "Signed1": 0,
+      "Signed2": 0,
+      "Name": "szSpellCallToArms",
+      "Index": 5
+    },
+    {
+      "ID": 8,
+      "Icon": 1606,
+      "Text1ID": 0,
+      "Text2ID": 0,
+      "Signed1": 0,
+      "Signed2": 0,
+      "Name": "szSpellTremor",
+      "Index": 6
+    },
+    {
+      "ID": 13,
+      "Icon": 1607,
+      "Text1ID": 0,
+      "Text2ID": 0,
+      "Signed1": 0,
+      "Signed2": 0,
+      "Name": "szSpellCreateGold",
+      "Index": 7
+    },
+    {
+      "ID": 7,
+      "Icon": 1608,
+      "Text1ID": 0,
+      "Text2ID": 0,
+      "Signed1": 0,
+      "Signed2": 0,
+      "Name": "szSpellTurnCoat",
+      "Index": 8
+    },
+    {
+      "ID": 9,
+      "Icon": 1609,
+      "Text1ID": 0,
+      "Text2ID": 0,
+      "Signed1": 0,
+      "Signed2": 0,
+      "Name": "szSpellInferno",
+      "Index": 9
+    },
+    {
+      "ID": 11,
+      "Icon": 1610,
+      "Text1ID": 0,
+      "Text2ID": 0,
+      "Signed1": 0,
+      "Signed2": 0,
+      "Name": "szSpellChicken",
+      "Index": 10
+    },
+    {
+      "ID": 5,
+      "Icon": 1611,
+      "Text1ID": 0,
+      "Text2ID": 0,
+      "Signed1": 0,
+      "Signed2": 0,
+      "Name": "szSpellSummonHorny",
+      "Index": 11
+    },
+    {
+      "ID": 14,
+      "Icon": 1611,
+      "Text1ID": 0,
+      "Text2ID": 0,
+      "Signed1": 0,
+      "Signed2": 0,
+      "Name": "szSpellUniqueHorny",
+      "Index": 12
+    }
+  ],
+  "Controls": {
+    "ManaCost": {
+      "Control": 124,
+      "Spinner": 224,
+      "Minimum": 0,
+      "Maximum": 999999,
+      "Fractional": false
+    },
+    "ManaDrain": {
+      "Control": 126,
+      "Spinner": 226,
+      "Minimum": 0,
+      "Maximum": 32767,
+      "Fractional": false
+    },
+    "UpgRechargeTime": {
+      "Control": 130,
+      "Spinner": 230,
+      "Minimum": 0,
+      "Maximum": 32767,
+      "Fractional": false
+    },
+    "RechargeTime": {
+      "Control": 128,
+      "Spinner": 228,
+      "Minimum": 0,
+      "MaximumWholePart": 32767,
+      "Denominator": 4096,
+      "Fractional": true
+    },
+    "Attacking": {
+      "Control": 131,
+      "Minimum": 0,
+      "Maximum": 1,
+      "Boolean": true
+    },
+    "Defensive": {
+      "Control": 132,
+      "Minimum": 0,
+      "Maximum": 1,
+      "Boolean": true
+    },
+    "HandAnim": {
+      "Control": 104,
+      "Catalogue": "GSpellsHand"
+    },
+    "NoGoHandAnim": {
+      "Control": 106,
+      "Catalogue": "GSpellsHand"
+    },
+    "CastRule": {
+      "Control": 114,
+      "Catalogue": "GSpellsCast"
+    },
+    "TargetRule": {
+      "Control": 116,
+      "Catalogue": "GSpellsTrget"
+    },
+    "ShotType": {
+      "Control": 144,
+      "Catalogue": "GShots"
+    },
+    "UpgShotType": {
+      "Control": 147,
+      "Catalogue": "GShots"
+    }
+  },
+  "Catalogues": {
+    "GSpellsHand": [
+      {
+        "ID": 0,
+        "Variable": 0,
+        "Icon": 0,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szSpellHand00"
+      },
+      {
+        "ID": 1,
+        "Variable": 0,
+        "Icon": 0,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szSpellHand01"
+      }
+    ],
+    "GSpellsCast": [
+      {
+        "ID": 1,
+        "Variable": 0,
+        "Icon": 0,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szSpellCast01"
+      },
+      {
+        "ID": 2,
+        "Variable": 0,
+        "Icon": 0,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szSpellCast02"
+      },
+      {
+        "ID": 3,
+        "Variable": 0,
+        "Icon": 0,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szSpellCast03"
+      },
+      {
+        "ID": 4,
+        "Variable": 0,
+        "Icon": 0,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szSpellCast04"
+      },
+      {
+        "ID": 5,
+        "Variable": 0,
+        "Icon": 0,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szSpellCast05"
+      }
+    ],
+    "GSpellsTrget": [
+      {
+        "ID": 1,
+        "Variable": 0,
+        "Icon": 0,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szSpellTarget01"
+      },
+      {
+        "ID": 2,
+        "Variable": 0,
+        "Icon": 0,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szSpellTarget02"
+      },
+      {
+        "ID": 3,
+        "Variable": 0,
+        "Icon": 0,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szSpellTarget03"
+      },
+      {
+        "ID": 4,
+        "Variable": 0,
+        "Icon": 0,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szSpellTarget04"
+      },
+      {
+        "ID": 5,
+        "Variable": 0,
+        "Icon": 0,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szSpellTarget05"
+      },
+      {
+        "ID": 6,
+        "Variable": 0,
+        "Icon": 0,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szSpellTarget06"
+      }
+    ],
+    "GShots": [
+      {
+        "ID": 0,
+        "Variable": 255,
+        "Icon": 0,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szEffect000"
+      },
+      {
+        "ID": 1,
+        "Variable": 1,
+        "Icon": 0,
+        "Text1ID": 1,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szSpellShot01"
+      },
+      {
+        "ID": 2,
+        "Variable": 2,
+        "Icon": 0,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szSpellShot02"
+      },
+      {
+        "ID": 3,
+        "Variable": 0,
+        "Icon": 0,
+        "Text1ID": 1,
+        "Text2ID": 1,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szSpellShot03"
+      },
+      {
+        "ID": 4,
+        "Variable": 1,
+        "Icon": 0,
+        "Text1ID": 2,
+        "Text2ID": 0,
+        "Signed1": 1,
+        "Signed2": 0,
+        "Name": "szSpellShot04"
+      },
+      {
+        "ID": 5,
+        "Variable": 4,
+        "Icon": 0,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szSpellShot05"
+      },
+      {
+        "ID": 6,
+        "Variable": 0,
+        "Icon": 0,
+        "Text1ID": 3,
+        "Text2ID": 2,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szSpellShot06"
+      },
+      {
+        "ID": 7,
+        "Variable": 1,
+        "Icon": 0,
+        "Text1ID": 4,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szSpellShot07"
+      },
+      {
+        "ID": 8,
+        "Variable": 1,
+        "Icon": 0,
+        "Text1ID": 4,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szSpellShot08"
+      },
+      {
+        "ID": 9,
+        "Variable": 0,
+        "Icon": 0,
+        "Text1ID": 2,
+        "Text2ID": 2,
+        "Signed1": 1,
+        "Signed2": 0,
+        "Name": "szSpellShot09"
+      },
+      {
+        "ID": 10,
+        "Variable": 1,
+        "Icon": 0,
+        "Text1ID": 4,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szSpellShot0A"
+      },
+      {
+        "ID": 11,
+        "Variable": 1,
+        "Icon": 0,
+        "Text1ID": 1,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szSpellShot0B"
+      },
+      {
+        "ID": 12,
+        "Variable": 1,
+        "Icon": 0,
+        "Text1ID": 1,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szSpellShot0C"
+      },
+      {
+        "ID": 13,
+        "Variable": 0,
+        "Icon": 0,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szSpellShot0D"
+      },
+      {
+        "ID": 14,
+        "Variable": 0,
+        "Icon": 0,
+        "Text1ID": 1,
+        "Text2ID": 1,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szSpellShot0E"
+      },
+      {
+        "ID": 15,
+        "Variable": 0,
+        "Icon": 0,
+        "Text1ID": 1,
+        "Text2ID": 1,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szSpellShot0F"
+      },
+      {
+        "ID": 16,
+        "Variable": 0,
+        "Icon": 0,
+        "Text1ID": 1,
+        "Text2ID": 1,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szSpellShot10"
+      },
+      {
+        "ID": 17,
+        "Variable": 0,
+        "Icon": 0,
+        "Text1ID": 1,
+        "Text2ID": 1,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szSpellShot11"
+      },
+      {
+        "ID": 18,
+        "Variable": 0,
+        "Icon": 0,
+        "Text1ID": 1,
+        "Text2ID": 1,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szSpellShot12"
+      },
+      {
+        "ID": 19,
+        "Variable": 0,
+        "Icon": 0,
+        "Text1ID": 1,
+        "Text2ID": 1,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szSpellShot13"
+      },
+      {
+        "ID": 20,
+        "Variable": 1,
+        "Icon": 0,
+        "Text1ID": 2,
+        "Text2ID": 0,
+        "Signed1": 1,
+        "Signed2": 0,
+        "Name": "szSpellShot14"
+      },
+      {
+        "ID": 21,
+        "Variable": 1,
+        "Icon": 0,
+        "Text1ID": 1,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szSpellShot15"
+      },
+      {
+        "ID": 22,
+        "Variable": 1,
+        "Icon": 0,
+        "Text1ID": 4,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szSpellShot16"
+      },
+      {
+        "ID": 23,
+        "Variable": 0,
+        "Icon": 0,
+        "Text1ID": 1,
+        "Text2ID": 1,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szSpellShot17"
+      },
+      {
+        "ID": 24,
+        "Variable": 0,
+        "Icon": 0,
+        "Text1ID": 1,
+        "Text2ID": 1,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szSpellShot18"
+      },
+      {
+        "ID": 25,
+        "Variable": 0,
+        "Icon": 0,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szSpellShot19"
+      },
+      {
+        "ID": 26,
+        "Variable": 1,
+        "Icon": 0,
+        "Text1ID": 1,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szSpellShot1A"
+      },
+      {
+        "ID": 27,
+        "Variable": 0,
+        "Icon": 0,
+        "Text1ID": 1,
+        "Text2ID": 1,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szSpellShot1B"
+      },
+      {
+        "ID": 28,
+        "Variable": 1,
+        "Icon": 0,
+        "Text1ID": 4,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szSpellShot1C"
+      },
+      {
+        "ID": 29,
+        "Variable": 0,
+        "Icon": 0,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szSpellShot1D"
+      },
+      {
+        "ID": 30,
+        "Variable": 1,
+        "Icon": 0,
+        "Text1ID": 1,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szSpellShot1E"
+      },
+      {
+        "ID": 31,
+        "Variable": 1,
+        "Icon": 0,
+        "Text1ID": 4,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szSpellShot1F"
+      },
+      {
+        "ID": 32,
+        "Variable": 255,
+        "Icon": 0,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szSpellShot20"
+      },
+      {
+        "ID": 33,
+        "Variable": 1,
+        "Icon": 0,
+        "Text1ID": 6,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szSpellShot21"
+      },
+      {
+        "ID": 34,
+        "Variable": 0,
+        "Icon": 0,
+        "Text1ID": 1,
+        "Text2ID": 1,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szSpellShot22"
+      },
+      {
+        "ID": 35,
+        "Variable": 1,
+        "Icon": 0,
+        "Text1ID": 1,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szSpellShot23"
+      },
+      {
+        "ID": 36,
+        "Variable": 1,
+        "Icon": 0,
+        "Text1ID": 1,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szSpellShot24"
+      },
+      {
+        "ID": 37,
+        "Variable": 0,
+        "Icon": 0,
+        "Text1ID": 1,
+        "Text2ID": 1,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szSpellShot25"
+      },
+      {
+        "ID": 38,
+        "Variable": 0,
+        "Icon": 0,
+        "Text1ID": 5,
+        "Text2ID": 2,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szSpellShot26"
+      },
+      {
+        "ID": 39,
+        "Variable": 0,
+        "Icon": 0,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szSpellShot27"
+      },
+      {
+        "ID": 40,
+        "Variable": 0,
+        "Icon": 0,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szSpellShot28"
+      },
+      {
+        "ID": 41,
+        "Variable": 0,
+        "Icon": 0,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szSpellShot29"
+      },
+      {
+        "ID": 42,
+        "Variable": 0,
+        "Icon": 0,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szSpellShot2A"
+      },
+      {
+        "ID": 43,
+        "Variable": 1,
+        "Icon": 0,
+        "Text1ID": 4,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szSpellShot2B"
+      },
+      {
+        "ID": 44,
+        "Variable": 1,
+        "Icon": 0,
+        "Text1ID": 1,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szSpellShot2C"
+      },
+      {
+        "ID": 45,
+        "Variable": 0,
+        "Icon": 0,
+        "Text1ID": 4,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szSpellShot2D"
+      },
+      {
+        "ID": 46,
+        "Variable": 1,
+        "Icon": 0,
+        "Text1ID": 4,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szSpellShot2E"
+      },
+      {
+        "ID": 47,
+        "Variable": 1,
+        "Icon": 0,
+        "Text1ID": 1,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szSpellShot2F"
+      },
+      {
+        "ID": 48,
+        "Variable": 1,
+        "Icon": 0,
+        "Text1ID": 1,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szSpellShot30"
+      },
+      {
+        "ID": 49,
+        "Variable": 1,
+        "Icon": 0,
+        "Text1ID": 1,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szSpellShot31"
+      },
+      {
+        "ID": 50,
+        "Variable": 0,
+        "Icon": 0,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szSpellShot32"
+      },
+      {
+        "ID": 51,
+        "Variable": 0,
+        "Icon": 0,
+        "Text1ID": 1,
+        "Text2ID": 1,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szSpellShot33"
+      },
+      {
+        "ID": 52,
+        "Variable": 1,
+        "Icon": 0,
+        "Text1ID": 1,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szSpellShot34"
+      },
+      {
+        "ID": 53,
+        "Variable": 1,
+        "Icon": 0,
+        "Text1ID": 3,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szSpellShot35"
+      },
+      {
+        "ID": 54,
+        "Variable": 0,
+        "Icon": 0,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szSpellShot36"
+      },
+      {
+        "ID": 55,
+        "Variable": 0,
+        "Icon": 0,
+        "Text1ID": 1,
+        "Text2ID": 1,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szSpellShot37"
+      },
+      {
+        "ID": 56,
+        "Variable": 1,
+        "Icon": 0,
+        "Text1ID": 1,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szSpellShot38"
+      },
+      {
+        "ID": 57,
+        "Variable": 1,
+        "Icon": 0,
+        "Text1ID": 1,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szSpellShot39"
+      },
+      {
+        "ID": 58,
+        "Variable": 0,
+        "Icon": 0,
+        "Text1ID": 1,
+        "Text2ID": 1,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szSpellShot3A"
+      },
+      {
+        "ID": 59,
+        "Variable": 1,
+        "Icon": 0,
+        "Text1ID": 1,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szSpellShot3B"
+      },
+      {
+        "ID": 60,
+        "Variable": 3,
+        "Icon": 0,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szSpellShot3C"
+      },
+      {
+        "ID": 61,
+        "Variable": 0,
+        "Icon": 0,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szSpellShot3D"
+      },
+      {
+        "ID": 62,
+        "Variable": 0,
+        "Icon": 0,
+        "Text1ID": 1,
+        "Text2ID": 2,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szSpellShot3E"
+      },
+      {
+        "ID": 63,
+        "Variable": 1,
+        "Icon": 0,
+        "Text1ID": 1,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szSpellShot3F"
+      },
+      {
+        "ID": 64,
+        "Variable": 0,
+        "Icon": 0,
+        "Text1ID": 1,
+        "Text2ID": 1,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szSpellShot40"
+      },
+      {
+        "ID": 65,
+        "Variable": 0,
+        "Icon": 0,
+        "Text1ID": 1,
+        "Text2ID": 1,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szSpellShot41"
+      }
+    ],
+    "GCreatures": [
+      {
+        "ID": 1,
+        "Variable": 1,
+        "Icon": 1100,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szBadCreatureImp"
+      },
+      {
+        "ID": 7,
+        "Variable": 7,
+        "Icon": 1101,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szBadCreatureGoblin"
+      },
+      {
+        "ID": 5,
+        "Variable": 5,
+        "Icon": 1102,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szBadCreatureWarLock"
+      },
+      {
+        "ID": 12,
+        "Variable": 12,
+        "Icon": 1103,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szBadCreatureFireFly"
+      },
+      {
+        "ID": 10,
+        "Variable": 10,
+        "Icon": 1104,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szBadCreatureTroll"
+      },
+      {
+        "ID": 6,
+        "Variable": 6,
+        "Icon": 1105,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szBadCreatureDarkElf"
+      },
+      {
+        "ID": 9,
+        "Variable": 9,
+        "Icon": 1106,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szBadCreatureSkeleton"
+      },
+      {
+        "ID": 4,
+        "Variable": 4,
+        "Icon": 1107,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szBadCreatureDarkMistress"
+      },
+      {
+        "ID": 11,
+        "Variable": 11,
+        "Icon": 1108,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szBadCreatureSalamander"
+      },
+      {
+        "ID": 24,
+        "Variable": 24,
+        "Icon": 1109,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szBadCreatureRogue"
+      },
+      {
+        "ID": 3,
+        "Variable": 3,
+        "Icon": 1110,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szBadCreatureBileDemon"
+      },
+      {
+        "ID": 8,
+        "Variable": 8,
+        "Icon": 1111,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szBadCreatureVampire"
+      },
+      {
+        "ID": 22,
+        "Variable": 22,
+        "Icon": 1112,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szBadCreatureDarkKnight"
+      },
+      {
+        "ID": 23,
+        "Variable": 23,
+        "Icon": 1113,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szBadCreatureDarkAngel"
+      },
+      {
+        "ID": 45,
+        "Variable": 45,
+        "Icon": 1114,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szBadCreatureMaiden"
+      },
+      {
+        "ID": 27,
+        "Variable": 27,
+        "Icon": 1115,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szBadCreatureHorny"
+      },
+      {
+        "ID": 33,
+        "Variable": 33,
+        "Icon": 1101,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szBadCreatureGoblinElite"
+      },
+      {
+        "ID": 34,
+        "Variable": 34,
+        "Icon": 1102,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szBadCreatureWarLockElite"
+      },
+      {
+        "ID": 32,
+        "Variable": 32,
+        "Icon": 1103,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szBadCreatureFireFlyElite"
+      },
+      {
+        "ID": 35,
+        "Variable": 35,
+        "Icon": 1104,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szBadCreatureTrollElite"
+      },
+      {
+        "ID": 36,
+        "Variable": 36,
+        "Icon": 1105,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szBadCreatureDarkElfElite"
+      },
+      {
+        "ID": 37,
+        "Variable": 37,
+        "Icon": 1106,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szBadCreatureSkeletonElite"
+      },
+      {
+        "ID": 38,
+        "Variable": 38,
+        "Icon": 1107,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szBadCreatureDarkMistressElite"
+      },
+      {
+        "ID": 39,
+        "Variable": 39,
+        "Icon": 1108,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szBadCreatureSalamanderElite"
+      },
+      {
+        "ID": 40,
+        "Variable": 40,
+        "Icon": 1109,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szBadCreatureRogueElite"
+      },
+      {
+        "ID": 41,
+        "Variable": 41,
+        "Icon": 1110,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szBadCreatureBileDemonElite"
+      },
+      {
+        "ID": 42,
+        "Variable": 42,
+        "Icon": 1111,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szBadCreatureVampireElite"
+      },
+      {
+        "ID": 43,
+        "Variable": 43,
+        "Icon": 1112,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szBadCreatureDarkKnightElite"
+      },
+      {
+        "ID": 44,
+        "Variable": 44,
+        "Icon": 1113,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szBadCreatureDarkAngelElite"
+      },
+      {
+        "ID": 14,
+        "Variable": 14,
+        "Icon": 1200,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szGoodCreatureDwarf"
+      },
+      {
+        "ID": 13,
+        "Variable": 13,
+        "Icon": 1201,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szGoodCreatureKnight"
+      },
+      {
+        "ID": 18,
+        "Variable": 18,
+        "Icon": 1202,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szGoodCreatureThief"
+      },
+      {
+        "ID": 25,
+        "Variable": 25,
+        "Icon": 1203,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szGoodCreatureGuard"
+      },
+      {
+        "ID": 16,
+        "Variable": 16,
+        "Icon": 1204,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szGoodCreatureWizard"
+      },
+      {
+        "ID": 15,
+        "Variable": 15,
+        "Icon": 1205,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szGoodCreatureGiant"
+      },
+      {
+        "ID": 17,
+        "Variable": 17,
+        "Icon": 1206,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szGoodCreatureElvenArcher"
+      },
+      {
+        "ID": 19,
+        "Variable": 19,
+        "Icon": 1207,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szGoodCreatureMonk"
+      },
+      {
+        "ID": 20,
+        "Variable": 20,
+        "Icon": 1208,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szGoodCreatureFairy"
+      },
+      {
+        "ID": 30,
+        "Variable": 30,
+        "Icon": 1209,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szGoodCreatureRoyalGuard"
+      },
+      {
+        "ID": 28,
+        "Variable": 28,
+        "Icon": 1210,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szGoodCreatureStoneGiant"
+      },
+      {
+        "ID": 29,
+        "Variable": 29,
+        "Icon": 1211,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szGoodCreatureLordOfTheLand"
+      },
+      {
+        "ID": 21,
+        "Variable": 21,
+        "Icon": 1212,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szGoodCreatureKingReginald"
+      },
+      {
+        "ID": 26,
+        "Variable": 26,
+        "Icon": 1213,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szGoodCreaturePrinceFelix"
+      },
+      {
+        "ID": 31,
+        "Variable": 31,
+        "Icon": 1214,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szGoodCreaturePrinceBalder"
+      },
+      {
+        "ID": 2,
+        "Variable": 2,
+        "Icon": 1215,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szGoodCreaturePrinceTristan"
+      }
+    ],
+    "Objects": [
+      {
+        "ID": 1,
+        "Variable": 0,
+        "Icon": 2001,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject01"
+      },
+      {
+        "ID": 2,
+        "Variable": 0,
+        "Icon": 2002,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject02"
+      },
+      {
+        "ID": 3,
+        "Variable": 0,
+        "Icon": 2003,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject03"
+      },
+      {
+        "ID": 4,
+        "Variable": 0,
+        "Icon": 2004,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject04"
+      },
+      {
+        "ID": 28,
+        "Variable": 0,
+        "Icon": 2028,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject1C"
+      },
+      {
+        "ID": 5,
+        "Variable": 0,
+        "Icon": 2005,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject05"
+      },
+      {
+        "ID": 36,
+        "Variable": 0,
+        "Icon": 2036,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject24"
+      },
+      {
+        "ID": 37,
+        "Variable": 0,
+        "Icon": 2037,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject25"
+      },
+      {
+        "ID": 38,
+        "Variable": 0,
+        "Icon": 2038,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject26"
+      },
+      {
+        "ID": 39,
+        "Variable": 0,
+        "Icon": 2039,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject27"
+      },
+      {
+        "ID": 92,
+        "Variable": 0,
+        "Icon": 2092,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject5C"
+      },
+      {
+        "ID": 40,
+        "Variable": 0,
+        "Icon": 2040,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject28"
+      },
+      {
+        "ID": 41,
+        "Variable": 0,
+        "Icon": 2041,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject29"
+      },
+      {
+        "ID": 42,
+        "Variable": 0,
+        "Icon": 2042,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject2A"
+      },
+      {
+        "ID": 43,
+        "Variable": 0,
+        "Icon": 2043,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject2B"
+      },
+      {
+        "ID": 44,
+        "Variable": 0,
+        "Icon": 2044,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject2C"
+      },
+      {
+        "ID": 138,
+        "Variable": 0,
+        "Icon": 2138,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject8A"
+      },
+      {
+        "ID": 52,
+        "Variable": 0,
+        "Icon": 2052,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject34"
+      },
+      {
+        "ID": 53,
+        "Variable": 0,
+        "Icon": 2053,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject35"
+      },
+      {
+        "ID": 54,
+        "Variable": 0,
+        "Icon": 2054,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject36"
+      },
+      {
+        "ID": 55,
+        "Variable": 0,
+        "Icon": 2055,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject37"
+      },
+      {
+        "ID": 56,
+        "Variable": 0,
+        "Icon": 2056,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject38"
+      },
+      {
+        "ID": 57,
+        "Variable": 0,
+        "Icon": 2057,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject39"
+      },
+      {
+        "ID": 9,
+        "Variable": 0,
+        "Icon": 2009,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject09"
+      },
+      {
+        "ID": 11,
+        "Variable": 0,
+        "Icon": 2011,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject0B"
+      },
+      {
+        "ID": 12,
+        "Variable": 0,
+        "Icon": 2012,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject0C"
+      },
+      {
+        "ID": 45,
+        "Variable": 0,
+        "Icon": 2045,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject2D"
+      },
+      {
+        "ID": 47,
+        "Variable": 0,
+        "Icon": 2047,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject2F"
+      },
+      {
+        "ID": 143,
+        "Variable": 0,
+        "Icon": 2143,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject8F"
+      },
+      {
+        "ID": 144,
+        "Variable": 0,
+        "Icon": 2144,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject90"
+      },
+      {
+        "ID": 49,
+        "Variable": 0,
+        "Icon": 2049,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject31"
+      },
+      {
+        "ID": 50,
+        "Variable": 0,
+        "Icon": 2050,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject32"
+      },
+      {
+        "ID": 31,
+        "Variable": 0,
+        "Icon": 2031,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject1F"
+      },
+      {
+        "ID": 32,
+        "Variable": 0,
+        "Icon": 2032,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject20"
+      },
+      {
+        "ID": 33,
+        "Variable": 0,
+        "Icon": 2033,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject21"
+      },
+      {
+        "ID": 34,
+        "Variable": 0,
+        "Icon": 2034,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject22"
+      },
+      {
+        "ID": 48,
+        "Variable": 0,
+        "Icon": 2048,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject30"
+      },
+      {
+        "ID": 75,
+        "Variable": 0,
+        "Icon": 2075,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject4B"
+      },
+      {
+        "ID": 46,
+        "Variable": 0,
+        "Icon": 2046,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject2E"
+      },
+      {
+        "ID": 67,
+        "Variable": 0,
+        "Icon": 2067,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject43"
+      },
+      {
+        "ID": 112,
+        "Variable": 0,
+        "Icon": 2112,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject70"
+      },
+      {
+        "ID": 87,
+        "Variable": 0,
+        "Icon": 2087,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject57"
+      },
+      {
+        "ID": 65,
+        "Variable": 0,
+        "Icon": 2065,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject41"
+      },
+      {
+        "ID": 71,
+        "Variable": 0,
+        "Icon": 2071,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject47"
+      },
+      {
+        "ID": 113,
+        "Variable": 0,
+        "Icon": 2113,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject71"
+      },
+      {
+        "ID": 35,
+        "Variable": 0,
+        "Icon": 2035,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject23"
+      },
+      {
+        "ID": 60,
+        "Variable": 0,
+        "Icon": 2060,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject3C"
+      },
+      {
+        "ID": 130,
+        "Variable": 0,
+        "Icon": 2130,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject82"
+      },
+      {
+        "ID": 142,
+        "Variable": 0,
+        "Icon": 2142,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject8E"
+      },
+      {
+        "ID": 66,
+        "Variable": 0,
+        "Icon": 2066,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject42"
+      },
+      {
+        "ID": 76,
+        "Variable": 0,
+        "Icon": 2076,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject4C"
+      },
+      {
+        "ID": 77,
+        "Variable": 0,
+        "Icon": 2077,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject4D"
+      },
+      {
+        "ID": 78,
+        "Variable": 0,
+        "Icon": 2078,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject4E"
+      },
+      {
+        "ID": 79,
+        "Variable": 0,
+        "Icon": 2079,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject4F"
+      },
+      {
+        "ID": 80,
+        "Variable": 0,
+        "Icon": 2080,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject50"
+      },
+      {
+        "ID": 81,
+        "Variable": 0,
+        "Icon": 2081,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject51"
+      },
+      {
+        "ID": 82,
+        "Variable": 0,
+        "Icon": 2082,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject52"
+      },
+      {
+        "ID": 84,
+        "Variable": 0,
+        "Icon": 2084,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject54"
+      },
+      {
+        "ID": 85,
+        "Variable": 0,
+        "Icon": 2085,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject55"
+      },
+      {
+        "ID": 141,
+        "Variable": 0,
+        "Icon": 2141,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject8D"
+      },
+      {
+        "ID": 101,
+        "Variable": 0,
+        "Icon": 2101,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject65"
+      },
+      {
+        "ID": 102,
+        "Variable": 0,
+        "Icon": 2102,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject66"
+      },
+      {
+        "ID": 108,
+        "Variable": 0,
+        "Icon": 2108,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject6C"
+      },
+      {
+        "ID": 110,
+        "Variable": 0,
+        "Icon": 2110,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject6E"
+      },
+      {
+        "ID": 114,
+        "Variable": 0,
+        "Icon": 2114,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject72"
+      },
+      {
+        "ID": 7,
+        "Variable": 0,
+        "Icon": 2007,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject07"
+      },
+      {
+        "ID": 8,
+        "Variable": 0,
+        "Icon": 2008,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject08"
+      },
+      {
+        "ID": 10,
+        "Variable": 0,
+        "Icon": 2010,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject0A"
+      },
+      {
+        "ID": 14,
+        "Variable": 0,
+        "Icon": 2014,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject0E"
+      },
+      {
+        "ID": 15,
+        "Variable": 0,
+        "Icon": 2015,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject0F"
+      },
+      {
+        "ID": 16,
+        "Variable": 0,
+        "Icon": 2016,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject10"
+      },
+      {
+        "ID": 29,
+        "Variable": 0,
+        "Icon": 2029,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject1D"
+      },
+      {
+        "ID": 30,
+        "Variable": 0,
+        "Icon": 2030,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject1E"
+      },
+      {
+        "ID": 51,
+        "Variable": 0,
+        "Icon": 2051,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject33"
+      },
+      {
+        "ID": 58,
+        "Variable": 0,
+        "Icon": 2058,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject3A"
+      },
+      {
+        "ID": 59,
+        "Variable": 0,
+        "Icon": 2059,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject3B"
+      },
+      {
+        "ID": 61,
+        "Variable": 0,
+        "Icon": 2061,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject3D"
+      },
+      {
+        "ID": 62,
+        "Variable": 0,
+        "Icon": 2062,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject3E"
+      },
+      {
+        "ID": 63,
+        "Variable": 0,
+        "Icon": 2063,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject3F"
+      },
+      {
+        "ID": 64,
+        "Variable": 0,
+        "Icon": 2064,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject40"
+      },
+      {
+        "ID": 68,
+        "Variable": 0,
+        "Icon": 2068,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject44"
+      },
+      {
+        "ID": 69,
+        "Variable": 0,
+        "Icon": 2069,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject45"
+      },
+      {
+        "ID": 72,
+        "Variable": 0,
+        "Icon": 2072,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject48"
+      },
+      {
+        "ID": 73,
+        "Variable": 0,
+        "Icon": 2073,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject49"
+      },
+      {
+        "ID": 74,
+        "Variable": 0,
+        "Icon": 2074,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject4A"
+      },
+      {
+        "ID": 86,
+        "Variable": 0,
+        "Icon": 2086,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject56"
+      },
+      {
+        "ID": 88,
+        "Variable": 0,
+        "Icon": 2088,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject58"
+      },
+      {
+        "ID": 96,
+        "Variable": 0,
+        "Icon": 2096,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject60"
+      },
+      {
+        "ID": 17,
+        "Variable": 0,
+        "Icon": 2017,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject11"
+      },
+      {
+        "ID": 104,
+        "Variable": 0,
+        "Icon": 2104,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject68"
+      },
+      {
+        "ID": 105,
+        "Variable": 0,
+        "Icon": 2105,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject69"
+      },
+      {
+        "ID": 106,
+        "Variable": 0,
+        "Icon": 2106,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject6A"
+      },
+      {
+        "ID": 107,
+        "Variable": 0,
+        "Icon": 2107,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject6B"
+      },
+      {
+        "ID": 137,
+        "Variable": 0,
+        "Icon": 2137,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject89"
+      },
+      {
+        "ID": 109,
+        "Variable": 0,
+        "Icon": 2109,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject6D"
+      },
+      {
+        "ID": 111,
+        "Variable": 0,
+        "Icon": 2111,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject6F"
+      },
+      {
+        "ID": 116,
+        "Variable": 0,
+        "Icon": 2116,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject74"
+      },
+      {
+        "ID": 131,
+        "Variable": 0,
+        "Icon": 2131,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject83"
+      },
+      {
+        "ID": 132,
+        "Variable": 0,
+        "Icon": 2132,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject84"
+      },
+      {
+        "ID": 89,
+        "Variable": 0,
+        "Icon": 2089,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject59"
+      },
+      {
+        "ID": 134,
+        "Variable": 0,
+        "Icon": 2133,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject86"
+      },
+      {
+        "ID": 135,
+        "Variable": 0,
+        "Icon": 2134,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject87"
+      },
+      {
+        "ID": 136,
+        "Variable": 0,
+        "Icon": 2135,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject88"
+      },
+      {
+        "ID": 139,
+        "Variable": 0,
+        "Icon": 2139,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject8B"
+      },
+      {
+        "ID": 6,
+        "Variable": 0,
+        "Icon": 2006,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject06"
+      },
+      {
+        "ID": 18,
+        "Variable": 0,
+        "Icon": 2018,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject12"
+      },
+      {
+        "ID": 19,
+        "Variable": 0,
+        "Icon": 2019,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject13"
+      },
+      {
+        "ID": 20,
+        "Variable": 0,
+        "Icon": 2020,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject14"
+      },
+      {
+        "ID": 21,
+        "Variable": 0,
+        "Icon": 2021,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject15"
+      },
+      {
+        "ID": 22,
+        "Variable": 0,
+        "Icon": 2022,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject16"
+      },
+      {
+        "ID": 23,
+        "Variable": 0,
+        "Icon": 2023,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject17"
+      },
+      {
+        "ID": 24,
+        "Variable": 0,
+        "Icon": 2024,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject18"
+      },
+      {
+        "ID": 25,
+        "Variable": 0,
+        "Icon": 2025,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject19"
+      },
+      {
+        "ID": 26,
+        "Variable": 0,
+        "Icon": 2026,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject1A"
+      },
+      {
+        "ID": 27,
+        "Variable": 0,
+        "Icon": 2027,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject1B"
+      },
+      {
+        "ID": 145,
+        "Variable": 0,
+        "Icon": 2145,
+        "Text1ID": 0,
+        "Text2ID": 0,
+        "Signed1": 0,
+        "Signed2": 0,
+        "Name": "szMapWorldObject91"
+      }
+    ]
+  },
+  "AllMainFieldsEnabledForAllRows": true,
+  "ProjectileSlots": [
+    "Shot",
+    "Upgrade"
+  ],
+  "SourceCompilerZeroData2ForForms": [
+    1,
+    255
+  ],
+  "SourceCompilerFlagClearMasks": {
+    "0xDC": 12
+  },
+  "UpgradedRechargeIsInteger": true,
+  "PageSaveDoesNotNormalizeInactiveShotArguments": true,
+  "SourceShotSecondSpinnerTargetsFirstNumericControl": true,
+  "ImplementedCompleteSpellPage": false,
+  "WholeGoalComplete": false
+}

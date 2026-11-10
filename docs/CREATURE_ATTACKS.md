@@ -1,0 +1,36 @@
+# Creature attacks
+
+The global definitions tab has a specialized EN/RU editor under **Creatures → Attacks**. It covers all 23 original attack fields: three creature-spell slots (six fields each) and melee (five fields). Other creature-definition groups, original source and installed game maps are preserved.
+
+## Source evidence
+
+- `Source/Includes/GlobalVariables.h`, `GLOBALCREATURE`: `Shot1` / `Shot2` / `Shot3` each store ID, acquisition level, casting delay and X/Y/Z origin offsets. Melee stores `MeleeID`, `RechargeTime`, `Range`, `Dammage` (the original spelling) and `Delay`.
+- `Source/Sources/Datas/Datas_GlobalVariables.c`: `GCrSpells` has 42 selectable entries (None 0 and creature spells 1–41); FFFFFFFF is its **terminating sentinel**, not a selectable spell. `GCrMelee` has 41 entries, in source order 1, 2, 3, 15, 4…14, 16…41. Its first four names are Blade, Point, Body and Scythe, not the corresponding ranged-spell names. It has no None entry. The remaining 37 entries use creature-spell names.
+- `Source/Sources/Properties/GlobalVariables/Properties_Global_Creatures.c`, `Properties_GlobalInitCr` page 3 and `Properties_GlobalAttacksProc`: acquisition-level pickers have 0–10; the source inserts zero before the ten levels from `Misc_CreateLevelComboBoxList` in `Source/Sources/Misc/Misc_Display.c`. Melee damage is an ordinary integer 0–32767. Recharge accepts whole parts 0–255; range, attack delay and spell delays accept 0–1000. Signed offsets accept whole parts −32767–32767. The fractional endpoint follows the existing exact [source numeric rules](GLOBAL_DEFINITION_NUMBERS.md), not invented seconds/metres or rounding to whole values.
+- `Properties_GlobalChangeShots`: selecting None disables the level/delay/offset controls but does not reset their contents. `Properties_GlobalSaveChangesCr`, page 3, still copies **all** 23 control values irrespective of None. Thus parameters typed before selecting None must also be saved. This is different from the inactive form arguments in the projectile editor.
+- `Source/Sources/Compiler/Compiler_Generate.c`: spell IDs/levels and melee ID are BYTE; melee damage is WORD; all fractional attack fields are LONG. Independent test offsets include the three spell blocks 0x0DC4–0x0E0B, melee ID 0x0F50, recharge 0x0EF8, range 0x0EEC, damage 0x0F14, and the nonadjacent melee delay 0x0CF9. Project IDs are UINT and numeric parameters LONG. Compilation retains the original BYTE/WORD/LONG bit casts.
+
+## Editing and safety
+
+Named spell and melee pickers preserve an explicit unknown selection rather than choosing the first entry. Imported BYTE/native and full-width UINT/project IDs can be retained; new specialized selections must be original catalogue entries. Native melee zero, not present in the original picker, is retained as an unknown imported value instead of inventing a new None option. Unknown nonzero spell IDs do not change the verified common parameter layout, so those parameters remain editable.
+
+Acquisition levels and damage use ordinary integers. The other 15 fields use exact integer / 4096 display with all low bits preserved, including comma/dot input, negative offsets and unsigned 20.12 aliases stored in LONG. Unchanged imported values outside manual limits are retained; new values are validated against the source control and physical storage. An unchanged apply never creates history or a fresh-project override.
+
+Typing is local; switching among all four slots or changing EN/RU retains every slot's input. Apply preflights the whole 23-field set and saves it as one undo transaction. A bad hidden-slot input cannot partially apply another slot. None disables the controls without clearing loaded or pending values. Discard reloads all four slots. Other source groups, opaque native bytes and the unused 46th project creature slot are unaffected.
+
+Confirmed source reset reloads the complete attack draft and the selected generic input even if the stored reset is a byte-exact no-op. This fixes a reproduced case where unapplied values survived the reset without a document-change event; no-op reset still creates no history.
+
+Core drafts are immutable and bound to their owning document, creature and exact loaded 23-field baseline. Concurrent attack edits or a pending stored-property-grid commit cannot apply an older snapshot, even if the pending change belongs to another attack slot. Changes in another creature group remain independent. Missing/unverified native definitions show blank current controls and remain read-only; source reference defaults are not substituted. Closing/replacing the document removes draft state and dynamically registered controls.
+
+## Verification
+
+`CreatureAttackChecks` has independent catalogue-order/name and literal 23-offset assertions. It re-enters all 45 creature defaults in both formats without writes, exercises every source type in each of the four slots, independently checks native bytes and fixed-point values, later-slot isolation, all-attack atomic apply, exact undo/redo/no-op, numeric endpoints and malformed/out-of-range input, source None transitions including pending parameters, saved/reopened maps, original compilation casts, unknown types/levels and signed raw aliases, unrelated-group retention, stale/foreign drafts and missing-native guards. It runs in the full suite or with `--attacks-only`.
+
+Four WPF EN/RU × native/project cases exercise actual named choices, all source spell activations, 0–10 levels, contextual melee labels, fractional/signed input, all four cached slot drafts, live language switching, all-slot atomic/no-op apply, None and pending parameter retention, hidden-slot validation, damage limits, native BYTE versus full-width project UINT imports, type repair without normalization, actual pending generic DataGrid edits in a different slot, undo, missing-native and close guards. `--attacks-only` runs those cases. `DK2_ATTACKS_UI_ARTIFACTS` writes five views (three spell slots, melee and None) × four language/format combinations (20 images).
+
+Original Win32-dialog and in-game acceptance remain pending. Level modifiers, other option catalogues, unverified native variants, visual assets and other incomplete rows remain in [the parity ledger](FEATURE_PARITY.md). This milestone is not a full original-editor parity claim.
+
+Verified 2026-10-06 after the no-op reset fix: Debug/Release builds have zero warnings/errors; Debug core passes all 52 groups; Release core plus local corpus passes 115 cases (52 core + six text inputs + 57 native maps). Debug and Release WPF each pass 124 cases, including four loaded-map cases. Twenty final attack views are saved under `Test/CreatureAttacksUiQA-Final-20261006`; inspected RU spell and EN melee renders show readable names, complete controls, exact fractional values and source bounds. `git diff --exit-code -- Source Binaries` confirms preserved original source/default files. These are automated regression and rendered-control checks, not historical-dialog/gameplay acceptance.
+
+
+Продолжение: [Attacks16 input/step callbacks и обе панели](CREATURE_ATTACK_INPUT_CALLBACKS.md), CreatureAttackInputs-20261019. Далее7 числовых controls Possession/CrSpells; I11 остаётся открыт.

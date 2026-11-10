@@ -1,0 +1,2563 @@
+{
+  "Scope": "Complete original global door definition page6822",
+  "InputHashes": {
+    "Source/Sources/Properties/GlobalVariables/Properties_Global_Elements.c": "c7095841095c4ec90193efdf3d24a32ac641ed9e5d8bed5b0fcf69d74b3d1614",
+    "Source/Sources/Datas/Datas_GlobalVariables.c": "c6d78d87522ec55963cc983e016356786f548b2a70cbede2ab70237ad049d456",
+    "Source/Sources/Datas/Datas_Effects.c": "2c8789547568796cd19455410fce7210363b2c51150655e47bd10365ec24b28d",
+    "Source/Sources/Properties/GlobalVariables/Properties_Global_Functions.c": "5783f781840b41e4db98b269930e211bd0bfe10666deb0c25ae8cfd15df69a94",
+    "Source/Sources/Compiler/Compiler_Generate.c": "4a2952b0b687149302b2f0374d08e5e2316c28875d98036059af4f8c6d84ac3b",
+    "Source/Includes/GlobalVariables.h": "d027d5a861f611de5347d807fc23aa3f871553b34a920b2973b2c1136784d129",
+    "Source/Resources/Editor.rc": "eb07ed2217a81348a03c75e302d09fdcb5e34b6099d1bd60229ba5fa9bd8920d",
+    "Source/Sources/Misc/Misc_Display.c": "b3fdf608d551981e0e9a593ba4ae20b34a52c8336ae6f7c65431ac23d8502769"
+  },
+  "Functions": {
+    "Properties_GlobalVariables": "Properties_GlobalVariables(HWND hWnd)\n{\n\tstatic DLGPROC\t pfn[]={Properties_GlobalTerrainProc,\n\t\t\t\tProperties_GlobalRoomProc,\n\t\t\t\tProperties_GlobalDoorProc,\n\t\t\t\tProperties_GlobalTrapProc,\n\t\t\t\tProperties_GlobalSpellsProc};\n\tPROPSHEETHEADER\t*psh;\n\tPROPSHEETPAGE\t*psp;\n\tGLOBALCTX\t*Context;\n\tint\t\t Result;\n\n\tpsh = GlobalAlloc(GPTR,sizeof(PROPSHEETHEADER));\n\tif (!psh) goto Error_0;\n\tpsp = GlobalAlloc(GPTR,sizeof(PROPSHEETPAGE)*5);\n\tif (!psp) goto Error_1;\n\tContext = GlobalAlloc(GPTR,sizeof(GLOBALCTX));\n\tif (!Context) goto Error_2;\n\n\tfor (Result = 0; Result != 5; Result++)\n\t\t{\n\t\tpsp[Result].dwSize = sizeof(PROPSHEETPAGE);\n\t\tpsp[Result].hInstance = hInstance;\n\t\tpsp[Result].DUMMYUNIONNAME.pszTemplate = MAKEINTRESOURCE(6820+Result);\n\t\tpsp[Result].pfnDlgProc = pfn[Result];\n\t\tpsp[Result].lParam = (LPARAM)Context;\n\t\t}\n\n\tpsh->dwSize = sizeof(PROPSHEETHEADER);\n\tpsh->dwFlags = PSH_PROPSHEETPAGE|PSH_USEICONID;\n\tpsh->hwndParent = hWnd;\n\tpsh->hInstance = hInstance;\n\tpsh->DUMMYUNIONNAME.pszIcon = MAKEINTRESOURCE(1);\n\tpsh->pszCaption = szGlobalVariables;\n\tpsh->nPages = 5;\n\tpsh->DUMMYUNIONNAME3.ppsp = psp;\n\n\tif (!Misc_CreateImageList(GTerrains,&Context->TerrainsImages,32,32,FALSE))\n\t\tgoto Error_4;\n\tif (!Misc_CreateImageList(GRooms,&Context->RoomsImages,32,32,FALSE))\n\t\tgoto Error_4;\n\tif (!Misc_CreateImageList(GDoors,&Context->DoorsImages,32,32,FALSE))\n\t\tgoto Error_4;\n\tif (!Misc_CreateImageList(GTraps,&Context->TrapsImages,32,32,FALSE))\n\t\tgoto Error_4;\n\tif (!Misc_CreateImageList(GSpells,&Context->SpellsImages,32,32,FALSE))\n\t\tgoto Error_4;\n\n\tCopyMemory(&Context->Variables,&MapGlobalVariables,sizeof(GLOBALVARS));\n\tResult = PropertySheet(psh);\n\tif (Result == -1) goto Error_4;\n\n\tInfo_Update();\n\tMisc_DestroyImageList(&Context->SpellsImages);\n\tMisc_DestroyImageList(&Context->TrapsImages);\n\tMisc_DestroyImageList(&Context->DoorsImages);\n\tMisc_DestroyImageList(&Context->RoomsImages);\n\tMisc_DestroyImageList(&Context->TerrainsImages);\n\tGlobalFree(Context);\n\tGlobalFree(psp);\n\tGlobalFree(psh);\n\tFiles_SaveUpdate();\n\treturn;\n\n//--- Erreurs survenues lors de l'initialisation ---\n\nError_4:Misc_DestroyImageList(&Context->SpellsImages);\n\tMisc_DestroyImageList(&Context->TrapsImages);\n\tMisc_DestroyImageList(&Context->DoorsImages);\n\tMisc_DestroyImageList(&Context->RoomsImages);\n\tMisc_DestroyImageList(&Context->TerrainsImages);\nError_3:GlobalFree(Context);\nError_2:GlobalFree(psp);\nError_1:GlobalFree(psh);\nError_0:Misc_MessageBoxExt(hWnd,szDialogErr,NULL,szMessageBoxExtOk,MB_ICONHAND);\n\treturn;\n}",
+    "Properties_GlobalDoorProc": "Properties_GlobalDoorProc(HWND hDlg, UINT uMsgId, WPARAM wParam, LPARAM lParam)\n{\n\tGLOBALCTX\t*Context;\n\tLONG\t\t lData;\n\n\tif (uMsgId == WM_INITDIALOG)\n\t\t{\n\t\tProperties_GlobalInit(hDlg,2,(PROPSHEETPAGE *)lParam);\n\t\treturn(TRUE);\n\t\t}\n\n\tContext = (GLOBALCTX *)GetWindowLong(hDlg,DWL_USER);\n\tif (!Context) return(FALSE);\n\n\tswitch(uMsgId)\n\t\t{\n\t\tcase WM_MEASUREITEM:\n\t\t\tif ( ((MEASUREITEMSTRUCT *)lParam)->CtlType == ODT_LISTBOX )\n\t\t\t\t{\n\t\t\t\tProperties_GlobalSetList((MEASUREITEMSTRUCT *)lParam);\n\t\t\t\treturn(TRUE);\n\t\t\t\t}\n\t\t\tbreak;\n\n\t\tcase WM_DRAWITEM:\n\t\t\tif ( ((DRAWITEMSTRUCT *)lParam)->CtlType == ODT_LISTBOX )\n\t\t\t\t{\n\t\t\t\tProperties_GlobalDrawList((DRAWITEMSTRUCT *)lParam,GDoors,Context->DoorsImages);\n\t\t\t\treturn(TRUE);\n\t\t\t\t}\n\t\t\tif (((DRAWITEMSTRUCT *)lParam)->CtlType == ODT_STATIC)\n\t\t\t\t{\n\t\t\t\tMisc_DrawGroup((DRAWITEMSTRUCT *)lParam);\n\t\t\t\treturn(TRUE);\n\t\t\t\t}\n\t\t\tbreak;\n\n\t\tcase WM_COMMAND:\n\t\t\tswitch(HIWORD(wParam))\n\t\t\t\t{\n\t\t\t\tcase LBN_SELCHANGE:\n\t\t\t\t\tProperties_GlobalSaveChanges(hDlg,2,Context);\n\t\t\t\t\tProperties_GlobalGetParams(hDlg,2,Context);\n\t\t\t\t\treturn(TRUE);\n\n\t\t\t\tcase EN_CHANGE:\n\t\t\t\t\tswitch(LOWORD(wParam))\n\t\t\t\t\t\t{\n\t\t\t\t\t\tcase 114:\n\t\t\t\t\t\tcase 116:\n\t\t\t\t\t\tcase 118:\n\t\t\t\t\t\tcase 120:\n\t\t\t\t\t\tcase 122:\n\t\t\t\t\t\t\tlData = GetDlgItemInt(hDlg,LOWORD(wParam),NULL,FALSE);\n\t\t\t\t\t\t\tif (lData < 0) SetDlgItemInt(hDlg,LOWORD(wParam),0,FALSE);\n\t\t\t\t\t\t\tif (lData > 65535) SetDlgItemInt(hDlg,LOWORD(wParam),65535,FALSE);\n\t\t\t\t\t\t\tbreak;\n\t\t\t\t\t\t}\n\t\t\t\t\treturn(TRUE);\n\n\t\t\t\tcase BN_CLICKED:\n\t\t\t\t\tswitch(LOWORD(wParam))\n\t\t\t\t\t\t{\n\t\t\t\t\t\tcase 998:\n\t\t\t\t\t\t\tProperties_GlobalReset(&Context->Variables,Context->CurrentDoor,MGRF_DOORS);\n\t\t\t\t\t\t\tProperties_GlobalGetParams(hDlg,2,Context);\n\t\t\t\t\t\t\tbreak;\n\t\t\t\t\t\tcase 999:\n\t\t\t\t\t\t\tProperties_GlobalReset(&Context->Variables,-1,MGRF_DOORS);\n\t\t\t\t\t\t\tProperties_GlobalGetParams(hDlg,2,Context);\n\t\t\t\t\t\t\tbreak;\n\t\t\t\t\t\t}\n\t\t\t\t\treturn(TRUE);\n\t\t\t\t}\n\t\t\tbreak;\n\n\t\tcase WM_NOTIFY:\n\t\t\tswitch( ((NMHDR *)lParam)->code )\n\t\t\t\t{\n\t\t\t\tcase UDN_DELTAPOS:\n\t\t\t\t\tswitch(((NMHDR *)lParam)->idFrom)\n\t\t\t\t\t\t{\n\t\t\t\t\t\tcase 214:\n\t\t\t\t\t\tcase 216:\n\t\t\t\t\t\tcase 218:\n\t\t\t\t\t\tcase 220:\n\t\t\t\t\t\tcase 222:\n\t\t\t\t\t\t\tMisc_SetUpDownInt(hDlg,((NMHDR *)lParam)->idFrom-100,(NM_UPDOWN *)lParam);\n\t\t\t\t\t\t\tbreak;\n\t\t\t\t\t\t}\n\t\t\t\t\treturn(TRUE);\n\n\t\t\t\tcase PSN_KILLACTIVE:\n\t\t\t\t\tProperties_GlobalSaveChanges(hDlg,2,Context);\n\t\t\t\t\tSetWindowLong(hDlg,DWL_MSGRESULT,0);\n\t\t\t\t\treturn(TRUE);\n\n\t\t\t\tcase PSN_APPLY:\n\t\t\t\t\tif (memcmp(&MapGlobalVariables,&Context->Variables,sizeof(GLOBALVARS)))\n\t\t\t\t\t\t{\n\t\t\t\t\t\tUndo_CreateGlobalVariables(&MapGlobalVariables);\n\t\t\t\t\t\tCopyMemory(&MapGlobalVariables,&Context->Variables,sizeof(GLOBALVARS));\n\t\t\t\t\t\tMapChanges++;\n\t\t\t\t\t\t}\n\t\t\t\t\tSetWindowLong(hDlg,DWL_MSGRESULT,0);\n\t\t\t\t\treturn(TRUE);\n\n                                case PSN_SETACTIVE:\n\t\t\t\t\tSetWindowLong(hDlg,DWL_MSGRESULT,(Properties_GlobalSetValues(hDlg,2,Context))?0:-1);\n\t\t\t\t\treturn(TRUE);\n\t\t\t\t}\n\t\t\tbreak;\n\t\t}\n\n\treturn(FALSE);\n}",
+    "Properties_GlobalInit": "Properties_GlobalInit(HWND hDlg, UINT Page, PROPSHEETPAGE *PageStruct)\n{\n\tGLOBALCTX\t*Context;\n\tint\t\t i;\n\n\tContext = (GLOBALCTX *)(PageStruct->lParam);\n\tSetWindowLong(hDlg,DWL_USER,(LONG)Context);\n\n\tswitch(Page)\n\t\t{\n\t\t//\n\t\t// Propri\u00e9t\u00e9s des terrains\n\t\t//\n\t\tcase 0:\n\t\t\tfor (i = 0; GTerrains[i].Id != 0; i++)\n\t\t\t\t{\n\t\t\t\tif (SendDlgItemMessage(hDlg,101,LB_ADDSTRING,(WPARAM)0,(LPARAM)GTerrains[i].Id) < 0)\n\t\t\t\t\tgoto Error_0;\n\t\t\t\tif (SendDlgItemMessage(hDlg,104,CB_ADDSTRING,(WPARAM)0,(LPARAM)GTerrains[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\t\t\t\tif (SendDlgItemMessage(hDlg,114,CB_ADDSTRING,(WPARAM)0,(LPARAM)GTerrains[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\t\t\t\t}\n\t\t\tSendDlgItemMessage(hDlg,101,LB_SETCURSEL,(WPARAM)0,(LPARAM)0);\n\n\t\t\tfor (i = 0; Effects[i].Id != 0xFFFFFFFF; i++)\n\t\t\t\t{\n\t\t\t\tif (SendDlgItemMessage(hDlg,106,CB_ADDSTRING,(WPARAM)0,(LPARAM)Effects[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\t\t\t\tif (SendDlgItemMessage(hDlg,116,CB_ADDSTRING,(WPARAM)0,(LPARAM)Effects[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\t\t\t\t}\n\n\t\t\tMisc_CreateUpDownButton(hDlg,124,224);\n\t\t\tMisc_CreateUpDownButton(hDlg,126,226);\n\t\t\tMisc_CreateUpDownButton(hDlg,128,228);\n\t\t\tMisc_CreateUpDownButton(hDlg,130,230);\n\t\t\tMisc_CreateUpDownButton(hDlg,132,232);\n\t\t\tMisc_CreateUpDownButton(hDlg,134,234);\n\t\t\tMisc_CreateUpDownButton(hDlg,136,236);\n\t\t\tMisc_CreateUpDownButton(hDlg,138,238);\n\t\t\tMisc_CreateUpDownButton(hDlg,150,250);\n\t\t\tSendDlgItemMessage(hDlg,124,EM_LIMITTEXT,(WPARAM)6,(LPARAM)0);\n\t\t\tSendDlgItemMessage(hDlg,126,EM_LIMITTEXT,(WPARAM)5,(LPARAM)0);\n\t\t\tSendDlgItemMessage(hDlg,128,EM_LIMITTEXT,(WPARAM)5,(LPARAM)0);\n\t\t\tSendDlgItemMessage(hDlg,130,EM_LIMITTEXT,(WPARAM)5,(LPARAM)0);\n\t\t\tSendDlgItemMessage(hDlg,132,EM_LIMITTEXT,(WPARAM)5,(LPARAM)0);\n\t\t\tSendDlgItemMessage(hDlg,134,EM_LIMITTEXT,(WPARAM)5,(LPARAM)0);\n\t\t\tSendDlgItemMessage(hDlg,136,EM_LIMITTEXT,(WPARAM)3,(LPARAM)0);\n\t\t\tSendDlgItemMessage(hDlg,138,EM_LIMITTEXT,(WPARAM)3,(LPARAM)0);\n\t\t\tSendDlgItemMessage(hDlg,150,EM_LIMITTEXT,(WPARAM)16,(LPARAM)0);\n\n\t\t\tContext->PageInitialized[0] = TRUE;\n\t\t\tbreak;\n\n\t\t//\n\t\t// Propri\u00e9t\u00e9s des salles\n\t\t//\n\t\tcase 1:\n\t\t\tfor (i = 0; GRooms[i].Id != 0; i++)\n\t\t\t\t{\n\t\t\t\tif (SendDlgItemMessage(hDlg,101,LB_ADDSTRING,(WPARAM)0,(LPARAM)GRooms[i].Id) < 0)\n\t\t\t\t\tgoto Error_0;\n\t\t\t\t}\n\t\t\tSendDlgItemMessage(hDlg,101,LB_SETCURSEL,(WPARAM)0,(LPARAM)0);\n\n\t\t\tfor (i = 0; Effects[i].Id != 0xFFFFFFFF; i++)\n\t\t\t\t{\n\t\t\t\tif (SendDlgItemMessage(hDlg,104,CB_ADDSTRING,(WPARAM)0,(LPARAM)Effects[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\t\t\t\tif (SendDlgItemMessage(hDlg,106,CB_ADDSTRING,(WPARAM)0,(LPARAM)Effects[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\t\t\t\tif (SendDlgItemMessage(hDlg,108,CB_ADDSTRING,(WPARAM)0,(LPARAM)Effects[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\t\t\t\tif (SendDlgItemMessage(hDlg,110,CB_ADDSTRING,(WPARAM)0,(LPARAM)Effects[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\t\t\t\tif (SendDlgItemMessage(hDlg,112,CB_ADDSTRING,(WPARAM)0,(LPARAM)Effects[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\t\t\t\tif (SendDlgItemMessage(hDlg,114,CB_ADDSTRING,(WPARAM)0,(LPARAM)Effects[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\t\t\t\tif (SendDlgItemMessage(hDlg,116,CB_ADDSTRING,(WPARAM)0,(LPARAM)Effects[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\t\t\t\t}\n\n\t\t\tfor (i = 124; i != 134+2; i += 2)\n\t\t\t\tif (SendDlgItemMessage(hDlg,i,CB_ADDSTRING,(WPARAM)0,(LPARAM)Effects[0].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\t\t\tfor (i = 0; Objects[i].Id != 0; i++)\n\t\t\t\t{\n\t\t\t\tif (SendDlgItemMessage(hDlg,124,CB_ADDSTRING,(WPARAM)0,(LPARAM)Objects[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\t\t\t\tif (SendDlgItemMessage(hDlg,126,CB_ADDSTRING,(WPARAM)0,(LPARAM)Objects[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\t\t\t\tif (SendDlgItemMessage(hDlg,128,CB_ADDSTRING,(WPARAM)0,(LPARAM)Objects[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\t\t\t\tif (SendDlgItemMessage(hDlg,130,CB_ADDSTRING,(WPARAM)0,(LPARAM)Objects[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\t\t\t\tif (SendDlgItemMessage(hDlg,132,CB_ADDSTRING,(WPARAM)0,(LPARAM)Objects[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\t\t\t\tif (SendDlgItemMessage(hDlg,134,CB_ADDSTRING,(WPARAM)0,(LPARAM)Objects[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\t\t\t\t}\n\n\t\t\tMisc_CreateUpDownButton(hDlg,143,243);\n\t\t\tMisc_CreateUpDownButton(hDlg,148,248);\n\t\t\tMisc_CreateUpDownButton(hDlg,150,250);\n\t\t\tMisc_CreateUpDownButton(hDlg,152,252);\n\t\t\tSendDlgItemMessage(hDlg,143,EM_LIMITTEXT,(WPARAM)5,(LPARAM)0);\n\t\t\tSendDlgItemMessage(hDlg,148,EM_LIMITTEXT,(WPARAM)3,(LPARAM)0);\n\t\t\tSendDlgItemMessage(hDlg,150,EM_LIMITTEXT,(WPARAM)16,(LPARAM)0);\n\t\t\tSendDlgItemMessage(hDlg,152,EM_LIMITTEXT,(WPARAM)16,(LPARAM)0);\n\n\t\t\tContext->PageInitialized[1] = TRUE;\n\t\t\tbreak;\n\n\t\t//\n\t\t// Propri\u00e9t\u00e9s des portes\n\t\t//\n\t\tcase 2:\n\t\t\tfor (i = 0; GDoors[i].Id != 0; i++)\n\t\t\t\t{\n\t\t\t\tif (SendDlgItemMessage(hDlg,101,LB_ADDSTRING,(WPARAM)0,(LPARAM)GDoors[i].Id) < 0)\n\t\t\t\t\tgoto Error_0;\n\t\t\t\t}\n\t\t\tSendDlgItemMessage(hDlg,101,LB_SETCURSEL,(WPARAM)0,(LPARAM)0);\n\n\t\t\tfor (i = 0; GDoorsMats[i].Id != 0xFFFFFFFF; i++)\n\t\t\t\tif (SendDlgItemMessage(hDlg,104,CB_ADDSTRING,(WPARAM)0,(LPARAM)GDoorsMats[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\n\t\t\tfor (i = 0; Effects[i].Id != 0xFFFFFFFF; i++)\n\t\t\t\tif (SendDlgItemMessage(hDlg,106,CB_ADDSTRING,(WPARAM)0,(LPARAM)Effects[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\n\t\t\tfor (i = 0; GDoorsCrates[i].Id != 0xFFFFFFFF; i++)\n\t\t\t\tif (SendDlgItemMessage(hDlg,108,CB_ADDSTRING,(WPARAM)0,(LPARAM)GDoorsCrates[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\n\t\t\tfor (i = 0; GDoorsKeys[i].Id != 0xFFFFFFFF; i++)\n\t\t\t\tif (SendDlgItemMessage(hDlg,110,CB_ADDSTRING,(WPARAM)0,(LPARAM)GDoorsKeys[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\n\t\t\tMisc_CreateUpDownButton(hDlg,114,214);\n\t\t\tMisc_CreateUpDownButton(hDlg,116,216);\n\t\t\tMisc_CreateUpDownButton(hDlg,118,218);\n\t\t\tMisc_CreateUpDownButton(hDlg,120,220);\n\t\t\tMisc_CreateUpDownButton(hDlg,122,222);\n\t\t\tSendDlgItemMessage(hDlg,114,EM_LIMITTEXT,(WPARAM)5,(LPARAM)0);\n\t\t\tSendDlgItemMessage(hDlg,116,EM_LIMITTEXT,(WPARAM)5,(LPARAM)0);\n\t\t\tSendDlgItemMessage(hDlg,118,EM_LIMITTEXT,(WPARAM)5,(LPARAM)0);\n\t\t\tSendDlgItemMessage(hDlg,120,EM_LIMITTEXT,(WPARAM)5,(LPARAM)0);\n\t\t\tSendDlgItemMessage(hDlg,122,EM_LIMITTEXT,(WPARAM)5,(LPARAM)0);\n\n\t\t\tContext->PageInitialized[2] = TRUE;\n\t\t\tbreak;\n\n\t\t//\n\t\t// Propri\u00e9t\u00e9s des pi\u00e8ges\n\t\t//\n\t\tcase 3:\n\t\t\tfor (i = 0; GTraps[i].Id != 0; i++)\n\t\t\t\t{\n\t\t\t\tif (SendDlgItemMessage(hDlg,101,LB_ADDSTRING,(WPARAM)0,(LPARAM)GTraps[i].Id) < 0)\n\t\t\t\t\tgoto Error_0;\n\t\t\t\t}\n\t\t\tSendDlgItemMessage(hDlg,101,LB_SETCURSEL,(WPARAM)0,(LPARAM)0);\n\n\t\t\tfor (i = 0; GDoorsMats[i].Id != 0xFFFFFFFF; i++)\n\t\t\t\tif (SendDlgItemMessage(hDlg,104,CB_ADDSTRING,(WPARAM)0,(LPARAM)GDoorsMats[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\n\t\t\tfor (i = 0; GTrapsCrates[i].Id != 0xFFFFFFFF; i++)\n\t\t\t\tif (SendDlgItemMessage(hDlg,106,CB_ADDSTRING,(WPARAM)0,(LPARAM)GTrapsCrates[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\n\t\t\tfor (i = 0; Effects[i].Id != 0xFFFFFFFF; i++)\n\t\t\t\t{\n\t\t\t\tif (SendDlgItemMessage(hDlg,114,CB_ADDSTRING,(WPARAM)0,(LPARAM)Effects[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\t\t\t\tif (SendDlgItemMessage(hDlg,116,CB_ADDSTRING,(WPARAM)0,(LPARAM)Effects[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\t\t\t\tif (SendDlgItemMessage(hDlg,118,CB_ADDSTRING,(WPARAM)0,(LPARAM)Effects[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\t\t\t\t}\n\n\t\t\tfor (i = 0; GTrapsTypes[i].Id != 0; i++)\n\t\t\t\tif (SendDlgItemMessage(hDlg,150,CB_ADDSTRING,(WPARAM)0,(LPARAM)GTrapsTypes[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\n\t\t\tfor (i = 0; GShots[i].Id != 0xFFFFFFFF; i++)\n\t\t\t\tif (SendDlgItemMessage(hDlg,154,CB_ADDSTRING,(WPARAM)0,(LPARAM)GShots[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\n\t\t\tMisc_CreateUpDownButton(hDlg,158,258);\n\t\t\tMisc_CreateUpDownButton(hDlg,160,260);\n\t\t\tMisc_CreateUpDownButton(hDlg,120,220);\n\t\t\tMisc_CreateUpDownButton(hDlg,134,234);\n\t\t\tMisc_CreateUpDownButton(hDlg,136,236);\n\t\t\tMisc_CreateUpDownButton(hDlg,138,238);\n\t\t\tMisc_CreateUpDownButton(hDlg,140,240);\n\t\t\tMisc_CreateUpDownButton(hDlg,142,242);\n\t\t\tMisc_CreateUpDownButton(hDlg,144,244);\n\t\t\tMisc_CreateUpDownButton(hDlg,146,246);\n\t\t\tMisc_CreateUpDownButton(hDlg,148,248);\n\t\t\tSendDlgItemMessage(hDlg,158,EM_LIMITTEXT,(WPARAM)5,(LPARAM)0);\n\t\t\tSendDlgItemMessage(hDlg,160,EM_LIMITTEXT,(WPARAM)5,(LPARAM)0);\n\t\t\tSendDlgItemMessage(hDlg,120,EM_LIMITTEXT,(WPARAM)16,(LPARAM)0);\n\t\t\tSendDlgItemMessage(hDlg,134,EM_LIMITTEXT,(WPARAM)5,(LPARAM)0);\n\t\t\tSendDlgItemMessage(hDlg,136,EM_LIMITTEXT,(WPARAM)5,(LPARAM)0);\n\t\t\tSendDlgItemMessage(hDlg,138,EM_LIMITTEXT,(WPARAM)16,(LPARAM)0);\n\t\t\tSendDlgItemMessage(hDlg,140,EM_LIMITTEXT,(WPARAM)16,(LPARAM)0);\n\t\t\tSendDlgItemMessage(hDlg,142,EM_LIMITTEXT,(WPARAM)5,(LPARAM)0);\n\t\t\tSendDlgItemMessage(hDlg,144,EM_LIMITTEXT,(WPARAM)5,(LPARAM)0);\n\t\t\tSendDlgItemMessage(hDlg,146,EM_LIMITTEXT,(WPARAM)5,(LPARAM)0);\n\t\t\tSendDlgItemMessage(hDlg,148,EM_LIMITTEXT,(WPARAM)16,(LPARAM)0);\n\n\t\t\tContext->PageInitialized[3] = TRUE;\n\t\t\tbreak;\n\n\t\t//\n\t\t// Propri\u00e9t\u00e9s des sorts\n\t\t//\n\t\tcase 4:\n\t\t\tfor (i = 0; GSpells[i].Id != 0; i++)\n\t\t\t\t{\n\t\t\t\tif (SendDlgItemMessage(hDlg,101,LB_ADDSTRING,(WPARAM)0,(LPARAM)GSpells[i].Id) < 0)\n\t\t\t\t\tgoto Error_0;\n\t\t\t\t}\n\t\t\tSendDlgItemMessage(hDlg,101,LB_SETCURSEL,(WPARAM)0,(LPARAM)0);\n\n\t\t\tfor (i = 0; GSpellsHand[i].Id != 0xFFFFFFFF; i++)\n\t\t\t\t{\n\t\t\t\tif (SendDlgItemMessage(hDlg,104,CB_ADDSTRING,(WPARAM)0,(LPARAM)GSpellsHand[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\t\t\t\tif (SendDlgItemMessage(hDlg,106,CB_ADDSTRING,(WPARAM)0,(LPARAM)GSpellsHand[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\t\t\t\t}\n\n\t\t\tfor (i = 0; GSpellsCast[i].Id != 0; i++)\n\t\t\t\tif (SendDlgItemMessage(hDlg,114,CB_ADDSTRING,(WPARAM)0,(LPARAM)GSpellsCast[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\n\t\t\tfor (i = 0; GSpellsTrget[i].Id != 0; i++)\n\t\t\t\tif (SendDlgItemMessage(hDlg,116,CB_ADDSTRING,(WPARAM)0,(LPARAM)GSpellsTrget[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\n\t\t\tfor (i = 0; GShots[i].Id != 0xFFFFFFFF; i++)\n\t\t\t\t{\n\t\t\t\tif (SendDlgItemMessage(hDlg,144,CB_ADDSTRING,(WPARAM)0,(LPARAM)GShots[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\t\t\t\tif (SendDlgItemMessage(hDlg,147,CB_ADDSTRING,(WPARAM)0,(LPARAM)GShots[i].Name) < 0)\n\t\t\t\t\tgoto Error_0;\n\t\t\t\t}\n\n\t\t\tMisc_CreateUpDownButton(hDlg,124,224);\n\t\t\tMisc_CreateUpDownButton(hDlg,126,226);\n\t\t\tMisc_CreateUpDownButton(hDlg,128,228);\n\t\t\tMisc_CreateUpDownButton(hDlg,130,230);\n\t\t\tSendDlgItemMessage(hDlg,124,EM_LIMITTEXT,(WPARAM)6,(LPARAM)0);\n\t\t\tSendDlgItemMessage(hDlg,126,EM_LIMITTEXT,(WPARAM)5,(LPARAM)0);\n\t\t\tSendDlgItemMessage(hDlg,128,EM_LIMITTEXT,(WPARAM)16,(LPARAM)0);\n\t\t\tSendDlgItemMessage(hDlg,130,EM_LIMITTEXT,(WPARAM)5,(LPARAM)0);\n\n\t\t\tContext->PageInitialized[4] = TRUE;\n\t\t\tbreak;\n\t\t}\n\n\treturn;\n\n//--- Erreurs d'initialisation ---\n\nError_0:Misc_PrintError(hDlg,szDialogErr,NULL,MB_ICONEXCLAMATION);\n\treturn;\n}",
+    "Properties_GlobalSetValues": "Properties_GlobalSetValues(HWND hDlg, UINT Page, GLOBALCTX *Context)\n{\n\tswitch(Page)\n\t\t{\n\t\t//\n\t\t// Propri\u00e9t\u00e9s des terrains\n\t\t//\n\t\tcase 0:\tif (!Context->PageInitialized[0]) return(0);\n\t\t\tProperties_GlobalGetParams(hDlg,0,Context);\n\t\t\treturn(1);\n\n\t\t//\n\t\t// Propi\u00e9t\u00e9s des salles\n\t\t//\n\t\tcase 1:\tif (!Context->PageInitialized[1]) return(0);\n\t\t\tProperties_GlobalGetParams(hDlg,1,Context);\n\t\t\treturn(1);\n\n\t\t//\n\t\t// Propri\u00e9t\u00e9s des portes\n\t\t//\n\t\tcase 2:\tif (!Context->PageInitialized[2]) return(0);\n\t\t\tProperties_GlobalGetParams(hDlg,2,Context);\n\t\t\treturn(1);\n\n\t\t//\n\t\t// Propri\u00e9t\u00e9s des pi\u00e8ges\n\t\t//\n\t\tcase 3:\tif (!Context->PageInitialized[3]) return(0);\n\t\t\tProperties_GlobalGetParams(hDlg,3,Context);\n\t\t\treturn(1);\n\n\t\t//\n\t\t// Propri\u00e9t\u00e9s des sorts\n\t\t//\n\t\tcase 4:\tif (!Context->PageInitialized[4]) return(0);\n\t\t\tProperties_GlobalGetParams(hDlg,4,Context);\n\t\t\treturn(1);\n\n\t\t}\n\n\treturn(0);\n}",
+    "Properties_GlobalSaveChanges": "Properties_GlobalSaveChanges(HWND hDlg, UINT Page, GLOBALCTX *Context)\n{\n\tint\ti;\n\n\tswitch(Page)\n\t\t{\n\t\t//\n\t\t// Propri\u00e9t\u00e9s des terrains\n\t\t//\n\t\tcase 0:\tContext->Variables.Terrains[Context->CurrentTerrain].MaxHealthType\t= GTerrains[SendDlgItemMessage(hDlg,104,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)].Id;\n\t\t\tContext->Variables.Terrains[Context->CurrentTerrain].DestroyedType\t= GTerrains[SendDlgItemMessage(hDlg,114,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)].Id;\n\t\t\tContext->Variables.Terrains[Context->CurrentTerrain].MaxHealthEffect\t= Effects[SendDlgItemMessage(hDlg,106,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)].Id;\n\t\t\tContext->Variables.Terrains[Context->CurrentTerrain].DestroyedEffect\t= Effects[SendDlgItemMessage(hDlg,116,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)].Id;\n\t\t\tContext->Variables.Terrains[Context->CurrentTerrain].Damage\t\t= GetDlgItemInt(hDlg,124,NULL,TRUE);\n\t\t\tContext->Variables.Terrains[Context->CurrentTerrain].GoldValue\t\t= GetDlgItemInt(hDlg,126,NULL,FALSE);\n\t\t\tContext->Variables.Terrains[Context->CurrentTerrain].StartingHealth\t= GetDlgItemInt(hDlg,128,NULL,FALSE);\n\t\t\tContext->Variables.Terrains[Context->CurrentTerrain].MaxHealth\t\t= GetDlgItemInt(hDlg,130,NULL,FALSE);\n\t\t\tContext->Variables.Terrains[Context->CurrentTerrain].ManaGain\t\t= GetDlgItemInt(hDlg,132,NULL,FALSE);\n\t\t\tContext->Variables.Terrains[Context->CurrentTerrain].MaxManaGain\t= GetDlgItemInt(hDlg,134,NULL,FALSE);\n\t\t\tContext->Variables.Terrains[Context->CurrentTerrain].WibbleH\t\t= GetDlgItemInt(hDlg,136,NULL,FALSE);\n\t\t\tContext->Variables.Terrains[Context->CurrentTerrain].WibbleV\t\t= GetDlgItemInt(hDlg,138,NULL,FALSE);\n\t\t\tContext->Variables.Terrains[Context->CurrentTerrain].Visible\t\t= (IsDlgButtonChecked(hDlg,139) == BST_CHECKED);\n\t\t\tContext->Variables.Terrains[Context->CurrentTerrain].TerrainLight\t= (IsDlgButtonChecked(hDlg,143) == BST_CHECKED);\n\t\t\tContext->Variables.Terrains[Context->CurrentTerrain].AmbientLight\t= (IsDlgButtonChecked(hDlg,144) == BST_CHECKED);\n\t\t\tContext->Variables.Terrains[Context->CurrentTerrain].TerrainLightB\t= (BYTE)((Context->TerrainColor&0x00FF0000)>>16);\n\t\t\tContext->Variables.Terrains[Context->CurrentTerrain].TerrainLightG\t= (BYTE)((Context->TerrainColor&0x0000FF00)>>8);\n\t\t\tContext->Variables.Terrains[Context->CurrentTerrain].TerrainLightR\t= (BYTE)((Context->TerrainColor&0x000000FF));\n\t\t\tContext->Variables.Terrains[Context->CurrentTerrain].AmbientLightB\t= (BYTE)((Context->AmbientColor&0x00FF0000)>>16);\n\t\t\tContext->Variables.Terrains[Context->CurrentTerrain].AmbientLightG\t= (BYTE)((Context->AmbientColor&0x0000FF00)>>8);\n\t\t\tContext->Variables.Terrains[Context->CurrentTerrain].AmbientLightR\t= (BYTE)((Context->AmbientColor&0x000000FF));\n\t\t\tif (!Context->Variables.Terrains[Context->CurrentTerrain].TerrainLight)\n\t\t\t\t{\n\t\t\t\tContext->Variables.Terrains[Context->CurrentTerrain].TerrainLightB = 0;\n\t\t\t\tContext->Variables.Terrains[Context->CurrentTerrain].TerrainLightG = 0;\n\t\t\t\tContext->Variables.Terrains[Context->CurrentTerrain].TerrainLightR = 0;\n\t\t\t\t}\n\t\t\tif (!Context->Variables.Terrains[Context->CurrentTerrain].AmbientLight)\n\t\t\t\t{\n\t\t\t\tContext->Variables.Terrains[Context->CurrentTerrain].AmbientLightB = 0;\n\t\t\t\tContext->Variables.Terrains[Context->CurrentTerrain].AmbientLightG = 0;\n\t\t\t\tContext->Variables.Terrains[Context->CurrentTerrain].AmbientLightR = 0;\n\t\t\t\t}\n\n\t\t\tContext->Variables.Terrains[Context->CurrentTerrain].TerrainLightH = Misc_GetDlgItemFloat(hDlg,150);\n\t\t\tbreak;\n\n\t\t//\n\t\t// Propri\u00e9t\u00e9s des salles\n\t\t//\n\n\t\tcase 1:\tContext->Variables.Rooms[Context->CurrentRoom].Cost\t\t\t= GetDlgItemInt(hDlg,143,NULL,FALSE);\n\t\t\tContext->Variables.Rooms[Context->CurrentRoom].BattleEffect\t\t= Effects[SendDlgItemMessage(hDlg,104,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)].Id;\n\t\t\tContext->Variables.Rooms[Context->CurrentRoom].Effects[0]\t\t= Effects[SendDlgItemMessage(hDlg,106,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)].Id;\n\t\t\tContext->Variables.Rooms[Context->CurrentRoom].Effects[1]\t\t= Effects[SendDlgItemMessage(hDlg,108,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)].Id;\n\t\t\tContext->Variables.Rooms[Context->CurrentRoom].Effects[2]\t\t= Effects[SendDlgItemMessage(hDlg,110,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)].Id;\n\t\t\tContext->Variables.Rooms[Context->CurrentRoom].Effects[3]\t\t= Effects[SendDlgItemMessage(hDlg,112,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)].Id;\n\t\t\tContext->Variables.Rooms[Context->CurrentRoom].Effects[4]\t\t= Effects[SendDlgItemMessage(hDlg,114,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)].Id;\n\t\t\tContext->Variables.Rooms[Context->CurrentRoom].Effects[5]\t\t= Effects[SendDlgItemMessage(hDlg,116,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)].Id;\n\t\t\ti = SendDlgItemMessage(hDlg,124,CB_GETCURSEL,(WPARAM)0,(LPARAM)0);\n\t\t\tif (i) Context->Variables.Rooms[Context->CurrentRoom].Objects[0]\t= Objects[i-1].Id;\n\t\t\telse   Context->Variables.Rooms[Context->CurrentRoom].Objects[0]\t= 0;\n\t\t\ti = SendDlgItemMessage(hDlg,126,CB_GETCURSEL,(WPARAM)0,(LPARAM)0);\n\t\t\tif (i) Context->Variables.Rooms[Context->CurrentRoom].Objects[1]\t= Objects[i-1].Id;\n\t\t\telse   Context->Variables.Rooms[Context->CurrentRoom].Objects[1]\t= 0;\n\t\t\ti = SendDlgItemMessage(hDlg,128,CB_GETCURSEL,(WPARAM)0,(LPARAM)0);\n\t\t\tif (i) Context->Variables.Rooms[Context->CurrentRoom].Objects[2]\t= Objects[i-1].Id;\n\t\t\telse   Context->Variables.Rooms[Context->CurrentRoom].Objects[2]\t= 0;\n\t\t\ti = SendDlgItemMessage(hDlg,130,CB_GETCURSEL,(WPARAM)0,(LPARAM)0);\n\t\t\tif (i) Context->Variables.Rooms[Context->CurrentRoom].Objects[3]\t= Objects[i-1].Id;\n\t\t\telse   Context->Variables.Rooms[Context->CurrentRoom].Objects[3]\t= 0;\n\t\t\ti = SendDlgItemMessage(hDlg,132,CB_GETCURSEL,(WPARAM)0,(LPARAM)0);\n\t\t\tif (i) Context->Variables.Rooms[Context->CurrentRoom].Objects[4]\t= Objects[i-1].Id;\n\t\t\telse   Context->Variables.Rooms[Context->CurrentRoom].Objects[4]\t= 0;\n\t\t\ti = SendDlgItemMessage(hDlg,134,CB_GETCURSEL,(WPARAM)0,(LPARAM)0);\n\t\t\tif (i) Context->Variables.Rooms[Context->CurrentRoom].Objects[5]\t= Objects[i-1].Id;\n\t\t\telse   Context->Variables.Rooms[Context->CurrentRoom].Objects[5]\t= 0;\n\t\t\tContext->Variables.Rooms[Context->CurrentRoom].TorchLightB\t\t= (BYTE)((Context->TorchColor&0x00FF0000)>>16);\n\t\t\tContext->Variables.Rooms[Context->CurrentRoom].TorchLightG\t\t= (BYTE)((Context->TorchColor&0x0000FF00)>>8);\n\t\t\tContext->Variables.Rooms[Context->CurrentRoom].TorchLightR\t\t= (BYTE)((Context->TorchColor&0x000000FF));\n\t\t\tContext->Variables.Rooms[Context->CurrentRoom].TorchIntensity\t\t= GetDlgItemInt(hDlg,148,NULL,FALSE);\n\t\t\tContext->Variables.Rooms[Context->CurrentRoom].TorchLightH\t\t= Misc_GetDlgItemFloat(hDlg,150);\n\t\t\tContext->Variables.Rooms[Context->CurrentRoom].TorchLightRad\t\t= Misc_GetDlgItemFloat(hDlg,152);\n\t\t\tbreak;\n\n\t\t//\n\t\t// Propri\u00e9t\u00e9s des portes\n\t\t//\n\n\t\tcase 2:\tContext->Variables.Doors[Context->CurrentDoor].Cost\t\t\t= GetDlgItemInt(hDlg,114,NULL,FALSE);\n\t\t\tContext->Variables.Doors[Context->CurrentDoor].BuildPoints\t\t= GetDlgItemInt(hDlg,116,NULL,FALSE);\n\t\t\tContext->Variables.Doors[Context->CurrentDoor].Health\t\t\t= GetDlgItemInt(hDlg,118,NULL,FALSE);\n\t\t\tContext->Variables.Doors[Context->CurrentDoor].HealthGain\t\t= GetDlgItemInt(hDlg,120,NULL,FALSE);\n\t\t\tContext->Variables.Doors[Context->CurrentDoor].ManaCost\t\t\t= GetDlgItemInt(hDlg,122,NULL,FALSE);\n\t\t\tContext->Variables.Doors[Context->CurrentDoor].Material\t\t\t= GDoorsMats[SendDlgItemMessage(hDlg,104,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)].Id;\n\t\t\tContext->Variables.Doors[Context->CurrentDoor].DeathEffect\t\t= Effects[SendDlgItemMessage(hDlg,106,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)].Id;\n\t\t\tContext->Variables.Doors[Context->CurrentDoor].Crate\t\t\t= GDoorsCrates[SendDlgItemMessage(hDlg,108,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)].Id;\n\t\t\tContext->Variables.Doors[Context->CurrentDoor].Key\t\t\t= GDoorsKeys[SendDlgItemMessage(hDlg,110,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)].Id;\n\t\t\tbreak;\n\n\t\t//\n\t\t// Propri\u00e9t\u00e9s des pi\u00e8ges\n\t\t//\n\n\t\tcase 3:\tContext->Variables.Traps[Context->CurrentTrap].Material\t\t\t= GDoorsMats[SendDlgItemMessage(hDlg,104,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)].Id;\n\t\t\tContext->Variables.Traps[Context->CurrentTrap].Crate\t\t\t= GTrapsCrates[SendDlgItemMessage(hDlg,106,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)].Id;\n\t\t\tContext->Variables.Traps[Context->CurrentTrap].DeathEffect\t\t= Effects[SendDlgItemMessage(hDlg,114,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)].Id;\n\t\t\tContext->Variables.Traps[Context->CurrentTrap].PowerlessEffect\t\t= Effects[SendDlgItemMessage(hDlg,116,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)].Id;\n\t\t\tContext->Variables.Traps[Context->CurrentTrap].IdleEffect\t\t= Effects[SendDlgItemMessage(hDlg,118,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)].Id;\n\t\t\tContext->Variables.Traps[Context->CurrentTrap].TriggerType\t\t= GTrapsTypes[SendDlgItemMessage(hDlg,150,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)].Id;\n\t\t\tContext->Variables.Traps[Context->CurrentTrap].ShotType\t\t\t= GShots[SendDlgItemMessage(hDlg,154,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)].Id;\n\t\t\tContext->Variables.Traps[Context->CurrentTrap].GoldCost\t\t\t= GetDlgItemInt(hDlg,158,NULL,FALSE);\n\t\t\tContext->Variables.Traps[Context->CurrentTrap].BuildPoints\t\t= GetDlgItemInt(hDlg,160,NULL,FALSE);\n\t\t\tContext->Variables.Traps[Context->CurrentTrap].IdleEffectDelay\t\t= Misc_GetDlgItemFloat(hDlg,120);\n\t\t\tContext->Variables.Traps[Context->CurrentTrap].Health\t\t\t= GetDlgItemInt(hDlg,134,NULL,FALSE);\n\t\t\tContext->Variables.Traps[Context->CurrentTrap].HealthGain\t\t= GetDlgItemInt(hDlg,136,NULL,FALSE);\n\t\t\tContext->Variables.Traps[Context->CurrentTrap].ChargeTime\t\t= Misc_GetDlgItemFloat(hDlg,138);\n\t\t\tContext->Variables.Traps[Context->CurrentTrap].RechargeTime\t\t= Misc_GetDlgItemFloat(hDlg,140);\n\t\t\tContext->Variables.Traps[Context->CurrentTrap].ManaUsage\t\t= GetDlgItemInt(hDlg,142,NULL,FALSE);\n\t\t\tContext->Variables.Traps[Context->CurrentTrap].ManaCostToFire\t\t= GetDlgItemInt(hDlg,144,NULL,FALSE);\n\t\t\tContext->Variables.Traps[Context->CurrentTrap].Threat\t\t\t= GetDlgItemInt(hDlg,146,NULL,FALSE);\n\t\t\tContext->Variables.Traps[Context->CurrentTrap].ThreatDuration\t\t= Misc_GetDlgItemFloat(hDlg,148);\n\t\t\tContext->Variables.Traps[Context->CurrentTrap].Invisible\t\t= (IsDlgButtonChecked(hDlg,123))?TRUE:FALSE;\n\t\t\tContext->Variables.Traps[Context->CurrentTrap].Disarmable\t\t= (IsDlgButtonChecked(hDlg,124))?TRUE:FALSE;\n\t\t\tContext->Variables.Traps[Context->CurrentTrap].RevealedWhenFired\t= (IsDlgButtonChecked(hDlg,125))?TRUE:FALSE;\n\t\t\tContext->Variables.Traps[Context->CurrentTrap].RequiresMana\t\t= (IsDlgButtonChecked(hDlg,126))?TRUE:FALSE;\n\t\t\tContext->Variables.Traps[Context->CurrentTrap].SolidObstacle\t\t= (IsDlgButtonChecked(hDlg,127))?TRUE:FALSE;\n\t\t\tContext->Variables.Traps[Context->CurrentTrap].FPObstacle\t\t= (IsDlgButtonChecked(hDlg,128))?TRUE:FALSE;\n\t\t\tbreak;\n\n\t\t//\n\t\t// Propri\u00e9t\u00e9s des sorts\n\t\t//\n\n\t\tcase 4:\tContext->Variables.Spells[Context->CurrentSpell].ManaCost\t\t= GetDlgItemInt(hDlg,124,NULL,FALSE);\n\t\t\tContext->Variables.Spells[Context->CurrentSpell].ManaDrain\t\t= GetDlgItemInt(hDlg,126,NULL,FALSE);\n\t\t\tContext->Variables.Spells[Context->CurrentSpell].RechargeTime\t\t= Misc_GetDlgItemFloat(hDlg,128);\n\t\t\tContext->Variables.Spells[Context->CurrentSpell].Attacking\t\t= (IsDlgButtonChecked(hDlg,131))?TRUE:FALSE;\n\t\t\tContext->Variables.Spells[Context->CurrentSpell].Defensive\t\t= (IsDlgButtonChecked(hDlg,132))?TRUE:FALSE;\n\t\t\tContext->Variables.Spells[Context->CurrentSpell].HandAnim\t\t= GSpellsHand[SendDlgItemMessage(hDlg,104,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)].Id;\n\t\t\tContext->Variables.Spells[Context->CurrentSpell].NoGoHandAnim\t\t= GSpellsHand[SendDlgItemMessage(hDlg,106,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)].Id;\n\t\t\tContext->Variables.Spells[Context->CurrentSpell].CastRule\t\t= GSpellsCast[SendDlgItemMessage(hDlg,114,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)].Id;\n\t\t\tContext->Variables.Spells[Context->CurrentSpell].TargetRule\t\t= GSpellsTrget[SendDlgItemMessage(hDlg,116,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)].Id;\n\t\t\tContext->Variables.Spells[Context->CurrentSpell].ShotType\t\t= GShots[SendDlgItemMessage(hDlg,144,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)].Id;\n\t\t\tContext->Variables.Spells[Context->CurrentSpell].UpgShotType\t\t= GShots[SendDlgItemMessage(hDlg,147,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)].Id;\n\t\t\tContext->Variables.Spells[Context->CurrentSpell].UpgRechargeTime\t= GetDlgItemInt(hDlg,130,NULL,FALSE);\n\t\t\tbreak;\n\n\t\t}\n\n\treturn;\n}",
+    "Properties_GlobalGetParams": "Properties_GlobalGetParams(HWND hDlg, UINT Page, GLOBALCTX *Context)\n{\n\tint\tCurrent;\n\tint\tActivate;\n\tint\ti;\n\n\tCurrent = SendDlgItemMessage(hDlg,101,LB_GETCURSEL,(WPARAM)0,(LPARAM)0);\n\n\tswitch(Page)\n\t\t{\n\t\t//\n\t\t// Propri\u00e9t\u00e9s des terrains\n\t\t//\n\t\tcase 0:\tContext->CurrentTerrain = Current;\n\t\t\tContext->TerrainColor = RGB(Context->Variables.Terrains[Current].TerrainLightR,Context->Variables.Terrains[Current].TerrainLightG,Context->Variables.Terrains[Current].TerrainLightB);\n\t\t\tContext->AmbientColor = RGB(Context->Variables.Terrains[Current].AmbientLightR,Context->Variables.Terrains[Current].AmbientLightG,Context->Variables.Terrains[Current].AmbientLightB);\n\n\t\t\tActivate = (GTerrains[Current].MinWidth)?1:0;\n\t\t\tEnableWindow(GetDlgItem(hDlg,103),Activate);\n\t\t\tEnableWindow(GetDlgItem(hDlg,104),Activate);\n\t\t\tEnableWindow(GetDlgItem(hDlg,113),Activate);\n\t\t\tEnableWindow(GetDlgItem(hDlg,114),Activate);\n\t\t\tEnableWindow(GetDlgItem(hDlg,105),Activate);\n\t\t\tEnableWindow(GetDlgItem(hDlg,106),Activate);\n\t\t\tEnableWindow(GetDlgItem(hDlg,115),Activate);\n\t\t\tEnableWindow(GetDlgItem(hDlg,116),Activate);\n\t\t\tEnableWindow(GetDlgItem(hDlg,139),(GTerrains[Current].MaxWidth)?FALSE:TRUE);\n\n\t\t\tSendDlgItemMessage(hDlg,104,CB_RESETCONTENT,(WPARAM)0,(LPARAM)0);\n\t\t\tSendDlgItemMessage(hDlg,114,CB_RESETCONTENT,(WPARAM)0,(LPARAM)0);\n\t\t\tfor (i = 0; GTerrains[i].Id != 0; i++)\n\t\t\t\t{\n\t\t\t\tif ((Activate)&&(GTerrains[i].MinHeight)) break;\n\t\t\t\tSendDlgItemMessage(hDlg,104,CB_ADDSTRING,(WPARAM)0,(LPARAM)GTerrains[i].Name);\n\t\t\t\tSendDlgItemMessage(hDlg,114,CB_ADDSTRING,(WPARAM)0,(LPARAM)GTerrains[i].Name);\n\t\t\t\t}\n\n\t\t\tfor (i = 0; GTerrains[i].Id != 0; i++)\n\t\t\t\t{\n\t\t\t\tif (Context->Variables.Terrains[Current].MaxHealthType == GTerrains[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,104,CB_SETCURSEL,(WPARAM)i,(LPARAM)0);\n\t\t\t\tif (Context->Variables.Terrains[Current].DestroyedType == GTerrains[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,114,CB_SETCURSEL,(WPARAM)i,(LPARAM)0);\n\t\t\t\t}\n\n\t\t\tfor (i = 0; Effects[i].Id != 0xFFFFFFFF; i++)\n\t\t\t\t{\n\t\t\t\tif (Context->Variables.Terrains[Current].MaxHealthEffect == Effects[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,106,CB_SETCURSEL,(WPARAM)i,(LPARAM)0);\n\t\t\t\tif (Context->Variables.Terrains[Current].DestroyedEffect == Effects[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,116,CB_SETCURSEL,(WPARAM)i,(LPARAM)0);\n\t\t\t\t}\n\n\t\t\tMisc_SetDlgItemFloat(hDlg,150,Context->Variables.Terrains[Current].TerrainLightH);\n\t\t\tSetDlgItemInt(hDlg,124,Context->Variables.Terrains[Current].Damage,TRUE);\n\t\t\tSetDlgItemInt(hDlg,126,Context->Variables.Terrains[Current].GoldValue,FALSE);\n\t\t\tSetDlgItemInt(hDlg,128,Context->Variables.Terrains[Current].StartingHealth,FALSE);\n\t\t\tSetDlgItemInt(hDlg,130,Context->Variables.Terrains[Current].MaxHealth,FALSE);\n\t\t\tSetDlgItemInt(hDlg,132,Context->Variables.Terrains[Current].ManaGain,FALSE);\n\t\t\tSetDlgItemInt(hDlg,134,Context->Variables.Terrains[Current].MaxManaGain,FALSE);\n\t\t\tSetDlgItemInt(hDlg,136,Context->Variables.Terrains[Current].WibbleH,FALSE);\n\t\t\tSetDlgItemInt(hDlg,138,Context->Variables.Terrains[Current].WibbleV,FALSE);\n\t\t\tCheckDlgButton(hDlg,139,(Context->Variables.Terrains[Current].Visible)?BST_CHECKED:BST_UNCHECKED);\n\t\t\tCheckDlgButton(hDlg,143,(Context->Variables.Terrains[Current].TerrainLight)?BST_CHECKED:BST_UNCHECKED);\n\t\t\tCheckDlgButton(hDlg,144,(Context->Variables.Terrains[Current].AmbientLight)?BST_CHECKED:BST_UNCHECKED);\n\t\t\tInvalidateRect(GetDlgItem(hDlg,145),NULL,FALSE);\n\t\t\tInvalidateRect(GetDlgItem(hDlg,146),NULL,FALSE);\n\t\t\tbreak;\n\n\t\t//\n\t\t// Propri\u00e9t\u00e9s des salles\n\t\t//\n\t\tcase 1:\tContext->CurrentRoom = Current;\n\t\t\tContext->TorchColor = RGB(Context->Variables.Rooms[Current].TorchLightR,Context->Variables.Rooms[Current].TorchLightG,Context->Variables.Rooms[Current].TorchLightB);\n\n\t\t\tfor (i = 0; Effects[i].Id != 0xFFFFFFFF; i++)\n\t\t\t\t{\n\t\t\t\tif (Context->Variables.Rooms[Current].BattleEffect == Effects[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,104,CB_SETCURSEL,(WPARAM)i,(LPARAM)0);\n\t\t\t\tif (Context->Variables.Rooms[Current].Effects[0] == Effects[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,106,CB_SETCURSEL,(WPARAM)i,(LPARAM)0);\n\t\t\t\tif (Context->Variables.Rooms[Current].Effects[1] == Effects[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,108,CB_SETCURSEL,(WPARAM)i,(LPARAM)0);\n\t\t\t\tif (Context->Variables.Rooms[Current].Effects[2] == Effects[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,110,CB_SETCURSEL,(WPARAM)i,(LPARAM)0);\n\t\t\t\tif (Context->Variables.Rooms[Current].Effects[3] == Effects[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,112,CB_SETCURSEL,(WPARAM)i,(LPARAM)0);\n\t\t\t\tif (Context->Variables.Rooms[Current].Effects[4] == Effects[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,114,CB_SETCURSEL,(WPARAM)i,(LPARAM)0);\n\t\t\t\tif (Context->Variables.Rooms[Current].Effects[5] == Effects[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,116,CB_SETCURSEL,(WPARAM)i,(LPARAM)0);\n\t\t\t\t}\n\n\t\t\tfor (i = 0; i != 6; i++)\n\t\t\t\tif (!Context->Variables.Rooms[Current].Objects[i])\n\t\t\t\t\tSendDlgItemMessage(hDlg,124+i*2,CB_SETCURSEL,(WPARAM)0,(LPARAM)0);\n\n\t\t\tfor (i = 0; Objects[i].Id != 0; i++)\n\t\t\t\t{\n\t\t\t\tif (Context->Variables.Rooms[Current].Objects[0] == Objects[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,124,CB_SETCURSEL,(WPARAM)i+1,(LPARAM)0);\n\t\t\t\tif (Context->Variables.Rooms[Current].Objects[1] == Objects[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,126,CB_SETCURSEL,(WPARAM)i+1,(LPARAM)0);\n\t\t\t\tif (Context->Variables.Rooms[Current].Objects[2] == Objects[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,128,CB_SETCURSEL,(WPARAM)i+1,(LPARAM)0);\n\t\t\t\tif (Context->Variables.Rooms[Current].Objects[3] == Objects[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,130,CB_SETCURSEL,(WPARAM)i+1,(LPARAM)0);\n\t\t\t\tif (Context->Variables.Rooms[Current].Objects[4] == Objects[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,132,CB_SETCURSEL,(WPARAM)i+1,(LPARAM)0);\n\t\t\t\tif (Context->Variables.Rooms[Current].Objects[5] == Objects[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,134,CB_SETCURSEL,(WPARAM)i+1,(LPARAM)0);\n\t\t\t\t}\n\n\t\t\tif (!(((DWORD)GRooms[Current].ASCIIName)&MGEF_EFFECT0))\n\t\t\t\t{\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,105),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,106),FALSE);\n\t\t\t\t}\n\t\t\telse\n\t\t\t\t{\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,105),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,106),TRUE);\n\t\t\t\t}\n\t\t\tif (!(((DWORD)GRooms[Current].ASCIIName)&MGEF_EFFECT1))\n\t\t\t\t{\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,107),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,108),FALSE);\n\t\t\t\t}\n\t\t\telse\n\t\t\t\t{\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,107),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,108),TRUE);\n\t\t\t\t}\n\t\t\tif (!(((DWORD)GRooms[Current].ASCIIName)&MGEF_EFFECT2))\n\t\t\t\t{\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,109),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,110),FALSE);\n\t\t\t\t}\n\t\t\telse\n\t\t\t\t{\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,109),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,110),TRUE);\n\t\t\t\t}\n\t\t\tif (!(((DWORD)GRooms[Current].ASCIIName)&MGEF_EFFECT3))\n\t\t\t\t{\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,111),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,112),FALSE);\n\t\t\t\t}\n\t\t\telse\n\t\t\t\t{\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,111),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,112),TRUE);\n\t\t\t\t}\n\t\t\tif (!(((DWORD)GRooms[Current].ASCIIName)&MGEF_EFFECT4))\n\t\t\t\t{\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,113),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,114),FALSE);\n\t\t\t\t}\n\t\t\telse\n\t\t\t\t{\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,113),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,114),TRUE);\n\t\t\t\t}\n\t\t\tif (!(((DWORD)GRooms[Current].ASCIIName)&MGEF_EFFECT5))\n\t\t\t\t{\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,115),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,116),FALSE);\n\t\t\t\t}\n\t\t\telse\n\t\t\t\t{\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,115),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,116),TRUE);\n\t\t\t\t}\n\n\t\t\tif (!(((DWORD)GRooms[Current].ASCIIName)&MGEF_OBJECT0))\n\t\t\t\t{\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,123),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,124),FALSE);\n\t\t\t\t}\n\t\t\telse\n\t\t\t\t{\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,123),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,124),TRUE);\n\t\t\t\t}\n\t\t\tif (!(((DWORD)GRooms[Current].ASCIIName)&MGEF_OBJECT1))\n\t\t\t\t{\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,125),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,126),FALSE);\n\t\t\t\t}\n\t\t\telse\n\t\t\t\t{\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,125),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,126),TRUE);\n\t\t\t\t}\n\t\t\tif (!(((DWORD)GRooms[Current].ASCIIName)&MGEF_OBJECT2))\n\t\t\t\t{\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,127),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,128),FALSE);\n\t\t\t\t}\n\t\t\telse\n\t\t\t\t{\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,127),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,128),TRUE);\n\t\t\t\t}\n\t\t\tif (!(((DWORD)GRooms[Current].ASCIIName)&MGEF_OBJECT3))\n\t\t\t\t{\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,129),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,130),FALSE);\n\t\t\t\t}\n\t\t\telse\n\t\t\t\t{\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,129),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,130),TRUE);\n\t\t\t\t}\n\t\t\tif (!(((DWORD)GRooms[Current].ASCIIName)&MGEF_OBJECT4))\n\t\t\t\t{\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,131),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,132),FALSE);\n\t\t\t\t}\n\t\t\telse\n\t\t\t\t{\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,131),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,132),TRUE);\n\t\t\t\t}\n\t\t\tif (!(((DWORD)GRooms[Current].ASCIIName)&MGEF_OBJECT5))\n\t\t\t\t{\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,133),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,134),FALSE);\n\t\t\t\t}\n\t\t\telse\n\t\t\t\t{\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,133),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,134),TRUE);\n\t\t\t\t}\n\n\t\t\tif (((DWORD)GRooms[Current].ASCIIName)&MGEF_CANTBUILD)\n\t\t\t\t{\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,143),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,144),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,243),FALSE);\n\t\t\t\t}\n\t\t\telse\n\t\t\t\t{\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,143),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,144),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,243),TRUE);\n\t\t\t\t}\n\n\t\t\tMisc_SetDlgItemFloat(hDlg,150,Context->Variables.Rooms[Current].TorchLightH);\n\t\t\tMisc_SetDlgItemFloat(hDlg,152,Context->Variables.Rooms[Current].TorchLightRad);\n\t\t\tSetDlgItemInt(hDlg,143,Context->Variables.Rooms[Current].Cost,FALSE);\n\t\t\tSetDlgItemInt(hDlg,148,Context->Variables.Rooms[Current].TorchIntensity,FALSE);\n\t\t\tInvalidateRect(GetDlgItem(hDlg,146),NULL,FALSE);\n\t\t\tbreak;\n\n\t\t//\n\t\t// Propri\u00e9t\u00e9s des portes\n\t\t//\n\n\t\tcase 2:\tContext->CurrentDoor = Current;\n\n\t\t\tfor (i = 0; GDoorsMats[i].Id != 0xFFFFFFFF; i++)\n\t\t\t\tif (Context->Variables.Doors[Context->CurrentDoor].Material == GDoorsMats[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,104,CB_SETCURSEL,(WPARAM)i,(LPARAM)0);\n\n\t\t\tfor (i = 0; Effects[i].Id != 0xFFFFFFFF; i++)\n\t\t\t\tif (Context->Variables.Doors[Context->CurrentDoor].DeathEffect == Effects[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,106,CB_SETCURSEL,(WPARAM)i,(LPARAM)0);\n\n\t\t\tfor (i = 0; GDoorsCrates[i].Id != 0xFFFFFFFF; i++)\n\t\t\t\tif (Context->Variables.Doors[Context->CurrentDoor].Crate == GDoorsCrates[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,108,CB_SETCURSEL,(WPARAM)i,(LPARAM)0);\n\n\t\t\tfor (i = 0; GDoorsKeys[i].Id != 0xFFFFFFFF; i++)\n\t\t\t\tif (Context->Variables.Doors[Context->CurrentDoor].Key == GDoorsKeys[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,110,CB_SETCURSEL,(WPARAM)i,(LPARAM)0);\n\n\t\t\tSetDlgItemInt(hDlg,114,Context->Variables.Doors[Context->CurrentDoor].Cost,FALSE);\n\t\t\tSetDlgItemInt(hDlg,116,Context->Variables.Doors[Context->CurrentDoor].BuildPoints,FALSE);\n\t\t\tSetDlgItemInt(hDlg,118,Context->Variables.Doors[Context->CurrentDoor].Health,FALSE);\n\t\t\tSetDlgItemInt(hDlg,120,Context->Variables.Doors[Context->CurrentDoor].HealthGain,FALSE);\n\t\t\tSetDlgItemInt(hDlg,122,Context->Variables.Doors[Context->CurrentDoor].ManaCost,FALSE);\n\t\t\tbreak;\n\n\t\t//\n\t\t// Propri\u00e9t\u00e9s des pi\u00e8ges\n\t\t//\n\n\t\tcase 3:\tContext->CurrentTrap = Current;\n\n\t\t\tfor (i = 0; GDoorsMats[i].Id != 0xFFFFFFFF; i++)\n\t\t\t\tif (Context->Variables.Traps[Context->CurrentTrap].Material == GDoorsMats[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,104,CB_SETCURSEL,(WPARAM)i,(LPARAM)0);\n\n\t\t\tfor (i = 0; GTrapsCrates[i].Id != 0xFFFFFFFF; i++)\n\t\t\t\tif (Context->Variables.Traps[Context->CurrentTrap].Crate == GTrapsCrates[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,106,CB_SETCURSEL,(WPARAM)i,(LPARAM)0);\n\n\t\t\tfor (i = 0; Effects[i].Id != 0xFFFFFFFF; i++)\n\t\t\t\t{\n\t\t\t\tif (Context->Variables.Traps[Context->CurrentTrap].DeathEffect == Effects[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,114,CB_SETCURSEL,(WPARAM)i,(LPARAM)0);\n\t\t\t\tif (Context->Variables.Traps[Context->CurrentTrap].PowerlessEffect == Effects[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,116,CB_SETCURSEL,(WPARAM)i,(LPARAM)0);\n\t\t\t\tif (Context->Variables.Traps[Context->CurrentTrap].IdleEffect == Effects[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,118,CB_SETCURSEL,(WPARAM)i,(LPARAM)0);\n\t\t\t\t}\n\n\t\t\tfor (i = 0; GTrapsTypes[i].Id != 0; i++)\n\t\t\t\tif (Context->Variables.Traps[Context->CurrentTrap].TriggerType == GTrapsTypes[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,150,CB_SETCURSEL,(WPARAM)i,(LPARAM)0);\n\n\t\t\tfor (i = 0; GShots[i].Id != 0xFFFFFFFF; i++)\n\t\t\t\tif (Context->Variables.Traps[Context->CurrentTrap].ShotType == GShots[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,154,CB_SETCURSEL,(WPARAM)i,(LPARAM)0);\n\n\t\t\t// MagicDoor inactive parameters\n\t\t\tif (GTraps[Context->CurrentTrap].Id == 0x0000000C)\n\t\t\t\t{\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,103),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,104),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,105),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,106),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,113),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,114),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,123),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,124),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,125),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,126),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,127),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,128),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,157),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,158),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,258),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,159),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,160),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,260),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,133),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,134),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,234),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,135),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,136),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,236),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,141),FALSE);\t// Mana usage\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,142),FALSE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,242),FALSE);\n\t\t\t\t}\n\t\t\telse\n\t\t\t\t{\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,103),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,104),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,105),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,106),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,113),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,114),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,123),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,124),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,125),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,126),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,127),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,128),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,157),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,158),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,258),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,159),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,160),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,260),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,133),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,134),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,234),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,135),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,136),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,236),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,141),TRUE);\t// Mana usage\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,142),TRUE);\n\t\t\t\tEnableWindow(GetDlgItem(hDlg,242),TRUE);\n\t\t\t\t}\n\n\t\t\tSetDlgItemInt(hDlg,158,Context->Variables.Traps[Context->CurrentTrap].GoldCost,FALSE);\n\t\t\tSetDlgItemInt(hDlg,160,Context->Variables.Traps[Context->CurrentTrap].BuildPoints,FALSE);\n\t\t\tMisc_SetDlgItemFloat(hDlg,120,Context->Variables.Traps[Context->CurrentTrap].IdleEffectDelay);\n\t\t\tSetDlgItemInt(hDlg,134,Context->Variables.Traps[Context->CurrentTrap].Health,FALSE);\n\t\t\tSetDlgItemInt(hDlg,136,Context->Variables.Traps[Context->CurrentTrap].HealthGain,FALSE);\n\t\t\tMisc_SetDlgItemFloat(hDlg,138,Context->Variables.Traps[Context->CurrentTrap].ChargeTime);\n\t\t\tMisc_SetDlgItemFloat(hDlg,140,Context->Variables.Traps[Context->CurrentTrap].RechargeTime);\n\t\t\tSetDlgItemInt(hDlg,142,Context->Variables.Traps[Context->CurrentTrap].ManaUsage,FALSE);\n\t\t\tSetDlgItemInt(hDlg,144,Context->Variables.Traps[Context->CurrentTrap].ManaCostToFire,FALSE);\n\t\t\tSetDlgItemInt(hDlg,146,Context->Variables.Traps[Context->CurrentTrap].Threat,FALSE);\n\t\t\tMisc_SetDlgItemFloat(hDlg,148,Context->Variables.Traps[Context->CurrentTrap].ThreatDuration);\n\n\t\t\tCheckDlgButton(hDlg,123,(Context->Variables.Traps[Context->CurrentTrap].Invisible)?BST_CHECKED:BST_UNCHECKED);\n\t\t\tCheckDlgButton(hDlg,124,(Context->Variables.Traps[Context->CurrentTrap].Disarmable)?BST_CHECKED:BST_UNCHECKED);\n\t\t\tCheckDlgButton(hDlg,125,(Context->Variables.Traps[Context->CurrentTrap].RevealedWhenFired)?BST_CHECKED:BST_UNCHECKED);\n\t\t\tCheckDlgButton(hDlg,126,(Context->Variables.Traps[Context->CurrentTrap].RequiresMana)?BST_CHECKED:BST_UNCHECKED);\n\t\t\tCheckDlgButton(hDlg,127,(Context->Variables.Traps[Context->CurrentTrap].SolidObstacle)?BST_CHECKED:BST_UNCHECKED);\n\t\t\tCheckDlgButton(hDlg,128,(Context->Variables.Traps[Context->CurrentTrap].FPObstacle)?BST_CHECKED:BST_UNCHECKED);\n\t\t\tbreak;\n\n\t\t//\n\t\t// Propri\u00e9t\u00e9s des sorts\n\t\t//\n\n\t\tcase 4:\tContext->CurrentSpell = Current;\n\n\t\t\tfor (i = 0; GSpellsHand[i].Id != 0xFFFFFFFF; i++)\n\t\t\t\t{\n\t\t\t\tif (Context->Variables.Spells[Context->CurrentSpell].HandAnim == GSpellsHand[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,104,CB_SETCURSEL,(WPARAM)i,(LPARAM)0);\n\t\t\t\tif (Context->Variables.Spells[Context->CurrentSpell].NoGoHandAnim == GSpellsHand[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,106,CB_SETCURSEL,(WPARAM)i,(LPARAM)0);\n\t\t\t\t}\n\n\t\t\tfor (i = 0; GSpellsCast[i].Id != 0; i++)\n\t\t\t\tif (Context->Variables.Spells[Context->CurrentSpell].CastRule == GSpellsCast[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,114,CB_SETCURSEL,(WPARAM)i,(LPARAM)0);\n\n\t\t\tfor (i = 0; GSpellsTrget[i].Id != 0; i++)\n\t\t\t\tif (Context->Variables.Spells[Context->CurrentSpell].TargetRule == GSpellsTrget[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,116,CB_SETCURSEL,(WPARAM)i,(LPARAM)0);\n\n\t\t\tfor (i = 0; GShots[i].Id != 0xFFFFFFFF; i++)\n\t\t\t\t{\n\t\t\t\tif (Context->Variables.Spells[Context->CurrentSpell].ShotType == GShots[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,144,CB_SETCURSEL,(WPARAM)i,(LPARAM)0);\n\t\t\t\tif (Context->Variables.Spells[Context->CurrentSpell].UpgShotType == GShots[i].Id)\n\t\t\t\t\tSendDlgItemMessage(hDlg,147,CB_SETCURSEL,(WPARAM)i,(LPARAM)0);\n\t\t\t\t}\n\n\t\t\tSetDlgItemInt(hDlg,124,Context->Variables.Spells[Context->CurrentSpell].ManaCost,FALSE);\n\t\t\tSetDlgItemInt(hDlg,126,Context->Variables.Spells[Context->CurrentSpell].ManaDrain,FALSE);\n\t\t\tMisc_SetDlgItemFloat(hDlg,128,Context->Variables.Spells[Context->CurrentSpell].RechargeTime);\n\t\t\tSetDlgItemInt(hDlg,130,Context->Variables.Spells[Context->CurrentSpell].UpgRechargeTime,FALSE);\n\t\t\tCheckDlgButton(hDlg,131,(Context->Variables.Spells[Context->CurrentSpell].Attacking)?BST_CHECKED:BST_UNCHECKED);\n\t\t\tCheckDlgButton(hDlg,132,(Context->Variables.Spells[Context->CurrentSpell].Defensive)?BST_CHECKED:BST_UNCHECKED);\n\n\t\t\tbreak;\n\n\n\t\t}\n\n\treturn;\n}",
+    "Misc_CreateUpDownButton": "Misc_CreateUpDownButton(HWND hDlg, UINT CtlID, UINT UpDownID)\n{\n\tRECT\tWindowRect;\n\tHWND\thCtrl;\n\tHWND\thWnd;\n\n\thCtrl = GetDlgItem(hDlg,CtlID);\n\tGetWindowRect(hCtrl,&WindowRect);\n\tMapWindowPoints(NULL,hDlg,(POINT *)&WindowRect,2);\n\n\thWnd = CreateUpDownControl(WS_CHILD|WS_VISIBLE|UDS_ALIGNRIGHT,0,0,WindowRect.bottom-WindowRect.top,WindowRect.bottom-WindowRect.top,hDlg,UpDownID,hInstance,hCtrl,0,1,0);\n\treturn((hWnd)?1:0);\n}",
+    "Misc_SetUpDownInt": "Misc_SetUpDownInt(HWND hDlg, UINT CtlID, NM_UPDOWN *UpDown)\n{\n\tint\tNumber;\n\n\tNumber = GetDlgItemInt(hDlg,CtlID,NULL,FALSE);\n\tif (UpDown->iDelta > 0)\n\t\tNumber--;\n\telse\n\t\tNumber++;\n\tSetDlgItemInt(hDlg,CtlID,Number,FALSE);\n\treturn;\n}"
+  },
+  "ResourcePages": {
+    "6822": "6822 DIALOG 8, 8, 450, 310\nSTYLE DS_MODALFRAME|WS_BORDER|WS_VISIBLE|WS_CAPTION|WS_SYSMENU\nCLASS DIALOG_CLASS\nCAPTION DIALOG_MAPGBLDOORS\nFONT 8, \"MS Sans Serif\"\n{\n\tGROUPBOX\tDIALOG_MAPGBLDNAMES,\t\t100,   6,   6, 130, 282\n\tLISTBOX\t\t\t\t\t\t101,  10,  16, 122, 266, WS_VSCROLL|LBS_OWNERDRAWVARIABLE|LBS_NOINTEGRALHEIGHT\n\tPUSHBUTTON\tDIALOG_MAPGBLDEFAULT,\t\t998,  10, 292,  60,  12\n\tPUSHBUTTON\tDIALOG_MAPGBLDEFAULTALL,\t999,  70, 292,  60,  12\n\n\tCONTROL\t\tDIALOG_MAPGBLDMATERIAL,\t\t102, \"STATIC\", WS_CHILD|SS_OWNERDRAW, 138, 14, 310, 10\n\tRTEXT\t\tDIALOG_MAPGBLDMATERIALTYPE,\t103, 150,  26,  46,  20\n\tCOMBOBOX\t\t\t\t\t104, 200,  28, 220, 100, WS_VSCROLL|CBS_DROPDOWNLIST\n\tRTEXT\t\tDIALOG_MAPGBLDDEATHEFFECT,\t105, 150,  44,  46,  20\n\tCOMBOBOX\t\t\t\t\t106, 200,  46, 220, 100, WS_VSCROLL|CBS_DROPDOWNLIST\n\tRTEXT\t\tDIALOG_MAPGBLDCRATE,\t\t107, 150,  66,  46,  10\n\tCOMBOBOX\t\t\t\t\t108, 200,  64, 220, 100, WS_VSCROLL|CBS_DROPDOWNLIST\n\tRTEXT\t\tDIALOG_MAPGBLDKEY,\t\t109, 150,  80,  46,  10\n\tCOMBOBOX\t\t\t\t\t110, 200,  78, 220, 100, WS_VSCROLL|CBS_DROPDOWNLIST\n\n\tCONTROL\t\tDIALOG_MAPGBLDPARAMS,\t\t112, \"STATIC\", WS_CHILD|SS_OWNERDRAW, 138, 98, 310, 10\n\tRTEXT\t\tDIALOG_MAPGBLDCOST,\t\t113, 150, 114, 150,  10\n\tEDITTEXT\t\t\t\t\t114, 304, 113,  40,  12, ES_NUMBER\n\tRTEXT\t\tDIALOG_MAPGBLDBUILD,\t\t115, 150, 128, 150,  10\n\tEDITTEXT\t\t\t\t\t116, 304, 127,  40,  12, ES_NUMBER\n\tRTEXT\t\tDIALOG_MAPGBLDHEALTH,\t\t117, 150, 142, 150,  10\n\tEDITTEXT\t\t\t\t\t118, 304, 141,  40,  12, ES_NUMBER\n\tRTEXT\t\tDIALOG_MAPGBLDHEALTHGAIN,\t119, 150, 156, 150,  10\n\tEDITTEXT\t\t\t\t\t120, 304, 155,  40,  12, ES_NUMBER\n\tRTEXT\t\tDIALOG_MAPGBLDMANACOST,\t\t121, 150, 170, 150,  10, WS_DISABLED\n\tEDITTEXT\t\t\t\t\t122, 304, 169,  40,  12, ES_NUMBER|WS_DISABLED\n\t// IDs equal to EDITTEXT controls IDs + 100 are reserved for UPDOWN controls\n}"
+  },
+  "Fields": [
+    "Cost",
+    "BuildPoints",
+    "Health",
+    "HealthGain",
+    "ManaCost",
+    "Material",
+    "DeathEffect",
+    "Crate",
+    "Key"
+  ],
+  "NativeStorage": {
+    "Cost": {
+      "Offset": 558,
+      "Kind": "WORD",
+      "Size": 2
+    },
+    "BuildPoints": {
+      "Offset": 564,
+      "Kind": "WORD",
+      "Size": 2
+    },
+    "Health": {
+      "Offset": 556,
+      "Kind": "WORD",
+      "Size": 2
+    },
+    "HealthGain": {
+      "Offset": 540,
+      "Kind": "WORD",
+      "Size": 2
+    },
+    "ManaCost": {
+      "Offset": 568,
+      "Kind": "WORD",
+      "Size": 2
+    },
+    "Material": {
+      "Offset": 550,
+      "Kind": "BYTE",
+      "Size": 1
+    },
+    "DeathEffect": {
+      "Offset": 562,
+      "Kind": "WORD",
+      "Size": 2
+    },
+    "Crate": {
+      "Offset": 582,
+      "Kind": "BYTE",
+      "Size": 1
+    },
+    "Key": {
+      "Offset": 583,
+      "Kind": "BYTE",
+      "Size": 1
+    }
+  },
+  "Doors": [
+    {
+      "ID": 6,
+      "Index": 0,
+      "Icon": 1300,
+      "Name": "szDoorWoodBarricade"
+    },
+    {
+      "ID": 1,
+      "Index": 1,
+      "Icon": 1301,
+      "Name": "szDoorWoodenDoor"
+    },
+    {
+      "ID": 3,
+      "Index": 2,
+      "Icon": 1302,
+      "Name": "szDoorBracedDoor"
+    },
+    {
+      "ID": 2,
+      "Index": 3,
+      "Icon": 1303,
+      "Name": "szDoorSteelDoor"
+    },
+    {
+      "ID": 4,
+      "Index": 4,
+      "Icon": 1304,
+      "Name": "szDoorMagicDoor"
+    },
+    {
+      "ID": 5,
+      "Index": 5,
+      "Icon": 1305,
+      "Name": "szDoorSecretDoor"
+    },
+    {
+      "ID": 7,
+      "Index": 6,
+      "Icon": 1306,
+      "Name": "szDoorStoneBarricade"
+    },
+    {
+      "ID": 8,
+      "Index": 7,
+      "Icon": 1307,
+      "Name": "szDoorGratedDoor"
+    }
+  ],
+  "Choices": {
+    "Material": [
+      {
+        "ID": 0,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect000"
+      },
+      {
+        "ID": 1,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szMapWorldMaterial1"
+      },
+      {
+        "ID": 2,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szMapWorldMaterial2"
+      },
+      {
+        "ID": 3,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szMapWorldMaterial3"
+      },
+      {
+        "ID": 4,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szMapWorldMaterial4"
+      },
+      {
+        "ID": 5,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szMapWorldMaterial5"
+      },
+      {
+        "ID": 6,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szMapWorldMaterial6"
+      },
+      {
+        "ID": 7,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szMapWorldMaterial7"
+      }
+    ],
+    "DeathEffect": [
+      {
+        "ID": 0,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect000"
+      },
+      {
+        "ID": 1,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect001"
+      },
+      {
+        "ID": 2,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect002"
+      },
+      {
+        "ID": 3,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect003"
+      },
+      {
+        "ID": 4,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect004"
+      },
+      {
+        "ID": 5,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect005"
+      },
+      {
+        "ID": 6,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect006"
+      },
+      {
+        "ID": 7,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect007"
+      },
+      {
+        "ID": 8,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect008"
+      },
+      {
+        "ID": 9,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect009"
+      },
+      {
+        "ID": 10,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect00A"
+      },
+      {
+        "ID": 11,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect00B"
+      },
+      {
+        "ID": 12,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect00C"
+      },
+      {
+        "ID": 13,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect00D"
+      },
+      {
+        "ID": 14,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect00E"
+      },
+      {
+        "ID": 15,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect00F"
+      },
+      {
+        "ID": 16,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect010"
+      },
+      {
+        "ID": 17,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect011"
+      },
+      {
+        "ID": 18,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect012"
+      },
+      {
+        "ID": 19,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect013"
+      },
+      {
+        "ID": 20,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect014"
+      },
+      {
+        "ID": 21,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect015"
+      },
+      {
+        "ID": 22,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect016"
+      },
+      {
+        "ID": 23,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect017"
+      },
+      {
+        "ID": 24,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect018"
+      },
+      {
+        "ID": 25,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect019"
+      },
+      {
+        "ID": 26,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect01A"
+      },
+      {
+        "ID": 27,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect01B"
+      },
+      {
+        "ID": 28,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect01C"
+      },
+      {
+        "ID": 29,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect01D"
+      },
+      {
+        "ID": 30,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect01E"
+      },
+      {
+        "ID": 31,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect01F"
+      },
+      {
+        "ID": 32,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect020"
+      },
+      {
+        "ID": 33,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect021"
+      },
+      {
+        "ID": 34,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect022"
+      },
+      {
+        "ID": 35,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect023"
+      },
+      {
+        "ID": 36,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect024"
+      },
+      {
+        "ID": 37,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect025"
+      },
+      {
+        "ID": 38,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect026"
+      },
+      {
+        "ID": 39,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect027"
+      },
+      {
+        "ID": 40,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect028"
+      },
+      {
+        "ID": 41,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect029"
+      },
+      {
+        "ID": 42,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect02A"
+      },
+      {
+        "ID": 43,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect02B"
+      },
+      {
+        "ID": 44,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect02C"
+      },
+      {
+        "ID": 45,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect02D"
+      },
+      {
+        "ID": 46,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect02E"
+      },
+      {
+        "ID": 47,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect02F"
+      },
+      {
+        "ID": 48,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect030"
+      },
+      {
+        "ID": 49,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect031"
+      },
+      {
+        "ID": 50,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect032"
+      },
+      {
+        "ID": 51,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect033"
+      },
+      {
+        "ID": 52,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect034"
+      },
+      {
+        "ID": 53,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect035"
+      },
+      {
+        "ID": 54,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect036"
+      },
+      {
+        "ID": 55,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect037"
+      },
+      {
+        "ID": 56,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect038"
+      },
+      {
+        "ID": 57,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect039"
+      },
+      {
+        "ID": 58,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect03A"
+      },
+      {
+        "ID": 59,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect03B"
+      },
+      {
+        "ID": 60,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect03C"
+      },
+      {
+        "ID": 61,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect03D"
+      },
+      {
+        "ID": 62,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect03E"
+      },
+      {
+        "ID": 63,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect03F"
+      },
+      {
+        "ID": 64,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect040"
+      },
+      {
+        "ID": 65,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect041"
+      },
+      {
+        "ID": 66,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect042"
+      },
+      {
+        "ID": 67,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect043"
+      },
+      {
+        "ID": 68,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect044"
+      },
+      {
+        "ID": 69,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect045"
+      },
+      {
+        "ID": 70,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect046"
+      },
+      {
+        "ID": 71,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect047"
+      },
+      {
+        "ID": 72,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect048"
+      },
+      {
+        "ID": 73,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect049"
+      },
+      {
+        "ID": 74,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect04A"
+      },
+      {
+        "ID": 75,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect04B"
+      },
+      {
+        "ID": 76,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect04C"
+      },
+      {
+        "ID": 77,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect04D"
+      },
+      {
+        "ID": 78,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect04E"
+      },
+      {
+        "ID": 79,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect04F"
+      },
+      {
+        "ID": 80,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect050"
+      },
+      {
+        "ID": 81,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect051"
+      },
+      {
+        "ID": 82,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect052"
+      },
+      {
+        "ID": 83,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect053"
+      },
+      {
+        "ID": 84,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect054"
+      },
+      {
+        "ID": 85,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect055"
+      },
+      {
+        "ID": 86,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect056"
+      },
+      {
+        "ID": 87,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect057"
+      },
+      {
+        "ID": 88,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect058"
+      },
+      {
+        "ID": 89,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect059"
+      },
+      {
+        "ID": 90,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect05A"
+      },
+      {
+        "ID": 91,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect05B"
+      },
+      {
+        "ID": 92,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect05C"
+      },
+      {
+        "ID": 93,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect05D"
+      },
+      {
+        "ID": 94,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect05E"
+      },
+      {
+        "ID": 95,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect05F"
+      },
+      {
+        "ID": 96,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect060"
+      },
+      {
+        "ID": 97,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect061"
+      },
+      {
+        "ID": 98,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect062"
+      },
+      {
+        "ID": 99,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect063"
+      },
+      {
+        "ID": 100,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect064"
+      },
+      {
+        "ID": 101,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect065"
+      },
+      {
+        "ID": 102,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect066"
+      },
+      {
+        "ID": 103,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect067"
+      },
+      {
+        "ID": 104,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect068"
+      },
+      {
+        "ID": 105,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect069"
+      },
+      {
+        "ID": 106,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect06A"
+      },
+      {
+        "ID": 107,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect06B"
+      },
+      {
+        "ID": 108,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect06C"
+      },
+      {
+        "ID": 109,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect06D"
+      },
+      {
+        "ID": 110,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect06E"
+      },
+      {
+        "ID": 111,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect06F"
+      },
+      {
+        "ID": 112,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect070"
+      },
+      {
+        "ID": 113,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect071"
+      },
+      {
+        "ID": 114,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect072"
+      },
+      {
+        "ID": 115,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect073"
+      },
+      {
+        "ID": 116,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect074"
+      },
+      {
+        "ID": 117,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect075"
+      },
+      {
+        "ID": 118,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect076"
+      },
+      {
+        "ID": 119,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect077"
+      },
+      {
+        "ID": 120,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect078"
+      },
+      {
+        "ID": 121,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect079"
+      },
+      {
+        "ID": 122,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect07A"
+      },
+      {
+        "ID": 123,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect07B"
+      },
+      {
+        "ID": 124,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect07C"
+      },
+      {
+        "ID": 125,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect07D"
+      },
+      {
+        "ID": 126,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect07E"
+      },
+      {
+        "ID": 127,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect07F"
+      },
+      {
+        "ID": 128,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect080"
+      },
+      {
+        "ID": 129,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect081"
+      },
+      {
+        "ID": 130,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect082"
+      },
+      {
+        "ID": 131,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect083"
+      },
+      {
+        "ID": 132,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect084"
+      },
+      {
+        "ID": 133,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect085"
+      },
+      {
+        "ID": 134,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect086"
+      },
+      {
+        "ID": 135,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect087"
+      },
+      {
+        "ID": 136,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect088"
+      },
+      {
+        "ID": 137,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect089"
+      },
+      {
+        "ID": 138,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect08A"
+      },
+      {
+        "ID": 139,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect08B"
+      },
+      {
+        "ID": 140,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect08C"
+      },
+      {
+        "ID": 141,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect08D"
+      },
+      {
+        "ID": 142,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect08E"
+      },
+      {
+        "ID": 143,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect08F"
+      },
+      {
+        "ID": 144,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect090"
+      },
+      {
+        "ID": 145,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect091"
+      },
+      {
+        "ID": 146,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect092"
+      },
+      {
+        "ID": 147,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect093"
+      },
+      {
+        "ID": 148,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect094"
+      },
+      {
+        "ID": 149,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect095"
+      },
+      {
+        "ID": 150,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect096"
+      },
+      {
+        "ID": 151,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect097"
+      },
+      {
+        "ID": 152,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect098"
+      },
+      {
+        "ID": 153,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect099"
+      },
+      {
+        "ID": 154,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect09A"
+      },
+      {
+        "ID": 155,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect09B"
+      },
+      {
+        "ID": 156,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect09C"
+      },
+      {
+        "ID": 157,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect09D"
+      },
+      {
+        "ID": 158,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect09E"
+      },
+      {
+        "ID": 159,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect09F"
+      },
+      {
+        "ID": 160,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0A0"
+      },
+      {
+        "ID": 161,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0A1"
+      },
+      {
+        "ID": 162,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0A2"
+      },
+      {
+        "ID": 163,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0A3"
+      },
+      {
+        "ID": 164,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0A4"
+      },
+      {
+        "ID": 165,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0A5"
+      },
+      {
+        "ID": 166,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0A6"
+      },
+      {
+        "ID": 167,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0A7"
+      },
+      {
+        "ID": 168,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0A8"
+      },
+      {
+        "ID": 169,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0A9"
+      },
+      {
+        "ID": 170,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0AA"
+      },
+      {
+        "ID": 171,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0AB"
+      },
+      {
+        "ID": 172,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0AC"
+      },
+      {
+        "ID": 173,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0AD"
+      },
+      {
+        "ID": 174,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0AE"
+      },
+      {
+        "ID": 175,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0AF"
+      },
+      {
+        "ID": 176,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0B0"
+      },
+      {
+        "ID": 177,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0B1"
+      },
+      {
+        "ID": 178,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0B2"
+      },
+      {
+        "ID": 179,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0B3"
+      },
+      {
+        "ID": 180,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0B4"
+      },
+      {
+        "ID": 181,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0B5"
+      },
+      {
+        "ID": 182,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0B6"
+      },
+      {
+        "ID": 183,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0B7"
+      },
+      {
+        "ID": 184,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0B8"
+      },
+      {
+        "ID": 185,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0B9"
+      },
+      {
+        "ID": 186,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0BA"
+      },
+      {
+        "ID": 187,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0BB"
+      },
+      {
+        "ID": 188,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0BC"
+      },
+      {
+        "ID": 189,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0BD"
+      },
+      {
+        "ID": 190,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0BE"
+      },
+      {
+        "ID": 191,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0BF"
+      },
+      {
+        "ID": 192,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0C0"
+      },
+      {
+        "ID": 193,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0C1"
+      },
+      {
+        "ID": 194,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0C2"
+      },
+      {
+        "ID": 195,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0C3"
+      },
+      {
+        "ID": 196,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0C4"
+      },
+      {
+        "ID": 197,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0C5"
+      },
+      {
+        "ID": 198,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0C6"
+      },
+      {
+        "ID": 199,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0C7"
+      },
+      {
+        "ID": 200,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0C8"
+      },
+      {
+        "ID": 201,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0C9"
+      },
+      {
+        "ID": 202,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0CA"
+      },
+      {
+        "ID": 203,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0CB"
+      },
+      {
+        "ID": 204,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0CC"
+      },
+      {
+        "ID": 205,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0CD"
+      },
+      {
+        "ID": 206,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0CE"
+      },
+      {
+        "ID": 207,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0CF"
+      },
+      {
+        "ID": 208,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0D0"
+      },
+      {
+        "ID": 209,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0D1"
+      },
+      {
+        "ID": 210,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0D2"
+      },
+      {
+        "ID": 211,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0D3"
+      },
+      {
+        "ID": 212,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0D4"
+      },
+      {
+        "ID": 213,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0D5"
+      },
+      {
+        "ID": 214,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0D6"
+      },
+      {
+        "ID": 215,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0D7"
+      },
+      {
+        "ID": 216,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0D8"
+      },
+      {
+        "ID": 217,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0D9"
+      },
+      {
+        "ID": 218,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0DA"
+      },
+      {
+        "ID": 219,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0DB"
+      },
+      {
+        "ID": 220,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0DC"
+      },
+      {
+        "ID": 221,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0DD"
+      },
+      {
+        "ID": 222,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0DE"
+      },
+      {
+        "ID": 223,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0DF"
+      },
+      {
+        "ID": 224,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0E0"
+      },
+      {
+        "ID": 225,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0E1"
+      },
+      {
+        "ID": 226,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0E2"
+      },
+      {
+        "ID": 227,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0E3"
+      },
+      {
+        "ID": 228,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0E4"
+      },
+      {
+        "ID": 229,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0E5"
+      },
+      {
+        "ID": 230,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0E6"
+      },
+      {
+        "ID": 231,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0E7"
+      },
+      {
+        "ID": 232,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0E8"
+      },
+      {
+        "ID": 233,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0E9"
+      },
+      {
+        "ID": 234,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0EA"
+      },
+      {
+        "ID": 235,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0EB"
+      },
+      {
+        "ID": 236,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0EC"
+      },
+      {
+        "ID": 237,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0ED"
+      },
+      {
+        "ID": 238,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0EE"
+      },
+      {
+        "ID": 239,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0EF"
+      },
+      {
+        "ID": 240,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0F0"
+      },
+      {
+        "ID": 241,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0F1"
+      },
+      {
+        "ID": 242,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0F2"
+      },
+      {
+        "ID": 243,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0F3"
+      },
+      {
+        "ID": 244,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0F4"
+      },
+      {
+        "ID": 245,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0F5"
+      },
+      {
+        "ID": 246,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0F6"
+      },
+      {
+        "ID": 247,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0F7"
+      },
+      {
+        "ID": 248,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0F8"
+      },
+      {
+        "ID": 249,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0F9"
+      },
+      {
+        "ID": 250,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0FA"
+      },
+      {
+        "ID": 251,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0FB"
+      },
+      {
+        "ID": 252,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0FC"
+      },
+      {
+        "ID": 253,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0FD"
+      },
+      {
+        "ID": 254,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0FE"
+      },
+      {
+        "ID": 255,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect0FF"
+      },
+      {
+        "ID": 256,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect100"
+      },
+      {
+        "ID": 257,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect101"
+      },
+      {
+        "ID": 258,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect102"
+      },
+      {
+        "ID": 259,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect103"
+      },
+      {
+        "ID": 260,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect104"
+      },
+      {
+        "ID": 261,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect105"
+      },
+      {
+        "ID": 262,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect106"
+      },
+      {
+        "ID": 263,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect107"
+      },
+      {
+        "ID": 264,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect108"
+      },
+      {
+        "ID": 265,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect109"
+      },
+      {
+        "ID": 266,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect10A"
+      },
+      {
+        "ID": 267,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect10B"
+      },
+      {
+        "ID": 268,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect10C"
+      },
+      {
+        "ID": 269,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect10D"
+      },
+      {
+        "ID": 270,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect10E"
+      },
+      {
+        "ID": 271,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect10F"
+      },
+      {
+        "ID": 272,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect110"
+      },
+      {
+        "ID": 273,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect111"
+      },
+      {
+        "ID": 274,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect112"
+      },
+      {
+        "ID": 275,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect113"
+      },
+      {
+        "ID": 276,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect114"
+      },
+      {
+        "ID": 277,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect115"
+      },
+      {
+        "ID": 278,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect116"
+      },
+      {
+        "ID": 279,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect117"
+      },
+      {
+        "ID": 280,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect118"
+      },
+      {
+        "ID": 281,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect119"
+      },
+      {
+        "ID": 282,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect11A"
+      },
+      {
+        "ID": 283,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect11B"
+      },
+      {
+        "ID": 284,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect11C"
+      },
+      {
+        "ID": 285,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect11D"
+      },
+      {
+        "ID": 286,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect11E"
+      },
+      {
+        "ID": 287,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect11F"
+      },
+      {
+        "ID": 288,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect120"
+      },
+      {
+        "ID": 289,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect121"
+      },
+      {
+        "ID": 290,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect122"
+      },
+      {
+        "ID": 291,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect123"
+      },
+      {
+        "ID": 292,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect124"
+      },
+      {
+        "ID": 293,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect125"
+      },
+      {
+        "ID": 294,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect126"
+      },
+      {
+        "ID": 295,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect127"
+      },
+      {
+        "ID": 296,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect128"
+      },
+      {
+        "ID": 297,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect129"
+      },
+      {
+        "ID": 298,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect12A"
+      },
+      {
+        "ID": 299,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect12B"
+      },
+      {
+        "ID": 300,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect12C"
+      },
+      {
+        "ID": 301,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect12D"
+      },
+      {
+        "ID": 302,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect12E"
+      },
+      {
+        "ID": 303,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect12F"
+      },
+      {
+        "ID": 304,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect130"
+      },
+      {
+        "ID": 305,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect131"
+      },
+      {
+        "ID": 306,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect132"
+      },
+      {
+        "ID": 307,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect133"
+      },
+      {
+        "ID": 308,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect134"
+      },
+      {
+        "ID": 309,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect135"
+      },
+      {
+        "ID": 310,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect136"
+      },
+      {
+        "ID": 311,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect137"
+      },
+      {
+        "ID": 312,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect138"
+      },
+      {
+        "ID": 313,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect139"
+      },
+      {
+        "ID": 314,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect13A"
+      },
+      {
+        "ID": 315,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect13B"
+      },
+      {
+        "ID": 316,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect13C"
+      },
+      {
+        "ID": 317,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect13D"
+      },
+      {
+        "ID": 318,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect13E"
+      },
+      {
+        "ID": 319,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect13F"
+      },
+      {
+        "ID": 320,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect140"
+      },
+      {
+        "ID": 321,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect141"
+      },
+      {
+        "ID": 322,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect142"
+      },
+      {
+        "ID": 323,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect143"
+      },
+      {
+        "ID": 324,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect144"
+      },
+      {
+        "ID": 325,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect145"
+      },
+      {
+        "ID": 326,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect146"
+      },
+      {
+        "ID": 327,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect147"
+      },
+      {
+        "ID": 328,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect148"
+      },
+      {
+        "ID": 329,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect149"
+      },
+      {
+        "ID": 330,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect14A"
+      },
+      {
+        "ID": 331,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect14B"
+      },
+      {
+        "ID": 332,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect14C"
+      },
+      {
+        "ID": 333,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect14D"
+      },
+      {
+        "ID": 334,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect14E"
+      },
+      {
+        "ID": 335,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect14F"
+      },
+      {
+        "ID": 336,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect150"
+      },
+      {
+        "ID": 337,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect151"
+      },
+      {
+        "ID": 338,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect152"
+      },
+      {
+        "ID": 339,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect153"
+      },
+      {
+        "ID": 340,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect154"
+      },
+      {
+        "ID": 341,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect155"
+      },
+      {
+        "ID": 342,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect156"
+      },
+      {
+        "ID": 343,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect157"
+      },
+      {
+        "ID": 344,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect158"
+      },
+      {
+        "ID": 345,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect159"
+      },
+      {
+        "ID": 346,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect15A"
+      },
+      {
+        "ID": 347,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect15B"
+      },
+      {
+        "ID": 348,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect15C"
+      },
+      {
+        "ID": 349,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect15D"
+      },
+      {
+        "ID": 350,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect15E"
+      },
+      {
+        "ID": 351,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect15F"
+      },
+      {
+        "ID": 352,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect160"
+      },
+      {
+        "ID": 353,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect161"
+      },
+      {
+        "ID": 354,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect162"
+      },
+      {
+        "ID": 355,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect163"
+      },
+      {
+        "ID": 356,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect164"
+      },
+      {
+        "ID": 357,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect165"
+      },
+      {
+        "ID": 358,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect166"
+      },
+      {
+        "ID": 359,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect167"
+      },
+      {
+        "ID": 360,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect168"
+      },
+      {
+        "ID": 361,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect169"
+      },
+      {
+        "ID": 362,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect16A"
+      },
+      {
+        "ID": 363,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect16B"
+      },
+      {
+        "ID": 364,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect16C"
+      },
+      {
+        "ID": 365,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect16D"
+      },
+      {
+        "ID": 366,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect16E"
+      },
+      {
+        "ID": 367,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect16F"
+      },
+      {
+        "ID": 368,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect170"
+      },
+      {
+        "ID": 369,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect171"
+      },
+      {
+        "ID": 370,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect172"
+      }
+    ],
+    "Crate": [
+      {
+        "ID": 0,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szEffect000"
+      },
+      {
+        "ID": 52,
+        "Index": 0,
+        "Icon": 2052,
+        "Name": "szMapWorldObject34"
+      },
+      {
+        "ID": 53,
+        "Index": 0,
+        "Icon": 2053,
+        "Name": "szMapWorldObject35"
+      },
+      {
+        "ID": 54,
+        "Index": 0,
+        "Icon": 2054,
+        "Name": "szMapWorldObject36"
+      },
+      {
+        "ID": 55,
+        "Index": 0,
+        "Icon": 2055,
+        "Name": "szMapWorldObject37"
+      },
+      {
+        "ID": 56,
+        "Index": 0,
+        "Icon": 2056,
+        "Name": "szMapWorldObject38"
+      },
+      {
+        "ID": 57,
+        "Index": 0,
+        "Icon": 2057,
+        "Name": "szMapWorldObject39"
+      }
+    ],
+    "Key": [
+      {
+        "ID": 0,
+        "Index": 0,
+        "Icon": 0,
+        "Name": "szGlobalNoKey"
+      },
+      {
+        "ID": 17,
+        "Index": 0,
+        "Icon": 2017,
+        "Name": "szMapWorldObject11"
+      },
+      {
+        "ID": 104,
+        "Index": 0,
+        "Icon": 2104,
+        "Name": "szMapWorldObject68"
+      },
+      {
+        "ID": 105,
+        "Index": 0,
+        "Icon": 2105,
+        "Name": "szMapWorldObject69"
+      },
+      {
+        "ID": 106,
+        "Index": 0,
+        "Icon": 2106,
+        "Name": "szMapWorldObject6A"
+      },
+      {
+        "ID": 107,
+        "Index": 0,
+        "Icon": 2107,
+        "Name": "szMapWorldObject6B"
+      },
+      {
+        "ID": 137,
+        "Index": 0,
+        "Icon": 2137,
+        "Name": "szMapWorldObject89"
+      }
+    ]
+  },
+  "NumericControls": {
+    "Cost": {
+      "Control": 114,
+      "Spinner": 214,
+      "Minimum": 0,
+      "Maximum": 65535,
+      "TextEntryEnabled": true,
+      "SpinnerEnabled": true,
+      "SpinnerInputEnabled": true
+    },
+    "BuildPoints": {
+      "Control": 116,
+      "Spinner": 216,
+      "Minimum": 0,
+      "Maximum": 65535,
+      "TextEntryEnabled": true,
+      "SpinnerEnabled": true,
+      "SpinnerInputEnabled": true
+    },
+    "Health": {
+      "Control": 118,
+      "Spinner": 218,
+      "Minimum": 0,
+      "Maximum": 65535,
+      "TextEntryEnabled": true,
+      "SpinnerEnabled": true,
+      "SpinnerInputEnabled": true
+    },
+    "HealthGain": {
+      "Control": 120,
+      "Spinner": 220,
+      "Minimum": 0,
+      "Maximum": 65535,
+      "TextEntryEnabled": true,
+      "SpinnerEnabled": true,
+      "SpinnerInputEnabled": true
+    },
+    "ManaCost": {
+      "Control": 122,
+      "Spinner": 222,
+      "Minimum": 0,
+      "Maximum": 65535,
+      "TextEntryEnabled": false,
+      "SpinnerEnabled": true,
+      "SpinnerInputEnabled": false
+    }
+  },
+  "ManaCostPolicy": "Disabled text entry and label; separately created enabled up/down222 changes edit122 via WM_NOTIFY and value is saved.",
+  "ExplicitSavePreservesUnchangedValues": true,
+  "ImplementedCompleteDoorPage": false,
+  "WholeGoalComplete": false,
+  "NativeBuddyInputEvidence": {
+    "ProbeResultSHA256": "335923b7bc82256feec7e5b8351b5c146d22e0b3b5b358558e5ff7febeb55689",
+    "ProbeSourceSHA256": "5f2678b07a06ccb60b2b8c41e80daf5cb4cef415b3c7389a8e85a8afddfaecbd",
+    "ProbeBuildSHA256": "7742a6bfe4280ad016a9d0a59796aaadc1385ac9e5b5d1d4ffcd5ea5e6561f9c",
+    "ProbeRunSHA256": "49348117ba7b5078d1fc3e92bfb57db40d45c724c9f6dac9eec95602d07a25cd",
+    "DisabledBuddyCases": 6,
+    "EnabledPositiveCounterchecks": 6,
+    "OriginalEditorGuiAccepted": false,
+    "PhysicalMouseOrVisibleDpiAccepted": false
+  }
+}

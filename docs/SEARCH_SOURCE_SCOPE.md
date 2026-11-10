@@ -1,0 +1,5 @@
+# Original general-search scope
+
+The preserved `Source/Sources/Map/Map_Find.c` contains only two functions. `Find_Select(HWND)` displays a message box with `Ok` and returns: it does not collect criteria, traverse map objects, create results or navigate them. `Find_UpdateList(void *Address)` removes entries referencing deleted addresses. `Source/Includes/Find.h` defines a results list and a result-data union, not an implemented searching workflow. Other preserved call sites clear that list or invoke the stub; they do not implement a criteria/result builder.
+
+Consequently a new named-filter/general-result-navigation tool is not an established editing capability of this source revision. Its earlier listing as mandatory unfinished original parity was unsupported and is removed from that requirement. This is not a claim about unexamined historical releases, nor removal of real object managers, statistics, existing modern category/record filtering or bilingual catalogue search. Those genuine features still have their own acceptance requirements. A richer modern general search may be added separately, but is not evidence of reproducing an absent original workflow.

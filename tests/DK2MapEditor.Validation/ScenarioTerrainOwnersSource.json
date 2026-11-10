@@ -1,0 +1,329 @@
+{
+  "InputHashes": {
+    "Source/Sources/Triggers/Triggers_Triggers.c": "b94b509ab4d625925bffa65c83f3bc77c8cba776cb2085d1494c855e6e4cb05a",
+    "Source/Sources/Triggers/Triggers_Actions.c": "6cb909e922dd1116d1d02c7cde63721b07c0ed4b57b7cc4ff4af8cd8fcf33d37",
+    "Source/Sources/Triggers/Triggers_Display.c": "a9ebbaa98de2d0c27d5e9dc5373f67ee64ed0b1d5c181bd196df07950c4859cd",
+    "Source/Sources/Misc/Misc_Display.c": "b3fdf608d551981e0e9a593ba4ae20b34a52c8336ae6f7c65431ac23d8502769",
+    "Source/Sources/Datas/Datas_Triggers.c": "b4ba371380ca3c5faf192fa761fb69df1f6713dc806e225bc3aa404ed4caa365"
+  },
+  "Pages": [
+    {
+      "Type": "TRIGGER_AREACONTENT",
+      "TerrainParameter": 3,
+      "OwnerParameter": 2,
+      "OwnerControl": 501,
+      "Cases": [
+        {
+          "Terrain": 4,
+          "ForcedOwner": 2,
+          "OwnerEnabled": false
+        },
+        {
+          "Terrain": 5,
+          "ForcedOwner": 2,
+          "OwnerEnabled": false
+        },
+        {
+          "Terrain": 6,
+          "ForcedOwner": 2,
+          "OwnerEnabled": false
+        },
+        {
+          "Terrain": 7,
+          "ForcedOwner": 2,
+          "OwnerEnabled": false
+        },
+        {
+          "Terrain": 1,
+          "ForcedOwner": 2,
+          "OwnerEnabled": false
+        },
+        {
+          "Terrain": 2,
+          "ForcedOwner": 2,
+          "OwnerEnabled": false
+        },
+        {
+          "Terrain": 3,
+          "ForcedOwner": 2,
+          "OwnerEnabled": false
+        },
+        {
+          "Terrain": 35,
+          "ForcedOwner": 1,
+          "OwnerEnabled": false
+        },
+        {
+          "Terrain": 31,
+          "ForcedOwner": 2,
+          "OwnerEnabled": false
+        },
+        {
+          "Terrain": 9,
+          "ForcedOwner": null,
+          "OwnerEnabled": true
+        },
+        {
+          "Terrain": 8,
+          "ForcedOwner": null,
+          "OwnerEnabled": true
+        },
+        {
+          "Terrain": 14,
+          "ForcedOwner": null,
+          "OwnerEnabled": true
+        },
+        {
+          "Terrain": 12,
+          "ForcedOwner": null,
+          "OwnerEnabled": true
+        },
+        {
+          "Terrain": 11,
+          "ForcedOwner": null,
+          "OwnerEnabled": true
+        },
+        {
+          "Terrain": 15,
+          "ForcedOwner": null,
+          "OwnerEnabled": true
+        },
+        {
+          "Terrain": 10,
+          "ForcedOwner": null,
+          "OwnerEnabled": true
+        },
+        {
+          "Terrain": 24,
+          "ForcedOwner": null,
+          "OwnerEnabled": true
+        },
+        {
+          "Terrain": 17,
+          "ForcedOwner": null,
+          "OwnerEnabled": true
+        },
+        {
+          "Terrain": 21,
+          "ForcedOwner": null,
+          "OwnerEnabled": true
+        },
+        {
+          "Terrain": 23,
+          "ForcedOwner": null,
+          "OwnerEnabled": true
+        },
+        {
+          "Terrain": 22,
+          "ForcedOwner": null,
+          "OwnerEnabled": true
+        },
+        {
+          "Terrain": 13,
+          "ForcedOwner": null,
+          "OwnerEnabled": true
+        },
+        {
+          "Terrain": 16,
+          "ForcedOwner": null,
+          "OwnerEnabled": true
+        },
+        {
+          "Terrain": 19,
+          "ForcedOwner": null,
+          "OwnerEnabled": true
+        },
+        {
+          "Terrain": 18,
+          "ForcedOwner": null,
+          "OwnerEnabled": true
+        },
+        {
+          "Terrain": 20,
+          "ForcedOwner": null,
+          "OwnerEnabled": true
+        },
+        {
+          "Terrain": 26,
+          "ForcedOwner": null,
+          "OwnerEnabled": true
+        },
+        {
+          "Terrain": 25,
+          "ForcedOwner": null,
+          "OwnerEnabled": true
+        },
+        {
+          "Terrain": 36,
+          "ForcedOwner": null,
+          "OwnerEnabled": true
+        }
+      ],
+      "OriginalSelectionNotification": "\n\t\t\t\t\tswitch(Context->TriggerCtx.TempTrigger.ctrl)\n\t\t\t\t\t\t{\n\t\t\t\t\t\tcase TRIGGER_DEATHSINBAND:\n\t\t\t\t\t\t\tlData = Triggers_TriggerDlgGetSelectedEntryParam(Context->TriggerCtx.DeadHerosList);\n\t\t\t\t\t\t\tif (!lData)\n\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\tSetDlgItemText(hDlg,102,NULL);\n\t\t\t\t\t\t\t\tbreak;\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\tlData = Heros_GetHerosCount(Heros_FindHerosById(lData-1));\n\t\t\t\t\t\t\twsprintf(Context->TriggerCtx.TempNumber,szTriggersHeroesCount,lData);\n\t\t\t\t\t\t\tSetDlgItemText(hDlg,102,Context->TriggerCtx.TempNumber);\n\t\t\t\t\t\t\tbreak;\n\t\t\t\t\t\tcase TRIGGER_JAILEDINBAND:\n\t\t\t\t\t\t\tlData = Triggers_TriggerDlgGetSelectedEntryParam(Context->TriggerCtx.JailHerosList);\n\t\t\t\t\t\t\tif (!lData)\n\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\tSetDlgItemText(hDlg,102,NULL);\n\t\t\t\t\t\t\t\tbreak;\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\tlData = Heros_GetHerosCount(Heros_FindHerosById(lData-1));\n\t\t\t\t\t\t\twsprintf(Context->TriggerCtx.TempNumber,szTriggersHeroesCount,lData);\n\t\t\t\t\t\t\tSetDlgItemText(hDlg,102,Context->TriggerCtx.TempNumber);\n\t\t\t\t\t\t\tbreak;\n\t\t\t\t\t\tcase TRIGGER_STUNNEDINBAND:\n\t\t\t\t\t\t\tlData = Triggers_TriggerDlgGetSelectedEntryParam(Context->TriggerCtx.StunHerosList);\n\t\t\t\t\t\t\tif (!lData)\n\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\tSetDlgItemText(hDlg,102,NULL);\n\t\t\t\t\t\t\t\tbreak;\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\tlData = Heros_GetHerosCount(Heros_FindHerosById(lData-1));\n\t\t\t\t\t\t\twsprintf(Context->TriggerCtx.TempNumber,szTriggersHeroesCount,lData);\n\t\t\t\t\t\t\tSetDlgItemText(hDlg,102,Context->TriggerCtx.TempNumber);\n\t\t\t\t\t\t\tbreak;\n\t\t\t\t\t\t}\n\n\t\t\t\t\tif (!IsWindow(Context->TriggerCtx.AreaContentList)) break;\n\t\t\t\t\tif (((NMHDR *)lParam)->hwndFrom == Context->TriggerCtx.AreaContentList)\n\t\t\t\t\t\t{\n\t\t\t\t\t\tif (!(((NM_LISTVIEW *)lParam)->uNewState&LVIS_SELECTED))\n\t\t\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,501),FALSE);\n\t\t\t\t\t\telse\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\tlData = Triggers_TriggerDlgGetSelectedEntryParam(Context->TriggerCtx.AreaContentList);\n\t\t\t\t\t\t\tif ((lData <= 0x07)||(lData == 0x1F))\n\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\tSendDlgItemMessage(hDlg,501,CB_SETCURSEL,(WPARAM)1,(LPARAM)0);\n\t\t\t\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,501),FALSE);\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\telse if (lData == 0x23)\n\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\tSendDlgItemMessage(hDlg,501,CB_SETCURSEL,(WPARAM)0,(LPARAM)0);\n\t\t\t\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,501),FALSE);\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\telse\n\t\t\t\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,501),TRUE);\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n\t\t\t\t\treturn(TRUE);\n\n                                "
+    },
+    {
+      "Type": "ACTION_CHANGESQUARE",
+      "TerrainParameter": 1,
+      "OwnerParameter": 2,
+      "OwnerControl": 303,
+      "Cases": [
+        {
+          "Terrain": 4,
+          "ForcedOwner": 2,
+          "OwnerEnabled": false
+        },
+        {
+          "Terrain": 5,
+          "ForcedOwner": 2,
+          "OwnerEnabled": false
+        },
+        {
+          "Terrain": 6,
+          "ForcedOwner": 2,
+          "OwnerEnabled": false
+        },
+        {
+          "Terrain": 7,
+          "ForcedOwner": 2,
+          "OwnerEnabled": false
+        },
+        {
+          "Terrain": 1,
+          "ForcedOwner": 2,
+          "OwnerEnabled": false
+        },
+        {
+          "Terrain": 2,
+          "ForcedOwner": 2,
+          "OwnerEnabled": false
+        },
+        {
+          "Terrain": 3,
+          "ForcedOwner": 2,
+          "OwnerEnabled": false
+        },
+        {
+          "Terrain": 35,
+          "ForcedOwner": 1,
+          "OwnerEnabled": false
+        },
+        {
+          "Terrain": 31,
+          "ForcedOwner": 2,
+          "OwnerEnabled": false
+        },
+        {
+          "Terrain": 9,
+          "ForcedOwner": null,
+          "OwnerEnabled": true
+        },
+        {
+          "Terrain": 8,
+          "ForcedOwner": null,
+          "OwnerEnabled": true
+        },
+        {
+          "Terrain": 11,
+          "ForcedOwner": null,
+          "OwnerEnabled": true
+        },
+        {
+          "Terrain": 15,
+          "ForcedOwner": null,
+          "OwnerEnabled": true
+        },
+        {
+          "Terrain": 10,
+          "ForcedOwner": null,
+          "OwnerEnabled": true
+        },
+        {
+          "Terrain": 24,
+          "ForcedOwner": null,
+          "OwnerEnabled": true
+        },
+        {
+          "Terrain": 17,
+          "ForcedOwner": null,
+          "OwnerEnabled": true
+        },
+        {
+          "Terrain": 21,
+          "ForcedOwner": null,
+          "OwnerEnabled": true
+        },
+        {
+          "Terrain": 23,
+          "ForcedOwner": null,
+          "OwnerEnabled": true
+        },
+        {
+          "Terrain": 22,
+          "ForcedOwner": null,
+          "OwnerEnabled": true
+        },
+        {
+          "Terrain": 13,
+          "ForcedOwner": null,
+          "OwnerEnabled": true
+        },
+        {
+          "Terrain": 16,
+          "ForcedOwner": null,
+          "OwnerEnabled": true
+        },
+        {
+          "Terrain": 19,
+          "ForcedOwner": null,
+          "OwnerEnabled": true
+        },
+        {
+          "Terrain": 18,
+          "ForcedOwner": null,
+          "OwnerEnabled": true
+        },
+        {
+          "Terrain": 20,
+          "ForcedOwner": null,
+          "OwnerEnabled": true
+        },
+        {
+          "Terrain": 26,
+          "ForcedOwner": null,
+          "OwnerEnabled": true
+        },
+        {
+          "Terrain": 25,
+          "ForcedOwner": null,
+          "OwnerEnabled": true
+        },
+        {
+          "Terrain": 36,
+          "ForcedOwner": null,
+          "OwnerEnabled": true
+        }
+      ],
+      "OriginalSelectionNotification": "\n\t\t\t\t\tif (!IsWindow(Context->ActionCtx.TerrainList)) break;\n\t\t\t\t\tif (((NMHDR *)lParam)->hwndFrom == Context->ActionCtx.TerrainList)\n\t\t\t\t\t\t{\n\t\t\t\t\t\tif (!(((NM_LISTVIEW *)lParam)->uNewState&LVIS_SELECTED))\n\t\t\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,303),FALSE);\n\t\t\t\t\t\telse\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\tlData = Triggers_TriggerDlgGetSelectedEntryParam(Context->ActionCtx.TerrainList);\n\t\t\t\t\t\t\tif ((lData <= 0x07)||(lData == 0x1F))\n\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\tSendDlgItemMessage(hDlg,303,CB_SETCURSEL,(WPARAM)1,(LPARAM)0);\n\t\t\t\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,303),FALSE);\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\telse if (lData == 0x23)\n\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\tSendDlgItemMessage(hDlg,303,CB_SETCURSEL,(WPARAM)0,(LPARAM)0);\n\t\t\t\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,303),FALSE);\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\telse\n\t\t\t\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,303),TRUE);\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n\t\t\t\t\treturn(TRUE);\n\n                                "
+    }
+  ],
+  "AliasSecondaryDefaults": {
+    "Type": "ACTION_SETVARIABLE",
+    "Control": 214,
+    "DefaultSlot": 0,
+    "LiteralModes": [
+      10,
+      18,
+      34
+    ],
+    "VariableModes": [
+      12,
+      20,
+      36
+    ],
+    "OriginalCheck": "\n\t\t\tif (!Context->ActionCtx.Initialized[ACTION_SETVARIABLE]) goto Error_0;\n\t\t\tSendDlgItemMessage(hDlg,214,CB_SETCURSEL,(WPARAM)0,(LPARAM)0);\n\t\t\tswitch(Context->ActionCtx.TempAction.param2)\n\t\t\t\t{\n\t\t\t\tcase 0x0A:\n\t\t\t\t\tCheckRadioButton(hDlg,200,205,200);\n\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,210),TRUE);\n\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,213),FALSE);\n\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,214),FALSE);\n\t\t\t\t\tbreak;\n\t\t\t\tcase 0x0C:\n\t\t\t\t\tCheckRadioButton(hDlg,200,205,203);\n\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,210),FALSE);\n\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,213),TRUE);\n\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,214),TRUE);\n\t\t\t\t\tSendDlgItemMessage(hDlg,214,CB_SETCURSEL,(WPARAM)Context->ActionCtx.TempAction.param5,(LPARAM)0);\n\t\t\t\t\tbreak;\n\t\t\t\tcase 0x12:\n\t\t\t\t\tCheckRadioButton(hDlg,200,205,201);\n\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,210),TRUE);\n\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,213),FALSE);\n\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,214),FALSE);\n\t\t\t\t\tbreak;\n\t\t\t\tcase 0x14:\n\t\t\t\t\tCheckRadioButton(hDlg,200,205,204);\n\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,210),FALSE);\n\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,213),TRUE);\n\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,214),TRUE);\n\t\t\t\t\tSendDlgItemMessage(hDlg,214,CB_SETCURSEL,(WPARAM)Context->ActionCtx.TempAction.param5,(LPARAM)0);\n\t\t\t\t\tbreak;\n\t\t\t\tcase 0x22:\n\t\t\t\t\tCheckRadioButton(hDlg,200,205,202);\n\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,210),TRUE);\n\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,213),FALSE);\n\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,214),FALSE);\n\t\t\t\t\tbreak;\n\t\t\t\tcase 0x24:\n\t\t\t\t\tCheckRadioButton(hDlg,200,205,205);\n\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,210),FALSE);\n\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,213),TRUE);\n\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,214),TRUE);\n\t\t\t\t\tSendDlgItemMessage(hDlg,214,CB_SETCURSEL,(WPARAM)Context->ActionCtx.TempAction.param5,(LPARAM)0);\n\t\t\t\t\tbreak;\n\t\t\t\t}\n\t\t\tSetDlgItemInt(hDlg,210,Context->ActionCtx.TempAction.param5,FALSE);\n\t\t\tSendDlgItemMessage(hDlg,210,EM_LIMITTEXT,(WPARAM)4,(LPARAM)0);\n\t\t\tSendDlgItemMessage(hDlg,212,CB_SETCURSEL,(WPARAM)Context->ActionCtx.TempAction.param1,(LPARAM)0);\n\t\t\tSendDlgItemMessage(hDlg,212,CB_LIMITTEXT,(WPARAM)TRIGGERS_MAXVARLEN-1,(LPARAM)0);\n\t\t\tSendDlgItemMessage(hDlg,214,CB_LIMITTEXT,(WPARAM)TRIGGERS_MAXVARLEN-1,(LPARAM)0);\n\t\t\tbreak;\n\n\t\t",
+    "NumericTextKeepsParam5": true
+  },
+  "SourceTerrainRows": 29,
+  "SelectableCases": 56,
+  "UIExecuted": false
+}

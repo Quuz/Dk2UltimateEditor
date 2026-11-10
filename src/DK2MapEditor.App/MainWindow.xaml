@@ -1,0 +1,222 @@
+<Window x:Class="DK2MapEditor.App.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:editing="clr-namespace:DK2MapEditor.App.Editing"
+        mc:Ignorable="d"
+        Title="{DynamicResource App.Title}"
+        Width="1240"
+        Height="760"
+        MinWidth="980"
+        MinHeight="600"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Menu Grid.Row="0" Padding="4,2">
+            <MenuItem Header="{DynamicResource Menu.File}">
+                <MenuItem Header="{DynamicResource Menu.New}" InputGestureText="Ctrl+N" Click="New_Click" />
+                <MenuItem Header="{DynamicResource Menu.Open}" InputGestureText="Ctrl+O" Click="OpenMap_Click" />
+                <MenuItem x:Name="SaveMenuItem" Header="{DynamicResource Save.Menu}" InputGestureText="Ctrl+S" Click="Save_Click" IsEnabled="False" />
+                <MenuItem x:Name="SaveAsMenuItem" Header="{DynamicResource Save.MenuAs}" InputGestureText="Ctrl+Shift+S" Click="SaveAs_Click" IsEnabled="False" />
+                <MenuItem x:Name="RecoverMenuItem" Header="{DynamicResource Save.Recover}" Click="Recover_Click" />
+                <MenuItem x:Name="RecentFilesMenuItem" Header="{DynamicResource Save.RecentFiles}" />
+                <MenuItem Header="{DynamicResource Menu.Export}" Click="Export_Click" />
+                <MenuItem x:Name="CompileMenuItem" Header="{DynamicResource Menu.Compile}" InputGestureText="Ctrl+Shift+C" Click="Compile_Click" IsEnabled="False" />
+                <MenuItem x:Name="RunGameMenuItem" Header="{DynamicResource Menu.RunGame}" InputGestureText="Ctrl+Shift+E" Click="RunGame_Click" IsEnabled="False" />
+                <MenuItem x:Name="UpgradeMenuItem" Header="{DynamicResource Menu.UpgradeProject}" Click="UpgradeProject_Click" IsEnabled="False" />
+                <MenuItem x:Name="TextExportMenuItem" Header="{DynamicResource Menu.TextExport}" IsEnabled="False">
+                    <MenuItem x:Name="TextExportSupportedMenuItem" Header="{DynamicResource TextMap.Mode.Supported}" Click="TextExport_Click" IsEnabled="False" />
+                    <MenuItem x:Name="TextExportOriginalMenuItem" Header="{DynamicResource TextMap.Mode.Original}" Click="TextExport_Click" IsEnabled="False" />
+                </MenuItem>
+                <Separator />
+                <MenuItem Header="{DynamicResource Menu.Exit}" Click="Exit_Click" />
+            </MenuItem>
+            <MenuItem Header="{DynamicResource Menu.Edit}">
+                <MenuItem x:Name="MapPropertiesMenuItem" Header="{DynamicResource MapProperties.Title}" Click="MapProperties_Click" IsEnabled="False" />
+                <MenuItem x:Name="UndoMenuItem" Header="{DynamicResource Menu.Undo}" InputGestureText="Ctrl+Z" Click="Undo_Click" IsEnabled="False" />
+                <MenuItem x:Name="RedoMenuItem" Header="{DynamicResource Menu.Redo}" InputGestureText="Ctrl+Y" Click="Redo_Click" IsEnabled="False" />
+                <MenuItem x:Name="HistoryMenuItem" Header="{DynamicResource History.Title}" Click="History_Click" IsEnabled="False" />
+                <MenuItem x:Name="ClearHistoryMenuItem" Header="{DynamicResource History.Clear}" Click="ClearHistory_Click" IsEnabled="False" />
+                <Separator />
+                <MenuItem x:Name="CutMenuItem" Header="{DynamicResource Menu.Cut}" InputGestureText="Ctrl+X" Click="Cut_Click" />
+                <MenuItem x:Name="CopyMenuItem" Header="{DynamicResource Menu.Copy}" InputGestureText="Ctrl+C" Click="Copy_Click" />
+                <MenuItem x:Name="CopyConfirmationMenuItem" Header="{DynamicResource CopyBuffer.Preference}" IsCheckable="True" IsChecked="True" Click="CopyConfirmation_Click" />
+                <MenuItem Header="{DynamicResource Menu.Paste}" InputGestureText="Ctrl+V" Click="Paste_Click" />
+                <MenuItem Header="{DynamicResource Menu.ImportSelection}" Click="ImportSelection_Click" />
+                <MenuItem Header="{DynamicResource Menu.ImportIntoSelection}" Click="ImportIntoSelection_Click" />
+                <MenuItem Header="{DynamicResource Menu.ExportSelection}" Click="ExportSelection_Click" />
+                <MenuItem Header="{DynamicResource Menu.ExportCopyBuffer}" Click="ExportCopyBuffer_Click" />
+                <MenuItem Header="{DynamicResource Menu.SelectAll}" InputGestureText="Ctrl+A" Click="SelectAll_Click" />
+                <MenuItem Header="{DynamicResource Menu.SelectNone}" InputGestureText="Esc" Click="SelectNone_Click" />
+                <MenuItem Header="{DynamicResource Menu.ChangeSelection}" Click="ChangeSelection_Click" />
+                <Separator />
+                <MenuItem x:Name="CreatureManagerMenuItem" Header="{DynamicResource Manager.Creatures}" Tag="0" Click="SourceObjectManager_Click" IsEnabled="False" />
+                <MenuItem x:Name="DoorTrapManagerMenuItem" Header="{DynamicResource Manager.DoorsTraps}" Tag="1" Click="SourceObjectManager_Click" IsEnabled="False" />
+                <MenuItem x:Name="ItemManagerMenuItem" Header="{DynamicResource Manager.ObjectsSpecials}" Tag="2" Click="SourceObjectManager_Click" IsEnabled="False" />
+                <MenuItem x:Name="BandManagerMenuItem" Header="{DynamicResource Manager.Bands}" Tag="Bands" Click="SourceWorkspaceManager_Click" IsEnabled="False" />
+                <MenuItem x:Name="AreaManagerMenuItem" Header="{DynamicResource Manager.Areas}" Tag="Areas" Click="SourceWorkspaceManager_Click" IsEnabled="False" />
+                <MenuItem x:Name="GateManagerMenuItem" Header="{DynamicResource Manager.Gates}" Tag="Gates" Click="SourceWorkspaceManager_Click" IsEnabled="False" />
+                <MenuItem x:Name="EffectManagerMenuItem" Header="{DynamicResource Manager.Effects}" Tag="Effects" Click="SourceWorkspaceManager_Click" IsEnabled="False" />
+                <MenuItem x:Name="PatrolManagerMenuItem" Header="{DynamicResource Manager.Patrols}" Tag="Patrols" Click="SourceWorkspaceManager_Click" IsEnabled="False" />
+                <MenuItem x:Name="ScenarioManagerMenuItem" Header="{DynamicResource Manager.Scenarios}" Tag="Scenarios" Click="SourceWorkspaceManager_Click" IsEnabled="False" />
+                <MenuItem Header="{DynamicResource Brush.TemplateTitle}">
+                    <MenuItem x:Name="CreatureBrushMenuItem" Header="{DynamicResource ProjectKind.Creature}" Tag="Creature" Click="SourceObjectBrush_Click" IsEnabled="False" />
+                    <MenuItem x:Name="DoorBrushMenuItem" Header="{DynamicResource ProjectKind.Door}" Tag="Door" Click="SourceObjectBrush_Click" IsEnabled="False" />
+                    <MenuItem x:Name="TrapBrushMenuItem" Header="{DynamicResource ProjectKind.Trap}" Tag="Trap" Click="SourceObjectBrush_Click" IsEnabled="False" />
+                    <MenuItem x:Name="ObjectBrushMenuItem" Header="{DynamicResource ProjectKind.Object}" Tag="Object" Click="SourceObjectBrush_Click" IsEnabled="False" />
+                    <MenuItem x:Name="SpecialBrushMenuItem" Header="{DynamicResource ProjectKind.MagicalObject}" Tag="SpecialItem" Click="SourceObjectBrush_Click" IsEnabled="False" />
+                </MenuItem>
+                <Separator />
+                <MenuItem Header="{DynamicResource Menu.Rotate}" InputGestureText="Ctrl+R" Click="Rotate_Click" />
+                <MenuItem Header="{DynamicResource Menu.RotateCounterclockwise}" InputGestureText="Ctrl+Shift+R" Click="RotateCounterclockwise_Click" />
+                <MenuItem x:Name="CopyRotatedMenuItem" Header="{DynamicResource Menu.CopyRotatedSelection}" Click="CopyRotatedSelection_Click" />
+                <MenuItem Header="{DynamicResource Menu.MirrorHorizontal}" Click="MirrorHorizontal_Click" />
+                <MenuItem Header="{DynamicResource Menu.MirrorVertical}" InputGestureText="Ctrl+Shift+Y" Click="MirrorVertical_Click" />
+            </MenuItem>
+            <MenuItem Header="{DynamicResource Menu.View}" SubmenuOpened="ViewMenu_Opened">
+                <MenuItem x:Name="ToolbarsMenuItem" Header="{DynamicResource Menu.Toolbars}" IsCheckable="True" IsChecked="True" Click="ToolbarsVisibility_Click" />
+                <MenuItem x:Name="MinimapMenuItem" Header="{DynamicResource Editor.Overview.Title}" IsCheckable="True" IsChecked="True" Click="MinimapVisibility_Click" />
+                <Separator />
+                <MenuItem x:Name="TerrainLayerMenuItem" Header="{DynamicResource MapZoom.ShowTerrain}" IsCheckable="True" Click="MapLayer_Click" />
+                <MenuItem x:Name="ObjectLayersMenuItem" Header="{DynamicResource MapObjects.Title}" />
+                <MenuItem x:Name="OverlayLayersMenuItem" Header="{DynamicResource MapOverlays.Title}" />
+                <Separator />
+                <MenuItem x:Name="ToolboxMenuItem" Header="{DynamicResource Menu.Toolbox}" IsCheckable="True" IsChecked="True" Click="ToolboxVisibility_Click" />
+                <MenuItem x:Name="InspectorMenuItem" Header="{DynamicResource Menu.Inspector}" IsCheckable="True" IsChecked="True" Click="InspectorVisibility_Click" />
+            </MenuItem>
+            <MenuItem Header="{DynamicResource Menu.Settings}">
+                <MenuItem Header="{DynamicResource History.Settings}" Click="HistorySettings_Click" />
+                <MenuItem Header="{DynamicResource Save.AutoSettings}" Click="AutoSaveSettings_Click" />
+                <MenuItem Header="{DynamicResource Menu.Language}">
+                    <MenuItem x:Name="EnglishMenuItem" Header="{DynamicResource Menu.Language.English}" IsCheckable="True" Click="English_Click" />
+                    <MenuItem x:Name="RussianMenuItem" Header="{DynamicResource Menu.Language.Russian}" IsCheckable="True" Click="Russian_Click" />
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="{DynamicResource Menu.Help}">
+                <MenuItem Header="{DynamicResource Help.Guide}" InputGestureText="F1" Click="Guide_Click" />
+                <MenuItem x:Name="SectionVersionsMenuItem" Header="{DynamicResource Versions.Title}" Click="SectionVersions_Click" IsEnabled="False" />
+                <MenuItem Header="{DynamicResource Menu.About}" Click="About_Click" />
+            </MenuItem>
+        </Menu>
+
+        <Border x:Name="CommandToolbar" Grid.Row="1" Background="{StaticResource Brush.Panel}" BorderBrush="{StaticResource Brush.Border}" BorderThickness="0,1,0,1" Padding="8,4">
+            <StackPanel Orientation="Horizontal">
+                <Button Content="{DynamicResource Toolbar.Open}" Click="OpenMap_Click" />
+                <Button x:Name="SaveButton" Content="{DynamicResource Save.Menu}" Click="Save_Click" IsEnabled="False" />
+                <Button Content="{DynamicResource Menu.Export}" Click="Export_Click" />
+                <Button x:Name="ValidateButton" Content="{DynamicResource Toolbar.Validate}" Click="Validate_Click" />
+            </StackPanel>
+        </Border>
+
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition x:Name="ToolboxColumn" Width="220" />
+                <ColumnDefinition Width="5" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="5" />
+                <ColumnDefinition x:Name="InspectorColumn" Width="320" />
+            </Grid.ColumnDefinitions>
+
+            <Border x:Name="ToolboxPanel" Grid.Column="0" Background="{StaticResource Brush.Panel}" BorderBrush="{StaticResource Brush.Border}" BorderThickness="0,0,1,0" Padding="14">
+                <StackPanel>
+                    <TextBlock Text="{DynamicResource Toolbox.Title}" Style="{StaticResource PanelHeader}" />
+                    <TextBlock Text="{DynamicResource Editor.ToolsHint}" TextWrapping="Wrap" Style="{StaticResource MutedText}" Margin="0,0,0,12" />
+                    <TextBlock Text="{DynamicResource Editor.PropertiesHint}" TextWrapping="Wrap" Style="{StaticResource MutedText}" />
+                </StackPanel>
+            </Border>
+
+            <GridSplitter Grid.Column="1" Width="5" HorizontalAlignment="Stretch" Background="{StaticResource Brush.Border}" />
+
+            <Border Grid.Column="2" Margin="12" Background="#181513" BorderBrush="{StaticResource Brush.Border}" BorderThickness="1" CornerRadius="3">
+                <Grid>
+                    <Grid.Background>
+                        <DrawingBrush TileMode="Tile" Viewport="0,0,32,32" ViewportUnits="Absolute">
+                            <DrawingBrush.Drawing>
+                                <DrawingGroup>
+                                    <GeometryDrawing Brush="#181513" Geometry="M0,0 H32 V32 H0 Z" />
+                                    <GeometryDrawing Brush="Transparent" Geometry="M0,0 H32 M0,0 V32">
+                                        <GeometryDrawing.Pen>
+                                            <Pen Brush="#2B251F" Thickness="1" />
+                                        </GeometryDrawing.Pen>
+                                    </GeometryDrawing>
+                                </DrawingGroup>
+                            </DrawingBrush.Drawing>
+                        </DrawingBrush>
+                    </Grid.Background>
+                    <StackPanel x:Name="WelcomePanel" Width="520" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <TextBlock Text="{DynamicResource Workspace.ReadOnly}" Foreground="{StaticResource Brush.Gold}" FontSize="11" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,14" />
+                        <TextBlock x:Name="WorkspaceTitle" Text="{DynamicResource Workspace.Welcome}" Foreground="{StaticResource Brush.GoldBright}" FontSize="28" FontWeight="SemiBold" HorizontalAlignment="Center" TextAlignment="Center" />
+                        <TextBlock Text="{DynamicResource Workspace.Description}" Style="{StaticResource MutedText}" TextWrapping="Wrap" TextAlignment="Center" FontSize="15" LineHeight="23" Margin="0,16,0,22" />
+                        <Button Content="{DynamicResource Toolbar.Open}" HorizontalAlignment="Center" Click="OpenMap_Click" />
+                    </StackPanel>
+                    <editing:EditorWorkspace x:Name="Editor" Visibility="Collapsed" />
+                </Grid>
+            </Border>
+
+            <GridSplitter Grid.Column="3" Width="5" HorizontalAlignment="Stretch" Background="{StaticResource Brush.Border}" />
+
+            <Border x:Name="InspectorPanel" Grid.Column="4" Background="{StaticResource Brush.Panel}" BorderBrush="{StaticResource Brush.Border}" BorderThickness="1,0,0,0" Padding="14">
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                    <StackPanel>
+                        <TextBlock Text="{DynamicResource Inspector.Title}" Style="{StaticResource PanelHeader}" />
+                        <TextBlock x:Name="NoMapText" Text="{DynamicResource Inspector.NoMap}" Style="{StaticResource MutedText}" Margin="0,0,0,12" />
+                        <Grid x:Name="MetadataGrid" Visibility="Collapsed">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Row="0" Text="{DynamicResource Inspector.File}" Style="{StaticResource MutedText}" Margin="0,3,12,3" />
+                            <TextBlock x:Name="FileValue" Foreground="{DynamicResource Brush.Text}" Grid.Row="0" Grid.Column="1" TextWrapping="Wrap" Margin="0,3" />
+                            <TextBlock Grid.Row="1" Text="{DynamicResource Inspector.Type}" Style="{StaticResource MutedText}" Margin="0,3,12,3" />
+                            <TextBlock x:Name="TypeValue" Foreground="{DynamicResource Brush.Text}" Grid.Row="1" Grid.Column="1" TextWrapping="Wrap" Margin="0,3" />
+                            <TextBlock Grid.Row="2" Text="{DynamicResource Inspector.Version}" Style="{StaticResource MutedText}" Margin="0,3,12,3" />
+                            <TextBlock x:Name="VersionValue" Foreground="{DynamicResource Brush.Text}" Grid.Row="2" Grid.Column="1" Margin="0,3" />
+                            <TextBlock Grid.Row="3" Text="{DynamicResource Inspector.Size}" Style="{StaticResource MutedText}" Margin="0,3,12,3" />
+                            <TextBlock x:Name="SizeValue" Foreground="{DynamicResource Brush.Text}" Grid.Row="3" Grid.Column="1" Margin="0,3" />
+                            <TextBlock Grid.Row="4" Text="{DynamicResource Inspector.Dimensions}" Style="{StaticResource MutedText}" Margin="0,3,12,3" />
+                            <TextBlock x:Name="DimensionsValue" Foreground="{DynamicResource Brush.Text}" Grid.Row="4" Grid.Column="1" Margin="0,3" />
+                            <TextBlock Grid.Row="5" Text="{DynamicResource Inspector.Author}" Style="{StaticResource MutedText}" Margin="0,3,12,3" />
+                            <TextBlock x:Name="AuthorValue" Foreground="{DynamicResource Brush.Text}" Grid.Row="5" Grid.Column="1" TextWrapping="Wrap" Margin="0,3" />
+                        </Grid>
+                        <TextBlock Text="{DynamicResource Inspector.Diagnostics}" Style="{StaticResource PanelHeader}" Margin="0,20,0,8" />
+                        <ItemsControl x:Name="DiagnosticsList">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <Border BorderBrush="{StaticResource Brush.Border}" BorderThickness="1" CornerRadius="2" Padding="8" Margin="0,0,0,7">
+                                        <StackPanel>
+                                            <TextBlock Text="{Binding Code}" Foreground="{Binding Color}" FontWeight="SemiBold" />
+                                            <TextBlock x:Name="DiagnosticMessage" Foreground="{DynamicResource Brush.Text}" Text="{Binding Message}" TextWrapping="Wrap" Margin="0,3,0,0" />
+                                            <TextBlock Text="{Binding FileName}" Style="{StaticResource MutedText}" TextWrapping="Wrap" FontSize="11" Margin="0,3,0,0" />
+                                        </StackPanel>
+                                    </Border>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </StackPanel>
+                </ScrollViewer>
+            </Border>
+        </Grid>
+
+        <Border Grid.Row="3" Background="{StaticResource Brush.PanelRaised}" BorderBrush="{StaticResource Brush.Border}" BorderThickness="0,1,0,0" Padding="10,5">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock x:Name="StatusText" Text="{DynamicResource Status.Ready}" Style="{StaticResource MutedText}" />
+                <TextBlock x:Name="McpStatus" Margin="16,0,0,0" Visibility="Collapsed" Style="{StaticResource MutedText}" />
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

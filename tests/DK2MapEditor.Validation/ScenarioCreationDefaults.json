@@ -1,0 +1,2453 @@
+{
+  "VerifiedSourceInventory": true,
+  "ImplementedOrAccepted": false,
+  "Scope": "All original creation/type-change defaults, guarded retention, 26 save-time zero branches and initial parameter/repeat values",
+  "CatalogueTypes": 103,
+  "ExplicitDefaultTypes": 70,
+  "TypesWithoutExplicitDefaultBranch": [
+    "TRIGGER_DOORDESTROYED",
+    "TRIGGER_OBJECTCLAIMED",
+    "TRIGGER_APPEAR",
+    "TRIGGER_DEATH",
+    "TRIGGER_SLAPPED",
+    "TRIGGER_SEE",
+    "TRIGGER_JAILED",
+    "TRIGGER_TORTURED",
+    "TRIGGER_CONVERTED",
+    "TRIGGER_TURNCOAT",
+    "TRIGGER_HUNGRY",
+    "TRIGGER_AFRAID",
+    "TRIGGER_STEAL",
+    "TRIGGER_GOAWAY",
+    "TRIGGER_STUNNED",
+    "TRIGGER_TRANSITIONENDS",
+    "TRIGGER_NOTHUNGRY",
+    "TRIGGER_FIRED",
+    "TRIGGER_TAKE",
+    "TRIGGER_GOLDDAY",
+    "TRIGGER_TAKECREATURE",
+    "TRIGGER_FREECREATURE",
+    "TRIGGER_FIRECREATURE",
+    "TRIGGER_HURTCREATURE",
+    "TRIGGER_BREACHED",
+    "TRIGGER_ENNEMYBREACHED",
+    "ACTION_VICTORY",
+    "ACTION_DEFEAT",
+    "ACTION_HASCRYSTAL",
+    "ACTION_POSSESSCREATURE",
+    "ACTION_MAKEHUNGRY",
+    "ACTION_REMOVE",
+    "ACTION_SHOW"
+  ],
+  "Pages": [
+    {
+      "Type": "ACTION_ADDCREATURE",
+      "Function": "Triggers_ActionDlgSetDefault",
+      "File": "Source/Sources/Triggers/Triggers_Actions.c",
+      "FunctionBodyLine": 360,
+      "SourceBody": "if (Context->ActionCtx.TempAction.ctrl != NewCtrl)\r\n\t\t\t\t{\r\n\t\t\t\tContext->ActionCtx.TempAction.param1 = 4;\r\n\t\t\t\tContext->ActionCtx.TempAction.param2 = 3;\r\n\t\t\t\tContext->ActionCtx.TempAction.param3 = 1;\r\n\t\t\t\tContext->ActionCtx.TempAction.param4 = 0x29;\r\n\t\t\t\tContext->ActionCtx.TempAction.param5 = 1;\r\n\t\t\t\tContext->ActionCtx.TempAction.param6 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param7 = 1;\r\n\t\t\t\tContext->ActionCtx.TempAction.param8 = 0;\r\n\t\t\t\t}\r\n\t\t\t",
+      "Values": {
+        "1": 4,
+        "2": 3,
+        "3": 1,
+        "4": 41,
+        "5": 1,
+        "6": 0,
+        "7": 1,
+        "8": 0
+      },
+      "OnlyWhenTypeChanges": true
+    },
+    {
+      "Type": "ACTION_ADDELEMENT",
+      "Function": "Triggers_ActionDlgSetDefault",
+      "File": "Source/Sources/Triggers/Triggers_Actions.c",
+      "FunctionBodyLine": 360,
+      "SourceBody": "if (Context->ActionCtx.TempAction.ctrl != NewCtrl)\r\n\t\t\t\t{\r\n\t\t\t\tContext->ActionCtx.TempAction.param1 = 3;\r\n\t\t\t\tContext->ActionCtx.TempAction.param2 = 5;\r\n\t\t\t\tContext->ActionCtx.TempAction.param3 = 5;\r\n\t\t\t\tContext->ActionCtx.TempAction.param4 = 1;\r\n\t\t\t\tContext->ActionCtx.TempAction.param5 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param6 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param7 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param8 = 0;\r\n\t\t\t\t}\r\n\t\t\t",
+      "Values": {
+        "1": 3,
+        "2": 5,
+        "3": 5,
+        "4": 1,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0
+      },
+      "OnlyWhenTypeChanges": true
+    },
+    {
+      "Type": "ACTION_ALLIES",
+      "Function": "Triggers_ActionDlgSetDefault",
+      "File": "Source/Sources/Triggers/Triggers_Actions.c",
+      "FunctionBodyLine": 360,
+      "SourceBody": "if (Context->ActionCtx.TempAction.ctrl != NewCtrl)\r\n\t\t\t\t{\r\n\t\t\t\tContext->ActionCtx.TempAction.param1 = 3;\r\n\t\t\t\tContext->ActionCtx.TempAction.param2 = 4;\r\n\t\t\t\tContext->ActionCtx.TempAction.param3 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param4 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param5 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param6 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param7 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param8 = 0;\r\n\t\t\t\t}\r\n\t\t\t",
+      "Values": {
+        "1": 3,
+        "2": 4,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0
+      },
+      "OnlyWhenTypeChanges": true
+    },
+    {
+      "Type": "ACTION_ATTACK",
+      "Function": "Triggers_ActionDlgSetDefault",
+      "File": "Source/Sources/Triggers/Triggers_Actions.c",
+      "FunctionBodyLine": 360,
+      "SourceBody": "if (Context->ActionCtx.TempAction.ctrl != NewCtrl)\r\n\t\t\t\t{\r\n\t\t\t\tContext->ActionCtx.TempAction.param1 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param2 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param3 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param4 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param5 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param6 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param7 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param8 = 0;\r\n\t\t\t\t}\r\n\t\t\t",
+      "Values": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0
+      },
+      "OnlyWhenTypeChanges": true
+    },
+    {
+      "Type": "ACTION_CAMERAPATH",
+      "Function": "Triggers_ActionDlgSetDefault",
+      "File": "Source/Sources/Triggers/Triggers_Actions.c",
+      "FunctionBodyLine": 360,
+      "SourceBody": "if (Context->ActionCtx.TempAction.ctrl != NewCtrl)\r\n\t\t\t\t{\r\n\t\t\t\tContext->ActionCtx.TempAction.param1 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param2 = 1;\r\n\t\t\t\tContext->ActionCtx.TempAction.param3 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param4 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param5 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param6 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param7 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param8 = 0;\r\n\t\t\t\t}\r\n\t\t\t",
+      "Values": {
+        "1": 0,
+        "2": 1,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0
+      },
+      "OnlyWhenTypeChanges": true
+    },
+    {
+      "Type": "ACTION_CHANGEOWNER",
+      "Function": "Triggers_ActionDlgSetDefault",
+      "File": "Source/Sources/Triggers/Triggers_Actions.c",
+      "FunctionBodyLine": 360,
+      "SourceBody": "if (Context->ActionCtx.TempAction.ctrl != NewCtrl)\r\n\t\t\t\t{\r\n\t\t\t\tContext->ActionCtx.TempAction.param1 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param2 = 3;\r\n\t\t\t\tContext->ActionCtx.TempAction.param3 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param4 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param5 = 2;\r\n\t\t\t\tContext->ActionCtx.TempAction.param6 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param7 = 2;\r\n\t\t\t\tContext->ActionCtx.TempAction.param8 = 0;\r\n\t\t\t\t}\r\n\t\t\t",
+      "Values": {
+        "1": 0,
+        "2": 3,
+        "3": 0,
+        "4": 0,
+        "5": 2,
+        "6": 0,
+        "7": 2,
+        "8": 0
+      },
+      "OnlyWhenTypeChanges": true
+    },
+    {
+      "Type": "ACTION_CHANGEPARAMS",
+      "Function": "Triggers_ActionDlgSetDefault",
+      "File": "Source/Sources/Triggers/Triggers_Actions.c",
+      "FunctionBodyLine": 360,
+      "SourceBody": "if (Context->ActionCtx.TempAction.ctrl != NewCtrl)\r\n\t\t\t\t{\r\n\t\t\t\tContext->ActionCtx.TempAction.param1 = 3;\r\n\t\t\t\tContext->ActionCtx.TempAction.param2 = 0x13;\r\n\t\t\t\tContext->ActionCtx.TempAction.param3 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param4 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param5 = 1;\r\n\t\t\t\tContext->ActionCtx.TempAction.param6 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param7 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param8 = 0;\r\n\t\t\t\t}\r\n\t\t\t",
+      "Values": {
+        "1": 3,
+        "2": 19,
+        "3": 0,
+        "4": 0,
+        "5": 1,
+        "6": 0,
+        "7": 0,
+        "8": 0
+      },
+      "OnlyWhenTypeChanges": true
+    },
+    {
+      "Type": "ACTION_CHANGESQUARE",
+      "Function": "Triggers_ActionDlgSetDefault",
+      "File": "Source/Sources/Triggers/Triggers_Actions.c",
+      "FunctionBodyLine": 360,
+      "SourceBody": "if (Context->ActionCtx.TempAction.ctrl != NewCtrl)\r\n\t\t\t\t{\r\n\t\t\t\tContext->ActionCtx.TempAction.param1 = 6;\r\n\t\t\t\tContext->ActionCtx.TempAction.param2 = 2;\r\n\t\t\t\tContext->ActionCtx.TempAction.param3 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param4 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param5 = 2;\r\n\t\t\t\tContext->ActionCtx.TempAction.param6 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param7 = 2;\r\n\t\t\t\tContext->ActionCtx.TempAction.param8 = 0;\r\n\t\t\t\t}\r\n\t\t\t",
+      "Values": {
+        "1": 6,
+        "2": 2,
+        "3": 0,
+        "4": 0,
+        "5": 2,
+        "6": 0,
+        "7": 2,
+        "8": 0
+      },
+      "OnlyWhenTypeChanges": true
+    },
+    {
+      "Type": "ACTION_CHANGEVIEW",
+      "Function": "Triggers_ActionDlgSetDefault",
+      "File": "Source/Sources/Triggers/Triggers_Actions.c",
+      "FunctionBodyLine": 360,
+      "SourceBody": "if (Context->ActionCtx.TempAction.ctrl != NewCtrl)\r\n\t\t\t\t{\r\n\t\t\t\tContext->ActionCtx.TempAction.param1 = 1;\r\n\t\t\t\tContext->ActionCtx.TempAction.param2 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param3 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param4 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param5 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param6 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param7 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param8 = 0;\r\n\t\t\t\t}\r\n\t\t\t",
+      "Values": {
+        "1": 1,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0
+      },
+      "OnlyWhenTypeChanges": true
+    },
+    {
+      "Type": "ACTION_DESTROYGATE",
+      "Function": "Triggers_ActionDlgSetDefault",
+      "File": "Source/Sources/Triggers/Triggers_Actions.c",
+      "FunctionBodyLine": 360,
+      "SourceBody": "if (Context->ActionCtx.TempAction.ctrl != NewCtrl)\r\n\t\t\t\t{\r\n\t\t\t\tContext->ActionCtx.TempAction.param1 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param2 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param3 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param4 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param5 = 1;\r\n\t\t\t\tContext->ActionCtx.TempAction.param6 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param7 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param8 = 0;\r\n\t\t\t\t}\r\n\t\t\t",
+      "Values": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 1,
+        "6": 0,
+        "7": 0,
+        "8": 0
+      },
+      "OnlyWhenTypeChanges": true
+    },
+    {
+      "Type": "ACTION_DISPLAYTIMER",
+      "Function": "Triggers_ActionDlgSetDefault",
+      "File": "Source/Sources/Triggers/Triggers_Actions.c",
+      "FunctionBodyLine": 360,
+      "SourceBody": "if (Context->ActionCtx.TempAction.ctrl != NewCtrl)\r\n\t\t\t\t{\r\n\t\t\t\tContext->ActionCtx.TempAction.param1 = 16;\r\n\t\t\t\tContext->ActionCtx.TempAction.param2 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param3 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param4 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param5 = 160;\r\n\t\t\t\tContext->ActionCtx.TempAction.param6 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param7 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param8 = 0;\r\n\t\t\t\t}\r\n\t\t\t",
+      "Values": {
+        "1": 16,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 160,
+        "6": 0,
+        "7": 0,
+        "8": 0
+      },
+      "OnlyWhenTypeChanges": true
+    },
+    {
+      "Type": "ACTION_ENABLEFOG",
+      "Function": "Triggers_ActionDlgSetDefault",
+      "File": "Source/Sources/Triggers/Triggers_Actions.c",
+      "FunctionBodyLine": 360,
+      "SourceBody": "if (Context->ActionCtx.TempAction.ctrl != NewCtrl)\r\n\t\t\t\t{\r\n\t\t\t\tContext->ActionCtx.TempAction.param1 = 1;\r\n\t\t\t\tContext->ActionCtx.TempAction.param2 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param3 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param4 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param5 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param6 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param7 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param8 = 0;\r\n\t\t\t\t}\r\n\t\t\t",
+      "Values": {
+        "1": 1,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0
+      },
+      "OnlyWhenTypeChanges": true
+    },
+    {
+      "Type": "ACTION_GENERATE",
+      "Function": "Triggers_ActionDlgSetDefault",
+      "File": "Source/Sources/Triggers/Triggers_Actions.c",
+      "FunctionBodyLine": 360,
+      "SourceBody": "if (Context->ActionCtx.TempAction.ctrl != NewCtrl)\r\n\t\t\t\t{\r\n\t\t\t\tContext->ActionCtx.TempAction.param1 = 7;\r\n\t\t\t\tContext->ActionCtx.TempAction.param2 = 1;\r\n\t\t\t\tContext->ActionCtx.TempAction.param3 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param4 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param5 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param6 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param7 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param8 = 0;\r\n\t\t\t\t}\r\n\t\t\t",
+      "Values": {
+        "1": 7,
+        "2": 1,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0
+      },
+      "OnlyWhenTypeChanges": true
+    },
+    {
+      "Type": "ACTION_MOODS",
+      "Function": "Triggers_ActionDlgSetDefault",
+      "File": "Source/Sources/Triggers/Triggers_Actions.c",
+      "FunctionBodyLine": 360,
+      "SourceBody": "if (Context->ActionCtx.TempAction.ctrl != NewCtrl)\r\n\t\t\t\t{\r\n\t\t\t\tContext->ActionCtx.TempAction.param1 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param2 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param3 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param4 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param5 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param6 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param7 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param8 = 0;\r\n\t\t\t\t}\r\n\t\t\t",
+      "Values": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0
+      },
+      "OnlyWhenTypeChanges": true
+    },
+    {
+      "Type": "ACTION_MOVECAMERA",
+      "Function": "Triggers_ActionDlgSetDefault",
+      "File": "Source/Sources/Triggers/Triggers_Actions.c",
+      "FunctionBodyLine": 360,
+      "SourceBody": "if (Context->ActionCtx.TempAction.ctrl != NewCtrl)\r\n\t\t\t\t{\r\n\t\t\t\tContext->ActionCtx.TempAction.param1 = 1;\r\n\t\t\t\tContext->ActionCtx.TempAction.param2 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param3 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param4 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param5 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param6 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param7 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param8 = 0;\r\n\t\t\t\t}\r\n\t\t\t",
+      "Values": {
+        "1": 1,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0
+      },
+      "OnlyWhenTypeChanges": true
+    },
+    {
+      "Type": "ACTION_MUSICLEVEL",
+      "Function": "Triggers_ActionDlgSetDefault",
+      "File": "Source/Sources/Triggers/Triggers_Actions.c",
+      "FunctionBodyLine": 360,
+      "SourceBody": "if (Context->ActionCtx.TempAction.ctrl != NewCtrl)\r\n\t\t\t\t{\r\n\t\t\t\tContext->ActionCtx.TempAction.param1 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param2 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param3 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param4 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param5 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param6 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param7 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param8 = 0;\r\n\t\t\t\t}\r\n\t\t\t",
+      "Values": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0
+      },
+      "OnlyWhenTypeChanges": true
+    },
+    {
+      "Type": "ACTION_PORTALS",
+      "Function": "Triggers_ActionDlgSetDefault",
+      "File": "Source/Sources/Triggers/Triggers_Actions.c",
+      "FunctionBodyLine": 360,
+      "SourceBody": "if (Context->ActionCtx.TempAction.ctrl != NewCtrl)\r\n\t\t\t\t{\r\n\t\t\t\tContext->ActionCtx.TempAction.param1 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param2 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param3 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param4 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param5 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param6 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param7 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param8 = 0;\r\n\t\t\t\t}\r\n\t\t\t",
+      "Values": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0
+      },
+      "OnlyWhenTypeChanges": true
+    },
+    {
+      "Type": "ACTION_PRIMARYTARGET",
+      "Function": "Triggers_ActionDlgSetDefault",
+      "File": "Source/Sources/Triggers/Triggers_Actions.c",
+      "FunctionBodyLine": 360,
+      "SourceBody": "if (Context->ActionCtx.TempAction.ctrl != NewCtrl)\r\n\t\t\t\t{\r\n\t\t\t\tContext->ActionCtx.TempAction.param1 = 1;\r\n\t\t\t\tContext->ActionCtx.TempAction.param2 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param3 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param4 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param5 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param6 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param7 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param8 = 0;\r\n\t\t\t\t}\r\n\t\t\t",
+      "Values": {
+        "1": 1,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0
+      },
+      "OnlyWhenTypeChanges": true
+    },
+    {
+      "Type": "ACTION_RELEASEBAND",
+      "Function": "Triggers_ActionDlgSetDefault",
+      "File": "Source/Sources/Triggers/Triggers_Actions.c",
+      "FunctionBodyLine": 360,
+      "SourceBody": "if (Context->ActionCtx.TempAction.ctrl != NewCtrl)\r\n\t\t\t\t{\r\n\t\t\t\tContext->ActionCtx.TempAction.param1 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param2 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param3 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param4 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param5 = 1;\r\n\t\t\t\tContext->ActionCtx.TempAction.param6 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param7 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param8 = 0;\r\n\t\t\t\t}\r\n\t\t\t",
+      "Values": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 1,
+        "6": 0,
+        "7": 0,
+        "8": 0
+      },
+      "OnlyWhenTypeChanges": true
+    },
+    {
+      "Type": "ACTION_ROTATECAMERA",
+      "Function": "Triggers_ActionDlgSetDefault",
+      "File": "Source/Sources/Triggers/Triggers_Actions.c",
+      "FunctionBodyLine": 360,
+      "SourceBody": "if (Context->ActionCtx.TempAction.ctrl != NewCtrl)\r\n\t\t\t\t{\r\n\t\t\t\tContext->ActionCtx.TempAction.param1 = 1;\r\n\t\t\t\tContext->ActionCtx.TempAction.param2 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param3 = 360;\r\n\t\t\t\tContext->ActionCtx.TempAction.param4 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param5 = 7;\r\n\t\t\t\tContext->ActionCtx.TempAction.param6 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param7 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param8 = 0;\r\n\t\t\t\t}\r\n\t\t\t",
+      "Values": {
+        "1": 1,
+        "2": 0,
+        "3": 360,
+        "4": 0,
+        "5": 7,
+        "6": 0,
+        "7": 0,
+        "8": 0
+      },
+      "OnlyWhenTypeChanges": true
+    },
+    {
+      "Type": "ACTION_RUN",
+      "Function": "Triggers_ActionDlgSetDefault",
+      "File": "Source/Sources/Triggers/Triggers_Actions.c",
+      "FunctionBodyLine": 360,
+      "SourceBody": "if (Context->ActionCtx.TempAction.ctrl != NewCtrl)\r\n\t\t\t\t{\r\n\t\t\t\tContext->ActionCtx.TempAction.param1 = 1;\r\n\t\t\t\tContext->ActionCtx.TempAction.param2 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param3 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param4 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param5 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param6 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param7 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param8 = 0;\r\n\t\t\t\t}\r\n\t\t\t",
+      "Values": {
+        "1": 1,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0
+      },
+      "OnlyWhenTypeChanges": true
+    },
+    {
+      "Type": "ACTION_SAY",
+      "Function": "Triggers_ActionDlgSetDefault",
+      "File": "Source/Sources/Triggers/Triggers_Actions.c",
+      "FunctionBodyLine": 360,
+      "SourceBody": "if (Context->ActionCtx.TempAction.ctrl != NewCtrl)\r\n\t\t\t\t{\r\n\t\t\t\tContext->ActionCtx.TempAction.param1 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param2 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param3 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param4 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param5 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param6 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param7 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param8 = 0;\r\n\t\t\t\t}\r\n\t\t\t",
+      "Values": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0
+      },
+      "OnlyWhenTypeChanges": true
+    },
+    {
+      "Type": "ACTION_SETTIMER",
+      "Function": "Triggers_ActionDlgSetDefault",
+      "File": "Source/Sources/Triggers/Triggers_Actions.c",
+      "FunctionBodyLine": 360,
+      "SourceBody": "if (Context->ActionCtx.TempAction.ctrl != NewCtrl)\r\n\t\t\t\t{\r\n\t\t\t\tContext->ActionCtx.TempAction.param1 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param2 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param3 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param4 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param5 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param6 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param7 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param8 = 0;\r\n\t\t\t\t}\r\n\t\t\t",
+      "Values": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0
+      },
+      "OnlyWhenTypeChanges": true
+    },
+    {
+      "Type": "ACTION_SETVARIABLE",
+      "Function": "Triggers_ActionDlgSetDefault",
+      "File": "Source/Sources/Triggers/Triggers_Actions.c",
+      "FunctionBodyLine": 360,
+      "SourceBody": "if (Context->ActionCtx.TempAction.ctrl != NewCtrl)\r\n\t\t\t\t{\r\n\t\t\t\tContext->ActionCtx.TempAction.param1 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param2 = 0x0a;\r\n\t\t\t\tContext->ActionCtx.TempAction.param3 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param4 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param5 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param6 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param7 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param8 = 0;\r\n\t\t\t\t}\r\n\t\t\t",
+      "Values": {
+        "1": 0,
+        "2": 10,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0
+      },
+      "OnlyWhenTypeChanges": true
+    },
+    {
+      "Type": "ACTION_SHOWAREA",
+      "Function": "Triggers_ActionDlgSetDefault",
+      "File": "Source/Sources/Triggers/Triggers_Actions.c",
+      "FunctionBodyLine": 360,
+      "SourceBody": "if (Context->ActionCtx.TempAction.ctrl != NewCtrl)\r\n\t\t\t\t{\r\n\t\t\t\tContext->ActionCtx.TempAction.param1 = 1;\r\n\t\t\t\tContext->ActionCtx.TempAction.param2 = 1;\r\n\t\t\t\tContext->ActionCtx.TempAction.param3 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param4 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param5 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param6 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param7 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param8 = 0;\r\n\t\t\t\t}\r\n\t\t\t",
+      "Values": {
+        "1": 1,
+        "2": 1,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0
+      },
+      "OnlyWhenTypeChanges": true
+    },
+    {
+      "Type": "ACTION_SHOWCRYSTAL",
+      "Function": "Triggers_ActionDlgSetDefault",
+      "File": "Source/Sources/Triggers/Triggers_Actions.c",
+      "FunctionBodyLine": 360,
+      "SourceBody": "if (Context->ActionCtx.TempAction.ctrl != NewCtrl)\r\n\t\t\t\t{\r\n\t\t\t\tContext->ActionCtx.TempAction.param1 = 0x1C;\r\n\t\t\t\tContext->ActionCtx.TempAction.param2 = 1;\r\n\t\t\t\tContext->ActionCtx.TempAction.param3 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param4 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param5 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param6 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param7 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param8 = 0;\r\n\t\t\t\t}\r\n\t\t\t",
+      "Values": {
+        "1": 28,
+        "2": 1,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0
+      },
+      "OnlyWhenTypeChanges": true
+    },
+    {
+      "Type": "ACTION_SHOWELEMENT",
+      "Function": "Triggers_ActionDlgSetDefault",
+      "File": "Source/Sources/Triggers/Triggers_Actions.c",
+      "FunctionBodyLine": 360,
+      "SourceBody": "if (Context->ActionCtx.TempAction.ctrl != NewCtrl)\r\n\t\t\t\t{\r\n\t\t\t\tContext->ActionCtx.TempAction.param1 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param2 = 0xF3;\r\n\t\t\t\tContext->ActionCtx.TempAction.param3 = 1;\r\n\t\t\t\tContext->ActionCtx.TempAction.param4 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param5 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param6 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param7 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param8 = 0;\r\n\t\t\t\t}\r\n\t\t\t",
+      "Values": {
+        "1": 0,
+        "2": 243,
+        "3": 1,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0
+      },
+      "OnlyWhenTypeChanges": true
+    },
+    {
+      "Type": "ACTION_SHOWHEALTH",
+      "Function": "Triggers_ActionDlgSetDefault",
+      "File": "Source/Sources/Triggers/Triggers_Actions.c",
+      "FunctionBodyLine": 360,
+      "SourceBody": "if (Context->ActionCtx.TempAction.ctrl != NewCtrl)\r\n\t\t\t\t{\r\n\t\t\t\tContext->ActionCtx.TempAction.param1 = 10;\r\n\t\t\t\tContext->ActionCtx.TempAction.param2 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param3 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param4 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param5 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param6 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param7 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param8 = 0;\r\n\t\t\t\t}\r\n\t\t\t",
+      "Values": {
+        "1": 10,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0
+      },
+      "OnlyWhenTypeChanges": true
+    },
+    {
+      "Type": "ACTION_SHOWNEXTROOM",
+      "Function": "Triggers_ActionDlgSetDefault",
+      "File": "Source/Sources/Triggers/Triggers_Actions.c",
+      "FunctionBodyLine": 360,
+      "SourceBody": "if (Context->ActionCtx.TempAction.ctrl != NewCtrl)\r\n\t\t\t\t{\r\n\t\t\t\tContext->ActionCtx.TempAction.param1 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param2 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param3 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param4 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param5 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param6 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param7 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param8 = 0;\r\n\t\t\t\t}\r\n\t\t\t",
+      "Values": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0
+      },
+      "OnlyWhenTypeChanges": true
+    },
+    {
+      "Type": "ACTION_SLAPSREMAINING",
+      "Function": "Triggers_ActionDlgSetDefault",
+      "File": "Source/Sources/Triggers/Triggers_Actions.c",
+      "FunctionBodyLine": 360,
+      "SourceBody": "if (Context->ActionCtx.TempAction.ctrl != NewCtrl)\r\n\t\t\t\t{\r\n\t\t\t\tContext->ActionCtx.TempAction.param1 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param2 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param3 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param4 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param5 = 16;\r\n\t\t\t\tContext->ActionCtx.TempAction.param6 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param7 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param8 = 0;\r\n\t\t\t\t}\r\n\t\t\t",
+      "Values": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 16,
+        "6": 0,
+        "7": 0,
+        "8": 0
+      },
+      "OnlyWhenTypeChanges": true
+    },
+    {
+      "Type": "ACTION_SYSTEMMESSAGES",
+      "Function": "Triggers_ActionDlgSetDefault",
+      "File": "Source/Sources/Triggers/Triggers_Actions.c",
+      "FunctionBodyLine": 360,
+      "SourceBody": "if (Context->ActionCtx.TempAction.ctrl != NewCtrl)\r\n\t\t\t\t{\r\n\t\t\t\tContext->ActionCtx.TempAction.param1 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param2 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param3 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param4 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param5 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param6 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param7 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param8 = 0;\r\n\t\t\t\t}\r\n\t\t\t",
+      "Values": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0
+      },
+      "OnlyWhenTypeChanges": true
+    },
+    {
+      "Type": "ACTION_TIMERSPEECH",
+      "Function": "Triggers_ActionDlgSetDefault",
+      "File": "Source/Sources/Triggers/Triggers_Actions.c",
+      "FunctionBodyLine": 360,
+      "SourceBody": "if (Context->ActionCtx.TempAction.ctrl != NewCtrl)\r\n\t\t\t\t{\r\n\t\t\t\tContext->ActionCtx.TempAction.param1 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param2 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param3 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param4 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param5 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param6 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param7 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param8 = 0;\r\n\t\t\t\t}\r\n\t\t\t",
+      "Values": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0
+      },
+      "OnlyWhenTypeChanges": true
+    },
+    {
+      "Type": "ACTION_TOGGLEEFFECT",
+      "Function": "Triggers_ActionDlgSetDefault",
+      "File": "Source/Sources/Triggers/Triggers_Actions.c",
+      "FunctionBodyLine": 360,
+      "SourceBody": "if (Context->ActionCtx.TempAction.ctrl != NewCtrl)\r\n\t\t\t\t{\r\n\t\t\t\tContext->ActionCtx.TempAction.param1 = 1;\r\n\t\t\t\tContext->ActionCtx.TempAction.param2 = 1;\r\n\t\t\t\tContext->ActionCtx.TempAction.param3 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param4 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param5 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param6 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param7 = 0;\r\n\t\t\t\tContext->ActionCtx.TempAction.param8 = 0;\r\n\t\t\t\t}\r\n\t\t\t",
+      "Values": {
+        "1": 1,
+        "2": 1,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0
+      },
+      "OnlyWhenTypeChanges": true
+    },
+    {
+      "Type": "TRIGGER_ANGRYCREATURES",
+      "Function": "Triggers_TriggerDlgSetDefault",
+      "File": "Source/Sources/Triggers/Triggers_Triggers.c",
+      "FunctionBodyLine": 329,
+      "SourceBody": "if (Context->TriggerCtx.TempTrigger.ctrl != NewCtrl)\r\n\t\t\t\t{\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param1 = 4;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param2 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param3 = 1;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param4 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param5 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param6 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param7 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param8 = 0;\r\n\t\t\t\t}\r\n\t\t\t",
+      "Values": {
+        "1": 4,
+        "2": 0,
+        "3": 1,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0
+      },
+      "OnlyWhenTypeChanges": true
+    },
+    {
+      "Type": "TRIGGER_AREACONTENT",
+      "Function": "Triggers_TriggerDlgSetDefault",
+      "File": "Source/Sources/Triggers/Triggers_Triggers.c",
+      "FunctionBodyLine": 329,
+      "SourceBody": "if (Context->TriggerCtx.TempTrigger.ctrl != NewCtrl)\r\n\t\t\t\t{\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param1 = 5;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param2 = 2;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param3 = 3;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param4 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param5 = 1;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param6 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param7 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param8 = 0;\r\n\t\t\t\t}\r\n\t\t\t",
+      "Values": {
+        "1": 5,
+        "2": 2,
+        "3": 3,
+        "4": 0,
+        "5": 1,
+        "6": 0,
+        "7": 0,
+        "8": 0
+      },
+      "OnlyWhenTypeChanges": true
+    },
+    {
+      "Type": "TRIGGER_BANDCREATED",
+      "Function": "Triggers_TriggerDlgSetDefault",
+      "File": "Source/Sources/Triggers/Triggers_Triggers.c",
+      "FunctionBodyLine": 329,
+      "SourceBody": "if (Context->TriggerCtx.TempTrigger.ctrl != NewCtrl)\r\n\t\t\t\t{\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param1 = 3;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param2 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param3 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param4 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param5 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param6 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param7 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param8 = 0;\r\n\t\t\t\t}\r\n\t\t\t",
+      "Values": {
+        "1": 3,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0
+      },
+      "OnlyWhenTypeChanges": true
+    },
+    {
+      "Type": "TRIGGER_CLAIMAREA",
+      "Function": "Triggers_TriggerDlgSetDefault",
+      "File": "Source/Sources/Triggers/Triggers_Triggers.c",
+      "FunctionBodyLine": 329,
+      "SourceBody": "if (Context->TriggerCtx.TempTrigger.ctrl != NewCtrl)\r\n\t\t\t\t{\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param1 = 5;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param2 = 3;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param3 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param4 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param5 = 1;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param6 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param7 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param8 = 0;\r\n\t\t\t\t}\r\n\t\t\t",
+      "Values": {
+        "1": 5,
+        "2": 3,
+        "3": 0,
+        "4": 0,
+        "5": 1,
+        "6": 0,
+        "7": 0,
+        "8": 0
+      },
+      "OnlyWhenTypeChanges": true
+    },
+    {
+      "Type": "TRIGGER_CLAIMENTIREAREA",
+      "Function": "Triggers_TriggerDlgSetDefault",
+      "File": "Source/Sources/Triggers/Triggers_Triggers.c",
+      "FunctionBodyLine": 329,
+      "SourceBody": "if (Context->TriggerCtx.TempTrigger.ctrl != NewCtrl)\r\n\t\t\t\t{\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param1 = 5;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param2 = 3;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param3 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param4 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param5 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param6 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param7 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param8 = 0;\r\n\t\t\t\t}\r\n\t\t\t",
+      "Values": {
+        "1": 5,
+        "2": 3,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0
+      },
+      "OnlyWhenTypeChanges": true
+    },
+    {
+      "Type": "TRIGGER_CLICKELEMENT",
+      "Function": "Triggers_TriggerDlgSetDefault",
+      "File": "Source/Sources/Triggers/Triggers_Triggers.c",
+      "FunctionBodyLine": 329,
+      "SourceBody": "if (Context->TriggerCtx.TempTrigger.ctrl != NewCtrl)\r\n\t\t\t\t{\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param1 = 1;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param2 = 2;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param3 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param4 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param5 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param6 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param7 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param8 = 0;\r\n\t\t\t\t}\r\n\t\t\t",
+      "Values": {
+        "1": 1,
+        "2": 2,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0
+      },
+      "OnlyWhenTypeChanges": true
+    },
+    {
+      "Type": "TRIGGER_CREAENTERAREA",
+      "Function": "Triggers_TriggerDlgSetDefault",
+      "File": "Source/Sources/Triggers/Triggers_Triggers.c",
+      "FunctionBodyLine": 329,
+      "SourceBody": "if (Context->TriggerCtx.TempTrigger.ctrl != NewCtrl)\r\n\t\t\t\t{\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param1 = 5;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param2 = 3;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param3 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param4 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param5 = 1;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param6 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param7 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param8 = 0;\r\n\t\t\t\t}\r\n\t\t\t",
+      "Values": {
+        "1": 5,
+        "2": 3,
+        "3": 0,
+        "4": 0,
+        "5": 1,
+        "6": 0,
+        "7": 0,
+        "8": 0
+      },
+      "OnlyWhenTypeChanges": true
+    },
+    {
+      "Type": "TRIGGER_CREATUREEXP",
+      "Function": "Triggers_TriggerDlgSetDefault",
+      "File": "Source/Sources/Triggers/Triggers_Triggers.c",
+      "FunctionBodyLine": 329,
+      "SourceBody": "if (Context->TriggerCtx.TempTrigger.ctrl != NewCtrl)\r\n\t\t\t\t{\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param1 = 5;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param2 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param3 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param4 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param5 = 1;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param6 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param7 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param8 = 0;\r\n\t\t\t\t}\r\n\t\t\t",
+      "Values": {
+        "1": 5,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 1,
+        "6": 0,
+        "7": 0,
+        "8": 0
+      },
+      "OnlyWhenTypeChanges": true
+    },
+    {
+      "Type": "TRIGGER_CREATURES",
+      "Function": "Triggers_TriggerDlgSetDefault",
+      "File": "Source/Sources/Triggers/Triggers_Triggers.c",
+      "FunctionBodyLine": 329,
+      "SourceBody": "if (Context->TriggerCtx.TempTrigger.ctrl != NewCtrl)\r\n\t\t\t\t{\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param1 = 4;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param2 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param3 = 1;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param4 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param5 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param6 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param7 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param8 = 0;\r\n\t\t\t\t}\r\n\t\t\t",
+      "Values": {
+        "1": 4,
+        "2": 0,
+        "3": 1,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0
+      },
+      "OnlyWhenTypeChanges": true
+    },
+    {
+      "Type": "TRIGGER_CREATURESLEVEL",
+      "Function": "Triggers_TriggerDlgSetDefault",
+      "File": "Source/Sources/Triggers/Triggers_Triggers.c",
+      "FunctionBodyLine": 329,
+      "SourceBody": "if (Context->TriggerCtx.TempTrigger.ctrl != NewCtrl)\r\n\t\t\t\t{\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param1 = 4;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param2 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param3 = 1;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param4 = 4;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param5 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param6 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param7 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param8 = 0;\r\n\t\t\t\t}\r\n\t\t\t",
+      "Values": {
+        "1": 4,
+        "2": 0,
+        "3": 1,
+        "4": 4,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0
+      },
+      "OnlyWhenTypeChanges": true
+    },
+    {
+      "Type": "TRIGGER_DEATHSINBAND",
+      "Function": "Triggers_TriggerDlgSetDefault",
+      "File": "Source/Sources/Triggers/Triggers_Triggers.c",
+      "FunctionBodyLine": 329,
+      "SourceBody": "if (Context->TriggerCtx.TempTrigger.ctrl != NewCtrl)\r\n\t\t\t\t{\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param1 = 4;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param2 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param3 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param4 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param5 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param6 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param7 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param8 = 0;\r\n\t\t\t\t}\r\n\t\t\t",
+      "Values": {
+        "1": 4,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0
+      },
+      "OnlyWhenTypeChanges": true
+    },
+    {
+      "Type": "TRIGGER_DESTROYED",
+      "Function": "Triggers_TriggerDlgSetDefault",
+      "File": "Source/Sources/Triggers/Triggers_Triggers.c",
+      "FunctionBodyLine": 329,
+      "SourceBody": "if (Context->TriggerCtx.TempTrigger.ctrl != NewCtrl)\r\n\t\t\t\t{\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param1 = 4;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param2 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param3 = 1;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param4 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param5 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param6 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param7 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param8 = 0;\r\n\t\t\t\t}\r\n\t\t\t",
+      "Values": {
+        "1": 4,
+        "2": 0,
+        "3": 1,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0
+      },
+      "OnlyWhenTypeChanges": true
+    },
+    {
+      "Type": "TRIGGER_DOORS",
+      "Function": "Triggers_TriggerDlgSetDefault",
+      "File": "Source/Sources/Triggers/Triggers_Triggers.c",
+      "FunctionBodyLine": 329,
+      "SourceBody": "if (Context->TriggerCtx.TempTrigger.ctrl != NewCtrl)\r\n\t\t\t\t{\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param1 = 4;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param2 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param3 = 1;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param4 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param5 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param6 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param7 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param8 = 0;\r\n\t\t\t\t}\r\n\t\t\t",
+      "Values": {
+        "1": 4,
+        "2": 0,
+        "3": 1,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0
+      },
+      "OnlyWhenTypeChanges": true
+    },
+    {
+      "Type": "TRIGGER_ENTERAREAINPOSS",
+      "Function": "Triggers_TriggerDlgSetDefault",
+      "File": "Source/Sources/Triggers/Triggers_Triggers.c",
+      "FunctionBodyLine": 329,
+      "SourceBody": "if (Context->TriggerCtx.TempTrigger.ctrl != NewCtrl)\r\n\t\t\t\t{\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param1 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param2 = 3;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param3 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param4 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param5 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param6 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param7 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param8 = 0;\r\n\t\t\t\t}\r\n\t\t\t",
+      "Values": {
+        "1": 0,
+        "2": 3,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0
+      },
+      "OnlyWhenTypeChanges": true
+    },
+    {
+      "Type": "TRIGGER_GOLDAMOUNT",
+      "Function": "Triggers_TriggerDlgSetDefault",
+      "File": "Source/Sources/Triggers/Triggers_Triggers.c",
+      "FunctionBodyLine": 329,
+      "SourceBody": "if (Context->TriggerCtx.TempTrigger.ctrl != NewCtrl)\r\n\t\t\t\t{\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param1 = 4;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param2 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param3 = 1;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param4 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param5 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param6 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param7 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param8 = 0;\r\n\t\t\t\t}\r\n\t\t\t",
+      "Values": {
+        "1": 4,
+        "2": 0,
+        "3": 1,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0
+      },
+      "OnlyWhenTypeChanges": true
+    },
+    {
+      "Type": "TRIGGER_GOLDMINED",
+      "Function": "Triggers_TriggerDlgSetDefault",
+      "File": "Source/Sources/Triggers/Triggers_Triggers.c",
+      "FunctionBodyLine": 329,
+      "SourceBody": "if (Context->TriggerCtx.TempTrigger.ctrl != NewCtrl)\r\n\t\t\t\t{\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param1 = 4;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param2 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param3 = 1;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param4 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param5 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param6 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param7 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param8 = 0;\r\n\t\t\t\t}\r\n\t\t\t",
+      "Values": {
+        "1": 4,
+        "2": 0,
+        "3": 1,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0
+      },
+      "OnlyWhenTypeChanges": true
+    },
+    {
+      "Type": "TRIGGER_GROUPINPOSSESS",
+      "Function": "Triggers_TriggerDlgSetDefault",
+      "File": "Source/Sources/Triggers/Triggers_Triggers.c",
+      "FunctionBodyLine": 329,
+      "SourceBody": "if (Context->TriggerCtx.TempTrigger.ctrl != NewCtrl)\r\n\t\t\t\t{\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param1 = 4;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param2 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param3 = 1;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param4 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param5 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param6 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param7 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param8 = 0;\r\n\t\t\t\t}\r\n\t\t\t",
+      "Values": {
+        "1": 4,
+        "2": 0,
+        "3": 1,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0
+      },
+      "OnlyWhenTypeChanges": true
+    },
+    {
+      "Type": "TRIGGER_HAPPYCREATURES",
+      "Function": "Triggers_TriggerDlgSetDefault",
+      "File": "Source/Sources/Triggers/Triggers_Triggers.c",
+      "FunctionBodyLine": 329,
+      "SourceBody": "if (Context->TriggerCtx.TempTrigger.ctrl != NewCtrl)\r\n\t\t\t\t{\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param1 = 4;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param2 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param3 = 1;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param4 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param5 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param6 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param7 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param8 = 0;\r\n\t\t\t\t}\r\n\t\t\t",
+      "Values": {
+        "1": 4,
+        "2": 0,
+        "3": 1,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0
+      },
+      "OnlyWhenTypeChanges": true
+    },
+    {
+      "Type": "TRIGGER_HEARTDESTROYED",
+      "Function": "Triggers_TriggerDlgSetDefault",
+      "File": "Source/Sources/Triggers/Triggers_Triggers.c",
+      "FunctionBodyLine": 329,
+      "SourceBody": "if (Context->TriggerCtx.TempTrigger.ctrl != NewCtrl)\r\n\t\t\t\t{\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param1 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param2 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param3 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param4 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param5 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param6 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param7 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param8 = 0;\r\n\t\t\t\t}\r\n\t\t\t",
+      "Values": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0
+      },
+      "OnlyWhenTypeChanges": true
+    },
+    {
+      "Type": "TRIGGER_HURTED",
+      "Function": "Triggers_TriggerDlgSetDefault",
+      "File": "Source/Sources/Triggers/Triggers_Triggers.c",
+      "FunctionBodyLine": 329,
+      "SourceBody": "if (Context->TriggerCtx.TempTrigger.ctrl != NewCtrl)\r\n\t\t\t\t{\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param1 = 4;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param2 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param3 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param4 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param5 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param6 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param7 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param8 = 0;\r\n\t\t\t\t}\r\n\t\t\t",
+      "Values": {
+        "1": 4,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0
+      },
+      "OnlyWhenTypeChanges": true
+    },
+    {
+      "Type": "TRIGGER_JAILEDINBAND",
+      "Function": "Triggers_TriggerDlgSetDefault",
+      "File": "Source/Sources/Triggers/Triggers_Triggers.c",
+      "FunctionBodyLine": 329,
+      "SourceBody": "if (Context->TriggerCtx.TempTrigger.ctrl != NewCtrl)\r\n\t\t\t\t{\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param1 = 4;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param2 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param3 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param4 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param5 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param6 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param7 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param8 = 0;\r\n\t\t\t\t}\r\n\t\t\t",
+      "Values": {
+        "1": 4,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0
+      },
+      "OnlyWhenTypeChanges": true
+    },
+    {
+      "Type": "TRIGGER_KILLEDCREATURES",
+      "Function": "Triggers_TriggerDlgSetDefault",
+      "File": "Source/Sources/Triggers/Triggers_Triggers.c",
+      "FunctionBodyLine": 329,
+      "SourceBody": "if (Context->TriggerCtx.TempTrigger.ctrl != NewCtrl)\r\n\t\t\t\t{\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param1 = 4;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param2 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param3 = 1;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param4 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param5 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param6 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param7 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param8 = 0;\r\n\t\t\t\t}\r\n\t\t\t",
+      "Values": {
+        "1": 4,
+        "2": 0,
+        "3": 1,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0
+      },
+      "OnlyWhenTypeChanges": true
+    },
+    {
+      "Type": "TRIGGER_LOSTCREATURES",
+      "Function": "Triggers_TriggerDlgSetDefault",
+      "File": "Source/Sources/Triggers/Triggers_Triggers.c",
+      "FunctionBodyLine": 329,
+      "SourceBody": "if (Context->TriggerCtx.TempTrigger.ctrl != NewCtrl)\r\n\t\t\t\t{\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param1 = 4;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param2 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param3 = 1;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param4 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param5 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param6 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param7 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param8 = 0;\r\n\t\t\t\t}\r\n\t\t\t",
+      "Values": {
+        "1": 4,
+        "2": 0,
+        "3": 1,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0
+      },
+      "OnlyWhenTypeChanges": true
+    },
+    {
+      "Type": "TRIGGER_MANAAMOUNT",
+      "Function": "Triggers_TriggerDlgSetDefault",
+      "File": "Source/Sources/Triggers/Triggers_Triggers.c",
+      "FunctionBodyLine": 329,
+      "SourceBody": "if (Context->TriggerCtx.TempTrigger.ctrl != NewCtrl)\r\n\t\t\t\t{\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param1 = 4;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param2 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param3 = 1;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param4 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param5 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param6 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param7 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param8 = 0;\r\n\t\t\t\t}\r\n\t\t\t",
+      "Values": {
+        "1": 4,
+        "2": 0,
+        "3": 1,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0
+      },
+      "OnlyWhenTypeChanges": true
+    },
+    {
+      "Type": "TRIGGER_ROOMS",
+      "Function": "Triggers_TriggerDlgSetDefault",
+      "File": "Source/Sources/Triggers/Triggers_Triggers.c",
+      "FunctionBodyLine": 329,
+      "SourceBody": "if (Context->TriggerCtx.TempTrigger.ctrl != NewCtrl)\r\n\t\t\t\t{\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param1 = 4;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param2 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param3 = 1;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param4 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param5 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param6 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param7 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param8 = 0;\r\n\t\t\t\t}\r\n\t\t\t",
+      "Values": {
+        "1": 4,
+        "2": 0,
+        "3": 1,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0
+      },
+      "OnlyWhenTypeChanges": true
+    },
+    {
+      "Type": "TRIGGER_ROOMSCONTENT",
+      "Function": "Triggers_TriggerDlgSetDefault",
+      "File": "Source/Sources/Triggers/Triggers_Triggers.c",
+      "FunctionBodyLine": 329,
+      "SourceBody": "if (Context->TriggerCtx.TempTrigger.ctrl != NewCtrl)\r\n\t\t\t\t{\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param1 = 4;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param2 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param3 = 1;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param4 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param5 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param6 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param7 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param8 = 0;\r\n\t\t\t\t}\r\n\t\t\t",
+      "Values": {
+        "1": 4,
+        "2": 0,
+        "3": 1,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0
+      },
+      "OnlyWhenTypeChanges": true
+    },
+    {
+      "Type": "TRIGGER_ROOMSSIZE",
+      "Function": "Triggers_TriggerDlgSetDefault",
+      "File": "Source/Sources/Triggers/Triggers_Triggers.c",
+      "FunctionBodyLine": 329,
+      "SourceBody": "if (Context->TriggerCtx.TempTrigger.ctrl != NewCtrl)\r\n\t\t\t\t{\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param1 = 4;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param2 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param3 = 1;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param4 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param5 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param6 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param7 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param8 = 0;\r\n\t\t\t\t}\r\n\t\t\t",
+      "Values": {
+        "1": 4,
+        "2": 0,
+        "3": 1,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0
+      },
+      "OnlyWhenTypeChanges": true
+    },
+    {
+      "Type": "TRIGGER_ROOMSTYPES",
+      "Function": "Triggers_TriggerDlgSetDefault",
+      "File": "Source/Sources/Triggers/Triggers_Triggers.c",
+      "FunctionBodyLine": 329,
+      "SourceBody": "if (Context->TriggerCtx.TempTrigger.ctrl != NewCtrl)\r\n\t\t\t\t{\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param1 = 4;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param2 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param3 = 1;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param4 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param5 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param6 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param7 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param8 = 0;\r\n\t\t\t\t}\r\n\t\t\t",
+      "Values": {
+        "1": 4,
+        "2": 0,
+        "3": 1,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0
+      },
+      "OnlyWhenTypeChanges": true
+    },
+    {
+      "Type": "TRIGGER_SELECTALLAREA",
+      "Function": "Triggers_TriggerDlgSetDefault",
+      "File": "Source/Sources/Triggers/Triggers_Triggers.c",
+      "FunctionBodyLine": 329,
+      "SourceBody": "if (Context->TriggerCtx.TempTrigger.ctrl != NewCtrl)\r\n\t\t\t\t{\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param1 = 5;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param2 = 3;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param3 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param4 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param5 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param6 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param7 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param8 = 0;\r\n\t\t\t\t}\r\n\t\t\t",
+      "Values": {
+        "1": 5,
+        "2": 3,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0
+      },
+      "OnlyWhenTypeChanges": true
+    },
+    {
+      "Type": "TRIGGER_SELECTAREA",
+      "Function": "Triggers_TriggerDlgSetDefault",
+      "File": "Source/Sources/Triggers/Triggers_Triggers.c",
+      "FunctionBodyLine": 329,
+      "SourceBody": "if (Context->TriggerCtx.TempTrigger.ctrl != NewCtrl)\r\n\t\t\t\t{\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param1 = 5;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param2 = 3;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param3 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param4 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param5 = 1;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param6 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param7 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param8 = 0;\r\n\t\t\t\t}\r\n\t\t\t",
+      "Values": {
+        "1": 5,
+        "2": 3,
+        "3": 0,
+        "4": 0,
+        "5": 1,
+        "6": 0,
+        "7": 0,
+        "8": 0
+      },
+      "OnlyWhenTypeChanges": true
+    },
+    {
+      "Type": "TRIGGER_SLAPCOUNT",
+      "Function": "Triggers_TriggerDlgSetDefault",
+      "File": "Source/Sources/Triggers/Triggers_Triggers.c",
+      "FunctionBodyLine": 329,
+      "SourceBody": "if (Context->TriggerCtx.TempTrigger.ctrl != NewCtrl)\r\n\t\t\t\t{\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param1 = 4;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param2 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param3 = 1;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param4 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param5 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param6 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param7 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param8 = 0;\r\n\t\t\t\t}\r\n\t\t\t",
+      "Values": {
+        "1": 4,
+        "2": 0,
+        "3": 1,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0
+      },
+      "OnlyWhenTypeChanges": true
+    },
+    {
+      "Type": "TRIGGER_SPELLS",
+      "Function": "Triggers_TriggerDlgSetDefault",
+      "File": "Source/Sources/Triggers/Triggers_Triggers.c",
+      "FunctionBodyLine": 329,
+      "SourceBody": "if (Context->TriggerCtx.TempTrigger.ctrl != NewCtrl)\r\n\t\t\t\t{\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param1 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param2 = 6;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param3 = 1;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param4 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param5 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param6 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param7 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param8 = 0;\r\n\t\t\t\t}\r\n\t\t\t",
+      "Values": {
+        "1": 0,
+        "2": 6,
+        "3": 1,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0
+      },
+      "OnlyWhenTypeChanges": true
+    },
+    {
+      "Type": "TRIGGER_STUNNEDINBAND",
+      "Function": "Triggers_TriggerDlgSetDefault",
+      "File": "Source/Sources/Triggers/Triggers_Triggers.c",
+      "FunctionBodyLine": 329,
+      "SourceBody": "if (Context->TriggerCtx.TempTrigger.ctrl != NewCtrl)\r\n\t\t\t\t{\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param1 = 4;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param2 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param3 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param4 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param5 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param6 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param7 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param8 = 0;\r\n\t\t\t\t}\r\n\t\t\t",
+      "Values": {
+        "1": 4,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0
+      },
+      "OnlyWhenTypeChanges": true
+    },
+    {
+      "Type": "TRIGGER_TIMEELAPSED",
+      "Function": "Triggers_TriggerDlgSetDefault",
+      "File": "Source/Sources/Triggers/Triggers_Triggers.c",
+      "FunctionBodyLine": 329,
+      "SourceBody": "if (Context->TriggerCtx.TempTrigger.ctrl != NewCtrl)\r\n\t\t\t\t{\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param1 = 5;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param2 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param3 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param4 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param5 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param6 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param7 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param8 = 0;\r\n\t\t\t\t}\r\n\t\t\t",
+      "Values": {
+        "1": 5,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0
+      },
+      "OnlyWhenTypeChanges": true
+    },
+    {
+      "Type": "TRIGGER_TIMER",
+      "Function": "Triggers_TriggerDlgSetDefault",
+      "File": "Source/Sources/Triggers/Triggers_Triggers.c",
+      "FunctionBodyLine": 329,
+      "SourceBody": "if (Context->TriggerCtx.TempTrigger.ctrl != NewCtrl)\r\n\t\t\t\t{\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param1 = 5;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param2 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param3 = 1;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param4 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param5 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param6 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param7 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param8 = 0;\r\n\t\t\t\t}\r\n\t\t\t",
+      "Values": {
+        "1": 5,
+        "2": 0,
+        "3": 1,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0
+      },
+      "OnlyWhenTypeChanges": true
+    },
+    {
+      "Type": "TRIGGER_TRAPS",
+      "Function": "Triggers_TriggerDlgSetDefault",
+      "File": "Source/Sources/Triggers/Triggers_Triggers.c",
+      "FunctionBodyLine": 329,
+      "SourceBody": "if (Context->TriggerCtx.TempTrigger.ctrl != NewCtrl)\r\n\t\t\t\t{\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param1 = 4;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param2 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param3 = 1;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param4 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param5 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param6 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param7 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param8 = 0;\r\n\t\t\t\t}\r\n\t\t\t",
+      "Values": {
+        "1": 4,
+        "2": 0,
+        "3": 1,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0
+      },
+      "OnlyWhenTypeChanges": true
+    },
+    {
+      "Type": "TRIGGER_VARIABLE",
+      "Function": "Triggers_TriggerDlgSetDefault",
+      "File": "Source/Sources/Triggers/Triggers_Triggers.c",
+      "FunctionBodyLine": 329,
+      "SourceBody": "if (Context->TriggerCtx.TempTrigger.ctrl != NewCtrl)\r\n\t\t\t\t{\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param1 = 3;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param2 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param3 = 1;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param4 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param5 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param6 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param7 = 0;\r\n\t\t\t\tContext->TriggerCtx.TempTrigger.param8 = 0;\r\n\t\t\t\t}\r\n\t\t\t",
+      "Values": {
+        "1": 3,
+        "2": 0,
+        "3": 1,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0
+      },
+      "OnlyWhenTypeChanges": true
+    }
+  ],
+  "InputHashes": {
+    "Source/Sources/Triggers/Triggers_Triggers.c": "b94b509ab4d625925bffa65c83f3bc77c8cba776cb2085d1494c855e6e4cb05a",
+    "Source/Sources/Triggers/Triggers_Actions.c": "6cb909e922dd1116d1d02c7cde63721b07c0ed4b57b7cc4ff4af8cd8fcf33d37",
+    "Source/Sources/Compiler/Compiler_Generate.c": "4a2952b0b687149302b2f0374d08e5e2316c28875d98036059af4f8c6d84ac3b",
+    "Source/Sources/Triggers/Triggers_Select.c": "529c47300a897d19504c47732f196c471c65fdfab0e05faa6987eea5c4b82fcc"
+  },
+  "CurrentImplementationSHA256": {
+    "src/DK2MapEditor.Core/Editing/LegacyEventSchemas.cs": "0ec21e2915fa8eb27a0f9a2c498a11d5515b93b12428deada9b7b5abefe381d2",
+    "src/DK2MapEditor.Core/Editing/NativeMapDocument.cs": "36131593c4d13082b8efaa0385d13f2d332f71ec0c85c09406a07ac9bebd8f79",
+    "src/DK2MapEditor.Core/Editing/LegacyProjectEditing.cs": "f3a5732b9fdf9c2c856ccbaf2ed1efcc0d1ffb23e3a3febe44205f425adf9de3"
+  },
+  "ConfirmedCurrentGap": "SetEventType uses compiler constants/zeros rather than original editor defaults; project path zeros every parameter on each invocation",
+  "ProductionModified": false,
+  "WholeGoalComplete": false,
+  "CreationAndSaveFlow": {
+    "Trigger": {
+      "InitialType": "TRIGGER_VARIABLE",
+      "InitialValues": [
+        3,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "InitialRepeat": 1,
+      "ZeroOnSaveTypes": [
+        "TRIGGER_DOORDESTROYED",
+        "TRIGGER_OBJECTCLAIMED",
+        "TRIGGER_APPEAR",
+        "TRIGGER_DEATH",
+        "TRIGGER_SEE",
+        "TRIGGER_TURNCOAT",
+        "TRIGGER_STUNNED",
+        "TRIGGER_HURTCREATURE",
+        "TRIGGER_SLAPPED",
+        "TRIGGER_JAILED",
+        "TRIGGER_TORTURED",
+        "TRIGGER_CONVERTED",
+        "TRIGGER_HUNGRY",
+        "TRIGGER_AFRAID",
+        "TRIGGER_STEAL",
+        "TRIGGER_GOAWAY",
+        "TRIGGER_NOTHUNGRY",
+        "TRIGGER_FIRED",
+        "TRIGGER_TAKE",
+        "TRIGGER_TRANSITIONENDS"
+      ],
+      "OriginalCreationBody": "\r\n\tPROPSHEETHEADER\t*psh;\r\n\tPROPSHEETPAGE\t*psp;\r\n\tint\t\t Count;\r\n\tint\t\t Result;\r\n\r\n\t//--- Si modification, copie les données précédentes ---\r\n\r\n\tif (Context->Modify)\r\n\t\t{\r\n\t\tTV_ITEM\tItem;\r\n\r\n\t\tItem.mask = TVIF_PARAM;\r\n\t\tItem.hItem = (HTREEITEM)SendMessage(Context->List,TVM_GETNEXTITEM,(WPARAM)TVGN_CARET,(LPARAM)TVI_ROOT);\r\n\t\tif (!Item.hItem) return;\r\n\t\tif (!SendMessage(Context->List,TVM_GETITEM,(WPARAM)0,(LPARAM)&Item)) return;\r\n\t\tif (!Item.lParam) return;\r\n\t\tCopyMemory(&Context->TriggerCtx.TempTrigger,(void *)Item.lParam,sizeof(TRIGGER));\r\n\t\tContext->TriggerCtx.SrceTrigger = (TRIGGER *)Item.lParam;\r\n\t\t}\r\n\telse\r\n\t\t{\r\n\t\tContext->TriggerCtx.SrceTrigger = NULL;\r\n\t\tContext->TriggerCtx.TempTrigger.node.next = NULL;\r\n\t\tContext->TriggerCtx.TempTrigger.node.prev = NULL;\r\n\t\tContext->TriggerCtx.TempTrigger.node.type = TYPE_TRIGGER;\r\n\t\tContext->TriggerCtx.TempTrigger.or = 0;\r\n\t\tContext->TriggerCtx.TempTrigger.and = 0;\r\n\t\tif (!Context->TriggerCtx.TempTrigger.ctrl)\r\n\t\t\t{\r\n\t\t\tContext->TriggerCtx.TempTrigger.ctrl = TRIGGER_VARIABLE;\r\n\t\t\tContext->TriggerCtx.TempTrigger.param1 = 3;\r\n\t\t\tContext->TriggerCtx.TempTrigger.param2 = 0;\r\n\t\t\tContext->TriggerCtx.TempTrigger.param3 = 1;\r\n\t\t\tContext->TriggerCtx.TempTrigger.param4 = 0;\r\n\t\t\tContext->TriggerCtx.TempTrigger.param5 = 0;\r\n\t\t\tContext->TriggerCtx.TempTrigger.param6 = 0;\r\n\t\t\tContext->TriggerCtx.TempTrigger.param7 = 0;\r\n\t\t\tContext->TriggerCtx.TempTrigger.param8 = 0;\r\n\t\t\tContext->TriggerCtx.TempTrigger.repeat = 0x01;\r\n\t\t\t}\r\n\t\t}\r\n\r\n\tfor (Count = 1; Triggers[Count].ctrl != 0; Count++);\r\n\r\n\tpsh = GlobalAlloc(GPTR,sizeof(PROPSHEETHEADER));\r\n\tif (!psh) goto Error_0;\r\n\tpsp = GlobalAlloc(GPTR,sizeof(PROPSHEETPAGE)*(Count+2));\r\n\tif (!psp) goto Error_1;\r\n\r\n\tpsp[0].dwSize = sizeof(PROPSHEETPAGE);\r\n\tpsp[0].hInstance = hInstance;\r\n\tpsp[0].DUMMYUNIONNAME.pszTemplate = MAKEINTRESOURCE(7100);\r\n\tpsp[0].pfnDlgProc = Triggers_TriggerDlgList;\r\n\tpsp[0].lParam = (LPARAM)Context;\r\n\tfor (Result = 1; Result != Count+1; Result++)\r\n\t\t{\r\n\t\tpsp[Result].dwSize = sizeof(PROPSHEETPAGE);\r\n\t\tpsp[Result].hInstance = hInstance;\r\n\t\tpsp[Result].DUMMYUNIONNAME.pszTemplate = MAKEINTRESOURCE(Triggers[Result-1].dialog);\r\n\t\tpsp[Result].pfnDlgProc = Triggers_TriggerDlgParams;\r\n\t\tpsp[Result].lParam = (LPARAM)Context;\r\n\t\t}\r\n\tpsp[Result].dwSize = sizeof(PROPSHEETPAGE);\r\n\tpsp[Result].hInstance = hInstance;\r\n\tpsp[Result].DUMMYUNIONNAME.pszTemplate = MAKEINTRESOURCE(7199);\r\n\tpsp[Result].pfnDlgProc = Triggers_TriggerDlgRepeat;\r\n\tpsp[Result].lParam = (LPARAM)Context;\r\n\r\n\tpsh->dwSize = sizeof(PROPSHEETHEADER);\r\n\tpsh->dwFlags = PSH_PROPSHEETPAGE|PSH_USEICONID|PSH_WIZARD;\r\n\tpsh->hwndParent = hDlg;\r\n\tpsh->hInstance = hInstance;\r\n\tpsh->DUMMYUNIONNAME.pszIcon = MAKEINTRESOURCE(1);\r\n\tpsh->pszCaption = NULL;\r\n\tpsh->nPages = Count+2;\r\n\tpsh->DUMMYUNIONNAME3.ppsp = psp;\r\n\r\n\tif (!Misc_CreateImageList(TrSpecial,&Context->Images,32,32,FALSE)) goto Error_2;\r\n\tif (!Misc_CreateImageList(BadCreatures,&Context->Images,32,32,TRUE)) goto Error_2;\r\n\tif (!Misc_CreateImageList(BadElites,&Context->Images,32,32,TRUE)) goto Error_2;\r\n\tif (!Misc_CreateImageList(Heros,&Context->Images,32,32,TRUE)) goto Error_2;\r\n\tif (!Misc_CreateImageList(Doors,&Context->Images,32,32,TRUE)) goto Error_2;\r\n\tif (!Misc_CreateImageList(Traps,&Context->Images,32,32,TRUE)) goto Error_2;\r\n\tif (!Misc_CreateImageList(Spells,&Context->Images,32,32,TRUE)) goto Error_2;\r\n\tif (!Misc_CreateImageList(Terrain,&Context->Images,32,32,TRUE)) goto Error_2;\r\n\tif (!Misc_CreateImageList(TrPlayers,&Context->Images,32,32,TRUE)) goto Error_2;\r\n\r\n\tfor (Result = 0; Result != Count; Result++)\r\n\t\t{\r\n\t\tContext->TriggerCtx.Initialized[Triggers[Result].ctrl] = FALSE;\r\n\t\t}\r\n\r\n\tResult = PropertySheet(psh);\r\n\tif (Result == -1) goto Error_2;\r\n\r\n\tMisc_DestroyImageList(&Context->Images);\r\n\tGlobalFree(psp);\r\n\tGlobalFree(psh);\r\n\treturn;\r\n\r\n//--- Erreurs survenues lors de l'initialisation ---\r\n\r\nError_2:Misc_DestroyImageList(&Context->Images);\r\n\tGlobalFree(psp);\r\nError_1:GlobalFree(psh);\r\nError_0:Misc_MessageBoxExt(hDlg,szDialogErr,NULL,szMessageBoxExtOk,MB_ICONHAND);\r\n\treturn;\r\n",
+      "OriginalSaveBody": "\r\n\tTV_INSERTSTRUCT\t Parent;\r\n\tTRIGGER\t\t*NewTrigger;\r\n\tchar\t\t*TextBuffer;\r\n\r\n\tswitch(Context->TriggerCtx.TempTrigger.ctrl)\r\n\t\t{\r\n\t\tcase TRIGGER_DOORDESTROYED:\r\n\t\tcase TRIGGER_OBJECTCLAIMED:\r\n\t\tcase TRIGGER_APPEAR:\r\n\t\tcase TRIGGER_DEATH:\r\n\t\tcase TRIGGER_SEE:\r\n\t\tcase TRIGGER_TURNCOAT:\r\n\t\tcase TRIGGER_STUNNED:\r\n\t\tcase TRIGGER_HURTCREATURE:\r\n\t\tcase TRIGGER_SLAPPED:\r\n\t\tcase TRIGGER_JAILED:\r\n\t\tcase TRIGGER_TORTURED:\r\n\t\tcase TRIGGER_CONVERTED:\r\n\t\tcase TRIGGER_HUNGRY:\r\n\t\tcase TRIGGER_AFRAID:\r\n\t\tcase TRIGGER_STEAL:\r\n\t\tcase TRIGGER_GOAWAY:\r\n\t\tcase TRIGGER_NOTHUNGRY:\r\n\t\tcase TRIGGER_FIRED:\r\n\t\tcase TRIGGER_TAKE:\r\n\t\tcase TRIGGER_TRANSITIONENDS:\r\n\t\t\tContext->TriggerCtx.TempTrigger.param1 = 0;\r\n\t\t\tContext->TriggerCtx.TempTrigger.param2 = 0;\r\n\t\t\tContext->TriggerCtx.TempTrigger.param3 = 0;\r\n\t\t\tContext->TriggerCtx.TempTrigger.param4 = 0;\r\n\t\t\tContext->TriggerCtx.TempTrigger.param5 = 0;\r\n\t\t\tContext->TriggerCtx.TempTrigger.param6 = 0;\r\n\t\t\tContext->TriggerCtx.TempTrigger.param7 = 0;\r\n\t\t\tContext->TriggerCtx.TempTrigger.param8 = 0;\r\n\t\t\tbreak;\r\n\t\t}\r\n\r\n\tTextBuffer = GlobalAlloc(GPTR,4096);\r\n\tif (!TextBuffer) goto Error_0;\r\n\tNewTrigger = GlobalAlloc(GPTR,sizeof(TRIGGER));\r\n\tif (!NewTrigger) goto Error_1;\r\n\r\n\tParent.DUMMYUNIONNAME.item.mask = TVIF_PARAM;\r\n\tParent.DUMMYUNIONNAME.item.lParam = 0;\r\n\tParent.DUMMYUNIONNAME.item.hItem = (HTREEITEM)SendMessage(Context->List,TVM_GETNEXTITEM,(WPARAM)TVGN_CARET,(LPARAM)TVI_ROOT);\r\n\tif (Parent.DUMMYUNIONNAME.item.hItem) SendMessage(Context->List,TVM_GETITEM,(WPARAM)0,(LPARAM)&Parent.DUMMYUNIONNAME.item);\r\n\r\n\t//--- Modifie un déclencheur ---\r\n\r\n\tif (Context->Modify)\r\n\t\t{\r\n\t\tGlobalFree(NewTrigger);\r\n\t\tCopyMemory(Context->TriggerCtx.SrceTrigger,&Context->TriggerCtx.TempTrigger,sizeof(TRIGGER));\r\n\t\tParent.DUMMYUNIONNAME.item.mask = TVIF_TEXT;\r\n\t\tParent.DUMMYUNIONNAME.item.pszText = Triggers_FmtTriggerText(Context->TriggerCtx.SrceTrigger,TextBuffer,TextBuffer+2048);\r\n\t\tif (Parent.DUMMYUNIONNAME.item.lParam) SendMessage(Context->List,TVM_SETITEM,(WPARAM)0,(LPARAM)&Parent.DUMMYUNIONNAME.item);\r\n\t\tgoto Done;\r\n\t\t}\r\n\r\n\t//--- Ajoute ou insère un déclencheur ---\r\n\r\n\tif ((Context->Insert)&&(Parent.DUMMYUNIONNAME.item.lParam))\r\n\t\t{\r\n\t\tCopyMemory(NewTrigger,&Context->TriggerCtx.TempTrigger,sizeof(TRIGGER));\r\n\t\tNewTrigger->id = Triggers_GetTriggerFreeId();\r\n\t\tParent.hParent = (HTREEITEM)SendMessage(Context->List,TVM_GETNEXTITEM,(WPARAM)TVGN_PARENT,(LPARAM)Parent.DUMMYUNIONNAME.item.hItem);\r\n\t\tParent.hInsertAfter = (HTREEITEM)SendMessage(Context->List,TVM_GETNEXTITEM,(WPARAM)TVGN_PREVIOUS,(LPARAM)Parent.DUMMYUNIONNAME.item.hItem);\r\n\t\tif (!Parent.hInsertAfter) Parent.hInsertAfter = TVI_FIRST;\r\n\t\tParent.DUMMYUNIONNAME.item.hItem = NULL;\r\n\t\tParent.DUMMYUNIONNAME.item.mask = TVIF_PARAM|TVIF_CHILDREN|TVIF_IMAGE|TVIF_SELECTEDIMAGE|TVIF_TEXT;\r\n\t\tParent.DUMMYUNIONNAME.item.pszText = Triggers_FmtTriggerText(NewTrigger,TextBuffer,TextBuffer+2048);\r\n\t\tParent.DUMMYUNIONNAME.item.iImage = 0;\r\n\t\tParent.DUMMYUNIONNAME.item.iSelectedImage = 0;\r\n\t\tParent.DUMMYUNIONNAME.item.cChildren = 1;\r\n\t\tParent.DUMMYUNIONNAME.item.lParam = (LPARAM)NewTrigger;\r\n\t\tParent.DUMMYUNIONNAME.item.hItem = (HTREEITEM)SendMessage(Context->List,TVM_INSERTITEM,(WPARAM)0,(LPARAM)&Parent);\r\n\t\tif (!Parent.DUMMYUNIONNAME.item.hItem) goto Error_2;\r\n\t\t}\r\n\telse\r\n\t\t{\r\n\t\tCopyMemory(NewTrigger,&Context->TriggerCtx.TempTrigger,sizeof(TRIGGER));\r\n\t\tNewTrigger->id = Triggers_GetTriggerFreeId();\r\n\t\tif ((Parent.DUMMYUNIONNAME.item.lParam)&&(!Context->Root))\r\n\t\t\t{\r\n\t\t\tif (((NODE *)Parent.DUMMYUNIONNAME.item.lParam)->type == TYPE_TRIGGER)\r\n\t\t\t\tParent.hParent = Parent.DUMMYUNIONNAME.item.hItem;\r\n\t\t\telse\r\n\t\t\t\tParent.hParent = (HTREEITEM)SendMessage(Context->List,TVM_GETNEXTITEM,(WPARAM)TVGN_PARENT,(LPARAM)Parent.DUMMYUNIONNAME.item.hItem);\r\n\t\t\tParent.hInsertAfter = TVI_LAST;\r\n\t\t\t}\r\n\t\telse\r\n\t\t\t{\r\n\t\t\tParent.hParent = TVI_ROOT;\r\n\t\t\tParent.hInsertAfter = TVI_LAST;\r\n\t\t\t}\r\n\t\tParent.DUMMYUNIONNAME.item.hItem = NULL;\r\n\t\tParent.DUMMYUNIONNAME.item.mask = TVIF_PARAM|TVIF_CHILDREN|TVIF_IMAGE|TVIF_SELECTEDIMAGE|TVIF_TEXT;\r\n\t\tParent.DUMMYUNIONNAME.item.pszText = Triggers_FmtTriggerText(NewTrigger,TextBuffer,TextBuffer+2048);\r\n\t\tParent.DUMMYUNIONNAME.item.iImage = 0;\r\n\t\tParent.DUMMYUNIONNAME.item.iSelectedImage = 0;\r\n\t\tParent.DUMMYUNIONNAME.item.cChildren = 1;\r\n\t\tParent.DUMMYUNIONNAME.item.lParam = (LPARAM)NewTrigger;\r\n\t\tParent.DUMMYUNIONNAME.item.hItem = (HTREEITEM)SendMessage(Context->List,TVM_INSERTITEM,(WPARAM)0,(LPARAM)&Parent);\r\n\t\tif (!Parent.DUMMYUNIONNAME.item.hItem) goto Error_2;\r\n\t\t}\r\n\r\n\t//--- Lie le déclencheur aux entrée précédentes ---\r\n\r\n\tList_AddEntry((NODE *)NewTrigger,&MapTriggers);\r\n\tif (!Triggers_SelectLink(NewTrigger,Context->TriggerCtx.ParentPoint,Parent.DUMMYUNIONNAME.item.hItem,Context)) goto Error_3;\r\n\r\n\t#if (DEBUG_EVENTS)\r\n\tParent.DUMMYUNIONNAME.item.mask = TVIF_TEXT;\r\n\tParent.DUMMYUNIONNAME.item.pszText = Triggers_FmtTriggerText(NewTrigger,TextBuffer,TextBuffer+2048);\r\n\tSendMessage(Context->List,TVM_SETITEM,(WPARAM)0,(LPARAM)&Parent.DUMMYUNIONNAME.item);\r\n\t#endif\r\n\r\n//--- Terminé... ----\r\n\r\nDone:\tSendMessage(Context->List,TVM_SELECTITEM,(WPARAM)TVGN_CARET,(LPARAM)Parent.DUMMYUNIONNAME.item.hItem);\r\n\tGlobalFree(TextBuffer);\r\n\tMapChanges++;\r\n\treturn(1);\r\n\r\n//--- Erreurs ---\r\n\r\nError_3:List_RemEntry((NODE *)NewTrigger);\r\n\tSendMessage(Context->List,TVM_DELETEITEM,(WPARAM)0,(LPARAM)Parent.DUMMYUNIONNAME.item.hItem);\r\nError_2:GlobalFree(NewTrigger);\r\nError_1:GlobalFree(TextBuffer);\r\nError_0:Misc_MessageBoxExt(hDlg,szTriggersNewTriggerErr,NULL,szMessageBoxExtOk,MB_ICONHAND);\r\n\treturn(0);\r\n"
+    },
+    "Action": {
+      "InitialType": "ACTION_SETVARIABLE",
+      "InitialValues": [
+        0,
+        10,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "InitialRepeat": 1,
+      "ZeroOnSaveTypes": [
+        "ACTION_VICTORY",
+        "ACTION_DEFEAT",
+        "ACTION_HASCRYSTAL",
+        "ACTION_POSSESSCREATURE",
+        "ACTION_REMOVE",
+        "ACTION_SHOW"
+      ],
+      "OriginalCreationBody": "\r\n\tPROPSHEETHEADER\t*psh;\r\n\tPROPSHEETPAGE\t*psp;\r\n\tchar\t\t*FileName;\r\n\tint\t\t Count;\r\n\tint\t\t Result;\r\n\r\n\t//--- Si modification, copie les données précédentes ---\r\n\r\n\tif (Context->Modify)\r\n\t\t{\r\n\t\tTV_ITEM\tItem;\r\n\r\n\t\tItem.mask = TVIF_PARAM;\r\n\t\tItem.hItem = (HTREEITEM)SendMessage(Context->List,TVM_GETNEXTITEM,(WPARAM)TVGN_CARET,(LPARAM)TVI_ROOT);\r\n\t\tif (!Item.hItem) return;\r\n\t\tif (!SendMessage(Context->List,TVM_GETITEM,(WPARAM)0,(LPARAM)&Item)) return;\r\n\t\tif (!Item.lParam) return;\r\n\t\tCopyMemory(&Context->ActionCtx.TempAction,(void *)Item.lParam,sizeof(ACTION));\r\n\t\tContext->ActionCtx.SrceAction = (ACTION *)Item.lParam;\r\n\t\t}\r\n\telse\r\n\t\t{\r\n\t\tContext->ActionCtx.SrceAction = NULL;\r\n\t\tContext->ActionCtx.TempAction.node.next = NULL;\r\n\t\tContext->ActionCtx.TempAction.node.prev = NULL;\r\n\t\tContext->ActionCtx.TempAction.node.type = TYPE_ACTION;\r\n\t\tif (!Context->ActionCtx.TempAction.ctrl)\r\n\t\t\t{\r\n\t\t\tContext->ActionCtx.TempAction.param1 = 0;\r\n\t\t\tContext->ActionCtx.TempAction.param2 = 0x0a;\r\n\t\t\tContext->ActionCtx.TempAction.param3 = 0;\r\n\t\t\tContext->ActionCtx.TempAction.param4 = 0;\r\n\t\t\tContext->ActionCtx.TempAction.param5 = 0;\r\n\t\t\tContext->ActionCtx.TempAction.param6 = 0;\r\n\t\t\tContext->ActionCtx.TempAction.param7 = 0;\r\n\t\t\tContext->ActionCtx.TempAction.param8 = 0;\r\n\t\t\tContext->ActionCtx.TempAction.one = 0x01;\r\n\t\t\tContext->ActionCtx.TempAction.ctrl = ACTION_SETVARIABLE;\r\n\t\t\t}\r\n\t\t}\r\n\r\n\tfor (Count = 1; Actions[Count].ctrl != 0; Count++);\r\n\r\n\tpsh = GlobalAlloc(GPTR,sizeof(PROPSHEETHEADER));\r\n\tif (!psh) goto Error_0;\r\n\tpsp = GlobalAlloc(GPTR,sizeof(PROPSHEETPAGE)*(Count+1));\r\n\tif (!psp) goto Error_1;\r\n\r\n\tpsp[0].dwSize = sizeof(PROPSHEETPAGE);\r\n\tpsp[0].hInstance = hInstance;\r\n\tpsp[0].DUMMYUNIONNAME.pszTemplate = MAKEINTRESOURCE(7200);\r\n\tpsp[0].pfnDlgProc = Triggers_ActionDlgList;\r\n\tpsp[0].lParam = (LPARAM)Context;\r\n\tfor (Result = 1; Result != Count+1; Result++)\r\n\t\t{\r\n\t\tpsp[Result].dwSize = sizeof(PROPSHEETPAGE);\r\n\t\tpsp[Result].hInstance = hInstance;\r\n\t\tpsp[Result].DUMMYUNIONNAME.pszTemplate = MAKEINTRESOURCE(Actions[Result-1].dialog);\r\n\t\tpsp[Result].pfnDlgProc = Triggers_ActionDlgParams;\r\n\t\tpsp[Result].lParam = (LPARAM)Context;\r\n\t\t}\r\n\r\n\tpsh->dwSize = sizeof(PROPSHEETHEADER);\r\n\tpsh->dwFlags = PSH_PROPSHEETPAGE|PSH_USEICONID|PSH_WIZARD;\r\n\tpsh->hwndParent = hDlg;\r\n\tpsh->hInstance = hInstance;\r\n\tpsh->DUMMYUNIONNAME.pszIcon = MAKEINTRESOURCE(1);\r\n\tpsh->pszCaption = NULL;\r\n\tpsh->nPages = Count+1;\r\n\tpsh->DUMMYUNIONNAME3.ppsp = psp;\r\n\r\n\tif (!Misc_CreateImageList(TrSpecial,&Context->Images,32,32,FALSE)) goto Error_2;\r\n\tif (!Misc_CreateImageList(BadCreatures,&Context->Images,32,32,TRUE)) goto Error_2;\r\n\tif (!Misc_CreateImageList(BadElites,&Context->Images,32,32,TRUE)) goto Error_2;\r\n\tif (!Misc_CreateImageList(Heros,&Context->Images,32,32,TRUE)) goto Error_2;\r\n\tif (!Misc_CreateImageList(Doors,&Context->Images,32,32,TRUE)) goto Error_2;\r\n\tif (!Misc_CreateImageList(Traps,&Context->Images,32,32,TRUE)) goto Error_2;\r\n\tif (!Misc_CreateImageList(Spells,&Context->Images,32,32,TRUE)) goto Error_2;\r\n\tif (!Misc_CreateImageList(Terrain,&Context->Images,32,32,TRUE)) goto Error_2;\r\n\tif (!Misc_CreateImageList(TrPlayers,&Context->Images,32,32,TRUE)) goto Error_2;\r\n\tContext->PointIcon = LoadImage(hInstance,MAKEINTRESOURCE(19),IMAGE_ICON,16,16,LR_DEFAULTCOLOR);\r\n\tif (!Context->PointIcon) goto Error_2;\r\n\tContext->RectIcon = LoadImage(hInstance,MAKEINTRESOURCE(25),IMAGE_ICON,16,16,LR_DEFAULTCOLOR);\r\n\tif (!Context->RectIcon) goto Error_3;\r\n\tContext->CameraIcon = LoadImage(hInstance,MAKEINTRESOURCE(26),IMAGE_ICON,16,16,LR_DEFAULTCOLOR);\r\n\tif (!Context->CameraIcon) goto Error_4;\r\n\r\n\tfor (Result = 0; Result != Count; Result++)\r\n\t\t{\r\n\t\tContext->ActionCtx.Initialized[Actions[Result].ctrl] = FALSE;\r\n\t\t}\r\n\r\n\tResult = PropertySheet(psh);\r\n\r\n\tFileName = GlobalAlloc(GPTR,2048);\r\n\tif (FileName)\r\n\t\t{\r\n\t\tGetTempPath(2048,FileName);\r\n\t\twsprintf(szTempSpeechID,szNumber,SpeechUniqueID-1);\r\n\t\tstrcat(FileName,szTempSoundFile);\r\n\t\tstrcat(FileName,szTempSpeechID);\r\n\t\tstrcat(FileName,szTempMP2Ext);\r\n\t\tProperties_MapVoicesDeleteTempFile(hWnd,FileName);\r\n\t\tGlobalFree(FileName);\r\n\t\tSpeechUniqueID = 0;\r\n\t\t}\r\n\telse\r\n\t\tSpeechUniqueID--;\r\n\r\n\tif (Result == -1) goto Error_5;\r\n\r\n\tDestroyIcon(Context->CameraIcon);\r\n\tDestroyIcon(Context->RectIcon);\r\n\tDestroyIcon(Context->PointIcon);\r\n\tMisc_DestroyImageList(&Context->Images);\r\n\tList_ReleaseMemory(&Context->ActionCtx.SpeechList);\r\n\tGlobalFree(psp);\r\n\tGlobalFree(psh);\r\n\treturn;\r\n\r\n//--- Erreurs survenues lors de l'initialisation ---\r\n\r\nError_5:DestroyIcon(Context->CameraIcon);\r\nError_4:DestroyIcon(Context->RectIcon);\r\nError_3:DestroyIcon(Context->PointIcon);\r\nError_2:Misc_DestroyImageList(&Context->Images);\r\n\tGlobalFree(psp);\r\nError_1:GlobalFree(psh);\r\nError_0:Misc_MessageBoxExt(hDlg,szDialogErr,NULL,szMessageBoxExtOk,MB_ICONHAND);\r\n\tList_ReleaseMemory(&Context->ActionCtx.SpeechList);\r\n\treturn;\r\n",
+      "OriginalSaveBody": "\r\n\tTV_INSERTSTRUCT\t Parent;\r\n\tACTION\t\t*NewAction;\r\n\tchar\t\t*TextBuffer;\r\n\tlong\t\t X = 1;\r\n\tlong\t\t Y = 0;\r\n\r\n\tswitch(Context->ActionCtx.TempAction.ctrl)\r\n\t\t{\r\n\t\tcase ACTION_VICTORY:\r\n\t\tcase ACTION_DEFEAT:\r\n\t\tcase ACTION_HASCRYSTAL:\r\n\t\tcase ACTION_POSSESSCREATURE:\r\n\t\tcase ACTION_REMOVE:\r\n\t\tcase ACTION_SHOW:\r\n\t\t\tContext->ActionCtx.TempAction.param1 = 0;\r\n\t\t\tContext->ActionCtx.TempAction.param2 = 0;\r\n\t\t\tContext->ActionCtx.TempAction.param3 = 0;\r\n\t\t\tContext->ActionCtx.TempAction.param4 = 0;\r\n\t\t\tContext->ActionCtx.TempAction.param5 = 0;\r\n\t\t\tContext->ActionCtx.TempAction.param6 = 0;\r\n\t\t\tContext->ActionCtx.TempAction.param7 = 0;\r\n\t\t\tContext->ActionCtx.TempAction.param8 = 0;\r\n\t\t\tbreak;\r\n\t\t}\r\n\r\nLoop:\tTextBuffer = GlobalAlloc(GPTR,4096);\r\n\tif (!TextBuffer) goto Error_0;\r\n\tNewAction = GlobalAlloc(GPTR,sizeof(ACTION));\r\n\tif (!NewAction) goto Error_1;\r\n\r\n\tParent.DUMMYUNIONNAME.item.mask = TVIF_PARAM;\r\n\tParent.DUMMYUNIONNAME.item.lParam = 0;\r\n\tParent.DUMMYUNIONNAME.item.hItem = (HTREEITEM)SendMessage(Context->List,TVM_GETNEXTITEM,(WPARAM)TVGN_CARET,(LPARAM)TVI_ROOT);\r\n\tif (Parent.DUMMYUNIONNAME.item.hItem) SendMessage(Context->List,TVM_GETITEM,(WPARAM)0,(LPARAM)&Parent.DUMMYUNIONNAME.item);\r\n\r\n\t//--- Modifie un déclencheur ---\r\n\r\n\tif (Context->Modify)\r\n\t\t{\r\n\t\tGlobalFree(NewAction);\r\n\t\tCopyMemory(Context->ActionCtx.SrceAction,&Context->ActionCtx.TempAction,sizeof(ACTION));\r\n\t\tParent.DUMMYUNIONNAME.item.mask = TVIF_TEXT;\r\n\t\tParent.DUMMYUNIONNAME.item.pszText = Triggers_FmtActionText(Context->ActionCtx.SrceAction,TextBuffer,TextBuffer+2048);\r\n\t\tif (Parent.DUMMYUNIONNAME.item.lParam) SendMessage(Context->List,TVM_SETITEM,(WPARAM)0,(LPARAM)&Parent.DUMMYUNIONNAME.item);\r\n\t\tgoto Done;\r\n\t\t}\r\n\r\n\t//--- Ajoute ou insère un déclencheur ---\r\n\r\n\tif ((Context->Insert)&&(Parent.DUMMYUNIONNAME.item.lParam))\r\n\t\t{\r\n\t\tCopyMemory(NewAction,&Context->ActionCtx.TempAction,sizeof(ACTION));\r\n\t\tNewAction->id = Triggers_GetActionFreeId();\r\n\t\tParent.hParent = (HTREEITEM)SendMessage(Context->List,TVM_GETNEXTITEM,(WPARAM)TVGN_PARENT,(LPARAM)Parent.DUMMYUNIONNAME.item.hItem);\r\n\t\tParent.hInsertAfter = (HTREEITEM)SendMessage(Context->List,TVM_GETNEXTITEM,(WPARAM)TVGN_PREVIOUS,(LPARAM)Parent.DUMMYUNIONNAME.item.hItem);\r\n\t\tif (!Parent.hInsertAfter) Parent.hInsertAfter = TVI_FIRST;\r\n\t\tParent.DUMMYUNIONNAME.item.hItem = NULL;\r\n\t\tParent.DUMMYUNIONNAME.item.mask = TVIF_PARAM|TVIF_CHILDREN|TVIF_IMAGE|TVIF_SELECTEDIMAGE|TVIF_TEXT;\r\n\t\tParent.DUMMYUNIONNAME.item.pszText = Triggers_FmtActionText(NewAction,TextBuffer,TextBuffer+2048);\r\n\t\tParent.DUMMYUNIONNAME.item.iImage = 1;\r\n\t\tParent.DUMMYUNIONNAME.item.iSelectedImage = 1;\r\n\t\tParent.DUMMYUNIONNAME.item.cChildren = 0;\r\n\t\tParent.DUMMYUNIONNAME.item.lParam = (LPARAM)NewAction;\r\n\t\tParent.DUMMYUNIONNAME.item.hItem = (HTREEITEM)SendMessage(Context->List,TVM_INSERTITEM,(WPARAM)0,(LPARAM)&Parent);\r\n\t\tif (!Parent.DUMMYUNIONNAME.item.hItem) goto Error_2;\r\n\t\t}\r\n\telse\r\n\t\t{\r\n\t\tCopyMemory(NewAction,&Context->ActionCtx.TempAction,sizeof(ACTION));\r\n\t\tNewAction->id = Triggers_GetActionFreeId();\r\n\t\tif (Parent.DUMMYUNIONNAME.item.lParam)\r\n\t\t\t{\r\n\t\t\tif (((NODE *)Parent.DUMMYUNIONNAME.item.lParam)->type == TYPE_TRIGGER)\r\n\t\t\t\tParent.hParent = Parent.DUMMYUNIONNAME.item.hItem;\r\n\t\t\telse\r\n\t\t\t\tParent.hParent = (HTREEITEM)SendMessage(Context->List,TVM_GETNEXTITEM,(WPARAM)TVGN_PARENT,(LPARAM)Parent.DUMMYUNIONNAME.item.hItem);\t\t\tParent.hInsertAfter = TVI_LAST;\r\n\t\t\t}\r\n\t\telse\r\n\t\t\t{\r\n\t\t\tParent.hParent = TVI_ROOT;\r\n\t\t\tParent.hInsertAfter = TVI_LAST;\r\n\t\t\t}\r\n\t\tParent.DUMMYUNIONNAME.item.hItem = NULL;\r\n\t\tParent.DUMMYUNIONNAME.item.mask = TVIF_PARAM|TVIF_CHILDREN|TVIF_IMAGE|TVIF_SELECTEDIMAGE|TVIF_TEXT;\r\n\t\tParent.DUMMYUNIONNAME.item.pszText = Triggers_FmtActionText(NewAction,TextBuffer,TextBuffer+2048);\r\n\t\tParent.DUMMYUNIONNAME.item.iImage = 1;\r\n\t\tParent.DUMMYUNIONNAME.item.iSelectedImage = 1;\r\n\t\tParent.DUMMYUNIONNAME.item.cChildren = 0;\r\n\t\tParent.DUMMYUNIONNAME.item.lParam = (LPARAM)NewAction;\r\n\t\tParent.DUMMYUNIONNAME.item.hItem = (HTREEITEM)SendMessage(Context->List,TVM_INSERTITEM,(WPARAM)0,(LPARAM)&Parent);\r\n\t\tif (!Parent.DUMMYUNIONNAME.item.hItem) goto Error_2;\r\n\t\t}\r\n\r\n\t//--- Lie le déclencheur aux entrée précédentes ---\r\n\r\n\tList_AddEntry((NODE *)NewAction,&MapActions);\r\n\tif (!Triggers_SelectLink(NewAction,Context->ActionCtx.ParentPoint,Parent.DUMMYUNIONNAME.item.hItem,Context)) goto Error_3;\r\n\r\n\t#if (DEBUG_EVENTS)\r\n\tParent.DUMMYUNIONNAME.item.mask = TVIF_TEXT;\r\n\tParent.DUMMYUNIONNAME.item.pszText = Triggers_FmtActionText(NewAction,TextBuffer,TextBuffer+2048);\r\n\tSendMessage(Context->List,TVM_SETITEM,(WPARAM)0,(LPARAM)&Parent.DUMMYUNIONNAME.item);\r\n\t#endif\r\n\r\n//--- Terminé... ----\r\n\r\nDone:\tSendMessage(Context->List,TVM_SELECTITEM,(WPARAM)TVGN_CARET,(LPARAM)Parent.DUMMYUNIONNAME.item.hItem);\r\n\tGlobalFree(TextBuffer);\r\n\tMapChanges++;\r\n\r\n\tif ((Context->ActionCtx.ChangeRect)&&(Context->ActionCtx.TempAction.ctrl == ACTION_CHANGESQUARE))\r\n\t\t{\r\n\t\tif (Context->ActionCtx.FullRect.x1+X == Context->ActionCtx.FullRect.x2+1)\r\n\t\t\t{\r\n\t\t\tX = 0;\r\n\t\t\tY++;\r\n\t\t\t}\r\n\t\tif (Context->ActionCtx.FullRect.y1+Y != Context->ActionCtx.FullRect.y2+1)\r\n\t\t\t{\r\n\t\t\tContext->ActionCtx.TempAction.param5 = Context->ActionCtx.FullRect.x1+X+1;\r\n\t\t\tContext->ActionCtx.TempAction.param7 = Context->ActionCtx.FullRect.y1+Y+1;\r\n\t\t\tX++;\r\n\t\t\tgoto Loop;\r\n\t\t\t}\r\n\r\n\t\tContext->ActionCtx.TempAction.param5 = Context->ActionCtx.FullRect.x1+1;\r\n\t\tContext->ActionCtx.TempAction.param7 = Context->ActionCtx.FullRect.y1+1;\r\n\t\tContext->ActionCtx.ChangeRect = FALSE;\r\n\t\t}\r\n\r\n\treturn(1);\r\n\r\n//--- Erreurs ---\r\n\r\nError_3:List_RemEntry((NODE *)NewAction);\r\n\tSendMessage(Context->List,TVM_DELETEITEM,(WPARAM)0,(LPARAM)Parent.DUMMYUNIONNAME.item.hItem);\r\nError_2:GlobalFree(NewAction);\r\nError_1:GlobalFree(TextBuffer);\r\nError_0:Misc_MessageBoxExt(hDlg,szTriggersNewActionErr,NULL,szMessageBoxExtOk,MB_ICONHAND);\r\n\treturn(0);\r\n"
+    }
+  },
+  "CompilerPadding": {
+    "TRIGGER_VARIABLE": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "TRIGGER_TIMER": [
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "TRIGGER_DOORDESTROYED": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "TRIGGER_OBJECTCLAIMED": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "TRIGGER_APPEAR": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "TRIGGER_DEATH": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "TRIGGER_SLAPPED": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "TRIGGER_SEE": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "TRIGGER_JAILED": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "TRIGGER_TORTURED": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "TRIGGER_CONVERTED": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "TRIGGER_TURNCOAT": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "TRIGGER_HUNGRY": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "TRIGGER_AFRAID": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "TRIGGER_STEAL": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "TRIGGER_GOAWAY": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "TRIGGER_STUNNED": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "TRIGGER_TRANSITIONENDS": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "TRIGGER_NOTHUNGRY": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "TRIGGER_FIRED": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "TRIGGER_TAKE": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "TRIGGER_CREATURES": [
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "TRIGGER_HAPPYCREATURES": [
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "TRIGGER_ANGRYCREATURES": [
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "TRIGGER_LOSTCREATURES": [
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "TRIGGER_KILLEDCREATURES": [
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "TRIGGER_ROOMS": [
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "TRIGGER_ROOMSSIZE": [
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "TRIGGER_ROOMSCONTENT": [
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "TRIGGER_ROOMSTYPES": [
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "TRIGGER_DOORS": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "TRIGGER_TRAPS": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "TRIGGER_DESTROYED": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "TRIGGER_SPELLS": [
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "TRIGGER_GOLDAMOUNT": [
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "TRIGGER_GOLDMINED": [
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "TRIGGER_MANAAMOUNT": [
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "TRIGGER_TIMEELAPSED": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "TRIGGER_HURTED": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "TRIGGER_CREAENTERAREA": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "TRIGGER_CLAIMAREA": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "TRIGGER_CLAIMENTIREAREA": [
+      5,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "TRIGGER_AREACONTENT": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "TRIGGER_BANDCREATED": [
+      3,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "TRIGGER_JAILEDINBAND": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "TRIGGER_DEATHSINBAND": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "TRIGGER_GOLDDAY": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "TRIGGER_HEARTDESTROYED": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "TRIGGER_CREATURESLEVEL": [
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "TRIGGER_CREATUREEXP": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "TRIGGER_CLICKELEMENT": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "TRIGGER_TAKECREATURE": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "TRIGGER_FREECREATURE": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "TRIGGER_FIRECREATURE": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "TRIGGER_HURTCREATURE": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "TRIGGER_SELECTAREA": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "TRIGGER_STUNNEDINBAND": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "TRIGGER_SELECTALLAREA": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "TRIGGER_ENTERAREAINPOSS": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "TRIGGER_SLAPCOUNT": [
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "TRIGGER_GROUPINPOSSESS": [
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "TRIGGER_BREACHED": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "TRIGGER_ENNEMYBREACHED": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "ACTION_ADDCREATURE": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "ACTION_SHOWCRYSTAL": [
+      28,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "ACTION_ADDELEMENT": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "ACTION_SETVARIABLE": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "ACTION_SETTIMER": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "ACTION_SHOWELEMENT": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "ACTION_VICTORY": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "ACTION_DEFEAT": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "ACTION_RELEASEBAND": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "ACTION_CHANGEPARAMS": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "ACTION_SHOWAREA": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "ACTION_ENABLEFOG": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "ACTION_ALLIES": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "ACTION_HASCRYSTAL": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "ACTION_POSSESSCREATURE": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "ACTION_CHANGESQUARE": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "ACTION_DISPLAYTIMER": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "ACTION_SAY": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "ACTION_MOVECAMERA": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "ACTION_ROTATECAMERA": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "ACTION_GENERATE": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "ACTION_MAKEHUNGRY": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "ACTION_SHOWHEALTH": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "ACTION_CAMERAPATH": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "ACTION_DESTROYGATE": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "ACTION_RUN": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "ACTION_MUSICLEVEL": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "ACTION_REMOVE": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "ACTION_ATTACK": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "ACTION_PORTALS": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "ACTION_CHANGEVIEW": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "ACTION_PRIMARYTARGET": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "ACTION_SHOW": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "ACTION_MOODS": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "ACTION_SYSTEMMESSAGES": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "ACTION_SHOWNEXTROOM": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "ACTION_TOGGLEEFFECT": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "ACTION_CHANGEOWNER": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "ACTION_SLAPSREMAINING": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "ACTION_TIMERSPEECH": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "DynamicCompilerOperands": {
+    "ACTION_SHOWCRYSTAL": [
+      {
+        "Offset": 12,
+        "Size": 2,
+        "SourceExpression": "(WORD)Things_GetThingPos(&MapObjects,0x1C,0)"
+      },
+      {
+        "Offset": 14,
+        "Size": 2,
+        "SourceExpression": "(WORD)Things_GetThingPos(&MapObjects,0x1C,1)"
+      }
+    ],
+    "ACTION_DESTROYGATE": [
+      {
+        "Offset": 12,
+        "Size": 2,
+        "SourceExpression": "(WORD)(RectEx_GetRectLocation(&MapGates,Action->param5,0)+1)"
+      },
+      {
+        "Offset": 14,
+        "Size": 2,
+        "SourceExpression": "(WORD)(RectEx_GetRectLocation(&MapGates,Action->param5,1)+1)"
+      }
+    ]
+  },
+  "WizardFlow": {
+    "Trigger": {
+      "New": "\n\tPROPSHEETHEADER\t*psh;\n\tPROPSHEETPAGE\t*psp;\n\tint\t\t Count;\n\tint\t\t Result;\n\n\t//--- Si modification, copie les données précédentes ---\n\n\tif (Context->Modify)\n\t\t{\n\t\tTV_ITEM\tItem;\n\n\t\tItem.mask = TVIF_PARAM;\n\t\tItem.hItem = (HTREEITEM)SendMessage(Context->List,TVM_GETNEXTITEM,(WPARAM)TVGN_CARET,(LPARAM)TVI_ROOT);\n\t\tif (!Item.hItem) return;\n\t\tif (!SendMessage(Context->List,TVM_GETITEM,(WPARAM)0,(LPARAM)&Item)) return;\n\t\tif (!Item.lParam) return;\n\t\tCopyMemory(&Context->TriggerCtx.TempTrigger,(void *)Item.lParam,sizeof(TRIGGER));\n\t\tContext->TriggerCtx.SrceTrigger = (TRIGGER *)Item.lParam;\n\t\t}\n\telse\n\t\t{\n\t\tContext->TriggerCtx.SrceTrigger = NULL;\n\t\tContext->TriggerCtx.TempTrigger.node.next = NULL;\n\t\tContext->TriggerCtx.TempTrigger.node.prev = NULL;\n\t\tContext->TriggerCtx.TempTrigger.node.type = TYPE_TRIGGER;\n\t\tContext->TriggerCtx.TempTrigger.or = 0;\n\t\tContext->TriggerCtx.TempTrigger.and = 0;\n\t\tif (!Context->TriggerCtx.TempTrigger.ctrl)\n\t\t\t{\n\t\t\tContext->TriggerCtx.TempTrigger.ctrl = TRIGGER_VARIABLE;\n\t\t\tContext->TriggerCtx.TempTrigger.param1 = 3;\n\t\t\tContext->TriggerCtx.TempTrigger.param2 = 0;\n\t\t\tContext->TriggerCtx.TempTrigger.param3 = 1;\n\t\t\tContext->TriggerCtx.TempTrigger.param4 = 0;\n\t\t\tContext->TriggerCtx.TempTrigger.param5 = 0;\n\t\t\tContext->TriggerCtx.TempTrigger.param6 = 0;\n\t\t\tContext->TriggerCtx.TempTrigger.param7 = 0;\n\t\t\tContext->TriggerCtx.TempTrigger.param8 = 0;\n\t\t\tContext->TriggerCtx.TempTrigger.repeat = 0x01;\n\t\t\t}\n\t\t}\n\n\tfor (Count = 1; Triggers[Count].ctrl != 0; Count++);\n\n\tpsh = GlobalAlloc(GPTR,sizeof(PROPSHEETHEADER));\n\tif (!psh) goto Error_0;\n\tpsp = GlobalAlloc(GPTR,sizeof(PROPSHEETPAGE)*(Count+2));\n\tif (!psp) goto Error_1;\n\n\tpsp[0].dwSize = sizeof(PROPSHEETPAGE);\n\tpsp[0].hInstance = hInstance;\n\tpsp[0].DUMMYUNIONNAME.pszTemplate = MAKEINTRESOURCE(7100);\n\tpsp[0].pfnDlgProc = Triggers_TriggerDlgList;\n\tpsp[0].lParam = (LPARAM)Context;\n\tfor (Result = 1; Result != Count+1; Result++)\n\t\t{\n\t\tpsp[Result].dwSize = sizeof(PROPSHEETPAGE);\n\t\tpsp[Result].hInstance = hInstance;\n\t\tpsp[Result].DUMMYUNIONNAME.pszTemplate = MAKEINTRESOURCE(Triggers[Result-1].dialog);\n\t\tpsp[Result].pfnDlgProc = Triggers_TriggerDlgParams;\n\t\tpsp[Result].lParam = (LPARAM)Context;\n\t\t}\n\tpsp[Result].dwSize = sizeof(PROPSHEETPAGE);\n\tpsp[Result].hInstance = hInstance;\n\tpsp[Result].DUMMYUNIONNAME.pszTemplate = MAKEINTRESOURCE(7199);\n\tpsp[Result].pfnDlgProc = Triggers_TriggerDlgRepeat;\n\tpsp[Result].lParam = (LPARAM)Context;\n\n\tpsh->dwSize = sizeof(PROPSHEETHEADER);\n\tpsh->dwFlags = PSH_PROPSHEETPAGE|PSH_USEICONID|PSH_WIZARD;\n\tpsh->hwndParent = hDlg;\n\tpsh->hInstance = hInstance;\n\tpsh->DUMMYUNIONNAME.pszIcon = MAKEINTRESOURCE(1);\n\tpsh->pszCaption = NULL;\n\tpsh->nPages = Count+2;\n\tpsh->DUMMYUNIONNAME3.ppsp = psp;\n\n\tif (!Misc_CreateImageList(TrSpecial,&Context->Images,32,32,FALSE)) goto Error_2;\n\tif (!Misc_CreateImageList(BadCreatures,&Context->Images,32,32,TRUE)) goto Error_2;\n\tif (!Misc_CreateImageList(BadElites,&Context->Images,32,32,TRUE)) goto Error_2;\n\tif (!Misc_CreateImageList(Heros,&Context->Images,32,32,TRUE)) goto Error_2;\n\tif (!Misc_CreateImageList(Doors,&Context->Images,32,32,TRUE)) goto Error_2;\n\tif (!Misc_CreateImageList(Traps,&Context->Images,32,32,TRUE)) goto Error_2;\n\tif (!Misc_CreateImageList(Spells,&Context->Images,32,32,TRUE)) goto Error_2;\n\tif (!Misc_CreateImageList(Terrain,&Context->Images,32,32,TRUE)) goto Error_2;\n\tif (!Misc_CreateImageList(TrPlayers,&Context->Images,32,32,TRUE)) goto Error_2;\n\n\tfor (Result = 0; Result != Count; Result++)\n\t\t{\n\t\tContext->TriggerCtx.Initialized[Triggers[Result].ctrl] = FALSE;\n\t\t}\n\n\tResult = PropertySheet(psh);\n\tif (Result == -1) goto Error_2;\n\n\tMisc_DestroyImageList(&Context->Images);\n\tGlobalFree(psp);\n\tGlobalFree(psh);\n\treturn;\n\n//--- Erreurs survenues lors de l'initialisation ---\n\nError_2:Misc_DestroyImageList(&Context->Images);\n\tGlobalFree(psp);\nError_1:GlobalFree(psh);\nError_0:Misc_MessageBoxExt(hDlg,szDialogErr,NULL,szMessageBoxExtOk,MB_ICONHAND);\n\treturn;\n",
+      "DlgList": "\n\tTRIGGERSCTX\t*Context;\n\tLONG\t\t lData;\n\n\tif (uMsgId == WM_INITDIALOG)\n\t\t{\n\t\tContext = (TRIGGERSCTX *)(((PROPSHEETPAGE *)lParam)->lParam);\n\t\tTriggers_TriggerDlgInit(hDlg,Context);\n\t\treturn(TRUE);\n\t\t}\n\n\tContext = (TRIGGERSCTX *)GetWindowLong(hDlg,DWL_USER);\n\tif (!Context) return(FALSE);\n\n\tswitch(uMsgId)\n\t\t{\n\t\tcase WM_MEASUREITEM:\n\t\t\tif (((MEASUREITEMSTRUCT *)lParam)->CtlType == ODT_LISTVIEW)\n\t\t\t\t{\n\t\t\t\tMisc_MeasureListViewItem((MEASUREITEMSTRUCT *)lParam,32);\n\t\t\t\treturn(TRUE);\n\t\t\t\t}\n\t\t\tbreak;\n\n\t\tcase WM_DRAWITEM:\n\t\t\tif (((DRAWITEMSTRUCT *)lParam)->CtlType == ODT_LISTVIEW)\n\t\t\t\t{\n\t\t\t\tTriggers_DisplayDrawList((DRAWITEMSTRUCT *)lParam,Context);\n\t\t\t\treturn(TRUE);\n\t\t\t\t}\n\t\t\tif (((DRAWITEMSTRUCT *)lParam)->CtlType == ODT_STATIC)\n\t\t\t\t{\n\t\t\t\tMisc_DrawGroup((DRAWITEMSTRUCT *)lParam);\n\t\t\t\treturn(TRUE);\n\t\t\t\t}\n\t\t\tbreak;\n\n\t\tcase WM_NOTIFY:\n\t\t\tswitch( ((NMHDR *)lParam)->code )\n\t\t\t\t{\n\t\t\t\tcase LVN_ITEMCHANGED:\n\t\t\t\t\tif (((NM_LISTVIEW *)lParam)->uChanged&LVIF_STATE)\n\t\t\t\t\t\t{\n\t\t\t\t\t\tSendMessage(GetParent(hDlg),PSM_SETWIZBUTTONS,(WPARAM)0,(LPARAM)PSWIZB_DISABLEDFINISH);\n\t\t\t\t\t\tif (((NM_LISTVIEW *)lParam)->uNewState&LVIS_SELECTED)\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\tlData = (LONG)Triggers_TriggerDlgGetParam(Context);\n\t\t\t\t\t\t\tif (!lData) return(TRUE);\n\t\t\t\t\t\t\tTriggers_TriggerDlgSetDefault((BYTE)((TRIGGERINFO *)lData)->ctrl,Context);\n\t\t\t\t\t\t\tContext->TriggerCtx.TempTrigger.ctrl = (BYTE)((TRIGGERINFO *)lData)->ctrl;\n\t\t\t\t\t\t\tSendMessage(GetParent(hDlg),PSM_SETWIZBUTTONS,(WPARAM)0,(LPARAM)PSWIZB_NEXT);\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n\t\t\t\t\treturn(TRUE);\n\n                                case PSN_SETACTIVE:\n\t\t\t\t\tif (!Context->TriggerCtx.MainSet)\n\t\t\t\t\t\t{\n\t\t\t\t\t\tSetWindowLong(hDlg,DWL_MSGRESULT,-1);\n\t\t\t\t\t\t}\n\t\t\t\t\telse\n\t\t\t\t\t\t{\n\t\t\t\t\t\tSetWindowLong(hDlg,DWL_MSGRESULT,0);\n\t\t\t\t\t\tPostMessage(GetParent(hDlg),PSM_SETWIZBUTTONS,(WPARAM)0,(LPARAM)PSWIZB_DISABLEDFINISH);\n\t\t\t\t\t\tlData = (LONG)Triggers_TriggerDlgGetParam(Context);\n\t\t\t\t\t\tif (!lData) return(TRUE);\n\t\t\t\t\t\tPostMessage(GetParent(hDlg),PSM_SETWIZBUTTONS,(WPARAM)0,(LPARAM)PSWIZB_NEXT);\n\t\t\t\t\t\t}\n\t\t\t\t\treturn(TRUE);\n\n\t\t\t\tcase PSN_WIZNEXT:\n\t\t\t\t\tlData = (LONG)Triggers_TriggerDlgGetParam(Context);\n\t\t\t\t\tif (!lData)\n\t\t\t\t\t\tSetWindowLong(hDlg,DWL_MSGRESULT,-1);\n\t\t\t\t\telse if (((TRIGGERINFO *)lData)->dialog == -1)\n\t\t\t\t\t\tSetWindowLong(hDlg,DWL_MSGRESULT,7199);\n\t\t\t\t\telse\n\t\t\t\t\t\tSetWindowLong(hDlg,DWL_MSGRESULT,((TRIGGERINFO *)lData)->dialog);\n\t\t\t\t\treturn(TRUE);\n\t\t\t\t}\n\t\t\tbreak;\n\t\t}\n\n\treturn(FALSE);\n",
+      "DlgParams": "\n\tTRIGGERSCTX\t*Context;\n\tLONG\t\t lData;\n\n\tif (uMsgId == WM_INITDIALOG)\n\t\t{\n\t\tContext = (TRIGGERSCTX *)(((PROPSHEETPAGE *)lParam)->lParam);\n\t\tTriggers_TriggerDlgParamsInit(hDlg,Context);\n\t\treturn(TRUE);\n\t\t}\n\n\tContext = (TRIGGERSCTX *)GetWindowLong(hDlg,DWL_USER);\n\tif (!Context) return(FALSE);\n\n\tswitch(uMsgId)\n\t\t{\n\t\tcase WM_MEASUREITEM:\n\t\t\tif (((MEASUREITEMSTRUCT *)lParam)->CtlType == ODT_COMBOBOX)\n\t\t\t\t{\n\t\t\t\tMisc_MeasurePlayerComboBoxList(501,(MEASUREITEMSTRUCT *)lParam);\n\t\t\t\treturn(TRUE);\n\t\t\t\t}\n\t\t\tif (((MEASUREITEMSTRUCT *)lParam)->CtlType == ODT_LISTVIEW)\n\t\t\t\t{\n\t\t\t\tMisc_MeasureListViewItem((MEASUREITEMSTRUCT *)lParam,32);\n\t\t\t\treturn(TRUE);\n\t\t\t\t}\n\t\t\tbreak;\n\n\t\tcase WM_DRAWITEM:\n\t\t\tif (((DRAWITEMSTRUCT *)lParam)->CtlType == ODT_COMBOBOX)\n\t\t\t\t{\n\t\t\t\tMisc_DisplayPlayerComboBoxList(501,(DRAWITEMSTRUCT *)lParam);\n\t\t\t\treturn(TRUE);\n\t\t\t\t}\n\t\t\tif (((DRAWITEMSTRUCT *)lParam)->CtlType == ODT_LISTVIEW)\n\t\t\t\t{\n\t\t\t\tTriggers_DisplayDrawList((DRAWITEMSTRUCT *)lParam,Context);\n\t\t\t\treturn(TRUE);\n\t\t\t\t}\n\t\t\tif (((DRAWITEMSTRUCT *)lParam)->CtlType == ODT_STATIC)\n\t\t\t\t{\n\t\t\t\tMisc_DrawGroup((DRAWITEMSTRUCT *)lParam);\n\t\t\t\treturn(TRUE);\n\t\t\t\t}\n\t\t\tbreak;\n\n\t\tcase WM_COMMAND:\n\t\t\tswitch(HIWORD(wParam))\n\t\t\t\t{\n\t\t\t\tcase BN_CLICKED:\n\t\t\t\t\tswitch(LOWORD(wParam))\n\t\t\t\t\t\t{\n\t\t\t\t\t\tcase 206:\n\t\t\t\t\t\t\tif (Context->TriggerCtx.TempTrigger.ctrl != TRIGGER_VARIABLE) break;\n\t\t\t\t\t\t\tif (IsDlgButtonChecked(hDlg,206) == BST_CHECKED) break;\n\t\t\t\t\t\t\tCheckDlgButton(hDlg,206,BST_CHECKED);\n\t\t\t\t\t\t\tCheckDlgButton(hDlg,207,BST_UNCHECKED);\n\t\t\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,210),TRUE);\n\t\t\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,209),FALSE);\n\t\t\t\t\t\t\treturn(TRUE);\n\t\t\t\t\t\tcase 207:\n\t\t\t\t\t\t\tif (Context->TriggerCtx.TempTrigger.ctrl != TRIGGER_VARIABLE) break;\n\t\t\t\t\t\t\tif (IsDlgButtonChecked(hDlg,207) == BST_CHECKED) break;\n\t\t\t\t\t\t\tCheckDlgButton(hDlg,206,BST_UNCHECKED);\n\t\t\t\t\t\t\tCheckDlgButton(hDlg,207,BST_CHECKED);\n\t\t\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,209),TRUE);\n\t\t\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,210),FALSE);\n\t\t\t\t\t\t\treturn(TRUE);\n\t\t\t\t\t\t}\n\t\t\t\t\tbreak;\n\n\t\t\t\tcase EN_CHANGE:\n\t\t\t\t\tswitch(LOWORD(wParam))\n\t\t\t\t\t\t{\n\t\t\t\t\t\tcase 700:\n\t\t\t\t\t\tcase 701:\n\t\t\t\t\t\tcase 702:\n\t\t\t\t\t\t\tif (Context->TriggerCtx.TempTrigger.ctrl == TRIGGER_TIMEELAPSED)\n\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\tlong\tHours;\n\t\t\t\t\t\t\t\tlong\tMinutes;\n\t\t\t\t\t\t\t\tlong\tSeconds;\n\n\t\t\t\t\t\t\t\tHours = GetDlgItemInt(hDlg,700,NULL,FALSE);\n\t\t\t\t\t\t\t\tMinutes = GetDlgItemInt(hDlg,701,NULL,FALSE);\n\t\t\t\t\t\t\t\tSeconds = GetDlgItemInt(hDlg,702,NULL,FALSE);\n\t\t\t\t\t\t\t\tif (Hours > 23)\n\t\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\tSetDlgItemInt(hDlg,700,23,FALSE);\n\t\t\t\t\t\t\t\t\tbreak;\n\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\tif (Minutes > 59)\n\t\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\tSetDlgItemInt(hDlg,701,59,FALSE);\n\t\t\t\t\t\t\t\t\tbreak;\n\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\tif (Seconds > 59)\n\t\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\tSetDlgItemInt(hDlg,702,59,FALSE);\n\t\t\t\t\t\t\t\t\tbreak;\n\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\tSetDlgItemInt(hDlg,210,Hours*60*60+Minutes*60+Seconds,FALSE);\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\tbreak;\n\t\t\t\t\t\t}\n\t\t\t\t\treturn(TRUE);\n\n\t\t\t\tcase CBN_SELCHANGE:\n\t\t\t\t\tswitch(LOWORD(wParam))\n\t\t\t\t\t\t{\n\t\t\t\t\t\tcase 212:\n\t\t\t\t\t\t\tlData = SendDlgItemMessage(hDlg,212,CB_GETCURSEL,(WPARAM)0,(LPARAM)0);\n\t\t\t\t\t\t\tif (lData < 0) break;\n\t\t\t\t\t\t\tContext->TriggerCtx.TempTrigger.param2 = lData;\n\t\t\t\t\t\t\tbreak;\n\t\t\t\t\t\t}\n\t\t\t\t\treturn(TRUE);\n\t\t\t\t}\n\t\t\tbreak;\n\n\t\tcase WM_NOTIFY:\n\t\t\tswitch( ((NMHDR *)lParam)->code )\n\t\t\t\t{\n\t\t\t\tcase LVN_ITEMCHANGED:\n\t\t\t\t\tswitch(Context->TriggerCtx.TempTrigger.ctrl)\n\t\t\t\t\t\t{\n\t\t\t\t\t\tcase TRIGGER_DEATHSINBAND:\n\t\t\t\t\t\t\tlData = Triggers_TriggerDlgGetSelectedEntryParam(Context->TriggerCtx.DeadHerosList);\n\t\t\t\t\t\t\tif (!lData)\n\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\tSetDlgItemText(hDlg,102,NULL);\n\t\t\t\t\t\t\t\tbreak;\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\tlData = Heros_GetHerosCount(Heros_FindHerosById(lData-1));\n\t\t\t\t\t\t\twsprintf(Context->TriggerCtx.TempNumber,szTriggersHeroesCount,lData);\n\t\t\t\t\t\t\tSetDlgItemText(hDlg,102,Context->TriggerCtx.TempNumber);\n\t\t\t\t\t\t\tbreak;\n\t\t\t\t\t\tcase TRIGGER_JAILEDINBAND:\n\t\t\t\t\t\t\tlData = Triggers_TriggerDlgGetSelectedEntryParam(Context->TriggerCtx.JailHerosList);\n\t\t\t\t\t\t\tif (!lData)\n\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\tSetDlgItemText(hDlg,102,NULL);\n\t\t\t\t\t\t\t\tbreak;\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\tlData = Heros_GetHerosCount(Heros_FindHerosById(lData-1));\n\t\t\t\t\t\t\twsprintf(Context->TriggerCtx.TempNumber,szTriggersHeroesCount,lData);\n\t\t\t\t\t\t\tSetDlgItemText(hDlg,102,Context->TriggerCtx.TempNumber);\n\t\t\t\t\t\t\tbreak;\n\t\t\t\t\t\tcase TRIGGER_STUNNEDINBAND:\n\t\t\t\t\t\t\tlData = Triggers_TriggerDlgGetSelectedEntryParam(Context->TriggerCtx.StunHerosList);\n\t\t\t\t\t\t\tif (!lData)\n\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\tSetDlgItemText(hDlg,102,NULL);\n\t\t\t\t\t\t\t\tbreak;\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\tlData = Heros_GetHerosCount(Heros_FindHerosById(lData-1));\n\t\t\t\t\t\t\twsprintf(Context->TriggerCtx.TempNumber,szTriggersHeroesCount,lData);\n\t\t\t\t\t\t\tSetDlgItemText(hDlg,102,Context->TriggerCtx.TempNumber);\n\t\t\t\t\t\t\tbreak;\n\t\t\t\t\t\t}\n\n\t\t\t\t\tif (!IsWindow(Context->TriggerCtx.AreaContentList)) break;\n\t\t\t\t\tif (((NMHDR *)lParam)->hwndFrom == Context->TriggerCtx.AreaContentList)\n\t\t\t\t\t\t{\n\t\t\t\t\t\tif (!(((NM_LISTVIEW *)lParam)->uNewState&LVIS_SELECTED))\n\t\t\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,501),FALSE);\n\t\t\t\t\t\telse\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\tlData = Triggers_TriggerDlgGetSelectedEntryParam(Context->TriggerCtx.AreaContentList);\n\t\t\t\t\t\t\tif ((lData <= 0x07)||(lData == 0x1F))\n\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\tSendDlgItemMessage(hDlg,501,CB_SETCURSEL,(WPARAM)1,(LPARAM)0);\n\t\t\t\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,501),FALSE);\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\telse if (lData == 0x23)\n\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\tSendDlgItemMessage(hDlg,501,CB_SETCURSEL,(WPARAM)0,(LPARAM)0);\n\t\t\t\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,501),FALSE);\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\telse\n\t\t\t\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,501),TRUE);\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n\t\t\t\t\treturn(TRUE);\n\n                                case PSN_SETACTIVE:\n\t\t\t\t\tTriggers_TriggerDlgParamsCheck(hDlg,Context);\n\t\t\t\t\treturn(TRUE);\n\n\t\t\t\tcase PSN_WIZBACK:\n\t\t\t\t\tTriggers_TriggerDlgParamsStore(hDlg,Context);\n\t\t\t\t\tSetWindowLong(hDlg,DWL_MSGRESULT,7100);\n\t\t\t\t\treturn(TRUE);\n\n\t\t\t\tcase PSN_WIZNEXT:\n\t\t\t\t\tif (!Triggers_TriggerDlgParamsStore(hDlg,Context))\n\t\t\t\t\t\tSetWindowLong(hDlg,DWL_MSGRESULT,-1);\n\t\t\t\t\telse\n\t\t\t\t\t\tSetWindowLong(hDlg,DWL_MSGRESULT,7199);\n\t\t\t\t\treturn(TRUE);\n\t\t\t\t}\n\t\t\tbreak;\n\t\t}\n\n\treturn(FALSE);\n"
+    },
+    "Action": {
+      "New": "\n\tPROPSHEETHEADER\t*psh;\n\tPROPSHEETPAGE\t*psp;\n\tchar\t\t*FileName;\n\tint\t\t Count;\n\tint\t\t Result;\n\n\t//--- Si modification, copie les données précédentes ---\n\n\tif (Context->Modify)\n\t\t{\n\t\tTV_ITEM\tItem;\n\n\t\tItem.mask = TVIF_PARAM;\n\t\tItem.hItem = (HTREEITEM)SendMessage(Context->List,TVM_GETNEXTITEM,(WPARAM)TVGN_CARET,(LPARAM)TVI_ROOT);\n\t\tif (!Item.hItem) return;\n\t\tif (!SendMessage(Context->List,TVM_GETITEM,(WPARAM)0,(LPARAM)&Item)) return;\n\t\tif (!Item.lParam) return;\n\t\tCopyMemory(&Context->ActionCtx.TempAction,(void *)Item.lParam,sizeof(ACTION));\n\t\tContext->ActionCtx.SrceAction = (ACTION *)Item.lParam;\n\t\t}\n\telse\n\t\t{\n\t\tContext->ActionCtx.SrceAction = NULL;\n\t\tContext->ActionCtx.TempAction.node.next = NULL;\n\t\tContext->ActionCtx.TempAction.node.prev = NULL;\n\t\tContext->ActionCtx.TempAction.node.type = TYPE_ACTION;\n\t\tif (!Context->ActionCtx.TempAction.ctrl)\n\t\t\t{\n\t\t\tContext->ActionCtx.TempAction.param1 = 0;\n\t\t\tContext->ActionCtx.TempAction.param2 = 0x0a;\n\t\t\tContext->ActionCtx.TempAction.param3 = 0;\n\t\t\tContext->ActionCtx.TempAction.param4 = 0;\n\t\t\tContext->ActionCtx.TempAction.param5 = 0;\n\t\t\tContext->ActionCtx.TempAction.param6 = 0;\n\t\t\tContext->ActionCtx.TempAction.param7 = 0;\n\t\t\tContext->ActionCtx.TempAction.param8 = 0;\n\t\t\tContext->ActionCtx.TempAction.one = 0x01;\n\t\t\tContext->ActionCtx.TempAction.ctrl = ACTION_SETVARIABLE;\n\t\t\t}\n\t\t}\n\n\tfor (Count = 1; Actions[Count].ctrl != 0; Count++);\n\n\tpsh = GlobalAlloc(GPTR,sizeof(PROPSHEETHEADER));\n\tif (!psh) goto Error_0;\n\tpsp = GlobalAlloc(GPTR,sizeof(PROPSHEETPAGE)*(Count+1));\n\tif (!psp) goto Error_1;\n\n\tpsp[0].dwSize = sizeof(PROPSHEETPAGE);\n\tpsp[0].hInstance = hInstance;\n\tpsp[0].DUMMYUNIONNAME.pszTemplate = MAKEINTRESOURCE(7200);\n\tpsp[0].pfnDlgProc = Triggers_ActionDlgList;\n\tpsp[0].lParam = (LPARAM)Context;\n\tfor (Result = 1; Result != Count+1; Result++)\n\t\t{\n\t\tpsp[Result].dwSize = sizeof(PROPSHEETPAGE);\n\t\tpsp[Result].hInstance = hInstance;\n\t\tpsp[Result].DUMMYUNIONNAME.pszTemplate = MAKEINTRESOURCE(Actions[Result-1].dialog);\n\t\tpsp[Result].pfnDlgProc = Triggers_ActionDlgParams;\n\t\tpsp[Result].lParam = (LPARAM)Context;\n\t\t}\n\n\tpsh->dwSize = sizeof(PROPSHEETHEADER);\n\tpsh->dwFlags = PSH_PROPSHEETPAGE|PSH_USEICONID|PSH_WIZARD;\n\tpsh->hwndParent = hDlg;\n\tpsh->hInstance = hInstance;\n\tpsh->DUMMYUNIONNAME.pszIcon = MAKEINTRESOURCE(1);\n\tpsh->pszCaption = NULL;\n\tpsh->nPages = Count+1;\n\tpsh->DUMMYUNIONNAME3.ppsp = psp;\n\n\tif (!Misc_CreateImageList(TrSpecial,&Context->Images,32,32,FALSE)) goto Error_2;\n\tif (!Misc_CreateImageList(BadCreatures,&Context->Images,32,32,TRUE)) goto Error_2;\n\tif (!Misc_CreateImageList(BadElites,&Context->Images,32,32,TRUE)) goto Error_2;\n\tif (!Misc_CreateImageList(Heros,&Context->Images,32,32,TRUE)) goto Error_2;\n\tif (!Misc_CreateImageList(Doors,&Context->Images,32,32,TRUE)) goto Error_2;\n\tif (!Misc_CreateImageList(Traps,&Context->Images,32,32,TRUE)) goto Error_2;\n\tif (!Misc_CreateImageList(Spells,&Context->Images,32,32,TRUE)) goto Error_2;\n\tif (!Misc_CreateImageList(Terrain,&Context->Images,32,32,TRUE)) goto Error_2;\n\tif (!Misc_CreateImageList(TrPlayers,&Context->Images,32,32,TRUE)) goto Error_2;\n\tContext->PointIcon = LoadImage(hInstance,MAKEINTRESOURCE(19),IMAGE_ICON,16,16,LR_DEFAULTCOLOR);\n\tif (!Context->PointIcon) goto Error_2;\n\tContext->RectIcon = LoadImage(hInstance,MAKEINTRESOURCE(25),IMAGE_ICON,16,16,LR_DEFAULTCOLOR);\n\tif (!Context->RectIcon) goto Error_3;\n\tContext->CameraIcon = LoadImage(hInstance,MAKEINTRESOURCE(26),IMAGE_ICON,16,16,LR_DEFAULTCOLOR);\n\tif (!Context->CameraIcon) goto Error_4;\n\n\tfor (Result = 0; Result != Count; Result++)\n\t\t{\n\t\tContext->ActionCtx.Initialized[Actions[Result].ctrl] = FALSE;\n\t\t}\n\n\tResult = PropertySheet(psh);\n\n\tFileName = GlobalAlloc(GPTR,2048);\n\tif (FileName)\n\t\t{\n\t\tGetTempPath(2048,FileName);\n\t\twsprintf(szTempSpeechID,szNumber,SpeechUniqueID-1);\n\t\tstrcat(FileName,szTempSoundFile);\n\t\tstrcat(FileName,szTempSpeechID);\n\t\tstrcat(FileName,szTempMP2Ext);\n\t\tProperties_MapVoicesDeleteTempFile(hWnd,FileName);\n\t\tGlobalFree(FileName);\n\t\tSpeechUniqueID = 0;\n\t\t}\n\telse\n\t\tSpeechUniqueID--;\n\n\tif (Result == -1) goto Error_5;\n\n\tDestroyIcon(Context->CameraIcon);\n\tDestroyIcon(Context->RectIcon);\n\tDestroyIcon(Context->PointIcon);\n\tMisc_DestroyImageList(&Context->Images);\n\tList_ReleaseMemory(&Context->ActionCtx.SpeechList);\n\tGlobalFree(psp);\n\tGlobalFree(psh);\n\treturn;\n\n//--- Erreurs survenues lors de l'initialisation ---\n\nError_5:DestroyIcon(Context->CameraIcon);\nError_4:DestroyIcon(Context->RectIcon);\nError_3:DestroyIcon(Context->PointIcon);\nError_2:Misc_DestroyImageList(&Context->Images);\n\tGlobalFree(psp);\nError_1:GlobalFree(psh);\nError_0:Misc_MessageBoxExt(hDlg,szDialogErr,NULL,szMessageBoxExtOk,MB_ICONHAND);\n\tList_ReleaseMemory(&Context->ActionCtx.SpeechList);\n\treturn;\n",
+      "DlgList": "\n\tTRIGGERSCTX\t*Context;\n\tLONG\t\t lData;\n\n\tif (uMsgId == WM_INITDIALOG)\n\t\t{\n\t\tContext = (TRIGGERSCTX *)(((PROPSHEETPAGE *)lParam)->lParam);\n\t\tTriggers_ActionDlgInit(hDlg,Context);\n\t\treturn(TRUE);\n\t\t}\n\n\tContext = (TRIGGERSCTX *)GetWindowLong(hDlg,DWL_USER);\n\tif (!Context) return(FALSE);\n\n\tswitch(uMsgId)\n\t\t{\n\t\tcase WM_MEASUREITEM:\n\t\t\tif (((MEASUREITEMSTRUCT *)lParam)->CtlType == ODT_LISTVIEW)\n\t\t\t\t{\n\t\t\t\tMisc_MeasureListViewItem((MEASUREITEMSTRUCT *)lParam,32);\n\t\t\t\treturn(TRUE);\n\t\t\t\t}\n\t\t\tbreak;\n\n\t\tcase WM_DRAWITEM:\n\t\t\tif (((DRAWITEMSTRUCT *)lParam)->CtlType == ODT_LISTVIEW)\n\t\t\t\t{\n\t\t\t\tTriggers_DisplayDrawList((DRAWITEMSTRUCT *)lParam,Context);\n\t\t\t\treturn(TRUE);\n\t\t\t\t}\n\t\t\tif (((DRAWITEMSTRUCT *)lParam)->CtlType == ODT_STATIC)\n\t\t\t\t{\n\t\t\t\tMisc_DrawGroup((DRAWITEMSTRUCT *)lParam);\n\t\t\t\treturn(TRUE);\n\t\t\t\t}\n\t\t\tbreak;\n\n\t\tcase WM_NOTIFY:\n\t\t\tswitch( ((NMHDR *)lParam)->code )\n\t\t\t\t{\n\t\t\t\tcase LVN_ITEMCHANGED:\n\t\t\t\t\tif (((NM_LISTVIEW *)lParam)->uChanged&LVIF_STATE)\n\t\t\t\t\t\t{\n\t\t\t\t\t\tSendMessage(GetParent(hDlg),PSM_SETWIZBUTTONS,(WPARAM)0,(LPARAM)PSWIZB_DISABLEDFINISH);\n\t\t\t\t\t\tif (((NM_LISTVIEW *)lParam)->uNewState&LVIS_SELECTED)\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\tlData = (LONG)Triggers_ActionDlgGetParam(Context);\n\t\t\t\t\t\t\tif (!lData) return(TRUE);\n\t\t\t\t\t\t\tTriggers_ActionDlgSetDefault((BYTE)((TRIGGERINFO *)lData)->ctrl,Context);\n\t\t\t\t\t\t\tContext->ActionCtx.TempAction.ctrl = (BYTE)((TRIGGERINFO *)lData)->ctrl;\n\t\t\t\t\t\t\tSendMessage(GetParent(hDlg),PSM_SETWIZBUTTONS,(WPARAM)0,(LPARAM)(((TRIGGERINFO *)lData)->dialog == -1)?PSWIZB_FINISH:PSWIZB_NEXT);\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n\t\t\t\t\treturn(TRUE);\n\n                                case PSN_SETACTIVE:\n\t\t\t\t\tif (!Context->ActionCtx.MainSet)\n\t\t\t\t\t\t{\n\t\t\t\t\t\tSetWindowLong(hDlg,DWL_MSGRESULT,-1);\n\t\t\t\t\t\t}\n\t\t\t\t\telse\n\t\t\t\t\t\t{\n\t\t\t\t\t\tSetWindowLong(hDlg,DWL_MSGRESULT,0);\n\t\t\t\t\t\tPostMessage(GetParent(hDlg),PSM_SETWIZBUTTONS,(WPARAM)0,(LPARAM)PSWIZB_DISABLEDFINISH);\n\t\t\t\t\t\tlData = (LONG)Triggers_ActionDlgGetParam(Context);\n\t\t\t\t\t\tif (!lData) return(TRUE);\n\t\t\t\t\t\tPostMessage(GetParent(hDlg),PSM_SETWIZBUTTONS,(WPARAM)0,(LPARAM)(((TRIGGERINFO *)lData)->dialog == -1)?PSWIZB_FINISH:PSWIZB_NEXT);\n\t\t\t\t\t\t}\n\t\t\t\t\treturn(TRUE);\n\n\t\t\t\tcase PSN_WIZNEXT:\n\t\t\t\t\tlData = (LONG)Triggers_ActionDlgGetParam(Context);\n\t\t\t\t\tif (!lData)\n\t\t\t\t\t\tSetWindowLong(hDlg,DWL_MSGRESULT,-1);\n\t\t\t\t\telse\n\t\t\t\t\t\tSetWindowLong(hDlg,DWL_MSGRESULT,((TRIGGERINFO *)lData)->dialog);\n\t\t\t\t\treturn(TRUE);\n\n\t\t\t\tcase PSN_WIZFINISH:\n\t\t\t\t\tTriggers_ActionDlgParamsSave(hDlg,Context);\n\t\t\t\t\treturn(TRUE);\n\t\t\t\t}\n\t\t\tbreak;\n\t\t}\n\n\treturn(FALSE);\n",
+      "DlgParams": "\n\tTRIGGERSCTX\t*Context;\n\tLONG\t\t lData;\n\n\tif (uMsgId == WM_INITDIALOG)\n\t\t{\n\t\tContext = (TRIGGERSCTX *)(((PROPSHEETPAGE *)lParam)->lParam);\n\t\tTriggers_ActionDlgParamsInit(hDlg,Context);\n\t\treturn(TRUE);\n\t\t}\n\n\tContext = (TRIGGERSCTX *)GetWindowLong(hDlg,DWL_USER);\n\tif (!Context) return(FALSE);\n\n\tswitch(uMsgId)\n\t\t{\n\t\tcase WM_MEASUREITEM:\n\t\t\tif (((MEASUREITEMSTRUCT *)lParam)->CtlType == ODT_COMBOBOX)\n\t\t\t\t{\n\t\t\t\tMisc_MeasurePlayerComboBoxList(303,(MEASUREITEMSTRUCT *)lParam);\n\t\t\t\treturn(TRUE);\n\t\t\t\t}\n\t\t\tif (((MEASUREITEMSTRUCT *)lParam)->CtlType == ODT_LISTVIEW)\n\t\t\t\t{\n\t\t\t\tMisc_MeasureListViewItem((MEASUREITEMSTRUCT *)lParam,32);\n\t\t\t\treturn(TRUE);\n\t\t\t\t}\n\t\t\tbreak;\n\n\t\tcase WM_DRAWITEM:\n\t\t\tif (((DRAWITEMSTRUCT *)lParam)->CtlType == ODT_COMBOBOX)\n\t\t\t\t{\n\t\t\t\tMisc_DisplayPlayerComboBoxList(303,(DRAWITEMSTRUCT *)lParam);\n\t\t\t\treturn(TRUE);\n\t\t\t\t}\n\t\t\tif (((DRAWITEMSTRUCT *)lParam)->CtlType == ODT_LISTVIEW)\n\t\t\t\t{\n\t\t\t\tTriggers_DisplayDrawList((DRAWITEMSTRUCT *)lParam,Context);\n\t\t\t\treturn(TRUE);\n\t\t\t\t}\n\t\t\tif (((DRAWITEMSTRUCT *)lParam)->CtlType == ODT_BUTTON)\n\t\t\t\t{\n\t\t\t\tswitch(((DRAWITEMSTRUCT *)lParam)->CtlID)\n\t\t\t\t\t{\n\t\t\t\t\tcase 312:\n\t\t\t\t\t\tMisc_DrawButtonIcon((DRAWITEMSTRUCT *)lParam,Context->PointIcon);\n\t\t\t\t\t\tbreak;\n\t\t\t\t\tcase 314:\n\t\t\t\t\t\tMisc_DrawButtonIcon((DRAWITEMSTRUCT *)lParam,Context->RectIcon);\n\t\t\t\t\t\tbreak;\n\t\t\t\t\tcase 315:\n\t\t\t\t\t\tMisc_DrawButtonIcon((DRAWITEMSTRUCT *)lParam,Context->CameraIcon);\n\t\t\t\t\t\tbreak;\n\t\t\t\t\t}\n\t\t\t\treturn(TRUE);\n\t\t\t\t}\n\t\t\tif (((DRAWITEMSTRUCT *)lParam)->CtlType == ODT_STATIC)\n\t\t\t\t{\n\t\t\t\tMisc_DrawGroup((DRAWITEMSTRUCT *)lParam);\n\t\t\t\treturn(TRUE);\n\t\t\t\t}\n\t\t\tbreak;\n\n\t\tcase WM_COMMAND:\n\t\t\tswitch(HIWORD(wParam))\n\t\t\t\t{\n\t\t\t\tcase EN_CHANGE:\n\t\t\t\t\tswitch(LOWORD(wParam))\n\t\t\t\t\t\t{\n\t\t\t\t\t\tcase 700:\n\t\t\t\t\t\tcase 701:\n\t\t\t\t\t\tcase 702:\n\t\t\t\t\t\t\tif (Context->ActionCtx.TempAction.ctrl == ACTION_DISPLAYTIMER)\n\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\tlong\tHours;\n\t\t\t\t\t\t\t\tlong\tMinutes;\n\t\t\t\t\t\t\t\tlong\tSeconds;\n\n\t\t\t\t\t\t\t\tHours = GetDlgItemInt(hDlg,700,NULL,FALSE);\n\t\t\t\t\t\t\t\tMinutes = GetDlgItemInt(hDlg,701,NULL,FALSE);\n\t\t\t\t\t\t\t\tSeconds = GetDlgItemInt(hDlg,702,NULL,FALSE);\n\t\t\t\t\t\t\t\tif (Hours > 23)\n\t\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\tSetDlgItemInt(hDlg,700,23,FALSE);\n\t\t\t\t\t\t\t\t\tbreak;\n\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\tif (Minutes > 59)\n\t\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\tSetDlgItemInt(hDlg,701,59,FALSE);\n\t\t\t\t\t\t\t\t\tbreak;\n\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\tif (Seconds > 59)\n\t\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\tSetDlgItemInt(hDlg,702,59,FALSE);\n\t\t\t\t\t\t\t\t\tbreak;\n\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\tSetDlgItemInt(hDlg,307,Hours*60*60+Minutes*60+Seconds,FALSE);\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\tbreak;\n\t\t\t\t\t\t}\n\t\t\t\t\treturn(TRUE);\n\n\t\t\t\tcase BN_CLICKED:\n\t\t\t\t\tswitch(LOWORD(wParam))\n\t\t\t\t\t\t{\n\t\t\t\t\t\tcase 200:\n\t\t\t\t\t\tcase 201:\n\t\t\t\t\t\tcase 202:\n\t\t\t\t\t\t\tif (Context->ActionCtx.TempAction.ctrl == ACTION_SETVARIABLE)\n\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,210),TRUE);\n\t\t\t\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,213),FALSE);\n\t\t\t\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,214),FALSE);\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\tbreak;\n\t\t\t\t\t\tcase 203:\n\t\t\t\t\t\tcase 204:\n\t\t\t\t\t\tcase 205:\n\t\t\t\t\t\t\tif (Context->ActionCtx.TempAction.ctrl == ACTION_SETVARIABLE)\n\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,210),FALSE);\n\t\t\t\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,213),TRUE);\n\t\t\t\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,214),TRUE);\n\t\t\t\t\t\t\t\tContext->ActionCtx.TempAction.param5 = SendDlgItemMessage(hDlg,214,CB_GETCURSEL,(WPARAM)0,(LPARAM)0);\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\tbreak;\n\n\t\t\t\t\t\tcase 313:\n\t\t\t\t\t\t\tif (Context->ActionCtx.TempAction.ctrl == ACTION_ADDCREATURE)\n\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\tThings_SelectOptions(hDlg,(DWORD *)&Context->ActionCtx.TempAction.param4,NULL,THING_OPTIONSADD);\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\tbreak;\n\n\t\t\t\t\t\tcase 312:\n\t\t\t\t\t\t\tTriggers_ActionDlgChoosePoint(hDlg);\n\t\t\t\t\t\t\tbreak;\n\t\t\t\t\t\tcase 314:\n\t\t\t\t\t\t\tMap_ChoosePointEx(hDlg,&Context->ActionCtx.FullRect,MAP_CHOICELMBRECT,szTriggersChoiceRect);\n\t\t\t\t\t\t\tSetDlgItemInt(hDlg,307,Context->ActionCtx.FullRect.x1,FALSE);\n\t\t\t\t\t\t\tSetDlgItemInt(hDlg,309,Context->ActionCtx.FullRect.y1,FALSE);\n\t\t\t\t\t\t\tbreak;\n\t\t\t\t\t\tcase 315:\n\t\t\t\t\t\t\tif (Context->ActionCtx.TempAction.ctrl == ACTION_CAMERAPATH)\n\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\tCAMERAPATH\tCameraPath;\n\n\t\t\t\t\t\t\t\tZeroMemory(&CameraPath,sizeof(CAMERAPATH));\n\t\t\t\t\t\t\t\tCameraPath.PathId = GetDlgItemInt(hDlg,307,NULL,FALSE);\n\t\t\t\t\t\t\t\tif (Library_Call(hDlg,LIBRARY_CAMERAPATH,&CameraPath))\n\t\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\tSetDlgItemInt(hDlg,307,CameraPath.PathId,FALSE);\n\t\t\t\t\t\t\t\t\tCheckRadioButton(hDlg,200,201,(CameraPath.ShowCell)?200:201);\n\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\telse\n\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\tif (IsDlgButtonChecked(hDlg,315) == BST_CHECKED)\n\t\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,306),FALSE);\n\t\t\t\t\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,307),FALSE);\n\t\t\t\t\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,308),FALSE);\n\t\t\t\t\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,309),FALSE);\n\t\t\t\t\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,310),FALSE);\n\t\t\t\t\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,311),FALSE);\n\t\t\t\t\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,312),FALSE);\n\t\t\t\t\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,314),TRUE);\n\t\t\t\t\t\t\t\t\tContext->ActionCtx.ChangeRect = TRUE;\n\t\t\t\t\t\t\t\t\tContext->ActionCtx.FullRect.x1 = GetDlgItemInt(hDlg,307,NULL,FALSE);\n\t\t\t\t\t\t\t\t\tContext->ActionCtx.FullRect.y1 = GetDlgItemInt(hDlg,309,NULL,FALSE);\n\t\t\t\t\t\t\t\t\tContext->ActionCtx.FullRect.x2 = Context->ActionCtx.FullRect.x1;\n\t\t\t\t\t\t\t\t\tContext->ActionCtx.FullRect.y2 = Context->ActionCtx.FullRect.y1;\n\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\telse\n\t\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,306),TRUE);\n\t\t\t\t\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,307),TRUE);\n\t\t\t\t\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,308),TRUE);\n\t\t\t\t\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,309),TRUE);\n\t\t\t\t\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,310),TRUE);\n\t\t\t\t\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,311),TRUE);\n\t\t\t\t\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,312),TRUE);\n\t\t\t\t\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,314),FALSE);\n\t\t\t\t\t\t\t\t\tContext->ActionCtx.ChangeRect = FALSE;\n\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\tbreak;\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\tbreak;\n\t\t\t\t\t\tcase 500:\n\t\t\t\t\t\t\tif (IsDlgButtonChecked(hDlg,500) == BST_CHECKED)\n\t\t\t\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,501),TRUE);\n\t\t\t\t\t\t\telse\n\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\tCheckDlgButton(hDlg,501,BST_UNCHECKED);\n\t\t\t\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,501),FALSE);\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\tbreak;\n\t\t\t\t\t\t}\n\t\t\t\t\treturn(TRUE);\n\n\t\t\t\tcase LBN_DBLCLK:\n\t\t\t\t\tswitch(LOWORD(wParam))\n\t\t\t\t\t\t{\n\t\t\t\t\t\tcase 401:\n\t\t\t\t\t\t\tif (Context->ActionCtx.TempAction.ctrl == ACTION_SAY)\n\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\tProperties_MapVoicesGetSoundList(hDlg,(char *)Map.Properties.SpeechFile,SendDlgItemMessage(hDlg,401,LB_GETCURSEL,(WPARAM)0,(LPARAM)0)+1,NULL);\n\t\t\t\t\t\t\t\treturn(TRUE);\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\tbreak;\n\t\t\t\t\t\t}\n\t\t\t\t\tbreak;\n\n\t\t\t\tcase CBN_SELCHANGE:\n\t\t\t\t\tswitch(LOWORD(wParam))\n\t\t\t\t\t\t{\n\t\t\t\t\t\tcase 401:\n\t\t\t\t\t\t\tif (Context->ActionCtx.TempAction.ctrl == ACTION_SAY)\n\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\tSetDlgItemInt(hDlg,307,SendDlgItemMessage(hDlg,401,LB_GETCURSEL,(WPARAM)0,(LPARAM)0)+1,FALSE);\n\t\t\t\t\t\t\t\tProperties_MapTextsSetText(hDlg,402,(char *)Map.Properties.SpeechFile,SendDlgItemMessage(hDlg,401,LB_GETCURSEL,(WPARAM)0,(LPARAM)0)+1);\n\t\t\t\t\t\t\t\treturn(TRUE);\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\tbreak;\n\n\t\t\t\t\t\tcase 311:\n\t\t\t\t\t\t\tswitch(Context->ActionCtx.TempAction.ctrl)\n\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\tcase ACTION_ADDCREATURE:\n\t\t\t\t\t\t\t\tcase ACTION_CHANGESQUARE:\n\t\t\t\t\t\t\t\tcase ACTION_CHANGEOWNER: {\n\t\t\t\t\t\t\t\t\tMAPRECTEX\t*Area;\n\t\t\t\t\t\t\t\t\tMAPCLIENT\t Client;\n\n\t\t\t\t\t\t\t\t\tlData = Misc_GetArea(hDlg,311,TRUE);\n\t\t\t\t\t\t\t\t\tif (!lData) break;\n\t\t\t\t\t\t\t\t\tArea = RectEx_FindById(lData,&MapAreas);\n\t\t\t\t\t\t\t\t\tif (!Area) break;\n\t\t\t\t\t\t\t\t\tMap_CorrectRect(&Area->rect,&Client);\n\t\t\t\t\t\t\t\t\tSetDlgItemInt(hDlg,307,Client.X,FALSE);\n\t\t\t\t\t\t\t\t\tSetDlgItemInt(hDlg,309,Client.Y,FALSE);\n\t\t\t\t\t\t\t\t\t} return(TRUE);\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\tbreak;\n\n\t\t\t\t\t\tcase 212:\n\t\t\t\t\t\t\tlData = SendDlgItemMessage(hDlg,212,CB_GETCURSEL,(WPARAM)0,(LPARAM)0);\n\t\t\t\t\t\t\tif (lData < 0) break;\n\t\t\t\t\t\t\tContext->ActionCtx.TempAction.param1 = lData;\n\t\t\t\t\t\t\tbreak;\n\t\t\t\t\t\tcase 214:\n\t\t\t\t\t\t\tlData = SendDlgItemMessage(hDlg,214,CB_GETCURSEL,(WPARAM)0,(LPARAM)0);\n\t\t\t\t\t\t\tif (lData < 0) break;\n\t\t\t\t\t\t\tContext->ActionCtx.TempAction.param5 = lData;\n\t\t\t\t\t\t\tbreak;\n\t\t\t\t\t\t}\n\t\t\t\t\treturn(TRUE);\n\t\t\t\t}\n\t\t\tbreak;\n\n\t\tcase WM_NOTIFY:\n\t\t\tswitch( ((NMHDR *)lParam)->code )\n\t\t\t\t{\n\t\t\t\tcase LVN_ITEMCHANGED:\n\t\t\t\t\tif (!IsWindow(Context->ActionCtx.TerrainList)) break;\n\t\t\t\t\tif (((NMHDR *)lParam)->hwndFrom == Context->ActionCtx.TerrainList)\n\t\t\t\t\t\t{\n\t\t\t\t\t\tif (!(((NM_LISTVIEW *)lParam)->uNewState&LVIS_SELECTED))\n\t\t\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,303),FALSE);\n\t\t\t\t\t\telse\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\tlData = Triggers_TriggerDlgGetSelectedEntryParam(Context->ActionCtx.TerrainList);\n\t\t\t\t\t\t\tif ((lData <= 0x07)||(lData == 0x1F))\n\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\tSendDlgItemMessage(hDlg,303,CB_SETCURSEL,(WPARAM)1,(LPARAM)0);\n\t\t\t\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,303),FALSE);\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\telse if (lData == 0x23)\n\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\tSendDlgItemMessage(hDlg,303,CB_SETCURSEL,(WPARAM)0,(LPARAM)0);\n\t\t\t\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,303),FALSE);\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\telse\n\t\t\t\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,303),TRUE);\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n\t\t\t\t\treturn(TRUE);\n\n                                case PSN_SETACTIVE:\n\t\t\t\t\tTriggers_ActionDlgParamsCheck(hDlg,Context);\n\t\t\t\t\treturn(TRUE);\n\n\t\t\t\tcase PSN_WIZBACK:\n\t\t\t\t\tTriggers_ActionDlgParamsStore(hDlg,Context);\n\t\t\t\t\tSetWindowLong(hDlg,DWL_MSGRESULT,7200);\n\t\t\t\t\treturn(TRUE);\n\n\t\t\t\tcase PSN_WIZFINISH:\n\t\t\t\t\tif (!Triggers_ActionDlgParamsStore(hDlg,Context))\n\t\t\t\t\t\t{\n\t\t\t\t\t\tSetWindowLong(hDlg,DWL_MSGRESULT,-1);\n\t\t\t\t\t\treturn(TRUE);\n\t\t\t\t\t\t}\n\t\t\t\t\tTriggers_ActionDlgParamsSave(hDlg,Context);\n\t\t\t\t\treturn(TRUE);\n\t\t\t\t}\n\t\t\tbreak;\n\t\t}\n\n\treturn(FALSE);\n"
+    },
+    "SelectionContext": "\n\tTRIGGERSCTX\t*Context;\n\tint\t\t Result;\n\n\tContext = GlobalAlloc(GPTR,sizeof(TRIGGERSCTX));\n\tif (!Context)\n\t\t{\n\t\tMisc_PrintError(hWnd,szDialogErr,NULL,MB_ICONHAND);\n\t\treturn;\n\t\t}\n\n\tContext->Triggers = &MapTriggers;\n\tContext->Actions = &MapActions;\n\tResult = DialogBoxParam(hInstance,MAKEINTRESOURCE(7000),hWnd,Triggers_SelectProc,(LPARAM)Context);\n\tif (Result == -1) Misc_PrintError(hWnd,szDialogErr,NULL,MB_ICONHAND);\n\n\tFiles_SaveUpdate();\n\tGlobalFree(Context);\n\treturn;\n"
+  }
+}

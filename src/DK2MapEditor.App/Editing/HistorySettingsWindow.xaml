@@ -1,0 +1,22 @@
+<Window x:Class="DK2MapEditor.App.Editing.HistorySettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="{DynamicResource History.Settings}" Width="620" Height="360" MinWidth="540" MinHeight="340"
+        WindowStartupLocation="CenterOwner" ShowInTaskbar="False" Background="{StaticResource Brush.Background}" Foreground="{StaticResource Brush.Text}">
+    <Grid Margin="16" Background="{StaticResource Brush.Background}">
+        <Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/><RowDefinition Height="*"/><RowDefinition Height="Auto"/></Grid.RowDefinitions>
+        <TextBlock Text="{DynamicResource History.SettingsHint}" TextWrapping="Wrap" Margin="0,0,0,12"/>
+        <DockPanel Grid.Row="1" Margin="0,0,0,12">
+            <TextBlock Text="{DynamicResource History.Depth}" VerticalAlignment="Center" Margin="0,0,12,0"/>
+            <TextBox x:Name="DepthInput" Width="100" HorizontalAlignment="Left" TextChanged="Input_Changed"/>
+        </DockPanel>
+        <TextBlock Grid.Row="2" Text="{DynamicResource History.TrimHint}" TextWrapping="Wrap" Margin="0,0,0,12"/>
+        <CheckBox x:Name="ConfirmClear" Grid.Row="3" Content="{DynamicResource History.ConfirmClear}" Checked="Confirm_Changed" Unchecked="Confirm_Changed"/>
+        <TextBlock x:Name="StatusText" Grid.Row="4" TextWrapping="Wrap" Foreground="{StaticResource Brush.Gold}" Margin="0,10,0,0"/>
+        <StackPanel Grid.Row="5" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button x:Name="ResetMemoryButton" Content="{DynamicResource HistoryMemory.Reset}" Click="ResetMemory_Click"/>
+            <Button x:Name="DefaultButton" Content="{DynamicResource History.Default}" Click="Default_Click"/>
+            <Button x:Name="ApplyButton" Content="{DynamicResource History.Apply}" IsDefault="True" Click="Apply_Click"/>
+            <Button Content="{DynamicResource History.Cancel}" IsCancel="True" Click="Cancel_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,801 @@
+{
+  "Pages": [
+    {
+      "Type": "ACTION_ADDELEMENT",
+      "PageID": 7204,
+      "Controls": [
+        {
+          "Parameter": 1,
+          "Kind": "NamedChoice",
+          "Maximum": 0,
+          "SecondaryParameter": 0,
+          "Values": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "Dynamic": false
+        },
+        {
+          "Parameter": 2,
+          "Kind": "Element",
+          "Maximum": 0,
+          "SecondaryParameter": 3,
+          "Values": [
+            65538,
+            65542,
+            65537,
+            65551,
+            65544,
+            65548,
+            65550,
+            65549,
+            65540,
+            65543,
+            65546,
+            65545,
+            65547,
+            65553,
+            65552,
+            327684,
+            327682,
+            327681,
+            327686,
+            327690,
+            327683,
+            327688,
+            327693,
+            327687,
+            327689,
+            327691,
+            327685,
+            196614,
+            196609,
+            196611,
+            196610,
+            196612,
+            196613,
+            196615,
+            196616,
+            262148,
+            262149,
+            262150,
+            262153,
+            262152,
+            262145,
+            262154,
+            262155,
+            262146,
+            262147,
+            262151,
+            262158,
+            262159,
+            262160
+          ],
+          "Dynamic": false
+        },
+        {
+          "Parameter": 4,
+          "Kind": "Choice",
+          "Maximum": 1,
+          "SecondaryParameter": 0,
+          "Values": [
+            0,
+            1
+          ],
+          "Dynamic": false
+        }
+      ],
+      "RequiredCollections": [],
+      "Native": [
+        {
+          "Name": "Param1",
+          "Offset": 8,
+          "Size": 1,
+          "Kind": "BYTE"
+        },
+        {
+          "Name": "Param2",
+          "Offset": 9,
+          "Size": 1,
+          "Kind": "BYTE"
+        },
+        {
+          "Name": "Param3",
+          "Offset": 10,
+          "Size": 1,
+          "Kind": "BYTE"
+        },
+        {
+          "Name": "Param4",
+          "Offset": 11,
+          "Size": 1,
+          "Kind": "BYTE"
+        }
+      ],
+      "SourceCheck": "if (!Context->ActionCtx.Initialized[ACTION_ADDELEMENT]) goto Error_0;\r\n\t\t\tSendDlgItemMessage(hDlg,303,CB_SETCURSEL,(WPARAM)Context->ActionCtx.TempAction.param1-1,(LPARAM)0);\r\n\t\t\tCheckRadioButton(hDlg,200,201,(Context->ActionCtx.TempAction.param4)?200:201);\r\n\t\t\tbreak;",
+      "SourceStore": "Context->ActionCtx.TempAction.param1 = SendDlgItemMessage(hDlg,303,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)+1;\r\n\t\t\tResult = Triggers_TriggerDlgGetSelectedEntryParam(Context->ActionCtx.ElementsList);\r\n\t\t\tif (!Result) goto NoElementSelected;\r\n\t\t\tContext->ActionCtx.TempAction.param2 = Result>>16;\r\n\t\t\tContext->ActionCtx.TempAction.param3 = Result&0x0000FFFF;\r\n\t\t\tif (IsDlgButtonChecked(hDlg,200) == BST_CHECKED) Context->ActionCtx.TempAction.param4 = 1;\r\n\t\t\telse Context->ActionCtx.TempAction.param4 = 0;\r\n\t\t\tResult = 1;\r\n\t\t\tbreak;"
+    },
+    {
+      "Type": "ACTION_SHOWAREA",
+      "PageID": 7205,
+      "Controls": [
+        {
+          "Parameter": 1,
+          "Kind": "NamedChoice",
+          "Maximum": 0,
+          "SecondaryParameter": 0,
+          "Values": [],
+          "Dynamic": true
+        },
+        {
+          "Parameter": 2,
+          "Kind": "Choice",
+          "Maximum": 1,
+          "SecondaryParameter": 0,
+          "Values": [
+            0,
+            1
+          ],
+          "Dynamic": false
+        }
+      ],
+      "RequiredCollections": [
+        "Areas"
+      ],
+      "Native": [
+        {
+          "Name": "Param1",
+          "Offset": 8,
+          "Size": 1,
+          "Kind": "BYTE"
+        },
+        {
+          "Name": "Param2",
+          "Offset": 9,
+          "Size": 1,
+          "Kind": "BYTE"
+        }
+      ],
+      "SourceCheck": "if (!Context->ActionCtx.Initialized[ACTION_SHOWAREA]) goto Error_0;\r\n\t\t\tif (!MapAreas.next) goto Error_2;\r\n\t\t\tMisc_SetArea(hDlg,311,Context->ActionCtx.TempAction.param1);\r\n\t\t\tCheckRadioButton(hDlg,200,201,(Context->ActionCtx.TempAction.param2)?201:200);\r\n\t\t\tbreak;",
+      "SourceStore": "Context->ActionCtx.TempAction.param1 = Misc_GetArea(hDlg,311,FALSE);\r\n\t\t\tif (IsDlgButtonChecked(hDlg,200) == BST_CHECKED) Context->ActionCtx.TempAction.param2 = 0;\r\n\t\t\telse Context->ActionCtx.TempAction.param2 = 1;\r\n\t\t\tResult = 1;\r\n\t\t\tbreak;"
+    },
+    {
+      "Type": "ACTION_ENABLEFOG",
+      "PageID": 7206,
+      "Controls": [
+        {
+          "Parameter": 1,
+          "Kind": "NamedChoice",
+          "Maximum": 0,
+          "SecondaryParameter": 0,
+          "Values": [],
+          "Dynamic": true
+        },
+        {
+          "Parameter": 2,
+          "Kind": "Choice",
+          "Maximum": 1,
+          "SecondaryParameter": 0,
+          "Values": [
+            0,
+            1
+          ],
+          "Dynamic": false
+        }
+      ],
+      "RequiredCollections": [
+        "Areas"
+      ],
+      "Native": [
+        {
+          "Name": "Param1",
+          "Offset": 8,
+          "Size": 1,
+          "Kind": "BYTE"
+        },
+        {
+          "Name": "Param2",
+          "Offset": 9,
+          "Size": 1,
+          "Kind": "BYTE"
+        }
+      ],
+      "SourceCheck": "if (!Context->ActionCtx.Initialized[ACTION_ENABLEFOG]) goto Error_0;\r\n\t\t\tif (!MapAreas.next) goto Error_2;\r\n\t\t\tMisc_SetArea(hDlg,311,Context->ActionCtx.TempAction.param1);\r\n\t\t\tCheckRadioButton(hDlg,200,201,(Context->ActionCtx.TempAction.param2)?201:200);\r\n\t\t\tbreak;",
+      "SourceStore": "Context->ActionCtx.TempAction.param1 = Misc_GetArea(hDlg,311,FALSE);\r\n\t\t\tif (IsDlgButtonChecked(hDlg,200) == BST_CHECKED) Context->ActionCtx.TempAction.param2 = 0;\r\n\t\t\telse Context->ActionCtx.TempAction.param2 = 1;\r\n\t\t\tResult = 1;\r\n\t\t\tbreak;"
+    },
+    {
+      "Type": "ACTION_ALLIES",
+      "PageID": 7222,
+      "Controls": [
+        {
+          "Parameter": 1,
+          "Kind": "NamedChoice",
+          "Maximum": 0,
+          "SecondaryParameter": 0,
+          "Values": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "Dynamic": false
+        },
+        {
+          "Parameter": 2,
+          "Kind": "NamedChoice",
+          "Maximum": 0,
+          "SecondaryParameter": 0,
+          "Values": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "Dynamic": false
+        },
+        {
+          "Parameter": 3,
+          "Kind": "Choice",
+          "Maximum": 1,
+          "SecondaryParameter": 0,
+          "Values": [
+            0,
+            1
+          ],
+          "Dynamic": false
+        }
+      ],
+      "RequiredCollections": [],
+      "Native": [
+        {
+          "Name": "Param1",
+          "Offset": 8,
+          "Size": 1,
+          "Kind": "BYTE"
+        },
+        {
+          "Name": "Param2",
+          "Offset": 9,
+          "Size": 1,
+          "Kind": "BYTE"
+        },
+        {
+          "Name": "Param3",
+          "Offset": 10,
+          "Size": 1,
+          "Kind": "BYTE"
+        }
+      ],
+      "SourceCheck": "if (!Context->ActionCtx.Initialized[ACTION_ALLIES]) goto Error_0;\r\n\t\t\tCheckRadioButton(hDlg,200,201,(Context->ActionCtx.TempAction.param3)?201:200);\r\n\t\t\tbreak;",
+      "SourceStore": "if (IsDlgButtonChecked(hDlg,200) == BST_CHECKED) Context->ActionCtx.TempAction.param3 = 0;\r\n\t\t\telse Context->ActionCtx.TempAction.param3 = 1;\r\n\t\t\tContext->ActionCtx.TempAction.param1 = Triggers_TriggerDlgGetSelectedEntryParam(Context->ActionCtx.FirstAlliePlayersList);\r\n\t\t\tContext->ActionCtx.TempAction.param2 = Triggers_TriggerDlgGetSelectedEntryParam(Context->ActionCtx.SecondAlliePlayersList);\r\n\t\t\tif (!Context->ActionCtx.TempAction.param1) goto NoPlayerSelected;\r\n\t\t\tif (!Context->ActionCtx.TempAction.param2) goto NoPlayerSelected;\r\n\t\t\tResult = 1;\r\n\t\t\tbreak;"
+    },
+    {
+      "Type": "ACTION_RELEASEBAND",
+      "PageID": 7207,
+      "Controls": [
+        {
+          "Parameter": 1,
+          "Kind": "NamedChoice",
+          "Maximum": 0,
+          "SecondaryParameter": 0,
+          "Values": [],
+          "Dynamic": true
+        },
+        {
+          "Parameter": 2,
+          "Kind": "Choice",
+          "Maximum": 2,
+          "SecondaryParameter": 0,
+          "Values": [
+            0,
+            1,
+            2
+          ],
+          "Dynamic": false
+        },
+        {
+          "Parameter": 5,
+          "Kind": "NamedChoice",
+          "Maximum": 0,
+          "SecondaryParameter": 0,
+          "Values": [],
+          "Dynamic": true
+        }
+      ],
+      "RequiredCollections": [
+        "Areas",
+        "Bands"
+      ],
+      "Native": [
+        {
+          "Name": "Param1",
+          "Offset": 8,
+          "Size": 1,
+          "Kind": "BYTE"
+        },
+        {
+          "Name": "Param2",
+          "Offset": 9,
+          "Size": 1,
+          "Kind": "BYTE"
+        },
+        {
+          "Name": "Param5",
+          "Offset": 12,
+          "Size": 4,
+          "Kind": "LONG"
+        }
+      ],
+      "SourceCheck": "if (!Context->ActionCtx.Initialized[ACTION_RELEASEBAND]) goto Error_0;\r\n\t\t\tif (!MapHerosBands.next) goto Error_1;\r\n\t\t\tif (!MapAreas.next) goto Error_2;\r\n\t\t\tMisc_SetArea(hDlg,311,Context->ActionCtx.TempAction.param5);\r\n\t\t\tswitch(Context->ActionCtx.TempAction.param2)\r\n\t\t\t\t{\r\n\t\t\t\tcase 0:\tCheckDlgButton(hDlg,500,BST_UNCHECKED);\r\n\t\t\t\t\tCheckDlgButton(hDlg,501,BST_UNCHECKED);\r\n\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,501),FALSE);\r\n\t\t\t\t\tbreak;\r\n\t\t\t\tcase 1:\tCheckDlgButton(hDlg,500,BST_CHECKED);\r\n\t\t\t\t\tCheckDlgButton(hDlg,501,BST_UNCHECKED);\r\n\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,501),TRUE);\r\n\t\t\t\t\tbreak;\r\n\t\t\t\tcase 2:\tCheckDlgButton(hDlg,500,BST_CHECKED);\r\n\t\t\t\t\tCheckDlgButton(hDlg,501,BST_CHECKED);\r\n\t\t\t\t\tEnableWindow(GetDlgItem(hDlg,501),TRUE);\r\n\t\t\t\t\tbreak;\r\n\t\t\t\t}\r\n\t\t\tbreak;",
+      "SourceStore": "Context->ActionCtx.TempAction.param1 = Triggers_TriggerDlgGetSelectedEntryParam(Context->ActionCtx.HerosList);\r\n\t\t\tContext->ActionCtx.TempAction.param5 = Misc_GetArea(hDlg,311,FALSE);\r\n\t\t\tif (IsDlgButtonChecked(hDlg,500) == BST_CHECKED)\r\n\t\t\t\t{\r\n\t\t\t\tContext->ActionCtx.TempAction.param2 = 1;\r\n\t\t\t\tif (IsDlgButtonChecked(hDlg,501) == BST_CHECKED) Context->ActionCtx.TempAction.param2 = 2;\r\n\t\t\t\t}\r\n\t\t\telse\r\n\t\t\t\tContext->ActionCtx.TempAction.param2 = 0;\r\n\t\t\tif (!Context->ActionCtx.TempAction.param1) goto NoBandSelected;\r\n\t\t\tContext->ActionCtx.TempAction.param1--;\r\n\t\t\tResult = 1;\r\n\t\t\tbreak;"
+    },
+    {
+      "Type": "ACTION_TOGGLEEFFECT",
+      "PageID": 7232,
+      "Controls": [
+        {
+          "Parameter": 1,
+          "Kind": "NamedChoice",
+          "Maximum": 0,
+          "SecondaryParameter": 0,
+          "Values": [],
+          "Dynamic": true
+        },
+        {
+          "Parameter": 2,
+          "Kind": "Choice",
+          "Maximum": 1,
+          "SecondaryParameter": 0,
+          "Values": [
+            0,
+            1
+          ],
+          "Dynamic": false
+        }
+      ],
+      "RequiredCollections": [
+        "Effects"
+      ],
+      "Native": [
+        {
+          "Name": "Param1",
+          "Offset": 8,
+          "Size": 1,
+          "Kind": "BYTE"
+        },
+        {
+          "Name": "Param2",
+          "Offset": 9,
+          "Size": 1,
+          "Kind": "BYTE"
+        }
+      ],
+      "SourceCheck": "if (!Context->ActionCtx.Initialized[ACTION_TOGGLEEFFECT]) goto Error_0;\r\n\t\t\tif (!MapEffects.next) goto Error_4;\r\n\t\t\tMisc_SetEffect(hDlg,311,Context->ActionCtx.TempAction.param1);\r\n\t\t\tCheckRadioButton(hDlg,200,201,(Context->ActionCtx.TempAction.param2)?200:201);\r\n\t\t\tbreak;",
+      "SourceStore": "Context->ActionCtx.TempAction.param1 = Misc_GetEffect(hDlg,311,FALSE);\r\n\t\t\tif (IsDlgButtonChecked(hDlg,200) == BST_CHECKED) Context->ActionCtx.TempAction.param2 = 1;\r\n\t\t\telse Context->ActionCtx.TempAction.param2 = 0;\r\n\t\t\tResult = 1;\r\n\t\t\tbreak;"
+    },
+    {
+      "Type": "ACTION_SHOWELEMENT",
+      "PageID": 7210,
+      "Controls": [
+        {
+          "Parameter": 1,
+          "Kind": "Element",
+          "Maximum": 0,
+          "SecondaryParameter": 2,
+          "Values": [
+            242,
+            243,
+            248,
+            251,
+            65538,
+            65542,
+            65537,
+            65551,
+            65544,
+            65548,
+            65550,
+            65549,
+            65540,
+            65543,
+            65546,
+            65545,
+            65547,
+            65553,
+            65552,
+            250,
+            327684,
+            327682,
+            327681,
+            327686,
+            327690,
+            327683,
+            327688,
+            327693,
+            327687,
+            327689,
+            327691,
+            249,
+            196614,
+            196609,
+            196611,
+            196610,
+            196612,
+            196613,
+            196615,
+            196616,
+            262148,
+            262149,
+            262150,
+            262153,
+            262152,
+            262145,
+            262154,
+            262155,
+            262146,
+            262147,
+            262151,
+            262158,
+            262159,
+            262160
+          ],
+          "Dynamic": false
+        },
+        {
+          "Parameter": 3,
+          "Kind": "Choice",
+          "Maximum": 1,
+          "SecondaryParameter": 0,
+          "Values": [
+            0,
+            1
+          ],
+          "Dynamic": false
+        },
+        {
+          "Parameter": 5,
+          "Kind": "Number",
+          "Maximum": 999999,
+          "SecondaryParameter": 0,
+          "Values": [],
+          "Dynamic": false,
+          "Unsigned": true
+        }
+      ],
+      "RequiredCollections": [],
+      "Native": [
+        {
+          "Name": "Param1",
+          "Offset": 8,
+          "Size": 1,
+          "Kind": "BYTE"
+        },
+        {
+          "Name": "Param2",
+          "Offset": 9,
+          "Size": 1,
+          "Kind": "BYTE"
+        },
+        {
+          "Name": "Param3",
+          "Offset": 10,
+          "Size": 1,
+          "Kind": "BYTE"
+        },
+        {
+          "Name": "Param5",
+          "Offset": 12,
+          "Size": 4,
+          "Kind": "LONG"
+        }
+      ],
+      "SourceCheck": "if (!Context->ActionCtx.Initialized[ACTION_SHOWELEMENT]) goto Error_0;\r\n\t\t\tCheckRadioButton(hDlg,200,201,(Context->ActionCtx.TempAction.param3)?200:201);\r\n\t\t\tSetDlgItemInt(hDlg,307,Context->ActionCtx.TempAction.param5,FALSE);\r\n\t\t\tSendDlgItemMessage(hDlg,307,EM_LIMITTEXT,(WPARAM)6,(LPARAM)0);\r\n\t\t\tbreak;",
+      "SourceStore": "Result = Triggers_TriggerDlgGetSelectedEntryParam(Context->ActionCtx.ButtonsList);\r\n\t\t\tif (!Result) goto NoButtonSelected;\r\n\t\t\tContext->ActionCtx.TempAction.param1 = Result>>16;\r\n\t\t\tContext->ActionCtx.TempAction.param2 = Result&0x0000FFFF;\r\n\t\t\tif (IsDlgButtonChecked(hDlg,200) == BST_CHECKED) Context->ActionCtx.TempAction.param3 = 1;\r\n\t\t\telse Context->ActionCtx.TempAction.param3 = 0;\r\n\t\t\tContext->ActionCtx.TempAction.param5 = GetDlgItemInt(hDlg,307,NULL,FALSE);\r\n\t\t\tResult = 1;\r\n\t\t\tbreak;"
+    },
+    {
+      "Type": "ACTION_MOVECAMERA",
+      "PageID": 7213,
+      "Controls": [
+        {
+          "Parameter": 1,
+          "Kind": "NamedChoice",
+          "Maximum": 0,
+          "SecondaryParameter": 0,
+          "Values": [],
+          "Dynamic": true
+        }
+      ],
+      "RequiredCollections": [
+        "Areas"
+      ],
+      "Native": [
+        {
+          "Name": "Param1",
+          "Offset": 8,
+          "Size": 1,
+          "Kind": "BYTE"
+        }
+      ],
+      "SourceCheck": "if (!Context->ActionCtx.Initialized[ACTION_MOVECAMERA]) goto Error_0;\r\n\t\t\tif (!MapAreas.next) goto Error_2;\r\n\t\t\tMisc_SetArea(hDlg,311,Context->ActionCtx.TempAction.param1);\r\n\t\t\tbreak;",
+      "SourceStore": "Context->ActionCtx.TempAction.param1 = Misc_GetArea(hDlg,311,FALSE);\r\n\t\t\tResult = 1;\r\n\t\t\tbreak;"
+    },
+    {
+      "Type": "ACTION_ROTATECAMERA",
+      "PageID": 7214,
+      "Controls": [
+        {
+          "Parameter": 1,
+          "Kind": "NamedChoice",
+          "Maximum": 0,
+          "SecondaryParameter": 0,
+          "Values": [],
+          "Dynamic": true
+        },
+        {
+          "Parameter": 3,
+          "Kind": "Number",
+          "Maximum": 999,
+          "SecondaryParameter": 0,
+          "Values": [],
+          "Dynamic": false,
+          "Unsigned": true
+        },
+        {
+          "Parameter": 5,
+          "Kind": "Number",
+          "Maximum": 9999,
+          "SecondaryParameter": 0,
+          "Values": [],
+          "Dynamic": false,
+          "Unsigned": true
+        }
+      ],
+      "RequiredCollections": [
+        "Areas"
+      ],
+      "Native": [
+        {
+          "Name": "Param1",
+          "Offset": 8,
+          "Size": 1,
+          "Kind": "BYTE"
+        },
+        {
+          "Name": "Param3",
+          "Offset": 10,
+          "Size": 2,
+          "Kind": "WORD"
+        },
+        {
+          "Name": "Param5",
+          "Offset": 12,
+          "Size": 1,
+          "Kind": "BYTE"
+        }
+      ],
+      "SourceCheck": "if (!Context->ActionCtx.Initialized[ACTION_ROTATECAMERA]) goto Error_0;\r\n\t\t\tif (!MapAreas.next) goto Error_2;\r\n\t\t\tMisc_SetArea(hDlg,311,Context->ActionCtx.TempAction.param1);\r\n\t\t\tSetDlgItemInt(hDlg,307,Context->ActionCtx.TempAction.param3,FALSE);\r\n\t\t\tSetDlgItemInt(hDlg,309,Context->ActionCtx.TempAction.param5,FALSE);\r\n\t\t\tSendDlgItemMessage(hDlg,307,EM_LIMITTEXT,(WPARAM)3,(LPARAM)0);\r\n\t\t\tSendDlgItemMessage(hDlg,309,EM_LIMITTEXT,(WPARAM)4,(LPARAM)0);\r\n\t\t\tbreak;",
+      "SourceStore": "Context->ActionCtx.TempAction.param1 = Misc_GetArea(hDlg,311,FALSE);\r\n\t\t\tContext->ActionCtx.TempAction.param3 = GetDlgItemInt(hDlg,307,NULL,FALSE);\r\n\t\t\tContext->ActionCtx.TempAction.param5 = GetDlgItemInt(hDlg,309,NULL,FALSE);\r\n\t\t\tResult = 1;\r\n\t\t\tbreak;"
+    },
+    {
+      "Type": "ACTION_GENERATE",
+      "PageID": 7223,
+      "Controls": [
+        {
+          "Parameter": 1,
+          "Kind": "NamedChoice",
+          "Maximum": 0,
+          "SecondaryParameter": 0,
+          "Values": [
+            1,
+            7,
+            5,
+            12,
+            10,
+            6,
+            9,
+            4,
+            11,
+            24,
+            3,
+            8,
+            22,
+            23,
+            45,
+            27,
+            33,
+            34,
+            32,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            14,
+            13,
+            18,
+            25,
+            16,
+            15,
+            17,
+            19,
+            20,
+            30,
+            28,
+            29,
+            21,
+            26,
+            31,
+            2
+          ],
+          "Dynamic": false
+        },
+        {
+          "Parameter": 2,
+          "Kind": "NamedChoice",
+          "Maximum": 0,
+          "SecondaryParameter": 0,
+          "Values": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "Dynamic": false
+        }
+      ],
+      "RequiredCollections": [],
+      "Native": [
+        {
+          "Name": "Param1",
+          "Offset": 8,
+          "Size": 1,
+          "Kind": "BYTE"
+        },
+        {
+          "Name": "Param2",
+          "Offset": 9,
+          "Size": 1,
+          "Kind": "BYTE"
+        }
+      ],
+      "SourceCheck": "if (!Context->ActionCtx.Initialized[ACTION_GENERATE]) goto Error_0;\r\n\t\t\tSendDlgItemMessage(hDlg,301,CB_SETCURSEL,(WPARAM)Context->ActionCtx.TempAction.param2-1,(LPARAM)0);\r\n\t\t\tbreak;",
+      "SourceStore": "Context->ActionCtx.TempAction.param1 = Triggers_TriggerDlgGetSelectedEntryParam(Context->ActionCtx.GenCreaturesList);\r\n\t\t\tif (Context->ActionCtx.TempAction.param1 == 0) goto NoCreatureSelected;\r\n\t\t\tContext->ActionCtx.TempAction.param2 = SendDlgItemMessage(hDlg,301,CB_GETCURSEL,(WPARAM)0,(LPARAM)0)+1;\r\n\t\t\tResult = 1;\r\n\t\t\tbreak;"
+    },
+    {
+      "Type": "ACTION_SHOWNEXTROOM",
+      "PageID": 7215,
+      "Controls": [
+        {
+          "Parameter": 1,
+          "Kind": "NamedChoice",
+          "Maximum": 0,
+          "SecondaryParameter": 0,
+          "Values": [
+            0,
+            2,
+            6,
+            1,
+            15,
+            8,
+            12,
+            14,
+            13,
+            4,
+            7,
+            10,
+            9,
+            11,
+            17,
+            16
+          ],
+          "Dynamic": false
+        }
+      ],
+      "RequiredCollections": [],
+      "Native": [
+        {
+          "Name": "Param1",
+          "Offset": 8,
+          "Size": 1,
+          "Kind": "BYTE"
+        }
+      ],
+      "SourceCheck": "if (!Context->ActionCtx.Initialized[ACTION_SHOWNEXTROOM]) goto Error_0;\r\n\t\t\tbreak;",
+      "SourceStore": "Context->ActionCtx.TempAction.param1 = Triggers_TriggerDlgGetSelectedEntryParam(Context->ActionCtx.RoomsList);\r\n\t\t\tif (!Context->ActionCtx.TempAction.param1) goto NoRoomSelected;\r\n\t\t\tif (Context->ActionCtx.TempAction.param1 == -1) Context->ActionCtx.TempAction.param1 = 0;\r\n\t\t\tResult = 1;\r\n\t\t\tbreak;"
+    },
+    {
+      "Type": "ACTION_CHANGEPARAMS",
+      "PageID": 7219,
+      "Controls": [
+        {
+          "Parameter": 1,
+          "Kind": "NamedChoice",
+          "Maximum": 0,
+          "SecondaryParameter": 0,
+          "Values": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "Dynamic": false
+        },
+        {
+          "Parameter": 2,
+          "Kind": "Choice",
+          "Maximum": 27,
+          "SecondaryParameter": 0,
+          "Values": [
+            11,
+            12,
+            13,
+            14,
+            17,
+            18,
+            19,
+            22,
+            23,
+            27
+          ],
+          "Dynamic": false
+        },
+        {
+          "Parameter": 5,
+          "Kind": "NamedChoice",
+          "Maximum": 0,
+          "SecondaryParameter": 0,
+          "Values": [],
+          "Dynamic": true
+        }
+      ],
+      "RequiredCollections": [],
+      "Native": [
+        {
+          "Name": "Param1",
+          "Offset": 8,
+          "Size": 1,
+          "Kind": "BYTE"
+        },
+        {
+          "Name": "Param2",
+          "Offset": 9,
+          "Size": 1,
+          "Kind": "BYTE"
+        },
+        {
+          "Name": "Param5",
+          "Offset": 12,
+          "Size": 1,
+          "Kind": "BYTE"
+        }
+      ],
+      "SourceCheck": "if (!Context->ActionCtx.Initialized[ACTION_CHANGEPARAMS]) goto Error_0;\r\n\t\t\tMisc_SetArea(hDlg,311,Context->ActionCtx.TempAction.param5);\r\n\t\t\tswitch(Context->ActionCtx.TempAction.param2)\r\n\t\t\t\t{\r\n\t\t\t\tcase 0x0B:\r\n\t\t\t\t\tCheckRadioButton(hDlg,200,209,200);\r\n\t\t\t\t\tbreak;\r\n\t\t\t\tcase 0x0C:\r\n\t\t\t\t\tCheckRadioButton(hDlg,200,209,201);\r\n\t\t\t\t\tbreak;\r\n\t\t\t\tcase 0x0D:\r\n\t\t\t\t\tCheckRadioButton(hDlg,200,209,202);\r\n\t\t\t\t\tbreak;\r\n\t\t\t\tcase 0x0E:\r\n\t\t\t\t\tCheckRadioButton(hDlg,200,209,203);\r\n\t\t\t\t\tbreak;\r\n\t\t\t\tcase 0x11:\r\n\t\t\t\t\tCheckRadioButton(hDlg,200,209,204);\r\n\t\t\t\t\tbreak;\r\n\t\t\t\tcase 0x12:\r\n\t\t\t\t\tCheckRadioButton(hDlg,200,209,205);\r\n\t\t\t\t\tbreak;\r\n\t\t\t\tcase 0x13:\r\n\t\t\t\t\tCheckRadioButton(hDlg,200,209,206);\r\n\t\t\t\t\tbreak;\r\n\t\t\t\tcase 0x16:\r\n\t\t\t\t\tCheckRadioButton(hDlg,200,209,207);\r\n\t\t\t\t\tbreak;\r\n\t\t\t\tcase 0x17:\r\n\t\t\t\t\tCheckRadioButton(hDlg,200,209,208);\r\n\t\t\t\t\tbreak;\r\n\t\t\t\tcase 0x1B:\r\n\t\t\t\t\tCheckRadioButton(hDlg,200,209,209);\r\n\t\t\t\t\tbreak;\r\n\t\t\t\t}\r\n\t\t\tbreak;",
+      "SourceStore": "Context->ActionCtx.TempAction.param1 = Triggers_TriggerDlgGetSelectedEntryParam(Context->ActionCtx.PlayersList);\r\n\t\t\tif (!Context->ActionCtx.TempAction.param1) goto NoPlayerSelected;\r\n\t\t\tif (Context->ActionCtx.TempAction.param1 == -1) Context->ActionCtx.TempAction.param1 = 0;\r\n\t\t\t     if (IsDlgButtonChecked(hDlg,200) == BST_CHECKED) Context->ActionCtx.TempAction.param2 = 0x0B;\r\n\t\t\telse if (IsDlgButtonChecked(hDlg,201) == BST_CHECKED) Context->ActionCtx.TempAction.param2 = 0x0C;\r\n\t\t\telse if (IsDlgButtonChecked(hDlg,202) == BST_CHECKED) Context->ActionCtx.TempAction.param2 = 0x0D;\r\n\t\t\telse if (IsDlgButtonChecked(hDlg,203) == BST_CHECKED) Context->ActionCtx.TempAction.param2 = 0x0E;\r\n\t\t\telse if (IsDlgButtonChecked(hDlg,204) == BST_CHECKED) Context->ActionCtx.TempAction.param2 = 0x11;\r\n\t\t\telse if (IsDlgButtonChecked(hDlg,205) == BST_CHECKED) Context->ActionCtx.TempAction.param2 = 0x12;\r\n\t\t\telse if (IsDlgButtonChecked(hDlg,206) == BST_CHECKED) Context->ActionCtx.TempAction.param2 = 0x13;\r\n\t\t\telse if (IsDlgButtonChecked(hDlg,207) == BST_CHECKED) Context->ActionCtx.TempAction.param2 = 0x16;\r\n\t\t\telse if (IsDlgButtonChecked(hDlg,208) == BST_CHECKED) Context->ActionCtx.TempAction.param2 = 0x17;\r\n\t\t\telse if (IsDlgButtonChecked(hDlg,209) == BST_CHECKED) Context->ActionCtx.TempAction.param2 = 0x1B;\r\n\t\t\tContext->ActionCtx.TempAction.param5 = Misc_GetArea(hDlg,311,FALSE);\r\n\t\t\tResult = 1;\r\n\t\t\tbreak;"
+    }
+  ]
+}

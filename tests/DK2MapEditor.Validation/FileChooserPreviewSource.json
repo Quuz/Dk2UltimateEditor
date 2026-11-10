@@ -1,0 +1,73 @@
+{
+  "InputHashes": {
+    "Source/Sources/Misc/Misc_Requests.c": "ee8c3f2d3e6a8cb73093aa167ab9f84355ae71cabbf48ec0ef2e9c044c32dad3",
+    "Source/Sources/Thumbnail/Thumbnail_Functions.c": "45e719526581e4f0c64d6464f3a383e7262ada5680da3d82db026cc371b61586",
+    "Source/Resources/Editor.rc": "eb07ed2217a81348a03c75e302d09fdcb5e34b6099d1bd60229ba5fa9bd8920d",
+    "Source/Includes/Thumbnails.h": "b8d2bef8fbffeda075491431750a8b12d24800f399099f199de5e596c320ddca",
+    "Source/Sources/Datas/Datas_Map.c": "30b8dcb91a6084bb65b8cab4fa85f47693c4390ef72e9c7aa7e5c941b214246d"
+  },
+  "SourceReader": "Misc_FileRead: FILE_MAP (game/editor/text), FILE_AREA, FILE_THUMBNAIL; dimensions101/102 and counts103..107; Thumbnail_Generate + aspect-preserving Misc_FileDraw",
+  "Callers": [
+    {
+      "File": "src/DK2MapEditor.App/MainWindow.xaml.cs",
+      "Routes": [
+        "OpenMap"
+      ]
+    },
+    {
+      "File": "src/DK2MapEditor.App/MainWindow.Save.cs",
+      "Routes": [
+        "Save/SaveAs"
+      ]
+    },
+    {
+      "File": "src/DK2MapEditor.App/MainWindow.ScenarioCheck.cs",
+      "Routes": [
+        "CompileBasis"
+      ]
+    },
+    {
+      "File": "src/DK2MapEditor.App/MainWindow.GameRun.cs",
+      "Routes": [
+        "GameBasis"
+      ]
+    },
+    {
+      "File": "src/DK2MapEditor.App/Editing/EditorWorkspace.xaml.cs",
+      "Routes": [
+        "ExportSelection",
+        "ExportCopyBuffer",
+        "ImportSelection/ImportIntoSelection"
+      ]
+    },
+    {
+      "File": "src/DK2MapEditor.App/Editing/ThumbnailWindow.xaml.cs",
+      "Routes": [
+        "SaveThumbnail"
+      ]
+    }
+  ],
+  "CallerRoutes": 8,
+  "NativeLayout64": {
+    "OpenFileNameSize": 152,
+    "FilterIndexOffset": 44,
+    "FlagsOffset": 96,
+    "DrawItemSize": 64,
+    "NotificationSize": 40
+  },
+  "NativeLayout32": {
+    "OpenFileNameSize": 88,
+    "FilterIndexOffset": 24,
+    "FlagsOffset": 52,
+    "DrawItemSize": 48,
+    "NotificationSize": 20
+  },
+  "SDKHeader": "C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/um/commdlg.h",
+  "SDKHeaderSHA256": "8b98a194569e52ca87266b5a8d676ccba67538ce7851571003db8f7a606b0d2b",
+  "PrimaryDocs": [
+    "https://learn.microsoft.com/en-us/windows/win32/dlgbox/open-and-save-as-dialog-boxes",
+    "https://learn.microsoft.com/en-us/windows/win32/api/commdlg/ns-commdlg-openfilenamew",
+    "https://learn.microsoft.com/en-us/windows/win32/dlgbox/cdm-getfilepath"
+  ],
+  "RemainingI13": "document-name/reference/source-caller coverage; native dialog layout/focus/path/overwrite/sizing/DPI acceptance remains manual"
+}
