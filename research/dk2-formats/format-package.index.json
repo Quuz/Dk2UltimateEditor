@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "original_package_sha256": "1430d50b53c2602b5eacb31c58f8617d5cedc02902aade50720412ce6a182430",
-  "original_package_bytes": 30034144,
+  "original_package_sha256": "89f7dd4bb4639e614c260e48fac4b3718fbd65c32e1ab1712a7124ee2255eb75",
+  "original_package_bytes": 30168921,
   "key_order": [
     "package_version",
     "byte_order",
@@ -192,7 +192,8 @@
     "crypt_state_writer_semantics",
     "crypt_pointer_forwarding_semantics",
     "conversion_score_semantics",
-    "gold_capacity_margin_semantics"
+    "gold_capacity_margin_semantics",
+    "melee_direction_semantics"
   ],
   "package_metadata": {
     "package_version": 1,
@@ -274,7 +275,8 @@
       "crypt_state_writer_semantics phase190:6native/6Ghidra;originalCPlayer/MyFile/Discwriterpreserves20runtimecounterbytesinside76..109Dblock. 18mappedgroupsplus2unassignedtailbytes;notnewKWDfields. Shorts/failuresreturn1with65/0outputbytes,outerframeworkunproved. Fullguardchecksnowpasswithdisjoint31400000output;oldoverlaptracesexcluded. 10new+7inheritedspans/562PC;167priorcomponents/source/codec preserved;10gameplaymeaningsopen.",
       "crypt_pointer_forwarding_semantics phase191: EDX adds35callee contexts(164->199); two PE-attested arithmetic returns add96rootstates.539roots/33counter/84indexed witnesses retained, no newcountermeaning;1root/12callee limits.5synthetic/4original exact8192B/4Ghidra register-only controls,2spans/13PC.168priorcomponents/420sources/7EXE/codec preserved.10countermeanings remain open.",
       "conversion_score_semantics phase192: existingVariable233 rawDWORD+4->51CD90->6F29E9->whole4F2800/48D050->originalWorldvslot344/511650. Mode4,unsignedreceivingPlayerType>=3;wrap32addthennegativeclamp0.16native/6Ghidra,258regions/639528B;4newfunctions/8byteblocks/72inherited/7382PC.8exactValueedits/15roundtrips;169priorcomponents/source/codec preserved. User9NovdefersCrypt;currentGlobals.",
-      "gold_capacity_margin_semantics phase193 corrects historicalVariables74 GAME_TICKS to GOLD_CAPACITY_MARGIN: rawDWORD+4->actualregistration51AA90/51CD90->6F28B6->whole464360. Unsignedcarry>=wrap32(leveladjustedMaxGold-Value74), no clamp; argument0 testsnonzerocarryonly.16native/6Ghidra,240regions/671172B;3newfunctions/64inherited/8076PC.8exactedits/1newsource roundtrip;15priorroundtrips inherited,notrerun.170priorcomponents/codec/420sources/7EXEs preserved. SiblingAutoSaveVariables isnot thedescriptor-namedmissingMapsfile. Globalsactive/Cryptdeferred."
+      "gold_capacity_margin_semantics phase193 corrects historicalVariables74 GAME_TICKS to GOLD_CAPACITY_MARGIN: rawDWORD+4->actualregistration51AA90/51CD90->6F28B6->whole464360. Unsignedcarry>=wrap32(leveladjustedMaxGold-Value74), no clamp; argument0 testsnonzerocarryonly.16native/6Ghidra,240regions/671172B;3newfunctions/64inherited/8076PC.8exactedits/1newsource roundtrip;15priorroundtrips inherited,notrerun.170priorcomponents/codec/420sources/7EXEs preserved. SiblingAutoSaveVariables isnot thedescriptor-namedmissingMapsfile. Globalsactive/Cryptdeferred.",
+      "melee_direction_semantics phase194:54fullDXraw/melee/HPscenes+6Ghidra/288regions/683076B confirmworldXYdirection,notvictimheading. Candidatep=floor((fold(angle)&1023)/20),onlyp>15;max51. Angle2047folds-1->1023 andjumps100->151near2046.3profiles execute2057pureangleinputs each;1.3/standard fullmelee notcertified.171priorcomponents/codec/420sources/7EXEs preserved;0newKWDfields. ReturntoGlobals;Cryptdeferred."
     ],
     "catalogue_ids": {
       "Terrain": "TerrainId",
@@ -1042,6 +1044,10 @@
       "gold_capacity_margin_semantics": {
         "file": "gold-capacity-margin-semantics.json",
         "sha256": "1f04ae40524db7457be7f0c3987f77e6a367685eeeedefe8c2f7b2a521612f97"
+      },
+      "melee_direction_semantics": {
+        "file": "melee-direction-semantics.json",
+        "sha256": "b6a025c6fbc7cc76943c06a6a87eac55b8c95820bb44e9ee3a83c72df67bef0d"
       }
     },
     "effective_shot_parameters": {
@@ -19069,11 +19075,11 @@
       "2147483648": "IS_MALE"
     }
   },
-  "use": "Assemble with tools/assemble_format_package.py; the full original package reconstructs byte-for-byte.",
   "serialization": {
     "encoding": "utf-8",
     "indent": 2,
     "ensure_ascii": false,
     "newline": "\r\n"
-  }
+  },
+  "use": "Assemble with tools/assemble_format_package.py; complete package matches the source SHA-256."
 }

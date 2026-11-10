@@ -1,0 +1,3298 @@
+{
+  "phase": 194,
+  "status": "verified_absolute_world_direction_melee_modifier_not_victim_relative_backstab",
+  "counts": {
+    "DX_whole_melee_scenes": 54,
+    "DX_whole_raw_Creature_loads": 54,
+    "independent_Ghidra_controls": 6,
+    "Ghidra_compared_regions": 288,
+    "Ghidra_compared_bytes": 683076,
+    "angle_helper_profiles": 3,
+    "angle_calls_per_profile": 2057,
+    "angle_calls_total": 6171,
+    "unique_angles_per_profile": 1864,
+    "inherited_function_extents": 82,
+    "new_function_extents": 0,
+    "unique_executed_original_DX_PCs": 4392,
+    "new_raw_fields": 0,
+    "new_container_roundtrip_runs": 0,
+    "source_writes": 0,
+    "prior_components_preserved": 171,
+    "source_files_preserved": 420,
+    "EXE_paths_preserved": 7,
+    "historical_source_hash_differences": 1
+  },
+  "profile": {
+    "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\DKII-DX.exe",
+    "sha256": "d7a8b854e4e4f02709eba271bead6fe2307dd6e332b5a96e70857e5b0e19fb8a"
+  },
+  "field_scope": "No new serialized KWD field. This is original EXE arithmetic applied after the base melee getter, before owner modifiers and target HP scaling.",
+  "contract": {
+    "melee_entry": 4820528,
+    "angle_call": 4821206,
+    "angle_helper": 6683476,
+    "angle_table": 6683796,
+    "coordinate_input": "World-coordinate difference attacker minus target, DWORD XY atActor1A/1E; target kindCreature only in this selected path.",
+    "folding": "a=angle&2047; folded=(2046-a) if a>1023 else a; p=(folded&1023)//20",
+    "damage": "For the checked unsigned16 base damage, D=base+floor(base*p/100) if p>15 else base.",
+    "exact_full_arithmetic": "Game works on negative HPdelta: delta+=trunc0(s32(low32(p*delta))/100); only whenp>15. Downstream target scaling follows separately.",
+    "maximum_percent": 51,
+    "activation_threshold": "Candidate percentages0..15 are ignored;16 is the first applied increment.",
+    "target_facing_read": false,
+    "attacker_facing_read": false,
+    "heading_offset": 244,
+    "interpretation": "Confirmed current selected code behavior. Lack of target-relative angle and the2047 seam are defects relative to a smooth facing-relative design; intended replacement formula is not established."
+  },
+  "examples": [
+    {
+      "dx": 0,
+      "dy": -4096,
+      "base": 100,
+      "damage": 100
+    },
+    {
+      "dx": 4096,
+      "dy": 0,
+      "base": 100,
+      "damage": 125
+    },
+    {
+      "dx": 0,
+      "dy": 4096,
+      "base": 100,
+      "damage": 151
+    },
+    {
+      "dx": -16,
+      "dy": -4096,
+      "angle": 2047,
+      "base": 100,
+      "damage": 151
+    },
+    {
+      "dx": -32,
+      "dy": -4096,
+      "angle": 2046,
+      "base": 100,
+      "damage": 100
+    }
+  ],
+  "heading_controls": "Eight relative directions times4 victim headings,6 additional attacker-heading controls,10 threshold/seam controls,6 translation/scaling controls. Headings and XY remain unchanged; selected full scenes read neither actorWORD_F4.",
+  "versions": {
+    "profiles": [
+      {
+        "profile": {
+          "id": "DX",
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\DKII-DX.exe",
+          "sha256": "d7a8b854e4e4f02709eba271bead6fe2307dd6e332b5a96e70857e5b0e19fb8a",
+          "helper": 6683476,
+          "table": 6683796,
+          "direction_block": 4821188,
+          "block_bytes": 125
+        },
+        "block_hex": "8b471e8b561e8b4f1a2bc28b561a502bca51e8796a1c0025ffff000083c40825ff070000663dff03668944241076108b442410bafe0700002bd066895424108b4c2410b86766666681e1ff030000f7e9c1fa038bc2c1e81f03d08bc28bd383f80f7e180fafc38bc8b81f85eb51f7e9c1fa058bcac1e91f03d103d38bda",
+        "block_sha256": "06fe7d7682cbbd90671c8fd2a3fba4358af24854e898ba30c750933c3e0e97fe",
+        "instructions": [
+          {
+            "address": "0x4990c4",
+            "hex": "8b471e",
+            "instruction": "mov eax, dword ptr [edi + 0x1e]"
+          },
+          {
+            "address": "0x4990c7",
+            "hex": "8b561e",
+            "instruction": "mov edx, dword ptr [esi + 0x1e]"
+          },
+          {
+            "address": "0x4990ca",
+            "hex": "8b4f1a",
+            "instruction": "mov ecx, dword ptr [edi + 0x1a]"
+          },
+          {
+            "address": "0x4990cd",
+            "hex": "2bc2",
+            "instruction": "sub eax, edx"
+          },
+          {
+            "address": "0x4990cf",
+            "hex": "8b561a",
+            "instruction": "mov edx, dword ptr [esi + 0x1a]"
+          },
+          {
+            "address": "0x4990d2",
+            "hex": "50",
+            "instruction": "push eax"
+          },
+          {
+            "address": "0x4990d3",
+            "hex": "2bca",
+            "instruction": "sub ecx, edx"
+          },
+          {
+            "address": "0x4990d5",
+            "hex": "51",
+            "instruction": "push ecx"
+          },
+          {
+            "address": "0x4990d6",
+            "hex": "e8796a1c00",
+            "instruction": "call 0x65fb54"
+          },
+          {
+            "address": "0x4990db",
+            "hex": "25ffff0000",
+            "instruction": "and eax, 0xffff"
+          },
+          {
+            "address": "0x4990e0",
+            "hex": "83c408",
+            "instruction": "add esp, 8"
+          },
+          {
+            "address": "0x4990e3",
+            "hex": "25ff070000",
+            "instruction": "and eax, 0x7ff"
+          },
+          {
+            "address": "0x4990e8",
+            "hex": "663dff03",
+            "instruction": "cmp ax, 0x3ff"
+          },
+          {
+            "address": "0x4990ec",
+            "hex": "6689442410",
+            "instruction": "mov word ptr [esp + 0x10], ax"
+          },
+          {
+            "address": "0x4990f1",
+            "hex": "7610",
+            "instruction": "jbe 0x499103"
+          },
+          {
+            "address": "0x4990f3",
+            "hex": "8b442410",
+            "instruction": "mov eax, dword ptr [esp + 0x10]"
+          },
+          {
+            "address": "0x4990f7",
+            "hex": "bafe070000",
+            "instruction": "mov edx, 0x7fe"
+          },
+          {
+            "address": "0x4990fc",
+            "hex": "2bd0",
+            "instruction": "sub edx, eax"
+          },
+          {
+            "address": "0x4990fe",
+            "hex": "6689542410",
+            "instruction": "mov word ptr [esp + 0x10], dx"
+          },
+          {
+            "address": "0x499103",
+            "hex": "8b4c2410",
+            "instruction": "mov ecx, dword ptr [esp + 0x10]"
+          },
+          {
+            "address": "0x499107",
+            "hex": "b867666666",
+            "instruction": "mov eax, 0x66666667"
+          },
+          {
+            "address": "0x49910c",
+            "hex": "81e1ff030000",
+            "instruction": "and ecx, 0x3ff"
+          },
+          {
+            "address": "0x499112",
+            "hex": "f7e9",
+            "instruction": "imul ecx"
+          },
+          {
+            "address": "0x499114",
+            "hex": "c1fa03",
+            "instruction": "sar edx, 3"
+          },
+          {
+            "address": "0x499117",
+            "hex": "8bc2",
+            "instruction": "mov eax, edx"
+          },
+          {
+            "address": "0x499119",
+            "hex": "c1e81f",
+            "instruction": "shr eax, 0x1f"
+          },
+          {
+            "address": "0x49911c",
+            "hex": "03d0",
+            "instruction": "add edx, eax"
+          },
+          {
+            "address": "0x49911e",
+            "hex": "8bc2",
+            "instruction": "mov eax, edx"
+          },
+          {
+            "address": "0x499120",
+            "hex": "8bd3",
+            "instruction": "mov edx, ebx"
+          },
+          {
+            "address": "0x499122",
+            "hex": "83f80f",
+            "instruction": "cmp eax, 0xf"
+          },
+          {
+            "address": "0x499125",
+            "hex": "7e18",
+            "instruction": "jle 0x49913f"
+          },
+          {
+            "address": "0x499127",
+            "hex": "0fafc3",
+            "instruction": "imul eax, ebx"
+          },
+          {
+            "address": "0x49912a",
+            "hex": "8bc8",
+            "instruction": "mov ecx, eax"
+          },
+          {
+            "address": "0x49912c",
+            "hex": "b81f85eb51",
+            "instruction": "mov eax, 0x51eb851f"
+          },
+          {
+            "address": "0x499131",
+            "hex": "f7e9",
+            "instruction": "imul ecx"
+          },
+          {
+            "address": "0x499133",
+            "hex": "c1fa05",
+            "instruction": "sar edx, 5"
+          },
+          {
+            "address": "0x499136",
+            "hex": "8bca",
+            "instruction": "mov ecx, edx"
+          },
+          {
+            "address": "0x499138",
+            "hex": "c1e91f",
+            "instruction": "shr ecx, 0x1f"
+          },
+          {
+            "address": "0x49913b",
+            "hex": "03d1",
+            "instruction": "add edx, ecx"
+          },
+          {
+            "address": "0x49913d",
+            "hex": "03d3",
+            "instruction": "add edx, ebx"
+          },
+          {
+            "address": "0x49913f",
+            "hex": "8bda",
+            "instruction": "mov ebx, edx"
+          }
+        ],
+        "normalized_arithmetic_core": [
+          "and eax, 0x7ff",
+          "cmp ax, 0x3ff",
+          "mov word ptr [esp + 0x10], ax",
+          "jbe block+0x3f",
+          "mov eax, dword ptr [esp + 0x10]",
+          "mov edx, 0x7fe",
+          "sub edx, eax",
+          "mov word ptr [esp + 0x10], dx",
+          "mov ecx, dword ptr [esp + 0x10]",
+          "mov eax, 0x66666667",
+          "and ecx, 0x3ff",
+          "imul ecx",
+          "sar edx, 3",
+          "mov eax, edx",
+          "shr eax, 0x1f",
+          "add edx, eax",
+          "mov eax, edx",
+          "mov edx, damage",
+          "cmp eax, 0xf",
+          "jle block+0x7b",
+          "imul eax, damage",
+          "mov ecx, eax",
+          "mov eax, 0x51eb851f",
+          "imul ecx",
+          "sar edx, 5",
+          "mov ecx, edx",
+          "shr ecx, 0x1f",
+          "add edx, ecx",
+          "add edx, damage",
+          "mov damage, edx"
+        ],
+        "helper_hex": "83ec0453528b4424100bc075158b5c24140bdb75116633c06625ff075a5b83c404c38b5c24140bc00f88860000000bdb78423bc37c1e93c1e00833d2f7f3668b044594fc6500660500026625ff075a5b83c404c3c1e00833d2f7f3668b044594fc650066f7d8660500046625ff075a5b83c404c3f7db3bc37c2193c1e00833d2f7f3668b044594fc650066f7d8660500026625ff075a5b83c404c3c1e00833d2f7f3668b044594fc65006625ff075a5b83c404c3f7d80bdb78423bc37c2193c1e00833d2f7f3668b044594fc650066f7d8660500066625ff075a5b83c404c3c1e00833d2f7f3668b044594fc6500660500046625ff075a5b83c404c3f7db3bc37c1e93c1e00833d2f7f3668b044594fc6500660500066625ff075a5b83c404c3c1e00833d2f7f3668b044594fc650066f7d8660500086625ff075a5b83c404c3",
+        "helper_sha256": "b2fa2d0fdfce735b50b267baaf8e88ea52004ff8cf5a10825f2112e3b6f4c273",
+        "table_hex": "000001000200030005000600070008000a000b000c000d000f00100011001300140015001600180019001a001b001d001e001f00200022002300240026002700280029002b002c002d002e003000310032003300350036003700380039003b003c003d003e004000410042004300440046004700480049004b004c004d004e004f00510052005300540055005700580059005a005b005c005e005f006000610062006300650066006700680069006a006b006d006e006f007000710072007300740076007700780079007a007b007c007d007e007f008100820083008400850086008700880089008a008b008c008d008e008f009000910093009400950096009700980099009a009b009c009d009e009f00a000a100a200a300a400a500a600a700a700a800a900aa00ab00ac00ad00ae00af00b000b100b200b300b400b500b600b600b700b800b900ba00bb00bc00bd00be00bf00bf00c000c100c200c300c400c500c600c600c700c800c900ca00cb00cb00cc00cd00ce00cf00d000d000d100d200d300d400d400d500d600d700d800d800d900da00db00dc00dc00dd00de00df00df00e000e100e200e200e300e400e500e500e600e700e800e800e900ea00eb00eb00ec00ed00ed00ee00ef00ef00f000f100f200f200f300f400f400f500f600f600f700f800f800f900fa00fa00fb00fc00fc00fd00fe00fe00ff000001",
+        "table_sha256": "1c26f16f88a3e0cedc9c879837b3849567ff70514c033eb6249bd95a264debce",
+        "scope": "Whole125-byte arithmetic block and whole320-byte pure angle helper, not whole non-DX melee function execution."
+      },
+      {
+        "profile": {
+          "id": "provided13",
+          "file": "D:/Games/DK2/DKII 13/Dungeon Keeper 2/DKII.exe",
+          "sha256": "93e826a142f677ef5120699feddb0572799d93399167ef1d05ec4b48a8b2a342",
+          "helper": 6619348,
+          "table": 6619668,
+          "direction_block": 4787347,
+          "block_bytes": 125
+        },
+        "block_hex": "8b471e8b561e8b4f1a8b5e1a2bc22bcb5051e82af41b0025ffff000083c40825ff070000663dff03668944241076108b442410bafe0700002bd066895424108b4c2410b86766666681e1ff030000f7e9c1fa038bc2c1e81f03d08bc28bd583f80f7e180fafc58bc8b81f85eb51f7e9c1fa058bcac1e91f03d103d58bea",
+        "block_sha256": "a8769527d30343d001fb1a9452caaf5ad728bbc6ea10a6ee7bc759a494b35386",
+        "instructions": [
+          {
+            "address": "0x490c93",
+            "hex": "8b471e",
+            "instruction": "mov eax, dword ptr [edi + 0x1e]"
+          },
+          {
+            "address": "0x490c96",
+            "hex": "8b561e",
+            "instruction": "mov edx, dword ptr [esi + 0x1e]"
+          },
+          {
+            "address": "0x490c99",
+            "hex": "8b4f1a",
+            "instruction": "mov ecx, dword ptr [edi + 0x1a]"
+          },
+          {
+            "address": "0x490c9c",
+            "hex": "8b5e1a",
+            "instruction": "mov ebx, dword ptr [esi + 0x1a]"
+          },
+          {
+            "address": "0x490c9f",
+            "hex": "2bc2",
+            "instruction": "sub eax, edx"
+          },
+          {
+            "address": "0x490ca1",
+            "hex": "2bcb",
+            "instruction": "sub ecx, ebx"
+          },
+          {
+            "address": "0x490ca3",
+            "hex": "50",
+            "instruction": "push eax"
+          },
+          {
+            "address": "0x490ca4",
+            "hex": "51",
+            "instruction": "push ecx"
+          },
+          {
+            "address": "0x490ca5",
+            "hex": "e82af41b00",
+            "instruction": "call 0x6500d4"
+          },
+          {
+            "address": "0x490caa",
+            "hex": "25ffff0000",
+            "instruction": "and eax, 0xffff"
+          },
+          {
+            "address": "0x490caf",
+            "hex": "83c408",
+            "instruction": "add esp, 8"
+          },
+          {
+            "address": "0x490cb2",
+            "hex": "25ff070000",
+            "instruction": "and eax, 0x7ff"
+          },
+          {
+            "address": "0x490cb7",
+            "hex": "663dff03",
+            "instruction": "cmp ax, 0x3ff"
+          },
+          {
+            "address": "0x490cbb",
+            "hex": "6689442410",
+            "instruction": "mov word ptr [esp + 0x10], ax"
+          },
+          {
+            "address": "0x490cc0",
+            "hex": "7610",
+            "instruction": "jbe 0x490cd2"
+          },
+          {
+            "address": "0x490cc2",
+            "hex": "8b442410",
+            "instruction": "mov eax, dword ptr [esp + 0x10]"
+          },
+          {
+            "address": "0x490cc6",
+            "hex": "bafe070000",
+            "instruction": "mov edx, 0x7fe"
+          },
+          {
+            "address": "0x490ccb",
+            "hex": "2bd0",
+            "instruction": "sub edx, eax"
+          },
+          {
+            "address": "0x490ccd",
+            "hex": "6689542410",
+            "instruction": "mov word ptr [esp + 0x10], dx"
+          },
+          {
+            "address": "0x490cd2",
+            "hex": "8b4c2410",
+            "instruction": "mov ecx, dword ptr [esp + 0x10]"
+          },
+          {
+            "address": "0x490cd6",
+            "hex": "b867666666",
+            "instruction": "mov eax, 0x66666667"
+          },
+          {
+            "address": "0x490cdb",
+            "hex": "81e1ff030000",
+            "instruction": "and ecx, 0x3ff"
+          },
+          {
+            "address": "0x490ce1",
+            "hex": "f7e9",
+            "instruction": "imul ecx"
+          },
+          {
+            "address": "0x490ce3",
+            "hex": "c1fa03",
+            "instruction": "sar edx, 3"
+          },
+          {
+            "address": "0x490ce6",
+            "hex": "8bc2",
+            "instruction": "mov eax, edx"
+          },
+          {
+            "address": "0x490ce8",
+            "hex": "c1e81f",
+            "instruction": "shr eax, 0x1f"
+          },
+          {
+            "address": "0x490ceb",
+            "hex": "03d0",
+            "instruction": "add edx, eax"
+          },
+          {
+            "address": "0x490ced",
+            "hex": "8bc2",
+            "instruction": "mov eax, edx"
+          },
+          {
+            "address": "0x490cef",
+            "hex": "8bd5",
+            "instruction": "mov edx, ebp"
+          },
+          {
+            "address": "0x490cf1",
+            "hex": "83f80f",
+            "instruction": "cmp eax, 0xf"
+          },
+          {
+            "address": "0x490cf4",
+            "hex": "7e18",
+            "instruction": "jle 0x490d0e"
+          },
+          {
+            "address": "0x490cf6",
+            "hex": "0fafc5",
+            "instruction": "imul eax, ebp"
+          },
+          {
+            "address": "0x490cf9",
+            "hex": "8bc8",
+            "instruction": "mov ecx, eax"
+          },
+          {
+            "address": "0x490cfb",
+            "hex": "b81f85eb51",
+            "instruction": "mov eax, 0x51eb851f"
+          },
+          {
+            "address": "0x490d00",
+            "hex": "f7e9",
+            "instruction": "imul ecx"
+          },
+          {
+            "address": "0x490d02",
+            "hex": "c1fa05",
+            "instruction": "sar edx, 5"
+          },
+          {
+            "address": "0x490d05",
+            "hex": "8bca",
+            "instruction": "mov ecx, edx"
+          },
+          {
+            "address": "0x490d07",
+            "hex": "c1e91f",
+            "instruction": "shr ecx, 0x1f"
+          },
+          {
+            "address": "0x490d0a",
+            "hex": "03d1",
+            "instruction": "add edx, ecx"
+          },
+          {
+            "address": "0x490d0c",
+            "hex": "03d5",
+            "instruction": "add edx, ebp"
+          },
+          {
+            "address": "0x490d0e",
+            "hex": "8bea",
+            "instruction": "mov ebp, edx"
+          }
+        ],
+        "normalized_arithmetic_core": [
+          "and eax, 0x7ff",
+          "cmp ax, 0x3ff",
+          "mov word ptr [esp + 0x10], ax",
+          "jbe block+0x3f",
+          "mov eax, dword ptr [esp + 0x10]",
+          "mov edx, 0x7fe",
+          "sub edx, eax",
+          "mov word ptr [esp + 0x10], dx",
+          "mov ecx, dword ptr [esp + 0x10]",
+          "mov eax, 0x66666667",
+          "and ecx, 0x3ff",
+          "imul ecx",
+          "sar edx, 3",
+          "mov eax, edx",
+          "shr eax, 0x1f",
+          "add edx, eax",
+          "mov eax, edx",
+          "mov edx, damage",
+          "cmp eax, 0xf",
+          "jle block+0x7b",
+          "imul eax, damage",
+          "mov ecx, eax",
+          "mov eax, 0x51eb851f",
+          "imul ecx",
+          "sar edx, 5",
+          "mov ecx, edx",
+          "shr ecx, 0x1f",
+          "add edx, ecx",
+          "add edx, damage",
+          "mov damage, edx"
+        ],
+        "helper_hex": "83ec0453528b4424100bc075158b5c24140bdb75116633c06625ff075a5b83c404c38b5c24140bc00f88860000000bdb78423bc37c1e93c1e00833d2f7f3668b044514026500660500026625ff075a5b83c404c3c1e00833d2f7f3668b04451402650066f7d8660500046625ff075a5b83c404c3f7db3bc37c2193c1e00833d2f7f3668b04451402650066f7d8660500026625ff075a5b83c404c3c1e00833d2f7f3668b0445140265006625ff075a5b83c404c3f7d80bdb78423bc37c2193c1e00833d2f7f3668b04451402650066f7d8660500066625ff075a5b83c404c3c1e00833d2f7f3668b044514026500660500046625ff075a5b83c404c3f7db3bc37c1e93c1e00833d2f7f3668b044514026500660500066625ff075a5b83c404c3c1e00833d2f7f3668b04451402650066f7d8660500086625ff075a5b83c404c3",
+        "helper_sha256": "4d5bec7d6a9dc554e2c9463cd19d983596c996ca540f378752d8b58b8bd2969e",
+        "table_hex": "000001000200030005000600070008000a000b000c000d000f00100011001300140015001600180019001a001b001d001e001f00200022002300240026002700280029002b002c002d002e003000310032003300350036003700380039003b003c003d003e004000410042004300440046004700480049004b004c004d004e004f00510052005300540055005700580059005a005b005c005e005f006000610062006300650066006700680069006a006b006d006e006f007000710072007300740076007700780079007a007b007c007d007e007f008100820083008400850086008700880089008a008b008c008d008e008f009000910093009400950096009700980099009a009b009c009d009e009f00a000a100a200a300a400a500a600a700a700a800a900aa00ab00ac00ad00ae00af00b000b100b200b300b400b500b600b600b700b800b900ba00bb00bc00bd00be00bf00bf00c000c100c200c300c400c500c600c600c700c800c900ca00cb00cb00cc00cd00ce00cf00d000d000d100d200d300d400d400d500d600d700d800d800d900da00db00dc00dc00dd00de00df00df00e000e100e200e200e300e400e500e500e600e700e800e800e900ea00eb00eb00ec00ed00ed00ee00ef00ef00f000f100f200f200f300f400f400f500f600f600f700f800f800f900fa00fa00fb00fc00fc00fd00fe00fe00ff000001",
+        "table_sha256": "1c26f16f88a3e0cedc9c879837b3849567ff70514c033eb6249bd95a264debce",
+        "scope": "Whole125-byte arithmetic block and whole320-byte pure angle helper, not whole non-DX melee function execution."
+      },
+      {
+        "profile": {
+          "id": "standard",
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\DKII.EXE",
+          "sha256": "e99818fbe9ad337ab4a24fa76901d5fe5a8c0a0dd306172d24b9547762c534cc",
+          "helper": 6683476,
+          "table": 6683796,
+          "direction_block": 4821188,
+          "block_bytes": 125
+        },
+        "block_hex": "8b471e8b561e8b4f1a2bc28b561a502bca51e8796a1c0025ffff000083c40825ff070000663dff03668944241076108b442410bafe0700002bd066895424108b4c2410b86766666681e1ff030000f7e9c1fa038bc2c1e81f03d08bc28bd383f80f7e180fafc38bc8b81f85eb51f7e9c1fa058bcac1e91f03d103d38bda",
+        "block_sha256": "06fe7d7682cbbd90671c8fd2a3fba4358af24854e898ba30c750933c3e0e97fe",
+        "instructions": [
+          {
+            "address": "0x4990c4",
+            "hex": "8b471e",
+            "instruction": "mov eax, dword ptr [edi + 0x1e]"
+          },
+          {
+            "address": "0x4990c7",
+            "hex": "8b561e",
+            "instruction": "mov edx, dword ptr [esi + 0x1e]"
+          },
+          {
+            "address": "0x4990ca",
+            "hex": "8b4f1a",
+            "instruction": "mov ecx, dword ptr [edi + 0x1a]"
+          },
+          {
+            "address": "0x4990cd",
+            "hex": "2bc2",
+            "instruction": "sub eax, edx"
+          },
+          {
+            "address": "0x4990cf",
+            "hex": "8b561a",
+            "instruction": "mov edx, dword ptr [esi + 0x1a]"
+          },
+          {
+            "address": "0x4990d2",
+            "hex": "50",
+            "instruction": "push eax"
+          },
+          {
+            "address": "0x4990d3",
+            "hex": "2bca",
+            "instruction": "sub ecx, edx"
+          },
+          {
+            "address": "0x4990d5",
+            "hex": "51",
+            "instruction": "push ecx"
+          },
+          {
+            "address": "0x4990d6",
+            "hex": "e8796a1c00",
+            "instruction": "call 0x65fb54"
+          },
+          {
+            "address": "0x4990db",
+            "hex": "25ffff0000",
+            "instruction": "and eax, 0xffff"
+          },
+          {
+            "address": "0x4990e0",
+            "hex": "83c408",
+            "instruction": "add esp, 8"
+          },
+          {
+            "address": "0x4990e3",
+            "hex": "25ff070000",
+            "instruction": "and eax, 0x7ff"
+          },
+          {
+            "address": "0x4990e8",
+            "hex": "663dff03",
+            "instruction": "cmp ax, 0x3ff"
+          },
+          {
+            "address": "0x4990ec",
+            "hex": "6689442410",
+            "instruction": "mov word ptr [esp + 0x10], ax"
+          },
+          {
+            "address": "0x4990f1",
+            "hex": "7610",
+            "instruction": "jbe 0x499103"
+          },
+          {
+            "address": "0x4990f3",
+            "hex": "8b442410",
+            "instruction": "mov eax, dword ptr [esp + 0x10]"
+          },
+          {
+            "address": "0x4990f7",
+            "hex": "bafe070000",
+            "instruction": "mov edx, 0x7fe"
+          },
+          {
+            "address": "0x4990fc",
+            "hex": "2bd0",
+            "instruction": "sub edx, eax"
+          },
+          {
+            "address": "0x4990fe",
+            "hex": "6689542410",
+            "instruction": "mov word ptr [esp + 0x10], dx"
+          },
+          {
+            "address": "0x499103",
+            "hex": "8b4c2410",
+            "instruction": "mov ecx, dword ptr [esp + 0x10]"
+          },
+          {
+            "address": "0x499107",
+            "hex": "b867666666",
+            "instruction": "mov eax, 0x66666667"
+          },
+          {
+            "address": "0x49910c",
+            "hex": "81e1ff030000",
+            "instruction": "and ecx, 0x3ff"
+          },
+          {
+            "address": "0x499112",
+            "hex": "f7e9",
+            "instruction": "imul ecx"
+          },
+          {
+            "address": "0x499114",
+            "hex": "c1fa03",
+            "instruction": "sar edx, 3"
+          },
+          {
+            "address": "0x499117",
+            "hex": "8bc2",
+            "instruction": "mov eax, edx"
+          },
+          {
+            "address": "0x499119",
+            "hex": "c1e81f",
+            "instruction": "shr eax, 0x1f"
+          },
+          {
+            "address": "0x49911c",
+            "hex": "03d0",
+            "instruction": "add edx, eax"
+          },
+          {
+            "address": "0x49911e",
+            "hex": "8bc2",
+            "instruction": "mov eax, edx"
+          },
+          {
+            "address": "0x499120",
+            "hex": "8bd3",
+            "instruction": "mov edx, ebx"
+          },
+          {
+            "address": "0x499122",
+            "hex": "83f80f",
+            "instruction": "cmp eax, 0xf"
+          },
+          {
+            "address": "0x499125",
+            "hex": "7e18",
+            "instruction": "jle 0x49913f"
+          },
+          {
+            "address": "0x499127",
+            "hex": "0fafc3",
+            "instruction": "imul eax, ebx"
+          },
+          {
+            "address": "0x49912a",
+            "hex": "8bc8",
+            "instruction": "mov ecx, eax"
+          },
+          {
+            "address": "0x49912c",
+            "hex": "b81f85eb51",
+            "instruction": "mov eax, 0x51eb851f"
+          },
+          {
+            "address": "0x499131",
+            "hex": "f7e9",
+            "instruction": "imul ecx"
+          },
+          {
+            "address": "0x499133",
+            "hex": "c1fa05",
+            "instruction": "sar edx, 5"
+          },
+          {
+            "address": "0x499136",
+            "hex": "8bca",
+            "instruction": "mov ecx, edx"
+          },
+          {
+            "address": "0x499138",
+            "hex": "c1e91f",
+            "instruction": "shr ecx, 0x1f"
+          },
+          {
+            "address": "0x49913b",
+            "hex": "03d1",
+            "instruction": "add edx, ecx"
+          },
+          {
+            "address": "0x49913d",
+            "hex": "03d3",
+            "instruction": "add edx, ebx"
+          },
+          {
+            "address": "0x49913f",
+            "hex": "8bda",
+            "instruction": "mov ebx, edx"
+          }
+        ],
+        "normalized_arithmetic_core": [
+          "and eax, 0x7ff",
+          "cmp ax, 0x3ff",
+          "mov word ptr [esp + 0x10], ax",
+          "jbe block+0x3f",
+          "mov eax, dword ptr [esp + 0x10]",
+          "mov edx, 0x7fe",
+          "sub edx, eax",
+          "mov word ptr [esp + 0x10], dx",
+          "mov ecx, dword ptr [esp + 0x10]",
+          "mov eax, 0x66666667",
+          "and ecx, 0x3ff",
+          "imul ecx",
+          "sar edx, 3",
+          "mov eax, edx",
+          "shr eax, 0x1f",
+          "add edx, eax",
+          "mov eax, edx",
+          "mov edx, damage",
+          "cmp eax, 0xf",
+          "jle block+0x7b",
+          "imul eax, damage",
+          "mov ecx, eax",
+          "mov eax, 0x51eb851f",
+          "imul ecx",
+          "sar edx, 5",
+          "mov ecx, edx",
+          "shr ecx, 0x1f",
+          "add edx, ecx",
+          "add edx, damage",
+          "mov damage, edx"
+        ],
+        "helper_hex": "83ec0453528b4424100bc075158b5c24140bdb75116633c06625ff075a5b83c404c38b5c24140bc00f88860000000bdb78423bc37c1e93c1e00833d2f7f3668b044594fc6500660500026625ff075a5b83c404c3c1e00833d2f7f3668b044594fc650066f7d8660500046625ff075a5b83c404c3f7db3bc37c2193c1e00833d2f7f3668b044594fc650066f7d8660500026625ff075a5b83c404c3c1e00833d2f7f3668b044594fc65006625ff075a5b83c404c3f7d80bdb78423bc37c2193c1e00833d2f7f3668b044594fc650066f7d8660500066625ff075a5b83c404c3c1e00833d2f7f3668b044594fc6500660500046625ff075a5b83c404c3f7db3bc37c1e93c1e00833d2f7f3668b044594fc6500660500066625ff075a5b83c404c3c1e00833d2f7f3668b044594fc650066f7d8660500086625ff075a5b83c404c3",
+        "helper_sha256": "b2fa2d0fdfce735b50b267baaf8e88ea52004ff8cf5a10825f2112e3b6f4c273",
+        "table_hex": "000001000200030005000600070008000a000b000c000d000f00100011001300140015001600180019001a001b001d001e001f00200022002300240026002700280029002b002c002d002e003000310032003300350036003700380039003b003c003d003e004000410042004300440046004700480049004b004c004d004e004f00510052005300540055005700580059005a005b005c005e005f006000610062006300650066006700680069006a006b006d006e006f007000710072007300740076007700780079007a007b007c007d007e007f008100820083008400850086008700880089008a008b008c008d008e008f009000910093009400950096009700980099009a009b009c009d009e009f00a000a100a200a300a400a500a600a700a700a800a900aa00ab00ac00ad00ae00af00b000b100b200b300b400b500b600b600b700b800b900ba00bb00bc00bd00be00bf00bf00c000c100c200c300c400c500c600c600c700c800c900ca00cb00cb00cc00cd00ce00cf00d000d000d100d200d300d400d400d500d600d700d800d800d900da00db00dc00dc00dd00de00df00df00e000e100e200e200e300e400e500e500e600e700e800e800e900ea00eb00eb00ec00ed00ed00ee00ef00ef00f000f100f200f200f300f400f400f500f600f600f700f800f800f900fa00fa00fb00fc00fc00fd00fe00fe00ff000001",
+        "table_sha256": "1c26f16f88a3e0cedc9c879837b3849567ff70514c033eb6249bd95a264debce",
+        "scope": "Whole125-byte arithmetic block and whole320-byte pure angle helper, not whole non-DX melee function execution."
+      }
+    ],
+    "replays": [
+      {
+        "profile": {
+          "id": "DX",
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\DKII-DX.exe",
+          "sha256": "d7a8b854e4e4f02709eba271bead6fe2307dd6e332b5a96e70857e5b0e19fb8a",
+          "helper": 6683476,
+          "table": 6683796,
+          "direction_block": 4821188,
+          "block_bytes": 125
+        },
+        "file": "ghidra\\phase194-angle-native-DX-e43a79beeda9.json",
+        "sha256": "06eb194368d22df8ff7c794628dd6bed4cce319856ff87b8db173392460a208f",
+        "angle_calls": 2057,
+        "unique_angles": 1864
+      },
+      {
+        "profile": {
+          "id": "provided13",
+          "file": "D:/Games/DK2/DKII 13/Dungeon Keeper 2/DKII.exe",
+          "sha256": "93e826a142f677ef5120699feddb0572799d93399167ef1d05ec4b48a8b2a342",
+          "helper": 6619348,
+          "table": 6619668,
+          "direction_block": 4787347,
+          "block_bytes": 125
+        },
+        "file": "ghidra\\phase194-angle-native-provided13-6f74b8e46cf5.json",
+        "sha256": "83b8ce350179d6db34b5f1d37069e1a69f6cb1b64acfd0e024024a002cbc227d",
+        "angle_calls": 2057,
+        "unique_angles": 1864
+      },
+      {
+        "profile": {
+          "id": "standard",
+          "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\DKII.EXE",
+          "sha256": "e99818fbe9ad337ab4a24fa76901d5fe5a8c0a0dd306172d24b9547762c534cc",
+          "helper": 6683476,
+          "table": 6683796,
+          "direction_block": 4821188,
+          "block_bytes": 125
+        },
+        "file": "ghidra\\phase194-angle-native-standard-adab55791c8d.json",
+        "sha256": "55eb1577a2d1d547fd1118a6e6089fe868051255b06b8a8eee04b7bdd5692813",
+        "angle_calls": 2057,
+        "unique_angles": 1864
+      }
+    ],
+    "normalized_arithmetic_cores_identical": true,
+    "angle_tables_identical": true,
+    "scope": "All3 pure angle helpers executed; full loader/melee/HP scenes belong to DX only. All257 table ratios in8 octants plus zero, not all32-bit coordinate/overflow inputs."
+  },
+  "primary": {
+    "profile": {
+      "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\DKII-DX.exe",
+      "sha256": "d7a8b854e4e4f02709eba271bead6fe2307dd6e332b5a96e70857e5b0e19fb8a"
+    },
+    "inherited_functions": [
+      {
+        "address": 4416496,
+        "length": 57,
+        "assembly": "ghidra/phase147-primary-4363f0-assembly.txt",
+        "assembly_sha256": "fd29920fee8be84b343263b8dfa283549de0b07cc614e0d07111f3ac3bca2266",
+        "static_only": false,
+        "unlisted_intervals": [],
+        "memory": "ghidra/phase147-primary-4363f0-memory.txt",
+        "memory_sha256": "91bf9e4a53a89d84274970ac29ec428046f54472370a71fc81b33d0062aa25fe",
+        "bytes_sha256": "45a5659e825fd9a09b451483f27c05af0d956e5eee7f5175140609ddd413b8d0"
+      },
+      {
+        "address": 4468944,
+        "length": 5,
+        "assembly": "ghidra/phase147-primary-4430d0-assembly.txt",
+        "assembly_sha256": "f3725a23b6a2cba23845c88b5b93645fd5d883c249e526f19f63c3d79e050fac",
+        "static_only": false,
+        "unlisted_intervals": [],
+        "memory": "ghidra/phase147-primary-4430d0-memory.txt",
+        "memory_sha256": "fea3d5975fae16a42741b18deb6571625149f1a3d78deb2aa17893da8f0bfd4c",
+        "bytes_sha256": "6fe8ecb84220ebaa231802dfcd815b40c70f020bf4a33ae758816b6b6b7156dd"
+      },
+      {
+        "address": 4780880,
+        "length": 43,
+        "assembly": "ghidra/phase147-primary-48f350-assembly.txt",
+        "assembly_sha256": "bbc4064258cc51caa196543a5ff05dea446ec4a8beab2e56d2242974b62eb4ed",
+        "static_only": false,
+        "unlisted_intervals": [],
+        "memory": "ghidra/phase147-primary-48f350-memory.txt",
+        "memory_sha256": "7e1ec2e09fc2b1907ca0ab010648be6c543091cf9046a78c9ef36314fe37afac",
+        "bytes_sha256": "5cd1e11e9c24f5aa4f96420482a383e74ca06c74fe3a7a0b68f37bd0dac33912"
+      },
+      {
+        "address": 4791632,
+        "length": 12,
+        "assembly": "ghidra/phase147-primary-491d50-assembly.txt",
+        "assembly_sha256": "2784631f7bae062af949e7479633c657750a0baffed86c7b21f5186e8e5220a6",
+        "static_only": false,
+        "unlisted_intervals": [],
+        "memory": "ghidra/phase147-primary-491d50-memory.txt",
+        "memory_sha256": "fdafeee392378d33f65dfcac797f7d24f68a1c51a77d276ef4200d31ab8af9d7",
+        "bytes_sha256": "254aa0b0b08b7e12486fe79e6f89212d8d35b5a15a5e830a47cdd2f98ba1cf24"
+      },
+      {
+        "address": 4791648,
+        "length": 25,
+        "assembly": "ghidra/phase147-primary-491d60-assembly.txt",
+        "assembly_sha256": "02db2c178fefc6178fea027b7f2259e71086ebfd93e998d510cf81d6c7128a62",
+        "static_only": false,
+        "unlisted_intervals": [],
+        "memory": "ghidra/phase147-primary-491d60-memory.txt",
+        "memory_sha256": "8e8a215b13c1b6caf2d7aba35aa7885ac9eb34d0e02e06f2237c31d6b4b374c1",
+        "bytes_sha256": "4e37c8de468ed3cd1f88b1953b94bde62b84ee28d3026bf02bf9641583a663d8"
+      },
+      {
+        "address": 4791680,
+        "length": 10,
+        "assembly": "ghidra/phase147-primary-491d80-assembly.txt",
+        "assembly_sha256": "57e6b6ebe0743208472b8c22561fcc5a63232a260de138c95ef1f00b33e0b31e",
+        "static_only": false,
+        "unlisted_intervals": [],
+        "memory": "ghidra/phase147-primary-491d80-memory.txt",
+        "memory_sha256": "3a3e694198fc30912c5639ff0c5e284837ee6b823ba9fdb89954a6fc2b3c104c",
+        "bytes_sha256": "404140e7761959e82db6cdcf77ddd6930c6ab91ba6aced866d7a66eb5e6d991a"
+      },
+      {
+        "address": 4791696,
+        "length": 18,
+        "assembly": "ghidra/phase147-primary-491d90-assembly.txt",
+        "assembly_sha256": "803d2d84930f751fad641a700b035340744dff76b52dd4a7c9a5fdb3b58716f0",
+        "static_only": false,
+        "unlisted_intervals": [],
+        "memory": "ghidra/phase147-primary-491d90-memory.txt",
+        "memory_sha256": "723bcd020f05dd2d7cbde51503c7d5086deef7ddfc5def5c4e9e84a6dea4cc2e",
+        "bytes_sha256": "fa94d490cef860b4e8f5c9c05d1458d70d294db3f79e4f09d69cb2e81b9226df"
+      },
+      {
+        "address": 4791728,
+        "length": 15,
+        "assembly": "ghidra/phase147-primary-491db0-assembly.txt",
+        "assembly_sha256": "14c1859bc2a11a52fe81528c69e771838237ef4662f7689193f12f4e4c3d7860",
+        "static_only": false,
+        "unlisted_intervals": [],
+        "memory": "ghidra/phase147-primary-491db0-memory.txt",
+        "memory_sha256": "f2b6728020256c960f6aa3e3aa256852978814a222014bffed98717b5baf2b0c",
+        "bytes_sha256": "6c127110d6a0e40d721ab6b3f3a089fdb058953422d172f0dbb94cff78330294"
+      },
+      {
+        "address": 4791744,
+        "length": 1135,
+        "assembly": "ghidra/phase147-primary-491dc0-assembly.txt",
+        "assembly_sha256": "0d01ca89a8e0a671a2f11945d9be58fa9429b0f498f68089955949547ad1b20c",
+        "static_only": false,
+        "unlisted_intervals": [],
+        "memory": "ghidra/phase147-primary-491dc0-memory.txt",
+        "memory_sha256": "8eeaa117ba424ced9d9f91f77ed6441360753bf0b27866b547500cffbf9dc600",
+        "bytes_sha256": "ae4ad216755f302e1b9106e075e9851d3fd529f6c5f570fb17152019c50f1791"
+      },
+      {
+        "address": 4793120,
+        "length": 8252,
+        "assembly": "ghidra/phase147-primary-492320-assembly.txt",
+        "assembly_sha256": "36ed1e3d206c43a605c1c9935965ad82af7fba67c1cb68389dfd5a9b227db083",
+        "static_only": false,
+        "unlisted_intervals": [],
+        "memory": "ghidra/phase147-primary-492320-memory.txt",
+        "memory_sha256": "c3f9e6bedcbbef867ff897a5b3d1ee1196ed22d6d59cdad088e08d74795b4706",
+        "bytes_sha256": "b311ac9d5f88c17ee505128e44c062cee0e2163b5417cd6ed63cba0651e97d1a"
+      },
+      {
+        "address": 4803840,
+        "length": 484,
+        "assembly": "ghidra/phase147-primary-494d00-assembly.txt",
+        "assembly_sha256": "7ad6558e4433af6054e46920f2eef6228d5ef524fa470071cd7b980f6233dcd4",
+        "static_only": false,
+        "unlisted_intervals": [],
+        "memory": "ghidra/phase147-primary-494d00-memory.txt",
+        "memory_sha256": "46f4991a2e1097cb6d45bf160bfc734323463d7299c9217c220c319a6231d52a",
+        "bytes_sha256": "3a2780fdd782ecbce9fcc6b0aa28e63ce60c356087925f2825742bd2819c9b0f"
+      },
+      {
+        "address": 4804800,
+        "length": 5597,
+        "assembly": "ghidra/phase147-primary-4950c0-assembly.txt",
+        "assembly_sha256": "917f43244952c0d644ae68eda7113edb9095439afa42e068ad5a5d24dc2a51c9",
+        "static_only": false,
+        "unlisted_intervals": [],
+        "memory": "ghidra/phase147-primary-4950c0-memory.txt",
+        "memory_sha256": "9815804ffb908f6db25b7833997b35431d62016e2214955c6ab7abad7828da28",
+        "bytes_sha256": "9fddf1d648ce82f75fd0db95d495d1e8daf578c0067391c59a12c1279d16b748"
+      },
+      {
+        "address": 4820528,
+        "length": 1227,
+        "assembly": "ghidra/phase147-primary-498e30-assembly.txt",
+        "assembly_sha256": "52916be8e4ddc778b379bb3e0ffd6bcb8214325559ca7c7ab183ee332a1813a1",
+        "static_only": false,
+        "unlisted_intervals": [],
+        "memory": "ghidra/phase147-primary-498e30-memory.txt",
+        "memory_sha256": "d041066837b189b1af2d39f3e34217817e37e0f859a9ff93bd4f1e930a163003",
+        "bytes_sha256": "38eb6177ee2e0b2fb493b4be56ceccabf4bdd828813becbdc7d6351f6399605a"
+      },
+      {
+        "address": 4823200,
+        "length": 387,
+        "assembly": "ghidra/phase147-primary-4998a0-assembly.txt",
+        "assembly_sha256": "080793d8f54b7dfb952b5c1c07b562d27ab3d18fba42a230ab33fe631e6ac503",
+        "static_only": false,
+        "unlisted_intervals": [],
+        "memory": "ghidra/phase147-primary-4998a0-memory.txt",
+        "memory_sha256": "97ac5d26954771a5b6f1ad39339b04353611b61c5b9e2d0b4e309f77c24b4c8c",
+        "bytes_sha256": "0449bd1ef9190dddeec72e4d53a2b33448b44b30d5f623df510a5489161d6e4b"
+      },
+      {
+        "address": 4926688,
+        "length": 1460,
+        "assembly": "ghidra/phase147-primary-4b2ce0-assembly.txt",
+        "assembly_sha256": "237bc968940d24974aad748d67d8ab4734c32bae5f3000db00b4c58b0f351941",
+        "static_only": false,
+        "unlisted_intervals": [],
+        "memory": "ghidra/phase147-primary-4b2ce0-memory.txt",
+        "memory_sha256": "d57456d7264b93db4037c0d390215b05b6905df78a79e43b11e103c33ca5bc6e",
+        "bytes_sha256": "02a0d4e3643a07c7ed9a2ee805239d0343644e4d77bd734237d0b0539228eaff"
+      },
+      {
+        "address": 4938800,
+        "length": 11,
+        "assembly": "ghidra/phase147-primary-4b5c30-assembly.txt",
+        "assembly_sha256": "600850e9e0be9eee32c2ade8cef936d0c976b47862a2e5caf44ea854f40f39b1",
+        "static_only": false,
+        "unlisted_intervals": [],
+        "memory": "ghidra/phase147-primary-4b5c30-memory.txt",
+        "memory_sha256": "4ff95254ca7cf2ee8ef755244518d338eb39b39c66db6f75aa7f17929c0c63a9",
+        "bytes_sha256": "80a552e5765d36a58ed2fe5d026cc2da4abd70c6aca01ce7157983325f673344"
+      },
+      {
+        "address": 4939072,
+        "length": 7,
+        "assembly": "ghidra/phase147-primary-4b5d40-assembly.txt",
+        "assembly_sha256": "4366d282857e21b11a221ec2a4603b2e951c4978da0065b1135c37c7b6b1d671",
+        "static_only": false,
+        "unlisted_intervals": [],
+        "memory": "ghidra/phase147-primary-4b5d40-memory.txt",
+        "memory_sha256": "254f77d4c54a7ebc62554c00015069d4b9182a321847f0e0c72ec7a2df68bf03",
+        "bytes_sha256": "22c0c79523e5d76f7b1477b8bceb242ee2c222458ee259dc8997fda0d7bf56ae"
+      },
+      {
+        "address": 4939088,
+        "length": 7,
+        "assembly": "ghidra/phase147-primary-4b5d50-assembly.txt",
+        "assembly_sha256": "71d593cb39523e3f9497790980a24297356256e892ad71ab45749150c0012acd",
+        "static_only": false,
+        "unlisted_intervals": [],
+        "memory": "ghidra/phase147-primary-4b5d50-memory.txt",
+        "memory_sha256": "4e378e2b377cb65d58bf64706c3ac1dd506f9f03336883146b677f09eb6f69fb",
+        "bytes_sha256": "4da2d3c1b0c98929d0afa3d9ded8b78399d649cba1de0dd75b2ea355c6ff4113"
+      },
+      {
+        "address": 4939232,
+        "length": 7,
+        "assembly": "ghidra/phase147-primary-4b5de0-assembly.txt",
+        "assembly_sha256": "c2854dcbf2c7799b1999af0fcf7f023ec9de163e47f0ead91d3ac09464a8b202",
+        "static_only": false,
+        "unlisted_intervals": [],
+        "memory": "ghidra/phase147-primary-4b5de0-memory.txt",
+        "memory_sha256": "61d040c9632c84235d9f880cd18c7f1eac97911975674dbddf2b1e88ee5cf097",
+        "bytes_sha256": "84b2ea51df9e3f0d8b64f128f4718e5c29559f99967927ea38748939c9db5cca"
+      },
+      {
+        "address": 5112928,
+        "length": 15,
+        "assembly": "ghidra/phase147-primary-4e0460-assembly.txt",
+        "assembly_sha256": "eb56689b096f789ce1f5c0681af2f2bb87a94b1ea9e2fa9b7b2b4f1baf125ae2",
+        "static_only": false,
+        "unlisted_intervals": [],
+        "memory": "ghidra/phase147-primary-4e0460-memory.txt",
+        "memory_sha256": "4f225213a87169db1d56871a1601ec1d293a417f3ee3d80db1b9fd89081f0c11",
+        "bytes_sha256": "e5ecf3846f837ea2c323317b34d0dc8979daf10436024f9ce0f90079fa059dbb"
+      },
+      {
+        "address": 5262688,
+        "length": 31,
+        "assembly": "ghidra/phase147-primary-504d60-assembly.txt",
+        "assembly_sha256": "8e2439f87dc650e5c0295ca6ebaed505f5ab49f69602f5613f0a39958141963a",
+        "static_only": false,
+        "unlisted_intervals": [],
+        "memory": "ghidra/phase147-primary-504d60-memory.txt",
+        "memory_sha256": "32e15bf942f468df5d1261dbb63f7267c2ef615d9c129a91177294d70060a33f",
+        "bytes_sha256": "12558628e8f199e22dc7f8289bfa4fed64080f401040c04b2ca7368c5c86384d"
+      },
+      {
+        "address": 5281152,
+        "length": 37,
+        "assembly": "ghidra/phase147-primary-509580-assembly.txt",
+        "assembly_sha256": "b76a28771c8bf9bf24879be100774f61cb600c4a68e00fb1568c67fae4abe808",
+        "static_only": false,
+        "unlisted_intervals": [],
+        "memory": "ghidra/phase147-primary-509580-memory.txt",
+        "memory_sha256": "b6eecf08a9c712c3789ee604936967a2b8cc3f668d418a7f86b6192fe0125848",
+        "bytes_sha256": "8e68af722fe9ca35befa5fe08a2a4646741635a1c54314700185a66fa67baa81"
+      },
+      {
+        "address": 5301392,
+        "length": 56,
+        "assembly": "ghidra/phase147-primary-50e490-assembly.txt",
+        "assembly_sha256": "3d51cf3efa681b15d9c26f70879b592661be53f77f4f7d7d636d6f6895f03764",
+        "static_only": false,
+        "unlisted_intervals": [],
+        "memory": "ghidra/phase147-primary-50e490-memory.txt",
+        "memory_sha256": "74c633e84dd0d7a0cbca4aac2bb5b152e7d42c1e620613bc6698d0a58338c63f",
+        "bytes_sha256": "1cac1031e2682fabb13467c39d230a844a6ebb46c0219a4ed687787b537795bf"
+      },
+      {
+        "address": 5338256,
+        "length": 7,
+        "assembly": "ghidra/phase147-primary-517490-assembly.txt",
+        "assembly_sha256": "763420093614a38f2a44a5451a20454ee03cff0eb59228df7c9422d065df45e7",
+        "static_only": false,
+        "unlisted_intervals": [],
+        "memory": "ghidra/phase147-primary-517490-memory.txt",
+        "memory_sha256": "f46b8b162979527e9d3fea64055ea964ea463c0991d7166587c5d794dc4ec19f",
+        "bytes_sha256": "478d198204dc1201c6d9430aa257ec122efc8ed3694922175dea0e90f77f6148"
+      },
+      {
+        "address": 5364800,
+        "length": 36,
+        "assembly": "ghidra/phase147-primary-51dc40-assembly.txt",
+        "assembly_sha256": "b9a7f73c47d9b30638c52d2d5b801ccee2add6ee41013e26feb7f02d6005b3f7",
+        "static_only": false,
+        "unlisted_intervals": [],
+        "memory": "ghidra/phase147-primary-51dc40-memory.txt",
+        "memory_sha256": "986fc57f737b8eece7a430eb4dabd05d21a372a95d00455906cc52d3868064da",
+        "bytes_sha256": "fa1d554777ba0fe1ea09f79a96b6164980fcaa8df96f937907ed446876e6309c"
+      },
+      {
+        "address": 5364848,
+        "length": 26,
+        "assembly": "ghidra/phase147-primary-51dc70-assembly.txt",
+        "assembly_sha256": "fd36688cac1ed064de52bd92315c90131e6482119eaeaa0e48a021cfc88f5771",
+        "static_only": false,
+        "unlisted_intervals": [],
+        "memory": "ghidra/phase147-primary-51dc70-memory.txt",
+        "memory_sha256": "e484579d4a554e32233edee9152ce1113d240a6c32e1d4ece799e8231999f6df",
+        "bytes_sha256": "451e360f83ffb1ef800d3003c645cf89d8524c3ce1f7d3ac8da57aec209f7c50"
+      },
+      {
+        "address": 5670944,
+        "length": 1552,
+        "assembly": "ghidra/phase147-primary-568820-assembly.txt",
+        "assembly_sha256": "821f20219eaad78a5d0c3da2f8b0c3355d4a12fb050a3d96f03ec4f0f48046d6",
+        "static_only": false,
+        "unlisted_intervals": [],
+        "memory": "ghidra/phase147-primary-568820-memory.txt",
+        "memory_sha256": "b9e5ebaea845adf7fd08a7e50c152a248b7e41023612349fb2998338b29b751c",
+        "bytes_sha256": "496dd328a811d181e915b61e6ccaf90525d478bcc63017c9c3e7eebf1f31bc24"
+      },
+      {
+        "address": 5672496,
+        "length": 3597,
+        "assembly": "ghidra/phase147-primary-568e30-assembly.txt",
+        "assembly_sha256": "97e9b7b90edc3441e1f6eaf7ef9d84ccb953c0604e8527a85ca26db865b3cde9",
+        "static_only": false,
+        "unlisted_intervals": [],
+        "memory": "ghidra/phase147-primary-568e30-memory.txt",
+        "memory_sha256": "0cf8edde42d73245e325f4ce69e42d0a55fd57921c2b03ce407735d4754c1add",
+        "bytes_sha256": "e418e5207c7759bbc3de4e9d28b92604fcf4b75869b67846622df9c1cbc36c78"
+      },
+      {
+        "address": 5676096,
+        "length": 24,
+        "assembly": "ghidra/phase147-primary-569c40-assembly.txt",
+        "assembly_sha256": "7f78fe97d05b137389ab45436eebddc9a541488ceea0456b29fc4202d339af89",
+        "static_only": false,
+        "unlisted_intervals": [],
+        "memory": "ghidra/phase147-primary-569c40-memory.txt",
+        "memory_sha256": "6e0400c4135d937e36b46cc67e0d8fe55913f451b3b33d16d13e38906dc60187",
+        "bytes_sha256": "fdfdb393f068d6cf157a87816c073903e9f8c1b195eafa3664d446a08034dbef"
+      },
+      {
+        "address": 5676128,
+        "length": 24,
+        "assembly": "ghidra/phase147-primary-569c60-assembly.txt",
+        "assembly_sha256": "ae99ecb0df3c90d4c2ac3509bc0078b9d6cfc9d7e7c4f8efe0ef7a2efa183479",
+        "static_only": false,
+        "unlisted_intervals": [],
+        "memory": "ghidra/phase147-primary-569c60-memory.txt",
+        "memory_sha256": "e6a565677a869ed3bc51e3cc4bcbdb742684714dcf45f07098182b998d2f27dd",
+        "bytes_sha256": "4a363e1000c4d218c45c298bde1ac26549ba37e2383be7e2c0f8f6bc9f1b4759"
+      },
+      {
+        "address": 5676160,
+        "length": 24,
+        "assembly": "ghidra/phase147-primary-569c80-assembly.txt",
+        "assembly_sha256": "819231de19bbad16556436396d5363255ae6cf79093cd83dd71ca0cb11019ed9",
+        "static_only": false,
+        "unlisted_intervals": [],
+        "memory": "ghidra/phase147-primary-569c80-memory.txt",
+        "memory_sha256": "9e7c91973826ceedcdd367c4596eeca04458ae629a750db2bb00665223c0c924",
+        "bytes_sha256": "ccbe7eb058d5707256759f5beb62bf62e89287716c2404d271e7ad4aeee11229"
+      },
+      {
+        "address": 5676192,
+        "length": 24,
+        "assembly": "ghidra/phase147-primary-569ca0-assembly.txt",
+        "assembly_sha256": "3a1c9d19ed61821f9039d86f230ded1e940e05f6cff1a8818859a9e5fd3c5279",
+        "static_only": false,
+        "unlisted_intervals": [],
+        "memory": "ghidra/phase147-primary-569ca0-memory.txt",
+        "memory_sha256": "58de4674d678ee7f137ec5edaa5c0abfc4749152a34f755bb3b00352d7a51415",
+        "bytes_sha256": "a6e825fcb2b65b3def02191ffc8932105046460039f8efe0b164059038c6a2ef"
+      },
+      {
+        "address": 5676224,
+        "length": 27,
+        "assembly": "ghidra/phase147-primary-569cc0-assembly.txt",
+        "assembly_sha256": "24b2bcea9ff62f42c614e4e45bb3f1ffcf185e41cdde9adf684e9501deaec05b",
+        "static_only": false,
+        "unlisted_intervals": [],
+        "memory": "ghidra/phase147-primary-569cc0-memory.txt",
+        "memory_sha256": "72b39c49f0db27fc0f66e7e0ece691e0aa70bdbc44e652f3d46b4ac804898aa2",
+        "bytes_sha256": "7569634cfc81cd11024cec9bafa9532c9c8ca1506468361de83a65bf18ed1f24"
+      },
+      {
+        "address": 5676256,
+        "length": 27,
+        "assembly": "ghidra/phase147-primary-569ce0-assembly.txt",
+        "assembly_sha256": "11e3f8456f61cfe533a3b2ace1ca90ad0d3439ec0c68aa13043d3bdad2ee09a4",
+        "static_only": false,
+        "unlisted_intervals": [],
+        "memory": "ghidra/phase147-primary-569ce0-memory.txt",
+        "memory_sha256": "570b4dab7d6b2fc95ecbf7c09ad06facc2fbfabe20fdf6a88ba396ed02d91408",
+        "bytes_sha256": "460e57ca06d6b68e96bd5f2a0fbf346a7e201974543fce922a32502c202a48bf"
+      },
+      {
+        "address": 5676288,
+        "length": 27,
+        "assembly": "ghidra/phase147-primary-569d00-assembly.txt",
+        "assembly_sha256": "8a741222090ed25fd1b1510120ec8931bb1546537c6d07c80d7b121935e80ef3",
+        "static_only": false,
+        "unlisted_intervals": [],
+        "memory": "ghidra/phase147-primary-569d00-memory.txt",
+        "memory_sha256": "d807f0ff4c8c2a0c33eb25cf87326b0333b91fd8845ea3720134f408343eb416",
+        "bytes_sha256": "3e1b0d5c7cc6925605ec50b0a521dbce0e6ddc3c876af370808474e1db51fa4a"
+      },
+      {
+        "address": 5676320,
+        "length": 38,
+        "assembly": "ghidra/phase147-primary-569d20-assembly.txt",
+        "assembly_sha256": "b3090aa8e601afaf82c4d6103968e69026a24d859aaf21c4f86e2c08457dc2cf",
+        "static_only": false,
+        "unlisted_intervals": [],
+        "memory": "ghidra/phase147-primary-569d20-memory.txt",
+        "memory_sha256": "09f612076ce2af20bb7210b99cda67a861235072a4e230828863bd66d2072c00",
+        "bytes_sha256": "f65c6282ba9b74eac79c4c331b1853785bda5ac5a4b2559245743b98fa226c9a"
+      },
+      {
+        "address": 5676368,
+        "length": 27,
+        "assembly": "ghidra/phase147-primary-569d50-assembly.txt",
+        "assembly_sha256": "da2189d699b514efcd1593b780002dda0c5374cd64aad74a3bd114228a77c53d",
+        "static_only": false,
+        "unlisted_intervals": [],
+        "memory": "ghidra/phase147-primary-569d50-memory.txt",
+        "memory_sha256": "a3dc78e5945127d4100d08bf592aac5f791bcbb99cbd198f70daa9c59ea88494",
+        "bytes_sha256": "489e5c78bc6620f031d230a3885d5004da798f7cab0df37f90ec3d8933075d8a"
+      },
+      {
+        "address": 5676400,
+        "length": 24,
+        "assembly": "ghidra/phase147-primary-569d70-assembly.txt",
+        "assembly_sha256": "21efea584786e3d1ecd6066299194f12bc9fc0c1cd2934d9f5fb025a71dc98a3",
+        "static_only": false,
+        "unlisted_intervals": [],
+        "memory": "ghidra/phase147-primary-569d70-memory.txt",
+        "memory_sha256": "395217b972dd039ae6259b21f1bd8c93d672b5046d42820f9976ceaa778d76e1",
+        "bytes_sha256": "8d75d9f82b4e5902875fa9f1ced9cbae2b10da661fa11cc2660370ab52c25ec1"
+      },
+      {
+        "address": 5676432,
+        "length": 24,
+        "assembly": "ghidra/phase147-primary-569d90-assembly.txt",
+        "assembly_sha256": "4ad23252ec33b5e8fedf8bb488b9ff409d765c28b71f203c6ad7dbbed39ca15d",
+        "static_only": false,
+        "unlisted_intervals": [],
+        "memory": "ghidra/phase147-primary-569d90-memory.txt",
+        "memory_sha256": "f3c7602dcf684f8dab6860f2b878f74305ab6f2f4b29ce54a8674503f582777c",
+        "bytes_sha256": "6d136458bc301eec6540f5d938bcfd9abcd7d0a6d9b69b770488e4509f890467"
+      },
+      {
+        "address": 5676464,
+        "length": 24,
+        "assembly": "ghidra/phase147-primary-569db0-assembly.txt",
+        "assembly_sha256": "5271de0d7f03a57622c217b28c288d6209dfa0ebfc9d8826775cfd3216626321",
+        "static_only": false,
+        "unlisted_intervals": [],
+        "memory": "ghidra/phase147-primary-569db0-memory.txt",
+        "memory_sha256": "310cdcf5d49268a086e8f17c62ec270c5dddf707fd974fd3634831a37019d583",
+        "bytes_sha256": "a24f435ff116ccfb0884dcb0de0bc1cc2f816f6b013c8ebbc33fe29e81ee4f45"
+      },
+      {
+        "address": 5676496,
+        "length": 24,
+        "assembly": "ghidra/phase147-primary-569dd0-assembly.txt",
+        "assembly_sha256": "291430cb007f1df9d486b3ec4ac6a27597f42dabd77369e04c0ad34754996c7d",
+        "static_only": false,
+        "unlisted_intervals": [],
+        "memory": "ghidra/phase147-primary-569dd0-memory.txt",
+        "memory_sha256": "6b77df37ee3c6b65a3e498751a9568c73f373a47d2b5910ffbe1970d67f55dec",
+        "bytes_sha256": "c504904f40039bd76227e295a9ac5be694a648df7ec43cb6eed0b2492858a5cc"
+      },
+      {
+        "address": 5676528,
+        "length": 27,
+        "assembly": "ghidra/phase147-primary-569df0-assembly.txt",
+        "assembly_sha256": "b27e80cbffd18f5286406d62fb6e128a326bb656a6285403b1004808282189a2",
+        "static_only": false,
+        "unlisted_intervals": [],
+        "memory": "ghidra/phase147-primary-569df0-memory.txt",
+        "memory_sha256": "b2e7bf16a05eb6027b046a8cb148c79d410c6fe5eba84b0257472a25205bc830",
+        "bytes_sha256": "5a440b444ab77476338e942ad5e35162819c2250f7fe8886d18250d99a1d0385"
+      },
+      {
+        "address": 5676560,
+        "length": 27,
+        "assembly": "ghidra/phase147-primary-569e10-assembly.txt",
+        "assembly_sha256": "03c6df80453b31656da59161826eb30ce7919363b4dc221c5a35c4378a39e592",
+        "static_only": false,
+        "unlisted_intervals": [],
+        "memory": "ghidra/phase147-primary-569e10-memory.txt",
+        "memory_sha256": "92436b893efa580731f58a30cd40c02bdd5d4b97bedf88db8842db0fcea63fcc",
+        "bytes_sha256": "8920ea61130ad6d313d84d278112909da25ffa04f86a9ca4300da3c56113e8da"
+      },
+      {
+        "address": 5676592,
+        "length": 29,
+        "assembly": "ghidra/phase147-primary-569e30-assembly.txt",
+        "assembly_sha256": "de8389dd6563f3f085259f552cfbe5925ba72b3c78e14841e4708e10b8a1d5fd",
+        "static_only": false,
+        "unlisted_intervals": [],
+        "memory": "ghidra/phase147-primary-569e30-memory.txt",
+        "memory_sha256": "45470634d13c6eb71573d18edc0fb6c586d6fd79a69bfe9d5444265deee6c134",
+        "bytes_sha256": "0d337d7fd5d01920eb27dc368577de2bfdad7090674b38c96f45b0f4e20d95ea"
+      },
+      {
+        "address": 5676624,
+        "length": 29,
+        "assembly": "ghidra/phase147-primary-569e50-assembly.txt",
+        "assembly_sha256": "66aea9f20d41ab6deb981d6c6a5172cdf43d7fd5a1a430f0df89fe341885709a",
+        "static_only": false,
+        "unlisted_intervals": [],
+        "memory": "ghidra/phase147-primary-569e50-memory.txt",
+        "memory_sha256": "59e535267c3ca649ff6a69e4ae5fe025dcb93bf8c13970e30c433b7be639f9fa",
+        "bytes_sha256": "cf7acf6d5dfc1953fcc45afa053f85cf08375d3afd3038a3f189568b59ea8c8b"
+      },
+      {
+        "address": 5676656,
+        "length": 24,
+        "assembly": "ghidra/phase147-primary-569e70-assembly.txt",
+        "assembly_sha256": "15658c6ece765b5167c4900f1692fd1f6b9a7c6bda0ce1afea0ef056c5db5c4e",
+        "static_only": false,
+        "unlisted_intervals": [],
+        "memory": "ghidra/phase147-primary-569e70-memory.txt",
+        "memory_sha256": "a9f79059508d0fc363004f14690d8f150636f760bfcb994c40bb60d07692ee73",
+        "bytes_sha256": "c4fd399701f67562236076288649eb03ba78ae8112080deb91f1e5d583f064a2"
+      },
+      {
+        "address": 5676688,
+        "length": 27,
+        "assembly": "ghidra/phase147-primary-569e90-assembly.txt",
+        "assembly_sha256": "e069788da7eb61df955967649f9f2f768337789ff6ce29c7688065c330ae3733",
+        "static_only": false,
+        "unlisted_intervals": [],
+        "memory": "ghidra/phase147-primary-569e90-memory.txt",
+        "memory_sha256": "d31b88394429a0ec12a31d71c48224c9746d43ee43549a271275ca5a07a58598",
+        "bytes_sha256": "1c0bf0f48c0b19f33fade56ac9b111d03214611a25b6ed26825c73c3e8f3532a"
+      },
+      {
+        "address": 5676720,
+        "length": 27,
+        "assembly": "ghidra/phase147-primary-569eb0-assembly.txt",
+        "assembly_sha256": "3291138e5edcb8c9386bb2a55a4aaaaee1154d096b967196519e8072b14bf3dd",
+        "static_only": false,
+        "unlisted_intervals": [],
+        "memory": "ghidra/phase147-primary-569eb0-memory.txt",
+        "memory_sha256": "b01d84c2a8f7dfb1e837411b0af349c1bb3bf84f5db6dc6687a3f9565b75a3ea",
+        "bytes_sha256": "3215120be939556c76719d7ca7fcfdcf0eecdcfd11abebe13f2c5f120163fe8c"
+      },
+      {
+        "address": 5676752,
+        "length": 29,
+        "assembly": "ghidra/phase147-primary-569ed0-assembly.txt",
+        "assembly_sha256": "a1c83e7b31d62b31838535f56d3b071bce565d7bfc145015ec477a3d2580bf2b",
+        "static_only": false,
+        "unlisted_intervals": [],
+        "memory": "ghidra/phase147-primary-569ed0-memory.txt",
+        "memory_sha256": "2c733684354a7b78161ffd3dd904d33e61d7a94890fbba5a3abf72d4a568b4eb",
+        "bytes_sha256": "070dffab6cf12cad7c100bda7dd0acb74e154e8ecd061ccf64ea4b2a3c255b62"
+      },
+      {
+        "address": 5676784,
+        "length": 29,
+        "assembly": "ghidra/phase147-primary-569ef0-assembly.txt",
+        "assembly_sha256": "faeb83b2d45952b70990fc441f25b34dbbd84d52d1412d72c0a274c9ff7965b6",
+        "static_only": false,
+        "unlisted_intervals": [],
+        "memory": "ghidra/phase147-primary-569ef0-memory.txt",
+        "memory_sha256": "dfe68a4ec30bf949ff5f048b03d994a652692982e6c5c201cf6097b233d4b761",
+        "bytes_sha256": "3614a1db547afbebfa1b1076aa0923fe6fa552481c7f11c2af63c4bd4f42140a"
+      },
+      {
+        "address": 5676816,
+        "length": 24,
+        "assembly": "ghidra/phase147-primary-569f10-assembly.txt",
+        "assembly_sha256": "c7b5d98ede5f3f0fe9d6f7c99cbd83035e704bd12615dfddc40faea196604d6c",
+        "static_only": false,
+        "unlisted_intervals": [],
+        "memory": "ghidra/phase147-primary-569f10-memory.txt",
+        "memory_sha256": "adafd27f4b68589cf31caf078ab805a76fd36efe816eb3f9541d1fd75b8097bf",
+        "bytes_sha256": "9e4b0d729300b12da25c38dcebcd0600f29f0ca021b31d6b8737d309064622f6"
+      },
+      {
+        "address": 5676848,
+        "length": 27,
+        "assembly": "ghidra/phase147-primary-569f30-assembly.txt",
+        "assembly_sha256": "51e534a4ff4c4c64e8c729fd6a61e75dae6d0cc039227dc91fb3d8479f3d9fef",
+        "static_only": false,
+        "unlisted_intervals": [],
+        "memory": "ghidra/phase147-primary-569f30-memory.txt",
+        "memory_sha256": "f84795742cb95ca3a5b74a608aca898f5dcb818ca99e23543153de65d5aee4c6",
+        "bytes_sha256": "ebfecf02a5ec07b368d5217b4ec91974998a4e262d970ed463a6612a02bbb5f6"
+      },
+      {
+        "address": 5676880,
+        "length": 27,
+        "assembly": "ghidra/phase147-primary-569f50-assembly.txt",
+        "assembly_sha256": "f3963486966ca4404f9d4ecbca3930a3d97bf7ac439570efe24cf6c05a18cb0a",
+        "static_only": false,
+        "unlisted_intervals": [],
+        "memory": "ghidra/phase147-primary-569f50-memory.txt",
+        "memory_sha256": "b66e7c68a17de1facee1f59bfbd4f926e5a6e72e8a8e73a4718135aa72c1504e",
+        "bytes_sha256": "d6d55d5e0835296486c209547253da89ef19fd2416ce9973482f4e1e1cdbcbbe"
+      },
+      {
+        "address": 5676912,
+        "length": 29,
+        "assembly": "ghidra/phase147-primary-569f70-assembly.txt",
+        "assembly_sha256": "fc7f6e06e675b4ef0c7bfb7d8c3373cd3bbf58f30ec014cc65102060511ecc4f",
+        "static_only": false,
+        "unlisted_intervals": [],
+        "memory": "ghidra/phase147-primary-569f70-memory.txt",
+        "memory_sha256": "a383b13c166d159d0789c84781131f6f2751e6b46adf8d951ecd40fa2ba964c0",
+        "bytes_sha256": "3d49e32645c3591920c0abd32b00da6572ca937d88a734c3203579c4f1d28994"
+      },
+      {
+        "address": 5676944,
+        "length": 29,
+        "assembly": "ghidra/phase147-primary-569f90-assembly.txt",
+        "assembly_sha256": "ffe51b753892e0cf4224304985795e863d78d1a3dc860499c7ed9c2095a671fb",
+        "static_only": false,
+        "unlisted_intervals": [],
+        "memory": "ghidra/phase147-primary-569f90-memory.txt",
+        "memory_sha256": "e7a3be98a1361d7b1c8aaf2d1f1937cd210352f2e76138372f2995d69c683a11",
+        "bytes_sha256": "c87884efc79413aa23c3b10427737040089dffff79f07cb31161d0646e0e43ae"
+      },
+      {
+        "address": 5676976,
+        "length": 24,
+        "assembly": "ghidra/phase147-primary-569fb0-assembly.txt",
+        "assembly_sha256": "b320912c1df3e3309f6c395b22de515548ca64b5e2dd14261fec02684e473931",
+        "static_only": false,
+        "unlisted_intervals": [],
+        "memory": "ghidra/phase147-primary-569fb0-memory.txt",
+        "memory_sha256": "ce113a26866521afeaccb3cf6e77869166de744b09bfa55d6abf226109267d55",
+        "bytes_sha256": "18e2f13b720f285c543f4b5a85b6f0f06d839fbd9540a7d0e438f73c4521aeb5"
+      },
+      {
+        "address": 5677008,
+        "length": 24,
+        "assembly": "ghidra/phase147-primary-569fd0-assembly.txt",
+        "assembly_sha256": "e87932cfc6636ee9dd74571ccebe948b8462958269b50965e36df261396a99e6",
+        "static_only": false,
+        "unlisted_intervals": [],
+        "memory": "ghidra/phase147-primary-569fd0-memory.txt",
+        "memory_sha256": "c36b37560911f8937c7f185d7bc691635e73a0105535216fce8a38c277406d3d",
+        "bytes_sha256": "860b36ce9df81873c47890b6822fd0981c040348cd3bbe9d27e73d0992e3cdb0"
+      },
+      {
+        "address": 5677040,
+        "length": 24,
+        "assembly": "ghidra/phase147-primary-569ff0-assembly.txt",
+        "assembly_sha256": "5db5d5fd0b1d4770785c3e55d847d85d0911ae177c3e124ee0a6acdbd78a6688",
+        "static_only": false,
+        "unlisted_intervals": [],
+        "memory": "ghidra/phase147-primary-569ff0-memory.txt",
+        "memory_sha256": "9bd15d15df78c0ef51a900a3c2978cdcbdb1734d05fc4129a223ae360dc8fc4e",
+        "bytes_sha256": "200fe6651942e6d9270d558e16f4966ce35fdf176694a4d1b0d63deff02377c1"
+      },
+      {
+        "address": 5677072,
+        "length": 24,
+        "assembly": "ghidra/phase147-primary-56a010-assembly.txt",
+        "assembly_sha256": "68e367d7157acfa3a17d2a473ac8b94bdd37890118f0cd32676005c8d0eefc72",
+        "static_only": false,
+        "unlisted_intervals": [],
+        "memory": "ghidra/phase147-primary-56a010-memory.txt",
+        "memory_sha256": "395ab420163072832132fbde86963f02610d3c8e0b978485a62ceb68fcc0d4b6",
+        "bytes_sha256": "ab6751b234526fb015712c1b3d9ac6c7e2af6a73c95669599efeef4a94bf5844"
+      },
+      {
+        "address": 5677104,
+        "length": 26,
+        "assembly": "ghidra/phase147-primary-56a030-assembly.txt",
+        "assembly_sha256": "d48148cdc06e7465356a55541a7172134eb1fdd96e050f1e8540534af5025061",
+        "static_only": false,
+        "unlisted_intervals": [],
+        "memory": "ghidra/phase147-primary-56a030-memory.txt",
+        "memory_sha256": "bfd5155ae6ef2fb00b577a158faf43dd88e3036a6886b4507b54942e27fe00df",
+        "bytes_sha256": "b106e436f666f21f0592b78eb30c5470e923f83a75eedfcda7071f274b0ab3ca"
+      },
+      {
+        "address": 5677136,
+        "length": 26,
+        "assembly": "ghidra/phase147-primary-56a050-assembly.txt",
+        "assembly_sha256": "354b6f6bd824241a0677d554b9dd6df266bdabffa7be6c08e81d4261db0c9538",
+        "static_only": false,
+        "unlisted_intervals": [],
+        "memory": "ghidra/phase147-primary-56a050-memory.txt",
+        "memory_sha256": "d2a092f9fb160a2407634bba1092b93f1ff6e9d3283b4224e38aef2096761300",
+        "bytes_sha256": "a167ef82fa0c5798a2450f569fa20cfd732a344ddc3fb838a8de3edd43548669"
+      },
+      {
+        "address": 5677168,
+        "length": 24,
+        "assembly": "ghidra/phase147-primary-56a070-assembly.txt",
+        "assembly_sha256": "dd15d3b189661ad3f8b1de46f1009a65c730107e4133d3202ab67d55dcbccf40",
+        "static_only": false,
+        "unlisted_intervals": [],
+        "memory": "ghidra/phase147-primary-56a070-memory.txt",
+        "memory_sha256": "1329e76ee245e35ce3acc695bd35c5dc3c5f81071ca10d1ae748d09d430c7a02",
+        "bytes_sha256": "8d6687e906259dfd4658736e76feeeda2f39491bdec42e01adc8fa3bd91978ff"
+      },
+      {
+        "address": 5677200,
+        "length": 24,
+        "assembly": "ghidra/phase147-primary-56a090-assembly.txt",
+        "assembly_sha256": "9d3f8e0bc61a00d44f89fe1a70840edf7004429b5071374b15910c608ed1dc88",
+        "static_only": false,
+        "unlisted_intervals": [],
+        "memory": "ghidra/phase147-primary-56a090-memory.txt",
+        "memory_sha256": "102e9b13de0c5b3d001b2f94ec4c9633626978e56ad5eda33ec05bca9b2d4436",
+        "bytes_sha256": "379126499787206b46ea70cd95a2419e5709ccc7fca768f26dd6323fa24e2218"
+      },
+      {
+        "address": 5677232,
+        "length": 24,
+        "assembly": "ghidra/phase147-primary-56a0b0-assembly.txt",
+        "assembly_sha256": "65c8fb9222c31f76b3157272978860a9eeca5d762ce16b6713989f8847a14233",
+        "static_only": false,
+        "unlisted_intervals": [],
+        "memory": "ghidra/phase147-primary-56a0b0-memory.txt",
+        "memory_sha256": "70ccf758e12e7e1cb71b35cb45ab79aec92d0c815f16336c53a109484bfa2b6a",
+        "bytes_sha256": "928d13d933a635551a68b4b2f74e7587a3d4709a9d87fe780d286d20cf985f42"
+      },
+      {
+        "address": 5677264,
+        "length": 24,
+        "assembly": "ghidra/phase147-primary-56a0d0-assembly.txt",
+        "assembly_sha256": "4a1679f6989c84cca9377797b9996ce412ddb20feb659fb4b99b7fa61cc6c808",
+        "static_only": false,
+        "unlisted_intervals": [],
+        "memory": "ghidra/phase147-primary-56a0d0-memory.txt",
+        "memory_sha256": "01f2cba828b1d413c28f2134a7358a54272344260bfa43991a660b25478e63be",
+        "bytes_sha256": "d3c0dde4ad34118b50a65ce7562eeed2d954d76ec2d1ab1a749706cc713c9a52"
+      },
+      {
+        "address": 5677296,
+        "length": 41,
+        "assembly": "ghidra/phase147-primary-56a0f0-assembly.txt",
+        "assembly_sha256": "211c88c587dd3aa3f356f07c126f05db1c42e0c18eb45809bb8c9cea9d6e2ca8",
+        "static_only": false,
+        "unlisted_intervals": [],
+        "memory": "ghidra/phase147-primary-56a0f0-memory.txt",
+        "memory_sha256": "d54f20987fd455bfe98b12beb358b0944ac04c7ffe705e4cb0a0f6690f62ddff",
+        "bytes_sha256": "99430ffc554bb477992dd41bfc9c3f9572605b33ca8de26ad809a35ccc7ebdce"
+      },
+      {
+        "address": 5677344,
+        "length": 24,
+        "assembly": "ghidra/phase147-primary-56a120-assembly.txt",
+        "assembly_sha256": "7dce880d4def301de1c7eca85fb1f1b6b9e5f7e0aab0e7ea8ce8204a5e679f4d",
+        "static_only": false,
+        "unlisted_intervals": [],
+        "memory": "ghidra/phase147-primary-56a120-memory.txt",
+        "memory_sha256": "92d04e210bf6068e8ee6db5dccd7b735d28899ad96fb345181428c2b35a6a1ad",
+        "bytes_sha256": "688ab333b3fd55e7b742cc0da35c1e3f1ad44356354c507f0dc3780ba3296aee"
+      },
+      {
+        "address": 5677376,
+        "length": 38,
+        "assembly": "ghidra/phase147-primary-56a140-assembly.txt",
+        "assembly_sha256": "6fcb4736c698137e28deb51deee75d3e03343856a81ced8a19f93d08eb191eeb",
+        "static_only": false,
+        "unlisted_intervals": [],
+        "memory": "ghidra/phase147-primary-56a140-memory.txt",
+        "memory_sha256": "d705971432d0680fb80f019520138fdaf37530774a181d68848b47bbc20d603b",
+        "bytes_sha256": "c2037d826719c31efdddefb17d7391fe32db6b6468d84bc203797baebdb0ff25"
+      },
+      {
+        "address": 5677424,
+        "length": 24,
+        "assembly": "ghidra/phase147-primary-56a170-assembly.txt",
+        "assembly_sha256": "0a65d177235bef7ed05f401bdb9755344d4f53ec572d46552bf06a36d3162e13",
+        "static_only": false,
+        "unlisted_intervals": [],
+        "memory": "ghidra/phase147-primary-56a170-memory.txt",
+        "memory_sha256": "ca3ec3dc72428bcd13935b422760b2fb43610072791df6d34f670cafff7254f7",
+        "bytes_sha256": "59d258dc842960cc9e15c78f1d59946d42a87f72f6d39bc6d1795515df0f5d29"
+      },
+      {
+        "address": 5677456,
+        "length": 26,
+        "assembly": "ghidra/phase147-primary-56a190-assembly.txt",
+        "assembly_sha256": "fb41075457f07a124e367b02849958b8690765891eff12caf1aad684df268f61",
+        "static_only": false,
+        "unlisted_intervals": [],
+        "memory": "ghidra/phase147-primary-56a190-memory.txt",
+        "memory_sha256": "4b3d160eb9f85e1eeaa18a099296bee4492bf0a76cb864b84470906b13ff6e64",
+        "bytes_sha256": "e901dc0f18e16443f4091dcd81ea096959f5b9dab4c7aacce02fdc09e6558568"
+      },
+      {
+        "address": 5677488,
+        "length": 26,
+        "assembly": "ghidra/phase147-primary-56a1b0-assembly.txt",
+        "assembly_sha256": "ea957930307f618e333397089547c2e1173315d755c47b2a5bad57e389708eeb",
+        "static_only": false,
+        "unlisted_intervals": [],
+        "memory": "ghidra/phase147-primary-56a1b0-memory.txt",
+        "memory_sha256": "e76ef42b473e85af6413ae00afe07000ad84875788b462018de902acdd2a1ea7",
+        "bytes_sha256": "d1e2656aee885c2751973bc1678de41683cf3ee777c675daabec781aa8ff5045"
+      },
+      {
+        "address": 5677520,
+        "length": 24,
+        "assembly": "ghidra/phase147-primary-56a1d0-assembly.txt",
+        "assembly_sha256": "4123c68ce37c3d55eb540e1696cd0eddfe820cd3b28413b099dcf7b290d6fcf5",
+        "static_only": false,
+        "unlisted_intervals": [],
+        "memory": "ghidra/phase147-primary-56a1d0-memory.txt",
+        "memory_sha256": "67e8b2d49d2812534d12c5e721c0cc4551b1cfd6725bc2ed8f81373264c20809",
+        "bytes_sha256": "faf3d270396c420c873370554d5795fd2a7325c0c1eb4ccf769b17492452c672"
+      },
+      {
+        "address": 5677552,
+        "length": 24,
+        "assembly": "ghidra/phase147-primary-56a1f0-assembly.txt",
+        "assembly_sha256": "32a5ce01f870cfaf19bc268ae7b1774e558cdeae774b11f70d589c694e7d06ec",
+        "static_only": false,
+        "unlisted_intervals": [],
+        "memory": "ghidra/phase147-primary-56a1f0-memory.txt",
+        "memory_sha256": "3f8ccbdda84562b1b36ab3b4702c486b8c63b3b14a3e300340f0908475806719",
+        "bytes_sha256": "dbf11bbe797cb2bbeaccad6d80f0850cd1e7f53a0b983b10cafb636a6f0bb751"
+      },
+      {
+        "address": 5677584,
+        "length": 24,
+        "assembly": "ghidra/phase147-primary-56a210-assembly.txt",
+        "assembly_sha256": "ae4928f156d67e8a3dc513e9e984e24e36a60e016ff519daf2f7087d185e5b31",
+        "static_only": false,
+        "unlisted_intervals": [],
+        "memory": "ghidra/phase147-primary-56a210-memory.txt",
+        "memory_sha256": "537831de66e603e5c24b11ba8b5c3153c0f718f53cd43edd56d84436f7be8917",
+        "bytes_sha256": "9d26529fe8142cba6ab7f0d410977106c6ac4f119395086c63c16f3cd54dab41"
+      },
+      {
+        "address": 5677616,
+        "length": 24,
+        "assembly": "ghidra/phase147-primary-56a230-assembly.txt",
+        "assembly_sha256": "3bbccc4e24da5bd38491ec1c95b8e67922d52916d53d9e6d5bc42a8810b250cc",
+        "static_only": false,
+        "unlisted_intervals": [],
+        "memory": "ghidra/phase147-primary-56a230-memory.txt",
+        "memory_sha256": "340c185f8e42d7a0890ae7d4e141bfcb6d252f4cddb4d6c1e60a058fc58c6f4f",
+        "bytes_sha256": "959dad2e68553a46a1af14a38039d2bb3c652b58d08da29f6ba4d17f1c989f28"
+      },
+      {
+        "address": 5886560,
+        "length": 286,
+        "assembly": "ghidra/phase147-primary-59d260-assembly.txt",
+        "assembly_sha256": "36c79581bd66411a29922f5bfadc0b1fbe66b337f2d8cb109025bc934b435b8c",
+        "static_only": false,
+        "unlisted_intervals": [],
+        "memory": "ghidra/phase147-primary-59d260-memory.txt",
+        "memory_sha256": "e28e48476c61127c77118006b64ca510481a3109038a4d373dd0de49f6c1df55",
+        "bytes_sha256": "82b259d371cd7fd9d388b4712604772187e3c6a410b91b6320825b0d38c0aa62"
+      },
+      {
+        "address": 5886848,
+        "length": 148,
+        "assembly": "ghidra/phase147-primary-59d380-assembly.txt",
+        "assembly_sha256": "ea8c3f707e9f8a19846dbcb4e008748b83811b6a35c9bed4c11a9af987c32499",
+        "static_only": false,
+        "unlisted_intervals": [],
+        "memory": "ghidra/phase147-primary-59d380-memory.txt",
+        "memory_sha256": "090687b2de0d40c6e709f1a8427a3bc7a20508dd9dd97cbff100fe05226c3e0f",
+        "bytes_sha256": "faa887457d4f0d281f7622fd330cef917d478849fdf1e199a4fdff4654ea1750"
+      },
+      {
+        "address": 6458304,
+        "length": 6,
+        "assembly": "ghidra/phase147-primary-628bc0-assembly.txt",
+        "assembly_sha256": "6086d5391d19c363bebf319676802de06bc621e60d8c634fec5bc5822df87cb4",
+        "static_only": false,
+        "unlisted_intervals": [],
+        "memory": "ghidra/phase147-primary-628bc0-memory.txt",
+        "memory_sha256": "b10eff204fa04a3a973f874bbbb36d697c3cdd027816cedff080cb635db8d3ef",
+        "bytes_sha256": "2db31f4e09597946e56e859813bfdad7046d457c32332c3a882654d1e3ffdf67"
+      },
+      {
+        "address": 6512320,
+        "length": 111,
+        "assembly": "ghidra/phase147-primary-635ec0-assembly.txt",
+        "assembly_sha256": "c98824ce1acdf8f9dcf42880080e5dc57d7cf5b45ee91f71ddacfd43c70cb560",
+        "static_only": false,
+        "unlisted_intervals": [],
+        "memory": "ghidra/phase147-primary-635ec0-memory.txt",
+        "memory_sha256": "289a51c4ee5a1aa21e744d3d7b29d3dd097913862ca348cfc441a6020c0f34a9",
+        "bytes_sha256": "69530106f3b4252f59fbfd1b59c1abdb491ee504b2b93c344511916209db7593"
+      },
+      {
+        "address": 6512440,
+        "length": 20,
+        "assembly": "ghidra/phase147-primary-635f38-assembly.txt",
+        "assembly_sha256": "ea90fe6695552beeea19019074431fc150f3877527fe04f0db12eba305774aaa",
+        "static_only": false,
+        "unlisted_intervals": [],
+        "memory": "ghidra/phase147-primary-635f38-memory.txt",
+        "memory_sha256": "ca639d65b7cc7af67cf85ace35b6e4a09e5dd8246ae242eb11f8a80d0adb60cd",
+        "bytes_sha256": "d3ecaec63122a11538fefbc03b3523b606c470eb8f44a40da3089946765c5424"
+      },
+      {
+        "address": 6513056,
+        "length": 254,
+        "assembly": "ghidra/phase147-primary-6361a0-assembly.txt",
+        "assembly_sha256": "b0e0d11e7cf673bf18b7ce3a03aa84c72f430f345f8016b33784a3a22d82361a",
+        "static_only": false,
+        "unlisted_intervals": [],
+        "memory": "ghidra/phase147-primary-6361a0-memory.txt",
+        "memory_sha256": "b4f8463f4318b565e89410b1c0dcd3f35c19c62221578d65e99e7558bc0863a6",
+        "bytes_sha256": "0318574df8288c6fc0e543c779d4c1098344731f9acf2a7c790c2176ab7bdf4c"
+      },
+      {
+        "address": 6683476,
+        "length": 320,
+        "assembly": "ghidra/phase147-primary-65fb54-assembly.txt",
+        "assembly_sha256": "3f77cbb32315c692803386b9415f014da1ed00e6a7eb074ffaf8b81006661842",
+        "static_only": false,
+        "unlisted_intervals": [],
+        "memory": "ghidra/phase147-primary-65fb54-memory.txt",
+        "memory_sha256": "b5cbda8aa97e2dc8c3fdb0583a5efec2ad98f0e51682711224c51b43daa2eb82",
+        "bytes_sha256": "b2fa2d0fdfce735b50b267baaf8e88ea52004ff8cf5a10825f2112e3b6f4c273"
+      }
+    ],
+    "inherited_tables": [
+      {
+        "address": 6739236,
+        "length": 304,
+        "meaning": "Original Creature vtable",
+        "memory": "ghidra/phase147-primary-block-66d524-memory.txt",
+        "memory_sha256": "7a851da2fb7f3dbf693cbb76f0971714d487869e8081eda32654fecc23a4fcf5",
+        "bytes_sha256": "b2caa8bff52312e2cd5efb7b25969d888800925748a33eedd28018e68acb2690"
+      },
+      {
+        "address": 6751604,
+        "length": 512,
+        "meaning": "Original CPCEngineInterface vtable",
+        "memory": "ghidra/phase147-primary-block-670574-memory.txt",
+        "memory_sha256": "48a2b36671d0b5a7d57e3bf62d1166b23597c30174de160508caadb1576f6dbb",
+        "bytes_sha256": "65c4a9a9db17afa51fd24f4932488c2c30259e44f36c8c0313c413af3a6061b1"
+      },
+      {
+        "address": 6743020,
+        "length": 928,
+        "meaning": "Original CWorld vtable",
+        "memory": "ghidra/phase147-primary-block-66e3ec-memory.txt",
+        "memory_sha256": "b5c9afc4e4e01dd913ec0c35a1176fe1413e344574449d8f089376df345881e3",
+        "bytes_sha256": "dc1a04c3ffb287304d0aafab1eb1c76a9d1d4cf93e9a929f21594f4869206ec9"
+      }
+    ],
+    "unique_executed_original_PCs": 4392,
+    "declared_external_IO_PCs": 3,
+    "all_executed_original_PCs_match_primary_instruction_starts": true,
+    "new_function_extents": 0,
+    "version_scope": "DX full loader/melee/HP; all3 profiles pure angle helper plus125-byte direction block static attestation. No full1.3/standard melee scene."
+  },
+  "native_executions": {
+    "phase": 194,
+    "replays": [
+      {
+        "case": {
+          "name": "d0-victim0",
+          "dx": 0,
+          "dy": -4096,
+          "target_heading": 0,
+          "attacker_heading": 0
+        },
+        "file": "ghidra\\phase194-direction-native-d0-victim0-db960a80c3b4.json",
+        "sha256": "d546776e8690d603679170b8261e59dc0b16e973d8c345cc76b2c2bd918d9010",
+        "outcome": {
+          "angle": 0,
+          "folded_word": 0,
+          "percent_candidate": 0,
+          "applied_percent": 0,
+          "damage_HP": 100,
+          "HP": 9900,
+          "facing_reads": 0,
+          "headings_and_positions_unchanged": true,
+          "full_regions": 47,
+          "full_bytes": 113842,
+          "native_steps": 13389
+        }
+      },
+      {
+        "case": {
+          "name": "d0-victim512",
+          "dx": 0,
+          "dy": -4096,
+          "target_heading": 512,
+          "attacker_heading": 0
+        },
+        "file": "ghidra\\phase194-direction-native-d0-victim512-aa4afdece3e9.json",
+        "sha256": "e90795bd5dc4b5d05238dcb7a13bd8f7b53f05e6af6fb3e71a0d1a685f8addf3",
+        "outcome": {
+          "angle": 0,
+          "folded_word": 0,
+          "percent_candidate": 0,
+          "applied_percent": 0,
+          "damage_HP": 100,
+          "HP": 9900,
+          "facing_reads": 0,
+          "headings_and_positions_unchanged": true,
+          "full_regions": 47,
+          "full_bytes": 113842,
+          "native_steps": 13389
+        }
+      },
+      {
+        "case": {
+          "name": "d0-victim1024",
+          "dx": 0,
+          "dy": -4096,
+          "target_heading": 1024,
+          "attacker_heading": 0
+        },
+        "file": "ghidra\\phase194-direction-native-d0-victim1024-fce42ec78d56.json",
+        "sha256": "1504600bbd700900731818ddb882f64eb71865adf1d6004750c0c87b9970a5e3",
+        "outcome": {
+          "angle": 0,
+          "folded_word": 0,
+          "percent_candidate": 0,
+          "applied_percent": 0,
+          "damage_HP": 100,
+          "HP": 9900,
+          "facing_reads": 0,
+          "headings_and_positions_unchanged": true,
+          "full_regions": 47,
+          "full_bytes": 113842,
+          "native_steps": 13389
+        }
+      },
+      {
+        "case": {
+          "name": "d0-victim1536",
+          "dx": 0,
+          "dy": -4096,
+          "target_heading": 1536,
+          "attacker_heading": 0
+        },
+        "file": "ghidra\\phase194-direction-native-d0-victim1536-f2112121c06e.json",
+        "sha256": "2e5588c0d183fd3c3b9a94346b1601b57703eff0641daebdb67979a7899d149f",
+        "outcome": {
+          "angle": 0,
+          "folded_word": 0,
+          "percent_candidate": 0,
+          "applied_percent": 0,
+          "damage_HP": 100,
+          "HP": 9900,
+          "facing_reads": 0,
+          "headings_and_positions_unchanged": true,
+          "full_regions": 47,
+          "full_bytes": 113842,
+          "native_steps": 13389
+        }
+      },
+      {
+        "case": {
+          "name": "d1-victim0",
+          "dx": 4096,
+          "dy": -4096,
+          "target_heading": 0,
+          "attacker_heading": 0
+        },
+        "file": "ghidra\\phase194-direction-native-d1-victim0-1a3676bdbee5.json",
+        "sha256": "d5f797d991b39f94e734cd69400fab03a60708ace12cead6ade93ee2af11a60c",
+        "outcome": {
+          "angle": 256,
+          "folded_word": 256,
+          "percent_candidate": 12,
+          "applied_percent": 0,
+          "damage_HP": 100,
+          "HP": 9900,
+          "facing_reads": 0,
+          "headings_and_positions_unchanged": true,
+          "full_regions": 47,
+          "full_bytes": 113842,
+          "native_steps": 13390
+        }
+      },
+      {
+        "case": {
+          "name": "d1-victim512",
+          "dx": 4096,
+          "dy": -4096,
+          "target_heading": 512,
+          "attacker_heading": 0
+        },
+        "file": "ghidra\\phase194-direction-native-d1-victim512-efcd88037b1a.json",
+        "sha256": "c878dbfe29e854e8ddec59588d180093c543f9c969134e369bfe7d1f694b41f3",
+        "outcome": {
+          "angle": 256,
+          "folded_word": 256,
+          "percent_candidate": 12,
+          "applied_percent": 0,
+          "damage_HP": 100,
+          "HP": 9900,
+          "facing_reads": 0,
+          "headings_and_positions_unchanged": true,
+          "full_regions": 47,
+          "full_bytes": 113842,
+          "native_steps": 13390
+        }
+      },
+      {
+        "case": {
+          "name": "d1-victim1024",
+          "dx": 4096,
+          "dy": -4096,
+          "target_heading": 1024,
+          "attacker_heading": 0
+        },
+        "file": "ghidra\\phase194-direction-native-d1-victim1024-3d48c317ae27.json",
+        "sha256": "e431fd5c3f25563025c5771d1f029959c5b1e931a8ef11bc86a9dcdc00dcc4dd",
+        "outcome": {
+          "angle": 256,
+          "folded_word": 256,
+          "percent_candidate": 12,
+          "applied_percent": 0,
+          "damage_HP": 100,
+          "HP": 9900,
+          "facing_reads": 0,
+          "headings_and_positions_unchanged": true,
+          "full_regions": 47,
+          "full_bytes": 113842,
+          "native_steps": 13390
+        }
+      },
+      {
+        "case": {
+          "name": "d1-victim1536",
+          "dx": 4096,
+          "dy": -4096,
+          "target_heading": 1536,
+          "attacker_heading": 0
+        },
+        "file": "ghidra\\phase194-direction-native-d1-victim1536-1404c1fa4636.json",
+        "sha256": "09dac986db195a709fb8abb7f093616ef6aba085a2f3db7410bad2ad214e3245",
+        "outcome": {
+          "angle": 256,
+          "folded_word": 256,
+          "percent_candidate": 12,
+          "applied_percent": 0,
+          "damage_HP": 100,
+          "HP": 9900,
+          "facing_reads": 0,
+          "headings_and_positions_unchanged": true,
+          "full_regions": 47,
+          "full_bytes": 113842,
+          "native_steps": 13390
+        }
+      },
+      {
+        "case": {
+          "name": "d2-victim0",
+          "dx": 4096,
+          "dy": 0,
+          "target_heading": 0,
+          "attacker_heading": 0
+        },
+        "file": "ghidra\\phase194-direction-native-d2-victim0-a83c9dd6dfbe.json",
+        "sha256": "958f6337cfbcd1044f0fadc02f07d13dda6587aed781ca5fec3563e6a1dae7c3",
+        "outcome": {
+          "angle": 512,
+          "folded_word": 512,
+          "percent_candidate": 25,
+          "applied_percent": 25,
+          "damage_HP": 125,
+          "HP": 9875,
+          "facing_reads": 0,
+          "headings_and_positions_unchanged": true,
+          "full_regions": 47,
+          "full_bytes": 113842,
+          "native_steps": 13397
+        }
+      },
+      {
+        "case": {
+          "name": "d2-victim512",
+          "dx": 4096,
+          "dy": 0,
+          "target_heading": 512,
+          "attacker_heading": 0
+        },
+        "file": "ghidra\\phase194-direction-native-d2-victim512-54761138379e.json",
+        "sha256": "4c76b1e229db07da4c7a65ce8698066e128cf381d8b2ff5c98aabd070ef8da95",
+        "outcome": {
+          "angle": 512,
+          "folded_word": 512,
+          "percent_candidate": 25,
+          "applied_percent": 25,
+          "damage_HP": 125,
+          "HP": 9875,
+          "facing_reads": 0,
+          "headings_and_positions_unchanged": true,
+          "full_regions": 47,
+          "full_bytes": 113842,
+          "native_steps": 13397
+        }
+      },
+      {
+        "case": {
+          "name": "d2-victim1024",
+          "dx": 4096,
+          "dy": 0,
+          "target_heading": 1024,
+          "attacker_heading": 0
+        },
+        "file": "ghidra\\phase194-direction-native-d2-victim1024-eae1705a2dee.json",
+        "sha256": "17b81d1bb9761c2a9fac90eedc0c64763494d0f10432bbeff9f5644b090be04e",
+        "outcome": {
+          "angle": 512,
+          "folded_word": 512,
+          "percent_candidate": 25,
+          "applied_percent": 25,
+          "damage_HP": 125,
+          "HP": 9875,
+          "facing_reads": 0,
+          "headings_and_positions_unchanged": true,
+          "full_regions": 47,
+          "full_bytes": 113842,
+          "native_steps": 13397
+        }
+      },
+      {
+        "case": {
+          "name": "d2-victim1536",
+          "dx": 4096,
+          "dy": 0,
+          "target_heading": 1536,
+          "attacker_heading": 0
+        },
+        "file": "ghidra\\phase194-direction-native-d2-victim1536-864909aec7d0.json",
+        "sha256": "e1c858a9cb691d181aec12753c1412da8315e503f09e1489a2eb4f426c200599",
+        "outcome": {
+          "angle": 512,
+          "folded_word": 512,
+          "percent_candidate": 25,
+          "applied_percent": 25,
+          "damage_HP": 125,
+          "HP": 9875,
+          "facing_reads": 0,
+          "headings_and_positions_unchanged": true,
+          "full_regions": 47,
+          "full_bytes": 113842,
+          "native_steps": 13397
+        }
+      },
+      {
+        "case": {
+          "name": "d3-victim0",
+          "dx": 4096,
+          "dy": 4096,
+          "target_heading": 0,
+          "attacker_heading": 0
+        },
+        "file": "ghidra\\phase194-direction-native-d3-victim0-49927e4dca1c.json",
+        "sha256": "5ef60be627088c556418fb376823008e3675a6ffe44b61ab860c1fdd197a396a",
+        "outcome": {
+          "angle": 768,
+          "folded_word": 768,
+          "percent_candidate": 38,
+          "applied_percent": 38,
+          "damage_HP": 138,
+          "HP": 9862,
+          "facing_reads": 0,
+          "headings_and_positions_unchanged": true,
+          "full_regions": 47,
+          "full_bytes": 113842,
+          "native_steps": 13397
+        }
+      },
+      {
+        "case": {
+          "name": "d3-victim512",
+          "dx": 4096,
+          "dy": 4096,
+          "target_heading": 512,
+          "attacker_heading": 0
+        },
+        "file": "ghidra\\phase194-direction-native-d3-victim512-be887eb97b1a.json",
+        "sha256": "c18d0047a3824fbb68602876517160960c296661ba36e5d1e5c8e787cdc433cb",
+        "outcome": {
+          "angle": 768,
+          "folded_word": 768,
+          "percent_candidate": 38,
+          "applied_percent": 38,
+          "damage_HP": 138,
+          "HP": 9862,
+          "facing_reads": 0,
+          "headings_and_positions_unchanged": true,
+          "full_regions": 47,
+          "full_bytes": 113842,
+          "native_steps": 13397
+        }
+      },
+      {
+        "case": {
+          "name": "d3-victim1024",
+          "dx": 4096,
+          "dy": 4096,
+          "target_heading": 1024,
+          "attacker_heading": 0
+        },
+        "file": "ghidra\\phase194-direction-native-d3-victim1024-ed129cf0e2bc.json",
+        "sha256": "8d60ffa716647414275dd0ef2c3231f1d8f3f835fe8c53f532c9787f240b1010",
+        "outcome": {
+          "angle": 768,
+          "folded_word": 768,
+          "percent_candidate": 38,
+          "applied_percent": 38,
+          "damage_HP": 138,
+          "HP": 9862,
+          "facing_reads": 0,
+          "headings_and_positions_unchanged": true,
+          "full_regions": 47,
+          "full_bytes": 113842,
+          "native_steps": 13397
+        }
+      },
+      {
+        "case": {
+          "name": "d3-victim1536",
+          "dx": 4096,
+          "dy": 4096,
+          "target_heading": 1536,
+          "attacker_heading": 0
+        },
+        "file": "ghidra\\phase194-direction-native-d3-victim1536-5f64d73f7665.json",
+        "sha256": "5dbca97ecf3f6c9017b058017be4bb52f587b0a1ced9a2b453db2607029ee479",
+        "outcome": {
+          "angle": 768,
+          "folded_word": 768,
+          "percent_candidate": 38,
+          "applied_percent": 38,
+          "damage_HP": 138,
+          "HP": 9862,
+          "facing_reads": 0,
+          "headings_and_positions_unchanged": true,
+          "full_regions": 47,
+          "full_bytes": 113842,
+          "native_steps": 13397
+        }
+      },
+      {
+        "case": {
+          "name": "d4-victim0",
+          "dx": 0,
+          "dy": 4096,
+          "target_heading": 0,
+          "attacker_heading": 0
+        },
+        "file": "ghidra\\phase194-direction-native-d4-victim0-14432f02ec86.json",
+        "sha256": "f7a4301af8a979ecf8d20657533d022222cf91bb7a6d54d97b893591ac8f4470",
+        "outcome": {
+          "angle": 1024,
+          "folded_word": 1022,
+          "percent_candidate": 51,
+          "applied_percent": 51,
+          "damage_HP": 151,
+          "HP": 9849,
+          "facing_reads": 0,
+          "headings_and_positions_unchanged": true,
+          "full_regions": 47,
+          "full_bytes": 113842,
+          "native_steps": 13403
+        }
+      },
+      {
+        "case": {
+          "name": "d4-victim512",
+          "dx": 0,
+          "dy": 4096,
+          "target_heading": 512,
+          "attacker_heading": 0
+        },
+        "file": "ghidra\\phase194-direction-native-d4-victim512-2cd438be10f1.json",
+        "sha256": "121a0551ddcff148668395cc8bcc82c1c0d7406e335f34d6b5691a6f37a0ea4c",
+        "outcome": {
+          "angle": 1024,
+          "folded_word": 1022,
+          "percent_candidate": 51,
+          "applied_percent": 51,
+          "damage_HP": 151,
+          "HP": 9849,
+          "facing_reads": 0,
+          "headings_and_positions_unchanged": true,
+          "full_regions": 47,
+          "full_bytes": 113842,
+          "native_steps": 13403
+        }
+      },
+      {
+        "case": {
+          "name": "d4-victim1024",
+          "dx": 0,
+          "dy": 4096,
+          "target_heading": 1024,
+          "attacker_heading": 0
+        },
+        "file": "ghidra\\phase194-direction-native-d4-victim1024-376677c66bad.json",
+        "sha256": "d9a39a8da0eafb605fb9f9d715e9e612b755e4c85c64edb5917cbb6628bbd111",
+        "outcome": {
+          "angle": 1024,
+          "folded_word": 1022,
+          "percent_candidate": 51,
+          "applied_percent": 51,
+          "damage_HP": 151,
+          "HP": 9849,
+          "facing_reads": 0,
+          "headings_and_positions_unchanged": true,
+          "full_regions": 47,
+          "full_bytes": 113842,
+          "native_steps": 13403
+        }
+      },
+      {
+        "case": {
+          "name": "d4-victim1536",
+          "dx": 0,
+          "dy": 4096,
+          "target_heading": 1536,
+          "attacker_heading": 0
+        },
+        "file": "ghidra\\phase194-direction-native-d4-victim1536-04dde3833cff.json",
+        "sha256": "c447099ee1400a192ffb177a169b95206a6b28c6147d016eac78077523dc2738",
+        "outcome": {
+          "angle": 1024,
+          "folded_word": 1022,
+          "percent_candidate": 51,
+          "applied_percent": 51,
+          "damage_HP": 151,
+          "HP": 9849,
+          "facing_reads": 0,
+          "headings_and_positions_unchanged": true,
+          "full_regions": 47,
+          "full_bytes": 113842,
+          "native_steps": 13403
+        }
+      },
+      {
+        "case": {
+          "name": "d5-victim0",
+          "dx": -4096,
+          "dy": 4096,
+          "target_heading": 0,
+          "attacker_heading": 0
+        },
+        "file": "ghidra\\phase194-direction-native-d5-victim0-3f177cc2802a.json",
+        "sha256": "04d967a021d50570fcda03f0f03b084559a1dc968d8caf2a08c3bd9d029dee79",
+        "outcome": {
+          "angle": 1280,
+          "folded_word": 766,
+          "percent_candidate": 38,
+          "applied_percent": 38,
+          "damage_HP": 138,
+          "HP": 9862,
+          "facing_reads": 0,
+          "headings_and_positions_unchanged": true,
+          "full_regions": 47,
+          "full_bytes": 113842,
+          "native_steps": 13403
+        }
+      },
+      {
+        "case": {
+          "name": "d5-victim512",
+          "dx": -4096,
+          "dy": 4096,
+          "target_heading": 512,
+          "attacker_heading": 0
+        },
+        "file": "ghidra\\phase194-direction-native-d5-victim512-c86b9bed73b6.json",
+        "sha256": "2df86977700048bf1d387407d690298e70ed9c3ad3d0147480c23fd0169aa39a",
+        "outcome": {
+          "angle": 1280,
+          "folded_word": 766,
+          "percent_candidate": 38,
+          "applied_percent": 38,
+          "damage_HP": 138,
+          "HP": 9862,
+          "facing_reads": 0,
+          "headings_and_positions_unchanged": true,
+          "full_regions": 47,
+          "full_bytes": 113842,
+          "native_steps": 13403
+        }
+      },
+      {
+        "case": {
+          "name": "d5-victim1024",
+          "dx": -4096,
+          "dy": 4096,
+          "target_heading": 1024,
+          "attacker_heading": 0
+        },
+        "file": "ghidra\\phase194-direction-native-d5-victim1024-2e6450b4f087.json",
+        "sha256": "d5e400c475f86591195e0f89d7961a4db83065f6a3be60fce72aba3b05c5b17d",
+        "outcome": {
+          "angle": 1280,
+          "folded_word": 766,
+          "percent_candidate": 38,
+          "applied_percent": 38,
+          "damage_HP": 138,
+          "HP": 9862,
+          "facing_reads": 0,
+          "headings_and_positions_unchanged": true,
+          "full_regions": 47,
+          "full_bytes": 113842,
+          "native_steps": 13403
+        }
+      },
+      {
+        "case": {
+          "name": "d5-victim1536",
+          "dx": -4096,
+          "dy": 4096,
+          "target_heading": 1536,
+          "attacker_heading": 0
+        },
+        "file": "ghidra\\phase194-direction-native-d5-victim1536-1d498419f73e.json",
+        "sha256": "90172b399a39187cad6426d5c14661f6ae9576599b2c7ed6b3da7aaf5b6cc0cc",
+        "outcome": {
+          "angle": 1280,
+          "folded_word": 766,
+          "percent_candidate": 38,
+          "applied_percent": 38,
+          "damage_HP": 138,
+          "HP": 9862,
+          "facing_reads": 0,
+          "headings_and_positions_unchanged": true,
+          "full_regions": 47,
+          "full_bytes": 113842,
+          "native_steps": 13403
+        }
+      },
+      {
+        "case": {
+          "name": "d6-victim0",
+          "dx": -4096,
+          "dy": 0,
+          "target_heading": 0,
+          "attacker_heading": 0
+        },
+        "file": "ghidra\\phase194-direction-native-d6-victim0-0f1ea23ab764.json",
+        "sha256": "f9fd89033132b0a4498d8604e5745225381c638bcfaf6987bb3d1077ca5cc75f",
+        "outcome": {
+          "angle": 1536,
+          "folded_word": 510,
+          "percent_candidate": 25,
+          "applied_percent": 25,
+          "damage_HP": 125,
+          "HP": 9875,
+          "facing_reads": 0,
+          "headings_and_positions_unchanged": true,
+          "full_regions": 47,
+          "full_bytes": 113842,
+          "native_steps": 13403
+        }
+      },
+      {
+        "case": {
+          "name": "d6-victim512",
+          "dx": -4096,
+          "dy": 0,
+          "target_heading": 512,
+          "attacker_heading": 0
+        },
+        "file": "ghidra\\phase194-direction-native-d6-victim512-1b4928e80c83.json",
+        "sha256": "65bce2f66478fda823bb38eb1ee86504cde4580fb25885cf8a1e65cd848ddaf8",
+        "outcome": {
+          "angle": 1536,
+          "folded_word": 510,
+          "percent_candidate": 25,
+          "applied_percent": 25,
+          "damage_HP": 125,
+          "HP": 9875,
+          "facing_reads": 0,
+          "headings_and_positions_unchanged": true,
+          "full_regions": 47,
+          "full_bytes": 113842,
+          "native_steps": 13403
+        }
+      },
+      {
+        "case": {
+          "name": "d6-victim1024",
+          "dx": -4096,
+          "dy": 0,
+          "target_heading": 1024,
+          "attacker_heading": 0
+        },
+        "file": "ghidra\\phase194-direction-native-d6-victim1024-f0085b0e3c76.json",
+        "sha256": "0b5ebb0bcbe82da4d29161652c2050f045515c9846ef63309ea05d873ad21f6c",
+        "outcome": {
+          "angle": 1536,
+          "folded_word": 510,
+          "percent_candidate": 25,
+          "applied_percent": 25,
+          "damage_HP": 125,
+          "HP": 9875,
+          "facing_reads": 0,
+          "headings_and_positions_unchanged": true,
+          "full_regions": 47,
+          "full_bytes": 113842,
+          "native_steps": 13403
+        }
+      },
+      {
+        "case": {
+          "name": "d6-victim1536",
+          "dx": -4096,
+          "dy": 0,
+          "target_heading": 1536,
+          "attacker_heading": 0
+        },
+        "file": "ghidra\\phase194-direction-native-d6-victim1536-eb83176904b0.json",
+        "sha256": "5620d82c2a1f886ce871ae7801d870641633dbd390654ffb499f3444e03cfbbc",
+        "outcome": {
+          "angle": 1536,
+          "folded_word": 510,
+          "percent_candidate": 25,
+          "applied_percent": 25,
+          "damage_HP": 125,
+          "HP": 9875,
+          "facing_reads": 0,
+          "headings_and_positions_unchanged": true,
+          "full_regions": 47,
+          "full_bytes": 113842,
+          "native_steps": 13403
+        }
+      },
+      {
+        "case": {
+          "name": "d7-victim0",
+          "dx": -4096,
+          "dy": -4096,
+          "target_heading": 0,
+          "attacker_heading": 0
+        },
+        "file": "ghidra\\phase194-direction-native-d7-victim0-18466d292a8c.json",
+        "sha256": "4773ad74ebff1fc5e4a52760cf064a4998b9627ba6932a8a30ea1c32cdf41e19",
+        "outcome": {
+          "angle": 1792,
+          "folded_word": 254,
+          "percent_candidate": 12,
+          "applied_percent": 0,
+          "damage_HP": 100,
+          "HP": 9900,
+          "facing_reads": 0,
+          "headings_and_positions_unchanged": true,
+          "full_regions": 47,
+          "full_bytes": 113842,
+          "native_steps": 13394
+        }
+      },
+      {
+        "case": {
+          "name": "d7-victim512",
+          "dx": -4096,
+          "dy": -4096,
+          "target_heading": 512,
+          "attacker_heading": 0
+        },
+        "file": "ghidra\\phase194-direction-native-d7-victim512-096711a7e6af.json",
+        "sha256": "2d7cc8d81d3efb1248f3bb4de5e60170a1eeefa21b219918520b8e01c135254d",
+        "outcome": {
+          "angle": 1792,
+          "folded_word": 254,
+          "percent_candidate": 12,
+          "applied_percent": 0,
+          "damage_HP": 100,
+          "HP": 9900,
+          "facing_reads": 0,
+          "headings_and_positions_unchanged": true,
+          "full_regions": 47,
+          "full_bytes": 113842,
+          "native_steps": 13394
+        }
+      },
+      {
+        "case": {
+          "name": "d7-victim1024",
+          "dx": -4096,
+          "dy": -4096,
+          "target_heading": 1024,
+          "attacker_heading": 0
+        },
+        "file": "ghidra\\phase194-direction-native-d7-victim1024-c562cb2e2a02.json",
+        "sha256": "d59867eae1625f6b17c9cf67f5189ea353eafb52e167ccd766bd598ec78da0bc",
+        "outcome": {
+          "angle": 1792,
+          "folded_word": 254,
+          "percent_candidate": 12,
+          "applied_percent": 0,
+          "damage_HP": 100,
+          "HP": 9900,
+          "facing_reads": 0,
+          "headings_and_positions_unchanged": true,
+          "full_regions": 47,
+          "full_bytes": 113842,
+          "native_steps": 13394
+        }
+      },
+      {
+        "case": {
+          "name": "d7-victim1536",
+          "dx": -4096,
+          "dy": -4096,
+          "target_heading": 1536,
+          "attacker_heading": 0
+        },
+        "file": "ghidra\\phase194-direction-native-d7-victim1536-62b3b88ad94a.json",
+        "sha256": "1e5ab4c11f76f69a6bb1cf63e4effc665153f97ba7df5d8dbee72a3c2a5ea5f9",
+        "outcome": {
+          "angle": 1792,
+          "folded_word": 254,
+          "percent_candidate": 12,
+          "applied_percent": 0,
+          "damage_HP": 100,
+          "HP": 9900,
+          "facing_reads": 0,
+          "headings_and_positions_unchanged": true,
+          "full_regions": 47,
+          "full_bytes": 113842,
+          "native_steps": 13394
+        }
+      },
+      {
+        "case": {
+          "name": "attacker-d0-512",
+          "dx": 0,
+          "dy": -4096,
+          "target_heading": 0,
+          "attacker_heading": 512
+        },
+        "file": "ghidra\\phase194-direction-native-attacker-d0-512-60bd979f60ca.json",
+        "sha256": "8bbdb53df9bbaec0bc7ea18e4fa8095add85be45711da6a0e1b621f24b1a3434",
+        "outcome": {
+          "angle": 0,
+          "folded_word": 0,
+          "percent_candidate": 0,
+          "applied_percent": 0,
+          "damage_HP": 100,
+          "HP": 9900,
+          "facing_reads": 0,
+          "headings_and_positions_unchanged": true,
+          "full_regions": 47,
+          "full_bytes": 113842,
+          "native_steps": 13389
+        }
+      },
+      {
+        "case": {
+          "name": "attacker-d0-1024",
+          "dx": 0,
+          "dy": -4096,
+          "target_heading": 0,
+          "attacker_heading": 1024
+        },
+        "file": "ghidra\\phase194-direction-native-attacker-d0-1024-4d46f9da7ea9.json",
+        "sha256": "02ec9e88f7ea09ff27f6d37408b2d671a8aa371d9072083dbef919dd9fda6d6d",
+        "outcome": {
+          "angle": 0,
+          "folded_word": 0,
+          "percent_candidate": 0,
+          "applied_percent": 0,
+          "damage_HP": 100,
+          "HP": 9900,
+          "facing_reads": 0,
+          "headings_and_positions_unchanged": true,
+          "full_regions": 47,
+          "full_bytes": 113842,
+          "native_steps": 13389
+        }
+      },
+      {
+        "case": {
+          "name": "attacker-d0-1536",
+          "dx": 0,
+          "dy": -4096,
+          "target_heading": 0,
+          "attacker_heading": 1536
+        },
+        "file": "ghidra\\phase194-direction-native-attacker-d0-1536-ae1053bd4a0d.json",
+        "sha256": "f97e5e9a4984ce88331b64eadd8a2589a8bfa1b7f8d3a01a69946c4f02344036",
+        "outcome": {
+          "angle": 0,
+          "folded_word": 0,
+          "percent_candidate": 0,
+          "applied_percent": 0,
+          "damage_HP": 100,
+          "HP": 9900,
+          "facing_reads": 0,
+          "headings_and_positions_unchanged": true,
+          "full_regions": 47,
+          "full_bytes": 113842,
+          "native_steps": 13389
+        }
+      },
+      {
+        "case": {
+          "name": "attacker-d1-512",
+          "dx": 0,
+          "dy": 4096,
+          "target_heading": 0,
+          "attacker_heading": 512
+        },
+        "file": "ghidra\\phase194-direction-native-attacker-d1-512-1ef1dd9bd12f.json",
+        "sha256": "58d2456291f70388b7b64999a7d06f9ca7a1ba786b23ea68007c14377025b700",
+        "outcome": {
+          "angle": 1024,
+          "folded_word": 1022,
+          "percent_candidate": 51,
+          "applied_percent": 51,
+          "damage_HP": 151,
+          "HP": 9849,
+          "facing_reads": 0,
+          "headings_and_positions_unchanged": true,
+          "full_regions": 47,
+          "full_bytes": 113842,
+          "native_steps": 13403
+        }
+      },
+      {
+        "case": {
+          "name": "attacker-d1-1024",
+          "dx": 0,
+          "dy": 4096,
+          "target_heading": 0,
+          "attacker_heading": 1024
+        },
+        "file": "ghidra\\phase194-direction-native-attacker-d1-1024-c187b2e223ff.json",
+        "sha256": "57a9e3fc5b767176f33d241c7506001ba5fd1e377f95e822f6341c914ef7e1c1",
+        "outcome": {
+          "angle": 1024,
+          "folded_word": 1022,
+          "percent_candidate": 51,
+          "applied_percent": 51,
+          "damage_HP": 151,
+          "HP": 9849,
+          "facing_reads": 0,
+          "headings_and_positions_unchanged": true,
+          "full_regions": 47,
+          "full_bytes": 113842,
+          "native_steps": 13403
+        }
+      },
+      {
+        "case": {
+          "name": "attacker-d1-1536",
+          "dx": 0,
+          "dy": 4096,
+          "target_heading": 0,
+          "attacker_heading": 1536
+        },
+        "file": "ghidra\\phase194-direction-native-attacker-d1-1536-c2541c6d25b9.json",
+        "sha256": "24d3e13a65e80be8d093ab398de53cdd15ab6ded35297415cb9e7da62542cdbd",
+        "outcome": {
+          "angle": 1024,
+          "folded_word": 1022,
+          "percent_candidate": 51,
+          "applied_percent": 51,
+          "damage_HP": 151,
+          "HP": 9849,
+          "facing_reads": 0,
+          "headings_and_positions_unchanged": true,
+          "full_regions": 47,
+          "full_bytes": 113842,
+          "native_steps": 13403
+        }
+      },
+      {
+        "case": {
+          "name": "boundary-0",
+          "dx": 16,
+          "dy": -4096,
+          "target_heading": 0,
+          "attacker_heading": 0
+        },
+        "file": "ghidra\\phase194-direction-native-boundary-0-9b908a03f2c0.json",
+        "sha256": "d3f78f964e7b8e87700c19d7372397729a58ef878fd68260b91e89951551b038",
+        "outcome": {
+          "angle": 1,
+          "folded_word": 1,
+          "percent_candidate": 0,
+          "applied_percent": 0,
+          "damage_HP": 100,
+          "HP": 9900,
+          "facing_reads": 0,
+          "headings_and_positions_unchanged": true,
+          "full_regions": 47,
+          "full_bytes": 113842,
+          "native_steps": 13387
+        }
+      },
+      {
+        "case": {
+          "name": "boundary-1",
+          "dx": -16,
+          "dy": -4096,
+          "target_heading": 0,
+          "attacker_heading": 0
+        },
+        "file": "ghidra\\phase194-direction-native-boundary-1-69121ed78058.json",
+        "sha256": "f1ddc75dfdab87f2305b3f9398e5ddf772b4c1f1a66d9f2386b37a7a5c1854ff",
+        "outcome": {
+          "angle": 2047,
+          "folded_word": 65535,
+          "percent_candidate": 51,
+          "applied_percent": 51,
+          "damage_HP": 151,
+          "HP": 9849,
+          "facing_reads": 0,
+          "headings_and_positions_unchanged": true,
+          "full_regions": 47,
+          "full_bytes": 113842,
+          "native_steps": 13403
+        }
+      },
+      {
+        "case": {
+          "name": "boundary-2",
+          "dx": -32,
+          "dy": -4096,
+          "target_heading": 0,
+          "attacker_heading": 0
+        },
+        "file": "ghidra\\phase194-direction-native-boundary-2-6f0ed05144b9.json",
+        "sha256": "b05e8bfb958f0d1f6fb47ab01ba0a9dcb8c33836dad158240ca86c9088b908f3",
+        "outcome": {
+          "angle": 2046,
+          "folded_word": 0,
+          "percent_candidate": 0,
+          "applied_percent": 0,
+          "damage_HP": 100,
+          "HP": 9900,
+          "facing_reads": 0,
+          "headings_and_positions_unchanged": true,
+          "full_regions": 47,
+          "full_bytes": 113842,
+          "native_steps": 13394
+        }
+      },
+      {
+        "case": {
+          "name": "boundary-3",
+          "dx": -48,
+          "dy": -4096,
+          "target_heading": 0,
+          "attacker_heading": 0
+        },
+        "file": "ghidra\\phase194-direction-native-boundary-3-5126531cb715.json",
+        "sha256": "c68bbbd4df690f96fa8d2be8ffa6844b3b104106e8ce18db2edc09e869f2467e",
+        "outcome": {
+          "angle": 2045,
+          "folded_word": 1,
+          "percent_candidate": 0,
+          "applied_percent": 0,
+          "damage_HP": 100,
+          "HP": 9900,
+          "facing_reads": 0,
+          "headings_and_positions_unchanged": true,
+          "full_regions": 47,
+          "full_bytes": 113842,
+          "native_steps": 13394
+        }
+      },
+      {
+        "case": {
+          "name": "boundary-4",
+          "dx": 4096,
+          "dy": -2768,
+          "target_heading": 0,
+          "attacker_heading": 0
+        },
+        "file": "ghidra\\phase194-direction-native-boundary-4-a08ba30c7acf.json",
+        "sha256": "865242d359bd05e7779eaaaebbfdc9fa1ea675c937c4252145f186224b9f2966",
+        "outcome": {
+          "angle": 319,
+          "folded_word": 319,
+          "percent_candidate": 15,
+          "applied_percent": 0,
+          "damage_HP": 100,
+          "HP": 9900,
+          "facing_reads": 0,
+          "headings_and_positions_unchanged": true,
+          "full_regions": 47,
+          "full_bytes": 113842,
+          "native_steps": 13390
+        }
+      },
+      {
+        "case": {
+          "name": "boundary-5",
+          "dx": 4096,
+          "dy": -2752,
+          "target_heading": 0,
+          "attacker_heading": 0
+        },
+        "file": "ghidra\\phase194-direction-native-boundary-5-b78c72977a33.json",
+        "sha256": "86f214208b60c0384327e6148d0f9bb090a8c0e44c2bfdcbcb289e000bb5db1c",
+        "outcome": {
+          "angle": 320,
+          "folded_word": 320,
+          "percent_candidate": 16,
+          "applied_percent": 16,
+          "damage_HP": 116,
+          "HP": 9884,
+          "facing_reads": 0,
+          "headings_and_positions_unchanged": true,
+          "full_regions": 47,
+          "full_bytes": 113842,
+          "native_steps": 13399
+        }
+      },
+      {
+        "case": {
+          "name": "boundary-6",
+          "dx": 4096,
+          "dy": -2720,
+          "target_heading": 0,
+          "attacker_heading": 0
+        },
+        "file": "ghidra\\phase194-direction-native-boundary-6-2a5e4a5953e5.json",
+        "sha256": "7d2f47b924723a95f3444209aa541c14739030a1863fb359e4ccec0c4351e155",
+        "outcome": {
+          "angle": 321,
+          "folded_word": 321,
+          "percent_candidate": 16,
+          "applied_percent": 16,
+          "damage_HP": 116,
+          "HP": 9884,
+          "facing_reads": 0,
+          "headings_and_positions_unchanged": true,
+          "full_regions": 47,
+          "full_bytes": 113842,
+          "native_steps": 13399
+        }
+      },
+      {
+        "case": {
+          "name": "boundary-7",
+          "dx": -4096,
+          "dy": -2688,
+          "target_heading": 0,
+          "attacker_heading": 0
+        },
+        "file": "ghidra\\phase194-direction-native-boundary-7-6e00f0c42d00.json",
+        "sha256": "92ac083162293e92f821c423843ba4308858d82054d712dd6e0ceaf799721495",
+        "outcome": {
+          "angle": 1725,
+          "folded_word": 321,
+          "percent_candidate": 16,
+          "applied_percent": 16,
+          "damage_HP": 116,
+          "HP": 9884,
+          "facing_reads": 0,
+          "headings_and_positions_unchanged": true,
+          "full_regions": 47,
+          "full_bytes": 113842,
+          "native_steps": 13403
+        }
+      },
+      {
+        "case": {
+          "name": "boundary-8",
+          "dx": -4096,
+          "dy": -2704,
+          "target_heading": 0,
+          "attacker_heading": 0
+        },
+        "file": "ghidra\\phase194-direction-native-boundary-8-b75638b3ac21.json",
+        "sha256": "ad5aa4e86e95440b198cf677e03b2d349c7269ef6fb15da7718ab45a0f3c2ab6",
+        "outcome": {
+          "angle": 1726,
+          "folded_word": 320,
+          "percent_candidate": 16,
+          "applied_percent": 16,
+          "damage_HP": 116,
+          "HP": 9884,
+          "facing_reads": 0,
+          "headings_and_positions_unchanged": true,
+          "full_regions": 47,
+          "full_bytes": 113842,
+          "native_steps": 13403
+        }
+      },
+      {
+        "case": {
+          "name": "boundary-9",
+          "dx": -4096,
+          "dy": -2720,
+          "target_heading": 0,
+          "attacker_heading": 0
+        },
+        "file": "ghidra\\phase194-direction-native-boundary-9-8dc4a57d3fda.json",
+        "sha256": "d3c3a99dca9175c6d74a21f27108d381eacad20d9b2022f5ff9d315e3079b99b",
+        "outcome": {
+          "angle": 1727,
+          "folded_word": 319,
+          "percent_candidate": 15,
+          "applied_percent": 0,
+          "damage_HP": 100,
+          "HP": 9900,
+          "facing_reads": 0,
+          "headings_and_positions_unchanged": true,
+          "full_regions": 47,
+          "full_bytes": 113842,
+          "native_steps": 13394
+        }
+      },
+      {
+        "case": {
+          "name": "translated-0",
+          "dx": 0,
+          "dy": -4096,
+          "target_heading": 512,
+          "attacker_heading": 1024,
+          "translate": [
+            8192,
+            4096
+          ]
+        },
+        "file": "ghidra\\phase194-direction-native-translated-0-ac8fb9a8c6b7.json",
+        "sha256": "0f39f211257f1c7d05368717bd2a627143b7d83439c6008def3f952a3f45196e",
+        "outcome": {
+          "angle": 0,
+          "folded_word": 0,
+          "percent_candidate": 0,
+          "applied_percent": 0,
+          "damage_HP": 100,
+          "HP": 9900,
+          "facing_reads": 0,
+          "headings_and_positions_unchanged": true,
+          "full_regions": 47,
+          "full_bytes": 113842,
+          "native_steps": 13389
+        }
+      },
+      {
+        "case": {
+          "name": "scaled-0",
+          "dx": 0,
+          "dy": -8192,
+          "target_heading": 1536,
+          "attacker_heading": 512
+        },
+        "file": "ghidra\\phase194-direction-native-scaled-0-44008ecaa022.json",
+        "sha256": "8c49f27216a98fdd622824801445035107ff039f92a618ebad07bfa27d4264f5",
+        "outcome": {
+          "angle": 0,
+          "folded_word": 0,
+          "percent_candidate": 0,
+          "applied_percent": 0,
+          "damage_HP": 100,
+          "HP": 9900,
+          "facing_reads": 0,
+          "headings_and_positions_unchanged": true,
+          "full_regions": 47,
+          "full_bytes": 113842,
+          "native_steps": 13389
+        }
+      },
+      {
+        "case": {
+          "name": "translated-1",
+          "dx": 4096,
+          "dy": 0,
+          "target_heading": 512,
+          "attacker_heading": 1024,
+          "translate": [
+            8192,
+            4096
+          ]
+        },
+        "file": "ghidra\\phase194-direction-native-translated-1-13b63b0e1942.json",
+        "sha256": "c000361bb01f3fbe601d68db93c927b59667100de5e28e9f61a2eb2dafcc213a",
+        "outcome": {
+          "angle": 512,
+          "folded_word": 512,
+          "percent_candidate": 25,
+          "applied_percent": 25,
+          "damage_HP": 125,
+          "HP": 9875,
+          "facing_reads": 0,
+          "headings_and_positions_unchanged": true,
+          "full_regions": 47,
+          "full_bytes": 113842,
+          "native_steps": 13397
+        }
+      },
+      {
+        "case": {
+          "name": "scaled-1",
+          "dx": 8192,
+          "dy": 0,
+          "target_heading": 1536,
+          "attacker_heading": 512
+        },
+        "file": "ghidra\\phase194-direction-native-scaled-1-5d43a0a579f0.json",
+        "sha256": "ad45718e43b90b27527213115bd10dd3e0d77df0f1ea2cfadd1271c2d74c4009",
+        "outcome": {
+          "angle": 512,
+          "folded_word": 512,
+          "percent_candidate": 25,
+          "applied_percent": 25,
+          "damage_HP": 125,
+          "HP": 9875,
+          "facing_reads": 0,
+          "headings_and_positions_unchanged": true,
+          "full_regions": 47,
+          "full_bytes": 113842,
+          "native_steps": 13397
+        }
+      },
+      {
+        "case": {
+          "name": "translated-2",
+          "dx": 0,
+          "dy": 4096,
+          "target_heading": 512,
+          "attacker_heading": 1024,
+          "translate": [
+            8192,
+            4096
+          ]
+        },
+        "file": "ghidra\\phase194-direction-native-translated-2-4ba83297dcee.json",
+        "sha256": "614822558955a72e7bf8aa75edfdafc064d76bd141abaefcc80198b5d3840c95",
+        "outcome": {
+          "angle": 1024,
+          "folded_word": 1022,
+          "percent_candidate": 51,
+          "applied_percent": 51,
+          "damage_HP": 151,
+          "HP": 9849,
+          "facing_reads": 0,
+          "headings_and_positions_unchanged": true,
+          "full_regions": 47,
+          "full_bytes": 113842,
+          "native_steps": 13403
+        }
+      },
+      {
+        "case": {
+          "name": "scaled-2",
+          "dx": 0,
+          "dy": 8192,
+          "target_heading": 1536,
+          "attacker_heading": 512
+        },
+        "file": "ghidra\\phase194-direction-native-scaled-2-6aeaea6fadca.json",
+        "sha256": "b93c134bdc156311b0daaddda630b2dd2655eb11230d0b0c3c5e64636047aacb",
+        "outcome": {
+          "angle": 1024,
+          "folded_word": 1022,
+          "percent_candidate": 51,
+          "applied_percent": 51,
+          "damage_HP": 151,
+          "HP": 9849,
+          "facing_reads": 0,
+          "headings_and_positions_unchanged": true,
+          "full_regions": 47,
+          "full_bytes": 113842,
+          "native_steps": 13403
+        }
+      }
+    ]
+  },
+  "independent_Ghidra_controls": [
+    {
+      "case": "d0-victim1024",
+      "file": "ghidra\\phase194-direction-Ghidra-d0-victim1024-b3baef569651.json",
+      "sha256": "80569271c5b338949ab2adda0e437fb0b8ccf8cc11409d6e7241780b413b8ad6",
+      "checked_regions": 48,
+      "checked_bytes": 113846
+    },
+    {
+      "case": "d4-victim0",
+      "file": "ghidra\\phase194-direction-Ghidra-d4-victim0-32ab991d3af9.json",
+      "sha256": "ed506c6bb6616c519b6aff9934e762d1bb6dccecf0f3b8a56caf1e8aeb4735e2",
+      "checked_regions": 48,
+      "checked_bytes": 113846
+    },
+    {
+      "case": "d4-victim1024",
+      "file": "ghidra\\phase194-direction-Ghidra-d4-victim1024-9e8f228d1401.json",
+      "sha256": "ac9d4ae3b7901a1f923a25509625ed3d08c21ec5b590fab8d62713862506b4e7",
+      "checked_regions": 48,
+      "checked_bytes": 113846
+    },
+    {
+      "case": "boundary-1",
+      "file": "ghidra\\phase194-direction-Ghidra-boundary-1-7b0277fa4fac.json",
+      "sha256": "3241993abbb9b0b5421939f6385b64f4052d45d90a8d320f64c151dfebccaed2",
+      "checked_regions": 48,
+      "checked_bytes": 113846
+    },
+    {
+      "case": "boundary-2",
+      "file": "ghidra\\phase194-direction-Ghidra-boundary-2-a715a9d7ca6c.json",
+      "sha256": "dc6d520722d11182f9b62ae681e343fbdff60c8559a2e1d47a9a3f2113b97fba",
+      "checked_regions": 48,
+      "checked_bytes": 113846
+    },
+    {
+      "case": "boundary-5",
+      "file": "ghidra\\phase194-direction-Ghidra-boundary-5-6650124661f7.json",
+      "sha256": "a47b71e26962bb7c6ea090132ae1714b9aa377ed862cc0d7363e2fc841638e75",
+      "checked_regions": 48,
+      "checked_bytes": 113846
+    }
+  ],
+  "API": {
+    "file": {
+      "file": "native_melee_direction.py",
+      "sha256": "23329963ca042416f6c2fe3ea03587c8d813b659e35b96c2a2610337aeb5bdc2"
+    },
+    "functions": [
+      "table",
+      "angle",
+      "modifier",
+      "damage"
+    ],
+    "scope": "angle API limited to nonoverflowing abs(dx/dy)<=7FFFFF; damage API limited to unsigned16 base and isolated directional increment."
+  },
+  "fixture": "Original rawCreature loader consumes a deliberately edited copy with melee damage100. Prepared post-factory Actor/target/World and declared resource/audio providers; game code/vtables remain original. No game source writes.",
+  "source_baseline": {
+    "file": "phase194-source-baseline.json",
+    "sha256": "911a70ae00f1b222f451d552ed63c05f6f1ef2a647e24a07a573e8e858a8d49a"
+  },
+  "historical_baseline": {
+    "file": "phase165-source-baseline.json",
+    "sha256": "e032a4b5a485cbec505b114e3a22ab4e995af3fb5d2e878d738197e74fc916f8"
+  },
+  "source_drift": [
+    {
+      "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\AutoSaveMap.kld",
+      "historical_phase165_sha256": "081491d867dde05ab7a500cd6562fffed33576d090116f06ed2a47651b9d3bc8",
+      "current_sha256": "06c60e7e39607f164b90b40abb440de659072810c289ece4472217b77b151709",
+      "bytes": 2536,
+      "group": "source_files"
+    }
+  ],
+  "helpers": [
+    {
+      "file": "native_melee_direction.py",
+      "sha256": "23329963ca042416f6c2fe3ea03587c8d813b659e35b96c2a2610337aeb5bdc2"
+    },
+    {
+      "file": "emulate_melee_direction.py",
+      "sha256": "4b32d50eba1833d454c6018f6d348a789b73fd71f5830c36842017866dbd751f"
+    },
+    {
+      "file": "probe_melee_direction_versions.py",
+      "sha256": "5ab99f7e973422bc71e633cb1cead071b77fa00e219af6bfb04b8bb97b3c5860"
+    },
+    {
+      "file": "crosscheck_melee_direction.py",
+      "sha256": "d0aab8202db808f80ad5be025b08af489914542ae658ee3bf859541251eb3725"
+    },
+    {
+      "file": "prepare_melee_direction_primary.py",
+      "sha256": "e22bb954cb83319bafc396fa3478d852bc21be56132cf9804ff4fcad50331503"
+    },
+    {
+      "file": "build_melee_direction.py",
+      "sha256": "04bc73ebe95aa44bfdc2a1d1402b2a4943632c758c1fa209cd562a5fa20ed137"
+    },
+    {
+      "file": "probe_melee_animation_flag.py",
+      "sha256": "4795cdc7bdb247b765a10ea5f9d22b036854e06d34278a67ab9e3b2e55f35cda"
+    },
+    {
+      "file": "probe_creature_resistance.py",
+      "sha256": "212c0879b5ef5c55bdc824175856c00c5c25975b541d674f198139666e10dbdf"
+    },
+    {
+      "file": "crosscheck_conversion_score.py",
+      "sha256": "a32ae49befe58665f643836209a0a9428fc08d1ee6d63300eddf0241219291e2"
+    },
+    {
+      "file": "native_unicorn_mapreader.py",
+      "sha256": "f602c16f87beec825fc2fae28900a62bd13ad909c1c9b95c9dae6481e75f8daf"
+    }
+  ],
+  "inherited_storage_evidence": {
+    "file": "phase193-gold-storage.json",
+    "sha256": "2a988577f3f29a31a6b946d164198041e94927a23eef481d2eabf63a799449be"
+  },
+  "priority": {
+    "current": "Global parameters",
+    "block_complete": false,
+    "Crypt": "Deferred; ten meanings remain unknown.",
+    "next": [
+      "Variables19/runtime6F2590 and Level override51E708",
+      "Unknown global meanings and full reader/writer/load order",
+      "Creature resistances and flags"
+    ]
+  },
+  "limitations": [
+    "Complete loader/melee/HP scenes and6 independent Ghidra controls belong toDX only.",
+    "Other two EXEs have statically equivalent arithmetic cores and executed pure angle helpers, not whole melee/AI/session execution.",
+    "2057 inputs cover all257 lookup ratios in8 octants plus zero, not all32-bit coordinate values/overflow cases.",
+    "No rendered combat, natural AI/animation/World scheduler or runtimeDLL patches are certified.",
+    "No working victim-relative backstab formula, new editable percent, wholeCreature flags/resistances closure or global readiness increase is claimed."
+  ]
+}

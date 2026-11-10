@@ -1,3 +1,5 @@
+Актуальный этап194: пакет172 компонента. Разбор направления ближнего удара завершён в BACKSTAB_DIRECTION_RU.md и melee-direction-semantics.json. Инструменты сборки и manifest обновлены; ниже сохранено описание исходного экспорта этапа193.
+
 # DK2 format research snapshot
 
 Снимок от10 ноября2026: **171 компонентов**, 224 документов, 1378 Python-исходников. Последний интегрированный этап —193. Начните с [индекса форматов](../../docs/formats/README.md), INTEGRATION_RU.md, RESEARCH_PRIORITIES_RU.md и READINESS_RU.md. Датированная история содержит прежние выводы/очереди; effective-представления и semantic_corrections имеют приоритет над legacy-разметкой.
