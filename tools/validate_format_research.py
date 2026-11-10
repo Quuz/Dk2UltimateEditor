@@ -25,6 +25,7 @@ def main():
     assert hashlib.sha256(evidence.read_bytes()).hexdigest()==manifest['primary_evidence']['sha256']
     with zipfile.ZipFile(evidence) as z:
         assert z.testzip() is None
+        assert len(z.infolist())==len({i.filename for i in z.infolist()}), 'Duplicate primary evidence names'
         assert len(z.infolist())==manifest['primary_evidence']['members']
         for info in z.infolist():
             p=Path(info.filename)
@@ -45,6 +46,25 @@ def main():
                     if row.get(key):assert hashlib.sha256(z.read(Path(row[key]).name)).hexdigest()==row[key+'_sha256']
             ref=writer['Ghidra_FPU_limitation']['primary']
             assert hashlib.sha256(z.read(Path(ref['file']).name)).hexdigest()==ref['sha256']
+    if 'global_table_index_semantics' in package:
+        indices=package['global_table_index_semantics']
+        assert indices['counts']['real_file_reader_scenes']==19
+        assert indices['counts']['native_whole_getter_calls']==512
+        assert indices['records']['Type65']['index_validation_in_handler'] is False
+        assert indices['records']['Type224']['write_bytes']==2
+        assert indices['physical_preservation']['exact_DWORD_field_edits']==24
+        replays={r['case']['name']:r['outcome'] for r in indices['native_file_executions']['replays']}
+        assert replays['growth-then-possession']['first_possession_WORD']==200
+        assert replays['possession-then-growth']['first_possession_WORD']==150
+        assert replays['growth-wrap-to-unknown29']['unknown29_bits']==0x1122BEEF
+        assert replays['possession-index132']['unknown186_bits']==0x55BEEF88
+        with zipfile.ZipFile(evidence) as z:
+            for row in indices['primary']['functions']+indices['primary']['alias_search_functions']:
+                for key in ['memory','assembly']:
+                    assert hashlib.sha256(z.read(Path(row[key]).name)).hexdigest()==row[key+'_sha256']
+            for row in indices['whole_stat_getter']['controls']:
+                ref=row['evidence']
+                assert hashlib.sha256(z.read(Path(ref['file']).name)).hexdigest()==ref['sha256']
     for p in RESEARCH.iterdir():assert p.suffix.lower() not in ['.exe','.dll','.kwd','.kld','.xlsx','.log'],p.name
     # Check token-shaped strings, without printing any matching value.
     secret=re.compile(rb'(?:gh[pousr]_[A-Za-z0-9]{30,}|github_pat_[A-Za-z0-9_]{40,}|sk-proj-[A-Za-z0-9_-]{40,}|AKIA[A-Z0-9]{16})')

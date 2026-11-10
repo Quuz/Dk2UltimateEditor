@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
   "export_date": "2026-11-11",
-  "latest_integrated_phase": 199,
-  "component_count": 177,
-  "documentation_count": 232,
-  "python_source_count": 1418,
+  "latest_integrated_phase": 200,
+  "component_count": 178,
+  "documentation_count": 233,
+  "python_source_count": 1425,
   "files": [
     {
       "file": "action-point-condition-semantics.json",
@@ -500,6 +500,11 @@
       "file": "audit_game_executable_compatibility.py",
       "bytes": 5285,
       "sha256": "b482ffb2da833751d8495320ae8a1141acd780a7100298d76b15bc45a97833ff"
+    },
+    {
+      "file": "audit_global_table_indices.py",
+      "bytes": 1309,
+      "sha256": "596b80bbed4f687ef22cacbc6013d38f5ac21e65e2c05288ca8be65408d7a169"
     },
     {
       "file": "audit_gold_margin.py",
@@ -1535,6 +1540,11 @@
       "file": "build_game_executable_compatibility.py",
       "bytes": 5652,
       "sha256": "6fe63ad92dae7f08fbe660e96ae896791ce91902d2a0e586ebe65e5d853820cb"
+    },
+    {
+      "file": "build_global_table_indices.py",
+      "bytes": 14616,
+      "sha256": "54520547cfeab9e90e7254d001409ac1e184fe7725b27774efcbd47a7a204eb9"
     },
     {
       "file": "build_gold_margin.py",
@@ -2762,6 +2772,11 @@
       "sha256": "30a40ca9280966cb3dc42092e7efee101d83578c102ffe05d97b341fc9bbabdd"
     },
     {
+      "file": "crosscheck_global_table_indices.py",
+      "bytes": 4404,
+      "sha256": "df844ea1704ad699ca96c8a1fd92c46c5b140268d83f20010f4990231d111480"
+    },
+    {
       "file": "crosscheck_gold_margin.py",
       "bytes": 2279,
       "sha256": "ff0bf06e7756fbcd8caef579b300761d063b100f991d1b29e6ad8ea57011dd13"
@@ -3912,6 +3927,11 @@
       "sha256": "067e70971f7d73aa91e7c8a81a5fa7cd665fff1aa3c99854b204e5f01f1fb9e6"
     },
     {
+      "file": "emulate_global_table_indices.py",
+      "bytes": 5862,
+      "sha256": "4f2ae6859d094a924055dfa64cef66e59243f464501339caf20b463002f48823"
+    },
+    {
       "file": "emulate_gold_margin.py",
       "bytes": 7788,
       "sha256": "b89946eb57432113cb27441495f9711a6ca1b1ae4a735f137dd996711f14cda8"
@@ -4962,6 +4982,16 @@
       "sha256": "b91ee9f782d766b68a397ba8da42763496dda9ec9b67b0da88c93df6a8048df6"
     },
     {
+      "file": "global-table-index-semantics.json",
+      "bytes": 213625,
+      "sha256": "9fb6a74ebcf297083e77f0e59c7d0b2eebdf8b33738e4d539c24b3c3f86c6e41"
+    },
+    {
+      "file": "GLOBAL_TABLE_INDICES_RU.md",
+      "bytes": 13894,
+      "sha256": "04aab0a6bb1d4a74d344f42f74ff91789f33edc711bc8bc19d11b484b86914ea"
+    },
+    {
       "file": "globals-comparison.json",
       "bytes": 1981,
       "sha256": "0d0acd19b0124bf75c1613094db7c69c76f8511df36b981ba2a48807ad30ab70"
@@ -5058,8 +5088,8 @@
     },
     {
       "file": "INTEGRATION_RU.md",
-      "bytes": 232618,
-      "sha256": "3ef00fef1ab7eb1d7181647f84f0c987242a8cfdb18cde3f0866000dff010233"
+      "bytes": 233716,
+      "sha256": "181041560ab42c99dff5702c5ed3669c5b931987f060a620d36f21d59876446b"
     },
     {
       "file": "inventory.json",
@@ -12922,6 +12952,91 @@
       "sha256": "6198b96611007688e3c915651f05990b271606719ca0c9e11b4a055aa262eb95"
     },
     {
+      "file": "phase200-global-alias-added-queries.json",
+      "bytes": 8044,
+      "sha256": "fbc7fbdcdf272626157644c8fe9671cf13fd609a7984312e4c78d22db2233a63"
+    },
+    {
+      "file": "phase200-global-alias-owner-queries.json",
+      "bytes": 22347,
+      "sha256": "f21031d4cfb503aa9feffeaa3c3622e0a0a76a8def2e7fd12585ae5f714db482"
+    },
+    {
+      "file": "phase200-global-alias-primary-queries.json",
+      "bytes": 38094,
+      "sha256": "61e8d8e3cd746bd4bfdf7864aba57208141710cd5ef2fd2b4489fef8116acfa8"
+    },
+    {
+      "file": "phase200-global-alias-search.json",
+      "bytes": 234869,
+      "sha256": "bf288f3350f18fbb805a3ab6b2d19602fc41e4897f40662618842e9a42767db4"
+    },
+    {
+      "file": "phase200-global-alias-seeds.json",
+      "bytes": 52375,
+      "sha256": "e9d0f864e122ff8f90b49d8358244b18985ee9d58b40790ff788da5a05b92836"
+    },
+    {
+      "file": "phase200-global-index-crosschecks.json",
+      "bytes": 1929,
+      "sha256": "5830c672e3a6f393c3aa389b98919e39bed75c315298fbdbb6f942f688bbaec0"
+    },
+    {
+      "file": "phase200-global-index-emulations.json",
+      "bytes": 37706,
+      "sha256": "42d35555d964219ba139448ef2627836dde9c054b01d0bca49d1fc51a215148f"
+    },
+    {
+      "file": "phase200-global-index-primary.json",
+      "bytes": 140949,
+      "sha256": "1ed8ea0758f44632521e263ed8c479d506cda353c3f0d9d116364fe3365b53a9"
+    },
+    {
+      "file": "phase200-global-index-storage.json",
+      "bytes": 5079,
+      "sha256": "9c0cbef9d4b5a8ae1a37ba202ed8fe8ed9dc49a39e8e10632ef57f24a9ac7169"
+    },
+    {
+      "file": "phase200-index-handler-queries.json",
+      "bytes": 1351,
+      "sha256": "4531335b20270041f4f2ae0b682c89bef88e72ee1902af35a455c230054ce831"
+    },
+    {
+      "file": "phase200-missing-owner-hints.json",
+      "bytes": 2886,
+      "sha256": "bcb0402acf95a60873db9f0f61d3bd14322945409273413da37fbb89b6c22078"
+    },
+    {
+      "file": "phase200-missing-owner-queries.json",
+      "bytes": 7983,
+      "sha256": "2650fe2835ec3b93f3e922eaae633a9a527f336510404a607c56a98d595b8827"
+    },
+    {
+      "file": "phase200-prior-package-state.json",
+      "bytes": 51421,
+      "sha256": "8074f437c8efa8ed3316a78d4d9a83ab0dce78648fd88f66e3998c7719efbde3"
+    },
+    {
+      "file": "phase200-search-status.json",
+      "bytes": 1404,
+      "sha256": "a51f3c269659ef0ee4fee7b37f506b573d5f8f885a9425b6d058a2132996b229"
+    },
+    {
+      "file": "phase200-stat-getter-native.json",
+      "bytes": 71015,
+      "sha256": "5de3bfb677e28ed0a6dc809212861b64241379c40bb91bbfdda0cdb68664a89d"
+    },
+    {
+      "file": "phase200-stat-getter-queries.json",
+      "bytes": 207340,
+      "sha256": "124a5730ae9e4687c671cd833685bbaf229b555028f4be3371bee6603ceacdde"
+    },
+    {
+      "file": "phase200-validation.json",
+      "bytes": 7094,
+      "sha256": "739eae2ff4c4bafc1ca99ddc1117070ea3a206048e512165d0298e82850b0803"
+    },
+    {
       "file": "phase21-color-emulations.json",
       "bytes": 5484,
       "sha256": "252b71f357767c2212606669b39f3351800007314e2e3d3f2d754fc5e1cf9111"
@@ -18232,6 +18347,11 @@
       "sha256": "c171634e4a7db9302ae51e5d7c834675ea3adbef1e0d9eae20fc5ef49b3606ce"
     },
     {
+      "file": "prepare_global_table_indices_primary.py",
+      "bytes": 3652,
+      "sha256": "4ea5ab4267ae06d350d61d3321f9b289c127ac58e41542651a8d7fbd54045a88"
+    },
+    {
       "file": "prepare_gold_margin_primary.py",
       "bytes": 4537,
       "sha256": "16d82239942d8c0dd22f8f9ae922c675288397d04544ba1f707fe129d94d5385"
@@ -19235,6 +19355,11 @@
       "file": "probe_game_turning.json",
       "bytes": 283,
       "sha256": "8e9df8ebc750e8ca8ffcfcee77f36f0bde9c6959f2a7853d463998e6462128fe"
+    },
+    {
+      "file": "probe_global_stat_getter.py",
+      "bytes": 3823,
+      "sha256": "fd2c65cf1a8e143cd38e539a16d25ce0be1adb55f2323ccfd91ff471f1926ee9"
     },
     {
       "file": "probe_guided_clock.py",
@@ -20283,8 +20408,8 @@
     },
     {
       "file": "READINESS_RU.md",
-      "bytes": 114975,
-      "sha256": "5a687af8ef4886ba899a295c43ef44ba4476fd00110422d0bc8c71783d48a97f"
+      "bytes": 116073,
+      "sha256": "a07a1bb7fe17afeda1fb2e2a1f5f8fe20333bacd03746e51ecaa62942ce936f3"
     },
     {
       "file": "reference-audit.json",
@@ -20323,8 +20448,8 @@
     },
     {
       "file": "RESEARCH_PRIORITIES_RU.md",
-      "bytes": 6008,
-      "sha256": "17ae488e2e8630b604c50bb25daed708d535fa5646ea62a05da72373e840b139"
+      "bytes": 6529,
+      "sha256": "6c381a57a880cc158aebb9fca1b85a8e3376ffa9835b930698140496f6c9d5c1"
     },
     {
       "file": "resistance-version-semantics.json",
@@ -21227,6 +21352,11 @@
       "sha256": "e06ed3d48e86b204605b873a298c99c9e040fa6aac99fb87ed444033956b7e10"
     },
     {
+      "file": "trace_global_parameter_aliases.py",
+      "bytes": 15352,
+      "sha256": "e25a213bee81a40a265e09f15a24e509d98d32ee24a61bd404d65cca370ef5fc"
+    },
+    {
       "file": "trace_keeper_alias_cfg.py",
       "bytes": 6567,
       "sha256": "c741072e1619a122a8f150a5b9b65578e1825da305c4539b75d4206ce3b454cd"
@@ -21839,14 +21969,14 @@
   ],
   "primary_evidence": {
     "file": "primary-evidence.zip",
-    "sha256": "6b1ec5084960b753a6a55775090b72ccd006309277df40ee053146d73a24f53a",
-    "members": 19188,
-    "uncompressed_bytes": 43212154,
-    "bytes": 13233130,
+    "sha256": "e76043eb3a1babfc0e17c070c8f19d5f8c48497e0b5a51270fefe83612683a0e",
+    "members": 19570,
+    "uncompressed_bytes": 44825763,
+    "bytes": 13690071,
     "contents": "Saved primary .txt and small .bin evidence; includes dated rejected diagnostics. Acceptance belongs to each schema/validation, not file existence."
   },
-  "original_package_sha256": "427a4ee153208f8e5fc5c354c842d3583464885efeb83f58ab9f42d8b749a09c",
-  "original_package_bytes": 30805343,
+  "original_package_sha256": "9a985025cc9a6af7cafaa892e4733b8f715cb04447672eef1ea01299a854fd64",
+  "original_package_bytes": 31029487,
   "source_writes": 0,
   "in_progress": null,
   "excluded_root_metadata": [
