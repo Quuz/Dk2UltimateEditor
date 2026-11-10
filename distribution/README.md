@@ -4,7 +4,7 @@ Run `App/UltimateEditor.exe` on Windows with the .NET 10 Desktop Runtime install
 
 To enable the optional local MCP bridge, run `Start-Editor-MCP.cmd`. Normal startup does not enable MCP. See [the MCP guide](Documentation/EDITOR_MCP.md).
 
-Project and source: https://github.com/Quuz/UltimateEditor
+Project and source: https://github.com/Quuz/Dk2UltimateEditor
 
 The editor is still in development. Work on copies of valuable maps. Normal Save currently uses DKM/MAP and may retain native source data in a companion ZIP. Native export or compilation creates the seven-file game map bundle. Full feature parity and manual/game acceptance are not yet complete.
 

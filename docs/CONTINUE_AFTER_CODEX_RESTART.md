@@ -2,7 +2,7 @@
 
 10 ноября 2026: продукт переименован в **DK2 Ultimate Editor**;
 запуск — `artifacts/PreFinal/App/UltimateEditor.exe`.
-[Репозиторий](https://github.com/Quuz/UltimateEditor) — публичный, по решению пользователя.
+[Репозиторий](https://github.com/Quuz/Dk2UltimateEditor) — публичный, по решению пользователя.
 [Описание переименования и публикации](ULTIMATE_EDITOR_REPOSITORY_20261110.md).
 Полное решение собрано без ошибок/предупреждений; фактический запуск EN/RU
 подтвердил новый заголовок. Форматы и история не менялись, новых manual PASS нет.

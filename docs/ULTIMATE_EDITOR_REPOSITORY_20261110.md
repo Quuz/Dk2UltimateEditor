@@ -4,11 +4,11 @@ Product name: **Dungeon Keeper 2 Ultimate Editor**. Window/welcome/about name: *
 
 The application assembly and namespaces remain `DK2MapEditor.App` / `DK2MapEditor.*`. The published apphost is renamed by `build.ps1` and still loads `DK2MapEditor.App.dll`; no second codebase or wrapper implementation was introduced. Existing user settings remain under the previous DK2MapEditor settings path. Map formats, Undo and current save behavior are unchanged.
 
-The about text credits NovFR, describes the current development status and links to https://github.com/Quuz/UltimateEditor. Product/file-description metadata also carries the new name. `Start-Editor-MCP.cmd` and current MCP launch instructions use `UltimateEditor.exe`.
+The about text credits NovFR, describes the current development status and links to https://github.com/Quuz/Dk2UltimateEditor. Product/file-description metadata also carries the new name. `Start-Editor-MCP.cmd` and current MCP launch instructions use `UltimateEditor.exe`.
 
 ## Public repository
 
-The user initially selected private visibility, then explicitly changed the request to public. The target is **Quuz/UltimateEditor**, with English/Russian overviews, contribution guidelines, provenance notice, bug/PR templates and a Windows build workflow. The original NovFR history is retained. The historical root README was preserved in `PROJECT_HISTORY_RU.md` before replacing it with the contributor-facing overview.
+The user initially selected private visibility, then explicitly changed the request to public. The target is **Quuz/Dk2UltimateEditor**, with English/Russian overviews, contribution guidelines, provenance notice, bug/PR templates and a Windows build workflow. The original NovFR history is retained. The historical root README was preserved in `PROJECT_HISTORY_RU.md` before replacing it with the contributor-facing overview.
 
 Source inputs `Source/`, `Binaries/`, `src/`, tests and documentation belong to the same repository/solution. Generated `artifacts/`, archived working copies, build intermediates and local evidence are excluded. The credential used for GitHub access is read through the existing Git credential helper and is never written into project files, URLs or reports.
 

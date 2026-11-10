@@ -8,7 +8,7 @@
 
 ## Запуск
 
-Стабильного релиза с тегом пока нет. Соберите проект или скачайте `UltimateEditor-windows` из успешной [Windows-сборки](https://github.com/Quuz/UltimateEditor/actions/workflows/windows-build.yml), когда она доступна.
+Стабильного релиза с тегом пока нет. Соберите проект или скачайте `UltimateEditor-windows` из успешной [Windows-сборки](https://github.com/Quuz/Dk2UltimateEditor/actions/workflows/windows-build.yml), когда она доступна.
 
 1. Распакуйте всю папку сборки, сохранив DLL и остальные файлы рядом.
 2. Установите .NET 10 Desktop Runtime для Windows, если он отсутствует.
@@ -30,8 +30,8 @@
 Windows, .NET SDK 10.0.100 (или совместимый patch из global.json), PowerShell и Git:
 
 ```powershell
-git clone https://github.com/Quuz/UltimateEditor.git
-cd UltimateEditor
+git clone https://github.com/Quuz/Dk2UltimateEditor.git
+cd Dk2UltimateEditor
 ./build.ps1
 ```
 

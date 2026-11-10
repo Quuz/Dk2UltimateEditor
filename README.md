@@ -19,7 +19,7 @@
 
 ## How to run
 
-There is no tagged stable release yet. Build from source, or download `UltimateEditor-windows` from a successful [Windows build](https://github.com/Quuz/UltimateEditor/actions/workflows/windows-build.yml) when one is available.
+There is no tagged stable release yet. Build from source, or download `UltimateEditor-windows` from a successful [Windows build](https://github.com/Quuz/Dk2UltimateEditor/actions/workflows/windows-build.yml) when one is available.
 
 1. Extract the complete build folder; keep its DLLs and other files together.
 2. Install the **.NET 10 Desktop Runtime for Windows** if it is not already installed. The current build is framework-dependent.
@@ -32,7 +32,7 @@ To test a level in the game, use `DKII-DX.exe -q -level <map-name>` after puttin
 
 ## How to report a bug
 
-Open a [GitHub issue](https://github.com/Quuz/UltimateEditor/issues) with:
+Open a [GitHub issue](https://github.com/Quuz/Dk2UltimateEditor/issues) with:
 
 1. The build or commit, Windows version, UI language and display scale.
 2. Exact steps, expected result and actual result.
@@ -54,8 +54,8 @@ No additional NuGet feeds are needed: `NuGet.Config` clears external package sou
 ### How to build
 
 ```powershell
-git clone https://github.com/Quuz/UltimateEditor.git
-cd UltimateEditor
+git clone https://github.com/Quuz/Dk2UltimateEditor.git
+cd Dk2UltimateEditor
 ./build.ps1
 ```
 
