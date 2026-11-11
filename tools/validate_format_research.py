@@ -23,10 +23,12 @@ def main():
     assert package['gold_capacity_margin_semantics']['priority']['block_complete'] is False
     evidence=RESEARCH/'primary-evidence.zip'
     assert hashlib.sha256(evidence.read_bytes()).hexdigest()==manifest['primary_evidence']['sha256']
+    assert evidence.stat().st_size==manifest['primary_evidence']['bytes']
     with zipfile.ZipFile(evidence) as z:
         assert z.testzip() is None
         assert len(z.infolist())==len({i.filename for i in z.infolist()}), 'Duplicate primary evidence names'
         assert len(z.infolist())==manifest['primary_evidence']['members']
+        assert sum(i.file_size for i in z.infolist())==manifest['primary_evidence']['uncompressed_bytes']
         for info in z.infolist():
             p=Path(info.filename)
             assert not p.is_absolute() and '..' not in p.parts and p.suffix in ['.txt','.bin']
@@ -79,6 +81,25 @@ def main():
         assert speed['order']['example']['combined_single_division_result']==32
         with zipfile.ZipFile(evidence) as z:
             for row in speed['primary']['functions']:
+                for key in ['memory','assembly']:
+                    assert hashlib.sha256(z.read(Path(row[key]).name)).hexdigest()==row[key+'_sha256']
+    if 'temple_file_reward_semantics' in package:
+        temple=package['temple_file_reward_semantics']
+        assert temple['counts']['native_compositions']==16
+        assert temple['counts']['file_records']==1874
+        assert temple['counts']['Ghidra_full_context_controls']==5
+        assert temple['counts']['new_physical_fields']==0
+        assert temple['files']['original_total_records']==621
+        assert temple['files']['original_recipe_records']==44
+        out=temple['outcomes']
+        assert out['whole-source-plus-gold']['object_created'] is True
+        assert out['whole-source-plus-gold']['file_records']==622
+        assert out['gold-pool-empty']['history_cleared'] is True
+        assert out['gold-pool-empty']['object_created'] is False
+        assert out['gold-x0-credit']['direct_gold_credit']==5000
+        assert len(temple['physical_preservation']['appended_recipe_controls'])==2
+        with zipfile.ZipFile(evidence) as z:
+            for row in temple['primary']['functions']:
                 for key in ['memory','assembly']:
                     assert hashlib.sha256(z.read(Path(row[key]).name)).hexdigest()==row[key+'_sha256']
     for p in RESEARCH.iterdir():assert p.suffix.lower() not in ['.exe','.dll','.kwd','.kld','.xlsx','.log'],p.name
