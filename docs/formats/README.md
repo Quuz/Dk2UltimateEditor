@@ -1,6 +1,6 @@
 # Форматы Dungeon Keeper 2
 
-Снимок исследования от 11 ноября 2026: **178 интегрированных компонентов**, последний этап машинного пакета — **200**. Это база для совместимого редактора; существенные неизвестные остаются открытыми. Наличие свойства в схеме ещё не означает его поддержку в приложении UltimateEditor.
+Снимок исследования от 11 ноября 2026: **179 интегрированных компонентов**, последний этап машинного пакета — **201**. Это база для совместимого редактора; существенные неизвестные остаются открытыми. Наличие свойства в схеме ещё не означает его поддержку в приложении UltimateEditor.
 
 ## Где искать информацию
 
@@ -9,6 +9,7 @@
 | Актуальные результаты и правила интеграции | [INTEGRATION_RU.md](../../research/dk2-formats/INTEGRATION_RU.md) |
 | Таблицы полей по каталогам | [FAMILIES.md](FAMILIES.md) |
 | Level: ссылки, порядок и ошибки загрузки | [LEVEL_REFERENCE_LOADING_RU.md](../../research/dk2-formats/LEVEL_REFERENCE_LOADING_RU.md) |
+| Скорость: Variables224/65, ранения, поверхность | [POSSESSION_SPEED_CONTEXT_RU.md](../../research/dk2-formats/POSSESSION_SPEED_CONTEXT_RU.md) |
 | Variables65/224: границы индексов и соседние таблицы | [GLOBAL_TABLE_INDICES_RU.md](../../research/dk2-formats/GLOBAL_TABLE_INDICES_RU.md) |
 | Variables: сохранение Pro и вычисление margin74 | [EDITOR_VARIABLES_WRITER_RU.md](../../research/dk2-formats/EDITOR_VARIABLES_WRITER_RU.md) |
 | Variables: чтение и порядок параметров | [VARIABLES_READER_ORDER_RU.md](../../research/dk2-formats/VARIABLES_READER_ORDER_RU.md) |

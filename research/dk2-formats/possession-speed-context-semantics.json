@@ -1,0 +1,3179 @@
+{
+  "phase": 201,
+  "date": "2026-11-11",
+  "status": "fresh_definition_and_file_loading_health_surface_speed_composition_verified",
+  "profile": {
+    "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\DKII-DX.exe",
+    "sha256": "d7a8b854e4e4f02709eba271bead6fe2307dd6e332b5a96e70857e5b0e19fb8a"
+  },
+  "counts": {
+    "native_compositions": 32,
+    "Variable_records": 34,
+    "native_instructions": 2118449,
+    "Ghidra_full_context_controls": 8,
+    "Ghidra_compared_regions": 440,
+    "Ghidra_compared_bytes": 1209160,
+    "public_API_native_matches": 32,
+    "original_PCs": 3485,
+    "function_byte_extents": 78,
+    "prior_components_preserved": 178,
+    "source_files_preserved": 420,
+    "EXE_paths_preserved": 7,
+    "source_writes": 0,
+    "new_physical_fields": 0
+  },
+  "extension_of": {
+    "component": "possession_speed_semantics",
+    "phase": 92,
+    "scope": "The basic Stat21 formula, other flag branch and mode selection were already confirmed. New evidence composes fresh rawCreature definition loading, actual file/World callbacks, HP/growth/surface branches and speed load boundaries."
+  },
+  "chain": {
+    "Creature_initializer": 4791744,
+    "MID_initializer": 5670944,
+    "raw_converter": 5672496,
+    "definition_loader": 4793120,
+    "outer_file_section": 5688272,
+    "Variables_parser": 5707488,
+    "World_callback": 5379984,
+    "Type224": 5364848,
+    "Type65": 5364800,
+    "possession_setter": 4775584,
+    "speed": 4762544,
+    "World_vcall1D4": 5279712,
+    "regular_Actor_vcall88": 4779328,
+    "stat_getter": 4804736
+  },
+  "inputs": {
+    "Type224": {
+      "record": [
+        224,
+        21,
+        200,
+        10
+      ],
+      "raw_stat_offset": 4,
+      "raw_value_offset": 8,
+      "raw_opaque_offset": 12,
+      "runtime_WORD": 7284877,
+      "relative_WORD": 829,
+      "read_as": "low16 read as signed16; high16 of ValueRaw and the opaque lastDWORD do not enter this speed arithmetic, but the completeMID contributes to World checksum"
+    },
+    "Type65": {
+      "HP_stat": 1,
+      "level": 2,
+      "example_value": 125,
+      "effect": "Writes growth coefficient read by speed inline HP threshold;125 gives maxHP1250 and threshold250 for definitionHP1000."
+    },
+    "raw_Creature_fields": {
+      "walk": 3764,
+      "run": 3768,
+      "shuffle": 3383,
+      "Flags": 3836,
+      "HP": 3852
+    },
+    "TPS": 20,
+    "mode_selection": "1->run,2->shuffle,allother->walk. All three use Type224 Stat21 in48ABB0, not Stat22."
+  },
+  "speed_base_loading": {
+    "fields": [
+      {
+        "raw": 3764,
+        "MID": 4772,
+        "runtime": 1460
+      },
+      {
+        "raw": 3768,
+        "MID": 4776,
+        "runtime": 1464
+      },
+      {
+        "raw": 3383,
+        "MID": 4391,
+        "runtime": 1468
+      }
+    ],
+    "exact": "q=(u32(raw)//u32(TPS))&FFFFh; if q==0 and raw!=0 store1 else q. Runtime storage is DWORD with this narrowed initial value.",
+    "native_operation": "XOR EDX,EDX; DIV ESI; AND EAX,FFFFh; conditional nonzero-raw minimum1,4924BD..492536",
+    "examples": [
+      {
+        "raw": 0,
+        "tps": 20,
+        "result": 0
+      },
+      {
+        "raw": 1,
+        "tps": 20,
+        "result": 1
+      },
+      {
+        "raw": 1310720,
+        "tps": 20,
+        "result": 1
+      },
+      {
+        "raw": 4294967295,
+        "tps": 20,
+        "result": 52428
+      },
+      {
+        "raw": 2000000000,
+        "tps": 20,
+        "result": 57600
+      }
+    ],
+    "scope": "Only this original definition-load path. Later stat77 or other runtime assignments are not proven to have the same narrowing. Other TPS/division-fault cases not newly executed; unsigned raw bits differ from historical signed Q12 display."
+  },
+  "order": {
+    "sequence": [
+      "select loaded mode speed",
+      "conditional20%HP slowdown",
+      "conditionalTerrain50%or150%",
+      "conditionalType224 Stat21 multiplier"
+    ],
+    "health": "If Definition686bit0 clear: maxHP=definitionu16HP692 at level1, otherwise trunc0(s16(growthWORD E1+2*level)*HP/100). threshold=u32(maxHP*20)//100. Compare signed currentHP40 < signed threshold. True ->S=u32(S*20)//100.",
+    "surface": "NativeWorld1D4 reads actual16-byte cell at current Q12XY; cellA chooses definition in6DA4A8. IfActorvcall88==0: TerrainDWORD17Bbit80 ->S=u32(S*50)//100, elsebit100 ->S=u32(S*150)//100.80wins ifboth.",
+    "final": "If ActorDWORD3E6bit80: S=u32(S*(100+s16(Stat21WORD)))//100. Else if ActorDWORD3EAbit8: same numerator//200. Else unchanged. First flag takes priority. Every stage keeps its own integer truncation/wrap.",
+    "example": {
+      "walk_base": 109,
+      "HP": 199,
+      "definition_HP": 1000,
+      "Terrain_bit": 128,
+      "stat21": 200,
+      "stages": [
+        109,
+        21,
+        10,
+        30
+      ],
+      "combined_single_division_result": 32
+    },
+    "health_boundary": {
+      "definition_HP": 1000,
+      "HP199_result": 30,
+      "HP200_result": 162,
+      "condition": "strictly below20%, with same Water/Stat21 inputs"
+    },
+    "growth_example": {
+      "level": 2,
+      "Type65_HP_coefficient": 125,
+      "threshold": 250,
+      "HP249_result": 30,
+      "HP250_result": 162
+    }
+  },
+  "flag_boundaries": {
+    "raw_definition_test": {
+      "raw_flags_offset": 3836,
+      "MID_flags_offset": 4844,
+      "runtime_flags_offset": 1670,
+      "mask": 1
+    },
+    "regular_vtable": 6739236,
+    "regular_v88": "48ED40 returns true only if Definition686bit0 and Actor3E6bit100. Original code/vtables are executed.",
+    "observed": "Definitionbit0 skips the lowHP branch even with status100clear. The surface branch skips only when actual vcall88 returns nonzero. Four relevant numeric flag combinations tested.",
+    "naming_limit": "No new gameplay name is assigned to bit0/status100 or the other3EA.8 flag. Tests keep a prepared ordinaryCCreature class; natural factory subclass selection for modified rawFlags and other overrides are not claimed."
+  },
+  "representative_outcomes": {
+    "wounded-water-rounding": {
+      "mode": 0,
+      "loaded_base": 109,
+      "level": 1,
+      "maxHP_formula_value": 1000,
+      "health_branch_enabled": true,
+      "health_threshold": 200,
+      "wounded_branch": true,
+      "after_health": 21,
+      "selected_surface_bit": 128,
+      "after_surface": 10,
+      "coefficient_signed16": 200,
+      "final_divisor": 100,
+      "result": 30,
+      "native_steps": 66180,
+      "compared_regions": 54,
+      "compared_bytes": 151139,
+      "file_records": 1,
+      "raw_definition_source_preserved": true,
+      "actor_changes_only_original_possession_setter": true,
+      "whole_global_region_matches": true
+    },
+    "at-health-boundary-water": {
+      "mode": 0,
+      "loaded_base": 109,
+      "level": 1,
+      "maxHP_formula_value": 1000,
+      "health_branch_enabled": true,
+      "health_threshold": 200,
+      "wounded_branch": false,
+      "after_health": 109,
+      "selected_surface_bit": 128,
+      "after_surface": 54,
+      "coefficient_signed16": 200,
+      "final_divisor": 100,
+      "result": 162,
+      "native_steps": 66174,
+      "compared_regions": 54,
+      "compared_bytes": 151139,
+      "file_records": 1,
+      "raw_definition_source_preserved": true,
+      "actor_changes_only_original_possession_setter": true,
+      "whole_global_region_matches": true
+    },
+    "wounded-lava": {
+      "mode": 0,
+      "loaded_base": 109,
+      "level": 1,
+      "maxHP_formula_value": 1000,
+      "health_branch_enabled": true,
+      "health_threshold": 200,
+      "wounded_branch": true,
+      "after_health": 21,
+      "selected_surface_bit": 256,
+      "after_surface": 31,
+      "coefficient_signed16": 200,
+      "final_divisor": 100,
+      "result": 93,
+      "native_steps": 66182,
+      "compared_regions": 54,
+      "compared_bytes": 151139,
+      "file_records": 1,
+      "raw_definition_source_preserved": true,
+      "actor_changes_only_original_possession_setter": true,
+      "whole_global_region_matches": true
+    },
+    "water-and-lava": {
+      "mode": 0,
+      "loaded_base": 109,
+      "level": 1,
+      "maxHP_formula_value": 1000,
+      "health_branch_enabled": true,
+      "health_threshold": 200,
+      "wounded_branch": false,
+      "after_health": 109,
+      "selected_surface_bit": 128,
+      "after_surface": 54,
+      "coefficient_signed16": 200,
+      "final_divisor": null,
+      "result": 54,
+      "native_steps": 66144,
+      "compared_regions": 54,
+      "compared_bytes": 151139,
+      "file_records": 1,
+      "raw_definition_source_preserved": true,
+      "actor_changes_only_original_possession_setter": true,
+      "whole_global_region_matches": true
+    },
+    "wounded-other-flag": {
+      "mode": 0,
+      "loaded_base": 109,
+      "level": 1,
+      "maxHP_formula_value": 1000,
+      "health_branch_enabled": true,
+      "health_threshold": 200,
+      "wounded_branch": true,
+      "after_health": 21,
+      "selected_surface_bit": 128,
+      "after_surface": 10,
+      "coefficient_signed16": 200,
+      "final_divisor": 200,
+      "result": 15,
+      "native_steps": 66167,
+      "compared_regions": 54,
+      "compared_bytes": 151139,
+      "file_records": 1,
+      "raw_definition_source_preserved": true,
+      "actor_changes_only_original_possession_setter": true,
+      "whole_global_region_matches": true
+    },
+    "definition-bit0-ground": {
+      "mode": 0,
+      "loaded_base": 109,
+      "level": 1,
+      "maxHP_formula_value": 1000,
+      "health_branch_enabled": false,
+      "health_threshold": 200,
+      "wounded_branch": false,
+      "after_health": 109,
+      "selected_surface_bit": 128,
+      "after_surface": 54,
+      "coefficient_signed16": 200,
+      "final_divisor": 100,
+      "result": 162,
+      "native_steps": 66145,
+      "compared_regions": 54,
+      "compared_bytes": 151139,
+      "file_records": 1,
+      "raw_definition_source_preserved": true,
+      "actor_changes_only_original_possession_setter": true,
+      "whole_global_region_matches": true
+    },
+    "definition-bit0-status100": {
+      "mode": 0,
+      "loaded_base": 109,
+      "level": 1,
+      "maxHP_formula_value": 1000,
+      "health_branch_enabled": false,
+      "health_threshold": 200,
+      "wounded_branch": false,
+      "after_health": 109,
+      "selected_surface_bit": 0,
+      "after_surface": 109,
+      "coefficient_signed16": 200,
+      "final_divisor": 100,
+      "result": 327,
+      "native_steps": 66134,
+      "compared_regions": 54,
+      "compared_bytes": 151139,
+      "file_records": 1,
+      "raw_definition_source_preserved": true,
+      "actor_changes_only_original_possession_setter": true,
+      "whole_global_region_matches": true
+    },
+    "large-raw-speed-narrowing": {
+      "mode": 0,
+      "loaded_base": 57600,
+      "level": 1,
+      "maxHP_formula_value": 1000,
+      "health_branch_enabled": true,
+      "health_threshold": 200,
+      "wounded_branch": false,
+      "after_health": 57600,
+      "selected_surface_bit": 256,
+      "after_surface": 86400,
+      "coefficient_signed16": 200,
+      "final_divisor": 100,
+      "result": 259200,
+      "native_steps": 66176,
+      "compared_regions": 54,
+      "compared_bytes": 151139,
+      "file_records": 1,
+      "raw_definition_source_preserved": true,
+      "actor_changes_only_original_possession_setter": true,
+      "whole_global_region_matches": true
+    },
+    "walk-raw-quotient65536-minimum": {
+      "mode": 0,
+      "loaded_base": 1,
+      "level": 1,
+      "maxHP_formula_value": 1000,
+      "health_branch_enabled": true,
+      "health_threshold": 200,
+      "wounded_branch": false,
+      "after_health": 1,
+      "selected_surface_bit": 0,
+      "after_surface": 1,
+      "coefficient_signed16": 200,
+      "final_divisor": 100,
+      "result": 3,
+      "native_steps": 66171,
+      "compared_regions": 54,
+      "compared_bytes": 151139,
+      "file_records": 1,
+      "raw_definition_source_preserved": true,
+      "actor_changes_only_original_possession_setter": true,
+      "whole_global_region_matches": true
+    },
+    "walk-raw-all-ones": {
+      "mode": 0,
+      "loaded_base": 52428,
+      "level": 1,
+      "maxHP_formula_value": 1000,
+      "health_branch_enabled": true,
+      "health_threshold": 200,
+      "wounded_branch": false,
+      "after_health": 52428,
+      "selected_surface_bit": 0,
+      "after_surface": 52428,
+      "coefficient_signed16": 200,
+      "final_divisor": 100,
+      "result": 157284,
+      "native_steps": 66168,
+      "compared_regions": 54,
+      "compared_bytes": 151139,
+      "file_records": 1,
+      "raw_definition_source_preserved": true,
+      "actor_changes_only_original_possession_setter": true,
+      "whole_global_region_matches": true
+    },
+    "negative-coefficient-wrap": {
+      "mode": 0,
+      "loaded_base": 109,
+      "level": 1,
+      "maxHP_formula_value": 1000,
+      "health_branch_enabled": true,
+      "health_threshold": 200,
+      "wounded_branch": false,
+      "after_health": 109,
+      "selected_surface_bit": 256,
+      "after_surface": 163,
+      "coefficient_signed16": -32768,
+      "final_divisor": 100,
+      "result": 42896424,
+      "native_steps": 66176,
+      "compared_regions": 54,
+      "compared_bytes": 151139,
+      "file_records": 1,
+      "raw_definition_source_preserved": true,
+      "actor_changes_only_original_possession_setter": true,
+      "whole_global_region_matches": true
+    },
+    "HP-zero-getter-only": {
+      "mode": 0,
+      "loaded_base": 109,
+      "level": 1,
+      "maxHP_formula_value": 1000,
+      "health_branch_enabled": true,
+      "health_threshold": 200,
+      "wounded_branch": true,
+      "after_health": 21,
+      "selected_surface_bit": 128,
+      "after_surface": 10,
+      "coefficient_signed16": 200,
+      "final_divisor": 100,
+      "result": 30,
+      "native_steps": 66180,
+      "compared_regions": 54,
+      "compared_bytes": 151139,
+      "file_records": 1,
+      "raw_definition_source_preserved": true,
+      "actor_changes_only_original_possession_setter": true,
+      "whole_global_region_matches": true
+    }
+  },
+  "physical_preservation": {
+    "exact_DWORD_field_edits": 19,
+    "edits": [
+      {
+        "source": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\Creatures.kwd",
+        "source_sha256": "e215c03c7722e89f7736ced7c710406dc10d6cf48e5ad37bed45faf2055c52e2",
+        "record": 7,
+        "field_offset": 3764,
+        "file_offset": 41963,
+        "value": 0,
+        "exact_neighbors_and_inverse": true
+      },
+      {
+        "source": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\Creatures.kwd",
+        "source_sha256": "e215c03c7722e89f7736ced7c710406dc10d6cf48e5ad37bed45faf2055c52e2",
+        "record": 7,
+        "field_offset": 3764,
+        "file_offset": 41963,
+        "value": 1,
+        "exact_neighbors_and_inverse": true
+      },
+      {
+        "source": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\Creatures.kwd",
+        "source_sha256": "e215c03c7722e89f7736ced7c710406dc10d6cf48e5ad37bed45faf2055c52e2",
+        "record": 7,
+        "field_offset": 3764,
+        "file_offset": 41963,
+        "value": 1310720,
+        "exact_neighbors_and_inverse": true
+      },
+      {
+        "source": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\Creatures.kwd",
+        "source_sha256": "e215c03c7722e89f7736ced7c710406dc10d6cf48e5ad37bed45faf2055c52e2",
+        "record": 7,
+        "field_offset": 3764,
+        "file_offset": 41963,
+        "value": 4294967295,
+        "exact_neighbors_and_inverse": true
+      },
+      {
+        "source": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\Creatures.kwd",
+        "source_sha256": "e215c03c7722e89f7736ced7c710406dc10d6cf48e5ad37bed45faf2055c52e2",
+        "record": 7,
+        "field_offset": 3768,
+        "file_offset": 41967,
+        "value": 0,
+        "exact_neighbors_and_inverse": true
+      },
+      {
+        "source": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\Creatures.kwd",
+        "source_sha256": "e215c03c7722e89f7736ced7c710406dc10d6cf48e5ad37bed45faf2055c52e2",
+        "record": 7,
+        "field_offset": 3768,
+        "file_offset": 41967,
+        "value": 1,
+        "exact_neighbors_and_inverse": true
+      },
+      {
+        "source": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\Creatures.kwd",
+        "source_sha256": "e215c03c7722e89f7736ced7c710406dc10d6cf48e5ad37bed45faf2055c52e2",
+        "record": 7,
+        "field_offset": 3768,
+        "file_offset": 41967,
+        "value": 1310720,
+        "exact_neighbors_and_inverse": true
+      },
+      {
+        "source": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\Creatures.kwd",
+        "source_sha256": "e215c03c7722e89f7736ced7c710406dc10d6cf48e5ad37bed45faf2055c52e2",
+        "record": 7,
+        "field_offset": 3768,
+        "file_offset": 41967,
+        "value": 4294967295,
+        "exact_neighbors_and_inverse": true
+      },
+      {
+        "source": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\Creatures.kwd",
+        "source_sha256": "e215c03c7722e89f7736ced7c710406dc10d6cf48e5ad37bed45faf2055c52e2",
+        "record": 7,
+        "field_offset": 3383,
+        "file_offset": 41582,
+        "value": 0,
+        "exact_neighbors_and_inverse": true
+      },
+      {
+        "source": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\Creatures.kwd",
+        "source_sha256": "e215c03c7722e89f7736ced7c710406dc10d6cf48e5ad37bed45faf2055c52e2",
+        "record": 7,
+        "field_offset": 3383,
+        "file_offset": 41582,
+        "value": 1,
+        "exact_neighbors_and_inverse": true
+      },
+      {
+        "source": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\Creatures.kwd",
+        "source_sha256": "e215c03c7722e89f7736ced7c710406dc10d6cf48e5ad37bed45faf2055c52e2",
+        "record": 7,
+        "field_offset": 3383,
+        "file_offset": 41582,
+        "value": 1310720,
+        "exact_neighbors_and_inverse": true
+      },
+      {
+        "source": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\Creatures.kwd",
+        "source_sha256": "e215c03c7722e89f7736ced7c710406dc10d6cf48e5ad37bed45faf2055c52e2",
+        "record": 7,
+        "field_offset": 3383,
+        "file_offset": 41582,
+        "value": 4294967295,
+        "exact_neighbors_and_inverse": true
+      },
+      {
+        "source": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\Creatures.kwd",
+        "source_sha256": "e215c03c7722e89f7736ced7c710406dc10d6cf48e5ad37bed45faf2055c52e2",
+        "record": 7,
+        "field_offset": 3836,
+        "file_offset": 42035,
+        "value": 2998732934,
+        "exact_neighbors_and_inverse": true
+      },
+      {
+        "source": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\Creatures.kwd",
+        "source_sha256": "e215c03c7722e89f7736ced7c710406dc10d6cf48e5ad37bed45faf2055c52e2",
+        "record": 7,
+        "field_offset": 3836,
+        "file_offset": 42035,
+        "value": 2998732935,
+        "exact_neighbors_and_inverse": true
+      },
+      {
+        "source": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\GlobalVariables.kwd",
+        "source_sha256": "d14b6a28694254dad722071267268d4f36c8535cd3a9c610f9ee0447fe9b941a",
+        "record": 610,
+        "field_offset": 8,
+        "file_offset": 9824,
+        "value": 0,
+        "exact_neighbors_and_inverse": true
+      },
+      {
+        "source": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\GlobalVariables.kwd",
+        "source_sha256": "d14b6a28694254dad722071267268d4f36c8535cd3a9c610f9ee0447fe9b941a",
+        "record": 610,
+        "field_offset": 8,
+        "file_offset": 9824,
+        "value": 200,
+        "exact_neighbors_and_inverse": true
+      },
+      {
+        "source": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\GlobalVariables.kwd",
+        "source_sha256": "d14b6a28694254dad722071267268d4f36c8535cd3a9c610f9ee0447fe9b941a",
+        "record": 610,
+        "field_offset": 8,
+        "file_offset": 9824,
+        "value": 2882339016,
+        "exact_neighbors_and_inverse": true
+      },
+      {
+        "source": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\GlobalVariables.kwd",
+        "source_sha256": "d14b6a28694254dad722071267268d4f36c8535cd3a9c610f9ee0447fe9b941a",
+        "record": 610,
+        "field_offset": 8,
+        "file_offset": 9824,
+        "value": 32768,
+        "exact_neighbors_and_inverse": true
+      },
+      {
+        "source": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\GlobalVariables.kwd",
+        "source_sha256": "d14b6a28694254dad722071267268d4f36c8535cd3a9c610f9ee0447fe9b941a",
+        "record": 610,
+        "field_offset": 8,
+        "file_offset": 9824,
+        "value": 4294967196,
+        "exact_neighbors_and_inverse": true
+      }
+    ],
+    "source_Vampire_raw_record_bytes": 5449,
+    "Type224_source_record": [
+      224,
+      21,
+      200,
+      10
+    ],
+    "headers_unknown_bytes_opaque_WORDs_and_other_sections_preserved": true,
+    "source_writes": 0
+  },
+  "native_executions": {
+    "scope": "File-applied Type224/65 -> rawCreature/native definition -> whole speed branches.\n\nExtends phase92 with fresh definition and file loading plus health/surface\ncomposition. Actor/World/cells are prepared class snapshots, no live movement.\n",
+    "replays": [
+      {
+        "case": {
+          "name": "source200-clear"
+        },
+        "file": "ghidra\\phase201-speed-context-native-source200-clear-c50f4b552880.json",
+        "sha256": "91c902bc5ef34f06293f8b081609c0a144b69fa35187afd7e439c6f00cc6b313",
+        "outcome": {
+          "mode": 0,
+          "loaded_base": 109,
+          "level": 1,
+          "maxHP_formula_value": 1000,
+          "health_branch_enabled": true,
+          "health_threshold": 200,
+          "wounded_branch": false,
+          "after_health": 109,
+          "selected_surface_bit": 0,
+          "after_surface": 109,
+          "coefficient_signed16": 200,
+          "final_divisor": 100,
+          "result": 327,
+          "native_steps": 66168,
+          "compared_regions": 54,
+          "compared_bytes": 151139,
+          "file_records": 1,
+          "raw_definition_source_preserved": true,
+          "actor_changes_only_original_possession_setter": true,
+          "whole_global_region_matches": true
+        }
+      },
+      {
+        "case": {
+          "name": "wounded-water-rounding",
+          "HP": 199,
+          "terrain": 128
+        },
+        "file": "ghidra\\phase201-speed-context-native-wounded-water-rounding-d4bfed3c1cb0.json",
+        "sha256": "c171d3c5d58fb2ff9b909b634a8189a10730688315a33ed75a41b1cf4791f459",
+        "outcome": {
+          "mode": 0,
+          "loaded_base": 109,
+          "level": 1,
+          "maxHP_formula_value": 1000,
+          "health_branch_enabled": true,
+          "health_threshold": 200,
+          "wounded_branch": true,
+          "after_health": 21,
+          "selected_surface_bit": 128,
+          "after_surface": 10,
+          "coefficient_signed16": 200,
+          "final_divisor": 100,
+          "result": 30,
+          "native_steps": 66180,
+          "compared_regions": 54,
+          "compared_bytes": 151139,
+          "file_records": 1,
+          "raw_definition_source_preserved": true,
+          "actor_changes_only_original_possession_setter": true,
+          "whole_global_region_matches": true
+        }
+      },
+      {
+        "case": {
+          "name": "at-health-boundary-water",
+          "HP": 200,
+          "terrain": 128
+        },
+        "file": "ghidra\\phase201-speed-context-native-at-health-boundary-water-6586d0de3c49.json",
+        "sha256": "2d50e3ce7ab0f92f46f57870b683045b2d7fe30b3bb7f07771fd5a6ad2ab9580",
+        "outcome": {
+          "mode": 0,
+          "loaded_base": 109,
+          "level": 1,
+          "maxHP_formula_value": 1000,
+          "health_branch_enabled": true,
+          "health_threshold": 200,
+          "wounded_branch": false,
+          "after_health": 109,
+          "selected_surface_bit": 128,
+          "after_surface": 54,
+          "coefficient_signed16": 200,
+          "final_divisor": 100,
+          "result": 162,
+          "native_steps": 66174,
+          "compared_regions": 54,
+          "compared_bytes": 151139,
+          "file_records": 1,
+          "raw_definition_source_preserved": true,
+          "actor_changes_only_original_possession_setter": true,
+          "whole_global_region_matches": true
+        }
+      },
+      {
+        "case": {
+          "name": "wounded-lava",
+          "HP": 199,
+          "terrain": 256
+        },
+        "file": "ghidra\\phase201-speed-context-native-wounded-lava-499ba765bd56.json",
+        "sha256": "0f6e4959aed44161d721298dc7984331040ef89712adb31f7c738031d941afb8",
+        "outcome": {
+          "mode": 0,
+          "loaded_base": 109,
+          "level": 1,
+          "maxHP_formula_value": 1000,
+          "health_branch_enabled": true,
+          "health_threshold": 200,
+          "wounded_branch": true,
+          "after_health": 21,
+          "selected_surface_bit": 256,
+          "after_surface": 31,
+          "coefficient_signed16": 200,
+          "final_divisor": 100,
+          "result": 93,
+          "native_steps": 66182,
+          "compared_regions": 54,
+          "compared_bytes": 151139,
+          "file_records": 1,
+          "raw_definition_source_preserved": true,
+          "actor_changes_only_original_possession_setter": true,
+          "whole_global_region_matches": true
+        }
+      },
+      {
+        "case": {
+          "name": "water-unpossessed",
+          "terrain": 128,
+          "possessed": false
+        },
+        "file": "ghidra\\phase201-speed-context-native-water-unpossessed-4e4bb5b0b432.json",
+        "sha256": "601d83416b3b609bdecedc49c0d64794fa39c948942a058f272f427bfc3453a2",
+        "outcome": {
+          "mode": 0,
+          "loaded_base": 109,
+          "level": 1,
+          "maxHP_formula_value": 1000,
+          "health_branch_enabled": true,
+          "health_threshold": 200,
+          "wounded_branch": false,
+          "after_health": 109,
+          "selected_surface_bit": 128,
+          "after_surface": 54,
+          "coefficient_signed16": 200,
+          "final_divisor": null,
+          "result": 54,
+          "native_steps": 66144,
+          "compared_regions": 54,
+          "compared_bytes": 151139,
+          "file_records": 1,
+          "raw_definition_source_preserved": true,
+          "actor_changes_only_original_possession_setter": true,
+          "whole_global_region_matches": true
+        }
+      },
+      {
+        "case": {
+          "name": "lava-unpossessed",
+          "terrain": 256,
+          "possessed": false
+        },
+        "file": "ghidra\\phase201-speed-context-native-lava-unpossessed-9c16970b52bb.json",
+        "sha256": "1125c21d97b76f3f59212a5f754266f9fea698d5b5882168ed074d884b8e286d",
+        "outcome": {
+          "mode": 0,
+          "loaded_base": 109,
+          "level": 1,
+          "maxHP_formula_value": 1000,
+          "health_branch_enabled": true,
+          "health_threshold": 200,
+          "wounded_branch": false,
+          "after_health": 109,
+          "selected_surface_bit": 256,
+          "after_surface": 163,
+          "coefficient_signed16": 200,
+          "final_divisor": null,
+          "result": 163,
+          "native_steps": 66146,
+          "compared_regions": 54,
+          "compared_bytes": 151139,
+          "file_records": 1,
+          "raw_definition_source_preserved": true,
+          "actor_changes_only_original_possession_setter": true,
+          "whole_global_region_matches": true
+        }
+      },
+      {
+        "case": {
+          "name": "water-and-lava",
+          "terrain": 384,
+          "possessed": false
+        },
+        "file": "ghidra\\phase201-speed-context-native-water-and-lava-13cd32f02eb9.json",
+        "sha256": "e7e82fb3d1f5b0d46df432fecc942eac1f0fb38d1ea50142db0c7b87423bb3be",
+        "outcome": {
+          "mode": 0,
+          "loaded_base": 109,
+          "level": 1,
+          "maxHP_formula_value": 1000,
+          "health_branch_enabled": true,
+          "health_threshold": 200,
+          "wounded_branch": false,
+          "after_health": 109,
+          "selected_surface_bit": 128,
+          "after_surface": 54,
+          "coefficient_signed16": 200,
+          "final_divisor": null,
+          "result": 54,
+          "native_steps": 66144,
+          "compared_regions": 54,
+          "compared_bytes": 151139,
+          "file_records": 1,
+          "raw_definition_source_preserved": true,
+          "actor_changes_only_original_possession_setter": true,
+          "whole_global_region_matches": true
+        }
+      },
+      {
+        "case": {
+          "name": "wounded-other-flag",
+          "HP": 199,
+          "terrain": 128,
+          "possessed": false,
+          "other_flag": true
+        },
+        "file": "ghidra\\phase201-speed-context-native-wounded-other-flag-aeacb201208a.json",
+        "sha256": "b97b7ab33344c95189cf56f29a94323d070ddb0742512953ee0515712298b6a0",
+        "outcome": {
+          "mode": 0,
+          "loaded_base": 109,
+          "level": 1,
+          "maxHP_formula_value": 1000,
+          "health_branch_enabled": true,
+          "health_threshold": 200,
+          "wounded_branch": true,
+          "after_health": 21,
+          "selected_surface_bit": 128,
+          "after_surface": 10,
+          "coefficient_signed16": 200,
+          "final_divisor": 200,
+          "result": 15,
+          "native_steps": 66167,
+          "compared_regions": 54,
+          "compared_bytes": 151139,
+          "file_records": 1,
+          "raw_definition_source_preserved": true,
+          "actor_changes_only_original_possession_setter": true,
+          "whole_global_region_matches": true
+        }
+      },
+      {
+        "case": {
+          "name": "wounded-both-flags",
+          "HP": 199,
+          "terrain": 128,
+          "other_flag": true
+        },
+        "file": "ghidra\\phase201-speed-context-native-wounded-both-flags-c4855d9ac05e.json",
+        "sha256": "0027608a9c5eb9f89075a658828341d89d427201509bcb812c32bc5d7e336111",
+        "outcome": {
+          "mode": 0,
+          "loaded_base": 109,
+          "level": 1,
+          "maxHP_formula_value": 1000,
+          "health_branch_enabled": true,
+          "health_threshold": 200,
+          "wounded_branch": true,
+          "after_health": 21,
+          "selected_surface_bit": 128,
+          "after_surface": 10,
+          "coefficient_signed16": 200,
+          "final_divisor": 100,
+          "result": 30,
+          "native_steps": 66180,
+          "compared_regions": 54,
+          "compared_bytes": 151139,
+          "file_records": 1,
+          "raw_definition_source_preserved": true,
+          "actor_changes_only_original_possession_setter": true,
+          "whole_global_region_matches": true
+        }
+      },
+      {
+        "case": {
+          "name": "wounded-coeff75",
+          "HP": 199,
+          "terrain": 128,
+          "percent": 75
+        },
+        "file": "ghidra\\phase201-speed-context-native-wounded-coeff75-94e8c7f3f1fd.json",
+        "sha256": "3eed963770c5e882c3363d1a4987b0b23fec57cefc4273d6661c68fe2d9abb9b",
+        "outcome": {
+          "mode": 0,
+          "loaded_base": 109,
+          "level": 1,
+          "maxHP_formula_value": 1000,
+          "health_branch_enabled": true,
+          "health_threshold": 200,
+          "wounded_branch": true,
+          "after_health": 21,
+          "selected_surface_bit": 128,
+          "after_surface": 10,
+          "coefficient_signed16": 75,
+          "final_divisor": 100,
+          "result": 17,
+          "native_steps": 66180,
+          "compared_regions": 54,
+          "compared_bytes": 151139,
+          "file_records": 1,
+          "raw_definition_source_preserved": true,
+          "actor_changes_only_original_possession_setter": true,
+          "whole_global_region_matches": true
+        }
+      },
+      {
+        "case": {
+          "name": "wounded-coeff-zero",
+          "HP": 199,
+          "terrain": 128,
+          "percent": 0
+        },
+        "file": "ghidra\\phase201-speed-context-native-wounded-coeff-zero-34efac14d8ca.json",
+        "sha256": "f2a7e046de1917bc1092b9fa8614de5595948cf3bcf4aeba95b4120874737dc3",
+        "outcome": {
+          "mode": 0,
+          "loaded_base": 109,
+          "level": 1,
+          "maxHP_formula_value": 1000,
+          "health_branch_enabled": true,
+          "health_threshold": 200,
+          "wounded_branch": true,
+          "after_health": 21,
+          "selected_surface_bit": 128,
+          "after_surface": 10,
+          "coefficient_signed16": 0,
+          "final_divisor": 100,
+          "result": 10,
+          "native_steps": 66180,
+          "compared_regions": 54,
+          "compared_bytes": 151139,
+          "file_records": 1,
+          "raw_definition_source_preserved": true,
+          "actor_changes_only_original_possession_setter": true,
+          "whole_global_region_matches": true
+        }
+      },
+      {
+        "case": {
+          "name": "wounded-coeff-minus100",
+          "HP": 199,
+          "terrain": 128,
+          "percent": 4294967196
+        },
+        "file": "ghidra\\phase201-speed-context-native-wounded-coeff-minus100-652005942ce9.json",
+        "sha256": "804cc19bc748795759a6b17f337e2fd4eb0650fa0e0beede6706589825863108",
+        "outcome": {
+          "mode": 0,
+          "loaded_base": 109,
+          "level": 1,
+          "maxHP_formula_value": 1000,
+          "health_branch_enabled": true,
+          "health_threshold": 200,
+          "wounded_branch": true,
+          "after_health": 21,
+          "selected_surface_bit": 128,
+          "after_surface": 10,
+          "coefficient_signed16": -100,
+          "final_divisor": 100,
+          "result": 0,
+          "native_steps": 66180,
+          "compared_regions": 54,
+          "compared_bytes": 151139,
+          "file_records": 1,
+          "raw_definition_source_preserved": true,
+          "actor_changes_only_original_possession_setter": true,
+          "whole_global_region_matches": true
+        }
+      },
+      {
+        "case": {
+          "name": "raw-high-bits",
+          "HP": 199,
+          "terrain": 128,
+          "percent": 2882339016
+        },
+        "file": "ghidra\\phase201-speed-context-native-raw-high-bits-0c0722933632.json",
+        "sha256": "6093bae5dae641c0112e83e0e06f3253a07cd24f7dcf0efba4d822fd21c9e84c",
+        "outcome": {
+          "mode": 0,
+          "loaded_base": 109,
+          "level": 1,
+          "maxHP_formula_value": 1000,
+          "health_branch_enabled": true,
+          "health_threshold": 200,
+          "wounded_branch": true,
+          "after_health": 21,
+          "selected_surface_bit": 128,
+          "after_surface": 10,
+          "coefficient_signed16": 200,
+          "final_divisor": 100,
+          "result": 30,
+          "native_steps": 66180,
+          "compared_regions": 54,
+          "compared_bytes": 151139,
+          "file_records": 1,
+          "raw_definition_source_preserved": true,
+          "actor_changes_only_original_possession_setter": true,
+          "whole_global_region_matches": true
+        }
+      },
+      {
+        "case": {
+          "name": "run-wounded-water",
+          "HP": 199,
+          "terrain": 128,
+          "mode": 1
+        },
+        "file": "ghidra\\phase201-speed-context-native-run-wounded-water-42804a66fe86.json",
+        "sha256": "183201539be7d50db395aacd8e6c70d1c84b9f004515679dced153d776780341",
+        "outcome": {
+          "mode": 1,
+          "loaded_base": 301,
+          "level": 1,
+          "maxHP_formula_value": 1000,
+          "health_branch_enabled": true,
+          "health_threshold": 200,
+          "wounded_branch": true,
+          "after_health": 60,
+          "selected_surface_bit": 128,
+          "after_surface": 30,
+          "coefficient_signed16": 200,
+          "final_divisor": 100,
+          "result": 90,
+          "native_steps": 66183,
+          "compared_regions": 54,
+          "compared_bytes": 151139,
+          "file_records": 1,
+          "raw_definition_source_preserved": true,
+          "actor_changes_only_original_possession_setter": true,
+          "whole_global_region_matches": true
+        }
+      },
+      {
+        "case": {
+          "name": "shuffle-wounded-water",
+          "HP": 199,
+          "terrain": 128,
+          "mode": 2
+        },
+        "file": "ghidra\\phase201-speed-context-native-shuffle-wounded-water-1a961dce5c3e.json",
+        "sha256": "48a3ad9d92f62c43bd51b5af144a5090314cab073a56f0b355e3781060f9dd0b",
+        "outcome": {
+          "mode": 2,
+          "loaded_base": 53,
+          "level": 1,
+          "maxHP_formula_value": 1000,
+          "health_branch_enabled": true,
+          "health_threshold": 200,
+          "wounded_branch": true,
+          "after_health": 10,
+          "selected_surface_bit": 128,
+          "after_surface": 5,
+          "coefficient_signed16": 200,
+          "final_divisor": 100,
+          "result": 15,
+          "native_steps": 66186,
+          "compared_regions": 54,
+          "compared_bytes": 151139,
+          "file_records": 1,
+          "raw_definition_source_preserved": true,
+          "actor_changes_only_original_possession_setter": true,
+          "whole_global_region_matches": true
+        }
+      },
+      {
+        "case": {
+          "name": "unknown-mode-water",
+          "HP": 199,
+          "terrain": 128,
+          "mode": 9
+        },
+        "file": "ghidra\\phase201-speed-context-native-unknown-mode-water-82ceb2a50539.json",
+        "sha256": "fcf55e2e5f381c10790569a99722e0356369df817fc5823808046394f6401997",
+        "outcome": {
+          "mode": 9,
+          "loaded_base": 109,
+          "level": 1,
+          "maxHP_formula_value": 1000,
+          "health_branch_enabled": true,
+          "health_threshold": 200,
+          "wounded_branch": true,
+          "after_health": 21,
+          "selected_surface_bit": 128,
+          "after_surface": 10,
+          "coefficient_signed16": 200,
+          "final_divisor": 100,
+          "result": 30,
+          "native_steps": 66184,
+          "compared_regions": 54,
+          "compared_bytes": 151139,
+          "file_records": 1,
+          "raw_definition_source_preserved": true,
+          "actor_changes_only_original_possession_setter": true,
+          "whole_global_region_matches": true
+        }
+      },
+      {
+        "case": {
+          "name": "level2-wounded",
+          "HP": 299,
+          "terrain": 128,
+          "level": 2
+        },
+        "file": "ghidra\\phase201-speed-context-native-level2-wounded-637a958939de.json",
+        "sha256": "24418417e6425ddabe55f753d20754262cf3dfe9f36f84dcafa69b8041395635",
+        "outcome": {
+          "mode": 0,
+          "loaded_base": 109,
+          "level": 2,
+          "maxHP_formula_value": 1500,
+          "health_branch_enabled": true,
+          "health_threshold": 300,
+          "wounded_branch": true,
+          "after_health": 21,
+          "selected_surface_bit": 128,
+          "after_surface": 10,
+          "coefficient_signed16": 200,
+          "final_divisor": 100,
+          "result": 30,
+          "native_steps": 66190,
+          "compared_regions": 54,
+          "compared_bytes": 151139,
+          "file_records": 1,
+          "raw_definition_source_preserved": true,
+          "actor_changes_only_original_possession_setter": true,
+          "whole_global_region_matches": true
+        }
+      },
+      {
+        "case": {
+          "name": "level2-boundary",
+          "HP": 300,
+          "terrain": 128,
+          "level": 2
+        },
+        "file": "ghidra\\phase201-speed-context-native-level2-boundary-6ca1ed5fe57a.json",
+        "sha256": "274768c07ad02d9adbe0557827defdb58ccd142da8ec4cac6c95a7262eee7ccc",
+        "outcome": {
+          "mode": 0,
+          "loaded_base": 109,
+          "level": 2,
+          "maxHP_formula_value": 1500,
+          "health_branch_enabled": true,
+          "health_threshold": 300,
+          "wounded_branch": false,
+          "after_health": 109,
+          "selected_surface_bit": 128,
+          "after_surface": 54,
+          "coefficient_signed16": 200,
+          "final_divisor": 100,
+          "result": 162,
+          "native_steps": 66184,
+          "compared_regions": 54,
+          "compared_bytes": 151139,
+          "file_records": 1,
+          "raw_definition_source_preserved": true,
+          "actor_changes_only_original_possession_setter": true,
+          "whole_global_region_matches": true
+        }
+      },
+      {
+        "case": {
+          "name": "level2-File-growth125-wounded",
+          "HP": 249,
+          "terrain": 128,
+          "level": 2,
+          "growth": 125
+        },
+        "file": "ghidra\\phase201-speed-context-native-level2-File-growth125-wounded-4a1383cccf02.json",
+        "sha256": "7dc55c8ac5aa7679bf1bf7d948c6a341d106d4db3d79dec2b127e47b9fec1c82",
+        "outcome": {
+          "mode": 0,
+          "loaded_base": 109,
+          "level": 2,
+          "maxHP_formula_value": 1250,
+          "health_branch_enabled": true,
+          "health_threshold": 250,
+          "wounded_branch": true,
+          "after_health": 21,
+          "selected_surface_bit": 128,
+          "after_surface": 10,
+          "coefficient_signed16": 200,
+          "final_divisor": 100,
+          "result": 30,
+          "native_steps": 66652,
+          "compared_regions": 54,
+          "compared_bytes": 151155,
+          "file_records": 2,
+          "raw_definition_source_preserved": true,
+          "actor_changes_only_original_possession_setter": true,
+          "whole_global_region_matches": true
+        }
+      },
+      {
+        "case": {
+          "name": "level2-File-growth125-boundary",
+          "HP": 250,
+          "terrain": 128,
+          "level": 2,
+          "growth": 125
+        },
+        "file": "ghidra\\phase201-speed-context-native-level2-File-growth125-boundary-7573886572d3.json",
+        "sha256": "f493e2896d13872ea39412d14cd539bffe4bc0c44b75a350d5b1041793495943",
+        "outcome": {
+          "mode": 0,
+          "loaded_base": 109,
+          "level": 2,
+          "maxHP_formula_value": 1250,
+          "health_branch_enabled": true,
+          "health_threshold": 250,
+          "wounded_branch": false,
+          "after_health": 109,
+          "selected_surface_bit": 128,
+          "after_surface": 54,
+          "coefficient_signed16": 200,
+          "final_divisor": 100,
+          "result": 162,
+          "native_steps": 66646,
+          "compared_regions": 54,
+          "compared_bytes": 151155,
+          "file_records": 2,
+          "raw_definition_source_preserved": true,
+          "actor_changes_only_original_possession_setter": true,
+          "whole_global_region_matches": true
+        }
+      },
+      {
+        "case": {
+          "name": "definition-bit0-ground",
+          "HP": 199,
+          "terrain": 128,
+          "definition_bit0": true
+        },
+        "file": "ghidra\\phase201-speed-context-native-definition-bit0-ground-816755090800.json",
+        "sha256": "d526837fdfa60f59d674bcbf6586c468ab869a01d807385418e4b1b415756a63",
+        "outcome": {
+          "mode": 0,
+          "loaded_base": 109,
+          "level": 1,
+          "maxHP_formula_value": 1000,
+          "health_branch_enabled": false,
+          "health_threshold": 200,
+          "wounded_branch": false,
+          "after_health": 109,
+          "selected_surface_bit": 128,
+          "after_surface": 54,
+          "coefficient_signed16": 200,
+          "final_divisor": 100,
+          "result": 162,
+          "native_steps": 66145,
+          "compared_regions": 54,
+          "compared_bytes": 151139,
+          "file_records": 1,
+          "raw_definition_source_preserved": true,
+          "actor_changes_only_original_possession_setter": true,
+          "whole_global_region_matches": true
+        }
+      },
+      {
+        "case": {
+          "name": "definition-bit0-status100",
+          "HP": 199,
+          "terrain": 128,
+          "definition_bit0": true,
+          "status100": true
+        },
+        "file": "ghidra\\phase201-speed-context-native-definition-bit0-status100-3fb917527d7f.json",
+        "sha256": "ec6dee2787365723cea6609a810e1709144caf473ab68dc5fd9e0497aaa6f29d",
+        "outcome": {
+          "mode": 0,
+          "loaded_base": 109,
+          "level": 1,
+          "maxHP_formula_value": 1000,
+          "health_branch_enabled": false,
+          "health_threshold": 200,
+          "wounded_branch": false,
+          "after_health": 109,
+          "selected_surface_bit": 0,
+          "after_surface": 109,
+          "coefficient_signed16": 200,
+          "final_divisor": 100,
+          "result": 327,
+          "native_steps": 66134,
+          "compared_regions": 54,
+          "compared_bytes": 151139,
+          "file_records": 1,
+          "raw_definition_source_preserved": true,
+          "actor_changes_only_original_possession_setter": true,
+          "whole_global_region_matches": true
+        }
+      },
+      {
+        "case": {
+          "name": "status100-without-definition-bit0",
+          "HP": 199,
+          "terrain": 128,
+          "status100": true
+        },
+        "file": "ghidra\\phase201-speed-context-native-status100-without-definition-bit0-975e131e8e16.json",
+        "sha256": "e84071f16a30fa7de852d7e4ebae5553febc06588c8d41ea952735abb0ae15b1",
+        "outcome": {
+          "mode": 0,
+          "loaded_base": 109,
+          "level": 1,
+          "maxHP_formula_value": 1000,
+          "health_branch_enabled": true,
+          "health_threshold": 200,
+          "wounded_branch": true,
+          "after_health": 21,
+          "selected_surface_bit": 128,
+          "after_surface": 10,
+          "coefficient_signed16": 200,
+          "final_divisor": 100,
+          "result": 30,
+          "native_steps": 66180,
+          "compared_regions": 54,
+          "compared_bytes": 151139,
+          "file_records": 1,
+          "raw_definition_source_preserved": true,
+          "actor_changes_only_original_possession_setter": true,
+          "whole_global_region_matches": true
+        }
+      },
+      {
+        "case": {
+          "name": "HP-zero-getter-only",
+          "HP": 0,
+          "terrain": 128
+        },
+        "file": "ghidra\\phase201-speed-context-native-HP-zero-getter-only-752bf5262695.json",
+        "sha256": "bc646861ac95e87625bb763b09a484e2a6581844dc038ae8e9eefa01bf8d1d35",
+        "outcome": {
+          "mode": 0,
+          "loaded_base": 109,
+          "level": 1,
+          "maxHP_formula_value": 1000,
+          "health_branch_enabled": true,
+          "health_threshold": 200,
+          "wounded_branch": true,
+          "after_health": 21,
+          "selected_surface_bit": 128,
+          "after_surface": 10,
+          "coefficient_signed16": 200,
+          "final_divisor": 100,
+          "result": 30,
+          "native_steps": 66180,
+          "compared_regions": 54,
+          "compared_bytes": 151139,
+          "file_records": 1,
+          "raw_definition_source_preserved": true,
+          "actor_changes_only_original_possession_setter": true,
+          "whole_global_region_matches": true
+        }
+      },
+      {
+        "case": {
+          "name": "large-raw-speed-narrowing",
+          "walk": 100000000,
+          "terrain": 256
+        },
+        "file": "ghidra\\phase201-speed-context-native-large-raw-speed-narrowing-1eed9876d715.json",
+        "sha256": "de46b09a372e8b6e3bebaf2e155caa4b844be3b703969b2efd4c9d302d453ae5",
+        "outcome": {
+          "mode": 0,
+          "loaded_base": 57600,
+          "level": 1,
+          "maxHP_formula_value": 1000,
+          "health_branch_enabled": true,
+          "health_threshold": 200,
+          "wounded_branch": false,
+          "after_health": 57600,
+          "selected_surface_bit": 256,
+          "after_surface": 86400,
+          "coefficient_signed16": 200,
+          "final_divisor": 100,
+          "result": 259200,
+          "native_steps": 66176,
+          "compared_regions": 54,
+          "compared_bytes": 151139,
+          "file_records": 1,
+          "raw_definition_source_preserved": true,
+          "actor_changes_only_original_possession_setter": true,
+          "whole_global_region_matches": true
+        }
+      },
+      {
+        "case": {
+          "name": "walk-raw-zero",
+          "walk_raw": 0
+        },
+        "file": "ghidra\\phase201-speed-context-native-walk-raw-zero-bc288295d79c.json",
+        "sha256": "590e1c5acee8747dd9118559262cd06cf22ac3948dd32ca42894100fd7575929",
+        "outcome": {
+          "mode": 0,
+          "loaded_base": 0,
+          "level": 1,
+          "maxHP_formula_value": 1000,
+          "health_branch_enabled": true,
+          "health_threshold": 200,
+          "wounded_branch": false,
+          "after_health": 0,
+          "selected_surface_bit": 0,
+          "after_surface": 0,
+          "coefficient_signed16": 200,
+          "final_divisor": 100,
+          "result": 0,
+          "native_steps": 66170,
+          "compared_regions": 54,
+          "compared_bytes": 151139,
+          "file_records": 1,
+          "raw_definition_source_preserved": true,
+          "actor_changes_only_original_possession_setter": true,
+          "whole_global_region_matches": true
+        }
+      },
+      {
+        "case": {
+          "name": "walk-raw-one-minimum",
+          "walk_raw": 1
+        },
+        "file": "ghidra\\phase201-speed-context-native-walk-raw-one-minimum-c6dd7d591f87.json",
+        "sha256": "fb2c74cc34d53a83360f90122a3fa16984901a8d5227e0979e9bfbe95903fd5b",
+        "outcome": {
+          "mode": 0,
+          "loaded_base": 1,
+          "level": 1,
+          "maxHP_formula_value": 1000,
+          "health_branch_enabled": true,
+          "health_threshold": 200,
+          "wounded_branch": false,
+          "after_health": 1,
+          "selected_surface_bit": 0,
+          "after_surface": 1,
+          "coefficient_signed16": 200,
+          "final_divisor": 100,
+          "result": 3,
+          "native_steps": 66171,
+          "compared_regions": 54,
+          "compared_bytes": 151139,
+          "file_records": 1,
+          "raw_definition_source_preserved": true,
+          "actor_changes_only_original_possession_setter": true,
+          "whole_global_region_matches": true
+        }
+      },
+      {
+        "case": {
+          "name": "walk-raw-quotient65536-minimum",
+          "walk_raw": 1310720
+        },
+        "file": "ghidra\\phase201-speed-context-native-walk-raw-quotient65536-minimum-ce59e5284aed.json",
+        "sha256": "42c1b717e073d210e974307e1fb9b38dbb8c053dd6d1d1c441d389a95efa9ad2",
+        "outcome": {
+          "mode": 0,
+          "loaded_base": 1,
+          "level": 1,
+          "maxHP_formula_value": 1000,
+          "health_branch_enabled": true,
+          "health_threshold": 200,
+          "wounded_branch": false,
+          "after_health": 1,
+          "selected_surface_bit": 0,
+          "after_surface": 1,
+          "coefficient_signed16": 200,
+          "final_divisor": 100,
+          "result": 3,
+          "native_steps": 66171,
+          "compared_regions": 54,
+          "compared_bytes": 151139,
+          "file_records": 1,
+          "raw_definition_source_preserved": true,
+          "actor_changes_only_original_possession_setter": true,
+          "whole_global_region_matches": true
+        }
+      },
+      {
+        "case": {
+          "name": "walk-raw-all-ones",
+          "walk_raw": 4294967295
+        },
+        "file": "ghidra\\phase201-speed-context-native-walk-raw-all-ones-cc7feb6935a9.json",
+        "sha256": "d2435550c4f35a8819b149c4240496b03fd50e0f171b6c77d813848427b79e77",
+        "outcome": {
+          "mode": 0,
+          "loaded_base": 52428,
+          "level": 1,
+          "maxHP_formula_value": 1000,
+          "health_branch_enabled": true,
+          "health_threshold": 200,
+          "wounded_branch": false,
+          "after_health": 52428,
+          "selected_surface_bit": 0,
+          "after_surface": 52428,
+          "coefficient_signed16": 200,
+          "final_divisor": 100,
+          "result": 157284,
+          "native_steps": 66168,
+          "compared_regions": 54,
+          "compared_bytes": 151139,
+          "file_records": 1,
+          "raw_definition_source_preserved": true,
+          "actor_changes_only_original_possession_setter": true,
+          "whole_global_region_matches": true
+        }
+      },
+      {
+        "case": {
+          "name": "run-raw-all-ones",
+          "mode": 1,
+          "run_raw": 4294967295
+        },
+        "file": "ghidra\\phase201-speed-context-native-run-raw-all-ones-3928da861c4a.json",
+        "sha256": "5b2fbb3cbbd7040aef2e9ed2c0859272e25c3627307a5f0367cbdf737ce2ff18",
+        "outcome": {
+          "mode": 1,
+          "loaded_base": 52428,
+          "level": 1,
+          "maxHP_formula_value": 1000,
+          "health_branch_enabled": true,
+          "health_threshold": 200,
+          "wounded_branch": false,
+          "after_health": 52428,
+          "selected_surface_bit": 0,
+          "after_surface": 52428,
+          "coefficient_signed16": 200,
+          "final_divisor": 100,
+          "result": 157284,
+          "native_steps": 66171,
+          "compared_regions": 54,
+          "compared_bytes": 151139,
+          "file_records": 1,
+          "raw_definition_source_preserved": true,
+          "actor_changes_only_original_possession_setter": true,
+          "whole_global_region_matches": true
+        }
+      },
+      {
+        "case": {
+          "name": "shuffle-raw-one-minimum",
+          "mode": 2,
+          "shuffle_raw": 1
+        },
+        "file": "ghidra\\phase201-speed-context-native-shuffle-raw-one-minimum-09a85d1de5cf.json",
+        "sha256": "435beeeff6d49f4ee11f602003f484f5ddde0d240df514f491e71fdc9a62dd1d",
+        "outcome": {
+          "mode": 2,
+          "loaded_base": 1,
+          "level": 1,
+          "maxHP_formula_value": 1000,
+          "health_branch_enabled": true,
+          "health_threshold": 200,
+          "wounded_branch": false,
+          "after_health": 1,
+          "selected_surface_bit": 0,
+          "after_surface": 1,
+          "coefficient_signed16": 200,
+          "final_divisor": 100,
+          "result": 3,
+          "native_steps": 66177,
+          "compared_regions": 54,
+          "compared_bytes": 151139,
+          "file_records": 1,
+          "raw_definition_source_preserved": true,
+          "actor_changes_only_original_possession_setter": true,
+          "whole_global_region_matches": true
+        }
+      },
+      {
+        "case": {
+          "name": "negative-coefficient-wrap",
+          "terrain": 256,
+          "percent": 32768
+        },
+        "file": "ghidra\\phase201-speed-context-native-negative-coefficient-wrap-1ac0331c26c6.json",
+        "sha256": "169de79c60da50b43f44f59c5102737f7cb1d472b30f58b5e073654a2a889414",
+        "outcome": {
+          "mode": 0,
+          "loaded_base": 109,
+          "level": 1,
+          "maxHP_formula_value": 1000,
+          "health_branch_enabled": true,
+          "health_threshold": 200,
+          "wounded_branch": false,
+          "after_health": 109,
+          "selected_surface_bit": 256,
+          "after_surface": 163,
+          "coefficient_signed16": -32768,
+          "final_divisor": 100,
+          "result": 42896424,
+          "native_steps": 66176,
+          "compared_regions": 54,
+          "compared_bytes": 151139,
+          "file_records": 1,
+          "raw_definition_source_preserved": true,
+          "actor_changes_only_original_possession_setter": true,
+          "whole_global_region_matches": true
+        }
+      }
+    ]
+  },
+  "independent_Ghidra_controls": [
+    {
+      "case": "wounded-water-rounding",
+      "file": "ghidra\\phase201-speed-context-Ghidra-wounded-water-rounding-3bf0e172a6ea.json",
+      "sha256": "94b9aa26c74d165e1bf13025fbcac81f837898920dd8b09b748c4ec6bd1cd88d",
+      "checked_regions": 55,
+      "checked_bytes": 151143
+    },
+    {
+      "case": "at-health-boundary-water",
+      "file": "ghidra\\phase201-speed-context-Ghidra-at-health-boundary-water-651bd2ba2c21.json",
+      "sha256": "26c1552d24e6c38d712edda07e59ff0a58f5b3b231d0a3ffae8655edbc4469ba",
+      "checked_regions": 55,
+      "checked_bytes": 151143
+    },
+    {
+      "case": "level2-File-growth125-wounded",
+      "file": "ghidra\\phase201-speed-context-Ghidra-level2-File-growth125-wounded-5910e2f8424f.json",
+      "sha256": "7aa3322a72eda731dcab6cb523a90420f2bf22de652193eb2bc3ec4b6af6f5fe",
+      "checked_regions": 55,
+      "checked_bytes": 151159
+    },
+    {
+      "case": "wounded-other-flag",
+      "file": "ghidra\\phase201-speed-context-Ghidra-wounded-other-flag-e7be95cfec96.json",
+      "sha256": "d0473a9f5acebb73a438c1494dd7ea5d8657b20f0a5ff68e69d7572711cadb5c",
+      "checked_regions": 55,
+      "checked_bytes": 151143
+    },
+    {
+      "case": "definition-bit0-status100",
+      "file": "ghidra\\phase201-speed-context-Ghidra-definition-bit0-status100-4f0dd02b9d06.json",
+      "sha256": "3a24d44de2dd701c25181fc58c885e49b875edacf95274bd783f5e759fabcaa8",
+      "checked_regions": 55,
+      "checked_bytes": 151143
+    },
+    {
+      "case": "status100-without-definition-bit0",
+      "file": "ghidra\\phase201-speed-context-Ghidra-status100-without-definition-bit0-58c58ee118d4.json",
+      "sha256": "5c315b24a564a8795362e566579a3345ce757e9c335ca2f08ee678d32d6999da",
+      "checked_regions": 55,
+      "checked_bytes": 151143
+    },
+    {
+      "case": "walk-raw-quotient65536-minimum",
+      "file": "ghidra\\phase201-speed-context-Ghidra-walk-raw-quotient65536-minimum-36f9c489ba91.json",
+      "sha256": "d3c0af1f623cf489a07a3b7597b571d9b9a105fa1b66aba02d0ae955f71b89b2",
+      "checked_regions": 55,
+      "checked_bytes": 151143
+    },
+    {
+      "case": "negative-coefficient-wrap",
+      "file": "ghidra\\phase201-speed-context-Ghidra-negative-coefficient-wrap-9ec3272507dc.json",
+      "sha256": "e9c2cb8891331bc8115d3314fd2b70dc6c0669bfdf9a68f420ab2b83637a4e58",
+      "checked_regions": 55,
+      "checked_bytes": 151143
+    }
+  ],
+  "public_API_matches": [
+    {
+      "case": "source200-clear",
+      "loaded_speeds": [
+        109,
+        301,
+        53
+      ],
+      "terms": {
+        "loaded_base": 109,
+        "maxHP_formula_value": 1000,
+        "health_branch_enabled": true,
+        "health_threshold": 200,
+        "wounded_branch": false,
+        "after_health": 109,
+        "selected_surface_bit": 0,
+        "after_surface": 109,
+        "coefficient_signed16": 200,
+        "final_divisor": 100,
+        "result": 327
+      },
+      "native_result": 327
+    },
+    {
+      "case": "wounded-water-rounding",
+      "loaded_speeds": [
+        109,
+        301,
+        53
+      ],
+      "terms": {
+        "loaded_base": 109,
+        "maxHP_formula_value": 1000,
+        "health_branch_enabled": true,
+        "health_threshold": 200,
+        "wounded_branch": true,
+        "after_health": 21,
+        "selected_surface_bit": 128,
+        "after_surface": 10,
+        "coefficient_signed16": 200,
+        "final_divisor": 100,
+        "result": 30
+      },
+      "native_result": 30
+    },
+    {
+      "case": "at-health-boundary-water",
+      "loaded_speeds": [
+        109,
+        301,
+        53
+      ],
+      "terms": {
+        "loaded_base": 109,
+        "maxHP_formula_value": 1000,
+        "health_branch_enabled": true,
+        "health_threshold": 200,
+        "wounded_branch": false,
+        "after_health": 109,
+        "selected_surface_bit": 128,
+        "after_surface": 54,
+        "coefficient_signed16": 200,
+        "final_divisor": 100,
+        "result": 162
+      },
+      "native_result": 162
+    },
+    {
+      "case": "wounded-lava",
+      "loaded_speeds": [
+        109,
+        301,
+        53
+      ],
+      "terms": {
+        "loaded_base": 109,
+        "maxHP_formula_value": 1000,
+        "health_branch_enabled": true,
+        "health_threshold": 200,
+        "wounded_branch": true,
+        "after_health": 21,
+        "selected_surface_bit": 256,
+        "after_surface": 31,
+        "coefficient_signed16": 200,
+        "final_divisor": 100,
+        "result": 93
+      },
+      "native_result": 93
+    },
+    {
+      "case": "water-unpossessed",
+      "loaded_speeds": [
+        109,
+        301,
+        53
+      ],
+      "terms": {
+        "loaded_base": 109,
+        "maxHP_formula_value": 1000,
+        "health_branch_enabled": true,
+        "health_threshold": 200,
+        "wounded_branch": false,
+        "after_health": 109,
+        "selected_surface_bit": 128,
+        "after_surface": 54,
+        "coefficient_signed16": 200,
+        "final_divisor": null,
+        "result": 54
+      },
+      "native_result": 54
+    },
+    {
+      "case": "lava-unpossessed",
+      "loaded_speeds": [
+        109,
+        301,
+        53
+      ],
+      "terms": {
+        "loaded_base": 109,
+        "maxHP_formula_value": 1000,
+        "health_branch_enabled": true,
+        "health_threshold": 200,
+        "wounded_branch": false,
+        "after_health": 109,
+        "selected_surface_bit": 256,
+        "after_surface": 163,
+        "coefficient_signed16": 200,
+        "final_divisor": null,
+        "result": 163
+      },
+      "native_result": 163
+    },
+    {
+      "case": "water-and-lava",
+      "loaded_speeds": [
+        109,
+        301,
+        53
+      ],
+      "terms": {
+        "loaded_base": 109,
+        "maxHP_formula_value": 1000,
+        "health_branch_enabled": true,
+        "health_threshold": 200,
+        "wounded_branch": false,
+        "after_health": 109,
+        "selected_surface_bit": 128,
+        "after_surface": 54,
+        "coefficient_signed16": 200,
+        "final_divisor": null,
+        "result": 54
+      },
+      "native_result": 54
+    },
+    {
+      "case": "wounded-other-flag",
+      "loaded_speeds": [
+        109,
+        301,
+        53
+      ],
+      "terms": {
+        "loaded_base": 109,
+        "maxHP_formula_value": 1000,
+        "health_branch_enabled": true,
+        "health_threshold": 200,
+        "wounded_branch": true,
+        "after_health": 21,
+        "selected_surface_bit": 128,
+        "after_surface": 10,
+        "coefficient_signed16": 200,
+        "final_divisor": 200,
+        "result": 15
+      },
+      "native_result": 15
+    },
+    {
+      "case": "wounded-both-flags",
+      "loaded_speeds": [
+        109,
+        301,
+        53
+      ],
+      "terms": {
+        "loaded_base": 109,
+        "maxHP_formula_value": 1000,
+        "health_branch_enabled": true,
+        "health_threshold": 200,
+        "wounded_branch": true,
+        "after_health": 21,
+        "selected_surface_bit": 128,
+        "after_surface": 10,
+        "coefficient_signed16": 200,
+        "final_divisor": 100,
+        "result": 30
+      },
+      "native_result": 30
+    },
+    {
+      "case": "wounded-coeff75",
+      "loaded_speeds": [
+        109,
+        301,
+        53
+      ],
+      "terms": {
+        "loaded_base": 109,
+        "maxHP_formula_value": 1000,
+        "health_branch_enabled": true,
+        "health_threshold": 200,
+        "wounded_branch": true,
+        "after_health": 21,
+        "selected_surface_bit": 128,
+        "after_surface": 10,
+        "coefficient_signed16": 75,
+        "final_divisor": 100,
+        "result": 17
+      },
+      "native_result": 17
+    },
+    {
+      "case": "wounded-coeff-zero",
+      "loaded_speeds": [
+        109,
+        301,
+        53
+      ],
+      "terms": {
+        "loaded_base": 109,
+        "maxHP_formula_value": 1000,
+        "health_branch_enabled": true,
+        "health_threshold": 200,
+        "wounded_branch": true,
+        "after_health": 21,
+        "selected_surface_bit": 128,
+        "after_surface": 10,
+        "coefficient_signed16": 0,
+        "final_divisor": 100,
+        "result": 10
+      },
+      "native_result": 10
+    },
+    {
+      "case": "wounded-coeff-minus100",
+      "loaded_speeds": [
+        109,
+        301,
+        53
+      ],
+      "terms": {
+        "loaded_base": 109,
+        "maxHP_formula_value": 1000,
+        "health_branch_enabled": true,
+        "health_threshold": 200,
+        "wounded_branch": true,
+        "after_health": 21,
+        "selected_surface_bit": 128,
+        "after_surface": 10,
+        "coefficient_signed16": -100,
+        "final_divisor": 100,
+        "result": 0
+      },
+      "native_result": 0
+    },
+    {
+      "case": "raw-high-bits",
+      "loaded_speeds": [
+        109,
+        301,
+        53
+      ],
+      "terms": {
+        "loaded_base": 109,
+        "maxHP_formula_value": 1000,
+        "health_branch_enabled": true,
+        "health_threshold": 200,
+        "wounded_branch": true,
+        "after_health": 21,
+        "selected_surface_bit": 128,
+        "after_surface": 10,
+        "coefficient_signed16": 200,
+        "final_divisor": 100,
+        "result": 30
+      },
+      "native_result": 30
+    },
+    {
+      "case": "run-wounded-water",
+      "loaded_speeds": [
+        109,
+        301,
+        53
+      ],
+      "terms": {
+        "loaded_base": 301,
+        "maxHP_formula_value": 1000,
+        "health_branch_enabled": true,
+        "health_threshold": 200,
+        "wounded_branch": true,
+        "after_health": 60,
+        "selected_surface_bit": 128,
+        "after_surface": 30,
+        "coefficient_signed16": 200,
+        "final_divisor": 100,
+        "result": 90
+      },
+      "native_result": 90
+    },
+    {
+      "case": "shuffle-wounded-water",
+      "loaded_speeds": [
+        109,
+        301,
+        53
+      ],
+      "terms": {
+        "loaded_base": 53,
+        "maxHP_formula_value": 1000,
+        "health_branch_enabled": true,
+        "health_threshold": 200,
+        "wounded_branch": true,
+        "after_health": 10,
+        "selected_surface_bit": 128,
+        "after_surface": 5,
+        "coefficient_signed16": 200,
+        "final_divisor": 100,
+        "result": 15
+      },
+      "native_result": 15
+    },
+    {
+      "case": "unknown-mode-water",
+      "loaded_speeds": [
+        109,
+        301,
+        53
+      ],
+      "terms": {
+        "loaded_base": 109,
+        "maxHP_formula_value": 1000,
+        "health_branch_enabled": true,
+        "health_threshold": 200,
+        "wounded_branch": true,
+        "after_health": 21,
+        "selected_surface_bit": 128,
+        "after_surface": 10,
+        "coefficient_signed16": 200,
+        "final_divisor": 100,
+        "result": 30
+      },
+      "native_result": 30
+    },
+    {
+      "case": "level2-wounded",
+      "loaded_speeds": [
+        109,
+        301,
+        53
+      ],
+      "terms": {
+        "loaded_base": 109,
+        "maxHP_formula_value": 1500,
+        "health_branch_enabled": true,
+        "health_threshold": 300,
+        "wounded_branch": true,
+        "after_health": 21,
+        "selected_surface_bit": 128,
+        "after_surface": 10,
+        "coefficient_signed16": 200,
+        "final_divisor": 100,
+        "result": 30
+      },
+      "native_result": 30
+    },
+    {
+      "case": "level2-boundary",
+      "loaded_speeds": [
+        109,
+        301,
+        53
+      ],
+      "terms": {
+        "loaded_base": 109,
+        "maxHP_formula_value": 1500,
+        "health_branch_enabled": true,
+        "health_threshold": 300,
+        "wounded_branch": false,
+        "after_health": 109,
+        "selected_surface_bit": 128,
+        "after_surface": 54,
+        "coefficient_signed16": 200,
+        "final_divisor": 100,
+        "result": 162
+      },
+      "native_result": 162
+    },
+    {
+      "case": "level2-File-growth125-wounded",
+      "loaded_speeds": [
+        109,
+        301,
+        53
+      ],
+      "terms": {
+        "loaded_base": 109,
+        "maxHP_formula_value": 1250,
+        "health_branch_enabled": true,
+        "health_threshold": 250,
+        "wounded_branch": true,
+        "after_health": 21,
+        "selected_surface_bit": 128,
+        "after_surface": 10,
+        "coefficient_signed16": 200,
+        "final_divisor": 100,
+        "result": 30
+      },
+      "native_result": 30
+    },
+    {
+      "case": "level2-File-growth125-boundary",
+      "loaded_speeds": [
+        109,
+        301,
+        53
+      ],
+      "terms": {
+        "loaded_base": 109,
+        "maxHP_formula_value": 1250,
+        "health_branch_enabled": true,
+        "health_threshold": 250,
+        "wounded_branch": false,
+        "after_health": 109,
+        "selected_surface_bit": 128,
+        "after_surface": 54,
+        "coefficient_signed16": 200,
+        "final_divisor": 100,
+        "result": 162
+      },
+      "native_result": 162
+    },
+    {
+      "case": "definition-bit0-ground",
+      "loaded_speeds": [
+        109,
+        301,
+        53
+      ],
+      "terms": {
+        "loaded_base": 109,
+        "maxHP_formula_value": 1000,
+        "health_branch_enabled": false,
+        "health_threshold": 200,
+        "wounded_branch": false,
+        "after_health": 109,
+        "selected_surface_bit": 128,
+        "after_surface": 54,
+        "coefficient_signed16": 200,
+        "final_divisor": 100,
+        "result": 162
+      },
+      "native_result": 162
+    },
+    {
+      "case": "definition-bit0-status100",
+      "loaded_speeds": [
+        109,
+        301,
+        53
+      ],
+      "terms": {
+        "loaded_base": 109,
+        "maxHP_formula_value": 1000,
+        "health_branch_enabled": false,
+        "health_threshold": 200,
+        "wounded_branch": false,
+        "after_health": 109,
+        "selected_surface_bit": 0,
+        "after_surface": 109,
+        "coefficient_signed16": 200,
+        "final_divisor": 100,
+        "result": 327
+      },
+      "native_result": 327
+    },
+    {
+      "case": "status100-without-definition-bit0",
+      "loaded_speeds": [
+        109,
+        301,
+        53
+      ],
+      "terms": {
+        "loaded_base": 109,
+        "maxHP_formula_value": 1000,
+        "health_branch_enabled": true,
+        "health_threshold": 200,
+        "wounded_branch": true,
+        "after_health": 21,
+        "selected_surface_bit": 128,
+        "after_surface": 10,
+        "coefficient_signed16": 200,
+        "final_divisor": 100,
+        "result": 30
+      },
+      "native_result": 30
+    },
+    {
+      "case": "HP-zero-getter-only",
+      "loaded_speeds": [
+        109,
+        301,
+        53
+      ],
+      "terms": {
+        "loaded_base": 109,
+        "maxHP_formula_value": 1000,
+        "health_branch_enabled": true,
+        "health_threshold": 200,
+        "wounded_branch": true,
+        "after_health": 21,
+        "selected_surface_bit": 128,
+        "after_surface": 10,
+        "coefficient_signed16": 200,
+        "final_divisor": 100,
+        "result": 30
+      },
+      "native_result": 30
+    },
+    {
+      "case": "large-raw-speed-narrowing",
+      "loaded_speeds": [
+        57600,
+        301,
+        53
+      ],
+      "terms": {
+        "loaded_base": 57600,
+        "maxHP_formula_value": 1000,
+        "health_branch_enabled": true,
+        "health_threshold": 200,
+        "wounded_branch": false,
+        "after_health": 57600,
+        "selected_surface_bit": 256,
+        "after_surface": 86400,
+        "coefficient_signed16": 200,
+        "final_divisor": 100,
+        "result": 259200
+      },
+      "native_result": 259200
+    },
+    {
+      "case": "walk-raw-zero",
+      "loaded_speeds": [
+        0,
+        301,
+        53
+      ],
+      "terms": {
+        "loaded_base": 0,
+        "maxHP_formula_value": 1000,
+        "health_branch_enabled": true,
+        "health_threshold": 200,
+        "wounded_branch": false,
+        "after_health": 0,
+        "selected_surface_bit": 0,
+        "after_surface": 0,
+        "coefficient_signed16": 200,
+        "final_divisor": 100,
+        "result": 0
+      },
+      "native_result": 0
+    },
+    {
+      "case": "walk-raw-one-minimum",
+      "loaded_speeds": [
+        1,
+        301,
+        53
+      ],
+      "terms": {
+        "loaded_base": 1,
+        "maxHP_formula_value": 1000,
+        "health_branch_enabled": true,
+        "health_threshold": 200,
+        "wounded_branch": false,
+        "after_health": 1,
+        "selected_surface_bit": 0,
+        "after_surface": 1,
+        "coefficient_signed16": 200,
+        "final_divisor": 100,
+        "result": 3
+      },
+      "native_result": 3
+    },
+    {
+      "case": "walk-raw-quotient65536-minimum",
+      "loaded_speeds": [
+        1,
+        301,
+        53
+      ],
+      "terms": {
+        "loaded_base": 1,
+        "maxHP_formula_value": 1000,
+        "health_branch_enabled": true,
+        "health_threshold": 200,
+        "wounded_branch": false,
+        "after_health": 1,
+        "selected_surface_bit": 0,
+        "after_surface": 1,
+        "coefficient_signed16": 200,
+        "final_divisor": 100,
+        "result": 3
+      },
+      "native_result": 3
+    },
+    {
+      "case": "walk-raw-all-ones",
+      "loaded_speeds": [
+        52428,
+        301,
+        53
+      ],
+      "terms": {
+        "loaded_base": 52428,
+        "maxHP_formula_value": 1000,
+        "health_branch_enabled": true,
+        "health_threshold": 200,
+        "wounded_branch": false,
+        "after_health": 52428,
+        "selected_surface_bit": 0,
+        "after_surface": 52428,
+        "coefficient_signed16": 200,
+        "final_divisor": 100,
+        "result": 157284
+      },
+      "native_result": 157284
+    },
+    {
+      "case": "run-raw-all-ones",
+      "loaded_speeds": [
+        109,
+        52428,
+        53
+      ],
+      "terms": {
+        "loaded_base": 52428,
+        "maxHP_formula_value": 1000,
+        "health_branch_enabled": true,
+        "health_threshold": 200,
+        "wounded_branch": false,
+        "after_health": 52428,
+        "selected_surface_bit": 0,
+        "after_surface": 52428,
+        "coefficient_signed16": 200,
+        "final_divisor": 100,
+        "result": 157284
+      },
+      "native_result": 157284
+    },
+    {
+      "case": "shuffle-raw-one-minimum",
+      "loaded_speeds": [
+        109,
+        301,
+        1
+      ],
+      "terms": {
+        "loaded_base": 1,
+        "maxHP_formula_value": 1000,
+        "health_branch_enabled": true,
+        "health_threshold": 200,
+        "wounded_branch": false,
+        "after_health": 1,
+        "selected_surface_bit": 0,
+        "after_surface": 1,
+        "coefficient_signed16": 200,
+        "final_divisor": 100,
+        "result": 3
+      },
+      "native_result": 3
+    },
+    {
+      "case": "negative-coefficient-wrap",
+      "loaded_speeds": [
+        109,
+        301,
+        53
+      ],
+      "terms": {
+        "loaded_base": 109,
+        "maxHP_formula_value": 1000,
+        "health_branch_enabled": true,
+        "health_threshold": 200,
+        "wounded_branch": false,
+        "after_health": 109,
+        "selected_surface_bit": 256,
+        "after_surface": 163,
+        "coefficient_signed16": -32768,
+        "final_divisor": 100,
+        "result": 42896424
+      },
+      "native_result": 42896424
+    }
+  ],
+  "primary": {
+    "profile": {
+      "file": "D:\\Games\\DK2\\Dungeon Keeper 2\\DKII-DX.exe",
+      "sha256": "d7a8b854e4e4f02709eba271bead6fe2307dd6e332b5a96e70857e5b0e19fb8a"
+    },
+    "functions": [
+      {
+        "address": 4791632,
+        "length": 12,
+        "memory": "ghidra\\phase131-primary-491d50-memory.txt",
+        "memory_sha256": "fdafeee392378d33f65dfcac797f7d24f68a1c51a77d276ef4200d31ab8af9d7",
+        "assembly": "ghidra\\phase131-primary-491d50-assembly.txt",
+        "assembly_sha256": "2784631f7bae062af949e7479633c657750a0baffed86c7b21f5186e8e5220a6",
+        "bytes_sha256": "254aa0b0b08b7e12486fe79e6f89212d8d35b5a15a5e830a47cdd2f98ba1cf24"
+      },
+      {
+        "address": 4791648,
+        "length": 25,
+        "memory": "ghidra\\phase131-primary-491d60-memory.txt",
+        "memory_sha256": "8e8a215b13c1b6caf2d7aba35aa7885ac9eb34d0e02e06f2237c31d6b4b374c1",
+        "assembly": "ghidra\\phase131-primary-491d60-assembly.txt",
+        "assembly_sha256": "02db2c178fefc6178fea027b7f2259e71086ebfd93e998d510cf81d6c7128a62",
+        "bytes_sha256": "4e37c8de468ed3cd1f88b1953b94bde62b84ee28d3026bf02bf9641583a663d8"
+      },
+      {
+        "address": 4791680,
+        "length": 10,
+        "memory": "ghidra\\phase131-primary-491d80-memory.txt",
+        "memory_sha256": "3a3e694198fc30912c5639ff0c5e284837ee6b823ba9fdb89954a6fc2b3c104c",
+        "assembly": "ghidra\\phase131-primary-491d80-assembly.txt",
+        "assembly_sha256": "57e6b6ebe0743208472b8c22561fcc5a63232a260de138c95ef1f00b33e0b31e",
+        "bytes_sha256": "404140e7761959e82db6cdcf77ddd6930c6ab91ba6aced866d7a66eb5e6d991a"
+      },
+      {
+        "address": 4791696,
+        "length": 18,
+        "memory": "ghidra\\phase131-primary-491d90-memory.txt",
+        "memory_sha256": "723bcd020f05dd2d7cbde51503c7d5086deef7ddfc5def5c4e9e84a6dea4cc2e",
+        "assembly": "ghidra\\phase131-primary-491d90-assembly.txt",
+        "assembly_sha256": "803d2d84930f751fad641a700b035340744dff76b52dd4a7c9a5fdb3b58716f0",
+        "bytes_sha256": "fa94d490cef860b4e8f5c9c05d1458d70d294db3f79e4f09d69cb2e81b9226df"
+      },
+      {
+        "address": 4791728,
+        "length": 15,
+        "memory": "ghidra\\phase131-primary-491db0-memory.txt",
+        "memory_sha256": "f2b6728020256c960f6aa3e3aa256852978814a222014bffed98717b5baf2b0c",
+        "assembly": "ghidra\\phase131-primary-491db0-assembly.txt",
+        "assembly_sha256": "14c1859bc2a11a52fe81528c69e771838237ef4662f7689193f12f4e4c3d7860",
+        "bytes_sha256": "6c127110d6a0e40d721ab6b3f3a089fdb058953422d172f0dbb94cff78330294"
+      },
+      {
+        "address": 4791744,
+        "length": 1135,
+        "memory": "ghidra\\phase131-primary-491dc0-memory.txt",
+        "memory_sha256": "8eeaa117ba424ced9d9f91f77ed6441360753bf0b27866b547500cffbf9dc600",
+        "assembly": "ghidra\\phase131-primary-491dc0-assembly.txt",
+        "assembly_sha256": "0d01ca89a8e0a671a2f11945d9be58fa9429b0f498f68089955949547ad1b20c",
+        "bytes_sha256": "ae4ad216755f302e1b9106e075e9851d3fd529f6c5f570fb17152019c50f1791"
+      },
+      {
+        "address": 4793120,
+        "length": 8252,
+        "memory": "ghidra\\phase131-primary-492320-memory.txt",
+        "memory_sha256": "c3f9e6bedcbbef867ff897a5b3d1ee1196ed22d6d59cdad088e08d74795b4706",
+        "assembly": "ghidra\\phase131-primary-492320-assembly.txt",
+        "assembly_sha256": "36ed1e3d206c43a605c1c9935965ad82af7fba67c1cb68389dfd5a9b227db083",
+        "bytes_sha256": "b311ac9d5f88c17ee505128e44c062cee0e2163b5417cd6ed63cba0651e97d1a"
+      },
+      {
+        "address": 5262688,
+        "length": 31,
+        "memory": "ghidra\\phase131-primary-504d60-memory.txt",
+        "memory_sha256": "32e15bf942f468df5d1261dbb63f7267c2ef615d9c129a91177294d70060a33f",
+        "assembly": "ghidra\\phase131-primary-504d60-assembly.txt",
+        "assembly_sha256": "8e2439f87dc650e5c0295ca6ebaed505f5ab49f69602f5613f0a39958141963a",
+        "bytes_sha256": "12558628e8f199e22dc7f8289bfa4fed64080f401040c04b2ca7368c5c86384d"
+      },
+      {
+        "address": 5670944,
+        "length": 1552,
+        "memory": "ghidra\\phase131-primary-568820-memory.txt",
+        "memory_sha256": "b9e5ebaea845adf7fd08a7e50c152a248b7e41023612349fb2998338b29b751c",
+        "assembly": "ghidra\\phase131-primary-568820-assembly.txt",
+        "assembly_sha256": "821f20219eaad78a5d0c3da2f8b0c3355d4a12fb050a3d96f03ec4f0f48046d6",
+        "bytes_sha256": "496dd328a811d181e915b61e6ccaf90525d478bcc63017c9c3e7eebf1f31bc24"
+      },
+      {
+        "address": 5672496,
+        "length": 3597,
+        "memory": "ghidra\\phase131-primary-568e30-memory.txt",
+        "memory_sha256": "0cf8edde42d73245e325f4ce69e42d0a55fd57921c2b03ce407735d4754c1add",
+        "assembly": "ghidra\\phase131-primary-568e30-assembly.txt",
+        "assembly_sha256": "97e9b7b90edc3441e1f6eaf7ef9d84ccb953c0604e8527a85ca26db865b3cde9",
+        "bytes_sha256": "e418e5207c7759bbc3de4e9d28b92604fcf4b75869b67846622df9c1cbc36c78"
+      },
+      {
+        "address": 5676096,
+        "length": 24,
+        "memory": "ghidra\\phase131-primary-569c40-memory.txt",
+        "memory_sha256": "6e0400c4135d937e36b46cc67e0d8fe55913f451b3b33d16d13e38906dc60187",
+        "assembly": "ghidra\\phase131-primary-569c40-assembly.txt",
+        "assembly_sha256": "7f78fe97d05b137389ab45436eebddc9a541488ceea0456b29fc4202d339af89",
+        "bytes_sha256": "fdfdb393f068d6cf157a87816c073903e9f8c1b195eafa3664d446a08034dbef"
+      },
+      {
+        "address": 5676128,
+        "length": 24,
+        "memory": "ghidra\\phase131-primary-569c60-memory.txt",
+        "memory_sha256": "e6a565677a869ed3bc51e3cc4bcbdb742684714dcf45f07098182b998d2f27dd",
+        "assembly": "ghidra\\phase131-primary-569c60-assembly.txt",
+        "assembly_sha256": "ae99ecb0df3c90d4c2ac3509bc0078b9d6cfc9d7e7c4f8efe0ef7a2efa183479",
+        "bytes_sha256": "4a363e1000c4d218c45c298bde1ac26549ba37e2383be7e2c0f8f6bc9f1b4759"
+      },
+      {
+        "address": 5676160,
+        "length": 24,
+        "memory": "ghidra\\phase131-primary-569c80-memory.txt",
+        "memory_sha256": "9e7c91973826ceedcdd367c4596eeca04458ae629a750db2bb00665223c0c924",
+        "assembly": "ghidra\\phase131-primary-569c80-assembly.txt",
+        "assembly_sha256": "819231de19bbad16556436396d5363255ae6cf79093cd83dd71ca0cb11019ed9",
+        "bytes_sha256": "ccbe7eb058d5707256759f5beb62bf62e89287716c2404d271e7ad4aeee11229"
+      },
+      {
+        "address": 5676192,
+        "length": 24,
+        "memory": "ghidra\\phase131-primary-569ca0-memory.txt",
+        "memory_sha256": "58de4674d678ee7f137ec5edaa5c0abfc4749152a34f755bb3b00352d7a51415",
+        "assembly": "ghidra\\phase131-primary-569ca0-assembly.txt",
+        "assembly_sha256": "3a1c9d19ed61821f9039d86f230ded1e940e05f6cff1a8818859a9e5fd3c5279",
+        "bytes_sha256": "a6e825fcb2b65b3def02191ffc8932105046460039f8efe0b164059038c6a2ef"
+      },
+      {
+        "address": 5676224,
+        "length": 27,
+        "memory": "ghidra\\phase131-primary-569cc0-memory.txt",
+        "memory_sha256": "72b39c49f0db27fc0f66e7e0ece691e0aa70bdbc44e652f3d46b4ac804898aa2",
+        "assembly": "ghidra\\phase131-primary-569cc0-assembly.txt",
+        "assembly_sha256": "24b2bcea9ff62f42c614e4e45bb3f1ffcf185e41cdde9adf684e9501deaec05b",
+        "bytes_sha256": "7569634cfc81cd11024cec9bafa9532c9c8ca1506468361de83a65bf18ed1f24"
+      },
+      {
+        "address": 5676256,
+        "length": 27,
+        "memory": "ghidra\\phase131-primary-569ce0-memory.txt",
+        "memory_sha256": "570b4dab7d6b2fc95ecbf7c09ad06facc2fbfabe20fdf6a88ba396ed02d91408",
+        "assembly": "ghidra\\phase131-primary-569ce0-assembly.txt",
+        "assembly_sha256": "11e3f8456f61cfe533a3b2ace1ca90ad0d3439ec0c68aa13043d3bdad2ee09a4",
+        "bytes_sha256": "460e57ca06d6b68e96bd5f2a0fbf346a7e201974543fce922a32502c202a48bf"
+      },
+      {
+        "address": 5676288,
+        "length": 27,
+        "memory": "ghidra\\phase131-primary-569d00-memory.txt",
+        "memory_sha256": "d807f0ff4c8c2a0c33eb25cf87326b0333b91fd8845ea3720134f408343eb416",
+        "assembly": "ghidra\\phase131-primary-569d00-assembly.txt",
+        "assembly_sha256": "8a741222090ed25fd1b1510120ec8931bb1546537c6d07c80d7b121935e80ef3",
+        "bytes_sha256": "3e1b0d5c7cc6925605ec50b0a521dbce0e6ddc3c876af370808474e1db51fa4a"
+      },
+      {
+        "address": 5676320,
+        "length": 38,
+        "memory": "ghidra\\phase131-primary-569d20-memory.txt",
+        "memory_sha256": "09f612076ce2af20bb7210b99cda67a861235072a4e230828863bd66d2072c00",
+        "assembly": "ghidra\\phase131-primary-569d20-assembly.txt",
+        "assembly_sha256": "b3090aa8e601afaf82c4d6103968e69026a24d859aaf21c4f86e2c08457dc2cf",
+        "bytes_sha256": "f65c6282ba9b74eac79c4c331b1853785bda5ac5a4b2559245743b98fa226c9a"
+      },
+      {
+        "address": 5676368,
+        "length": 27,
+        "memory": "ghidra\\phase131-primary-569d50-memory.txt",
+        "memory_sha256": "a3dc78e5945127d4100d08bf592aac5f791bcbb99cbd198f70daa9c59ea88494",
+        "assembly": "ghidra\\phase131-primary-569d50-assembly.txt",
+        "assembly_sha256": "da2189d699b514efcd1593b780002dda0c5374cd64aad74a3bd114228a77c53d",
+        "bytes_sha256": "489e5c78bc6620f031d230a3885d5004da798f7cab0df37f90ec3d8933075d8a"
+      },
+      {
+        "address": 5676400,
+        "length": 24,
+        "memory": "ghidra\\phase131-primary-569d70-memory.txt",
+        "memory_sha256": "395217b972dd039ae6259b21f1bd8c93d672b5046d42820f9976ceaa778d76e1",
+        "assembly": "ghidra\\phase131-primary-569d70-assembly.txt",
+        "assembly_sha256": "21efea584786e3d1ecd6066299194f12bc9fc0c1cd2934d9f5fb025a71dc98a3",
+        "bytes_sha256": "8d75d9f82b4e5902875fa9f1ced9cbae2b10da661fa11cc2660370ab52c25ec1"
+      },
+      {
+        "address": 5676432,
+        "length": 24,
+        "memory": "ghidra\\phase131-primary-569d90-memory.txt",
+        "memory_sha256": "f3c7602dcf684f8dab6860f2b878f74305ab6f2f4b29ce54a8674503f582777c",
+        "assembly": "ghidra\\phase131-primary-569d90-assembly.txt",
+        "assembly_sha256": "4ad23252ec33b5e8fedf8bb488b9ff409d765c28b71f203c6ad7dbbed39ca15d",
+        "bytes_sha256": "6d136458bc301eec6540f5d938bcfd9abcd7d0a6d9b69b770488e4509f890467"
+      },
+      {
+        "address": 5676464,
+        "length": 24,
+        "memory": "ghidra\\phase131-primary-569db0-memory.txt",
+        "memory_sha256": "310cdcf5d49268a086e8f17c62ec270c5dddf707fd974fd3634831a37019d583",
+        "assembly": "ghidra\\phase131-primary-569db0-assembly.txt",
+        "assembly_sha256": "5271de0d7f03a57622c217b28c288d6209dfa0ebfc9d8826775cfd3216626321",
+        "bytes_sha256": "a24f435ff116ccfb0884dcb0de0bc1cc2f816f6b013c8ebbc33fe29e81ee4f45"
+      },
+      {
+        "address": 5676496,
+        "length": 24,
+        "memory": "ghidra\\phase131-primary-569dd0-memory.txt",
+        "memory_sha256": "6b77df37ee3c6b65a3e498751a9568c73f373a47d2b5910ffbe1970d67f55dec",
+        "assembly": "ghidra\\phase131-primary-569dd0-assembly.txt",
+        "assembly_sha256": "291430cb007f1df9d486b3ec4ac6a27597f42dabd77369e04c0ad34754996c7d",
+        "bytes_sha256": "c504904f40039bd76227e295a9ac5be694a648df7ec43cb6eed0b2492858a5cc"
+      },
+      {
+        "address": 5676528,
+        "length": 27,
+        "memory": "ghidra\\phase131-primary-569df0-memory.txt",
+        "memory_sha256": "b2e7bf16a05eb6027b046a8cb148c79d410c6fe5eba84b0257472a25205bc830",
+        "assembly": "ghidra\\phase131-primary-569df0-assembly.txt",
+        "assembly_sha256": "b27e80cbffd18f5286406d62fb6e128a326bb656a6285403b1004808282189a2",
+        "bytes_sha256": "5a440b444ab77476338e942ad5e35162819c2250f7fe8886d18250d99a1d0385"
+      },
+      {
+        "address": 5676560,
+        "length": 27,
+        "memory": "ghidra\\phase131-primary-569e10-memory.txt",
+        "memory_sha256": "92436b893efa580731f58a30cd40c02bdd5d4b97bedf88db8842db0fcea63fcc",
+        "assembly": "ghidra\\phase131-primary-569e10-assembly.txt",
+        "assembly_sha256": "03c6df80453b31656da59161826eb30ce7919363b4dc221c5a35c4378a39e592",
+        "bytes_sha256": "8920ea61130ad6d313d84d278112909da25ffa04f86a9ca4300da3c56113e8da"
+      },
+      {
+        "address": 5676592,
+        "length": 29,
+        "memory": "ghidra\\phase131-primary-569e30-memory.txt",
+        "memory_sha256": "45470634d13c6eb71573d18edc0fb6c586d6fd79a69bfe9d5444265deee6c134",
+        "assembly": "ghidra\\phase131-primary-569e30-assembly.txt",
+        "assembly_sha256": "de8389dd6563f3f085259f552cfbe5925ba72b3c78e14841e4708e10b8a1d5fd",
+        "bytes_sha256": "0d337d7fd5d01920eb27dc368577de2bfdad7090674b38c96f45b0f4e20d95ea"
+      },
+      {
+        "address": 5676624,
+        "length": 29,
+        "memory": "ghidra\\phase131-primary-569e50-memory.txt",
+        "memory_sha256": "59e535267c3ca649ff6a69e4ae5fe025dcb93bf8c13970e30c433b7be639f9fa",
+        "assembly": "ghidra\\phase131-primary-569e50-assembly.txt",
+        "assembly_sha256": "66aea9f20d41ab6deb981d6c6a5172cdf43d7fd5a1a430f0df89fe341885709a",
+        "bytes_sha256": "cf7acf6d5dfc1953fcc45afa053f85cf08375d3afd3038a3f189568b59ea8c8b"
+      },
+      {
+        "address": 5676656,
+        "length": 24,
+        "memory": "ghidra\\phase131-primary-569e70-memory.txt",
+        "memory_sha256": "a9f79059508d0fc363004f14690d8f150636f760bfcb994c40bb60d07692ee73",
+        "assembly": "ghidra\\phase131-primary-569e70-assembly.txt",
+        "assembly_sha256": "15658c6ece765b5167c4900f1692fd1f6b9a7c6bda0ce1afea0ef056c5db5c4e",
+        "bytes_sha256": "c4fd399701f67562236076288649eb03ba78ae8112080deb91f1e5d583f064a2"
+      },
+      {
+        "address": 5676688,
+        "length": 27,
+        "memory": "ghidra\\phase131-primary-569e90-memory.txt",
+        "memory_sha256": "d31b88394429a0ec12a31d71c48224c9746d43ee43549a271275ca5a07a58598",
+        "assembly": "ghidra\\phase131-primary-569e90-assembly.txt",
+        "assembly_sha256": "e069788da7eb61df955967649f9f2f768337789ff6ce29c7688065c330ae3733",
+        "bytes_sha256": "1c0bf0f48c0b19f33fade56ac9b111d03214611a25b6ed26825c73c3e8f3532a"
+      },
+      {
+        "address": 5676720,
+        "length": 27,
+        "memory": "ghidra\\phase131-primary-569eb0-memory.txt",
+        "memory_sha256": "b01d84c2a8f7dfb1e837411b0af349c1bb3bf84f5db6dc6687a3f9565b75a3ea",
+        "assembly": "ghidra\\phase131-primary-569eb0-assembly.txt",
+        "assembly_sha256": "3291138e5edcb8c9386bb2a55a4aaaaee1154d096b967196519e8072b14bf3dd",
+        "bytes_sha256": "3215120be939556c76719d7ca7fcfdcf0eecdcfd11abebe13f2c5f120163fe8c"
+      },
+      {
+        "address": 5676752,
+        "length": 29,
+        "memory": "ghidra\\phase131-primary-569ed0-memory.txt",
+        "memory_sha256": "2c733684354a7b78161ffd3dd904d33e61d7a94890fbba5a3abf72d4a568b4eb",
+        "assembly": "ghidra\\phase131-primary-569ed0-assembly.txt",
+        "assembly_sha256": "a1c83e7b31d62b31838535f56d3b071bce565d7bfc145015ec477a3d2580bf2b",
+        "bytes_sha256": "070dffab6cf12cad7c100bda7dd0acb74e154e8ecd061ccf64ea4b2a3c255b62"
+      },
+      {
+        "address": 5676784,
+        "length": 29,
+        "memory": "ghidra\\phase131-primary-569ef0-memory.txt",
+        "memory_sha256": "dfe68a4ec30bf949ff5f048b03d994a652692982e6c5c201cf6097b233d4b761",
+        "assembly": "ghidra\\phase131-primary-569ef0-assembly.txt",
+        "assembly_sha256": "faeb83b2d45952b70990fc441f25b34dbbd84d52d1412d72c0a274c9ff7965b6",
+        "bytes_sha256": "3614a1db547afbebfa1b1076aa0923fe6fa552481c7f11c2af63c4bd4f42140a"
+      },
+      {
+        "address": 5676816,
+        "length": 24,
+        "memory": "ghidra\\phase131-primary-569f10-memory.txt",
+        "memory_sha256": "adafd27f4b68589cf31caf078ab805a76fd36efe816eb3f9541d1fd75b8097bf",
+        "assembly": "ghidra\\phase131-primary-569f10-assembly.txt",
+        "assembly_sha256": "c7b5d98ede5f3f0fe9d6f7c99cbd83035e704bd12615dfddc40faea196604d6c",
+        "bytes_sha256": "9e4b0d729300b12da25c38dcebcd0600f29f0ca021b31d6b8737d309064622f6"
+      },
+      {
+        "address": 5676848,
+        "length": 27,
+        "memory": "ghidra\\phase131-primary-569f30-memory.txt",
+        "memory_sha256": "f84795742cb95ca3a5b74a608aca898f5dcb818ca99e23543153de65d5aee4c6",
+        "assembly": "ghidra\\phase131-primary-569f30-assembly.txt",
+        "assembly_sha256": "51e534a4ff4c4c64e8c729fd6a61e75dae6d0cc039227dc91fb3d8479f3d9fef",
+        "bytes_sha256": "ebfecf02a5ec07b368d5217b4ec91974998a4e262d970ed463a6612a02bbb5f6"
+      },
+      {
+        "address": 5676880,
+        "length": 27,
+        "memory": "ghidra\\phase131-primary-569f50-memory.txt",
+        "memory_sha256": "b66e7c68a17de1facee1f59bfbd4f926e5a6e72e8a8e73a4718135aa72c1504e",
+        "assembly": "ghidra\\phase131-primary-569f50-assembly.txt",
+        "assembly_sha256": "f3963486966ca4404f9d4ecbca3930a3d97bf7ac439570efe24cf6c05a18cb0a",
+        "bytes_sha256": "d6d55d5e0835296486c209547253da89ef19fd2416ce9973482f4e1e1cdbcbbe"
+      },
+      {
+        "address": 5676912,
+        "length": 29,
+        "memory": "ghidra\\phase131-primary-569f70-memory.txt",
+        "memory_sha256": "a383b13c166d159d0789c84781131f6f2751e6b46adf8d951ecd40fa2ba964c0",
+        "assembly": "ghidra\\phase131-primary-569f70-assembly.txt",
+        "assembly_sha256": "fc7f6e06e675b4ef0c7bfb7d8c3373cd3bbf58f30ec014cc65102060511ecc4f",
+        "bytes_sha256": "3d49e32645c3591920c0abd32b00da6572ca937d88a734c3203579c4f1d28994"
+      },
+      {
+        "address": 5676944,
+        "length": 29,
+        "memory": "ghidra\\phase131-primary-569f90-memory.txt",
+        "memory_sha256": "e7a3be98a1361d7b1c8aaf2d1f1937cd210352f2e76138372f2995d69c683a11",
+        "assembly": "ghidra\\phase131-primary-569f90-assembly.txt",
+        "assembly_sha256": "ffe51b753892e0cf4224304985795e863d78d1a3dc860499c7ed9c2095a671fb",
+        "bytes_sha256": "c87884efc79413aa23c3b10427737040089dffff79f07cb31161d0646e0e43ae"
+      },
+      {
+        "address": 5676976,
+        "length": 24,
+        "memory": "ghidra\\phase131-primary-569fb0-memory.txt",
+        "memory_sha256": "ce113a26866521afeaccb3cf6e77869166de744b09bfa55d6abf226109267d55",
+        "assembly": "ghidra\\phase131-primary-569fb0-assembly.txt",
+        "assembly_sha256": "b320912c1df3e3309f6c395b22de515548ca64b5e2dd14261fec02684e473931",
+        "bytes_sha256": "18e2f13b720f285c543f4b5a85b6f0f06d839fbd9540a7d0e438f73c4521aeb5"
+      },
+      {
+        "address": 5677008,
+        "length": 24,
+        "memory": "ghidra\\phase131-primary-569fd0-memory.txt",
+        "memory_sha256": "c36b37560911f8937c7f185d7bc691635e73a0105535216fce8a38c277406d3d",
+        "assembly": "ghidra\\phase131-primary-569fd0-assembly.txt",
+        "assembly_sha256": "e87932cfc6636ee9dd74571ccebe948b8462958269b50965e36df261396a99e6",
+        "bytes_sha256": "860b36ce9df81873c47890b6822fd0981c040348cd3bbe9d27e73d0992e3cdb0"
+      },
+      {
+        "address": 5677040,
+        "length": 24,
+        "memory": "ghidra\\phase131-primary-569ff0-memory.txt",
+        "memory_sha256": "9bd15d15df78c0ef51a900a3c2978cdcbdb1734d05fc4129a223ae360dc8fc4e",
+        "assembly": "ghidra\\phase131-primary-569ff0-assembly.txt",
+        "assembly_sha256": "5db5d5fd0b1d4770785c3e55d847d85d0911ae177c3e124ee0a6acdbd78a6688",
+        "bytes_sha256": "200fe6651942e6d9270d558e16f4966ce35fdf176694a4d1b0d63deff02377c1"
+      },
+      {
+        "address": 5677072,
+        "length": 24,
+        "memory": "ghidra\\phase131-primary-56a010-memory.txt",
+        "memory_sha256": "395ab420163072832132fbde86963f02610d3c8e0b978485a62ceb68fcc0d4b6",
+        "assembly": "ghidra\\phase131-primary-56a010-assembly.txt",
+        "assembly_sha256": "68e367d7157acfa3a17d2a473ac8b94bdd37890118f0cd32676005c8d0eefc72",
+        "bytes_sha256": "ab6751b234526fb015712c1b3d9ac6c7e2af6a73c95669599efeef4a94bf5844"
+      },
+      {
+        "address": 5677104,
+        "length": 26,
+        "memory": "ghidra\\phase131-primary-56a030-memory.txt",
+        "memory_sha256": "bfd5155ae6ef2fb00b577a158faf43dd88e3036a6886b4507b54942e27fe00df",
+        "assembly": "ghidra\\phase131-primary-56a030-assembly.txt",
+        "assembly_sha256": "d48148cdc06e7465356a55541a7172134eb1fdd96e050f1e8540534af5025061",
+        "bytes_sha256": "b106e436f666f21f0592b78eb30c5470e923f83a75eedfcda7071f274b0ab3ca"
+      },
+      {
+        "address": 5677136,
+        "length": 26,
+        "memory": "ghidra\\phase131-primary-56a050-memory.txt",
+        "memory_sha256": "d2a092f9fb160a2407634bba1092b93f1ff6e9d3283b4224e38aef2096761300",
+        "assembly": "ghidra\\phase131-primary-56a050-assembly.txt",
+        "assembly_sha256": "354b6f6bd824241a0677d554b9dd6df266bdabffa7be6c08e81d4261db0c9538",
+        "bytes_sha256": "a167ef82fa0c5798a2450f569fa20cfd732a344ddc3fb838a8de3edd43548669"
+      },
+      {
+        "address": 5677168,
+        "length": 24,
+        "memory": "ghidra\\phase131-primary-56a070-memory.txt",
+        "memory_sha256": "1329e76ee245e35ce3acc695bd35c5dc3c5f81071ca10d1ae748d09d430c7a02",
+        "assembly": "ghidra\\phase131-primary-56a070-assembly.txt",
+        "assembly_sha256": "dd15d3b189661ad3f8b1de46f1009a65c730107e4133d3202ab67d55dcbccf40",
+        "bytes_sha256": "8d6687e906259dfd4658736e76feeeda2f39491bdec42e01adc8fa3bd91978ff"
+      },
+      {
+        "address": 5677200,
+        "length": 24,
+        "memory": "ghidra\\phase131-primary-56a090-memory.txt",
+        "memory_sha256": "102e9b13de0c5b3d001b2f94ec4c9633626978e56ad5eda33ec05bca9b2d4436",
+        "assembly": "ghidra\\phase131-primary-56a090-assembly.txt",
+        "assembly_sha256": "9d3f8e0bc61a00d44f89fe1a70840edf7004429b5071374b15910c608ed1dc88",
+        "bytes_sha256": "379126499787206b46ea70cd95a2419e5709ccc7fca768f26dd6323fa24e2218"
+      },
+      {
+        "address": 5677232,
+        "length": 24,
+        "memory": "ghidra\\phase131-primary-56a0b0-memory.txt",
+        "memory_sha256": "70ccf758e12e7e1cb71b35cb45ab79aec92d0c815f16336c53a109484bfa2b6a",
+        "assembly": "ghidra\\phase131-primary-56a0b0-assembly.txt",
+        "assembly_sha256": "65c8fb9222c31f76b3157272978860a9eeca5d762ce16b6713989f8847a14233",
+        "bytes_sha256": "928d13d933a635551a68b4b2f74e7587a3d4709a9d87fe780d286d20cf985f42"
+      },
+      {
+        "address": 5677264,
+        "length": 24,
+        "memory": "ghidra\\phase131-primary-56a0d0-memory.txt",
+        "memory_sha256": "01f2cba828b1d413c28f2134a7358a54272344260bfa43991a660b25478e63be",
+        "assembly": "ghidra\\phase131-primary-56a0d0-assembly.txt",
+        "assembly_sha256": "4a1679f6989c84cca9377797b9996ce412ddb20feb659fb4b99b7fa61cc6c808",
+        "bytes_sha256": "d3c0dde4ad34118b50a65ce7562eeed2d954d76ec2d1ab1a749706cc713c9a52"
+      },
+      {
+        "address": 5677296,
+        "length": 41,
+        "memory": "ghidra\\phase131-primary-56a0f0-memory.txt",
+        "memory_sha256": "d54f20987fd455bfe98b12beb358b0944ac04c7ffe705e4cb0a0f6690f62ddff",
+        "assembly": "ghidra\\phase131-primary-56a0f0-assembly.txt",
+        "assembly_sha256": "211c88c587dd3aa3f356f07c126f05db1c42e0c18eb45809bb8c9cea9d6e2ca8",
+        "bytes_sha256": "99430ffc554bb477992dd41bfc9c3f9572605b33ca8de26ad809a35ccc7ebdce"
+      },
+      {
+        "address": 5677344,
+        "length": 24,
+        "memory": "ghidra\\phase131-primary-56a120-memory.txt",
+        "memory_sha256": "92d04e210bf6068e8ee6db5dccd7b735d28899ad96fb345181428c2b35a6a1ad",
+        "assembly": "ghidra\\phase131-primary-56a120-assembly.txt",
+        "assembly_sha256": "7dce880d4def301de1c7eca85fb1f1b6b9e5f7e0aab0e7ea8ce8204a5e679f4d",
+        "bytes_sha256": "688ab333b3fd55e7b742cc0da35c1e3f1ad44356354c507f0dc3780ba3296aee"
+      },
+      {
+        "address": 5677376,
+        "length": 38,
+        "memory": "ghidra\\phase131-primary-56a140-memory.txt",
+        "memory_sha256": "d705971432d0680fb80f019520138fdaf37530774a181d68848b47bbc20d603b",
+        "assembly": "ghidra\\phase131-primary-56a140-assembly.txt",
+        "assembly_sha256": "6fcb4736c698137e28deb51deee75d3e03343856a81ced8a19f93d08eb191eeb",
+        "bytes_sha256": "c2037d826719c31efdddefb17d7391fe32db6b6468d84bc203797baebdb0ff25"
+      },
+      {
+        "address": 5677424,
+        "length": 24,
+        "memory": "ghidra\\phase131-primary-56a170-memory.txt",
+        "memory_sha256": "ca3ec3dc72428bcd13935b422760b2fb43610072791df6d34f670cafff7254f7",
+        "assembly": "ghidra\\phase131-primary-56a170-assembly.txt",
+        "assembly_sha256": "0a65d177235bef7ed05f401bdb9755344d4f53ec572d46552bf06a36d3162e13",
+        "bytes_sha256": "59d258dc842960cc9e15c78f1d59946d42a87f72f6d39bc6d1795515df0f5d29"
+      },
+      {
+        "address": 5677456,
+        "length": 26,
+        "memory": "ghidra\\phase131-primary-56a190-memory.txt",
+        "memory_sha256": "4b3d160eb9f85e1eeaa18a099296bee4492bf0a76cb864b84470906b13ff6e64",
+        "assembly": "ghidra\\phase131-primary-56a190-assembly.txt",
+        "assembly_sha256": "fb41075457f07a124e367b02849958b8690765891eff12caf1aad684df268f61",
+        "bytes_sha256": "e901dc0f18e16443f4091dcd81ea096959f5b9dab4c7aacce02fdc09e6558568"
+      },
+      {
+        "address": 5677488,
+        "length": 26,
+        "memory": "ghidra\\phase131-primary-56a1b0-memory.txt",
+        "memory_sha256": "e76ef42b473e85af6413ae00afe07000ad84875788b462018de902acdd2a1ea7",
+        "assembly": "ghidra\\phase131-primary-56a1b0-assembly.txt",
+        "assembly_sha256": "ea957930307f618e333397089547c2e1173315d755c47b2a5bad57e389708eeb",
+        "bytes_sha256": "d1e2656aee885c2751973bc1678de41683cf3ee777c675daabec781aa8ff5045"
+      },
+      {
+        "address": 5677520,
+        "length": 24,
+        "memory": "ghidra\\phase131-primary-56a1d0-memory.txt",
+        "memory_sha256": "67e8b2d49d2812534d12c5e721c0cc4551b1cfd6725bc2ed8f81373264c20809",
+        "assembly": "ghidra\\phase131-primary-56a1d0-assembly.txt",
+        "assembly_sha256": "4123c68ce37c3d55eb540e1696cd0eddfe820cd3b28413b099dcf7b290d6fcf5",
+        "bytes_sha256": "faf3d270396c420c873370554d5795fd2a7325c0c1eb4ccf769b17492452c672"
+      },
+      {
+        "address": 5677552,
+        "length": 24,
+        "memory": "ghidra\\phase131-primary-56a1f0-memory.txt",
+        "memory_sha256": "3f8ccbdda84562b1b36ab3b4702c486b8c63b3b14a3e300340f0908475806719",
+        "assembly": "ghidra\\phase131-primary-56a1f0-assembly.txt",
+        "assembly_sha256": "32a5ce01f870cfaf19bc268ae7b1774e558cdeae774b11f70d589c694e7d06ec",
+        "bytes_sha256": "dbf11bbe797cb2bbeaccad6d80f0850cd1e7f53a0b983b10cafb636a6f0bb751"
+      },
+      {
+        "address": 5677584,
+        "length": 24,
+        "memory": "ghidra\\phase131-primary-56a210-memory.txt",
+        "memory_sha256": "537831de66e603e5c24b11ba8b5c3153c0f718f53cd43edd56d84436f7be8917",
+        "assembly": "ghidra\\phase131-primary-56a210-assembly.txt",
+        "assembly_sha256": "ae4928f156d67e8a3dc513e9e984e24e36a60e016ff519daf2f7087d185e5b31",
+        "bytes_sha256": "9d26529fe8142cba6ab7f0d410977106c6ac4f119395086c63c16f3cd54dab41"
+      },
+      {
+        "address": 5677616,
+        "length": 24,
+        "memory": "ghidra\\phase131-primary-56a230-memory.txt",
+        "memory_sha256": "340c185f8e42d7a0890ae7d4e141bfcb6d252f4cddb4d6c1e60a058fc58c6f4f",
+        "assembly": "ghidra\\phase131-primary-56a230-assembly.txt",
+        "assembly_sha256": "3bbccc4e24da5bd38491ec1c95b8e67922d52916d53d9e6d5bc42a8810b250cc",
+        "bytes_sha256": "959dad2e68553a46a1af14a38039d2bb3c652b58d08da29f6ba4d17f1c989f28"
+      },
+      {
+        "address": 6512320,
+        "length": 111,
+        "memory": "ghidra\\phase131-primary-635ec0-memory.txt",
+        "memory_sha256": "289a51c4ee5a1aa21e744d3d7b29d3dd097913862ca348cfc441a6020c0f34a9",
+        "assembly": "ghidra\\phase131-primary-635ec0-assembly.txt",
+        "assembly_sha256": "c98824ce1acdf8f9dcf42880080e5dc57d7cf5b45ee91f71ddacfd43c70cb560",
+        "bytes_sha256": "69530106f3b4252f59fbfd1b59c1abdb491ee504b2b93c344511916209db7593"
+      },
+      {
+        "address": 6512440,
+        "length": 20,
+        "memory": "ghidra\\phase131-primary-635f38-memory.txt",
+        "memory_sha256": "ca639d65b7cc7af67cf85ace35b6e4a09e5dd8246ae242eb11f8a80d0adb60cd",
+        "assembly": "ghidra\\phase131-primary-635f38-assembly.txt",
+        "assembly_sha256": "ea90fe6695552beeea19019074431fc150f3877527fe04f0db12eba305774aaa",
+        "bytes_sha256": "d3ecaec63122a11538fefbc03b3523b606c470eb8f44a40da3089946765c5424"
+      },
+      {
+        "address": 6513056,
+        "length": 254,
+        "memory": "ghidra\\phase131-primary-6361a0-memory.txt",
+        "memory_sha256": "b4f8463f4318b565e89410b1c0dcd3f35c19c62221578d65e99e7558bc0863a6",
+        "assembly": "ghidra\\phase131-primary-6361a0-assembly.txt",
+        "assembly_sha256": "b0e0d11e7cf673bf18b7ce3a03aa84c72f430f345f8016b33784a3a22d82361a",
+        "bytes_sha256": "0318574df8288c6fc0e543c779d4c1098344731f9acf2a7c790c2176ab7bdf4c"
+      },
+      {
+        "address": 5310656,
+        "length": 46,
+        "memory": "ghidra\\phase196-PC-5108c0-memory.txt",
+        "memory_sha256": "5f02c439dc2fd58c7f7ce41c8f1a4123373ea163e6b294c660d38b3af5e5a1f4",
+        "assembly": "ghidra\\phase196-PC-5108c0-assembly.txt",
+        "assembly_sha256": "133f9ef6f58418faab2fe9b9ce397e0d1208b8f0df4c9a858d73736555e06930",
+        "bytes_sha256": "b87d301761ad51baf1ba24673f96d40657ce52b1c2f829d3601fd577a4b5d9ac"
+      },
+      {
+        "address": 5979824,
+        "length": 45,
+        "memory": "ghidra/phase139-primary-5b3eb0-memory.txt",
+        "memory_sha256": "caf6fab9758445cb515fe28a2ea86688ba0774248aa3eddb252b46beb9ae1ead",
+        "assembly": "ghidra/phase139-reader-5b3eb0-disassemble_function.txt",
+        "assembly_sha256": "e87163611f45b498e4630f850a141274a9ea45c83efc8768ea4ef117d1bbe06d",
+        "bytes_sha256": "37738632b84864d2bb68420b8bbea87c87bcca910e63025e185819e87084bfa7"
+      },
+      {
+        "address": 5992000,
+        "length": 16,
+        "memory": "ghidra/phase139-primary-5b6e40-memory.txt",
+        "memory_sha256": "72c842dbaa7e2e9394e17ae52f6e0acd8c03bcf6ec877c4d0ae7ab6d6a6ea485",
+        "assembly": "ghidra/phase139-stream-5b6e40-disassemble_function.txt",
+        "assembly_sha256": "24516200cb39ef1dde2050dfe44134b196767e5418a4f838fb847470e90cd50b",
+        "bytes_sha256": "2a912f9306714a055aa586146bed5fe3e9a9b182a5fdf45d3e22a43e7d0efa8c"
+      },
+      {
+        "address": 5992096,
+        "length": 31,
+        "memory": "ghidra/phase139-primary-5b6ea0-memory.txt",
+        "memory_sha256": "4b950b4d9fff5967dd2b77418ae8920de6d4d61f98e69cd94e05d4627d152aa4",
+        "assembly": "ghidra/phase139-file-5b6ea0-disassemble_function.txt",
+        "assembly_sha256": "fd3c79e259832f0835e2d397bd47568a025d5e8d99aa04b27d8c5bce0d011150",
+        "bytes_sha256": "a31d63b36238552b006c4f62e84b905c5dd811339644ae9895742a81c8024251"
+      },
+      {
+        "address": 5992224,
+        "length": 42,
+        "memory": "ghidra/phase139-primary-5b6f20-memory.txt",
+        "memory_sha256": "1419f5acf0535bb4ace5d96d4043076c77fff8e7d1f638934fca5543c70c06a2",
+        "assembly": "ghidra/phase139-stream-5b6f20-disassemble_function.txt",
+        "assembly_sha256": "e08e43fdc397adc96180b665b05b06f747513952078837c7759561ff65945acb",
+        "bytes_sha256": "87c582033880602704770d0b488be95a9d95ce460ed998c4813cad08d599eca6"
+      },
+      {
+        "address": 6124080,
+        "length": 11,
+        "memory": "ghidra/phase139-primary-5d7230-memory.txt",
+        "memory_sha256": "fb8764a6004df65d9eb506c4afc5217a2cc7ffa944eb6d0c355ad13ddb6ef61f",
+        "assembly": "ghidra/phase139-stream-5d7230-disassemble_function.txt",
+        "assembly_sha256": "5e8d363c02d26d6f1c3de235b9911a315a78ef75c3f05cf49e43aed0d3149610",
+        "bytes_sha256": "841d7b8e520aba01226823eca6e3b961c3b955e318380c4f1e04d4f00bc597e4"
+      },
+      {
+        "address": 6291376,
+        "length": 57,
+        "memory": "ghidra/phase139-primary-5fffb0-memory.txt",
+        "memory_sha256": "39a49a38d7166a03537030b4d8a64e37263e77b38099185900418a58ce8b8d47",
+        "assembly": "ghidra/phase139-stream-5fffb0-disassemble_function.txt",
+        "assembly_sha256": "9bcd900e38011336ba1ed597e7e30ea1fe7094cf54013ea9f0c120d32271a754",
+        "bytes_sha256": "0a2fb5a397d7329fdd101c4e5c004ed53e9bad6335ea76cd533450547488a064"
+      },
+      {
+        "address": 5379984,
+        "length": 83,
+        "memory": "ghidra\\phase196-static-521790-memory.txt",
+        "memory_sha256": "9010aef8dd8af193cea85f7dedb69db18ba22bca89fc95386f1f0ece2662b9ed",
+        "assembly": "ghidra\\phase196-static-521790-assembly.txt",
+        "assembly_sha256": "f4956f5dd2086cd982d3672c5192d2c9dd805160eaa16891d14e203062a08f43",
+        "bytes_sha256": "b38754d5e9a79e2e958a8b9c704c703cb10e4e908bec3316c1da72da1979f78b"
+      },
+      {
+        "address": 5688272,
+        "length": 1539,
+        "memory": "ghidra\\phase196-static-56cbd0-memory.txt",
+        "memory_sha256": "42f19731de4bf2c34c453d0e7caa50353e241ec86650b1821c27ae76642e5381",
+        "assembly": "ghidra\\phase196-static-56cbd0-assembly.txt",
+        "assembly_sha256": "663260a772bcb7256227192f19b8638d7f08f7a62a1b737332ff85459dcdfff0",
+        "bytes_sha256": "9c8302ecbf0cabd4c968654f39eb5b98ed8399425b33ba7fcba48c1b7e8de499"
+      },
+      {
+        "address": 5707488,
+        "length": 559,
+        "memory": "ghidra\\phase196-static-5716e0-memory.txt",
+        "memory_sha256": "a968d31ea9ab04f6e0c0db87dccafd5b3f00c9286f7c4265e6dea4646b076d0d",
+        "assembly": "ghidra\\phase196-static-5716e0-assembly.txt",
+        "assembly_sha256": "ff8feba0b6a3f444df53b4a825abcb5a209de6595b866f65aef0c08f82034142",
+        "bytes_sha256": "eff155dde4e0af1ae4af2249e7f344c70e4cf01a238ed651259ac903bf80fbed"
+      },
+      {
+        "address": 4804736,
+        "length": 34,
+        "memory": "ghidra/phase200-DX-function-495080-memory.txt",
+        "memory_sha256": "67178053cae59db9428890325c8de7ffbafb6ce5e1e5574da669bad6ef198bb7",
+        "assembly": "ghidra/phase200-DX-function-495080-assembly.txt",
+        "assembly_sha256": "1e71d20f93bedfb2f3f99bae35faa9b02fa0c9e891da2802e4a6fbbe317be7dc",
+        "bytes_sha256": "1d25a59a45933f76ddf291182cce991bc57055f2dc07196a78d14262aed96b80"
+      },
+      {
+        "address": 5364800,
+        "length": 36,
+        "memory": "ghidra/phase200-DX-51dc40-memory.txt",
+        "memory_sha256": "986fc57f737b8eece7a430eb4dabd05d21a372a95d00455906cc52d3868064da",
+        "assembly": "ghidra/phase200-DX-51dc40-assembly.txt",
+        "assembly_sha256": "b9a7f73c47d9b30638c52d2d5b801ccee2add6ee41013e26feb7f02d6005b3f7",
+        "bytes_sha256": "fa1d554777ba0fe1ea09f79a96b6164980fcaa8df96f937907ed446876e6309c"
+      },
+      {
+        "address": 5364848,
+        "length": 26,
+        "memory": "ghidra/phase200-DX-51dc70-memory.txt",
+        "memory_sha256": "e484579d4a554e32233edee9152ce1113d240a6c32e1d4ece799e8231999f6df",
+        "assembly": "ghidra/phase200-DX-51dc70-assembly.txt",
+        "assembly_sha256": "fd36688cac1ed064de52bd92315c90131e6482119eaeaa0e48a021cfc88f5771",
+        "bytes_sha256": "451e360f83ffb1ef800d3003c645cf89d8524c3ce1f7d3ac8da57aec209f7c50"
+      },
+      {
+        "address": 4762544,
+        "length": 376,
+        "memory": "ghidra/phase200-DX-function-48abb0-memory.txt",
+        "memory_sha256": "e89d81eef5762b71891e33b3fe3d01e1e6820bce045041aec835674e55c66837",
+        "assembly": "ghidra/phase200-DX-function-48abb0-assembly.txt",
+        "assembly_sha256": "fc902de3f8b1ad5770bfceaa9210402acf91277a001c317a66c029659372c3b6",
+        "bytes_sha256": "5b136a626b00c355eda94e24d268198d0a5a544538258132d1810453d04fd97d"
+      },
+      {
+        "address": 4775584,
+        "length": 103,
+        "memory": "ghidra\\phase201-DX-48dea0-memory.txt",
+        "memory_sha256": "1209cfd03fe0f52e373ffd85b17565482382c905b2411a0b35dfeb33f637ec08",
+        "assembly": "ghidra\\phase201-DX-48dea0-assembly.txt",
+        "assembly_sha256": "5b3de1ecdfce7cfe3396fabcdc812956dd035beac7bf5f5cab5890c55c26bcd3",
+        "bytes_sha256": "67515558de44e66c25149bd6a429836e3e9c71085d0897528b420ca0e4b2f5e3"
+      },
+      {
+        "address": 4779328,
+        "length": 132,
+        "memory": "ghidra\\phase201-DX-48ed40-memory.txt",
+        "memory_sha256": "5ab168e072bd870fca6102c29e3f4e08e7e3b7dbb6e9f89336b6746ab4c245e0",
+        "assembly": "ghidra\\phase201-DX-48ed40-assembly.txt",
+        "assembly_sha256": "17b3cc3dfc3c59ac35a2b8191d6f120e3208b3cc542044f3fa8691dab0e00a2b",
+        "bytes_sha256": "ff185e01ca96aaea929a182882966b201a6c7726cff1b60532ed8a0b44dc7910"
+      },
+      {
+        "address": 5279712,
+        "length": 42,
+        "memory": "ghidra\\phase201-DX-508fe0-memory.txt",
+        "memory_sha256": "691049565f446d3b75ec406317c21c1a50f313be9cc62045c94a3f86e33647a7",
+        "assembly": "ghidra\\phase201-DX-508fe0-assembly.txt",
+        "assembly_sha256": "dad9442df95247a917849ed0b8ff5b0525e6c91d9d67a2406b27bc992db9f6d7",
+        "bytes_sha256": "9f06753671a885cf6ad60474e9e0d7aabbee8001c3b630b0aeefa1ba0e4c9936"
+      },
+      {
+        "address": 4802304,
+        "length": 24,
+        "memory": "ghidra\\phase201-PC-494700-memory.txt",
+        "memory_sha256": "2789595756afbfa65438ddc49c9f2951d677ea679962401f61af8917c6fcfbd3",
+        "assembly": "ghidra\\phase201-PC-494700-assembly.txt",
+        "assembly_sha256": "7d9c7556a5afaf8d374da2b9fe750cca33fef3a0bc2f11b62707ef3431e22d83",
+        "bytes_sha256": "c8948897e4186e4d44579bbc8016d110f09df29b306e0eca6864393d607681f6"
+      }
+    ],
+    "unique_executed_original_PCs": 3485,
+    "all_executed_original_PCs_covered": true,
+    "scope": "Fresh rawCreature constructor/converter/loader, real Variables E6 section/World callback, original possession setter, full48ABB0 with actualWorld1D4 andActor88. Prepared Actor/World/terrain and external file/null-resource providers; no movement scheduler."
+  },
+  "helpers": [
+    {
+      "file": "probe_possession_speed_context.py",
+      "sha256": "403b3dd687c9e1637e9a1f4629bac9faf7f2d4f3a7f3f9d2d51b063140d43fa7"
+    },
+    {
+      "file": "emulate_possession_speed_context.py",
+      "sha256": "c3183ef1fa38ff4b5a47c5bd05cb68bed88f868cc2b815f1a33bddfb6bddec93"
+    },
+    {
+      "file": "crosscheck_possession_speed_context.py",
+      "sha256": "7897a8baafcfb46b2ffa00d88b84ad9f0a8a844d0bac192465e6a4b3aeff367b"
+    },
+    {
+      "file": "native_speed_context.py",
+      "sha256": "be795291994d367583faff115e0de9c5a92c3511a7a8852a7ffeebc19de1cfb2"
+    },
+    {
+      "file": "prepare_possession_speed_context_primary.py",
+      "sha256": "e4c4d4e352a60b960b397c8feb250462dc739d282d1dfb525bc9e12bc2856548"
+    },
+    {
+      "file": "build_possession_speed_context.py",
+      "sha256": "4a8073b0ea9dadc97fb9bffc0381b9f7f82d95a265448a8f8d0a5eefaaadb3b6"
+    },
+    {
+      "file": "audit_possession_speed_context.py",
+      "sha256": "58f8061e372154a5b4afa3dc9f629c1b594e2f9b11a60499ac7f5a511592fa13"
+    },
+    {
+      "file": "probe_creature_work_level.py",
+      "sha256": "957384d5e1ffe700fd16ee393af47fe0db00848407a241d640f9a1b317549104"
+    },
+    {
+      "file": "emulate_possession_speed.py",
+      "sha256": "339f6a241b1331043cbb475e21317f9664de9e6a1163362087c4582ed45d8a11"
+    },
+    {
+      "file": "emulate_variables_reader.py",
+      "sha256": "3ec52f361ea58df0e5db65326512889bce386ad93b113f5def47cb631265027c"
+    },
+    {
+      "file": "native_unicorn_mapreader.py",
+      "sha256": "f602c16f87beec825fc2fae28900a62bd13ad909c1c9b95c9dae6481e75f8daf"
+    }
+  ],
+  "fixture_boundaries": {
+    "Actor": "Verified prior phase90 factory Actor snapshot, not fresh allocation. Level/HP/status inputs prepared, actual48DEA0 setter enables possession. Fresh Creature definition is loaded from a copied real Vampire row with explicit test field edits.",
+    "World": "Original World/Actor vtables retained. Prepared32x32World/cells and Terrain definition flags; real508FE0 and48ED40 execute. Terrain raw file parser and natural surface traversal not composed.",
+    "files": "ActualMyFile/Disc/stream and56CBD0/5716E0/521790 read a synthetic one-section memory file containing real source Stat21 record or controlled variants and optionally Type65. Header callback and bounded Win32 file providers explicitly declared. WholeFileEOF/Level-reference traversal is phase198, not repeated.",
+    "external_services": "Inherited null resource/sound/graphics lookup interfaces and declared file/TLS providers; original game code, IAT and game vtables are not substituted. No real rendering, audio, disk changes or live process injection.",
+    "numeric_results": "Returned internal speed DWORD, not measured tiles/sec or actual movement. HP0 still yields getter30 in preparedcase; this does not prove a dead creature moves."
+  },
+  "limitations": [
+    "General15-family objective incomplete; no all-Globals closure or percentage increase. Unknown29/186 meanings unchanged.",
+    "No whole natural possession/control/AI movement scheduler, release-possession path, all class overrides or creature birth with modifiedFlags.",
+    "Type224 Stat1/4/31 and previous scalar98/113/114 work remain separate earlier components; they are not re-proved or newly named here.",
+    "Variable77 overrides, arbitrary invalid levels/negative growth, otherTPS and otherEXEs are outside these32 accepted cases.",
+    "Global parameters still active. Crypt deferred; ten counter meanings remain open. Creature resistances/flags follow globals."
+  ],
+  "next": [
+    "Remaining global scalar/union consumers and writer paths; keep phase92/93/95/96/101/104 completed work as references.",
+    "Creature resistances and flags after remaining global work; Crypt deferred."
+  ]
+}

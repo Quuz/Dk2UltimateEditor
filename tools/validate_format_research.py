@@ -65,6 +65,22 @@ def main():
             for row in indices['whole_stat_getter']['controls']:
                 ref=row['evidence']
                 assert hashlib.sha256(z.read(Path(ref['file']).name)).hexdigest()==ref['sha256']
+    if 'possession_speed_context_semantics' in package:
+        speed=package['possession_speed_context_semantics']
+        assert speed['counts']['native_compositions']==32
+        assert speed['counts']['Ghidra_full_context_controls']==8
+        assert speed['counts']['public_API_native_matches']==32
+        assert speed['physical_preservation']['exact_DWORD_field_edits']==19
+        examples=speed['representative_outcomes']
+        assert examples['wounded-water-rounding']['result']==30
+        assert examples['at-health-boundary-water']['result']==162
+        assert examples['walk-raw-quotient65536-minimum']['loaded_base']==1
+        assert examples['walk-raw-all-ones']['loaded_base']==52428
+        assert speed['order']['example']['combined_single_division_result']==32
+        with zipfile.ZipFile(evidence) as z:
+            for row in speed['primary']['functions']:
+                for key in ['memory','assembly']:
+                    assert hashlib.sha256(z.read(Path(row[key]).name)).hexdigest()==row[key+'_sha256']
     for p in RESEARCH.iterdir():assert p.suffix.lower() not in ['.exe','.dll','.kwd','.kld','.xlsx','.log'],p.name
     # Check token-shaped strings, without printing any matching value.
     secret=re.compile(rb'(?:gh[pousr]_[A-Za-z0-9]{30,}|github_pat_[A-Za-z0-9_]{40,}|sk-proj-[A-Za-z0-9_-]{40,}|AKIA[A-Z0-9]{16})')
