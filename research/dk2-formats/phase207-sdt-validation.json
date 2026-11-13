@@ -1,0 +1,133 @@
+{
+  "phase": 207,
+  "date": "2026-11-13",
+  "scope": "Actual FFmpeg decoding and nominal SFX duration correlation",
+  "files": [
+    {
+      "file": "SDT_DECODING_AND_DURATION_RU.md",
+      "bytes": 13417,
+      "sha256": "a4883dfbf758d5813cdc87de9fd6ac8604291b0033ae65ca27c957cd807d7151"
+    },
+    {
+      "file": "audit_sdt_duration_geometry.py",
+      "bytes": 7328,
+      "sha256": "bf0ce1d1595e8e58391ec3b7712246e51bd531cb4943a7a042933e0ae5f9183c"
+    },
+    {
+      "file": "sdt-duration-stock.json",
+      "bytes": 71163,
+      "sha256": "e3fa300f98fa88c24c179eebd4a994afa9aeb51694233ae76fa31cd94e855dee"
+    },
+    {
+      "file": "sdt-duration-russian.json",
+      "bytes": 73907,
+      "sha256": "5deee9a6a2d2b276df9a9c03e2e678a097a13263708bc422353734ab3d8e061e"
+    },
+    {
+      "file": "sdt-decode/audit_sdt_decode.py",
+      "bytes": 13896,
+      "sha256": "c4bdee90acbc787a8656173c177ef1bc4621356d4eeb9cd0deb41816f990e4e8"
+    },
+    {
+      "file": "sdt-decode/first-clip-report.json",
+      "bytes": 3106,
+      "sha256": "584e7bad400afed2774194f2a076b9936328097fd663107c8cf9d1c950def890"
+    },
+    {
+      "file": "sdt-decode/russian-decode-report.json",
+      "bytes": 2952200,
+      "sha256": "ffe8d2b1d05d4bf68e33e62e9f3a1bb4d2e80840f577edb07b7aa7f625e126d0"
+    },
+    {
+      "file": "sdt-decode/README.md",
+      "bytes": 3608,
+      "sha256": "5206ce7f786883e9566108b6ccb695251d4325a268cca89001fbc9068cf3f9e8"
+    }
+  ],
+  "decoder_result": {
+    "clips": 3385,
+    "decoded_frames": 150739,
+    "decoded_samples_per_channel": 173651328,
+    "decoded_pcm_bytes": 347302656,
+    "decode_errors": 0,
+    "all_drained_to_eof": true,
+    "clips_matching_header_implied_samples": 3385,
+    "clips_with_nominal_pcm_mismatch": 3385
+  },
+  "acceptance": "PASS scoped to pinned DLL decode and stored-field correlation; native playback remains open",
+  "performed_checks": [
+    "Coordinator full 3385-clip decoder rerun; all PCM hashes identical, excluding elapsed time",
+    "Independent Sol full decoder/duration reruns matched reports",
+    "One deliberately malformed 720-byte zero packet rejected with AVERROR_INVALIDDATA",
+    "Coordinator directly read Qt source and verified eight Git blob hashes",
+    "Coordinator separately parsed speech_level1 first SFX row and Horny mismatch geometry",
+    "Published-path decoder and both duration CLI runs matched saved reports",
+    "Existing portable research validator PASS:4454 source files,182 components,19627 evidence members",
+    "Prior phase206 and new phase207 file hashes/JSON/Python syntax verified"
+  ],
+  "source_review": {
+    "repository": "https://github.com/Dethware/DK2",
+    "revision": "28adde55f91145abdaab2df900a0bb6994aa04db",
+    "verified_files": [
+      {
+        "path": "player/src/core/clipcache.cpp",
+        "git_blob": "23a4e00356833bfe824b506cde997c5df10bc929"
+      },
+      {
+        "path": "player/src/core/clipcache.h",
+        "git_blob": "0f789728f36e04ec1da4af8946fcb33fd3a2e674"
+      },
+      {
+        "path": "player/src/core/layer.cpp",
+        "git_blob": "00a55377f3e93da0b060d4e02948f93e470c63a8"
+      },
+      {
+        "path": "player/src/core/layer.h",
+        "git_blob": "d5ac4e8bc96e72c86c0dee681b66c7693b74686d"
+      },
+      {
+        "path": "player/src/core/mixer.cpp",
+        "git_blob": "38a591b4d3b17fdab0ed5e3ab27906c732f5d499"
+      },
+      {
+        "path": "player/src/core/soundmaps.cpp",
+        "git_blob": "7977166266742d3e32e5df8ddcc6ed230b6af740"
+      },
+      {
+        "path": "player/src/core/soundmaps.h",
+        "git_blob": "366af35a0fd3dad573b8060598a6a1bd7bb506af"
+      },
+      {
+        "path": "docs/file-formats.md",
+        "git_blob": "c1a34e49fe5ab5fc27d8dda07332f449295e43df"
+      }
+    ]
+  },
+  "duration_correlation": {
+    "hd_mp2_references": 6623,
+    "hd_nearest_half_up_matches": 6622,
+    "hw_mp2_references": 2563,
+    "hw_nearest_half_up_matches": 210,
+    "hd_pcm_references": 87,
+    "hd_pcm_payload_geometry_matches": 87,
+    "reference_counts_not_unique_clips": true
+  },
+  "executor_acceptance": {
+    "developer": "reserved Codex implementation; accepted after coordinator full rerun",
+    "opencode": "Qt source findings verified; backend speed conclusion remains conditional",
+    "kilo": "no measurements returned after tool error; coordinator completed assignment",
+    "sol": "independent full decoder and duration reruns PASS",
+    "freebuff": "not retried after prior CLI failure",
+    "coarena": "not retried after prior quota exhaustion"
+  },
+  "game_files_written": 0,
+  "game_playback_tested": false,
+  "native_timing_tested": false,
+  "limitations": [
+    "Pinned Windows x64 FFmpeg DLLs; ctypes offsets are not an independent C ABI check",
+    "Zero decode_errors means no negative API errors; complete decode_error_flags and CRC not inspected",
+    "No conclusion of Qt backend behavior or native metadata policy",
+    "No replacement sound encoded or loaded in the game"
+  ],
+  "historical_package_components_unchanged": true
+}

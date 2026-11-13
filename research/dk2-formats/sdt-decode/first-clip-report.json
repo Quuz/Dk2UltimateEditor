@@ -1,0 +1,92 @@
+{
+  "scope": "Actual mp2 decoder output from pinned Russian length40 SDTs; original files read only",
+  "audio_decoded": true,
+  "game_playback_tested": false,
+  "game_files_written": 0,
+  "baseline_sha256": "65b94d6c155d2a1b8478dafce2bb9a309fd4caa67ef5be4beaf3bd06a1a9a87c",
+  "decoder": {
+    "avcodec_version": 3871332,
+    "avutil_version": 3740004,
+    "dll_sha256": {
+      "avcodec-59.dll": "670fb1a808f1fb4089ca237695d95522512c42ff2e9a01e6dfc0e9698f74cbde",
+      "avutil-57.dll": "0eac6f53a76f6d1843d6d3c80d5ac0360dad873634e4665c62ff714f2b6d9991"
+    },
+    "packet_prefix_offsets": {
+      "buf": 0,
+      "pts": 8,
+      "dts": 16,
+      "data": 24,
+      "size": 32
+    },
+    "frame_prefix_offsets": {
+      "data": 0,
+      "linesize": 64,
+      "extended_data": 96,
+      "width": 104,
+      "height": 108,
+      "nb_samples": 112,
+      "format": 116
+    }
+  },
+  "primary_abi_sources": [
+    "https://github.com/FFmpeg/FFmpeg/blob/n5.1.2/libavutil/frame.h",
+    "https://github.com/FFmpeg/FFmpeg/blob/n5.1.2/libavcodec/packet.h",
+    "https://ffmpeg.org/doxygen/5.1/group__lavc__encdec.html"
+  ],
+  "method": "One physical 720-byte MPEG frame per avcodec packet; asserted final NUL excluded; decoder drained to EOF",
+  "pcm_hash_order": "per decoded frame, PCM planes in channel order, no linesize padding",
+  "limits": {
+    "limit": 1,
+    "file": null,
+    "index": null
+  },
+  "negative_control": {
+    "malformed_packet": "720 zero bytes, no valid MPEG header",
+    "rejected": true,
+    "error": "send_packet_0: -1094995529: Invalid data found when processing input"
+  },
+  "totals": {
+    "clips": 1,
+    "decoded_frames": 203,
+    "decoded_samples_per_channel": 233856,
+    "decoded_pcm_bytes": 467712,
+    "decode_errors": 0,
+    "all_drained_to_eof": true,
+    "clips_matching_header_implied_samples": 1,
+    "clips_with_nominal_pcm_mismatch": 1,
+    "elapsed_seconds": 0.06199999999989814
+  },
+  "limitations": [
+    "No game playback, no SDT/PCM output files, no interpretation of game-side nominal metadata",
+    "Successful FFmpeg decoding does not prove original audio perceptual fidelity or CRC correctness"
+  ],
+  "clips": [
+    {
+      "file": "speech_level1/speech_level1hd.sdt",
+      "index": 1,
+      "source_sha256": "494fb4eab04ddfc5d500b9ad952e44ec3349e0c5bab773af708de7b7b48ebfbc",
+      "nominal_sdt_rate_hz": 22050,
+      "nominal_pcm_bytes": 963546,
+      "header_implied_rate_hz": 32000,
+      "header_implied_samples": 233856,
+      "packets_sent": 203,
+      "decoded_frames": 203,
+      "decoded_samples_per_channel": 233856,
+      "decoded_pcm_bytes": 467712,
+      "decoded_pcm_sha256": "8c5ea89fdf429d25ed833eca3994f400fea5399a37587042c1a1bc342f3fa3eb",
+      "observed_rate_frame_counts": {
+        "32000": 203
+      },
+      "observed_channel_frame_counts": {
+        "1": 203
+      },
+      "observed_sample_formats": {
+        "s16p": 203
+      },
+      "observed_nb_samples_counts": {
+        "1152": 203
+      },
+      "drained_to_eof": true
+    }
+  ]
+}
