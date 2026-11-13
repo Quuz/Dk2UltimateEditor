@@ -9,6 +9,7 @@
 | Актуальные результаты и правила интеграции | [INTEGRATION_RU.md](../../research/dk2-formats/INTEGRATION_RU.md) |
 | Таблицы полей по каталогам | [FAMILIES.md](FAMILIES.md) |
 | Обзор всех файлов Dethware и графы фонового звука | [DETHWARE_SOUND_REVIEW_RU.md](../../research/dk2-formats/DETHWARE_SOUND_REVIEW_RU.md) |
+| SDT: пересборка и ограничения замены звуков | [SDT_EDITING_READINESS_RU.md](../../research/dk2-formats/SDT_EDITING_READINESS_RU.md) |
 | Звуковые категории, дорожки и пороги музыки | [SOUND_RESOURCES_RU.md](../../research/dk2-formats/SOUND_RESOURCES_RU.md) |
 | Level: ссылки, порядок и ошибки загрузки | [LEVEL_REFERENCE_LOADING_RU.md](../../research/dk2-formats/LEVEL_REFERENCE_LOADING_RU.md) |
 | Храм: файл рецептов и выдача gold/Object-награды | [TEMPLE_FILE_REWARDS_RU.md](../../research/dk2-formats/TEMPLE_FILE_REWARDS_RU.md) |

@@ -1,0 +1,70 @@
+{
+  "phase": 206,
+  "date": "2026-11-13",
+  "scope": "SDT structural preservation and metadata readiness supplement",
+  "coordinator_acceptance": "PASS within structural/metadata scope; decoding and game acceptance open",
+  "files": [
+    {
+      "file": "SDT_EDITING_READINESS_RU.md",
+      "bytes": 10936,
+      "sha256": "536ad0cf3707935cb17a72ac7cf10fc90052c5cbb59dcb1512e548fbab309221"
+    },
+    {
+      "file": "audit_sdt_mpeg_metadata.py",
+      "bytes": 4948,
+      "sha256": "c5f5162b67949ce81f3c004c0083b2ed4afcd644d651d5f86f9198d47d3f22b9"
+    },
+    {
+      "file": "sdt-mpeg-metadata-audit.json",
+      "bytes": 1003269,
+      "sha256": "bf9566032b7376ef22365a76dae6f123633326c61ac270d49f517ed2e17e74ba"
+    },
+    {
+      "file": "sdt-roundtrip/audit_sdt_roundtrip.py",
+      "bytes": 7522,
+      "sha256": "7f0ff5a8b4f81f728dc721cc982022afde2286fdbb1f8c66e129fcb7ba61adfb"
+    },
+    {
+      "file": "sdt-roundtrip/test_sdt_roundtrip.py",
+      "bytes": 4992,
+      "sha256": "d72302c0be1ed97ad11ef1cc4aae3063ceaf0e8325ac94d4a13d30a460305ab9"
+    },
+    {
+      "file": "sdt-roundtrip/stock-report.json",
+      "bytes": 60137,
+      "sha256": "7e6f01c02eabd6f54988a7ef697c652306386b3eb69d92a987b3159d65b40ad3"
+    },
+    {
+      "file": "sdt-roundtrip/russian-report.json",
+      "bytes": 66194,
+      "sha256": "3e5b93470db790714ebd38314bca3f84dd582e9cc6aae29f241ee9cbde05110b"
+    },
+    {
+      "file": "sdt-roundtrip/README.md",
+      "bytes": 2814,
+      "sha256": "072cee1239e3ebe84c66519b9f79ab5a00a175b301a4d55ca1f7843c6b557d74"
+    }
+  ],
+  "performed_checks": [
+    "20 synthetic boundary/offset recalculation tests passed",
+    "Coordinator independently reran both installed corpus audits; reports exactly match",
+    "142 stock archives / 8959 records exactly rebuilt",
+    "145 alternate archives / 9139 records: 113 exact rebuilds, 32 known length40-pattern files",
+    "32 length40 candidates / 3385 records rebuilt and inverted in memory",
+    "Metadata audit SHA-pinned 32 files; independently reproduced by Sol reviewer",
+    "Portable snapshot validator PASS: 4454 source files,182 components,19627 evidence members (existing package unchanged)",
+    "Existing FormatResearch suite:4 tests PASS; published SDT suite:20 tests PASS"
+  ],
+  "executors": {
+    "freebuff": "CLI exited before output",
+    "coarena": "all accounts quota exhausted",
+    "opencode": "accepted next-record boundary finding; broader semantic recommendations qualified",
+    "kilo": "accepted field evidence; fixed-offset replacement advice rejected",
+    "sol": "scoped PASS; metadata audit reproduced",
+    "native_codex": "implementation accepted after coordinator rerun"
+  },
+  "game_files_written": 0,
+  "audio_decoded": false,
+  "game_playback_tested": false,
+  "historical_package_components_unchanged": true
+}
