@@ -1,0 +1,990 @@
+{
+  "phase": 204,
+  "date": "2026-11-13",
+  "external_reference": {
+    "repo": "https://github.com/Dethware/DK2",
+    "revision": "28adde55f91145abdaab2df900a0bb6994aa04db",
+    "paths": [
+      "docs/file-formats.md",
+      "docs/runtime-behaviour.md"
+    ],
+    "scope": "Steam executable and format hypotheses. Local claims are checked separately."
+  },
+  "local_build": {
+    "profile": "DKII-DX.exe",
+    "sha256": "d7a8b854e4e4f02709eba271bead6fe2307dd6e332b5a96e70857e5b0e19fb8a"
+  },
+  "corpus": {
+    "banks": 204,
+    "sfx_maps": 205,
+    "sdt_archives": 142,
+    "clip_types": {
+      "0x00": 999,
+      "0x24": 7461,
+      "0x02": 211,
+      "0x25": 288
+    },
+    "sound_rows": 6772,
+    "alternate_structural_issues": 35,
+    "primary_report": {
+      "file": "sound-index-validation.json",
+      "sha256": "a01218281757ab4c2cf5d50e93e54d38132796353202f2eb588f3a319230c24a"
+    }
+  },
+  "layout": {
+    "bank": {
+      "signature": "012c61e9d031d211b40900a0c993f203",
+      "count_offset": 24,
+      "opaque_row_bytes": 11,
+      "name_length_bytes": 4,
+      "index_base": 1
+    },
+    "sfx": {
+      "signature": "002c61e9d031d211b40900b0c993f203",
+      "count_offset": 24,
+      "entry_bytes": 24,
+      "group_bytes": 20,
+      "item_bytes": 42,
+      "sound_bytes": 16,
+      "link_bytes": 8,
+      "directory_order": [
+        "entries",
+        "groups for every entry",
+        "item headers for one group",
+        "sounds then links per item"
+      ],
+      "sound_bank_index_offset": 12,
+      "sound_clip_index_offset": 0,
+      "indices_base": 1,
+      "opaque_fields": "Preserve all bytes. Link duplicates and their order carry information."
+    },
+    "sdt": {
+      "count_offset": 0,
+      "absolute_entry_offsets_start": 4,
+      "observed_entry_header_bytes": 40,
+      "name_offset": 8,
+      "name_bytes": 16,
+      "sample_rate_offset": 24,
+      "sample_bits_offset": 26,
+      "type_offset": 27,
+      "pcm_bytes_offset": 32,
+      "payload_offset": "entry offset + declared header size"
+    }
+  },
+  "catalogue": {
+    "fields": [
+      {
+        "file": "Terrain.kwd",
+        "sha256": "1b4296b0cf696d5428e6d3d94eb8571e2601bd78fc51caa6c3e1e13c0695e77d",
+        "field": "SoundCategory",
+        "offset": 479,
+        "records": 41,
+        "empty": 6,
+        "matched": 35,
+        "missing_pairs": [],
+        "labels": {
+          "ROOM_BRIDGE": 3,
+          "ROOM_CASINO": 1,
+          "ROOM_DUNGEON_HEART": 1,
+          "ROOM_GRAVEYARD": 2,
+          "ROOM_GUARD_POST": 1,
+          "ROOM_HATCHERY": 1,
+          "ROOM_HERO_GATE": 1,
+          "ROOM_HERO_GATE_BIRDLESS": 2,
+          "ROOM_LAIR": 1,
+          "ROOM_LIBRARY": 1,
+          "ROOM_PIT": 1,
+          "ROOM_PORTAL": 2,
+          "ROOM_PRISON": 1,
+          "ROOM_TEMPLE": 1,
+          "ROOM_TORTURE": 1,
+          "ROOM_TRAINING": 1,
+          "ROOM_TREASURE": 1,
+          "ROOM_WORKSHOP": 1,
+          "TERRAIN_CLAIMED_PATH": 3,
+          "TERRAIN_DIRT_PATH": 2,
+          "TERRAIN_GEMS": 1,
+          "TERRAIN_GOLD": 1,
+          "TERRAIN_LAVA": 1,
+          "TERRAIN_ROCK": 1,
+          "TERRAIN_SOLID_ROCK": 1,
+          "TERRAIN_WALL": 1,
+          "TERRAIN_WATER": 1
+        }
+      },
+      {
+        "file": "Terrain.kwd",
+        "sha256": "1b4296b0cf696d5428e6d3d94eb8571e2601bd78fc51caa6c3e1e13c0695e77d",
+        "field": "SoundCategoryFirstPerson",
+        "offset": 516,
+        "records": 41,
+        "empty": 29,
+        "matched": 12,
+        "missing_pairs": [],
+        "labels": {
+          "TERRAIN_CLAIMED_PATH": 3,
+          "TERRAIN_DIRT_PATH": 2,
+          "TERRAIN_GEMS": 1,
+          "TERRAIN_GOLD": 1,
+          "TERRAIN_LAVA_1ST_PERSON": 1,
+          "TERRAIN_ROCK": 1,
+          "TERRAIN_SOLID_ROCK": 1,
+          "TERRAIN_WALL": 1,
+          "TERRAIN_WATER_1ST_PERSON": 1
+        }
+      },
+      {
+        "file": "Rooms.kwd",
+        "sha256": "24546825ac6cf3f8455bf9b26fbffe9e2ded05ea3b176c0e00354ee1ccf0a465",
+        "field": "SoundCategory",
+        "offset": 930,
+        "records": 26,
+        "empty": 3,
+        "matched": 23,
+        "missing_pairs": [],
+        "labels": {
+          "ROOM_BRIDGE": 3,
+          "ROOM_CASINO": 1,
+          "ROOM_DUNGEON_HEART": 1,
+          "ROOM_GRAVEYARD": 2,
+          "ROOM_GUARD_POST": 1,
+          "ROOM_HATCHERY": 1,
+          "ROOM_HERO_GATE": 1,
+          "ROOM_HERO_GATE_BIRDLESS": 2,
+          "ROOM_LAIR": 1,
+          "ROOM_LIBRARY": 1,
+          "ROOM_PIT": 1,
+          "ROOM_PORTAL": 2,
+          "ROOM_PRISON": 1,
+          "ROOM_TEMPLE": 1,
+          "ROOM_TORTURE": 1,
+          "ROOM_TRAINING": 1,
+          "ROOM_TREASURE": 1,
+          "ROOM_WORKSHOP": 1
+        }
+      },
+      {
+        "file": "Traps.kwd",
+        "sha256": "417c5632e431963e0e734386ac5cea6750fe84d4422e7725e68228bd593aeb04",
+        "field": "SoundCategory",
+        "offset": 527,
+        "records": 16,
+        "empty": 2,
+        "matched": 14,
+        "missing_pairs": [],
+        "labels": {
+          "TRAP_ALARM": 2,
+          "TRAP_BOULDER": 1,
+          "TRAP_FEAR": 1,
+          "TRAP_FIREBURST": 1,
+          "TRAP_FREEZE": 1,
+          "TRAP_GAS": 1,
+          "TRAP_GUARD_POST": 1,
+          "TRAP_JACKINBOX": 1,
+          "TRAP_LIGHTNING": 1,
+          "TRAP_SENTRY": 2,
+          "TRAP_SPIKE": 1,
+          "TRAP_TRIGGER": 1
+        }
+      },
+      {
+        "file": "Doors.kwd",
+        "sha256": "0f9235b31fcf72525c6cac8eb800e866731e50e9d05bf56ed94bfa0927717504",
+        "field": "SoundCategory",
+        "offset": 584,
+        "records": 8,
+        "empty": 0,
+        "matched": 8,
+        "missing_pairs": [],
+        "labels": {
+          "DOOR_BARRICADE": 2,
+          "DOOR_BRACED": 1,
+          "DOOR_MAGIC": 1,
+          "DOOR_SECRET": 1,
+          "DOOR_STEEL": 2,
+          "DOOR_WOOD": 1
+        }
+      },
+      {
+        "file": "KeeperSpells.kwd",
+        "sha256": "1836b4dfd708f56568ac22135ac2526eeeeaa5e06b34acd6fbe5afd516cd0b16",
+        "field": "SoundCategory",
+        "offset": 241,
+        "records": 13,
+        "empty": 0,
+        "matched": 13,
+        "missing_pairs": [],
+        "labels": {
+          "KEEPER_SPELL_CALL_TO_ARMS": 1,
+          "KEEPER_SPELL_CHICKEN": 1,
+          "KEEPER_SPELL_CREATE_GOLD": 1,
+          "KEEPER_SPELL_CREATE_IMP": 1,
+          "KEEPER_SPELL_HEAL": 1,
+          "KEEPER_SPELL_INFERNO": 1,
+          "KEEPER_SPELL_POSSESSION": 1,
+          "KEEPER_SPELL_SIGHT_OF_EVIL": 1,
+          "KEEPER_SPELL_SUMMON_REAPER": 2,
+          "KEEPER_SPELL_THUNDERBOLT": 1,
+          "KEEPER_SPELL_TREMOR": 1,
+          "KEEPER_SPELL_TURNCOAT": 1
+        }
+      },
+      {
+        "file": "KeeperSpells.kwd",
+        "sha256": "1836b4dfd708f56568ac22135ac2526eeeeaa5e06b34acd6fbe5afd516cd0b16",
+        "field": "SoundCategoryGui",
+        "offset": 372,
+        "records": 13,
+        "empty": 0,
+        "matched": 13,
+        "missing_pairs": [],
+        "labels": {
+          "GUI_BUTTON_CALL_TO_ARMS": 1,
+          "GUI_BUTTON_CHICKEN": 1,
+          "GUI_BUTTON_CREATE_GOLD": 1,
+          "GUI_BUTTON_CREATE_IMP": 1,
+          "GUI_BUTTON_HEAL": 1,
+          "GUI_BUTTON_INFERNO": 1,
+          "GUI_BUTTON_POSSESSION": 1,
+          "GUI_BUTTON_SIGHT_OF_EVIL": 1,
+          "GUI_BUTTON_SUMMON_REAPER": 2,
+          "GUI_BUTTON_THUNDERBOLT": 1,
+          "GUI_BUTTON_TREMOR": 1,
+          "GUI_BUTTON_TURNCOAT": 1
+        }
+      },
+      {
+        "file": "Creatures.kwd",
+        "sha256": "e215c03c7722e89f7736ced7c710406dc10d6cf48e5ad37bed45faf2055c52e2",
+        "field": "TranslationSoundGategory",
+        "offset": 3351,
+        "records": 46,
+        "empty": 46,
+        "matched": 0,
+        "missing_pairs": [],
+        "labels": {}
+      },
+      {
+        "file": "Creatures.kwd",
+        "sha256": "e215c03c7722e89f7736ced7c710406dc10d6cf48e5ad37bed45faf2055c52e2",
+        "field": "SoundCategory",
+        "offset": 3926,
+        "records": 46,
+        "empty": 0,
+        "matched": 46,
+        "missing_pairs": [],
+        "labels": {
+          "CREATURE_BILE_DEMON": 2,
+          "CREATURE_BLACK_KNIGHT": 2,
+          "CREATURE_DARK_ANGEL": 2,
+          "CREATURE_DARK_ELF": 2,
+          "CREATURE_DWARF": 1,
+          "CREATURE_ELVEN_ARCHER": 1,
+          "CREATURE_FAIRY": 1,
+          "CREATURE_FIREFLY": 2,
+          "CREATURE_GIANT": 1,
+          "CREATURE_GOBLIN": 2,
+          "CREATURE_GUARD": 2,
+          "CREATURE_HORNED_REAPER": 1,
+          "CREATURE_IMP": 1,
+          "CREATURE_JACKINBOX": 1,
+          "CREATURE_KING": 2,
+          "CREATURE_KNIGHT": 4,
+          "CREATURE_MAIDEN": 1,
+          "CREATURE_MISTRESS": 2,
+          "CREATURE_MONK": 1,
+          "CREATURE_ROGUE": 2,
+          "CREATURE_SALAMANDER": 2,
+          "CREATURE_SKELETON": 2,
+          "CREATURE_STONE_KNIGHT": 1,
+          "CREATURE_THIEF": 1,
+          "CREATURE_TROLL": 2,
+          "CREATURE_VAMPIRE": 2,
+          "CREATURE_WARLOCK": 2,
+          "CREATURE_WIZARD": 1
+        }
+      },
+      {
+        "file": "Objects.kwd",
+        "sha256": "36d607b408eeeb17da0fbea01e374a614a327021d2a30eea4aaa0311bf9b334c",
+        "field": "SoundCategory",
+        "offset": 862,
+        "records": 145,
+        "empty": 104,
+        "matched": 39,
+        "missing_pairs": [
+          "OBJECT_HEART",
+          "OBJECT_TRAINING_TARGET"
+        ],
+        "labels": {
+          "LIBRARY_BOOK": 1,
+          "OBJECT_BAT": 1,
+          "OBJECT_BED": 12,
+          "OBJECT_CHICKEN": 1,
+          "OBJECT_ELECTRIC_CHAIR": 1,
+          "OBJECT_FE_WINDOW": 1,
+          "OBJECT_FORGE": 1,
+          "OBJECT_GOLD": 1,
+          "OBJECT_HEART": 1,
+          "OBJECT_RAT": 1,
+          "OBJECT_ROULETTE_WHEEL": 1,
+          "OBJECT_SPECIAL": 15,
+          "OBJECT_TRAINING_DUMMY": 1,
+          "OBJECT_TRAINING_TARGET": 1,
+          "OBJECT_WHEEL": 1,
+          "TRAP_BOULDER": 1
+        }
+      },
+      {
+        "file": "Shots.kwd",
+        "sha256": "a684a3d91b2bded6f8072bbdfefb26e72cb76343028aaf8476fa473f6a7075b6",
+        "field": "SoundCategory",
+        "offset": 201,
+        "records": 65,
+        "empty": 23,
+        "matched": 40,
+        "missing_pairs": [
+          "SPELL_WIND"
+        ],
+        "labels": {
+          "KEEPER_SPELL_INFERNO": 1,
+          "KEEPER_SPELL_SIGHT_OF_EVIL": 1,
+          "KEEPER_SPELL_SUMMON_REAPER": 1,
+          "KEEPER_SPELL_TREMOR": 1,
+          "SPELL_ARMOUR": 1,
+          "SPELL_ARROW": 3,
+          "SPELL_DRAIN": 2,
+          "SPELL_FIREBALL": 6,
+          "SPELL_FIREBOMB": 2,
+          "SPELL_FREEZE": 2,
+          "SPELL_GAS_CLOUD": 1,
+          "SPELL_GAS_MISSILE": 2,
+          "SPELL_GRENADE": 1,
+          "SPELL_GUIDED_BOLT": 1,
+          "SPELL_HAIL_STORM": 2,
+          "SPELL_HAST_CREATURE": 1,
+          "SPELL_HEAL_CREATURE": 1,
+          "SPELL_INVISIBLE": 1,
+          "SPELL_KNIVES": 1,
+          "SPELL_LIGHTNING": 2,
+          "SPELL_RAISE_DEAD": 1,
+          "SPELL_SKELETON_ARMY": 1,
+          "SPELL_SLOW": 1,
+          "SPELL_TOUCH_OF_DEATH": 1,
+          "SPELL_WIND": 2,
+          "TRAP_GAS": 1,
+          "TRAP_LIGHTNING": 1,
+          "TRAP_SENTRY": 1
+        }
+      }
+    ],
+    "examples": [
+      {
+        "category": "creature_warlock",
+        "group": 195,
+        "bank": 1,
+        "archive": "Global/WarlockHD.sdt",
+        "index": 23,
+        "clip": "wl_picked_up_2.",
+        "sample_rate": 22050,
+        "sdt_type": 36,
+        "duration_ms": 213
+      },
+      {
+        "category": "keeper_spell_heal",
+        "group": 239,
+        "bank": 1,
+        "archive": "Global/KeeperSpellsHD.sdt",
+        "index": 48,
+        "clip": "choirheal2tc2.m",
+        "sample_rate": 22050,
+        "sdt_type": 36,
+        "duration_ms": 3363
+      }
+    ],
+    "scope": "Literal case-insensitive Global pair resolution on installed files. Runtime fallback remains open."
+  },
+  "level_music": {
+    "raw_level_offsets": {
+      "25603": 25527,
+      "25683": 25527
+    },
+    "first_section_file_offset": 25583,
+    "runtime_offset": 29197,
+    "choice_table_address": 7068528,
+    "choices": {
+      "0": 343,
+      "1": 343,
+      "2": 344,
+      "3": 345
+    },
+    "local_track2_group_exists": false,
+    "counts": {
+      "0": 2,
+      "1": 485,
+      "2": 15,
+      "3": 84
+    },
+    "scope": "Native manager byte read and table lookup verified statically. Choices 0–3 only. Audio output untested."
+  },
+  "battle_music": {
+    "consumer": 5264144,
+    "raiser": 5667776,
+    "manager_level_offset": 44,
+    "threshold_ids": [
+      215,
+      216,
+      217
+    ],
+    "threshold_addresses": [
+      7285173,
+      7285177,
+      7285181
+    ],
+    "source_thresholds": [
+      100,
+      500,
+      1500
+    ],
+    "comparison": "Unsigned DWORD, inclusive, tests 217 then 216 then 215.",
+    "threat_raw_offset": 3858,
+    "threat_definition_offset": 1688,
+    "threat_bytes": 2,
+    "growth_type": 65,
+    "growth_stat": 3,
+    "growth_word_formula": "s16(globals + 0x105 + 2*level)",
+    "score_formula": "Level 1 uses base u16. Other selected levels use signed product / 100 truncated toward zero. Accumulation and threshold comparison use u32.",
+    "ownership": "Battle+0 points to prepared original-class World. vtable+0x264 -> 0x508C60 reads World+0x7243. Equal actor owner is excluded.",
+    "cases": [
+      {
+        "case": "below-two",
+        "threat": 99,
+        "level": 1,
+        "growth": null,
+        "actor_owner": 8,
+        "world_owner": 7,
+        "thresholds": [
+          100,
+          500,
+          1500
+        ],
+        "before": 255,
+        "after": 255,
+        "raise_calls": 0,
+        "instructions": 5173,
+        "verified_read_PCs": [
+          "0x5053d4",
+          "0x50549f",
+          "0x5054b8",
+          "0x5054d2",
+          "0x508c60"
+        ]
+      },
+      {
+        "case": "equal-two",
+        "threat": 100,
+        "level": 1,
+        "growth": null,
+        "actor_owner": 8,
+        "world_owner": 7,
+        "thresholds": [
+          100,
+          500,
+          1500
+        ],
+        "before": 255,
+        "after": 257,
+        "raise_calls": 1,
+        "instructions": 5183,
+        "verified_read_PCs": [
+          "0x5053d4",
+          "0x50549f",
+          "0x5054b8",
+          "0x5054d2",
+          "0x508c60"
+        ]
+      },
+      {
+        "case": "below-three",
+        "threat": 499,
+        "level": 1,
+        "growth": null,
+        "actor_owner": 8,
+        "world_owner": 7,
+        "thresholds": [
+          100,
+          500,
+          1500
+        ],
+        "before": 255,
+        "after": 257,
+        "raise_calls": 1,
+        "instructions": 5183,
+        "verified_read_PCs": [
+          "0x5053d4",
+          "0x50549f",
+          "0x5054b8",
+          "0x5054d2",
+          "0x508c60"
+        ]
+      },
+      {
+        "case": "equal-three",
+        "threat": 500,
+        "level": 1,
+        "growth": null,
+        "actor_owner": 8,
+        "world_owner": 7,
+        "thresholds": [
+          100,
+          500,
+          1500
+        ],
+        "before": 255,
+        "after": 258,
+        "raise_calls": 1,
+        "instructions": 5182,
+        "verified_read_PCs": [
+          "0x5053d4",
+          "0x50549f",
+          "0x5054b8",
+          "0x508c60"
+        ]
+      },
+      {
+        "case": "below-four",
+        "threat": 1499,
+        "level": 1,
+        "growth": null,
+        "actor_owner": 8,
+        "world_owner": 7,
+        "thresholds": [
+          100,
+          500,
+          1500
+        ],
+        "before": 255,
+        "after": 258,
+        "raise_calls": 1,
+        "instructions": 5182,
+        "verified_read_PCs": [
+          "0x5053d4",
+          "0x50549f",
+          "0x5054b8",
+          "0x508c60"
+        ]
+      },
+      {
+        "case": "equal-four",
+        "threat": 1500,
+        "level": 1,
+        "growth": null,
+        "actor_owner": 8,
+        "world_owner": 7,
+        "thresholds": [
+          100,
+          500,
+          1500
+        ],
+        "before": 255,
+        "after": 259,
+        "raise_calls": 1,
+        "instructions": 5180,
+        "verified_read_PCs": [
+          "0x5053d4",
+          "0x50549f",
+          "0x508c60"
+        ]
+      },
+      {
+        "case": "same-owner",
+        "threat": 1500,
+        "level": 1,
+        "growth": null,
+        "actor_owner": 7,
+        "world_owner": 7,
+        "thresholds": [
+          100,
+          500,
+          1500
+        ],
+        "before": 255,
+        "after": 255,
+        "raise_calls": 0,
+        "instructions": 5164,
+        "verified_read_PCs": [
+          "0x50549f",
+          "0x5054b8",
+          "0x5054d2",
+          "0x508c60"
+        ]
+      },
+      {
+        "case": "level-two-file-growth",
+        "threat": 400,
+        "level": 2,
+        "growth": 125,
+        "actor_owner": 8,
+        "world_owner": 7,
+        "thresholds": [
+          100,
+          500,
+          1500
+        ],
+        "before": 255,
+        "after": 258,
+        "raise_calls": 1,
+        "instructions": 5654,
+        "verified_read_PCs": [
+          "0x5053ee",
+          "0x5053f5",
+          "0x50549f",
+          "0x5054b8",
+          "0x508c60"
+        ]
+      },
+      {
+        "case": "level-two-truncates",
+        "threat": 399,
+        "level": 2,
+        "growth": 125,
+        "actor_owner": 8,
+        "world_owner": 7,
+        "thresholds": [
+          100,
+          500,
+          1500
+        ],
+        "before": 255,
+        "after": 257,
+        "raise_calls": 1,
+        "instructions": 5655,
+        "verified_read_PCs": [
+          "0x5053ee",
+          "0x5053f5",
+          "0x50549f",
+          "0x5054b8",
+          "0x5054d2",
+          "0x508c60"
+        ]
+      },
+      {
+        "case": "signed-growth-unsigned-score",
+        "threat": 100,
+        "level": 2,
+        "growth": -100,
+        "actor_owner": 8,
+        "world_owner": 7,
+        "thresholds": [
+          100,
+          500,
+          1500
+        ],
+        "before": 255,
+        "after": 259,
+        "raise_calls": 1,
+        "instructions": 5652,
+        "verified_read_PCs": [
+          "0x5053ee",
+          "0x5053f5",
+          "0x50549f",
+          "0x508c60"
+        ]
+      },
+      {
+        "case": "raise-keeps-highest",
+        "threat": 100,
+        "level": 1,
+        "growth": null,
+        "actor_owner": 8,
+        "world_owner": 7,
+        "thresholds": [
+          100,
+          500,
+          1500
+        ],
+        "before": 259,
+        "after": 259,
+        "raise_calls": 1,
+        "instructions": 5182,
+        "verified_read_PCs": [
+          "0x5053d4",
+          "0x50549f",
+          "0x5054b8",
+          "0x5054d2",
+          "0x508c60"
+        ]
+      },
+      {
+        "case": "file-changes-threshold",
+        "threat": 500,
+        "level": 1,
+        "growth": null,
+        "actor_owner": 8,
+        "world_owner": 7,
+        "thresholds": [
+          100,
+          501,
+          1500
+        ],
+        "before": 255,
+        "after": 257,
+        "raise_calls": 1,
+        "instructions": 5183,
+        "verified_read_PCs": [
+          "0x5053d4",
+          "0x50549f",
+          "0x5054b8",
+          "0x5054d2",
+          "0x508c60"
+        ]
+      },
+      {
+        "case": "raw-creature-below",
+        "threat": 499,
+        "level": 1,
+        "growth": null,
+        "actor_owner": 8,
+        "world_owner": 7,
+        "thresholds": [
+          100,
+          500,
+          1500
+        ],
+        "before": 255,
+        "after": 257,
+        "raise_calls": 1,
+        "instructions": 70174,
+        "verified_read_PCs": [
+          "0x49233e",
+          "0x5053d4",
+          "0x50549f",
+          "0x5054b8",
+          "0x5054d2",
+          "0x508c60"
+        ]
+      },
+      {
+        "case": "raw-creature-equal",
+        "threat": 500,
+        "level": 1,
+        "growth": null,
+        "actor_owner": 8,
+        "world_owner": 7,
+        "thresholds": [
+          100,
+          500,
+          1500
+        ],
+        "before": 255,
+        "after": 258,
+        "raise_calls": 1,
+        "instructions": 70173,
+        "verified_read_PCs": [
+          "0x49233e",
+          "0x5053d4",
+          "0x50549f",
+          "0x5054b8",
+          "0x508c60"
+        ]
+      },
+      {
+        "case": "raw-creature-growth",
+        "threat": 400,
+        "level": 2,
+        "growth": 125,
+        "actor_owner": 8,
+        "world_owner": 7,
+        "thresholds": [
+          100,
+          500,
+          1500
+        ],
+        "before": 255,
+        "after": 258,
+        "raise_calls": 1,
+        "instructions": 70645,
+        "verified_read_PCs": [
+          "0x49233e",
+          "0x5053ee",
+          "0x5053f5",
+          "0x50549f",
+          "0x5054b8",
+          "0x508c60"
+        ]
+      }
+    ],
+    "replay_report": {
+      "file": "sound-DX-music-replays.json",
+      "sha256": "f61e96325892c65a78ef70d860754820c88c8e6a35e7cbe9cc227214ee48d003"
+    },
+    "scope": "Prepared one-member battle and manager. Native Variables parser, raw Creature loader for three controls, scorer and original raise method. Scheduler, battle recruitment and audio output are open."
+  },
+  "background": {
+    "music": {
+      "archive_names": [
+        "Global/Track_1_1",
+        "Global/Track_1_2",
+        "Global/Track_1_3",
+        "Global/Track_1_4",
+        "Global/Track_1SG",
+        "Global/Track_3_1",
+        "Global/Track_3_2",
+        "Global/Track_3_3",
+        "Global/Track_3_4"
+      ],
+      "groups": [
+        {
+          "id": 343,
+          "flags": 1542,
+          "parameter_slot_0": 2,
+          "items": 135,
+          "sound_rows": 135,
+          "links": 750,
+          "empty_clip_refs": [],
+          "exact_duplicate_link_rows": 0
+        },
+        {
+          "id": 345,
+          "flags": 1542,
+          "parameter_slot_0": 2,
+          "items": 156,
+          "sound_rows": 156,
+          "links": 509,
+          "empty_clip_refs": [],
+          "exact_duplicate_link_rows": 11
+        }
+      ]
+    },
+    "ambience": {
+      "archive_names": [
+        "Global/Track_Zero"
+      ],
+      "groups": [
+        {
+          "id": 341,
+          "flags": 1542,
+          "parameter_slot_0": 2,
+          "items": 21,
+          "sound_rows": 21,
+          "links": 421,
+          "empty_clip_refs": [],
+          "exact_duplicate_link_rows": 0
+        }
+      ]
+    },
+    "one_shot_atmos": {
+      "archive_names": [
+        "Global/SoundFont"
+      ],
+      "groups": [
+        {
+          "id": 746,
+          "flags": 516,
+          "parameter_slot_0": 0,
+          "items": 1,
+          "sound_rows": 19,
+          "links": 0,
+          "empty_clip_refs": [],
+          "exact_duplicate_link_rows": 0
+        }
+      ]
+    },
+    "options_music": {
+      "archive_names": [
+        "Global/Track_1_4"
+      ],
+      "groups": [
+        {
+          "id": 838,
+          "flags": 542,
+          "parameter_slot_0": 0,
+          "items": 16,
+          "sound_rows": 16,
+          "links": 16,
+          "empty_clip_refs": [],
+          "exact_duplicate_link_rows": 0
+        }
+      ]
+    }
+  },
+  "physical_preservation": [
+    {
+      "file": "Creatures.kwd",
+      "source_sha256": "e215c03c7722e89f7736ced7c710406dc10d6cf48e5ad37bed45faf2055c52e2",
+      "record": 4,
+      "absolute_offset": 25710,
+      "record_offset": 3858,
+      "width": 2,
+      "value": 500
+    },
+    {
+      "file": "GlobalVariables.kwd",
+      "source_sha256": "d14b6a28694254dad722071267268d4f36c8535cd3a9c610f9ee0447fe9b941a",
+      "record": 230,
+      "absolute_offset": 3740,
+      "record_offset": 4,
+      "width": 4,
+      "value": 501
+    },
+    {
+      "file": "AutoSave.kwd",
+      "source_sha256": "bd4133f5074ae3c2f4edc42f972a39105cc25c5ef517d1d48adfba08ff856293",
+      "absolute_offset": 25583,
+      "record_offset": 25527,
+      "width": 1,
+      "value": 2
+    }
+  ],
+  "primary": [
+    {
+      "file": "sound-DX-505310-memory.txt",
+      "sha256": "8b4c2e8d7a2939f124a997875cbc8cc3836ee46fe85e13eea12cc98c56d5b0b5",
+      "address": 5264144,
+      "size": 496,
+      "PE_bytes_sha256": "f2480922406c3bde1badf875ebd6cb1ac20d7ab1c3c0b36c4ab7744e579cc093"
+    },
+    {
+      "file": "sound-DX-5674f0-memory.txt",
+      "sha256": "c8b25033b4469f348b307e28ce98bae46e0866a3060ddb613e86d47966ec33a9",
+      "address": 5666032,
+      "size": 565,
+      "PE_bytes_sha256": "d7512f60f1965a72ee200ad38e5ba03edafc14b7680f99796945c78c7fb0816e"
+    },
+    {
+      "file": "sound-DX-567bc0-memory.txt",
+      "sha256": "ab66da9c8ffda4970d9ebe0b5e2974346dd5aee03f3bd5c7c8d3cd052f5c5d26",
+      "address": 5667776,
+      "size": 15,
+      "PE_bytes_sha256": "3b889edc444506a26248aaec9c4c1f0f209c4ab0ac3028e67adeb89f62c562dc"
+    },
+    {
+      "file": "sound-DX-66f848-memory.txt",
+      "sha256": "bbc015d0d27ca448ea45e13e2de63df09ce6e6ec77f7d5fbfc62bd68ab325587",
+      "address": 6748232,
+      "size": 8,
+      "PE_bytes_sha256": "e6a9a1b8062a5490a8f17471173a02163fe57864e852c286d3097c4a957feaa3"
+    },
+    {
+      "file": "sound-DX-6bdb70-memory.txt",
+      "sha256": "1712704ac28b4a94684cc700d364010a881c66dfe973f623f6e1679f522044fb",
+      "address": 7068528,
+      "size": 16,
+      "PE_bytes_sha256": "1d292662e417921e1d0382c72a9b5d36e9ec257f6153f3f8aa266eb474e09b92"
+    }
+  ],
+  "helpers": [
+    {
+      "file": "dk2_sound_index.py",
+      "sha256": "5c4d3ecd4f67f520b004f74175b79e2bf65a1d8a1670be09740643f96cfdf5c7"
+    },
+    {
+      "file": "audit_dk2_sound_index.py",
+      "sha256": "472ad6465fe733fd44f70c26e5871a462318af7212b07255d48fd48afe75a589"
+    },
+    {
+      "file": "probe_sound_music_dx.py",
+      "sha256": "8df0e86f4c27589b080fc4c8ce0cda720015a59fd5657bcb7436a4d49a93a4de"
+    }
+  ]
+}

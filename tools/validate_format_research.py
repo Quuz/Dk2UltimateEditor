@@ -102,6 +102,20 @@ def main():
             for row in temple['primary']['functions']:
                 for key in ['memory','assembly']:
                     assert hashlib.sha256(z.read(Path(row[key]).name)).hexdigest()==row[key+'_sha256']
+    if 'sound_resource_semantics' in package:
+        sound=package['sound_resource_semantics']
+        assert sum(row['matched'] for row in sound['catalogue']['fields'])==243
+        assert sound['level_music']['choices']['2']==344 and not sound['level_music']['local_track2_group_exists']
+        assert sound['battle_music']['threshold_ids']==[215,216,217]
+        cases={row['case']:row for row in sound['battle_music']['cases']}
+        assert len(cases)==15
+        assert cases['raw-creature-below']['after']==0x101
+        assert cases['raw-creature-equal']['after']==0x102
+        assert cases['same-owner']['raise_calls']==0
+        assert len(sound['physical_preservation'])==3
+        with zipfile.ZipFile(evidence) as z:
+            for row in sound['primary']:
+                assert hashlib.sha256(z.read(row['file'])).hexdigest()==row['sha256']
     for p in RESEARCH.iterdir():assert p.suffix.lower() not in ['.exe','.dll','.kwd','.kld','.xlsx','.log'],p.name
     # Check token-shaped strings, without printing any matching value.
     secret=re.compile(rb'(?:gh[pousr]_[A-Za-z0-9]{30,}|github_pat_[A-Za-z0-9_]{40,}|sk-proj-[A-Za-z0-9_-]{40,}|AKIA[A-Z0-9]{16})')

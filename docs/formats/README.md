@@ -1,6 +1,6 @@
 # Форматы Dungeon Keeper 2
 
-Снимок исследования от 11 ноября 2026: **180 интегрированных компонентов**, последний этап машинного пакета — **202**. Это база для совместимого редактора; существенные неизвестные остаются открытыми. Наличие свойства в схеме ещё не означает его поддержку в приложении UltimateEditor.
+Снимок исследования от 13 ноября 2026: **181 интегрированный компонент**, последний этап машинного пакета — **204**. Это база для совместимого редактора; существенные неизвестные остаются открытыми. Наличие свойства в схеме ещё не означает его поддержку в приложении UltimateEditor.
 
 ## Где искать информацию
 
@@ -8,6 +8,7 @@
 |---|---|
 | Актуальные результаты и правила интеграции | [INTEGRATION_RU.md](../../research/dk2-formats/INTEGRATION_RU.md) |
 | Таблицы полей по каталогам | [FAMILIES.md](FAMILIES.md) |
+| Звуковые категории, дорожки и пороги музыки | [SOUND_RESOURCES_RU.md](../../research/dk2-formats/SOUND_RESOURCES_RU.md) |
 | Level: ссылки, порядок и ошибки загрузки | [LEVEL_REFERENCE_LOADING_RU.md](../../research/dk2-formats/LEVEL_REFERENCE_LOADING_RU.md) |
 | Храм: файл рецептов и выдача gold/Object-награды | [TEMPLE_FILE_REWARDS_RU.md](../../research/dk2-formats/TEMPLE_FILE_REWARDS_RU.md) |
 | Скорость: Variables224/65, ранения, поверхность | [POSSESSION_SPEED_CONTEXT_RU.md](../../research/dk2-formats/POSSESSION_SPEED_CONTEXT_RU.md) |
