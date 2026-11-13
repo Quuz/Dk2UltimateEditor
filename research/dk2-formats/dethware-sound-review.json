@@ -1,0 +1,1987 @@
+{
+  "phase": 205,
+  "date": "2026-11-13",
+  "source": {
+    "repository": "https://github.com/Dethware/DK2",
+    "revision": "28adde55f91145abdaab2df900a0bb6994aa04db",
+    "git_tree": "58ac843a0b5e90d98f9abb856f873e42b39a15c6",
+    "branch": "master",
+    "license_reported_by_GitHub": null,
+    "files": [
+      {
+        "path": ".gitignore",
+        "git_blob": "9351c1b859db8fddce2cc586a73c090f64961f3a"
+      },
+      {
+        "path": "README.md",
+        "git_blob": "0dbdf9751c5a680b589f513b8b21f70ac56ea302"
+      },
+      {
+        "path": "docs/file-formats.md",
+        "git_blob": "c1a34e49fe5ab5fc27d8dda07332f449295e43df"
+      },
+      {
+        "path": "docs/open-questions.md",
+        "git_blob": "c7c334ec21d9902f8bc3b389ed5a0855d2a95228"
+      },
+      {
+        "path": "docs/runtime-behaviour.md",
+        "git_blob": "53ee17debaedaaee0b63bf70d7aa0d085b1c15c6"
+      },
+      {
+        "path": "player/CMakeLists.txt",
+        "git_blob": "856f675a7ee51789748efeeadb123bb9268fbf5e"
+      },
+      {
+        "path": "player/src/app/CMakeLists.txt",
+        "git_blob": "0c55a883fa2eb3d21c9e4c86ab5689cf63e1c2ee"
+      },
+      {
+        "path": "player/src/app/main.cpp",
+        "git_blob": "c49c381edcda388d0f2bcf9ce9e40ce9be46ac2c"
+      },
+      {
+        "path": "player/src/app/mainwindow.cpp",
+        "git_blob": "42c17cf0bb4c3e6214f77e7e6434f7fef436949c"
+      },
+      {
+        "path": "player/src/app/mainwindow.h",
+        "git_blob": "91b7e0ca3942250a8c735f4e806f7aaa81875d3c"
+      },
+      {
+        "path": "player/src/core/CMakeLists.txt",
+        "git_blob": "143c46c64272f0fca33d7eb790d3d344499f637a"
+      },
+      {
+        "path": "player/src/core/clipcache.cpp",
+        "git_blob": "23a4e00356833bfe824b506cde997c5df10bc929"
+      },
+      {
+        "path": "player/src/core/clipcache.h",
+        "git_blob": "0f789728f36e04ec1da4af8946fcb33fd3a2e674"
+      },
+      {
+        "path": "player/src/core/engine.cpp",
+        "git_blob": "f61c979f622828f9d56e3d7f285aa49d085b473d"
+      },
+      {
+        "path": "player/src/core/engine.h",
+        "git_blob": "2e2a20fb2d01fd64d5a7cd73831fba65860ee9e6"
+      },
+      {
+        "path": "player/src/core/gamedata.cpp",
+        "git_blob": "049c5d90a0284992846f4c64d754e7a802bd5ec6"
+      },
+      {
+        "path": "player/src/core/gamedata.h",
+        "git_blob": "80f18d128d0fde529935f068974b3a634914be6a"
+      },
+      {
+        "path": "player/src/core/layer.cpp",
+        "git_blob": "00a55377f3e93da0b060d4e02948f93e470c63a8"
+      },
+      {
+        "path": "player/src/core/layer.h",
+        "git_blob": "d5ac4e8bc96e72c86c0dee681b66c7693b74686d"
+      },
+      {
+        "path": "player/src/core/mixer.cpp",
+        "git_blob": "38a591b4d3b17fdab0ed5e3ab27906c732f5d499"
+      },
+      {
+        "path": "player/src/core/mixer.h",
+        "git_blob": "cfb59dd01c7ede5867f26591647042eaa50bfceb"
+      },
+      {
+        "path": "player/src/core/musiclevel.h",
+        "git_blob": "76f68b69266553786ce35cf76137b3093022430d"
+      },
+      {
+        "path": "player/src/core/sdtarchive.cpp",
+        "git_blob": "9cc2a9b7982dd32c4409cfb7460e768b076dfac9"
+      },
+      {
+        "path": "player/src/core/sdtarchive.h",
+        "git_blob": "3cfe092a82b70a9ed36b988b69a888607a897b45"
+      },
+      {
+        "path": "player/src/core/sequencer.cpp",
+        "git_blob": "c60111ebef0f9cf9a6e6f4950ef4eaaa770242d6"
+      },
+      {
+        "path": "player/src/core/sequencer.h",
+        "git_blob": "94e58d9d670dc4ab3ab6894d8dfb4d09c49a82d8"
+      },
+      {
+        "path": "player/src/core/soundmaps.cpp",
+        "git_blob": "7977166266742d3e32e5df8ddcc6ed230b6af740"
+      },
+      {
+        "path": "player/src/core/soundmaps.h",
+        "git_blob": "366af35a0fd3dad573b8060598a6a1bd7bb506af"
+      },
+      {
+        "path": "player/tests/CMakeLists.txt",
+        "git_blob": "da513cd8a074c1ce1ca187ee1a8053b07ebc3840"
+      },
+      {
+        "path": "player/tests/tst_dk2music.cpp",
+        "git_blob": "b700d36b1d8d103ff954280f1a847b019990e4e9"
+      },
+      {
+        "path": "tools/ghidra/Decompile.java",
+        "git_blob": "02c9823695a31a1aab2ab81647eade982e97a711"
+      },
+      {
+        "path": "tools/ghidra/FindDisp.java",
+        "git_blob": "70d467b00649c120170744b2845588a0a829ec81"
+      },
+      {
+        "path": "tools/ghidra/FindRefs.java",
+        "git_blob": "4249517a09bfbb4dbe535eff96a4f9f9a9980b48"
+      },
+      {
+        "path": "tools/ghidra/run.sh",
+        "git_blob": "a4d78858f26523b7d2e6a13b616a56898834d3ba"
+      },
+      {
+        "path": "tools/sdt.py",
+        "git_blob": "399ee1b8052fbce26b85477a7fd4f48fa91498a9"
+      },
+      {
+        "path": "tools/sfxmap.py",
+        "git_blob": "978f2435c5c3b80c72cf948fcea5c6e128cb71fd"
+      }
+    ]
+  },
+  "source_coverage": [
+    {
+      "path": ".gitignore",
+      "git_blob": "9351c1b859db8fddce2cc586a73c090f64961f3a",
+      "url": "https://github.com/Dethware/DK2/blob/28adde55f91145abdaab2df900a0bb6994aa04db/.gitignore",
+      "reviewed": true,
+      "useful_content": "Local game data and build/extraction exclusions"
+    },
+    {
+      "path": "README.md",
+      "git_blob": "0dbdf9751c5a680b589f513b8b21f70ac56ea302",
+      "url": "https://github.com/Dethware/DK2/blob/28adde55f91145abdaab2df900a0bb6994aa04db/README.md",
+      "reviewed": true,
+      "useful_content": "Repository scope, dependencies and player/test entry points"
+    },
+    {
+      "path": "docs/file-formats.md",
+      "git_blob": "c1a34e49fe5ab5fc27d8dda07332f449295e43df",
+      "url": "https://github.com/Dethware/DK2/blob/28adde55f91145abdaab2df900a0bb6994aa04db/docs/file-formats.md",
+      "reviewed": true,
+      "useful_content": "BANK/SFX/SDT structures, PCM boundaries and music graph"
+    },
+    {
+      "path": "docs/open-questions.md",
+      "git_blob": "c7c334ec21d9902f8bc3b389ed5a0855d2a95228",
+      "url": "https://github.com/Dethware/DK2/blob/28adde55f91145abdaab2df900a0bb6994aa04db/docs/open-questions.md",
+      "reviewed": true,
+      "useful_content": "All unresolved fields, gameplay conditions and unanalysed player classes"
+    },
+    {
+      "path": "docs/runtime-behaviour.md",
+      "git_blob": "53ee17debaedaaee0b63bf70d7aa0d085b1c15c6",
+      "url": "https://github.com/Dethware/DK2/blob/28adde55f91145abdaab2df900a0bb6994aa04db/docs/runtime-behaviour.md",
+      "reviewed": true,
+      "useful_content": "Native sound methods, sequencing, music level and battle requests"
+    },
+    {
+      "path": "player/CMakeLists.txt",
+      "git_blob": "856f675a7ee51789748efeeadb123bb9268fbf5e",
+      "url": "https://github.com/Dethware/DK2/blob/28adde55f91145abdaab2df900a0bb6994aa04db/player/CMakeLists.txt",
+      "reviewed": true,
+      "useful_content": "C++20, CMake3.21, Qt6.8 with Multimedia/Widgets/Test"
+    },
+    {
+      "path": "player/src/app/CMakeLists.txt",
+      "git_blob": "0c55a883fa2eb3d21c9e4c86ab5689cf63e1c2ee",
+      "url": "https://github.com/Dethware/DK2/blob/28adde55f91145abdaab2df900a0bb6994aa04db/player/src/app/CMakeLists.txt",
+      "reviewed": true,
+      "useful_content": "Standalone UI target and core linkage"
+    },
+    {
+      "path": "player/src/app/main.cpp",
+      "git_blob": "c49c381edcda388d0f2bcf9ce9e40ce9be46ac2c",
+      "url": "https://github.com/Dethware/DK2/blob/28adde55f91145abdaab2df900a0bb6994aa04db/player/src/app/main.cpp",
+      "reviewed": true,
+      "useful_content": "Qt application entry and optional game directory argument"
+    },
+    {
+      "path": "player/src/app/mainwindow.cpp",
+      "git_blob": "42c17cf0bb4c3e6214f77e7e6434f7fef436949c",
+      "url": "https://github.com/Dethware/DK2/blob/28adde55f91145abdaab2df900a0bb6994aa04db/player/src/app/mainwindow.cpp",
+      "reviewed": true,
+      "useful_content": "Track selection, battle slider, reset, per-layer gain and event log"
+    },
+    {
+      "path": "player/src/app/mainwindow.h",
+      "git_blob": "91b7e0ca3942250a8c735f4e806f7aaa81875d3c",
+      "url": "https://github.com/Dethware/DK2/blob/28adde55f91145abdaab2df900a0bb6994aa04db/player/src/app/mainwindow.h",
+      "reviewed": true,
+      "useful_content": "UI/Engine interface"
+    },
+    {
+      "path": "player/src/core/CMakeLists.txt",
+      "git_blob": "143c46c64272f0fca33d7eb790d3d344499f637a",
+      "url": "https://github.com/Dethware/DK2/blob/28adde55f91145abdaab2df900a0bb6994aa04db/player/src/core/CMakeLists.txt",
+      "reviewed": true,
+      "useful_content": "Core dependency and source list"
+    },
+    {
+      "path": "player/src/core/clipcache.cpp",
+      "git_blob": "23a4e00356833bfe824b506cde997c5df10bc929",
+      "url": "https://github.com/Dethware/DK2/blob/28adde55f91145abdaab2df900a0bb6994aa04db/player/src/core/clipcache.cpp",
+      "reviewed": true,
+      "useful_content": "Decoder queue, float conversion, PCM resize and LRU eviction"
+    },
+    {
+      "path": "player/src/core/clipcache.h",
+      "git_blob": "0f789728f36e04ec1da4af8946fcb33fd3a2e674",
+      "url": "https://github.com/Dethware/DK2/blob/28adde55f91145abdaab2df900a0bb6994aa04db/player/src/core/clipcache.h",
+      "reviewed": true,
+      "useful_content": "Threaded cache, pending/failed clips and512MiB choice"
+    },
+    {
+      "path": "player/src/core/engine.cpp",
+      "git_blob": "f61c979f622828f9d56e3d7f285aa49d085b473d",
+      "url": "https://github.com/Dethware/DK2/blob/28adde55f91145abdaab2df900a0bb6994aa04db/player/src/core/engine.cpp",
+      "reviewed": true,
+      "useful_content": "Three layers, start/stop, threat tick and sound output orchestration"
+    },
+    {
+      "path": "player/src/core/engine.h",
+      "git_blob": "2e2a20fb2d01fd64d5a7cd73831fba65860ee9e6",
+      "url": "https://github.com/Dethware/DK2/blob/28adde55f91145abdaab2df900a0bb6994aa04db/player/src/core/engine.h",
+      "reviewed": true,
+      "useful_content": "Group IDs and50ms standalone ticker choice"
+    },
+    {
+      "path": "player/src/core/gamedata.cpp",
+      "git_blob": "049c5d90a0284992846f4c64d754e7a802bd5ec6",
+      "url": "https://github.com/Dethware/DK2/blob/28adde55f91145abdaab2df900a0bb6994aa04db/player/src/core/gamedata.cpp",
+      "reviewed": true,
+      "useful_content": "Case-insensitive lookup, HD/HW selection and threshold scanning"
+    },
+    {
+      "path": "player/src/core/gamedata.h",
+      "git_blob": "80f18d128d0fde529935f068974b3a634914be6a",
+      "url": "https://github.com/Dethware/DK2/blob/28adde55f91145abdaab2df900a0bb6994aa04db/player/src/core/gamedata.h",
+      "reviewed": true,
+      "useful_content": "Archive and group reference interfaces"
+    },
+    {
+      "path": "player/src/core/layer.cpp",
+      "git_blob": "00a55377f3e93da0b060d4e02948f93e470c63a8",
+      "url": "https://github.com/Dethware/DK2/blob/28adde55f91145abdaab2df900a0bb6994aa04db/player/src/core/layer.cpp",
+      "reviewed": true,
+      "useful_content": "Prefetch, retry/wait timing, sequence start and gain mixing"
+    },
+    {
+      "path": "player/src/core/layer.h",
+      "git_blob": "d5ac4e8bc96e72c86c0dee681b66c7693b74686d",
+      "url": "https://github.com/Dethware/DK2/blob/28adde55f91145abdaab2df900a0bb6994aa04db/player/src/core/layer.h",
+      "reviewed": true,
+      "useful_content": "22050Hz stereo rendering contract for the standalone layer"
+    },
+    {
+      "path": "player/src/core/mixer.cpp",
+      "git_blob": "38a591b4d3b17fdab0ed5e3ab27906c732f5d499",
+      "url": "https://github.com/Dethware/DK2/blob/28adde55f91145abdaab2df900a0bb6994aa04db/player/src/core/mixer.cpp",
+      "reviewed": true,
+      "useful_content": "Linear resampling, format conversion and clipping"
+    },
+    {
+      "path": "player/src/core/mixer.h",
+      "git_blob": "cfb59dd01c7ede5867f26591647042eaa50bfceb",
+      "url": "https://github.com/Dethware/DK2/blob/28adde55f91145abdaab2df900a0bb6994aa04db/player/src/core/mixer.h",
+      "reviewed": true,
+      "useful_content": "QAudioSink pull interface and mixer state"
+    },
+    {
+      "path": "player/src/core/musiclevel.h",
+      "git_blob": "76f68b69266553786ce35cf76137b3093022430d",
+      "url": "https://github.com/Dethware/DK2/blob/28adde55f91145abdaab2df900a0bb6994aa04db/player/src/core/musiclevel.h",
+      "reviewed": true,
+      "useful_content": "Standalone normalized level model and per-update decay"
+    },
+    {
+      "path": "player/src/core/sdtarchive.cpp",
+      "git_blob": "9cc2a9b7982dd32c4409cfb7460e768b076dfac9",
+      "url": "https://github.com/Dethware/DK2/blob/28adde55f91145abdaab2df900a0bb6994aa04db/player/src/core/sdtarchive.cpp",
+      "reviewed": true,
+      "useful_content": "SDT metadata reading and payload extraction"
+    },
+    {
+      "path": "player/src/core/sdtarchive.h",
+      "git_blob": "3cfe092a82b70a9ed36b988b69a888607a897b45",
+      "url": "https://github.com/Dethware/DK2/blob/28adde55f91145abdaab2df900a0bb6994aa04db/player/src/core/sdtarchive.h",
+      "reviewed": true,
+      "useful_content": "Declared PCM/type/name fields"
+    },
+    {
+      "path": "player/src/core/sequencer.cpp",
+      "git_blob": "c60111ebef0f9cf9a6e6f4950ef4eaaa770242d6",
+      "url": "https://github.com/Dethware/DK2/blob/28adde55f91145abdaab2df900a0bb6994aa04db/player/src/core/sequencer.cpp",
+      "reviewed": true,
+      "useful_content": "Link matching, Qt item/sound choices and fallback"
+    },
+    {
+      "path": "player/src/core/sequencer.h",
+      "git_blob": "94e58d9d670dc4ab3ab6894d8dfb4d09c49a82d8",
+      "url": "https://github.com/Dethware/DK2/blob/28adde55f91145abdaab2df900a0bb6994aa04db/player/src/core/sequencer.h",
+      "reviewed": true,
+      "useful_content": "mt19937,250ms padding and candidate-prefetch interface"
+    },
+    {
+      "path": "player/src/core/soundmaps.cpp",
+      "git_blob": "7977166266742d3e32e5df8ddcc6ed230b6af740",
+      "url": "https://github.com/Dethware/DK2/blob/28adde55f91145abdaab2df900a0bb6994aa04db/player/src/core/soundmaps.cpp",
+      "reviewed": true,
+      "useful_content": "Bounds-checked map parsing and selected field projection"
+    },
+    {
+      "path": "player/src/core/soundmaps.h",
+      "git_blob": "366af35a0fd3dad573b8060598a6a1bd7bb506af",
+      "url": "https://github.com/Dethware/DK2/blob/28adde55f91145abdaab2df900a0bb6994aa04db/player/src/core/soundmaps.h",
+      "reviewed": true,
+      "useful_content": "SoundRef/Item/Group representation"
+    },
+    {
+      "path": "player/tests/CMakeLists.txt",
+      "git_blob": "da513cd8a074c1ce1ca187ee1a8053b07ebc3840",
+      "url": "https://github.com/Dethware/DK2/blob/28adde55f91145abdaab2df900a0bb6994aa04db/player/tests/CMakeLists.txt",
+      "reviewed": true,
+      "useful_content": "Qt test target and conditional installed-data tests"
+    },
+    {
+      "path": "player/tests/tst_dk2music.cpp",
+      "git_blob": "b700d36b1d8d103ff954280f1a847b019990e4e9",
+      "url": "https://github.com/Dethware/DK2/blob/28adde55f91145abdaab2df900a0bb6994aa04db/player/tests/tst_dk2music.cpp",
+      "reviewed": true,
+      "useful_content": "Graph, weighting, level, mixer and90second-render checks"
+    },
+    {
+      "path": "tools/ghidra/Decompile.java",
+      "git_blob": "02c9823695a31a1aab2ab81647eade982e97a711",
+      "url": "https://github.com/Dethware/DK2/blob/28adde55f91145abdaab2df900a0bb6994aa04db/tools/ghidra/Decompile.java",
+      "reviewed": true,
+      "useful_content": "Missing-function creation and recursive callee decompilation"
+    },
+    {
+      "path": "tools/ghidra/FindDisp.java",
+      "git_blob": "70d467b00649c120170744b2845588a0a829ec81",
+      "url": "https://github.com/Dethware/DK2/blob/28adde55f91145abdaab2df900a0bb6994aa04db/tools/ghidra/FindDisp.java",
+      "reviewed": true,
+      "useful_content": "Conjunction of displacement/scalar filters"
+    },
+    {
+      "path": "tools/ghidra/FindRefs.java",
+      "git_blob": "4249517a09bfbb4dbe535eff96a4f9f9a9980b48",
+      "url": "https://github.com/Dethware/DK2/blob/28adde55f91145abdaab2df900a0bb6994aa04db/tools/ghidra/FindRefs.java",
+      "reviewed": true,
+      "useful_content": "Reference, scalar and defined-string searches"
+    },
+    {
+      "path": "tools/ghidra/run.sh",
+      "git_blob": "a4d78858f26523b7d2e6a13b616a56898834d3ba",
+      "url": "https://github.com/Dethware/DK2/blob/28adde55f91145abdaab2df900a0bb6994aa04db/tools/ghidra/run.sh",
+      "reviewed": true,
+      "useful_content": "Read-only headless analysis wrapper"
+    },
+    {
+      "path": "tools/sdt.py",
+      "git_blob": "399ee1b8052fbce26b85477a7fd4f48fa91498a9",
+      "url": "https://github.com/Dethware/DK2/blob/28adde55f91145abdaab2df900a0bb6994aa04db/tools/sdt.py",
+      "reviewed": true,
+      "useful_content": "Raw sound directory reader/extractor"
+    },
+    {
+      "path": "tools/sfxmap.py",
+      "git_blob": "978f2435c5c3b80c72cf948fcea5c6e128cb71fd",
+      "url": "https://github.com/Dethware/DK2/blob/28adde55f91145abdaab2df900a0bb6994aa04db/tools/sfxmap.py",
+      "reviewed": true,
+      "useful_content": "BANK/SFX directory reader and graph printout"
+    }
+  ],
+  "topics": [
+    {
+      "id": "binary-profile",
+      "status": "source_scope",
+      "source": "https://github.com/Dethware/DK2/blob/28adde55f91145abdaab2df900a0bb6994aa04db/docs/runtime-behaviour.md",
+      "finding": "Author inspected Steam DKII.EXE b5e4e2f6b76335e2a2e7f43bb6903bfc6f4170eabf04598955b00f512a47b449 with Ghidra12.1.2. Local DX has its own SHA and verification records."
+    },
+    {
+      "id": "bank-sfx-sdt-layout",
+      "status": "local_data",
+      "source": "https://github.com/Dethware/DK2/blob/28adde55f91145abdaab2df900a0bb6994aa04db/docs/file-formats.md",
+      "finding": "All published structures, offsets and background graph details are retained through the phase204schema and full raw-header metadata graphs."
+    },
+    {
+      "id": "audio-encodings",
+      "status": "source_observation",
+      "source": "https://github.com/Dethware/DK2/blob/28adde55f91145abdaab2df900a0bb6994aa04db/docs/file-formats.md",
+      "finding": "SDT0/24h/25h labels and published background MPEG descriptions are preserved with actual local sample rates, type bytes and payload prefixes. Local02h/03h meanings remain open."
+    },
+    {
+      "id": "pcm-crop",
+      "status": "author_waveform_check",
+      "source": "https://github.com/Dethware/DK2/blob/28adde55f91145abdaab2df900a0bb6994aa04db/docs/file-formats.md",
+      "finding": "Author reports cropping decoded16bitPCM to pcmBytes from decoder offset0. The Qt cache resizes its float sample list to pcmBytes/2. Local decoding and waveform validation remain open."
+    },
+    {
+      "id": "bank-variant-preference",
+      "status": "source_static",
+      "source": "https://github.com/Dethware/DK2/blob/28adde55f91145abdaab2df900a0bb6994aa04db/docs/file-formats.md",
+      "finding": "Author and standalone GameData choose HD first, then HW. The local catalogue audit resolves each variant independently."
+    },
+    {
+      "id": "entry-distance-fields",
+      "status": "source_interpretation",
+      "source": "https://github.com/Dethware/DK2/blob/28adde55f91145abdaab2df900a0bb6994aa04db/docs/file-formats.md",
+      "finding": "Entry0C/10/14 are labelled minDistance/maxDistance/scale via OpenKeeper. Entry4..B retains opaque storage."
+    },
+    {
+      "id": "player-class-flags",
+      "status": "DX_static",
+      "source": "https://github.com/Dethware/DK2/blob/28adde55f91145abdaab2df900a0bb6994aa04db/docs/runtime-behaviour.md",
+      "finding": "Factory60DA70 checks4, then10h, then2/400h to select creator6157F0,616630,6165E0,6162F0,616090 or615EE0. Full allocation/audio construction remains open."
+    },
+    {
+      "id": "parameter-slots",
+      "status": "DX_executed",
+      "source": "https://github.com/Dethware/DK2/blob/28adde55f91145abdaab2df900a0bb6994aa04db/docs/runtime-behaviour.md",
+      "finding": "Player40..43 stores four IDs and44..47 four values.60C750 updates every matching ID. Two controls cover duplicate ID2 and absentID9 with playback-update gate24=0."
+    },
+    {
+      "id": "linked-choice",
+      "status": "DX_executed",
+      "source": "https://github.com/Dethware/DK2/blob/28adde55f91145abdaab2df900a0bb6994aa04db/docs/runtime-behaviour.md",
+      "finding": "6163C0 selects uniformly among inclusive intensity links in file order. Repeating a link changes its chance. Current=NULL starts from the first item."
+    },
+    {
+      "id": "shared-RNG",
+      "status": "DX_executed",
+      "source": "https://github.com/Dethware/DK2/blob/28adde55f91145abdaab2df900a0bb6994aa04db/docs/runtime-behaviour.md",
+      "finding": "Seed7A53B0 advances by seed*19660Dh+3C6EF35Fh modulo2^32, followed by ROR13. Link and range selection use modulo; sound/item weighted selection uses upper16 of rotated value."
+    },
+    {
+      "id": "self-link",
+      "status": "DX_executed_refinement",
+      "source": "https://github.com/Dethware/DK2/blob/28adde55f91145abdaab2df900a0bb6994aa04db/player/src/core/sequencer.h",
+      "finding": "A first-item self-link can select that item for normal playback. The header comment that the entry point is never played needs this qualification; the C++ algorithm itself accepts self-targets."
+    },
+    {
+      "id": "no-matching-links",
+      "status": "DX_executed",
+      "source": "https://github.com/Dethware/DK2/blob/28adde55f91145abdaab2df900a0bb6994aa04db/docs/runtime-behaviour.md",
+      "finding": "With nonzero linkCount but no eligible link,6163C0 sets intensity7Fh and flag100h, returns0 and retains current item."
+    },
+    {
+      "id": "zero-link-count",
+      "status": "DX_executed_refinement",
+      "source": "https://github.com/Dethware/DK2/blob/28adde55f91145abdaab2df900a0bb6994aa04db/docs/runtime-behaviour.md",
+      "finding": "With linkCount0,6163C0 sets current=NULL and returns0. This early path leaves the intensity byte and stop flag unchanged."
+    },
+    {
+      "id": "resume-callback",
+      "status": "DX_static",
+      "source": "https://github.com/Dethware/DK2/blob/28adde55f91145abdaab2df900a0bb6994aa04db/docs/runtime-behaviour.md",
+      "finding": "616560 tests stop flag100h and intensity different from7Fh before invoking original vslot3C. Full stream resume remains open."
+    },
+    {
+      "id": "sound-weight-width",
+      "status": "DX_executed_refinement",
+      "source": "https://github.com/Dethware/DK2/blob/28adde55f91145abdaab2df900a0bb6994aa04db/docs/file-formats.md",
+      "finding": "60CFF0 compares the full unsignedDWORD atSound+4 with a16bit random value using inclusive>=. One sound returns directly without RNG advance; no hit falls back to first."
+    },
+    {
+      "id": "item-weight-width",
+      "status": "DX_executed_refinement",
+      "source": "https://github.com/Dethware/DK2/blob/28adde55f91145abdaab2df900a0bb6994aa04db/docs/file-formats.md",
+      "finding": "60D060 compares aDWORD beginning atItem+1E. The source layout describes aWORD at1E and opaqueWORD20; both participate in this read. Preserve upperWORD."
+    },
+    {
+      "id": "weights-local-range",
+      "status": "local_data",
+      "source": "https://github.com/Dethware/DK2/blob/28adde55f91145abdaab2df900a0bb6994aa04db/docs/file-formats.md",
+      "finding": "All6772local Sound weights have high16zero.435of643multi-sound items finish below65535. Source data therefore exercises the fallback interval."
+    },
+    {
+      "id": "delay-range",
+      "status": "DX_executed",
+      "source": "https://github.com/Dethware/DK2/blob/28adde55f91145abdaab2df900a0bb6994aa04db/docs/runtime-behaviour.md",
+      "finding": "60CCF0 returns min+ROR13(nextSeed)%(max-min) for increasing ranges, min for equal bounds,0for0/0.250ms is added by callers, including615B94 and615EB0."
+    },
+    {
+      "id": "delay-clock",
+      "status": "DX_static",
+      "source": "https://github.com/Dethware/DK2/blob/28adde55f91145abdaab2df900a0bb6994aa04db/docs/runtime-behaviour.md",
+      "finding": "Caller scheduling combines current clock, clip duration and250ms. The tick subtracts clip duration before checking the next-start threshold. This supports start-to-start timing."
+    },
+    {
+      "id": "volume-range",
+      "status": "DX_executed",
+      "source": "https://github.com/Dethware/DK2/blob/28adde55f91145abdaab2df900a0bb6994aa04db/docs/runtime-behaviour.md",
+      "finding": "60CAA0 treats0C/0D as unsigned bytes, swaps reversed bounds in runtime data, chooses half-open random range or interpolation from slot1/2."
+    },
+    {
+      "id": "signed-range",
+      "status": "DX_executed_arithmetic",
+      "source": "https://github.com/Dethware/DK2/blob/28adde55f91145abdaab2df900a0bb6994aa04db/docs/file-formats.md",
+      "finding": "60CB90 uses signed bytes0E/0F and swaps reversed bounds. The source pan interpretation remains a semantic lead; numeric behavior is executed."
+    },
+    {
+      "id": "range-slot-flags",
+      "status": "DX_executed",
+      "source": "https://github.com/Dethware/DK2/blob/28adde55f91145abdaab2df900a0bb6994aa04db/docs/file-formats.md",
+      "finding": "Item18/1C bit0 selects slot1/2 for volume and bit1 for the signed range. Prepared percent50/25 controls and fixed ranges preserve RNG state."
+    },
+    {
+      "id": "music-manager",
+      "status": "DX_static_and_phase204",
+      "source": "https://github.com/Dethware/DK2/blob/28adde55f91145abdaab2df900a0bb6994aa04db/docs/runtime-behaviour.md",
+      "finding": "LevelFFh is silent;100h..103h map to20/40/60/80. Raise567BC0 keeps maximum; set567BE0 assigns directly. Three layers use music, ambience341 and atmosphere746."
+    },
+    {
+      "id": "music-decay-gate",
+      "status": "DX_static_refinement",
+      "source": "https://github.com/Dethware/DK2/blob/28adde55f91145abdaab2df900a0bb6994aa04db/docs/runtime-behaviour.md",
+      "finding": "56750E skips to5675E1 when the music optionDWORD75AD37 is zero. Clamp5675DE lies inside the enabled music branch. Whole-manager audio execution remains open."
+    },
+    {
+      "id": "ambience-option",
+      "status": "DX_static",
+      "source": "https://github.com/Dethware/DK2/blob/28adde55f91145abdaab2df900a0bb6994aa04db/docs/runtime-behaviour.md",
+      "finding": "567651..567665 adds20 when optionDWORD75AD27 equals1. Menu text IDs5A3/119/5A2 from source remain to be resolved to a setting name."
+    },
+    {
+      "id": "track-choice",
+      "status": "phase204_local",
+      "source": "https://github.com/Dethware/DK2/blob/28adde55f91145abdaab2df900a0bb6994aa04db/docs/runtime-behaviour.md",
+      "finding": "Level SoundTrack raw63B7 ->World720D ->table341/343/344/345 at6BDB70;0aliases1. Local music groups343/345 exist and344 is absent."
+    },
+    {
+      "id": "fight-start-requests",
+      "status": "source_static",
+      "source": "https://github.com/Dethware/DK2/blob/28adde55f91145abdaab2df900a0bb6994aa04db/docs/runtime-behaviour.md",
+      "finding": "Source lists creature statesA4/B4/B8/BA and functions458370/4586B0/482010/485AB0/485B80 requesting100h. Exact roles and ownership filtering remain open."
+    },
+    {
+      "id": "battle-threat",
+      "status": "phase204_DX_executed",
+      "source": "https://github.com/Dethware/DK2/blob/28adde55f91145abdaab2df900a0bb6994aa04db/docs/runtime-behaviour.md",
+      "finding": "505310 uses Threat rawF12 ->definition698, growth65Stat3 and215..217 thresholds. Same owner as World7243 is excluded. Native phase204includes15scenes."
+    },
+    {
+      "id": "horny-music",
+      "status": "phase204_DX_static",
+      "source": "https://github.com/Dethware/DK2/blob/28adde55f91145abdaab2df900a0bb6994aa04db/docs/runtime-behaviour.md",
+      "finding": "488930 tests definitionFlags4000h. Owner+76 bit40h chooses setFFh rather than raise103h. Meaning of that owner flag remains open."
+    },
+    {
+      "id": "graph-partitions",
+      "status": "source_and_local_data",
+      "source": "https://github.com/Dethware/DK2/blob/28adde55f91145abdaab2df900a0bb6994aa04db/docs/file-formats.md",
+      "finding": "Track1 partitions1..52/53..87/88..109/110..125 with transition126..135; track3partitions1..87/88..110/111..128/129..156. Full local links are retained for direct inspection."
+    },
+    {
+      "id": "graph-transition-boundaries",
+      "status": "source_static",
+      "source": "https://github.com/Dethware/DK2/blob/28adde55f91145abdaab2df900a0bb6994aa04db/docs/runtime-behaviour.md",
+      "finding": "Linked player consults intensity when selecting a segment. Native full audio queue and audible transition timing remain open."
+    },
+    {
+      "id": "qt-random-model",
+      "status": "implementation_choice",
+      "source": "https://github.com/Dethware/DK2/blob/28adde55f91145abdaab2df900a0bb6994aa04db/player/src/core/sequencer.h",
+      "finding": "Standalone player uses per-sequencer mt19937 and uniform_int_distribution. DX selectors use one shared LCG seed and observable early-return consumption."
+    },
+    {
+      "id": "qt-nonlinked-selection",
+      "status": "implementation_difference",
+      "source": "https://github.com/Dethware/DK2/blob/28adde55f91145abdaab2df900a0bb6994aa04db/player/src/core/sequencer.cpp",
+      "finding": "Standalone nonlinked next() uniformly chooses an item, while native60D060 uses cumulativeDWORD weights. Its atmosphere group has one item."
+    },
+    {
+      "id": "qt-threshold-model",
+      "status": "implementation_difference",
+      "source": "https://github.com/Dethware/DK2/blob/28adde55f91145abdaab2df900a0bb6994aa04db/player/src/core/musiclevel.h",
+      "finding": "Standalone model counts crossed thresholds and clamps toFour. Native505310 prioritizes217,216,215 with unsigned comparisons. Source default positive ordered thresholds match ordinary scenes."
+    },
+    {
+      "id": "qt-timer-cache-resampler",
+      "status": "implementation_choice",
+      "source": "https://github.com/Dethware/DK2/blob/28adde55f91145abdaab2df900a0bb6994aa04db/player/src/core/engine.h",
+      "finding": "50ms ticker,22050Hz stereo layers,100msretry/10msdecodewait,512MiBLRUcache, linearresampling and clampedoutput are standalone implementation choices."
+    },
+    {
+      "id": "qt-codec-and-gains",
+      "status": "implementation_choice",
+      "source": "https://github.com/Dethware/DK2/blob/28adde55f91145abdaab2df900a0bb6994aa04db/player/src/core/clipcache.cpp",
+      "finding": "QAudioDecoder producesfloatPCM, supports sample-format conversions and PCM-length resize. Layer/mastergain, prefetch and device-format fallback are reusable preview design references."
+    },
+    {
+      "id": "upstream-tests",
+      "status": "source_test_description",
+      "source": "https://github.com/Dethware/DK2/blob/28adde55f91145abdaab2df900a0bb6994aa04db/player/tests/tst_dk2music.cpp",
+      "finding": "Qt tests cover graphs, duplicated-link ratios, delay bounds, thresholds, decay,48kHzmixer, installed data and90secondtrack1render with waveform-join curvature. These tests were reviewed, not run locally."
+    },
+    {
+      "id": "ghidra-tools",
+      "status": "source_tooling",
+      "source": "https://github.com/Dethware/DK2/blob/28adde55f91145abdaab2df900a0bb6994aa04db/tools/ghidra/Decompile.java",
+      "finding": "Recursive decompilation with missing-function creation, scalar/string/reference searches and AND-of-displacements scans provide reusable analysis techniques."
+    },
+    {
+      "id": "russian-lengths",
+      "status": "local_follow_up",
+      "source": "https://github.com/Dethware/DK2/blob/28adde55f91145abdaab2df900a0bb6994aa04db/docs/open-questions.md",
+      "finding": "32alternateSDTs have every3385declared payload length overstated by40bytes. Header-only in-memory correction is exactly reversible.150739completeMPEG-frame extents were checked; playback remains open."
+    }
+  ],
+  "open_questions": [
+    {
+      "id": "fight-states",
+      "state": "open",
+      "subject": "Exact roles ofA4/B4/B8/BA and requests from other keepers"
+    },
+    {
+      "id": "battle-recruitment",
+      "state": "open",
+      "subject": "Ownership selection,8battle-slot recruitment and spatial separation of fights"
+    },
+    {
+      "id": "threat-identity",
+      "state": "locally_resolved_for_selected_DX",
+      "subject": "RawF12/definition698 and Type65Stat3 feed505310 in phase204"
+    },
+    {
+      "id": "horny-owner-flag",
+      "state": "open",
+      "subject": "Meaning and producers of owner+76 bit40h"
+    },
+    {
+      "id": "ambience-menu",
+      "state": "open",
+      "subject": "Name corresponding to75AD27 and textIDs5A3/119/5A2"
+    },
+    {
+      "id": "level-overrides",
+      "state": "loader_confirmed",
+      "subject": "NativeVariables accepts215..217 replacements; actual level-specific sound playback remains open"
+    },
+    {
+      "id": "sound-tick-rate",
+      "state": "open",
+      "subject": "Measured scheduler rate and interaction with variableTPS"
+    },
+    {
+      "id": "group0c",
+      "state": "open",
+      "subject": "GroupDWORD0C often labelled priority"
+    },
+    {
+      "id": "item14-15",
+      "state": "open",
+      "subject": "Meaning of two Item bytes at14/15, commonly50/50inbackground"
+    },
+    {
+      "id": "item22",
+      "state": "open",
+      "subject": "Meaning of Item float22, observed20/100/0.1inbackground"
+    },
+    {
+      "id": "signed-range-role",
+      "state": "arithmetic_confirmed_semantics_open",
+      "subject": "Pan interpretation and its downstream audible effect"
+    },
+    {
+      "id": "entry4-b",
+      "state": "open",
+      "subject": "Meaning of EntryDWORD4 and WORD8/A"
+    },
+    {
+      "id": "track2-origin",
+      "state": "open",
+      "subject": "Other releases or intended content of absent group344"
+    },
+    {
+      "id": "options-player",
+      "state": "factory_branch_static",
+      "subject": "Full6741C8options-loop behavior"
+    },
+    {
+      "id": "other-player-classes",
+      "state": "open",
+      "subject": "674140/6740F8and673F40subclass615680paths"
+    },
+    {
+      "id": "front-end",
+      "state": "open",
+      "subject": "Menu ambience and object sound orchestration"
+    },
+    {
+      "id": "DX-profile",
+      "state": "partially_resolved",
+      "subject": "Thirteen local sound byte ranges,63selectorcontrols and phase204battle chain; remaining engine paths retain source status"
+    },
+    {
+      "id": "audio-PCM",
+      "state": "open",
+      "subject": "Local decoding, offset0crop, physical sample-rate/SDTheader discrepancies and waveform joins"
+    }
+  ],
+  "selectors": {
+    "profile": "DKII-DX.exe",
+    "exe_sha256": "d7a8b854e4e4f02709eba271bead6fe2307dd6e332b5a96e70857e5b0e19fb8a",
+    "links": [
+      {
+        "intensity": 19,
+        "seed": 0,
+        "selected_item_index": null,
+        "current_pointer_retained_on_no_match": true,
+        "after_seed": 0
+      },
+      {
+        "intensity": 19,
+        "seed": 1,
+        "selected_item_index": null,
+        "current_pointer_retained_on_no_match": true,
+        "after_seed": 1
+      },
+      {
+        "intensity": 19,
+        "seed": 2,
+        "selected_item_index": null,
+        "current_pointer_retained_on_no_match": true,
+        "after_seed": 2
+      },
+      {
+        "intensity": 19,
+        "seed": 3,
+        "selected_item_index": null,
+        "current_pointer_retained_on_no_match": true,
+        "after_seed": 3
+      },
+      {
+        "intensity": 19,
+        "seed": 4294967295,
+        "selected_item_index": null,
+        "current_pointer_retained_on_no_match": true,
+        "after_seed": 4294967295
+      },
+      {
+        "intensity": 20,
+        "seed": 0,
+        "selected_item_index": 2,
+        "current_pointer_retained_on_no_match": false,
+        "after_seed": 1013904223
+      },
+      {
+        "intensity": 20,
+        "seed": 1,
+        "selected_item_index": 2,
+        "current_pointer_retained_on_no_match": false,
+        "after_seed": 1015568748
+      },
+      {
+        "intensity": 20,
+        "seed": 2,
+        "selected_item_index": 3,
+        "current_pointer_retained_on_no_match": false,
+        "after_seed": 1017233273
+      },
+      {
+        "intensity": 20,
+        "seed": 3,
+        "selected_item_index": 2,
+        "current_pointer_retained_on_no_match": false,
+        "after_seed": 1018897798
+      },
+      {
+        "intensity": 20,
+        "seed": 4294967295,
+        "selected_item_index": 3,
+        "current_pointer_retained_on_no_match": false,
+        "after_seed": 1012239698
+      },
+      {
+        "intensity": 39,
+        "seed": 0,
+        "selected_item_index": 2,
+        "current_pointer_retained_on_no_match": false,
+        "after_seed": 1013904223
+      },
+      {
+        "intensity": 39,
+        "seed": 1,
+        "selected_item_index": 2,
+        "current_pointer_retained_on_no_match": false,
+        "after_seed": 1015568748
+      },
+      {
+        "intensity": 39,
+        "seed": 2,
+        "selected_item_index": 3,
+        "current_pointer_retained_on_no_match": false,
+        "after_seed": 1017233273
+      },
+      {
+        "intensity": 39,
+        "seed": 3,
+        "selected_item_index": 2,
+        "current_pointer_retained_on_no_match": false,
+        "after_seed": 1018897798
+      },
+      {
+        "intensity": 39,
+        "seed": 4294967295,
+        "selected_item_index": 3,
+        "current_pointer_retained_on_no_match": false,
+        "after_seed": 1012239698
+      },
+      {
+        "intensity": 40,
+        "seed": 0,
+        "selected_item_index": 4,
+        "current_pointer_retained_on_no_match": false,
+        "after_seed": 1013904223
+      },
+      {
+        "intensity": 40,
+        "seed": 1,
+        "selected_item_index": 4,
+        "current_pointer_retained_on_no_match": false,
+        "after_seed": 1015568748
+      },
+      {
+        "intensity": 40,
+        "seed": 2,
+        "selected_item_index": 4,
+        "current_pointer_retained_on_no_match": false,
+        "after_seed": 1017233273
+      },
+      {
+        "intensity": 40,
+        "seed": 3,
+        "selected_item_index": 4,
+        "current_pointer_retained_on_no_match": false,
+        "after_seed": 1018897798
+      },
+      {
+        "intensity": 40,
+        "seed": 4294967295,
+        "selected_item_index": 4,
+        "current_pointer_retained_on_no_match": false,
+        "after_seed": 1012239698
+      },
+      {
+        "intensity": 80,
+        "seed": 0,
+        "selected_item_index": 4,
+        "current_pointer_retained_on_no_match": false,
+        "after_seed": 1013904223
+      },
+      {
+        "intensity": 80,
+        "seed": 1,
+        "selected_item_index": 4,
+        "current_pointer_retained_on_no_match": false,
+        "after_seed": 1015568748
+      },
+      {
+        "intensity": 80,
+        "seed": 2,
+        "selected_item_index": 4,
+        "current_pointer_retained_on_no_match": false,
+        "after_seed": 1017233273
+      },
+      {
+        "intensity": 80,
+        "seed": 3,
+        "selected_item_index": 4,
+        "current_pointer_retained_on_no_match": false,
+        "after_seed": 1018897798
+      },
+      {
+        "intensity": 80,
+        "seed": 4294967295,
+        "selected_item_index": 4,
+        "current_pointer_retained_on_no_match": false,
+        "after_seed": 1012239698
+      },
+      {
+        "intensity": 81,
+        "seed": 0,
+        "selected_item_index": null,
+        "current_pointer_retained_on_no_match": true,
+        "after_seed": 0
+      },
+      {
+        "intensity": 81,
+        "seed": 1,
+        "selected_item_index": null,
+        "current_pointer_retained_on_no_match": true,
+        "after_seed": 1
+      },
+      {
+        "intensity": 81,
+        "seed": 2,
+        "selected_item_index": null,
+        "current_pointer_retained_on_no_match": true,
+        "after_seed": 2
+      },
+      {
+        "intensity": 81,
+        "seed": 3,
+        "selected_item_index": null,
+        "current_pointer_retained_on_no_match": true,
+        "after_seed": 3
+      },
+      {
+        "intensity": 81,
+        "seed": 4294967295,
+        "selected_item_index": null,
+        "current_pointer_retained_on_no_match": true,
+        "after_seed": 4294967295
+      },
+      {
+        "case": "self_link",
+        "seed": 0,
+        "current": 486670336,
+        "flags": 0,
+        "intensity_byte": 0
+      },
+      {
+        "case": "terminal_item",
+        "seed": 0,
+        "current": 0,
+        "flags": 0,
+        "intensity_byte": 0
+      }
+    ],
+    "weights": [
+      {
+        "kind": "sound",
+        "case": "inclusive",
+        "weights": [
+          39673,
+          65535
+        ],
+        "index": 1,
+        "after_seed": 1013904223
+      },
+      {
+        "kind": "sound",
+        "case": "full_DWORD",
+        "weights": [
+          65536,
+          65535
+        ],
+        "index": 1,
+        "after_seed": 1013904223
+      },
+      {
+        "kind": "sound",
+        "case": "second_wins",
+        "weights": [
+          0,
+          65535
+        ],
+        "index": 2,
+        "after_seed": 1013904223
+      },
+      {
+        "kind": "sound",
+        "case": "fallback_first",
+        "weights": [
+          0,
+          1
+        ],
+        "index": 1,
+        "after_seed": 1013904223
+      },
+      {
+        "kind": "sound",
+        "case": "only_one",
+        "weights": [
+          0
+        ],
+        "index": 1,
+        "after_seed": 0
+      },
+      {
+        "kind": "item",
+        "case": "inclusive",
+        "weights": [
+          39673,
+          65535
+        ],
+        "index": 1,
+        "after_seed": 1013904223
+      },
+      {
+        "kind": "item",
+        "case": "full_DWORD",
+        "weights": [
+          65536,
+          65535
+        ],
+        "index": 1,
+        "after_seed": 1013904223
+      },
+      {
+        "kind": "item",
+        "case": "second_wins",
+        "weights": [
+          0,
+          65535
+        ],
+        "index": 2,
+        "after_seed": 1013904223
+      },
+      {
+        "kind": "item",
+        "case": "fallback_first",
+        "weights": [
+          0,
+          1
+        ],
+        "index": 1,
+        "after_seed": 1013904223
+      },
+      {
+        "kind": "item",
+        "case": "only_one",
+        "weights": [
+          0
+        ],
+        "index": 1,
+        "after_seed": 0
+      }
+    ],
+    "delays": [
+      {
+        "minimum": 0,
+        "maximum": 0,
+        "seed": 0,
+        "return_ms": 0,
+        "after_seed": 0
+      },
+      {
+        "minimum": 0,
+        "maximum": 0,
+        "seed": 42,
+        "return_ms": 0,
+        "after_seed": 42
+      },
+      {
+        "minimum": 0,
+        "maximum": 0,
+        "seed": 4294967295,
+        "return_ms": 0,
+        "after_seed": 4294967295
+      },
+      {
+        "minimum": 8000,
+        "maximum": 8000,
+        "seed": 0,
+        "return_ms": 8000,
+        "after_seed": 0
+      },
+      {
+        "minimum": 8000,
+        "maximum": 8000,
+        "seed": 42,
+        "return_ms": 8000,
+        "after_seed": 42
+      },
+      {
+        "minimum": 8000,
+        "maximum": 8000,
+        "seed": 4294967295,
+        "return_ms": 8000,
+        "after_seed": 4294967295
+      },
+      {
+        "minimum": 8000,
+        "maximum": 20000,
+        "seed": 0,
+        "return_ms": 11959,
+        "after_seed": 1013904223
+      },
+      {
+        "minimum": 8000,
+        "maximum": 20000,
+        "seed": 42,
+        "return_ms": 18829,
+        "after_seed": 1083814273
+      },
+      {
+        "minimum": 8000,
+        "maximum": 20000,
+        "seed": 4294967295,
+        "return_ms": 13644,
+        "after_seed": 1012239698
+      }
+    ],
+    "ranges": [
+      {
+        "kind": "volume",
+        "mode": "random",
+        "original_min": 20,
+        "original_max": 80,
+        "value": 49,
+        "after_seed": 1083814273,
+        "range_bytes_after": [
+          20,
+          80
+        ]
+      },
+      {
+        "kind": "volume",
+        "mode": "reverse",
+        "original_min": 80,
+        "original_max": 20,
+        "value": 49,
+        "after_seed": 1083814273,
+        "range_bytes_after": [
+          20,
+          80
+        ]
+      },
+      {
+        "kind": "volume",
+        "mode": "constant",
+        "original_min": 20,
+        "original_max": 20,
+        "value": 20,
+        "after_seed": 42,
+        "range_bytes_after": [
+          20,
+          20
+        ]
+      },
+      {
+        "kind": "volume",
+        "mode": "slot1",
+        "original_min": 20,
+        "original_max": 80,
+        "value": 50,
+        "after_seed": 42,
+        "range_bytes_after": [
+          20,
+          80
+        ]
+      },
+      {
+        "kind": "volume",
+        "mode": "slot2",
+        "original_min": 20,
+        "original_max": 80,
+        "value": 35,
+        "after_seed": 42,
+        "range_bytes_after": [
+          20,
+          80
+        ]
+      },
+      {
+        "kind": "signed_range",
+        "mode": "random",
+        "original_min": -20,
+        "original_max": 30,
+        "value": 9,
+        "after_seed": 1083814273,
+        "range_bytes_after": [
+          236,
+          30
+        ]
+      },
+      {
+        "kind": "signed_range",
+        "mode": "reverse",
+        "original_min": 30,
+        "original_max": -20,
+        "value": 9,
+        "after_seed": 1083814273,
+        "range_bytes_after": [
+          236,
+          30
+        ]
+      },
+      {
+        "kind": "signed_range",
+        "mode": "constant",
+        "original_min": -20,
+        "original_max": -20,
+        "value": -20,
+        "after_seed": 42,
+        "range_bytes_after": [
+          236,
+          236
+        ]
+      },
+      {
+        "kind": "signed_range",
+        "mode": "slot1",
+        "original_min": -20,
+        "original_max": 30,
+        "value": 5,
+        "after_seed": 42,
+        "range_bytes_after": [
+          236,
+          30
+        ]
+      },
+      {
+        "kind": "signed_range",
+        "mode": "slot2",
+        "original_min": -20,
+        "original_max": 30,
+        "value": -8,
+        "after_seed": 42,
+        "range_bytes_after": [
+          236,
+          30
+        ]
+      }
+    ],
+    "parameters": [
+      {
+        "parameter": 2,
+        "values": [
+          80,
+          5,
+          80,
+          0
+        ]
+      },
+      {
+        "parameter": 9,
+        "values": [
+          20,
+          5,
+          30,
+          0
+        ]
+      }
+    ],
+    "scope": "Prepared pointer-resolved data, whole selector functions. No real audio output."
+  },
+  "format_fields": {
+    "Entry24": [
+      {
+        "offset": 0,
+        "size": 4,
+        "kind": "u32",
+        "meaning": "groupCount",
+        "confidence": "local_storage"
+      },
+      {
+        "offset": 4,
+        "size": 4,
+        "kind": "u32",
+        "meaning": "opaque",
+        "confidence": "local_storage"
+      },
+      {
+        "offset": 8,
+        "size": 2,
+        "kind": "u16",
+        "meaning": "opaque",
+        "confidence": "local_storage"
+      },
+      {
+        "offset": 10,
+        "size": 2,
+        "kind": "u16",
+        "meaning": "opaque",
+        "confidence": "local_storage"
+      },
+      {
+        "offset": 12,
+        "size": 4,
+        "kind": "f32",
+        "meaning": "minDistance",
+        "confidence": "source_name"
+      },
+      {
+        "offset": 16,
+        "size": 4,
+        "kind": "f32",
+        "meaning": "maxDistance",
+        "confidence": "source_name"
+      },
+      {
+        "offset": 20,
+        "size": 4,
+        "kind": "f32",
+        "meaning": "scale",
+        "confidence": "source_name"
+      }
+    ],
+    "Group20": [
+      {
+        "offset": 0,
+        "size": 4,
+        "kind": "u32",
+        "meaning": "event ID within category",
+        "confidence": "local_storage"
+      },
+      {
+        "offset": 4,
+        "size": 4,
+        "kind": "u32",
+        "meaning": "itemCount",
+        "confidence": "local_storage"
+      },
+      {
+        "offset": 8,
+        "size": 4,
+        "kind": "u32",
+        "meaning": "items pointer at runtime, preserve raw file value",
+        "confidence": "local_storage"
+      },
+      {
+        "offset": 12,
+        "size": 4,
+        "kind": "u32",
+        "meaning": "priority candidate, meaning open",
+        "confidence": "local_storage"
+      },
+      {
+        "offset": 16,
+        "size": 2,
+        "kind": "u16",
+        "meaning": "class-selection flags",
+        "confidence": "DX_static"
+      },
+      {
+        "offset": 18,
+        "size": 1,
+        "kind": "u8",
+        "meaning": "parameter slot0 ID",
+        "confidence": "source_static"
+      },
+      {
+        "offset": 19,
+        "size": 1,
+        "kind": "u8",
+        "meaning": "opaque",
+        "confidence": "local_storage"
+      }
+    ],
+    "Item42": [
+      {
+        "offset": 0,
+        "size": 4,
+        "kind": "u32",
+        "meaning": "soundCount",
+        "confidence": "local_storage"
+      },
+      {
+        "offset": 4,
+        "size": 4,
+        "kind": "u32",
+        "meaning": "linkCount",
+        "confidence": "local_storage"
+      },
+      {
+        "offset": 8,
+        "size": 4,
+        "kind": "u32",
+        "meaning": "sounds pointer at runtime, preserve file value",
+        "confidence": "local_storage"
+      },
+      {
+        "offset": 12,
+        "size": 1,
+        "kind": "u8",
+        "meaning": "volume lower bound",
+        "confidence": "DX_executed"
+      },
+      {
+        "offset": 13,
+        "size": 1,
+        "kind": "u8",
+        "meaning": "volume upper bound",
+        "confidence": "DX_executed"
+      },
+      {
+        "offset": 14,
+        "size": 1,
+        "kind": "s8",
+        "meaning": "signed lower bound, pan candidate",
+        "confidence": "DX_executed_arithmetic"
+      },
+      {
+        "offset": 15,
+        "size": 1,
+        "kind": "s8",
+        "meaning": "signed upper bound, pan candidate",
+        "confidence": "DX_executed_arithmetic"
+      },
+      {
+        "offset": 16,
+        "size": 2,
+        "kind": "u16",
+        "meaning": "delay lower bound",
+        "confidence": "DX_executed"
+      },
+      {
+        "offset": 18,
+        "size": 2,
+        "kind": "u16",
+        "meaning": "delay upper bound",
+        "confidence": "DX_executed"
+      },
+      {
+        "offset": 20,
+        "size": 1,
+        "kind": "u8",
+        "meaning": "opaque, source background often50",
+        "confidence": "local_storage"
+      },
+      {
+        "offset": 21,
+        "size": 1,
+        "kind": "u8",
+        "meaning": "opaque, source background often50",
+        "confidence": "local_storage"
+      },
+      {
+        "offset": 22,
+        "size": 2,
+        "kind": "u16",
+        "meaning": "parameter slot1 ID",
+        "confidence": "source_static"
+      },
+      {
+        "offset": 24,
+        "size": 2,
+        "kind": "u16",
+        "meaning": "slot1 use, bit0 volume and bit1 signed range",
+        "confidence": "DX_executed"
+      },
+      {
+        "offset": 26,
+        "size": 2,
+        "kind": "u16",
+        "meaning": "parameter slot2 ID",
+        "confidence": "source_static"
+      },
+      {
+        "offset": 28,
+        "size": 2,
+        "kind": "u16",
+        "meaning": "slot2 use, bit0 volume and bit1 signed range",
+        "confidence": "DX_executed"
+      },
+      {
+        "offset": 30,
+        "size": 2,
+        "kind": "u16",
+        "meaning": "lowWORD of cumulative item selection value",
+        "confidence": "local_storage"
+      },
+      {
+        "offset": 32,
+        "size": 2,
+        "kind": "u16",
+        "meaning": "upperWORD included by nativeDWORDread at1E",
+        "confidence": "DX_executed"
+      },
+      {
+        "offset": 34,
+        "size": 4,
+        "kind": "f32",
+        "meaning": "meaning open, source background20/100/0.1",
+        "confidence": "local_storage"
+      },
+      {
+        "offset": 38,
+        "size": 4,
+        "kind": "u32",
+        "meaning": "links pointer at runtime, preserve raw file value",
+        "confidence": "local_storage"
+      }
+    ],
+    "Sound16": [
+      {
+        "offset": 0,
+        "size": 4,
+        "kind": "u32",
+        "meaning": "archive entry,1based",
+        "confidence": "local_storage"
+      },
+      {
+        "offset": 4,
+        "size": 4,
+        "kind": "u32",
+        "meaning": "cumulative selection weight",
+        "confidence": "DX_executed"
+      },
+      {
+        "offset": 8,
+        "size": 4,
+        "kind": "u32",
+        "meaning": "duration milliseconds",
+        "confidence": "source_static"
+      },
+      {
+        "offset": 12,
+        "size": 4,
+        "kind": "u32",
+        "meaning": "bank index,1based",
+        "confidence": "local_storage"
+      }
+    ],
+    "Link8": [
+      {
+        "offset": 0,
+        "size": 4,
+        "kind": "u32",
+        "meaning": "target item,1based in group; pointer at runtime",
+        "confidence": "local_storage"
+      },
+      {
+        "offset": 4,
+        "size": 1,
+        "kind": "u8",
+        "meaning": "opaque",
+        "confidence": "local_storage"
+      },
+      {
+        "offset": 5,
+        "size": 1,
+        "kind": "u8",
+        "meaning": "opaque",
+        "confidence": "local_storage"
+      },
+      {
+        "offset": 6,
+        "size": 1,
+        "kind": "u8",
+        "meaning": "minimum inclusive intensity",
+        "confidence": "DX_executed"
+      },
+      {
+        "offset": 7,
+        "size": 1,
+        "kind": "u8",
+        "meaning": "maximum inclusive intensity",
+        "confidence": "DX_executed"
+      }
+    ],
+    "SDT40": [
+      {
+        "offset": 0,
+        "size": 4,
+        "kind": "u32",
+        "meaning": "header byte size",
+        "confidence": "local_storage"
+      },
+      {
+        "offset": 4,
+        "size": 4,
+        "kind": "u32",
+        "meaning": "payload byte size",
+        "confidence": "local_storage"
+      },
+      {
+        "offset": 8,
+        "size": 16,
+        "kind": "bytes",
+        "meaning": "bounded sound name",
+        "confidence": "local_storage"
+      },
+      {
+        "offset": 24,
+        "size": 2,
+        "kind": "u16",
+        "meaning": "nominal sample rate",
+        "confidence": "local_storage"
+      },
+      {
+        "offset": 26,
+        "size": 1,
+        "kind": "u8",
+        "meaning": "sample bits",
+        "confidence": "local_storage"
+      },
+      {
+        "offset": 27,
+        "size": 1,
+        "kind": "u8",
+        "meaning": "sound type",
+        "confidence": "local_storage"
+      },
+      {
+        "offset": 28,
+        "size": 4,
+        "kind": "u32",
+        "meaning": "opaque",
+        "confidence": "local_storage"
+      },
+      {
+        "offset": 32,
+        "size": 4,
+        "kind": "u32",
+        "meaning": "PCM byte count",
+        "confidence": "source_static"
+      },
+      {
+        "offset": 36,
+        "size": 4,
+        "kind": "u32",
+        "meaning": "opaque",
+        "confidence": "local_storage"
+      }
+    ]
+  },
+  "factory_dispatch": [
+    {
+      "condition": "flags&4==0",
+      "creator": 6379504,
+      "vtable_from_source": null,
+      "role": "plain sound"
+    },
+    {
+      "condition": "flags&4 and flags&10h",
+      "creator": 6383152,
+      "vtable_from_source": 6767048,
+      "role": "options music"
+    },
+    {
+      "condition": "flags&4 and !(flags&10h) and flags&2 and flags&400h",
+      "creator": 6383072,
+      "vtable_from_source": 6766976,
+      "role": "linked streaming"
+    },
+    {
+      "condition": "flags&4 and !(flags&10h) and flags&2 and !(flags&400h)",
+      "creator": 6382320,
+      "vtable_from_source": 6766912,
+      "role": "remaining source class"
+    },
+    {
+      "condition": "flags&4 and !(flags&10h) and !(flags&2) and flags&400h",
+      "creator": 6381712,
+      "vtable_from_source": 6766840,
+      "role": "remaining source class"
+    },
+    {
+      "condition": "flags&4 and !(flags&10h) and !(flags&2) and !(flags&400h)",
+      "creator": 6381280,
+      "vtable_from_source": 6766768,
+      "role": "delay chained"
+    }
+  ],
+  "counts": {
+    "source_files_reviewed": 36,
+    "native_selector_controls": 63,
+    "graph_groups": 5,
+    "graph_items": 329,
+    "background_archives": 11,
+    "prior_components_preserved": 181
+  },
+  "local_survey": {
+    "category_names": [
+      "music",
+      "ambience",
+      "one_shot_atmos",
+      "options_music"
+    ],
+    "graph_groups": 5,
+    "graph_items": 329,
+    "background_archives": 11,
+    "exact_background_map_roundtrips": 8,
+    "all_SFX_counts": {
+      "groups": 4801,
+      "items": 5291,
+      "sounds": 6772,
+      "sound_weights_with_high16": 0,
+      "links": 2479,
+      "multi_sound_items": 643,
+      "multi_sound_final_weight_below65535": 435,
+      "reversed_signed_range": 1
+    },
+    "reversed_signed_ranges": [
+      {
+        "file": "Global/room_prisonSFX.map",
+        "group": 746,
+        "item": 1,
+        "minimum": 40,
+        "maximum": 10
+      }
+    ],
+    "group_flag_counts": {
+      "0x0000": 933,
+      "0x0001": 238,
+      "0x0004": 8,
+      "0x0006": 43,
+      "0x0008": 2,
+      "0x0016": 1,
+      "0x0200": 3528,
+      "0x0201": 32,
+      "0x0204": 1,
+      "0x0206": 2,
+      "0x021e": 1,
+      "0x0221": 2,
+      "0x0406": 6,
+      "0x0604": 1,
+      "0x0606": 3
+    },
+    "opaque_value_counts": {
+      "entry4_12": {
+        "0000000000000000": 4,
+        "0000000003000000": 1,
+        "0000000003000100": 1,
+        "0000000005000000": 1,
+        "0000000005000100": 34,
+        "0000000009000000": 18,
+        "0000000009000100": 100,
+        "0000000009000d00": 36,
+        "0000000009001600": 4,
+        "0000000009001700": 2,
+        "0000000009001900": 4
+      },
+      "group_priority": {
+        "0": 7,
+        "1": 1,
+        "2": 2,
+        "5": 26,
+        "7": 2,
+        "9": 4,
+        "10": 48,
+        "12": 2,
+        "15": 1,
+        "20": 23,
+        "30": 23,
+        "40": 26,
+        "50": 37,
+        "60": 24,
+        "70": 24,
+        "80": 24,
+        "90": 25,
+        "100": 14,
+        "120": 21,
+        "130": 2,
+        "140": 142,
+        "145": 27,
+        "149": 3,
+        "150": 34,
+        "160": 23,
+        "170": 22,
+        "180": 22,
+        "190": 20,
+        "200": 26,
+        "210": 26,
+        "217": 3,
+        "219": 3,
+        "220": 1,
+        "230": 24,
+        "240": 20,
+        "250": 24,
+        "260": 21,
+        "263": 1,
+        "265": 26,
+        "266": 1,
+        "270": 28,
+        "280": 26,
+        "290": 25,
+        "300": 24,
+        "310": 26,
+        "320": 26,
+        "325": 1,
+        "330": 19,
+        "500": 5,
+        "1000": 99,
+        "1999": 7,
+        "2000": 16,
+        "3000": 6,
+        "3300": 2,
+        "3500": 23,
+        "3700": 11,
+        "3750": 1,
+        "3900": 18,
+        "3901": 18,
+        "3998": 5,
+        "3999": 70,
+        "4000": 8,
+        "4850": 1,
+        "4900": 12,
+        "4901": 3,
+        "4999": 16,
+        "5000": 2,
+        "5299": 15,
+        "5300": 2,
+        "5400": 3,
+        "5500": 2,
+        "5700": 13,
+        "5800": 1,
+        "5998": 1,
+        "5999": 7,
+        "6000": 3452,
+        "10300": 2
+      },
+      "group_slot0": {
+        "0": 4792,
+        "2": 3,
+        "3": 1,
+        "8": 1,
+        "10": 4
+      },
+      "item14_16": {
+        "0000": 3447,
+        "3232": 1844
+      },
+      "item22_float": {
+        "00000000": 3447,
+        "00002041": 34,
+        "00004040": 11,
+        "00007041": 4,
+        "0000803f": 6,
+        "0000a040": 41,
+        "0000a041": 1528,
+        "0000c841": 3,
+        "0000c842": 134,
+        "0000f041": 5,
+        "cdcccc3d": 78
+      },
+      "item20_WORD": {
+        "0": 5291
+      }
+    }
+  },
+  "background_graph": {
+    "file": "sound-background-graphs.json.gz",
+    "sha256": "8873524c69eb36c006a3816fc024473c272c43fef3c3d3e39e54c4918187dfb2"
+  },
+  "russian_follow_up": {
+    "file": "sound-russian-sdt-length-audit.json",
+    "sha256": "65b94d6c155d2a1b8478dafce2bb9a309fd4caa67ef5be4beaf3bd06a1a9a87c"
+  },
+  "primary": [
+    {
+      "file": "dethware-DX-5674f0-memory.txt",
+      "sha256": "c8b25033b4469f348b307e28ce98bae46e0866a3060ddb613e86d47966ec33a9",
+      "address": 5666032,
+      "length": 565,
+      "bytes_sha256": "d7512f60f1965a72ee200ad38e5ba03edafc14b7680f99796945c78c7fb0816e"
+    },
+    {
+      "file": "dethware-DX-60c750-memory.txt",
+      "sha256": "046a3ab1d3ba6520de33ec55919f3b60e3f029ec51cd6dd21f115d2840e0c22f",
+      "address": 6342480,
+      "length": 56,
+      "bytes_sha256": "795f30bcbb2afd51d089d9c230b1f73e2be4155448c4e655a35c3af702c7cee1"
+    },
+    {
+      "file": "dethware-DX-60c790-memory.txt",
+      "sha256": "aeb09f0585fb3805f66c4c360e3e06c514d2d83a981ede1cb8f51dcebbb8ffaa",
+      "address": 6342544,
+      "length": 125,
+      "bytes_sha256": "384964215f88b005344de65aac23260f3b7eda0915c3b11c68faa3d4c59e7ebd"
+    },
+    {
+      "file": "dethware-DX-60caa0-memory.txt",
+      "sha256": "2a423675a5389a9ea3cd6e77e989b647295b9f62921039005af9f97f4437bc05",
+      "address": 6343328,
+      "length": 226,
+      "bytes_sha256": "6b385b4c37acfa000723fc8fdb71eeede69fc48522f0dd7be83ecddcbaaaf7da"
+    },
+    {
+      "file": "dethware-DX-60cb90-memory.txt",
+      "sha256": "1a6cca07423fa3e4eaaf35851532cc5db4449d79dfaeca9e33ace65e5298d33c",
+      "address": 6343568,
+      "length": 232,
+      "bytes_sha256": "c43c25447cd20447bf46e7f474352eae21fa1b9823e3ed68dea3e1251a3f41e4"
+    },
+    {
+      "file": "dethware-DX-60ccf0-memory.txt",
+      "sha256": "b1647166ecba140910fef196e9f635d632853d13d00199bc3b56e7f3b5924e00",
+      "address": 6343920,
+      "length": 100,
+      "bytes_sha256": "82ab660c38452197f4ed64fe85594064f8e4a17d6200810d79c5067813be2a1f"
+    },
+    {
+      "file": "dethware-DX-60cff0-memory.txt",
+      "sha256": "1270c8e4abf93d803fc89c9779d99a60e8623acf54325b177b96aa27da69ad53",
+      "address": 6344688,
+      "length": 106,
+      "bytes_sha256": "fb14d3d8493a6a0774a2db83d5dd9e938611fc666750d3b25ac5eff05a5dae1f"
+    },
+    {
+      "file": "dethware-DX-60d060-memory.txt",
+      "sha256": "ce948891afaf5f5b34441e7371e42352359d91de633c971e977a04f9274f5dbb",
+      "address": 6344800,
+      "length": 141,
+      "bytes_sha256": "a736b680515ccfc15c53bb81ae7a5eed6a5026fa223be091cdf9ca8af963c97b"
+    },
+    {
+      "file": "dethware-DX-60da70-memory.txt",
+      "sha256": "cc4b5a5c31de2716baa9336a9c0b1c17bb6830db5800a1aba463b6a0b8259466",
+      "address": 6347376,
+      "length": 271,
+      "bytes_sha256": "e05acbcbe14dd8fb836534cf10f966cb2071cbc0cf35017174362e5c55a0468c"
+    },
+    {
+      "file": "dethware-DX-615b10-memory.txt",
+      "sha256": "bfb0a1f19e1cff9f2926ace646b3bbdfd7c8fc740ac8131687202aa52a6eea1b",
+      "address": 6380304,
+      "length": 215,
+      "bytes_sha256": "d71a88f2b8c00492a10971cbe6d8e503a7b9655221c4c499368c03112b75b082"
+    },
+    {
+      "file": "dethware-DX-615d60-memory.txt",
+      "sha256": "27a5b7407bd5442e74c3f628dd1789938c67fe55d43dbc3e89357b03b350d113",
+      "address": 6380896,
+      "length": 375,
+      "bytes_sha256": "3cbaa79cf020ae1f30586d86a1e9950829b3bca58b1dcddd02cbafdf7193e130"
+    },
+    {
+      "file": "dethware-DX-6163c0-memory.txt",
+      "sha256": "bb4949661ec1a175b040c2fc7e3984e8f79f518a02265a109ae20e2ce3daf1f9",
+      "address": 6382528,
+      "length": 265,
+      "bytes_sha256": "aa2226926e7686e3c9923c6847db64737f0f8038c227e306252b8c941150fe1e"
+    },
+    {
+      "file": "dethware-DX-616560-memory.txt",
+      "sha256": "67476358f61078407f99ec79684b1134da82e81c57babe10ca2d159eac8198f5",
+      "address": 6382944,
+      "length": 112,
+      "bytes_sha256": "531f69105c47d4ce24676f30d24b250d18c1758e8a1aea0ad57af21bd98ce43f"
+    }
+  ],
+  "interpretation": "Statuses describe each finding independently. Source tests were inspected. Native controls use prepared pointer-resolved structures. Live audio/Qt tests remain open.",
+  "schema_previous": {
+    "file": "sound-resource-semantics.json",
+    "sha256": "cf7415889acc7c7b6a50214d05eb3e8ab5563702016cbc383e376938cbfb7928"
+  },
+  "helpers": [
+    {
+      "file": "probe_dethware_dx_selectors.py",
+      "sha256": "bab5b5bfc37819aadab7a88a8acc0f7ed783921954db4eb4f836216249090520"
+    },
+    {
+      "file": "survey_dethware_sound_data.py",
+      "sha256": "7c82d9d964c1c346213496a957c6ad22bcf19b732b3d967e4a418ee6b0e5cd2d"
+    },
+    {
+      "file": "audit_russian_sdt_lengths.py",
+      "sha256": "6cb348a4e32361efa5fca968aeffff8b9261929cf59d7ca3c252638b5f511c0c"
+    },
+    {
+      "file": "build_dethware_review.py",
+      "sha256": "e031d1739b6bc654348a18d5af76ca8080329c095f39f8f5c6324c1753397634"
+    }
+  ]
+}

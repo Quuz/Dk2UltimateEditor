@@ -116,6 +116,22 @@ def main():
         with zipfile.ZipFile(evidence) as z:
             for row in sound['primary']:
                 assert hashlib.sha256(z.read(row['file'])).hexdigest()==row['sha256']
+    if 'dethware_sound_review' in package:
+        review=package['dethware_sound_review']
+        assert len(review['source_coverage'])==36 and all(row['reviewed'] for row in review['source_coverage'])
+        assert len({row['path'] for row in review['source_coverage']})==36
+        assert len(review['topics'])==39 and len(review['open_questions'])==18
+        assert review['counts']['native_selector_controls']==63
+        assert review['counts']['graph_items']==329
+        assert review['local_survey']['exact_background_map_roundtrips']==8
+        links=review['selectors']['links']
+        assert next(row for row in links if row.get('case')=='terminal_item')['flags']==0
+        assert next(row for row in links if row.get('case')=='self_link')['current']!=0
+        assert review['selectors']['parameters'][0]['values']==[80,5,80,0]
+        assert len(review['primary'])==13
+        with zipfile.ZipFile(evidence) as z:
+            for row in review['primary']:
+                assert hashlib.sha256(z.read(row['file'])).hexdigest()==row['sha256']
     for p in RESEARCH.iterdir():assert p.suffix.lower() not in ['.exe','.dll','.kwd','.kld','.xlsx','.log'],p.name
     # Check token-shaped strings, without printing any matching value.
     secret=re.compile(rb'(?:gh[pousr]_[A-Za-z0-9]{30,}|github_pat_[A-Za-z0-9_]{40,}|sk-proj-[A-Za-z0-9_-]{40,}|AKIA[A-Z0-9]{16})')

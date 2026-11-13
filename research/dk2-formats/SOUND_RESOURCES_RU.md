@@ -1,3 +1,5 @@
+Продолжение обзора Dethware сохранено в DETHWARE_SOUND_REVIEW_RU.md. Этап 205 добавляет полные графы и 63 проверки исходного DX. Уточнены поведение узла без переходов, ширина весов и условие спада уровня музыки.
+
 # Звуковые категории и динамическая музыка DK2
 
 13 ноября 2026. Источником гипотез и адресов послужило исследование Dethware. Его описание динамической музыки относится к Steam DKII.EXE. Здесь байты форматов сверены с установленными файлами, а потребители полей проверены в локальном DKII-DX.exe с SHA-256 d7a8b854e4e4f02709eba271bead6fe2307dd6e332b5a96e70857e5b0e19fb8a. [Форматы Dethware](https://github.com/Dethware/DK2/blob/28adde55f91145abdaab2df900a0bb6994aa04db/docs/file-formats.md) · [Логика воспроизведения](https://github.com/Dethware/DK2/blob/28adde55f91145abdaab2df900a0bb6994aa04db/docs/runtime-behaviour.md)
