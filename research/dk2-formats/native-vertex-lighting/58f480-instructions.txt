@@ -1,0 +1,38 @@
+0058f480: PUSH ECX 
+0058f481: PUSH ESI 
+0058f482: XOR ESI,ESI 
+0058f484: MOV dword ptr [ESP + 0x4],ESI 
+0058f488: MOV ECX,0x7814a0 
+0058f48d: FILD dword ptr [ESP + 0x4] 
+0058f491: CMP ECX,0x7814a0 
+0058f497: FST float ptr [ESI*0x4 + 0x781ca0] 
+0058f49e: JZ 0x0058f4b9 
+0058f4a0: MOV EAX,0x10000 
+0058f4a5: CDQ 
+0058f4a6: FDIVR double ptr [0x0066ff00] 
+0058f4ac: IDIV ESI 
+0058f4ae: FSTP float ptr [ESI*0x4 + 0x7810a0] 
+0058f4b5: MOV dword ptr [ECX],EAX 
+0058f4b7: JMP 0x0058f4bb 
+0058f4b9: FSTP ST0 
+0058f4bb: ADD ECX,0x4 
+0058f4be: INC ESI 
+0058f4bf: CMP ECX,0x7818a0 
+0058f4c5: MOV dword ptr [ESP + 0x4],ESI 
+0058f4c9: JL 0x0058f48d 
+0058f4cb: MOV dword ptr [ESP + 0x4],0x0 
+0058f4d3: MOV EAX,0x7818a0 
+0058f4d8: FILD dword ptr [ESP + 0x4] 
+0058f4dc: MOV ESI,dword ptr [ESP + 0x4] 
+0058f4e0: ADD EAX,0x4 
+0058f4e3: INC ESI 
+0058f4e4: CMP EAX,0x781ca0 
+0058f4e9: FMUL float ptr [0x0066ff08] 
+0058f4ef: MOV dword ptr [ESP + 0x4],ESI 
+0058f4f3: FDIVR float ptr [0x0066ff0c] 
+0058f4f9: FSUBR float ptr [0x0066ff10] 
+0058f4ff: FSTP float ptr [EAX + -0x4] 
+0058f502: JL 0x0058f4d8 
+0058f504: POP ESI 
+0058f505: POP ECX 
+0058f506: RET 

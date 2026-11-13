@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "component": "native_vertex_light_supplement",
+  "integration": "supplement; frozen main package unchanged",
+  "profile": {
+    "program": "DKII-DX.exe",
+    "sha256": "d7a8b854e4e4f02709eba271bead6fe2307dd6e332b5a96e70857e5b0e19fb8a"
+  },
+  "physical_fields": [
+    {
+      "family": "Rooms",
+      "raw_offset": "0x36E",
+      "type": "u8",
+      "CLight_offset": "0x145",
+      "render_record_offsets": [
+        "0x30",
+        "0x34"
+      ],
+      "scale": "N/128",
+      "status": "prior phase123; not replayed here"
+    }
+  ],
+  "runtime_descriptor": {
+    "size": 40,
+    "position": "float3 +0",
+    "radius_squared": "float +0xC",
+    "inverse_radius_squared": "float +0x10",
+    "intensity": "float +0x18",
+    "rgb": "float3 +0x1C"
+  },
+  "executed": [
+    "58F480",
+    "57BF00"
+  ],
+  "static": [
+    "576230",
+    "586130",
+    "57AFF0",
+    "57BCB0"
+  ],
+  "constants": {
+    "table_count": 256,
+    "table_formula": "float32(0.25 + 16/index)",
+    "index_formula": "(float32_bits(12582912 - (float32(0.49999) - 16*distanceSquared)) & 0x7fffff) - 0x400000"
+  },
+  "cases": 80,
+  "radius": 1.5,
+  "distance_count": 10,
+  "intensities": [
+    0,
+    64,
+    128,
+    255
+  ],
+  "normals": [
+    "+Z",
+    "-Z"
+  ],
+  "rgb_tolerance": 0.0002,
+  "limitations": [
+    "prepared descriptor, not full loader/World",
+    "no GPU/pixel validation",
+    "only axial normals",
+    "only one light",
+    "outside-table lookup unknown",
+    "index0 IEEE NaN/Infinity and signbit branches retained",
+    "no KWD writer; original EXE hash retained"
+  ]
+}
