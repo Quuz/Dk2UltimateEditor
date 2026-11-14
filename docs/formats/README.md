@@ -16,6 +16,7 @@
 | Храм: файл рецептов и выдача gold/Object-награды | [TEMPLE_FILE_REWARDS_RU.md](../../research/dk2-formats/TEMPLE_FILE_REWARDS_RU.md) |
 | Скорость: Variables224/65, ранения, поверхность | [POSSESSION_SPEED_CONTEXT_RU.md](../../research/dk2-formats/POSSESSION_SPEED_CONTEXT_RU.md) |
 | Variables65/224: границы индексов и соседние таблицы | [GLOBAL_TABLE_INDICES_RU.md](../../research/dk2-formats/GLOBAL_TABLE_INDICES_RU.md) |
+| Globals113/114: пересечения байтов и границы двух кандидатов | [Статический аудит](../../research/dk2-formats/globals-113-114-read-audit/ACCEPTANCE_RU.md) |
 | Variables: первая ветвь записей игрока | [Player writer](../../research/dk2-formats/variables-player-writer/README_RU.md) |
 | Variables Type77: семь CPU-сцен и ограничения фикстуры | [Type77](../../research/dk2-formats/variables-type77/README_RU.md) |
 | Variables: сохранение Pro и вычисление margin74 | [EDITOR_VARIABLES_WRITER_RU.md](../../research/dk2-formats/EDITOR_VARIABLES_WRITER_RU.md) |

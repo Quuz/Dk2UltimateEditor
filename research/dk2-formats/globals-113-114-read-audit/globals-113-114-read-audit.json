@@ -1,0 +1,4633 @@
+{
+  "audit": "globals-113-114-read-audit",
+  "pass": "correction-pass-2",
+  "scope": "Bounded static primary-byte/dataflow pass on two candidate functions. Not a native runtime observation and not a whole-game non-use claim.",
+  "exe": {
+    "path": "D:\\Games\\DK2\\Dungeon Keeper 2\\DKII-DX.exe",
+    "sha256": "d7a8b854e4e4f02709eba271bead6fe2307dd6e332b5a96e70857e5b0e19fb8a",
+    "pinned": "d7a8b854e4e4f02709eba271bead6fe2307dd6e332b5a96e70857e5b0e19fb8a",
+    "match": true,
+    "size": 2977280,
+    "image_base": "0x400000",
+    "capstone": "5.0.7"
+  },
+  "targets": {
+    "113": {
+      "va": "0x6f28f2",
+      "base_plus": "0x3a2",
+      "decimal": 930,
+      "size": 2
+    },
+    "114": {
+      "va": "0x6f28f4",
+      "base_plus": "0x3a4",
+      "decimal": 932,
+      "size": 2
+    }
+  },
+  "retractions": [
+    "The '346 parity exclusions' and '133 scale-2 reads excluded' counts are invalid: they compared operand START equality and ignored operand width. They are replaced by 33 load PCs / 66 target-load pairs / 132 load-target-index triples of byte-interval candidates with no exclusion claim.",
+    "The hand classify_abs_reference decoder is removed from the proof. It mis-sized moffs/movzx/movups and missed CMP/ADD memory reads; instruction size/access now comes from Capstone on the pinned EXE.",
+    "The claim 'exhaustive wide-read absence' for 113/114 is withdrawn. The census is raw candidate arithmetic over the saved phase200 reads only.",
+    "The 'Type112' label for the store at 0x51cdb0 is withdrawn; only verified store bytes are reported.",
+    "Base identity 0x006e4154 == 0x006f2550 is conditional, not unconditional proof.",
+    "The loader stores and 0x47bb4e DWORD analysis are historical reproduction (phase200), not new findings and not new semantics.",
+    "The earlier derivation '0x6F2976 = type 179' is wrong; VARIABLE_RUNTIME maps type 192 to 0x6f2976 and type 179 to 0x6f295e."
+  ],
+  "historical_reproduction": {
+    "note": "Repeat primary-byte checks of evidence already established in phase200/phase101; kept for reproducibility only, not presented as new semantics.",
+    "loader_stores": [
+      {
+        "global": "113",
+        "va": "0x51d14d",
+        "decode_start": "0x51d13d",
+        "instruction": {
+          "pc": 5361997,
+          "bytes": "66a3f2286f00",
+          "size": 6,
+          "mnemonic": "mov",
+          "op_str": "word ptr [0x6f28f2], ax",
+          "mem_ops": [
+            {
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "disp": 7284978,
+              "size": 2,
+              "read": false,
+              "write": true
+            }
+          ]
+        },
+        "verified": true
+      },
+      {
+        "global": "114",
+        "va": "0x51d15b",
+        "decode_start": "0x51d14b",
+        "instruction": {
+          "pc": 5362011,
+          "bytes": "66a3f4286f00",
+          "size": 6,
+          "mnemonic": "mov",
+          "op_str": "word ptr [0x6f28f4], ax",
+          "mem_ops": [
+            {
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "disp": 7284980,
+              "size": 2,
+              "read": false,
+              "write": true
+            }
+          ]
+        },
+        "verified": true
+      }
+    ],
+    "known_overlap_dword": {
+      "va": "0x47bb4e",
+      "decode_start": "0x47bb40",
+      "instruction": {
+        "pc": 4701006,
+        "bytes": "8b0df0286f00",
+        "size": 6,
+        "mnemonic": "mov",
+        "op_str": "ecx, dword ptr [0x6f28f0]",
+        "mem_ops": [
+          {
+            "base": null,
+            "index": null,
+            "scale": 1,
+            "disp": 7284976,
+            "size": 4,
+            "read": true,
+            "write": false
+          }
+        ]
+      },
+      "verified": true
+    }
+  },
+  "broad_candidate_census": {
+    "source": "phase200-global-alias-search.json",
+    "source_sha256": "bf288f3350f18fbb805a3ab6b2d19602fc41e4897f40662618842e9a42767db4",
+    "method": "structured expression [1, disp, [[symbol, scale, 0, mask]]] + operand width 'bytes'; candidate iff [disp+scale*idx, +width-1] intersects a target byte",
+    "counts": {
+      "alias_reads_total": 183,
+      "reads_with_structured_expression": 183,
+      "load_pcs": 33,
+      "target_load_pairs": 66,
+      "load_target_index_triples": 132
+    },
+    "pairs": [
+      {
+        "access": "0x4578da",
+        "target": 113
+      },
+      {
+        "access": "0x4578da",
+        "target": 114
+      },
+      {
+        "access": "0x457988",
+        "target": 113
+      },
+      {
+        "access": "0x457988",
+        "target": 114
+      },
+      {
+        "access": "0x459066",
+        "target": 113
+      },
+      {
+        "access": "0x459066",
+        "target": 114
+      },
+      {
+        "access": "0x45b2b8",
+        "target": 113
+      },
+      {
+        "access": "0x45b2b8",
+        "target": 114
+      },
+      {
+        "access": "0x45b678",
+        "target": 113
+      },
+      {
+        "access": "0x45b678",
+        "target": 114
+      },
+      {
+        "access": "0x45b94d",
+        "target": 113
+      },
+      {
+        "access": "0x45b94d",
+        "target": 114
+      },
+      {
+        "access": "0x45bc45",
+        "target": 113
+      },
+      {
+        "access": "0x45bc45",
+        "target": 114
+      },
+      {
+        "access": "0x45c002",
+        "target": 113
+      },
+      {
+        "access": "0x45c002",
+        "target": 114
+      },
+      {
+        "access": "0x45c22b",
+        "target": 113
+      },
+      {
+        "access": "0x45c22b",
+        "target": 114
+      },
+      {
+        "access": "0x45c7a1",
+        "target": 113
+      },
+      {
+        "access": "0x45c7a1",
+        "target": 114
+      },
+      {
+        "access": "0x45c98f",
+        "target": 113
+      },
+      {
+        "access": "0x45c98f",
+        "target": 114
+      },
+      {
+        "access": "0x45d225",
+        "target": 113
+      },
+      {
+        "access": "0x45d225",
+        "target": 114
+      },
+      {
+        "access": "0x45d433",
+        "target": 113
+      },
+      {
+        "access": "0x45d433",
+        "target": 114
+      },
+      {
+        "access": "0x47a909",
+        "target": 113
+      },
+      {
+        "access": "0x47a909",
+        "target": 114
+      },
+      {
+        "access": "0x47b033",
+        "target": 113
+      },
+      {
+        "access": "0x47b033",
+        "target": 114
+      },
+      {
+        "access": "0x47b1c3",
+        "target": 113
+      },
+      {
+        "access": "0x47b1c3",
+        "target": 114
+      },
+      {
+        "access": "0x47b316",
+        "target": 113
+      },
+      {
+        "access": "0x47b316",
+        "target": 114
+      },
+      {
+        "access": "0x47b698",
+        "target": 113
+      },
+      {
+        "access": "0x47b698",
+        "target": 114
+      },
+      {
+        "access": "0x4858f7",
+        "target": 113
+      },
+      {
+        "access": "0x4858f7",
+        "target": 114
+      },
+      {
+        "access": "0x48597c",
+        "target": 113
+      },
+      {
+        "access": "0x48597c",
+        "target": 114
+      },
+      {
+        "access": "0x487879",
+        "target": 113
+      },
+      {
+        "access": "0x487879",
+        "target": 114
+      },
+      {
+        "access": "0x488b01",
+        "target": 113
+      },
+      {
+        "access": "0x488b01",
+        "target": 114
+      },
+      {
+        "access": "0x48ea9b",
+        "target": 113
+      },
+      {
+        "access": "0x48ea9b",
+        "target": 114
+      },
+      {
+        "access": "0x48efde",
+        "target": 113
+      },
+      {
+        "access": "0x48efde",
+        "target": 114
+      },
+      {
+        "access": "0x48fdc6",
+        "target": 113
+      },
+      {
+        "access": "0x48fdc6",
+        "target": 114
+      },
+      {
+        "access": "0x495093",
+        "target": 113
+      },
+      {
+        "access": "0x495093",
+        "target": 114
+      },
+      {
+        "access": "0x4ae6ba",
+        "target": 113
+      },
+      {
+        "access": "0x4ae6ba",
+        "target": 114
+      },
+      {
+        "access": "0x4ae757",
+        "target": 113
+      },
+      {
+        "access": "0x4ae757",
+        "target": 114
+      },
+      {
+        "access": "0x4b1588",
+        "target": 113
+      },
+      {
+        "access": "0x4b1588",
+        "target": 114
+      },
+      {
+        "access": "0x4c12c3",
+        "target": 113
+      },
+      {
+        "access": "0x4c12c3",
+        "target": 114
+      },
+      {
+        "access": "0x4c1834",
+        "target": 113
+      },
+      {
+        "access": "0x4c1834",
+        "target": 114
+      },
+      {
+        "access": "0x4dd4a6",
+        "target": 113
+      },
+      {
+        "access": "0x4dd4a6",
+        "target": 114
+      },
+      {
+        "access": "0x4ff691",
+        "target": 113
+      },
+      {
+        "access": "0x4ff691",
+        "target": 114
+      }
+    ],
+    "index_constraints": {
+      "mask_domain": "0..mask (encoding bound only)",
+      "note": "A 0..255 mask does NOT prove that a normal gameplay index reaches that value. Every triple below is arithmetic only and is not a reachability or non-use proof."
+    },
+    "candidates": [
+      {
+        "access": "0x4578da",
+        "function": "0x457880",
+        "target": 113,
+        "index": 244,
+        "start_offset": 929,
+        "byte_interval": [
+          929,
+          930
+        ],
+        "operand_width": 2,
+        "instruction": "movsx ecx, word ptr [eax + edx*2 + 0x1b9]",
+        "expression": [
+          1,
+          441,
+          [
+            [
+              "4578d4:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x4578da",
+        "function": "0x457880",
+        "target": 113,
+        "index": 245,
+        "start_offset": 931,
+        "byte_interval": [
+          931,
+          932
+        ],
+        "operand_width": 2,
+        "instruction": "movsx ecx, word ptr [eax + edx*2 + 0x1b9]",
+        "expression": [
+          1,
+          441,
+          [
+            [
+              "4578d4:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x4578da",
+        "function": "0x457880",
+        "target": 114,
+        "index": 245,
+        "start_offset": 931,
+        "byte_interval": [
+          931,
+          932
+        ],
+        "operand_width": 2,
+        "instruction": "movsx ecx, word ptr [eax + edx*2 + 0x1b9]",
+        "expression": [
+          1,
+          441,
+          [
+            [
+              "4578d4:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x4578da",
+        "function": "0x457880",
+        "target": 114,
+        "index": 246,
+        "start_offset": 933,
+        "byte_interval": [
+          933,
+          934
+        ],
+        "operand_width": 2,
+        "instruction": "movsx ecx, word ptr [eax + edx*2 + 0x1b9]",
+        "expression": [
+          1,
+          441,
+          [
+            [
+              "4578d4:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x457988",
+        "function": "0x457880",
+        "target": 113,
+        "index": 244,
+        "start_offset": 929,
+        "byte_interval": [
+          929,
+          930
+        ],
+        "operand_width": 2,
+        "instruction": "movsx ecx, word ptr [ecx + eax*2 + 0x1b9]",
+        "expression": [
+          1,
+          441,
+          [
+            [
+              "45797a:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x457988",
+        "function": "0x457880",
+        "target": 113,
+        "index": 245,
+        "start_offset": 931,
+        "byte_interval": [
+          931,
+          932
+        ],
+        "operand_width": 2,
+        "instruction": "movsx ecx, word ptr [ecx + eax*2 + 0x1b9]",
+        "expression": [
+          1,
+          441,
+          [
+            [
+              "45797a:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x457988",
+        "function": "0x457880",
+        "target": 114,
+        "index": 245,
+        "start_offset": 931,
+        "byte_interval": [
+          931,
+          932
+        ],
+        "operand_width": 2,
+        "instruction": "movsx ecx, word ptr [ecx + eax*2 + 0x1b9]",
+        "expression": [
+          1,
+          441,
+          [
+            [
+              "45797a:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x457988",
+        "function": "0x457880",
+        "target": 114,
+        "index": 246,
+        "start_offset": 933,
+        "byte_interval": [
+          933,
+          934
+        ],
+        "operand_width": 2,
+        "instruction": "movsx ecx, word ptr [ecx + eax*2 + 0x1b9]",
+        "expression": [
+          1,
+          441,
+          [
+            [
+              "45797a:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x459066",
+        "function": "0x458f60",
+        "target": 113,
+        "index": 181,
+        "start_offset": 929,
+        "byte_interval": [
+          929,
+          930
+        ],
+        "operand_width": 2,
+        "instruction": "movsx ecx, word ptr [ecx + edx*2 + 0x237]",
+        "expression": [
+          1,
+          567,
+          [
+            [
+              "459060:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x459066",
+        "function": "0x458f60",
+        "target": 113,
+        "index": 182,
+        "start_offset": 931,
+        "byte_interval": [
+          931,
+          932
+        ],
+        "operand_width": 2,
+        "instruction": "movsx ecx, word ptr [ecx + edx*2 + 0x237]",
+        "expression": [
+          1,
+          567,
+          [
+            [
+              "459060:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x459066",
+        "function": "0x458f60",
+        "target": 114,
+        "index": 182,
+        "start_offset": 931,
+        "byte_interval": [
+          931,
+          932
+        ],
+        "operand_width": 2,
+        "instruction": "movsx ecx, word ptr [ecx + edx*2 + 0x237]",
+        "expression": [
+          1,
+          567,
+          [
+            [
+              "459060:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x459066",
+        "function": "0x458f60",
+        "target": 114,
+        "index": 183,
+        "start_offset": 933,
+        "byte_interval": [
+          933,
+          934
+        ],
+        "operand_width": 2,
+        "instruction": "movsx ecx, word ptr [ecx + edx*2 + 0x237]",
+        "expression": [
+          1,
+          567,
+          [
+            [
+              "459060:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x45b2b8",
+        "function": "0x45b140",
+        "target": 113,
+        "index": 127,
+        "start_offset": 929,
+        "byte_interval": [
+          929,
+          930
+        ],
+        "operand_width": 2,
+        "instruction": "movsx ecx, word ptr [edx + ecx*2 + 0x2a3]",
+        "expression": [
+          1,
+          675,
+          [
+            [
+              "45b2b2:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x45b2b8",
+        "function": "0x45b140",
+        "target": 113,
+        "index": 128,
+        "start_offset": 931,
+        "byte_interval": [
+          931,
+          932
+        ],
+        "operand_width": 2,
+        "instruction": "movsx ecx, word ptr [edx + ecx*2 + 0x2a3]",
+        "expression": [
+          1,
+          675,
+          [
+            [
+              "45b2b2:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x45b2b8",
+        "function": "0x45b140",
+        "target": 114,
+        "index": 128,
+        "start_offset": 931,
+        "byte_interval": [
+          931,
+          932
+        ],
+        "operand_width": 2,
+        "instruction": "movsx ecx, word ptr [edx + ecx*2 + 0x2a3]",
+        "expression": [
+          1,
+          675,
+          [
+            [
+              "45b2b2:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x45b2b8",
+        "function": "0x45b140",
+        "target": 114,
+        "index": 129,
+        "start_offset": 933,
+        "byte_interval": [
+          933,
+          934
+        ],
+        "operand_width": 2,
+        "instruction": "movsx ecx, word ptr [edx + ecx*2 + 0x2a3]",
+        "expression": [
+          1,
+          675,
+          [
+            [
+              "45b2b2:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x45b678",
+        "function": "0x45b500",
+        "target": 113,
+        "index": 127,
+        "start_offset": 929,
+        "byte_interval": [
+          929,
+          930
+        ],
+        "operand_width": 2,
+        "instruction": "movsx ecx, word ptr [edx + ecx*2 + 0x2a3]",
+        "expression": [
+          1,
+          675,
+          [
+            [
+              "45b672:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x45b678",
+        "function": "0x45b500",
+        "target": 113,
+        "index": 128,
+        "start_offset": 931,
+        "byte_interval": [
+          931,
+          932
+        ],
+        "operand_width": 2,
+        "instruction": "movsx ecx, word ptr [edx + ecx*2 + 0x2a3]",
+        "expression": [
+          1,
+          675,
+          [
+            [
+              "45b672:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x45b678",
+        "function": "0x45b500",
+        "target": 114,
+        "index": 128,
+        "start_offset": 931,
+        "byte_interval": [
+          931,
+          932
+        ],
+        "operand_width": 2,
+        "instruction": "movsx ecx, word ptr [edx + ecx*2 + 0x2a3]",
+        "expression": [
+          1,
+          675,
+          [
+            [
+              "45b672:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x45b678",
+        "function": "0x45b500",
+        "target": 114,
+        "index": 129,
+        "start_offset": 933,
+        "byte_interval": [
+          933,
+          934
+        ],
+        "operand_width": 2,
+        "instruction": "movsx ecx, word ptr [edx + ecx*2 + 0x2a3]",
+        "expression": [
+          1,
+          675,
+          [
+            [
+              "45b672:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x45b94d",
+        "function": "0x45b800",
+        "target": 113,
+        "index": 127,
+        "start_offset": 929,
+        "byte_interval": [
+          929,
+          930
+        ],
+        "operand_width": 2,
+        "instruction": "movsx ecx, word ptr [edx + ecx*2 + 0x2a3]",
+        "expression": [
+          1,
+          675,
+          [
+            [
+              "45b947:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x45b94d",
+        "function": "0x45b800",
+        "target": 113,
+        "index": 128,
+        "start_offset": 931,
+        "byte_interval": [
+          931,
+          932
+        ],
+        "operand_width": 2,
+        "instruction": "movsx ecx, word ptr [edx + ecx*2 + 0x2a3]",
+        "expression": [
+          1,
+          675,
+          [
+            [
+              "45b947:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x45b94d",
+        "function": "0x45b800",
+        "target": 114,
+        "index": 128,
+        "start_offset": 931,
+        "byte_interval": [
+          931,
+          932
+        ],
+        "operand_width": 2,
+        "instruction": "movsx ecx, word ptr [edx + ecx*2 + 0x2a3]",
+        "expression": [
+          1,
+          675,
+          [
+            [
+              "45b947:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x45b94d",
+        "function": "0x45b800",
+        "target": 114,
+        "index": 129,
+        "start_offset": 933,
+        "byte_interval": [
+          933,
+          934
+        ],
+        "operand_width": 2,
+        "instruction": "movsx ecx, word ptr [edx + ecx*2 + 0x2a3]",
+        "expression": [
+          1,
+          675,
+          [
+            [
+              "45b947:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x45bc45",
+        "function": "0x45bad0",
+        "target": 113,
+        "index": 127,
+        "start_offset": 929,
+        "byte_interval": [
+          929,
+          930
+        ],
+        "operand_width": 2,
+        "instruction": "movsx ecx, word ptr [edx + ecx*2 + 0x2a3]",
+        "expression": [
+          1,
+          675,
+          [
+            [
+              "45bc3f:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x45bc45",
+        "function": "0x45bad0",
+        "target": 113,
+        "index": 128,
+        "start_offset": 931,
+        "byte_interval": [
+          931,
+          932
+        ],
+        "operand_width": 2,
+        "instruction": "movsx ecx, word ptr [edx + ecx*2 + 0x2a3]",
+        "expression": [
+          1,
+          675,
+          [
+            [
+              "45bc3f:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x45bc45",
+        "function": "0x45bad0",
+        "target": 114,
+        "index": 128,
+        "start_offset": 931,
+        "byte_interval": [
+          931,
+          932
+        ],
+        "operand_width": 2,
+        "instruction": "movsx ecx, word ptr [edx + ecx*2 + 0x2a3]",
+        "expression": [
+          1,
+          675,
+          [
+            [
+              "45bc3f:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x45bc45",
+        "function": "0x45bad0",
+        "target": 114,
+        "index": 129,
+        "start_offset": 933,
+        "byte_interval": [
+          933,
+          934
+        ],
+        "operand_width": 2,
+        "instruction": "movsx ecx, word ptr [edx + ecx*2 + 0x2a3]",
+        "expression": [
+          1,
+          675,
+          [
+            [
+              "45bc3f:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x45c002",
+        "function": "0x45bdf0",
+        "target": 113,
+        "index": 127,
+        "start_offset": 929,
+        "byte_interval": [
+          929,
+          930
+        ],
+        "operand_width": 2,
+        "instruction": "movsx ecx, word ptr [edx + ecx*2 + 0x2a3]",
+        "expression": [
+          1,
+          675,
+          [
+            [
+              "45bffc:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x45c002",
+        "function": "0x45bdf0",
+        "target": 113,
+        "index": 128,
+        "start_offset": 931,
+        "byte_interval": [
+          931,
+          932
+        ],
+        "operand_width": 2,
+        "instruction": "movsx ecx, word ptr [edx + ecx*2 + 0x2a3]",
+        "expression": [
+          1,
+          675,
+          [
+            [
+              "45bffc:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x45c002",
+        "function": "0x45bdf0",
+        "target": 114,
+        "index": 128,
+        "start_offset": 931,
+        "byte_interval": [
+          931,
+          932
+        ],
+        "operand_width": 2,
+        "instruction": "movsx ecx, word ptr [edx + ecx*2 + 0x2a3]",
+        "expression": [
+          1,
+          675,
+          [
+            [
+              "45bffc:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x45c002",
+        "function": "0x45bdf0",
+        "target": 114,
+        "index": 129,
+        "start_offset": 933,
+        "byte_interval": [
+          933,
+          934
+        ],
+        "operand_width": 2,
+        "instruction": "movsx ecx, word ptr [edx + ecx*2 + 0x2a3]",
+        "expression": [
+          1,
+          675,
+          [
+            [
+              "45bffc:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x45c22b",
+        "function": "0x45bdf0",
+        "target": 113,
+        "index": 127,
+        "start_offset": 929,
+        "byte_interval": [
+          929,
+          930
+        ],
+        "operand_width": 2,
+        "instruction": "movsx ecx, word ptr [edx + ecx*2 + 0x2a3]",
+        "expression": [
+          1,
+          675,
+          [
+            [
+              "45c225:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x45c22b",
+        "function": "0x45bdf0",
+        "target": 113,
+        "index": 128,
+        "start_offset": 931,
+        "byte_interval": [
+          931,
+          932
+        ],
+        "operand_width": 2,
+        "instruction": "movsx ecx, word ptr [edx + ecx*2 + 0x2a3]",
+        "expression": [
+          1,
+          675,
+          [
+            [
+              "45c225:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x45c22b",
+        "function": "0x45bdf0",
+        "target": 114,
+        "index": 128,
+        "start_offset": 931,
+        "byte_interval": [
+          931,
+          932
+        ],
+        "operand_width": 2,
+        "instruction": "movsx ecx, word ptr [edx + ecx*2 + 0x2a3]",
+        "expression": [
+          1,
+          675,
+          [
+            [
+              "45c225:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x45c22b",
+        "function": "0x45bdf0",
+        "target": 114,
+        "index": 129,
+        "start_offset": 933,
+        "byte_interval": [
+          933,
+          934
+        ],
+        "operand_width": 2,
+        "instruction": "movsx ecx, word ptr [edx + ecx*2 + 0x2a3]",
+        "expression": [
+          1,
+          675,
+          [
+            [
+              "45c225:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x45c7a1",
+        "function": "0x45c690",
+        "target": 113,
+        "index": 127,
+        "start_offset": 929,
+        "byte_interval": [
+          929,
+          930
+        ],
+        "operand_width": 2,
+        "instruction": "movsx edx, word ptr [ebx + edx*2 + 0x2a3]",
+        "expression": [
+          1,
+          675,
+          [
+            [
+              "45c79b:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x45c7a1",
+        "function": "0x45c690",
+        "target": 113,
+        "index": 128,
+        "start_offset": 931,
+        "byte_interval": [
+          931,
+          932
+        ],
+        "operand_width": 2,
+        "instruction": "movsx edx, word ptr [ebx + edx*2 + 0x2a3]",
+        "expression": [
+          1,
+          675,
+          [
+            [
+              "45c79b:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x45c7a1",
+        "function": "0x45c690",
+        "target": 114,
+        "index": 128,
+        "start_offset": 931,
+        "byte_interval": [
+          931,
+          932
+        ],
+        "operand_width": 2,
+        "instruction": "movsx edx, word ptr [ebx + edx*2 + 0x2a3]",
+        "expression": [
+          1,
+          675,
+          [
+            [
+              "45c79b:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x45c7a1",
+        "function": "0x45c690",
+        "target": 114,
+        "index": 129,
+        "start_offset": 933,
+        "byte_interval": [
+          933,
+          934
+        ],
+        "operand_width": 2,
+        "instruction": "movsx edx, word ptr [ebx + edx*2 + 0x2a3]",
+        "expression": [
+          1,
+          675,
+          [
+            [
+              "45c79b:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x45c98f",
+        "function": "0x45c690",
+        "target": 113,
+        "index": 127,
+        "start_offset": 929,
+        "byte_interval": [
+          929,
+          930
+        ],
+        "operand_width": 2,
+        "instruction": "movsx edx, word ptr [ebx + edx*2 + 0x2a3]",
+        "expression": [
+          1,
+          675,
+          [
+            [
+              "45c989:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x45c98f",
+        "function": "0x45c690",
+        "target": 113,
+        "index": 128,
+        "start_offset": 931,
+        "byte_interval": [
+          931,
+          932
+        ],
+        "operand_width": 2,
+        "instruction": "movsx edx, word ptr [ebx + edx*2 + 0x2a3]",
+        "expression": [
+          1,
+          675,
+          [
+            [
+              "45c989:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x45c98f",
+        "function": "0x45c690",
+        "target": 114,
+        "index": 128,
+        "start_offset": 931,
+        "byte_interval": [
+          931,
+          932
+        ],
+        "operand_width": 2,
+        "instruction": "movsx edx, word ptr [ebx + edx*2 + 0x2a3]",
+        "expression": [
+          1,
+          675,
+          [
+            [
+              "45c989:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x45c98f",
+        "function": "0x45c690",
+        "target": 114,
+        "index": 129,
+        "start_offset": 933,
+        "byte_interval": [
+          933,
+          934
+        ],
+        "operand_width": 2,
+        "instruction": "movsx edx, word ptr [ebx + edx*2 + 0x2a3]",
+        "expression": [
+          1,
+          675,
+          [
+            [
+              "45c989:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x45d225",
+        "function": "0x45cb00",
+        "target": 113,
+        "index": 127,
+        "start_offset": 929,
+        "byte_interval": [
+          929,
+          930
+        ],
+        "operand_width": 2,
+        "instruction": "movsx ecx, word ptr [edx + ecx*2 + 0x2a3]",
+        "expression": [
+          1,
+          675,
+          [
+            [
+              "45d21f:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x45d225",
+        "function": "0x45cb00",
+        "target": 113,
+        "index": 128,
+        "start_offset": 931,
+        "byte_interval": [
+          931,
+          932
+        ],
+        "operand_width": 2,
+        "instruction": "movsx ecx, word ptr [edx + ecx*2 + 0x2a3]",
+        "expression": [
+          1,
+          675,
+          [
+            [
+              "45d21f:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x45d225",
+        "function": "0x45cb00",
+        "target": 114,
+        "index": 128,
+        "start_offset": 931,
+        "byte_interval": [
+          931,
+          932
+        ],
+        "operand_width": 2,
+        "instruction": "movsx ecx, word ptr [edx + ecx*2 + 0x2a3]",
+        "expression": [
+          1,
+          675,
+          [
+            [
+              "45d21f:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x45d225",
+        "function": "0x45cb00",
+        "target": 114,
+        "index": 129,
+        "start_offset": 933,
+        "byte_interval": [
+          933,
+          934
+        ],
+        "operand_width": 2,
+        "instruction": "movsx ecx, word ptr [edx + ecx*2 + 0x2a3]",
+        "expression": [
+          1,
+          675,
+          [
+            [
+              "45d21f:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x45d433",
+        "function": "0x45cb00",
+        "target": 113,
+        "index": 127,
+        "start_offset": 929,
+        "byte_interval": [
+          929,
+          930
+        ],
+        "operand_width": 2,
+        "instruction": "movsx ecx, word ptr [edx + ecx*2 + 0x2a3]",
+        "expression": [
+          1,
+          675,
+          [
+            [
+              "45d42d:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x45d433",
+        "function": "0x45cb00",
+        "target": 113,
+        "index": 128,
+        "start_offset": 931,
+        "byte_interval": [
+          931,
+          932
+        ],
+        "operand_width": 2,
+        "instruction": "movsx ecx, word ptr [edx + ecx*2 + 0x2a3]",
+        "expression": [
+          1,
+          675,
+          [
+            [
+              "45d42d:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x45d433",
+        "function": "0x45cb00",
+        "target": 114,
+        "index": 128,
+        "start_offset": 931,
+        "byte_interval": [
+          931,
+          932
+        ],
+        "operand_width": 2,
+        "instruction": "movsx ecx, word ptr [edx + ecx*2 + 0x2a3]",
+        "expression": [
+          1,
+          675,
+          [
+            [
+              "45d42d:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x45d433",
+        "function": "0x45cb00",
+        "target": 114,
+        "index": 129,
+        "start_offset": 933,
+        "byte_interval": [
+          933,
+          934
+        ],
+        "operand_width": 2,
+        "instruction": "movsx ecx, word ptr [edx + ecx*2 + 0x2a3]",
+        "expression": [
+          1,
+          675,
+          [
+            [
+              "45d42d:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x47a909",
+        "function": "0x47a870",
+        "target": 113,
+        "index": 226,
+        "start_offset": 929,
+        "byte_interval": [
+          929,
+          930
+        ],
+        "operand_width": 2,
+        "instruction": "movsx edx, word ptr [eax + edx*2 + 0x1dd]",
+        "expression": [
+          1,
+          477,
+          [
+            [
+              "47a903:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x47a909",
+        "function": "0x47a870",
+        "target": 113,
+        "index": 227,
+        "start_offset": 931,
+        "byte_interval": [
+          931,
+          932
+        ],
+        "operand_width": 2,
+        "instruction": "movsx edx, word ptr [eax + edx*2 + 0x1dd]",
+        "expression": [
+          1,
+          477,
+          [
+            [
+              "47a903:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x47a909",
+        "function": "0x47a870",
+        "target": 114,
+        "index": 227,
+        "start_offset": 931,
+        "byte_interval": [
+          931,
+          932
+        ],
+        "operand_width": 2,
+        "instruction": "movsx edx, word ptr [eax + edx*2 + 0x1dd]",
+        "expression": [
+          1,
+          477,
+          [
+            [
+              "47a903:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x47a909",
+        "function": "0x47a870",
+        "target": 114,
+        "index": 228,
+        "start_offset": 933,
+        "byte_interval": [
+          933,
+          934
+        ],
+        "operand_width": 2,
+        "instruction": "movsx edx, word ptr [eax + edx*2 + 0x1dd]",
+        "expression": [
+          1,
+          477,
+          [
+            [
+              "47a903:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x47b033",
+        "function": "0x47b000",
+        "target": 113,
+        "index": 208,
+        "start_offset": 929,
+        "byte_interval": [
+          929,
+          930
+        ],
+        "operand_width": 2,
+        "instruction": "movsx ecx, word ptr [edx + ecx*2 + 0x201]",
+        "expression": [
+          1,
+          513,
+          [
+            [
+              "47b02d:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x47b033",
+        "function": "0x47b000",
+        "target": 113,
+        "index": 209,
+        "start_offset": 931,
+        "byte_interval": [
+          931,
+          932
+        ],
+        "operand_width": 2,
+        "instruction": "movsx ecx, word ptr [edx + ecx*2 + 0x201]",
+        "expression": [
+          1,
+          513,
+          [
+            [
+              "47b02d:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x47b033",
+        "function": "0x47b000",
+        "target": 114,
+        "index": 209,
+        "start_offset": 931,
+        "byte_interval": [
+          931,
+          932
+        ],
+        "operand_width": 2,
+        "instruction": "movsx ecx, word ptr [edx + ecx*2 + 0x201]",
+        "expression": [
+          1,
+          513,
+          [
+            [
+              "47b02d:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x47b033",
+        "function": "0x47b000",
+        "target": 114,
+        "index": 210,
+        "start_offset": 933,
+        "byte_interval": [
+          933,
+          934
+        ],
+        "operand_width": 2,
+        "instruction": "movsx ecx, word ptr [edx + ecx*2 + 0x201]",
+        "expression": [
+          1,
+          513,
+          [
+            [
+              "47b02d:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x47b1c3",
+        "function": "0x47b190",
+        "target": 113,
+        "index": 199,
+        "start_offset": 929,
+        "byte_interval": [
+          929,
+          930
+        ],
+        "operand_width": 2,
+        "instruction": "movsx ecx, word ptr [edx + ecx*2 + 0x213]",
+        "expression": [
+          1,
+          531,
+          [
+            [
+              "47b1bd:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x47b1c3",
+        "function": "0x47b190",
+        "target": 113,
+        "index": 200,
+        "start_offset": 931,
+        "byte_interval": [
+          931,
+          932
+        ],
+        "operand_width": 2,
+        "instruction": "movsx ecx, word ptr [edx + ecx*2 + 0x213]",
+        "expression": [
+          1,
+          531,
+          [
+            [
+              "47b1bd:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x47b1c3",
+        "function": "0x47b190",
+        "target": 114,
+        "index": 200,
+        "start_offset": 931,
+        "byte_interval": [
+          931,
+          932
+        ],
+        "operand_width": 2,
+        "instruction": "movsx ecx, word ptr [edx + ecx*2 + 0x213]",
+        "expression": [
+          1,
+          531,
+          [
+            [
+              "47b1bd:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x47b1c3",
+        "function": "0x47b190",
+        "target": 114,
+        "index": 201,
+        "start_offset": 933,
+        "byte_interval": [
+          933,
+          934
+        ],
+        "operand_width": 2,
+        "instruction": "movsx ecx, word ptr [edx + ecx*2 + 0x213]",
+        "expression": [
+          1,
+          531,
+          [
+            [
+              "47b1bd:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x47b316",
+        "function": "0x47b2d0",
+        "target": 113,
+        "index": 217,
+        "start_offset": 929,
+        "byte_interval": [
+          929,
+          930
+        ],
+        "operand_width": 2,
+        "instruction": "movsx edx, word ptr [edi + edx*2 + 0x1ef]",
+        "expression": [
+          1,
+          495,
+          [
+            [
+              "47b310:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x47b316",
+        "function": "0x47b2d0",
+        "target": 113,
+        "index": 218,
+        "start_offset": 931,
+        "byte_interval": [
+          931,
+          932
+        ],
+        "operand_width": 2,
+        "instruction": "movsx edx, word ptr [edi + edx*2 + 0x1ef]",
+        "expression": [
+          1,
+          495,
+          [
+            [
+              "47b310:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x47b316",
+        "function": "0x47b2d0",
+        "target": 114,
+        "index": 218,
+        "start_offset": 931,
+        "byte_interval": [
+          931,
+          932
+        ],
+        "operand_width": 2,
+        "instruction": "movsx edx, word ptr [edi + edx*2 + 0x1ef]",
+        "expression": [
+          1,
+          495,
+          [
+            [
+              "47b310:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x47b316",
+        "function": "0x47b2d0",
+        "target": 114,
+        "index": 219,
+        "start_offset": 933,
+        "byte_interval": [
+          933,
+          934
+        ],
+        "operand_width": 2,
+        "instruction": "movsx edx, word ptr [edi + edx*2 + 0x1ef]",
+        "expression": [
+          1,
+          495,
+          [
+            [
+              "47b310:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x47b698",
+        "function": "0x47b590",
+        "target": 113,
+        "index": 145,
+        "start_offset": 929,
+        "byte_interval": [
+          929,
+          930
+        ],
+        "operand_width": 2,
+        "instruction": "movsx edx, word ptr [ebx + edx*2 + 0x27f]",
+        "expression": [
+          1,
+          639,
+          [
+            [
+              "47b692:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x47b698",
+        "function": "0x47b590",
+        "target": 113,
+        "index": 146,
+        "start_offset": 931,
+        "byte_interval": [
+          931,
+          932
+        ],
+        "operand_width": 2,
+        "instruction": "movsx edx, word ptr [ebx + edx*2 + 0x27f]",
+        "expression": [
+          1,
+          639,
+          [
+            [
+              "47b692:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x47b698",
+        "function": "0x47b590",
+        "target": 114,
+        "index": 146,
+        "start_offset": 931,
+        "byte_interval": [
+          931,
+          932
+        ],
+        "operand_width": 2,
+        "instruction": "movsx edx, word ptr [ebx + edx*2 + 0x27f]",
+        "expression": [
+          1,
+          639,
+          [
+            [
+              "47b692:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x47b698",
+        "function": "0x47b590",
+        "target": 114,
+        "index": 147,
+        "start_offset": 933,
+        "byte_interval": [
+          933,
+          934
+        ],
+        "operand_width": 2,
+        "instruction": "movsx edx, word ptr [ebx + edx*2 + 0x27f]",
+        "expression": [
+          1,
+          639,
+          [
+            [
+              "47b692:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x4858f7",
+        "function": "0x4858b0",
+        "target": 113,
+        "index": 244,
+        "start_offset": 929,
+        "byte_interval": [
+          929,
+          930
+        ],
+        "operand_width": 2,
+        "instruction": "movsx edx, word ptr [edi + eax*2 + 0x1b9]",
+        "expression": [
+          1,
+          441,
+          [
+            [
+              "4858f2:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x4858f7",
+        "function": "0x4858b0",
+        "target": 113,
+        "index": 245,
+        "start_offset": 931,
+        "byte_interval": [
+          931,
+          932
+        ],
+        "operand_width": 2,
+        "instruction": "movsx edx, word ptr [edi + eax*2 + 0x1b9]",
+        "expression": [
+          1,
+          441,
+          [
+            [
+              "4858f2:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x4858f7",
+        "function": "0x4858b0",
+        "target": 114,
+        "index": 245,
+        "start_offset": 931,
+        "byte_interval": [
+          931,
+          932
+        ],
+        "operand_width": 2,
+        "instruction": "movsx edx, word ptr [edi + eax*2 + 0x1b9]",
+        "expression": [
+          1,
+          441,
+          [
+            [
+              "4858f2:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x4858f7",
+        "function": "0x4858b0",
+        "target": 114,
+        "index": 246,
+        "start_offset": 933,
+        "byte_interval": [
+          933,
+          934
+        ],
+        "operand_width": 2,
+        "instruction": "movsx edx, word ptr [edi + eax*2 + 0x1b9]",
+        "expression": [
+          1,
+          441,
+          [
+            [
+              "4858f2:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x48597c",
+        "function": "0x4858b0",
+        "target": 113,
+        "index": 244,
+        "start_offset": 929,
+        "byte_interval": [
+          929,
+          930
+        ],
+        "operand_width": 2,
+        "instruction": "movsx edx, word ptr [edi + eax*2 + 0x1b9]",
+        "expression": [
+          1,
+          441,
+          [
+            [
+              "485977:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x48597c",
+        "function": "0x4858b0",
+        "target": 113,
+        "index": 245,
+        "start_offset": 931,
+        "byte_interval": [
+          931,
+          932
+        ],
+        "operand_width": 2,
+        "instruction": "movsx edx, word ptr [edi + eax*2 + 0x1b9]",
+        "expression": [
+          1,
+          441,
+          [
+            [
+              "485977:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x48597c",
+        "function": "0x4858b0",
+        "target": 114,
+        "index": 245,
+        "start_offset": 931,
+        "byte_interval": [
+          931,
+          932
+        ],
+        "operand_width": 2,
+        "instruction": "movsx edx, word ptr [edi + eax*2 + 0x1b9]",
+        "expression": [
+          1,
+          441,
+          [
+            [
+              "485977:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x48597c",
+        "function": "0x4858b0",
+        "target": 114,
+        "index": 246,
+        "start_offset": 933,
+        "byte_interval": [
+          933,
+          934
+        ],
+        "operand_width": 2,
+        "instruction": "movsx edx, word ptr [edi + eax*2 + 0x1b9]",
+        "expression": [
+          1,
+          441,
+          [
+            [
+              "485977:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x487879",
+        "function": "0x4872a0",
+        "target": 113,
+        "index": 100,
+        "start_offset": 929,
+        "byte_interval": [
+          929,
+          930
+        ],
+        "operand_width": 2,
+        "instruction": "movsx ecx, word ptr [edx + ecx*2 + 0x2d9]",
+        "expression": [
+          1,
+          729,
+          [
+            [
+              "487873:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x487879",
+        "function": "0x4872a0",
+        "target": 113,
+        "index": 101,
+        "start_offset": 931,
+        "byte_interval": [
+          931,
+          932
+        ],
+        "operand_width": 2,
+        "instruction": "movsx ecx, word ptr [edx + ecx*2 + 0x2d9]",
+        "expression": [
+          1,
+          729,
+          [
+            [
+              "487873:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x487879",
+        "function": "0x4872a0",
+        "target": 114,
+        "index": 101,
+        "start_offset": 931,
+        "byte_interval": [
+          931,
+          932
+        ],
+        "operand_width": 2,
+        "instruction": "movsx ecx, word ptr [edx + ecx*2 + 0x2d9]",
+        "expression": [
+          1,
+          729,
+          [
+            [
+              "487873:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x487879",
+        "function": "0x4872a0",
+        "target": 114,
+        "index": 102,
+        "start_offset": 933,
+        "byte_interval": [
+          933,
+          934
+        ],
+        "operand_width": 2,
+        "instruction": "movsx ecx, word ptr [edx + ecx*2 + 0x2d9]",
+        "expression": [
+          1,
+          729,
+          [
+            [
+              "487873:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x488b01",
+        "function": "0x488930",
+        "target": 113,
+        "index": 109,
+        "start_offset": 929,
+        "byte_interval": [
+          929,
+          930
+        ],
+        "operand_width": 2,
+        "instruction": "movsx ecx, word ptr [edi + ecx*2 + 0x2c7]",
+        "expression": [
+          1,
+          711,
+          [
+            [
+              "488aed:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x488b01",
+        "function": "0x488930",
+        "target": 113,
+        "index": 110,
+        "start_offset": 931,
+        "byte_interval": [
+          931,
+          932
+        ],
+        "operand_width": 2,
+        "instruction": "movsx ecx, word ptr [edi + ecx*2 + 0x2c7]",
+        "expression": [
+          1,
+          711,
+          [
+            [
+              "488aed:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x488b01",
+        "function": "0x488930",
+        "target": 114,
+        "index": 110,
+        "start_offset": 931,
+        "byte_interval": [
+          931,
+          932
+        ],
+        "operand_width": 2,
+        "instruction": "movsx ecx, word ptr [edi + ecx*2 + 0x2c7]",
+        "expression": [
+          1,
+          711,
+          [
+            [
+              "488aed:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x488b01",
+        "function": "0x488930",
+        "target": 114,
+        "index": 111,
+        "start_offset": 933,
+        "byte_interval": [
+          933,
+          934
+        ],
+        "operand_width": 2,
+        "instruction": "movsx ecx, word ptr [edi + ecx*2 + 0x2c7]",
+        "expression": [
+          1,
+          711,
+          [
+            [
+              "488aed:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x48ea9b",
+        "function": "0x48ea40",
+        "target": 113,
+        "index": 244,
+        "start_offset": 929,
+        "byte_interval": [
+          929,
+          930
+        ],
+        "operand_width": 2,
+        "instruction": "movsx ecx, word ptr [edx + ecx*2 + 0x1b9]",
+        "expression": [
+          1,
+          441,
+          [
+            [
+              "48ea95:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x48ea9b",
+        "function": "0x48ea40",
+        "target": 113,
+        "index": 245,
+        "start_offset": 931,
+        "byte_interval": [
+          931,
+          932
+        ],
+        "operand_width": 2,
+        "instruction": "movsx ecx, word ptr [edx + ecx*2 + 0x1b9]",
+        "expression": [
+          1,
+          441,
+          [
+            [
+              "48ea95:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x48ea9b",
+        "function": "0x48ea40",
+        "target": 114,
+        "index": 245,
+        "start_offset": 931,
+        "byte_interval": [
+          931,
+          932
+        ],
+        "operand_width": 2,
+        "instruction": "movsx ecx, word ptr [edx + ecx*2 + 0x1b9]",
+        "expression": [
+          1,
+          441,
+          [
+            [
+              "48ea95:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x48ea9b",
+        "function": "0x48ea40",
+        "target": 114,
+        "index": 246,
+        "start_offset": 933,
+        "byte_interval": [
+          933,
+          934
+        ],
+        "operand_width": 2,
+        "instruction": "movsx ecx, word ptr [edx + ecx*2 + 0x1b9]",
+        "expression": [
+          1,
+          441,
+          [
+            [
+              "48ea95:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x48efde",
+        "function": "0x48ee90",
+        "target": 113,
+        "index": 127,
+        "start_offset": 929,
+        "byte_interval": [
+          929,
+          930
+        ],
+        "operand_width": 2,
+        "instruction": "movsx ecx, word ptr [edx + ecx*2 + 0x2a3]",
+        "expression": [
+          1,
+          675,
+          [
+            [
+              "48efd8:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x48efde",
+        "function": "0x48ee90",
+        "target": 113,
+        "index": 128,
+        "start_offset": 931,
+        "byte_interval": [
+          931,
+          932
+        ],
+        "operand_width": 2,
+        "instruction": "movsx ecx, word ptr [edx + ecx*2 + 0x2a3]",
+        "expression": [
+          1,
+          675,
+          [
+            [
+              "48efd8:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x48efde",
+        "function": "0x48ee90",
+        "target": 114,
+        "index": 128,
+        "start_offset": 931,
+        "byte_interval": [
+          931,
+          932
+        ],
+        "operand_width": 2,
+        "instruction": "movsx ecx, word ptr [edx + ecx*2 + 0x2a3]",
+        "expression": [
+          1,
+          675,
+          [
+            [
+              "48efd8:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x48efde",
+        "function": "0x48ee90",
+        "target": 114,
+        "index": 129,
+        "start_offset": 933,
+        "byte_interval": [
+          933,
+          934
+        ],
+        "operand_width": 2,
+        "instruction": "movsx ecx, word ptr [edx + ecx*2 + 0x2a3]",
+        "expression": [
+          1,
+          675,
+          [
+            [
+              "48efd8:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x48fdc6",
+        "function": "0x48fd70",
+        "target": 113,
+        "index": 100,
+        "start_offset": 929,
+        "byte_interval": [
+          929,
+          930
+        ],
+        "operand_width": 2,
+        "instruction": "movsx edx, word ptr [edi + edx*2 + 0x2d9]",
+        "expression": [
+          1,
+          729,
+          [
+            [
+              "48fdc0:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x48fdc6",
+        "function": "0x48fd70",
+        "target": 113,
+        "index": 101,
+        "start_offset": 931,
+        "byte_interval": [
+          931,
+          932
+        ],
+        "operand_width": 2,
+        "instruction": "movsx edx, word ptr [edi + edx*2 + 0x2d9]",
+        "expression": [
+          1,
+          729,
+          [
+            [
+              "48fdc0:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x48fdc6",
+        "function": "0x48fd70",
+        "target": 114,
+        "index": 101,
+        "start_offset": 931,
+        "byte_interval": [
+          931,
+          932
+        ],
+        "operand_width": 2,
+        "instruction": "movsx edx, word ptr [edi + edx*2 + 0x2d9]",
+        "expression": [
+          1,
+          729,
+          [
+            [
+              "48fdc0:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x48fdc6",
+        "function": "0x48fd70",
+        "target": 114,
+        "index": 102,
+        "start_offset": 933,
+        "byte_interval": [
+          933,
+          934
+        ],
+        "operand_width": 2,
+        "instruction": "movsx edx, word ptr [edi + edx*2 + 0x2d9]",
+        "expression": [
+          1,
+          729,
+          [
+            [
+              "48fdc0:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x495093",
+        "function": "0x495080",
+        "target": 113,
+        "index": 71,
+        "start_offset": 929,
+        "byte_interval": [
+          929,
+          930
+        ],
+        "operand_width": 2,
+        "instruction": "movsx eax, word ptr [ecx + eax*2 + 0x313]",
+        "expression": [
+          1,
+          787,
+          [
+            [
+              "49508e:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x495093",
+        "function": "0x495080",
+        "target": 113,
+        "index": 72,
+        "start_offset": 931,
+        "byte_interval": [
+          931,
+          932
+        ],
+        "operand_width": 2,
+        "instruction": "movsx eax, word ptr [ecx + eax*2 + 0x313]",
+        "expression": [
+          1,
+          787,
+          [
+            [
+              "49508e:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x495093",
+        "function": "0x495080",
+        "target": 114,
+        "index": 72,
+        "start_offset": 931,
+        "byte_interval": [
+          931,
+          932
+        ],
+        "operand_width": 2,
+        "instruction": "movsx eax, word ptr [ecx + eax*2 + 0x313]",
+        "expression": [
+          1,
+          787,
+          [
+            [
+              "49508e:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x495093",
+        "function": "0x495080",
+        "target": 114,
+        "index": 73,
+        "start_offset": 933,
+        "byte_interval": [
+          933,
+          934
+        ],
+        "operand_width": 2,
+        "instruction": "movsx eax, word ptr [ecx + eax*2 + 0x313]",
+        "expression": [
+          1,
+          787,
+          [
+            [
+              "49508e:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x4ae6ba",
+        "function": "0x4ae630",
+        "target": 113,
+        "index": 244,
+        "start_offset": 929,
+        "byte_interval": [
+          929,
+          930
+        ],
+        "operand_width": 2,
+        "instruction": "movsx edx, word ptr [esi + edx*2 + 0x1b9]",
+        "expression": [
+          1,
+          441,
+          [
+            [
+              "4ae6b4:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x4ae6ba",
+        "function": "0x4ae630",
+        "target": 113,
+        "index": 245,
+        "start_offset": 931,
+        "byte_interval": [
+          931,
+          932
+        ],
+        "operand_width": 2,
+        "instruction": "movsx edx, word ptr [esi + edx*2 + 0x1b9]",
+        "expression": [
+          1,
+          441,
+          [
+            [
+              "4ae6b4:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x4ae6ba",
+        "function": "0x4ae630",
+        "target": 114,
+        "index": 245,
+        "start_offset": 931,
+        "byte_interval": [
+          931,
+          932
+        ],
+        "operand_width": 2,
+        "instruction": "movsx edx, word ptr [esi + edx*2 + 0x1b9]",
+        "expression": [
+          1,
+          441,
+          [
+            [
+              "4ae6b4:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x4ae6ba",
+        "function": "0x4ae630",
+        "target": 114,
+        "index": 246,
+        "start_offset": 933,
+        "byte_interval": [
+          933,
+          934
+        ],
+        "operand_width": 2,
+        "instruction": "movsx edx, word ptr [esi + edx*2 + 0x1b9]",
+        "expression": [
+          1,
+          441,
+          [
+            [
+              "4ae6b4:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x4ae757",
+        "function": "0x4ae630",
+        "target": 113,
+        "index": 244,
+        "start_offset": 929,
+        "byte_interval": [
+          929,
+          930
+        ],
+        "operand_width": 2,
+        "instruction": "movsx edx, word ptr [esi + edx*2 + 0x1b9]",
+        "expression": [
+          1,
+          441,
+          [
+            [
+              "4ae751:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x4ae757",
+        "function": "0x4ae630",
+        "target": 113,
+        "index": 245,
+        "start_offset": 931,
+        "byte_interval": [
+          931,
+          932
+        ],
+        "operand_width": 2,
+        "instruction": "movsx edx, word ptr [esi + edx*2 + 0x1b9]",
+        "expression": [
+          1,
+          441,
+          [
+            [
+              "4ae751:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x4ae757",
+        "function": "0x4ae630",
+        "target": 114,
+        "index": 245,
+        "start_offset": 931,
+        "byte_interval": [
+          931,
+          932
+        ],
+        "operand_width": 2,
+        "instruction": "movsx edx, word ptr [esi + edx*2 + 0x1b9]",
+        "expression": [
+          1,
+          441,
+          [
+            [
+              "4ae751:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x4ae757",
+        "function": "0x4ae630",
+        "target": 114,
+        "index": 246,
+        "start_offset": 933,
+        "byte_interval": [
+          933,
+          934
+        ],
+        "operand_width": 2,
+        "instruction": "movsx edx, word ptr [esi + edx*2 + 0x1b9]",
+        "expression": [
+          1,
+          441,
+          [
+            [
+              "4ae751:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x4b1588",
+        "function": "0x4b12d0",
+        "target": 113,
+        "index": 100,
+        "start_offset": 929,
+        "byte_interval": [
+          929,
+          930
+        ],
+        "operand_width": 2,
+        "instruction": "movsx ecx, word ptr [eax + edx*2 + 0x2d9]",
+        "expression": [
+          1,
+          729,
+          [
+            [
+              "4b1582:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x4b1588",
+        "function": "0x4b12d0",
+        "target": 113,
+        "index": 101,
+        "start_offset": 931,
+        "byte_interval": [
+          931,
+          932
+        ],
+        "operand_width": 2,
+        "instruction": "movsx ecx, word ptr [eax + edx*2 + 0x2d9]",
+        "expression": [
+          1,
+          729,
+          [
+            [
+              "4b1582:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x4b1588",
+        "function": "0x4b12d0",
+        "target": 114,
+        "index": 101,
+        "start_offset": 931,
+        "byte_interval": [
+          931,
+          932
+        ],
+        "operand_width": 2,
+        "instruction": "movsx ecx, word ptr [eax + edx*2 + 0x2d9]",
+        "expression": [
+          1,
+          729,
+          [
+            [
+              "4b1582:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x4b1588",
+        "function": "0x4b12d0",
+        "target": 114,
+        "index": 102,
+        "start_offset": 933,
+        "byte_interval": [
+          933,
+          934
+        ],
+        "operand_width": 2,
+        "instruction": "movsx ecx, word ptr [eax + edx*2 + 0x2d9]",
+        "expression": [
+          1,
+          729,
+          [
+            [
+              "4b1582:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x4c12c3",
+        "function": "0x4c10e0",
+        "target": 113,
+        "index": 118,
+        "start_offset": 929,
+        "byte_interval": [
+          929,
+          930
+        ],
+        "operand_width": 2,
+        "instruction": "movsx ecx, word ptr [edx + ecx*2 + 0x2b5]",
+        "expression": [
+          1,
+          693,
+          [
+            [
+              "4c12bd:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x4c12c3",
+        "function": "0x4c10e0",
+        "target": 113,
+        "index": 119,
+        "start_offset": 931,
+        "byte_interval": [
+          931,
+          932
+        ],
+        "operand_width": 2,
+        "instruction": "movsx ecx, word ptr [edx + ecx*2 + 0x2b5]",
+        "expression": [
+          1,
+          693,
+          [
+            [
+              "4c12bd:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x4c12c3",
+        "function": "0x4c10e0",
+        "target": 114,
+        "index": 119,
+        "start_offset": 931,
+        "byte_interval": [
+          931,
+          932
+        ],
+        "operand_width": 2,
+        "instruction": "movsx ecx, word ptr [edx + ecx*2 + 0x2b5]",
+        "expression": [
+          1,
+          693,
+          [
+            [
+              "4c12bd:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x4c12c3",
+        "function": "0x4c10e0",
+        "target": 114,
+        "index": 120,
+        "start_offset": 933,
+        "byte_interval": [
+          933,
+          934
+        ],
+        "operand_width": 2,
+        "instruction": "movsx ecx, word ptr [edx + ecx*2 + 0x2b5]",
+        "expression": [
+          1,
+          693,
+          [
+            [
+              "4c12bd:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x4c1834",
+        "function": "0x4c17a0",
+        "target": 113,
+        "index": 118,
+        "start_offset": 929,
+        "byte_interval": [
+          929,
+          930
+        ],
+        "operand_width": 2,
+        "instruction": "movsx ecx, word ptr [ecx + edx*2 + 0x2b5]",
+        "expression": [
+          1,
+          693,
+          [
+            [
+              "4c182e:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x4c1834",
+        "function": "0x4c17a0",
+        "target": 113,
+        "index": 119,
+        "start_offset": 931,
+        "byte_interval": [
+          931,
+          932
+        ],
+        "operand_width": 2,
+        "instruction": "movsx ecx, word ptr [ecx + edx*2 + 0x2b5]",
+        "expression": [
+          1,
+          693,
+          [
+            [
+              "4c182e:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x4c1834",
+        "function": "0x4c17a0",
+        "target": 114,
+        "index": 119,
+        "start_offset": 931,
+        "byte_interval": [
+          931,
+          932
+        ],
+        "operand_width": 2,
+        "instruction": "movsx ecx, word ptr [ecx + edx*2 + 0x2b5]",
+        "expression": [
+          1,
+          693,
+          [
+            [
+              "4c182e:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x4c1834",
+        "function": "0x4c17a0",
+        "target": 114,
+        "index": 120,
+        "start_offset": 933,
+        "byte_interval": [
+          933,
+          934
+        ],
+        "operand_width": 2,
+        "instruction": "movsx ecx, word ptr [ecx + edx*2 + 0x2b5]",
+        "expression": [
+          1,
+          693,
+          [
+            [
+              "4c182e:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x4dd4a6",
+        "function": "0x4dd470",
+        "target": 113,
+        "index": 190,
+        "start_offset": 929,
+        "byte_interval": [
+          929,
+          930
+        ],
+        "operand_width": 2,
+        "instruction": "movsx ecx, word ptr [edx + ecx*2 + 0x225]",
+        "expression": [
+          1,
+          549,
+          [
+            [
+              "4dd4a0:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x4dd4a6",
+        "function": "0x4dd470",
+        "target": 113,
+        "index": 191,
+        "start_offset": 931,
+        "byte_interval": [
+          931,
+          932
+        ],
+        "operand_width": 2,
+        "instruction": "movsx ecx, word ptr [edx + ecx*2 + 0x225]",
+        "expression": [
+          1,
+          549,
+          [
+            [
+              "4dd4a0:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x4dd4a6",
+        "function": "0x4dd470",
+        "target": 114,
+        "index": 191,
+        "start_offset": 931,
+        "byte_interval": [
+          931,
+          932
+        ],
+        "operand_width": 2,
+        "instruction": "movsx ecx, word ptr [edx + ecx*2 + 0x225]",
+        "expression": [
+          1,
+          549,
+          [
+            [
+              "4dd4a0:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x4dd4a6",
+        "function": "0x4dd470",
+        "target": 114,
+        "index": 192,
+        "start_offset": 933,
+        "byte_interval": [
+          933,
+          934
+        ],
+        "operand_width": 2,
+        "instruction": "movsx ecx, word ptr [edx + ecx*2 + 0x225]",
+        "expression": [
+          1,
+          549,
+          [
+            [
+              "4dd4a0:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x4ff691",
+        "function": "0x4ff5c0",
+        "target": 113,
+        "index": 244,
+        "start_offset": 929,
+        "byte_interval": [
+          929,
+          930
+        ],
+        "operand_width": 2,
+        "instruction": "movsx ecx, word ptr [ecx + eax*2 + 0x1b9]",
+        "expression": [
+          1,
+          441,
+          [
+            [
+              "4ff683:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x4ff691",
+        "function": "0x4ff5c0",
+        "target": 113,
+        "index": 245,
+        "start_offset": 931,
+        "byte_interval": [
+          931,
+          932
+        ],
+        "operand_width": 2,
+        "instruction": "movsx ecx, word ptr [ecx + eax*2 + 0x1b9]",
+        "expression": [
+          1,
+          441,
+          [
+            [
+              "4ff683:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x4ff691",
+        "function": "0x4ff5c0",
+        "target": 114,
+        "index": 245,
+        "start_offset": 931,
+        "byte_interval": [
+          931,
+          932
+        ],
+        "operand_width": 2,
+        "instruction": "movsx ecx, word ptr [ecx + eax*2 + 0x1b9]",
+        "expression": [
+          1,
+          441,
+          [
+            [
+              "4ff683:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      },
+      {
+        "access": "0x4ff691",
+        "function": "0x4ff5c0",
+        "target": 114,
+        "index": 246,
+        "start_offset": 933,
+        "byte_interval": [
+          933,
+          934
+        ],
+        "operand_width": 2,
+        "instruction": "movsx ecx, word ptr [ecx + eax*2 + 0x1b9]",
+        "expression": [
+          1,
+          441,
+          [
+            [
+              "4ff683:mask:ff",
+              2,
+              0,
+              255
+            ]
+          ]
+        ]
+      }
+    ],
+    "scope": "Candidate arithmetic over the saved phase200 alias reads. No absence claim: unsupported expressions stay unresolved and indirect/pointer-copied reads outside the saved set are not covered."
+  },
+  "literal_base_census": {
+    "base": "0x006f2550",
+    "hits": [
+      {
+        "va": "0x4dbc14",
+        "file_offset": "0xdb014",
+        "section": ".text",
+        "decode_start": "0x4dbc08",
+        "instruction": {
+          "pc": 5094419,
+          "bytes": "a150256f00",
+          "size": 5,
+          "mnemonic": "mov",
+          "op_str": "eax, dword ptr [0x6f2550]",
+          "mem_ops": [
+            {
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "disp": 7284048,
+              "size": 4,
+              "read": true,
+              "write": false
+            }
+          ]
+        },
+        "role": "absolute DWORD read at table base offset 0"
+      },
+      {
+        "va": "0x4dbc83",
+        "file_offset": "0xdb083",
+        "section": ".text",
+        "decode_start": "0x4dbc77",
+        "instruction": {
+          "pc": 5094530,
+          "bytes": "a150256f00",
+          "size": 5,
+          "mnemonic": "mov",
+          "op_str": "eax, dword ptr [0x6f2550]",
+          "mem_ops": [
+            {
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "disp": 7284048,
+              "size": 4,
+              "read": true,
+              "write": false
+            }
+          ]
+        },
+        "role": "absolute DWORD read at table base offset 0"
+      },
+      {
+        "va": "0x509a55",
+        "file_offset": "0x108e55",
+        "section": ".text",
+        "decode_start": "0x509a49",
+        "instruction": {
+          "pc": 5282388,
+          "bytes": "bf50256f00",
+          "size": 5,
+          "mnemonic": "mov",
+          "op_str": "edi, 0x6f2550",
+          "mem_ops": []
+        },
+        "role": "literal table base loaded into EDI for bulk zero-fill (write only)"
+      },
+      {
+        "va": "0x509a9c",
+        "file_offset": "0x108e9c",
+        "section": ".text",
+        "decode_start": "0x509a90",
+        "instruction": {
+          "pc": 5282454,
+          "bytes": "c70554416e0050256f00",
+          "size": 10,
+          "mnemonic": "mov",
+          "op_str": "dword ptr [0x6e4154], 0x6f2550",
+          "mem_ops": [
+            {
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "disp": 7225684,
+              "size": 4,
+              "read": false,
+              "write": true
+            }
+          ]
+        },
+        "role": "store of literal table base into alias pointer global 0x6e4154 (value identity only)"
+      },
+      {
+        "va": "0x51cdb1",
+        "file_offset": "0x11c1b1",
+        "section": ".text",
+        "decode_start": "0x51cda5",
+        "instruction": {
+          "pc": 5361072,
+          "bytes": "a350256f00",
+          "size": 5,
+          "mnemonic": "mov",
+          "op_str": "dword ptr [0x6f2550], eax",
+          "mem_ops": [
+            {
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "disp": 7284048,
+              "size": 4,
+              "read": false,
+              "write": true
+            }
+          ]
+        },
+        "role": "verified 4-byte store to table base offset 0 (dword 0); stored value is the runtime accumulator and is NOT traced; previous 'Type112' label withdrawn"
+      }
+    ],
+    "hit_address_note": "Each hit 'va' is the first byte of the 4-byte little-endian literal 0x006f2550 (the moffs/disp32/imm32 field), which can sit inside the instruction. 'instruction.pc' is the Capstone-validated instruction boundary.",
+    "identity_status": "CONDITIONAL. One verified instruction stores the literal 0x006f2550 into [0x006e4154] (0x509a96), and a bulk zero-fill materialises the same literal in EDI. That does not prove the pointer at [0x006e4154] is never rewritten by another path, so alias-based address arithmetic stays conditional.",
+    "withdrawn_label": "The store at 0x51cdb0 (a3 50 25 6f 00, mov dword ptr [0x006f2550],eax) was previously labelled 'Type112'. phase101 puts the Type112 store at 0x51d13f -> 0x6f28f0. No selector was traced for 0x51cdb0 here; only its verified bytes are reported."
+  },
+  "type192_bound": {
+    "kwd": {
+      "path": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\GlobalVariables.kwd",
+      "sha256": "d14b6a28694254dad722071267268d4f36c8535cd3a9c610f9ee0447fe9b941a"
+    },
+    "record": {
+      "type": 192,
+      "value": 8,
+      "raw_hex": "c0000000080000000000000000000000",
+      "runtime_address": "0x006f2976",
+      "runtime_bytes": 1,
+      "source": "GlobalVariables.kwd Section 0xE6, generic layout (Type, Value, Extra1, Extra2)"
+    },
+    "guard_site": "0x0045789f mov al,[0x006f2976] ; 0x004578a4 cmp cl,al ; 0x004578a6 jnc 0x004579e3",
+    "note": "The guard value is file-controlled. The installed editor file yields 8; it is a runtime 1-byte copy of the type-192 payload, not a hard-coded constant."
+  },
+  "level_domain": {
+    "field": "creature instance byte +0x403 ('Experience level' per the older creature-record notes; the same object type is addressed in both candidate functions)",
+    "located_writers": [
+      {
+        "va": "0x4875c9",
+        "decode_start": "0x4875bb",
+        "instruction": {
+          "pc": 4748745,
+          "bytes": "c6860304000001",
+          "size": 7,
+          "mnemonic": "mov",
+          "op_str": "byte ptr [esi + 0x403], 1",
+          "mem_ops": [
+            {
+              "base": "esi",
+              "index": null,
+              "scale": 1,
+              "disp": 1027,
+              "size": 1,
+              "read": false,
+              "write": true
+            }
+          ]
+        },
+        "effect": "creature instance init: level = 1",
+        "verified": true
+      },
+      {
+        "va": "0x48b1e6",
+        "decode_start": "0x48b1d7",
+        "instruction": {
+          "pc": 4764134,
+          "bytes": "888603040000",
+          "size": 6,
+          "mnemonic": "mov",
+          "op_str": "byte ptr [esi + 0x403], al",
+          "mem_ops": [
+            {
+              "base": "esi",
+              "index": null,
+              "scale": 1,
+              "disp": 1027,
+              "size": 1,
+              "read": false,
+              "write": true
+            }
+          ]
+        },
+        "effect": "level-up: AL = byte[+0x403]; INC AL; byte[+0x403] = AL",
+        "verified": true
+      },
+      {
+        "va": "0x48b06a",
+        "decode_start": "0x48b05c",
+        "instruction": {
+          "pc": 4763754,
+          "bytes": "888603040000",
+          "size": 6,
+          "mnemonic": "mov",
+          "op_str": "byte ptr [esi + 0x403], al",
+          "mem_ops": [
+            {
+              "base": "esi",
+              "index": null,
+              "scale": 1,
+              "disp": 1027,
+              "size": 1,
+              "read": false,
+              "write": true
+            }
+          ]
+        },
+        "effect": "level-down: AL = byte[+0x403]; DEC AL; byte[+0x403] = AL",
+        "verified": true
+      }
+    ],
+    "level_up_cap": {
+      "instructions": [
+        {
+          "pc": 4763964,
+          "bytes": "80be030400000a",
+          "size": 7,
+          "mnemonic": "cmp",
+          "op_str": "byte ptr [esi + 0x403], 0xa",
+          "mem_ops": [
+            {
+              "base": "esi",
+              "index": null,
+              "scale": 1,
+              "disp": 1027,
+              "size": 1,
+              "read": true,
+              "write": false
+            }
+          ]
+        },
+        {
+          "pc": 4764124,
+          "bytes": "8a8603040000",
+          "size": 6,
+          "mnemonic": "mov",
+          "op_str": "al, byte ptr [esi + 0x403]",
+          "mem_ops": [
+            {
+              "base": "esi",
+              "index": null,
+              "scale": 1,
+              "disp": 1027,
+              "size": 1,
+              "read": true,
+              "write": false
+            }
+          ]
+        },
+        {
+          "pc": 4764130,
+          "bytes": "fec0",
+          "size": 2,
+          "mnemonic": "inc",
+          "op_str": "al",
+          "mem_ops": []
+        },
+        {
+          "pc": 4764132,
+          "bytes": "8ac8",
+          "size": 2,
+          "mnemonic": "mov",
+          "op_str": "cl, al",
+          "mem_ops": []
+        },
+        {
+          "pc": 4764134,
+          "bytes": "888603040000",
+          "size": 6,
+          "mnemonic": "mov",
+          "op_str": "byte ptr [esi + 0x403], al",
+          "mem_ops": [
+            {
+              "base": "esi",
+              "index": null,
+              "scale": 1,
+              "disp": 1027,
+              "size": 1,
+              "read": false,
+              "write": true
+            }
+          ]
+        }
+      ],
+      "derivation": "entry check CMP byte[+0x403],0x0a: if level == 10 the function returns without a write; otherwise it writes AL = level+1, so a write can only produce 2..10 from a 1..9 predecessor"
+    },
+    "level_down_floor": {
+      "instructions": [
+        {
+          "pc": 4763580,
+          "bytes": "80be0304000001",
+          "size": 7,
+          "mnemonic": "cmp",
+          "op_str": "byte ptr [esi + 0x403], 1",
+          "mem_ops": [
+            {
+              "base": "esi",
+              "index": null,
+              "scale": 1,
+              "disp": 1027,
+              "size": 1,
+              "read": true,
+              "write": false
+            }
+          ]
+        },
+        {
+          "pc": 4763740,
+          "bytes": "8a8603040000",
+          "size": 6,
+          "mnemonic": "mov",
+          "op_str": "al, byte ptr [esi + 0x403]",
+          "mem_ops": [
+            {
+              "base": "esi",
+              "index": null,
+              "scale": 1,
+              "disp": 1027,
+              "size": 1,
+              "read": true,
+              "write": false
+            }
+          ]
+        },
+        {
+          "pc": 4763752,
+          "bytes": "fec8",
+          "size": 2,
+          "mnemonic": "dec",
+          "op_str": "al",
+          "mem_ops": []
+        },
+        {
+          "pc": 4763754,
+          "bytes": "888603040000",
+          "size": 6,
+          "mnemonic": "mov",
+          "op_str": "byte ptr [esi + 0x403], al",
+          "mem_ops": [
+            {
+              "base": "esi",
+              "index": null,
+              "scale": 1,
+              "disp": 1027,
+              "size": 1,
+              "read": false,
+              "write": true
+            }
+          ]
+        }
+      ],
+      "derivation": "entry check CMP byte[+0x403],0x1: if level == 1 the function returns without a write; otherwise it writes AL = level-1, so a write can only produce 0..9 from a 1..10 predecessor; combined with init=1 the reachable floor is 1"
+    },
+    "inductive_supported_domain": [
+      1,
+      10
+    ],
+    "caveat": "The domain 1..10 is an inductive invariant over the three writers located by the saved decompile corpus (init=1, +1 capped at 10, -1 floored at 1). It is NOT a proof that no other writer exists (for example a bulk copy/load path); writer enumeration completeness is not established here."
+  },
+  "two_function_investigation": [
+    {
+      "function": "0x00457880",
+      "saved_candidate_loads": [
+        "0x004578da",
+        "0x00457988"
+      ],
+      "primary_instructions": [
+        {
+          "pc": 4552839,
+          "bytes": "8b86e6030000",
+          "size": 6,
+          "mnemonic": "mov",
+          "op_str": "eax, dword ptr [esi + 0x3e6]",
+          "mem_ops": [
+            {
+              "base": "esi",
+              "index": null,
+              "scale": 1,
+              "disp": 998,
+              "size": 4,
+              "read": true,
+              "write": false
+            }
+          ]
+        },
+        {
+          "pc": 4552845,
+          "bytes": "2500800000",
+          "size": 5,
+          "mnemonic": "and",
+          "op_str": "eax, 0x8000",
+          "mem_ops": []
+        },
+        {
+          "pc": 4552850,
+          "bytes": "3d00800000",
+          "size": 5,
+          "mnemonic": "cmp",
+          "op_str": "eax, 0x8000",
+          "mem_ops": []
+        },
+        {
+          "pc": 4552855,
+          "bytes": "7513",
+          "size": 2,
+          "mnemonic": "jne",
+          "op_str": "0x4578ac",
+          "mem_ops": []
+        },
+        {
+          "pc": 4552857,
+          "bytes": "8a8e03040000",
+          "size": 6,
+          "mnemonic": "mov",
+          "op_str": "cl, byte ptr [esi + 0x403]",
+          "mem_ops": [
+            {
+              "base": "esi",
+              "index": null,
+              "scale": 1,
+              "disp": 1027,
+              "size": 1,
+              "read": true,
+              "write": false
+            }
+          ]
+        },
+        {
+          "pc": 4552863,
+          "bytes": "a076296f00",
+          "size": 5,
+          "mnemonic": "mov",
+          "op_str": "al, byte ptr [0x6f2976]",
+          "mem_ops": [
+            {
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "disp": 7285110,
+              "size": 1,
+              "read": true,
+              "write": false
+            }
+          ]
+        },
+        {
+          "pc": 4552868,
+          "bytes": "3ac8",
+          "size": 2,
+          "mnemonic": "cmp",
+          "op_str": "cl, al",
+          "mem_ops": []
+        },
+        {
+          "pc": 4552870,
+          "bytes": "0f8337010000",
+          "size": 6,
+          "mnemonic": "jae",
+          "op_str": "0x4579e3",
+          "mem_ops": []
+        },
+        {
+          "pc": 4552876,
+          "bytes": "8a9e03040000",
+          "size": 6,
+          "mnemonic": "mov",
+          "op_str": "bl, byte ptr [esi + 0x403]",
+          "mem_ops": [
+            {
+              "base": "esi",
+              "index": null,
+              "scale": 1,
+              "disp": 1027,
+              "size": 1,
+              "read": true,
+              "write": false
+            }
+          ]
+        },
+        {
+          "pc": 4552882,
+          "bytes": "8bbe70030000",
+          "size": 6,
+          "mnemonic": "mov",
+          "op_str": "edi, dword ptr [esi + 0x370]",
+          "mem_ops": [
+            {
+              "base": "esi",
+              "index": null,
+              "scale": 1,
+              "disp": 880,
+              "size": 4,
+              "read": true,
+              "write": false
+            }
+          ]
+        },
+        {
+          "pc": 4552922,
+          "bytes": "0fbf8c50b9010000",
+          "size": 8,
+          "mnemonic": "movsx",
+          "op_str": "ecx, word ptr [eax + edx*2 + 0x1b9]",
+          "mem_ops": [
+            {
+              "base": "eax",
+              "index": "edx",
+              "scale": 2,
+              "disp": 441,
+              "size": 2,
+              "read": true,
+              "write": false
+            }
+          ]
+        },
+        {
+          "pc": 4552944,
+          "bytes": "0fafca",
+          "size": 3,
+          "mnemonic": "imul",
+          "op_str": "ecx, edx",
+          "mem_ops": []
+        },
+        {
+          "pc": 4552947,
+          "bytes": "f7e9",
+          "size": 2,
+          "mnemonic": "imul",
+          "op_str": "ecx",
+          "mem_ops": []
+        },
+        {
+          "pc": 4552949,
+          "bytes": "c1fa05",
+          "size": 3,
+          "mnemonic": "sar",
+          "op_str": "edx, 5",
+          "mem_ops": []
+        },
+        {
+          "pc": 4552969,
+          "bytes": "3dfeff0000",
+          "size": 5,
+          "mnemonic": "cmp",
+          "op_str": "eax, 0xfffe",
+          "mem_ops": []
+        },
+        {
+          "pc": 4552988,
+          "bytes": "b8feff0000",
+          "size": 5,
+          "mnemonic": "mov",
+          "op_str": "eax, 0xfffe",
+          "mem_ops": []
+        },
+        {
+          "pc": 4552996,
+          "bytes": "0f84b9000000",
+          "size": 6,
+          "mnemonic": "je",
+          "op_str": "0x4579e3",
+          "mem_ops": []
+        },
+        {
+          "pc": 4553006,
+          "bytes": "8b8eff030000",
+          "size": 6,
+          "mnemonic": "mov",
+          "op_str": "ecx, dword ptr [esi + 0x3ff]",
+          "mem_ops": [
+            {
+              "base": "esi",
+              "index": null,
+              "scale": 1,
+              "disp": 1023,
+              "size": 4,
+              "read": true,
+              "write": false
+            }
+          ]
+        },
+        {
+          "pc": 4553044,
+          "bytes": "03c8",
+          "size": 2,
+          "mnemonic": "add",
+          "op_str": "ecx, eax",
+          "mem_ops": []
+        },
+        {
+          "pc": 4553096,
+          "bytes": "0fbf8c41b9010000",
+          "size": 8,
+          "mnemonic": "movsx",
+          "op_str": "ecx, word ptr [ecx + eax*2 + 0x1b9]",
+          "mem_ops": [
+            {
+              "base": "ecx",
+              "index": "eax",
+              "scale": 2,
+              "disp": 441,
+              "size": 2,
+              "read": true,
+              "write": false
+            }
+          ]
+        },
+        {
+          "pc": 4553134,
+          "bytes": "3dfeff0000",
+          "size": 5,
+          "mnemonic": "cmp",
+          "op_str": "eax, 0xfffe",
+          "mem_ops": []
+        },
+        {
+          "pc": 4553155,
+          "bytes": "bffeff0000",
+          "size": 5,
+          "mnemonic": "mov",
+          "op_str": "edi, 0xfffe",
+          "mem_ops": []
+        },
+        {
+          "pc": 4553166,
+          "bytes": "3bef",
+          "size": 2,
+          "mnemonic": "cmp",
+          "op_str": "ebp, edi",
+          "mem_ops": []
+        },
+        {
+          "pc": 4553172,
+          "bytes": "e847370300",
+          "size": 5,
+          "mnemonic": "call",
+          "op_str": "0x48b120",
+          "mem_ops": []
+        }
+      ],
+      "index_producer": {
+        "source": "byte[ESI + 0x403] (ESI = this; also reloaded as BL at 0x4578ac)",
+        "mask": "AND EDX,0xff at 0x4578d4 / AND EAX,0xff at 0x45797a",
+        "domain": "creature experience level, supported 1..10 (see level_domain)"
+      },
+      "in_function_guard": {
+        "condition": "([ESI+0x3e6] & 0x8000) == 0x8000",
+        "bounded_path": "byte[ESI+0x403] < byte[0x006f2976]; else JNC 0x4579e3 (returns 0)",
+        "bound_value": "byte[0x006f2976] is the 1-byte runtime copy of Variables type 192 (COMBAT_PIT_MAX_EXPERIENCE_LEVEL); the installed KWD record has Value=8",
+        "unbounded_path": "the bound is skipped entirely when flag bit 0x8000 is clear"
+      },
+      "address_arithmetic": {
+        "table_pointer": "[0x006e4154], conditional identity to 0x6f2550 (see base note)",
+        "load": "word[base + (level & 0xff)*2 + 0x1b9]; with base = 0x6f2550 the address is 0x6f2709 + 2*level, so index 244 starts at 0x6f28f1 and index 245 at 0x6f28f3 (one-byte shifts across the word targets)",
+        "required_index_for_overlap": [
+          {
+            "index": 244,
+            "byte_interval": [
+              929,
+              930
+            ],
+            "targets": [
+              113
+            ]
+          },
+          {
+            "index": 245,
+            "byte_interval": [
+              931,
+              932
+            ],
+            "targets": [
+              113,
+              114
+            ]
+          },
+          {
+            "index": 246,
+            "byte_interval": [
+              933,
+              934
+            ],
+            "targets": [
+              114
+            ]
+          }
+        ]
+      },
+      "downstream": {
+        "scale": "IMUL by word[EDI+0x6b5] (EDI = [ESI+0x370] definition), then /100 via magic 0x51eb851f",
+        "clamp": "negative -> 0; value >= 0xfffe -> 0xfffe",
+        "consume": "accumulator [ESI+0x3ff] += stack arg; the scaled/clamped value is compared with the accumulator (CMP EBP,EDI at 0x4579ce); when accumulator >= value the code calls 0x48b120 (creature level-up)",
+        "zero_path": "if the scaled value is 0 the function returns the accumulator unchanged"
+      },
+      "verdict": "candidate_resolved_as_non_consumer_under_supported_index_domain",
+      "reason": "The saved byte-overlap candidates need level 244..246. The located writers give an inductive supported domain 1..10, and when flag 0x8000 is set the function itself rejects any level >= byte[0x6f2976] (=8). Therefore neither load reads bytes 0x3a2/0x3a4 in the supported domain. Residual uncertainty: writer enumeration is not proven complete, and the alias base identity is conditional."
+    },
+    {
+      "function": "0x00458f60",
+      "saved_candidate_load": "0x00459066",
+      "primary_instructions": [
+        {
+          "pc": 4558890,
+          "bytes": "e8a1c80f00",
+          "size": 5,
+          "mnemonic": "call",
+          "op_str": "0x5558d0",
+          "mem_ops": []
+        },
+        {
+          "pc": 4558905,
+          "bytes": "8a8f03040000",
+          "size": 6,
+          "mnemonic": "mov",
+          "op_str": "cl, byte ptr [edi + 0x403]",
+          "mem_ops": [
+            {
+              "base": "edi",
+              "index": null,
+              "scale": 1,
+              "disp": 1027,
+              "size": 1,
+              "read": true,
+              "write": false
+            }
+          ]
+        },
+        {
+          "pc": 4558911,
+          "bytes": "8b8770030000",
+          "size": 6,
+          "mnemonic": "mov",
+          "op_str": "eax, dword ptr [edi + 0x370]",
+          "mem_ops": [
+            {
+              "base": "edi",
+              "index": null,
+              "scale": 1,
+              "disp": 880,
+              "size": 4,
+              "read": true,
+              "write": false
+            }
+          ]
+        },
+        {
+          "pc": 4558917,
+          "bytes": "80f901",
+          "size": 3,
+          "mnemonic": "cmp",
+          "op_str": "cl, 1",
+          "mem_ops": []
+        },
+        {
+          "pc": 4558934,
+          "bytes": "8b542410",
+          "size": 4,
+          "mnemonic": "mov",
+          "op_str": "edx, dword ptr [esp + 0x10]",
+          "mem_ops": [
+            {
+              "base": "esp",
+              "index": null,
+              "scale": 1,
+              "disp": 16,
+              "size": 4,
+              "read": true,
+              "write": false
+            }
+          ]
+        },
+        {
+          "pc": 4558944,
+          "bytes": "81e2ff000000",
+          "size": 6,
+          "mnemonic": "and",
+          "op_str": "edx, 0xff",
+          "mem_ops": []
+        },
+        {
+          "pc": 4558950,
+          "bytes": "0fbf8c5137020000",
+          "size": 8,
+          "mnemonic": "movsx",
+          "op_str": "ecx, word ptr [ecx + edx*2 + 0x237]",
+          "mem_ops": [
+            {
+              "base": "ecx",
+              "index": "edx",
+              "scale": 2,
+              "disp": 567,
+              "size": 2,
+              "read": true,
+              "write": false
+            }
+          ]
+        },
+        {
+          "pc": 4558960,
+          "bytes": "8a90e0050000",
+          "size": 6,
+          "mnemonic": "mov",
+          "op_str": "dl, byte ptr [eax + 0x5e0]",
+          "mem_ops": [
+            {
+              "base": "eax",
+              "index": null,
+              "scale": 1,
+              "disp": 1504,
+              "size": 1,
+              "read": true,
+              "write": false
+            }
+          ]
+        },
+        {
+          "pc": 4558996,
+          "bytes": "3dfe000000",
+          "size": 5,
+          "mnemonic": "cmp",
+          "op_str": "eax, 0xfe",
+          "mem_ops": []
+        },
+        {
+          "pc": 4559013,
+          "bytes": "b0fe",
+          "size": 2,
+          "mnemonic": "mov",
+          "op_str": "al, 0xfe",
+          "mem_ops": []
+        },
+        {
+          "pc": 4559024,
+          "bytes": "3bc8",
+          "size": 2,
+          "mnemonic": "cmp",
+          "op_str": "ecx, eax",
+          "mem_ops": []
+        },
+        {
+          "pc": 4559026,
+          "bytes": "7338",
+          "size": 2,
+          "mnemonic": "jae",
+          "op_str": "0x4590ec",
+          "mem_ops": []
+        },
+        {
+          "pc": 4559035,
+          "bytes": "e8d0ec0400",
+          "size": 5,
+          "mnemonic": "call",
+          "op_str": "0x4a7d90",
+          "mem_ops": []
+        },
+        {
+          "pc": 4559060,
+          "bytes": "e8b7e30b00",
+          "size": 5,
+          "mnemonic": "call",
+          "op_str": "0x517490",
+          "mem_ops": []
+        }
+      ],
+      "index_producer": {
+        "source": "byte[EDI + 0x403] where EDI = [ESI+0x8] (same creature object)",
+        "mask": "AND EDX,0xff at 0x459060",
+        "domain": "creature experience level, supported 1..10 (see level_domain)"
+      },
+      "in_function_guard": {
+        "condition": "none on the index; the function only checks CALL 0x496d00 and the word[creature+0x43d] global-table lookup at 0x458f7e",
+        "note": "no upper bound on byte[+0x403] exists inside 0x458f60"
+      },
+      "address_arithmetic": {
+        "table_pointer": "[0x006e4154], conditional identity to 0x6f2550 (see base note)",
+        "load": "word[base + (level & 0xff)*2 + 0x237]",
+        "required_index_for_overlap": [
+          {
+            "index": 181,
+            "byte_interval": [
+              929,
+              930
+            ],
+            "targets": [
+              113
+            ]
+          },
+          {
+            "index": 182,
+            "byte_interval": [
+              931,
+              932
+            ],
+            "targets": [
+              113,
+              114
+            ]
+          },
+          {
+            "index": 183,
+            "byte_interval": [
+              933,
+              934
+            ],
+            "targets": [
+              114
+            ]
+          }
+        ]
+      },
+      "downstream": {
+        "scale": "IMUL by byte[[EDI+0x370]+0x5e0] definition byte, then /100 via magic 0x51eb851f",
+        "clamp": "negative -> 0; value >= 0xfe -> 0xfe (byte accumulator)",
+        "consume": "compared with the roll returned by CALL 0x5558d0 (range argument 0x64); roll < value takes the success branch that calls 0x4a7d90 and schedules 0xdc, otherwise the failure branch calls the virtual +0x20 and 0x481610"
+      },
+      "verdict": "candidate_resolved_as_non_consumer_under_supported_index_domain",
+      "reason": "The saved overlap candidates need level 181..183. The same level field is bounded by its located writers to 1..10, and 0x458f60 adds no bound of its own. In the supported domain the load cannot reach bytes 0x3a2/0x3a4. Residual uncertainty: writer enumeration completeness and the conditional base identity."
+    }
+  ],
+  "verdicts": {
+    "function_0x457880": "Loads 0x4578da/0x457988 are creature-level table lookups. Byte overlap with WORD 113/114 is arithmetic only (indices 244..246) and is outside the supported level domain 1..10; the 0x8000-flag path additionally rejects level >= byte[0x6f2976]. Not shown to be a 113/114 consumer. Static only.",
+    "function_0x458f60": "Load 0x459066 is the same creature-level table lookup (indices 181..183 for the byte overlap). No index bound exists inside the function, but the same supported level domain 1..10 excludes those indices. Not shown to be a 113/114 consumer. Static only.",
+    "global": "No supported gameplay consumer of WORD 113/114 was established in this pass. The broad alias list remains unvalidated candidate arithmetic, so no absence claim is made."
+  },
+  "open_paths": [
+    "Writer-enumeration completeness for creature +0x403 is not proven; a bulk copy/load writer would change the 1..10 supported domain.",
+    "The pointer at [0x006e4154] is assumed to equal 0x006f2550 for both candidate functions; only one literal store was verified, so this is conditional.",
+    "The 132 triples from the saved phase200 reads are arithmetic candidates; no per-read index producer/bound was derived outside the two selected functions.",
+    "No native (runtime) observation was performed in this pass; all conclusions are static."
+  ],
+  "failures": []
+}

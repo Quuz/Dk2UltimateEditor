@@ -1,0 +1,54 @@
+{
+  "phase": 210,
+  "date": "2026-11-14",
+  "scope": "Static Globals113/114 candidate byte intervals and two bounded consumers",
+  "acceptance": "PASS for pinned static reproducibility and conditional byte geometry; unknown Globals113/114 meanings remain unresolved",
+  "files": [
+    {
+      "file": "globals-113-114-read-audit/ACCEPTANCE_RU.md",
+      "bytes": 5060,
+      "sha256": "bad96ab688f3c5ea85d3b2fb65170b73b2be7cb9aec25064b78749a615ea5ebb"
+    },
+    {
+      "file": "globals-113-114-read-audit/audit_globals_113_114_reads.py",
+      "bytes": 37547,
+      "sha256": "cbd6338cb1c0f9c93f60b64ab6e855faabbc5d670e76756762fd182926f273f6"
+    },
+    {
+      "file": "globals-113-114-read-audit/AUDIT_MANIFEST.json",
+      "bytes": 1418,
+      "sha256": "6f5703e237d717f34ecae90d60f6a9a7274c7971474676ad670666e854cad3ab"
+    },
+    {
+      "file": "globals-113-114-read-audit/coordinator-validation.json",
+      "bytes": 14683,
+      "sha256": "c9ae35087738fc82718763533354c7daeb5195c443b9f5757778a1a66a8eb20c"
+    },
+    {
+      "file": "globals-113-114-read-audit/globals-113-114-read-audit.json",
+      "bytes": 109945,
+      "sha256": "1e789655167f2ba14ce9d4b103d099f5c6041001dba2b79782fb527d5e3316b6"
+    },
+    {
+      "file": "globals-113-114-read-audit/README_RU.md",
+      "bytes": 10114,
+      "sha256": "6d0c77ea62947cfc399c68c5cf32610b75c61d5b75bb2b706ff4135fe792e497"
+    }
+  ],
+  "native_execution_performed": false,
+  "source_exe_sha256": "d7a8b854e4e4f02709eba271bead6fe2307dd6e332b5a96e70857e5b0e19fb8a",
+  "historical_package_components_unchanged": true,
+  "limitations": [
+    "All 183 pinned input expressions have coefficient1, at most one masked term and domain0..255; other expression shapes were not validated",
+    "Local Capstone boundary search is a candidate decoder; coordinator checked decisive stores from known function entries",
+    "Levels1..10 are a conditional transition model, not an exhaustive runtime invariant",
+    "Per-read base identity and completeness of level writers remain conditional",
+    "No native observation, GUI test or new interpretation of Globals113/114"
+  ],
+  "portable_checks_performed": {
+    "snapshot_validator": "PASS4454sources/182components/19627evidence",
+    "format_research_unittest": "5testsPASS",
+    "supplement_hashes": "208:6/6,209:5/5,210:6/6 PASS",
+    "git_diff_check": "PASS"
+  }
+}
