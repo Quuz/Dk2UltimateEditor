@@ -6,6 +6,7 @@
 
 | Материал | Ссылка |
 |---|---|
+| Структурный реестр и дополнения после205 | [Проверяемая матрица](../../research/dk2-formats/format-registry/README_RU.md) |
 | Актуальные результаты и правила интеграции | [INTEGRATION_RU.md](../../research/dk2-formats/INTEGRATION_RU.md) |
 | Таблицы полей по каталогам | [FAMILIES.md](FAMILIES.md) |
 | Обзор всех файлов Dethware и графы фонового звука | [DETHWARE_SOUND_REVIEW_RU.md](../../research/dk2-formats/DETHWARE_SOUND_REVIEW_RU.md) |
