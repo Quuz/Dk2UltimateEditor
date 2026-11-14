@@ -1,0 +1,53 @@
+{
+  "phase": 209,
+  "date": "2026-11-14",
+  "scope": "First native player-scoped Variables writer branch",
+  "acceptance": "PASS for first player-scoped native writer branch in four prepared fixtures",
+  "files": [
+    {
+      "file": "variables-player-writer/audit_player_writer.py",
+      "bytes": 18429,
+      "sha256": "c029ce36129d8bfa8f15d6708c3146ab3c6c4d284e4b28214cc35f008dcdaf3f"
+    },
+    {
+      "file": "variables-player-writer/coordinator-validation.json",
+      "bytes": 19810,
+      "sha256": "6cdece822ce8d90cb90891aea7e1d5d291f5531b5815fc09043fb4d718d25f05"
+    },
+    {
+      "file": "variables-player-writer/player-writer-results.json",
+      "bytes": 12597,
+      "sha256": "55d7595d3cab403a59bb7f02106b6efba43371926ca18c9b1fe13afa72307ad1"
+    },
+    {
+      "file": "variables-player-writer/PLAYER_WRITER_RU.md",
+      "bytes": 6817,
+      "sha256": "3b91e95f57c1efd3e389813b2a0f1cfa49d0e9ee34a4bdd75da12a41703866ac"
+    },
+    {
+      "file": "variables-player-writer/README_RU.md",
+      "bytes": 3896,
+      "sha256": "c74b4ee715b8464169af634c6e7986c894e34f0d2997783426c2e1bbc91ea481"
+    }
+  ],
+  "native_scenes": 4,
+  "game_or_gui_tested": false,
+  "historical_package_components_unchanged": true,
+  "source_exe_sha256": "989c45df779bccfc9a9e509b2ad0224a9bd269629f74792adc0320fa4b99fb09",
+  "limitations": [
+    "Only FUN_4943C0 / FUN_48CF50 with one selected player is exercised.",
+    "Pool/availability groups 1..5 (types 1+(kind<<16)..) are NOT executed or interpreted.",
+    "No GUI reachability, full save, gameplay consumer or real-file write is claimed.",
+    "Type77 count 110 is zero; Type 29, 113, 114 and 186 keep prior treatment.",
+    "Scalar record tails +8..+15 are inherited stack-scratch reproduction, not a new meaning.",
+    "Zero-value +0x4C entries (skip branch of writer and count helper) are not exercised.",
+    "Every scene has at most one player, so accessor index > 0 and cross-player order are untested.",
+    "Header timestamp/date bytes and other inherited header fields are not re-derived here."
+  ],
+  "portable_checks_performed": {
+    "snapshot_validator": "PASS:4454 sources,182 components,19627 primary evidence members",
+    "format_research_unittest": "5 tests PASS",
+    "supplement_sha256_and_syntax": "5/5 current and6/6 prior Type77 files PASS",
+    "git_diff_check": "PASS"
+  }
+}

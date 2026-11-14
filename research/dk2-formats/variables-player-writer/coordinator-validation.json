@@ -1,0 +1,566 @@
+{
+  "date": "2026-11-14",
+  "acceptance": "PASS for first player-scoped native writer branch in four prepared fixtures",
+  "full_report_matches_saved": true,
+  "no_write_hashes_unchanged": true,
+  "deliverable_sha256": {
+    "audit_player_writer.py": "c029ce36129d8bfa8f15d6708c3146ab3c6c4d284e4b28214cc35f008dcdaf3f",
+    "player-writer-results.json": "55d7595d3cab403a59bb7f02106b6efba43371926ca18c9b1fe13afa72307ad1",
+    "PLAYER_WRITER_RU.md": "3b91e95f57c1efd3e389813b2a0f1cfa49d0e9ee34a4bdd75da12a41703866ac"
+  },
+  "source_exe_sha256": "989c45df779bccfc9a9e509b2ad0224a9bd269629f74792adc0320fa4b99fb09",
+  "terrain_source": {
+    "path": "Dungeon Keeper 2/Data/editor/Terrain.kwd",
+    "bytes": 22688,
+    "sha256": "1b4296b0cf696d5428e6d3d94eb8571e2601bd78fc51caa6c3e1e13c0695e77d"
+  },
+  "runtime": {
+    "python": "3.12.15 (main, Oct  9 2026, 15:21:55) [MSC v.1944 64 bit (AMD64)]",
+    "unicorn": "2.1.4",
+    "capstone": "5.0.7",
+    "pefile": "2024.8.26"
+  },
+  "helper_sources": [
+    {
+      "path": "audit_targeted_spell.py",
+      "bytes": 5547,
+      "sha256": "a49e013c69ed9ea36e6b03e9a3122cf3b0c7d9cd7b747e9edc1cdee363713bdb"
+    },
+    {
+      "path": "build_effect_semantics.py",
+      "bytes": 12363,
+      "sha256": "b62e18d81b46d9726ad8565a63e3c2c8716226d349e7054e433e0ed5af730b43"
+    },
+    {
+      "path": "build_targeted_spell.py",
+      "bytes": 11263,
+      "sha256": "0b7ca67625350f9cddaebe0ab7a5aab4b9e073954aa86c19e85ab3b2ff9f2b75"
+    },
+    {
+      "path": "dk2_formats.py",
+      "bytes": 38275,
+      "sha256": "de49eda2daabd83afba4f7a27be2dd8008128be2901aff908fdf6c8aca0ca2c7"
+    },
+    {
+      "path": "emulate_creature_shot_request.py",
+      "bytes": 9232,
+      "sha256": "b580842cccdd0d8eca6b27fc69aa49cd45f62070ef9c7217fac704d28723e6f5"
+    },
+    {
+      "path": "emulate_editor_global_variables.py",
+      "bytes": 6946,
+      "sha256": "a0542307af20f83597a8561a9b154467dfa436d751d70ac78c780c7cf9d30266"
+    },
+    {
+      "path": "emulate_editor_variables_writer.py",
+      "bytes": 10945,
+      "sha256": "e46fa4ffd6f3363e3b65b8a526cba75b54147ff70f0e1da6f9ae64c411e0e69d"
+    },
+    {
+      "path": "emulate_element_colors.py",
+      "bytes": 8570,
+      "sha256": "9913d3c58846a01f92cbae6d32931fc6735cad66c7e1fb17b7bbf2ecd16e213c"
+    },
+    {
+      "path": "emulate_hero_parties.py",
+      "bytes": 11777,
+      "sha256": "2b9eb62fef32942a0cb4332be4c0ee7bc50fcf08524c5519e5245d4e2edf53f7"
+    },
+    {
+      "path": "emulate_native_shot_success.py",
+      "bytes": 9048,
+      "sha256": "ee4dfa40654fe5e4b99db2fc1877b0ae5388bbe56b8490dfb1475eaa14e365c3"
+    },
+    {
+      "path": "emulate_placed_creatures.py",
+      "bytes": 13989,
+      "sha256": "ee15c5c34ac2e1553fc96fe61ab9e66d3854ed51b60f42a150053045ec6e25f3"
+    },
+    {
+      "path": "emulate_placed_objects.py",
+      "bytes": 11019,
+      "sha256": "209d355c4341be1574411c62bddc7331c8b6f81ac43067cc8d618018e7a670d5"
+    },
+    {
+      "path": "emulate_placed_structures.py",
+      "bytes": 8137,
+      "sha256": "db8d939590cc872a9cdd3df5195be0c9e39c9c4c3992d935d2a4f7cf18f27a28"
+    },
+    {
+      "path": "emulate_room_model_chain.py",
+      "bytes": 17814,
+      "sha256": "8f4a37ff095963e244d9d540ebe2cdd880cb49c818cb397cf65aeebe4375f5ad"
+    },
+    {
+      "path": "emulate_room_writer.py",
+      "bytes": 9434,
+      "sha256": "22653c26ebc6322681fbfe43a3f8ffb5cb4d96f93b92489adfa4ffa19acba678"
+    },
+    {
+      "path": "emulate_targeted_spell.py",
+      "bytes": 10408,
+      "sha256": "83f10aa45ff9a0287e48b056a34cb16ad127b207ff77c212efaedc946e36ebb7"
+    },
+    {
+      "path": "emulate_terrain_model_chain.py",
+      "bytes": 7786,
+      "sha256": "704194b83837080e2719b40b3ceb5677b4a56c9692e75eb0c97f34fd509f0e98"
+    },
+    {
+      "path": "emulate_terrain_text_stat.py",
+      "bytes": 5293,
+      "sha256": "2185f9924b840267035740b05fa7276c218c782d93692c39ba2861c53b489b14"
+    },
+    {
+      "path": "memory_readout.py",
+      "bytes": 711,
+      "sha256": "d4c61ba4faa946798570ed1fc731cb86a57e5176ac24cf293cef75b2f4e8583a"
+    },
+    {
+      "path": "native_creature_shot_request.py",
+      "bytes": 1733,
+      "sha256": "a0f2a54c24293158478612f194cd71a567bf52585b6e566baeaa9449c615e916"
+    },
+    {
+      "path": "native_door_field_layout.py",
+      "bytes": 1887,
+      "sha256": "6c15c87699f158cddd1ce9e6835c2867674e7c26ce9d1a41e553907f2c05bd86"
+    },
+    {
+      "path": "native_editor_text_executor.py",
+      "bytes": 5023,
+      "sha256": "d38440fda813fdf42e51a6ec9ecb6d49eebead4d481ab472622d9dbdde0d84b8"
+    },
+    {
+      "path": "native_editor_variables_writer_cpu.py",
+      "bytes": 5436,
+      "sha256": "702f575ae8d7846abaf9da5944e8ef46b74989d35d5a916988a1e5d335ffaf8c"
+    },
+    {
+      "path": "native_element_colors.py",
+      "bytes": 3873,
+      "sha256": "5784a72bd2f8f49c0a438479f47a12cfdfdb03500f58544dd5878984bff1959c"
+    },
+    {
+      "path": "native_hero_parties.py",
+      "bytes": 5098,
+      "sha256": "603d71b94c93f15e439d110cfdeab9e48baf5261c1dbfd9486dcf603bc747881"
+    },
+    {
+      "path": "native_melee_animation_flag.py",
+      "bytes": 845,
+      "sha256": "c52155dcd776e6a0a93393e3cd93b62d4e5b6943b27692691495923a76190a9d"
+    },
+    {
+      "path": "native_placed_creatures.py",
+      "bytes": 4690,
+      "sha256": "10737ee08c4bc81fd3893ee9c98fee23f109d9508255a48e6a44ba111b01c57f"
+    },
+    {
+      "path": "native_placed_objects.py",
+      "bytes": 3532,
+      "sha256": "0c82e28deb388e482ffba293f69f08e5d6a23b3adc12e4c4929f268f6c9faf95"
+    },
+    {
+      "path": "native_placed_structures.py",
+      "bytes": 2224,
+      "sha256": "1c6b19aafce9e84825945f18f6e3e62f9694f6eca5a1a0252f83e24ca1e9dd95"
+    },
+    {
+      "path": "native_room_writer.py",
+      "bytes": 2679,
+      "sha256": "76b8bee9fabde681f9abb8de4e8312161ff49c68430b1c5fca5e0b3bdc2f82eb"
+    },
+    {
+      "path": "native_spell_alternatives.py",
+      "bytes": 2693,
+      "sha256": "82aa05afdb0ee7532df3bd4d0084ad37be045d33adf63feb6506a593baeafd56"
+    },
+    {
+      "path": "native_spell_writer.py",
+      "bytes": 2100,
+      "sha256": "8ec58d9056e6522589412b6f9b32ab449878eb6f37ab83335b413fc554176f7e"
+    },
+    {
+      "path": "native_targeted_spell.py",
+      "bytes": 1018,
+      "sha256": "87e0d6aeb5825a591d7fde10bb9b0c0bc3ca35157d90a62ab3fe547637e9d651"
+    },
+    {
+      "path": "native_terrain_catalogue.py",
+      "bytes": 4208,
+      "sha256": "41c271973270abec7c834789511309f6f72e028d0579c55a7810a0916c671048"
+    },
+    {
+      "path": "native_trap_field_layout.py",
+      "bytes": 1309,
+      "sha256": "b63992615aa33f7b881111598d64657505f84d01ad9395a77f6fd23c5a66a8c9"
+    },
+    {
+      "path": "party_writer_stack_audit.py",
+      "bytes": 3474,
+      "sha256": "d73304c9325433d585a887daff2fb3e9ac77b57d5d609b071f94e5f90a9c6664"
+    },
+    {
+      "path": "probe_editor_global_defaults.py",
+      "bytes": 1641,
+      "sha256": "777435e02644ed47ca5deca4360add679000036498985a502ca3fc853188112e"
+    },
+    {
+      "path": "probe_terrain_text_stat.py",
+      "bytes": 2941,
+      "sha256": "e2f915db90da3aa43d051c32c3b28bc9d947aeb7c3f53efc682dc7efac192ca9"
+    }
+  ],
+  "primary_blocks": [
+    {
+      "va": "0x4943c0",
+      "end_exclusive": "0x494464",
+      "bytes_hex": "83ec1455578bf933ed897c2408c744240c010000008b87680a000085c0767b538b5c242456558bcfe84344ffff8bf08a461c3c03724d25ff00000033ff894424208b465485c07e378b46508b4cf8048d04f885c9742133c96a108a08894c241c8b56508bcb8b44fa048b13894424208d44241850ff52388b4654473bf87cc98b7c24108b87680a0000453be872975e5b5fb0015d83c414c204005fb0015d83c414c20400",
+      "sha256": "643e727f1becbdbc312ba0a211efe463ce250f00184106d02d33e6ede27034fe",
+      "instructions": [
+        "004943c0 sub esp, 0x14",
+        "004943c3 push ebp",
+        "004943c4 push edi",
+        "004943c5 mov edi, ecx",
+        "004943c7 xor ebp, ebp",
+        "004943c9 mov dword ptr [esp + 8], edi",
+        "004943cd mov dword ptr [esp + 0xc], 1",
+        "004943d5 mov eax, dword ptr [edi + 0xa68]",
+        "004943db test eax, eax",
+        "004943dd jbe 0x49445a",
+        "004943df push ebx",
+        "004943e0 mov ebx, dword ptr [esp + 0x24]",
+        "004943e4 push esi",
+        "004943e5 push ebp",
+        "004943e6 mov ecx, edi",
+        "004943e8 call 0x488830",
+        "004943ed mov esi, eax",
+        "004943ef mov al, byte ptr [esi + 0x1c]",
+        "004943f2 cmp al, 3",
+        "004943f4 jb 0x494443",
+        "004943f6 and eax, 0xff",
+        "004943fb xor edi, edi",
+        "004943fd mov dword ptr [esp + 0x20], eax",
+        "00494401 mov eax, dword ptr [esi + 0x54]",
+        "00494404 test eax, eax",
+        "00494406 jle 0x49443f",
+        "00494408 mov eax, dword ptr [esi + 0x50]",
+        "0049440b mov ecx, dword ptr [eax + edi*8 + 4]",
+        "0049440f lea eax, [eax + edi*8]",
+        "00494412 test ecx, ecx",
+        "00494414 je 0x494437",
+        "00494416 xor ecx, ecx",
+        "00494418 push 0x10",
+        "0049441a mov cl, byte ptr [eax]",
+        "0049441c mov dword ptr [esp + 0x1c], ecx",
+        "00494420 mov edx, dword ptr [esi + 0x50]",
+        "00494423 mov ecx, ebx",
+        "00494425 mov eax, dword ptr [edx + edi*8 + 4]",
+        "00494429 mov edx, dword ptr [ebx]",
+        "0049442b mov dword ptr [esp + 0x20], eax",
+        "0049442f lea eax, [esp + 0x18]",
+        "00494433 push eax",
+        "00494434 call dword ptr [edx + 0x38]",
+        "00494437 mov eax, dword ptr [esi + 0x54]",
+        "0049443a inc edi",
+        "0049443b cmp edi, eax",
+        "0049443d jl 0x494408",
+        "0049443f mov edi, dword ptr [esp + 0x10]",
+        "00494443 mov eax, dword ptr [edi + 0xa68]",
+        "00494449 inc ebp",
+        "0049444a cmp ebp, eax",
+        "0049444c jb 0x4943e5",
+        "0049444e pop esi",
+        "0049444f pop ebx",
+        "00494450 pop edi",
+        "00494451 mov al, 1",
+        "00494453 pop ebp",
+        "00494454 add esp, 0x14",
+        "00494457 ret 4",
+        "0049445a pop edi",
+        "0049445b mov al, 1",
+        "0049445d pop ebp",
+        "0049445e add esp, 0x14",
+        "00494461 ret 4"
+      ]
+    },
+    {
+      "va": "0x48cf50",
+      "end_exclusive": "0x48cf7f",
+      "bytes_hex": "8b4c240483ec0833c08b510885d27e198b4904568b31897424048b710485f674014083c1084a75ec5e83c408c20400",
+      "sha256": "e3bd419c984952ed6a0863d72cbf5e72e8ab7ba71503ce69d0f3ffd1e16ddf61",
+      "instructions": [
+        "0048cf50 mov ecx, dword ptr [esp + 4]",
+        "0048cf54 sub esp, 8",
+        "0048cf57 xor eax, eax",
+        "0048cf59 mov edx, dword ptr [ecx + 8]",
+        "0048cf5c test edx, edx",
+        "0048cf5e jle 0x48cf79",
+        "0048cf60 mov ecx, dword ptr [ecx + 4]",
+        "0048cf63 push esi",
+        "0048cf64 mov esi, dword ptr [ecx]",
+        "0048cf66 mov dword ptr [esp + 4], esi",
+        "0048cf6a mov esi, dword ptr [ecx + 4]",
+        "0048cf6d test esi, esi",
+        "0048cf6f je 0x48cf72",
+        "0048cf71 inc eax",
+        "0048cf72 add ecx, 8",
+        "0048cf75 dec edx",
+        "0048cf76 jne 0x48cf64",
+        "0048cf78 pop esi",
+        "0048cf79 add esp, 8",
+        "0048cf7c ret 4"
+      ]
+    },
+    {
+      "va": "0x488830",
+      "end_exclusive": "0x48884f",
+      "bytes_hex": "8b4424048b91680a00003bc2720533c0c204008b89640a00008b0481c20400",
+      "sha256": "3638a517aee355908504b63d3fe5bed6b165d6176b5c8f90502a97e9df84e3c0",
+      "instructions": [
+        "00488830 mov eax, dword ptr [esp + 4]",
+        "00488834 mov edx, dword ptr [ecx + 0xa68]",
+        "0048883a cmp eax, edx",
+        "0048883c jb 0x488843",
+        "0048883e xor eax, eax",
+        "00488840 ret 4",
+        "00488843 mov ecx, dword ptr [ecx + 0xa64]",
+        "00488849 mov eax, dword ptr [ecx + eax*4]",
+        "0048884c ret 4"
+      ]
+    },
+    {
+      "va": "0x48ca00",
+      "end_exclusive": "0x48ca4c",
+      "bytes_hex": "81ecbc000000535556578bf933ed33f6897c241c8b87680a0000896c241085c0762a568bcfe806beffff80781c03720d83c04c8bcf50e81505000003e88b87680a0000463bf072da896c2410",
+      "sha256": "d120b050f0fd24a002d8a8fab85840176fe8bf60438f361792a875eae2a99ba1",
+      "instructions": [
+        "0048ca00 sub esp, 0xbc",
+        "0048ca06 push ebx",
+        "0048ca07 push ebp",
+        "0048ca08 push esi",
+        "0048ca09 push edi",
+        "0048ca0a mov edi, ecx",
+        "0048ca0c xor ebp, ebp",
+        "0048ca0e xor esi, esi",
+        "0048ca10 mov dword ptr [esp + 0x1c], edi",
+        "0048ca14 mov eax, dword ptr [edi + 0xa68]",
+        "0048ca1a mov dword ptr [esp + 0x10], ebp",
+        "0048ca1e test eax, eax",
+        "0048ca20 jbe 0x48ca4c",
+        "0048ca22 push esi",
+        "0048ca23 mov ecx, edi",
+        "0048ca25 call 0x488830",
+        "0048ca2a cmp byte ptr [eax + 0x1c], 3",
+        "0048ca2e jb 0x48ca3d",
+        "0048ca30 add eax, 0x4c",
+        "0048ca33 mov ecx, edi",
+        "0048ca35 push eax",
+        "0048ca36 call 0x48cf50",
+        "0048ca3b add ebp, eax",
+        "0048ca3d mov eax, dword ptr [edi + 0xa68]",
+        "0048ca43 inc esi",
+        "0048ca44 cmp esi, eax",
+        "0048ca46 jb 0x48ca22",
+        "0048ca48 mov dword ptr [esp + 0x10], ebp"
+      ]
+    }
+  ],
+  "scene_results": [
+    {
+      "name": "player-no-players-baseline",
+      "description": "Map +0xA68 = 0: FUN_4943C0 returns 1 before the loop; no player record. Expected inheritance of the published 196-record scene.",
+      "fixture_sha256": "7bf83da83e32f11fcc67cde39e406cfc4679bf34ced86249f5e5cf5754518841",
+      "outcome": "PASS",
+      "declared_records": 196,
+      "emitted_records": 196,
+      "independent_player_records": [],
+      "observed_player_records": [],
+      "independent_player_records_hex": [],
+      "observed_player_records_hex": [],
+      "inherited_records": 196,
+      "inherited_tail_reproduction": [
+        2779096485,
+        2779096485
+      ],
+      "branch_pc_visits": {
+        "0x4937D0": 1,
+        "0x49386D": 1,
+        "0x4943C0": 1,
+        "0x4943E8": 0,
+        "0x494434": 0,
+        "0x48CA36": 0,
+        "0x48CF50": 0,
+        "0x48CF71": 0
+      },
+      "output_bytes": 3192,
+      "type77_count": 0,
+      "native_steps": 26874
+    },
+    {
+      "name": "player-one-accepted",
+      "description": "One player, byte +0x1C = 3, one +0x4C entry {0x94, 0x11223344}: one independently derived 16-byte record.",
+      "fixture_sha256": "cd8814b64e0390f52a359748be5474f268c9d007b8d1db4acd7795a4aeeeaf2e",
+      "outcome": "PASS",
+      "declared_records": 197,
+      "emitted_records": 197,
+      "independent_player_records": [
+        [
+          1,
+          148,
+          287454020,
+          3
+        ]
+      ],
+      "observed_player_records": [
+        [
+          1,
+          148,
+          287454020,
+          3
+        ]
+      ],
+      "independent_player_records_hex": [
+        "01000000940000004433221103000000"
+      ],
+      "observed_player_records_hex": [
+        "01000000940000004433221103000000"
+      ],
+      "inherited_records": 196,
+      "inherited_tail_reproduction": [
+        2779096485,
+        2779096485
+      ],
+      "branch_pc_visits": {
+        "0x4937D0": 1,
+        "0x49386D": 1,
+        "0x4943C0": 1,
+        "0x4943E8": 1,
+        "0x494434": 1,
+        "0x48CA36": 1,
+        "0x48CF50": 1,
+        "0x48CF71": 1
+      },
+      "output_bytes": 3208,
+      "type77_count": 0,
+      "native_steps": 27106
+    },
+    {
+      "name": "player-two-order",
+      "description": "One player, two +0x4C entries {0x11, 0xAABBCCDD} then {0x22, 0x01020304}: two records in entry-array order.",
+      "fixture_sha256": "60b33b1eb2d0ca92415c84d3055b069d95c67cacf0a8e268aa01bc3fa4c31b23",
+      "outcome": "PASS",
+      "declared_records": 198,
+      "emitted_records": 198,
+      "independent_player_records": [
+        [
+          1,
+          17,
+          2864434397,
+          3
+        ],
+        [
+          1,
+          34,
+          16909060,
+          3
+        ]
+      ],
+      "observed_player_records": [
+        [
+          1,
+          17,
+          2864434397,
+          3
+        ],
+        [
+          1,
+          34,
+          16909060,
+          3
+        ]
+      ],
+      "independent_player_records_hex": [
+        "0100000011000000ddccbbaa03000000",
+        "01000000220000000403020103000000"
+      ],
+      "observed_player_records_hex": [
+        "0100000011000000ddccbbaa03000000",
+        "01000000220000000403020103000000"
+      ],
+      "inherited_records": 196,
+      "inherited_tail_reproduction": [
+        2779096485,
+        2779096485
+      ],
+      "branch_pc_visits": {
+        "0x4937D0": 1,
+        "0x49386D": 1,
+        "0x4943C0": 1,
+        "0x4943E8": 1,
+        "0x494434": 2,
+        "0x48CA36": 1,
+        "0x48CF50": 1,
+        "0x48CF71": 2
+      },
+      "output_bytes": 3224,
+      "type77_count": 0,
+      "native_steps": 27168
+    },
+    {
+      "name": "player-kind2-boundary",
+      "description": "One player, byte +0x1C = 2 (gate is strict 2 < byte): count and writer both skip; no record, declared count stays 196.",
+      "fixture_sha256": "5cd5aede4fd2889658990675828a257e2cb150883d1ac6b5e3bc76961afbb04f",
+      "outcome": "PASS",
+      "declared_records": 196,
+      "emitted_records": 196,
+      "independent_player_records": [],
+      "observed_player_records": [],
+      "independent_player_records_hex": [],
+      "observed_player_records_hex": [],
+      "inherited_records": 196,
+      "inherited_tail_reproduction": [
+        2779096485,
+        2779096485
+      ],
+      "branch_pc_visits": {
+        "0x4937D0": 1,
+        "0x49386D": 1,
+        "0x4943C0": 1,
+        "0x4943E8": 1,
+        "0x494434": 0,
+        "0x48CA36": 0,
+        "0x48CF50": 0,
+        "0x48CF71": 0
+      },
+      "output_bytes": 3192,
+      "type77_count": 0,
+      "native_steps": 26962
+    }
+  ],
+  "coordinator_corrections": [
+    "Extended two source ranges to include original RET 4 instructions",
+    "Scoped independent expected bytes to new player records; scalar tails use observed entry scratch",
+    "Corrected at-most-one-player limitation and lowercase PC lookup"
+  ],
+  "checks_actually_run": [
+    "Coordinator full four-scene no-write replay equals complete saved JSON",
+    "Source and deliverable SHA256 unchanged by replay",
+    "Primary branch, counter, accessor and caller instructions read directly from pinned EXE",
+    "All eight declared and all imported local helpers equal publication copies"
+  ],
+  "limitations": [
+    "Only FUN_4943C0 / FUN_48CF50 with one selected player is exercised.",
+    "Pool/availability groups 1..5 (types 1+(kind<<16)..) are NOT executed or interpreted.",
+    "No GUI reachability, full save, gameplay consumer or real-file write is claimed.",
+    "Type77 count 110 is zero; Type 29, 113, 114 and 186 keep prior treatment.",
+    "Scalar record tails +8..+15 are inherited stack-scratch reproduction, not a new meaning.",
+    "Zero-value +0x4C entries (skip branch of writer and count helper) are not exercised.",
+    "Every scene has at most one player, so accessor index > 0 and cross-player order are untested.",
+    "Header timestamp/date bytes and other inherited header fields are not re-derived here."
+  ],
+  "game_or_gui_tested": false,
+  "original_instruction_substitutions": 0,
+  "complete_variables_writer_implemented": false
+}

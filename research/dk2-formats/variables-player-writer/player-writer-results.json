@@ -1,0 +1,278 @@
+{
+  "scope": "Bounded native CPU audit of the FIRST player-scoped Variables union branch.\n\nTarget\n------\nShipped ``DK2 Editor pro.exe`` writer ``0x4937C0``, first player branch\n``FUN_4943C0`` (entry ``0x4943C0``, called from ``0x49386D``) and the matching\ncount helper ``FUN_48CF50`` called from ``FUN_48CA00`` at ``0x48CA36``.\n\nThe writer stores, for every selected player (player ``+0x1C`` byte >= 3), one\n16-byte record for each entry of the player ``+0x4C`` container whose value\nDWORD is non-zero:\n\n    +0  DWORD 1                    (constant emitted by 0x4943CD)\n    +4  DWORD zero-extended key    (low byte of player[+0x50][i*8+0])\n    +8  DWORD value                (player[+0x50][i*8+4])\n    +12 DWORD zero-extended type   (player[+0x1C] byte)\n\nThe count helper walks the same ``+0x4C`` container (data pointer ``+0x50``,\ncount ``+0x54``) and adds 1 for each non-zero value DWORD.  The player array is\n``Map +0xA64`` (pointer to an array of player pointers) and ``Map +0xA68``\n(dword count); both are confirmed by the original accessor ``0x488830``.\n\nScope / limits\n--------------\nOnly the branch above is newly exercised.  The player-scoped pool/availability\ngroups (types ``1 + (player[+0x1C] << 16)`` .. ``5 + ...``) are left with zero\nlocal and global lists and are NOT interpreted here.  No GUI reachability,\ngameplay meaning, Type77/A80 content or Type 29/186/113/114 semantics are\nclaimed.  Type77 count at Map ``+0x110`` stays 0.  SDT/Crypt are untouched.\n\nFixtures\n--------\nThe fixture builder ``emulate_editor_variables_writer.build()`` and runner\n``native_editor_variables_writer_cpu.run()`` are reused unchanged.  They\ndeclare the Map model at ``0x17700000``, 248 doubles at ``0x17710000``,\nTerrain #6 raw bytes, 0xA5-filled stack, the CFile sink, HeapAlloc/HeapFree,\nlstrlen, interlocked, critical-section, clock/TLS/error IAT adapters and the\noriginal Terrain/default-initializer calls.  This audit adds only data:\n\n    Map +0xA64 / +0xA68          explicit player pointer array / count\n    player object                zero-filled except +0x1C and +0x4C (+0x50/+0x54)\n    entry array                  8-byte {key, value} records\n    pool/availability locals     explicitly zero (branch not in scope)\n\nNo instruction is patched, no register/vtable/getter is replaced and no code\nor read-only section is written.  All 16 bytes of every new player record are\nassigned by the original instructions and checked against an expectation built\nonly from the declared inputs; scalar record tails are the inherited\nwriter-entry stack scratch and are reported as reproduction, not as a new\nsemantic claim.\n",
+  "overall": "PASS",
+  "source": {
+    "exe": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\DK2 Editor pro.exe",
+    "exe_sha256": "989c45df779bccfc9a9e509b2ad0224a9bd269629f74792adc0320fa4b99fb09",
+    "branch": {
+      "address": "0x4943C0",
+      "end": "0x494464",
+      "bytes_hex": "83ec1455578bf933ed897c2408c744240c010000008b87680a000085c0767b538b5c242456558bcfe84344ffff8bf08a461c3c03724d25ff00000033ff894424208b465485c07e378b46508b4cf8048d04f885c9742133c96a108a08894c241c8b56508bcb8b44fa048b13894424208d44241850ff52388b4654473bf87cc98b7c24108b87680a0000453be872975e5b5fb0015d83c414c204005fb0015d83c414c20400",
+      "bytes_sha256": "643e727f1becbdbc312ba0a211efe463ce250f00184106d02d33e6ede27034fe"
+    },
+    "count_helper": {
+      "address": "0x48CF50",
+      "end": "0x48CF7F",
+      "bytes_hex": "8b4c240483ec0833c08b510885d27e198b4904568b31897424048b710485f674014083c1084a75ec5e83c408c20400",
+      "bytes_sha256": "e3bd419c984952ed6a0863d72cbf5e72e8ab7ba71503ce69d0f3ffd1e16ddf61"
+    },
+    "player_accessor": {
+      "address": "0x488830",
+      "bytes_hex": "8b4424048b91680a00003bc2720533c0c204008b89640a00008b0481c2040090",
+      "bytes_sha256": "f182a321345c392bbdeac9b8a2ed1047bed93c3b9ba9892ce3989db482718c1e"
+    }
+  },
+  "branch_semantics": {
+    "player_array": {
+      "pointer_offset": "Map +0xA64",
+      "count_offset": "Map +0xA68",
+      "accessor": "0x488830: index<count ? *(Map[+0xA64]+index*4) : 0"
+    },
+    "gate": "selected player: unsigned byte player[+0x1C] >= 3 (strict 2 < byte)",
+    "count_helper": "0x48CF50(player+0x4C): count entries i where DWORD player[+0x50][i*8+4] != 0",
+    "first_emitted_type": 1,
+    "record": {
+      "size": 16,
+      "fields": [
+        {
+          "offset": 0,
+          "value": "DWORD constant 1",
+          "pc": "0x4943CD"
+        },
+        {
+          "offset": 4,
+          "value": "DWORD zero-extended key byte player[+0x50][i*8+0]",
+          "pc": "0x49441C"
+        },
+        {
+          "offset": 8,
+          "value": "DWORD player[+0x50][i*8+4]",
+          "pc": "0x49442B"
+        },
+        {
+          "offset": 12,
+          "value": "DWORD zero-extended player[+0x1C]",
+          "pc": "0x4943FD"
+        }
+      ],
+      "sink_call_pc": "0x494434",
+      "unasserted_bytes": 0
+    },
+    "call_sites": {
+      "total_count": "0x4937D0 -> 0x48CA00",
+      "player_records": "0x49386D -> 0x4943C0",
+      "player_lookup": "0x4943E8 -> 0x488830",
+      "count_helper": "0x48CA36 -> 0x48CF50"
+    }
+  },
+  "helper_sha256": {
+    "emulate_editor_variables_writer.py": "e46fa4ffd6f3363e3b65b8a526cba75b54147ff70f0e1da6f9ae64c411e0e69d",
+    "native_editor_variables_writer_cpu.py": "702f575ae8d7846abaf9da5944e8ef46b74989d35d5a916988a1e5d335ffaf8c",
+    "emulate_editor_global_variables.py": "a0542307af20f83597a8561a9b154467dfa436d751d70ac78c780c7cf9d30266",
+    "emulate_room_model_chain.py": "8f4a37ff095963e244d9d540ebe2cdd880cb49c818cb397cf65aeebe4375f5ad",
+    "probe_editor_global_defaults.py": "777435e02644ed47ca5deca4360add679000036498985a502ca3fc853188112e",
+    "emulate_terrain_text_stat.py": "2185f9924b840267035740b05fa7276c218c782d93692c39ba2861c53b489b14",
+    "emulate_room_writer.py": "22653c26ebc6322681fbfe43a3f8ffb5cb4d96f93b92489adfa4ffa19acba678",
+    "build_effect_semantics.py": "b62e18d81b46d9726ad8565a63e3c2c8716226d349e7054e433e0ed5af730b43"
+  },
+  "fixture_contract": {
+    "player_array": {
+      "address": "0x17790000",
+      "layout": "DWORD player pointers"
+    },
+    "player_object": {
+      "address": "0x177A0000",
+      "size": 512,
+      "fields": "+0x1C kind byte; +0x4C container {+0x50 data, +0x54 count}; other pool/availability containers explicitly zero"
+    },
+    "entries": {
+      "address": "0x177B0000",
+      "layout": "8-byte {DWORD key, DWORD value}"
+    },
+    "map_fields": "Map +0xA64 pointer array, +0xA68 count; +0x110 Type77 count remains 0",
+    "registers": "every call: EAX/EBX/ECX/EDX/ESI/EDI zeroed except declared ECX; ESP=EBP=0x7FFF0000; EFLAGS=2; FPCW=0x37F; return stub at 0x16000000",
+    "inherited": "CFile sink, HeapAlloc/HeapFree, lstrlen, interlocked, critical-section, clock/TLS/error IAT adapters and Terrain #6/default-initializer calls belong to the reused published fixture, not to this audit"
+  },
+  "limitations": [
+    "Only FUN_4943C0 / FUN_48CF50 with one selected player is exercised.",
+    "Pool/availability groups 1..5 (types 1+(kind<<16)..) are NOT executed or interpreted.",
+    "No GUI reachability, full save, gameplay consumer or real-file write is claimed.",
+    "Type77 count 110 is zero; Type 29, 113, 114 and 186 keep prior treatment.",
+    "Scalar record tails +8..+15 are inherited stack-scratch reproduction, not a new meaning.",
+    "Zero-value +0x4C entries (skip branch of writer and count helper) are not exercised.",
+    "Every scene has at most one player, so accessor index > 0 and cross-player order are untested.",
+    "Header timestamp/date bytes and other inherited header fields are not re-derived here."
+  ],
+  "scenes": [
+    {
+      "name": "player-no-players-baseline",
+      "description": "Map +0xA68 = 0: FUN_4943C0 returns 1 before the loop; no player record. Expected inheritance of the published 196-record scene.",
+      "fixture_sha256": "7bf83da83e32f11fcc67cde39e406cfc4679bf34ced86249f5e5cf5754518841",
+      "outcome": "PASS",
+      "declared_records": 196,
+      "emitted_records": 196,
+      "independent_player_records": [],
+      "observed_player_records": [],
+      "independent_player_records_hex": [],
+      "observed_player_records_hex": [],
+      "inherited_records": 196,
+      "inherited_tail_reproduction": [
+        2779096485,
+        2779096485
+      ],
+      "branch_pc_visits": {
+        "0x4937D0": 1,
+        "0x49386D": 1,
+        "0x4943C0": 1,
+        "0x4943E8": 0,
+        "0x494434": 0,
+        "0x48CA36": 0,
+        "0x48CF50": 0,
+        "0x48CF71": 0
+      },
+      "output_bytes": 3192,
+      "type77_count": 0,
+      "native_steps": 26874
+    },
+    {
+      "name": "player-one-accepted",
+      "description": "One player, byte +0x1C = 3, one +0x4C entry {0x94, 0x11223344}: one independently derived 16-byte record.",
+      "fixture_sha256": "cd8814b64e0390f52a359748be5474f268c9d007b8d1db4acd7795a4aeeeaf2e",
+      "outcome": "PASS",
+      "declared_records": 197,
+      "emitted_records": 197,
+      "independent_player_records": [
+        [
+          1,
+          148,
+          287454020,
+          3
+        ]
+      ],
+      "observed_player_records": [
+        [
+          1,
+          148,
+          287454020,
+          3
+        ]
+      ],
+      "independent_player_records_hex": [
+        "01000000940000004433221103000000"
+      ],
+      "observed_player_records_hex": [
+        "01000000940000004433221103000000"
+      ],
+      "inherited_records": 196,
+      "inherited_tail_reproduction": [
+        2779096485,
+        2779096485
+      ],
+      "branch_pc_visits": {
+        "0x4937D0": 1,
+        "0x49386D": 1,
+        "0x4943C0": 1,
+        "0x4943E8": 1,
+        "0x494434": 1,
+        "0x48CA36": 1,
+        "0x48CF50": 1,
+        "0x48CF71": 1
+      },
+      "output_bytes": 3208,
+      "type77_count": 0,
+      "native_steps": 27106
+    },
+    {
+      "name": "player-two-order",
+      "description": "One player, two +0x4C entries {0x11, 0xAABBCCDD} then {0x22, 0x01020304}: two records in entry-array order.",
+      "fixture_sha256": "60b33b1eb2d0ca92415c84d3055b069d95c67cacf0a8e268aa01bc3fa4c31b23",
+      "outcome": "PASS",
+      "declared_records": 198,
+      "emitted_records": 198,
+      "independent_player_records": [
+        [
+          1,
+          17,
+          2864434397,
+          3
+        ],
+        [
+          1,
+          34,
+          16909060,
+          3
+        ]
+      ],
+      "observed_player_records": [
+        [
+          1,
+          17,
+          2864434397,
+          3
+        ],
+        [
+          1,
+          34,
+          16909060,
+          3
+        ]
+      ],
+      "independent_player_records_hex": [
+        "0100000011000000ddccbbaa03000000",
+        "01000000220000000403020103000000"
+      ],
+      "observed_player_records_hex": [
+        "0100000011000000ddccbbaa03000000",
+        "01000000220000000403020103000000"
+      ],
+      "inherited_records": 196,
+      "inherited_tail_reproduction": [
+        2779096485,
+        2779096485
+      ],
+      "branch_pc_visits": {
+        "0x4937D0": 1,
+        "0x49386D": 1,
+        "0x4943C0": 1,
+        "0x4943E8": 1,
+        "0x494434": 2,
+        "0x48CA36": 1,
+        "0x48CF50": 1,
+        "0x48CF71": 2
+      },
+      "output_bytes": 3224,
+      "type77_count": 0,
+      "native_steps": 27168
+    },
+    {
+      "name": "player-kind2-boundary",
+      "description": "One player, byte +0x1C = 2 (gate is strict 2 < byte): count and writer both skip; no record, declared count stays 196.",
+      "fixture_sha256": "5cd5aede4fd2889658990675828a257e2cb150883d1ac6b5e3bc76961afbb04f",
+      "outcome": "PASS",
+      "declared_records": 196,
+      "emitted_records": 196,
+      "independent_player_records": [],
+      "observed_player_records": [],
+      "independent_player_records_hex": [],
+      "observed_player_records_hex": [],
+      "inherited_records": 196,
+      "inherited_tail_reproduction": [
+        2779096485,
+        2779096485
+      ],
+      "branch_pc_visits": {
+        "0x4937D0": 1,
+        "0x49386D": 1,
+        "0x4943C0": 1,
+        "0x4943E8": 1,
+        "0x494434": 0,
+        "0x48CA36": 0,
+        "0x48CF50": 0,
+        "0x48CF71": 0
+      },
+      "output_bytes": 3192,
+      "type77_count": 0,
+      "native_steps": 26962
+    }
+  ]
+}
