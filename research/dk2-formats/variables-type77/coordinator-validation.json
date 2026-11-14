@@ -1,0 +1,337 @@
+{
+  "source_sha256": "989c45df779bccfc9a9e509b2ad0224a9bd269629f74792adc0320fa4b99fb09",
+  "summary": {
+    "scenes": 7,
+    "passed": 7,
+    "failed": 0,
+    "blocked": 0
+  },
+  "full_report_matches_saved": true,
+  "no_write_hashes_unchanged": true,
+  "files": {
+    "audit_type77.py": "26f145be67507838b2802c6fcec6b940492490400cc849d349e5d325f1bded33",
+    "type77-explanation.ru.md": "f9645389bd6644a315679482dcb4b96113d8243c019ce2aa6f47f52b2ddde952",
+    "type77-results.json": "b1e931ccd05a637b8a2aca98341c6c59e286d21f68b97b424c289379a1a6f190",
+    "type77-scenes.json": "e76be2ddc6d094f8a6bc9bc2eb94c84930c6d2298e45daec20b18826ccd8bdd1"
+  },
+  "helpers": [
+    {
+      "path": "emulate_editor_variables_writer.py",
+      "sha256": "e46fa4ffd6f3363e3b65b8a526cba75b54147ff70f0e1da6f9ae64c411e0e69d",
+      "publication_copy_equal": true
+    },
+    {
+      "path": "native_editor_variables_writer_cpu.py",
+      "sha256": "702f575ae8d7846abaf9da5944e8ef46b74989d35d5a916988a1e5d335ffaf8c",
+      "publication_copy_equal": true
+    },
+    {
+      "path": "emulate_editor_global_variables.py",
+      "sha256": "a0542307af20f83597a8561a9b154467dfa436d751d70ac78c780c7cf9d30266",
+      "publication_copy_equal": true
+    },
+    {
+      "path": "emulate_room_model_chain.py",
+      "sha256": "8f4a37ff095963e244d9d540ebe2cdd880cb49c818cb397cf65aeebe4375f5ad",
+      "publication_copy_equal": true
+    },
+    {
+      "path": "probe_editor_global_defaults.py",
+      "sha256": "777435e02644ed47ca5deca4360add679000036498985a502ca3fc853188112e",
+      "publication_copy_equal": true
+    },
+    {
+      "path": "emulate_terrain_text_stat.py",
+      "sha256": "2185f9924b840267035740b05fa7276c218c782d93692c39ba2861c53b489b14",
+      "publication_copy_equal": true
+    }
+  ],
+  "primary_blocks": [
+    {
+      "va": "0x48d720",
+      "bytes": "8b4424048b911001000083ec083bc28d44240073048d44240083c408c20400",
+      "sha256": "3d2cacb6a621b9a59ca8617ae56ee3a1d0d92c9d8997e2e9712dda1ea6f36437",
+      "instructions": [
+        "0048d720 mov eax, dword ptr [esp + 4]",
+        "0048d724 mov edx, dword ptr [ecx + 0x110]",
+        "0048d72a sub esp, 8",
+        "0048d72d cmp eax, edx",
+        "0048d72f lea eax, [esp]",
+        "0048d733 jae 0x48d739",
+        "0048d735 lea eax, [esp]",
+        "0048d739 add esp, 8",
+        "0048d73c ret 4"
+      ]
+    },
+    {
+      "va": "0x4941fd",
+      "bytes": "33edc74424104d000000",
+      "sha256": "90a9af251877f1eaf8899636ae9bd28867d4a7ed34404c9c58ca00d8048cc631",
+      "instructions": [
+        "004941fd xor ebp, ebp",
+        "004941ff mov dword ptr [esp + 0x10], 0x4d"
+      ]
+    },
+    {
+      "va": "0x48cf20",
+      "bytes": "85c0740680ff207301458b87",
+      "sha256": "9bd74d2aaef64c41585a335e0fffee64dbcf16271f4c29acf0d870edea151fcd",
+      "instructions": [
+        "0048cf20 test eax, eax",
+        "0048cf22 je 0x48cf2a",
+        "0048cf24 cmp bh, 0x20",
+        "0048cf27 jae 0x48cf2a",
+        "0048cf29 inc ebp"
+      ]
+    },
+    {
+      "va": "0x494247",
+      "bytes": "388a680100007407403bc672f0eb3685d274328b44243d3c20732a81e1ff00000025ff000000894c24148b8c2470010000894424188d4424108b116a1050897c2424ff52",
+      "sha256": "9c2ee22d4f3f97b43c05731ad224d4a14ce75e434bd31f3f4aa6628a4bdba4da",
+      "instructions": [
+        "00494247 cmp byte ptr [edx + 0x168], cl",
+        "0049424d je 0x494256",
+        "0049424f inc eax",
+        "00494250 cmp eax, esi",
+        "00494252 jb 0x494244",
+        "00494254 jmp 0x49428c",
+        "00494256 test edx, edx",
+        "00494258 je 0x49428c",
+        "0049425a mov eax, dword ptr [esp + 0x3d]",
+        "0049425e cmp al, 0x20",
+        "00494260 jae 0x49428c",
+        "00494262 and ecx, 0xff",
+        "00494268 and eax, 0xff",
+        "0049426d mov dword ptr [esp + 0x14], ecx",
+        "00494271 mov ecx, dword ptr [esp + 0x170]",
+        "00494278 mov dword ptr [esp + 0x18], eax",
+        "0049427c lea eax, [esp + 0x10]",
+        "00494280 mov edx, dword ptr [ecx]",
+        "00494282 push 0x10",
+        "00494284 push eax",
+        "00494285 mov dword ptr [esp + 0x24], edi"
+      ]
+    }
+  ],
+  "limitations": [
+    "Type77 comparison uses observed-fixture golden values",
+    "Boundary divergence is explicitly fixture-conditioned",
+    "No natural GUI occurrence or gameplay tested"
+  ],
+  "date": "2026-11-14",
+  "acceptance": "PASS for bounded native instruction execution and configured-fixture reproduction",
+  "native_game_or_gui_tested": false,
+  "writer_implementation_added": false,
+  "coordinator_edits": "Explanatory docstring and two-declared description reconciled with accepted scope; no algorithm changes",
+  "imported_local_helper_sources": [
+    {
+      "path": "audit_targeted_spell.py",
+      "bytes": 5547,
+      "sha256": "a49e013c69ed9ea36e6b03e9a3122cf3b0c7d9cd7b747e9edc1cdee363713bdb"
+    },
+    {
+      "path": "build_effect_semantics.py",
+      "bytes": 12363,
+      "sha256": "b62e18d81b46d9726ad8565a63e3c2c8716226d349e7054e433e0ed5af730b43"
+    },
+    {
+      "path": "build_targeted_spell.py",
+      "bytes": 11263,
+      "sha256": "0b7ca67625350f9cddaebe0ab7a5aab4b9e073954aa86c19e85ab3b2ff9f2b75"
+    },
+    {
+      "path": "dk2_formats.py",
+      "bytes": 38275,
+      "sha256": "de49eda2daabd83afba4f7a27be2dd8008128be2901aff908fdf6c8aca0ca2c7"
+    },
+    {
+      "path": "emulate_creature_shot_request.py",
+      "bytes": 9232,
+      "sha256": "b580842cccdd0d8eca6b27fc69aa49cd45f62070ef9c7217fac704d28723e6f5"
+    },
+    {
+      "path": "emulate_editor_global_variables.py",
+      "bytes": 6946,
+      "sha256": "a0542307af20f83597a8561a9b154467dfa436d751d70ac78c780c7cf9d30266"
+    },
+    {
+      "path": "emulate_editor_variables_writer.py",
+      "bytes": 10945,
+      "sha256": "e46fa4ffd6f3363e3b65b8a526cba75b54147ff70f0e1da6f9ae64c411e0e69d"
+    },
+    {
+      "path": "emulate_element_colors.py",
+      "bytes": 8570,
+      "sha256": "9913d3c58846a01f92cbae6d32931fc6735cad66c7e1fb17b7bbf2ecd16e213c"
+    },
+    {
+      "path": "emulate_hero_parties.py",
+      "bytes": 11777,
+      "sha256": "2b9eb62fef32942a0cb4332be4c0ee7bc50fcf08524c5519e5245d4e2edf53f7"
+    },
+    {
+      "path": "emulate_native_shot_success.py",
+      "bytes": 9048,
+      "sha256": "ee4dfa40654fe5e4b99db2fc1877b0ae5388bbe56b8490dfb1475eaa14e365c3"
+    },
+    {
+      "path": "emulate_placed_creatures.py",
+      "bytes": 13989,
+      "sha256": "ee15c5c34ac2e1553fc96fe61ab9e66d3854ed51b60f42a150053045ec6e25f3"
+    },
+    {
+      "path": "emulate_placed_objects.py",
+      "bytes": 11019,
+      "sha256": "209d355c4341be1574411c62bddc7331c8b6f81ac43067cc8d618018e7a670d5"
+    },
+    {
+      "path": "emulate_placed_structures.py",
+      "bytes": 8137,
+      "sha256": "db8d939590cc872a9cdd3df5195be0c9e39c9c4c3992d935d2a4f7cf18f27a28"
+    },
+    {
+      "path": "emulate_room_model_chain.py",
+      "bytes": 17814,
+      "sha256": "8f4a37ff095963e244d9d540ebe2cdd880cb49c818cb397cf65aeebe4375f5ad"
+    },
+    {
+      "path": "emulate_room_writer.py",
+      "bytes": 9434,
+      "sha256": "22653c26ebc6322681fbfe43a3f8ffb5cb4d96f93b92489adfa4ffa19acba678"
+    },
+    {
+      "path": "emulate_targeted_spell.py",
+      "bytes": 10408,
+      "sha256": "83f10aa45ff9a0287e48b056a34cb16ad127b207ff77c212efaedc946e36ebb7"
+    },
+    {
+      "path": "emulate_terrain_model_chain.py",
+      "bytes": 7786,
+      "sha256": "704194b83837080e2719b40b3ceb5677b4a56c9692e75eb0c97f34fd509f0e98"
+    },
+    {
+      "path": "emulate_terrain_text_stat.py",
+      "bytes": 5293,
+      "sha256": "2185f9924b840267035740b05fa7276c218c782d93692c39ba2861c53b489b14"
+    },
+    {
+      "path": "memory_readout.py",
+      "bytes": 711,
+      "sha256": "d4c61ba4faa946798570ed1fc731cb86a57e5176ac24cf293cef75b2f4e8583a"
+    },
+    {
+      "path": "native_creature_shot_request.py",
+      "bytes": 1733,
+      "sha256": "a0f2a54c24293158478612f194cd71a567bf52585b6e566baeaa9449c615e916"
+    },
+    {
+      "path": "native_door_field_layout.py",
+      "bytes": 1887,
+      "sha256": "6c15c87699f158cddd1ce9e6835c2867674e7c26ce9d1a41e553907f2c05bd86"
+    },
+    {
+      "path": "native_editor_text_executor.py",
+      "bytes": 5023,
+      "sha256": "d38440fda813fdf42e51a6ec9ecb6d49eebead4d481ab472622d9dbdde0d84b8"
+    },
+    {
+      "path": "native_editor_variables_writer_cpu.py",
+      "bytes": 5436,
+      "sha256": "702f575ae8d7846abaf9da5944e8ef46b74989d35d5a916988a1e5d335ffaf8c"
+    },
+    {
+      "path": "native_element_colors.py",
+      "bytes": 3873,
+      "sha256": "5784a72bd2f8f49c0a438479f47a12cfdfdb03500f58544dd5878984bff1959c"
+    },
+    {
+      "path": "native_hero_parties.py",
+      "bytes": 5098,
+      "sha256": "603d71b94c93f15e439d110cfdeab9e48baf5261c1dbfd9486dcf603bc747881"
+    },
+    {
+      "path": "native_melee_animation_flag.py",
+      "bytes": 845,
+      "sha256": "c52155dcd776e6a0a93393e3cd93b62d4e5b6943b27692691495923a76190a9d"
+    },
+    {
+      "path": "native_placed_creatures.py",
+      "bytes": 4690,
+      "sha256": "10737ee08c4bc81fd3893ee9c98fee23f109d9508255a48e6a44ba111b01c57f"
+    },
+    {
+      "path": "native_placed_objects.py",
+      "bytes": 3532,
+      "sha256": "0c82e28deb388e482ffba293f69f08e5d6a23b3adc12e4c4929f268f6c9faf95"
+    },
+    {
+      "path": "native_placed_structures.py",
+      "bytes": 2224,
+      "sha256": "1c6b19aafce9e84825945f18f6e3e62f9694f6eca5a1a0252f83e24ca1e9dd95"
+    },
+    {
+      "path": "native_room_writer.py",
+      "bytes": 2679,
+      "sha256": "76b8bee9fabde681f9abb8de4e8312161ff49c68430b1c5fca5e0b3bdc2f82eb"
+    },
+    {
+      "path": "native_spell_alternatives.py",
+      "bytes": 2693,
+      "sha256": "82aa05afdb0ee7532df3bd4d0084ad37be045d33adf63feb6506a593baeafd56"
+    },
+    {
+      "path": "native_spell_writer.py",
+      "bytes": 2100,
+      "sha256": "8ec58d9056e6522589412b6f9b32ab449878eb6f37ab83335b413fc554176f7e"
+    },
+    {
+      "path": "native_targeted_spell.py",
+      "bytes": 1018,
+      "sha256": "87e0d6aeb5825a591d7fde10bb9b0c0bc3ca35157d90a62ab3fe547637e9d651"
+    },
+    {
+      "path": "native_terrain_catalogue.py",
+      "bytes": 4208,
+      "sha256": "41c271973270abec7c834789511309f6f72e028d0579c55a7810a0916c671048"
+    },
+    {
+      "path": "native_trap_field_layout.py",
+      "bytes": 1309,
+      "sha256": "b63992615aa33f7b881111598d64657505f84d01ad9395a77f6fd23c5a66a8c9"
+    },
+    {
+      "path": "party_writer_stack_audit.py",
+      "bytes": 3474,
+      "sha256": "d73304c9325433d585a887daff2fb3e9ac77b57d5d609b071f94e5f90a9c6664"
+    },
+    {
+      "path": "probe_editor_global_defaults.py",
+      "bytes": 1641,
+      "sha256": "777435e02644ed47ca5deca4360add679000036498985a502ca3fc853188112e"
+    },
+    {
+      "path": "probe_terrain_text_stat.py",
+      "bytes": 2941,
+      "sha256": "e2f915db90da3aa43d051c32c3b28bc9d947aeb7c3f53efc682dc7efac192ca9"
+    }
+  ],
+  "terrain_source": {
+    "path": "Dungeon Keeper 2/Data/editor/Terrain.kwd",
+    "bytes": 22688,
+    "sha256": "1b4296b0cf696d5428e6d3d94eb8571e2601bd78fc51caa6c3e1e13c0695e77d"
+  },
+  "runtime": {
+    "python": "3.12.15 (main, Oct  9 2026, 15:21:55) [MSC v.1944 64 bit (AMD64)]",
+    "unicorn": "2.1.4",
+    "capstone": "5.0.7",
+    "pefile": "2024.8.26"
+  },
+  "checks_actually_run": [
+    "All four worker snapshot SHA256 values matched before coordinator editorial reconciliation",
+    "Coordinator full audit(write=False) report exactly matched saved JSON after normalization",
+    "No-write replay left all four deliverable hashes unchanged",
+    "Coordinator disassembled source accessor, type store, counter filter and writer filter bytes",
+    "Six declared helpers and all imported local helper sources match publication copies"
+  ],
+  "review_disposition": "Five documentation/provenance findings corrected and personally checked; independent review was not a separate final-snapshot rerun"
+}

@@ -1,0 +1,152 @@
+{
+  "scope": "Bounded native CPU audit of the Pro Variables writer Type77 (0x4D) branch.",
+  "source": {
+    "path": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\DK2 Editor pro.exe",
+    "pinned_sha256": "989c45df779bccfc9a9e509b2ad0224a9bd269629f74792adc0320fa4b99fb09",
+    "observed_sha256": "989c45df779bccfc9a9e509b2ad0224a9bd269629f74792adc0320fa4b99fb09",
+    "sha256_matches": true
+  },
+  "helper_sha256": {
+    "emulate_editor_variables_writer.py": "e46fa4ffd6f3363e3b65b8a526cba75b54147ff70f0e1da6f9ae64c411e0e69d",
+    "native_editor_variables_writer_cpu.py": "702f575ae8d7846abaf9da5944e8ef46b74989d35d5a916988a1e5d335ffaf8c",
+    "emulate_editor_global_variables.py": "a0542307af20f83597a8561a9b154467dfa436d751d70ac78c780c7cf9d30266",
+    "emulate_room_model_chain.py": "8f4a37ff095963e244d9d540ebe2cdd880cb49c818cb397cf65aeebe4375f5ad",
+    "probe_editor_global_defaults.py": "777435e02644ed47ca5deca4360add679000036498985a502ca3fc853188112e",
+    "emulate_terrain_text_stat.py": "2185f9924b840267035740b05fa7276c218c782d93692c39ba2861c53b489b14"
+  },
+  "builder": "emulate_editor_variables_writer.build",
+  "runner": "native_editor_variables_writer_cpu.run",
+  "memory_anchors": {
+    "MAP": "0x17700000",
+    "VALUES": "0x17710000",
+    "STACK": "0x7fff0000",
+    "COUNT_SCRATCH": "0x7ffefdb4",
+    "WRITER_SCRATCH": "0x7ffefe84",
+    "DAT_0054F9D0": "0x17781000",
+    "entity_base": "0x17782000"
+  },
+  "scenes": [
+    {
+      "name": "zero-declared",
+      "description": "Map +0x110 = 0: both Type77 loops are skipped entirely.",
+      "map_count": 0,
+      "vector_entities": [],
+      "count_scratch_key": "0x294",
+      "expected_declared": 196,
+      "expected_emitted": 196,
+      "expected_divergence": false,
+      "expected_type77": [],
+      "expected_type77_source": "observed-fixture golden values"
+    },
+    {
+      "name": "zero-vector",
+      "description": "Map +0x110 = 1 but DAT_0054F9D4 = 0: loops run, filter has no entity.",
+      "map_count": 1,
+      "vector_entities": [],
+      "count_scratch_key": "0x294",
+      "expected_declared": 196,
+      "expected_emitted": 196,
+      "expected_divergence": false,
+      "expected_type77": [],
+      "expected_type77_source": "observed-fixture golden values"
+    },
+    {
+      "name": "one-accepted",
+      "description": "Map +0x110 = 1, vector[0].+0x168 = 0x94, count scratch key 0x294.",
+      "map_count": 1,
+      "vector_entities": [
+        "0x94"
+      ],
+      "count_scratch_key": "0x294",
+      "expected_declared": 197,
+      "expected_emitted": 197,
+      "expected_divergence": false,
+      "expected_type77": [
+        [
+          77,
+          148,
+          2,
+          4800915
+        ]
+      ],
+      "expected_type77_source": "observed-fixture golden values"
+    },
+    {
+      "name": "two-declared",
+      "description": "Map +0x110 = 2: one Type77 record is observed; exact second-iteration accessor reads are not captured in the published evidence.",
+      "map_count": 2,
+      "vector_entities": [
+        "0x94"
+      ],
+      "count_scratch_key": "0x294",
+      "expected_declared": 197,
+      "expected_emitted": 197,
+      "expected_divergence": false,
+      "expected_type77": [
+        [
+          77,
+          148,
+          2,
+          4800915
+        ]
+      ],
+      "expected_type77_source": "observed-fixture golden values"
+    },
+    {
+      "name": "entity-mismatch",
+      "description": "Vector[0].+0x168 = 0x00 != key low byte 0x94: both filters reject.",
+      "map_count": 1,
+      "vector_entities": [
+        "0x0"
+      ],
+      "count_scratch_key": "0x294",
+      "expected_declared": 196,
+      "expected_emitted": 196,
+      "expected_divergence": false,
+      "expected_type77": [],
+      "expected_type77_source": "observed-fixture golden values"
+    },
+    {
+      "name": "count-bh20-boundary",
+      "description": "Count scratch key 0x2094 (BH = 0x20) rejects at 0x48CF24/0x48CF27, while the writer stack-slot key 0x294 (BH = 0x02) still emits: declared count and emitted records diverge.",
+      "map_count": 1,
+      "vector_entities": [
+        "0x94"
+      ],
+      "count_scratch_key": "0x2094",
+      "expected_declared": 196,
+      "expected_emitted": 197,
+      "expected_divergence": true,
+      "expected_type77": [
+        [
+          77,
+          148,
+          2,
+          4800915
+        ]
+      ],
+      "expected_type77_source": "observed-fixture golden values"
+    },
+    {
+      "name": "count-bh1f-control",
+      "description": "Count scratch key 0x1F94 (BH = 0x1F) passes the 0x20 boundary and accepts, giving declared count 197.",
+      "map_count": 1,
+      "vector_entities": [
+        "0x94"
+      ],
+      "count_scratch_key": "0x1f94",
+      "expected_declared": 197,
+      "expected_emitted": 197,
+      "expected_divergence": false,
+      "expected_type77": [
+        [
+          77,
+          148,
+          2,
+          4800915
+        ]
+      ],
+      "expected_type77_source": "observed-fixture golden values"
+    }
+  ]
+}
