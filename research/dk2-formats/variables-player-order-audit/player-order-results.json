@@ -1,0 +1,710 @@
+{
+  "scope": "Bounded native CPU audit: zero-value skip and cross-player order in the\nfirst player-scoped Variables union branch.\n\nTarget\n------\nShipped ``DK2 Editor pro.exe`` (pinned SHA-256 below), original instructions\nonly: writer ``0x4937C0``, first player branch ``FUN_4943C0`` (called from\n``0x49386D``), total-count pass ``FUN_48CA00`` (called from ``0x4937D0``), its\nplayer count helper ``FUN_48CF50`` (called from ``0x48CA36``) and the player\naccessor ``FUN_488830`` (called from ``0x4943E8``, ``0x48CA25``, ``0x48CA6F``).\n\nThe accepted parent audit (``../variables-player-writer/audit_player_writer.py``)\nproved one accepted player, entry order inside one player and the strict\n``2 < player[+0x1C]`` gate.  It explicitly left open:\n\n* the writer/count-helper skip of a ``+0x4C`` entry whose value DWORD is zero,\n* player-array index > 0, i.e. cross-player order and Map ``+0xA64``/``+0xA68``\n  with more than one pointer.\n\nThis audit covers only those two gaps with four new data-only fixtures.  The\nfixed/player pool groups (types ``1 + (kind << 16)`` .. ``5 + ...``) stay with\nzero local and global lists and are NOT interpreted.  Type77 count at Map\n``+0x110`` stays 0.  Types 29/113/114/186, SDT and Crypt are untouched.\n\nFixtures\n--------\n``emulate_editor_variables_writer.build()`` and\n``native_editor_variables_writer_cpu.run()`` are reused unchanged (original\ninstructions, no patches, no register/vtable/getter replacement, no\nnew instruction hooks).  The published Map/Terrain/stack/CFile/heap scaffolding is\ninherited; this audit adds only data:\n\n    Map +0xA64 / +0xA68    explicit pointer array / player count\n    0x177A0000 + i*0x1000  player object i (zeros except +0x1C and +0x4C)\n    0x177B0000 + i*0x1000  player i's 8-byte {key, value} entry array\n\nEvery player and every entry array has its own memory, so two players cannot\nalias.  Expected records are derived only from the declared inputs; the\ninherited scalar record tails are the writer-entry stack scratch observed in\nthe reused runner and are reported as reproduction, not as a new semantic\nclaim.\n",
+  "overall": "PASS",
+  "source": {
+    "exe": "D:\\Games\\DK2\\Dungeon Keeper 2\\Data\\editor\\DK2 Editor pro.exe",
+    "exe_sha256": "989c45df779bccfc9a9e509b2ad0224a9bd269629f74792adc0320fa4b99fb09",
+    "branch": {
+      "address": "0x4943C0",
+      "end": "0x494464",
+      "bytes_hex": "83ec1455578bf933ed897c2408c744240c010000008b87680a000085c0767b538b5c242456558bcfe84344ffff8bf08a461c3c03724d25ff00000033ff894424208b465485c07e378b46508b4cf8048d04f885c9742133c96a108a08894c241c8b56508bcb8b44fa048b13894424208d44241850ff52388b4654473bf87cc98b7c24108b87680a0000453be872975e5b5fb0015d83c414c204005fb0015d83c414c20400",
+      "bytes_sha256": "643e727f1becbdbc312ba0a211efe463ce250f00184106d02d33e6ede27034fe"
+    },
+    "count_pass": {
+      "address": "0x48CA00",
+      "end": "0x48CEE6",
+      "scope": "prefix only; full execution also reaches later count code",
+      "bytes_sha256": "bb49a9e8c89dd402d3416cf7b69d5f598bee817897ec05e9cd8e222674776f57"
+    },
+    "count_helper": {
+      "address": "0x48CF50",
+      "end": "0x48CF7F",
+      "bytes_hex": "8b4c240483ec0833c08b510885d27e198b4904568b31897424048b710485f674014083c1084a75ec5e83c408c20400",
+      "bytes_sha256": "e3bd419c984952ed6a0863d72cbf5e72e8ab7ba71503ce69d0f3ffd1e16ddf61"
+    },
+    "player_accessor": {
+      "address": "0x488830",
+      "end": "0x48884F",
+      "bytes_hex": "8b4424048b91680a00003bc2720533c0c204008b89640a00008b0481c20400",
+      "bytes_sha256": "3638a517aee355908504b63d3fe5bed6b165d6176b5c8f90502a97e9df84e3c0"
+    }
+  },
+  "helper_sha256": {
+    "emulate_editor_variables_writer.py": "e46fa4ffd6f3363e3b65b8a526cba75b54147ff70f0e1da6f9ae64c411e0e69d",
+    "native_editor_variables_writer_cpu.py": "702f575ae8d7846abaf9da5944e8ef46b74989d35d5a916988a1e5d335ffaf8c",
+    "emulate_editor_global_variables.py": "a0542307af20f83597a8561a9b154467dfa436d751d70ac78c780c7cf9d30266",
+    "emulate_room_model_chain.py": "8f4a37ff095963e244d9d540ebe2cdd880cb49c818cb397cf65aeebe4375f5ad",
+    "probe_editor_global_defaults.py": "777435e02644ed47ca5deca4360add679000036498985a502ca3fc853188112e",
+    "emulate_terrain_text_stat.py": "2185f9924b840267035740b05fa7276c218c782d93692c39ba2861c53b489b14",
+    "emulate_room_writer.py": "22653c26ebc6322681fbfe43a3f8ffb5cb4d96f93b92489adfa4ffa19acba678",
+    "build_effect_semantics.py": "b62e18d81b46d9726ad8565a63e3c2c8716226d349e7054e433e0ed5af730b43",
+    "emulate_element_colors.py": "9913d3c58846a01f92cbae6d32931fc6735cad66c7e1fb17b7bbf2ecd16e213c",
+    "audit_targeted_spell.py": "a49e013c69ed9ea36e6b03e9a3122cf3b0c7d9cd7b747e9edc1cdee363713bdb",
+    "variables-player-writer/audit_player_writer.py": "c029ce36129d8bfa8f15d6708c3146ab3c6c4d284e4b28214cc35f008dcdaf3f"
+  },
+  "pc_semantics": [
+    {
+      "pc": "0x4937D0",
+      "static": "call 0x48ca00",
+      "role": "CALL 0x48CA00 total count pass"
+    },
+    {
+      "pc": "0x49386D",
+      "static": "call 0x4943c0",
+      "role": "CALL 0x4943C0 first player branch"
+    },
+    {
+      "pc": "0x49389D",
+      "static": "call 0x488830",
+      "role": "other player loop in 0x4937C0: CALL 0x488830 (not interpreted)"
+    },
+    {
+      "pc": "0x4943C0",
+      "static": "sub esp, 0x14",
+      "role": "FUN_4943C0 entry"
+    },
+    {
+      "pc": "0x4943E5",
+      "static": "push ebp",
+      "role": "PUSH EBP: per-player loop head (index push)"
+    },
+    {
+      "pc": "0x4943E8",
+      "static": "call 0x488830",
+      "role": "CALL 0x488830: player pointer lookup"
+    },
+    {
+      "pc": "0x4943F4",
+      "static": "jb 0x494443",
+      "role": "JB 0x494443: strict kind >= 3 gate"
+    },
+    {
+      "pc": "0x494414",
+      "static": "je 0x494437",
+      "role": "JZ 0x494437: zero-value skip in writer"
+    },
+    {
+      "pc": "0x494434",
+      "static": "call dword ptr [edx + 0x38]",
+      "role": "CALL [EDX+0x38]: emit one 16-byte record"
+    },
+    {
+      "pc": "0x494437",
+      "static": "mov eax, dword ptr [esi + 0x54]",
+      "role": "entry loop tail (both zero and non-zero paths)"
+    },
+    {
+      "pc": "0x49443A",
+      "static": "inc edi",
+      "role": "INC EDI: next entry index"
+    },
+    {
+      "pc": "0x49443D",
+      "static": "jl 0x494408",
+      "role": "JL 0x494408: entry loop"
+    },
+    {
+      "pc": "0x494449",
+      "static": "inc ebp",
+      "role": "INC EBP: next player index"
+    },
+    {
+      "pc": "0x49444C",
+      "static": "jb 0x4943e5",
+      "role": "JC 0x4943E5: player loop"
+    },
+    {
+      "pc": "0x488843",
+      "static": "mov ecx, dword ptr [ecx + 0xa64]",
+      "role": "accessor valid-index path"
+    },
+    {
+      "pc": "0x488849",
+      "static": "mov eax, dword ptr [ecx + eax*4]",
+      "role": "accessor: load pointer array element"
+    },
+    {
+      "pc": "0x48884C",
+      "static": "ret 4",
+      "role": "accessor: return element"
+    },
+    {
+      "pc": "0x48883E",
+      "static": "xor eax, eax",
+      "role": "accessor out-of-range path (must stay 0 here)"
+    },
+    {
+      "pc": "0x48CA25",
+      "static": "call 0x488830",
+      "role": "count pass: CALL 0x488830"
+    },
+    {
+      "pc": "0x48CA36",
+      "static": "call 0x48cf50",
+      "role": "CALL 0x48CF50 player count helper"
+    },
+    {
+      "pc": "0x48CA43",
+      "static": "inc esi",
+      "role": "count pass: INC ESI next player index"
+    },
+    {
+      "pc": "0x48CA6F",
+      "static": "call 0x488830",
+      "role": "total-count function, second player loop: CALL 0x488830"
+    },
+    {
+      "pc": "0x48CA77",
+      "static": "mov dword ptr [esp + 0x14], eax",
+      "role": "total-count function, second player loop: store player pointer"
+    },
+    {
+      "pc": "0x48CF50",
+      "static": "mov ecx, dword ptr [esp + 4]",
+      "role": "FUN_48CF50 entry"
+    },
+    {
+      "pc": "0x48CF6F",
+      "static": "je 0x48cf72",
+      "role": "JE 0x48CF72: zero-value skip in count helper"
+    },
+    {
+      "pc": "0x48CF71",
+      "static": "inc eax",
+      "role": "INC EAX: count one non-zero value"
+    }
+  ],
+  "fixture_contract": {
+    "inherited": "build()/run() reused unchanged; Map 0x17700000, 248 doubles 0x17710000, Terrain #6 raw, 0xA5 stack, CFile sink, HeapAlloc/HeapFree, lstrlen, interlocked, critical-section, clock/TLS/error IAT adapters and the Terrain/default-initializer calls come from the published fixture",
+    "player_array": {
+      "address": "0x17790000",
+      "layout": "DWORD player pointers, order declared per scene"
+    },
+    "player_object": {
+      "address": "0x177A0000 + i*0x1000",
+      "size": 512,
+      "fields": "+0x1C kind byte; +0x4C container {+0x50 data, +0x54 count}; every other pool/availability field zero"
+    },
+    "entries": {
+      "address": "0x177B0000 + i*0x1000",
+      "layout": "8-byte {DWORD key, DWORD value} per player"
+    },
+    "map_fields": "Map +0xA64 pointer array, +0xA68 count; +0x110 Type77 count remains 0; no local/global pool lists",
+    "registers": "harness default per call: EAX/EBX/ECX/EDX/ESI/EDI = 0 except the declared ECX; ESP=EBP=0x7FFF0000; EFLAGS=2; FPCW=0x37F; return stub at 0x16000000"
+  },
+  "limitations": [
+    "Only FUN_4943C0 / FUN_48CF50 / FUN_488830 inside FUN_4937C0 and FUN_48CA00 are newly exercised; pool/availability groups 1+(kind<<16)..5+... are NOT executed or interpreted.",
+    "No GUI reachability, full save, gameplay consumer or real-file write is claimed; the CFile sink is the published adapter.",
+    "Type77 count 110 is zero; Types 29/113/114/186 keep prior treatment; SDT/Crypt untouched.",
+    "Player-array index 1 itself is not read from a register: the unchanged runner exposes PC visit counts and output memory only, so index 1 is evidenced by two player-loop iterations, the unique kind/key/value of the second player and the reversed-pointer control scene, not by an argument-value trace.",
+    "Scalar record tails +8..+15 are inherited stack-scratch reproduction (observed writer-entry seed), not a new meaning.",
+    "Header time/date/ID fields produced by the original clock/text calls are inherited, not re-derived; only signature/version/size/count/tag fields are checked.",
+    "Kind 2 is exercised only as a skipped player; no other kind values or true pool-content paths are tested."
+  ],
+  "scenes": [
+    {
+      "name": "order-zero-value-skip",
+      "description": "One accepted player (kind 3) with entries {0x40, 0x0BADF00D}, {0x41, 0x00000000}, {0x42, 0xFEEDFACE}: the zero-valued middle entry is skipped by both the writer and the count helper, the two non-zero entries keep their array order.",
+      "pointers": [
+        0
+      ],
+      "fixture_sha256": "73fb2bcd164eebe1a7018ba578d1b580c1eb35e55de6dfdf17c8c3d460ee7188",
+      "outcome": "PASS",
+      "declared_records": 198,
+      "emitted_records": 198,
+      "independent_player_records": [
+        [
+          1,
+          64,
+          195948557,
+          3
+        ],
+        [
+          1,
+          66,
+          4277009102,
+          3
+        ]
+      ],
+      "observed_player_records": [
+        [
+          1,
+          64,
+          195948557,
+          3
+        ],
+        [
+          1,
+          66,
+          4277009102,
+          3
+        ]
+      ],
+      "independent_player_records_hex": [
+        "01000000400000000df0ad0b03000000",
+        "0100000042000000cefaedfe03000000"
+      ],
+      "observed_player_records_hex": [
+        "01000000400000000df0ad0b03000000",
+        "0100000042000000cefaedfe03000000"
+      ],
+      "player_record_count": 2,
+      "inherited_records": 196,
+      "inherited_tail_reproduction": [
+        2779096485,
+        2779096485
+      ],
+      "output_bytes": 3224,
+      "output_tail_is_A5": true,
+      "output_tail_bytes": 13160,
+      "header_hex": "e600000004000000980c0000e70000001c000000c600000001000000ea071d0aa5a50c2238a5ea071d0aa5a50c2238a5e8000000600c0000",
+      "header_sha256": "60d18a38c23223dbf773e9363ed49c007ff8a022d08930f674718965f04bcded",
+      "header_fields": {
+        "signature": "0xe6",
+        "version": 4,
+        "size_at_8": 3224,
+        "tag1_at_12": "0xe7",
+        "count_at_20": 198,
+        "tag2_at_48": "0xe8",
+        "record_bytes_at_52": 3168
+      },
+      "meta": [
+        201,
+        352717976,
+        0
+      ],
+      "pc_visits": {
+        "0x4937d0": 1,
+        "0x49386d": 1,
+        "0x49389d": 1,
+        "0x4943c0": 1,
+        "0x4943e5": 1,
+        "0x4943e8": 1,
+        "0x4943f4": 1,
+        "0x494414": 3,
+        "0x494434": 2,
+        "0x494437": 3,
+        "0x49443a": 3,
+        "0x49443d": 3,
+        "0x494449": 1,
+        "0x49444a": 1,
+        "0x49444c": 1,
+        "0x48883e": 0,
+        "0x48ca25": 1,
+        "0x48ca36": 1,
+        "0x48ca43": 1,
+        "0x48ca6f": 1,
+        "0x48ca77": 1,
+        "0x48cf50": 1,
+        "0x48cf6f": 3,
+        "0x48cf71": 2,
+        "0x4943cc": 0
+      },
+      "pc_counts": {
+        "players": 1,
+        "selected": 1,
+        "entries_visited": 3,
+        "entries_nonzero": 2,
+        "entries_zero_skipped": 1
+      },
+      "accessor_path_visits": {
+        "0x488843": 4,
+        "0x488849": 4,
+        "0x48884c": 4,
+        "0x48883e": 0
+      },
+      "accessor_evidence": {
+        "call_sites_per_player": {
+          "0x49389d": 1,
+          "0x4943e8": 1,
+          "0x48ca25": 1,
+          "0x48ca6f": 1
+        },
+        "valid_index_path_total": 4,
+        "out_of_range_path": 0,
+        "pointer_array_order": [
+          0
+        ],
+        "note": "The unchanged runner exposes PC visit counts, not the accessor argument; index 1 is supported by four accessor entries per player into the valid path, the player-loop iteration count and the unique kind/key/value of the second pointer, plus the reversed-pointer control scene."
+      },
+      "type77_count": 0,
+      "native_steps": 27185
+    },
+    {
+      "name": "order-two-players-forward",
+      "description": "Two accepted players, pointer array [P0(kind 3, 0x11/0xAABBCCDD), P1(kind 4, 0x22/0x01020304)]: Map +0xA64/+0xA68 index 1 is used and records follow the pointer array.",
+      "pointers": [
+        0,
+        1
+      ],
+      "fixture_sha256": "15562f8c3d787817013ebcaf93c969dddfadfe37b578f34256c7a155ff88697e",
+      "outcome": "PASS",
+      "declared_records": 198,
+      "emitted_records": 198,
+      "independent_player_records": [
+        [
+          1,
+          17,
+          2864434397,
+          3
+        ],
+        [
+          1,
+          34,
+          16909060,
+          4
+        ]
+      ],
+      "observed_player_records": [
+        [
+          1,
+          17,
+          2864434397,
+          3
+        ],
+        [
+          1,
+          34,
+          16909060,
+          4
+        ]
+      ],
+      "independent_player_records_hex": [
+        "0100000011000000ddccbbaa03000000",
+        "01000000220000000403020104000000"
+      ],
+      "observed_player_records_hex": [
+        "0100000011000000ddccbbaa03000000",
+        "01000000220000000403020104000000"
+      ],
+      "player_record_count": 2,
+      "inherited_records": 196,
+      "inherited_tail_reproduction": [
+        2779096485,
+        2779096485
+      ],
+      "output_bytes": 3224,
+      "output_tail_is_A5": true,
+      "output_tail_bytes": 13160,
+      "header_hex": "e600000004000000980c0000e70000001c000000c600000001000000ea071d0aa5a50c2238a5ea071d0aa5a50c2238a5e8000000600c0000",
+      "header_sha256": "60d18a38c23223dbf773e9363ed49c007ff8a022d08930f674718965f04bcded",
+      "header_fields": {
+        "signature": "0xe6",
+        "version": 4,
+        "size_at_8": 3224,
+        "tag1_at_12": "0xe7",
+        "count_at_20": 198,
+        "tag2_at_48": "0xe8",
+        "record_bytes_at_52": 3168
+      },
+      "meta": [
+        201,
+        352717976,
+        0
+      ],
+      "pc_visits": {
+        "0x4937d0": 1,
+        "0x49386d": 1,
+        "0x49389d": 2,
+        "0x4943c0": 1,
+        "0x4943e5": 2,
+        "0x4943e8": 2,
+        "0x4943f4": 2,
+        "0x494414": 2,
+        "0x494434": 2,
+        "0x494437": 2,
+        "0x49443a": 2,
+        "0x49443d": 2,
+        "0x494449": 2,
+        "0x49444a": 2,
+        "0x49444c": 2,
+        "0x48883e": 0,
+        "0x48ca25": 2,
+        "0x48ca36": 2,
+        "0x48ca43": 2,
+        "0x48ca6f": 2,
+        "0x48ca77": 2,
+        "0x48cf50": 2,
+        "0x48cf6f": 2,
+        "0x48cf71": 2,
+        "0x4943cc": 0
+      },
+      "pc_counts": {
+        "players": 2,
+        "selected": 2,
+        "entries_visited": 2,
+        "entries_nonzero": 2,
+        "entries_zero_skipped": 0
+      },
+      "accessor_path_visits": {
+        "0x488843": 8,
+        "0x488849": 8,
+        "0x48884c": 8,
+        "0x48883e": 0
+      },
+      "accessor_evidence": {
+        "call_sites_per_player": {
+          "0x49389d": 2,
+          "0x4943e8": 2,
+          "0x48ca25": 2,
+          "0x48ca6f": 2
+        },
+        "valid_index_path_total": 8,
+        "out_of_range_path": 0,
+        "pointer_array_order": [
+          0,
+          1
+        ],
+        "note": "The unchanged runner exposes PC visit counts, not the accessor argument; index 1 is supported by four accessor entries per player into the valid path, the player-loop iteration count and the unique kind/key/value of the second pointer, plus the reversed-pointer control scene."
+      },
+      "type77_count": 0,
+      "native_steps": 27330
+    },
+    {
+      "name": "order-two-players-reversed",
+      "description": "Same two player objects, pointer array reversed [P1, P0]: the emitted order follows the pointer array, not object address order.",
+      "pointers": [
+        1,
+        0
+      ],
+      "fixture_sha256": "c35b8da53d3a30ae6c3abd7aff8383983a322ea1bb5dcff455d487951a080498",
+      "outcome": "PASS",
+      "declared_records": 198,
+      "emitted_records": 198,
+      "independent_player_records": [
+        [
+          1,
+          34,
+          16909060,
+          4
+        ],
+        [
+          1,
+          17,
+          2864434397,
+          3
+        ]
+      ],
+      "observed_player_records": [
+        [
+          1,
+          34,
+          16909060,
+          4
+        ],
+        [
+          1,
+          17,
+          2864434397,
+          3
+        ]
+      ],
+      "independent_player_records_hex": [
+        "01000000220000000403020104000000",
+        "0100000011000000ddccbbaa03000000"
+      ],
+      "observed_player_records_hex": [
+        "01000000220000000403020104000000",
+        "0100000011000000ddccbbaa03000000"
+      ],
+      "player_record_count": 2,
+      "inherited_records": 196,
+      "inherited_tail_reproduction": [
+        2779096485,
+        2779096485
+      ],
+      "output_bytes": 3224,
+      "output_tail_is_A5": true,
+      "output_tail_bytes": 13160,
+      "header_hex": "e600000004000000980c0000e70000001c000000c600000001000000ea071d0aa5a50c2238a5ea071d0aa5a50c2238a5e8000000600c0000",
+      "header_sha256": "60d18a38c23223dbf773e9363ed49c007ff8a022d08930f674718965f04bcded",
+      "header_fields": {
+        "signature": "0xe6",
+        "version": 4,
+        "size_at_8": 3224,
+        "tag1_at_12": "0xe7",
+        "count_at_20": 198,
+        "tag2_at_48": "0xe8",
+        "record_bytes_at_52": 3168
+      },
+      "meta": [
+        201,
+        352717976,
+        0
+      ],
+      "pc_visits": {
+        "0x4937d0": 1,
+        "0x49386d": 1,
+        "0x49389d": 2,
+        "0x4943c0": 1,
+        "0x4943e5": 2,
+        "0x4943e8": 2,
+        "0x4943f4": 2,
+        "0x494414": 2,
+        "0x494434": 2,
+        "0x494437": 2,
+        "0x49443a": 2,
+        "0x49443d": 2,
+        "0x494449": 2,
+        "0x49444a": 2,
+        "0x49444c": 2,
+        "0x48883e": 0,
+        "0x48ca25": 2,
+        "0x48ca36": 2,
+        "0x48ca43": 2,
+        "0x48ca6f": 2,
+        "0x48ca77": 2,
+        "0x48cf50": 2,
+        "0x48cf6f": 2,
+        "0x48cf71": 2,
+        "0x4943cc": 0
+      },
+      "pc_counts": {
+        "players": 2,
+        "selected": 2,
+        "entries_visited": 2,
+        "entries_nonzero": 2,
+        "entries_zero_skipped": 0
+      },
+      "accessor_path_visits": {
+        "0x488843": 8,
+        "0x488849": 8,
+        "0x48884c": 8,
+        "0x48883e": 0
+      },
+      "accessor_evidence": {
+        "call_sites_per_player": {
+          "0x49389d": 2,
+          "0x4943e8": 2,
+          "0x48ca25": 2,
+          "0x48ca6f": 2
+        },
+        "valid_index_path_total": 8,
+        "out_of_range_path": 0,
+        "pointer_array_order": [
+          1,
+          0
+        ],
+        "note": "The unchanged runner exposes PC visit counts, not the accessor argument; index 1 is supported by four accessor entries per player into the valid path, the player-loop iteration count and the unique kind/key/value of the second pointer, plus the reversed-pointer control scene."
+      },
+      "type77_count": 0,
+      "native_steps": 27330
+    },
+    {
+      "name": "order-kind2-then-kind3",
+      "description": "Pointer array [P0(kind 2, 0x51/0x11111111), P1(kind 3, 0x52/0x22222222 and 0x53/0)]: the unselected player emits and counts nothing and its entries are not visited, while traversal continues to the next player.",
+      "pointers": [
+        0,
+        1
+      ],
+      "fixture_sha256": "2e819ed52ced406ecea0ee24eadc9ea97fc710d2bbf2f6688f8ccc7212b06ff6",
+      "outcome": "PASS",
+      "declared_records": 197,
+      "emitted_records": 197,
+      "independent_player_records": [
+        [
+          1,
+          82,
+          572662306,
+          3
+        ]
+      ],
+      "observed_player_records": [
+        [
+          1,
+          82,
+          572662306,
+          3
+        ]
+      ],
+      "independent_player_records_hex": [
+        "01000000520000002222222203000000"
+      ],
+      "observed_player_records_hex": [
+        "01000000520000002222222203000000"
+      ],
+      "player_record_count": 1,
+      "inherited_records": 196,
+      "inherited_tail_reproduction": [
+        2779096485,
+        2779096485
+      ],
+      "output_bytes": 3208,
+      "output_tail_is_A5": true,
+      "output_tail_bytes": 13176,
+      "header_hex": "e600000004000000880c0000e70000001c000000c500000001000000ea071d0aa5a50c2238a5ea071d0aa5a50c2238a5e8000000500c0000",
+      "header_sha256": "50240412923fffd4bc058f9b3587b449a2331cb4435b70823435579a95de8b66",
+      "header_fields": {
+        "signature": "0xe6",
+        "version": 4,
+        "size_at_8": 3208,
+        "tag1_at_12": "0xe7",
+        "count_at_20": 197,
+        "tag2_at_48": "0xe8",
+        "record_bytes_at_52": 3152
+      },
+      "meta": [
+        200,
+        352717960,
+        0
+      ],
+      "pc_visits": {
+        "0x4937d0": 1,
+        "0x49386d": 1,
+        "0x49389d": 2,
+        "0x4943c0": 1,
+        "0x4943e5": 2,
+        "0x4943e8": 2,
+        "0x4943f4": 2,
+        "0x494414": 2,
+        "0x494434": 1,
+        "0x494437": 2,
+        "0x49443a": 2,
+        "0x49443d": 2,
+        "0x494449": 2,
+        "0x49444a": 2,
+        "0x49444c": 2,
+        "0x48883e": 0,
+        "0x48ca25": 2,
+        "0x48ca36": 1,
+        "0x48ca43": 2,
+        "0x48ca6f": 2,
+        "0x48ca77": 2,
+        "0x48cf50": 1,
+        "0x48cf6f": 2,
+        "0x48cf71": 1,
+        "0x4943cc": 0
+      },
+      "pc_counts": {
+        "players": 2,
+        "selected": 1,
+        "entries_visited": 2,
+        "entries_nonzero": 1,
+        "entries_zero_skipped": 1
+      },
+      "accessor_path_visits": {
+        "0x488843": 8,
+        "0x488849": 8,
+        "0x48884c": 8,
+        "0x48883e": 0
+      },
+      "accessor_evidence": {
+        "call_sites_per_player": {
+          "0x49389d": 2,
+          "0x4943e8": 2,
+          "0x48ca25": 2,
+          "0x48ca6f": 2
+        },
+        "valid_index_path_total": 8,
+        "out_of_range_path": 0,
+        "pointer_array_order": [
+          0,
+          1
+        ],
+        "note": "The unchanged runner exposes PC visit counts, not the accessor argument; index 1 is supported by four accessor entries per player into the valid path, the player-loop iteration count and the unique kind/key/value of the second pointer, plus the reversed-pointer control scene."
+      },
+      "type77_count": 0,
+      "native_steps": 27203
+    }
+  ]
+}

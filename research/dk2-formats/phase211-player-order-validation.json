@@ -1,0 +1,52 @@
+{
+  "phase": 211,
+  "date": "2026-11-14",
+  "scope": "First Variables player branch: zero-value skip and pointer-array order",
+  "acceptance": "PASS for four native data-only fixtures of first player branch: zero skip and pointer-array order",
+  "files": [
+    {
+      "file": "variables-player-order-audit/audit_player_order.py",
+      "bytes": 23525,
+      "sha256": "d1811c471526f68d73b70360ec4f0b704a5abc7d2a357f977d376836b7aab964"
+    },
+    {
+      "file": "variables-player-order-audit/coordinator-validation.json",
+      "bytes": 33266,
+      "sha256": "0b66531d0b8530fcd6ee55e790caabe1783c4ec8b932e1194e87725430f92e90"
+    },
+    {
+      "file": "variables-player-order-audit/player-order-results.json",
+      "bytes": 24868,
+      "sha256": "1952da984391cee5cd2013ab478eea4cbfb2bd0e909c465284532e2ecbc5f28e"
+    },
+    {
+      "file": "variables-player-order-audit/PLAYER_ORDER_RU.md",
+      "bytes": 8648,
+      "sha256": "6f5da4da16d15460bce1b046a3d7d7e37a8da027974f4711c52961700c12189c"
+    },
+    {
+      "file": "variables-player-order-audit/README_RU.md",
+      "bytes": 3779,
+      "sha256": "43f3b9c85afba6e0c622ee18274fdcc25e2205fa14c5fba9583be8c83cb204d4"
+    }
+  ],
+  "native_scenes": 4,
+  "source_exe_sha256": "989c45df779bccfc9a9e509b2ad0224a9bd269629f74792adc0320fa4b99fb09",
+  "historical_package_components_unchanged": true,
+  "game_or_gui_tested": false,
+  "limitations": [
+    "Only FUN_4943C0 / FUN_48CF50 / FUN_488830 inside FUN_4937C0 and FUN_48CA00 are newly exercised; pool/availability groups 1+(kind<<16)..5+... are NOT executed or interpreted.",
+    "No GUI reachability, full save, gameplay consumer or real-file write is claimed; the CFile sink is the published adapter.",
+    "Type77 count 110 is zero; Types 29/113/114/186 keep prior treatment; SDT/Crypt untouched.",
+    "Player-array index 1 itself is not read from a register: the unchanged runner exposes PC visit counts and output memory only, so index 1 is evidenced by two player-loop iterations, the unique kind/key/value of the second player and the reversed-pointer control scene, not by an argument-value trace.",
+    "Scalar record tails +8..+15 are inherited stack-scratch reproduction (observed writer-entry seed), not a new meaning.",
+    "Header time/date/ID fields produced by the original clock/text calls are inherited, not re-derived; only signature/version/size/count/tag fields are checked.",
+    "Kind 2 is exercised only as a skipped player; no other kind values or true pool-content paths are tested."
+  ],
+  "portable_checks_performed": {
+    "snapshot_validator": "PASS4454sources/182components/19627evidence",
+    "format_research_unittest": "5testsPASS",
+    "supplement_hashes": "208:6/6,209:5/5,210:6/6,211:5/5PASS",
+    "git_diff_check": "PASS"
+  }
+}

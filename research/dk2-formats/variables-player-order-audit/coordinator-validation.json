@@ -1,0 +1,950 @@
+{
+  "date": "2026-11-14",
+  "acceptance": "PASS for four native data-only fixtures of first player branch: zero skip and pointer-array order",
+  "full_report_matches_saved": true,
+  "no_write_preserves_three_files": true,
+  "source_exe_sha256": "989c45df779bccfc9a9e509b2ad0224a9bd269629f74792adc0320fa4b99fb09",
+  "files": {
+    "audit_player_order.py": "d1811c471526f68d73b70360ec4f0b704a5abc7d2a357f977d376836b7aab964",
+    "player-order-results.json": "1952da984391cee5cd2013ab478eea4cbfb2bd0e909c465284532e2ecbc5f28e",
+    "PLAYER_ORDER_RU.md": "6f5da4da16d15460bce1b046a3d7d7e37a8da027974f4711c52961700c12189c"
+  },
+  "terrain_source": {
+    "path": "Dungeon Keeper 2/Data/editor/Terrain.kwd",
+    "sha256": "1b4296b0cf696d5428e6d3d94eb8571e2601bd78fc51caa6c3e1e13c0695e77d"
+  },
+  "runtime": {
+    "python": "3.12.15 (main, Oct  9 2026, 15:21:55) [MSC v.1944 64 bit (AMD64)]",
+    "capstone": "5.0.7",
+    "pefile": "2024.8.26",
+    "unicorn": "2.1.4"
+  },
+  "primary_blocks": [
+    {
+      "address": "0x4943c0",
+      "bytes_hex": "83ec1455578bf933ed897c2408c744240c010000008b87680a000085c0767b538b5c242456558bcfe84344ffff8bf08a461c3c03724d25ff00000033ff894424208b465485c07e378b46508b4cf8048d04f885c9742133c96a108a08894c241c8b56508bcb8b44fa048b13894424208d44241850ff52388b4654473bf87cc98b7c24108b87680a0000453be872975e5b5fb0015d83c414c204005fb0015d83c414c20400",
+      "sha256": "643e727f1becbdbc312ba0a211efe463ce250f00184106d02d33e6ede27034fe",
+      "instructions": [
+        "004943c0 sub esp, 0x14",
+        "004943c3 push ebp",
+        "004943c4 push edi",
+        "004943c5 mov edi, ecx",
+        "004943c7 xor ebp, ebp",
+        "004943c9 mov dword ptr [esp + 8], edi",
+        "004943cd mov dword ptr [esp + 0xc], 1",
+        "004943d5 mov eax, dword ptr [edi + 0xa68]",
+        "004943db test eax, eax",
+        "004943dd jbe 0x49445a",
+        "004943df push ebx",
+        "004943e0 mov ebx, dword ptr [esp + 0x24]",
+        "004943e4 push esi",
+        "004943e5 push ebp",
+        "004943e6 mov ecx, edi",
+        "004943e8 call 0x488830",
+        "004943ed mov esi, eax",
+        "004943ef mov al, byte ptr [esi + 0x1c]",
+        "004943f2 cmp al, 3",
+        "004943f4 jb 0x494443",
+        "004943f6 and eax, 0xff",
+        "004943fb xor edi, edi",
+        "004943fd mov dword ptr [esp + 0x20], eax",
+        "00494401 mov eax, dword ptr [esi + 0x54]",
+        "00494404 test eax, eax",
+        "00494406 jle 0x49443f",
+        "00494408 mov eax, dword ptr [esi + 0x50]",
+        "0049440b mov ecx, dword ptr [eax + edi*8 + 4]",
+        "0049440f lea eax, [eax + edi*8]",
+        "00494412 test ecx, ecx",
+        "00494414 je 0x494437",
+        "00494416 xor ecx, ecx",
+        "00494418 push 0x10",
+        "0049441a mov cl, byte ptr [eax]",
+        "0049441c mov dword ptr [esp + 0x1c], ecx",
+        "00494420 mov edx, dword ptr [esi + 0x50]",
+        "00494423 mov ecx, ebx",
+        "00494425 mov eax, dword ptr [edx + edi*8 + 4]",
+        "00494429 mov edx, dword ptr [ebx]",
+        "0049442b mov dword ptr [esp + 0x20], eax",
+        "0049442f lea eax, [esp + 0x18]",
+        "00494433 push eax",
+        "00494434 call dword ptr [edx + 0x38]",
+        "00494437 mov eax, dword ptr [esi + 0x54]",
+        "0049443a inc edi",
+        "0049443b cmp edi, eax",
+        "0049443d jl 0x494408",
+        "0049443f mov edi, dword ptr [esp + 0x10]",
+        "00494443 mov eax, dword ptr [edi + 0xa68]",
+        "00494449 inc ebp",
+        "0049444a cmp ebp, eax",
+        "0049444c jb 0x4943e5",
+        "0049444e pop esi",
+        "0049444f pop ebx",
+        "00494450 pop edi",
+        "00494451 mov al, 1",
+        "00494453 pop ebp",
+        "00494454 add esp, 0x14",
+        "00494457 ret 4",
+        "0049445a pop edi",
+        "0049445b mov al, 1",
+        "0049445d pop ebp",
+        "0049445e add esp, 0x14",
+        "00494461 ret 4"
+      ]
+    },
+    {
+      "address": "0x48cf50",
+      "bytes_hex": "8b4c240483ec0833c08b510885d27e198b4904568b31897424048b710485f674014083c1084a75ec5e83c408c20400",
+      "sha256": "e3bd419c984952ed6a0863d72cbf5e72e8ab7ba71503ce69d0f3ffd1e16ddf61",
+      "instructions": [
+        "0048cf50 mov ecx, dword ptr [esp + 4]",
+        "0048cf54 sub esp, 8",
+        "0048cf57 xor eax, eax",
+        "0048cf59 mov edx, dword ptr [ecx + 8]",
+        "0048cf5c test edx, edx",
+        "0048cf5e jle 0x48cf79",
+        "0048cf60 mov ecx, dword ptr [ecx + 4]",
+        "0048cf63 push esi",
+        "0048cf64 mov esi, dword ptr [ecx]",
+        "0048cf66 mov dword ptr [esp + 4], esi",
+        "0048cf6a mov esi, dword ptr [ecx + 4]",
+        "0048cf6d test esi, esi",
+        "0048cf6f je 0x48cf72",
+        "0048cf71 inc eax",
+        "0048cf72 add ecx, 8",
+        "0048cf75 dec edx",
+        "0048cf76 jne 0x48cf64",
+        "0048cf78 pop esi",
+        "0048cf79 add esp, 8",
+        "0048cf7c ret 4"
+      ]
+    },
+    {
+      "address": "0x488830",
+      "bytes_hex": "8b4424048b91680a00003bc2720533c0c204008b89640a00008b0481c20400",
+      "sha256": "3638a517aee355908504b63d3fe5bed6b165d6176b5c8f90502a97e9df84e3c0",
+      "instructions": [
+        "00488830 mov eax, dword ptr [esp + 4]",
+        "00488834 mov edx, dword ptr [ecx + 0xa68]",
+        "0048883a cmp eax, edx",
+        "0048883c jb 0x488843",
+        "0048883e xor eax, eax",
+        "00488840 ret 4",
+        "00488843 mov ecx, dword ptr [ecx + 0xa64]",
+        "00488849 mov eax, dword ptr [ecx + eax*4]",
+        "0048884c ret 4"
+      ]
+    },
+    {
+      "address": "0x48ca00",
+      "bytes_hex": "81ecbc000000535556578bf933ed33f6897c241c8b87680a0000896c241085c0762a568bcfe806beffff80781c03720d83c04c8bcf50e81505000003e88b87680a0000463bf072da896c24108b87680a0000c74424180000000085c00f8683040000eb048b7c241c8b4424188bcf50e8bcbdffff8a481c8944241480f9030f8240040000a19cf9540033c985c0894c24",
+      "sha256": "a3ce42c8d745385c87c400fa7d15b8c3f21bacd144a962a5dbb1767130e3768c",
+      "instructions": [
+        "0048ca00 sub esp, 0xbc",
+        "0048ca06 push ebx",
+        "0048ca07 push ebp",
+        "0048ca08 push esi",
+        "0048ca09 push edi",
+        "0048ca0a mov edi, ecx",
+        "0048ca0c xor ebp, ebp",
+        "0048ca0e xor esi, esi",
+        "0048ca10 mov dword ptr [esp + 0x1c], edi",
+        "0048ca14 mov eax, dword ptr [edi + 0xa68]",
+        "0048ca1a mov dword ptr [esp + 0x10], ebp",
+        "0048ca1e test eax, eax",
+        "0048ca20 jbe 0x48ca4c",
+        "0048ca22 push esi",
+        "0048ca23 mov ecx, edi",
+        "0048ca25 call 0x488830",
+        "0048ca2a cmp byte ptr [eax + 0x1c], 3",
+        "0048ca2e jb 0x48ca3d",
+        "0048ca30 add eax, 0x4c",
+        "0048ca33 mov ecx, edi",
+        "0048ca35 push eax",
+        "0048ca36 call 0x48cf50",
+        "0048ca3b add ebp, eax",
+        "0048ca3d mov eax, dword ptr [edi + 0xa68]",
+        "0048ca43 inc esi",
+        "0048ca44 cmp esi, eax",
+        "0048ca46 jb 0x48ca22",
+        "0048ca48 mov dword ptr [esp + 0x10], ebp",
+        "0048ca4c mov eax, dword ptr [edi + 0xa68]",
+        "0048ca52 mov dword ptr [esp + 0x18], 0",
+        "0048ca5a test eax, eax",
+        "0048ca5c jbe 0x48cee5",
+        "0048ca62 jmp 0x48ca68",
+        "0048ca64 mov edi, dword ptr [esp + 0x1c]",
+        "0048ca68 mov eax, dword ptr [esp + 0x18]",
+        "0048ca6c mov ecx, edi",
+        "0048ca6e push eax",
+        "0048ca6f call 0x488830",
+        "0048ca74 mov cl, byte ptr [eax + 0x1c]",
+        "0048ca77 mov dword ptr [esp + 0x14], eax",
+        "0048ca7b cmp cl, 3",
+        "0048ca7e jb 0x48cec4",
+        "0048ca84 mov eax, dword ptr [0x54f99c]",
+        "0048ca89 xor ecx, ecx",
+        "0048ca8b test eax, eax"
+      ]
+    },
+    {
+      "address": "0x4937c0",
+      "bytes_hex": "81ec5c0100005355568be957896c2424e82b92ffff8bf88b9c24700100008bf76a0c8b138bcbc1e604c7442450e6000000c7442454040000008d4638894424588d44245050ff52388d4c2468c7442458e700000051b950f55400897c2464c744246801000000e8f57a01008d542472b950f5540052e8e67a01008b038d4c24586a24518bcbc74424641c000000ff50388b138d4424446a08508bcbc744244ce800000089742450ff5238538bcde84e0b00008b85680a0000c74424100200000085c0c744243c000000000f86ad070000eb048b6c24248b4c243c518bcde88e4fffff8a481c8944242080f9030f827007",
+      "sha256": "093d360f7805327b4940a2c7fbbee3ae66ae296d4359052be75dfa77c41abf75",
+      "instructions": [
+        "004937c0 sub esp, 0x15c",
+        "004937c6 push ebx",
+        "004937c7 push ebp",
+        "004937c8 push esi",
+        "004937c9 mov ebp, ecx",
+        "004937cb push edi",
+        "004937cc mov dword ptr [esp + 0x24], ebp",
+        "004937d0 call 0x48ca00",
+        "004937d5 mov edi, eax",
+        "004937d7 mov ebx, dword ptr [esp + 0x170]",
+        "004937de mov esi, edi",
+        "004937e0 push 0xc",
+        "004937e2 mov edx, dword ptr [ebx]",
+        "004937e4 mov ecx, ebx",
+        "004937e6 shl esi, 4",
+        "004937e9 mov dword ptr [esp + 0x50], 0xe6",
+        "004937f1 mov dword ptr [esp + 0x54], 4",
+        "004937f9 lea eax, [esi + 0x38]",
+        "004937fc mov dword ptr [esp + 0x58], eax",
+        "00493800 lea eax, [esp + 0x50]",
+        "00493804 push eax",
+        "00493805 call dword ptr [edx + 0x38]",
+        "00493808 lea ecx, [esp + 0x68]",
+        "0049380c mov dword ptr [esp + 0x58], 0xe7",
+        "00493814 push ecx",
+        "00493815 mov ecx, 0x54f550",
+        "0049381a mov dword ptr [esp + 0x64], edi",
+        "0049381e mov dword ptr [esp + 0x68], 1",
+        "00493826 call 0x4ab320",
+        "0049382b lea edx, [esp + 0x72]",
+        "0049382f mov ecx, 0x54f550",
+        "00493834 push edx",
+        "00493835 call 0x4ab320",
+        "0049383a mov eax, dword ptr [ebx]",
+        "0049383c lea ecx, [esp + 0x58]",
+        "00493840 push 0x24",
+        "00493842 push ecx",
+        "00493843 mov ecx, ebx",
+        "00493845 mov dword ptr [esp + 0x64], 0x1c",
+        "0049384d call dword ptr [eax + 0x38]",
+        "00493850 mov edx, dword ptr [ebx]",
+        "00493852 lea eax, [esp + 0x44]",
+        "00493856 push 8",
+        "00493858 push eax",
+        "00493859 mov ecx, ebx",
+        "0049385b mov dword ptr [esp + 0x4c], 0xe8",
+        "00493863 mov dword ptr [esp + 0x50], esi",
+        "00493867 call dword ptr [edx + 0x38]",
+        "0049386a push ebx",
+        "0049386b mov ecx, ebp",
+        "0049386d call 0x4943c0",
+        "00493872 mov eax, dword ptr [ebp + 0xa68]",
+        "00493878 mov dword ptr [esp + 0x10], 2",
+        "00493880 test eax, eax",
+        "00493882 mov dword ptr [esp + 0x3c], 0",
+        "0049388a jbe 0x49403d",
+        "00493890 jmp 0x493896",
+        "00493892 mov ebp, dword ptr [esp + 0x24]",
+        "00493896 mov ecx, dword ptr [esp + 0x3c]",
+        "0049389a push ecx",
+        "0049389b mov ecx, ebp",
+        "0049389d call 0x488830",
+        "004938a2 mov cl, byte ptr [eax + 0x1c]",
+        "004938a5 mov dword ptr [esp + 0x20], eax",
+        "004938a9 cmp cl, 3"
+      ]
+    }
+  ],
+  "all_reported_pc_roles_on_primary_boundaries": true,
+  "imported_helper_sources": [
+    {
+      "path": "audit_targeted_spell.py",
+      "sha256": "a49e013c69ed9ea36e6b03e9a3122cf3b0c7d9cd7b747e9edc1cdee363713bdb"
+    },
+    {
+      "path": "build_effect_semantics.py",
+      "sha256": "b62e18d81b46d9726ad8565a63e3c2c8716226d349e7054e433e0ed5af730b43"
+    },
+    {
+      "path": "build_targeted_spell.py",
+      "sha256": "0b7ca67625350f9cddaebe0ab7a5aab4b9e073954aa86c19e85ab3b2ff9f2b75"
+    },
+    {
+      "path": "dk2_formats.py",
+      "sha256": "de49eda2daabd83afba4f7a27be2dd8008128be2901aff908fdf6c8aca0ca2c7"
+    },
+    {
+      "path": "emulate_creature_shot_request.py",
+      "sha256": "b580842cccdd0d8eca6b27fc69aa49cd45f62070ef9c7217fac704d28723e6f5"
+    },
+    {
+      "path": "emulate_editor_global_variables.py",
+      "sha256": "a0542307af20f83597a8561a9b154467dfa436d751d70ac78c780c7cf9d30266"
+    },
+    {
+      "path": "emulate_editor_variables_writer.py",
+      "sha256": "e46fa4ffd6f3363e3b65b8a526cba75b54147ff70f0e1da6f9ae64c411e0e69d"
+    },
+    {
+      "path": "emulate_element_colors.py",
+      "sha256": "9913d3c58846a01f92cbae6d32931fc6735cad66c7e1fb17b7bbf2ecd16e213c"
+    },
+    {
+      "path": "emulate_hero_parties.py",
+      "sha256": "2b9eb62fef32942a0cb4332be4c0ee7bc50fcf08524c5519e5245d4e2edf53f7"
+    },
+    {
+      "path": "emulate_native_shot_success.py",
+      "sha256": "ee4dfa40654fe5e4b99db2fc1877b0ae5388bbe56b8490dfb1475eaa14e365c3"
+    },
+    {
+      "path": "emulate_placed_creatures.py",
+      "sha256": "ee15c5c34ac2e1553fc96fe61ab9e66d3854ed51b60f42a150053045ec6e25f3"
+    },
+    {
+      "path": "emulate_placed_objects.py",
+      "sha256": "209d355c4341be1574411c62bddc7331c8b6f81ac43067cc8d618018e7a670d5"
+    },
+    {
+      "path": "emulate_placed_structures.py",
+      "sha256": "db8d939590cc872a9cdd3df5195be0c9e39c9c4c3992d935d2a4f7cf18f27a28"
+    },
+    {
+      "path": "emulate_room_model_chain.py",
+      "sha256": "8f4a37ff095963e244d9d540ebe2cdd880cb49c818cb397cf65aeebe4375f5ad"
+    },
+    {
+      "path": "emulate_room_writer.py",
+      "sha256": "22653c26ebc6322681fbfe43a3f8ffb5cb4d96f93b92489adfa4ffa19acba678"
+    },
+    {
+      "path": "emulate_targeted_spell.py",
+      "sha256": "83f10aa45ff9a0287e48b056a34cb16ad127b207ff77c212efaedc946e36ebb7"
+    },
+    {
+      "path": "emulate_terrain_model_chain.py",
+      "sha256": "704194b83837080e2719b40b3ceb5677b4a56c9692e75eb0c97f34fd509f0e98"
+    },
+    {
+      "path": "emulate_terrain_text_stat.py",
+      "sha256": "2185f9924b840267035740b05fa7276c218c782d93692c39ba2861c53b489b14"
+    },
+    {
+      "path": "memory_readout.py",
+      "sha256": "d4c61ba4faa946798570ed1fc731cb86a57e5176ac24cf293cef75b2f4e8583a"
+    },
+    {
+      "path": "native_creature_shot_request.py",
+      "sha256": "a0f2a54c24293158478612f194cd71a567bf52585b6e566baeaa9449c615e916"
+    },
+    {
+      "path": "native_door_field_layout.py",
+      "sha256": "6c15c87699f158cddd1ce9e6835c2867674e7c26ce9d1a41e553907f2c05bd86"
+    },
+    {
+      "path": "native_editor_text_executor.py",
+      "sha256": "d38440fda813fdf42e51a6ec9ecb6d49eebead4d481ab472622d9dbdde0d84b8"
+    },
+    {
+      "path": "native_editor_variables_writer_cpu.py",
+      "sha256": "702f575ae8d7846abaf9da5944e8ef46b74989d35d5a916988a1e5d335ffaf8c"
+    },
+    {
+      "path": "native_element_colors.py",
+      "sha256": "5784a72bd2f8f49c0a438479f47a12cfdfdb03500f58544dd5878984bff1959c"
+    },
+    {
+      "path": "native_hero_parties.py",
+      "sha256": "603d71b94c93f15e439d110cfdeab9e48baf5261c1dbfd9486dcf603bc747881"
+    },
+    {
+      "path": "native_melee_animation_flag.py",
+      "sha256": "c52155dcd776e6a0a93393e3cd93b62d4e5b6943b27692691495923a76190a9d"
+    },
+    {
+      "path": "native_placed_creatures.py",
+      "sha256": "10737ee08c4bc81fd3893ee9c98fee23f109d9508255a48e6a44ba111b01c57f"
+    },
+    {
+      "path": "native_placed_objects.py",
+      "sha256": "0c82e28deb388e482ffba293f69f08e5d6a23b3adc12e4c4929f268f6c9faf95"
+    },
+    {
+      "path": "native_placed_structures.py",
+      "sha256": "1c6b19aafce9e84825945f18f6e3e62f9694f6eca5a1a0252f83e24ca1e9dd95"
+    },
+    {
+      "path": "native_room_writer.py",
+      "sha256": "76b8bee9fabde681f9abb8de4e8312161ff49c68430b1c5fca5e0b3bdc2f82eb"
+    },
+    {
+      "path": "native_spell_alternatives.py",
+      "sha256": "82aa05afdb0ee7532df3bd4d0084ad37be045d33adf63feb6506a593baeafd56"
+    },
+    {
+      "path": "native_spell_writer.py",
+      "sha256": "8ec58d9056e6522589412b6f9b32ab449878eb6f37ab83335b413fc554176f7e"
+    },
+    {
+      "path": "native_targeted_spell.py",
+      "sha256": "87e0d6aeb5825a591d7fde10bb9b0c0bc3ca35157d90a62ab3fe547637e9d651"
+    },
+    {
+      "path": "native_terrain_catalogue.py",
+      "sha256": "41c271973270abec7c834789511309f6f72e028d0579c55a7810a0916c671048"
+    },
+    {
+      "path": "native_trap_field_layout.py",
+      "sha256": "b63992615aa33f7b881111598d64657505f84d01ad9395a77f6fd23c5a66a8c9"
+    },
+    {
+      "path": "party_writer_stack_audit.py",
+      "sha256": "d73304c9325433d585a887daff2fb3e9ac77b57d5d609b071f94e5f90a9c6664"
+    },
+    {
+      "path": "probe_editor_global_defaults.py",
+      "sha256": "777435e02644ed47ca5deca4360add679000036498985a502ca3fc853188112e"
+    },
+    {
+      "path": "probe_terrain_text_stat.py",
+      "sha256": "e2f915db90da3aa43d051c32c3b28bc9d947aeb7c3f53efc682dc7efac192ca9"
+    }
+  ],
+  "checks_actually_run": [
+    "Worker script/results SHA matched before editorial corrections",
+    "Coordinator full no-write four-scene replay exactly matches saved JSON",
+    "No-write retains all three file hashes",
+    "Reversed pointer control reverses unique emitted rows",
+    "All PC roles lie on boundaries decoded from original function entries",
+    "All eleven declared helpers and imported local helpers match publication"
+  ],
+  "coordinator_edits": [
+    "Accessor bytes extended to include full RET4",
+    "Count-function hash explicitly scoped as prefix",
+    "Independent expectations scoped to new player records; scalar tails reproduce entry scratch",
+    "No new hooks stated separately from inherited observer hooks"
+  ],
+  "register_argument_trace_performed": false,
+  "index_one_evidence": "PC counts, unique second-pointer outputs, two loop iterations and reversal control; no argument register trace",
+  "game_or_gui_tested": false,
+  "complete_variables_writer_implemented": false,
+  "limitations": [
+    "Only FUN_4943C0 / FUN_48CF50 / FUN_488830 inside FUN_4937C0 and FUN_48CA00 are newly exercised; pool/availability groups 1+(kind<<16)..5+... are NOT executed or interpreted.",
+    "No GUI reachability, full save, gameplay consumer or real-file write is claimed; the CFile sink is the published adapter.",
+    "Type77 count 110 is zero; Types 29/113/114/186 keep prior treatment; SDT/Crypt untouched.",
+    "Player-array index 1 itself is not read from a register: the unchanged runner exposes PC visit counts and output memory only, so index 1 is evidenced by two player-loop iterations, the unique kind/key/value of the second player and the reversed-pointer control scene, not by an argument-value trace.",
+    "Scalar record tails +8..+15 are inherited stack-scratch reproduction (observed writer-entry seed), not a new meaning.",
+    "Header time/date/ID fields produced by the original clock/text calls are inherited, not re-derived; only signature/version/size/count/tag fields are checked.",
+    "Kind 2 is exercised only as a skipped player; no other kind values or true pool-content paths are tested."
+  ],
+  "scene_results": [
+    {
+      "name": "order-zero-value-skip",
+      "description": "One accepted player (kind 3) with entries {0x40, 0x0BADF00D}, {0x41, 0x00000000}, {0x42, 0xFEEDFACE}: the zero-valued middle entry is skipped by both the writer and the count helper, the two non-zero entries keep their array order.",
+      "pointers": [
+        0
+      ],
+      "fixture_sha256": "73fb2bcd164eebe1a7018ba578d1b580c1eb35e55de6dfdf17c8c3d460ee7188",
+      "outcome": "PASS",
+      "declared_records": 198,
+      "emitted_records": 198,
+      "independent_player_records": [
+        [
+          1,
+          64,
+          195948557,
+          3
+        ],
+        [
+          1,
+          66,
+          4277009102,
+          3
+        ]
+      ],
+      "observed_player_records": [
+        [
+          1,
+          64,
+          195948557,
+          3
+        ],
+        [
+          1,
+          66,
+          4277009102,
+          3
+        ]
+      ],
+      "independent_player_records_hex": [
+        "01000000400000000df0ad0b03000000",
+        "0100000042000000cefaedfe03000000"
+      ],
+      "observed_player_records_hex": [
+        "01000000400000000df0ad0b03000000",
+        "0100000042000000cefaedfe03000000"
+      ],
+      "player_record_count": 2,
+      "inherited_records": 196,
+      "inherited_tail_reproduction": [
+        2779096485,
+        2779096485
+      ],
+      "output_bytes": 3224,
+      "output_tail_is_A5": true,
+      "output_tail_bytes": 13160,
+      "header_hex": "e600000004000000980c0000e70000001c000000c600000001000000ea071d0aa5a50c2238a5ea071d0aa5a50c2238a5e8000000600c0000",
+      "header_sha256": "60d18a38c23223dbf773e9363ed49c007ff8a022d08930f674718965f04bcded",
+      "header_fields": {
+        "signature": "0xe6",
+        "version": 4,
+        "size_at_8": 3224,
+        "tag1_at_12": "0xe7",
+        "count_at_20": 198,
+        "tag2_at_48": "0xe8",
+        "record_bytes_at_52": 3168
+      },
+      "meta": [
+        201,
+        352717976,
+        0
+      ],
+      "pc_visits": {
+        "0x4937d0": 1,
+        "0x49386d": 1,
+        "0x49389d": 1,
+        "0x4943c0": 1,
+        "0x4943e5": 1,
+        "0x4943e8": 1,
+        "0x4943f4": 1,
+        "0x494414": 3,
+        "0x494434": 2,
+        "0x494437": 3,
+        "0x49443a": 3,
+        "0x49443d": 3,
+        "0x494449": 1,
+        "0x49444a": 1,
+        "0x49444c": 1,
+        "0x48883e": 0,
+        "0x48ca25": 1,
+        "0x48ca36": 1,
+        "0x48ca43": 1,
+        "0x48ca6f": 1,
+        "0x48ca77": 1,
+        "0x48cf50": 1,
+        "0x48cf6f": 3,
+        "0x48cf71": 2,
+        "0x4943cc": 0
+      },
+      "pc_counts": {
+        "players": 1,
+        "selected": 1,
+        "entries_visited": 3,
+        "entries_nonzero": 2,
+        "entries_zero_skipped": 1
+      },
+      "accessor_path_visits": {
+        "0x488843": 4,
+        "0x488849": 4,
+        "0x48884c": 4,
+        "0x48883e": 0
+      },
+      "accessor_evidence": {
+        "call_sites_per_player": {
+          "0x49389d": 1,
+          "0x4943e8": 1,
+          "0x48ca25": 1,
+          "0x48ca6f": 1
+        },
+        "valid_index_path_total": 4,
+        "out_of_range_path": 0,
+        "pointer_array_order": [
+          0
+        ],
+        "note": "The unchanged runner exposes PC visit counts, not the accessor argument; index 1 is supported by four accessor entries per player into the valid path, the player-loop iteration count and the unique kind/key/value of the second pointer, plus the reversed-pointer control scene."
+      },
+      "type77_count": 0,
+      "native_steps": 27185
+    },
+    {
+      "name": "order-two-players-forward",
+      "description": "Two accepted players, pointer array [P0(kind 3, 0x11/0xAABBCCDD), P1(kind 4, 0x22/0x01020304)]: Map +0xA64/+0xA68 index 1 is used and records follow the pointer array.",
+      "pointers": [
+        0,
+        1
+      ],
+      "fixture_sha256": "15562f8c3d787817013ebcaf93c969dddfadfe37b578f34256c7a155ff88697e",
+      "outcome": "PASS",
+      "declared_records": 198,
+      "emitted_records": 198,
+      "independent_player_records": [
+        [
+          1,
+          17,
+          2864434397,
+          3
+        ],
+        [
+          1,
+          34,
+          16909060,
+          4
+        ]
+      ],
+      "observed_player_records": [
+        [
+          1,
+          17,
+          2864434397,
+          3
+        ],
+        [
+          1,
+          34,
+          16909060,
+          4
+        ]
+      ],
+      "independent_player_records_hex": [
+        "0100000011000000ddccbbaa03000000",
+        "01000000220000000403020104000000"
+      ],
+      "observed_player_records_hex": [
+        "0100000011000000ddccbbaa03000000",
+        "01000000220000000403020104000000"
+      ],
+      "player_record_count": 2,
+      "inherited_records": 196,
+      "inherited_tail_reproduction": [
+        2779096485,
+        2779096485
+      ],
+      "output_bytes": 3224,
+      "output_tail_is_A5": true,
+      "output_tail_bytes": 13160,
+      "header_hex": "e600000004000000980c0000e70000001c000000c600000001000000ea071d0aa5a50c2238a5ea071d0aa5a50c2238a5e8000000600c0000",
+      "header_sha256": "60d18a38c23223dbf773e9363ed49c007ff8a022d08930f674718965f04bcded",
+      "header_fields": {
+        "signature": "0xe6",
+        "version": 4,
+        "size_at_8": 3224,
+        "tag1_at_12": "0xe7",
+        "count_at_20": 198,
+        "tag2_at_48": "0xe8",
+        "record_bytes_at_52": 3168
+      },
+      "meta": [
+        201,
+        352717976,
+        0
+      ],
+      "pc_visits": {
+        "0x4937d0": 1,
+        "0x49386d": 1,
+        "0x49389d": 2,
+        "0x4943c0": 1,
+        "0x4943e5": 2,
+        "0x4943e8": 2,
+        "0x4943f4": 2,
+        "0x494414": 2,
+        "0x494434": 2,
+        "0x494437": 2,
+        "0x49443a": 2,
+        "0x49443d": 2,
+        "0x494449": 2,
+        "0x49444a": 2,
+        "0x49444c": 2,
+        "0x48883e": 0,
+        "0x48ca25": 2,
+        "0x48ca36": 2,
+        "0x48ca43": 2,
+        "0x48ca6f": 2,
+        "0x48ca77": 2,
+        "0x48cf50": 2,
+        "0x48cf6f": 2,
+        "0x48cf71": 2,
+        "0x4943cc": 0
+      },
+      "pc_counts": {
+        "players": 2,
+        "selected": 2,
+        "entries_visited": 2,
+        "entries_nonzero": 2,
+        "entries_zero_skipped": 0
+      },
+      "accessor_path_visits": {
+        "0x488843": 8,
+        "0x488849": 8,
+        "0x48884c": 8,
+        "0x48883e": 0
+      },
+      "accessor_evidence": {
+        "call_sites_per_player": {
+          "0x49389d": 2,
+          "0x4943e8": 2,
+          "0x48ca25": 2,
+          "0x48ca6f": 2
+        },
+        "valid_index_path_total": 8,
+        "out_of_range_path": 0,
+        "pointer_array_order": [
+          0,
+          1
+        ],
+        "note": "The unchanged runner exposes PC visit counts, not the accessor argument; index 1 is supported by four accessor entries per player into the valid path, the player-loop iteration count and the unique kind/key/value of the second pointer, plus the reversed-pointer control scene."
+      },
+      "type77_count": 0,
+      "native_steps": 27330
+    },
+    {
+      "name": "order-two-players-reversed",
+      "description": "Same two player objects, pointer array reversed [P1, P0]: the emitted order follows the pointer array, not object address order.",
+      "pointers": [
+        1,
+        0
+      ],
+      "fixture_sha256": "c35b8da53d3a30ae6c3abd7aff8383983a322ea1bb5dcff455d487951a080498",
+      "outcome": "PASS",
+      "declared_records": 198,
+      "emitted_records": 198,
+      "independent_player_records": [
+        [
+          1,
+          34,
+          16909060,
+          4
+        ],
+        [
+          1,
+          17,
+          2864434397,
+          3
+        ]
+      ],
+      "observed_player_records": [
+        [
+          1,
+          34,
+          16909060,
+          4
+        ],
+        [
+          1,
+          17,
+          2864434397,
+          3
+        ]
+      ],
+      "independent_player_records_hex": [
+        "01000000220000000403020104000000",
+        "0100000011000000ddccbbaa03000000"
+      ],
+      "observed_player_records_hex": [
+        "01000000220000000403020104000000",
+        "0100000011000000ddccbbaa03000000"
+      ],
+      "player_record_count": 2,
+      "inherited_records": 196,
+      "inherited_tail_reproduction": [
+        2779096485,
+        2779096485
+      ],
+      "output_bytes": 3224,
+      "output_tail_is_A5": true,
+      "output_tail_bytes": 13160,
+      "header_hex": "e600000004000000980c0000e70000001c000000c600000001000000ea071d0aa5a50c2238a5ea071d0aa5a50c2238a5e8000000600c0000",
+      "header_sha256": "60d18a38c23223dbf773e9363ed49c007ff8a022d08930f674718965f04bcded",
+      "header_fields": {
+        "signature": "0xe6",
+        "version": 4,
+        "size_at_8": 3224,
+        "tag1_at_12": "0xe7",
+        "count_at_20": 198,
+        "tag2_at_48": "0xe8",
+        "record_bytes_at_52": 3168
+      },
+      "meta": [
+        201,
+        352717976,
+        0
+      ],
+      "pc_visits": {
+        "0x4937d0": 1,
+        "0x49386d": 1,
+        "0x49389d": 2,
+        "0x4943c0": 1,
+        "0x4943e5": 2,
+        "0x4943e8": 2,
+        "0x4943f4": 2,
+        "0x494414": 2,
+        "0x494434": 2,
+        "0x494437": 2,
+        "0x49443a": 2,
+        "0x49443d": 2,
+        "0x494449": 2,
+        "0x49444a": 2,
+        "0x49444c": 2,
+        "0x48883e": 0,
+        "0x48ca25": 2,
+        "0x48ca36": 2,
+        "0x48ca43": 2,
+        "0x48ca6f": 2,
+        "0x48ca77": 2,
+        "0x48cf50": 2,
+        "0x48cf6f": 2,
+        "0x48cf71": 2,
+        "0x4943cc": 0
+      },
+      "pc_counts": {
+        "players": 2,
+        "selected": 2,
+        "entries_visited": 2,
+        "entries_nonzero": 2,
+        "entries_zero_skipped": 0
+      },
+      "accessor_path_visits": {
+        "0x488843": 8,
+        "0x488849": 8,
+        "0x48884c": 8,
+        "0x48883e": 0
+      },
+      "accessor_evidence": {
+        "call_sites_per_player": {
+          "0x49389d": 2,
+          "0x4943e8": 2,
+          "0x48ca25": 2,
+          "0x48ca6f": 2
+        },
+        "valid_index_path_total": 8,
+        "out_of_range_path": 0,
+        "pointer_array_order": [
+          1,
+          0
+        ],
+        "note": "The unchanged runner exposes PC visit counts, not the accessor argument; index 1 is supported by four accessor entries per player into the valid path, the player-loop iteration count and the unique kind/key/value of the second pointer, plus the reversed-pointer control scene."
+      },
+      "type77_count": 0,
+      "native_steps": 27330
+    },
+    {
+      "name": "order-kind2-then-kind3",
+      "description": "Pointer array [P0(kind 2, 0x51/0x11111111), P1(kind 3, 0x52/0x22222222 and 0x53/0)]: the unselected player emits and counts nothing and its entries are not visited, while traversal continues to the next player.",
+      "pointers": [
+        0,
+        1
+      ],
+      "fixture_sha256": "2e819ed52ced406ecea0ee24eadc9ea97fc710d2bbf2f6688f8ccc7212b06ff6",
+      "outcome": "PASS",
+      "declared_records": 197,
+      "emitted_records": 197,
+      "independent_player_records": [
+        [
+          1,
+          82,
+          572662306,
+          3
+        ]
+      ],
+      "observed_player_records": [
+        [
+          1,
+          82,
+          572662306,
+          3
+        ]
+      ],
+      "independent_player_records_hex": [
+        "01000000520000002222222203000000"
+      ],
+      "observed_player_records_hex": [
+        "01000000520000002222222203000000"
+      ],
+      "player_record_count": 1,
+      "inherited_records": 196,
+      "inherited_tail_reproduction": [
+        2779096485,
+        2779096485
+      ],
+      "output_bytes": 3208,
+      "output_tail_is_A5": true,
+      "output_tail_bytes": 13176,
+      "header_hex": "e600000004000000880c0000e70000001c000000c500000001000000ea071d0aa5a50c2238a5ea071d0aa5a50c2238a5e8000000500c0000",
+      "header_sha256": "50240412923fffd4bc058f9b3587b449a2331cb4435b70823435579a95de8b66",
+      "header_fields": {
+        "signature": "0xe6",
+        "version": 4,
+        "size_at_8": 3208,
+        "tag1_at_12": "0xe7",
+        "count_at_20": 197,
+        "tag2_at_48": "0xe8",
+        "record_bytes_at_52": 3152
+      },
+      "meta": [
+        200,
+        352717960,
+        0
+      ],
+      "pc_visits": {
+        "0x4937d0": 1,
+        "0x49386d": 1,
+        "0x49389d": 2,
+        "0x4943c0": 1,
+        "0x4943e5": 2,
+        "0x4943e8": 2,
+        "0x4943f4": 2,
+        "0x494414": 2,
+        "0x494434": 1,
+        "0x494437": 2,
+        "0x49443a": 2,
+        "0x49443d": 2,
+        "0x494449": 2,
+        "0x49444a": 2,
+        "0x49444c": 2,
+        "0x48883e": 0,
+        "0x48ca25": 2,
+        "0x48ca36": 1,
+        "0x48ca43": 2,
+        "0x48ca6f": 2,
+        "0x48ca77": 2,
+        "0x48cf50": 1,
+        "0x48cf6f": 2,
+        "0x48cf71": 1,
+        "0x4943cc": 0
+      },
+      "pc_counts": {
+        "players": 2,
+        "selected": 1,
+        "entries_visited": 2,
+        "entries_nonzero": 1,
+        "entries_zero_skipped": 1
+      },
+      "accessor_path_visits": {
+        "0x488843": 8,
+        "0x488849": 8,
+        "0x48884c": 8,
+        "0x48883e": 0
+      },
+      "accessor_evidence": {
+        "call_sites_per_player": {
+          "0x49389d": 2,
+          "0x4943e8": 2,
+          "0x48ca25": 2,
+          "0x48ca6f": 2
+        },
+        "valid_index_path_total": 8,
+        "out_of_range_path": 0,
+        "pointer_array_order": [
+          0,
+          1
+        ],
+        "note": "The unchanged runner exposes PC visit counts, not the accessor argument; index 1 is supported by four accessor entries per player into the valid path, the player-loop iteration count and the unique kind/key/value of the second pointer, plus the reversed-pointer control scene."
+      },
+      "type77_count": 0,
+      "native_steps": 27203
+    }
+  ]
+}
